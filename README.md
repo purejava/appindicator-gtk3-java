@@ -6,6 +6,8 @@
 
 Java bindings for libappindicator-gtk3 in 100% pure Java
 
+Based on libappindicator3-1 (12.10.1+20.10.20200706.1-0ubuntu1)
+
 # Requires
 Java 19 (preview)
 - due to the use of the new Foreign Function & Memory API
