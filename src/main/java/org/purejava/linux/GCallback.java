@@ -11,13 +11,13 @@ public interface GCallback {
 
     void apply();
     static MemorySegment allocate(GCallback fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GCallback.class, fi, constants$441.GCallback$FUNC, session);
+        return RuntimeHelper.upcallStub(GCallback.class, fi, constants$0.GCallback$FUNC, session);
     }
     static GCallback ofAddress(MemoryAddress addr, MemorySession session) {
         MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
         return () -> {
             try {
-                constants$442.GCallback$MH.invokeExact((Addressable)symbol);
+                constants$0.GCallback$MH.invokeExact((Addressable)symbol);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

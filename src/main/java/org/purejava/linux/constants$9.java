@@ -9,49 +9,49 @@ import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
 class constants$9 {
 
-    static final FunctionDescriptor GTranslateFunc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor app_indicator_get_attention_icon$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle app_indicator_get_attention_icon$MH = RuntimeHelper.downcallHandle(
+        "app_indicator_get_attention_icon",
+        constants$9.app_indicator_get_attention_icon$FUNC
+    );
+    static final FunctionDescriptor app_indicator_get_title$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle app_indicator_get_title$MH = RuntimeHelper.downcallHandle(
+        "app_indicator_get_title",
+        constants$9.app_indicator_get_title$FUNC
+    );
+    static final FunctionDescriptor app_indicator_get_menu$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle app_indicator_get_menu$MH = RuntimeHelper.downcallHandle(
+        "app_indicator_get_menu",
+        constants$9.app_indicator_get_menu$FUNC
+    );
+    static final FunctionDescriptor app_indicator_get_label$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle app_indicator_get_label$MH = RuntimeHelper.downcallHandle(
+        "app_indicator_get_label",
+        constants$9.app_indicator_get_label$FUNC
+    );
+    static final FunctionDescriptor app_indicator_get_ordering_index$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle app_indicator_get_ordering_index$MH = RuntimeHelper.downcallHandle(
+        "app_indicator_get_ordering_index",
+        constants$9.app_indicator_get_ordering_index$FUNC
+    );
+    static final FunctionDescriptor app_indicator_build_menu_from_desktop$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GTranslateFunc$MH = RuntimeHelper.downcallHandle(
-        constants$9.GTranslateFunc$FUNC
-    );
-    static final FunctionDescriptor memcpy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle memcpy$MH = RuntimeHelper.downcallHandle(
-        "memcpy",
-        constants$9.memcpy$FUNC
-    );
-    static final FunctionDescriptor memmove$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle memmove$MH = RuntimeHelper.downcallHandle(
-        "memmove",
-        constants$9.memmove$FUNC
-    );
-    static final FunctionDescriptor memccpy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle memccpy$MH = RuntimeHelper.downcallHandle(
-        "memccpy",
-        constants$9.memccpy$FUNC
-    );
-    static final FunctionDescriptor memset$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle memset$MH = RuntimeHelper.downcallHandle(
-        "memset",
-        constants$9.memset$FUNC
+    static final MethodHandle app_indicator_build_menu_from_desktop$MH = RuntimeHelper.downcallHandle(
+        "app_indicator_build_menu_from_desktop",
+        constants$9.app_indicator_build_menu_from_desktop$FUNC
     );
 }
 

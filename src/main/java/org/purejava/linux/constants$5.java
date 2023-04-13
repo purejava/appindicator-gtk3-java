@@ -9,54 +9,62 @@ import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
 class constants$5 {
 
-    static final FunctionDescriptor timer_create$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_action_get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_action_get_name$MH = RuntimeHelper.downcallHandle(
+        "gtk_action_get_name",
+        constants$5.gtk_action_get_name$FUNC
+    );
+    static final FunctionDescriptor gtk_action_group_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_action_group_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_action_group_new",
+        constants$5.gtk_action_group_new$FUNC
+    );
+    static final FunctionDescriptor gtk_action_group_add_action$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_action_group_add_action$MH = RuntimeHelper.downcallHandle(
+        "gtk_action_group_add_action",
+        constants$5.gtk_action_group_add_action$FUNC
+    );
+    static final FunctionDescriptor gtk_action_group_add_actions$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle timer_create$MH = RuntimeHelper.downcallHandle(
-        "timer_create",
-        constants$5.timer_create$FUNC
+    static final MethodHandle gtk_action_group_add_actions$MH = RuntimeHelper.downcallHandle(
+        "gtk_action_group_add_actions",
+        constants$5.gtk_action_group_add_actions$FUNC
     );
-    static final FunctionDescriptor timer_delete$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle timer_delete$MH = RuntimeHelper.downcallHandle(
-        "timer_delete",
-        constants$5.timer_delete$FUNC
-    );
-    static final FunctionDescriptor timer_settime$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_table_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle timer_settime$MH = RuntimeHelper.downcallHandle(
-        "timer_settime",
-        constants$5.timer_settime$FUNC
-    );
-    static final FunctionDescriptor timer_gettime$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle timer_gettime$MH = RuntimeHelper.downcallHandle(
-        "timer_gettime",
-        constants$5.timer_gettime$FUNC
-    );
-    static final FunctionDescriptor timer_getoverrun$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle timer_getoverrun$MH = RuntimeHelper.downcallHandle(
-        "timer_getoverrun",
-        constants$5.timer_getoverrun$FUNC
-    );
-    static final FunctionDescriptor timespec_get$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle timespec_get$MH = RuntimeHelper.downcallHandle(
-        "timespec_get",
-        constants$5.timespec_get$FUNC
+    static final MethodHandle gtk_table_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_table_new",
+        constants$5.gtk_table_new$FUNC
+    );
+    static final FunctionDescriptor gtk_table_attach$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_table_attach$MH = RuntimeHelper.downcallHandle(
+        "gtk_table_attach",
+        constants$5.gtk_table_attach$FUNC
     );
 }
 

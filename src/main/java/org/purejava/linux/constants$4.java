@@ -9,55 +9,51 @@ import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
 class constants$4 {
 
-    static final FunctionDescriptor nanosleep$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_message_dialog_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_message_dialog_new$MH = RuntimeHelper.downcallHandleVariadic(
+        "gtk_message_dialog_new",
+        constants$4.gtk_message_dialog_new$FUNC
+    );
+    static final FunctionDescriptor gtk_scrolled_window_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle nanosleep$MH = RuntimeHelper.downcallHandle(
-        "nanosleep",
-        constants$4.nanosleep$FUNC
+    static final MethodHandle gtk_scrolled_window_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_scrolled_window_new",
+        constants$4.gtk_scrolled_window_new$FUNC
     );
-    static final FunctionDescriptor clock_getres$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle clock_getres$MH = RuntimeHelper.downcallHandle(
-        "clock_getres",
-        constants$4.clock_getres$FUNC
-    );
-    static final FunctionDescriptor clock_gettime$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle clock_gettime$MH = RuntimeHelper.downcallHandle(
-        "clock_gettime",
-        constants$4.clock_gettime$FUNC
-    );
-    static final FunctionDescriptor clock_settime$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle clock_settime$MH = RuntimeHelper.downcallHandle(
-        "clock_settime",
-        constants$4.clock_settime$FUNC
-    );
-    static final FunctionDescriptor clock_nanosleep$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_scrolled_window_set_policy$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle clock_nanosleep$MH = RuntimeHelper.downcallHandle(
-        "clock_nanosleep",
-        constants$4.clock_nanosleep$FUNC
-    );
-    static final FunctionDescriptor clock_getcpuclockid$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle clock_getcpuclockid$MH = RuntimeHelper.downcallHandle(
-        "clock_getcpuclockid",
-        constants$4.clock_getcpuclockid$FUNC
+    static final MethodHandle gtk_scrolled_window_set_policy$MH = RuntimeHelper.downcallHandle(
+        "gtk_scrolled_window_set_policy",
+        constants$4.gtk_scrolled_window_set_policy$FUNC
+    );
+    static final FunctionDescriptor gtk_scrolled_window_set_shadow_type$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_scrolled_window_set_shadow_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_scrolled_window_set_shadow_type",
+        constants$4.gtk_scrolled_window_set_shadow_type$FUNC
+    );
+    static final FunctionDescriptor gtk_statusbar_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_statusbar_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_statusbar_new",
+        constants$4.gtk_statusbar_new$FUNC
+    );
+    static final FunctionDescriptor gtk_text_view_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_text_view_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_view_new",
+        constants$4.gtk_text_view_new$FUNC
     );
 }
 

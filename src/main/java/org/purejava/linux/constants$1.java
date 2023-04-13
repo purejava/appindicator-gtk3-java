@@ -9,49 +9,49 @@ import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
 class constants$1 {
 
-    static final FunctionDescriptor gmtime$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gmtime$MH = RuntimeHelper.downcallHandle(
-        "gmtime",
-        constants$1.gmtime$FUNC
-    );
-    static final FunctionDescriptor localtime$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle localtime$MH = RuntimeHelper.downcallHandle(
-        "localtime",
-        constants$1.localtime$FUNC
-    );
-    static final FunctionDescriptor gmtime_r$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_widget_destroyed$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gmtime_r$MH = RuntimeHelper.downcallHandle(
-        "gmtime_r",
-        constants$1.gmtime_r$FUNC
+    static final MethodHandle gtk_widget_destroyed$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_destroyed",
+        constants$1.gtk_widget_destroyed$FUNC
     );
-    static final FunctionDescriptor localtime_r$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_widget_show$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_show$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_show",
+        constants$1.gtk_widget_show$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_show_all$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_show_all$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_show_all",
+        constants$1.gtk_widget_show_all$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_grab_focus$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_grab_focus$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_grab_focus",
+        constants$1.gtk_widget_grab_focus$FUNC
+    );
+    static final FunctionDescriptor gtk_container_add$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle localtime_r$MH = RuntimeHelper.downcallHandle(
-        "localtime_r",
-        constants$1.localtime_r$FUNC
+    static final MethodHandle gtk_container_add$MH = RuntimeHelper.downcallHandle(
+        "gtk_container_add",
+        constants$1.gtk_container_add$FUNC
     );
-    static final FunctionDescriptor asctime$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gtk_window_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle asctime$MH = RuntimeHelper.downcallHandle(
-        "asctime",
-        constants$1.asctime$FUNC
-    );
-    static final FunctionDescriptor ctime$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle ctime$MH = RuntimeHelper.downcallHandle(
-        "ctime",
-        constants$1.ctime$FUNC
+    static final MethodHandle gtk_window_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_new",
+        constants$1.gtk_window_new$FUNC
     );
 }
 

@@ -5,10 +5,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.purejava</groupId>
-    <artifactId>libappindicator-gtk3-full-java</artifactId>
+    <artifactId>libappindicator-gtk3-minimal-java</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 
-    <name>libappindicator-gtk3-full-java</name>
+    <name>libappindicator-gtk3-minimal-java</name>
     <description>Java bindings for libappindicator-gtk3 in 100% pure Java</description>
     <url>https://github.com/purejava/libappindicator-gtk3-java/</url>
 

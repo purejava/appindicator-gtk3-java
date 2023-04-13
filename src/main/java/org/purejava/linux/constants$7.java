@@ -9,24 +9,55 @@ import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
 class constants$7 {
 
-    static final FunctionDescriptor GDestroyNotify$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor app_indicator_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle GDestroyNotify$MH = RuntimeHelper.downcallHandle(
-        constants$7.GDestroyNotify$FUNC
+    static final MethodHandle app_indicator_new$MH = RuntimeHelper.downcallHandle(
+        "app_indicator_new",
+        constants$7.app_indicator_new$FUNC
     );
-    static final FunctionDescriptor GFunc$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor app_indicator_set_status$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle app_indicator_set_status$MH = RuntimeHelper.downcallHandle(
+        "app_indicator_set_status",
+        constants$7.app_indicator_set_status$FUNC
+    );
+    static final FunctionDescriptor app_indicator_set_attention_icon$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GFunc$MH = RuntimeHelper.downcallHandle(
-        constants$7.GFunc$FUNC
+    static final MethodHandle app_indicator_set_attention_icon$MH = RuntimeHelper.downcallHandle(
+        "app_indicator_set_attention_icon",
+        constants$7.app_indicator_set_attention_icon$FUNC
     );
-    static final FunctionDescriptor GHashFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor app_indicator_set_menu$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GHashFunc$MH = RuntimeHelper.downcallHandle(
-        constants$7.GHashFunc$FUNC
+    static final MethodHandle app_indicator_set_menu$MH = RuntimeHelper.downcallHandle(
+        "app_indicator_set_menu",
+        constants$7.app_indicator_set_menu$FUNC
+    );
+    static final FunctionDescriptor app_indicator_set_icon$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle app_indicator_set_icon$MH = RuntimeHelper.downcallHandle(
+        "app_indicator_set_icon",
+        constants$7.app_indicator_set_icon$FUNC
+    );
+    static final FunctionDescriptor app_indicator_set_label$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle app_indicator_set_label$MH = RuntimeHelper.downcallHandle(
+        "app_indicator_set_label",
+        constants$7.app_indicator_set_label$FUNC
     );
 }
 

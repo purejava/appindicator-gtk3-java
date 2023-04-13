@@ -9,27 +9,57 @@ import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
 class constants$6 {
 
-    static final FunctionDescriptor GCompareFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_ui_manager_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_ui_manager_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_ui_manager_new",
+        constants$6.gtk_ui_manager_new$FUNC
+    );
+    static final FunctionDescriptor gtk_ui_manager_insert_action_group$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_ui_manager_insert_action_group$MH = RuntimeHelper.downcallHandle(
+        "gtk_ui_manager_insert_action_group",
+        constants$6.gtk_ui_manager_insert_action_group$FUNC
+    );
+    static final FunctionDescriptor gtk_ui_manager_get_accel_group$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_ui_manager_get_accel_group$MH = RuntimeHelper.downcallHandle(
+        "gtk_ui_manager_get_accel_group",
+        constants$6.gtk_ui_manager_get_accel_group$FUNC
+    );
+    static final FunctionDescriptor gtk_ui_manager_get_widget$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GCompareFunc$MH = RuntimeHelper.downcallHandle(
-        constants$6.GCompareFunc$FUNC
+    static final MethodHandle gtk_ui_manager_get_widget$MH = RuntimeHelper.downcallHandle(
+        "gtk_ui_manager_get_widget",
+        constants$6.gtk_ui_manager_get_widget$FUNC
     );
-    static final FunctionDescriptor GCompareDataFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_ui_manager_add_ui_from_string$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GCompareDataFunc$MH = RuntimeHelper.downcallHandle(
-        constants$6.GCompareDataFunc$FUNC
+    static final MethodHandle gtk_ui_manager_add_ui_from_string$MH = RuntimeHelper.downcallHandle(
+        "gtk_ui_manager_add_ui_from_string",
+        constants$6.gtk_ui_manager_add_ui_from_string$FUNC
     );
-    static final FunctionDescriptor GEqualFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_ui_manager_add_ui$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle GEqualFunc$MH = RuntimeHelper.downcallHandle(
-        constants$6.GEqualFunc$FUNC
+    static final MethodHandle gtk_ui_manager_add_ui$MH = RuntimeHelper.downcallHandle(
+        "gtk_ui_manager_add_ui",
+        constants$6.gtk_ui_manager_add_ui$FUNC
     );
 }
 

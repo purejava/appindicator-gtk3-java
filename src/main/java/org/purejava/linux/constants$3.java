@@ -9,37 +9,44 @@ import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
 class constants$3 {
 
-    static final FunctionDescriptor tzset$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle tzset$MH = RuntimeHelper.downcallHandle(
-        "tzset",
-        constants$3.tzset$FUNC
+    static final FunctionDescriptor gtk_menu_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_menu_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_new",
+        constants$3.gtk_menu_new$FUNC
     );
-    static final  OfInt daylight$LAYOUT = Constants$root.C_INT$LAYOUT;
-    static final VarHandle daylight$VH = constants$3.daylight$LAYOUT.varHandle();
-    static final MemorySegment daylight$SEGMENT = RuntimeHelper.lookupGlobalVariable("daylight", constants$3.daylight$LAYOUT);
-    static final  OfLong timezone$LAYOUT = Constants$root.C_LONG_LONG$LAYOUT;
-    static final VarHandle timezone$VH = constants$3.timezone$LAYOUT.varHandle();
-    static final MemorySegment timezone$SEGMENT = RuntimeHelper.lookupGlobalVariable("timezone", constants$3.timezone$LAYOUT);
-    static final FunctionDescriptor timegm$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+    static final FunctionDescriptor gtk_menu_item_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_menu_item_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_item_new",
+        constants$3.gtk_menu_item_new$FUNC
+    );
+    static final FunctionDescriptor gtk_menu_item_set_submenu$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle timegm$MH = RuntimeHelper.downcallHandle(
-        "timegm",
-        constants$3.timegm$FUNC
+    static final MethodHandle gtk_menu_item_set_submenu$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_item_set_submenu",
+        constants$3.gtk_menu_item_set_submenu$FUNC
     );
-    static final FunctionDescriptor timelocal$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+    static final FunctionDescriptor gtk_menu_item_set_label$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle timelocal$MH = RuntimeHelper.downcallHandle(
-        "timelocal",
-        constants$3.timelocal$FUNC
+    static final MethodHandle gtk_menu_item_set_label$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_item_set_label",
+        constants$3.gtk_menu_item_set_label$FUNC
     );
-    static final FunctionDescriptor dysize$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor gtk_init$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle dysize$MH = RuntimeHelper.downcallHandle(
-        "dysize",
-        constants$3.dysize$FUNC
+    static final MethodHandle gtk_init$MH = RuntimeHelper.downcallHandle(
+        "gtk_init",
+        constants$3.gtk_init$FUNC
+    );
+    static final FunctionDescriptor gtk_main$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle gtk_main$MH = RuntimeHelper.downcallHandle(
+        "gtk_main",
+        constants$3.gtk_main$FUNC
     );
 }
 

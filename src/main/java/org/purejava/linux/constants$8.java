@@ -9,26 +9,49 @@ import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
 class constants$8 {
 
-    static final FunctionDescriptor GHFunc$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor app_indicator_set_ordering_index$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle app_indicator_set_ordering_index$MH = RuntimeHelper.downcallHandle(
+        "app_indicator_set_ordering_index",
+        constants$8.app_indicator_set_ordering_index$FUNC
+    );
+    static final FunctionDescriptor app_indicator_set_title$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GHFunc$MH = RuntimeHelper.downcallHandle(
-        constants$8.GHFunc$FUNC
+    static final MethodHandle app_indicator_set_title$MH = RuntimeHelper.downcallHandle(
+        "app_indicator_set_title",
+        constants$8.app_indicator_set_title$FUNC
     );
-    static final FunctionDescriptor GCopyFunc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor app_indicator_get_id$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GCopyFunc$MH = RuntimeHelper.downcallHandle(
-        constants$8.GCopyFunc$FUNC
+    static final MethodHandle app_indicator_get_id$MH = RuntimeHelper.downcallHandle(
+        "app_indicator_get_id",
+        constants$8.app_indicator_get_id$FUNC
     );
-    static final FunctionDescriptor GFreeFunc$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor app_indicator_get_category$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GFreeFunc$MH = RuntimeHelper.downcallHandle(
-        constants$8.GFreeFunc$FUNC
+    static final MethodHandle app_indicator_get_category$MH = RuntimeHelper.downcallHandle(
+        "app_indicator_get_category",
+        constants$8.app_indicator_get_category$FUNC
+    );
+    static final FunctionDescriptor app_indicator_get_status$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle app_indicator_get_status$MH = RuntimeHelper.downcallHandle(
+        "app_indicator_get_status",
+        constants$8.app_indicator_get_status$FUNC
+    );
+    static final FunctionDescriptor app_indicator_get_icon$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle app_indicator_get_icon$MH = RuntimeHelper.downcallHandle(
+        "app_indicator_get_icon",
+        constants$8.app_indicator_get_icon$FUNC
     );
 }
 

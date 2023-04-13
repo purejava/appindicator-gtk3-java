@@ -9,32 +9,55 @@ import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
 class constants$2 {
 
-    static final FunctionDescriptor asctime_r$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_window_set_title$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle asctime_r$MH = RuntimeHelper.downcallHandle(
-        "asctime_r",
-        constants$2.asctime_r$FUNC
+    static final MethodHandle gtk_window_set_title$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_set_title",
+        constants$2.gtk_window_set_title$FUNC
     );
-    static final FunctionDescriptor ctime_r$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_window_add_accel_group$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle ctime_r$MH = RuntimeHelper.downcallHandle(
-        "ctime_r",
-        constants$2.ctime_r$FUNC
+    static final MethodHandle gtk_window_add_accel_group$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_add_accel_group",
+        constants$2.gtk_window_add_accel_group$FUNC
     );
-    static final  SequenceLayout __tzname$LAYOUT = MemoryLayout.sequenceLayout(2, Constants$root.C_POINTER$LAYOUT);
-    static final MemorySegment __tzname$SEGMENT = RuntimeHelper.lookupGlobalVariable("__tzname", constants$2.__tzname$LAYOUT);
-    static final  OfInt __daylight$LAYOUT = Constants$root.C_INT$LAYOUT;
-    static final VarHandle __daylight$VH = constants$2.__daylight$LAYOUT.varHandle();
-    static final MemorySegment __daylight$SEGMENT = RuntimeHelper.lookupGlobalVariable("__daylight", constants$2.__daylight$LAYOUT);
-    static final  OfLong __timezone$LAYOUT = Constants$root.C_LONG_LONG$LAYOUT;
-    static final VarHandle __timezone$VH = constants$2.__timezone$LAYOUT.varHandle();
-    static final MemorySegment __timezone$SEGMENT = RuntimeHelper.lookupGlobalVariable("__timezone", constants$2.__timezone$LAYOUT);
-    static final  SequenceLayout tzname$LAYOUT = MemoryLayout.sequenceLayout(2, Constants$root.C_POINTER$LAYOUT);
-    static final MemorySegment tzname$SEGMENT = RuntimeHelper.lookupGlobalVariable("tzname", constants$2.tzname$LAYOUT);
+    static final FunctionDescriptor gtk_window_set_icon$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_window_set_icon$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_set_icon",
+        constants$2.gtk_window_set_icon$FUNC
+    );
+    static final FunctionDescriptor gtk_window_set_icon_name$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_window_set_icon_name$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_set_icon_name",
+        constants$2.gtk_window_set_icon_name$FUNC
+    );
+    static final FunctionDescriptor gtk_window_set_default_size$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_window_set_default_size$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_set_default_size",
+        constants$2.gtk_window_set_default_size$FUNC
+    );
+    static final FunctionDescriptor gtk_menu_shell_append$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_menu_shell_append$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_shell_append",
+        constants$2.gtk_menu_shell_append$FUNC
+    );
 }
 
 
