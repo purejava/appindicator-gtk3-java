@@ -18,6 +18,7 @@ final class RuntimeHelper {
     private final static ClassLoader LOADER = RuntimeHelper.class.getClassLoader();
     private final static MethodHandles.Lookup MH_LOOKUP = MethodHandles.lookup();
     private final static SymbolLookup SYMBOL_LOOKUP;
+    private static boolean isLoaded = false;
     private static final Logger LOG = LoggerFactory.getLogger(RuntimeHelper.class);
 
     final static SegmentAllocator CONSTANT_ALLOCATOR =
@@ -26,6 +27,7 @@ final class RuntimeHelper {
     static {
         try {
             System.loadLibrary("appindicator3");
+            isLoaded = true;
         } catch (UnsatisfiedLinkError e) {
             LOG.error("Native code library failed to load.\n", e);
         }
@@ -220,5 +222,10 @@ final class RuntimeHelper {
                 throw new IllegalArgumentException("Unhandled variadic argument class: " + c);
             }
         }
+    }
+
+    // Getter
+    public static boolean isLoaded() {
+        return isLoaded;
     }
 }

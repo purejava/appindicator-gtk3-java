@@ -11,4 +11,8 @@ public class MemoryAllocator {
     public static MemorySegment ALLOCATE_CALLBACK_FOR(GCallback cb, MemorySession session) {
         return GCallback.allocate(cb, session);
     }
+
+    public static boolean isLoadedNativeLib() {
+        return RuntimeHelper.isLoaded();
+    }
 }
