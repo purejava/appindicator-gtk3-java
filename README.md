@@ -2,7 +2,7 @@
 ![libappindicator-gtk3-java](libappindicator-gtk3-java.svg)
 
 [![License](https://img.shields.io/github/license/purejava/libappindicator-gtk3-java.svg)](https://github.com/purejava/libappindicator-gtk3-java/blob/master/LICENSE)
-[![Maven Central](https://img.shields.io/maven-central/v/org.purejava/libappindicator-gtk3-java.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22org.purejava%22%20AND%20a:libappindicator-gtk3-java)
+[![Maven Central](https://img.shields.io/maven-central/v/org.purejava/libappindicator-gtk3-java.svg?label=Maven%20Central)](https://central.sonatype.com/search?q=libappindicator-gtk3-java&smo=true&namespace=org.purejava)
 
 Java bindings for libappindicator-gtk3 in 100% pure Java
 
