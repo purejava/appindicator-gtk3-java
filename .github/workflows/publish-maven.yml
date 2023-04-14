@@ -1,4 +1,4 @@
-name: Publish libappindicator-gtk3-java to Maven Central
+name: Publish libappindicator-gtk3-java-full to Maven Central
 on:
   release:
     types: [published]
@@ -13,6 +13,8 @@ jobs:
     if: startsWith(github.ref, 'refs/tags/') # only allow publishing tagged versions
     steps:
       - uses: actions/checkout@v3
+        with:
+            ref: 'develop'
       - uses: actions/setup-java@v3
         with:
           distribution: 'temurin'
