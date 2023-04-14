@@ -26,7 +26,7 @@ The bindings come in two flavors:
 ```java
 <dependency>
     <groupId>org.purejava</groupId>
-    <artifactId>libappindicator-gtk3-full-java</artifactId>
+    <artifactId>libappindicator-gtk3-java-full</artifactId>
     <version>1.0.0</version>
 </dependency>
 ```
@@ -95,7 +95,7 @@ As the according jar has a size of ~9,6M, I decided to provide a **reduced varia
 ```java
 <dependency>
     <groupId>org.purejava</groupId>
-    <artifactId>libappindicator-gtk3-minimal-java</artifactId>
+    <artifactId>libappindicator-gtk3-java-minimal</artifactId>
     <version>1.0.0</version>
 </dependency>
 ```
