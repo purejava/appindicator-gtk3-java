@@ -16,7 +16,8 @@ class AppIndicatorTest {
     @EnabledOnOs(OS.LINUX)
     public void shouldHaveNoErrors() {
         try {
-            System.loadLibrary("appindicator3");
+            System.loadLibrary("ayatana-appindicator3");
+            LOG.debug("Native code library ayatana-appindicator3 successfully loaded");
         } catch (UnsatisfiedLinkError e) {
             LOG.error("Native code library failed to load.\n", e);
         }
