@@ -4,7 +4,9 @@
 [![License](https://img.shields.io/github/license/purejava/libappindicator-gtk3-java.svg)](https://github.com/purejava/libappindicator-gtk3-java/blob/master/LICENSE)
 [![Maven Central](https://img.shields.io/maven-central/v/org.purejava/libappindicator-gtk3-java-full.svg?label=Maven%20Central)](https://central.sonatype.com/search?q=libappindicator-gtk3-java&smo=true&namespace=org.purejava)
 
-Java bindings for libappindicator-gtk3 in 100% pure Java
+Java bindings for libayatana-appindicator and libappindicator-gtk3 in 100% pure Java
+
+Based on libayatana-appindicator3-1 (0.5.92-1)
 
 Based on libappindicator3-1 (12.10.1+20.10.20200706.1-0ubuntu1)
 
@@ -13,7 +15,7 @@ Java 19 (preview)
 - due to the use of the new Foreign Function & Memory API
 
 # Usage
-The bindings come in two flavors:
+The bindings come in three flavors:
 
 ## Dependency including *all bindings* related to libappindicator:
 - gtk-3.0
@@ -99,7 +101,23 @@ As the according jar has a size of ~9,6M, I decided to provide a **reduced varia
     <version>1.0.0</version>
 </dependency>
 ```
-
+### libappindicator-gtk3-java-minimal 1.1.0 - minimal is compatible to both libraries
+Starting with version 1.1.0, the `minimal` artifact is compatible to libayatana-appindicator and libappindicator. When either of these two is installed on your system, this library will bind to it.
+## Dependency including *all bindings* related to libayatana-appindicator:
+- gtk-3.0
+- glib-2.0
+- cairo
+- gdk-pixbuf-2.0
+- pango-1.0
+- atk-1.0
+- harfbuzz
+```java
+<dependency>
+    <groupId>org.purejava</groupId>
+    <artifactId>libayatana-appindicator-java-full</artifactId>
+    <version>1.0.0</version>
+</dependency>
+```
 # Copyright
 Copyright (C) 2023 Ralph Plawetzki
 
