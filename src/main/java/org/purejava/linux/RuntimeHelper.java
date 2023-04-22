@@ -26,10 +26,17 @@ final class RuntimeHelper {
 
     static {
         try {
-            System.loadLibrary("appindicator3");
+            System.loadLibrary("ayatana-appindicator3");
+            LOG.debug("Native code library ayatana-appindicator3 successfully loaded");
             isLoaded = true;
         } catch (UnsatisfiedLinkError e) {
             LOG.error("Native code library failed to load.\n", e);
+            try {
+                System.loadLibrary("appindicator3");
+                LOG.debug("Native code library appindicator3 successfully loaded");
+            } catch (UnsatisfiedLinkError e2) {
+                LOG.error("Native code library failed to load.\n", e2);
+            }
         }
         SymbolLookup loaderLookup = SymbolLookup.loaderLookup();
         SYMBOL_LOOKUP = name -> loaderLookup.lookup(name).or(() -> LINKER.defaultLookup().lookup(name));
