@@ -17,30 +17,13 @@ public class _AppIndicator {
             Constants$root.C_INT$LAYOUT.withName("ref_count"),
             MemoryLayout.paddingLayout(32),
             Constants$root.C_POINTER$LAYOUT.withName("qdata")
-        ).withName("parent"),
-        Constants$root.C_POINTER$LAYOUT.withName("priv")
+        ).withName("parent")
     ).withName("_AppIndicator");
     public static MemoryLayout $LAYOUT() {
         return _AppIndicator.$struct$LAYOUT;
     }
     public static MemorySegment parent$slice(MemorySegment seg) {
         return seg.asSlice(0, 24);
-    }
-    static final VarHandle priv$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("priv"));
-    public static VarHandle priv$VH() {
-        return _AppIndicator.priv$VH;
-    }
-    public static MemoryAddress priv$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AppIndicator.priv$VH.get(seg);
-    }
-    public static void priv$set( MemorySegment seg, MemoryAddress x) {
-        _AppIndicator.priv$VH.set(seg, x);
-    }
-    public static MemoryAddress priv$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AppIndicator.priv$VH.get(seg.asSlice(index*sizeof()));
-    }
-    public static void priv$set(MemorySegment seg, long index, MemoryAddress x) {
-        _AppIndicator.priv$VH.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
