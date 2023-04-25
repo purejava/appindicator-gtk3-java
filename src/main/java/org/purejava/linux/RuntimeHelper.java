@@ -34,6 +34,7 @@ final class RuntimeHelper {
             try {
                 System.loadLibrary("appindicator3");
                 LOG.debug("Native code library appindicator3 successfully loaded");
+                isLoaded = true;
             } catch (UnsatisfiedLinkError e2) {
                 LOG.error("Native code library failed to load.\n", e2);
             }
