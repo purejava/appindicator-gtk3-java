@@ -2,7 +2,6 @@
 ![libappindicator-gtk3-java](libappindicator-gtk3-java.svg)
 
 [![License](https://img.shields.io/github/license/purejava/libappindicator-gtk3-java.svg)](https://github.com/purejava/libappindicator-gtk3-java/blob/master/LICENSE)
-[![Maven Central](https://img.shields.io/maven-central/v/org.purejava/libappindicator-gtk3-java-full.svg?label=Maven%20Central)](https://central.sonatype.com/search?q=appindicator&smo=true&namespace=org.purejava)
 
 Java bindings for libayatana-appindicator and libappindicator-gtk3 in 100% pure Java
 
@@ -25,6 +24,8 @@ The bindings come in three flavors:
 - pango-1.0
 - atk-1.0
 - harfbuzz
+
+[![Maven Central](https://img.shields.io/maven-central/v/org.purejava/libappindicator-gtk3-java-full.svg?label=Maven%20Central)](https://central.sonatype.com/search?q=libappindicator-gtk3-java-full&smo=true&namespace=org.purejava)
 ```java
 <dependency>
     <groupId>org.purejava</groupId>
@@ -94,6 +95,8 @@ As the according jar has a size of ~9,6M, I decided to provide a **reduced varia
 - gtk_ui_manager_insert_action_group
 - gtk_ui_manager_new
 - GCallback
+
+[![Maven Central](https://img.shields.io/maven-central/v/org.purejava/libappindicator-gtk3-java-minimal.svg?label=Maven%20Central)](https://central.sonatype.com/search?q=libappindicator-gtk3-java-minimal&smo=true&namespace=org.purejava)
 ```java
 <dependency>
     <groupId>org.purejava</groupId>
@@ -111,6 +114,8 @@ Starting with version 1.1.0, the `minimal` artifact is compatible to libayatana-
 - pango-1.0
 - atk-1.0
 - harfbuzz
+
+[![Maven Central](https://img.shields.io/maven-central/v/org.purejava/libayatana-appindicator-java-full.svg?label=Maven%20Central)](https://central.sonatype.com/search?q=libayatana-appindicator-java-full&smo=true&namespace=org.purejava)
 ```java
 <dependency>
     <groupId>org.purejava</groupId>
