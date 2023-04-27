@@ -7,8 +7,26 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$76 {
+final class constants$76 {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$76() {}
+    static final FunctionDescriptor sigaddset$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle sigaddset$MH = RuntimeHelper.downcallHandle(
+        "sigaddset",
+        constants$76.sigaddset$FUNC
+    );
+    static final FunctionDescriptor sigdelset$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle sigdelset$MH = RuntimeHelper.downcallHandle(
+        "sigdelset",
+        constants$76.sigdelset$FUNC
+    );
     static final FunctionDescriptor sigismember$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
@@ -41,21 +59,6 @@ class constants$76 {
     static final MethodHandle sigaction$MH = RuntimeHelper.downcallHandle(
         "sigaction",
         constants$76.sigaction$FUNC
-    );
-    static final FunctionDescriptor sigpending$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle sigpending$MH = RuntimeHelper.downcallHandle(
-        "sigpending",
-        constants$76.sigpending$FUNC
-    );
-    static final FunctionDescriptor sigwait$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle sigwait$MH = RuntimeHelper.downcallHandle(
-        "sigwait",
-        constants$76.sigwait$FUNC
     );
 }
 

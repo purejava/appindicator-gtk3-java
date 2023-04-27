@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * void (*GErrorClearFunc)(struct _GError* error);
+ * }
+ */
 public interface GErrorClearFunc {
 
-    void apply(java.lang.foreign.MemoryAddress error);
-    static MemorySegment allocate(GErrorClearFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GErrorClearFunc.class, fi, constants$32.GErrorClearFunc$FUNC, session);
+    void apply(java.lang.foreign.MemorySegment display);
+    static MemorySegment allocate(GErrorClearFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$35.GErrorClearFunc_UP$MH, fi, constants$35.GErrorClearFunc$FUNC, scope);
     }
-    static GErrorClearFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _error) -> {
+    static GErrorClearFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _display) -> {
             try {
-                constants$33.GErrorClearFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_error);
+                constants$35.GErrorClearFunc_DOWN$MH.invokeExact(symbol, _display);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

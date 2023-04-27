@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkIconFactory extends _GtkIconFactory {
+/**
+ * {@snippet :
+ * typedef struct _GtkIconFactory GtkIconFactory;
+ * }
+ */
+public final class GtkIconFactory extends _GtkIconFactory {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkIconFactory() {}
 }
 
 

@@ -7,46 +7,59 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$340 {
+final class constants$340 {
 
-    static final FunctionDescriptor g_mem_chunk_print$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_mem_chunk_print$MH = RuntimeHelper.downcallHandle(
-        "g_mem_chunk_print",
-        constants$340.g_mem_chunk_print$FUNC
-    );
-    static final FunctionDescriptor g_mem_chunk_info$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle g_mem_chunk_info$MH = RuntimeHelper.downcallHandle(
-        "g_mem_chunk_info",
-        constants$340.g_mem_chunk_info$FUNC
-    );
-    static final FunctionDescriptor g_blow_chunks$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle g_blow_chunks$MH = RuntimeHelper.downcallHandle(
-        "g_blow_chunks",
-        constants$340.g_blow_chunks$FUNC
-    );
-    static final FunctionDescriptor g_allocator_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$340() {}
+    static final FunctionDescriptor g_uri_params_iter_init$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_allocator_new$MH = RuntimeHelper.downcallHandle(
-        "g_allocator_new",
-        constants$340.g_allocator_new$FUNC
+    static final MethodHandle g_uri_params_iter_init$MH = RuntimeHelper.downcallHandle(
+        "g_uri_params_iter_init",
+        constants$340.g_uri_params_iter_init$FUNC
     );
-    static final FunctionDescriptor g_allocator_free$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_uri_params_iter_next$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_allocator_free$MH = RuntimeHelper.downcallHandle(
-        "g_allocator_free",
-        constants$340.g_allocator_free$FUNC
+    static final MethodHandle g_uri_params_iter_next$MH = RuntimeHelper.downcallHandle(
+        "g_uri_params_iter_next",
+        constants$340.g_uri_params_iter_next$FUNC
     );
-    static final FunctionDescriptor g_list_push_allocator$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_uri_error_quark$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
+    static final MethodHandle g_uri_error_quark$MH = RuntimeHelper.downcallHandle(
+        "g_uri_error_quark",
+        constants$340.g_uri_error_quark$FUNC
+    );
+    static final FunctionDescriptor g_uri_unescape_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_list_push_allocator$MH = RuntimeHelper.downcallHandle(
-        "g_list_push_allocator",
-        constants$340.g_list_push_allocator$FUNC
+    static final MethodHandle g_uri_unescape_string$MH = RuntimeHelper.downcallHandle(
+        "g_uri_unescape_string",
+        constants$340.g_uri_unescape_string$FUNC
+    );
+    static final FunctionDescriptor g_uri_unescape_segment$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_uri_unescape_segment$MH = RuntimeHelper.downcallHandle(
+        "g_uri_unescape_segment",
+        constants$340.g_uri_unescape_segment$FUNC
+    );
+    static final FunctionDescriptor g_uri_parse_scheme$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_uri_parse_scheme$MH = RuntimeHelper.downcallHandle(
+        "g_uri_parse_scheme",
+        constants$340.g_uri_parse_scheme$FUNC
     );
 }
 

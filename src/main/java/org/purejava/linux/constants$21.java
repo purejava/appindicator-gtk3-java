@@ -7,8 +7,46 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$21 {
+final class constants$21 {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$21() {}
+    static final FunctionDescriptor g_array_remove_range$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_array_remove_range$MH = RuntimeHelper.downcallHandle(
+        "g_array_remove_range",
+        constants$21.g_array_remove_range$FUNC
+    );
+    static final FunctionDescriptor g_array_sort$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_array_sort$MH = RuntimeHelper.downcallHandle(
+        "g_array_sort",
+        constants$21.g_array_sort$FUNC
+    );
+    static final FunctionDescriptor g_array_sort_with_data$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_array_sort_with_data$MH = RuntimeHelper.downcallHandle(
+        "g_array_sort_with_data",
+        constants$21.g_array_sort_with_data$FUNC
+    );
+    static final FunctionDescriptor g_array_binary_search$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_array_binary_search$MH = RuntimeHelper.downcallHandle(
+        "g_array_binary_search",
+        constants$21.g_array_binary_search$FUNC
+    );
     static final FunctionDescriptor g_array_set_clear_func$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
@@ -21,37 +59,6 @@ class constants$21 {
     static final MethodHandle g_ptr_array_new$MH = RuntimeHelper.downcallHandle(
         "g_ptr_array_new",
         constants$21.g_ptr_array_new$FUNC
-    );
-    static final FunctionDescriptor g_ptr_array_new_with_free_func$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_ptr_array_new_with_free_func$MH = RuntimeHelper.downcallHandle(
-        "g_ptr_array_new_with_free_func",
-        constants$21.g_ptr_array_new_with_free_func$FUNC
-    );
-    static final FunctionDescriptor g_ptr_array_steal$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_ptr_array_steal$MH = RuntimeHelper.downcallHandle(
-        "g_ptr_array_steal",
-        constants$21.g_ptr_array_steal$FUNC
-    );
-    static final FunctionDescriptor g_ptr_array_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_ptr_array_copy$MH = RuntimeHelper.downcallHandle(
-        "g_ptr_array_copy",
-        constants$21.g_ptr_array_copy$FUNC
-    );
-    static final FunctionDescriptor g_ptr_array_sized_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_ptr_array_sized_new$MH = RuntimeHelper.downcallHandle(
-        "g_ptr_array_sized_new",
-        constants$21.g_ptr_array_sized_new$FUNC
     );
 }
 

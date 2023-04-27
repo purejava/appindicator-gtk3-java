@@ -7,60 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$264 {
+final class constants$264 {
 
-    static final FunctionDescriptor g_queue_insert_before_link$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_queue_insert_before_link$MH = RuntimeHelper.downcallHandle(
-        "g_queue_insert_before_link",
-        constants$264.g_queue_insert_before_link$FUNC
-    );
-    static final FunctionDescriptor g_queue_insert_after$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_queue_insert_after$MH = RuntimeHelper.downcallHandle(
-        "g_queue_insert_after",
-        constants$264.g_queue_insert_after$FUNC
-    );
-    static final FunctionDescriptor g_queue_insert_after_link$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_queue_insert_after_link$MH = RuntimeHelper.downcallHandle(
-        "g_queue_insert_after_link",
-        constants$264.g_queue_insert_after_link$FUNC
-    );
-    static final FunctionDescriptor g_queue_insert_sorted$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$264() {}
+    static final FunctionDescriptor GOptionErrorFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_queue_insert_sorted$MH = RuntimeHelper.downcallHandle(
-        "g_queue_insert_sorted",
-        constants$264.g_queue_insert_sorted$FUNC
+    static final MethodHandle GOptionErrorFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$264.GOptionErrorFunc_DOWN$FUNC
     );
-    static final FunctionDescriptor g_queue_push_head_link$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_option_error_quark$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
+    static final MethodHandle g_option_error_quark$MH = RuntimeHelper.downcallHandle(
+        "g_option_error_quark",
+        constants$264.g_option_error_quark$FUNC
+    );
+    static final FunctionDescriptor g_option_context_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_option_context_new$MH = RuntimeHelper.downcallHandle(
+        "g_option_context_new",
+        constants$264.g_option_context_new$FUNC
+    );
+    static final FunctionDescriptor g_option_context_set_summary$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_queue_push_head_link$MH = RuntimeHelper.downcallHandle(
-        "g_queue_push_head_link",
-        constants$264.g_queue_push_head_link$FUNC
+    static final MethodHandle g_option_context_set_summary$MH = RuntimeHelper.downcallHandle(
+        "g_option_context_set_summary",
+        constants$264.g_option_context_set_summary$FUNC
     );
-    static final FunctionDescriptor g_queue_push_tail_link$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_option_context_get_summary$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_option_context_get_summary$MH = RuntimeHelper.downcallHandle(
+        "g_option_context_get_summary",
+        constants$264.g_option_context_get_summary$FUNC
+    );
+    static final FunctionDescriptor g_option_context_set_description$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_queue_push_tail_link$MH = RuntimeHelper.downcallHandle(
-        "g_queue_push_tail_link",
-        constants$264.g_queue_push_tail_link$FUNC
+    static final MethodHandle g_option_context_set_description$MH = RuntimeHelper.downcallHandle(
+        "g_option_context_set_description",
+        constants$264.g_option_context_set_description$FUNC
     );
 }
 

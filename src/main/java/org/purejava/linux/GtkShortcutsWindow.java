@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkShortcutsWindow extends _GtkShortcutsWindow {
+/**
+ * {@snippet :
+ * typedef struct _GtkShortcutsWindow GtkShortcutsWindow;
+ * }
+ */
+public final class GtkShortcutsWindow extends _GtkShortcutsWindow {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkShortcutsWindow() {}
 }
 
 

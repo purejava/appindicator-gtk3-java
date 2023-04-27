@@ -7,49 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$952 {
+final class constants$952 {
 
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GResolver$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$952() {}
+    static final FunctionDescriptor pango_glyph_item_get_logical_widths$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GResolver$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GResolver",
-        constants$952.glib_queueautoptr_cleanup_GResolver$FUNC
+    static final MethodHandle pango_glyph_item_get_logical_widths$MH = RuntimeHelper.downcallHandle(
+        "pango_glyph_item_get_logical_widths",
+        constants$952.pango_glyph_item_get_logical_widths$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GResource$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_glyph_item_iter_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle pango_glyph_item_iter_get_type$MH = RuntimeHelper.downcallHandle(
+        "pango_glyph_item_iter_get_type",
+        constants$952.pango_glyph_item_iter_get_type$FUNC
+    );
+    static final FunctionDescriptor pango_glyph_item_iter_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GResource$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GResource",
-        constants$952.glib_autoptr_clear_GResource$FUNC
+    static final MethodHandle pango_glyph_item_iter_copy$MH = RuntimeHelper.downcallHandle(
+        "pango_glyph_item_iter_copy",
+        constants$952.pango_glyph_item_iter_copy$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GResource$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_glyph_item_iter_free$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GResource$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GResource",
-        constants$952.glib_autoptr_cleanup_GResource$FUNC
+    static final MethodHandle pango_glyph_item_iter_free$MH = RuntimeHelper.downcallHandle(
+        "pango_glyph_item_iter_free",
+        constants$952.pango_glyph_item_iter_free$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GResource$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_glyph_item_iter_init_start$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GResource$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GResource",
-        constants$952.glib_listautoptr_cleanup_GResource$FUNC
+    static final MethodHandle pango_glyph_item_iter_init_start$MH = RuntimeHelper.downcallHandle(
+        "pango_glyph_item_iter_init_start",
+        constants$952.pango_glyph_item_iter_init_start$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GResource$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_glyph_item_iter_init_end$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GResource$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GResource",
-        constants$952.glib_slistautoptr_cleanup_GResource$FUNC
-    );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GResource$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_queueautoptr_cleanup_GResource$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GResource",
-        constants$952.glib_queueautoptr_cleanup_GResource$FUNC
+    static final MethodHandle pango_glyph_item_iter_init_end$MH = RuntimeHelper.downcallHandle(
+        "pango_glyph_item_iter_init_end",
+        constants$952.pango_glyph_item_iter_init_end$FUNC
     );
 }
 

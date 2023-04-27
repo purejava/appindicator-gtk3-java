@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GRWLock extends _GRWLock {
+/**
+ * {@snippet :
+ * typedef struct _GRWLock GRWLock;
+ * }
+ */
+public final class GRWLock extends _GRWLock {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GRWLock() {}
 }
 
 

@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * void* (*pthread_create$__start_routine)(void*);
+ * }
+ */
 public interface pthread_create$__start_routine {
 
-    java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0);
-    static MemorySegment allocate(pthread_create$__start_routine fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(pthread_create$__start_routine.class, fi, constants$351.pthread_create$__start_routine$FUNC, session);
+    java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
+    static MemorySegment allocate(pthread_create$__start_routine fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$355.pthread_create$__start_routine_UP$MH, fi, constants$355.pthread_create$__start_routine$FUNC, scope);
     }
-    static pthread_create$__start_routine ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress __x0) -> {
+    static pthread_create$__start_routine ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)constants$351.pthread_create$__start_routine$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                return (java.lang.foreign.MemorySegment)constants$355.pthread_create$__start_routine_DOWN$MH.invokeExact(symbol, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

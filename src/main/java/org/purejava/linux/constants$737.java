@@ -7,47 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$737 {
+final class constants$737 {
 
-    static final FunctionDescriptor g_list_model_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_list_model_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_list_model_get_type",
-        constants$737.g_list_model_get_type$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_clear_GListModel$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$737() {}
+    static final FunctionDescriptor g_static_resource_fini$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GListModel$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GListModel",
-        constants$737.glib_autoptr_clear_GListModel$FUNC
+    static final MethodHandle g_static_resource_fini$MH = RuntimeHelper.downcallHandle(
+        "g_static_resource_fini",
+        constants$737.g_static_resource_fini$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GListModel$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_static_resource_get_resource$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GListModel$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GListModel",
-        constants$737.glib_autoptr_cleanup_GListModel$FUNC
+    static final MethodHandle g_static_resource_get_resource$MH = RuntimeHelper.downcallHandle(
+        "g_static_resource_get_resource",
+        constants$737.g_static_resource_get_resource$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GListModel$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_seekable_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_seekable_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_seekable_get_type",
+        constants$737.g_seekable_get_type$FUNC
+    );
+    static final FunctionDescriptor g_seekable_tell$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GListModel$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GListModel",
-        constants$737.glib_listautoptr_cleanup_GListModel$FUNC
+    static final MethodHandle g_seekable_tell$MH = RuntimeHelper.downcallHandle(
+        "g_seekable_tell",
+        constants$737.g_seekable_tell$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GListModel$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_seekable_can_seek$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GListModel$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GListModel",
-        constants$737.glib_slistautoptr_cleanup_GListModel$FUNC
+    static final MethodHandle g_seekable_can_seek$MH = RuntimeHelper.downcallHandle(
+        "g_seekable_can_seek",
+        constants$737.g_seekable_can_seek$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GListModel$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_seekable_seek$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GListModel$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GListModel",
-        constants$737.glib_queueautoptr_cleanup_GListModel$FUNC
+    static final MethodHandle g_seekable_seek$MH = RuntimeHelper.downcallHandle(
+        "g_seekable_seek",
+        constants$737.g_seekable_seek$FUNC
     );
 }
 

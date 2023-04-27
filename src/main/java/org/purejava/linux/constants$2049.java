@@ -7,55 +7,16 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$2049 {
+final class constants$2049 {
 
-    static final FunctionDescriptor gtk_toolbar_insert$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_toolbar_insert$MH = RuntimeHelper.downcallHandle(
-        "gtk_toolbar_insert",
-        constants$2049.gtk_toolbar_insert$FUNC
-    );
-    static final FunctionDescriptor gtk_toolbar_get_item_index$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_toolbar_get_item_index$MH = RuntimeHelper.downcallHandle(
-        "gtk_toolbar_get_item_index",
-        constants$2049.gtk_toolbar_get_item_index$FUNC
-    );
-    static final FunctionDescriptor gtk_toolbar_get_n_items$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_toolbar_get_n_items$MH = RuntimeHelper.downcallHandle(
-        "gtk_toolbar_get_n_items",
-        constants$2049.gtk_toolbar_get_n_items$FUNC
-    );
-    static final FunctionDescriptor gtk_toolbar_get_nth_item$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_toolbar_get_nth_item$MH = RuntimeHelper.downcallHandle(
-        "gtk_toolbar_get_nth_item",
-        constants$2049.gtk_toolbar_get_nth_item$FUNC
-    );
-    static final FunctionDescriptor gtk_toolbar_get_show_arrow$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_toolbar_get_show_arrow$MH = RuntimeHelper.downcallHandle(
-        "gtk_toolbar_get_show_arrow",
-        constants$2049.gtk_toolbar_get_show_arrow$FUNC
-    );
-    static final FunctionDescriptor gtk_toolbar_set_show_arrow$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_toolbar_set_show_arrow$MH = RuntimeHelper.downcallHandle(
-        "gtk_toolbar_set_show_arrow",
-        constants$2049.gtk_toolbar_set_show_arrow$FUNC
-    );
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$2049() {}
+    static final MemorySegment GTK_PRINT_SETTINGS_OUTPUT_BASENAME$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("output-basename");
+    static final MemorySegment GTK_PRINT_SETTINGS_OUTPUT_FILE_FORMAT$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("output-file-format");
+    static final MemorySegment GTK_PRINT_SETTINGS_OUTPUT_URI$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("output-uri");
+    static final MemorySegment GTK_PRINT_SETTINGS_WIN32_DRIVER_VERSION$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("win32-driver-version");
+    static final MemorySegment GTK_PRINT_SETTINGS_WIN32_DRIVER_EXTRA$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("win32-driver-extra");
+    static final MemorySegment APP_INDICATOR_SIGNAL_NEW_ICON$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("new-icon");
 }
 
 

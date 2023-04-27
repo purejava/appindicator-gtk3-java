@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkRecentChooserMenuClass extends _GtkRecentChooserMenuClass {
+/**
+ * {@snippet :
+ * typedef struct _GtkRecentChooserMenuClass GtkRecentChooserMenuClass;
+ * }
+ */
+public final class GtkRecentChooserMenuClass extends _GtkRecentChooserMenuClass {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkRecentChooserMenuClass() {}
 }
 
 

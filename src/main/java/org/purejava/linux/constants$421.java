@@ -7,50 +7,60 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$421 {
+final class constants$421 {
 
-    static final FunctionDescriptor g_type_is_a$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$421() {}
+    static final FunctionDescriptor g_signal_override_class_handler$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_type_is_a$MH = RuntimeHelper.downcallHandle(
-        "g_type_is_a",
-        constants$421.g_type_is_a$FUNC
-    );
-    static final FunctionDescriptor g_type_class_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_type_class_ref$MH = RuntimeHelper.downcallHandle(
-        "g_type_class_ref",
-        constants$421.g_type_class_ref$FUNC
-    );
-    static final FunctionDescriptor g_type_class_peek$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_type_class_peek$MH = RuntimeHelper.downcallHandle(
-        "g_type_class_peek",
-        constants$421.g_type_class_peek$FUNC
-    );
-    static final FunctionDescriptor g_type_class_peek_static$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_type_class_peek_static$MH = RuntimeHelper.downcallHandle(
-        "g_type_class_peek_static",
-        constants$421.g_type_class_peek_static$FUNC
-    );
-    static final FunctionDescriptor g_type_class_unref$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_type_class_unref$MH = RuntimeHelper.downcallHandle(
-        "g_type_class_unref",
-        constants$421.g_type_class_unref$FUNC
+    static final MethodHandle g_signal_override_class_handler$MH = RuntimeHelper.downcallHandle(
+        "g_signal_override_class_handler",
+        constants$421.g_signal_override_class_handler$FUNC
     );
-    static final FunctionDescriptor g_type_class_peek_parent$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_signal_chain_from_overridden$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_type_class_peek_parent$MH = RuntimeHelper.downcallHandle(
-        "g_type_class_peek_parent",
-        constants$421.g_type_class_peek_parent$FUNC
+    static final MethodHandle g_signal_chain_from_overridden$MH = RuntimeHelper.downcallHandle(
+        "g_signal_chain_from_overridden",
+        constants$421.g_signal_chain_from_overridden$FUNC
+    );
+    static final FunctionDescriptor g_signal_chain_from_overridden_handler$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_signal_chain_from_overridden_handler$MH = RuntimeHelper.downcallHandleVariadic(
+        "g_signal_chain_from_overridden_handler",
+        constants$421.g_signal_chain_from_overridden_handler$FUNC
+    );
+    static final FunctionDescriptor g_signal_accumulator_true_handled$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_signal_accumulator_true_handled$MH = RuntimeHelper.downcallHandle(
+        "g_signal_accumulator_true_handled",
+        constants$421.g_signal_accumulator_true_handled$FUNC
+    );
+    static final FunctionDescriptor g_signal_accumulator_first_wins$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_signal_accumulator_first_wins$MH = RuntimeHelper.downcallHandle(
+        "g_signal_accumulator_first_wins",
+        constants$421.g_signal_accumulator_first_wins$FUNC
+    );
+    static final FunctionDescriptor g_signal_handlers_destroy$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_signal_handlers_destroy$MH = RuntimeHelper.downcallHandle(
+        "g_signal_handlers_destroy",
+        constants$421.g_signal_handlers_destroy$FUNC
     );
 }
 

@@ -7,49 +7,73 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$885 {
+final class constants$885 {
 
-    static final FunctionDescriptor glib_listautoptr_cleanup_GApplication$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$885() {}
+    static final FunctionDescriptor hb_buffer_add$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GApplication$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GApplication",
-        constants$885.glib_listautoptr_cleanup_GApplication$FUNC
+    static final MethodHandle hb_buffer_add$MH = RuntimeHelper.downcallHandle(
+        "hb_buffer_add",
+        constants$885.hb_buffer_add$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GApplication$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor hb_buffer_add_utf8$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GApplication$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GApplication",
-        constants$885.glib_slistautoptr_cleanup_GApplication$FUNC
+    static final MethodHandle hb_buffer_add_utf8$MH = RuntimeHelper.downcallHandle(
+        "hb_buffer_add_utf8",
+        constants$885.hb_buffer_add_utf8$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GApplication$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor hb_buffer_add_utf16$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GApplication$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GApplication",
-        constants$885.glib_queueautoptr_cleanup_GApplication$FUNC
+    static final MethodHandle hb_buffer_add_utf16$MH = RuntimeHelper.downcallHandle(
+        "hb_buffer_add_utf16",
+        constants$885.hb_buffer_add_utf16$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GAsyncInitable$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor hb_buffer_add_utf32$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GAsyncInitable$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GAsyncInitable",
-        constants$885.glib_autoptr_clear_GAsyncInitable$FUNC
+    static final MethodHandle hb_buffer_add_utf32$MH = RuntimeHelper.downcallHandle(
+        "hb_buffer_add_utf32",
+        constants$885.hb_buffer_add_utf32$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GAsyncInitable$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor hb_buffer_add_latin1$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GAsyncInitable$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GAsyncInitable",
-        constants$885.glib_autoptr_cleanup_GAsyncInitable$FUNC
+    static final MethodHandle hb_buffer_add_latin1$MH = RuntimeHelper.downcallHandle(
+        "hb_buffer_add_latin1",
+        constants$885.hb_buffer_add_latin1$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GAsyncInitable$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor hb_buffer_add_codepoints$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GAsyncInitable$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GAsyncInitable",
-        constants$885.glib_listautoptr_cleanup_GAsyncInitable$FUNC
+    static final MethodHandle hb_buffer_add_codepoints$MH = RuntimeHelper.downcallHandle(
+        "hb_buffer_add_codepoints",
+        constants$885.hb_buffer_add_codepoints$FUNC
     );
 }
 

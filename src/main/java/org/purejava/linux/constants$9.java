@@ -7,14 +7,38 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$9 {
+final class constants$9 {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$9() {}
+    static final FunctionDescriptor GFreeFunc$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final FunctionDescriptor GFreeFunc_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GFreeFunc_UP$MH = RuntimeHelper.upcallHandle(GFreeFunc.class, "apply", constants$9.GFreeFunc_UP$FUNC);
+    static final FunctionDescriptor GFreeFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GFreeFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$9.GFreeFunc_DOWN$FUNC
+    );
     static final FunctionDescriptor GTranslateFunc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GTranslateFunc$MH = RuntimeHelper.downcallHandle(
-        constants$9.GTranslateFunc$FUNC
+    static final FunctionDescriptor GTranslateFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GTranslateFunc_UP$MH = RuntimeHelper.upcallHandle(GTranslateFunc.class, "apply", constants$9.GTranslateFunc_UP$FUNC);
+    static final FunctionDescriptor GTranslateFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GTranslateFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$9.GTranslateFunc_DOWN$FUNC
     );
     static final FunctionDescriptor memcpy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
@@ -33,25 +57,6 @@ class constants$9 {
     static final MethodHandle memmove$MH = RuntimeHelper.downcallHandle(
         "memmove",
         constants$9.memmove$FUNC
-    );
-    static final FunctionDescriptor memccpy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle memccpy$MH = RuntimeHelper.downcallHandle(
-        "memccpy",
-        constants$9.memccpy$FUNC
-    );
-    static final FunctionDescriptor memset$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle memset$MH = RuntimeHelper.downcallHandle(
-        "memset",
-        constants$9.memset$FUNC
     );
 }
 

@@ -7,50 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$273 {
+final class constants$273 {
 
-    static final FunctionDescriptor g_ref_string_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_ref_string_new$MH = RuntimeHelper.downcallHandle(
-        "g_ref_string_new",
-        constants$273.g_ref_string_new$FUNC
-    );
-    static final FunctionDescriptor g_ref_string_new_len$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$273() {}
+    static final FunctionDescriptor g_pattern_match_string$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_ref_string_new_len$MH = RuntimeHelper.downcallHandle(
-        "g_ref_string_new_len",
-        constants$273.g_ref_string_new_len$FUNC
-    );
-    static final FunctionDescriptor g_ref_string_new_intern$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_ref_string_new_intern$MH = RuntimeHelper.downcallHandle(
-        "g_ref_string_new_intern",
-        constants$273.g_ref_string_new_intern$FUNC
+    static final MethodHandle g_pattern_match_string$MH = RuntimeHelper.downcallHandle(
+        "g_pattern_match_string",
+        constants$273.g_pattern_match_string$FUNC
     );
-    static final FunctionDescriptor g_ref_string_acquire$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_pattern_match_simple$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_ref_string_acquire$MH = RuntimeHelper.downcallHandle(
-        "g_ref_string_acquire",
-        constants$273.g_ref_string_acquire$FUNC
+    static final MethodHandle g_pattern_match_simple$MH = RuntimeHelper.downcallHandle(
+        "g_pattern_match_simple",
+        constants$273.g_pattern_match_simple$FUNC
     );
-    static final FunctionDescriptor g_ref_string_release$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_spaced_primes_closest$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_spaced_primes_closest$MH = RuntimeHelper.downcallHandle(
+        "g_spaced_primes_closest",
+        constants$273.g_spaced_primes_closest$FUNC
+    );
+    static final FunctionDescriptor g_qsort_with_data$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_ref_string_release$MH = RuntimeHelper.downcallHandle(
-        "g_ref_string_release",
-        constants$273.g_ref_string_release$FUNC
+    static final MethodHandle g_qsort_with_data$MH = RuntimeHelper.downcallHandle(
+        "g_qsort_with_data",
+        constants$273.g_qsort_with_data$FUNC
     );
-    static final FunctionDescriptor g_ref_string_length$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+    static final FunctionDescriptor g_queue_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle g_queue_new$MH = RuntimeHelper.downcallHandle(
+        "g_queue_new",
+        constants$273.g_queue_new$FUNC
+    );
+    static final FunctionDescriptor g_queue_free$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_ref_string_length$MH = RuntimeHelper.downcallHandle(
-        "g_ref_string_length",
-        constants$273.g_ref_string_length$FUNC
+    static final MethodHandle g_queue_free$MH = RuntimeHelper.downcallHandle(
+        "g_queue_free",
+        constants$273.g_queue_free$FUNC
     );
 }
 

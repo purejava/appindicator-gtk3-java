@@ -7,2589 +7,7285 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
- class app_indicator_h_2 extends app_indicator_h_1 {
+public class app_indicator_h_2 extends app_indicator_h_1 {
 
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Hangul_J_RieulTieut 3808
+     * }
+     */
     public static int GDK_KEY_Hangul_J_RieulTieut() {
         return (int)3808L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Hangul_J_RieulPhieuf 3809
+     * }
+     */
     public static int GDK_KEY_Hangul_J_RieulPhieuf() {
         return (int)3809L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Hangul_J_RieulHieuh 3810
+     * }
+     */
     public static int GDK_KEY_Hangul_J_RieulHieuh() {
         return (int)3810L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Hangul_J_Mieum 3811
+     * }
+     */
     public static int GDK_KEY_Hangul_J_Mieum() {
         return (int)3811L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Hangul_J_Pieub 3812
+     * }
+     */
     public static int GDK_KEY_Hangul_J_Pieub() {
         return (int)3812L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Hangul_J_PieubSios 3813
+     * }
+     */
     public static int GDK_KEY_Hangul_J_PieubSios() {
         return (int)3813L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Hangul_J_Sios 3814
+     * }
+     */
     public static int GDK_KEY_Hangul_J_Sios() {
         return (int)3814L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Hangul_J_SsangSios 3815
+     * }
+     */
     public static int GDK_KEY_Hangul_J_SsangSios() {
         return (int)3815L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Hangul_J_Ieung 3816
+     * }
+     */
     public static int GDK_KEY_Hangul_J_Ieung() {
         return (int)3816L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Hangul_J_Jieuj 3817
+     * }
+     */
     public static int GDK_KEY_Hangul_J_Jieuj() {
         return (int)3817L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Hangul_J_Cieuc 3818
+     * }
+     */
     public static int GDK_KEY_Hangul_J_Cieuc() {
         return (int)3818L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Hangul_J_Khieuq 3819
+     * }
+     */
     public static int GDK_KEY_Hangul_J_Khieuq() {
         return (int)3819L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Hangul_J_Tieut 3820
+     * }
+     */
     public static int GDK_KEY_Hangul_J_Tieut() {
         return (int)3820L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Hangul_J_Phieuf 3821
+     * }
+     */
     public static int GDK_KEY_Hangul_J_Phieuf() {
         return (int)3821L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Hangul_J_Hieuh 3822
+     * }
+     */
     public static int GDK_KEY_Hangul_J_Hieuh() {
         return (int)3822L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Hangul_RieulYeorinHieuh 3823
+     * }
+     */
     public static int GDK_KEY_Hangul_RieulYeorinHieuh() {
         return (int)3823L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Hangul_SunkyeongeumMieum 3824
+     * }
+     */
     public static int GDK_KEY_Hangul_SunkyeongeumMieum() {
         return (int)3824L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Hangul_SunkyeongeumPieub 3825
+     * }
+     */
     public static int GDK_KEY_Hangul_SunkyeongeumPieub() {
         return (int)3825L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Hangul_PanSios 3826
+     * }
+     */
     public static int GDK_KEY_Hangul_PanSios() {
         return (int)3826L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Hangul_KkogjiDalrinIeung 3827
+     * }
+     */
     public static int GDK_KEY_Hangul_KkogjiDalrinIeung() {
         return (int)3827L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Hangul_SunkyeongeumPhieuf 3828
+     * }
+     */
     public static int GDK_KEY_Hangul_SunkyeongeumPhieuf() {
         return (int)3828L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Hangul_YeorinHieuh 3829
+     * }
+     */
     public static int GDK_KEY_Hangul_YeorinHieuh() {
         return (int)3829L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Hangul_AraeA 3830
+     * }
+     */
     public static int GDK_KEY_Hangul_AraeA() {
         return (int)3830L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Hangul_AraeAE 3831
+     * }
+     */
     public static int GDK_KEY_Hangul_AraeAE() {
         return (int)3831L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Hangul_J_PanSios 3832
+     * }
+     */
     public static int GDK_KEY_Hangul_J_PanSios() {
         return (int)3832L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Hangul_J_KkogjiDalrinIeung 3833
+     * }
+     */
     public static int GDK_KEY_Hangul_J_KkogjiDalrinIeung() {
         return (int)3833L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Hangul_J_YeorinHieuh 3834
+     * }
+     */
     public static int GDK_KEY_Hangul_J_YeorinHieuh() {
         return (int)3834L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Korean_Won 3839
+     * }
+     */
     public static int GDK_KEY_Korean_Won() {
         return (int)3839L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_ligature_ew 16778631
+     * }
+     */
     public static int GDK_KEY_Armenian_ligature_ew() {
         return (int)16778631L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_full_stop 16778633
+     * }
+     */
     public static int GDK_KEY_Armenian_full_stop() {
         return (int)16778633L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_verjaket 16778633
+     * }
+     */
     public static int GDK_KEY_Armenian_verjaket() {
         return (int)16778633L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_separation_mark 16778589
+     * }
+     */
     public static int GDK_KEY_Armenian_separation_mark() {
         return (int)16778589L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_but 16778589
+     * }
+     */
     public static int GDK_KEY_Armenian_but() {
         return (int)16778589L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_hyphen 16778634
+     * }
+     */
     public static int GDK_KEY_Armenian_hyphen() {
         return (int)16778634L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_yentamna 16778634
+     * }
+     */
     public static int GDK_KEY_Armenian_yentamna() {
         return (int)16778634L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_exclam 16778588
+     * }
+     */
     public static int GDK_KEY_Armenian_exclam() {
         return (int)16778588L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_amanak 16778588
+     * }
+     */
     public static int GDK_KEY_Armenian_amanak() {
         return (int)16778588L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_accent 16778587
+     * }
+     */
     public static int GDK_KEY_Armenian_accent() {
         return (int)16778587L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_shesht 16778587
+     * }
+     */
     public static int GDK_KEY_Armenian_shesht() {
         return (int)16778587L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_question 16778590
+     * }
+     */
     public static int GDK_KEY_Armenian_question() {
         return (int)16778590L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_paruyk 16778590
+     * }
+     */
     public static int GDK_KEY_Armenian_paruyk() {
         return (int)16778590L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_AYB 16778545
+     * }
+     */
     public static int GDK_KEY_Armenian_AYB() {
         return (int)16778545L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_ayb 16778593
+     * }
+     */
     public static int GDK_KEY_Armenian_ayb() {
         return (int)16778593L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_BEN 16778546
+     * }
+     */
     public static int GDK_KEY_Armenian_BEN() {
         return (int)16778546L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_ben 16778594
+     * }
+     */
     public static int GDK_KEY_Armenian_ben() {
         return (int)16778594L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_GIM 16778547
+     * }
+     */
     public static int GDK_KEY_Armenian_GIM() {
         return (int)16778547L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_gim 16778595
+     * }
+     */
     public static int GDK_KEY_Armenian_gim() {
         return (int)16778595L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_DA 16778548
+     * }
+     */
     public static int GDK_KEY_Armenian_DA() {
         return (int)16778548L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_da 16778596
+     * }
+     */
     public static int GDK_KEY_Armenian_da() {
         return (int)16778596L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_YECH 16778549
+     * }
+     */
     public static int GDK_KEY_Armenian_YECH() {
         return (int)16778549L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_yech 16778597
+     * }
+     */
     public static int GDK_KEY_Armenian_yech() {
         return (int)16778597L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_ZA 16778550
+     * }
+     */
     public static int GDK_KEY_Armenian_ZA() {
         return (int)16778550L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_za 16778598
+     * }
+     */
     public static int GDK_KEY_Armenian_za() {
         return (int)16778598L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_E 16778551
+     * }
+     */
     public static int GDK_KEY_Armenian_E() {
         return (int)16778551L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_e 16778599
+     * }
+     */
     public static int GDK_KEY_Armenian_e() {
         return (int)16778599L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_AT 16778552
+     * }
+     */
     public static int GDK_KEY_Armenian_AT() {
         return (int)16778552L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_at 16778600
+     * }
+     */
     public static int GDK_KEY_Armenian_at() {
         return (int)16778600L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_TO 16778553
+     * }
+     */
     public static int GDK_KEY_Armenian_TO() {
         return (int)16778553L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_to 16778601
+     * }
+     */
     public static int GDK_KEY_Armenian_to() {
         return (int)16778601L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_ZHE 16778554
+     * }
+     */
     public static int GDK_KEY_Armenian_ZHE() {
         return (int)16778554L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_zhe 16778602
+     * }
+     */
     public static int GDK_KEY_Armenian_zhe() {
         return (int)16778602L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_INI 16778555
+     * }
+     */
     public static int GDK_KEY_Armenian_INI() {
         return (int)16778555L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_ini 16778603
+     * }
+     */
     public static int GDK_KEY_Armenian_ini() {
         return (int)16778603L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_LYUN 16778556
+     * }
+     */
     public static int GDK_KEY_Armenian_LYUN() {
         return (int)16778556L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_lyun 16778604
+     * }
+     */
     public static int GDK_KEY_Armenian_lyun() {
         return (int)16778604L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_KHE 16778557
+     * }
+     */
     public static int GDK_KEY_Armenian_KHE() {
         return (int)16778557L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_khe 16778605
+     * }
+     */
     public static int GDK_KEY_Armenian_khe() {
         return (int)16778605L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_TSA 16778558
+     * }
+     */
     public static int GDK_KEY_Armenian_TSA() {
         return (int)16778558L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_tsa 16778606
+     * }
+     */
     public static int GDK_KEY_Armenian_tsa() {
         return (int)16778606L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_KEN 16778559
+     * }
+     */
     public static int GDK_KEY_Armenian_KEN() {
         return (int)16778559L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_ken 16778607
+     * }
+     */
     public static int GDK_KEY_Armenian_ken() {
         return (int)16778607L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_HO 16778560
+     * }
+     */
     public static int GDK_KEY_Armenian_HO() {
         return (int)16778560L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_ho 16778608
+     * }
+     */
     public static int GDK_KEY_Armenian_ho() {
         return (int)16778608L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_DZA 16778561
+     * }
+     */
     public static int GDK_KEY_Armenian_DZA() {
         return (int)16778561L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_dza 16778609
+     * }
+     */
     public static int GDK_KEY_Armenian_dza() {
         return (int)16778609L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_GHAT 16778562
+     * }
+     */
     public static int GDK_KEY_Armenian_GHAT() {
         return (int)16778562L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_ghat 16778610
+     * }
+     */
     public static int GDK_KEY_Armenian_ghat() {
         return (int)16778610L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_TCHE 16778563
+     * }
+     */
     public static int GDK_KEY_Armenian_TCHE() {
         return (int)16778563L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_tche 16778611
+     * }
+     */
     public static int GDK_KEY_Armenian_tche() {
         return (int)16778611L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_MEN 16778564
+     * }
+     */
     public static int GDK_KEY_Armenian_MEN() {
         return (int)16778564L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_men 16778612
+     * }
+     */
     public static int GDK_KEY_Armenian_men() {
         return (int)16778612L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_HI 16778565
+     * }
+     */
     public static int GDK_KEY_Armenian_HI() {
         return (int)16778565L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_hi 16778613
+     * }
+     */
     public static int GDK_KEY_Armenian_hi() {
         return (int)16778613L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_NU 16778566
+     * }
+     */
     public static int GDK_KEY_Armenian_NU() {
         return (int)16778566L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_nu 16778614
+     * }
+     */
     public static int GDK_KEY_Armenian_nu() {
         return (int)16778614L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_SHA 16778567
+     * }
+     */
     public static int GDK_KEY_Armenian_SHA() {
         return (int)16778567L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_sha 16778615
+     * }
+     */
     public static int GDK_KEY_Armenian_sha() {
         return (int)16778615L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_VO 16778568
+     * }
+     */
     public static int GDK_KEY_Armenian_VO() {
         return (int)16778568L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_vo 16778616
+     * }
+     */
     public static int GDK_KEY_Armenian_vo() {
         return (int)16778616L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_CHA 16778569
+     * }
+     */
     public static int GDK_KEY_Armenian_CHA() {
         return (int)16778569L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_cha 16778617
+     * }
+     */
     public static int GDK_KEY_Armenian_cha() {
         return (int)16778617L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_PE 16778570
+     * }
+     */
     public static int GDK_KEY_Armenian_PE() {
         return (int)16778570L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_pe 16778618
+     * }
+     */
     public static int GDK_KEY_Armenian_pe() {
         return (int)16778618L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_JE 16778571
+     * }
+     */
     public static int GDK_KEY_Armenian_JE() {
         return (int)16778571L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_je 16778619
+     * }
+     */
     public static int GDK_KEY_Armenian_je() {
         return (int)16778619L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_RA 16778572
+     * }
+     */
     public static int GDK_KEY_Armenian_RA() {
         return (int)16778572L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_ra 16778620
+     * }
+     */
     public static int GDK_KEY_Armenian_ra() {
         return (int)16778620L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_SE 16778573
+     * }
+     */
     public static int GDK_KEY_Armenian_SE() {
         return (int)16778573L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_se 16778621
+     * }
+     */
     public static int GDK_KEY_Armenian_se() {
         return (int)16778621L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_VEV 16778574
+     * }
+     */
     public static int GDK_KEY_Armenian_VEV() {
         return (int)16778574L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_vev 16778622
+     * }
+     */
     public static int GDK_KEY_Armenian_vev() {
         return (int)16778622L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_TYUN 16778575
+     * }
+     */
     public static int GDK_KEY_Armenian_TYUN() {
         return (int)16778575L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_tyun 16778623
+     * }
+     */
     public static int GDK_KEY_Armenian_tyun() {
         return (int)16778623L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_RE 16778576
+     * }
+     */
     public static int GDK_KEY_Armenian_RE() {
         return (int)16778576L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_re 16778624
+     * }
+     */
     public static int GDK_KEY_Armenian_re() {
         return (int)16778624L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_TSO 16778577
+     * }
+     */
     public static int GDK_KEY_Armenian_TSO() {
         return (int)16778577L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_tso 16778625
+     * }
+     */
     public static int GDK_KEY_Armenian_tso() {
         return (int)16778625L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_VYUN 16778578
+     * }
+     */
     public static int GDK_KEY_Armenian_VYUN() {
         return (int)16778578L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_vyun 16778626
+     * }
+     */
     public static int GDK_KEY_Armenian_vyun() {
         return (int)16778626L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_PYUR 16778579
+     * }
+     */
     public static int GDK_KEY_Armenian_PYUR() {
         return (int)16778579L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_pyur 16778627
+     * }
+     */
     public static int GDK_KEY_Armenian_pyur() {
         return (int)16778627L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_KE 16778580
+     * }
+     */
     public static int GDK_KEY_Armenian_KE() {
         return (int)16778580L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_ke 16778628
+     * }
+     */
     public static int GDK_KEY_Armenian_ke() {
         return (int)16778628L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_O 16778581
+     * }
+     */
     public static int GDK_KEY_Armenian_O() {
         return (int)16778581L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_o 16778629
+     * }
+     */
     public static int GDK_KEY_Armenian_o() {
         return (int)16778629L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_FE 16778582
+     * }
+     */
     public static int GDK_KEY_Armenian_FE() {
         return (int)16778582L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_fe 16778630
+     * }
+     */
     public static int GDK_KEY_Armenian_fe() {
         return (int)16778630L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Armenian_apostrophe 16778586
+     * }
+     */
     public static int GDK_KEY_Armenian_apostrophe() {
         return (int)16778586L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Georgian_an 16781520
+     * }
+     */
     public static int GDK_KEY_Georgian_an() {
         return (int)16781520L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Georgian_ban 16781521
+     * }
+     */
     public static int GDK_KEY_Georgian_ban() {
         return (int)16781521L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Georgian_gan 16781522
+     * }
+     */
     public static int GDK_KEY_Georgian_gan() {
         return (int)16781522L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Georgian_don 16781523
+     * }
+     */
     public static int GDK_KEY_Georgian_don() {
         return (int)16781523L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Georgian_en 16781524
+     * }
+     */
     public static int GDK_KEY_Georgian_en() {
         return (int)16781524L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Georgian_vin 16781525
+     * }
+     */
     public static int GDK_KEY_Georgian_vin() {
         return (int)16781525L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Georgian_zen 16781526
+     * }
+     */
     public static int GDK_KEY_Georgian_zen() {
         return (int)16781526L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Georgian_tan 16781527
+     * }
+     */
     public static int GDK_KEY_Georgian_tan() {
         return (int)16781527L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Georgian_in 16781528
+     * }
+     */
     public static int GDK_KEY_Georgian_in() {
         return (int)16781528L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Georgian_kan 16781529
+     * }
+     */
     public static int GDK_KEY_Georgian_kan() {
         return (int)16781529L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Georgian_las 16781530
+     * }
+     */
     public static int GDK_KEY_Georgian_las() {
         return (int)16781530L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Georgian_man 16781531
+     * }
+     */
     public static int GDK_KEY_Georgian_man() {
         return (int)16781531L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Georgian_nar 16781532
+     * }
+     */
     public static int GDK_KEY_Georgian_nar() {
         return (int)16781532L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Georgian_on 16781533
+     * }
+     */
     public static int GDK_KEY_Georgian_on() {
         return (int)16781533L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Georgian_par 16781534
+     * }
+     */
     public static int GDK_KEY_Georgian_par() {
         return (int)16781534L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Georgian_zhar 16781535
+     * }
+     */
     public static int GDK_KEY_Georgian_zhar() {
         return (int)16781535L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Georgian_rae 16781536
+     * }
+     */
     public static int GDK_KEY_Georgian_rae() {
         return (int)16781536L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Georgian_san 16781537
+     * }
+     */
     public static int GDK_KEY_Georgian_san() {
         return (int)16781537L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Georgian_tar 16781538
+     * }
+     */
     public static int GDK_KEY_Georgian_tar() {
         return (int)16781538L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Georgian_un 16781539
+     * }
+     */
     public static int GDK_KEY_Georgian_un() {
         return (int)16781539L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Georgian_phar 16781540
+     * }
+     */
     public static int GDK_KEY_Georgian_phar() {
         return (int)16781540L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Georgian_khar 16781541
+     * }
+     */
     public static int GDK_KEY_Georgian_khar() {
         return (int)16781541L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Georgian_ghan 16781542
+     * }
+     */
     public static int GDK_KEY_Georgian_ghan() {
         return (int)16781542L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Georgian_qar 16781543
+     * }
+     */
     public static int GDK_KEY_Georgian_qar() {
         return (int)16781543L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Georgian_shin 16781544
+     * }
+     */
     public static int GDK_KEY_Georgian_shin() {
         return (int)16781544L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Georgian_chin 16781545
+     * }
+     */
     public static int GDK_KEY_Georgian_chin() {
         return (int)16781545L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Georgian_can 16781546
+     * }
+     */
     public static int GDK_KEY_Georgian_can() {
         return (int)16781546L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Georgian_jil 16781547
+     * }
+     */
     public static int GDK_KEY_Georgian_jil() {
         return (int)16781547L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Georgian_cil 16781548
+     * }
+     */
     public static int GDK_KEY_Georgian_cil() {
         return (int)16781548L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Georgian_char 16781549
+     * }
+     */
     public static int GDK_KEY_Georgian_char() {
         return (int)16781549L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Georgian_xan 16781550
+     * }
+     */
     public static int GDK_KEY_Georgian_xan() {
         return (int)16781550L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Georgian_jhan 16781551
+     * }
+     */
     public static int GDK_KEY_Georgian_jhan() {
         return (int)16781551L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Georgian_hae 16781552
+     * }
+     */
     public static int GDK_KEY_Georgian_hae() {
         return (int)16781552L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Georgian_he 16781553
+     * }
+     */
     public static int GDK_KEY_Georgian_he() {
         return (int)16781553L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Georgian_hie 16781554
+     * }
+     */
     public static int GDK_KEY_Georgian_hie() {
         return (int)16781554L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Georgian_we 16781555
+     * }
+     */
     public static int GDK_KEY_Georgian_we() {
         return (int)16781555L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Georgian_har 16781556
+     * }
+     */
     public static int GDK_KEY_Georgian_har() {
         return (int)16781556L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Georgian_hoe 16781557
+     * }
+     */
     public static int GDK_KEY_Georgian_hoe() {
         return (int)16781557L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Georgian_fi 16781558
+     * }
+     */
     public static int GDK_KEY_Georgian_fi() {
         return (int)16781558L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Xabovedot 16785034
+     * }
+     */
     public static int GDK_KEY_Xabovedot() {
         return (int)16785034L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Ibreve 16777516
+     * }
+     */
     public static int GDK_KEY_Ibreve() {
         return (int)16777516L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Zstroke 16777653
+     * }
+     */
     public static int GDK_KEY_Zstroke() {
         return (int)16777653L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Gcaron 16777702
+     * }
+     */
     public static int GDK_KEY_Gcaron() {
         return (int)16777702L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Ocaron 16777681
+     * }
+     */
     public static int GDK_KEY_Ocaron() {
         return (int)16777681L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Obarred 16777631
+     * }
+     */
     public static int GDK_KEY_Obarred() {
         return (int)16777631L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_xabovedot 16785035
+     * }
+     */
     public static int GDK_KEY_xabovedot() {
         return (int)16785035L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_ibreve 16777517
+     * }
+     */
     public static int GDK_KEY_ibreve() {
         return (int)16777517L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_zstroke 16777654
+     * }
+     */
     public static int GDK_KEY_zstroke() {
         return (int)16777654L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_gcaron 16777703
+     * }
+     */
     public static int GDK_KEY_gcaron() {
         return (int)16777703L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_ocaron 16777682
+     * }
+     */
     public static int GDK_KEY_ocaron() {
         return (int)16777682L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_obarred 16777845
+     * }
+     */
     public static int GDK_KEY_obarred() {
         return (int)16777845L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_SCHWA 16777615
+     * }
+     */
     public static int GDK_KEY_SCHWA() {
         return (int)16777615L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_schwa 16777817
+     * }
+     */
     public static int GDK_KEY_schwa() {
         return (int)16777817L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_EZH 16777655
+     * }
+     */
     public static int GDK_KEY_EZH() {
         return (int)16777655L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_ezh 16777874
+     * }
+     */
     public static int GDK_KEY_ezh() {
         return (int)16777874L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Lbelowdot 16784950
+     * }
+     */
     public static int GDK_KEY_Lbelowdot() {
         return (int)16784950L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_lbelowdot 16784951
+     * }
+     */
     public static int GDK_KEY_lbelowdot() {
         return (int)16784951L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Abelowdot 16785056
+     * }
+     */
     public static int GDK_KEY_Abelowdot() {
         return (int)16785056L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_abelowdot 16785057
+     * }
+     */
     public static int GDK_KEY_abelowdot() {
         return (int)16785057L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Ahook 16785058
+     * }
+     */
     public static int GDK_KEY_Ahook() {
         return (int)16785058L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_ahook 16785059
+     * }
+     */
     public static int GDK_KEY_ahook() {
         return (int)16785059L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Acircumflexacute 16785060
+     * }
+     */
     public static int GDK_KEY_Acircumflexacute() {
         return (int)16785060L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_acircumflexacute 16785061
+     * }
+     */
     public static int GDK_KEY_acircumflexacute() {
         return (int)16785061L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Acircumflexgrave 16785062
+     * }
+     */
     public static int GDK_KEY_Acircumflexgrave() {
         return (int)16785062L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_acircumflexgrave 16785063
+     * }
+     */
     public static int GDK_KEY_acircumflexgrave() {
         return (int)16785063L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Acircumflexhook 16785064
+     * }
+     */
     public static int GDK_KEY_Acircumflexhook() {
         return (int)16785064L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_acircumflexhook 16785065
+     * }
+     */
     public static int GDK_KEY_acircumflexhook() {
         return (int)16785065L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Acircumflextilde 16785066
+     * }
+     */
     public static int GDK_KEY_Acircumflextilde() {
         return (int)16785066L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_acircumflextilde 16785067
+     * }
+     */
     public static int GDK_KEY_acircumflextilde() {
         return (int)16785067L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Acircumflexbelowdot 16785068
+     * }
+     */
     public static int GDK_KEY_Acircumflexbelowdot() {
         return (int)16785068L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_acircumflexbelowdot 16785069
+     * }
+     */
     public static int GDK_KEY_acircumflexbelowdot() {
         return (int)16785069L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Abreveacute 16785070
+     * }
+     */
     public static int GDK_KEY_Abreveacute() {
         return (int)16785070L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_abreveacute 16785071
+     * }
+     */
     public static int GDK_KEY_abreveacute() {
         return (int)16785071L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Abrevegrave 16785072
+     * }
+     */
     public static int GDK_KEY_Abrevegrave() {
         return (int)16785072L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_abrevegrave 16785073
+     * }
+     */
     public static int GDK_KEY_abrevegrave() {
         return (int)16785073L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Abrevehook 16785074
+     * }
+     */
     public static int GDK_KEY_Abrevehook() {
         return (int)16785074L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_abrevehook 16785075
+     * }
+     */
     public static int GDK_KEY_abrevehook() {
         return (int)16785075L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Abrevetilde 16785076
+     * }
+     */
     public static int GDK_KEY_Abrevetilde() {
         return (int)16785076L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_abrevetilde 16785077
+     * }
+     */
     public static int GDK_KEY_abrevetilde() {
         return (int)16785077L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Abrevebelowdot 16785078
+     * }
+     */
     public static int GDK_KEY_Abrevebelowdot() {
         return (int)16785078L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_abrevebelowdot 16785079
+     * }
+     */
     public static int GDK_KEY_abrevebelowdot() {
         return (int)16785079L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Ebelowdot 16785080
+     * }
+     */
     public static int GDK_KEY_Ebelowdot() {
         return (int)16785080L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_ebelowdot 16785081
+     * }
+     */
     public static int GDK_KEY_ebelowdot() {
         return (int)16785081L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Ehook 16785082
+     * }
+     */
     public static int GDK_KEY_Ehook() {
         return (int)16785082L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_ehook 16785083
+     * }
+     */
     public static int GDK_KEY_ehook() {
         return (int)16785083L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Etilde 16785084
+     * }
+     */
     public static int GDK_KEY_Etilde() {
         return (int)16785084L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_etilde 16785085
+     * }
+     */
     public static int GDK_KEY_etilde() {
         return (int)16785085L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Ecircumflexacute 16785086
+     * }
+     */
     public static int GDK_KEY_Ecircumflexacute() {
         return (int)16785086L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_ecircumflexacute 16785087
+     * }
+     */
     public static int GDK_KEY_ecircumflexacute() {
         return (int)16785087L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Ecircumflexgrave 16785088
+     * }
+     */
     public static int GDK_KEY_Ecircumflexgrave() {
         return (int)16785088L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_ecircumflexgrave 16785089
+     * }
+     */
     public static int GDK_KEY_ecircumflexgrave() {
         return (int)16785089L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Ecircumflexhook 16785090
+     * }
+     */
     public static int GDK_KEY_Ecircumflexhook() {
         return (int)16785090L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_ecircumflexhook 16785091
+     * }
+     */
     public static int GDK_KEY_ecircumflexhook() {
         return (int)16785091L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Ecircumflextilde 16785092
+     * }
+     */
     public static int GDK_KEY_Ecircumflextilde() {
         return (int)16785092L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_ecircumflextilde 16785093
+     * }
+     */
     public static int GDK_KEY_ecircumflextilde() {
         return (int)16785093L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Ecircumflexbelowdot 16785094
+     * }
+     */
     public static int GDK_KEY_Ecircumflexbelowdot() {
         return (int)16785094L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_ecircumflexbelowdot 16785095
+     * }
+     */
     public static int GDK_KEY_ecircumflexbelowdot() {
         return (int)16785095L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Ihook 16785096
+     * }
+     */
     public static int GDK_KEY_Ihook() {
         return (int)16785096L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_ihook 16785097
+     * }
+     */
     public static int GDK_KEY_ihook() {
         return (int)16785097L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Ibelowdot 16785098
+     * }
+     */
     public static int GDK_KEY_Ibelowdot() {
         return (int)16785098L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_ibelowdot 16785099
+     * }
+     */
     public static int GDK_KEY_ibelowdot() {
         return (int)16785099L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Obelowdot 16785100
+     * }
+     */
     public static int GDK_KEY_Obelowdot() {
         return (int)16785100L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_obelowdot 16785101
+     * }
+     */
     public static int GDK_KEY_obelowdot() {
         return (int)16785101L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Ohook 16785102
+     * }
+     */
     public static int GDK_KEY_Ohook() {
         return (int)16785102L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_ohook 16785103
+     * }
+     */
     public static int GDK_KEY_ohook() {
         return (int)16785103L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Ocircumflexacute 16785104
+     * }
+     */
     public static int GDK_KEY_Ocircumflexacute() {
         return (int)16785104L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_ocircumflexacute 16785105
+     * }
+     */
     public static int GDK_KEY_ocircumflexacute() {
         return (int)16785105L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Ocircumflexgrave 16785106
+     * }
+     */
     public static int GDK_KEY_Ocircumflexgrave() {
         return (int)16785106L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_ocircumflexgrave 16785107
+     * }
+     */
     public static int GDK_KEY_ocircumflexgrave() {
         return (int)16785107L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Ocircumflexhook 16785108
+     * }
+     */
     public static int GDK_KEY_Ocircumflexhook() {
         return (int)16785108L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_ocircumflexhook 16785109
+     * }
+     */
     public static int GDK_KEY_ocircumflexhook() {
         return (int)16785109L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Ocircumflextilde 16785110
+     * }
+     */
     public static int GDK_KEY_Ocircumflextilde() {
         return (int)16785110L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_ocircumflextilde 16785111
+     * }
+     */
     public static int GDK_KEY_ocircumflextilde() {
         return (int)16785111L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Ocircumflexbelowdot 16785112
+     * }
+     */
     public static int GDK_KEY_Ocircumflexbelowdot() {
         return (int)16785112L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_ocircumflexbelowdot 16785113
+     * }
+     */
     public static int GDK_KEY_ocircumflexbelowdot() {
         return (int)16785113L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Ohornacute 16785114
+     * }
+     */
     public static int GDK_KEY_Ohornacute() {
         return (int)16785114L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_ohornacute 16785115
+     * }
+     */
     public static int GDK_KEY_ohornacute() {
         return (int)16785115L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Ohorngrave 16785116
+     * }
+     */
     public static int GDK_KEY_Ohorngrave() {
         return (int)16785116L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_ohorngrave 16785117
+     * }
+     */
     public static int GDK_KEY_ohorngrave() {
         return (int)16785117L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Ohornhook 16785118
+     * }
+     */
     public static int GDK_KEY_Ohornhook() {
         return (int)16785118L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_ohornhook 16785119
+     * }
+     */
     public static int GDK_KEY_ohornhook() {
         return (int)16785119L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Ohorntilde 16785120
+     * }
+     */
     public static int GDK_KEY_Ohorntilde() {
         return (int)16785120L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_ohorntilde 16785121
+     * }
+     */
     public static int GDK_KEY_ohorntilde() {
         return (int)16785121L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Ohornbelowdot 16785122
+     * }
+     */
     public static int GDK_KEY_Ohornbelowdot() {
         return (int)16785122L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_ohornbelowdot 16785123
+     * }
+     */
     public static int GDK_KEY_ohornbelowdot() {
         return (int)16785123L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Ubelowdot 16785124
+     * }
+     */
     public static int GDK_KEY_Ubelowdot() {
         return (int)16785124L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_ubelowdot 16785125
+     * }
+     */
     public static int GDK_KEY_ubelowdot() {
         return (int)16785125L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Uhook 16785126
+     * }
+     */
     public static int GDK_KEY_Uhook() {
         return (int)16785126L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_uhook 16785127
+     * }
+     */
     public static int GDK_KEY_uhook() {
         return (int)16785127L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Uhornacute 16785128
+     * }
+     */
     public static int GDK_KEY_Uhornacute() {
         return (int)16785128L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_uhornacute 16785129
+     * }
+     */
     public static int GDK_KEY_uhornacute() {
         return (int)16785129L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Uhorngrave 16785130
+     * }
+     */
     public static int GDK_KEY_Uhorngrave() {
         return (int)16785130L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_uhorngrave 16785131
+     * }
+     */
     public static int GDK_KEY_uhorngrave() {
         return (int)16785131L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Uhornhook 16785132
+     * }
+     */
     public static int GDK_KEY_Uhornhook() {
         return (int)16785132L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_uhornhook 16785133
+     * }
+     */
     public static int GDK_KEY_uhornhook() {
         return (int)16785133L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Uhorntilde 16785134
+     * }
+     */
     public static int GDK_KEY_Uhorntilde() {
         return (int)16785134L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_uhorntilde 16785135
+     * }
+     */
     public static int GDK_KEY_uhorntilde() {
         return (int)16785135L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Uhornbelowdot 16785136
+     * }
+     */
     public static int GDK_KEY_Uhornbelowdot() {
         return (int)16785136L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_uhornbelowdot 16785137
+     * }
+     */
     public static int GDK_KEY_uhornbelowdot() {
         return (int)16785137L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Ybelowdot 16785140
+     * }
+     */
     public static int GDK_KEY_Ybelowdot() {
         return (int)16785140L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_ybelowdot 16785141
+     * }
+     */
     public static int GDK_KEY_ybelowdot() {
         return (int)16785141L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Yhook 16785142
+     * }
+     */
     public static int GDK_KEY_Yhook() {
         return (int)16785142L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_yhook 16785143
+     * }
+     */
     public static int GDK_KEY_yhook() {
         return (int)16785143L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Ytilde 16785144
+     * }
+     */
     public static int GDK_KEY_Ytilde() {
         return (int)16785144L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_ytilde 16785145
+     * }
+     */
     public static int GDK_KEY_ytilde() {
         return (int)16785145L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Ohorn 16777632
+     * }
+     */
     public static int GDK_KEY_Ohorn() {
         return (int)16777632L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_ohorn 16777633
+     * }
+     */
     public static int GDK_KEY_ohorn() {
         return (int)16777633L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Uhorn 16777647
+     * }
+     */
     public static int GDK_KEY_Uhorn() {
         return (int)16777647L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_uhorn 16777648
+     * }
+     */
     public static int GDK_KEY_uhorn() {
         return (int)16777648L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_EcuSign 16785568
+     * }
+     */
     public static int GDK_KEY_EcuSign() {
         return (int)16785568L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_ColonSign 16785569
+     * }
+     */
     public static int GDK_KEY_ColonSign() {
         return (int)16785569L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_CruzeiroSign 16785570
+     * }
+     */
     public static int GDK_KEY_CruzeiroSign() {
         return (int)16785570L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_FFrancSign 16785571
+     * }
+     */
     public static int GDK_KEY_FFrancSign() {
         return (int)16785571L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_LiraSign 16785572
+     * }
+     */
     public static int GDK_KEY_LiraSign() {
         return (int)16785572L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_MillSign 16785573
+     * }
+     */
     public static int GDK_KEY_MillSign() {
         return (int)16785573L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_NairaSign 16785574
+     * }
+     */
     public static int GDK_KEY_NairaSign() {
         return (int)16785574L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_PesetaSign 16785575
+     * }
+     */
     public static int GDK_KEY_PesetaSign() {
         return (int)16785575L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_RupeeSign 16785576
+     * }
+     */
     public static int GDK_KEY_RupeeSign() {
         return (int)16785576L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_WonSign 16785577
+     * }
+     */
     public static int GDK_KEY_WonSign() {
         return (int)16785577L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_NewSheqelSign 16785578
+     * }
+     */
     public static int GDK_KEY_NewSheqelSign() {
         return (int)16785578L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_DongSign 16785579
+     * }
+     */
     public static int GDK_KEY_DongSign() {
         return (int)16785579L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_EuroSign 8364
+     * }
+     */
     public static int GDK_KEY_EuroSign() {
         return (int)8364L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_zerosuperior 16785520
+     * }
+     */
     public static int GDK_KEY_zerosuperior() {
         return (int)16785520L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_foursuperior 16785524
+     * }
+     */
     public static int GDK_KEY_foursuperior() {
         return (int)16785524L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_fivesuperior 16785525
+     * }
+     */
     public static int GDK_KEY_fivesuperior() {
         return (int)16785525L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_sixsuperior 16785526
+     * }
+     */
     public static int GDK_KEY_sixsuperior() {
         return (int)16785526L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_sevensuperior 16785527
+     * }
+     */
     public static int GDK_KEY_sevensuperior() {
         return (int)16785527L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_eightsuperior 16785528
+     * }
+     */
     public static int GDK_KEY_eightsuperior() {
         return (int)16785528L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_ninesuperior 16785529
+     * }
+     */
     public static int GDK_KEY_ninesuperior() {
         return (int)16785529L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_zerosubscript 16785536
+     * }
+     */
     public static int GDK_KEY_zerosubscript() {
         return (int)16785536L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_onesubscript 16785537
+     * }
+     */
     public static int GDK_KEY_onesubscript() {
         return (int)16785537L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_twosubscript 16785538
+     * }
+     */
     public static int GDK_KEY_twosubscript() {
         return (int)16785538L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_threesubscript 16785539
+     * }
+     */
     public static int GDK_KEY_threesubscript() {
         return (int)16785539L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_foursubscript 16785540
+     * }
+     */
     public static int GDK_KEY_foursubscript() {
         return (int)16785540L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_fivesubscript 16785541
+     * }
+     */
     public static int GDK_KEY_fivesubscript() {
         return (int)16785541L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_sixsubscript 16785542
+     * }
+     */
     public static int GDK_KEY_sixsubscript() {
         return (int)16785542L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_sevensubscript 16785543
+     * }
+     */
     public static int GDK_KEY_sevensubscript() {
         return (int)16785543L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_eightsubscript 16785544
+     * }
+     */
     public static int GDK_KEY_eightsubscript() {
         return (int)16785544L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_ninesubscript 16785545
+     * }
+     */
     public static int GDK_KEY_ninesubscript() {
         return (int)16785545L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_partdifferential 16785922
+     * }
+     */
     public static int GDK_KEY_partdifferential() {
         return (int)16785922L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_emptyset 16785925
+     * }
+     */
     public static int GDK_KEY_emptyset() {
         return (int)16785925L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_elementof 16785928
+     * }
+     */
     public static int GDK_KEY_elementof() {
         return (int)16785928L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_notelementof 16785929
+     * }
+     */
     public static int GDK_KEY_notelementof() {
         return (int)16785929L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_containsas 16785931
+     * }
+     */
     public static int GDK_KEY_containsas() {
         return (int)16785931L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_squareroot 16785946
+     * }
+     */
     public static int GDK_KEY_squareroot() {
         return (int)16785946L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_cuberoot 16785947
+     * }
+     */
     public static int GDK_KEY_cuberoot() {
         return (int)16785947L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_fourthroot 16785948
+     * }
+     */
     public static int GDK_KEY_fourthroot() {
         return (int)16785948L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_dintegral 16785964
+     * }
+     */
     public static int GDK_KEY_dintegral() {
         return (int)16785964L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_tintegral 16785965
+     * }
+     */
     public static int GDK_KEY_tintegral() {
         return (int)16785965L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_because 16785973
+     * }
+     */
     public static int GDK_KEY_because() {
         return (int)16785973L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_approxeq 16785992
+     * }
+     */
     public static int GDK_KEY_approxeq() {
         return (int)16785992L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_notapproxeq 16785991
+     * }
+     */
     public static int GDK_KEY_notapproxeq() {
         return (int)16785991L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_notidentical 16786018
+     * }
+     */
     public static int GDK_KEY_notidentical() {
         return (int)16786018L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_stricteq 16786019
+     * }
+     */
     public static int GDK_KEY_stricteq() {
         return (int)16786019L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dot_1 65521
+     * }
+     */
     public static int GDK_KEY_braille_dot_1() {
         return (int)65521L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dot_2 65522
+     * }
+     */
     public static int GDK_KEY_braille_dot_2() {
         return (int)65522L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dot_3 65523
+     * }
+     */
     public static int GDK_KEY_braille_dot_3() {
         return (int)65523L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dot_4 65524
+     * }
+     */
     public static int GDK_KEY_braille_dot_4() {
         return (int)65524L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dot_5 65525
+     * }
+     */
     public static int GDK_KEY_braille_dot_5() {
         return (int)65525L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dot_6 65526
+     * }
+     */
     public static int GDK_KEY_braille_dot_6() {
         return (int)65526L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dot_7 65527
+     * }
+     */
     public static int GDK_KEY_braille_dot_7() {
         return (int)65527L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dot_8 65528
+     * }
+     */
     public static int GDK_KEY_braille_dot_8() {
         return (int)65528L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dot_9 65529
+     * }
+     */
     public static int GDK_KEY_braille_dot_9() {
         return (int)65529L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dot_10 65530
+     * }
+     */
     public static int GDK_KEY_braille_dot_10() {
         return (int)65530L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_blank 16787456
+     * }
+     */
     public static int GDK_KEY_braille_blank() {
         return (int)16787456L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_1 16787457
+     * }
+     */
     public static int GDK_KEY_braille_dots_1() {
         return (int)16787457L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_2 16787458
+     * }
+     */
     public static int GDK_KEY_braille_dots_2() {
         return (int)16787458L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_12 16787459
+     * }
+     */
     public static int GDK_KEY_braille_dots_12() {
         return (int)16787459L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_3 16787460
+     * }
+     */
     public static int GDK_KEY_braille_dots_3() {
         return (int)16787460L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_13 16787461
+     * }
+     */
     public static int GDK_KEY_braille_dots_13() {
         return (int)16787461L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_23 16787462
+     * }
+     */
     public static int GDK_KEY_braille_dots_23() {
         return (int)16787462L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_123 16787463
+     * }
+     */
     public static int GDK_KEY_braille_dots_123() {
         return (int)16787463L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_4 16787464
+     * }
+     */
     public static int GDK_KEY_braille_dots_4() {
         return (int)16787464L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_14 16787465
+     * }
+     */
     public static int GDK_KEY_braille_dots_14() {
         return (int)16787465L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_24 16787466
+     * }
+     */
     public static int GDK_KEY_braille_dots_24() {
         return (int)16787466L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_124 16787467
+     * }
+     */
     public static int GDK_KEY_braille_dots_124() {
         return (int)16787467L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_34 16787468
+     * }
+     */
     public static int GDK_KEY_braille_dots_34() {
         return (int)16787468L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_134 16787469
+     * }
+     */
     public static int GDK_KEY_braille_dots_134() {
         return (int)16787469L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_234 16787470
+     * }
+     */
     public static int GDK_KEY_braille_dots_234() {
         return (int)16787470L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_1234 16787471
+     * }
+     */
     public static int GDK_KEY_braille_dots_1234() {
         return (int)16787471L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_5 16787472
+     * }
+     */
     public static int GDK_KEY_braille_dots_5() {
         return (int)16787472L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_15 16787473
+     * }
+     */
     public static int GDK_KEY_braille_dots_15() {
         return (int)16787473L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_25 16787474
+     * }
+     */
     public static int GDK_KEY_braille_dots_25() {
         return (int)16787474L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_125 16787475
+     * }
+     */
     public static int GDK_KEY_braille_dots_125() {
         return (int)16787475L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_35 16787476
+     * }
+     */
     public static int GDK_KEY_braille_dots_35() {
         return (int)16787476L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_135 16787477
+     * }
+     */
     public static int GDK_KEY_braille_dots_135() {
         return (int)16787477L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_235 16787478
+     * }
+     */
     public static int GDK_KEY_braille_dots_235() {
         return (int)16787478L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_1235 16787479
+     * }
+     */
     public static int GDK_KEY_braille_dots_1235() {
         return (int)16787479L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_45 16787480
+     * }
+     */
     public static int GDK_KEY_braille_dots_45() {
         return (int)16787480L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_145 16787481
+     * }
+     */
     public static int GDK_KEY_braille_dots_145() {
         return (int)16787481L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_245 16787482
+     * }
+     */
     public static int GDK_KEY_braille_dots_245() {
         return (int)16787482L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_1245 16787483
+     * }
+     */
     public static int GDK_KEY_braille_dots_1245() {
         return (int)16787483L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_345 16787484
+     * }
+     */
     public static int GDK_KEY_braille_dots_345() {
         return (int)16787484L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_1345 16787485
+     * }
+     */
     public static int GDK_KEY_braille_dots_1345() {
         return (int)16787485L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_2345 16787486
+     * }
+     */
     public static int GDK_KEY_braille_dots_2345() {
         return (int)16787486L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_12345 16787487
+     * }
+     */
     public static int GDK_KEY_braille_dots_12345() {
         return (int)16787487L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_6 16787488
+     * }
+     */
     public static int GDK_KEY_braille_dots_6() {
         return (int)16787488L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_16 16787489
+     * }
+     */
     public static int GDK_KEY_braille_dots_16() {
         return (int)16787489L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_26 16787490
+     * }
+     */
     public static int GDK_KEY_braille_dots_26() {
         return (int)16787490L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_126 16787491
+     * }
+     */
     public static int GDK_KEY_braille_dots_126() {
         return (int)16787491L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_36 16787492
+     * }
+     */
     public static int GDK_KEY_braille_dots_36() {
         return (int)16787492L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_136 16787493
+     * }
+     */
     public static int GDK_KEY_braille_dots_136() {
         return (int)16787493L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_236 16787494
+     * }
+     */
     public static int GDK_KEY_braille_dots_236() {
         return (int)16787494L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_1236 16787495
+     * }
+     */
     public static int GDK_KEY_braille_dots_1236() {
         return (int)16787495L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_46 16787496
+     * }
+     */
     public static int GDK_KEY_braille_dots_46() {
         return (int)16787496L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_146 16787497
+     * }
+     */
     public static int GDK_KEY_braille_dots_146() {
         return (int)16787497L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_246 16787498
+     * }
+     */
     public static int GDK_KEY_braille_dots_246() {
         return (int)16787498L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_1246 16787499
+     * }
+     */
     public static int GDK_KEY_braille_dots_1246() {
         return (int)16787499L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_346 16787500
+     * }
+     */
     public static int GDK_KEY_braille_dots_346() {
         return (int)16787500L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_1346 16787501
+     * }
+     */
     public static int GDK_KEY_braille_dots_1346() {
         return (int)16787501L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_2346 16787502
+     * }
+     */
     public static int GDK_KEY_braille_dots_2346() {
         return (int)16787502L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_12346 16787503
+     * }
+     */
     public static int GDK_KEY_braille_dots_12346() {
         return (int)16787503L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_56 16787504
+     * }
+     */
     public static int GDK_KEY_braille_dots_56() {
         return (int)16787504L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_156 16787505
+     * }
+     */
     public static int GDK_KEY_braille_dots_156() {
         return (int)16787505L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_256 16787506
+     * }
+     */
     public static int GDK_KEY_braille_dots_256() {
         return (int)16787506L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_1256 16787507
+     * }
+     */
     public static int GDK_KEY_braille_dots_1256() {
         return (int)16787507L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_356 16787508
+     * }
+     */
     public static int GDK_KEY_braille_dots_356() {
         return (int)16787508L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_1356 16787509
+     * }
+     */
     public static int GDK_KEY_braille_dots_1356() {
         return (int)16787509L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_2356 16787510
+     * }
+     */
     public static int GDK_KEY_braille_dots_2356() {
         return (int)16787510L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_12356 16787511
+     * }
+     */
     public static int GDK_KEY_braille_dots_12356() {
         return (int)16787511L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_456 16787512
+     * }
+     */
     public static int GDK_KEY_braille_dots_456() {
         return (int)16787512L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_1456 16787513
+     * }
+     */
     public static int GDK_KEY_braille_dots_1456() {
         return (int)16787513L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_2456 16787514
+     * }
+     */
     public static int GDK_KEY_braille_dots_2456() {
         return (int)16787514L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_12456 16787515
+     * }
+     */
     public static int GDK_KEY_braille_dots_12456() {
         return (int)16787515L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_3456 16787516
+     * }
+     */
     public static int GDK_KEY_braille_dots_3456() {
         return (int)16787516L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_13456 16787517
+     * }
+     */
     public static int GDK_KEY_braille_dots_13456() {
         return (int)16787517L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_23456 16787518
+     * }
+     */
     public static int GDK_KEY_braille_dots_23456() {
         return (int)16787518L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_123456 16787519
+     * }
+     */
     public static int GDK_KEY_braille_dots_123456() {
         return (int)16787519L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_7 16787520
+     * }
+     */
     public static int GDK_KEY_braille_dots_7() {
         return (int)16787520L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_17 16787521
+     * }
+     */
     public static int GDK_KEY_braille_dots_17() {
         return (int)16787521L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_27 16787522
+     * }
+     */
     public static int GDK_KEY_braille_dots_27() {
         return (int)16787522L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_127 16787523
+     * }
+     */
     public static int GDK_KEY_braille_dots_127() {
         return (int)16787523L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_37 16787524
+     * }
+     */
     public static int GDK_KEY_braille_dots_37() {
         return (int)16787524L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_137 16787525
+     * }
+     */
     public static int GDK_KEY_braille_dots_137() {
         return (int)16787525L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_237 16787526
+     * }
+     */
     public static int GDK_KEY_braille_dots_237() {
         return (int)16787526L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_1237 16787527
+     * }
+     */
     public static int GDK_KEY_braille_dots_1237() {
         return (int)16787527L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_47 16787528
+     * }
+     */
     public static int GDK_KEY_braille_dots_47() {
         return (int)16787528L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_147 16787529
+     * }
+     */
     public static int GDK_KEY_braille_dots_147() {
         return (int)16787529L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_247 16787530
+     * }
+     */
     public static int GDK_KEY_braille_dots_247() {
         return (int)16787530L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_1247 16787531
+     * }
+     */
     public static int GDK_KEY_braille_dots_1247() {
         return (int)16787531L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_347 16787532
+     * }
+     */
     public static int GDK_KEY_braille_dots_347() {
         return (int)16787532L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_1347 16787533
+     * }
+     */
     public static int GDK_KEY_braille_dots_1347() {
         return (int)16787533L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_2347 16787534
+     * }
+     */
     public static int GDK_KEY_braille_dots_2347() {
         return (int)16787534L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_12347 16787535
+     * }
+     */
     public static int GDK_KEY_braille_dots_12347() {
         return (int)16787535L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_57 16787536
+     * }
+     */
     public static int GDK_KEY_braille_dots_57() {
         return (int)16787536L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_157 16787537
+     * }
+     */
     public static int GDK_KEY_braille_dots_157() {
         return (int)16787537L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_257 16787538
+     * }
+     */
     public static int GDK_KEY_braille_dots_257() {
         return (int)16787538L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_1257 16787539
+     * }
+     */
     public static int GDK_KEY_braille_dots_1257() {
         return (int)16787539L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_357 16787540
+     * }
+     */
     public static int GDK_KEY_braille_dots_357() {
         return (int)16787540L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_1357 16787541
+     * }
+     */
     public static int GDK_KEY_braille_dots_1357() {
         return (int)16787541L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_2357 16787542
+     * }
+     */
     public static int GDK_KEY_braille_dots_2357() {
         return (int)16787542L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_12357 16787543
+     * }
+     */
     public static int GDK_KEY_braille_dots_12357() {
         return (int)16787543L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_457 16787544
+     * }
+     */
     public static int GDK_KEY_braille_dots_457() {
         return (int)16787544L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_1457 16787545
+     * }
+     */
     public static int GDK_KEY_braille_dots_1457() {
         return (int)16787545L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_2457 16787546
+     * }
+     */
     public static int GDK_KEY_braille_dots_2457() {
         return (int)16787546L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_12457 16787547
+     * }
+     */
     public static int GDK_KEY_braille_dots_12457() {
         return (int)16787547L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_3457 16787548
+     * }
+     */
     public static int GDK_KEY_braille_dots_3457() {
         return (int)16787548L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_13457 16787549
+     * }
+     */
     public static int GDK_KEY_braille_dots_13457() {
         return (int)16787549L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_23457 16787550
+     * }
+     */
     public static int GDK_KEY_braille_dots_23457() {
         return (int)16787550L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_123457 16787551
+     * }
+     */
     public static int GDK_KEY_braille_dots_123457() {
         return (int)16787551L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_67 16787552
+     * }
+     */
     public static int GDK_KEY_braille_dots_67() {
         return (int)16787552L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_167 16787553
+     * }
+     */
     public static int GDK_KEY_braille_dots_167() {
         return (int)16787553L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_267 16787554
+     * }
+     */
     public static int GDK_KEY_braille_dots_267() {
         return (int)16787554L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_1267 16787555
+     * }
+     */
     public static int GDK_KEY_braille_dots_1267() {
         return (int)16787555L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_367 16787556
+     * }
+     */
     public static int GDK_KEY_braille_dots_367() {
         return (int)16787556L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_1367 16787557
+     * }
+     */
     public static int GDK_KEY_braille_dots_1367() {
         return (int)16787557L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_2367 16787558
+     * }
+     */
     public static int GDK_KEY_braille_dots_2367() {
         return (int)16787558L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_12367 16787559
+     * }
+     */
     public static int GDK_KEY_braille_dots_12367() {
         return (int)16787559L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_467 16787560
+     * }
+     */
     public static int GDK_KEY_braille_dots_467() {
         return (int)16787560L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_1467 16787561
+     * }
+     */
     public static int GDK_KEY_braille_dots_1467() {
         return (int)16787561L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_2467 16787562
+     * }
+     */
     public static int GDK_KEY_braille_dots_2467() {
         return (int)16787562L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_12467 16787563
+     * }
+     */
     public static int GDK_KEY_braille_dots_12467() {
         return (int)16787563L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_3467 16787564
+     * }
+     */
     public static int GDK_KEY_braille_dots_3467() {
         return (int)16787564L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_13467 16787565
+     * }
+     */
     public static int GDK_KEY_braille_dots_13467() {
         return (int)16787565L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_23467 16787566
+     * }
+     */
     public static int GDK_KEY_braille_dots_23467() {
         return (int)16787566L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_123467 16787567
+     * }
+     */
     public static int GDK_KEY_braille_dots_123467() {
         return (int)16787567L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_567 16787568
+     * }
+     */
     public static int GDK_KEY_braille_dots_567() {
         return (int)16787568L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_1567 16787569
+     * }
+     */
     public static int GDK_KEY_braille_dots_1567() {
         return (int)16787569L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_2567 16787570
+     * }
+     */
     public static int GDK_KEY_braille_dots_2567() {
         return (int)16787570L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_12567 16787571
+     * }
+     */
     public static int GDK_KEY_braille_dots_12567() {
         return (int)16787571L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_3567 16787572
+     * }
+     */
     public static int GDK_KEY_braille_dots_3567() {
         return (int)16787572L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_13567 16787573
+     * }
+     */
     public static int GDK_KEY_braille_dots_13567() {
         return (int)16787573L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_23567 16787574
+     * }
+     */
     public static int GDK_KEY_braille_dots_23567() {
         return (int)16787574L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_123567 16787575
+     * }
+     */
     public static int GDK_KEY_braille_dots_123567() {
         return (int)16787575L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_4567 16787576
+     * }
+     */
     public static int GDK_KEY_braille_dots_4567() {
         return (int)16787576L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_14567 16787577
+     * }
+     */
     public static int GDK_KEY_braille_dots_14567() {
         return (int)16787577L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_24567 16787578
+     * }
+     */
     public static int GDK_KEY_braille_dots_24567() {
         return (int)16787578L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_124567 16787579
+     * }
+     */
     public static int GDK_KEY_braille_dots_124567() {
         return (int)16787579L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_34567 16787580
+     * }
+     */
     public static int GDK_KEY_braille_dots_34567() {
         return (int)16787580L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_134567 16787581
+     * }
+     */
     public static int GDK_KEY_braille_dots_134567() {
         return (int)16787581L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_234567 16787582
+     * }
+     */
     public static int GDK_KEY_braille_dots_234567() {
         return (int)16787582L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_1234567 16787583
+     * }
+     */
     public static int GDK_KEY_braille_dots_1234567() {
         return (int)16787583L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_8 16787584
+     * }
+     */
     public static int GDK_KEY_braille_dots_8() {
         return (int)16787584L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_18 16787585
+     * }
+     */
     public static int GDK_KEY_braille_dots_18() {
         return (int)16787585L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_28 16787586
+     * }
+     */
     public static int GDK_KEY_braille_dots_28() {
         return (int)16787586L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_128 16787587
+     * }
+     */
     public static int GDK_KEY_braille_dots_128() {
         return (int)16787587L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_38 16787588
+     * }
+     */
     public static int GDK_KEY_braille_dots_38() {
         return (int)16787588L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_138 16787589
+     * }
+     */
     public static int GDK_KEY_braille_dots_138() {
         return (int)16787589L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_238 16787590
+     * }
+     */
     public static int GDK_KEY_braille_dots_238() {
         return (int)16787590L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_1238 16787591
+     * }
+     */
     public static int GDK_KEY_braille_dots_1238() {
         return (int)16787591L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_48 16787592
+     * }
+     */
     public static int GDK_KEY_braille_dots_48() {
         return (int)16787592L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_148 16787593
+     * }
+     */
     public static int GDK_KEY_braille_dots_148() {
         return (int)16787593L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_248 16787594
+     * }
+     */
     public static int GDK_KEY_braille_dots_248() {
         return (int)16787594L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_1248 16787595
+     * }
+     */
     public static int GDK_KEY_braille_dots_1248() {
         return (int)16787595L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_348 16787596
+     * }
+     */
     public static int GDK_KEY_braille_dots_348() {
         return (int)16787596L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_1348 16787597
+     * }
+     */
     public static int GDK_KEY_braille_dots_1348() {
         return (int)16787597L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_2348 16787598
+     * }
+     */
     public static int GDK_KEY_braille_dots_2348() {
         return (int)16787598L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_12348 16787599
+     * }
+     */
     public static int GDK_KEY_braille_dots_12348() {
         return (int)16787599L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_58 16787600
+     * }
+     */
     public static int GDK_KEY_braille_dots_58() {
         return (int)16787600L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_158 16787601
+     * }
+     */
     public static int GDK_KEY_braille_dots_158() {
         return (int)16787601L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_258 16787602
+     * }
+     */
     public static int GDK_KEY_braille_dots_258() {
         return (int)16787602L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_1258 16787603
+     * }
+     */
     public static int GDK_KEY_braille_dots_1258() {
         return (int)16787603L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_358 16787604
+     * }
+     */
     public static int GDK_KEY_braille_dots_358() {
         return (int)16787604L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_1358 16787605
+     * }
+     */
     public static int GDK_KEY_braille_dots_1358() {
         return (int)16787605L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_2358 16787606
+     * }
+     */
     public static int GDK_KEY_braille_dots_2358() {
         return (int)16787606L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_12358 16787607
+     * }
+     */
     public static int GDK_KEY_braille_dots_12358() {
         return (int)16787607L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_458 16787608
+     * }
+     */
     public static int GDK_KEY_braille_dots_458() {
         return (int)16787608L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_1458 16787609
+     * }
+     */
     public static int GDK_KEY_braille_dots_1458() {
         return (int)16787609L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_2458 16787610
+     * }
+     */
     public static int GDK_KEY_braille_dots_2458() {
         return (int)16787610L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_12458 16787611
+     * }
+     */
     public static int GDK_KEY_braille_dots_12458() {
         return (int)16787611L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_3458 16787612
+     * }
+     */
     public static int GDK_KEY_braille_dots_3458() {
         return (int)16787612L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_13458 16787613
+     * }
+     */
     public static int GDK_KEY_braille_dots_13458() {
         return (int)16787613L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_23458 16787614
+     * }
+     */
     public static int GDK_KEY_braille_dots_23458() {
         return (int)16787614L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_123458 16787615
+     * }
+     */
     public static int GDK_KEY_braille_dots_123458() {
         return (int)16787615L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_68 16787616
+     * }
+     */
     public static int GDK_KEY_braille_dots_68() {
         return (int)16787616L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_168 16787617
+     * }
+     */
     public static int GDK_KEY_braille_dots_168() {
         return (int)16787617L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_268 16787618
+     * }
+     */
     public static int GDK_KEY_braille_dots_268() {
         return (int)16787618L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_1268 16787619
+     * }
+     */
     public static int GDK_KEY_braille_dots_1268() {
         return (int)16787619L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_368 16787620
+     * }
+     */
     public static int GDK_KEY_braille_dots_368() {
         return (int)16787620L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_1368 16787621
+     * }
+     */
     public static int GDK_KEY_braille_dots_1368() {
         return (int)16787621L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_2368 16787622
+     * }
+     */
     public static int GDK_KEY_braille_dots_2368() {
         return (int)16787622L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_12368 16787623
+     * }
+     */
     public static int GDK_KEY_braille_dots_12368() {
         return (int)16787623L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_468 16787624
+     * }
+     */
     public static int GDK_KEY_braille_dots_468() {
         return (int)16787624L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_1468 16787625
+     * }
+     */
     public static int GDK_KEY_braille_dots_1468() {
         return (int)16787625L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_2468 16787626
+     * }
+     */
     public static int GDK_KEY_braille_dots_2468() {
         return (int)16787626L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_12468 16787627
+     * }
+     */
     public static int GDK_KEY_braille_dots_12468() {
         return (int)16787627L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_3468 16787628
+     * }
+     */
     public static int GDK_KEY_braille_dots_3468() {
         return (int)16787628L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_13468 16787629
+     * }
+     */
     public static int GDK_KEY_braille_dots_13468() {
         return (int)16787629L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_23468 16787630
+     * }
+     */
     public static int GDK_KEY_braille_dots_23468() {
         return (int)16787630L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_123468 16787631
+     * }
+     */
     public static int GDK_KEY_braille_dots_123468() {
         return (int)16787631L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_568 16787632
+     * }
+     */
     public static int GDK_KEY_braille_dots_568() {
         return (int)16787632L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_1568 16787633
+     * }
+     */
     public static int GDK_KEY_braille_dots_1568() {
         return (int)16787633L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_2568 16787634
+     * }
+     */
     public static int GDK_KEY_braille_dots_2568() {
         return (int)16787634L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_12568 16787635
+     * }
+     */
     public static int GDK_KEY_braille_dots_12568() {
         return (int)16787635L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_3568 16787636
+     * }
+     */
     public static int GDK_KEY_braille_dots_3568() {
         return (int)16787636L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_13568 16787637
+     * }
+     */
     public static int GDK_KEY_braille_dots_13568() {
         return (int)16787637L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_23568 16787638
+     * }
+     */
     public static int GDK_KEY_braille_dots_23568() {
         return (int)16787638L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_123568 16787639
+     * }
+     */
     public static int GDK_KEY_braille_dots_123568() {
         return (int)16787639L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_4568 16787640
+     * }
+     */
     public static int GDK_KEY_braille_dots_4568() {
         return (int)16787640L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_14568 16787641
+     * }
+     */
     public static int GDK_KEY_braille_dots_14568() {
         return (int)16787641L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_24568 16787642
+     * }
+     */
     public static int GDK_KEY_braille_dots_24568() {
         return (int)16787642L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_124568 16787643
+     * }
+     */
     public static int GDK_KEY_braille_dots_124568() {
         return (int)16787643L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_34568 16787644
+     * }
+     */
     public static int GDK_KEY_braille_dots_34568() {
         return (int)16787644L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_134568 16787645
+     * }
+     */
     public static int GDK_KEY_braille_dots_134568() {
         return (int)16787645L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_234568 16787646
+     * }
+     */
     public static int GDK_KEY_braille_dots_234568() {
         return (int)16787646L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_1234568 16787647
+     * }
+     */
     public static int GDK_KEY_braille_dots_1234568() {
         return (int)16787647L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_78 16787648
+     * }
+     */
     public static int GDK_KEY_braille_dots_78() {
         return (int)16787648L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_178 16787649
+     * }
+     */
     public static int GDK_KEY_braille_dots_178() {
         return (int)16787649L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_278 16787650
+     * }
+     */
     public static int GDK_KEY_braille_dots_278() {
         return (int)16787650L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_1278 16787651
+     * }
+     */
     public static int GDK_KEY_braille_dots_1278() {
         return (int)16787651L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_378 16787652
+     * }
+     */
     public static int GDK_KEY_braille_dots_378() {
         return (int)16787652L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_1378 16787653
+     * }
+     */
     public static int GDK_KEY_braille_dots_1378() {
         return (int)16787653L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_2378 16787654
+     * }
+     */
     public static int GDK_KEY_braille_dots_2378() {
         return (int)16787654L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_12378 16787655
+     * }
+     */
     public static int GDK_KEY_braille_dots_12378() {
         return (int)16787655L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_478 16787656
+     * }
+     */
     public static int GDK_KEY_braille_dots_478() {
         return (int)16787656L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_1478 16787657
+     * }
+     */
     public static int GDK_KEY_braille_dots_1478() {
         return (int)16787657L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_2478 16787658
+     * }
+     */
     public static int GDK_KEY_braille_dots_2478() {
         return (int)16787658L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_12478 16787659
+     * }
+     */
     public static int GDK_KEY_braille_dots_12478() {
         return (int)16787659L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_3478 16787660
+     * }
+     */
     public static int GDK_KEY_braille_dots_3478() {
         return (int)16787660L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_13478 16787661
+     * }
+     */
     public static int GDK_KEY_braille_dots_13478() {
         return (int)16787661L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_23478 16787662
+     * }
+     */
     public static int GDK_KEY_braille_dots_23478() {
         return (int)16787662L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_123478 16787663
+     * }
+     */
     public static int GDK_KEY_braille_dots_123478() {
         return (int)16787663L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_578 16787664
+     * }
+     */
     public static int GDK_KEY_braille_dots_578() {
         return (int)16787664L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_1578 16787665
+     * }
+     */
     public static int GDK_KEY_braille_dots_1578() {
         return (int)16787665L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_2578 16787666
+     * }
+     */
     public static int GDK_KEY_braille_dots_2578() {
         return (int)16787666L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_12578 16787667
+     * }
+     */
     public static int GDK_KEY_braille_dots_12578() {
         return (int)16787667L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_3578 16787668
+     * }
+     */
     public static int GDK_KEY_braille_dots_3578() {
         return (int)16787668L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_13578 16787669
+     * }
+     */
     public static int GDK_KEY_braille_dots_13578() {
         return (int)16787669L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_23578 16787670
+     * }
+     */
     public static int GDK_KEY_braille_dots_23578() {
         return (int)16787670L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_123578 16787671
+     * }
+     */
     public static int GDK_KEY_braille_dots_123578() {
         return (int)16787671L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_4578 16787672
+     * }
+     */
     public static int GDK_KEY_braille_dots_4578() {
         return (int)16787672L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_14578 16787673
+     * }
+     */
     public static int GDK_KEY_braille_dots_14578() {
         return (int)16787673L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_24578 16787674
+     * }
+     */
     public static int GDK_KEY_braille_dots_24578() {
         return (int)16787674L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_124578 16787675
+     * }
+     */
     public static int GDK_KEY_braille_dots_124578() {
         return (int)16787675L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_34578 16787676
+     * }
+     */
     public static int GDK_KEY_braille_dots_34578() {
         return (int)16787676L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_134578 16787677
+     * }
+     */
     public static int GDK_KEY_braille_dots_134578() {
         return (int)16787677L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_234578 16787678
+     * }
+     */
     public static int GDK_KEY_braille_dots_234578() {
         return (int)16787678L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_1234578 16787679
+     * }
+     */
     public static int GDK_KEY_braille_dots_1234578() {
         return (int)16787679L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_678 16787680
+     * }
+     */
     public static int GDK_KEY_braille_dots_678() {
         return (int)16787680L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_1678 16787681
+     * }
+     */
     public static int GDK_KEY_braille_dots_1678() {
         return (int)16787681L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_2678 16787682
+     * }
+     */
     public static int GDK_KEY_braille_dots_2678() {
         return (int)16787682L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_12678 16787683
+     * }
+     */
     public static int GDK_KEY_braille_dots_12678() {
         return (int)16787683L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_3678 16787684
+     * }
+     */
     public static int GDK_KEY_braille_dots_3678() {
         return (int)16787684L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_13678 16787685
+     * }
+     */
     public static int GDK_KEY_braille_dots_13678() {
         return (int)16787685L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_23678 16787686
+     * }
+     */
     public static int GDK_KEY_braille_dots_23678() {
         return (int)16787686L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_123678 16787687
+     * }
+     */
     public static int GDK_KEY_braille_dots_123678() {
         return (int)16787687L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_4678 16787688
+     * }
+     */
     public static int GDK_KEY_braille_dots_4678() {
         return (int)16787688L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_14678 16787689
+     * }
+     */
     public static int GDK_KEY_braille_dots_14678() {
         return (int)16787689L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_24678 16787690
+     * }
+     */
     public static int GDK_KEY_braille_dots_24678() {
         return (int)16787690L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_124678 16787691
+     * }
+     */
     public static int GDK_KEY_braille_dots_124678() {
         return (int)16787691L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_34678 16787692
+     * }
+     */
     public static int GDK_KEY_braille_dots_34678() {
         return (int)16787692L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_134678 16787693
+     * }
+     */
     public static int GDK_KEY_braille_dots_134678() {
         return (int)16787693L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_234678 16787694
+     * }
+     */
     public static int GDK_KEY_braille_dots_234678() {
         return (int)16787694L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_1234678 16787695
+     * }
+     */
     public static int GDK_KEY_braille_dots_1234678() {
         return (int)16787695L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_5678 16787696
+     * }
+     */
     public static int GDK_KEY_braille_dots_5678() {
         return (int)16787696L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_15678 16787697
+     * }
+     */
     public static int GDK_KEY_braille_dots_15678() {
         return (int)16787697L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_25678 16787698
+     * }
+     */
     public static int GDK_KEY_braille_dots_25678() {
         return (int)16787698L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_125678 16787699
+     * }
+     */
     public static int GDK_KEY_braille_dots_125678() {
         return (int)16787699L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_35678 16787700
+     * }
+     */
     public static int GDK_KEY_braille_dots_35678() {
         return (int)16787700L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_135678 16787701
+     * }
+     */
     public static int GDK_KEY_braille_dots_135678() {
         return (int)16787701L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_235678 16787702
+     * }
+     */
     public static int GDK_KEY_braille_dots_235678() {
         return (int)16787702L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_1235678 16787703
+     * }
+     */
     public static int GDK_KEY_braille_dots_1235678() {
         return (int)16787703L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_45678 16787704
+     * }
+     */
     public static int GDK_KEY_braille_dots_45678() {
         return (int)16787704L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_145678 16787705
+     * }
+     */
     public static int GDK_KEY_braille_dots_145678() {
         return (int)16787705L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_245678 16787706
+     * }
+     */
     public static int GDK_KEY_braille_dots_245678() {
         return (int)16787706L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_1245678 16787707
+     * }
+     */
     public static int GDK_KEY_braille_dots_1245678() {
         return (int)16787707L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_345678 16787708
+     * }
+     */
     public static int GDK_KEY_braille_dots_345678() {
         return (int)16787708L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_1345678 16787709
+     * }
+     */
     public static int GDK_KEY_braille_dots_1345678() {
         return (int)16787709L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_2345678 16787710
+     * }
+     */
     public static int GDK_KEY_braille_dots_2345678() {
         return (int)16787710L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braille_dots_12345678 16787711
+     * }
+     */
     public static int GDK_KEY_braille_dots_12345678() {
         return (int)16787711L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_ng 16780674
+     * }
+     */
     public static int GDK_KEY_Sinh_ng() {
         return (int)16780674L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_h2 16780675
+     * }
+     */
     public static int GDK_KEY_Sinh_h2() {
         return (int)16780675L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_a 16780677
+     * }
+     */
     public static int GDK_KEY_Sinh_a() {
         return (int)16780677L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_aa 16780678
+     * }
+     */
     public static int GDK_KEY_Sinh_aa() {
         return (int)16780678L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_ae 16780679
+     * }
+     */
     public static int GDK_KEY_Sinh_ae() {
         return (int)16780679L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_aee 16780680
+     * }
+     */
     public static int GDK_KEY_Sinh_aee() {
         return (int)16780680L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_i 16780681
+     * }
+     */
     public static int GDK_KEY_Sinh_i() {
         return (int)16780681L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_ii 16780682
+     * }
+     */
     public static int GDK_KEY_Sinh_ii() {
         return (int)16780682L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_u 16780683
+     * }
+     */
     public static int GDK_KEY_Sinh_u() {
         return (int)16780683L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_uu 16780684
+     * }
+     */
     public static int GDK_KEY_Sinh_uu() {
         return (int)16780684L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_ri 16780685
+     * }
+     */
     public static int GDK_KEY_Sinh_ri() {
         return (int)16780685L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_rii 16780686
+     * }
+     */
     public static int GDK_KEY_Sinh_rii() {
         return (int)16780686L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_lu 16780687
+     * }
+     */
     public static int GDK_KEY_Sinh_lu() {
         return (int)16780687L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_luu 16780688
+     * }
+     */
     public static int GDK_KEY_Sinh_luu() {
         return (int)16780688L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_e 16780689
+     * }
+     */
     public static int GDK_KEY_Sinh_e() {
         return (int)16780689L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_ee 16780690
+     * }
+     */
     public static int GDK_KEY_Sinh_ee() {
         return (int)16780690L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_ai 16780691
+     * }
+     */
     public static int GDK_KEY_Sinh_ai() {
         return (int)16780691L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_o 16780692
+     * }
+     */
     public static int GDK_KEY_Sinh_o() {
         return (int)16780692L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_oo 16780693
+     * }
+     */
     public static int GDK_KEY_Sinh_oo() {
         return (int)16780693L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_au 16780694
+     * }
+     */
     public static int GDK_KEY_Sinh_au() {
         return (int)16780694L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_ka 16780698
+     * }
+     */
     public static int GDK_KEY_Sinh_ka() {
         return (int)16780698L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_kha 16780699
+     * }
+     */
     public static int GDK_KEY_Sinh_kha() {
         return (int)16780699L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_ga 16780700
+     * }
+     */
     public static int GDK_KEY_Sinh_ga() {
         return (int)16780700L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_gha 16780701
+     * }
+     */
     public static int GDK_KEY_Sinh_gha() {
         return (int)16780701L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_ng2 16780702
+     * }
+     */
     public static int GDK_KEY_Sinh_ng2() {
         return (int)16780702L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_nga 16780703
+     * }
+     */
     public static int GDK_KEY_Sinh_nga() {
         return (int)16780703L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_ca 16780704
+     * }
+     */
     public static int GDK_KEY_Sinh_ca() {
         return (int)16780704L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_cha 16780705
+     * }
+     */
     public static int GDK_KEY_Sinh_cha() {
         return (int)16780705L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_ja 16780706
+     * }
+     */
     public static int GDK_KEY_Sinh_ja() {
         return (int)16780706L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_jha 16780707
+     * }
+     */
     public static int GDK_KEY_Sinh_jha() {
         return (int)16780707L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_nya 16780708
+     * }
+     */
     public static int GDK_KEY_Sinh_nya() {
         return (int)16780708L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_jnya 16780709
+     * }
+     */
     public static int GDK_KEY_Sinh_jnya() {
         return (int)16780709L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_nja 16780710
+     * }
+     */
     public static int GDK_KEY_Sinh_nja() {
         return (int)16780710L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_tta 16780711
+     * }
+     */
     public static int GDK_KEY_Sinh_tta() {
         return (int)16780711L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_ttha 16780712
+     * }
+     */
     public static int GDK_KEY_Sinh_ttha() {
         return (int)16780712L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_dda 16780713
+     * }
+     */
     public static int GDK_KEY_Sinh_dda() {
         return (int)16780713L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_ddha 16780714
+     * }
+     */
     public static int GDK_KEY_Sinh_ddha() {
         return (int)16780714L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_nna 16780715
+     * }
+     */
     public static int GDK_KEY_Sinh_nna() {
         return (int)16780715L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_ndda 16780716
+     * }
+     */
     public static int GDK_KEY_Sinh_ndda() {
         return (int)16780716L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_tha 16780717
+     * }
+     */
     public static int GDK_KEY_Sinh_tha() {
         return (int)16780717L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_thha 16780718
+     * }
+     */
     public static int GDK_KEY_Sinh_thha() {
         return (int)16780718L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_dha 16780719
+     * }
+     */
     public static int GDK_KEY_Sinh_dha() {
         return (int)16780719L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_dhha 16780720
+     * }
+     */
     public static int GDK_KEY_Sinh_dhha() {
         return (int)16780720L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_na 16780721
+     * }
+     */
     public static int GDK_KEY_Sinh_na() {
         return (int)16780721L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_ndha 16780723
+     * }
+     */
     public static int GDK_KEY_Sinh_ndha() {
         return (int)16780723L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_pa 16780724
+     * }
+     */
     public static int GDK_KEY_Sinh_pa() {
         return (int)16780724L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_pha 16780725
+     * }
+     */
     public static int GDK_KEY_Sinh_pha() {
         return (int)16780725L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_ba 16780726
+     * }
+     */
     public static int GDK_KEY_Sinh_ba() {
         return (int)16780726L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_bha 16780727
+     * }
+     */
     public static int GDK_KEY_Sinh_bha() {
         return (int)16780727L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_ma 16780728
+     * }
+     */
     public static int GDK_KEY_Sinh_ma() {
         return (int)16780728L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_mba 16780729
+     * }
+     */
     public static int GDK_KEY_Sinh_mba() {
         return (int)16780729L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_ya 16780730
+     * }
+     */
     public static int GDK_KEY_Sinh_ya() {
         return (int)16780730L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_ra 16780731
+     * }
+     */
     public static int GDK_KEY_Sinh_ra() {
         return (int)16780731L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_la 16780733
+     * }
+     */
     public static int GDK_KEY_Sinh_la() {
         return (int)16780733L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_va 16780736
+     * }
+     */
     public static int GDK_KEY_Sinh_va() {
         return (int)16780736L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_sha 16780737
+     * }
+     */
     public static int GDK_KEY_Sinh_sha() {
         return (int)16780737L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_ssha 16780738
+     * }
+     */
     public static int GDK_KEY_Sinh_ssha() {
         return (int)16780738L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_sa 16780739
+     * }
+     */
     public static int GDK_KEY_Sinh_sa() {
         return (int)16780739L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_ha 16780740
+     * }
+     */
     public static int GDK_KEY_Sinh_ha() {
         return (int)16780740L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_lla 16780741
+     * }
+     */
     public static int GDK_KEY_Sinh_lla() {
         return (int)16780741L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_fa 16780742
+     * }
+     */
     public static int GDK_KEY_Sinh_fa() {
         return (int)16780742L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_al 16780746
+     * }
+     */
     public static int GDK_KEY_Sinh_al() {
         return (int)16780746L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_aa2 16780751
+     * }
+     */
     public static int GDK_KEY_Sinh_aa2() {
         return (int)16780751L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_ae2 16780752
+     * }
+     */
     public static int GDK_KEY_Sinh_ae2() {
         return (int)16780752L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_aee2 16780753
+     * }
+     */
     public static int GDK_KEY_Sinh_aee2() {
         return (int)16780753L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_i2 16780754
+     * }
+     */
     public static int GDK_KEY_Sinh_i2() {
         return (int)16780754L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_ii2 16780755
+     * }
+     */
     public static int GDK_KEY_Sinh_ii2() {
         return (int)16780755L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_u2 16780756
+     * }
+     */
     public static int GDK_KEY_Sinh_u2() {
         return (int)16780756L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_uu2 16780758
+     * }
+     */
     public static int GDK_KEY_Sinh_uu2() {
         return (int)16780758L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_ru2 16780760
+     * }
+     */
     public static int GDK_KEY_Sinh_ru2() {
         return (int)16780760L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_e2 16780761
+     * }
+     */
     public static int GDK_KEY_Sinh_e2() {
         return (int)16780761L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_ee2 16780762
+     * }
+     */
     public static int GDK_KEY_Sinh_ee2() {
         return (int)16780762L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_ai2 16780763
+     * }
+     */
     public static int GDK_KEY_Sinh_ai2() {
         return (int)16780763L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_o2 16780764
+     * }
+     */
     public static int GDK_KEY_Sinh_o2() {
         return (int)16780764L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_oo2 16780765
+     * }
+     */
     public static int GDK_KEY_Sinh_oo2() {
         return (int)16780765L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_au2 16780766
+     * }
+     */
     public static int GDK_KEY_Sinh_au2() {
         return (int)16780766L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_lu2 16780767
+     * }
+     */
     public static int GDK_KEY_Sinh_lu2() {
         return (int)16780767L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_ruu2 16780786
+     * }
+     */
     public static int GDK_KEY_Sinh_ruu2() {
         return (int)16780786L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_luu2 16780787
+     * }
+     */
     public static int GDK_KEY_Sinh_luu2() {
         return (int)16780787L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sinh_kunddaliya 16780788
+     * }
+     */
     public static int GDK_KEY_Sinh_kunddaliya() {
         return (int)16780788L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_ModeLock 269025025
+     * }
+     */
     public static int GDK_KEY_ModeLock() {
         return (int)269025025L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_MonBrightnessUp 269025026
+     * }
+     */
     public static int GDK_KEY_MonBrightnessUp() {
         return (int)269025026L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_MonBrightnessDown 269025027
+     * }
+     */
     public static int GDK_KEY_MonBrightnessDown() {
         return (int)269025027L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_KbdLightOnOff 269025028
+     * }
+     */
     public static int GDK_KEY_KbdLightOnOff() {
         return (int)269025028L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_KbdBrightnessUp 269025029
+     * }
+     */
     public static int GDK_KEY_KbdBrightnessUp() {
         return (int)269025029L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_KbdBrightnessDown 269025030
+     * }
+     */
     public static int GDK_KEY_KbdBrightnessDown() {
         return (int)269025030L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Standby 269025040
+     * }
+     */
     public static int GDK_KEY_Standby() {
         return (int)269025040L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_AudioLowerVolume 269025041
+     * }
+     */
     public static int GDK_KEY_AudioLowerVolume() {
         return (int)269025041L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_AudioMute 269025042
+     * }
+     */
     public static int GDK_KEY_AudioMute() {
         return (int)269025042L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_AudioRaiseVolume 269025043
+     * }
+     */
     public static int GDK_KEY_AudioRaiseVolume() {
         return (int)269025043L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_AudioPlay 269025044
+     * }
+     */
     public static int GDK_KEY_AudioPlay() {
         return (int)269025044L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_AudioStop 269025045
+     * }
+     */
     public static int GDK_KEY_AudioStop() {
         return (int)269025045L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_AudioPrev 269025046
+     * }
+     */
     public static int GDK_KEY_AudioPrev() {
         return (int)269025046L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_AudioNext 269025047
+     * }
+     */
     public static int GDK_KEY_AudioNext() {
         return (int)269025047L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_HomePage 269025048
+     * }
+     */
     public static int GDK_KEY_HomePage() {
         return (int)269025048L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Mail 269025049
+     * }
+     */
     public static int GDK_KEY_Mail() {
         return (int)269025049L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Start 269025050
+     * }
+     */
     public static int GDK_KEY_Start() {
         return (int)269025050L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Search 269025051
+     * }
+     */
     public static int GDK_KEY_Search() {
         return (int)269025051L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_AudioRecord 269025052
+     * }
+     */
     public static int GDK_KEY_AudioRecord() {
         return (int)269025052L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Calculator 269025053
+     * }
+     */
     public static int GDK_KEY_Calculator() {
         return (int)269025053L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Memo 269025054
+     * }
+     */
     public static int GDK_KEY_Memo() {
         return (int)269025054L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_ToDoList 269025055
+     * }
+     */
     public static int GDK_KEY_ToDoList() {
         return (int)269025055L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Calendar 269025056
+     * }
+     */
     public static int GDK_KEY_Calendar() {
         return (int)269025056L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_PowerDown 269025057
+     * }
+     */
     public static int GDK_KEY_PowerDown() {
         return (int)269025057L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_ContrastAdjust 269025058
+     * }
+     */
     public static int GDK_KEY_ContrastAdjust() {
         return (int)269025058L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_RockerUp 269025059
+     * }
+     */
     public static int GDK_KEY_RockerUp() {
         return (int)269025059L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_RockerDown 269025060
+     * }
+     */
     public static int GDK_KEY_RockerDown() {
         return (int)269025060L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_RockerEnter 269025061
+     * }
+     */
     public static int GDK_KEY_RockerEnter() {
         return (int)269025061L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Back 269025062
+     * }
+     */
     public static int GDK_KEY_Back() {
         return (int)269025062L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Forward 269025063
+     * }
+     */
     public static int GDK_KEY_Forward() {
         return (int)269025063L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Stop 269025064
+     * }
+     */
     public static int GDK_KEY_Stop() {
         return (int)269025064L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Refresh 269025065
+     * }
+     */
     public static int GDK_KEY_Refresh() {
         return (int)269025065L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_PowerOff 269025066
+     * }
+     */
     public static int GDK_KEY_PowerOff() {
         return (int)269025066L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_WakeUp 269025067
+     * }
+     */
     public static int GDK_KEY_WakeUp() {
         return (int)269025067L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Eject 269025068
+     * }
+     */
     public static int GDK_KEY_Eject() {
         return (int)269025068L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_ScreenSaver 269025069
+     * }
+     */
     public static int GDK_KEY_ScreenSaver() {
         return (int)269025069L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_WWW 269025070
+     * }
+     */
     public static int GDK_KEY_WWW() {
         return (int)269025070L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Sleep 269025071
+     * }
+     */
     public static int GDK_KEY_Sleep() {
         return (int)269025071L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Favorites 269025072
+     * }
+     */
     public static int GDK_KEY_Favorites() {
         return (int)269025072L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_AudioPause 269025073
+     * }
+     */
     public static int GDK_KEY_AudioPause() {
         return (int)269025073L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_AudioMedia 269025074
+     * }
+     */
     public static int GDK_KEY_AudioMedia() {
         return (int)269025074L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_MyComputer 269025075
+     * }
+     */
     public static int GDK_KEY_MyComputer() {
         return (int)269025075L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_VendorHome 269025076
+     * }
+     */
     public static int GDK_KEY_VendorHome() {
         return (int)269025076L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_LightBulb 269025077
+     * }
+     */
     public static int GDK_KEY_LightBulb() {
         return (int)269025077L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Shop 269025078
+     * }
+     */
     public static int GDK_KEY_Shop() {
         return (int)269025078L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_History 269025079
+     * }
+     */
     public static int GDK_KEY_History() {
         return (int)269025079L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_OpenURL 269025080
+     * }
+     */
     public static int GDK_KEY_OpenURL() {
         return (int)269025080L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_AddFavorite 269025081
+     * }
+     */
     public static int GDK_KEY_AddFavorite() {
         return (int)269025081L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_HotLinks 269025082
+     * }
+     */
     public static int GDK_KEY_HotLinks() {
         return (int)269025082L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_BrightnessAdjust 269025083
+     * }
+     */
     public static int GDK_KEY_BrightnessAdjust() {
         return (int)269025083L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Finance 269025084
+     * }
+     */
     public static int GDK_KEY_Finance() {
         return (int)269025084L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Community 269025085
+     * }
+     */
     public static int GDK_KEY_Community() {
         return (int)269025085L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_AudioRewind 269025086
+     * }
+     */
     public static int GDK_KEY_AudioRewind() {
         return (int)269025086L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_BackForward 269025087
+     * }
+     */
     public static int GDK_KEY_BackForward() {
         return (int)269025087L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Launch0 269025088
+     * }
+     */
     public static int GDK_KEY_Launch0() {
         return (int)269025088L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Launch1 269025089
+     * }
+     */
     public static int GDK_KEY_Launch1() {
         return (int)269025089L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Launch2 269025090
+     * }
+     */
     public static int GDK_KEY_Launch2() {
         return (int)269025090L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Launch3 269025091
+     * }
+     */
     public static int GDK_KEY_Launch3() {
         return (int)269025091L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Launch4 269025092
+     * }
+     */
     public static int GDK_KEY_Launch4() {
         return (int)269025092L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Launch5 269025093
+     * }
+     */
     public static int GDK_KEY_Launch5() {
         return (int)269025093L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Launch6 269025094
+     * }
+     */
     public static int GDK_KEY_Launch6() {
         return (int)269025094L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Launch7 269025095
+     * }
+     */
     public static int GDK_KEY_Launch7() {
         return (int)269025095L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Launch8 269025096
+     * }
+     */
     public static int GDK_KEY_Launch8() {
         return (int)269025096L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Launch9 269025097
+     * }
+     */
     public static int GDK_KEY_Launch9() {
         return (int)269025097L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_LaunchA 269025098
+     * }
+     */
     public static int GDK_KEY_LaunchA() {
         return (int)269025098L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_LaunchB 269025099
+     * }
+     */
     public static int GDK_KEY_LaunchB() {
         return (int)269025099L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_LaunchC 269025100
+     * }
+     */
     public static int GDK_KEY_LaunchC() {
         return (int)269025100L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_LaunchD 269025101
+     * }
+     */
     public static int GDK_KEY_LaunchD() {
         return (int)269025101L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_LaunchE 269025102
+     * }
+     */
     public static int GDK_KEY_LaunchE() {
         return (int)269025102L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_LaunchF 269025103
+     * }
+     */
     public static int GDK_KEY_LaunchF() {
         return (int)269025103L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_ApplicationLeft 269025104
+     * }
+     */
     public static int GDK_KEY_ApplicationLeft() {
         return (int)269025104L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_ApplicationRight 269025105
+     * }
+     */
     public static int GDK_KEY_ApplicationRight() {
         return (int)269025105L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Book 269025106
+     * }
+     */
     public static int GDK_KEY_Book() {
         return (int)269025106L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_CD 269025107
+     * }
+     */
     public static int GDK_KEY_CD() {
         return (int)269025107L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_WindowClear 269025109
+     * }
+     */
     public static int GDK_KEY_WindowClear() {
         return (int)269025109L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Close 269025110
+     * }
+     */
     public static int GDK_KEY_Close() {
         return (int)269025110L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Copy 269025111
+     * }
+     */
     public static int GDK_KEY_Copy() {
         return (int)269025111L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Cut 269025112
+     * }
+     */
     public static int GDK_KEY_Cut() {
         return (int)269025112L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Display 269025113
+     * }
+     */
     public static int GDK_KEY_Display() {
         return (int)269025113L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_DOS 269025114
+     * }
+     */
     public static int GDK_KEY_DOS() {
         return (int)269025114L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Documents 269025115
+     * }
+     */
     public static int GDK_KEY_Documents() {
         return (int)269025115L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Excel 269025116
+     * }
+     */
     public static int GDK_KEY_Excel() {
         return (int)269025116L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Explorer 269025117
+     * }
+     */
     public static int GDK_KEY_Explorer() {
         return (int)269025117L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Game 269025118
+     * }
+     */
     public static int GDK_KEY_Game() {
         return (int)269025118L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Go 269025119
+     * }
+     */
     public static int GDK_KEY_Go() {
         return (int)269025119L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_iTouch 269025120
+     * }
+     */
     public static int GDK_KEY_iTouch() {
         return (int)269025120L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_LogOff 269025121
+     * }
+     */
     public static int GDK_KEY_LogOff() {
         return (int)269025121L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Market 269025122
+     * }
+     */
     public static int GDK_KEY_Market() {
         return (int)269025122L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Meeting 269025123
+     * }
+     */
     public static int GDK_KEY_Meeting() {
         return (int)269025123L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_MenuKB 269025125
+     * }
+     */
     public static int GDK_KEY_MenuKB() {
         return (int)269025125L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_MenuPB 269025126
+     * }
+     */
     public static int GDK_KEY_MenuPB() {
         return (int)269025126L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_MySites 269025127
+     * }
+     */
     public static int GDK_KEY_MySites() {
         return (int)269025127L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_New 269025128
+     * }
+     */
     public static int GDK_KEY_New() {
         return (int)269025128L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_News 269025129
+     * }
+     */
     public static int GDK_KEY_News() {
         return (int)269025129L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_OfficeHome 269025130
+     * }
+     */
     public static int GDK_KEY_OfficeHome() {
         return (int)269025130L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Open 269025131
+     * }
+     */
     public static int GDK_KEY_Open() {
         return (int)269025131L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Option 269025132
+     * }
+     */
     public static int GDK_KEY_Option() {
         return (int)269025132L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Paste 269025133
+     * }
+     */
     public static int GDK_KEY_Paste() {
         return (int)269025133L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Phone 269025134
+     * }
+     */
     public static int GDK_KEY_Phone() {
         return (int)269025134L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Reply 269025138
+     * }
+     */
     public static int GDK_KEY_Reply() {
         return (int)269025138L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Reload 269025139
+     * }
+     */
     public static int GDK_KEY_Reload() {
         return (int)269025139L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_RotateWindows 269025140
+     * }
+     */
     public static int GDK_KEY_RotateWindows() {
         return (int)269025140L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_RotationPB 269025141
+     * }
+     */
     public static int GDK_KEY_RotationPB() {
         return (int)269025141L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_RotationKB 269025142
+     * }
+     */
     public static int GDK_KEY_RotationKB() {
         return (int)269025142L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Save 269025143
+     * }
+     */
     public static int GDK_KEY_Save() {
         return (int)269025143L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_ScrollUp 269025144
+     * }
+     */
     public static int GDK_KEY_ScrollUp() {
         return (int)269025144L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_ScrollDown 269025145
+     * }
+     */
     public static int GDK_KEY_ScrollDown() {
         return (int)269025145L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_ScrollClick 269025146
+     * }
+     */
     public static int GDK_KEY_ScrollClick() {
         return (int)269025146L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Send 269025147
+     * }
+     */
     public static int GDK_KEY_Send() {
         return (int)269025147L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Spell 269025148
+     * }
+     */
     public static int GDK_KEY_Spell() {
         return (int)269025148L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_SplitScreen 269025149
+     * }
+     */
     public static int GDK_KEY_SplitScreen() {
         return (int)269025149L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Support 269025150
+     * }
+     */
     public static int GDK_KEY_Support() {
         return (int)269025150L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_TaskPane 269025151
+     * }
+     */
     public static int GDK_KEY_TaskPane() {
         return (int)269025151L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Terminal 269025152
+     * }
+     */
     public static int GDK_KEY_Terminal() {
         return (int)269025152L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Tools 269025153
+     * }
+     */
     public static int GDK_KEY_Tools() {
         return (int)269025153L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Travel 269025154
+     * }
+     */
     public static int GDK_KEY_Travel() {
         return (int)269025154L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_UserPB 269025156
+     * }
+     */
     public static int GDK_KEY_UserPB() {
         return (int)269025156L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_User1KB 269025157
+     * }
+     */
     public static int GDK_KEY_User1KB() {
         return (int)269025157L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_User2KB 269025158
+     * }
+     */
     public static int GDK_KEY_User2KB() {
         return (int)269025158L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Video 269025159
+     * }
+     */
     public static int GDK_KEY_Video() {
         return (int)269025159L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_WheelButton 269025160
+     * }
+     */
     public static int GDK_KEY_WheelButton() {
         return (int)269025160L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Word 269025161
+     * }
+     */
     public static int GDK_KEY_Word() {
         return (int)269025161L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Xfer 269025162
+     * }
+     */
     public static int GDK_KEY_Xfer() {
         return (int)269025162L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_ZoomIn 269025163
+     * }
+     */
     public static int GDK_KEY_ZoomIn() {
         return (int)269025163L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_ZoomOut 269025164
+     * }
+     */
     public static int GDK_KEY_ZoomOut() {
         return (int)269025164L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Away 269025165
+     * }
+     */
     public static int GDK_KEY_Away() {
         return (int)269025165L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Messenger 269025166
+     * }
+     */
     public static int GDK_KEY_Messenger() {
         return (int)269025166L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_WebCam 269025167
+     * }
+     */
     public static int GDK_KEY_WebCam() {
         return (int)269025167L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_MailForward 269025168
+     * }
+     */
     public static int GDK_KEY_MailForward() {
         return (int)269025168L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Pictures 269025169
+     * }
+     */
     public static int GDK_KEY_Pictures() {
         return (int)269025169L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Music 269025170
+     * }
+     */
     public static int GDK_KEY_Music() {
         return (int)269025170L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Battery 269025171
+     * }
+     */
     public static int GDK_KEY_Battery() {
         return (int)269025171L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Bluetooth 269025172
+     * }
+     */
     public static int GDK_KEY_Bluetooth() {
         return (int)269025172L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_WLAN 269025173
+     * }
+     */
     public static int GDK_KEY_WLAN() {
         return (int)269025173L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_UWB 269025174
+     * }
+     */
     public static int GDK_KEY_UWB() {
         return (int)269025174L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_AudioForward 269025175
+     * }
+     */
     public static int GDK_KEY_AudioForward() {
         return (int)269025175L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_AudioRepeat 269025176
+     * }
+     */
     public static int GDK_KEY_AudioRepeat() {
         return (int)269025176L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_AudioRandomPlay 269025177
+     * }
+     */
     public static int GDK_KEY_AudioRandomPlay() {
         return (int)269025177L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Subtitle 269025178
+     * }
+     */
     public static int GDK_KEY_Subtitle() {
         return (int)269025178L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_AudioCycleTrack 269025179
+     * }
+     */
     public static int GDK_KEY_AudioCycleTrack() {
         return (int)269025179L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_CycleAngle 269025180
+     * }
+     */
     public static int GDK_KEY_CycleAngle() {
         return (int)269025180L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_FrameBack 269025181
+     * }
+     */
     public static int GDK_KEY_FrameBack() {
         return (int)269025181L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_FrameForward 269025182
+     * }
+     */
     public static int GDK_KEY_FrameForward() {
         return (int)269025182L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Time 269025183
+     * }
+     */
     public static int GDK_KEY_Time() {
         return (int)269025183L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_SelectButton 269025184
+     * }
+     */
     public static int GDK_KEY_SelectButton() {
         return (int)269025184L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_View 269025185
+     * }
+     */
     public static int GDK_KEY_View() {
         return (int)269025185L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_TopMenu 269025186
+     * }
+     */
     public static int GDK_KEY_TopMenu() {
         return (int)269025186L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Red 269025187
+     * }
+     */
     public static int GDK_KEY_Red() {
         return (int)269025187L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Green 269025188
+     * }
+     */
     public static int GDK_KEY_Green() {
         return (int)269025188L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Yellow 269025189
+     * }
+     */
     public static int GDK_KEY_Yellow() {
         return (int)269025189L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Blue 269025190
+     * }
+     */
     public static int GDK_KEY_Blue() {
         return (int)269025190L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Suspend 269025191
+     * }
+     */
     public static int GDK_KEY_Suspend() {
         return (int)269025191L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Hibernate 269025192
+     * }
+     */
     public static int GDK_KEY_Hibernate() {
         return (int)269025192L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_TouchpadToggle 269025193
+     * }
+     */
     public static int GDK_KEY_TouchpadToggle() {
         return (int)269025193L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_TouchpadOn 269025200
+     * }
+     */
     public static int GDK_KEY_TouchpadOn() {
         return (int)269025200L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_TouchpadOff 269025201
+     * }
+     */
     public static int GDK_KEY_TouchpadOff() {
         return (int)269025201L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_AudioMicMute 269025202
+     * }
+     */
     public static int GDK_KEY_AudioMicMute() {
         return (int)269025202L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Keyboard 269025203
+     * }
+     */
     public static int GDK_KEY_Keyboard() {
         return (int)269025203L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_WWAN 269025204
+     * }
+     */
     public static int GDK_KEY_WWAN() {
         return (int)269025204L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_RFKill 269025205
+     * }
+     */
     public static int GDK_KEY_RFKill() {
         return (int)269025205L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_AudioPreset 269025206
+     * }
+     */
     public static int GDK_KEY_AudioPreset() {
         return (int)269025206L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Switch_VT_1 269024769
+     * }
+     */
     public static int GDK_KEY_Switch_VT_1() {
         return (int)269024769L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Switch_VT_2 269024770
+     * }
+     */
     public static int GDK_KEY_Switch_VT_2() {
         return (int)269024770L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Switch_VT_3 269024771
+     * }
+     */
     public static int GDK_KEY_Switch_VT_3() {
         return (int)269024771L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Switch_VT_4 269024772
+     * }
+     */
     public static int GDK_KEY_Switch_VT_4() {
         return (int)269024772L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Switch_VT_5 269024773
+     * }
+     */
     public static int GDK_KEY_Switch_VT_5() {
         return (int)269024773L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Switch_VT_6 269024774
+     * }
+     */
     public static int GDK_KEY_Switch_VT_6() {
         return (int)269024774L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Switch_VT_7 269024775
+     * }
+     */
     public static int GDK_KEY_Switch_VT_7() {
         return (int)269024775L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Switch_VT_8 269024776
+     * }
+     */
     public static int GDK_KEY_Switch_VT_8() {
         return (int)269024776L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Switch_VT_9 269024777
+     * }
+     */
     public static int GDK_KEY_Switch_VT_9() {
         return (int)269024777L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Switch_VT_10 269024778
+     * }
+     */
     public static int GDK_KEY_Switch_VT_10() {
         return (int)269024778L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Switch_VT_11 269024779
+     * }
+     */
     public static int GDK_KEY_Switch_VT_11() {
         return (int)269024779L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Switch_VT_12 269024780
+     * }
+     */
     public static int GDK_KEY_Switch_VT_12() {
         return (int)269024780L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Ungrab 269024800
+     * }
+     */
     public static int GDK_KEY_Ungrab() {
         return (int)269024800L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_ClearGrab 269024801
+     * }
+     */
     public static int GDK_KEY_ClearGrab() {
         return (int)269024801L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Next_VMode 269024802
+     * }
+     */
     public static int GDK_KEY_Next_VMode() {
         return (int)269024802L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Prev_VMode 269024803
+     * }
+     */
     public static int GDK_KEY_Prev_VMode() {
         return (int)269024803L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_LogWindowTree 269024804
+     * }
+     */
     public static int GDK_KEY_LogWindowTree() {
         return (int)269024804L;
     }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_LogGrabInfo 269024805
+     * }
+     */
     public static int GDK_KEY_LogGrabInfo() {
         return (int)269024805L;
     }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_PROVIDER_PRIORITY_FALLBACK 1
+     * }
+     */
     public static int GTK_STYLE_PROVIDER_PRIORITY_FALLBACK() {
         return (int)1L;
     }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_PROVIDER_PRIORITY_THEME 200
+     * }
+     */
     public static int GTK_STYLE_PROVIDER_PRIORITY_THEME() {
         return (int)200L;
     }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_PROVIDER_PRIORITY_SETTINGS 400
+     * }
+     */
     public static int GTK_STYLE_PROVIDER_PRIORITY_SETTINGS() {
         return (int)400L;
     }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_PROVIDER_PRIORITY_APPLICATION 600
+     * }
+     */
     public static int GTK_STYLE_PROVIDER_PRIORITY_APPLICATION() {
         return (int)600L;
     }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_PROVIDER_PRIORITY_USER 800
+     * }
+     */
     public static int GTK_STYLE_PROVIDER_PRIORITY_USER() {
         return (int)800L;
     }
+    /**
+     * {@snippet :
+     * #define GTK_MAX_COMPOSE_LEN 7
+     * }
+     */
     public static int GTK_MAX_COMPOSE_LEN() {
         return (int)7L;
     }
+    /**
+     * {@snippet :
+     * #define GTK_PATH_PRIO_MASK 15
+     * }
+     */
     public static int GTK_PATH_PRIO_MASK() {
         return (int)15L;
     }
-    public static OfLong ptrdiff_t = Constants$root.C_LONG_LONG$LAYOUT;
-    public static OfInt wchar_t = Constants$root.C_INT$LAYOUT;
-    public static OfShort gint16 = Constants$root.C_SHORT$LAYOUT;
-    public static OfInt gint32 = Constants$root.C_INT$LAYOUT;
-    public static OfLong gint64 = Constants$root.C_LONG_LONG$LAYOUT;
-    public static OfLong gssize = Constants$root.C_LONG_LONG$LAYOUT;
-    public static OfLong goffset = Constants$root.C_LONG_LONG$LAYOUT;
-    public static OfLong gintptr = Constants$root.C_LONG_LONG$LAYOUT;
-    public static OfInt GPid = Constants$root.C_INT$LAYOUT;
-    public static OfShort __int16_t = Constants$root.C_SHORT$LAYOUT;
-    public static OfInt __int32_t = Constants$root.C_INT$LAYOUT;
-    public static OfLong __int64_t = Constants$root.C_LONG_LONG$LAYOUT;
-    public static OfShort __int_least16_t = Constants$root.C_SHORT$LAYOUT;
-    public static OfInt __int_least32_t = Constants$root.C_INT$LAYOUT;
-    public static OfLong __int_least64_t = Constants$root.C_LONG_LONG$LAYOUT;
-    public static OfLong __quad_t = Constants$root.C_LONG_LONG$LAYOUT;
-    public static OfLong __intmax_t = Constants$root.C_LONG_LONG$LAYOUT;
-    public static OfLong __off_t = Constants$root.C_LONG_LONG$LAYOUT;
-    public static OfLong __off64_t = Constants$root.C_LONG_LONG$LAYOUT;
-    public static OfInt __pid_t = Constants$root.C_INT$LAYOUT;
-    public static OfLong __clock_t = Constants$root.C_LONG_LONG$LAYOUT;
-    public static OfLong __time_t = Constants$root.C_LONG_LONG$LAYOUT;
-    public static OfLong __suseconds_t = Constants$root.C_LONG_LONG$LAYOUT;
-    public static OfLong __suseconds64_t = Constants$root.C_LONG_LONG$LAYOUT;
-    public static OfInt __daddr_t = Constants$root.C_INT$LAYOUT;
-    public static OfInt __key_t = Constants$root.C_INT$LAYOUT;
-    public static OfInt __clockid_t = Constants$root.C_INT$LAYOUT;
-    public static OfAddress __timer_t = Constants$root.C_POINTER$LAYOUT;
-    public static OfLong __blksize_t = Constants$root.C_LONG_LONG$LAYOUT;
-    public static OfLong __blkcnt_t = Constants$root.C_LONG_LONG$LAYOUT;
-    public static OfLong __blkcnt64_t = Constants$root.C_LONG_LONG$LAYOUT;
-    public static OfLong __fsword_t = Constants$root.C_LONG_LONG$LAYOUT;
-    public static OfLong __ssize_t = Constants$root.C_LONG_LONG$LAYOUT;
-    public static OfLong __syscall_slong_t = Constants$root.C_LONG_LONG$LAYOUT;
-    public static OfLong __loff_t = Constants$root.C_LONG_LONG$LAYOUT;
-    public static OfAddress __caddr_t = Constants$root.C_POINTER$LAYOUT;
-    public static OfLong __intptr_t = Constants$root.C_LONG_LONG$LAYOUT;
-    public static OfInt __sig_atomic_t = Constants$root.C_INT$LAYOUT;
-    public static OfLong clock_t = Constants$root.C_LONG_LONG$LAYOUT;
-    public static OfLong time_t = Constants$root.C_LONG_LONG$LAYOUT;
-    public static OfInt clockid_t = Constants$root.C_INT$LAYOUT;
-    public static OfAddress timer_t = Constants$root.C_POINTER$LAYOUT;
-    public static OfInt pid_t = Constants$root.C_INT$LAYOUT;
-    public static OfAddress __locale_t = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress locale_t = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef long ptrdiff_t;
+     * }
+     */
+    public static final OfLong ptrdiff_t = Constants$root.C_LONG_LONG$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef unsigned long size_t;
+     * }
+     */
+    public static final OfLong size_t = Constants$root.C_LONG_LONG$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef int wchar_t;
+     * }
+     */
+    public static final OfInt wchar_t = Constants$root.C_INT$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef signed char gint8;
+     * }
+     */
+    public static final OfByte gint8 = Constants$root.C_CHAR$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef unsigned char guint8;
+     * }
+     */
+    public static final OfByte guint8 = Constants$root.C_CHAR$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef short gint16;
+     * }
+     */
+    public static final OfShort gint16 = Constants$root.C_SHORT$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef unsigned short guint16;
+     * }
+     */
+    public static final OfShort guint16 = Constants$root.C_SHORT$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef int gint32;
+     * }
+     */
+    public static final OfInt gint32 = Constants$root.C_INT$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef unsigned int guint32;
+     * }
+     */
+    public static final OfInt guint32 = Constants$root.C_INT$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef long gint64;
+     * }
+     */
+    public static final OfLong gint64 = Constants$root.C_LONG_LONG$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef unsigned long guint64;
+     * }
+     */
+    public static final OfLong guint64 = Constants$root.C_LONG_LONG$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef long gssize;
+     * }
+     */
+    public static final OfLong gssize = Constants$root.C_LONG_LONG$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef unsigned long gsize;
+     * }
+     */
+    public static final OfLong gsize = Constants$root.C_LONG_LONG$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef long goffset;
+     * }
+     */
+    public static final OfLong goffset = Constants$root.C_LONG_LONG$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef long gintptr;
+     * }
+     */
+    public static final OfLong gintptr = Constants$root.C_LONG_LONG$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef unsigned long guintptr;
+     * }
+     */
+    public static final OfLong guintptr = Constants$root.C_LONG_LONG$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef int GPid;
+     * }
+     */
+    public static final OfInt GPid = Constants$root.C_INT$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef unsigned char __u_char;
+     * }
+     */
+    public static final OfByte __u_char = Constants$root.C_CHAR$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef unsigned short __u_short;
+     * }
+     */
+    public static final OfShort __u_short = Constants$root.C_SHORT$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef unsigned int __u_int;
+     * }
+     */
+    public static final OfInt __u_int = Constants$root.C_INT$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef unsigned long __u_long;
+     * }
+     */
+    public static final OfLong __u_long = Constants$root.C_LONG_LONG$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef signed char __int8_t;
+     * }
+     */
+    public static final OfByte __int8_t = Constants$root.C_CHAR$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef unsigned char __uint8_t;
+     * }
+     */
+    public static final OfByte __uint8_t = Constants$root.C_CHAR$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef short __int16_t;
+     * }
+     */
+    public static final OfShort __int16_t = Constants$root.C_SHORT$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef unsigned short __uint16_t;
+     * }
+     */
+    public static final OfShort __uint16_t = Constants$root.C_SHORT$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef int __int32_t;
+     * }
+     */
+    public static final OfInt __int32_t = Constants$root.C_INT$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef unsigned int __uint32_t;
+     * }
+     */
+    public static final OfInt __uint32_t = Constants$root.C_INT$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef long __int64_t;
+     * }
+     */
+    public static final OfLong __int64_t = Constants$root.C_LONG_LONG$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef unsigned long __uint64_t;
+     * }
+     */
+    public static final OfLong __uint64_t = Constants$root.C_LONG_LONG$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef signed char __int_least8_t;
+     * }
+     */
+    public static final OfByte __int_least8_t = Constants$root.C_CHAR$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef unsigned char __uint_least8_t;
+     * }
+     */
+    public static final OfByte __uint_least8_t = Constants$root.C_CHAR$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef short __int_least16_t;
+     * }
+     */
+    public static final OfShort __int_least16_t = Constants$root.C_SHORT$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef unsigned short __uint_least16_t;
+     * }
+     */
+    public static final OfShort __uint_least16_t = Constants$root.C_SHORT$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef int __int_least32_t;
+     * }
+     */
+    public static final OfInt __int_least32_t = Constants$root.C_INT$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef unsigned int __uint_least32_t;
+     * }
+     */
+    public static final OfInt __uint_least32_t = Constants$root.C_INT$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef long __int_least64_t;
+     * }
+     */
+    public static final OfLong __int_least64_t = Constants$root.C_LONG_LONG$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef unsigned long __uint_least64_t;
+     * }
+     */
+    public static final OfLong __uint_least64_t = Constants$root.C_LONG_LONG$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef long __quad_t;
+     * }
+     */
+    public static final OfLong __quad_t = Constants$root.C_LONG_LONG$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef unsigned long __u_quad_t;
+     * }
+     */
+    public static final OfLong __u_quad_t = Constants$root.C_LONG_LONG$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef long __intmax_t;
+     * }
+     */
+    public static final OfLong __intmax_t = Constants$root.C_LONG_LONG$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef unsigned long __uintmax_t;
+     * }
+     */
+    public static final OfLong __uintmax_t = Constants$root.C_LONG_LONG$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef unsigned long __dev_t;
+     * }
+     */
+    public static final OfLong __dev_t = Constants$root.C_LONG_LONG$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef unsigned int __uid_t;
+     * }
+     */
+    public static final OfInt __uid_t = Constants$root.C_INT$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef unsigned int __gid_t;
+     * }
+     */
+    public static final OfInt __gid_t = Constants$root.C_INT$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef unsigned long __ino_t;
+     * }
+     */
+    public static final OfLong __ino_t = Constants$root.C_LONG_LONG$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef unsigned long __ino64_t;
+     * }
+     */
+    public static final OfLong __ino64_t = Constants$root.C_LONG_LONG$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef unsigned int __mode_t;
+     * }
+     */
+    public static final OfInt __mode_t = Constants$root.C_INT$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef unsigned long __nlink_t;
+     * }
+     */
+    public static final OfLong __nlink_t = Constants$root.C_LONG_LONG$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef long __off_t;
+     * }
+     */
+    public static final OfLong __off_t = Constants$root.C_LONG_LONG$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef long __off64_t;
+     * }
+     */
+    public static final OfLong __off64_t = Constants$root.C_LONG_LONG$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef int __pid_t;
+     * }
+     */
+    public static final OfInt __pid_t = Constants$root.C_INT$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef long __clock_t;
+     * }
+     */
+    public static final OfLong __clock_t = Constants$root.C_LONG_LONG$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef unsigned long __rlim_t;
+     * }
+     */
+    public static final OfLong __rlim_t = Constants$root.C_LONG_LONG$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef unsigned long __rlim64_t;
+     * }
+     */
+    public static final OfLong __rlim64_t = Constants$root.C_LONG_LONG$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef unsigned int __id_t;
+     * }
+     */
+    public static final OfInt __id_t = Constants$root.C_INT$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef long __time_t;
+     * }
+     */
+    public static final OfLong __time_t = Constants$root.C_LONG_LONG$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef unsigned int __useconds_t;
+     * }
+     */
+    public static final OfInt __useconds_t = Constants$root.C_INT$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef long __suseconds_t;
+     * }
+     */
+    public static final OfLong __suseconds_t = Constants$root.C_LONG_LONG$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef long __suseconds64_t;
+     * }
+     */
+    public static final OfLong __suseconds64_t = Constants$root.C_LONG_LONG$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef int __daddr_t;
+     * }
+     */
+    public static final OfInt __daddr_t = Constants$root.C_INT$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef int __key_t;
+     * }
+     */
+    public static final OfInt __key_t = Constants$root.C_INT$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef int __clockid_t;
+     * }
+     */
+    public static final OfInt __clockid_t = Constants$root.C_INT$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef void* __timer_t;
+     * }
+     */
+    public static final OfAddress __timer_t = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef long __blksize_t;
+     * }
+     */
+    public static final OfLong __blksize_t = Constants$root.C_LONG_LONG$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef long __blkcnt_t;
+     * }
+     */
+    public static final OfLong __blkcnt_t = Constants$root.C_LONG_LONG$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef long __blkcnt64_t;
+     * }
+     */
+    public static final OfLong __blkcnt64_t = Constants$root.C_LONG_LONG$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef unsigned long __fsblkcnt_t;
+     * }
+     */
+    public static final OfLong __fsblkcnt_t = Constants$root.C_LONG_LONG$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef unsigned long __fsblkcnt64_t;
+     * }
+     */
+    public static final OfLong __fsblkcnt64_t = Constants$root.C_LONG_LONG$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef unsigned long __fsfilcnt_t;
+     * }
+     */
+    public static final OfLong __fsfilcnt_t = Constants$root.C_LONG_LONG$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef unsigned long __fsfilcnt64_t;
+     * }
+     */
+    public static final OfLong __fsfilcnt64_t = Constants$root.C_LONG_LONG$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef long __fsword_t;
+     * }
+     */
+    public static final OfLong __fsword_t = Constants$root.C_LONG_LONG$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef long __ssize_t;
+     * }
+     */
+    public static final OfLong __ssize_t = Constants$root.C_LONG_LONG$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef long __syscall_slong_t;
+     * }
+     */
+    public static final OfLong __syscall_slong_t = Constants$root.C_LONG_LONG$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef unsigned long __syscall_ulong_t;
+     * }
+     */
+    public static final OfLong __syscall_ulong_t = Constants$root.C_LONG_LONG$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef long __loff_t;
+     * }
+     */
+    public static final OfLong __loff_t = Constants$root.C_LONG_LONG$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef char* __caddr_t;
+     * }
+     */
+    public static final OfAddress __caddr_t = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef long __intptr_t;
+     * }
+     */
+    public static final OfLong __intptr_t = Constants$root.C_LONG_LONG$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef unsigned int __socklen_t;
+     * }
+     */
+    public static final OfInt __socklen_t = Constants$root.C_INT$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef int __sig_atomic_t;
+     * }
+     */
+    public static final OfInt __sig_atomic_t = Constants$root.C_INT$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef long clock_t;
+     * }
+     */
+    public static final OfLong clock_t = Constants$root.C_LONG_LONG$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef long time_t;
+     * }
+     */
+    public static final OfLong time_t = Constants$root.C_LONG_LONG$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef int clockid_t;
+     * }
+     */
+    public static final OfInt clockid_t = Constants$root.C_INT$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef void* timer_t;
+     * }
+     */
+    public static final OfAddress timer_t = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef int pid_t;
+     * }
+     */
+    public static final OfInt pid_t = Constants$root.C_INT$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct __locale_struct* __locale_t;
+     * }
+     */
+    public static final OfAddress __locale_t = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct __locale_struct* locale_t;
+     * }
+     */
+    public static final OfAddress locale_t = Constants$root.C_POINTER$LAYOUT;
     public static MethodHandle clock$MH() {
         return RuntimeHelper.requireNonNull(constants$0.clock$MH,"clock");
     }
-    public static long clock () {
+    /**
+     * {@snippet :
+     * clock_t clock();
+     * }
+     */
+    public static long clock() {
         var mh$ = clock$MH();
         try {
             return (long)mh$.invokeExact();
@@ -2600,7 +7296,12 @@ import static java.lang.foreign.ValueLayout.*;
     public static MethodHandle time$MH() {
         return RuntimeHelper.requireNonNull(constants$0.time$MH,"time");
     }
-    public static long time ( Addressable __timer) {
+    /**
+     * {@snippet :
+     * time_t time(time_t* __timer);
+     * }
+     */
+    public static long time(MemorySegment __timer) {
         var mh$ = time$MH();
         try {
             return (long)mh$.invokeExact(__timer);
@@ -2611,7 +7312,12 @@ import static java.lang.foreign.ValueLayout.*;
     public static MethodHandle difftime$MH() {
         return RuntimeHelper.requireNonNull(constants$0.difftime$MH,"difftime");
     }
-    public static double difftime ( long __time1,  long __time0) {
+    /**
+     * {@snippet :
+     * double difftime(time_t __time1, time_t __time0);
+     * }
+     */
+    public static double difftime(long __time1, long __time0) {
         var mh$ = difftime$MH();
         try {
             return (double)mh$.invokeExact(__time1, __time0);
@@ -2622,7 +7328,12 @@ import static java.lang.foreign.ValueLayout.*;
     public static MethodHandle mktime$MH() {
         return RuntimeHelper.requireNonNull(constants$0.mktime$MH,"mktime");
     }
-    public static long mktime ( Addressable __tp) {
+    /**
+     * {@snippet :
+     * time_t mktime(struct tm* __tp);
+     * }
+     */
+    public static long mktime(MemorySegment __tp) {
         var mh$ = mktime$MH();
         try {
             return (long)mh$.invokeExact(__tp);
@@ -2633,7 +7344,12 @@ import static java.lang.foreign.ValueLayout.*;
     public static MethodHandle strftime$MH() {
         return RuntimeHelper.requireNonNull(constants$0.strftime$MH,"strftime");
     }
-    public static long strftime ( Addressable __s,  long __maxsize,  Addressable __format,  Addressable __tp) {
+    /**
+     * {@snippet :
+     * size_t strftime(char* __s, size_t __maxsize, char* __format, struct tm* __tp);
+     * }
+     */
+    public static long strftime(MemorySegment __s, long __maxsize, MemorySegment __format, MemorySegment __tp) {
         var mh$ = strftime$MH();
         try {
             return (long)mh$.invokeExact(__s, __maxsize, __format, __tp);
@@ -2644,7 +7360,12 @@ import static java.lang.foreign.ValueLayout.*;
     public static MethodHandle strftime_l$MH() {
         return RuntimeHelper.requireNonNull(constants$0.strftime_l$MH,"strftime_l");
     }
-    public static long strftime_l ( Addressable __s,  long __maxsize,  Addressable __format,  Addressable __tp,  Addressable __loc) {
+    /**
+     * {@snippet :
+     * size_t strftime_l(char* __s, size_t __maxsize, char* __format, struct tm* __tp, locale_t __loc);
+     * }
+     */
+    public static long strftime_l(MemorySegment __s, long __maxsize, MemorySegment __format, MemorySegment __tp, MemorySegment __loc) {
         var mh$ = strftime_l$MH();
         try {
             return (long)mh$.invokeExact(__s, __maxsize, __format, __tp, __loc);
@@ -2655,10 +7376,15 @@ import static java.lang.foreign.ValueLayout.*;
     public static MethodHandle gmtime$MH() {
         return RuntimeHelper.requireNonNull(constants$1.gmtime$MH,"gmtime");
     }
-    public static MemoryAddress gmtime ( Addressable __timer) {
+    /**
+     * {@snippet :
+     * struct tm* gmtime(const time_t* __timer);
+     * }
+     */
+    public static MemorySegment gmtime(MemorySegment __timer) {
         var mh$ = gmtime$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(__timer);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(__timer);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
@@ -2666,10 +7392,15 @@ import static java.lang.foreign.ValueLayout.*;
     public static MethodHandle localtime$MH() {
         return RuntimeHelper.requireNonNull(constants$1.localtime$MH,"localtime");
     }
-    public static MemoryAddress localtime ( Addressable __timer) {
+    /**
+     * {@snippet :
+     * struct tm* localtime(const time_t* __timer);
+     * }
+     */
+    public static MemorySegment localtime(MemorySegment __timer) {
         var mh$ = localtime$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(__timer);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(__timer);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
@@ -2677,10 +7408,15 @@ import static java.lang.foreign.ValueLayout.*;
     public static MethodHandle gmtime_r$MH() {
         return RuntimeHelper.requireNonNull(constants$1.gmtime_r$MH,"gmtime_r");
     }
-    public static MemoryAddress gmtime_r ( Addressable __timer,  Addressable __tp) {
+    /**
+     * {@snippet :
+     * struct tm* gmtime_r(const time_t* __timer, struct tm* __tp);
+     * }
+     */
+    public static MemorySegment gmtime_r(MemorySegment __timer, MemorySegment __tp) {
         var mh$ = gmtime_r$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(__timer, __tp);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(__timer, __tp);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
@@ -2688,10 +7424,15 @@ import static java.lang.foreign.ValueLayout.*;
     public static MethodHandle localtime_r$MH() {
         return RuntimeHelper.requireNonNull(constants$1.localtime_r$MH,"localtime_r");
     }
-    public static MemoryAddress localtime_r ( Addressable __timer,  Addressable __tp) {
+    /**
+     * {@snippet :
+     * struct tm* localtime_r(const time_t* __timer, struct tm* __tp);
+     * }
+     */
+    public static MemorySegment localtime_r(MemorySegment __timer, MemorySegment __tp) {
         var mh$ = localtime_r$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(__timer, __tp);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(__timer, __tp);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
@@ -2699,10 +7440,15 @@ import static java.lang.foreign.ValueLayout.*;
     public static MethodHandle asctime$MH() {
         return RuntimeHelper.requireNonNull(constants$1.asctime$MH,"asctime");
     }
-    public static MemoryAddress asctime ( Addressable __tp) {
+    /**
+     * {@snippet :
+     * char* asctime(struct tm* __tp);
+     * }
+     */
+    public static MemorySegment asctime(MemorySegment __tp) {
         var mh$ = asctime$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(__tp);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(__tp);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
@@ -2710,10 +7456,15 @@ import static java.lang.foreign.ValueLayout.*;
     public static MethodHandle ctime$MH() {
         return RuntimeHelper.requireNonNull(constants$1.ctime$MH,"ctime");
     }
-    public static MemoryAddress ctime ( Addressable __timer) {
+    /**
+     * {@snippet :
+     * char* ctime(const time_t* __timer);
+     * }
+     */
+    public static MemorySegment ctime(MemorySegment __timer) {
         var mh$ = ctime$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(__timer);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(__timer);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
@@ -2721,10 +7472,15 @@ import static java.lang.foreign.ValueLayout.*;
     public static MethodHandle asctime_r$MH() {
         return RuntimeHelper.requireNonNull(constants$2.asctime_r$MH,"asctime_r");
     }
-    public static MemoryAddress asctime_r ( Addressable __tp,  Addressable __buf) {
+    /**
+     * {@snippet :
+     * char* asctime_r(struct tm* __tp, char* __buf);
+     * }
+     */
+    public static MemorySegment asctime_r(MemorySegment __tp, MemorySegment __buf) {
         var mh$ = asctime_r$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(__tp, __buf);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(__tp, __buf);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
@@ -2732,14 +7488,24 @@ import static java.lang.foreign.ValueLayout.*;
     public static MethodHandle ctime_r$MH() {
         return RuntimeHelper.requireNonNull(constants$2.ctime_r$MH,"ctime_r");
     }
-    public static MemoryAddress ctime_r ( Addressable __timer,  Addressable __buf) {
+    /**
+     * {@snippet :
+     * char* ctime_r(const time_t* __timer, char* __buf);
+     * }
+     */
+    public static MemorySegment ctime_r(MemorySegment __timer, MemorySegment __buf) {
         var mh$ = ctime_r$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(__timer, __buf);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(__timer, __buf);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
+    /**
+     * {@snippet :
+     * char* __tzname[2];
+     * }
+     */
     public static MemorySegment __tzname$SEGMENT() {
         return RuntimeHelper.requireNonNull(constants$2.__tzname$SEGMENT,"__tzname");
     }
@@ -2752,10 +7518,22 @@ import static java.lang.foreign.ValueLayout.*;
     public static MemorySegment __daylight$SEGMENT() {
         return RuntimeHelper.requireNonNull(constants$2.__daylight$SEGMENT,"__daylight");
     }
+    /**
+     * Getter for variable:
+     * {@snippet :
+     * int __daylight;
+     * }
+     */
     public static int __daylight$get() {
         return (int) constants$2.__daylight$VH.get(RuntimeHelper.requireNonNull(constants$2.__daylight$SEGMENT, "__daylight"));
     }
-    public static void __daylight$set( int x) {
+    /**
+     * Setter for variable:
+     * {@snippet :
+     * int __daylight;
+     * }
+     */
+    public static void __daylight$set(int x) {
         constants$2.__daylight$VH.set(RuntimeHelper.requireNonNull(constants$2.__daylight$SEGMENT, "__daylight"), x);
     }
     public static MemoryLayout __timezone$LAYOUT() {
@@ -2767,19 +7545,41 @@ import static java.lang.foreign.ValueLayout.*;
     public static MemorySegment __timezone$SEGMENT() {
         return RuntimeHelper.requireNonNull(constants$2.__timezone$SEGMENT,"__timezone");
     }
+    /**
+     * Getter for variable:
+     * {@snippet :
+     * long __timezone;
+     * }
+     */
     public static long __timezone$get() {
         return (long) constants$2.__timezone$VH.get(RuntimeHelper.requireNonNull(constants$2.__timezone$SEGMENT, "__timezone"));
     }
-    public static void __timezone$set( long x) {
+    /**
+     * Setter for variable:
+     * {@snippet :
+     * long __timezone;
+     * }
+     */
+    public static void __timezone$set(long x) {
         constants$2.__timezone$VH.set(RuntimeHelper.requireNonNull(constants$2.__timezone$SEGMENT, "__timezone"), x);
     }
+    /**
+     * {@snippet :
+     * char* tzname[2];
+     * }
+     */
     public static MemorySegment tzname$SEGMENT() {
         return RuntimeHelper.requireNonNull(constants$2.tzname$SEGMENT,"tzname");
     }
     public static MethodHandle tzset$MH() {
         return RuntimeHelper.requireNonNull(constants$3.tzset$MH,"tzset");
     }
-    public static void tzset () {
+    /**
+     * {@snippet :
+     * void tzset();
+     * }
+     */
+    public static void tzset() {
         var mh$ = tzset$MH();
         try {
             mh$.invokeExact();
@@ -2796,10 +7596,22 @@ import static java.lang.foreign.ValueLayout.*;
     public static MemorySegment daylight$SEGMENT() {
         return RuntimeHelper.requireNonNull(constants$3.daylight$SEGMENT,"daylight");
     }
+    /**
+     * Getter for variable:
+     * {@snippet :
+     * int daylight;
+     * }
+     */
     public static int daylight$get() {
         return (int) constants$3.daylight$VH.get(RuntimeHelper.requireNonNull(constants$3.daylight$SEGMENT, "daylight"));
     }
-    public static void daylight$set( int x) {
+    /**
+     * Setter for variable:
+     * {@snippet :
+     * int daylight;
+     * }
+     */
+    public static void daylight$set(int x) {
         constants$3.daylight$VH.set(RuntimeHelper.requireNonNull(constants$3.daylight$SEGMENT, "daylight"), x);
     }
     public static MemoryLayout timezone$LAYOUT() {
@@ -2811,16 +7623,33 @@ import static java.lang.foreign.ValueLayout.*;
     public static MemorySegment timezone$SEGMENT() {
         return RuntimeHelper.requireNonNull(constants$3.timezone$SEGMENT,"timezone");
     }
+    /**
+     * Getter for variable:
+     * {@snippet :
+     * long timezone;
+     * }
+     */
     public static long timezone$get() {
         return (long) constants$3.timezone$VH.get(RuntimeHelper.requireNonNull(constants$3.timezone$SEGMENT, "timezone"));
     }
-    public static void timezone$set( long x) {
+    /**
+     * Setter for variable:
+     * {@snippet :
+     * long timezone;
+     * }
+     */
+    public static void timezone$set(long x) {
         constants$3.timezone$VH.set(RuntimeHelper.requireNonNull(constants$3.timezone$SEGMENT, "timezone"), x);
     }
     public static MethodHandle timegm$MH() {
         return RuntimeHelper.requireNonNull(constants$3.timegm$MH,"timegm");
     }
-    public static long timegm ( Addressable __tp) {
+    /**
+     * {@snippet :
+     * time_t timegm(struct tm* __tp);
+     * }
+     */
+    public static long timegm(MemorySegment __tp) {
         var mh$ = timegm$MH();
         try {
             return (long)mh$.invokeExact(__tp);
@@ -2831,7 +7660,12 @@ import static java.lang.foreign.ValueLayout.*;
     public static MethodHandle timelocal$MH() {
         return RuntimeHelper.requireNonNull(constants$3.timelocal$MH,"timelocal");
     }
-    public static long timelocal ( Addressable __tp) {
+    /**
+     * {@snippet :
+     * time_t timelocal(struct tm* __tp);
+     * }
+     */
+    public static long timelocal(MemorySegment __tp) {
         var mh$ = timelocal$MH();
         try {
             return (long)mh$.invokeExact(__tp);
@@ -2842,7 +7676,12 @@ import static java.lang.foreign.ValueLayout.*;
     public static MethodHandle dysize$MH() {
         return RuntimeHelper.requireNonNull(constants$3.dysize$MH,"dysize");
     }
-    public static int dysize ( int __year) {
+    /**
+     * {@snippet :
+     * int dysize(int __year);
+     * }
+     */
+    public static int dysize(int __year) {
         var mh$ = dysize$MH();
         try {
             return (int)mh$.invokeExact(__year);
@@ -2853,7 +7692,12 @@ import static java.lang.foreign.ValueLayout.*;
     public static MethodHandle nanosleep$MH() {
         return RuntimeHelper.requireNonNull(constants$4.nanosleep$MH,"nanosleep");
     }
-    public static int nanosleep ( Addressable __requested_time,  Addressable __remaining) {
+    /**
+     * {@snippet :
+     * int nanosleep(struct timespec* __requested_time, struct timespec* __remaining);
+     * }
+     */
+    public static int nanosleep(MemorySegment __requested_time, MemorySegment __remaining) {
         var mh$ = nanosleep$MH();
         try {
             return (int)mh$.invokeExact(__requested_time, __remaining);
@@ -2864,7 +7708,12 @@ import static java.lang.foreign.ValueLayout.*;
     public static MethodHandle clock_getres$MH() {
         return RuntimeHelper.requireNonNull(constants$4.clock_getres$MH,"clock_getres");
     }
-    public static int clock_getres ( int __clock_id,  Addressable __res) {
+    /**
+     * {@snippet :
+     * int clock_getres(clockid_t __clock_id, struct timespec* __res);
+     * }
+     */
+    public static int clock_getres(int __clock_id, MemorySegment __res) {
         var mh$ = clock_getres$MH();
         try {
             return (int)mh$.invokeExact(__clock_id, __res);
@@ -2875,7 +7724,12 @@ import static java.lang.foreign.ValueLayout.*;
     public static MethodHandle clock_gettime$MH() {
         return RuntimeHelper.requireNonNull(constants$4.clock_gettime$MH,"clock_gettime");
     }
-    public static int clock_gettime ( int __clock_id,  Addressable __tp) {
+    /**
+     * {@snippet :
+     * int clock_gettime(clockid_t __clock_id, struct timespec* __tp);
+     * }
+     */
+    public static int clock_gettime(int __clock_id, MemorySegment __tp) {
         var mh$ = clock_gettime$MH();
         try {
             return (int)mh$.invokeExact(__clock_id, __tp);
@@ -2886,7 +7740,12 @@ import static java.lang.foreign.ValueLayout.*;
     public static MethodHandle clock_settime$MH() {
         return RuntimeHelper.requireNonNull(constants$4.clock_settime$MH,"clock_settime");
     }
-    public static int clock_settime ( int __clock_id,  Addressable __tp) {
+    /**
+     * {@snippet :
+     * int clock_settime(clockid_t __clock_id, struct timespec* __tp);
+     * }
+     */
+    public static int clock_settime(int __clock_id, MemorySegment __tp) {
         var mh$ = clock_settime$MH();
         try {
             return (int)mh$.invokeExact(__clock_id, __tp);
@@ -2897,7 +7756,12 @@ import static java.lang.foreign.ValueLayout.*;
     public static MethodHandle clock_nanosleep$MH() {
         return RuntimeHelper.requireNonNull(constants$4.clock_nanosleep$MH,"clock_nanosleep");
     }
-    public static int clock_nanosleep ( int __clock_id,  int __flags,  Addressable __req,  Addressable __rem) {
+    /**
+     * {@snippet :
+     * int clock_nanosleep(clockid_t __clock_id, int __flags, struct timespec* __req, struct timespec* __rem);
+     * }
+     */
+    public static int clock_nanosleep(int __clock_id, int __flags, MemorySegment __req, MemorySegment __rem) {
         var mh$ = clock_nanosleep$MH();
         try {
             return (int)mh$.invokeExact(__clock_id, __flags, __req, __rem);
@@ -2908,7 +7772,12 @@ import static java.lang.foreign.ValueLayout.*;
     public static MethodHandle clock_getcpuclockid$MH() {
         return RuntimeHelper.requireNonNull(constants$4.clock_getcpuclockid$MH,"clock_getcpuclockid");
     }
-    public static int clock_getcpuclockid ( int __pid,  Addressable __clock_id) {
+    /**
+     * {@snippet :
+     * int clock_getcpuclockid(pid_t __pid, clockid_t* __clock_id);
+     * }
+     */
+    public static int clock_getcpuclockid(int __pid, MemorySegment __clock_id) {
         var mh$ = clock_getcpuclockid$MH();
         try {
             return (int)mh$.invokeExact(__pid, __clock_id);
@@ -2919,7 +7788,12 @@ import static java.lang.foreign.ValueLayout.*;
     public static MethodHandle timer_create$MH() {
         return RuntimeHelper.requireNonNull(constants$5.timer_create$MH,"timer_create");
     }
-    public static int timer_create ( int __clock_id,  Addressable __evp,  Addressable __timerid) {
+    /**
+     * {@snippet :
+     * int timer_create(clockid_t __clock_id, struct sigevent* __evp, timer_t* __timerid);
+     * }
+     */
+    public static int timer_create(int __clock_id, MemorySegment __evp, MemorySegment __timerid) {
         var mh$ = timer_create$MH();
         try {
             return (int)mh$.invokeExact(__clock_id, __evp, __timerid);
@@ -2930,7 +7804,12 @@ import static java.lang.foreign.ValueLayout.*;
     public static MethodHandle timer_delete$MH() {
         return RuntimeHelper.requireNonNull(constants$5.timer_delete$MH,"timer_delete");
     }
-    public static int timer_delete ( Addressable __timerid) {
+    /**
+     * {@snippet :
+     * int timer_delete(timer_t __timerid);
+     * }
+     */
+    public static int timer_delete(MemorySegment __timerid) {
         var mh$ = timer_delete$MH();
         try {
             return (int)mh$.invokeExact(__timerid);
@@ -2941,7 +7820,12 @@ import static java.lang.foreign.ValueLayout.*;
     public static MethodHandle timer_settime$MH() {
         return RuntimeHelper.requireNonNull(constants$5.timer_settime$MH,"timer_settime");
     }
-    public static int timer_settime ( Addressable __timerid,  int __flags,  Addressable __value,  Addressable __ovalue) {
+    /**
+     * {@snippet :
+     * int timer_settime(timer_t __timerid, int __flags, struct itimerspec* __value, struct itimerspec* __ovalue);
+     * }
+     */
+    public static int timer_settime(MemorySegment __timerid, int __flags, MemorySegment __value, MemorySegment __ovalue) {
         var mh$ = timer_settime$MH();
         try {
             return (int)mh$.invokeExact(__timerid, __flags, __value, __ovalue);
@@ -2952,7 +7836,12 @@ import static java.lang.foreign.ValueLayout.*;
     public static MethodHandle timer_gettime$MH() {
         return RuntimeHelper.requireNonNull(constants$5.timer_gettime$MH,"timer_gettime");
     }
-    public static int timer_gettime ( Addressable __timerid,  Addressable __value) {
+    /**
+     * {@snippet :
+     * int timer_gettime(timer_t __timerid, struct itimerspec* __value);
+     * }
+     */
+    public static int timer_gettime(MemorySegment __timerid, MemorySegment __value) {
         var mh$ = timer_gettime$MH();
         try {
             return (int)mh$.invokeExact(__timerid, __value);
@@ -2963,7 +7852,12 @@ import static java.lang.foreign.ValueLayout.*;
     public static MethodHandle timer_getoverrun$MH() {
         return RuntimeHelper.requireNonNull(constants$5.timer_getoverrun$MH,"timer_getoverrun");
     }
-    public static int timer_getoverrun ( Addressable __timerid) {
+    /**
+     * {@snippet :
+     * int timer_getoverrun(timer_t __timerid);
+     * }
+     */
+    public static int timer_getoverrun(MemorySegment __timerid) {
         var mh$ = timer_getoverrun$MH();
         try {
             return (int)mh$.invokeExact(__timerid);
@@ -2974,7 +7868,12 @@ import static java.lang.foreign.ValueLayout.*;
     public static MethodHandle timespec_get$MH() {
         return RuntimeHelper.requireNonNull(constants$5.timespec_get$MH,"timespec_get");
     }
-    public static int timespec_get ( Addressable __ts,  int __base) {
+    /**
+     * {@snippet :
+     * int timespec_get(struct timespec* __ts, int __base);
+     * }
+     */
+    public static int timespec_get(MemorySegment __ts, int __base) {
         var mh$ = timespec_get$MH();
         try {
             return (int)mh$.invokeExact(__ts, __base);
@@ -2982,24 +7881,108 @@ import static java.lang.foreign.ValueLayout.*;
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static OfByte gchar = Constants$root.C_CHAR$LAYOUT;
-    public static OfShort gshort = Constants$root.C_SHORT$LAYOUT;
-    public static OfLong glong = Constants$root.C_LONG_LONG$LAYOUT;
-    public static OfInt gint = Constants$root.C_INT$LAYOUT;
-    public static OfInt gboolean = Constants$root.C_INT$LAYOUT;
-    public static OfFloat gfloat = Constants$root.C_FLOAT$LAYOUT;
-    public static OfDouble gdouble = Constants$root.C_DOUBLE$LAYOUT;
-    public static OfAddress gpointer = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress gconstpointer = Constants$root.C_POINTER$LAYOUT;
-    public static OfInt grefcount = Constants$root.C_INT$LAYOUT;
-    public static OfInt gatomicrefcount = Constants$root.C_INT$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef char gchar;
+     * }
+     */
+    public static final OfByte gchar = Constants$root.C_CHAR$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef short gshort;
+     * }
+     */
+    public static final OfShort gshort = Constants$root.C_SHORT$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef long glong;
+     * }
+     */
+    public static final OfLong glong = Constants$root.C_LONG_LONG$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef int gint;
+     * }
+     */
+    public static final OfInt gint = Constants$root.C_INT$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef int gboolean;
+     * }
+     */
+    public static final OfInt gboolean = Constants$root.C_INT$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef unsigned char guchar;
+     * }
+     */
+    public static final OfByte guchar = Constants$root.C_CHAR$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef unsigned short gushort;
+     * }
+     */
+    public static final OfShort gushort = Constants$root.C_SHORT$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef unsigned long gulong;
+     * }
+     */
+    public static final OfLong gulong = Constants$root.C_LONG_LONG$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef unsigned int guint;
+     * }
+     */
+    public static final OfInt guint = Constants$root.C_INT$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef float gfloat;
+     * }
+     */
+    public static final OfFloat gfloat = Constants$root.C_FLOAT$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef double gdouble;
+     * }
+     */
+    public static final OfDouble gdouble = Constants$root.C_DOUBLE$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef void* gpointer;
+     * }
+     */
+    public static final OfAddress gpointer = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef void* gconstpointer;
+     * }
+     */
+    public static final OfAddress gconstpointer = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef int grefcount;
+     * }
+     */
+    public static final OfInt grefcount = Constants$root.C_INT$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef int gatomicrefcount;
+     * }
+     */
+    public static final OfInt gatomicrefcount = Constants$root.C_INT$LAYOUT;
     public static MethodHandle memcpy$MH() {
         return RuntimeHelper.requireNonNull(constants$9.memcpy$MH,"memcpy");
     }
-    public static MemoryAddress memcpy ( Addressable __dest,  Addressable __src,  long __n) {
+    /**
+     * {@snippet :
+     * void* memcpy(void* __dest, void* __src, size_t __n);
+     * }
+     */
+    public static MemorySegment memcpy(MemorySegment __dest, MemorySegment __src, long __n) {
         var mh$ = memcpy$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(__dest, __src, __n);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(__dest, __src, __n);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
@@ -3007,32 +7990,47 @@ import static java.lang.foreign.ValueLayout.*;
     public static MethodHandle memmove$MH() {
         return RuntimeHelper.requireNonNull(constants$9.memmove$MH,"memmove");
     }
-    public static MemoryAddress memmove ( Addressable __dest,  Addressable __src,  long __n) {
+    /**
+     * {@snippet :
+     * void* memmove(void* __dest, void* __src, size_t __n);
+     * }
+     */
+    public static MemorySegment memmove(MemorySegment __dest, MemorySegment __src, long __n) {
         var mh$ = memmove$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(__dest, __src, __n);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(__dest, __src, __n);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle memccpy$MH() {
-        return RuntimeHelper.requireNonNull(constants$9.memccpy$MH,"memccpy");
+        return RuntimeHelper.requireNonNull(constants$10.memccpy$MH,"memccpy");
     }
-    public static MemoryAddress memccpy ( Addressable __dest,  Addressable __src,  int __c,  long __n) {
+    /**
+     * {@snippet :
+     * void* memccpy(void* __dest, void* __src, int __c, size_t __n);
+     * }
+     */
+    public static MemorySegment memccpy(MemorySegment __dest, MemorySegment __src, int __c, long __n) {
         var mh$ = memccpy$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(__dest, __src, __c, __n);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(__dest, __src, __c, __n);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle memset$MH() {
-        return RuntimeHelper.requireNonNull(constants$9.memset$MH,"memset");
+        return RuntimeHelper.requireNonNull(constants$10.memset$MH,"memset");
     }
-    public static MemoryAddress memset ( Addressable __s,  int __c,  long __n) {
+    /**
+     * {@snippet :
+     * void* memset(void* __s, int __c, size_t __n);
+     * }
+     */
+    public static MemorySegment memset(MemorySegment __s, int __c, long __n) {
         var mh$ = memset$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(__s, __c, __n);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(__s, __c, __n);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
@@ -3040,7 +8038,12 @@ import static java.lang.foreign.ValueLayout.*;
     public static MethodHandle memcmp$MH() {
         return RuntimeHelper.requireNonNull(constants$10.memcmp$MH,"memcmp");
     }
-    public static int memcmp ( Addressable __s1,  Addressable __s2,  long __n) {
+    /**
+     * {@snippet :
+     * int memcmp(void* __s1, void* __s2, size_t __n);
+     * }
+     */
+    public static int memcmp(MemorySegment __s1, MemorySegment __s2, long __n) {
         var mh$ = memcmp$MH();
         try {
             return (int)mh$.invokeExact(__s1, __s2, __n);
@@ -3051,7 +8054,12 @@ import static java.lang.foreign.ValueLayout.*;
     public static MethodHandle __memcmpeq$MH() {
         return RuntimeHelper.requireNonNull(constants$10.__memcmpeq$MH,"__memcmpeq");
     }
-    public static int __memcmpeq ( Addressable __s1,  Addressable __s2,  long __n) {
+    /**
+     * {@snippet :
+     * int __memcmpeq(void* __s1, void* __s2, size_t __n);
+     * }
+     */
+    public static int __memcmpeq(MemorySegment __s1, MemorySegment __s2, long __n) {
         var mh$ = __memcmpeq$MH();
         try {
             return (int)mh$.invokeExact(__s1, __s2, __n);
@@ -3062,10 +8070,15 @@ import static java.lang.foreign.ValueLayout.*;
     public static MethodHandle memchr$MH() {
         return RuntimeHelper.requireNonNull(constants$10.memchr$MH,"memchr");
     }
-    public static MemoryAddress memchr ( Addressable __s,  int __c,  long __n) {
+    /**
+     * {@snippet :
+     * void* memchr(void* __s, int __c, size_t __n);
+     * }
+     */
+    public static MemorySegment memchr(MemorySegment __s, int __c, long __n) {
         var mh$ = memchr$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(__s, __c, __n);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(__s, __c, __n);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
@@ -3073,32 +8086,47 @@ import static java.lang.foreign.ValueLayout.*;
     public static MethodHandle strcpy$MH() {
         return RuntimeHelper.requireNonNull(constants$10.strcpy$MH,"strcpy");
     }
-    public static MemoryAddress strcpy ( Addressable __dest,  Addressable __src) {
+    /**
+     * {@snippet :
+     * char* strcpy(char* __dest, char* __src);
+     * }
+     */
+    public static MemorySegment strcpy(MemorySegment __dest, MemorySegment __src) {
         var mh$ = strcpy$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(__dest, __src);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(__dest, __src);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle strncpy$MH() {
-        return RuntimeHelper.requireNonNull(constants$10.strncpy$MH,"strncpy");
+        return RuntimeHelper.requireNonNull(constants$11.strncpy$MH,"strncpy");
     }
-    public static MemoryAddress strncpy ( Addressable __dest,  Addressable __src,  long __n) {
+    /**
+     * {@snippet :
+     * char* strncpy(char* __dest, char* __src, size_t __n);
+     * }
+     */
+    public static MemorySegment strncpy(MemorySegment __dest, MemorySegment __src, long __n) {
         var mh$ = strncpy$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(__dest, __src, __n);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(__dest, __src, __n);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle strcat$MH() {
-        return RuntimeHelper.requireNonNull(constants$10.strcat$MH,"strcat");
+        return RuntimeHelper.requireNonNull(constants$11.strcat$MH,"strcat");
     }
-    public static MemoryAddress strcat ( Addressable __dest,  Addressable __src) {
+    /**
+     * {@snippet :
+     * char* strcat(char* __dest, char* __src);
+     * }
+     */
+    public static MemorySegment strcat(MemorySegment __dest, MemorySegment __src) {
         var mh$ = strcat$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(__dest, __src);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(__dest, __src);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
@@ -3106,10 +8134,15 @@ import static java.lang.foreign.ValueLayout.*;
     public static MethodHandle strncat$MH() {
         return RuntimeHelper.requireNonNull(constants$11.strncat$MH,"strncat");
     }
-    public static MemoryAddress strncat ( Addressable __dest,  Addressable __src,  long __n) {
+    /**
+     * {@snippet :
+     * char* strncat(char* __dest, char* __src, size_t __n);
+     * }
+     */
+    public static MemorySegment strncat(MemorySegment __dest, MemorySegment __src, long __n) {
         var mh$ = strncat$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(__dest, __src, __n);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(__dest, __src, __n);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
@@ -3117,7 +8150,12 @@ import static java.lang.foreign.ValueLayout.*;
     public static MethodHandle strcmp$MH() {
         return RuntimeHelper.requireNonNull(constants$11.strcmp$MH,"strcmp");
     }
-    public static int strcmp ( Addressable __s1,  Addressable __s2) {
+    /**
+     * {@snippet :
+     * int strcmp(char* __s1, char* __s2);
+     * }
+     */
+    public static int strcmp(MemorySegment __s1, MemorySegment __s2) {
         var mh$ = strcmp$MH();
         try {
             return (int)mh$.invokeExact(__s1, __s2);
@@ -3128,7 +8166,12 @@ import static java.lang.foreign.ValueLayout.*;
     public static MethodHandle strncmp$MH() {
         return RuntimeHelper.requireNonNull(constants$11.strncmp$MH,"strncmp");
     }
-    public static int strncmp ( Addressable __s1,  Addressable __s2,  long __n) {
+    /**
+     * {@snippet :
+     * int strncmp(char* __s1, char* __s2, size_t __n);
+     * }
+     */
+    public static int strncmp(MemorySegment __s1, MemorySegment __s2, long __n) {
         var mh$ = strncmp$MH();
         try {
             return (int)mh$.invokeExact(__s1, __s2, __n);
@@ -3139,7 +8182,12 @@ import static java.lang.foreign.ValueLayout.*;
     public static MethodHandle strcoll$MH() {
         return RuntimeHelper.requireNonNull(constants$11.strcoll$MH,"strcoll");
     }
-    public static int strcoll ( Addressable __s1,  Addressable __s2) {
+    /**
+     * {@snippet :
+     * int strcoll(char* __s1, char* __s2);
+     * }
+     */
+    public static int strcoll(MemorySegment __s1, MemorySegment __s2) {
         var mh$ = strcoll$MH();
         try {
             return (int)mh$.invokeExact(__s1, __s2);
@@ -3148,9 +8196,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle strxfrm$MH() {
-        return RuntimeHelper.requireNonNull(constants$11.strxfrm$MH,"strxfrm");
+        return RuntimeHelper.requireNonNull(constants$12.strxfrm$MH,"strxfrm");
     }
-    public static long strxfrm ( Addressable __dest,  Addressable __src,  long __n) {
+    /**
+     * {@snippet :
+     * unsigned long strxfrm(char* __dest, char* __src, size_t __n);
+     * }
+     */
+    public static long strxfrm(MemorySegment __dest, MemorySegment __src, long __n) {
         var mh$ = strxfrm$MH();
         try {
             return (long)mh$.invokeExact(__dest, __src, __n);
@@ -3159,9 +8212,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle strcoll_l$MH() {
-        return RuntimeHelper.requireNonNull(constants$11.strcoll_l$MH,"strcoll_l");
+        return RuntimeHelper.requireNonNull(constants$12.strcoll_l$MH,"strcoll_l");
     }
-    public static int strcoll_l ( Addressable __s1,  Addressable __s2,  Addressable __l) {
+    /**
+     * {@snippet :
+     * int strcoll_l(char* __s1, char* __s2, locale_t __l);
+     * }
+     */
+    public static int strcoll_l(MemorySegment __s1, MemorySegment __s2, MemorySegment __l) {
         var mh$ = strcoll_l$MH();
         try {
             return (int)mh$.invokeExact(__s1, __s2, __l);
@@ -3172,7 +8230,12 @@ import static java.lang.foreign.ValueLayout.*;
     public static MethodHandle strxfrm_l$MH() {
         return RuntimeHelper.requireNonNull(constants$12.strxfrm_l$MH,"strxfrm_l");
     }
-    public static long strxfrm_l ( Addressable __dest,  Addressable __src,  long __n,  Addressable __l) {
+    /**
+     * {@snippet :
+     * size_t strxfrm_l(char* __dest, char* __src, size_t __n, locale_t __l);
+     * }
+     */
+    public static long strxfrm_l(MemorySegment __dest, MemorySegment __src, long __n, MemorySegment __l) {
         var mh$ = strxfrm_l$MH();
         try {
             return (long)mh$.invokeExact(__dest, __src, __n, __l);
@@ -3183,10 +8246,15 @@ import static java.lang.foreign.ValueLayout.*;
     public static MethodHandle strdup$MH() {
         return RuntimeHelper.requireNonNull(constants$12.strdup$MH,"strdup");
     }
-    public static MemoryAddress strdup ( Addressable __s) {
+    /**
+     * {@snippet :
+     * char* strdup(char* __s);
+     * }
+     */
+    public static MemorySegment strdup(MemorySegment __s) {
         var mh$ = strdup$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(__s);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(__s);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
@@ -3194,505 +8262,15 @@ import static java.lang.foreign.ValueLayout.*;
     public static MethodHandle strndup$MH() {
         return RuntimeHelper.requireNonNull(constants$12.strndup$MH,"strndup");
     }
-    public static MemoryAddress strndup ( Addressable __string,  long __n) {
+    /**
+     * {@snippet :
+     * char* strndup(char* __string, size_t __n);
+     * }
+     */
+    public static MemorySegment strndup(MemorySegment __string, long __n) {
         var mh$ = strndup$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(__string, __n);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle strchr$MH() {
-        return RuntimeHelper.requireNonNull(constants$12.strchr$MH,"strchr");
-    }
-    public static MemoryAddress strchr ( Addressable __s,  int __c) {
-        var mh$ = strchr$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(__s, __c);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle strrchr$MH() {
-        return RuntimeHelper.requireNonNull(constants$12.strrchr$MH,"strrchr");
-    }
-    public static MemoryAddress strrchr ( Addressable __s,  int __c) {
-        var mh$ = strrchr$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(__s, __c);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle strcspn$MH() {
-        return RuntimeHelper.requireNonNull(constants$12.strcspn$MH,"strcspn");
-    }
-    public static long strcspn ( Addressable __s,  Addressable __reject) {
-        var mh$ = strcspn$MH();
-        try {
-            return (long)mh$.invokeExact(__s, __reject);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle strspn$MH() {
-        return RuntimeHelper.requireNonNull(constants$13.strspn$MH,"strspn");
-    }
-    public static long strspn ( Addressable __s,  Addressable __accept) {
-        var mh$ = strspn$MH();
-        try {
-            return (long)mh$.invokeExact(__s, __accept);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle strpbrk$MH() {
-        return RuntimeHelper.requireNonNull(constants$13.strpbrk$MH,"strpbrk");
-    }
-    public static MemoryAddress strpbrk ( Addressable __s,  Addressable __accept) {
-        var mh$ = strpbrk$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(__s, __accept);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle strstr$MH() {
-        return RuntimeHelper.requireNonNull(constants$13.strstr$MH,"strstr");
-    }
-    public static MemoryAddress strstr ( Addressable __haystack,  Addressable __needle) {
-        var mh$ = strstr$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(__haystack, __needle);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle strtok$MH() {
-        return RuntimeHelper.requireNonNull(constants$13.strtok$MH,"strtok");
-    }
-    public static MemoryAddress strtok ( Addressable __s,  Addressable __delim) {
-        var mh$ = strtok$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(__s, __delim);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle __strtok_r$MH() {
-        return RuntimeHelper.requireNonNull(constants$13.__strtok_r$MH,"__strtok_r");
-    }
-    public static MemoryAddress __strtok_r ( Addressable __s,  Addressable __delim,  Addressable __save_ptr) {
-        var mh$ = __strtok_r$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(__s, __delim, __save_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle strtok_r$MH() {
-        return RuntimeHelper.requireNonNull(constants$13.strtok_r$MH,"strtok_r");
-    }
-    public static MemoryAddress strtok_r ( Addressable __s,  Addressable __delim,  Addressable __save_ptr) {
-        var mh$ = strtok_r$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(__s, __delim, __save_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle strlen$MH() {
-        return RuntimeHelper.requireNonNull(constants$14.strlen$MH,"strlen");
-    }
-    public static long strlen ( Addressable __s) {
-        var mh$ = strlen$MH();
-        try {
-            return (long)mh$.invokeExact(__s);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle strnlen$MH() {
-        return RuntimeHelper.requireNonNull(constants$14.strnlen$MH,"strnlen");
-    }
-    public static long strnlen ( Addressable __string,  long __maxlen) {
-        var mh$ = strnlen$MH();
-        try {
-            return (long)mh$.invokeExact(__string, __maxlen);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle strerror$MH() {
-        return RuntimeHelper.requireNonNull(constants$14.strerror$MH,"strerror");
-    }
-    public static MemoryAddress strerror ( int __errnum) {
-        var mh$ = strerror$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(__errnum);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle strerror_r$MH() {
-        return RuntimeHelper.requireNonNull(constants$14.strerror_r$MH,"strerror_r");
-    }
-    public static int strerror_r ( int __errnum,  Addressable __buf,  long __buflen) {
-        var mh$ = strerror_r$MH();
-        try {
-            return (int)mh$.invokeExact(__errnum, __buf, __buflen);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle strerror_l$MH() {
-        return RuntimeHelper.requireNonNull(constants$14.strerror_l$MH,"strerror_l");
-    }
-    public static MemoryAddress strerror_l ( int __errnum,  Addressable __l) {
-        var mh$ = strerror_l$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(__errnum, __l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle bcmp$MH() {
-        return RuntimeHelper.requireNonNull(constants$14.bcmp$MH,"bcmp");
-    }
-    public static int bcmp ( Addressable __s1,  Addressable __s2,  long __n) {
-        var mh$ = bcmp$MH();
-        try {
-            return (int)mh$.invokeExact(__s1, __s2, __n);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle bcopy$MH() {
-        return RuntimeHelper.requireNonNull(constants$15.bcopy$MH,"bcopy");
-    }
-    public static void bcopy ( Addressable __src,  Addressable __dest,  long __n) {
-        var mh$ = bcopy$MH();
-        try {
-            mh$.invokeExact(__src, __dest, __n);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle bzero$MH() {
-        return RuntimeHelper.requireNonNull(constants$15.bzero$MH,"bzero");
-    }
-    public static void bzero ( Addressable __s,  long __n) {
-        var mh$ = bzero$MH();
-        try {
-            mh$.invokeExact(__s, __n);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle index$MH() {
-        return RuntimeHelper.requireNonNull(constants$15.index$MH,"index");
-    }
-    public static MemoryAddress index ( Addressable __s,  int __c) {
-        var mh$ = index$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(__s, __c);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle rindex$MH() {
-        return RuntimeHelper.requireNonNull(constants$15.rindex$MH,"rindex");
-    }
-    public static MemoryAddress rindex ( Addressable __s,  int __c) {
-        var mh$ = rindex$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(__s, __c);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle ffs$MH() {
-        return RuntimeHelper.requireNonNull(constants$15.ffs$MH,"ffs");
-    }
-    public static int ffs ( int __i) {
-        var mh$ = ffs$MH();
-        try {
-            return (int)mh$.invokeExact(__i);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle ffsl$MH() {
-        return RuntimeHelper.requireNonNull(constants$15.ffsl$MH,"ffsl");
-    }
-    public static int ffsl ( long __l) {
-        var mh$ = ffsl$MH();
-        try {
-            return (int)mh$.invokeExact(__l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle ffsll$MH() {
-        return RuntimeHelper.requireNonNull(constants$16.ffsll$MH,"ffsll");
-    }
-    public static int ffsll ( long __ll) {
-        var mh$ = ffsll$MH();
-        try {
-            return (int)mh$.invokeExact(__ll);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle strcasecmp$MH() {
-        return RuntimeHelper.requireNonNull(constants$16.strcasecmp$MH,"strcasecmp");
-    }
-    public static int strcasecmp ( Addressable __s1,  Addressable __s2) {
-        var mh$ = strcasecmp$MH();
-        try {
-            return (int)mh$.invokeExact(__s1, __s2);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle strncasecmp$MH() {
-        return RuntimeHelper.requireNonNull(constants$16.strncasecmp$MH,"strncasecmp");
-    }
-    public static int strncasecmp ( Addressable __s1,  Addressable __s2,  long __n) {
-        var mh$ = strncasecmp$MH();
-        try {
-            return (int)mh$.invokeExact(__s1, __s2, __n);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle strcasecmp_l$MH() {
-        return RuntimeHelper.requireNonNull(constants$16.strcasecmp_l$MH,"strcasecmp_l");
-    }
-    public static int strcasecmp_l ( Addressable __s1,  Addressable __s2,  Addressable __loc) {
-        var mh$ = strcasecmp_l$MH();
-        try {
-            return (int)mh$.invokeExact(__s1, __s2, __loc);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle strncasecmp_l$MH() {
-        return RuntimeHelper.requireNonNull(constants$16.strncasecmp_l$MH,"strncasecmp_l");
-    }
-    public static int strncasecmp_l ( Addressable __s1,  Addressable __s2,  long __n,  Addressable __loc) {
-        var mh$ = strncasecmp_l$MH();
-        try {
-            return (int)mh$.invokeExact(__s1, __s2, __n, __loc);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle explicit_bzero$MH() {
-        return RuntimeHelper.requireNonNull(constants$16.explicit_bzero$MH,"explicit_bzero");
-    }
-    public static void explicit_bzero ( Addressable __s,  long __n) {
-        var mh$ = explicit_bzero$MH();
-        try {
-            mh$.invokeExact(__s, __n);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle strsep$MH() {
-        return RuntimeHelper.requireNonNull(constants$17.strsep$MH,"strsep");
-    }
-    public static MemoryAddress strsep ( Addressable __stringp,  Addressable __delim) {
-        var mh$ = strsep$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(__stringp, __delim);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle strsignal$MH() {
-        return RuntimeHelper.requireNonNull(constants$17.strsignal$MH,"strsignal");
-    }
-    public static MemoryAddress strsignal ( int __sig) {
-        var mh$ = strsignal$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(__sig);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle __stpcpy$MH() {
-        return RuntimeHelper.requireNonNull(constants$17.__stpcpy$MH,"__stpcpy");
-    }
-    public static MemoryAddress __stpcpy ( Addressable __dest,  Addressable __src) {
-        var mh$ = __stpcpy$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(__dest, __src);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle stpcpy$MH() {
-        return RuntimeHelper.requireNonNull(constants$17.stpcpy$MH,"stpcpy");
-    }
-    public static MemoryAddress stpcpy ( Addressable __dest,  Addressable __src) {
-        var mh$ = stpcpy$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(__dest, __src);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle __stpncpy$MH() {
-        return RuntimeHelper.requireNonNull(constants$17.__stpncpy$MH,"__stpncpy");
-    }
-    public static MemoryAddress __stpncpy ( Addressable __dest,  Addressable __src,  long __n) {
-        var mh$ = __stpncpy$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(__dest, __src, __n);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle stpncpy$MH() {
-        return RuntimeHelper.requireNonNull(constants$17.stpncpy$MH,"stpncpy");
-    }
-    public static MemoryAddress stpncpy ( Addressable __dest,  Addressable __src,  long __n) {
-        var mh$ = stpncpy$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(__dest, __src, __n);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_array_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$18.g_array_new$MH,"g_array_new");
-    }
-    public static MemoryAddress g_array_new ( int zero_terminated,  int clear_,  int element_size) {
-        var mh$ = g_array_new$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(zero_terminated, clear_, element_size);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_array_steal$MH() {
-        return RuntimeHelper.requireNonNull(constants$18.g_array_steal$MH,"g_array_steal");
-    }
-    public static MemoryAddress g_array_steal ( Addressable array,  Addressable len) {
-        var mh$ = g_array_steal$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(array, len);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_array_sized_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$18.g_array_sized_new$MH,"g_array_sized_new");
-    }
-    public static MemoryAddress g_array_sized_new ( int zero_terminated,  int clear_,  int element_size,  int reserved_size) {
-        var mh$ = g_array_sized_new$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(zero_terminated, clear_, element_size, reserved_size);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_array_copy$MH() {
-        return RuntimeHelper.requireNonNull(constants$18.g_array_copy$MH,"g_array_copy");
-    }
-    public static MemoryAddress g_array_copy ( Addressable array) {
-        var mh$ = g_array_copy$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(array);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_array_free$MH() {
-        return RuntimeHelper.requireNonNull(constants$18.g_array_free$MH,"g_array_free");
-    }
-    public static MemoryAddress g_array_free ( Addressable array,  int free_segment) {
-        var mh$ = g_array_free$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(array, free_segment);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_array_ref$MH() {
-        return RuntimeHelper.requireNonNull(constants$18.g_array_ref$MH,"g_array_ref");
-    }
-    public static MemoryAddress g_array_ref ( Addressable array) {
-        var mh$ = g_array_ref$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(array);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_array_unref$MH() {
-        return RuntimeHelper.requireNonNull(constants$19.g_array_unref$MH,"g_array_unref");
-    }
-    public static void g_array_unref ( Addressable array) {
-        var mh$ = g_array_unref$MH();
-        try {
-            mh$.invokeExact(array);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_array_get_element_size$MH() {
-        return RuntimeHelper.requireNonNull(constants$19.g_array_get_element_size$MH,"g_array_get_element_size");
-    }
-    public static int g_array_get_element_size ( Addressable array) {
-        var mh$ = g_array_get_element_size$MH();
-        try {
-            return (int)mh$.invokeExact(array);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_array_append_vals$MH() {
-        return RuntimeHelper.requireNonNull(constants$19.g_array_append_vals$MH,"g_array_append_vals");
-    }
-    public static MemoryAddress g_array_append_vals ( Addressable array,  Addressable data,  int len) {
-        var mh$ = g_array_append_vals$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(array, data, len);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_array_prepend_vals$MH() {
-        return RuntimeHelper.requireNonNull(constants$19.g_array_prepend_vals$MH,"g_array_prepend_vals");
-    }
-    public static MemoryAddress g_array_prepend_vals ( Addressable array,  Addressable data,  int len) {
-        var mh$ = g_array_prepend_vals$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(array, data, len);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_array_insert_vals$MH() {
-        return RuntimeHelper.requireNonNull(constants$19.g_array_insert_vals$MH,"g_array_insert_vals");
-    }
-    public static MemoryAddress g_array_insert_vals ( Addressable array,  int index_,  Addressable data,  int len) {
-        var mh$ = g_array_insert_vals$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(array, index_, data, len);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_array_set_size$MH() {
-        return RuntimeHelper.requireNonNull(constants$19.g_array_set_size$MH,"g_array_set_size");
-    }
-    public static MemoryAddress g_array_set_size ( Addressable array,  int length) {
-        var mh$ = g_array_set_size$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(array, length);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(__string, __n);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

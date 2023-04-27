@@ -7,61 +7,50 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1823 {
+final class constants$1823 {
 
-    static final FunctionDescriptor gtk_style_properties_set_property$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_style_properties_set_property$MH = RuntimeHelper.downcallHandle(
-        "gtk_style_properties_set_property",
-        constants$1823.gtk_style_properties_set_property$FUNC
-    );
-    static final FunctionDescriptor gtk_style_properties_set_valist$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_style_properties_set_valist$MH = RuntimeHelper.downcallHandle(
-        "gtk_style_properties_set_valist",
-        constants$1823.gtk_style_properties_set_valist$FUNC
-    );
-    static final FunctionDescriptor gtk_style_properties_set$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1823() {}
+    static final FunctionDescriptor gtk_switch_set_state$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_style_properties_set$MH = RuntimeHelper.downcallHandleVariadic(
-        "gtk_style_properties_set",
-        constants$1823.gtk_style_properties_set$FUNC
+    static final MethodHandle gtk_switch_set_state$MH = RuntimeHelper.downcallHandle(
+        "gtk_switch_set_state",
+        constants$1823.gtk_switch_set_state$FUNC
     );
-    static final FunctionDescriptor gtk_style_properties_get_property$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_switch_get_state$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_style_properties_get_property$MH = RuntimeHelper.downcallHandle(
-        "gtk_style_properties_get_property",
-        constants$1823.gtk_style_properties_get_property$FUNC
+    static final MethodHandle gtk_switch_get_state$MH = RuntimeHelper.downcallHandle(
+        "gtk_switch_get_state",
+        constants$1823.gtk_switch_get_state$FUNC
     );
-    static final FunctionDescriptor gtk_style_properties_get_valist$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor GtkTextTagTableForeach$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_style_properties_get_valist$MH = RuntimeHelper.downcallHandle(
-        "gtk_style_properties_get_valist",
-        constants$1823.gtk_style_properties_get_valist$FUNC
-    );
-    static final FunctionDescriptor gtk_style_properties_get$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor GtkTextTagTableForeach_UP$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_style_properties_get$MH = RuntimeHelper.downcallHandleVariadic(
-        "gtk_style_properties_get",
-        constants$1823.gtk_style_properties_get$FUNC
+    static final MethodHandle GtkTextTagTableForeach_UP$MH = RuntimeHelper.upcallHandle(GtkTextTagTableForeach.class, "apply", constants$1823.GtkTextTagTableForeach_UP$FUNC);
+    static final FunctionDescriptor GtkTextTagTableForeach_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GtkTextTagTableForeach_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$1823.GtkTextTagTableForeach_DOWN$FUNC
+    );
+    static final FunctionDescriptor gtk_text_tag_table_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_text_tag_table_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_tag_table_get_type",
+        constants$1823.gtk_text_tag_table_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_text_tag_table_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_text_tag_table_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_tag_table_new",
+        constants$1823.gtk_text_tag_table_new$FUNC
     );
 }
 

@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GParamSpecDouble extends _GParamSpecDouble {
+/**
+ * {@snippet :
+ * typedef struct _GParamSpecDouble GParamSpecDouble;
+ * }
+ */
+public final class GParamSpecDouble extends _GParamSpecDouble {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GParamSpecDouble() {}
 }
 
 

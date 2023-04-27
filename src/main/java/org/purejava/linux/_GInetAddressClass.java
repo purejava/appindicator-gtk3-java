@@ -7,9 +7,18 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GInetAddressClass {
+ *     GObjectClass parent_class;
+ *     gchar* (*to_string)(GInetAddress*);
+ *     const guint8* (*to_bytes)(GInetAddress*);
+ * };
+ * }
+ */
 public class _GInetAddressClass {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
                 Constants$root.C_LONG_LONG$LAYOUT.withName("g_type")
@@ -24,7 +33,10 @@ public class _GInetAddressClass {
             Constants$root.C_POINTER$LAYOUT.withName("notify"),
             Constants$root.C_POINTER$LAYOUT.withName("constructed"),
             Constants$root.C_LONG_LONG$LAYOUT.withName("flags"),
-            MemoryLayout.sequenceLayout(6, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
+            Constants$root.C_LONG_LONG$LAYOUT.withName("n_construct_properties"),
+            Constants$root.C_POINTER$LAYOUT.withName("pspecs"),
+            Constants$root.C_LONG_LONG$LAYOUT.withName("n_pspecs"),
+            MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
         ).withName("parent_class"),
         Constants$root.C_POINTER$LAYOUT.withName("to_string"),
         Constants$root.C_POINTER$LAYOUT.withName("to_bytes")
@@ -38,20 +50,32 @@ public class _GInetAddressClass {
     static final FunctionDescriptor to_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle to_string$MH = RuntimeHelper.downcallHandle(
-        _GInetAddressClass.to_string$FUNC
+    static final FunctionDescriptor to_string_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle to_string_UP$MH = RuntimeHelper.upcallHandle(to_string.class, "apply", _GInetAddressClass.to_string_UP$FUNC);
+    static final FunctionDescriptor to_string_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle to_string_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GInetAddressClass.to_string_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gchar* (*to_string)(GInetAddress*);
+     * }
+     */
     public interface to_string {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(to_string fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(to_string.class, fi, _GInetAddressClass.to_string$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(to_string fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GInetAddressClass.to_string_UP$MH, fi, _GInetAddressClass.to_string$FUNC, scope);
         }
-        static to_string ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static to_string ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GInetAddressClass.to_string$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (java.lang.foreign.MemorySegment)_GInetAddressClass.to_string_DOWN$MH.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -63,38 +87,62 @@ public class _GInetAddressClass {
     public static VarHandle to_string$VH() {
         return _GInetAddressClass.to_string$VH;
     }
-    public static MemoryAddress to_string$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GInetAddressClass.to_string$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gchar* (*to_string)(GInetAddress*);
+     * }
+     */
+    public static MemorySegment to_string$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GInetAddressClass.to_string$VH.get(seg);
     }
-    public static void to_string$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gchar* (*to_string)(GInetAddress*);
+     * }
+     */
+    public static void to_string$set(MemorySegment seg, MemorySegment x) {
         _GInetAddressClass.to_string$VH.set(seg, x);
     }
-    public static MemoryAddress to_string$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GInetAddressClass.to_string$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment to_string$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GInetAddressClass.to_string$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void to_string$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void to_string$set(MemorySegment seg, long index, MemorySegment x) {
         _GInetAddressClass.to_string$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static to_string to_string (MemorySegment segment, MemorySession session) {
-        return to_string.ofAddress(to_string$get(segment), session);
+    public static to_string to_string(MemorySegment segment, SegmentScope scope) {
+        return to_string.ofAddress(to_string$get(segment), scope);
     }
     static final FunctionDescriptor to_bytes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle to_bytes$MH = RuntimeHelper.downcallHandle(
-        _GInetAddressClass.to_bytes$FUNC
+    static final FunctionDescriptor to_bytes_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle to_bytes_UP$MH = RuntimeHelper.upcallHandle(to_bytes.class, "apply", _GInetAddressClass.to_bytes_UP$FUNC);
+    static final FunctionDescriptor to_bytes_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle to_bytes_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GInetAddressClass.to_bytes_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * const guint8* (*to_bytes)(GInetAddress*);
+     * }
+     */
     public interface to_bytes {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(to_bytes fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(to_bytes.class, fi, _GInetAddressClass.to_bytes$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(to_bytes fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GInetAddressClass.to_bytes_UP$MH, fi, _GInetAddressClass.to_bytes$FUNC, scope);
         }
-        static to_bytes ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static to_bytes ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GInetAddressClass.to_bytes$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (java.lang.foreign.MemorySegment)_GInetAddressClass.to_bytes_DOWN$MH.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -106,27 +154,39 @@ public class _GInetAddressClass {
     public static VarHandle to_bytes$VH() {
         return _GInetAddressClass.to_bytes$VH;
     }
-    public static MemoryAddress to_bytes$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GInetAddressClass.to_bytes$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * const guint8* (*to_bytes)(GInetAddress*);
+     * }
+     */
+    public static MemorySegment to_bytes$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GInetAddressClass.to_bytes$VH.get(seg);
     }
-    public static void to_bytes$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * const guint8* (*to_bytes)(GInetAddress*);
+     * }
+     */
+    public static void to_bytes$set(MemorySegment seg, MemorySegment x) {
         _GInetAddressClass.to_bytes$VH.set(seg, x);
     }
-    public static MemoryAddress to_bytes$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GInetAddressClass.to_bytes$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment to_bytes$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GInetAddressClass.to_bytes$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void to_bytes$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void to_bytes$set(MemorySegment seg, long index, MemorySegment x) {
         _GInetAddressClass.to_bytes$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static to_bytes to_bytes (MemorySegment segment, MemorySession session) {
-        return to_bytes.ofAddress(to_bytes$get(segment), session);
+    public static to_bytes to_bytes(MemorySegment segment, SegmentScope scope) {
+        return to_bytes.ofAddress(to_bytes$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

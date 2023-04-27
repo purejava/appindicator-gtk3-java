@@ -7,49 +7,56 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1310 {
+final class constants$1310 {
 
-    static final FunctionDescriptor glib_autoptr_cleanup_GdkPixbufAnimationIter$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1310() {}
+    static final FunctionDescriptor gtk_window_get_modal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GdkPixbufAnimationIter$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GdkPixbufAnimationIter",
-        constants$1310.glib_autoptr_cleanup_GdkPixbufAnimationIter$FUNC
+    static final MethodHandle gtk_window_get_modal$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_get_modal",
+        constants$1310.gtk_window_get_modal$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GdkPixbufAnimationIter$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_window_list_toplevels$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_window_list_toplevels$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_list_toplevels",
+        constants$1310.gtk_window_list_toplevels$FUNC
+    );
+    static final FunctionDescriptor gtk_window_set_has_user_ref_count$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_window_set_has_user_ref_count$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_set_has_user_ref_count",
+        constants$1310.gtk_window_set_has_user_ref_count$FUNC
+    );
+    static final FunctionDescriptor gtk_window_add_mnemonic$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GdkPixbufAnimationIter$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GdkPixbufAnimationIter",
-        constants$1310.glib_listautoptr_cleanup_GdkPixbufAnimationIter$FUNC
+    static final MethodHandle gtk_window_add_mnemonic$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_add_mnemonic",
+        constants$1310.gtk_window_add_mnemonic$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GdkPixbufAnimationIter$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_window_remove_mnemonic$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GdkPixbufAnimationIter$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GdkPixbufAnimationIter",
-        constants$1310.glib_slistautoptr_cleanup_GdkPixbufAnimationIter$FUNC
+    static final MethodHandle gtk_window_remove_mnemonic$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_remove_mnemonic",
+        constants$1310.gtk_window_remove_mnemonic$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GdkPixbufAnimationIter$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gtk_window_mnemonic_activate$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GdkPixbufAnimationIter$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GdkPixbufAnimationIter",
-        constants$1310.glib_queueautoptr_cleanup_GdkPixbufAnimationIter$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_clear_GdkPixbufLoader$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_autoptr_clear_GdkPixbufLoader$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GdkPixbufLoader",
-        constants$1310.glib_autoptr_clear_GdkPixbufLoader$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_cleanup_GdkPixbufLoader$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_autoptr_cleanup_GdkPixbufLoader$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GdkPixbufLoader",
-        constants$1310.glib_autoptr_cleanup_GdkPixbufLoader$FUNC
+    static final MethodHandle gtk_window_mnemonic_activate$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_mnemonic_activate",
+        constants$1310.gtk_window_mnemonic_activate$FUNC
     );
 }
 

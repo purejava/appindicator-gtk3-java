@@ -7,50 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$66 {
+final class constants$66 {
 
-    static final FunctionDescriptor g_once_impl$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$66() {}
+    static final FunctionDescriptor g_rec_mutex_unlock$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_rec_mutex_unlock$MH = RuntimeHelper.downcallHandle(
+        "g_rec_mutex_unlock",
+        constants$66.g_rec_mutex_unlock$FUNC
+    );
+    static final FunctionDescriptor g_cond_init$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_cond_init$MH = RuntimeHelper.downcallHandle(
+        "g_cond_init",
+        constants$66.g_cond_init$FUNC
+    );
+    static final FunctionDescriptor g_cond_clear$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_cond_clear$MH = RuntimeHelper.downcallHandle(
+        "g_cond_clear",
+        constants$66.g_cond_clear$FUNC
+    );
+    static final FunctionDescriptor g_cond_wait$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_once_impl$MH = RuntimeHelper.downcallHandle(
-        "g_once_impl",
-        constants$66.g_once_impl$FUNC
+    static final MethodHandle g_cond_wait$MH = RuntimeHelper.downcallHandle(
+        "g_cond_wait",
+        constants$66.g_cond_wait$FUNC
     );
-    static final FunctionDescriptor g_once_init_enter$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_cond_signal$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_once_init_enter$MH = RuntimeHelper.downcallHandle(
-        "g_once_init_enter",
-        constants$66.g_once_init_enter$FUNC
+    static final MethodHandle g_cond_signal$MH = RuntimeHelper.downcallHandle(
+        "g_cond_signal",
+        constants$66.g_cond_signal$FUNC
     );
-    static final FunctionDescriptor g_once_init_leave$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_once_init_leave$MH = RuntimeHelper.downcallHandle(
-        "g_once_init_leave",
-        constants$66.g_once_init_leave$FUNC
-    );
-    static final FunctionDescriptor g_get_num_processors$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle g_get_num_processors$MH = RuntimeHelper.downcallHandle(
-        "g_get_num_processors",
-        constants$66.g_get_num_processors$FUNC
-    );
-    static final FunctionDescriptor g_mutex_locker_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_cond_broadcast$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_mutex_locker_new$MH = RuntimeHelper.downcallHandle(
-        "g_mutex_locker_new",
-        constants$66.g_mutex_locker_new$FUNC
-    );
-    static final FunctionDescriptor g_mutex_locker_free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_mutex_locker_free$MH = RuntimeHelper.downcallHandle(
-        "g_mutex_locker_free",
-        constants$66.g_mutex_locker_free$FUNC
+    static final MethodHandle g_cond_broadcast$MH = RuntimeHelper.downcallHandle(
+        "g_cond_broadcast",
+        constants$66.g_cond_broadcast$FUNC
     );
 }
 

@@ -7,59 +7,16 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$2034 {
+final class constants$2034 {
 
-    static final FunctionDescriptor GtkTextBufferDeserializeFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GtkTextBufferDeserializeFunc$MH = RuntimeHelper.downcallHandle(
-        constants$2034.GtkTextBufferDeserializeFunc$FUNC
-    );
-    static final FunctionDescriptor gtk_text_buffer_register_serialize_format$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_register_serialize_format$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_register_serialize_format",
-        constants$2034.gtk_text_buffer_register_serialize_format$FUNC
-    );
-    static final FunctionDescriptor gtk_text_buffer_register_serialize_tagset$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_register_serialize_tagset$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_register_serialize_tagset",
-        constants$2034.gtk_text_buffer_register_serialize_tagset$FUNC
-    );
-    static final FunctionDescriptor gtk_text_buffer_register_deserialize_format$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_register_deserialize_format$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_register_deserialize_format",
-        constants$2034.gtk_text_buffer_register_deserialize_format$FUNC
-    );
-    static final FunctionDescriptor gtk_text_buffer_register_deserialize_tagset$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_register_deserialize_tagset$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_register_deserialize_tagset",
-        constants$2034.gtk_text_buffer_register_deserialize_tagset$FUNC
-    );
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$2034() {}
+    static final MemorySegment GTK_STYLE_CLASS_LINKED$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("linked");
+    static final MemorySegment GTK_STYLE_CLASS_GRIP$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("grip");
+    static final MemorySegment GTK_STYLE_CLASS_DOCK$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("dock");
+    static final MemorySegment GTK_STYLE_CLASS_PROGRESSBAR$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("progressbar");
+    static final MemorySegment GTK_STYLE_CLASS_SPINNER$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("spinner");
+    static final MemorySegment GTK_STYLE_CLASS_MARK$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("mark");
 }
 
 

@@ -7,55 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1230 {
+final class constants$1230 {
 
-    static final FunctionDescriptor gdk_events_get_center$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1230() {}
+    static final FunctionDescriptor atk_relation_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle atk_relation_get_type$MH = RuntimeHelper.downcallHandle(
+        "atk_relation_get_type",
+        constants$1230.atk_relation_get_type$FUNC
+    );
+    static final FunctionDescriptor atk_relation_type_register$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_events_get_center$MH = RuntimeHelper.downcallHandle(
-        "gdk_events_get_center",
-        constants$1230.gdk_events_get_center$FUNC
+    static final MethodHandle atk_relation_type_register$MH = RuntimeHelper.downcallHandle(
+        "atk_relation_type_register",
+        constants$1230.atk_relation_type_register$FUNC
     );
-    static final FunctionDescriptor gdk_event_handler_set$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor atk_relation_type_get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle atk_relation_type_get_name$MH = RuntimeHelper.downcallHandle(
+        "atk_relation_type_get_name",
+        constants$1230.atk_relation_type_get_name$FUNC
+    );
+    static final FunctionDescriptor atk_relation_type_for_name$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle atk_relation_type_for_name$MH = RuntimeHelper.downcallHandle(
+        "atk_relation_type_for_name",
+        constants$1230.atk_relation_type_for_name$FUNC
+    );
+    static final FunctionDescriptor atk_relation_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle atk_relation_new$MH = RuntimeHelper.downcallHandle(
+        "atk_relation_new",
+        constants$1230.atk_relation_new$FUNC
+    );
+    static final FunctionDescriptor atk_relation_get_relation_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_event_handler_set$MH = RuntimeHelper.downcallHandle(
-        "gdk_event_handler_set",
-        constants$1230.gdk_event_handler_set$FUNC
-    );
-    static final FunctionDescriptor gdk_event_set_screen$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_event_set_screen$MH = RuntimeHelper.downcallHandle(
-        "gdk_event_set_screen",
-        constants$1230.gdk_event_set_screen$FUNC
-    );
-    static final FunctionDescriptor gdk_event_get_screen$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_event_get_screen$MH = RuntimeHelper.downcallHandle(
-        "gdk_event_get_screen",
-        constants$1230.gdk_event_get_screen$FUNC
-    );
-    static final FunctionDescriptor gdk_event_get_event_sequence$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_event_get_event_sequence$MH = RuntimeHelper.downcallHandle(
-        "gdk_event_get_event_sequence",
-        constants$1230.gdk_event_get_event_sequence$FUNC
-    );
-    static final FunctionDescriptor gdk_event_get_event_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_event_get_event_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_event_get_event_type",
-        constants$1230.gdk_event_get_event_type$FUNC
+    static final MethodHandle atk_relation_get_relation_type$MH = RuntimeHelper.downcallHandle(
+        "atk_relation_get_relation_type",
+        constants$1230.atk_relation_get_relation_type$FUNC
     );
 }
 

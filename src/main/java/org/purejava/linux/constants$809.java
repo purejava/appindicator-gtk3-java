@@ -7,65 +7,63 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$809 {
+final class constants$809 {
 
-    static final FunctionDescriptor g_simple_async_result_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$809() {}
+    static final FunctionDescriptor g_tls_connection_set_advertised_protocols$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_simple_async_result_new$MH = RuntimeHelper.downcallHandle(
-        "g_simple_async_result_new",
-        constants$809.g_simple_async_result_new$FUNC
+    static final MethodHandle g_tls_connection_set_advertised_protocols$MH = RuntimeHelper.downcallHandle(
+        "g_tls_connection_set_advertised_protocols",
+        constants$809.g_tls_connection_set_advertised_protocols$FUNC
     );
-    static final FunctionDescriptor g_simple_async_result_new_error$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_tls_connection_get_negotiated_protocol$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_tls_connection_get_negotiated_protocol$MH = RuntimeHelper.downcallHandle(
+        "g_tls_connection_get_negotiated_protocol",
+        constants$809.g_tls_connection_get_negotiated_protocol$FUNC
+    );
+    static final FunctionDescriptor g_tls_connection_get_channel_binding_data$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_tls_connection_get_channel_binding_data$MH = RuntimeHelper.downcallHandle(
+        "g_tls_connection_get_channel_binding_data",
+        constants$809.g_tls_connection_get_channel_binding_data$FUNC
+    );
+    static final FunctionDescriptor g_tls_connection_handshake$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_tls_connection_handshake$MH = RuntimeHelper.downcallHandle(
+        "g_tls_connection_handshake",
+        constants$809.g_tls_connection_handshake$FUNC
+    );
+    static final FunctionDescriptor g_tls_connection_handshake_async$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_simple_async_result_new_error$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_simple_async_result_new_error",
-        constants$809.g_simple_async_result_new_error$FUNC
-    );
-    static final FunctionDescriptor g_simple_async_result_new_from_error$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_simple_async_result_new_from_error$MH = RuntimeHelper.downcallHandle(
-        "g_simple_async_result_new_from_error",
-        constants$809.g_simple_async_result_new_from_error$FUNC
+    static final MethodHandle g_tls_connection_handshake_async$MH = RuntimeHelper.downcallHandle(
+        "g_tls_connection_handshake_async",
+        constants$809.g_tls_connection_handshake_async$FUNC
     );
-    static final FunctionDescriptor g_simple_async_result_new_take_error$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_simple_async_result_new_take_error$MH = RuntimeHelper.downcallHandle(
-        "g_simple_async_result_new_take_error",
-        constants$809.g_simple_async_result_new_take_error$FUNC
-    );
-    static final FunctionDescriptor g_simple_async_result_set_op_res_gpointer$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_tls_connection_handshake_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_simple_async_result_set_op_res_gpointer$MH = RuntimeHelper.downcallHandle(
-        "g_simple_async_result_set_op_res_gpointer",
-        constants$809.g_simple_async_result_set_op_res_gpointer$FUNC
-    );
-    static final FunctionDescriptor g_simple_async_result_get_op_res_gpointer$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_simple_async_result_get_op_res_gpointer$MH = RuntimeHelper.downcallHandle(
-        "g_simple_async_result_get_op_res_gpointer",
-        constants$809.g_simple_async_result_get_op_res_gpointer$FUNC
+    static final MethodHandle g_tls_connection_handshake_finish$MH = RuntimeHelper.downcallHandle(
+        "g_tls_connection_handshake_finish",
+        constants$809.g_tls_connection_handshake_finish$FUNC
     );
 }
 

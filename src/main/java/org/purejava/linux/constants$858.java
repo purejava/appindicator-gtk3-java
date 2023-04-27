@@ -7,57 +7,75 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$858 {
+final class constants$858 {
 
-    static final FunctionDescriptor g_tls_certificate_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_tls_certificate_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_tls_certificate_get_type",
-        constants$858.g_tls_certificate_get_type$FUNC
-    );
-    static final FunctionDescriptor g_tls_certificate_new_from_pem$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$858() {}
+    static final FunctionDescriptor hb_font_get_font_extents_func_t$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_tls_certificate_new_from_pem$MH = RuntimeHelper.downcallHandle(
-        "g_tls_certificate_new_from_pem",
-        constants$858.g_tls_certificate_new_from_pem$FUNC
-    );
-    static final FunctionDescriptor g_tls_certificate_new_from_pkcs12$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_tls_certificate_new_from_pkcs12$MH = RuntimeHelper.downcallHandle(
-        "g_tls_certificate_new_from_pkcs12",
-        constants$858.g_tls_certificate_new_from_pkcs12$FUNC
-    );
-    static final FunctionDescriptor g_tls_certificate_new_from_file_with_password$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_tls_certificate_new_from_file_with_password$MH = RuntimeHelper.downcallHandle(
-        "g_tls_certificate_new_from_file_with_password",
-        constants$858.g_tls_certificate_new_from_file_with_password$FUNC
-    );
-    static final FunctionDescriptor g_tls_certificate_new_from_file$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor hb_font_get_font_extents_func_t_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_tls_certificate_new_from_file$MH = RuntimeHelper.downcallHandle(
-        "g_tls_certificate_new_from_file",
-        constants$858.g_tls_certificate_new_from_file$FUNC
-    );
-    static final FunctionDescriptor g_tls_certificate_new_from_files$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_tls_certificate_new_from_files$MH = RuntimeHelper.downcallHandle(
-        "g_tls_certificate_new_from_files",
-        constants$858.g_tls_certificate_new_from_files$FUNC
+    static final MethodHandle hb_font_get_font_extents_func_t_UP$MH = RuntimeHelper.upcallHandle(hb_font_get_font_extents_func_t.class, "apply", constants$858.hb_font_get_font_extents_func_t_UP$FUNC);
+    static final FunctionDescriptor hb_font_get_font_extents_func_t_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle hb_font_get_font_extents_func_t_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$858.hb_font_get_font_extents_func_t_DOWN$FUNC
+    );
+    static final FunctionDescriptor hb_font_get_font_h_extents_func_t$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final FunctionDescriptor hb_font_get_font_h_extents_func_t_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle hb_font_get_font_h_extents_func_t_UP$MH = RuntimeHelper.upcallHandle(hb_font_get_font_h_extents_func_t.class, "apply", constants$858.hb_font_get_font_h_extents_func_t_UP$FUNC);
+    static final FunctionDescriptor hb_font_get_font_h_extents_func_t_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle hb_font_get_font_h_extents_func_t_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$858.hb_font_get_font_h_extents_func_t_DOWN$FUNC
+    );
+    static final FunctionDescriptor hb_font_get_font_v_extents_func_t$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final FunctionDescriptor hb_font_get_font_v_extents_func_t_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle hb_font_get_font_v_extents_func_t_UP$MH = RuntimeHelper.upcallHandle(hb_font_get_font_v_extents_func_t.class, "apply", constants$858.hb_font_get_font_v_extents_func_t_UP$FUNC);
+    static final FunctionDescriptor hb_font_get_font_v_extents_func_t_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle hb_font_get_font_v_extents_func_t_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$858.hb_font_get_font_v_extents_func_t_DOWN$FUNC
     );
 }
 

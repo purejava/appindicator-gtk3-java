@@ -7,50 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1175 {
+final class constants$1175 {
 
-    static final FunctionDescriptor cairo_scaled_font_reference$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1175() {}
+    static final FunctionDescriptor gdk_keyval_is_lower$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle cairo_scaled_font_reference$MH = RuntimeHelper.downcallHandle(
-        "cairo_scaled_font_reference",
-        constants$1175.cairo_scaled_font_reference$FUNC
+    static final MethodHandle gdk_keyval_is_lower$MH = RuntimeHelper.downcallHandle(
+        "gdk_keyval_is_lower",
+        constants$1175.gdk_keyval_is_lower$FUNC
     );
-    static final FunctionDescriptor cairo_scaled_font_destroy$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gdk_keyval_to_unicode$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle cairo_scaled_font_destroy$MH = RuntimeHelper.downcallHandle(
-        "cairo_scaled_font_destroy",
-        constants$1175.cairo_scaled_font_destroy$FUNC
+    static final MethodHandle gdk_keyval_to_unicode$MH = RuntimeHelper.downcallHandle(
+        "gdk_keyval_to_unicode",
+        constants$1175.gdk_keyval_to_unicode$FUNC
     );
-    static final FunctionDescriptor cairo_scaled_font_get_reference_count$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gdk_unicode_to_keyval$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle cairo_scaled_font_get_reference_count$MH = RuntimeHelper.downcallHandle(
-        "cairo_scaled_font_get_reference_count",
-        constants$1175.cairo_scaled_font_get_reference_count$FUNC
+    static final MethodHandle gdk_unicode_to_keyval$MH = RuntimeHelper.downcallHandle(
+        "gdk_unicode_to_keyval",
+        constants$1175.gdk_unicode_to_keyval$FUNC
     );
-    static final FunctionDescriptor cairo_scaled_font_status$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_scaled_font_status$MH = RuntimeHelper.downcallHandle(
-        "cairo_scaled_font_status",
-        constants$1175.cairo_scaled_font_status$FUNC
-    );
-    static final FunctionDescriptor cairo_scaled_font_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_scaled_font_get_type$MH = RuntimeHelper.downcallHandle(
-        "cairo_scaled_font_get_type",
-        constants$1175.cairo_scaled_font_get_type$FUNC
-    );
-    static final FunctionDescriptor cairo_scaled_font_get_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gdk_parse_args$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_scaled_font_get_user_data$MH = RuntimeHelper.downcallHandle(
-        "cairo_scaled_font_get_user_data",
-        constants$1175.cairo_scaled_font_get_user_data$FUNC
+    static final MethodHandle gdk_parse_args$MH = RuntimeHelper.downcallHandle(
+        "gdk_parse_args",
+        constants$1175.gdk_parse_args$FUNC
+    );
+    static final FunctionDescriptor gdk_init$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_init$MH = RuntimeHelper.downcallHandle(
+        "gdk_init",
+        constants$1175.gdk_init$FUNC
+    );
+    static final FunctionDescriptor gdk_init_check$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_init_check$MH = RuntimeHelper.downcallHandle(
+        "gdk_init_check",
+        constants$1175.gdk_init_check$FUNC
     );
 }
 

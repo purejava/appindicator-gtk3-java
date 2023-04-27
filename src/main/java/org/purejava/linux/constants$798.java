@@ -7,55 +7,48 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$798 {
+final class constants$798 {
 
-    static final FunctionDescriptor g_settings_new_with_backend$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$798() {}
+    static final FunctionDescriptor g_tcp_connection_get_graceful_disconnect$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_tcp_connection_get_graceful_disconnect$MH = RuntimeHelper.downcallHandle(
+        "g_tcp_connection_get_graceful_disconnect",
+        constants$798.g_tcp_connection_get_graceful_disconnect$FUNC
+    );
+    static final FunctionDescriptor g_tcp_wrapper_connection_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_tcp_wrapper_connection_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_tcp_wrapper_connection_get_type",
+        constants$798.g_tcp_wrapper_connection_get_type$FUNC
+    );
+    static final FunctionDescriptor g_tcp_wrapper_connection_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_settings_new_with_backend$MH = RuntimeHelper.downcallHandle(
-        "g_settings_new_with_backend",
-        constants$798.g_settings_new_with_backend$FUNC
+    static final MethodHandle g_tcp_wrapper_connection_new$MH = RuntimeHelper.downcallHandle(
+        "g_tcp_wrapper_connection_new",
+        constants$798.g_tcp_wrapper_connection_new$FUNC
     );
-    static final FunctionDescriptor g_settings_new_with_backend_and_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_tcp_wrapper_connection_get_base_io_stream$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_settings_new_with_backend_and_path$MH = RuntimeHelper.downcallHandle(
-        "g_settings_new_with_backend_and_path",
-        constants$798.g_settings_new_with_backend_and_path$FUNC
+    static final MethodHandle g_tcp_wrapper_connection_get_base_io_stream$MH = RuntimeHelper.downcallHandle(
+        "g_tcp_wrapper_connection_get_base_io_stream",
+        constants$798.g_tcp_wrapper_connection_get_base_io_stream$FUNC
     );
-    static final FunctionDescriptor g_settings_new_full$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_test_dbus_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_test_dbus_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_test_dbus_get_type",
+        constants$798.g_test_dbus_get_type$FUNC
     );
-    static final MethodHandle g_settings_new_full$MH = RuntimeHelper.downcallHandle(
-        "g_settings_new_full",
-        constants$798.g_settings_new_full$FUNC
+    static final FunctionDescriptor g_test_dbus_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final FunctionDescriptor g_settings_list_children$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_settings_list_children$MH = RuntimeHelper.downcallHandle(
-        "g_settings_list_children",
-        constants$798.g_settings_list_children$FUNC
-    );
-    static final FunctionDescriptor g_settings_list_keys$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_settings_list_keys$MH = RuntimeHelper.downcallHandle(
-        "g_settings_list_keys",
-        constants$798.g_settings_list_keys$FUNC
-    );
-    static final FunctionDescriptor g_settings_get_range$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_settings_get_range$MH = RuntimeHelper.downcallHandle(
-        "g_settings_get_range",
-        constants$798.g_settings_get_range$FUNC
+    static final MethodHandle g_test_dbus_new$MH = RuntimeHelper.downcallHandle(
+        "g_test_dbus_new",
+        constants$798.g_test_dbus_new$FUNC
     );
 }
 

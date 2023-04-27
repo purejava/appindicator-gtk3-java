@@ -7,48 +7,48 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1974 {
+final class constants$1974 {
 
-    static final FunctionDescriptor gtk_recent_filter_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_recent_filter_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_filter_get_type",
-        constants$1974.gtk_recent_filter_get_type$FUNC
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1974() {}
+    static final FunctionDescriptor gtk_theming_engine_load$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor gtk_recent_filter_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_recent_filter_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_filter_new",
-        constants$1974.gtk_recent_filter_new$FUNC
+    static final MethodHandle gtk_theming_engine_load$MH = RuntimeHelper.downcallHandle(
+        "gtk_theming_engine_load",
+        constants$1974.gtk_theming_engine_load$FUNC
     );
-    static final FunctionDescriptor gtk_recent_filter_set_name$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_theming_engine_get_screen$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_theming_engine_get_screen$MH = RuntimeHelper.downcallHandle(
+        "gtk_theming_engine_get_screen",
+        constants$1974.gtk_theming_engine_get_screen$FUNC
+    );
+    static final FunctionDescriptor gtk_ui_manager_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_ui_manager_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_ui_manager_get_type",
+        constants$1974.gtk_ui_manager_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_ui_manager_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_ui_manager_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_ui_manager_new",
+        constants$1974.gtk_ui_manager_new$FUNC
+    );
+    static final FunctionDescriptor gtk_ui_manager_set_add_tearoffs$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_ui_manager_set_add_tearoffs$MH = RuntimeHelper.downcallHandle(
+        "gtk_ui_manager_set_add_tearoffs",
+        constants$1974.gtk_ui_manager_set_add_tearoffs$FUNC
+    );
+    static final FunctionDescriptor gtk_ui_manager_get_add_tearoffs$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_recent_filter_set_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_filter_set_name",
-        constants$1974.gtk_recent_filter_set_name$FUNC
-    );
-    static final FunctionDescriptor gtk_recent_filter_get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_recent_filter_get_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_filter_get_name",
-        constants$1974.gtk_recent_filter_get_name$FUNC
-    );
-    static final FunctionDescriptor gtk_recent_filter_add_mime_type$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_recent_filter_add_mime_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_filter_add_mime_type",
-        constants$1974.gtk_recent_filter_add_mime_type$FUNC
-    );
-    static final FunctionDescriptor gtk_recent_filter_add_pattern$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_recent_filter_add_pattern$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_filter_add_pattern",
-        constants$1974.gtk_recent_filter_add_pattern$FUNC
+    static final MethodHandle gtk_ui_manager_get_add_tearoffs$MH = RuntimeHelper.downcallHandle(
+        "gtk_ui_manager_get_add_tearoffs",
+        constants$1974.gtk_ui_manager_get_add_tearoffs$FUNC
     );
 }
 

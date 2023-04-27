@@ -7,9 +7,17 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GMenuAttributeIterClass {
+ *     GObjectClass parent_class;
+ *     gboolean (*get_next)(GMenuAttributeIter*,const gchar**,GVariant**);
+ * };
+ * }
+ */
 public class _GMenuAttributeIterClass {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
                 Constants$root.C_LONG_LONG$LAYOUT.withName("g_type")
@@ -24,7 +32,10 @@ public class _GMenuAttributeIterClass {
             Constants$root.C_POINTER$LAYOUT.withName("notify"),
             Constants$root.C_POINTER$LAYOUT.withName("constructed"),
             Constants$root.C_LONG_LONG$LAYOUT.withName("flags"),
-            MemoryLayout.sequenceLayout(6, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
+            Constants$root.C_LONG_LONG$LAYOUT.withName("n_construct_properties"),
+            Constants$root.C_POINTER$LAYOUT.withName("pspecs"),
+            Constants$root.C_LONG_LONG$LAYOUT.withName("n_pspecs"),
+            MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
         ).withName("parent_class"),
         Constants$root.C_POINTER$LAYOUT.withName("get_next")
     ).withName("_GMenuAttributeIterClass");
@@ -39,20 +50,36 @@ public class _GMenuAttributeIterClass {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_next$MH = RuntimeHelper.downcallHandle(
-        _GMenuAttributeIterClass.get_next$FUNC
+    static final FunctionDescriptor get_next_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_next_UP$MH = RuntimeHelper.upcallHandle(get_next.class, "apply", _GMenuAttributeIterClass.get_next_UP$FUNC);
+    static final FunctionDescriptor get_next_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_next_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GMenuAttributeIterClass.get_next_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*get_next)(GMenuAttributeIter*,const gchar**,GVariant**);
+     * }
+     */
     public interface get_next {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2);
-        static MemorySegment allocate(get_next fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_next.class, fi, _GMenuAttributeIterClass.get_next$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2);
+        static MemorySegment allocate(get_next fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GMenuAttributeIterClass.get_next_UP$MH, fi, _GMenuAttributeIterClass.get_next$FUNC, scope);
         }
-        static get_next ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2) -> {
+        static get_next ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2) -> {
                 try {
-                    return (int)_GMenuAttributeIterClass.get_next$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2);
+                    return (int)_GMenuAttributeIterClass.get_next_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -64,27 +91,39 @@ public class _GMenuAttributeIterClass {
     public static VarHandle get_next$VH() {
         return _GMenuAttributeIterClass.get_next$VH;
     }
-    public static MemoryAddress get_next$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GMenuAttributeIterClass.get_next$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*get_next)(GMenuAttributeIter*,const gchar**,GVariant**);
+     * }
+     */
+    public static MemorySegment get_next$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GMenuAttributeIterClass.get_next$VH.get(seg);
     }
-    public static void get_next$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*get_next)(GMenuAttributeIter*,const gchar**,GVariant**);
+     * }
+     */
+    public static void get_next$set(MemorySegment seg, MemorySegment x) {
         _GMenuAttributeIterClass.get_next$VH.set(seg, x);
     }
-    public static MemoryAddress get_next$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GMenuAttributeIterClass.get_next$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_next$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GMenuAttributeIterClass.get_next$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_next$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_next$set(MemorySegment seg, long index, MemorySegment x) {
         _GMenuAttributeIterClass.get_next$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_next get_next (MemorySegment segment, MemorySession session) {
-        return get_next.ofAddress(get_next$get(segment), session);
+    public static get_next get_next(MemorySegment segment, SegmentScope scope) {
+        return get_next.ofAddress(get_next$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

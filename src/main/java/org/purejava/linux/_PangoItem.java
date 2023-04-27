@@ -7,9 +7,19 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _PangoItem {
+ *     int offset;
+ *     int length;
+ *     int num_chars;
+ *     PangoAnalysis analysis;
+ * };
+ * }
+ */
 public class _PangoItem {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_INT$LAYOUT.withName("offset"),
         Constants$root.C_INT$LAYOUT.withName("length"),
         Constants$root.C_INT$LAYOUT.withName("num_chars"),
@@ -34,10 +44,22 @@ public class _PangoItem {
     public static VarHandle offset$VH() {
         return _PangoItem.offset$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * int offset;
+     * }
+     */
     public static int offset$get(MemorySegment seg) {
         return (int)_PangoItem.offset$VH.get(seg);
     }
-    public static void offset$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * int offset;
+     * }
+     */
+    public static void offset$set(MemorySegment seg, int x) {
         _PangoItem.offset$VH.set(seg, x);
     }
     public static int offset$get(MemorySegment seg, long index) {
@@ -50,10 +72,22 @@ public class _PangoItem {
     public static VarHandle length$VH() {
         return _PangoItem.length$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * int length;
+     * }
+     */
     public static int length$get(MemorySegment seg) {
         return (int)_PangoItem.length$VH.get(seg);
     }
-    public static void length$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * int length;
+     * }
+     */
+    public static void length$set(MemorySegment seg, int x) {
         _PangoItem.length$VH.set(seg, x);
     }
     public static int length$get(MemorySegment seg, long index) {
@@ -66,10 +100,22 @@ public class _PangoItem {
     public static VarHandle num_chars$VH() {
         return _PangoItem.num_chars$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * int num_chars;
+     * }
+     */
     public static int num_chars$get(MemorySegment seg) {
         return (int)_PangoItem.num_chars$VH.get(seg);
     }
-    public static void num_chars$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * int num_chars;
+     * }
+     */
+    public static void num_chars$set(MemorySegment seg, int x) {
         _PangoItem.num_chars$VH.set(seg, x);
     }
     public static int num_chars$get(MemorySegment seg, long index) {
@@ -83,10 +129,10 @@ public class _PangoItem {
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

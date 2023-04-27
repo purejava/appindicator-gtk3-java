@@ -7,51 +7,49 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1803 {
+final class constants$1803 {
 
-    static final FunctionDescriptor gtk_gesture_stylus_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1803() {}
+    static final FunctionDescriptor gtk_scrolled_window_get_propagate_natural_height$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_gesture_stylus_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_gesture_stylus_new",
-        constants$1803.gtk_gesture_stylus_new$FUNC
+    static final MethodHandle gtk_scrolled_window_get_propagate_natural_height$MH = RuntimeHelper.downcallHandle(
+        "gtk_scrolled_window_get_propagate_natural_height",
+        constants$1803.gtk_scrolled_window_get_propagate_natural_height$FUNC
     );
-    static final FunctionDescriptor gtk_gesture_stylus_get_axis$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_search_bar_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_search_bar_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_search_bar_get_type",
+        constants$1803.gtk_search_bar_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_search_bar_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_search_bar_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_search_bar_new",
+        constants$1803.gtk_search_bar_new$FUNC
+    );
+    static final FunctionDescriptor gtk_search_bar_connect_entry$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_gesture_stylus_get_axis$MH = RuntimeHelper.downcallHandle(
-        "gtk_gesture_stylus_get_axis",
-        constants$1803.gtk_gesture_stylus_get_axis$FUNC
+    static final MethodHandle gtk_search_bar_connect_entry$MH = RuntimeHelper.downcallHandle(
+        "gtk_search_bar_connect_entry",
+        constants$1803.gtk_search_bar_connect_entry$FUNC
     );
-    static final FunctionDescriptor gtk_gesture_stylus_get_axes$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_search_bar_get_search_mode$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_search_bar_get_search_mode$MH = RuntimeHelper.downcallHandle(
+        "gtk_search_bar_get_search_mode",
+        constants$1803.gtk_search_bar_get_search_mode$FUNC
+    );
+    static final FunctionDescriptor gtk_search_bar_set_search_mode$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_gesture_stylus_get_axes$MH = RuntimeHelper.downcallHandle(
-        "gtk_gesture_stylus_get_axes",
-        constants$1803.gtk_gesture_stylus_get_axes$FUNC
-    );
-    static final FunctionDescriptor gtk_gesture_stylus_get_device_tool$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_gesture_stylus_get_device_tool$MH = RuntimeHelper.downcallHandle(
-        "gtk_gesture_stylus_get_device_tool",
-        constants$1803.gtk_gesture_stylus_get_device_tool$FUNC
-    );
-    static final FunctionDescriptor gtk_gesture_swipe_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_gesture_swipe_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_gesture_swipe_get_type",
-        constants$1803.gtk_gesture_swipe_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_gesture_swipe_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_gesture_swipe_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_gesture_swipe_new",
-        constants$1803.gtk_gesture_swipe_new$FUNC
+    static final MethodHandle gtk_search_bar_set_search_mode$MH = RuntimeHelper.downcallHandle(
+        "gtk_search_bar_set_search_mode",
+        constants$1803.gtk_search_bar_set_search_mode$FUNC
     );
 }
 

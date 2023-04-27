@@ -7,47 +7,59 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1858 {
+final class constants$1858 {
 
-    static final FunctionDescriptor gtk_im_multicontext_append_menuitems$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1858() {}
+    static final FunctionDescriptor gtk_tool_palette_set_exclusive$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_tool_palette_set_exclusive$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_palette_set_exclusive",
+        constants$1858.gtk_tool_palette_set_exclusive$FUNC
+    );
+    static final FunctionDescriptor gtk_tool_palette_set_expand$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_tool_palette_set_expand$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_palette_set_expand",
+        constants$1858.gtk_tool_palette_set_expand$FUNC
+    );
+    static final FunctionDescriptor gtk_tool_palette_get_group_position$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_im_multicontext_append_menuitems$MH = RuntimeHelper.downcallHandle(
-        "gtk_im_multicontext_append_menuitems",
-        constants$1858.gtk_im_multicontext_append_menuitems$FUNC
+    static final MethodHandle gtk_tool_palette_get_group_position$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_palette_get_group_position",
+        constants$1858.gtk_tool_palette_get_group_position$FUNC
     );
-    static final FunctionDescriptor gtk_im_multicontext_get_context_id$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_im_multicontext_get_context_id$MH = RuntimeHelper.downcallHandle(
-        "gtk_im_multicontext_get_context_id",
-        constants$1858.gtk_im_multicontext_get_context_id$FUNC
-    );
-    static final FunctionDescriptor gtk_im_multicontext_set_context_id$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_tool_palette_get_exclusive$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_im_multicontext_set_context_id$MH = RuntimeHelper.downcallHandle(
-        "gtk_im_multicontext_set_context_id",
-        constants$1858.gtk_im_multicontext_set_context_id$FUNC
+    static final MethodHandle gtk_tool_palette_get_exclusive$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_palette_get_exclusive",
+        constants$1858.gtk_tool_palette_get_exclusive$FUNC
     );
-    static final FunctionDescriptor gtk_info_bar_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_info_bar_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_info_bar_get_type",
-        constants$1858.gtk_info_bar_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_info_bar_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_info_bar_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_info_bar_new",
-        constants$1858.gtk_info_bar_new$FUNC
-    );
-    static final FunctionDescriptor gtk_info_bar_new_with_buttons$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_tool_palette_get_expand$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_info_bar_new_with_buttons$MH = RuntimeHelper.downcallHandleVariadic(
-        "gtk_info_bar_new_with_buttons",
-        constants$1858.gtk_info_bar_new_with_buttons$FUNC
+    static final MethodHandle gtk_tool_palette_get_expand$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_palette_get_expand",
+        constants$1858.gtk_tool_palette_get_expand$FUNC
+    );
+    static final FunctionDescriptor gtk_tool_palette_set_icon_size$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_tool_palette_set_icon_size$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_palette_set_icon_size",
+        constants$1858.gtk_tool_palette_set_icon_size$FUNC
     );
 }
 

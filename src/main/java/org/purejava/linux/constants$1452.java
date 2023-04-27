@@ -7,52 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1452 {
+final class constants$1452 {
 
-    static final FunctionDescriptor gtk_widget_set_margin_right$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1452() {}
+    static final FunctionDescriptor gtk_entry_set_has_frame$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_widget_set_margin_right$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_margin_right",
-        constants$1452.gtk_widget_set_margin_right$FUNC
+    static final MethodHandle gtk_entry_set_has_frame$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_set_has_frame",
+        constants$1452.gtk_entry_set_has_frame$FUNC
     );
-    static final FunctionDescriptor gtk_widget_get_margin_start$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_entry_get_has_frame$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_widget_get_margin_start$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_margin_start",
-        constants$1452.gtk_widget_get_margin_start$FUNC
+    static final MethodHandle gtk_entry_get_has_frame$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_get_has_frame",
+        constants$1452.gtk_entry_get_has_frame$FUNC
     );
-    static final FunctionDescriptor gtk_widget_set_margin_start$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_entry_set_inner_border$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_entry_set_inner_border$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_set_inner_border",
+        constants$1452.gtk_entry_set_inner_border$FUNC
+    );
+    static final FunctionDescriptor gtk_entry_get_inner_border$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_entry_get_inner_border$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_get_inner_border",
+        constants$1452.gtk_entry_get_inner_border$FUNC
+    );
+    static final FunctionDescriptor gtk_entry_set_overwrite_mode$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_widget_set_margin_start$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_margin_start",
-        constants$1452.gtk_widget_set_margin_start$FUNC
+    static final MethodHandle gtk_entry_set_overwrite_mode$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_set_overwrite_mode",
+        constants$1452.gtk_entry_set_overwrite_mode$FUNC
     );
-    static final FunctionDescriptor gtk_widget_get_margin_end$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_entry_get_overwrite_mode$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_widget_get_margin_end$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_margin_end",
-        constants$1452.gtk_widget_get_margin_end$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_set_margin_end$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_widget_set_margin_end$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_margin_end",
-        constants$1452.gtk_widget_set_margin_end$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_get_margin_top$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_get_margin_top$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_margin_top",
-        constants$1452.gtk_widget_get_margin_top$FUNC
+    static final MethodHandle gtk_entry_get_overwrite_mode$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_get_overwrite_mode",
+        constants$1452.gtk_entry_get_overwrite_mode$FUNC
     );
 }
 

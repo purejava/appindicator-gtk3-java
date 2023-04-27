@@ -7,46 +7,66 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1056 {
+final class constants$1056 {
 
-    static final FunctionDescriptor pango_font_description_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_font_description_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_font_description_get_type",
-        constants$1056.pango_font_description_get_type$FUNC
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1056() {}
+    static final FunctionDescriptor gdk_device_set_axis_use$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final FunctionDescriptor pango_font_description_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle pango_font_description_new$MH = RuntimeHelper.downcallHandle(
-        "pango_font_description_new",
-        constants$1056.pango_font_description_new$FUNC
+    static final MethodHandle gdk_device_set_axis_use$MH = RuntimeHelper.downcallHandle(
+        "gdk_device_set_axis_use",
+        constants$1056.gdk_device_set_axis_use$FUNC
     );
-    static final FunctionDescriptor pango_font_description_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_font_description_copy$MH = RuntimeHelper.downcallHandle(
-        "pango_font_description_copy",
-        constants$1056.pango_font_description_copy$FUNC
-    );
-    static final FunctionDescriptor pango_font_description_copy_static$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_font_description_copy_static$MH = RuntimeHelper.downcallHandle(
-        "pango_font_description_copy_static",
-        constants$1056.pango_font_description_copy_static$FUNC
-    );
-    static final FunctionDescriptor pango_font_description_hash$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_font_description_hash$MH = RuntimeHelper.downcallHandle(
-        "pango_font_description_hash",
-        constants$1056.pango_font_description_hash$FUNC
-    );
-    static final FunctionDescriptor pango_font_description_equal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gdk_device_get_state$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_font_description_equal$MH = RuntimeHelper.downcallHandle(
-        "pango_font_description_equal",
-        constants$1056.pango_font_description_equal$FUNC
+    static final MethodHandle gdk_device_get_state$MH = RuntimeHelper.downcallHandle(
+        "gdk_device_get_state",
+        constants$1056.gdk_device_get_state$FUNC
+    );
+    static final FunctionDescriptor gdk_device_get_position$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_device_get_position$MH = RuntimeHelper.downcallHandle(
+        "gdk_device_get_position",
+        constants$1056.gdk_device_get_position$FUNC
+    );
+    static final FunctionDescriptor gdk_device_get_window_at_position$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_device_get_window_at_position$MH = RuntimeHelper.downcallHandle(
+        "gdk_device_get_window_at_position",
+        constants$1056.gdk_device_get_window_at_position$FUNC
+    );
+    static final FunctionDescriptor gdk_device_get_position_double$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_device_get_position_double$MH = RuntimeHelper.downcallHandle(
+        "gdk_device_get_position_double",
+        constants$1056.gdk_device_get_position_double$FUNC
+    );
+    static final FunctionDescriptor gdk_device_get_window_at_position_double$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_device_get_window_at_position_double$MH = RuntimeHelper.downcallHandle(
+        "gdk_device_get_window_at_position_double",
+        constants$1056.gdk_device_get_window_at_position_double$FUNC
     );
 }
 

@@ -7,48 +7,61 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1589 {
+final class constants$1589 {
 
-    static final FunctionDescriptor gtk_text_child_anchor_get_widgets$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1589() {}
+    static final FunctionDescriptor gtk_flow_box_get_activate_on_single_click$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_text_child_anchor_get_widgets$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_child_anchor_get_widgets",
-        constants$1589.gtk_text_child_anchor_get_widgets$FUNC
+    static final MethodHandle gtk_flow_box_get_activate_on_single_click$MH = RuntimeHelper.downcallHandle(
+        "gtk_flow_box_get_activate_on_single_click",
+        constants$1589.gtk_flow_box_get_activate_on_single_click$FUNC
     );
-    static final FunctionDescriptor gtk_text_child_anchor_get_deleted$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_child_anchor_get_deleted$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_child_anchor_get_deleted",
-        constants$1589.gtk_text_child_anchor_get_deleted$FUNC
-    );
-    static final FunctionDescriptor gtk_text_tag_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_text_tag_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_tag_get_type",
-        constants$1589.gtk_text_tag_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_text_tag_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_tag_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_tag_new",
-        constants$1589.gtk_text_tag_new$FUNC
-    );
-    static final FunctionDescriptor gtk_text_tag_get_priority$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_tag_get_priority$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_tag_get_priority",
-        constants$1589.gtk_text_tag_get_priority$FUNC
-    );
-    static final FunctionDescriptor gtk_text_tag_set_priority$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_flow_box_insert$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_text_tag_set_priority$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_tag_set_priority",
-        constants$1589.gtk_text_tag_set_priority$FUNC
+    static final MethodHandle gtk_flow_box_insert$MH = RuntimeHelper.downcallHandle(
+        "gtk_flow_box_insert",
+        constants$1589.gtk_flow_box_insert$FUNC
+    );
+    static final FunctionDescriptor gtk_flow_box_get_child_at_index$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_flow_box_get_child_at_index$MH = RuntimeHelper.downcallHandle(
+        "gtk_flow_box_get_child_at_index",
+        constants$1589.gtk_flow_box_get_child_at_index$FUNC
+    );
+    static final FunctionDescriptor gtk_flow_box_get_child_at_pos$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_flow_box_get_child_at_pos$MH = RuntimeHelper.downcallHandle(
+        "gtk_flow_box_get_child_at_pos",
+        constants$1589.gtk_flow_box_get_child_at_pos$FUNC
+    );
+    static final FunctionDescriptor GtkFlowBoxForeachFunc$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final FunctionDescriptor GtkFlowBoxForeachFunc_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GtkFlowBoxForeachFunc_UP$MH = RuntimeHelper.upcallHandle(GtkFlowBoxForeachFunc.class, "apply", constants$1589.GtkFlowBoxForeachFunc_UP$FUNC);
+    static final FunctionDescriptor GtkFlowBoxForeachFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GtkFlowBoxForeachFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$1589.GtkFlowBoxForeachFunc_DOWN$FUNC
     );
 }
 

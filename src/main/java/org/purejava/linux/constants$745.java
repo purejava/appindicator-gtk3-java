@@ -7,49 +7,59 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$745 {
+final class constants$745 {
 
-    static final FunctionDescriptor glib_autoptr_clear_GMemoryMonitor$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$745() {}
+    static final FunctionDescriptor g_settings_get_user_value$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GMemoryMonitor$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GMemoryMonitor",
-        constants$745.glib_autoptr_clear_GMemoryMonitor$FUNC
+    static final MethodHandle g_settings_get_user_value$MH = RuntimeHelper.downcallHandle(
+        "g_settings_get_user_value",
+        constants$745.g_settings_get_user_value$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GMemoryMonitor$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_settings_get_default_value$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GMemoryMonitor$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GMemoryMonitor",
-        constants$745.glib_autoptr_cleanup_GMemoryMonitor$FUNC
+    static final MethodHandle g_settings_get_default_value$MH = RuntimeHelper.downcallHandle(
+        "g_settings_get_default_value",
+        constants$745.g_settings_get_default_value$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GMemoryMonitor$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_settings_set$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GMemoryMonitor$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GMemoryMonitor",
-        constants$745.glib_listautoptr_cleanup_GMemoryMonitor$FUNC
+    static final MethodHandle g_settings_set$MH = RuntimeHelper.downcallHandleVariadic(
+        "g_settings_set",
+        constants$745.g_settings_set$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GMemoryMonitor$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_settings_get$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GMemoryMonitor$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GMemoryMonitor",
-        constants$745.glib_slistautoptr_cleanup_GMemoryMonitor$FUNC
+    static final MethodHandle g_settings_get$MH = RuntimeHelper.downcallHandleVariadic(
+        "g_settings_get",
+        constants$745.g_settings_get$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GMemoryMonitor$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_settings_reset$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GMemoryMonitor$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GMemoryMonitor",
-        constants$745.glib_queueautoptr_cleanup_GMemoryMonitor$FUNC
+    static final MethodHandle g_settings_reset$MH = RuntimeHelper.downcallHandle(
+        "g_settings_reset",
+        constants$745.g_settings_reset$FUNC
     );
-    static final FunctionDescriptor g_memory_monitor$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_settings_get_int$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_memory_monitor$MH = RuntimeHelper.downcallHandle(
-        "g_memory_monitor",
-        constants$745.g_memory_monitor$FUNC
+    static final MethodHandle g_settings_get_int$MH = RuntimeHelper.downcallHandle(
+        "g_settings_get_int",
+        constants$745.g_settings_get_int$FUNC
     );
 }
 

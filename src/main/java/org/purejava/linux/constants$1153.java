@@ -7,52 +7,62 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1153 {
+final class constants$1153 {
 
-    static final FunctionDescriptor pango_log2vis_get_embedding_levels$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_log2vis_get_embedding_levels$MH = RuntimeHelper.downcallHandle(
-        "pango_log2vis_get_embedding_levels",
-        constants$1153.pango_log2vis_get_embedding_levels$FUNC
-    );
-    static final FunctionDescriptor pango_is_zero_width$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_is_zero_width$MH = RuntimeHelper.downcallHandle(
-        "pango_is_zero_width",
-        constants$1153.pango_is_zero_width$FUNC
-    );
-    static final FunctionDescriptor pango_find_paragraph_boundary$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1153() {}
+    static final FunctionDescriptor pango_cairo_update_layout$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_find_paragraph_boundary$MH = RuntimeHelper.downcallHandle(
-        "pango_find_paragraph_boundary",
-        constants$1153.pango_find_paragraph_boundary$FUNC
+    static final MethodHandle pango_cairo_update_layout$MH = RuntimeHelper.downcallHandle(
+        "pango_cairo_update_layout",
+        constants$1153.pango_cairo_update_layout$FUNC
     );
-    static final FunctionDescriptor pango_version$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle pango_version$MH = RuntimeHelper.downcallHandle(
-        "pango_version",
-        constants$1153.pango_version$FUNC
+    static final FunctionDescriptor pango_cairo_show_glyph_string$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor pango_version_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle pango_version_string$MH = RuntimeHelper.downcallHandle(
-        "pango_version_string",
-        constants$1153.pango_version_string$FUNC
+    static final MethodHandle pango_cairo_show_glyph_string$MH = RuntimeHelper.downcallHandle(
+        "pango_cairo_show_glyph_string",
+        constants$1153.pango_cairo_show_glyph_string$FUNC
     );
-    static final FunctionDescriptor pango_version_check$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor pango_cairo_show_glyph_item$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_version_check$MH = RuntimeHelper.downcallHandle(
-        "pango_version_check",
-        constants$1153.pango_version_check$FUNC
+    static final MethodHandle pango_cairo_show_glyph_item$MH = RuntimeHelper.downcallHandle(
+        "pango_cairo_show_glyph_item",
+        constants$1153.pango_cairo_show_glyph_item$FUNC
+    );
+    static final FunctionDescriptor pango_cairo_show_layout_line$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle pango_cairo_show_layout_line$MH = RuntimeHelper.downcallHandle(
+        "pango_cairo_show_layout_line",
+        constants$1153.pango_cairo_show_layout_line$FUNC
+    );
+    static final FunctionDescriptor pango_cairo_show_layout$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle pango_cairo_show_layout$MH = RuntimeHelper.downcallHandle(
+        "pango_cairo_show_layout",
+        constants$1153.pango_cairo_show_layout$FUNC
+    );
+    static final FunctionDescriptor pango_cairo_show_error_underline$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle pango_cairo_show_error_underline$MH = RuntimeHelper.downcallHandle(
+        "pango_cairo_show_error_underline",
+        constants$1153.pango_cairo_show_error_underline$FUNC
     );
 }
 

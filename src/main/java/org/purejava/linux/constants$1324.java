@@ -7,37 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1324 {
+final class constants$1324 {
 
-    static final FunctionDescriptor gdk_input_source_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_input_source_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_input_source_get_type",
-        constants$1324.gdk_input_source_get_type$FUNC
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1324() {}
+    static final FunctionDescriptor gtk_about_dialog_get_website$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor gdk_input_mode_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_input_mode_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_input_mode_get_type",
-        constants$1324.gdk_input_mode_get_type$FUNC
+    static final MethodHandle gtk_about_dialog_get_website$MH = RuntimeHelper.downcallHandle(
+        "gtk_about_dialog_get_website",
+        constants$1324.gtk_about_dialog_get_website$FUNC
     );
-    static final FunctionDescriptor gdk_device_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_device_type_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_device_type_get_type",
-        constants$1324.gdk_device_type_get_type$FUNC
+    static final FunctionDescriptor gtk_about_dialog_set_website$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor gdk_device_pad_feature_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_device_pad_feature_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_device_pad_feature_get_type",
-        constants$1324.gdk_device_pad_feature_get_type$FUNC
+    static final MethodHandle gtk_about_dialog_set_website$MH = RuntimeHelper.downcallHandle(
+        "gtk_about_dialog_set_website",
+        constants$1324.gtk_about_dialog_set_website$FUNC
     );
-    static final FunctionDescriptor gdk_device_tool_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_device_tool_type_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_device_tool_type_get_type",
-        constants$1324.gdk_device_tool_type_get_type$FUNC
+    static final FunctionDescriptor gtk_about_dialog_get_website_label$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor gdk_drag_action_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_drag_action_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_drag_action_get_type",
-        constants$1324.gdk_drag_action_get_type$FUNC
+    static final MethodHandle gtk_about_dialog_get_website_label$MH = RuntimeHelper.downcallHandle(
+        "gtk_about_dialog_get_website_label",
+        constants$1324.gtk_about_dialog_get_website_label$FUNC
+    );
+    static final FunctionDescriptor gtk_about_dialog_set_website_label$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_about_dialog_set_website_label$MH = RuntimeHelper.downcallHandle(
+        "gtk_about_dialog_set_website_label",
+        constants$1324.gtk_about_dialog_set_website_label$FUNC
+    );
+    static final FunctionDescriptor gtk_about_dialog_get_authors$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_about_dialog_get_authors$MH = RuntimeHelper.downcallHandle(
+        "gtk_about_dialog_get_authors",
+        constants$1324.gtk_about_dialog_get_authors$FUNC
+    );
+    static final FunctionDescriptor gtk_about_dialog_set_authors$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_about_dialog_set_authors$MH = RuntimeHelper.downcallHandle(
+        "gtk_about_dialog_set_authors",
+        constants$1324.gtk_about_dialog_set_authors$FUNC
     );
 }
 

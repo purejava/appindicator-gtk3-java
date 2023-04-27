@@ -7,51 +7,93 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$862 {
+final class constants$862 {
 
-    static final FunctionDescriptor g_tls_connection_set_interaction$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$862() {}
+    static final FunctionDescriptor hb_font_get_glyph_origin_func_t$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_tls_connection_set_interaction$MH = RuntimeHelper.downcallHandle(
-        "g_tls_connection_set_interaction",
-        constants$862.g_tls_connection_set_interaction$FUNC
-    );
-    static final FunctionDescriptor g_tls_connection_get_interaction$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_tls_connection_get_interaction$MH = RuntimeHelper.downcallHandle(
-        "g_tls_connection_get_interaction",
-        constants$862.g_tls_connection_get_interaction$FUNC
-    );
-    static final FunctionDescriptor g_tls_connection_get_peer_certificate$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_tls_connection_get_peer_certificate$MH = RuntimeHelper.downcallHandle(
-        "g_tls_connection_get_peer_certificate",
-        constants$862.g_tls_connection_get_peer_certificate$FUNC
-    );
-    static final FunctionDescriptor g_tls_connection_get_peer_certificate_errors$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_tls_connection_get_peer_certificate_errors$MH = RuntimeHelper.downcallHandle(
-        "g_tls_connection_get_peer_certificate_errors",
-        constants$862.g_tls_connection_get_peer_certificate_errors$FUNC
-    );
-    static final FunctionDescriptor g_tls_connection_set_require_close_notify$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor hb_font_get_glyph_origin_func_t_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_tls_connection_set_require_close_notify$MH = RuntimeHelper.downcallHandle(
-        "g_tls_connection_set_require_close_notify",
-        constants$862.g_tls_connection_set_require_close_notify$FUNC
-    );
-    static final FunctionDescriptor g_tls_connection_get_require_close_notify$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_tls_connection_get_require_close_notify$MH = RuntimeHelper.downcallHandle(
-        "g_tls_connection_get_require_close_notify",
-        constants$862.g_tls_connection_get_require_close_notify$FUNC
+    static final MethodHandle hb_font_get_glyph_origin_func_t_UP$MH = RuntimeHelper.upcallHandle(hb_font_get_glyph_origin_func_t.class, "apply", constants$862.hb_font_get_glyph_origin_func_t_UP$FUNC);
+    static final FunctionDescriptor hb_font_get_glyph_origin_func_t_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle hb_font_get_glyph_origin_func_t_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$862.hb_font_get_glyph_origin_func_t_DOWN$FUNC
+    );
+    static final FunctionDescriptor hb_font_get_glyph_h_origin_func_t$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final FunctionDescriptor hb_font_get_glyph_h_origin_func_t_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle hb_font_get_glyph_h_origin_func_t_UP$MH = RuntimeHelper.upcallHandle(hb_font_get_glyph_h_origin_func_t.class, "apply", constants$862.hb_font_get_glyph_h_origin_func_t_UP$FUNC);
+    static final FunctionDescriptor hb_font_get_glyph_h_origin_func_t_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle hb_font_get_glyph_h_origin_func_t_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$862.hb_font_get_glyph_h_origin_func_t_DOWN$FUNC
+    );
+    static final FunctionDescriptor hb_font_get_glyph_v_origin_func_t$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final FunctionDescriptor hb_font_get_glyph_v_origin_func_t_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle hb_font_get_glyph_v_origin_func_t_UP$MH = RuntimeHelper.upcallHandle(hb_font_get_glyph_v_origin_func_t.class, "apply", constants$862.hb_font_get_glyph_v_origin_func_t_UP$FUNC);
+    static final FunctionDescriptor hb_font_get_glyph_v_origin_func_t_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle hb_font_get_glyph_v_origin_func_t_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$862.hb_font_get_glyph_v_origin_func_t_DOWN$FUNC
     );
 }
 

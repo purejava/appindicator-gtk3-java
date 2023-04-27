@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkPaperSize {
+/**
+ * {@snippet :
+ * typedef struct _GtkPaperSize GtkPaperSize;
+ * }
+ */
+public final class GtkPaperSize {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkPaperSize() {}
 }
 
 

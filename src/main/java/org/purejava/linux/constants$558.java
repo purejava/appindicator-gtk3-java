@@ -7,48 +7,86 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$558 {
+final class constants$558 {
 
-    static final FunctionDescriptor g_cancellable_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_cancellable_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_cancellable_get_type",
-        constants$558.g_cancellable_get_type$FUNC
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$558() {}
+    static final FunctionDescriptor g_dbus_connection_unregister_subtree$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final FunctionDescriptor g_cancellable_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_cancellable_new$MH = RuntimeHelper.downcallHandle(
-        "g_cancellable_new",
-        constants$558.g_cancellable_new$FUNC
+    static final MethodHandle g_dbus_connection_unregister_subtree$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_connection_unregister_subtree",
+        constants$558.g_dbus_connection_unregister_subtree$FUNC
     );
-    static final FunctionDescriptor g_cancellable_is_cancelled$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_cancellable_is_cancelled$MH = RuntimeHelper.downcallHandle(
-        "g_cancellable_is_cancelled",
-        constants$558.g_cancellable_is_cancelled$FUNC
-    );
-    static final FunctionDescriptor g_cancellable_set_error_if_cancelled$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor GDBusSignalCallback$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_cancellable_set_error_if_cancelled$MH = RuntimeHelper.downcallHandle(
-        "g_cancellable_set_error_if_cancelled",
-        constants$558.g_cancellable_set_error_if_cancelled$FUNC
-    );
-    static final FunctionDescriptor g_cancellable_get_fd$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_cancellable_get_fd$MH = RuntimeHelper.downcallHandle(
-        "g_cancellable_get_fd",
-        constants$558.g_cancellable_get_fd$FUNC
-    );
-    static final FunctionDescriptor g_cancellable_make_pollfd$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor GDBusSignalCallback_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_cancellable_make_pollfd$MH = RuntimeHelper.downcallHandle(
-        "g_cancellable_make_pollfd",
-        constants$558.g_cancellable_make_pollfd$FUNC
+    static final MethodHandle GDBusSignalCallback_UP$MH = RuntimeHelper.upcallHandle(GDBusSignalCallback.class, "apply", constants$558.GDBusSignalCallback_UP$FUNC);
+    static final FunctionDescriptor GDBusSignalCallback_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle GDBusSignalCallback_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$558.GDBusSignalCallback_DOWN$FUNC
+    );
+    static final FunctionDescriptor g_dbus_connection_signal_subscribe$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_dbus_connection_signal_subscribe$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_connection_signal_subscribe",
+        constants$558.g_dbus_connection_signal_subscribe$FUNC
+    );
+    static final FunctionDescriptor g_dbus_connection_signal_unsubscribe$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_dbus_connection_signal_unsubscribe$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_connection_signal_unsubscribe",
+        constants$558.g_dbus_connection_signal_unsubscribe$FUNC
+    );
+    static final FunctionDescriptor GDBusMessageFilterFunction$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final FunctionDescriptor GDBusMessageFilterFunction_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GDBusMessageFilterFunction_UP$MH = RuntimeHelper.upcallHandle(GDBusMessageFilterFunction.class, "apply", constants$558.GDBusMessageFilterFunction_UP$FUNC);
 }
 
 

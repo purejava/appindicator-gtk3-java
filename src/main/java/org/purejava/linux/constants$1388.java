@@ -7,60 +7,69 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1388 {
+final class constants$1388 {
 
-    static final FunctionDescriptor atk_component_get_mdi_zorder$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1388() {}
+    static final FunctionDescriptor gtk_cell_area_request_renderer$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_component_get_mdi_zorder$MH = RuntimeHelper.downcallHandle(
-        "atk_component_get_mdi_zorder",
-        constants$1388.atk_component_get_mdi_zorder$FUNC
+    static final MethodHandle gtk_cell_area_request_renderer$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_area_request_renderer",
+        constants$1388.gtk_cell_area_request_renderer$FUNC
     );
-    static final FunctionDescriptor atk_component_grab_focus$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor _gtk_cell_area_set_cell_data_func_with_proxy$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_component_grab_focus$MH = RuntimeHelper.downcallHandle(
-        "atk_component_grab_focus",
-        constants$1388.atk_component_grab_focus$FUNC
+    static final MethodHandle _gtk_cell_area_set_cell_data_func_with_proxy$MH = RuntimeHelper.downcallHandle(
+        "_gtk_cell_area_set_cell_data_func_with_proxy",
+        constants$1388._gtk_cell_area_set_cell_data_func_with_proxy$FUNC
     );
-    static final FunctionDescriptor atk_component_remove_focus_handler$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor GtkTreeCellDataFunc$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle atk_component_remove_focus_handler$MH = RuntimeHelper.downcallHandle(
-        "atk_component_remove_focus_handler",
-        constants$1388.atk_component_remove_focus_handler$FUNC
-    );
-    static final FunctionDescriptor atk_component_set_extents$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle atk_component_set_extents$MH = RuntimeHelper.downcallHandle(
-        "atk_component_set_extents",
-        constants$1388.atk_component_set_extents$FUNC
-    );
-    static final FunctionDescriptor atk_component_set_position$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle atk_component_set_position$MH = RuntimeHelper.downcallHandle(
-        "atk_component_set_position",
-        constants$1388.atk_component_set_position$FUNC
-    );
-    static final FunctionDescriptor atk_component_set_size$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_component_set_size$MH = RuntimeHelper.downcallHandle(
-        "atk_component_set_size",
-        constants$1388.atk_component_set_size$FUNC
+    static final FunctionDescriptor GtkTreeCellDataFunc_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GtkTreeCellDataFunc_UP$MH = RuntimeHelper.upcallHandle(GtkTreeCellDataFunc.class, "apply", constants$1388.GtkTreeCellDataFunc_UP$FUNC);
+    static final FunctionDescriptor GtkTreeCellDataFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GtkTreeCellDataFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$1388.GtkTreeCellDataFunc_DOWN$FUNC
+    );
+    static final FunctionDescriptor gtk_tree_view_column_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_tree_view_column_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_column_get_type",
+        constants$1388.gtk_tree_view_column_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_tree_view_column_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_tree_view_column_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_column_new",
+        constants$1388.gtk_tree_view_column_new$FUNC
     );
 }
 

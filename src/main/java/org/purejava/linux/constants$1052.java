@@ -7,51 +7,59 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1052 {
+final class constants$1052 {
 
-    static final FunctionDescriptor pango_script_for_unichar$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1052() {}
+    static final FunctionDescriptor cairo_region_get_rectangle$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cairo_region_get_rectangle$MH = RuntimeHelper.downcallHandle(
+        "cairo_region_get_rectangle",
+        constants$1052.cairo_region_get_rectangle$FUNC
+    );
+    static final FunctionDescriptor cairo_region_is_empty$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cairo_region_is_empty$MH = RuntimeHelper.downcallHandle(
+        "cairo_region_is_empty",
+        constants$1052.cairo_region_is_empty$FUNC
+    );
+    static final FunctionDescriptor cairo_region_contains_rectangle$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cairo_region_contains_rectangle$MH = RuntimeHelper.downcallHandle(
+        "cairo_region_contains_rectangle",
+        constants$1052.cairo_region_contains_rectangle$FUNC
+    );
+    static final FunctionDescriptor cairo_region_contains_point$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle pango_script_for_unichar$MH = RuntimeHelper.downcallHandle(
-        "pango_script_for_unichar",
-        constants$1052.pango_script_for_unichar$FUNC
+    static final MethodHandle cairo_region_contains_point$MH = RuntimeHelper.downcallHandle(
+        "cairo_region_contains_point",
+        constants$1052.cairo_region_contains_point$FUNC
     );
-    static final FunctionDescriptor pango_script_iter_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_script_iter_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_script_iter_get_type",
-        constants$1052.pango_script_iter_get_type$FUNC
-    );
-    static final FunctionDescriptor pango_script_iter_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor cairo_region_translate$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle pango_script_iter_new$MH = RuntimeHelper.downcallHandle(
-        "pango_script_iter_new",
-        constants$1052.pango_script_iter_new$FUNC
+    static final MethodHandle cairo_region_translate$MH = RuntimeHelper.downcallHandle(
+        "cairo_region_translate",
+        constants$1052.cairo_region_translate$FUNC
     );
-    static final FunctionDescriptor pango_script_iter_get_range$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor cairo_region_subtract$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_script_iter_get_range$MH = RuntimeHelper.downcallHandle(
-        "pango_script_iter_get_range",
-        constants$1052.pango_script_iter_get_range$FUNC
-    );
-    static final FunctionDescriptor pango_script_iter_next$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_script_iter_next$MH = RuntimeHelper.downcallHandle(
-        "pango_script_iter_next",
-        constants$1052.pango_script_iter_next$FUNC
-    );
-    static final FunctionDescriptor pango_script_iter_free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_script_iter_free$MH = RuntimeHelper.downcallHandle(
-        "pango_script_iter_free",
-        constants$1052.pango_script_iter_free$FUNC
+    static final MethodHandle cairo_region_subtract$MH = RuntimeHelper.downcallHandle(
+        "cairo_region_subtract",
+        constants$1052.cairo_region_subtract$FUNC
     );
 }
 

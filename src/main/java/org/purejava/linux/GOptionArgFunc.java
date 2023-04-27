@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * int (*GOptionArgFunc)(char* option_name,char* value,void* data,struct _GError** error);
+ * }
+ */
 public interface GOptionArgFunc {
 
-    int apply(java.lang.foreign.MemoryAddress option_name, java.lang.foreign.MemoryAddress value, java.lang.foreign.MemoryAddress data, java.lang.foreign.MemoryAddress error);
-    static MemorySegment allocate(GOptionArgFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GOptionArgFunc.class, fi, constants$251.GOptionArgFunc$FUNC, session);
+    int apply(java.lang.foreign.MemorySegment completion, java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment user_data);
+    static MemorySegment allocate(GOptionArgFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$263.GOptionArgFunc_UP$MH, fi, constants$263.GOptionArgFunc$FUNC, scope);
     }
-    static GOptionArgFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _option_name, java.lang.foreign.MemoryAddress _value, java.lang.foreign.MemoryAddress _data, java.lang.foreign.MemoryAddress _error) -> {
+    static GOptionArgFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _completion, java.lang.foreign.MemorySegment _key, java.lang.foreign.MemorySegment _iter, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                return (int)constants$251.GOptionArgFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_option_name, (java.lang.foreign.Addressable)_value, (java.lang.foreign.Addressable)_data, (java.lang.foreign.Addressable)_error);
+                return (int)constants$263.GOptionArgFunc_DOWN$MH.invokeExact(symbol, _completion, _key, _iter, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

@@ -7,56 +7,63 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$440 {
+final class constants$440 {
 
-    static final FunctionDescriptor g_param_spec_get_name_quark$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_param_spec_get_name_quark$MH = RuntimeHelper.downcallHandle(
-        "g_param_spec_get_name_quark",
-        constants$440.g_param_spec_get_name_quark$FUNC
-    );
-    static final FunctionDescriptor g_param_type_register_static$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$440() {}
+    static final FunctionDescriptor g_object_dup_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_param_type_register_static$MH = RuntimeHelper.downcallHandle(
-        "g_param_type_register_static",
-        constants$440.g_param_type_register_static$FUNC
+    static final MethodHandle g_object_dup_data$MH = RuntimeHelper.downcallHandle(
+        "g_object_dup_data",
+        constants$440.g_object_dup_data$FUNC
     );
-    static final FunctionDescriptor g_param_spec_is_valid_name$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_object_replace_data$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_param_spec_is_valid_name$MH = RuntimeHelper.downcallHandle(
-        "g_param_spec_is_valid_name",
-        constants$440.g_param_spec_is_valid_name$FUNC
+    static final MethodHandle g_object_replace_data$MH = RuntimeHelper.downcallHandle(
+        "g_object_replace_data",
+        constants$440.g_object_replace_data$FUNC
     );
-    static final FunctionDescriptor _g_param_type_register_static_constant$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+    static final FunctionDescriptor g_object_watch_closure$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_object_watch_closure$MH = RuntimeHelper.downcallHandle(
+        "g_object_watch_closure",
+        constants$440.g_object_watch_closure$FUNC
+    );
+    static final FunctionDescriptor g_cclosure_new_object$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle _g_param_type_register_static_constant$MH = RuntimeHelper.downcallHandle(
-        "_g_param_type_register_static_constant",
-        constants$440._g_param_type_register_static_constant$FUNC
+    static final MethodHandle g_cclosure_new_object$MH = RuntimeHelper.downcallHandle(
+        "g_cclosure_new_object",
+        constants$440.g_cclosure_new_object$FUNC
     );
-    static final FunctionDescriptor g_param_spec_internal$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
+    static final FunctionDescriptor g_cclosure_new_object_swap$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_param_spec_internal$MH = RuntimeHelper.downcallHandle(
-        "g_param_spec_internal",
-        constants$440.g_param_spec_internal$FUNC
+    static final MethodHandle g_cclosure_new_object_swap$MH = RuntimeHelper.downcallHandle(
+        "g_cclosure_new_object_swap",
+        constants$440.g_cclosure_new_object_swap$FUNC
     );
-    static final FunctionDescriptor g_param_spec_pool_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor g_closure_new_object$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_param_spec_pool_new$MH = RuntimeHelper.downcallHandle(
-        "g_param_spec_pool_new",
-        constants$440.g_param_spec_pool_new$FUNC
+    static final MethodHandle g_closure_new_object$MH = RuntimeHelper.downcallHandle(
+        "g_closure_new_object",
+        constants$440.g_closure_new_object$FUNC
     );
 }
 

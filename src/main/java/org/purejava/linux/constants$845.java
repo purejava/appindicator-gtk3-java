@@ -7,56 +7,57 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$845 {
+final class constants$845 {
 
-    static final FunctionDescriptor g_subprocess_launcher_take_stderr_fd$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$845() {}
+    static final FunctionDescriptor hb_set_del$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_subprocess_launcher_take_stderr_fd$MH = RuntimeHelper.downcallHandle(
-        "g_subprocess_launcher_take_stderr_fd",
-        constants$845.g_subprocess_launcher_take_stderr_fd$FUNC
+    static final MethodHandle hb_set_del$MH = RuntimeHelper.downcallHandle(
+        "hb_set_del",
+        constants$845.hb_set_del$FUNC
     );
-    static final FunctionDescriptor g_subprocess_launcher_take_fd$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor hb_set_del_range$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_subprocess_launcher_take_fd$MH = RuntimeHelper.downcallHandle(
-        "g_subprocess_launcher_take_fd",
-        constants$845.g_subprocess_launcher_take_fd$FUNC
+    static final MethodHandle hb_set_del_range$MH = RuntimeHelper.downcallHandle(
+        "hb_set_del_range",
+        constants$845.hb_set_del_range$FUNC
     );
-    static final FunctionDescriptor g_subprocess_launcher_close$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_subprocess_launcher_close$MH = RuntimeHelper.downcallHandle(
-        "g_subprocess_launcher_close",
-        constants$845.g_subprocess_launcher_close$FUNC
-    );
-    static final FunctionDescriptor g_subprocess_launcher_set_child_setup$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor hb_set_is_equal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_subprocess_launcher_set_child_setup$MH = RuntimeHelper.downcallHandle(
-        "g_subprocess_launcher_set_child_setup",
-        constants$845.g_subprocess_launcher_set_child_setup$FUNC
+    static final MethodHandle hb_set_is_equal$MH = RuntimeHelper.downcallHandle(
+        "hb_set_is_equal",
+        constants$845.hb_set_is_equal$FUNC
     );
-    static final FunctionDescriptor g_task_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_task_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_task_get_type",
-        constants$845.g_task_get_type$FUNC
+    static final FunctionDescriptor hb_set_hash$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor g_task_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final MethodHandle hb_set_hash$MH = RuntimeHelper.downcallHandle(
+        "hb_set_hash",
+        constants$845.hb_set_hash$FUNC
+    );
+    static final FunctionDescriptor hb_set_is_subset$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_task_new$MH = RuntimeHelper.downcallHandle(
-        "g_task_new",
-        constants$845.g_task_new$FUNC
+    static final MethodHandle hb_set_is_subset$MH = RuntimeHelper.downcallHandle(
+        "hb_set_is_subset",
+        constants$845.hb_set_is_subset$FUNC
+    );
+    static final FunctionDescriptor hb_set_set$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle hb_set_set$MH = RuntimeHelper.downcallHandle(
+        "hb_set_set",
+        constants$845.hb_set_set$FUNC
     );
 }
 

@@ -7,43 +7,57 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1053 {
+final class constants$1053 {
 
-    static final FunctionDescriptor pango_language_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_language_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_language_get_type",
-        constants$1053.pango_language_get_type$FUNC
-    );
-    static final FunctionDescriptor pango_language_get_default$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle pango_language_get_default$MH = RuntimeHelper.downcallHandle(
-        "pango_language_get_default",
-        constants$1053.pango_language_get_default$FUNC
-    );
-    static final FunctionDescriptor pango_language_get_preferred$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle pango_language_get_preferred$MH = RuntimeHelper.downcallHandle(
-        "pango_language_get_preferred",
-        constants$1053.pango_language_get_preferred$FUNC
-    );
-    static final FunctionDescriptor pango_language_from_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1053() {}
+    static final FunctionDescriptor cairo_region_subtract_rectangle$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_language_from_string$MH = RuntimeHelper.downcallHandle(
-        "pango_language_from_string",
-        constants$1053.pango_language_from_string$FUNC
+    static final MethodHandle cairo_region_subtract_rectangle$MH = RuntimeHelper.downcallHandle(
+        "cairo_region_subtract_rectangle",
+        constants$1053.cairo_region_subtract_rectangle$FUNC
     );
-    static final FunctionDescriptor pango_language_to_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor cairo_region_intersect$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_language_to_string$MH = RuntimeHelper.downcallHandle(
-        "pango_language_to_string",
-        constants$1053.pango_language_to_string$FUNC
+    static final MethodHandle cairo_region_intersect$MH = RuntimeHelper.downcallHandle(
+        "cairo_region_intersect",
+        constants$1053.cairo_region_intersect$FUNC
     );
-    static final FunctionDescriptor pango_language_get_sample_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor cairo_region_intersect_rectangle$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_language_get_sample_string$MH = RuntimeHelper.downcallHandle(
-        "pango_language_get_sample_string",
-        constants$1053.pango_language_get_sample_string$FUNC
+    static final MethodHandle cairo_region_intersect_rectangle$MH = RuntimeHelper.downcallHandle(
+        "cairo_region_intersect_rectangle",
+        constants$1053.cairo_region_intersect_rectangle$FUNC
+    );
+    static final FunctionDescriptor cairo_region_union$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cairo_region_union$MH = RuntimeHelper.downcallHandle(
+        "cairo_region_union",
+        constants$1053.cairo_region_union$FUNC
+    );
+    static final FunctionDescriptor cairo_region_union_rectangle$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cairo_region_union_rectangle$MH = RuntimeHelper.downcallHandle(
+        "cairo_region_union_rectangle",
+        constants$1053.cairo_region_union_rectangle$FUNC
+    );
+    static final FunctionDescriptor cairo_region_xor$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cairo_region_xor$MH = RuntimeHelper.downcallHandle(
+        "cairo_region_xor",
+        constants$1053.cairo_region_xor$FUNC
     );
 }
 

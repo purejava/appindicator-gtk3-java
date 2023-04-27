@@ -7,9 +7,21 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GPollableOutputStreamInterface {
+ *     GTypeInterface g_iface;
+ *     gboolean (*can_poll)(GPollableOutputStream*);
+ *     gboolean (*is_writable)(GPollableOutputStream*);
+ *     GSource* (*create_source)(GPollableOutputStream*,GCancellable*);
+ *     gssize (*write_nonblocking)(GPollableOutputStream*,void*,gsize,GError**);
+ *     GPollableReturn (*writev_nonblocking)(GPollableOutputStream*,const GOutputVector*,gsize,gsize*,GError**);
+ * };
+ * }
+ */
 public class _GPollableOutputStreamInterface {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             Constants$root.C_LONG_LONG$LAYOUT.withName("g_type"),
             Constants$root.C_LONG_LONG$LAYOUT.withName("g_instance_type")
@@ -29,20 +41,32 @@ public class _GPollableOutputStreamInterface {
     static final FunctionDescriptor can_poll$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle can_poll$MH = RuntimeHelper.downcallHandle(
-        _GPollableOutputStreamInterface.can_poll$FUNC
+    static final FunctionDescriptor can_poll_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle can_poll_UP$MH = RuntimeHelper.upcallHandle(can_poll.class, "apply", _GPollableOutputStreamInterface.can_poll_UP$FUNC);
+    static final FunctionDescriptor can_poll_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle can_poll_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GPollableOutputStreamInterface.can_poll_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*can_poll)(GPollableOutputStream*);
+     * }
+     */
     public interface can_poll {
 
-        int apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(can_poll fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(can_poll.class, fi, _GPollableOutputStreamInterface.can_poll$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0);
+        static MemorySegment allocate(can_poll fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GPollableOutputStreamInterface.can_poll_UP$MH, fi, _GPollableOutputStreamInterface.can_poll$FUNC, scope);
         }
-        static can_poll ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static can_poll ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0) -> {
                 try {
-                    return (int)_GPollableOutputStreamInterface.can_poll$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (int)_GPollableOutputStreamInterface.can_poll_DOWN$MH.invokeExact(symbol, __x0);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -54,38 +78,62 @@ public class _GPollableOutputStreamInterface {
     public static VarHandle can_poll$VH() {
         return _GPollableOutputStreamInterface.can_poll$VH;
     }
-    public static MemoryAddress can_poll$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GPollableOutputStreamInterface.can_poll$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*can_poll)(GPollableOutputStream*);
+     * }
+     */
+    public static MemorySegment can_poll$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GPollableOutputStreamInterface.can_poll$VH.get(seg);
     }
-    public static void can_poll$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*can_poll)(GPollableOutputStream*);
+     * }
+     */
+    public static void can_poll$set(MemorySegment seg, MemorySegment x) {
         _GPollableOutputStreamInterface.can_poll$VH.set(seg, x);
     }
-    public static MemoryAddress can_poll$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GPollableOutputStreamInterface.can_poll$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment can_poll$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GPollableOutputStreamInterface.can_poll$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void can_poll$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void can_poll$set(MemorySegment seg, long index, MemorySegment x) {
         _GPollableOutputStreamInterface.can_poll$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static can_poll can_poll (MemorySegment segment, MemorySession session) {
-        return can_poll.ofAddress(can_poll$get(segment), session);
+    public static can_poll can_poll(MemorySegment segment, SegmentScope scope) {
+        return can_poll.ofAddress(can_poll$get(segment), scope);
     }
     static final FunctionDescriptor is_writable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle is_writable$MH = RuntimeHelper.downcallHandle(
-        _GPollableOutputStreamInterface.is_writable$FUNC
+    static final FunctionDescriptor is_writable_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle is_writable_UP$MH = RuntimeHelper.upcallHandle(is_writable.class, "apply", _GPollableOutputStreamInterface.is_writable_UP$FUNC);
+    static final FunctionDescriptor is_writable_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle is_writable_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GPollableOutputStreamInterface.is_writable_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*is_writable)(GPollableOutputStream*);
+     * }
+     */
     public interface is_writable {
 
-        int apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(is_writable fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(is_writable.class, fi, _GPollableOutputStreamInterface.is_writable$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0);
+        static MemorySegment allocate(is_writable fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GPollableOutputStreamInterface.is_writable_UP$MH, fi, _GPollableOutputStreamInterface.is_writable$FUNC, scope);
         }
-        static is_writable ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static is_writable ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0) -> {
                 try {
-                    return (int)_GPollableOutputStreamInterface.is_writable$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (int)_GPollableOutputStreamInterface.is_writable_DOWN$MH.invokeExact(symbol, __x0);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -97,39 +145,65 @@ public class _GPollableOutputStreamInterface {
     public static VarHandle is_writable$VH() {
         return _GPollableOutputStreamInterface.is_writable$VH;
     }
-    public static MemoryAddress is_writable$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GPollableOutputStreamInterface.is_writable$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*is_writable)(GPollableOutputStream*);
+     * }
+     */
+    public static MemorySegment is_writable$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GPollableOutputStreamInterface.is_writable$VH.get(seg);
     }
-    public static void is_writable$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*is_writable)(GPollableOutputStream*);
+     * }
+     */
+    public static void is_writable$set(MemorySegment seg, MemorySegment x) {
         _GPollableOutputStreamInterface.is_writable$VH.set(seg, x);
     }
-    public static MemoryAddress is_writable$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GPollableOutputStreamInterface.is_writable$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment is_writable$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GPollableOutputStreamInterface.is_writable$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void is_writable$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void is_writable$set(MemorySegment seg, long index, MemorySegment x) {
         _GPollableOutputStreamInterface.is_writable$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static is_writable is_writable (MemorySegment segment, MemorySession session) {
-        return is_writable.ofAddress(is_writable$get(segment), session);
+    public static is_writable is_writable(MemorySegment segment, SegmentScope scope) {
+        return is_writable.ofAddress(is_writable$get(segment), scope);
     }
     static final FunctionDescriptor create_source$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle create_source$MH = RuntimeHelper.downcallHandle(
-        _GPollableOutputStreamInterface.create_source$FUNC
+    static final FunctionDescriptor create_source_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle create_source_UP$MH = RuntimeHelper.upcallHandle(create_source.class, "apply", _GPollableOutputStreamInterface.create_source_UP$FUNC);
+    static final FunctionDescriptor create_source_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle create_source_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GPollableOutputStreamInterface.create_source_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * GSource* (*create_source)(GPollableOutputStream*,GCancellable*);
+     * }
+     */
     public interface create_source {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(create_source fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(create_source.class, fi, _GPollableOutputStreamInterface.create_source$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment func_data);
+        static MemorySegment allocate(create_source fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GPollableOutputStreamInterface.create_source_UP$MH, fi, _GPollableOutputStreamInterface.create_source$FUNC, scope);
         }
-        static create_source ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static create_source ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _path, java.lang.foreign.MemorySegment _func_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GPollableOutputStreamInterface.create_source$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    return (java.lang.foreign.MemorySegment)_GPollableOutputStreamInterface.create_source_DOWN$MH.invokeExact(symbol, _path, _func_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -141,20 +215,32 @@ public class _GPollableOutputStreamInterface {
     public static VarHandle create_source$VH() {
         return _GPollableOutputStreamInterface.create_source$VH;
     }
-    public static MemoryAddress create_source$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GPollableOutputStreamInterface.create_source$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GSource* (*create_source)(GPollableOutputStream*,GCancellable*);
+     * }
+     */
+    public static MemorySegment create_source$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GPollableOutputStreamInterface.create_source$VH.get(seg);
     }
-    public static void create_source$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GSource* (*create_source)(GPollableOutputStream*,GCancellable*);
+     * }
+     */
+    public static void create_source$set(MemorySegment seg, MemorySegment x) {
         _GPollableOutputStreamInterface.create_source$VH.set(seg, x);
     }
-    public static MemoryAddress create_source$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GPollableOutputStreamInterface.create_source$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment create_source$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GPollableOutputStreamInterface.create_source$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void create_source$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void create_source$set(MemorySegment seg, long index, MemorySegment x) {
         _GPollableOutputStreamInterface.create_source$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static create_source create_source (MemorySegment segment, MemorySession session) {
-        return create_source.ofAddress(create_source$get(segment), session);
+    public static create_source create_source(MemorySegment segment, SegmentScope scope) {
+        return create_source.ofAddress(create_source$get(segment), scope);
     }
     static final FunctionDescriptor write_nonblocking$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
@@ -162,20 +248,38 @@ public class _GPollableOutputStreamInterface {
         Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle write_nonblocking$MH = RuntimeHelper.downcallHandle(
-        _GPollableOutputStreamInterface.write_nonblocking$FUNC
+    static final FunctionDescriptor write_nonblocking_UP$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle write_nonblocking_UP$MH = RuntimeHelper.upcallHandle(write_nonblocking.class, "apply", _GPollableOutputStreamInterface.write_nonblocking_UP$FUNC);
+    static final FunctionDescriptor write_nonblocking_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle write_nonblocking_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GPollableOutputStreamInterface.write_nonblocking_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gssize (*write_nonblocking)(GPollableOutputStream*,void*,gsize,GError**);
+     * }
+     */
     public interface write_nonblocking {
 
-        long apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, long _x2, java.lang.foreign.MemoryAddress _x3);
-        static MemorySegment allocate(write_nonblocking fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(write_nonblocking.class, fi, _GPollableOutputStreamInterface.write_nonblocking$FUNC, session);
+        long apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, long _x2, java.lang.foreign.MemorySegment _x3);
+        static MemorySegment allocate(write_nonblocking fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GPollableOutputStreamInterface.write_nonblocking_UP$MH, fi, _GPollableOutputStreamInterface.write_nonblocking$FUNC, scope);
         }
-        static write_nonblocking ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, long __x2, java.lang.foreign.MemoryAddress __x3) -> {
+        static write_nonblocking ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, long __x2, java.lang.foreign.MemorySegment __x3) -> {
                 try {
-                    return (long)_GPollableOutputStreamInterface.write_nonblocking$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, __x2, (java.lang.foreign.Addressable)__x3);
+                    return (long)_GPollableOutputStreamInterface.write_nonblocking_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -187,20 +291,32 @@ public class _GPollableOutputStreamInterface {
     public static VarHandle write_nonblocking$VH() {
         return _GPollableOutputStreamInterface.write_nonblocking$VH;
     }
-    public static MemoryAddress write_nonblocking$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GPollableOutputStreamInterface.write_nonblocking$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gssize (*write_nonblocking)(GPollableOutputStream*,void*,gsize,GError**);
+     * }
+     */
+    public static MemorySegment write_nonblocking$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GPollableOutputStreamInterface.write_nonblocking$VH.get(seg);
     }
-    public static void write_nonblocking$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gssize (*write_nonblocking)(GPollableOutputStream*,void*,gsize,GError**);
+     * }
+     */
+    public static void write_nonblocking$set(MemorySegment seg, MemorySegment x) {
         _GPollableOutputStreamInterface.write_nonblocking$VH.set(seg, x);
     }
-    public static MemoryAddress write_nonblocking$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GPollableOutputStreamInterface.write_nonblocking$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment write_nonblocking$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GPollableOutputStreamInterface.write_nonblocking$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void write_nonblocking$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void write_nonblocking$set(MemorySegment seg, long index, MemorySegment x) {
         _GPollableOutputStreamInterface.write_nonblocking$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static write_nonblocking write_nonblocking (MemorySegment segment, MemorySession session) {
-        return write_nonblocking.ofAddress(write_nonblocking$get(segment), session);
+    public static write_nonblocking write_nonblocking(MemorySegment segment, SegmentScope scope) {
+        return write_nonblocking.ofAddress(write_nonblocking$get(segment), scope);
     }
     static final FunctionDescriptor writev_nonblocking$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
@@ -209,20 +325,40 @@ public class _GPollableOutputStreamInterface {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle writev_nonblocking$MH = RuntimeHelper.downcallHandle(
-        _GPollableOutputStreamInterface.writev_nonblocking$FUNC
+    static final FunctionDescriptor writev_nonblocking_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle writev_nonblocking_UP$MH = RuntimeHelper.upcallHandle(writev_nonblocking.class, "apply", _GPollableOutputStreamInterface.writev_nonblocking_UP$FUNC);
+    static final FunctionDescriptor writev_nonblocking_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle writev_nonblocking_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GPollableOutputStreamInterface.writev_nonblocking_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * GPollableReturn (*writev_nonblocking)(GPollableOutputStream*,const GOutputVector*,gsize,gsize*,GError**);
+     * }
+     */
     public interface writev_nonblocking {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, long _x2, java.lang.foreign.MemoryAddress _x3, java.lang.foreign.MemoryAddress _x4);
-        static MemorySegment allocate(writev_nonblocking fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(writev_nonblocking.class, fi, _GPollableOutputStreamInterface.writev_nonblocking$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, long _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4);
+        static MemorySegment allocate(writev_nonblocking fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GPollableOutputStreamInterface.writev_nonblocking_UP$MH, fi, _GPollableOutputStreamInterface.writev_nonblocking$FUNC, scope);
         }
-        static writev_nonblocking ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, long __x2, java.lang.foreign.MemoryAddress __x3, java.lang.foreign.MemoryAddress __x4) -> {
+        static writev_nonblocking ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, long __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4) -> {
                 try {
-                    return (int)_GPollableOutputStreamInterface.writev_nonblocking$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, __x2, (java.lang.foreign.Addressable)__x3, (java.lang.foreign.Addressable)__x4);
+                    return (int)_GPollableOutputStreamInterface.writev_nonblocking_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -234,27 +370,39 @@ public class _GPollableOutputStreamInterface {
     public static VarHandle writev_nonblocking$VH() {
         return _GPollableOutputStreamInterface.writev_nonblocking$VH;
     }
-    public static MemoryAddress writev_nonblocking$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GPollableOutputStreamInterface.writev_nonblocking$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GPollableReturn (*writev_nonblocking)(GPollableOutputStream*,const GOutputVector*,gsize,gsize*,GError**);
+     * }
+     */
+    public static MemorySegment writev_nonblocking$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GPollableOutputStreamInterface.writev_nonblocking$VH.get(seg);
     }
-    public static void writev_nonblocking$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GPollableReturn (*writev_nonblocking)(GPollableOutputStream*,const GOutputVector*,gsize,gsize*,GError**);
+     * }
+     */
+    public static void writev_nonblocking$set(MemorySegment seg, MemorySegment x) {
         _GPollableOutputStreamInterface.writev_nonblocking$VH.set(seg, x);
     }
-    public static MemoryAddress writev_nonblocking$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GPollableOutputStreamInterface.writev_nonblocking$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment writev_nonblocking$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GPollableOutputStreamInterface.writev_nonblocking$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void writev_nonblocking$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void writev_nonblocking$set(MemorySegment seg, long index, MemorySegment x) {
         _GPollableOutputStreamInterface.writev_nonblocking$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static writev_nonblocking writev_nonblocking (MemorySegment segment, MemorySession session) {
-        return writev_nonblocking.ofAddress(writev_nonblocking$get(segment), session);
+    public static writev_nonblocking writev_nonblocking(MemorySegment segment, SegmentScope scope) {
+        return writev_nonblocking.ofAddress(writev_nonblocking$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

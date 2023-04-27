@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkMountOperationClass extends _GtkMountOperationClass {
+/**
+ * {@snippet :
+ * typedef struct _GtkMountOperationClass GtkMountOperationClass;
+ * }
+ */
+public final class GtkMountOperationClass extends _GtkMountOperationClass {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkMountOperationClass() {}
 }
 
 

@@ -7,9 +7,19 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct hb_feature_t {
+ *     hb_tag_t tag;
+ *     uint32_t value;
+ *     unsigned int start;
+ *     unsigned int end;
+ * };
+ * }
+ */
 public class hb_feature_t {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_INT$LAYOUT.withName("tag"),
         Constants$root.C_INT$LAYOUT.withName("value"),
         Constants$root.C_INT$LAYOUT.withName("start"),
@@ -22,10 +32,22 @@ public class hb_feature_t {
     public static VarHandle tag$VH() {
         return hb_feature_t.tag$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * hb_tag_t tag;
+     * }
+     */
     public static int tag$get(MemorySegment seg) {
         return (int)hb_feature_t.tag$VH.get(seg);
     }
-    public static void tag$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * hb_tag_t tag;
+     * }
+     */
+    public static void tag$set(MemorySegment seg, int x) {
         hb_feature_t.tag$VH.set(seg, x);
     }
     public static int tag$get(MemorySegment seg, long index) {
@@ -38,10 +60,22 @@ public class hb_feature_t {
     public static VarHandle value$VH() {
         return hb_feature_t.value$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * uint32_t value;
+     * }
+     */
     public static int value$get(MemorySegment seg) {
         return (int)hb_feature_t.value$VH.get(seg);
     }
-    public static void value$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * uint32_t value;
+     * }
+     */
+    public static void value$set(MemorySegment seg, int x) {
         hb_feature_t.value$VH.set(seg, x);
     }
     public static int value$get(MemorySegment seg, long index) {
@@ -54,10 +88,22 @@ public class hb_feature_t {
     public static VarHandle start$VH() {
         return hb_feature_t.start$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * unsigned int start;
+     * }
+     */
     public static int start$get(MemorySegment seg) {
         return (int)hb_feature_t.start$VH.get(seg);
     }
-    public static void start$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * unsigned int start;
+     * }
+     */
+    public static void start$set(MemorySegment seg, int x) {
         hb_feature_t.start$VH.set(seg, x);
     }
     public static int start$get(MemorySegment seg, long index) {
@@ -70,10 +116,22 @@ public class hb_feature_t {
     public static VarHandle end$VH() {
         return hb_feature_t.end$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * unsigned int end;
+     * }
+     */
     public static int end$get(MemorySegment seg) {
         return (int)hb_feature_t.end$VH.get(seg);
     }
-    public static void end$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * unsigned int end;
+     * }
+     */
+    public static void end$set(MemorySegment seg, int x) {
         hb_feature_t.end$VH.set(seg, x);
     }
     public static int end$get(MemorySegment seg, long index) {
@@ -84,10 +142,10 @@ public class hb_feature_t {
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

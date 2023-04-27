@@ -7,9 +7,17 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GClosureNotifyData {
+ *     gpointer data;
+ *     GClosureNotify notify;
+ * };
+ * }
+ */
 public class _GClosureNotifyData {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_POINTER$LAYOUT.withName("data"),
         Constants$root.C_POINTER$LAYOUT.withName("notify")
     ).withName("_GClosureNotifyData");
@@ -20,43 +28,67 @@ public class _GClosureNotifyData {
     public static VarHandle data$VH() {
         return _GClosureNotifyData.data$VH;
     }
-    public static MemoryAddress data$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GClosureNotifyData.data$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gpointer data;
+     * }
+     */
+    public static MemorySegment data$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GClosureNotifyData.data$VH.get(seg);
     }
-    public static void data$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gpointer data;
+     * }
+     */
+    public static void data$set(MemorySegment seg, MemorySegment x) {
         _GClosureNotifyData.data$VH.set(seg, x);
     }
-    public static MemoryAddress data$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GClosureNotifyData.data$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment data$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GClosureNotifyData.data$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void data$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void data$set(MemorySegment seg, long index, MemorySegment x) {
         _GClosureNotifyData.data$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle notify$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("notify"));
     public static VarHandle notify$VH() {
         return _GClosureNotifyData.notify$VH;
     }
-    public static MemoryAddress notify$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GClosureNotifyData.notify$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GClosureNotify notify;
+     * }
+     */
+    public static MemorySegment notify$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GClosureNotifyData.notify$VH.get(seg);
     }
-    public static void notify$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GClosureNotify notify;
+     * }
+     */
+    public static void notify$set(MemorySegment seg, MemorySegment x) {
         _GClosureNotifyData.notify$VH.set(seg, x);
     }
-    public static MemoryAddress notify$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GClosureNotifyData.notify$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment notify$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GClosureNotifyData.notify$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void notify$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void notify$set(MemorySegment seg, long index, MemorySegment x) {
         _GClosureNotifyData.notify$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static GClosureNotify notify (MemorySegment segment, MemorySession session) {
-        return GClosureNotify.ofAddress(notify$get(segment), session);
+    public static GClosureNotify notify(MemorySegment segment, SegmentScope scope) {
+        return GClosureNotify.ofAddress(notify$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

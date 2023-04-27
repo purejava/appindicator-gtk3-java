@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkSpinner extends _GtkSpinner {
+/**
+ * {@snippet :
+ * typedef struct _GtkSpinner GtkSpinner;
+ * }
+ */
+public final class GtkSpinner extends _GtkSpinner {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkSpinner() {}
 }
 
 

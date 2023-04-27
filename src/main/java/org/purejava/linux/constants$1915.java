@@ -7,51 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1915 {
+final class constants$1915 {
 
-    static final FunctionDescriptor gtk_overlay_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_overlay_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_overlay_new",
-        constants$1915.gtk_overlay_new$FUNC
-    );
-    static final FunctionDescriptor gtk_overlay_add_overlay$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_overlay_add_overlay$MH = RuntimeHelper.downcallHandle(
-        "gtk_overlay_add_overlay",
-        constants$1915.gtk_overlay_add_overlay$FUNC
-    );
-    static final FunctionDescriptor gtk_overlay_reorder_overlay$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1915() {}
+    static final FunctionDescriptor gtk_action_set_always_show_image$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_overlay_reorder_overlay$MH = RuntimeHelper.downcallHandle(
-        "gtk_overlay_reorder_overlay",
-        constants$1915.gtk_overlay_reorder_overlay$FUNC
+    static final MethodHandle gtk_action_set_always_show_image$MH = RuntimeHelper.downcallHandle(
+        "gtk_action_set_always_show_image",
+        constants$1915.gtk_action_set_always_show_image$FUNC
     );
-    static final FunctionDescriptor gtk_overlay_get_overlay_pass_through$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_action_get_always_show_image$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_action_get_always_show_image$MH = RuntimeHelper.downcallHandle(
+        "gtk_action_get_always_show_image",
+        constants$1915.gtk_action_get_always_show_image$FUNC
+    );
+    static final FunctionDescriptor gtk_activatable_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_activatable_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_activatable_get_type",
+        constants$1915.gtk_activatable_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_activatable_sync_action_properties$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_overlay_get_overlay_pass_through$MH = RuntimeHelper.downcallHandle(
-        "gtk_overlay_get_overlay_pass_through",
-        constants$1915.gtk_overlay_get_overlay_pass_through$FUNC
+    static final MethodHandle gtk_activatable_sync_action_properties$MH = RuntimeHelper.downcallHandle(
+        "gtk_activatable_sync_action_properties",
+        constants$1915.gtk_activatable_sync_action_properties$FUNC
     );
-    static final FunctionDescriptor gtk_overlay_set_overlay_pass_through$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_activatable_set_related_action$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_overlay_set_overlay_pass_through$MH = RuntimeHelper.downcallHandle(
-        "gtk_overlay_set_overlay_pass_through",
-        constants$1915.gtk_overlay_set_overlay_pass_through$FUNC
+    static final MethodHandle gtk_activatable_set_related_action$MH = RuntimeHelper.downcallHandle(
+        "gtk_activatable_set_related_action",
+        constants$1915.gtk_activatable_set_related_action$FUNC
     );
-    static final FunctionDescriptor gtk_pad_controller_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_pad_controller_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_pad_controller_get_type",
-        constants$1915.gtk_pad_controller_get_type$FUNC
+    static final FunctionDescriptor gtk_activatable_get_related_action$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_activatable_get_related_action$MH = RuntimeHelper.downcallHandle(
+        "gtk_activatable_get_related_action",
+        constants$1915.gtk_activatable_get_related_action$FUNC
     );
 }
 

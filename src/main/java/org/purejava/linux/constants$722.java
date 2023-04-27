@@ -7,37 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$722 {
+final class constants$722 {
 
-    static final FunctionDescriptor g_socket_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_socket_type_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_socket_type_get_type",
-        constants$722.g_socket_type_get_type$FUNC
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$722() {}
+    static final FunctionDescriptor g_permission_get_can_release$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor g_socket_msg_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_socket_msg_flags_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_socket_msg_flags_get_type",
-        constants$722.g_socket_msg_flags_get_type$FUNC
+    static final MethodHandle g_permission_get_can_release$MH = RuntimeHelper.downcallHandle(
+        "g_permission_get_can_release",
+        constants$722.g_permission_get_can_release$FUNC
     );
-    static final FunctionDescriptor g_socket_protocol_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_socket_protocol_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_socket_protocol_get_type",
-        constants$722.g_socket_protocol_get_type$FUNC
+    static final FunctionDescriptor g_permission_impl_update$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final FunctionDescriptor g_zlib_compressor_format_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_zlib_compressor_format_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_zlib_compressor_format_get_type",
-        constants$722.g_zlib_compressor_format_get_type$FUNC
+    static final MethodHandle g_permission_impl_update$MH = RuntimeHelper.downcallHandle(
+        "g_permission_impl_update",
+        constants$722.g_permission_impl_update$FUNC
     );
-    static final FunctionDescriptor g_unix_socket_address_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_unix_socket_address_type_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_unix_socket_address_type_get_type",
-        constants$722.g_unix_socket_address_type_get_type$FUNC
+    static final FunctionDescriptor g_pollable_input_stream_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_pollable_input_stream_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_pollable_input_stream_get_type",
+        constants$722.g_pollable_input_stream_get_type$FUNC
     );
-    static final FunctionDescriptor g_bus_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_bus_type_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_bus_type_get_type",
-        constants$722.g_bus_type_get_type$FUNC
+    static final FunctionDescriptor g_pollable_input_stream_can_poll$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_pollable_input_stream_can_poll$MH = RuntimeHelper.downcallHandle(
+        "g_pollable_input_stream_can_poll",
+        constants$722.g_pollable_input_stream_can_poll$FUNC
+    );
+    static final FunctionDescriptor g_pollable_input_stream_is_readable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_pollable_input_stream_is_readable$MH = RuntimeHelper.downcallHandle(
+        "g_pollable_input_stream_is_readable",
+        constants$722.g_pollable_input_stream_is_readable$FUNC
+    );
+    static final FunctionDescriptor g_pollable_input_stream_create_source$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_pollable_input_stream_create_source$MH = RuntimeHelper.downcallHandle(
+        "g_pollable_input_stream_create_source",
+        constants$722.g_pollable_input_stream_create_source$FUNC
     );
 }
 

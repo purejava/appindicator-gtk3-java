@@ -7,9 +7,18 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GLogField {
+ *     const gchar* key;
+ *     gconstpointer value;
+ *     gssize length;
+ * };
+ * }
+ */
 public class _GLogField {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_POINTER$LAYOUT.withName("key"),
         Constants$root.C_POINTER$LAYOUT.withName("value"),
         Constants$root.C_LONG_LONG$LAYOUT.withName("length")
@@ -21,42 +30,78 @@ public class _GLogField {
     public static VarHandle key$VH() {
         return _GLogField.key$VH;
     }
-    public static MemoryAddress key$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GLogField.key$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * const gchar* key;
+     * }
+     */
+    public static MemorySegment key$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GLogField.key$VH.get(seg);
     }
-    public static void key$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * const gchar* key;
+     * }
+     */
+    public static void key$set(MemorySegment seg, MemorySegment x) {
         _GLogField.key$VH.set(seg, x);
     }
-    public static MemoryAddress key$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GLogField.key$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment key$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GLogField.key$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void key$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void key$set(MemorySegment seg, long index, MemorySegment x) {
         _GLogField.key$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle value$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("value"));
     public static VarHandle value$VH() {
         return _GLogField.value$VH;
     }
-    public static MemoryAddress value$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GLogField.value$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gconstpointer value;
+     * }
+     */
+    public static MemorySegment value$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GLogField.value$VH.get(seg);
     }
-    public static void value$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gconstpointer value;
+     * }
+     */
+    public static void value$set(MemorySegment seg, MemorySegment x) {
         _GLogField.value$VH.set(seg, x);
     }
-    public static MemoryAddress value$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GLogField.value$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment value$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GLogField.value$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void value$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void value$set(MemorySegment seg, long index, MemorySegment x) {
         _GLogField.value$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle length$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("length"));
     public static VarHandle length$VH() {
         return _GLogField.length$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gssize length;
+     * }
+     */
     public static long length$get(MemorySegment seg) {
         return (long)_GLogField.length$VH.get(seg);
     }
-    public static void length$set( MemorySegment seg, long x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gssize length;
+     * }
+     */
+    public static void length$set(MemorySegment seg, long x) {
         _GLogField.length$VH.set(seg, x);
     }
     public static long length$get(MemorySegment seg, long index) {
@@ -67,10 +112,10 @@ public class _GLogField {
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

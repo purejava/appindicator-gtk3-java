@@ -7,55 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$487 {
+final class constants$487 {
 
-    static final FunctionDescriptor g_enum_get_value$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$487() {}
+    static final FunctionDescriptor g_application_id_is_valid$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_application_id_is_valid$MH = RuntimeHelper.downcallHandle(
+        "g_application_id_is_valid",
+        constants$487.g_application_id_is_valid$FUNC
+    );
+    static final FunctionDescriptor g_application_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_enum_get_value$MH = RuntimeHelper.downcallHandle(
-        "g_enum_get_value",
-        constants$487.g_enum_get_value$FUNC
+    static final MethodHandle g_application_new$MH = RuntimeHelper.downcallHandle(
+        "g_application_new",
+        constants$487.g_application_new$FUNC
     );
-    static final FunctionDescriptor g_enum_get_value_by_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_application_get_application_id$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_application_get_application_id$MH = RuntimeHelper.downcallHandle(
+        "g_application_get_application_id",
+        constants$487.g_application_get_application_id$FUNC
+    );
+    static final FunctionDescriptor g_application_set_application_id$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_enum_get_value_by_name$MH = RuntimeHelper.downcallHandle(
-        "g_enum_get_value_by_name",
-        constants$487.g_enum_get_value_by_name$FUNC
+    static final MethodHandle g_application_set_application_id$MH = RuntimeHelper.downcallHandle(
+        "g_application_set_application_id",
+        constants$487.g_application_set_application_id$FUNC
     );
-    static final FunctionDescriptor g_enum_get_value_by_nick$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_application_get_dbus_connection$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_enum_get_value_by_nick$MH = RuntimeHelper.downcallHandle(
-        "g_enum_get_value_by_nick",
-        constants$487.g_enum_get_value_by_nick$FUNC
+    static final MethodHandle g_application_get_dbus_connection$MH = RuntimeHelper.downcallHandle(
+        "g_application_get_dbus_connection",
+        constants$487.g_application_get_dbus_connection$FUNC
     );
-    static final FunctionDescriptor g_flags_get_first_value$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_flags_get_first_value$MH = RuntimeHelper.downcallHandle(
-        "g_flags_get_first_value",
-        constants$487.g_flags_get_first_value$FUNC
-    );
-    static final FunctionDescriptor g_flags_get_value_by_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_application_get_dbus_object_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_flags_get_value_by_name$MH = RuntimeHelper.downcallHandle(
-        "g_flags_get_value_by_name",
-        constants$487.g_flags_get_value_by_name$FUNC
-    );
-    static final FunctionDescriptor g_flags_get_value_by_nick$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_flags_get_value_by_nick$MH = RuntimeHelper.downcallHandle(
-        "g_flags_get_value_by_nick",
-        constants$487.g_flags_get_value_by_nick$FUNC
+    static final MethodHandle g_application_get_dbus_object_path$MH = RuntimeHelper.downcallHandle(
+        "g_application_get_dbus_object_path",
+        constants$487.g_application_get_dbus_object_path$FUNC
     );
 }
 

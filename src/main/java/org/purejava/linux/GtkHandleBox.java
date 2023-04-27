@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkHandleBox extends _GtkHandleBox {
+/**
+ * {@snippet :
+ * typedef struct _GtkHandleBox GtkHandleBox;
+ * }
+ */
+public final class GtkHandleBox extends _GtkHandleBox {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkHandleBox() {}
 }
 
 

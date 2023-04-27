@@ -7,58 +7,62 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$209 {
+final class constants$209 {
 
-    static final FunctionDescriptor g_key_file_to_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$209() {}
+    static final FunctionDescriptor g_string_prepend_unichar$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_string_prepend_unichar$MH = RuntimeHelper.downcallHandle(
+        "g_string_prepend_unichar",
+        constants$209.g_string_prepend_unichar$FUNC
+    );
+    static final FunctionDescriptor g_string_prepend_len$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle g_string_prepend_len$MH = RuntimeHelper.downcallHandle(
+        "g_string_prepend_len",
+        constants$209.g_string_prepend_len$FUNC
+    );
+    static final FunctionDescriptor g_string_insert$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_key_file_to_data$MH = RuntimeHelper.downcallHandle(
-        "g_key_file_to_data",
-        constants$209.g_key_file_to_data$FUNC
+    static final MethodHandle g_string_insert$MH = RuntimeHelper.downcallHandle(
+        "g_string_insert",
+        constants$209.g_string_insert$FUNC
     );
-    static final FunctionDescriptor g_key_file_save_to_file$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_string_insert_c$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_CHAR$LAYOUT
+    );
+    static final MethodHandle g_string_insert_c$MH = RuntimeHelper.downcallHandle(
+        "g_string_insert_c",
+        constants$209.g_string_insert_c$FUNC
+    );
+    static final FunctionDescriptor g_string_insert_unichar$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_string_insert_unichar$MH = RuntimeHelper.downcallHandle(
+        "g_string_insert_unichar",
+        constants$209.g_string_insert_unichar$FUNC
+    );
+    static final FunctionDescriptor g_string_overwrite$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_key_file_save_to_file$MH = RuntimeHelper.downcallHandle(
-        "g_key_file_save_to_file",
-        constants$209.g_key_file_save_to_file$FUNC
-    );
-    static final FunctionDescriptor g_key_file_get_start_group$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_key_file_get_start_group$MH = RuntimeHelper.downcallHandle(
-        "g_key_file_get_start_group",
-        constants$209.g_key_file_get_start_group$FUNC
-    );
-    static final FunctionDescriptor g_key_file_get_groups$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_key_file_get_groups$MH = RuntimeHelper.downcallHandle(
-        "g_key_file_get_groups",
-        constants$209.g_key_file_get_groups$FUNC
-    );
-    static final FunctionDescriptor g_key_file_get_keys$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_key_file_get_keys$MH = RuntimeHelper.downcallHandle(
-        "g_key_file_get_keys",
-        constants$209.g_key_file_get_keys$FUNC
-    );
-    static final FunctionDescriptor g_key_file_has_group$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_key_file_has_group$MH = RuntimeHelper.downcallHandle(
-        "g_key_file_has_group",
-        constants$209.g_key_file_has_group$FUNC
+    static final MethodHandle g_string_overwrite$MH = RuntimeHelper.downcallHandle(
+        "g_string_overwrite",
+        constants$209.g_string_overwrite$FUNC
     );
 }
 

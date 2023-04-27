@@ -7,56 +7,58 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$577 {
+final class constants$577 {
 
-    static final FunctionDescriptor symlinkat$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$577() {}
+    static final FunctionDescriptor g_dbus_message_set_signature$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle symlinkat$MH = RuntimeHelper.downcallHandle(
-        "symlinkat",
-        constants$577.symlinkat$FUNC
+    static final MethodHandle g_dbus_message_set_signature$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_message_set_signature",
+        constants$577.g_dbus_message_set_signature$FUNC
     );
-    static final FunctionDescriptor readlinkat$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle readlinkat$MH = RuntimeHelper.downcallHandle(
-        "readlinkat",
-        constants$577.readlinkat$FUNC
-    );
-    static final FunctionDescriptor unlink$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_dbus_message_get_num_unix_fds$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle unlink$MH = RuntimeHelper.downcallHandle(
-        "unlink",
-        constants$577.unlink$FUNC
+    static final MethodHandle g_dbus_message_get_num_unix_fds$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_message_get_num_unix_fds",
+        constants$577.g_dbus_message_get_num_unix_fds$FUNC
     );
-    static final FunctionDescriptor unlinkat$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_dbus_message_set_num_unix_fds$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle unlinkat$MH = RuntimeHelper.downcallHandle(
-        "unlinkat",
-        constants$577.unlinkat$FUNC
+    static final MethodHandle g_dbus_message_set_num_unix_fds$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_message_set_num_unix_fds",
+        constants$577.g_dbus_message_set_num_unix_fds$FUNC
     );
-    static final FunctionDescriptor rmdir$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_dbus_message_get_arg0$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle rmdir$MH = RuntimeHelper.downcallHandle(
-        "rmdir",
-        constants$577.rmdir$FUNC
+    static final MethodHandle g_dbus_message_get_arg0$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_message_get_arg0",
+        constants$577.g_dbus_message_get_arg0$FUNC
     );
-    static final FunctionDescriptor tcgetpgrp$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor g_dbus_message_new_from_blob$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle tcgetpgrp$MH = RuntimeHelper.downcallHandle(
-        "tcgetpgrp",
-        constants$577.tcgetpgrp$FUNC
+    static final MethodHandle g_dbus_message_new_from_blob$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_message_new_from_blob",
+        constants$577.g_dbus_message_new_from_blob$FUNC
+    );
+    static final FunctionDescriptor g_dbus_message_bytes_needed$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_dbus_message_bytes_needed$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_message_bytes_needed",
+        constants$577.g_dbus_message_bytes_needed$FUNC
     );
 }
 

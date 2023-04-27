@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * void (*GtkMenuPositionFunc)(struct _GtkMenu* menu,int* x,int* y,int* push_in,void* user_data);
+ * }
+ */
 public interface GtkMenuPositionFunc {
 
-    void apply(java.lang.foreign.MemoryAddress menu, java.lang.foreign.MemoryAddress x, java.lang.foreign.MemoryAddress y, java.lang.foreign.MemoryAddress push_in, java.lang.foreign.MemoryAddress user_data);
-    static MemorySegment allocate(GtkMenuPositionFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GtkMenuPositionFunc.class, fi, constants$1517.GtkMenuPositionFunc$FUNC, session);
+    void apply(java.lang.foreign.MemorySegment cell_layout, java.lang.foreign.MemorySegment cell, java.lang.foreign.MemorySegment tree_model, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment data);
+    static MemorySegment allocate(GtkMenuPositionFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$1330.GtkMenuPositionFunc_UP$MH, fi, constants$1330.GtkMenuPositionFunc$FUNC, scope);
     }
-    static GtkMenuPositionFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _menu, java.lang.foreign.MemoryAddress _x, java.lang.foreign.MemoryAddress _y, java.lang.foreign.MemoryAddress _push_in, java.lang.foreign.MemoryAddress _user_data) -> {
+    static GtkMenuPositionFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _cell_layout, java.lang.foreign.MemorySegment _cell, java.lang.foreign.MemorySegment _tree_model, java.lang.foreign.MemorySegment _iter, java.lang.foreign.MemorySegment _data) -> {
             try {
-                constants$1517.GtkMenuPositionFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_menu, (java.lang.foreign.Addressable)_x, (java.lang.foreign.Addressable)_y, (java.lang.foreign.Addressable)_push_in, (java.lang.foreign.Addressable)_user_data);
+                constants$1330.GtkMenuPositionFunc_DOWN$MH.invokeExact(symbol, _cell_layout, _cell, _tree_model, _iter, _data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

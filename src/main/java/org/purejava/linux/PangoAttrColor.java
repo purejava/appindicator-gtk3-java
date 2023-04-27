@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class PangoAttrColor extends _PangoAttrColor {
+/**
+ * {@snippet :
+ * typedef struct _PangoAttrColor PangoAttrColor;
+ * }
+ */
+public final class PangoAttrColor extends _PangoAttrColor {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private PangoAttrColor() {}
 }
 
 

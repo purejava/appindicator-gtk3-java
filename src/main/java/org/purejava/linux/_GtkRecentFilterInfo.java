@@ -7,9 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GtkRecentFilterInfo {
+ *     GtkRecentFilterFlags contains;
+ *     const gchar* uri;
+ *     const gchar* display_name;
+ *     const gchar* mime_type;
+ *     const gchar** applications;
+ *     const gchar** groups;
+ *     gint age;
+ * };
+ * }
+ */
 public class _GtkRecentFilterInfo {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_INT$LAYOUT.withName("contains"),
         MemoryLayout.paddingLayout(32),
         Constants$root.C_POINTER$LAYOUT.withName("uri"),
@@ -27,10 +40,22 @@ public class _GtkRecentFilterInfo {
     public static VarHandle contains$VH() {
         return _GtkRecentFilterInfo.contains$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GtkRecentFilterFlags contains;
+     * }
+     */
     public static int contains$get(MemorySegment seg) {
         return (int)_GtkRecentFilterInfo.contains$VH.get(seg);
     }
-    public static void contains$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GtkRecentFilterFlags contains;
+     * }
+     */
+    public static void contains$set(MemorySegment seg, int x) {
         _GtkRecentFilterInfo.contains$VH.set(seg, x);
     }
     public static int contains$get(MemorySegment seg, long index) {
@@ -43,90 +68,162 @@ public class _GtkRecentFilterInfo {
     public static VarHandle uri$VH() {
         return _GtkRecentFilterInfo.uri$VH;
     }
-    public static MemoryAddress uri$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkRecentFilterInfo.uri$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * const gchar* uri;
+     * }
+     */
+    public static MemorySegment uri$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkRecentFilterInfo.uri$VH.get(seg);
     }
-    public static void uri$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * const gchar* uri;
+     * }
+     */
+    public static void uri$set(MemorySegment seg, MemorySegment x) {
         _GtkRecentFilterInfo.uri$VH.set(seg, x);
     }
-    public static MemoryAddress uri$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkRecentFilterInfo.uri$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment uri$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkRecentFilterInfo.uri$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void uri$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void uri$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkRecentFilterInfo.uri$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle display_name$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("display_name"));
     public static VarHandle display_name$VH() {
         return _GtkRecentFilterInfo.display_name$VH;
     }
-    public static MemoryAddress display_name$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkRecentFilterInfo.display_name$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * const gchar* display_name;
+     * }
+     */
+    public static MemorySegment display_name$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkRecentFilterInfo.display_name$VH.get(seg);
     }
-    public static void display_name$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * const gchar* display_name;
+     * }
+     */
+    public static void display_name$set(MemorySegment seg, MemorySegment x) {
         _GtkRecentFilterInfo.display_name$VH.set(seg, x);
     }
-    public static MemoryAddress display_name$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkRecentFilterInfo.display_name$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment display_name$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkRecentFilterInfo.display_name$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void display_name$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void display_name$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkRecentFilterInfo.display_name$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle mime_type$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("mime_type"));
     public static VarHandle mime_type$VH() {
         return _GtkRecentFilterInfo.mime_type$VH;
     }
-    public static MemoryAddress mime_type$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkRecentFilterInfo.mime_type$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * const gchar* mime_type;
+     * }
+     */
+    public static MemorySegment mime_type$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkRecentFilterInfo.mime_type$VH.get(seg);
     }
-    public static void mime_type$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * const gchar* mime_type;
+     * }
+     */
+    public static void mime_type$set(MemorySegment seg, MemorySegment x) {
         _GtkRecentFilterInfo.mime_type$VH.set(seg, x);
     }
-    public static MemoryAddress mime_type$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkRecentFilterInfo.mime_type$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment mime_type$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkRecentFilterInfo.mime_type$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void mime_type$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void mime_type$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkRecentFilterInfo.mime_type$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle applications$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("applications"));
     public static VarHandle applications$VH() {
         return _GtkRecentFilterInfo.applications$VH;
     }
-    public static MemoryAddress applications$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkRecentFilterInfo.applications$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * const gchar** applications;
+     * }
+     */
+    public static MemorySegment applications$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkRecentFilterInfo.applications$VH.get(seg);
     }
-    public static void applications$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * const gchar** applications;
+     * }
+     */
+    public static void applications$set(MemorySegment seg, MemorySegment x) {
         _GtkRecentFilterInfo.applications$VH.set(seg, x);
     }
-    public static MemoryAddress applications$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkRecentFilterInfo.applications$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment applications$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkRecentFilterInfo.applications$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void applications$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void applications$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkRecentFilterInfo.applications$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle groups$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("groups"));
     public static VarHandle groups$VH() {
         return _GtkRecentFilterInfo.groups$VH;
     }
-    public static MemoryAddress groups$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkRecentFilterInfo.groups$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * const gchar** groups;
+     * }
+     */
+    public static MemorySegment groups$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkRecentFilterInfo.groups$VH.get(seg);
     }
-    public static void groups$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * const gchar** groups;
+     * }
+     */
+    public static void groups$set(MemorySegment seg, MemorySegment x) {
         _GtkRecentFilterInfo.groups$VH.set(seg, x);
     }
-    public static MemoryAddress groups$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkRecentFilterInfo.groups$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment groups$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkRecentFilterInfo.groups$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void groups$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void groups$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkRecentFilterInfo.groups$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle age$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("age"));
     public static VarHandle age$VH() {
         return _GtkRecentFilterInfo.age$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gint age;
+     * }
+     */
     public static int age$get(MemorySegment seg) {
         return (int)_GtkRecentFilterInfo.age$VH.get(seg);
     }
-    public static void age$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gint age;
+     * }
+     */
+    public static void age$set(MemorySegment seg, int x) {
         _GtkRecentFilterInfo.age$VH.set(seg, x);
     }
     public static int age$get(MemorySegment seg, long index) {
@@ -137,10 +234,10 @@ public class _GtkRecentFilterInfo {
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

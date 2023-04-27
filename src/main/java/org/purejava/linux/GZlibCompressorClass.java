@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GZlibCompressorClass extends _GZlibCompressorClass {
+/**
+ * {@snippet :
+ * typedef struct _GZlibCompressorClass GZlibCompressorClass;
+ * }
+ */
+public final class GZlibCompressorClass extends _GZlibCompressorClass {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GZlibCompressorClass() {}
 }
 
 

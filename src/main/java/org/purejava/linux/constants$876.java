@@ -7,54 +7,59 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$876 {
+final class constants$876 {
 
-    static final FunctionDescriptor g_volume_get_drive$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$876() {}
+    static final FunctionDescriptor hb_font_get_scale$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_volume_get_drive$MH = RuntimeHelper.downcallHandle(
-        "g_volume_get_drive",
-        constants$876.g_volume_get_drive$FUNC
+    static final MethodHandle hb_font_get_scale$MH = RuntimeHelper.downcallHandle(
+        "hb_font_get_scale",
+        constants$876.hb_font_get_scale$FUNC
     );
-    static final FunctionDescriptor g_volume_get_mount$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_volume_get_mount$MH = RuntimeHelper.downcallHandle(
-        "g_volume_get_mount",
-        constants$876.g_volume_get_mount$FUNC
-    );
-    static final FunctionDescriptor g_volume_can_mount$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_volume_can_mount$MH = RuntimeHelper.downcallHandle(
-        "g_volume_can_mount",
-        constants$876.g_volume_can_mount$FUNC
-    );
-    static final FunctionDescriptor g_volume_can_eject$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_volume_can_eject$MH = RuntimeHelper.downcallHandle(
-        "g_volume_can_eject",
-        constants$876.g_volume_can_eject$FUNC
-    );
-    static final FunctionDescriptor g_volume_should_automount$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_volume_should_automount$MH = RuntimeHelper.downcallHandle(
-        "g_volume_should_automount",
-        constants$876.g_volume_should_automount$FUNC
-    );
-    static final FunctionDescriptor g_volume_mount$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor hb_font_set_ppem$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle hb_font_set_ppem$MH = RuntimeHelper.downcallHandle(
+        "hb_font_set_ppem",
+        constants$876.hb_font_set_ppem$FUNC
+    );
+    static final FunctionDescriptor hb_font_get_ppem$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_volume_mount$MH = RuntimeHelper.downcallHandle(
-        "g_volume_mount",
-        constants$876.g_volume_mount$FUNC
+    static final MethodHandle hb_font_get_ppem$MH = RuntimeHelper.downcallHandle(
+        "hb_font_get_ppem",
+        constants$876.hb_font_get_ppem$FUNC
+    );
+    static final FunctionDescriptor hb_font_set_ptem$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_FLOAT$LAYOUT
+    );
+    static final MethodHandle hb_font_set_ptem$MH = RuntimeHelper.downcallHandle(
+        "hb_font_set_ptem",
+        constants$876.hb_font_set_ptem$FUNC
+    );
+    static final FunctionDescriptor hb_font_get_ptem$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle hb_font_get_ptem$MH = RuntimeHelper.downcallHandle(
+        "hb_font_get_ptem",
+        constants$876.hb_font_get_ptem$FUNC
+    );
+    static final FunctionDescriptor hb_font_set_synthetic_slant$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_FLOAT$LAYOUT
+    );
+    static final MethodHandle hb_font_set_synthetic_slant$MH = RuntimeHelper.downcallHandle(
+        "hb_font_set_synthetic_slant",
+        constants$876.hb_font_set_synthetic_slant$FUNC
     );
 }
 

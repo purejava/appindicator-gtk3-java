@@ -7,49 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1466 {
+final class constants$1466 {
 
-    static final FunctionDescriptor glib_autoptr_cleanup_GtkWidget$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1466() {}
+    static final FunctionDescriptor gtk_tree_view_get_vadjustment$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GtkWidget$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GtkWidget",
-        constants$1466.glib_autoptr_cleanup_GtkWidget$FUNC
+    static final MethodHandle gtk_tree_view_get_vadjustment$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_get_vadjustment",
+        constants$1466.gtk_tree_view_get_vadjustment$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GtkWidget$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_tree_view_set_vadjustment$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GtkWidget$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GtkWidget",
-        constants$1466.glib_listautoptr_cleanup_GtkWidget$FUNC
+    static final MethodHandle gtk_tree_view_set_vadjustment$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_set_vadjustment",
+        constants$1466.gtk_tree_view_set_vadjustment$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GtkWidget$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_tree_view_get_headers_visible$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GtkWidget$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GtkWidget",
-        constants$1466.glib_slistautoptr_cleanup_GtkWidget$FUNC
+    static final MethodHandle gtk_tree_view_get_headers_visible$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_get_headers_visible",
+        constants$1466.gtk_tree_view_get_headers_visible$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GtkWidget$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_tree_view_set_headers_visible$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_tree_view_set_headers_visible$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_set_headers_visible",
+        constants$1466.gtk_tree_view_set_headers_visible$FUNC
+    );
+    static final FunctionDescriptor gtk_tree_view_columns_autosize$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GtkWidget$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GtkWidget",
-        constants$1466.glib_queueautoptr_cleanup_GtkWidget$FUNC
+    static final MethodHandle gtk_tree_view_columns_autosize$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_columns_autosize",
+        constants$1466.gtk_tree_view_columns_autosize$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GtkRequisition$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_tree_view_get_headers_clickable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GtkRequisition$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GtkRequisition",
-        constants$1466.glib_autoptr_clear_GtkRequisition$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_cleanup_GtkRequisition$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_autoptr_cleanup_GtkRequisition$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GtkRequisition",
-        constants$1466.glib_autoptr_cleanup_GtkRequisition$FUNC
+    static final MethodHandle gtk_tree_view_get_headers_clickable$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_get_headers_clickable",
+        constants$1466.gtk_tree_view_get_headers_clickable$FUNC
     );
 }
 

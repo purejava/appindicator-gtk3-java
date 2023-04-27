@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GMarkupParser extends _GMarkupParser {
+/**
+ * {@snippet :
+ * typedef struct _GMarkupParser GMarkupParser;
+ * }
+ */
+public final class GMarkupParser extends _GMarkupParser {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GMarkupParser() {}
 }
 
 

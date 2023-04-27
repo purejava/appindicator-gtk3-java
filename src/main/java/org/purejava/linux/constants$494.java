@@ -7,49 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$494 {
+final class constants$494 {
 
-    static final FunctionDescriptor g_param_spec_variant$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_param_spec_variant$MH = RuntimeHelper.downcallHandle(
-        "g_param_spec_variant",
-        constants$494.g_param_spec_variant$FUNC
-    );
-    static final  OfAddress g_param_spec_types$LAYOUT = Constants$root.C_POINTER$LAYOUT;
-    static final VarHandle g_param_spec_types$VH = constants$494.g_param_spec_types$LAYOUT.varHandle();
-    static final MemorySegment g_param_spec_types$SEGMENT = RuntimeHelper.lookupGlobalVariable("g_param_spec_types", constants$494.g_param_spec_types$LAYOUT);
-    static final FunctionDescriptor g_signal_group_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_signal_group_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_signal_group_get_type",
-        constants$494.g_signal_group_get_type$FUNC
-    );
-    static final FunctionDescriptor g_signal_group_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_signal_group_new$MH = RuntimeHelper.downcallHandle(
-        "g_signal_group_new",
-        constants$494.g_signal_group_new$FUNC
-    );
-    static final FunctionDescriptor g_signal_group_set_target$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$494() {}
+    static final FunctionDescriptor g_application_command_line_getenv$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_signal_group_set_target$MH = RuntimeHelper.downcallHandle(
-        "g_signal_group_set_target",
-        constants$494.g_signal_group_set_target$FUNC
+    static final MethodHandle g_application_command_line_getenv$MH = RuntimeHelper.downcallHandle(
+        "g_application_command_line_getenv",
+        constants$494.g_application_command_line_getenv$FUNC
     );
-    static final FunctionDescriptor g_signal_group_dup_target$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_application_command_line_get_cwd$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_signal_group_dup_target$MH = RuntimeHelper.downcallHandle(
-        "g_signal_group_dup_target",
-        constants$494.g_signal_group_dup_target$FUNC
+    static final MethodHandle g_application_command_line_get_cwd$MH = RuntimeHelper.downcallHandle(
+        "g_application_command_line_get_cwd",
+        constants$494.g_application_command_line_get_cwd$FUNC
+    );
+    static final FunctionDescriptor g_application_command_line_get_is_remote$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_application_command_line_get_is_remote$MH = RuntimeHelper.downcallHandle(
+        "g_application_command_line_get_is_remote",
+        constants$494.g_application_command_line_get_is_remote$FUNC
+    );
+    static final FunctionDescriptor g_application_command_line_print$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_application_command_line_print$MH = RuntimeHelper.downcallHandleVariadic(
+        "g_application_command_line_print",
+        constants$494.g_application_command_line_print$FUNC
+    );
+    static final FunctionDescriptor g_application_command_line_printerr$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_application_command_line_printerr$MH = RuntimeHelper.downcallHandleVariadic(
+        "g_application_command_line_printerr",
+        constants$494.g_application_command_line_printerr$FUNC
+    );
+    static final FunctionDescriptor g_application_command_line_get_exit_status$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_application_command_line_get_exit_status$MH = RuntimeHelper.downcallHandle(
+        "g_application_command_line_get_exit_status",
+        constants$494.g_application_command_line_get_exit_status$FUNC
     );
 }
 

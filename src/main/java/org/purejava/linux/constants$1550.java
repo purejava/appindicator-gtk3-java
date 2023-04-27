@@ -7,52 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1550 {
+final class constants$1550 {
 
-    static final FunctionDescriptor gtk_app_chooser_widget_get_show_default$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1550() {}
+    static final FunctionDescriptor gtk_combo_box_text_new_with_entry$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_combo_box_text_new_with_entry$MH = RuntimeHelper.downcallHandle(
+        "gtk_combo_box_text_new_with_entry",
+        constants$1550.gtk_combo_box_text_new_with_entry$FUNC
+    );
+    static final FunctionDescriptor gtk_combo_box_text_append_text$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_app_chooser_widget_get_show_default$MH = RuntimeHelper.downcallHandle(
-        "gtk_app_chooser_widget_get_show_default",
-        constants$1550.gtk_app_chooser_widget_get_show_default$FUNC
+    static final MethodHandle gtk_combo_box_text_append_text$MH = RuntimeHelper.downcallHandle(
+        "gtk_combo_box_text_append_text",
+        constants$1550.gtk_combo_box_text_append_text$FUNC
     );
-    static final FunctionDescriptor gtk_app_chooser_widget_set_show_recommended$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_combo_box_text_insert_text$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_combo_box_text_insert_text$MH = RuntimeHelper.downcallHandle(
+        "gtk_combo_box_text_insert_text",
+        constants$1550.gtk_combo_box_text_insert_text$FUNC
+    );
+    static final FunctionDescriptor gtk_combo_box_text_prepend_text$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_combo_box_text_prepend_text$MH = RuntimeHelper.downcallHandle(
+        "gtk_combo_box_text_prepend_text",
+        constants$1550.gtk_combo_box_text_prepend_text$FUNC
+    );
+    static final FunctionDescriptor gtk_combo_box_text_remove$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_app_chooser_widget_set_show_recommended$MH = RuntimeHelper.downcallHandle(
-        "gtk_app_chooser_widget_set_show_recommended",
-        constants$1550.gtk_app_chooser_widget_set_show_recommended$FUNC
+    static final MethodHandle gtk_combo_box_text_remove$MH = RuntimeHelper.downcallHandle(
+        "gtk_combo_box_text_remove",
+        constants$1550.gtk_combo_box_text_remove$FUNC
     );
-    static final FunctionDescriptor gtk_app_chooser_widget_get_show_recommended$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_combo_box_text_remove_all$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_app_chooser_widget_get_show_recommended$MH = RuntimeHelper.downcallHandle(
-        "gtk_app_chooser_widget_get_show_recommended",
-        constants$1550.gtk_app_chooser_widget_get_show_recommended$FUNC
-    );
-    static final FunctionDescriptor gtk_app_chooser_widget_set_show_fallback$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_app_chooser_widget_set_show_fallback$MH = RuntimeHelper.downcallHandle(
-        "gtk_app_chooser_widget_set_show_fallback",
-        constants$1550.gtk_app_chooser_widget_set_show_fallback$FUNC
-    );
-    static final FunctionDescriptor gtk_app_chooser_widget_get_show_fallback$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_app_chooser_widget_get_show_fallback$MH = RuntimeHelper.downcallHandle(
-        "gtk_app_chooser_widget_get_show_fallback",
-        constants$1550.gtk_app_chooser_widget_get_show_fallback$FUNC
-    );
-    static final FunctionDescriptor gtk_app_chooser_widget_set_show_other$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_app_chooser_widget_set_show_other$MH = RuntimeHelper.downcallHandle(
-        "gtk_app_chooser_widget_set_show_other",
-        constants$1550.gtk_app_chooser_widget_set_show_other$FUNC
+    static final MethodHandle gtk_combo_box_text_remove_all$MH = RuntimeHelper.downcallHandle(
+        "gtk_combo_box_text_remove_all",
+        constants$1550.gtk_combo_box_text_remove_all$FUNC
     );
 }
 

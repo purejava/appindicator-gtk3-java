@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GdkEventPadButton extends _GdkEventPadButton {
+/**
+ * {@snippet :
+ * typedef struct _GdkEventPadButton GdkEventPadButton;
+ * }
+ */
+public final class GdkEventPadButton extends _GdkEventPadButton {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GdkEventPadButton() {}
 }
 
 

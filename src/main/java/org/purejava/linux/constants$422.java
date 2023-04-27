@@ -7,51 +7,41 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$422 {
+final class constants$422 {
 
-    static final FunctionDescriptor g_type_interface_peek$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$422() {}
+    static final FunctionDescriptor _g_signals_destroy$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_LONG_LONG$LAYOUT
     );
-    static final MethodHandle g_type_interface_peek$MH = RuntimeHelper.downcallHandle(
-        "g_type_interface_peek",
-        constants$422.g_type_interface_peek$FUNC
+    static final MethodHandle _g_signals_destroy$MH = RuntimeHelper.downcallHandle(
+        "_g_signals_destroy",
+        constants$422._g_signals_destroy$FUNC
     );
-    static final FunctionDescriptor g_type_interface_peek_parent$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_date_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_date_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_date_get_type",
+        constants$422.g_date_get_type$FUNC
     );
-    static final MethodHandle g_type_interface_peek_parent$MH = RuntimeHelper.downcallHandle(
-        "g_type_interface_peek_parent",
-        constants$422.g_type_interface_peek_parent$FUNC
+    static final FunctionDescriptor g_strv_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_strv_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_strv_get_type",
+        constants$422.g_strv_get_type$FUNC
     );
-    static final FunctionDescriptor g_type_default_interface_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final FunctionDescriptor g_gstring_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_gstring_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_gstring_get_type",
+        constants$422.g_gstring_get_type$FUNC
     );
-    static final MethodHandle g_type_default_interface_ref$MH = RuntimeHelper.downcallHandle(
-        "g_type_default_interface_ref",
-        constants$422.g_type_default_interface_ref$FUNC
+    static final FunctionDescriptor g_hash_table_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_hash_table_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_hash_table_get_type",
+        constants$422.g_hash_table_get_type$FUNC
     );
-    static final FunctionDescriptor g_type_default_interface_peek$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_type_default_interface_peek$MH = RuntimeHelper.downcallHandle(
-        "g_type_default_interface_peek",
-        constants$422.g_type_default_interface_peek$FUNC
-    );
-    static final FunctionDescriptor g_type_default_interface_unref$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_type_default_interface_unref$MH = RuntimeHelper.downcallHandle(
-        "g_type_default_interface_unref",
-        constants$422.g_type_default_interface_unref$FUNC
-    );
-    static final FunctionDescriptor g_type_children$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_type_children$MH = RuntimeHelper.downcallHandle(
-        "g_type_children",
-        constants$422.g_type_children$FUNC
+    static final FunctionDescriptor g_array_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_array_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_array_get_type",
+        constants$422.g_array_get_type$FUNC
     );
 }
 

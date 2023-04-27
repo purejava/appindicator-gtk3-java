@@ -7,9 +7,19 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GtkTreeIter {
+ *     gint stamp;
+ *     gpointer user_data;
+ *     gpointer user_data2;
+ *     gpointer user_data3;
+ * };
+ * }
+ */
 public class _GtkTreeIter {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_INT$LAYOUT.withName("stamp"),
         MemoryLayout.paddingLayout(32),
         Constants$root.C_POINTER$LAYOUT.withName("user_data"),
@@ -23,10 +33,22 @@ public class _GtkTreeIter {
     public static VarHandle stamp$VH() {
         return _GtkTreeIter.stamp$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gint stamp;
+     * }
+     */
     public static int stamp$get(MemorySegment seg) {
         return (int)_GtkTreeIter.stamp$VH.get(seg);
     }
-    public static void stamp$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gint stamp;
+     * }
+     */
+    public static void stamp$set(MemorySegment seg, int x) {
         _GtkTreeIter.stamp$VH.set(seg, x);
     }
     public static int stamp$get(MemorySegment seg, long index) {
@@ -39,56 +61,92 @@ public class _GtkTreeIter {
     public static VarHandle user_data$VH() {
         return _GtkTreeIter.user_data$VH;
     }
-    public static MemoryAddress user_data$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkTreeIter.user_data$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gpointer user_data;
+     * }
+     */
+    public static MemorySegment user_data$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkTreeIter.user_data$VH.get(seg);
     }
-    public static void user_data$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gpointer user_data;
+     * }
+     */
+    public static void user_data$set(MemorySegment seg, MemorySegment x) {
         _GtkTreeIter.user_data$VH.set(seg, x);
     }
-    public static MemoryAddress user_data$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkTreeIter.user_data$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment user_data$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkTreeIter.user_data$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void user_data$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void user_data$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkTreeIter.user_data$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle user_data2$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("user_data2"));
     public static VarHandle user_data2$VH() {
         return _GtkTreeIter.user_data2$VH;
     }
-    public static MemoryAddress user_data2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkTreeIter.user_data2$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gpointer user_data2;
+     * }
+     */
+    public static MemorySegment user_data2$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkTreeIter.user_data2$VH.get(seg);
     }
-    public static void user_data2$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gpointer user_data2;
+     * }
+     */
+    public static void user_data2$set(MemorySegment seg, MemorySegment x) {
         _GtkTreeIter.user_data2$VH.set(seg, x);
     }
-    public static MemoryAddress user_data2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkTreeIter.user_data2$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment user_data2$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkTreeIter.user_data2$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void user_data2$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void user_data2$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkTreeIter.user_data2$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle user_data3$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("user_data3"));
     public static VarHandle user_data3$VH() {
         return _GtkTreeIter.user_data3$VH;
     }
-    public static MemoryAddress user_data3$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkTreeIter.user_data3$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gpointer user_data3;
+     * }
+     */
+    public static MemorySegment user_data3$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkTreeIter.user_data3$VH.get(seg);
     }
-    public static void user_data3$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gpointer user_data3;
+     * }
+     */
+    public static void user_data3$set(MemorySegment seg, MemorySegment x) {
         _GtkTreeIter.user_data3$VH.set(seg, x);
     }
-    public static MemoryAddress user_data3$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkTreeIter.user_data3$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment user_data3$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkTreeIter.user_data3$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void user_data3$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void user_data3$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkTreeIter.user_data3$VH.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

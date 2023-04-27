@@ -7,55 +7,65 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$700 {
+final class constants$700 {
 
-    static final FunctionDescriptor g_file_info_set_icon$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$700() {}
+    static final FunctionDescriptor g_menu_insert_section$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_file_info_set_icon$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_set_icon",
-        constants$700.g_file_info_set_icon$FUNC
+    static final MethodHandle g_menu_insert_section$MH = RuntimeHelper.downcallHandle(
+        "g_menu_insert_section",
+        constants$700.g_menu_insert_section$FUNC
     );
-    static final FunctionDescriptor g_file_info_set_symbolic_icon$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_menu_prepend_section$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_file_info_set_symbolic_icon$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_set_symbolic_icon",
-        constants$700.g_file_info_set_symbolic_icon$FUNC
+    static final MethodHandle g_menu_prepend_section$MH = RuntimeHelper.downcallHandle(
+        "g_menu_prepend_section",
+        constants$700.g_menu_prepend_section$FUNC
     );
-    static final FunctionDescriptor g_file_info_set_content_type$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_menu_append_section$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_file_info_set_content_type$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_set_content_type",
-        constants$700.g_file_info_set_content_type$FUNC
+    static final MethodHandle g_menu_append_section$MH = RuntimeHelper.downcallHandle(
+        "g_menu_append_section",
+        constants$700.g_menu_append_section$FUNC
     );
-    static final FunctionDescriptor g_file_info_set_size$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_menu_insert_submenu$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_file_info_set_size$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_set_size",
-        constants$700.g_file_info_set_size$FUNC
-    );
-    static final FunctionDescriptor g_file_info_set_modification_time$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_file_info_set_modification_time$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_set_modification_time",
-        constants$700.g_file_info_set_modification_time$FUNC
+    static final MethodHandle g_menu_insert_submenu$MH = RuntimeHelper.downcallHandle(
+        "g_menu_insert_submenu",
+        constants$700.g_menu_insert_submenu$FUNC
     );
-    static final FunctionDescriptor g_file_info_set_modification_date_time$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_menu_prepend_submenu$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_file_info_set_modification_date_time$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_set_modification_date_time",
-        constants$700.g_file_info_set_modification_date_time$FUNC
+    static final MethodHandle g_menu_prepend_submenu$MH = RuntimeHelper.downcallHandle(
+        "g_menu_prepend_submenu",
+        constants$700.g_menu_prepend_submenu$FUNC
+    );
+    static final FunctionDescriptor g_menu_append_submenu$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_menu_append_submenu$MH = RuntimeHelper.downcallHandle(
+        "g_menu_append_submenu",
+        constants$700.g_menu_append_submenu$FUNC
     );
 }
 

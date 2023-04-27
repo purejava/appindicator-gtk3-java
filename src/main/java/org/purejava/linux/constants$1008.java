@@ -7,47 +7,49 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1008 {
+final class constants$1008 {
 
-    static final FunctionDescriptor hb_face_collect_variation_unicodes$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1008() {}
+    static final FunctionDescriptor cairo_glyph_allocate$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle cairo_glyph_allocate$MH = RuntimeHelper.downcallHandle(
+        "cairo_glyph_allocate",
+        constants$1008.cairo_glyph_allocate$FUNC
+    );
+    static final FunctionDescriptor cairo_glyph_free$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_face_collect_variation_unicodes$MH = RuntimeHelper.downcallHandle(
-        "hb_face_collect_variation_unicodes",
-        constants$1008.hb_face_collect_variation_unicodes$FUNC
+    static final MethodHandle cairo_glyph_free$MH = RuntimeHelper.downcallHandle(
+        "cairo_glyph_free",
+        constants$1008.cairo_glyph_free$FUNC
     );
-    static final FunctionDescriptor hb_face_builder_create$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle hb_face_builder_create$MH = RuntimeHelper.downcallHandle(
-        "hb_face_builder_create",
-        constants$1008.hb_face_builder_create$FUNC
+    static final FunctionDescriptor cairo_text_cluster_allocate$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final FunctionDescriptor hb_face_builder_add_table$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final MethodHandle cairo_text_cluster_allocate$MH = RuntimeHelper.downcallHandle(
+        "cairo_text_cluster_allocate",
+        constants$1008.cairo_text_cluster_allocate$FUNC
+    );
+    static final FunctionDescriptor cairo_text_cluster_free$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_face_builder_add_table$MH = RuntimeHelper.downcallHandle(
-        "hb_face_builder_add_table",
-        constants$1008.hb_face_builder_add_table$FUNC
+    static final MethodHandle cairo_text_cluster_free$MH = RuntimeHelper.downcallHandle(
+        "cairo_text_cluster_free",
+        constants$1008.cairo_text_cluster_free$FUNC
     );
-    static final FunctionDescriptor hb_font_funcs_create$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle hb_font_funcs_create$MH = RuntimeHelper.downcallHandle(
-        "hb_font_funcs_create",
-        constants$1008.hb_font_funcs_create$FUNC
+    static final FunctionDescriptor cairo_font_options_create$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle cairo_font_options_create$MH = RuntimeHelper.downcallHandle(
+        "cairo_font_options_create",
+        constants$1008.cairo_font_options_create$FUNC
     );
-    static final FunctionDescriptor hb_font_funcs_get_empty$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle hb_font_funcs_get_empty$MH = RuntimeHelper.downcallHandle(
-        "hb_font_funcs_get_empty",
-        constants$1008.hb_font_funcs_get_empty$FUNC
-    );
-    static final FunctionDescriptor hb_font_funcs_reference$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor cairo_font_options_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_font_funcs_reference$MH = RuntimeHelper.downcallHandle(
-        "hb_font_funcs_reference",
-        constants$1008.hb_font_funcs_reference$FUNC
+    static final MethodHandle cairo_font_options_copy$MH = RuntimeHelper.downcallHandle(
+        "cairo_font_options_copy",
+        constants$1008.cairo_font_options_copy$FUNC
     );
 }
 

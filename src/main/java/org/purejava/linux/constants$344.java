@@ -7,44 +7,48 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$344 {
+final class constants$344 {
 
-    static final FunctionDescriptor GCompletionFunc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$344() {}
+    static final FunctionDescriptor g_mem_chunk_reset$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GCompletionFunc$MH = RuntimeHelper.downcallHandle(
-        constants$344.GCompletionFunc$FUNC
+    static final MethodHandle g_mem_chunk_reset$MH = RuntimeHelper.downcallHandle(
+        "g_mem_chunk_reset",
+        constants$344.g_mem_chunk_reset$FUNC
     );
-    static final FunctionDescriptor GCompletionStrncmpFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle GCompletionStrncmpFunc$MH = RuntimeHelper.downcallHandle(
-        constants$344.GCompletionStrncmpFunc$FUNC
-    );
-    static final FunctionDescriptor g_completion_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_mem_chunk_print$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_completion_new$MH = RuntimeHelper.downcallHandle(
-        "g_completion_new",
-        constants$344.g_completion_new$FUNC
+    static final MethodHandle g_mem_chunk_print$MH = RuntimeHelper.downcallHandle(
+        "g_mem_chunk_print",
+        constants$344.g_mem_chunk_print$FUNC
     );
-    static final FunctionDescriptor g_completion_add_items$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_mem_chunk_info$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle g_mem_chunk_info$MH = RuntimeHelper.downcallHandle(
+        "g_mem_chunk_info",
+        constants$344.g_mem_chunk_info$FUNC
+    );
+    static final FunctionDescriptor g_blow_chunks$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle g_blow_chunks$MH = RuntimeHelper.downcallHandle(
+        "g_blow_chunks",
+        constants$344.g_blow_chunks$FUNC
+    );
+    static final FunctionDescriptor g_allocator_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_allocator_new$MH = RuntimeHelper.downcallHandle(
+        "g_allocator_new",
+        constants$344.g_allocator_new$FUNC
+    );
+    static final FunctionDescriptor g_allocator_free$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_completion_add_items$MH = RuntimeHelper.downcallHandle(
-        "g_completion_add_items",
-        constants$344.g_completion_add_items$FUNC
-    );
-    static final FunctionDescriptor g_completion_remove_items$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_completion_remove_items$MH = RuntimeHelper.downcallHandle(
-        "g_completion_remove_items",
-        constants$344.g_completion_remove_items$FUNC
+    static final MethodHandle g_allocator_free$MH = RuntimeHelper.downcallHandle(
+        "g_allocator_free",
+        constants$344.g_allocator_free$FUNC
     );
 }
 

@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * void (*atexit$__func)();
+ * }
+ */
 public interface atexit$__func {
 
     void apply();
-    static MemorySegment allocate(atexit$__func fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(atexit$__func.class, fi, constants$52.atexit$__func$FUNC, session);
+    static MemorySegment allocate(atexit$__func fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$53.atexit$__func_UP$MH, fi, constants$53.atexit$__func$FUNC, scope);
     }
-    static atexit$__func ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+    static atexit$__func ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
         return () -> {
             try {
-                constants$52.atexit$__func$MH.invokeExact((Addressable)symbol);
+                constants$53.atexit$__func_DOWN$MH.invokeExact(symbol);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

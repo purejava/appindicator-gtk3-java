@@ -7,49 +7,56 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$976 {
+final class constants$976 {
 
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GThreadedSocketService$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$976() {}
+    static final FunctionDescriptor pango_renderer_get_color$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle pango_renderer_get_color$MH = RuntimeHelper.downcallHandle(
+        "pango_renderer_get_color",
+        constants$976.pango_renderer_get_color$FUNC
+    );
+    static final FunctionDescriptor pango_renderer_set_alpha$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_SHORT$LAYOUT
+    );
+    static final MethodHandle pango_renderer_set_alpha$MH = RuntimeHelper.downcallHandle(
+        "pango_renderer_set_alpha",
+        constants$976.pango_renderer_set_alpha$FUNC
+    );
+    static final FunctionDescriptor pango_renderer_get_alpha$FUNC = FunctionDescriptor.of(Constants$root.C_SHORT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle pango_renderer_get_alpha$MH = RuntimeHelper.downcallHandle(
+        "pango_renderer_get_alpha",
+        constants$976.pango_renderer_get_alpha$FUNC
+    );
+    static final FunctionDescriptor pango_renderer_set_matrix$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GThreadedSocketService$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GThreadedSocketService",
-        constants$976.glib_slistautoptr_cleanup_GThreadedSocketService$FUNC
+    static final MethodHandle pango_renderer_set_matrix$MH = RuntimeHelper.downcallHandle(
+        "pango_renderer_set_matrix",
+        constants$976.pango_renderer_set_matrix$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GThreadedSocketService$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_renderer_get_matrix$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GThreadedSocketService$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GThreadedSocketService",
-        constants$976.glib_queueautoptr_cleanup_GThreadedSocketService$FUNC
+    static final MethodHandle pango_renderer_get_matrix$MH = RuntimeHelper.downcallHandle(
+        "pango_renderer_get_matrix",
+        constants$976.pango_renderer_get_matrix$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GTlsBackend$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_renderer_get_layout$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GTlsBackend$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GTlsBackend",
-        constants$976.glib_autoptr_clear_GTlsBackend$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_cleanup_GTlsBackend$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_autoptr_cleanup_GTlsBackend$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GTlsBackend",
-        constants$976.glib_autoptr_cleanup_GTlsBackend$FUNC
-    );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GTlsBackend$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_listautoptr_cleanup_GTlsBackend$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GTlsBackend",
-        constants$976.glib_listautoptr_cleanup_GTlsBackend$FUNC
-    );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GTlsBackend$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_slistautoptr_cleanup_GTlsBackend$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GTlsBackend",
-        constants$976.glib_slistautoptr_cleanup_GTlsBackend$FUNC
+    static final MethodHandle pango_renderer_get_layout$MH = RuntimeHelper.downcallHandle(
+        "pango_renderer_get_layout",
+        constants$976.pango_renderer_get_layout$FUNC
     );
 }
 

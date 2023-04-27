@@ -7,8 +7,23 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$73 {
+final class constants$73 {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$73() {}
+    static final FunctionDescriptor __sighandler_t$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_INT$LAYOUT
+    );
+    static final FunctionDescriptor __sighandler_t_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle __sighandler_t_UP$MH = RuntimeHelper.upcallHandle(__sighandler_t.class, "apply", constants$73.__sighandler_t_UP$FUNC);
+    static final FunctionDescriptor __sighandler_t_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle __sighandler_t_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$73.__sighandler_t_DOWN$FUNC
+    );
     static final FunctionDescriptor __sysv_signal$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
@@ -40,21 +55,6 @@ class constants$73 {
     static final MethodHandle killpg$MH = RuntimeHelper.downcallHandle(
         "killpg",
         constants$73.killpg$FUNC
-    );
-    static final FunctionDescriptor raise$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle raise$MH = RuntimeHelper.downcallHandle(
-        "raise",
-        constants$73.raise$FUNC
-    );
-    static final FunctionDescriptor ssignal$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle ssignal$MH = RuntimeHelper.downcallHandle(
-        "ssignal",
-        constants$73.ssignal$FUNC
     );
 }
 

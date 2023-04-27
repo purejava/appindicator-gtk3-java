@@ -7,43 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$368 {
+final class constants$368 {
 
-    static final FunctionDescriptor pthread_key_create$__destr_function$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$368() {}
+    static final FunctionDescriptor pthread_rwlockattr_setkind_np$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle pthread_key_create$__destr_function$MH = RuntimeHelper.downcallHandle(
-        constants$368.pthread_key_create$__destr_function$FUNC
+    static final MethodHandle pthread_rwlockattr_setkind_np$MH = RuntimeHelper.downcallHandle(
+        "pthread_rwlockattr_setkind_np",
+        constants$368.pthread_rwlockattr_setkind_np$FUNC
     );
-    static final FunctionDescriptor pthread_key_create$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor pthread_cond_init$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pthread_key_create$MH = RuntimeHelper.downcallHandle(
-        "pthread_key_create",
-        constants$368.pthread_key_create$FUNC
+    static final MethodHandle pthread_cond_init$MH = RuntimeHelper.downcallHandle(
+        "pthread_cond_init",
+        constants$368.pthread_cond_init$FUNC
     );
-    static final FunctionDescriptor pthread_key_delete$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pthread_key_delete$MH = RuntimeHelper.downcallHandle(
-        "pthread_key_delete",
-        constants$368.pthread_key_delete$FUNC
-    );
-    static final FunctionDescriptor pthread_getspecific$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pthread_getspecific$MH = RuntimeHelper.downcallHandle(
-        "pthread_getspecific",
-        constants$368.pthread_getspecific$FUNC
-    );
-    static final FunctionDescriptor pthread_setspecific$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor pthread_cond_destroy$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pthread_setspecific$MH = RuntimeHelper.downcallHandle(
-        "pthread_setspecific",
-        constants$368.pthread_setspecific$FUNC
+    static final MethodHandle pthread_cond_destroy$MH = RuntimeHelper.downcallHandle(
+        "pthread_cond_destroy",
+        constants$368.pthread_cond_destroy$FUNC
+    );
+    static final FunctionDescriptor pthread_cond_signal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle pthread_cond_signal$MH = RuntimeHelper.downcallHandle(
+        "pthread_cond_signal",
+        constants$368.pthread_cond_signal$FUNC
+    );
+    static final FunctionDescriptor pthread_cond_broadcast$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle pthread_cond_broadcast$MH = RuntimeHelper.downcallHandle(
+        "pthread_cond_broadcast",
+        constants$368.pthread_cond_broadcast$FUNC
+    );
+    static final FunctionDescriptor pthread_cond_wait$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle pthread_cond_wait$MH = RuntimeHelper.downcallHandle(
+        "pthread_cond_wait",
+        constants$368.pthread_cond_wait$FUNC
     );
 }
 

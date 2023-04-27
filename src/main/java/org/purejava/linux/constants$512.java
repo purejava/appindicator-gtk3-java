@@ -7,49 +7,49 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$512 {
+final class constants$512 {
 
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GFlagsClass$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$512() {}
+    static final FunctionDescriptor g_cancellable_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_cancellable_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_cancellable_get_type",
+        constants$512.g_cancellable_get_type$FUNC
+    );
+    static final FunctionDescriptor g_cancellable_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle g_cancellable_new$MH = RuntimeHelper.downcallHandle(
+        "g_cancellable_new",
+        constants$512.g_cancellable_new$FUNC
+    );
+    static final FunctionDescriptor g_cancellable_is_cancelled$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GFlagsClass$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GFlagsClass",
-        constants$512.glib_queueautoptr_cleanup_GFlagsClass$FUNC
+    static final MethodHandle g_cancellable_is_cancelled$MH = RuntimeHelper.downcallHandle(
+        "g_cancellable_is_cancelled",
+        constants$512.g_cancellable_is_cancelled$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GObject$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_cancellable_set_error_if_cancelled$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GObject$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GObject",
-        constants$512.glib_autoptr_clear_GObject$FUNC
+    static final MethodHandle g_cancellable_set_error_if_cancelled$MH = RuntimeHelper.downcallHandle(
+        "g_cancellable_set_error_if_cancelled",
+        constants$512.g_cancellable_set_error_if_cancelled$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GObject$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_cancellable_get_fd$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GObject$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GObject",
-        constants$512.glib_autoptr_cleanup_GObject$FUNC
+    static final MethodHandle g_cancellable_get_fd$MH = RuntimeHelper.downcallHandle(
+        "g_cancellable_get_fd",
+        constants$512.g_cancellable_get_fd$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GObject$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_cancellable_make_pollfd$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GObject$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GObject",
-        constants$512.glib_listautoptr_cleanup_GObject$FUNC
-    );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GObject$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_slistautoptr_cleanup_GObject$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GObject",
-        constants$512.glib_slistautoptr_cleanup_GObject$FUNC
-    );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GObject$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_queueautoptr_cleanup_GObject$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GObject",
-        constants$512.glib_queueautoptr_cleanup_GObject$FUNC
+    static final MethodHandle g_cancellable_make_pollfd$MH = RuntimeHelper.downcallHandle(
+        "g_cancellable_make_pollfd",
+        constants$512.g_cancellable_make_pollfd$FUNC
     );
 }
 

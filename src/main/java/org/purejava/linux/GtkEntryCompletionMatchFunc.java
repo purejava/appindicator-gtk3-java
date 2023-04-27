@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * int (*GtkEntryCompletionMatchFunc)(struct _GtkEntryCompletion* completion,char* key,struct _GtkTreeIter* iter,void* user_data);
+ * }
+ */
 public interface GtkEntryCompletionMatchFunc {
 
-    int apply(java.lang.foreign.MemoryAddress completion, java.lang.foreign.MemoryAddress key, java.lang.foreign.MemoryAddress iter, java.lang.foreign.MemoryAddress user_data);
-    static MemorySegment allocate(GtkEntryCompletionMatchFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GtkEntryCompletionMatchFunc.class, fi, constants$1630.GtkEntryCompletionMatchFunc$FUNC, session);
+    int apply(java.lang.foreign.MemorySegment completion, java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment user_data);
+    static MemorySegment allocate(GtkEntryCompletionMatchFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$1440.GtkEntryCompletionMatchFunc_UP$MH, fi, constants$1440.GtkEntryCompletionMatchFunc$FUNC, scope);
     }
-    static GtkEntryCompletionMatchFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _completion, java.lang.foreign.MemoryAddress _key, java.lang.foreign.MemoryAddress _iter, java.lang.foreign.MemoryAddress _user_data) -> {
+    static GtkEntryCompletionMatchFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _completion, java.lang.foreign.MemorySegment _key, java.lang.foreign.MemorySegment _iter, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                return (int)constants$1630.GtkEntryCompletionMatchFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_completion, (java.lang.foreign.Addressable)_key, (java.lang.foreign.Addressable)_iter, (java.lang.foreign.Addressable)_user_data);
+                return (int)constants$1440.GtkEntryCompletionMatchFunc_DOWN$MH.invokeExact(symbol, _completion, _key, _iter, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

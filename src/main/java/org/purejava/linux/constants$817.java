@@ -7,52 +7,58 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$817 {
+final class constants$817 {
 
-    static final FunctionDescriptor g_socket_set_listen_backlog$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$817() {}
+    static final FunctionDescriptor g_tls_password_get_value$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_tls_password_get_value$MH = RuntimeHelper.downcallHandle(
+        "g_tls_password_get_value",
+        constants$817.g_tls_password_get_value$FUNC
+    );
+    static final FunctionDescriptor g_tls_password_set_value$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle g_tls_password_set_value$MH = RuntimeHelper.downcallHandle(
+        "g_tls_password_set_value",
+        constants$817.g_tls_password_set_value$FUNC
+    );
+    static final FunctionDescriptor g_tls_password_set_value_full$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_tls_password_set_value_full$MH = RuntimeHelper.downcallHandle(
+        "g_tls_password_set_value_full",
+        constants$817.g_tls_password_set_value_full$FUNC
+    );
+    static final FunctionDescriptor g_tls_password_get_flags$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_tls_password_get_flags$MH = RuntimeHelper.downcallHandle(
+        "g_tls_password_get_flags",
+        constants$817.g_tls_password_get_flags$FUNC
+    );
+    static final FunctionDescriptor g_tls_password_set_flags$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_socket_set_listen_backlog$MH = RuntimeHelper.downcallHandle(
-        "g_socket_set_listen_backlog",
-        constants$817.g_socket_set_listen_backlog$FUNC
+    static final MethodHandle g_tls_password_set_flags$MH = RuntimeHelper.downcallHandle(
+        "g_tls_password_set_flags",
+        constants$817.g_tls_password_set_flags$FUNC
     );
-    static final FunctionDescriptor g_socket_get_timeout$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_tls_password_get_description$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_socket_get_timeout$MH = RuntimeHelper.downcallHandle(
-        "g_socket_get_timeout",
-        constants$817.g_socket_get_timeout$FUNC
-    );
-    static final FunctionDescriptor g_socket_set_timeout$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_socket_set_timeout$MH = RuntimeHelper.downcallHandle(
-        "g_socket_set_timeout",
-        constants$817.g_socket_set_timeout$FUNC
-    );
-    static final FunctionDescriptor g_socket_get_ttl$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_get_ttl$MH = RuntimeHelper.downcallHandle(
-        "g_socket_get_ttl",
-        constants$817.g_socket_get_ttl$FUNC
-    );
-    static final FunctionDescriptor g_socket_set_ttl$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_socket_set_ttl$MH = RuntimeHelper.downcallHandle(
-        "g_socket_set_ttl",
-        constants$817.g_socket_set_ttl$FUNC
-    );
-    static final FunctionDescriptor g_socket_get_broadcast$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_get_broadcast$MH = RuntimeHelper.downcallHandle(
-        "g_socket_get_broadcast",
-        constants$817.g_socket_get_broadcast$FUNC
+    static final MethodHandle g_tls_password_get_description$MH = RuntimeHelper.downcallHandle(
+        "g_tls_password_get_description",
+        constants$817.g_tls_password_get_description$FUNC
     );
 }
 

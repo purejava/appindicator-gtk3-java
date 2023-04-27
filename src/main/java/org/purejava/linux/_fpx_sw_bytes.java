@@ -7,9 +7,20 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _fpx_sw_bytes {
+ *     __uint32_t magic1;
+ *     __uint32_t extended_size;
+ *     __uint64_t xstate_bv;
+ *     __uint32_t xstate_size;
+ *     __uint32_t __glibc_reserved1[7];
+ * };
+ * }
+ */
 public class _fpx_sw_bytes {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_INT$LAYOUT.withName("magic1"),
         Constants$root.C_INT$LAYOUT.withName("extended_size"),
         Constants$root.C_LONG_LONG$LAYOUT.withName("xstate_bv"),
@@ -23,10 +34,22 @@ public class _fpx_sw_bytes {
     public static VarHandle magic1$VH() {
         return _fpx_sw_bytes.magic1$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * __uint32_t magic1;
+     * }
+     */
     public static int magic1$get(MemorySegment seg) {
         return (int)_fpx_sw_bytes.magic1$VH.get(seg);
     }
-    public static void magic1$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * __uint32_t magic1;
+     * }
+     */
+    public static void magic1$set(MemorySegment seg, int x) {
         _fpx_sw_bytes.magic1$VH.set(seg, x);
     }
     public static int magic1$get(MemorySegment seg, long index) {
@@ -39,10 +62,22 @@ public class _fpx_sw_bytes {
     public static VarHandle extended_size$VH() {
         return _fpx_sw_bytes.extended_size$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * __uint32_t extended_size;
+     * }
+     */
     public static int extended_size$get(MemorySegment seg) {
         return (int)_fpx_sw_bytes.extended_size$VH.get(seg);
     }
-    public static void extended_size$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * __uint32_t extended_size;
+     * }
+     */
+    public static void extended_size$set(MemorySegment seg, int x) {
         _fpx_sw_bytes.extended_size$VH.set(seg, x);
     }
     public static int extended_size$get(MemorySegment seg, long index) {
@@ -55,10 +90,22 @@ public class _fpx_sw_bytes {
     public static VarHandle xstate_bv$VH() {
         return _fpx_sw_bytes.xstate_bv$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * __uint64_t xstate_bv;
+     * }
+     */
     public static long xstate_bv$get(MemorySegment seg) {
         return (long)_fpx_sw_bytes.xstate_bv$VH.get(seg);
     }
-    public static void xstate_bv$set( MemorySegment seg, long x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * __uint64_t xstate_bv;
+     * }
+     */
+    public static void xstate_bv$set(MemorySegment seg, long x) {
         _fpx_sw_bytes.xstate_bv$VH.set(seg, x);
     }
     public static long xstate_bv$get(MemorySegment seg, long index) {
@@ -71,10 +118,22 @@ public class _fpx_sw_bytes {
     public static VarHandle xstate_size$VH() {
         return _fpx_sw_bytes.xstate_size$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * __uint32_t xstate_size;
+     * }
+     */
     public static int xstate_size$get(MemorySegment seg) {
         return (int)_fpx_sw_bytes.xstate_size$VH.get(seg);
     }
-    public static void xstate_size$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * __uint32_t xstate_size;
+     * }
+     */
+    public static void xstate_size$set(MemorySegment seg, int x) {
         _fpx_sw_bytes.xstate_size$VH.set(seg, x);
     }
     public static int xstate_size$get(MemorySegment seg, long index) {
@@ -88,10 +147,10 @@ public class _fpx_sw_bytes {
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkWidgetPath {
+/**
+ * {@snippet :
+ * typedef struct _GtkWidgetPath GtkWidgetPath;
+ * }
+ */
+public final class GtkWidgetPath {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkWidgetPath() {}
 }
 
 

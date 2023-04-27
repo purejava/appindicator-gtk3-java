@@ -7,50 +7,48 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1226 {
+final class constants$1226 {
 
-    static final FunctionDescriptor gdk_event_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1226() {}
+    static final FunctionDescriptor atk_no_op_object_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle atk_no_op_object_get_type$MH = RuntimeHelper.downcallHandle(
+        "atk_no_op_object_get_type",
+        constants$1226.atk_no_op_object_get_type$FUNC
     );
-    static final MethodHandle gdk_event_new$MH = RuntimeHelper.downcallHandle(
-        "gdk_event_new",
-        constants$1226.gdk_event_new$FUNC
-    );
-    static final FunctionDescriptor gdk_event_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor atk_no_op_object_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_event_copy$MH = RuntimeHelper.downcallHandle(
-        "gdk_event_copy",
-        constants$1226.gdk_event_copy$FUNC
+    static final MethodHandle atk_no_op_object_new$MH = RuntimeHelper.downcallHandle(
+        "atk_no_op_object_new",
+        constants$1226.atk_no_op_object_new$FUNC
     );
-    static final FunctionDescriptor gdk_event_free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor atk_object_factory_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle atk_object_factory_get_type$MH = RuntimeHelper.downcallHandle(
+        "atk_object_factory_get_type",
+        constants$1226.atk_object_factory_get_type$FUNC
     );
-    static final MethodHandle gdk_event_free$MH = RuntimeHelper.downcallHandle(
-        "gdk_event_free",
-        constants$1226.gdk_event_free$FUNC
-    );
-    static final FunctionDescriptor gdk_event_get_window$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_event_get_window$MH = RuntimeHelper.downcallHandle(
-        "gdk_event_get_window",
-        constants$1226.gdk_event_get_window$FUNC
-    );
-    static final FunctionDescriptor gdk_event_get_time$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_event_get_time$MH = RuntimeHelper.downcallHandle(
-        "gdk_event_get_time",
-        constants$1226.gdk_event_get_time$FUNC
-    );
-    static final FunctionDescriptor gdk_event_get_state$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor atk_object_factory_create_accessible$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_event_get_state$MH = RuntimeHelper.downcallHandle(
-        "gdk_event_get_state",
-        constants$1226.gdk_event_get_state$FUNC
+    static final MethodHandle atk_object_factory_create_accessible$MH = RuntimeHelper.downcallHandle(
+        "atk_object_factory_create_accessible",
+        constants$1226.atk_object_factory_create_accessible$FUNC
+    );
+    static final FunctionDescriptor atk_object_factory_invalidate$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle atk_object_factory_invalidate$MH = RuntimeHelper.downcallHandle(
+        "atk_object_factory_invalidate",
+        constants$1226.atk_object_factory_invalidate$FUNC
+    );
+    static final FunctionDescriptor atk_object_factory_get_accessible_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle atk_object_factory_get_accessible_type$MH = RuntimeHelper.downcallHandle(
+        "atk_object_factory_get_accessible_type",
+        constants$1226.atk_object_factory_get_accessible_type$FUNC
     );
 }
 

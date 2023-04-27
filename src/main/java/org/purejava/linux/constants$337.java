@@ -7,51 +7,75 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$337 {
+final class constants$337 {
 
-    static final FunctionDescriptor g_uri_escape_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$337() {}
+    static final FunctionDescriptor g_uri_parse_relative$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_uri_parse_relative$MH = RuntimeHelper.downcallHandle(
+        "g_uri_parse_relative",
+        constants$337.g_uri_parse_relative$FUNC
+    );
+    static final FunctionDescriptor g_uri_resolve_relative$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_uri_resolve_relative$MH = RuntimeHelper.downcallHandle(
+        "g_uri_resolve_relative",
+        constants$337.g_uri_resolve_relative$FUNC
+    );
+    static final FunctionDescriptor g_uri_build$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_uri_build$MH = RuntimeHelper.downcallHandle(
+        "g_uri_build",
+        constants$337.g_uri_build$FUNC
+    );
+    static final FunctionDescriptor g_uri_build_with_user$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_uri_build_with_user$MH = RuntimeHelper.downcallHandle(
+        "g_uri_build_with_user",
+        constants$337.g_uri_build_with_user$FUNC
+    );
+    static final FunctionDescriptor g_uri_to_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_uri_to_string$MH = RuntimeHelper.downcallHandle(
+        "g_uri_to_string",
+        constants$337.g_uri_to_string$FUNC
+    );
+    static final FunctionDescriptor g_uri_to_string_partial$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_uri_escape_string$MH = RuntimeHelper.downcallHandle(
-        "g_uri_escape_string",
-        constants$337.g_uri_escape_string$FUNC
+    static final MethodHandle g_uri_to_string_partial$MH = RuntimeHelper.downcallHandle(
+        "g_uri_to_string_partial",
+        constants$337.g_uri_to_string_partial$FUNC
     );
-    static final FunctionDescriptor g_uri_unescape_bytes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_uri_unescape_bytes$MH = RuntimeHelper.downcallHandle(
-        "g_uri_unescape_bytes",
-        constants$337.g_uri_unescape_bytes$FUNC
-    );
-    static final FunctionDescriptor g_uri_escape_bytes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_uri_escape_bytes$MH = RuntimeHelper.downcallHandle(
-        "g_uri_escape_bytes",
-        constants$337.g_uri_escape_bytes$FUNC
-    );
-    static final FunctionDescriptor g_uuid_string_is_valid$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_uuid_string_is_valid$MH = RuntimeHelper.downcallHandle(
-        "g_uuid_string_is_valid",
-        constants$337.g_uuid_string_is_valid$FUNC
-    );
-    static final FunctionDescriptor g_uuid_string_random$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_uuid_string_random$MH = RuntimeHelper.downcallHandle(
-        "g_uuid_string_random",
-        constants$337.g_uuid_string_random$FUNC
-    );
-    static final  OfInt glib_major_version$LAYOUT = Constants$root.C_INT$LAYOUT;
-    static final VarHandle glib_major_version$VH = constants$337.glib_major_version$LAYOUT.varHandle();
-    static final MemorySegment glib_major_version$SEGMENT = RuntimeHelper.lookupGlobalVariable("glib_major_version", constants$337.glib_major_version$LAYOUT);
 }
 
 

@@ -7,50 +7,62 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1807 {
+final class constants$1807 {
 
-    static final FunctionDescriptor gtk_gl_area_queue_render$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_gl_area_queue_render$MH = RuntimeHelper.downcallHandle(
-        "gtk_gl_area_queue_render",
-        constants$1807.gtk_gl_area_queue_render$FUNC
-    );
-    static final FunctionDescriptor gtk_gl_area_get_context$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_gl_area_get_context$MH = RuntimeHelper.downcallHandle(
-        "gtk_gl_area_get_context",
-        constants$1807.gtk_gl_area_get_context$FUNC
-    );
-    static final FunctionDescriptor gtk_gl_area_make_current$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_gl_area_make_current$MH = RuntimeHelper.downcallHandle(
-        "gtk_gl_area_make_current",
-        constants$1807.gtk_gl_area_make_current$FUNC
-    );
-    static final FunctionDescriptor gtk_gl_area_attach_buffers$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_gl_area_attach_buffers$MH = RuntimeHelper.downcallHandle(
-        "gtk_gl_area_attach_buffers",
-        constants$1807.gtk_gl_area_attach_buffers$FUNC
-    );
-    static final FunctionDescriptor gtk_gl_area_set_error$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1807() {}
+    static final FunctionDescriptor gtk_settings_install_property_parser$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_gl_area_set_error$MH = RuntimeHelper.downcallHandle(
-        "gtk_gl_area_set_error",
-        constants$1807.gtk_gl_area_set_error$FUNC
+    static final MethodHandle gtk_settings_install_property_parser$MH = RuntimeHelper.downcallHandle(
+        "gtk_settings_install_property_parser",
+        constants$1807.gtk_settings_install_property_parser$FUNC
     );
-    static final FunctionDescriptor gtk_gl_area_get_error$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_rc_property_parse_color$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_gl_area_get_error$MH = RuntimeHelper.downcallHandle(
-        "gtk_gl_area_get_error",
-        constants$1807.gtk_gl_area_get_error$FUNC
+    static final MethodHandle gtk_rc_property_parse_color$MH = RuntimeHelper.downcallHandle(
+        "gtk_rc_property_parse_color",
+        constants$1807.gtk_rc_property_parse_color$FUNC
+    );
+    static final FunctionDescriptor gtk_rc_property_parse_enum$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_rc_property_parse_enum$MH = RuntimeHelper.downcallHandle(
+        "gtk_rc_property_parse_enum",
+        constants$1807.gtk_rc_property_parse_enum$FUNC
+    );
+    static final FunctionDescriptor gtk_rc_property_parse_flags$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_rc_property_parse_flags$MH = RuntimeHelper.downcallHandle(
+        "gtk_rc_property_parse_flags",
+        constants$1807.gtk_rc_property_parse_flags$FUNC
+    );
+    static final FunctionDescriptor gtk_rc_property_parse_requisition$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_rc_property_parse_requisition$MH = RuntimeHelper.downcallHandle(
+        "gtk_rc_property_parse_requisition",
+        constants$1807.gtk_rc_property_parse_requisition$FUNC
+    );
+    static final FunctionDescriptor gtk_rc_property_parse_border$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_rc_property_parse_border$MH = RuntimeHelper.downcallHandle(
+        "gtk_rc_property_parse_border",
+        constants$1807.gtk_rc_property_parse_border$FUNC
     );
 }
 

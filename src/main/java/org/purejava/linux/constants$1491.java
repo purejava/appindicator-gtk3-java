@@ -7,45 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1491 {
+final class constants$1491 {
 
-    static final FunctionDescriptor gtk_window_get_icon_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1491() {}
+    static final FunctionDescriptor gtk_application_window_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_application_window_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_application_window_get_type",
+        constants$1491.gtk_application_window_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_application_window_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_window_get_icon_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_get_icon_name",
-        constants$1491.gtk_window_get_icon_name$FUNC
+    static final MethodHandle gtk_application_window_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_application_window_new",
+        constants$1491.gtk_application_window_new$FUNC
     );
-    static final FunctionDescriptor gtk_window_set_default_icon_list$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_application_window_set_show_menubar$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_application_window_set_show_menubar$MH = RuntimeHelper.downcallHandle(
+        "gtk_application_window_set_show_menubar",
+        constants$1491.gtk_application_window_set_show_menubar$FUNC
+    );
+    static final FunctionDescriptor gtk_application_window_get_show_menubar$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_window_set_default_icon_list$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_set_default_icon_list",
-        constants$1491.gtk_window_set_default_icon_list$FUNC
+    static final MethodHandle gtk_application_window_get_show_menubar$MH = RuntimeHelper.downcallHandle(
+        "gtk_application_window_get_show_menubar",
+        constants$1491.gtk_application_window_get_show_menubar$FUNC
     );
-    static final FunctionDescriptor gtk_window_get_default_icon_list$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_window_get_default_icon_list$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_get_default_icon_list",
-        constants$1491.gtk_window_get_default_icon_list$FUNC
-    );
-    static final FunctionDescriptor gtk_window_set_default_icon$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_application_window_get_id$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_window_set_default_icon$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_set_default_icon",
-        constants$1491.gtk_window_set_default_icon$FUNC
+    static final MethodHandle gtk_application_window_get_id$MH = RuntimeHelper.downcallHandle(
+        "gtk_application_window_get_id",
+        constants$1491.gtk_application_window_get_id$FUNC
     );
-    static final FunctionDescriptor gtk_window_set_default_icon_name$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_application_window_set_help_overlay$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_window_set_default_icon_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_set_default_icon_name",
-        constants$1491.gtk_window_set_default_icon_name$FUNC
-    );
-    static final FunctionDescriptor gtk_window_get_default_icon_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_window_get_default_icon_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_get_default_icon_name",
-        constants$1491.gtk_window_get_default_icon_name$FUNC
+    static final MethodHandle gtk_application_window_set_help_overlay$MH = RuntimeHelper.downcallHandle(
+        "gtk_application_window_set_help_overlay",
+        constants$1491.gtk_application_window_set_help_overlay$FUNC
     );
 }
 

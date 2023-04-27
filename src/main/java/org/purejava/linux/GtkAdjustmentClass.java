@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkAdjustmentClass extends _GtkAdjustmentClass {
+/**
+ * {@snippet :
+ * typedef struct _GtkAdjustmentClass GtkAdjustmentClass;
+ * }
+ */
+public final class GtkAdjustmentClass extends _GtkAdjustmentClass {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkAdjustmentClass() {}
 }
 
 

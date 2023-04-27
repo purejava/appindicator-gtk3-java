@@ -7,9 +7,26 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GdkGeometry {
+ *     gint min_width;
+ *     gint min_height;
+ *     gint max_width;
+ *     gint max_height;
+ *     gint base_width;
+ *     gint base_height;
+ *     gint width_inc;
+ *     gint height_inc;
+ *     gdouble min_aspect;
+ *     gdouble max_aspect;
+ *     GdkGravity win_gravity;
+ * };
+ * }
+ */
 public class _GdkGeometry {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_INT$LAYOUT.withName("min_width"),
         Constants$root.C_INT$LAYOUT.withName("min_height"),
         Constants$root.C_INT$LAYOUT.withName("max_width"),
@@ -30,10 +47,22 @@ public class _GdkGeometry {
     public static VarHandle min_width$VH() {
         return _GdkGeometry.min_width$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gint min_width;
+     * }
+     */
     public static int min_width$get(MemorySegment seg) {
         return (int)_GdkGeometry.min_width$VH.get(seg);
     }
-    public static void min_width$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gint min_width;
+     * }
+     */
+    public static void min_width$set(MemorySegment seg, int x) {
         _GdkGeometry.min_width$VH.set(seg, x);
     }
     public static int min_width$get(MemorySegment seg, long index) {
@@ -46,10 +75,22 @@ public class _GdkGeometry {
     public static VarHandle min_height$VH() {
         return _GdkGeometry.min_height$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gint min_height;
+     * }
+     */
     public static int min_height$get(MemorySegment seg) {
         return (int)_GdkGeometry.min_height$VH.get(seg);
     }
-    public static void min_height$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gint min_height;
+     * }
+     */
+    public static void min_height$set(MemorySegment seg, int x) {
         _GdkGeometry.min_height$VH.set(seg, x);
     }
     public static int min_height$get(MemorySegment seg, long index) {
@@ -62,10 +103,22 @@ public class _GdkGeometry {
     public static VarHandle max_width$VH() {
         return _GdkGeometry.max_width$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gint max_width;
+     * }
+     */
     public static int max_width$get(MemorySegment seg) {
         return (int)_GdkGeometry.max_width$VH.get(seg);
     }
-    public static void max_width$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gint max_width;
+     * }
+     */
+    public static void max_width$set(MemorySegment seg, int x) {
         _GdkGeometry.max_width$VH.set(seg, x);
     }
     public static int max_width$get(MemorySegment seg, long index) {
@@ -78,10 +131,22 @@ public class _GdkGeometry {
     public static VarHandle max_height$VH() {
         return _GdkGeometry.max_height$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gint max_height;
+     * }
+     */
     public static int max_height$get(MemorySegment seg) {
         return (int)_GdkGeometry.max_height$VH.get(seg);
     }
-    public static void max_height$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gint max_height;
+     * }
+     */
+    public static void max_height$set(MemorySegment seg, int x) {
         _GdkGeometry.max_height$VH.set(seg, x);
     }
     public static int max_height$get(MemorySegment seg, long index) {
@@ -94,10 +159,22 @@ public class _GdkGeometry {
     public static VarHandle base_width$VH() {
         return _GdkGeometry.base_width$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gint base_width;
+     * }
+     */
     public static int base_width$get(MemorySegment seg) {
         return (int)_GdkGeometry.base_width$VH.get(seg);
     }
-    public static void base_width$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gint base_width;
+     * }
+     */
+    public static void base_width$set(MemorySegment seg, int x) {
         _GdkGeometry.base_width$VH.set(seg, x);
     }
     public static int base_width$get(MemorySegment seg, long index) {
@@ -110,10 +187,22 @@ public class _GdkGeometry {
     public static VarHandle base_height$VH() {
         return _GdkGeometry.base_height$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gint base_height;
+     * }
+     */
     public static int base_height$get(MemorySegment seg) {
         return (int)_GdkGeometry.base_height$VH.get(seg);
     }
-    public static void base_height$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gint base_height;
+     * }
+     */
+    public static void base_height$set(MemorySegment seg, int x) {
         _GdkGeometry.base_height$VH.set(seg, x);
     }
     public static int base_height$get(MemorySegment seg, long index) {
@@ -126,10 +215,22 @@ public class _GdkGeometry {
     public static VarHandle width_inc$VH() {
         return _GdkGeometry.width_inc$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gint width_inc;
+     * }
+     */
     public static int width_inc$get(MemorySegment seg) {
         return (int)_GdkGeometry.width_inc$VH.get(seg);
     }
-    public static void width_inc$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gint width_inc;
+     * }
+     */
+    public static void width_inc$set(MemorySegment seg, int x) {
         _GdkGeometry.width_inc$VH.set(seg, x);
     }
     public static int width_inc$get(MemorySegment seg, long index) {
@@ -142,10 +243,22 @@ public class _GdkGeometry {
     public static VarHandle height_inc$VH() {
         return _GdkGeometry.height_inc$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gint height_inc;
+     * }
+     */
     public static int height_inc$get(MemorySegment seg) {
         return (int)_GdkGeometry.height_inc$VH.get(seg);
     }
-    public static void height_inc$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gint height_inc;
+     * }
+     */
+    public static void height_inc$set(MemorySegment seg, int x) {
         _GdkGeometry.height_inc$VH.set(seg, x);
     }
     public static int height_inc$get(MemorySegment seg, long index) {
@@ -158,10 +271,22 @@ public class _GdkGeometry {
     public static VarHandle min_aspect$VH() {
         return _GdkGeometry.min_aspect$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gdouble min_aspect;
+     * }
+     */
     public static double min_aspect$get(MemorySegment seg) {
         return (double)_GdkGeometry.min_aspect$VH.get(seg);
     }
-    public static void min_aspect$set( MemorySegment seg, double x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gdouble min_aspect;
+     * }
+     */
+    public static void min_aspect$set(MemorySegment seg, double x) {
         _GdkGeometry.min_aspect$VH.set(seg, x);
     }
     public static double min_aspect$get(MemorySegment seg, long index) {
@@ -174,10 +299,22 @@ public class _GdkGeometry {
     public static VarHandle max_aspect$VH() {
         return _GdkGeometry.max_aspect$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gdouble max_aspect;
+     * }
+     */
     public static double max_aspect$get(MemorySegment seg) {
         return (double)_GdkGeometry.max_aspect$VH.get(seg);
     }
-    public static void max_aspect$set( MemorySegment seg, double x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gdouble max_aspect;
+     * }
+     */
+    public static void max_aspect$set(MemorySegment seg, double x) {
         _GdkGeometry.max_aspect$VH.set(seg, x);
     }
     public static double max_aspect$get(MemorySegment seg, long index) {
@@ -190,10 +327,22 @@ public class _GdkGeometry {
     public static VarHandle win_gravity$VH() {
         return _GdkGeometry.win_gravity$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GdkGravity win_gravity;
+     * }
+     */
     public static int win_gravity$get(MemorySegment seg) {
         return (int)_GdkGeometry.win_gravity$VH.get(seg);
     }
-    public static void win_gravity$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GdkGravity win_gravity;
+     * }
+     */
+    public static void win_gravity$set(MemorySegment seg, int x) {
         _GdkGeometry.win_gravity$VH.set(seg, x);
     }
     public static int win_gravity$get(MemorySegment seg, long index) {
@@ -204,10 +353,10 @@ public class _GdkGeometry {
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

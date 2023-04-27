@@ -7,49 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1467 {
+final class constants$1467 {
 
-    static final FunctionDescriptor glib_listautoptr_cleanup_GtkRequisition$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_listautoptr_cleanup_GtkRequisition$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GtkRequisition",
-        constants$1467.glib_listautoptr_cleanup_GtkRequisition$FUNC
-    );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GtkRequisition$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_slistautoptr_cleanup_GtkRequisition$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GtkRequisition",
-        constants$1467.glib_slistautoptr_cleanup_GtkRequisition$FUNC
-    );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GtkRequisition$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_queueautoptr_cleanup_GtkRequisition$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GtkRequisition",
-        constants$1467.glib_queueautoptr_cleanup_GtkRequisition$FUNC
-    );
-    static final FunctionDescriptor gtk_application_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_application_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_application_get_type",
-        constants$1467.gtk_application_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_application_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1467() {}
+    static final FunctionDescriptor gtk_tree_view_set_headers_clickable$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_application_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_application_new",
-        constants$1467.gtk_application_new$FUNC
+    static final MethodHandle gtk_tree_view_set_headers_clickable$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_set_headers_clickable",
+        constants$1467.gtk_tree_view_set_headers_clickable$FUNC
     );
-    static final FunctionDescriptor gtk_application_add_window$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_tree_view_set_rules_hint$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_tree_view_set_rules_hint$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_set_rules_hint",
+        constants$1467.gtk_tree_view_set_rules_hint$FUNC
+    );
+    static final FunctionDescriptor gtk_tree_view_get_rules_hint$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_tree_view_get_rules_hint$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_get_rules_hint",
+        constants$1467.gtk_tree_view_get_rules_hint$FUNC
+    );
+    static final FunctionDescriptor gtk_tree_view_get_activate_on_single_click$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_tree_view_get_activate_on_single_click$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_get_activate_on_single_click",
+        constants$1467.gtk_tree_view_get_activate_on_single_click$FUNC
+    );
+    static final FunctionDescriptor gtk_tree_view_set_activate_on_single_click$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_tree_view_set_activate_on_single_click$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_set_activate_on_single_click",
+        constants$1467.gtk_tree_view_set_activate_on_single_click$FUNC
+    );
+    static final FunctionDescriptor gtk_tree_view_append_column$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_application_add_window$MH = RuntimeHelper.downcallHandle(
-        "gtk_application_add_window",
-        constants$1467.gtk_application_add_window$FUNC
+    static final MethodHandle gtk_tree_view_append_column$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_append_column",
+        constants$1467.gtk_tree_view_append_column$FUNC
     );
 }
 

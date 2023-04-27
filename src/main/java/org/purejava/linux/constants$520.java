@@ -7,51 +7,61 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$520 {
+final class constants$520 {
 
-    static final FunctionDescriptor g_action_get_state_hint$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$520() {}
+    static final FunctionDescriptor close$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_action_get_state_hint$MH = RuntimeHelper.downcallHandle(
-        "g_action_get_state_hint",
-        constants$520.g_action_get_state_hint$FUNC
+    static final MethodHandle close$MH = RuntimeHelper.downcallHandle(
+        "close",
+        constants$520.close$FUNC
     );
-    static final FunctionDescriptor g_action_get_enabled$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor closefrom$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_action_get_enabled$MH = RuntimeHelper.downcallHandle(
-        "g_action_get_enabled",
-        constants$520.g_action_get_enabled$FUNC
+    static final MethodHandle closefrom$MH = RuntimeHelper.downcallHandle(
+        "closefrom",
+        constants$520.closefrom$FUNC
     );
-    static final FunctionDescriptor g_action_get_state$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_action_get_state$MH = RuntimeHelper.downcallHandle(
-        "g_action_get_state",
-        constants$520.g_action_get_state$FUNC
-    );
-    static final FunctionDescriptor g_action_change_state$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor read$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_LONG_LONG$LAYOUT
     );
-    static final MethodHandle g_action_change_state$MH = RuntimeHelper.downcallHandle(
-        "g_action_change_state",
-        constants$520.g_action_change_state$FUNC
+    static final MethodHandle read$MH = RuntimeHelper.downcallHandle(
+        "read",
+        constants$520.read$FUNC
     );
-    static final FunctionDescriptor g_action_activate$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor write$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_LONG_LONG$LAYOUT
     );
-    static final MethodHandle g_action_activate$MH = RuntimeHelper.downcallHandle(
-        "g_action_activate",
-        constants$520.g_action_activate$FUNC
+    static final MethodHandle write$MH = RuntimeHelper.downcallHandle(
+        "write",
+        constants$520.write$FUNC
     );
-    static final FunctionDescriptor g_action_name_is_valid$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor pread$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
     );
-    static final MethodHandle g_action_name_is_valid$MH = RuntimeHelper.downcallHandle(
-        "g_action_name_is_valid",
-        constants$520.g_action_name_is_valid$FUNC
+    static final MethodHandle pread$MH = RuntimeHelper.downcallHandle(
+        "pread",
+        constants$520.pread$FUNC
+    );
+    static final FunctionDescriptor pwrite$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle pwrite$MH = RuntimeHelper.downcallHandle(
+        "pwrite",
+        constants$520.pwrite$FUNC
     );
 }
 

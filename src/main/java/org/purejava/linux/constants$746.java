@@ -7,38 +7,60 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$746 {
+final class constants$746 {
 
-    static final FunctionDescriptor g_IS_memory_monitor$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$746() {}
+    static final FunctionDescriptor g_settings_set_int$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_settings_set_int$MH = RuntimeHelper.downcallHandle(
+        "g_settings_set_int",
+        constants$746.g_settings_set_int$FUNC
+    );
+    static final FunctionDescriptor g_settings_get_int64$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_IS_memory_monitor$MH = RuntimeHelper.downcallHandle(
-        "g_IS_memory_monitor",
-        constants$746.g_IS_memory_monitor$FUNC
+    static final MethodHandle g_settings_get_int64$MH = RuntimeHelper.downcallHandle(
+        "g_settings_get_int64",
+        constants$746.g_settings_get_int64$FUNC
     );
-    static final FunctionDescriptor g_memory_monitor_GET_IFACE$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_memory_monitor_GET_IFACE$MH = RuntimeHelper.downcallHandle(
-        "g_memory_monitor_GET_IFACE",
-        constants$746.g_memory_monitor_GET_IFACE$FUNC
-    );
-    static final FunctionDescriptor g_memory_monitor_dup_default$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_memory_monitor_dup_default$MH = RuntimeHelper.downcallHandle(
-        "g_memory_monitor_dup_default",
-        constants$746.g_memory_monitor_dup_default$FUNC
-    );
-    static final FunctionDescriptor GReallocFunc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_settings_set_int64$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_LONG_LONG$LAYOUT
     );
-    static final MethodHandle GReallocFunc$MH = RuntimeHelper.downcallHandle(
-        constants$746.GReallocFunc$FUNC
+    static final MethodHandle g_settings_set_int64$MH = RuntimeHelper.downcallHandle(
+        "g_settings_set_int64",
+        constants$746.g_settings_set_int64$FUNC
     );
-    static final FunctionDescriptor g_memory_output_stream_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_memory_output_stream_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_memory_output_stream_get_type",
-        constants$746.g_memory_output_stream_get_type$FUNC
+    static final FunctionDescriptor g_settings_get_uint$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_settings_get_uint$MH = RuntimeHelper.downcallHandle(
+        "g_settings_get_uint",
+        constants$746.g_settings_get_uint$FUNC
+    );
+    static final FunctionDescriptor g_settings_set_uint$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_settings_set_uint$MH = RuntimeHelper.downcallHandle(
+        "g_settings_set_uint",
+        constants$746.g_settings_set_uint$FUNC
+    );
+    static final FunctionDescriptor g_settings_get_uint64$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_settings_get_uint64$MH = RuntimeHelper.downcallHandle(
+        "g_settings_get_uint64",
+        constants$746.g_settings_get_uint64$FUNC
     );
 }
 

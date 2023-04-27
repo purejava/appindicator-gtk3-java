@@ -7,59 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1567 {
+final class constants$1567 {
 
-    static final FunctionDescriptor gtk_cell_renderer_is_activatable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_cell_renderer_is_activatable$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_renderer_is_activatable",
-        constants$1567.gtk_cell_renderer_is_activatable$FUNC
-    );
-    static final FunctionDescriptor gtk_cell_renderer_stop_editing$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1567() {}
+    static final FunctionDescriptor gtk_fixed_move$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_cell_renderer_stop_editing$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_renderer_stop_editing",
-        constants$1567.gtk_cell_renderer_stop_editing$FUNC
+    static final MethodHandle gtk_fixed_move$MH = RuntimeHelper.downcallHandle(
+        "gtk_fixed_move",
+        constants$1567.gtk_fixed_move$FUNC
     );
-    static final FunctionDescriptor _gtk_cell_renderer_calc_offset$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor GtkFileFilterFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle _gtk_cell_renderer_calc_offset$MH = RuntimeHelper.downcallHandle(
-        "_gtk_cell_renderer_calc_offset",
-        constants$1567._gtk_cell_renderer_calc_offset$FUNC
-    );
-    static final FunctionDescriptor gtk_cell_renderer_get_state$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor GtkFileFilterFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_cell_renderer_get_state$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_renderer_get_state",
-        constants$1567.gtk_cell_renderer_get_state$FUNC
-    );
-    static final FunctionDescriptor gtk_cell_renderer_class_set_accessible_type$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle gtk_cell_renderer_class_set_accessible_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_renderer_class_set_accessible_type",
-        constants$1567.gtk_cell_renderer_class_set_accessible_type$FUNC
-    );
-    static final FunctionDescriptor _gtk_cell_renderer_get_accessible_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle _gtk_cell_renderer_get_accessible_type$MH = RuntimeHelper.downcallHandle(
-        "_gtk_cell_renderer_get_accessible_type",
-        constants$1567._gtk_cell_renderer_get_accessible_type$FUNC
+    static final MethodHandle GtkFileFilterFunc_UP$MH = RuntimeHelper.upcallHandle(GtkFileFilterFunc.class, "apply", constants$1567.GtkFileFilterFunc_UP$FUNC);
+    static final FunctionDescriptor GtkFileFilterFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GtkFileFilterFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$1567.GtkFileFilterFunc_DOWN$FUNC
+    );
+    static final FunctionDescriptor gtk_file_filter_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_file_filter_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_file_filter_get_type",
+        constants$1567.gtk_file_filter_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_file_filter_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_file_filter_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_file_filter_new",
+        constants$1567.gtk_file_filter_new$FUNC
+    );
+    static final FunctionDescriptor gtk_file_filter_set_name$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_file_filter_set_name$MH = RuntimeHelper.downcallHandle(
+        "gtk_file_filter_set_name",
+        constants$1567.gtk_file_filter_set_name$FUNC
     );
 }
 

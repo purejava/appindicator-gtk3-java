@@ -7,53 +7,44 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1525 {
+final class constants$1525 {
 
-    static final FunctionDescriptor gtk_label_set_label$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1525() {}
+    static final FunctionDescriptor gtk_cell_renderer_spinner_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_cell_renderer_spinner_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_renderer_spinner_get_type",
+        constants$1525.gtk_cell_renderer_spinner_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_cell_renderer_spinner_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_cell_renderer_spinner_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_renderer_spinner_new",
+        constants$1525.gtk_cell_renderer_spinner_new$FUNC
+    );
+    static final FunctionDescriptor gtk_cell_renderer_toggle_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_cell_renderer_toggle_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_renderer_toggle_get_type",
+        constants$1525.gtk_cell_renderer_toggle_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_cell_renderer_toggle_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_cell_renderer_toggle_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_renderer_toggle_new",
+        constants$1525.gtk_cell_renderer_toggle_new$FUNC
+    );
+    static final FunctionDescriptor gtk_cell_renderer_toggle_get_radio$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_label_set_label$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_set_label",
-        constants$1525.gtk_label_set_label$FUNC
+    static final MethodHandle gtk_cell_renderer_toggle_get_radio$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_renderer_toggle_get_radio",
+        constants$1525.gtk_cell_renderer_toggle_get_radio$FUNC
     );
-    static final FunctionDescriptor gtk_label_get_label$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_label_get_label$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_get_label",
-        constants$1525.gtk_label_get_label$FUNC
-    );
-    static final FunctionDescriptor gtk_label_set_markup$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_label_set_markup$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_set_markup",
-        constants$1525.gtk_label_set_markup$FUNC
-    );
-    static final FunctionDescriptor gtk_label_set_use_markup$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_label_set_use_markup$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_set_use_markup",
-        constants$1525.gtk_label_set_use_markup$FUNC
-    );
-    static final FunctionDescriptor gtk_label_get_use_markup$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_label_get_use_markup$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_get_use_markup",
-        constants$1525.gtk_label_get_use_markup$FUNC
-    );
-    static final FunctionDescriptor gtk_label_set_use_underline$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_cell_renderer_toggle_set_radio$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_label_set_use_underline$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_set_use_underline",
-        constants$1525.gtk_label_set_use_underline$FUNC
+    static final MethodHandle gtk_cell_renderer_toggle_set_radio$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_renderer_toggle_set_radio",
+        constants$1525.gtk_cell_renderer_toggle_set_radio$FUNC
     );
 }
 

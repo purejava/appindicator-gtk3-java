@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * void (*GInterfaceFinalizeFunc)(void* g_iface,void* iface_data);
+ * }
+ */
 public interface GInterfaceFinalizeFunc {
 
-    void apply(java.lang.foreign.MemoryAddress g_iface, java.lang.foreign.MemoryAddress iface_data);
-    static MemorySegment allocate(GInterfaceFinalizeFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GInterfaceFinalizeFunc.class, fi, constants$425.GInterfaceFinalizeFunc$FUNC, session);
+    void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+    static MemorySegment allocate(GInterfaceFinalizeFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$386.GInterfaceFinalizeFunc_UP$MH, fi, constants$386.GInterfaceFinalizeFunc$FUNC, scope);
     }
-    static GInterfaceFinalizeFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _g_iface, java.lang.foreign.MemoryAddress _iface_data) -> {
+    static GInterfaceFinalizeFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
             try {
-                constants$426.GInterfaceFinalizeFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_g_iface, (java.lang.foreign.Addressable)_iface_data);
+                constants$386.GInterfaceFinalizeFunc_DOWN$MH.invokeExact(symbol, _tag, _data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

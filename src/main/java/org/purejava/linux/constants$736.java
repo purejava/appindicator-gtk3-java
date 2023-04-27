@@ -7,55 +7,61 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$736 {
+final class constants$736 {
 
-    static final FunctionDescriptor g_io_module_unload$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$736() {}
+    static final FunctionDescriptor g_resources_unregister$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_io_module_unload$MH = RuntimeHelper.downcallHandle(
-        "g_io_module_unload",
-        constants$736.g_io_module_unload$FUNC
+    static final MethodHandle g_resources_unregister$MH = RuntimeHelper.downcallHandle(
+        "g_resources_unregister",
+        constants$736.g_resources_unregister$FUNC
     );
-    static final FunctionDescriptor g_io_module_query$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_io_module_query$MH = RuntimeHelper.downcallHandle(
-        "g_io_module_query",
-        constants$736.g_io_module_query$FUNC
-    );
-    static final FunctionDescriptor g_io_scheduler_push_job$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_resources_open_stream$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_io_scheduler_push_job$MH = RuntimeHelper.downcallHandle(
-        "g_io_scheduler_push_job",
-        constants$736.g_io_scheduler_push_job$FUNC
+    static final MethodHandle g_resources_open_stream$MH = RuntimeHelper.downcallHandle(
+        "g_resources_open_stream",
+        constants$736.g_resources_open_stream$FUNC
     );
-    static final FunctionDescriptor g_io_scheduler_cancel_all_jobs$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle g_io_scheduler_cancel_all_jobs$MH = RuntimeHelper.downcallHandle(
-        "g_io_scheduler_cancel_all_jobs",
-        constants$736.g_io_scheduler_cancel_all_jobs$FUNC
-    );
-    static final FunctionDescriptor g_io_scheduler_job_send_to_mainloop$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_resources_lookup_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_resources_lookup_data$MH = RuntimeHelper.downcallHandle(
+        "g_resources_lookup_data",
+        constants$736.g_resources_lookup_data$FUNC
+    );
+    static final FunctionDescriptor g_resources_enumerate_children$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_resources_enumerate_children$MH = RuntimeHelper.downcallHandle(
+        "g_resources_enumerate_children",
+        constants$736.g_resources_enumerate_children$FUNC
+    );
+    static final FunctionDescriptor g_resources_get_info$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_io_scheduler_job_send_to_mainloop$MH = RuntimeHelper.downcallHandle(
-        "g_io_scheduler_job_send_to_mainloop",
-        constants$736.g_io_scheduler_job_send_to_mainloop$FUNC
+    static final MethodHandle g_resources_get_info$MH = RuntimeHelper.downcallHandle(
+        "g_resources_get_info",
+        constants$736.g_resources_get_info$FUNC
     );
-    static final FunctionDescriptor g_io_scheduler_job_send_to_mainloop_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_static_resource_init$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_io_scheduler_job_send_to_mainloop_async$MH = RuntimeHelper.downcallHandle(
-        "g_io_scheduler_job_send_to_mainloop_async",
-        constants$736.g_io_scheduler_job_send_to_mainloop_async$FUNC
+    static final MethodHandle g_static_resource_init$MH = RuntimeHelper.downcallHandle(
+        "g_static_resource_init",
+        constants$736.g_static_resource_init$FUNC
     );
 }
 

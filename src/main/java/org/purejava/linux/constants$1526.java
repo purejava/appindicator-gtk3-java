@@ -7,52 +7,49 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1526 {
+final class constants$1526 {
 
-    static final FunctionDescriptor gtk_label_get_use_underline$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1526() {}
+    static final FunctionDescriptor gtk_cell_renderer_toggle_get_active$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_label_get_use_underline$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_get_use_underline",
-        constants$1526.gtk_label_get_use_underline$FUNC
+    static final MethodHandle gtk_cell_renderer_toggle_get_active$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_renderer_toggle_get_active",
+        constants$1526.gtk_cell_renderer_toggle_get_active$FUNC
     );
-    static final FunctionDescriptor gtk_label_set_markup_with_mnemonic$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_cell_renderer_toggle_set_active$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_cell_renderer_toggle_set_active$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_renderer_toggle_set_active",
+        constants$1526.gtk_cell_renderer_toggle_set_active$FUNC
+    );
+    static final FunctionDescriptor gtk_cell_renderer_toggle_get_activatable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_label_set_markup_with_mnemonic$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_set_markup_with_mnemonic",
-        constants$1526.gtk_label_set_markup_with_mnemonic$FUNC
+    static final MethodHandle gtk_cell_renderer_toggle_get_activatable$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_renderer_toggle_get_activatable",
+        constants$1526.gtk_cell_renderer_toggle_get_activatable$FUNC
     );
-    static final FunctionDescriptor gtk_label_get_mnemonic_keyval$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_label_get_mnemonic_keyval$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_get_mnemonic_keyval",
-        constants$1526.gtk_label_get_mnemonic_keyval$FUNC
-    );
-    static final FunctionDescriptor gtk_label_set_mnemonic_widget$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_cell_renderer_toggle_set_activatable$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_label_set_mnemonic_widget$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_set_mnemonic_widget",
-        constants$1526.gtk_label_set_mnemonic_widget$FUNC
+    static final MethodHandle gtk_cell_renderer_toggle_set_activatable$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_renderer_toggle_set_activatable",
+        constants$1526.gtk_cell_renderer_toggle_set_activatable$FUNC
     );
-    static final FunctionDescriptor gtk_label_get_mnemonic_widget$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gtk_cell_view_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_cell_view_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_view_get_type",
+        constants$1526.gtk_cell_view_get_type$FUNC
     );
-    static final MethodHandle gtk_label_get_mnemonic_widget$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_get_mnemonic_widget",
-        constants$1526.gtk_label_get_mnemonic_widget$FUNC
-    );
-    static final FunctionDescriptor gtk_label_set_text_with_mnemonic$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_label_set_text_with_mnemonic$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_set_text_with_mnemonic",
-        constants$1526.gtk_label_set_text_with_mnemonic$FUNC
+    static final FunctionDescriptor gtk_cell_view_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_cell_view_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_view_new",
+        constants$1526.gtk_cell_view_new$FUNC
     );
 }
 

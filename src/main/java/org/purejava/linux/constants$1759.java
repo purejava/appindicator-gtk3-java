@@ -7,56 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1759 {
+final class constants$1759 {
 
-    static final FunctionDescriptor gtk_file_filter_add_mime_type$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1759() {}
+    static final FunctionDescriptor gtk_progress_bar_get_pulse_step$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_file_filter_add_mime_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_filter_add_mime_type",
-        constants$1759.gtk_file_filter_add_mime_type$FUNC
+    static final MethodHandle gtk_progress_bar_get_pulse_step$MH = RuntimeHelper.downcallHandle(
+        "gtk_progress_bar_get_pulse_step",
+        constants$1759.gtk_progress_bar_get_pulse_step$FUNC
     );
-    static final FunctionDescriptor gtk_file_filter_add_pattern$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_progress_bar_get_inverted$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_file_filter_add_pattern$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_filter_add_pattern",
-        constants$1759.gtk_file_filter_add_pattern$FUNC
+    static final MethodHandle gtk_progress_bar_get_inverted$MH = RuntimeHelper.downcallHandle(
+        "gtk_progress_bar_get_inverted",
+        constants$1759.gtk_progress_bar_get_inverted$FUNC
     );
-    static final FunctionDescriptor gtk_file_filter_add_pixbuf_formats$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_progress_bar_set_ellipsize$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_progress_bar_set_ellipsize$MH = RuntimeHelper.downcallHandle(
+        "gtk_progress_bar_set_ellipsize",
+        constants$1759.gtk_progress_bar_set_ellipsize$FUNC
+    );
+    static final FunctionDescriptor gtk_progress_bar_get_ellipsize$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_file_filter_add_pixbuf_formats$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_filter_add_pixbuf_formats",
-        constants$1759.gtk_file_filter_add_pixbuf_formats$FUNC
+    static final MethodHandle gtk_progress_bar_get_ellipsize$MH = RuntimeHelper.downcallHandle(
+        "gtk_progress_bar_get_ellipsize",
+        constants$1759.gtk_progress_bar_get_ellipsize$FUNC
     );
-    static final FunctionDescriptor gtk_file_filter_add_custom$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_progress_bar_set_show_text$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_progress_bar_set_show_text$MH = RuntimeHelper.downcallHandle(
+        "gtk_progress_bar_set_show_text",
+        constants$1759.gtk_progress_bar_set_show_text$FUNC
+    );
+    static final FunctionDescriptor gtk_progress_bar_get_show_text$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_file_filter_add_custom$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_filter_add_custom",
-        constants$1759.gtk_file_filter_add_custom$FUNC
-    );
-    static final FunctionDescriptor gtk_file_filter_get_needed$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_file_filter_get_needed$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_filter_get_needed",
-        constants$1759.gtk_file_filter_get_needed$FUNC
-    );
-    static final FunctionDescriptor gtk_file_filter_filter$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_file_filter_filter$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_filter_filter",
-        constants$1759.gtk_file_filter_filter$FUNC
+    static final MethodHandle gtk_progress_bar_get_show_text$MH = RuntimeHelper.downcallHandle(
+        "gtk_progress_bar_get_show_text",
+        constants$1759.gtk_progress_bar_get_show_text$FUNC
     );
 }
 

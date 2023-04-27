@@ -7,55 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1280 {
+final class constants$1280 {
 
-    static final FunctionDescriptor gdk_screen_make_display_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_screen_make_display_name$MH = RuntimeHelper.downcallHandle(
-        "gdk_screen_make_display_name",
-        constants$1280.gdk_screen_make_display_name$FUNC
-    );
-    static final FunctionDescriptor gdk_screen_get_n_monitors$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_screen_get_n_monitors$MH = RuntimeHelper.downcallHandle(
-        "gdk_screen_get_n_monitors",
-        constants$1280.gdk_screen_get_n_monitors$FUNC
-    );
-    static final FunctionDescriptor gdk_screen_get_primary_monitor$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_screen_get_primary_monitor$MH = RuntimeHelper.downcallHandle(
-        "gdk_screen_get_primary_monitor",
-        constants$1280.gdk_screen_get_primary_monitor$FUNC
-    );
-    static final FunctionDescriptor gdk_screen_get_monitor_geometry$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1280() {}
+    static final FunctionDescriptor gtk_widget_set_direction$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_screen_get_monitor_geometry$MH = RuntimeHelper.downcallHandle(
-        "gdk_screen_get_monitor_geometry",
-        constants$1280.gdk_screen_get_monitor_geometry$FUNC
-    );
-    static final FunctionDescriptor gdk_screen_get_monitor_workarea$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_screen_get_monitor_workarea$MH = RuntimeHelper.downcallHandle(
-        "gdk_screen_get_monitor_workarea",
-        constants$1280.gdk_screen_get_monitor_workarea$FUNC
-    );
-    static final FunctionDescriptor gdk_screen_get_monitor_at_point$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gdk_screen_get_monitor_at_point$MH = RuntimeHelper.downcallHandle(
-        "gdk_screen_get_monitor_at_point",
-        constants$1280.gdk_screen_get_monitor_at_point$FUNC
+    static final MethodHandle gtk_widget_set_direction$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_set_direction",
+        constants$1280.gtk_widget_set_direction$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_get_direction$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_get_direction$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_direction",
+        constants$1280.gtk_widget_get_direction$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_set_default_direction$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_widget_set_default_direction$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_set_default_direction",
+        constants$1280.gtk_widget_set_default_direction$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_get_default_direction$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
+    static final MethodHandle gtk_widget_get_default_direction$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_default_direction",
+        constants$1280.gtk_widget_get_default_direction$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_is_composited$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_is_composited$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_is_composited",
+        constants$1280.gtk_widget_is_composited$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_shape_combine_region$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_shape_combine_region$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_shape_combine_region",
+        constants$1280.gtk_widget_shape_combine_region$FUNC
     );
 }
 

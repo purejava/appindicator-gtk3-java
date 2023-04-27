@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkCellViewClass extends _GtkCellViewClass {
+/**
+ * {@snippet :
+ * typedef struct _GtkCellViewClass GtkCellViewClass;
+ * }
+ */
+public final class GtkCellViewClass extends _GtkCellViewClass {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkCellViewClass() {}
 }
 
 

@@ -7,50 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1420 {
+final class constants$1420 {
 
-    static final FunctionDescriptor atk_table_remove_row_selection$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle atk_table_remove_row_selection$MH = RuntimeHelper.downcallHandle(
-        "atk_table_remove_row_selection",
-        constants$1420.atk_table_remove_row_selection$FUNC
-    );
-    static final FunctionDescriptor atk_table_add_column_selection$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle atk_table_add_column_selection$MH = RuntimeHelper.downcallHandle(
-        "atk_table_add_column_selection",
-        constants$1420.atk_table_add_column_selection$FUNC
-    );
-    static final FunctionDescriptor atk_table_remove_column_selection$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle atk_table_remove_column_selection$MH = RuntimeHelper.downcallHandle(
-        "atk_table_remove_column_selection",
-        constants$1420.atk_table_remove_column_selection$FUNC
-    );
-    static final FunctionDescriptor atk_table_cell_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle atk_table_cell_get_type$MH = RuntimeHelper.downcallHandle(
-        "atk_table_cell_get_type",
-        constants$1420.atk_table_cell_get_type$FUNC
-    );
-    static final FunctionDescriptor atk_table_cell_get_column_span$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1420() {}
+    static final FunctionDescriptor gtk_selection_data_get_data_type$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_table_cell_get_column_span$MH = RuntimeHelper.downcallHandle(
-        "atk_table_cell_get_column_span",
-        constants$1420.atk_table_cell_get_column_span$FUNC
+    static final MethodHandle gtk_selection_data_get_data_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_selection_data_get_data_type",
+        constants$1420.gtk_selection_data_get_data_type$FUNC
     );
-    static final FunctionDescriptor atk_table_cell_get_column_header_cells$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_selection_data_get_format$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_table_cell_get_column_header_cells$MH = RuntimeHelper.downcallHandle(
-        "atk_table_cell_get_column_header_cells",
-        constants$1420.atk_table_cell_get_column_header_cells$FUNC
+    static final MethodHandle gtk_selection_data_get_format$MH = RuntimeHelper.downcallHandle(
+        "gtk_selection_data_get_format",
+        constants$1420.gtk_selection_data_get_format$FUNC
+    );
+    static final FunctionDescriptor gtk_selection_data_get_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_selection_data_get_data$MH = RuntimeHelper.downcallHandle(
+        "gtk_selection_data_get_data",
+        constants$1420.gtk_selection_data_get_data$FUNC
+    );
+    static final FunctionDescriptor gtk_selection_data_get_length$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_selection_data_get_length$MH = RuntimeHelper.downcallHandle(
+        "gtk_selection_data_get_length",
+        constants$1420.gtk_selection_data_get_length$FUNC
+    );
+    static final FunctionDescriptor gtk_selection_data_get_data_with_length$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_selection_data_get_data_with_length$MH = RuntimeHelper.downcallHandle(
+        "gtk_selection_data_get_data_with_length",
+        constants$1420.gtk_selection_data_get_data_with_length$FUNC
+    );
+    static final FunctionDescriptor gtk_selection_data_get_display$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_selection_data_get_display$MH = RuntimeHelper.downcallHandle(
+        "gtk_selection_data_get_display",
+        constants$1420.gtk_selection_data_get_display$FUNC
     );
 }
 

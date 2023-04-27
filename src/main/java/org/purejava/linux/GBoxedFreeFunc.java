@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * void (*GBoxedFreeFunc)(void* boxed);
+ * }
+ */
 public interface GBoxedFreeFunc {
 
-    void apply(java.lang.foreign.MemoryAddress boxed);
-    static MemorySegment allocate(GBoxedFreeFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GBoxedFreeFunc.class, fi, constants$467.GBoxedFreeFunc$FUNC, session);
+    void apply(java.lang.foreign.MemorySegment display);
+    static MemorySegment allocate(GBoxedFreeFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$428.GBoxedFreeFunc_UP$MH, fi, constants$428.GBoxedFreeFunc$FUNC, scope);
     }
-    static GBoxedFreeFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _boxed) -> {
+    static GBoxedFreeFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _display) -> {
             try {
-                constants$467.GBoxedFreeFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_boxed);
+                constants$428.GBoxedFreeFunc_DOWN$MH.invokeExact(symbol, _display);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

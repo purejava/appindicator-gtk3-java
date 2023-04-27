@@ -7,9 +7,18 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GtkShortcutsWindowClass {
+ *     GtkWindowClass parent_class;
+ *     void (*close)(GtkShortcutsWindow*);
+ *     void (*search)(GtkShortcutsWindow*);
+ * };
+ * }
+ */
 public class _GtkShortcutsWindowClass {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
                 MemoryLayout.structLayout(
@@ -28,7 +37,10 @@ public class _GtkShortcutsWindowClass {
                             Constants$root.C_POINTER$LAYOUT.withName("notify"),
                             Constants$root.C_POINTER$LAYOUT.withName("constructed"),
                             Constants$root.C_LONG_LONG$LAYOUT.withName("flags"),
-                            MemoryLayout.sequenceLayout(6, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
+                            Constants$root.C_LONG_LONG$LAYOUT.withName("n_construct_properties"),
+                            Constants$root.C_POINTER$LAYOUT.withName("pspecs"),
+                            Constants$root.C_LONG_LONG$LAYOUT.withName("n_pspecs"),
+                            MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
                         ).withName("parent_class"),
                         Constants$root.C_INT$LAYOUT.withName("activate_signal"),
                         MemoryLayout.paddingLayout(32),
@@ -128,10 +140,7 @@ public class _GtkShortcutsWindowClass {
                     Constants$root.C_POINTER$LAYOUT.withName("set_child_property"),
                     Constants$root.C_POINTER$LAYOUT.withName("get_child_property"),
                     Constants$root.C_POINTER$LAYOUT.withName("get_path_for_child"),
-                    MemoryLayout.structLayout(
-                        MemoryLayout.paddingLayout(1).withName("_handle_border_width"),
-                        MemoryLayout.paddingLayout(63)
-                    ),
+                    MemoryLayout.paddingLayout(64),
                     Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved1"),
                     Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved2"),
                     Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved3"),
@@ -167,20 +176,32 @@ public class _GtkShortcutsWindowClass {
     static final FunctionDescriptor close$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle close$MH = RuntimeHelper.downcallHandle(
-        _GtkShortcutsWindowClass.close$FUNC
+    static final FunctionDescriptor close_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle close_UP$MH = RuntimeHelper.upcallHandle(close.class, "apply", _GtkShortcutsWindowClass.close_UP$FUNC);
+    static final FunctionDescriptor close_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle close_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkShortcutsWindowClass.close_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*close)(GtkShortcutsWindow*);
+     * }
+     */
     public interface close {
 
-        void apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(close fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(close.class, fi, _GtkShortcutsWindowClass.close$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment display);
+        static MemorySegment allocate(close fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkShortcutsWindowClass.close_UP$MH, fi, _GtkShortcutsWindowClass.close$FUNC, scope);
         }
-        static close ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static close ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GtkShortcutsWindowClass.close$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    _GtkShortcutsWindowClass.close_DOWN$MH.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -192,38 +213,62 @@ public class _GtkShortcutsWindowClass {
     public static VarHandle close$VH() {
         return _GtkShortcutsWindowClass.close$VH;
     }
-    public static MemoryAddress close$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkShortcutsWindowClass.close$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*close)(GtkShortcutsWindow*);
+     * }
+     */
+    public static MemorySegment close$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkShortcutsWindowClass.close$VH.get(seg);
     }
-    public static void close$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*close)(GtkShortcutsWindow*);
+     * }
+     */
+    public static void close$set(MemorySegment seg, MemorySegment x) {
         _GtkShortcutsWindowClass.close$VH.set(seg, x);
     }
-    public static MemoryAddress close$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkShortcutsWindowClass.close$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment close$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkShortcutsWindowClass.close$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void close$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void close$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkShortcutsWindowClass.close$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static close close (MemorySegment segment, MemorySession session) {
-        return close.ofAddress(close$get(segment), session);
+    public static close close(MemorySegment segment, SegmentScope scope) {
+        return close.ofAddress(close$get(segment), scope);
     }
     static final FunctionDescriptor search$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle search$MH = RuntimeHelper.downcallHandle(
-        _GtkShortcutsWindowClass.search$FUNC
+    static final FunctionDescriptor search_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle search_UP$MH = RuntimeHelper.upcallHandle(search.class, "apply", _GtkShortcutsWindowClass.search_UP$FUNC);
+    static final FunctionDescriptor search_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle search_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkShortcutsWindowClass.search_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*search)(GtkShortcutsWindow*);
+     * }
+     */
     public interface search {
 
-        void apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(search fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(search.class, fi, _GtkShortcutsWindowClass.search$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment display);
+        static MemorySegment allocate(search fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkShortcutsWindowClass.search_UP$MH, fi, _GtkShortcutsWindowClass.search$FUNC, scope);
         }
-        static search ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static search ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GtkShortcutsWindowClass.search$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    _GtkShortcutsWindowClass.search_DOWN$MH.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -235,27 +280,39 @@ public class _GtkShortcutsWindowClass {
     public static VarHandle search$VH() {
         return _GtkShortcutsWindowClass.search$VH;
     }
-    public static MemoryAddress search$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkShortcutsWindowClass.search$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*search)(GtkShortcutsWindow*);
+     * }
+     */
+    public static MemorySegment search$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkShortcutsWindowClass.search$VH.get(seg);
     }
-    public static void search$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*search)(GtkShortcutsWindow*);
+     * }
+     */
+    public static void search$set(MemorySegment seg, MemorySegment x) {
         _GtkShortcutsWindowClass.search$VH.set(seg, x);
     }
-    public static MemoryAddress search$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkShortcutsWindowClass.search$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment search$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkShortcutsWindowClass.search$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void search$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void search$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkShortcutsWindowClass.search$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static search search (MemorySegment segment, MemorySession session) {
-        return search.ofAddress(search$get(segment), session);
+    public static search search(MemorySegment segment, SegmentScope scope) {
+        return search.ofAddress(search$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

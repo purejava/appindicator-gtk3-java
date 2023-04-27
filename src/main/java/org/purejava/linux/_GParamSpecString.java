@@ -7,9 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GParamSpecString {
+ *     GParamSpec parent_instance;
+ *     gchar* default_value;
+ *     gchar* cset_first;
+ *     gchar* cset_nth;
+ *     gchar substitutor;
+ *      *     guint null_fold_if_empty;
+ *     guint ensure_non_null;
+ * };
+ * }
+ */
 public class _GParamSpecString {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
                 Constants$root.C_POINTER$LAYOUT.withName("g_class")
@@ -29,11 +42,7 @@ public class _GParamSpecString {
         Constants$root.C_POINTER$LAYOUT.withName("cset_first"),
         Constants$root.C_POINTER$LAYOUT.withName("cset_nth"),
         Constants$root.C_CHAR$LAYOUT.withName("substitutor"),
-        MemoryLayout.structLayout(
-            MemoryLayout.paddingLayout(1).withName("null_fold_if_empty"),
-            MemoryLayout.paddingLayout(1).withName("ensure_non_null"),
-            MemoryLayout.paddingLayout(54)
-        )
+        MemoryLayout.paddingLayout(56)
     ).withName("_GParamSpecString");
     public static MemoryLayout $LAYOUT() {
         return _GParamSpecString.$struct$LAYOUT;
@@ -45,58 +54,106 @@ public class _GParamSpecString {
     public static VarHandle default_value$VH() {
         return _GParamSpecString.default_value$VH;
     }
-    public static MemoryAddress default_value$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GParamSpecString.default_value$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gchar* default_value;
+     * }
+     */
+    public static MemorySegment default_value$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GParamSpecString.default_value$VH.get(seg);
     }
-    public static void default_value$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gchar* default_value;
+     * }
+     */
+    public static void default_value$set(MemorySegment seg, MemorySegment x) {
         _GParamSpecString.default_value$VH.set(seg, x);
     }
-    public static MemoryAddress default_value$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GParamSpecString.default_value$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment default_value$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GParamSpecString.default_value$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void default_value$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void default_value$set(MemorySegment seg, long index, MemorySegment x) {
         _GParamSpecString.default_value$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle cset_first$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("cset_first"));
     public static VarHandle cset_first$VH() {
         return _GParamSpecString.cset_first$VH;
     }
-    public static MemoryAddress cset_first$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GParamSpecString.cset_first$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gchar* cset_first;
+     * }
+     */
+    public static MemorySegment cset_first$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GParamSpecString.cset_first$VH.get(seg);
     }
-    public static void cset_first$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gchar* cset_first;
+     * }
+     */
+    public static void cset_first$set(MemorySegment seg, MemorySegment x) {
         _GParamSpecString.cset_first$VH.set(seg, x);
     }
-    public static MemoryAddress cset_first$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GParamSpecString.cset_first$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment cset_first$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GParamSpecString.cset_first$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void cset_first$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void cset_first$set(MemorySegment seg, long index, MemorySegment x) {
         _GParamSpecString.cset_first$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle cset_nth$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("cset_nth"));
     public static VarHandle cset_nth$VH() {
         return _GParamSpecString.cset_nth$VH;
     }
-    public static MemoryAddress cset_nth$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GParamSpecString.cset_nth$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gchar* cset_nth;
+     * }
+     */
+    public static MemorySegment cset_nth$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GParamSpecString.cset_nth$VH.get(seg);
     }
-    public static void cset_nth$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gchar* cset_nth;
+     * }
+     */
+    public static void cset_nth$set(MemorySegment seg, MemorySegment x) {
         _GParamSpecString.cset_nth$VH.set(seg, x);
     }
-    public static MemoryAddress cset_nth$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GParamSpecString.cset_nth$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment cset_nth$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GParamSpecString.cset_nth$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void cset_nth$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void cset_nth$set(MemorySegment seg, long index, MemorySegment x) {
         _GParamSpecString.cset_nth$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle substitutor$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("substitutor"));
     public static VarHandle substitutor$VH() {
         return _GParamSpecString.substitutor$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gchar substitutor;
+     * }
+     */
     public static byte substitutor$get(MemorySegment seg) {
         return (byte)_GParamSpecString.substitutor$VH.get(seg);
     }
-    public static void substitutor$set( MemorySegment seg, byte x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gchar substitutor;
+     * }
+     */
+    public static void substitutor$set(MemorySegment seg, byte x) {
         _GParamSpecString.substitutor$VH.set(seg, x);
     }
     public static byte substitutor$get(MemorySegment seg, long index) {
@@ -107,10 +164,10 @@ public class _GParamSpecString {
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

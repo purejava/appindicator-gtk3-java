@@ -7,55 +7,70 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$814 {
+final class constants$814 {
 
-    static final FunctionDescriptor g_simple_proxy_resolver_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_simple_proxy_resolver_new$MH = RuntimeHelper.downcallHandle(
-        "g_simple_proxy_resolver_new",
-        constants$814.g_simple_proxy_resolver_new$FUNC
-    );
-    static final FunctionDescriptor g_simple_proxy_resolver_set_default_proxy$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_simple_proxy_resolver_set_default_proxy$MH = RuntimeHelper.downcallHandle(
-        "g_simple_proxy_resolver_set_default_proxy",
-        constants$814.g_simple_proxy_resolver_set_default_proxy$FUNC
-    );
-    static final FunctionDescriptor g_simple_proxy_resolver_set_ignore_hosts$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_simple_proxy_resolver_set_ignore_hosts$MH = RuntimeHelper.downcallHandle(
-        "g_simple_proxy_resolver_set_ignore_hosts",
-        constants$814.g_simple_proxy_resolver_set_ignore_hosts$FUNC
-    );
-    static final FunctionDescriptor g_simple_proxy_resolver_set_uri_proxy$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$814() {}
+    static final FunctionDescriptor g_tls_database_lookup_certificate_issuer_async$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_simple_proxy_resolver_set_uri_proxy$MH = RuntimeHelper.downcallHandle(
-        "g_simple_proxy_resolver_set_uri_proxy",
-        constants$814.g_simple_proxy_resolver_set_uri_proxy$FUNC
-    );
-    static final FunctionDescriptor g_socket_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_socket_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_socket_get_type",
-        constants$814.g_socket_get_type$FUNC
-    );
-    static final FunctionDescriptor g_socket_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_socket_new$MH = RuntimeHelper.downcallHandle(
-        "g_socket_new",
-        constants$814.g_socket_new$FUNC
+    static final MethodHandle g_tls_database_lookup_certificate_issuer_async$MH = RuntimeHelper.downcallHandle(
+        "g_tls_database_lookup_certificate_issuer_async",
+        constants$814.g_tls_database_lookup_certificate_issuer_async$FUNC
+    );
+    static final FunctionDescriptor g_tls_database_lookup_certificate_issuer_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_tls_database_lookup_certificate_issuer_finish$MH = RuntimeHelper.downcallHandle(
+        "g_tls_database_lookup_certificate_issuer_finish",
+        constants$814.g_tls_database_lookup_certificate_issuer_finish$FUNC
+    );
+    static final FunctionDescriptor g_tls_database_lookup_certificates_issued_by$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_tls_database_lookup_certificates_issued_by$MH = RuntimeHelper.downcallHandle(
+        "g_tls_database_lookup_certificates_issued_by",
+        constants$814.g_tls_database_lookup_certificates_issued_by$FUNC
+    );
+    static final FunctionDescriptor g_tls_database_lookup_certificates_issued_by_async$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_tls_database_lookup_certificates_issued_by_async$MH = RuntimeHelper.downcallHandle(
+        "g_tls_database_lookup_certificates_issued_by_async",
+        constants$814.g_tls_database_lookup_certificates_issued_by_async$FUNC
+    );
+    static final FunctionDescriptor g_tls_database_lookup_certificates_issued_by_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_tls_database_lookup_certificates_issued_by_finish$MH = RuntimeHelper.downcallHandle(
+        "g_tls_database_lookup_certificates_issued_by_finish",
+        constants$814.g_tls_database_lookup_certificates_issued_by_finish$FUNC
+    );
+    static final FunctionDescriptor g_tls_file_database_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_tls_file_database_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_tls_file_database_get_type",
+        constants$814.g_tls_file_database_get_type$FUNC
     );
 }
 

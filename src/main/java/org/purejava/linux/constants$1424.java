@@ -7,48 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1424 {
+final class constants$1424 {
 
-    static final FunctionDescriptor atk_value_get_increment$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1424() {}
+    static final FunctionDescriptor gtk_selection_data_free$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_value_get_increment$MH = RuntimeHelper.downcallHandle(
-        "atk_value_get_increment",
-        constants$1424.atk_value_get_increment$FUNC
+    static final MethodHandle gtk_selection_data_free$MH = RuntimeHelper.downcallHandle(
+        "gtk_selection_data_free",
+        constants$1424.gtk_selection_data_free$FUNC
     );
-    static final FunctionDescriptor atk_value_get_sub_ranges$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gtk_target_entry_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_target_entry_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_target_entry_get_type",
+        constants$1424.gtk_target_entry_get_type$FUNC
     );
-    static final MethodHandle atk_value_get_sub_ranges$MH = RuntimeHelper.downcallHandle(
-        "atk_value_get_sub_ranges",
-        constants$1424.atk_value_get_sub_ranges$FUNC
-    );
-    static final FunctionDescriptor atk_value_set_value$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_target_entry_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle atk_value_set_value$MH = RuntimeHelper.downcallHandle(
-        "atk_value_set_value",
-        constants$1424.atk_value_set_value$FUNC
-    );
-    static final FunctionDescriptor atk_value_type_get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle atk_value_type_get_name$MH = RuntimeHelper.downcallHandle(
-        "atk_value_type_get_name",
-        constants$1424.atk_value_type_get_name$FUNC
+    static final MethodHandle gtk_target_entry_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_target_entry_new",
+        constants$1424.gtk_target_entry_new$FUNC
     );
-    static final FunctionDescriptor atk_value_type_get_localized_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_target_entry_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_target_entry_copy$MH = RuntimeHelper.downcallHandle(
+        "gtk_target_entry_copy",
+        constants$1424.gtk_target_entry_copy$FUNC
+    );
+    static final FunctionDescriptor gtk_target_entry_free$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_target_entry_free$MH = RuntimeHelper.downcallHandle(
+        "gtk_target_entry_free",
+        constants$1424.gtk_target_entry_free$FUNC
+    );
+    static final FunctionDescriptor gtk_drag_get_data$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle atk_value_type_get_localized_name$MH = RuntimeHelper.downcallHandle(
-        "atk_value_type_get_localized_name",
-        constants$1424.atk_value_type_get_localized_name$FUNC
-    );
-    static final FunctionDescriptor atk_window_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle atk_window_get_type$MH = RuntimeHelper.downcallHandle(
-        "atk_window_get_type",
-        constants$1424.atk_window_get_type$FUNC
+    static final MethodHandle gtk_drag_get_data$MH = RuntimeHelper.downcallHandle(
+        "gtk_drag_get_data",
+        constants$1424.gtk_drag_get_data$FUNC
     );
 }
 

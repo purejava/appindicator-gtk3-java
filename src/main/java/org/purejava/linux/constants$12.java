@@ -7,8 +7,28 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$12 {
+final class constants$12 {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$12() {}
+    static final FunctionDescriptor strxfrm$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle strxfrm$MH = RuntimeHelper.downcallHandle(
+        "strxfrm",
+        constants$12.strxfrm$FUNC
+    );
+    static final FunctionDescriptor strcoll_l$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle strcoll_l$MH = RuntimeHelper.downcallHandle(
+        "strcoll_l",
+        constants$12.strcoll_l$FUNC
+    );
     static final FunctionDescriptor strxfrm_l$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
@@ -41,22 +61,6 @@ class constants$12 {
     static final MethodHandle strchr$MH = RuntimeHelper.downcallHandle(
         "strchr",
         constants$12.strchr$FUNC
-    );
-    static final FunctionDescriptor strrchr$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle strrchr$MH = RuntimeHelper.downcallHandle(
-        "strrchr",
-        constants$12.strrchr$FUNC
-    );
-    static final FunctionDescriptor strcspn$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle strcspn$MH = RuntimeHelper.downcallHandle(
-        "strcspn",
-        constants$12.strcspn$FUNC
     );
 }
 

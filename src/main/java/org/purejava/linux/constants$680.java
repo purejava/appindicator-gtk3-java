@@ -7,69 +7,39 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$680 {
+final class constants$680 {
 
-    static final FunctionDescriptor g_file_unmount_mountable_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$680() {}
+    static final FunctionDescriptor g_socket_listener_event_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_socket_listener_event_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_socket_listener_event_get_type",
+        constants$680.g_socket_listener_event_get_type$FUNC
     );
-    static final MethodHandle g_file_unmount_mountable_finish$MH = RuntimeHelper.downcallHandle(
-        "g_file_unmount_mountable_finish",
-        constants$680.g_file_unmount_mountable_finish$FUNC
+    static final FunctionDescriptor g_test_dbus_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_test_dbus_flags_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_test_dbus_flags_get_type",
+        constants$680.g_test_dbus_flags_get_type$FUNC
     );
-    static final FunctionDescriptor g_file_unmount_mountable_with_operation$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_subprocess_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_subprocess_flags_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_subprocess_flags_get_type",
+        constants$680.g_subprocess_flags_get_type$FUNC
     );
-    static final MethodHandle g_file_unmount_mountable_with_operation$MH = RuntimeHelper.downcallHandle(
-        "g_file_unmount_mountable_with_operation",
-        constants$680.g_file_unmount_mountable_with_operation$FUNC
+    static final FunctionDescriptor g_notification_priority_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_notification_priority_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_notification_priority_get_type",
+        constants$680.g_notification_priority_get_type$FUNC
     );
-    static final FunctionDescriptor g_file_unmount_mountable_with_operation_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_network_connectivity_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_network_connectivity_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_network_connectivity_get_type",
+        constants$680.g_network_connectivity_get_type$FUNC
     );
-    static final MethodHandle g_file_unmount_mountable_with_operation_finish$MH = RuntimeHelper.downcallHandle(
-        "g_file_unmount_mountable_with_operation_finish",
-        constants$680.g_file_unmount_mountable_with_operation_finish$FUNC
-    );
-    static final FunctionDescriptor g_file_eject_mountable$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_eject_mountable$MH = RuntimeHelper.downcallHandle(
-        "g_file_eject_mountable",
-        constants$680.g_file_eject_mountable$FUNC
-    );
-    static final FunctionDescriptor g_file_eject_mountable_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_eject_mountable_finish$MH = RuntimeHelper.downcallHandle(
-        "g_file_eject_mountable_finish",
-        constants$680.g_file_eject_mountable_finish$FUNC
-    );
-    static final FunctionDescriptor g_file_eject_mountable_with_operation$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_eject_mountable_with_operation$MH = RuntimeHelper.downcallHandle(
-        "g_file_eject_mountable_with_operation",
-        constants$680.g_file_eject_mountable_with_operation$FUNC
+    static final FunctionDescriptor g_pollable_return_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_pollable_return_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_pollable_return_get_type",
+        constants$680.g_pollable_return_get_type$FUNC
     );
 }
 

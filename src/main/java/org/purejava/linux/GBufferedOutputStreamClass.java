@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GBufferedOutputStreamClass extends _GBufferedOutputStreamClass {
+/**
+ * {@snippet :
+ * typedef struct _GBufferedOutputStreamClass GBufferedOutputStreamClass;
+ * }
+ */
+public final class GBufferedOutputStreamClass extends _GBufferedOutputStreamClass {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GBufferedOutputStreamClass() {}
 }
 
 

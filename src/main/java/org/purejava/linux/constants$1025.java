@@ -7,55 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1025 {
+final class constants$1025 {
 
-    static final FunctionDescriptor hb_font_set_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1025() {}
+    static final FunctionDescriptor cairo_append_path$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cairo_append_path$MH = RuntimeHelper.downcallHandle(
+        "cairo_append_path",
+        constants$1025.cairo_append_path$FUNC
+    );
+    static final FunctionDescriptor cairo_path_destroy$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cairo_path_destroy$MH = RuntimeHelper.downcallHandle(
+        "cairo_path_destroy",
+        constants$1025.cairo_path_destroy$FUNC
+    );
+    static final FunctionDescriptor cairo_status$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cairo_status$MH = RuntimeHelper.downcallHandle(
+        "cairo_status",
+        constants$1025.cairo_status$FUNC
+    );
+    static final FunctionDescriptor cairo_status_to_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle hb_font_set_user_data$MH = RuntimeHelper.downcallHandle(
-        "hb_font_set_user_data",
-        constants$1025.hb_font_set_user_data$FUNC
+    static final MethodHandle cairo_status_to_string$MH = RuntimeHelper.downcallHandle(
+        "cairo_status_to_string",
+        constants$1025.cairo_status_to_string$FUNC
     );
-    static final FunctionDescriptor hb_font_get_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor cairo_device_reference$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_font_get_user_data$MH = RuntimeHelper.downcallHandle(
-        "hb_font_get_user_data",
-        constants$1025.hb_font_get_user_data$FUNC
+    static final MethodHandle cairo_device_reference$MH = RuntimeHelper.downcallHandle(
+        "cairo_device_reference",
+        constants$1025.cairo_device_reference$FUNC
     );
-    static final FunctionDescriptor hb_font_make_immutable$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor cairo_device_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_font_make_immutable$MH = RuntimeHelper.downcallHandle(
-        "hb_font_make_immutable",
-        constants$1025.hb_font_make_immutable$FUNC
-    );
-    static final FunctionDescriptor hb_font_is_immutable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_font_is_immutable$MH = RuntimeHelper.downcallHandle(
-        "hb_font_is_immutable",
-        constants$1025.hb_font_is_immutable$FUNC
-    );
-    static final FunctionDescriptor hb_font_set_parent$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_font_set_parent$MH = RuntimeHelper.downcallHandle(
-        "hb_font_set_parent",
-        constants$1025.hb_font_set_parent$FUNC
-    );
-    static final FunctionDescriptor hb_font_get_parent$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_font_get_parent$MH = RuntimeHelper.downcallHandle(
-        "hb_font_get_parent",
-        constants$1025.hb_font_get_parent$FUNC
+    static final MethodHandle cairo_device_get_type$MH = RuntimeHelper.downcallHandle(
+        "cairo_device_get_type",
+        constants$1025.cairo_device_get_type$FUNC
     );
 }
 

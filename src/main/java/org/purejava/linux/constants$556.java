@@ -7,50 +7,91 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$556 {
+final class constants$556 {
 
-    static final FunctionDescriptor g_filter_output_stream_get_close_base_stream$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$556() {}
+    static final FunctionDescriptor GDBusInterfaceSetPropertyFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_filter_output_stream_get_close_base_stream$MH = RuntimeHelper.downcallHandle(
-        "g_filter_output_stream_get_close_base_stream",
-        constants$556.g_filter_output_stream_get_close_base_stream$FUNC
+    static final FunctionDescriptor GDBusInterfaceSetPropertyFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor g_filter_output_stream_set_close_base_stream$FUNC = FunctionDescriptor.ofVoid(
+    static final MethodHandle GDBusInterfaceSetPropertyFunc_UP$MH = RuntimeHelper.upcallHandle(GDBusInterfaceSetPropertyFunc.class, "apply", constants$556.GDBusInterfaceSetPropertyFunc_UP$FUNC);
+    static final FunctionDescriptor GDBusInterfaceSetPropertyFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GDBusInterfaceSetPropertyFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$556.GDBusInterfaceSetPropertyFunc_DOWN$FUNC
+    );
+    static final FunctionDescriptor g_dbus_connection_register_object$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_dbus_connection_register_object$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_connection_register_object",
+        constants$556.g_dbus_connection_register_object$FUNC
+    );
+    static final FunctionDescriptor g_dbus_connection_register_object_with_closures$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_dbus_connection_register_object_with_closures$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_connection_register_object_with_closures",
+        constants$556.g_dbus_connection_register_object_with_closures$FUNC
+    );
+    static final FunctionDescriptor g_dbus_connection_unregister_object$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_filter_output_stream_set_close_base_stream$MH = RuntimeHelper.downcallHandle(
-        "g_filter_output_stream_set_close_base_stream",
-        constants$556.g_filter_output_stream_set_close_base_stream$FUNC
+    static final MethodHandle g_dbus_connection_unregister_object$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_connection_unregister_object",
+        constants$556.g_dbus_connection_unregister_object$FUNC
     );
-    static final FunctionDescriptor g_buffered_output_stream_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_buffered_output_stream_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_buffered_output_stream_get_type",
-        constants$556.g_buffered_output_stream_get_type$FUNC
-    );
-    static final FunctionDescriptor g_buffered_output_stream_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_buffered_output_stream_new$MH = RuntimeHelper.downcallHandle(
-        "g_buffered_output_stream_new",
-        constants$556.g_buffered_output_stream_new$FUNC
-    );
-    static final FunctionDescriptor g_buffered_output_stream_new_sized$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor GDBusSubtreeEnumerateFunc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_buffered_output_stream_new_sized$MH = RuntimeHelper.downcallHandle(
-        "g_buffered_output_stream_new_sized",
-        constants$556.g_buffered_output_stream_new_sized$FUNC
-    );
-    static final FunctionDescriptor g_buffered_output_stream_get_buffer_size$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_buffered_output_stream_get_buffer_size$MH = RuntimeHelper.downcallHandle(
-        "g_buffered_output_stream_get_buffer_size",
-        constants$556.g_buffered_output_stream_get_buffer_size$FUNC
+    static final FunctionDescriptor GDBusSubtreeEnumerateFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle GDBusSubtreeEnumerateFunc_UP$MH = RuntimeHelper.upcallHandle(GDBusSubtreeEnumerateFunc.class, "apply", constants$556.GDBusSubtreeEnumerateFunc_UP$FUNC);
 }
 
 

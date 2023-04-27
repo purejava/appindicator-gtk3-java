@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GThemedIcon {
+/**
+ * {@snippet :
+ * typedef struct _GThemedIcon GThemedIcon;
+ * }
+ */
+public final class GThemedIcon {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GThemedIcon() {}
 }
 
 

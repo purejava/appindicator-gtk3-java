@@ -7,41 +7,56 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$483 {
+final class constants$483 {
 
-    static final FunctionDescriptor g_weak_ref_get$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$483() {}
+    static final FunctionDescriptor g_app_info_get_all_for_type$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_weak_ref_get$MH = RuntimeHelper.downcallHandle(
-        "g_weak_ref_get",
-        constants$483.g_weak_ref_get$FUNC
+    static final MethodHandle g_app_info_get_all_for_type$MH = RuntimeHelper.downcallHandle(
+        "g_app_info_get_all_for_type",
+        constants$483.g_app_info_get_all_for_type$FUNC
     );
-    static final FunctionDescriptor g_weak_ref_set$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_app_info_get_recommended_for_type$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_app_info_get_recommended_for_type$MH = RuntimeHelper.downcallHandle(
+        "g_app_info_get_recommended_for_type",
+        constants$483.g_app_info_get_recommended_for_type$FUNC
+    );
+    static final FunctionDescriptor g_app_info_get_fallback_for_type$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_app_info_get_fallback_for_type$MH = RuntimeHelper.downcallHandle(
+        "g_app_info_get_fallback_for_type",
+        constants$483.g_app_info_get_fallback_for_type$FUNC
+    );
+    static final FunctionDescriptor g_app_info_reset_type_associations$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_app_info_reset_type_associations$MH = RuntimeHelper.downcallHandle(
+        "g_app_info_reset_type_associations",
+        constants$483.g_app_info_reset_type_associations$FUNC
+    );
+    static final FunctionDescriptor g_app_info_get_default_for_type$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_app_info_get_default_for_type$MH = RuntimeHelper.downcallHandle(
+        "g_app_info_get_default_for_type",
+        constants$483.g_app_info_get_default_for_type$FUNC
+    );
+    static final FunctionDescriptor g_app_info_get_default_for_type_async$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_weak_ref_set$MH = RuntimeHelper.downcallHandle(
-        "g_weak_ref_set",
-        constants$483.g_weak_ref_set$FUNC
-    );
-    static final FunctionDescriptor GBindingTransformFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GBindingTransformFunc$MH = RuntimeHelper.downcallHandle(
-        constants$483.GBindingTransformFunc$FUNC
-    );
-    static final FunctionDescriptor g_binding_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_binding_flags_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_binding_flags_get_type",
-        constants$483.g_binding_flags_get_type$FUNC
-    );
-    static final FunctionDescriptor g_binding_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_binding_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_binding_get_type",
-        constants$483.g_binding_get_type$FUNC
+    static final MethodHandle g_app_info_get_default_for_type_async$MH = RuntimeHelper.downcallHandle(
+        "g_app_info_get_default_for_type_async",
+        constants$483.g_app_info_get_default_for_type_async$FUNC
     );
 }
 

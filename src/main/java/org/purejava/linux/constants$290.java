@@ -7,50 +7,57 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$290 {
+final class constants$290 {
 
-    static final FunctionDescriptor g_sequence_set$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$290() {}
+    static final FunctionDescriptor g_regex_get_string_number$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_sequence_set$MH = RuntimeHelper.downcallHandle(
-        "g_sequence_set",
-        constants$290.g_sequence_set$FUNC
+    static final MethodHandle g_regex_get_string_number$MH = RuntimeHelper.downcallHandle(
+        "g_regex_get_string_number",
+        constants$290.g_regex_get_string_number$FUNC
     );
-    static final FunctionDescriptor g_sequence_iter_is_begin$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_regex_escape_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_regex_escape_string$MH = RuntimeHelper.downcallHandle(
+        "g_regex_escape_string",
+        constants$290.g_regex_escape_string$FUNC
+    );
+    static final FunctionDescriptor g_regex_escape_nul$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_regex_escape_nul$MH = RuntimeHelper.downcallHandle(
+        "g_regex_escape_nul",
+        constants$290.g_regex_escape_nul$FUNC
+    );
+    static final FunctionDescriptor g_regex_get_compile_flags$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_sequence_iter_is_begin$MH = RuntimeHelper.downcallHandle(
-        "g_sequence_iter_is_begin",
-        constants$290.g_sequence_iter_is_begin$FUNC
+    static final MethodHandle g_regex_get_compile_flags$MH = RuntimeHelper.downcallHandle(
+        "g_regex_get_compile_flags",
+        constants$290.g_regex_get_compile_flags$FUNC
     );
-    static final FunctionDescriptor g_sequence_iter_is_end$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_regex_get_match_flags$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_sequence_iter_is_end$MH = RuntimeHelper.downcallHandle(
-        "g_sequence_iter_is_end",
-        constants$290.g_sequence_iter_is_end$FUNC
+    static final MethodHandle g_regex_get_match_flags$MH = RuntimeHelper.downcallHandle(
+        "g_regex_get_match_flags",
+        constants$290.g_regex_get_match_flags$FUNC
     );
-    static final FunctionDescriptor g_sequence_iter_next$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_regex_match_simple$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_sequence_iter_next$MH = RuntimeHelper.downcallHandle(
-        "g_sequence_iter_next",
-        constants$290.g_sequence_iter_next$FUNC
-    );
-    static final FunctionDescriptor g_sequence_iter_prev$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_sequence_iter_prev$MH = RuntimeHelper.downcallHandle(
-        "g_sequence_iter_prev",
-        constants$290.g_sequence_iter_prev$FUNC
-    );
-    static final FunctionDescriptor g_sequence_iter_get_position$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_sequence_iter_get_position$MH = RuntimeHelper.downcallHandle(
-        "g_sequence_iter_get_position",
-        constants$290.g_sequence_iter_get_position$FUNC
+    static final MethodHandle g_regex_match_simple$MH = RuntimeHelper.downcallHandle(
+        "g_regex_match_simple",
+        constants$290.g_regex_match_simple$FUNC
     );
 }
 

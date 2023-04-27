@@ -7,54 +7,62 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$266 {
+final class constants$266 {
 
-    static final FunctionDescriptor g_queue_peek_nth_link$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$266() {}
+    static final FunctionDescriptor g_option_context_set_strict_posix$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_queue_peek_nth_link$MH = RuntimeHelper.downcallHandle(
-        "g_queue_peek_nth_link",
-        constants$266.g_queue_peek_nth_link$FUNC
+    static final MethodHandle g_option_context_set_strict_posix$MH = RuntimeHelper.downcallHandle(
+        "g_option_context_set_strict_posix",
+        constants$266.g_option_context_set_strict_posix$FUNC
     );
-    static final FunctionDescriptor g_queue_link_index$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_option_context_get_strict_posix$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_option_context_get_strict_posix$MH = RuntimeHelper.downcallHandle(
+        "g_option_context_get_strict_posix",
+        constants$266.g_option_context_get_strict_posix$FUNC
+    );
+    static final FunctionDescriptor g_option_context_add_main_entries$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_queue_link_index$MH = RuntimeHelper.downcallHandle(
-        "g_queue_link_index",
-        constants$266.g_queue_link_index$FUNC
+    static final MethodHandle g_option_context_add_main_entries$MH = RuntimeHelper.downcallHandle(
+        "g_option_context_add_main_entries",
+        constants$266.g_option_context_add_main_entries$FUNC
     );
-    static final FunctionDescriptor g_queue_unlink$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_option_context_parse$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_queue_unlink$MH = RuntimeHelper.downcallHandle(
-        "g_queue_unlink",
-        constants$266.g_queue_unlink$FUNC
+    static final MethodHandle g_option_context_parse$MH = RuntimeHelper.downcallHandle(
+        "g_option_context_parse",
+        constants$266.g_option_context_parse$FUNC
     );
-    static final FunctionDescriptor g_queue_delete_link$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_option_context_parse_strv$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_queue_delete_link$MH = RuntimeHelper.downcallHandle(
-        "g_queue_delete_link",
-        constants$266.g_queue_delete_link$FUNC
+    static final MethodHandle g_option_context_parse_strv$MH = RuntimeHelper.downcallHandle(
+        "g_option_context_parse_strv",
+        constants$266.g_option_context_parse_strv$FUNC
     );
-    static final FunctionDescriptor g_rand_new_with_seed$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_rand_new_with_seed$MH = RuntimeHelper.downcallHandle(
-        "g_rand_new_with_seed",
-        constants$266.g_rand_new_with_seed$FUNC
-    );
-    static final FunctionDescriptor g_rand_new_with_seed_array$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_option_context_set_translate_func$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_rand_new_with_seed_array$MH = RuntimeHelper.downcallHandle(
-        "g_rand_new_with_seed_array",
-        constants$266.g_rand_new_with_seed_array$FUNC
+    static final MethodHandle g_option_context_set_translate_func$MH = RuntimeHelper.downcallHandle(
+        "g_option_context_set_translate_func",
+        constants$266.g_option_context_set_translate_func$FUNC
     );
 }
 

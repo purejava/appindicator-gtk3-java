@@ -7,9 +7,17 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GtkTextMark {
+ *     GObject parent_instance;
+ *     gpointer segment;
+ * };
+ * }
+ */
 public class _GtkTextMark {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
                 Constants$root.C_POINTER$LAYOUT.withName("g_class")
@@ -30,24 +38,36 @@ public class _GtkTextMark {
     public static VarHandle segment$VH() {
         return _GtkTextMark.segment$VH;
     }
-    public static MemoryAddress segment$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkTextMark.segment$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gpointer segment;
+     * }
+     */
+    public static MemorySegment segment$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkTextMark.segment$VH.get(seg);
     }
-    public static void segment$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gpointer segment;
+     * }
+     */
+    public static void segment$set(MemorySegment seg, MemorySegment x) {
         _GtkTextMark.segment$VH.set(seg, x);
     }
-    public static MemoryAddress segment$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkTextMark.segment$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment segment$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkTextMark.segment$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void segment$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void segment$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkTextMark.segment$VH.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

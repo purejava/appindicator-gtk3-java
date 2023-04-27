@@ -7,49 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$404 {
+final class constants$404 {
 
-    static final FunctionDescriptor glib_autoptr_cleanup_GString$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$404() {}
+    static final FunctionDescriptor g_signal_type_cclosure_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_signal_type_cclosure_new$MH = RuntimeHelper.downcallHandle(
+        "g_signal_type_cclosure_new",
+        constants$404.g_signal_type_cclosure_new$FUNC
+    );
+    static final FunctionDescriptor g_closure_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GString$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GString",
-        constants$404.glib_autoptr_cleanup_GString$FUNC
+    static final MethodHandle g_closure_ref$MH = RuntimeHelper.downcallHandle(
+        "g_closure_ref",
+        constants$404.g_closure_ref$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GString$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_closure_sink$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GString$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GString",
-        constants$404.glib_listautoptr_cleanup_GString$FUNC
+    static final MethodHandle g_closure_sink$MH = RuntimeHelper.downcallHandle(
+        "g_closure_sink",
+        constants$404.g_closure_sink$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GString$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_closure_unref$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GString$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GString",
-        constants$404.glib_slistautoptr_cleanup_GString$FUNC
+    static final MethodHandle g_closure_unref$MH = RuntimeHelper.downcallHandle(
+        "g_closure_unref",
+        constants$404.g_closure_unref$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GString$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_closure_new_simple$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GString$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GString",
-        constants$404.glib_queueautoptr_cleanup_GString$FUNC
+    static final MethodHandle g_closure_new_simple$MH = RuntimeHelper.downcallHandle(
+        "g_closure_new_simple",
+        constants$404.g_closure_new_simple$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GStringChunk$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_closure_add_finalize_notifier$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GStringChunk$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GStringChunk",
-        constants$404.glib_autoptr_clear_GStringChunk$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_cleanup_GStringChunk$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_autoptr_cleanup_GStringChunk$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GStringChunk",
-        constants$404.glib_autoptr_cleanup_GStringChunk$FUNC
+    static final MethodHandle g_closure_add_finalize_notifier$MH = RuntimeHelper.downcallHandle(
+        "g_closure_add_finalize_notifier",
+        constants$404.g_closure_add_finalize_notifier$FUNC
     );
 }
 

@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GTuples extends _GTuples {
+/**
+ * {@snippet :
+ * typedef struct _GTuples GTuples;
+ * }
+ */
+public final class GTuples extends _GTuples {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GTuples() {}
 }
 
 

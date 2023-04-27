@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GTlsDatabase extends _GTlsDatabase {
+/**
+ * {@snippet :
+ * typedef struct _GTlsDatabase GTlsDatabase;
+ * }
+ */
+public final class GTlsDatabase extends _GTlsDatabase {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GTlsDatabase() {}
 }
 
 

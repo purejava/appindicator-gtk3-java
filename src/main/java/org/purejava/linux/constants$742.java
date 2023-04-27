@@ -7,59 +7,48 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$742 {
+final class constants$742 {
 
-    static final FunctionDescriptor g_list_store_sort$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_list_store_sort$MH = RuntimeHelper.downcallHandle(
-        "g_list_store_sort",
-        constants$742.g_list_store_sort$FUNC
-    );
-    static final FunctionDescriptor g_list_store_append$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$742() {}
+    static final FunctionDescriptor g_settings_schema_key_range_check$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_list_store_append$MH = RuntimeHelper.downcallHandle(
-        "g_list_store_append",
-        constants$742.g_list_store_append$FUNC
+    static final MethodHandle g_settings_schema_key_range_check$MH = RuntimeHelper.downcallHandle(
+        "g_settings_schema_key_range_check",
+        constants$742.g_settings_schema_key_range_check$FUNC
     );
-    static final FunctionDescriptor g_list_store_remove$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_list_store_remove$MH = RuntimeHelper.downcallHandle(
-        "g_list_store_remove",
-        constants$742.g_list_store_remove$FUNC
-    );
-    static final FunctionDescriptor g_list_store_remove_all$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_settings_schema_key_get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_list_store_remove_all$MH = RuntimeHelper.downcallHandle(
-        "g_list_store_remove_all",
-        constants$742.g_list_store_remove_all$FUNC
+    static final MethodHandle g_settings_schema_key_get_name$MH = RuntimeHelper.downcallHandle(
+        "g_settings_schema_key_get_name",
+        constants$742.g_settings_schema_key_get_name$FUNC
     );
-    static final FunctionDescriptor g_list_store_splice$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_list_store_splice$MH = RuntimeHelper.downcallHandle(
-        "g_list_store_splice",
-        constants$742.g_list_store_splice$FUNC
-    );
-    static final FunctionDescriptor g_list_store_find$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_settings_schema_key_get_summary$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_list_store_find$MH = RuntimeHelper.downcallHandle(
-        "g_list_store_find",
-        constants$742.g_list_store_find$FUNC
+    static final MethodHandle g_settings_schema_key_get_summary$MH = RuntimeHelper.downcallHandle(
+        "g_settings_schema_key_get_summary",
+        constants$742.g_settings_schema_key_get_summary$FUNC
+    );
+    static final FunctionDescriptor g_settings_schema_key_get_description$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_settings_schema_key_get_description$MH = RuntimeHelper.downcallHandle(
+        "g_settings_schema_key_get_description",
+        constants$742.g_settings_schema_key_get_description$FUNC
+    );
+    static final FunctionDescriptor g_settings_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_settings_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_settings_get_type",
+        constants$742.g_settings_get_type$FUNC
+    );
+    static final FunctionDescriptor g_settings_list_schemas$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle g_settings_list_schemas$MH = RuntimeHelper.downcallHandle(
+        "g_settings_list_schemas",
+        constants$742.g_settings_list_schemas$FUNC
     );
 }
 

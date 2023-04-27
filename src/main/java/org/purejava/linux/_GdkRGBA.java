@@ -7,9 +7,19 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GdkRGBA {
+ *     gdouble red;
+ *     gdouble green;
+ *     gdouble blue;
+ *     gdouble alpha;
+ * };
+ * }
+ */
 public class _GdkRGBA {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_DOUBLE$LAYOUT.withName("red"),
         Constants$root.C_DOUBLE$LAYOUT.withName("green"),
         Constants$root.C_DOUBLE$LAYOUT.withName("blue"),
@@ -22,10 +32,22 @@ public class _GdkRGBA {
     public static VarHandle red$VH() {
         return _GdkRGBA.red$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gdouble red;
+     * }
+     */
     public static double red$get(MemorySegment seg) {
         return (double)_GdkRGBA.red$VH.get(seg);
     }
-    public static void red$set( MemorySegment seg, double x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gdouble red;
+     * }
+     */
+    public static void red$set(MemorySegment seg, double x) {
         _GdkRGBA.red$VH.set(seg, x);
     }
     public static double red$get(MemorySegment seg, long index) {
@@ -38,10 +60,22 @@ public class _GdkRGBA {
     public static VarHandle green$VH() {
         return _GdkRGBA.green$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gdouble green;
+     * }
+     */
     public static double green$get(MemorySegment seg) {
         return (double)_GdkRGBA.green$VH.get(seg);
     }
-    public static void green$set( MemorySegment seg, double x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gdouble green;
+     * }
+     */
+    public static void green$set(MemorySegment seg, double x) {
         _GdkRGBA.green$VH.set(seg, x);
     }
     public static double green$get(MemorySegment seg, long index) {
@@ -54,10 +88,22 @@ public class _GdkRGBA {
     public static VarHandle blue$VH() {
         return _GdkRGBA.blue$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gdouble blue;
+     * }
+     */
     public static double blue$get(MemorySegment seg) {
         return (double)_GdkRGBA.blue$VH.get(seg);
     }
-    public static void blue$set( MemorySegment seg, double x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gdouble blue;
+     * }
+     */
+    public static void blue$set(MemorySegment seg, double x) {
         _GdkRGBA.blue$VH.set(seg, x);
     }
     public static double blue$get(MemorySegment seg, long index) {
@@ -70,10 +116,22 @@ public class _GdkRGBA {
     public static VarHandle alpha$VH() {
         return _GdkRGBA.alpha$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gdouble alpha;
+     * }
+     */
     public static double alpha$get(MemorySegment seg) {
         return (double)_GdkRGBA.alpha$VH.get(seg);
     }
-    public static void alpha$set( MemorySegment seg, double x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gdouble alpha;
+     * }
+     */
+    public static void alpha$set(MemorySegment seg, double x) {
         _GdkRGBA.alpha$VH.set(seg, x);
     }
     public static double alpha$get(MemorySegment seg, long index) {
@@ -84,10 +142,10 @@ public class _GdkRGBA {
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

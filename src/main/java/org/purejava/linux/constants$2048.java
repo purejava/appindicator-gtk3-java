@@ -7,48 +7,16 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$2048 {
+final class constants$2048 {
 
-    static final FunctionDescriptor gtk_text_view_set_input_hints$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_text_view_set_input_hints$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_set_input_hints",
-        constants$2048.gtk_text_view_set_input_hints$FUNC
-    );
-    static final FunctionDescriptor gtk_text_view_get_input_hints$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_view_get_input_hints$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_get_input_hints",
-        constants$2048.gtk_text_view_get_input_hints$FUNC
-    );
-    static final FunctionDescriptor gtk_text_view_set_monospace$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_text_view_set_monospace$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_set_monospace",
-        constants$2048.gtk_text_view_set_monospace$FUNC
-    );
-    static final FunctionDescriptor gtk_text_view_get_monospace$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_view_get_monospace$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_get_monospace",
-        constants$2048.gtk_text_view_get_monospace$FUNC
-    );
-    static final FunctionDescriptor gtk_toolbar_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_toolbar_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_toolbar_get_type",
-        constants$2048.gtk_toolbar_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_toolbar_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_toolbar_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_toolbar_new",
-        constants$2048.gtk_toolbar_new$FUNC
-    );
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$2048() {}
+    static final MemorySegment GTK_PRINT_SETTINGS_NUMBER_UP_LAYOUT$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("number-up-layout");
+    static final MemorySegment GTK_PRINT_SETTINGS_OUTPUT_BIN$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("output-bin");
+    static final MemorySegment GTK_PRINT_SETTINGS_RESOLUTION_X$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("resolution-x");
+    static final MemorySegment GTK_PRINT_SETTINGS_RESOLUTION_Y$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("resolution-y");
+    static final MemorySegment GTK_PRINT_SETTINGS_PRINTER_LPI$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("printer-lpi");
+    static final MemorySegment GTK_PRINT_SETTINGS_OUTPUT_DIR$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("output-dir");
 }
 
 

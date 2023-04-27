@@ -7,37 +7,74 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$724 {
+final class constants$724 {
 
-    static final FunctionDescriptor g_dbus_call_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_dbus_call_flags_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_call_flags_get_type",
-        constants$724.g_dbus_call_flags_get_type$FUNC
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$724() {}
+    static final FunctionDescriptor g_pollable_output_stream_writev_nonblocking$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor g_dbus_message_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_dbus_message_type_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_type_get_type",
-        constants$724.g_dbus_message_type_get_type$FUNC
+    static final MethodHandle g_pollable_output_stream_writev_nonblocking$MH = RuntimeHelper.downcallHandle(
+        "g_pollable_output_stream_writev_nonblocking",
+        constants$724.g_pollable_output_stream_writev_nonblocking$FUNC
     );
-    static final FunctionDescriptor g_dbus_message_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_dbus_message_flags_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_flags_get_type",
-        constants$724.g_dbus_message_flags_get_type$FUNC
+    static final FunctionDescriptor g_pollable_source_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor g_dbus_message_header_field_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_dbus_message_header_field_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_header_field_get_type",
-        constants$724.g_dbus_message_header_field_get_type$FUNC
+    static final MethodHandle g_pollable_source_new$MH = RuntimeHelper.downcallHandle(
+        "g_pollable_source_new",
+        constants$724.g_pollable_source_new$FUNC
     );
-    static final FunctionDescriptor g_dbus_property_info_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_dbus_property_info_flags_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_property_info_flags_get_type",
-        constants$724.g_dbus_property_info_flags_get_type$FUNC
+    static final FunctionDescriptor g_pollable_source_new_full$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor g_dbus_subtree_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_dbus_subtree_flags_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_subtree_flags_get_type",
-        constants$724.g_dbus_subtree_flags_get_type$FUNC
+    static final MethodHandle g_pollable_source_new_full$MH = RuntimeHelper.downcallHandle(
+        "g_pollable_source_new_full",
+        constants$724.g_pollable_source_new_full$FUNC
+    );
+    static final FunctionDescriptor g_pollable_stream_read$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_pollable_stream_read$MH = RuntimeHelper.downcallHandle(
+        "g_pollable_stream_read",
+        constants$724.g_pollable_stream_read$FUNC
+    );
+    static final FunctionDescriptor g_pollable_stream_write$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_pollable_stream_write$MH = RuntimeHelper.downcallHandle(
+        "g_pollable_stream_write",
+        constants$724.g_pollable_stream_write$FUNC
+    );
+    static final FunctionDescriptor g_pollable_stream_write_all$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_pollable_stream_write_all$MH = RuntimeHelper.downcallHandle(
+        "g_pollable_stream_write_all",
+        constants$724.g_pollable_stream_write_all$FUNC
     );
 }
 

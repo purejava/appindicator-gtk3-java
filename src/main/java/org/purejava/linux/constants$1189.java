@@ -7,55 +7,65 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1189 {
+final class constants$1189 {
 
-    static final FunctionDescriptor cairo_surface_observer_add_finish_callback$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1189() {}
+    static final FunctionDescriptor gdk_visual_get_blue_pixel_details$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_surface_observer_add_finish_callback$MH = RuntimeHelper.downcallHandle(
-        "cairo_surface_observer_add_finish_callback",
-        constants$1189.cairo_surface_observer_add_finish_callback$FUNC
-    );
-    static final FunctionDescriptor cairo_surface_observer_print$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_surface_observer_print$MH = RuntimeHelper.downcallHandle(
-        "cairo_surface_observer_print",
-        constants$1189.cairo_surface_observer_print$FUNC
+    static final MethodHandle gdk_visual_get_blue_pixel_details$MH = RuntimeHelper.downcallHandle(
+        "gdk_visual_get_blue_pixel_details",
+        constants$1189.gdk_visual_get_blue_pixel_details$FUNC
     );
-    static final FunctionDescriptor cairo_surface_observer_elapsed$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor GtkAccelGroupActivate$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle cairo_surface_observer_elapsed$MH = RuntimeHelper.downcallHandle(
-        "cairo_surface_observer_elapsed",
-        constants$1189.cairo_surface_observer_elapsed$FUNC
+    static final FunctionDescriptor GtkAccelGroupActivate_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final FunctionDescriptor cairo_device_observer_print$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final MethodHandle GtkAccelGroupActivate_UP$MH = RuntimeHelper.upcallHandle(GtkAccelGroupActivate.class, "apply", constants$1189.GtkAccelGroupActivate_UP$FUNC);
+    static final FunctionDescriptor GtkAccelGroupActivate_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle GtkAccelGroupActivate_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$1189.GtkAccelGroupActivate_DOWN$FUNC
+    );
+    static final FunctionDescriptor GtkAccelGroupFindFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_device_observer_print$MH = RuntimeHelper.downcallHandle(
-        "cairo_device_observer_print",
-        constants$1189.cairo_device_observer_print$FUNC
-    );
-    static final FunctionDescriptor cairo_device_observer_elapsed$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
+    static final FunctionDescriptor GtkAccelGroupFindFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_device_observer_elapsed$MH = RuntimeHelper.downcallHandle(
-        "cairo_device_observer_elapsed",
-        constants$1189.cairo_device_observer_elapsed$FUNC
-    );
-    static final FunctionDescriptor cairo_device_observer_paint_elapsed$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
+    static final MethodHandle GtkAccelGroupFindFunc_UP$MH = RuntimeHelper.upcallHandle(GtkAccelGroupFindFunc.class, "apply", constants$1189.GtkAccelGroupFindFunc_UP$FUNC);
+    static final FunctionDescriptor GtkAccelGroupFindFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_device_observer_paint_elapsed$MH = RuntimeHelper.downcallHandle(
-        "cairo_device_observer_paint_elapsed",
-        constants$1189.cairo_device_observer_paint_elapsed$FUNC
+    static final MethodHandle GtkAccelGroupFindFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$1189.GtkAccelGroupFindFunc_DOWN$FUNC
+    );
+    static final FunctionDescriptor gtk_accel_group_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_accel_group_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_accel_group_get_type",
+        constants$1189.gtk_accel_group_get_type$FUNC
     );
 }
 

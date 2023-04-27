@@ -7,47 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$311 {
+final class constants$311 {
 
-    static final FunctionDescriptor g_test_fail$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle g_test_fail$MH = RuntimeHelper.downcallHandle(
-        "g_test_fail",
-        constants$311.g_test_fail$FUNC
-    );
-    static final FunctionDescriptor g_test_fail_printf$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$311() {}
+    static final FunctionDescriptor g_string_chunk_insert_const$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_test_fail_printf$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_test_fail_printf",
-        constants$311.g_test_fail_printf$FUNC
+    static final MethodHandle g_string_chunk_insert_const$MH = RuntimeHelper.downcallHandle(
+        "g_string_chunk_insert_const",
+        constants$311.g_string_chunk_insert_const$FUNC
     );
-    static final FunctionDescriptor g_test_incomplete$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_strv_builder_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle g_strv_builder_new$MH = RuntimeHelper.downcallHandle(
+        "g_strv_builder_new",
+        constants$311.g_strv_builder_new$FUNC
+    );
+    static final FunctionDescriptor g_strv_builder_unref$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_test_incomplete$MH = RuntimeHelper.downcallHandle(
-        "g_test_incomplete",
-        constants$311.g_test_incomplete$FUNC
+    static final MethodHandle g_strv_builder_unref$MH = RuntimeHelper.downcallHandle(
+        "g_strv_builder_unref",
+        constants$311.g_strv_builder_unref$FUNC
     );
-    static final FunctionDescriptor g_test_incomplete_printf$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_strv_builder_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_test_incomplete_printf$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_test_incomplete_printf",
-        constants$311.g_test_incomplete_printf$FUNC
+    static final MethodHandle g_strv_builder_ref$MH = RuntimeHelper.downcallHandle(
+        "g_strv_builder_ref",
+        constants$311.g_strv_builder_ref$FUNC
     );
-    static final FunctionDescriptor g_test_skip$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_strv_builder_add$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_test_skip$MH = RuntimeHelper.downcallHandle(
-        "g_test_skip",
-        constants$311.g_test_skip$FUNC
+    static final MethodHandle g_strv_builder_add$MH = RuntimeHelper.downcallHandle(
+        "g_strv_builder_add",
+        constants$311.g_strv_builder_add$FUNC
     );
-    static final FunctionDescriptor g_test_skip_printf$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_strv_builder_addv$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_test_skip_printf$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_test_skip_printf",
-        constants$311.g_test_skip_printf$FUNC
+    static final MethodHandle g_strv_builder_addv$MH = RuntimeHelper.downcallHandle(
+        "g_strv_builder_addv",
+        constants$311.g_strv_builder_addv$FUNC
     );
 }
 

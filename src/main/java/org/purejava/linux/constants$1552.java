@@ -7,50 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1552 {
+final class constants$1552 {
 
-    static final FunctionDescriptor GtkTreeModelForeachFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1552() {}
+    static final FunctionDescriptor gtk_css_section_unref$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GtkTreeModelForeachFunc$MH = RuntimeHelper.downcallHandle(
-        constants$1552.GtkTreeModelForeachFunc$FUNC
+    static final MethodHandle gtk_css_section_unref$MH = RuntimeHelper.downcallHandle(
+        "gtk_css_section_unref",
+        constants$1552.gtk_css_section_unref$FUNC
     );
-    static final FunctionDescriptor gtk_tree_path_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_tree_path_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_path_new",
-        constants$1552.gtk_tree_path_new$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_path_new_from_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_css_section_get_section_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_tree_path_new_from_string$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_path_new_from_string",
-        constants$1552.gtk_tree_path_new_from_string$FUNC
+    static final MethodHandle gtk_css_section_get_section_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_css_section_get_section_type",
+        constants$1552.gtk_css_section_get_section_type$FUNC
     );
-    static final FunctionDescriptor gtk_tree_path_new_from_indices$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_tree_path_new_from_indices$MH = RuntimeHelper.downcallHandleVariadic(
-        "gtk_tree_path_new_from_indices",
-        constants$1552.gtk_tree_path_new_from_indices$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_path_new_from_indicesv$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle gtk_tree_path_new_from_indicesv$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_path_new_from_indicesv",
-        constants$1552.gtk_tree_path_new_from_indicesv$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_path_to_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_css_section_get_parent$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_tree_path_to_string$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_path_to_string",
-        constants$1552.gtk_tree_path_to_string$FUNC
+    static final MethodHandle gtk_css_section_get_parent$MH = RuntimeHelper.downcallHandle(
+        "gtk_css_section_get_parent",
+        constants$1552.gtk_css_section_get_parent$FUNC
+    );
+    static final FunctionDescriptor gtk_css_section_get_file$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_css_section_get_file$MH = RuntimeHelper.downcallHandle(
+        "gtk_css_section_get_file",
+        constants$1552.gtk_css_section_get_file$FUNC
+    );
+    static final FunctionDescriptor gtk_css_section_get_start_line$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_css_section_get_start_line$MH = RuntimeHelper.downcallHandle(
+        "gtk_css_section_get_start_line",
+        constants$1552.gtk_css_section_get_start_line$FUNC
+    );
+    static final FunctionDescriptor gtk_css_section_get_start_position$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_css_section_get_start_position$MH = RuntimeHelper.downcallHandle(
+        "gtk_css_section_get_start_position",
+        constants$1552.gtk_css_section_get_start_position$FUNC
     );
 }
 

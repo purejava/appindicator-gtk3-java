@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkHSeparator extends _GtkHSeparator {
+/**
+ * {@snippet :
+ * typedef struct _GtkHSeparator GtkHSeparator;
+ * }
+ */
+public final class GtkHSeparator extends _GtkHSeparator {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkHSeparator() {}
 }
 
 

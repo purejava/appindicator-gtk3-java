@@ -7,75 +7,66 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$868 {
+final class constants$868 {
 
-    static final FunctionDescriptor g_tls_database_lookup_certificate_for_handle_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$868() {}
+    static final FunctionDescriptor hb_font_funcs_set_glyph_shape_func$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_tls_database_lookup_certificate_for_handle_finish$MH = RuntimeHelper.downcallHandle(
-        "g_tls_database_lookup_certificate_for_handle_finish",
-        constants$868.g_tls_database_lookup_certificate_for_handle_finish$FUNC
+    static final MethodHandle hb_font_funcs_set_glyph_shape_func$MH = RuntimeHelper.downcallHandle(
+        "hb_font_funcs_set_glyph_shape_func",
+        constants$868.hb_font_funcs_set_glyph_shape_func$FUNC
     );
-    static final FunctionDescriptor g_tls_database_lookup_certificate_issuer$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor hb_font_get_h_extents$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle hb_font_get_h_extents$MH = RuntimeHelper.downcallHandle(
+        "hb_font_get_h_extents",
+        constants$868.hb_font_get_h_extents$FUNC
+    );
+    static final FunctionDescriptor hb_font_get_v_extents$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle hb_font_get_v_extents$MH = RuntimeHelper.downcallHandle(
+        "hb_font_get_v_extents",
+        constants$868.hb_font_get_v_extents$FUNC
+    );
+    static final FunctionDescriptor hb_font_get_nominal_glyph$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle hb_font_get_nominal_glyph$MH = RuntimeHelper.downcallHandle(
+        "hb_font_get_nominal_glyph",
+        constants$868.hb_font_get_nominal_glyph$FUNC
+    );
+    static final FunctionDescriptor hb_font_get_variation_glyph$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle hb_font_get_variation_glyph$MH = RuntimeHelper.downcallHandle(
+        "hb_font_get_variation_glyph",
+        constants$868.hb_font_get_variation_glyph$FUNC
+    );
+    static final FunctionDescriptor hb_font_get_nominal_glyphs$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_tls_database_lookup_certificate_issuer$MH = RuntimeHelper.downcallHandle(
-        "g_tls_database_lookup_certificate_issuer",
-        constants$868.g_tls_database_lookup_certificate_issuer$FUNC
-    );
-    static final FunctionDescriptor g_tls_database_lookup_certificate_issuer_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_tls_database_lookup_certificate_issuer_async$MH = RuntimeHelper.downcallHandle(
-        "g_tls_database_lookup_certificate_issuer_async",
-        constants$868.g_tls_database_lookup_certificate_issuer_async$FUNC
-    );
-    static final FunctionDescriptor g_tls_database_lookup_certificate_issuer_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_tls_database_lookup_certificate_issuer_finish$MH = RuntimeHelper.downcallHandle(
-        "g_tls_database_lookup_certificate_issuer_finish",
-        constants$868.g_tls_database_lookup_certificate_issuer_finish$FUNC
-    );
-    static final FunctionDescriptor g_tls_database_lookup_certificates_issued_by$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_tls_database_lookup_certificates_issued_by$MH = RuntimeHelper.downcallHandle(
-        "g_tls_database_lookup_certificates_issued_by",
-        constants$868.g_tls_database_lookup_certificates_issued_by$FUNC
-    );
-    static final FunctionDescriptor g_tls_database_lookup_certificates_issued_by_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_tls_database_lookup_certificates_issued_by_async$MH = RuntimeHelper.downcallHandle(
-        "g_tls_database_lookup_certificates_issued_by_async",
-        constants$868.g_tls_database_lookup_certificates_issued_by_async$FUNC
+    static final MethodHandle hb_font_get_nominal_glyphs$MH = RuntimeHelper.downcallHandle(
+        "hb_font_get_nominal_glyphs",
+        constants$868.hb_font_get_nominal_glyphs$FUNC
     );
 }
 

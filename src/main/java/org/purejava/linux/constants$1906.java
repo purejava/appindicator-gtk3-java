@@ -7,55 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1906 {
+final class constants$1906 {
 
-    static final FunctionDescriptor gtk_notebook_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_notebook_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_notebook_get_type",
-        constants$1906.gtk_notebook_get_type$FUNC
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1906() {}
+    static final FunctionDescriptor gtk_window_group_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_window_group_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_group_new",
+        constants$1906.gtk_window_group_new$FUNC
     );
-    static final FunctionDescriptor gtk_notebook_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_notebook_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_notebook_new",
-        constants$1906.gtk_notebook_new$FUNC
-    );
-    static final FunctionDescriptor gtk_notebook_append_page$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_window_group_add_window$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_notebook_append_page$MH = RuntimeHelper.downcallHandle(
-        "gtk_notebook_append_page",
-        constants$1906.gtk_notebook_append_page$FUNC
+    static final MethodHandle gtk_window_group_add_window$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_group_add_window",
+        constants$1906.gtk_window_group_add_window$FUNC
     );
-    static final FunctionDescriptor gtk_notebook_append_page_menu$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_window_group_remove_window$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_notebook_append_page_menu$MH = RuntimeHelper.downcallHandle(
-        "gtk_notebook_append_page_menu",
-        constants$1906.gtk_notebook_append_page_menu$FUNC
+    static final MethodHandle gtk_window_group_remove_window$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_group_remove_window",
+        constants$1906.gtk_window_group_remove_window$FUNC
     );
-    static final FunctionDescriptor gtk_notebook_prepend_page$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_window_group_list_windows$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_window_group_list_windows$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_group_list_windows",
+        constants$1906.gtk_window_group_list_windows$FUNC
+    );
+    static final FunctionDescriptor gtk_window_group_get_current_grab$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_window_group_get_current_grab$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_group_get_current_grab",
+        constants$1906.gtk_window_group_get_current_grab$FUNC
+    );
+    static final FunctionDescriptor gtk_window_group_get_current_device_grab$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_notebook_prepend_page$MH = RuntimeHelper.downcallHandle(
-        "gtk_notebook_prepend_page",
-        constants$1906.gtk_notebook_prepend_page$FUNC
-    );
-    static final FunctionDescriptor gtk_notebook_prepend_page_menu$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_notebook_prepend_page_menu$MH = RuntimeHelper.downcallHandle(
-        "gtk_notebook_prepend_page_menu",
-        constants$1906.gtk_notebook_prepend_page_menu$FUNC
+    static final MethodHandle gtk_window_group_get_current_device_grab$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_group_get_current_device_grab",
+        constants$1906.gtk_window_group_get_current_device_grab$FUNC
     );
 }
 

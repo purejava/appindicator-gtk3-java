@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkTreeViewClass extends _GtkTreeViewClass {
+/**
+ * {@snippet :
+ * typedef struct _GtkTreeViewClass GtkTreeViewClass;
+ * }
+ */
+public final class GtkTreeViewClass extends _GtkTreeViewClass {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkTreeViewClass() {}
 }
 
 

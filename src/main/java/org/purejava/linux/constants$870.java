@@ -7,70 +7,68 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$870 {
+final class constants$870 {
 
-    static final FunctionDescriptor g_tls_interaction_ask_password_async$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$870() {}
+    static final FunctionDescriptor hb_font_get_glyph_h_kerning$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle hb_font_get_glyph_h_kerning$MH = RuntimeHelper.downcallHandle(
+        "hb_font_get_glyph_h_kerning",
+        constants$870.hb_font_get_glyph_h_kerning$FUNC
+    );
+    static final FunctionDescriptor hb_font_get_glyph_extents$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle hb_font_get_glyph_extents$MH = RuntimeHelper.downcallHandle(
+        "hb_font_get_glyph_extents",
+        constants$870.hb_font_get_glyph_extents$FUNC
+    );
+    static final FunctionDescriptor hb_font_get_glyph_contour_point$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_tls_interaction_ask_password_async$MH = RuntimeHelper.downcallHandle(
-        "g_tls_interaction_ask_password_async",
-        constants$870.g_tls_interaction_ask_password_async$FUNC
+    static final MethodHandle hb_font_get_glyph_contour_point$MH = RuntimeHelper.downcallHandle(
+        "hb_font_get_glyph_contour_point",
+        constants$870.hb_font_get_glyph_contour_point$FUNC
     );
-    static final FunctionDescriptor g_tls_interaction_ask_password_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor hb_font_get_glyph_name$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle hb_font_get_glyph_name$MH = RuntimeHelper.downcallHandle(
+        "hb_font_get_glyph_name",
+        constants$870.hb_font_get_glyph_name$FUNC
+    );
+    static final FunctionDescriptor hb_font_get_glyph_from_name$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_tls_interaction_ask_password_finish$MH = RuntimeHelper.downcallHandle(
-        "g_tls_interaction_ask_password_finish",
-        constants$870.g_tls_interaction_ask_password_finish$FUNC
+    static final MethodHandle hb_font_get_glyph_from_name$MH = RuntimeHelper.downcallHandle(
+        "hb_font_get_glyph_from_name",
+        constants$870.hb_font_get_glyph_from_name$FUNC
     );
-    static final FunctionDescriptor g_tls_interaction_invoke_request_certificate$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor hb_font_get_glyph_shape$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_tls_interaction_invoke_request_certificate$MH = RuntimeHelper.downcallHandle(
-        "g_tls_interaction_invoke_request_certificate",
-        constants$870.g_tls_interaction_invoke_request_certificate$FUNC
-    );
-    static final FunctionDescriptor g_tls_interaction_request_certificate$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_tls_interaction_request_certificate$MH = RuntimeHelper.downcallHandle(
-        "g_tls_interaction_request_certificate",
-        constants$870.g_tls_interaction_request_certificate$FUNC
-    );
-    static final FunctionDescriptor g_tls_interaction_request_certificate_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_tls_interaction_request_certificate_async$MH = RuntimeHelper.downcallHandle(
-        "g_tls_interaction_request_certificate_async",
-        constants$870.g_tls_interaction_request_certificate_async$FUNC
-    );
-    static final FunctionDescriptor g_tls_interaction_request_certificate_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_tls_interaction_request_certificate_finish$MH = RuntimeHelper.downcallHandle(
-        "g_tls_interaction_request_certificate_finish",
-        constants$870.g_tls_interaction_request_certificate_finish$FUNC
+    static final MethodHandle hb_font_get_glyph_shape$MH = RuntimeHelper.downcallHandle(
+        "hb_font_get_glyph_shape",
+        constants$870.hb_font_get_glyph_shape$FUNC
     );
 }
 

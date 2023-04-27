@@ -7,9 +7,18 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _xsave_hdr {
+ *     __uint64_t xstate_bv;
+ *     __uint64_t __glibc_reserved1[2];
+ *     __uint64_t __glibc_reserved2[5];
+ * };
+ * }
+ */
 public class _xsave_hdr {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_LONG_LONG$LAYOUT.withName("xstate_bv"),
         MemoryLayout.sequenceLayout(2, Constants$root.C_LONG_LONG$LAYOUT).withName("__glibc_reserved1"),
         MemoryLayout.sequenceLayout(5, Constants$root.C_LONG_LONG$LAYOUT).withName("__glibc_reserved2")
@@ -21,10 +30,22 @@ public class _xsave_hdr {
     public static VarHandle xstate_bv$VH() {
         return _xsave_hdr.xstate_bv$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * __uint64_t xstate_bv;
+     * }
+     */
     public static long xstate_bv$get(MemorySegment seg) {
         return (long)_xsave_hdr.xstate_bv$VH.get(seg);
     }
-    public static void xstate_bv$set( MemorySegment seg, long x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * __uint64_t xstate_bv;
+     * }
+     */
+    public static void xstate_bv$set(MemorySegment seg, long x) {
         _xsave_hdr.xstate_bv$VH.set(seg, x);
     }
     public static long xstate_bv$get(MemorySegment seg, long index) {
@@ -41,10 +62,10 @@ public class _xsave_hdr {
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

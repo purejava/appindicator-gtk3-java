@@ -7,48 +7,57 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1754 {
+final class constants$1754 {
 
-    static final FunctionDescriptor gtk_event_controller_scroll_get_flags$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_event_controller_scroll_get_flags$MH = RuntimeHelper.downcallHandle(
-        "gtk_event_controller_scroll_get_flags",
-        constants$1754.gtk_event_controller_scroll_get_flags$FUNC
-    );
-    static final FunctionDescriptor gtk_expander_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_expander_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_expander_get_type",
-        constants$1754.gtk_expander_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_expander_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_expander_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_expander_new",
-        constants$1754.gtk_expander_new$FUNC
-    );
-    static final FunctionDescriptor gtk_expander_new_with_mnemonic$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_expander_new_with_mnemonic$MH = RuntimeHelper.downcallHandle(
-        "gtk_expander_new_with_mnemonic",
-        constants$1754.gtk_expander_new_with_mnemonic$FUNC
-    );
-    static final FunctionDescriptor gtk_expander_set_expanded$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1754() {}
+    static final FunctionDescriptor gtk_print_operation_set_allow_async$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_expander_set_expanded$MH = RuntimeHelper.downcallHandle(
-        "gtk_expander_set_expanded",
-        constants$1754.gtk_expander_set_expanded$FUNC
+    static final MethodHandle gtk_print_operation_set_allow_async$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_operation_set_allow_async",
+        constants$1754.gtk_print_operation_set_allow_async$FUNC
     );
-    static final FunctionDescriptor gtk_expander_get_expanded$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_print_operation_set_custom_tab_label$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_expander_get_expanded$MH = RuntimeHelper.downcallHandle(
-        "gtk_expander_get_expanded",
-        constants$1754.gtk_expander_get_expanded$FUNC
+    static final MethodHandle gtk_print_operation_set_custom_tab_label$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_operation_set_custom_tab_label",
+        constants$1754.gtk_print_operation_set_custom_tab_label$FUNC
+    );
+    static final FunctionDescriptor gtk_print_operation_run$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_print_operation_run$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_operation_run",
+        constants$1754.gtk_print_operation_run$FUNC
+    );
+    static final FunctionDescriptor gtk_print_operation_get_error$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_print_operation_get_error$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_operation_get_error",
+        constants$1754.gtk_print_operation_get_error$FUNC
+    );
+    static final FunctionDescriptor gtk_print_operation_get_status$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_print_operation_get_status$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_operation_get_status",
+        constants$1754.gtk_print_operation_get_status$FUNC
+    );
+    static final FunctionDescriptor gtk_print_operation_get_status_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_print_operation_get_status_string$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_operation_get_status_string",
+        constants$1754.gtk_print_operation_get_status_string$FUNC
     );
 }
 

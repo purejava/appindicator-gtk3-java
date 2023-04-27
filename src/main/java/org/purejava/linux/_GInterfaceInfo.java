@@ -7,9 +7,18 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GInterfaceInfo {
+ *     GInterfaceInitFunc interface_init;
+ *     GInterfaceFinalizeFunc interface_finalize;
+ *     gpointer interface_data;
+ * };
+ * }
+ */
 public class _GInterfaceInfo {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_POINTER$LAYOUT.withName("interface_init"),
         Constants$root.C_POINTER$LAYOUT.withName("interface_finalize"),
         Constants$root.C_POINTER$LAYOUT.withName("interface_data")
@@ -21,62 +30,98 @@ public class _GInterfaceInfo {
     public static VarHandle interface_init$VH() {
         return _GInterfaceInfo.interface_init$VH;
     }
-    public static MemoryAddress interface_init$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GInterfaceInfo.interface_init$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GInterfaceInitFunc interface_init;
+     * }
+     */
+    public static MemorySegment interface_init$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GInterfaceInfo.interface_init$VH.get(seg);
     }
-    public static void interface_init$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GInterfaceInitFunc interface_init;
+     * }
+     */
+    public static void interface_init$set(MemorySegment seg, MemorySegment x) {
         _GInterfaceInfo.interface_init$VH.set(seg, x);
     }
-    public static MemoryAddress interface_init$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GInterfaceInfo.interface_init$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment interface_init$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GInterfaceInfo.interface_init$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void interface_init$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void interface_init$set(MemorySegment seg, long index, MemorySegment x) {
         _GInterfaceInfo.interface_init$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static GInterfaceInitFunc interface_init (MemorySegment segment, MemorySession session) {
-        return GInterfaceInitFunc.ofAddress(interface_init$get(segment), session);
+    public static GInterfaceInitFunc interface_init(MemorySegment segment, SegmentScope scope) {
+        return GInterfaceInitFunc.ofAddress(interface_init$get(segment), scope);
     }
     static final VarHandle interface_finalize$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("interface_finalize"));
     public static VarHandle interface_finalize$VH() {
         return _GInterfaceInfo.interface_finalize$VH;
     }
-    public static MemoryAddress interface_finalize$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GInterfaceInfo.interface_finalize$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GInterfaceFinalizeFunc interface_finalize;
+     * }
+     */
+    public static MemorySegment interface_finalize$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GInterfaceInfo.interface_finalize$VH.get(seg);
     }
-    public static void interface_finalize$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GInterfaceFinalizeFunc interface_finalize;
+     * }
+     */
+    public static void interface_finalize$set(MemorySegment seg, MemorySegment x) {
         _GInterfaceInfo.interface_finalize$VH.set(seg, x);
     }
-    public static MemoryAddress interface_finalize$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GInterfaceInfo.interface_finalize$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment interface_finalize$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GInterfaceInfo.interface_finalize$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void interface_finalize$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void interface_finalize$set(MemorySegment seg, long index, MemorySegment x) {
         _GInterfaceInfo.interface_finalize$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static GInterfaceFinalizeFunc interface_finalize (MemorySegment segment, MemorySession session) {
-        return GInterfaceFinalizeFunc.ofAddress(interface_finalize$get(segment), session);
+    public static GInterfaceFinalizeFunc interface_finalize(MemorySegment segment, SegmentScope scope) {
+        return GInterfaceFinalizeFunc.ofAddress(interface_finalize$get(segment), scope);
     }
     static final VarHandle interface_data$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("interface_data"));
     public static VarHandle interface_data$VH() {
         return _GInterfaceInfo.interface_data$VH;
     }
-    public static MemoryAddress interface_data$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GInterfaceInfo.interface_data$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gpointer interface_data;
+     * }
+     */
+    public static MemorySegment interface_data$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GInterfaceInfo.interface_data$VH.get(seg);
     }
-    public static void interface_data$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gpointer interface_data;
+     * }
+     */
+    public static void interface_data$set(MemorySegment seg, MemorySegment x) {
         _GInterfaceInfo.interface_data$VH.set(seg, x);
     }
-    public static MemoryAddress interface_data$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GInterfaceInfo.interface_data$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment interface_data$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GInterfaceInfo.interface_data$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void interface_data$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void interface_data$set(MemorySegment seg, long index, MemorySegment x) {
         _GInterfaceInfo.interface_data$VH.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

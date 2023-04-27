@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkFileFilter {
+/**
+ * {@snippet :
+ * typedef struct _GtkFileFilter GtkFileFilter;
+ * }
+ */
+public final class GtkFileFilter {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkFileFilter() {}
 }
 
 

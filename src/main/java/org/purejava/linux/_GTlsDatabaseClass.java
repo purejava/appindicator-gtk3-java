@@ -7,9 +7,30 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GTlsDatabaseClass {
+ *     GObjectClass parent_class;
+ *     GTlsCertificateFlags (*verify_chain)(GTlsDatabase*,GTlsCertificate*,const gchar*,GSocketConnectable*,GTlsInteraction*,GTlsDatabaseVerifyFlags,GCancellable*,GError**);
+ *     void (*verify_chain_async)(GTlsDatabase*,GTlsCertificate*,const gchar*,GSocketConnectable*,GTlsInteraction*,GTlsDatabaseVerifyFlags,GCancellable*,GAsyncReadyCallback,gpointer);
+ *     GTlsCertificateFlags (*verify_chain_finish)(GTlsDatabase*,GAsyncResult*,GError**);
+ *     gchar* (*create_certificate_handle)(GTlsDatabase*,GTlsCertificate*);
+ *     GTlsCertificate* (*lookup_certificate_for_handle)(GTlsDatabase*,const gchar*,GTlsInteraction*,GTlsDatabaseLookupFlags,GCancellable*,GError**);
+ *     void (*lookup_certificate_for_handle_async)(GTlsDatabase*,const gchar*,GTlsInteraction*,GTlsDatabaseLookupFlags,GCancellable*,GAsyncReadyCallback,gpointer);
+ *     GTlsCertificate* (*lookup_certificate_for_handle_finish)(GTlsDatabase*,GAsyncResult*,GError**);
+ *     GTlsCertificate* (*lookup_certificate_issuer)(GTlsDatabase*,GTlsCertificate*,GTlsInteraction*,GTlsDatabaseLookupFlags,GCancellable*,GError**);
+ *     void (*lookup_certificate_issuer_async)(GTlsDatabase*,GTlsCertificate*,GTlsInteraction*,GTlsDatabaseLookupFlags,GCancellable*,GAsyncReadyCallback,gpointer);
+ *     GTlsCertificate* (*lookup_certificate_issuer_finish)(GTlsDatabase*,GAsyncResult*,GError**);
+ *     GList* (*lookup_certificates_issued_by)(GTlsDatabase*,GByteArray*,GTlsInteraction*,GTlsDatabaseLookupFlags,GCancellable*,GError**);
+ *     void (*lookup_certificates_issued_by_async)(GTlsDatabase*,GByteArray*,GTlsInteraction*,GTlsDatabaseLookupFlags,GCancellable*,GAsyncReadyCallback,gpointer);
+ *     GList* (*lookup_certificates_issued_by_finish)(GTlsDatabase*,GAsyncResult*,GError**);
+ *     gpointer padding[16];
+ * };
+ * }
+ */
 public class _GTlsDatabaseClass {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
                 Constants$root.C_LONG_LONG$LAYOUT.withName("g_type")
@@ -24,7 +45,10 @@ public class _GTlsDatabaseClass {
             Constants$root.C_POINTER$LAYOUT.withName("notify"),
             Constants$root.C_POINTER$LAYOUT.withName("constructed"),
             Constants$root.C_LONG_LONG$LAYOUT.withName("flags"),
-            MemoryLayout.sequenceLayout(6, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
+            Constants$root.C_LONG_LONG$LAYOUT.withName("n_construct_properties"),
+            Constants$root.C_POINTER$LAYOUT.withName("pspecs"),
+            Constants$root.C_LONG_LONG$LAYOUT.withName("n_pspecs"),
+            MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
         ).withName("parent_class"),
         Constants$root.C_POINTER$LAYOUT.withName("verify_chain"),
         Constants$root.C_POINTER$LAYOUT.withName("verify_chain_async"),
@@ -57,20 +81,46 @@ public class _GTlsDatabaseClass {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle verify_chain$MH = RuntimeHelper.downcallHandle(
-        _GTlsDatabaseClass.verify_chain$FUNC
+    static final FunctionDescriptor verify_chain_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle verify_chain_UP$MH = RuntimeHelper.upcallHandle(verify_chain.class, "apply", _GTlsDatabaseClass.verify_chain_UP$FUNC);
+    static final FunctionDescriptor verify_chain_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle verify_chain_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GTlsDatabaseClass.verify_chain_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * GTlsCertificateFlags (*verify_chain)(GTlsDatabase*,GTlsCertificate*,const gchar*,GSocketConnectable*,GTlsInteraction*,GTlsDatabaseVerifyFlags,GCancellable*,GError**);
+     * }
+     */
     public interface verify_chain {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2, java.lang.foreign.MemoryAddress _x3, java.lang.foreign.MemoryAddress _x4, int _x5, java.lang.foreign.MemoryAddress _x6, java.lang.foreign.MemoryAddress _x7);
-        static MemorySegment allocate(verify_chain fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(verify_chain.class, fi, _GTlsDatabaseClass.verify_chain$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4, int _x5, java.lang.foreign.MemorySegment _x6, java.lang.foreign.MemorySegment _x7);
+        static MemorySegment allocate(verify_chain fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GTlsDatabaseClass.verify_chain_UP$MH, fi, _GTlsDatabaseClass.verify_chain$FUNC, scope);
         }
-        static verify_chain ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2, java.lang.foreign.MemoryAddress __x3, java.lang.foreign.MemoryAddress __x4, int __x5, java.lang.foreign.MemoryAddress __x6, java.lang.foreign.MemoryAddress __x7) -> {
+        static verify_chain ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4, int __x5, java.lang.foreign.MemorySegment __x6, java.lang.foreign.MemorySegment __x7) -> {
                 try {
-                    return (int)_GTlsDatabaseClass.verify_chain$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2, (java.lang.foreign.Addressable)__x3, (java.lang.foreign.Addressable)__x4, __x5, (java.lang.foreign.Addressable)__x6, (java.lang.foreign.Addressable)__x7);
+                    return (int)_GTlsDatabaseClass.verify_chain_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5, __x6, __x7);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -82,20 +132,32 @@ public class _GTlsDatabaseClass {
     public static VarHandle verify_chain$VH() {
         return _GTlsDatabaseClass.verify_chain$VH;
     }
-    public static MemoryAddress verify_chain$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GTlsDatabaseClass.verify_chain$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GTlsCertificateFlags (*verify_chain)(GTlsDatabase*,GTlsCertificate*,const gchar*,GSocketConnectable*,GTlsInteraction*,GTlsDatabaseVerifyFlags,GCancellable*,GError**);
+     * }
+     */
+    public static MemorySegment verify_chain$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GTlsDatabaseClass.verify_chain$VH.get(seg);
     }
-    public static void verify_chain$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GTlsCertificateFlags (*verify_chain)(GTlsDatabase*,GTlsCertificate*,const gchar*,GSocketConnectable*,GTlsInteraction*,GTlsDatabaseVerifyFlags,GCancellable*,GError**);
+     * }
+     */
+    public static void verify_chain$set(MemorySegment seg, MemorySegment x) {
         _GTlsDatabaseClass.verify_chain$VH.set(seg, x);
     }
-    public static MemoryAddress verify_chain$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GTlsDatabaseClass.verify_chain$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment verify_chain$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GTlsDatabaseClass.verify_chain$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void verify_chain$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void verify_chain$set(MemorySegment seg, long index, MemorySegment x) {
         _GTlsDatabaseClass.verify_chain$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static verify_chain verify_chain (MemorySegment segment, MemorySession session) {
-        return verify_chain.ofAddress(verify_chain$get(segment), session);
+    public static verify_chain verify_chain(MemorySegment segment, SegmentScope scope) {
+        return verify_chain.ofAddress(verify_chain$get(segment), scope);
     }
     static final FunctionDescriptor verify_chain_async$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
@@ -108,20 +170,48 @@ public class _GTlsDatabaseClass {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle verify_chain_async$MH = RuntimeHelper.downcallHandle(
-        _GTlsDatabaseClass.verify_chain_async$FUNC
+    static final FunctionDescriptor verify_chain_async_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle verify_chain_async_UP$MH = RuntimeHelper.upcallHandle(verify_chain_async.class, "apply", _GTlsDatabaseClass.verify_chain_async_UP$FUNC);
+    static final FunctionDescriptor verify_chain_async_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle verify_chain_async_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GTlsDatabaseClass.verify_chain_async_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*verify_chain_async)(GTlsDatabase*,GTlsCertificate*,const gchar*,GSocketConnectable*,GTlsInteraction*,GTlsDatabaseVerifyFlags,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
     public interface verify_chain_async {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2, java.lang.foreign.MemoryAddress _x3, java.lang.foreign.MemoryAddress _x4, int _x5, java.lang.foreign.MemoryAddress _x6, java.lang.foreign.MemoryAddress _x7, java.lang.foreign.MemoryAddress _x8);
-        static MemorySegment allocate(verify_chain_async fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(verify_chain_async.class, fi, _GTlsDatabaseClass.verify_chain_async$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4, int _x5, java.lang.foreign.MemorySegment _x6, java.lang.foreign.MemorySegment _x7, java.lang.foreign.MemorySegment _x8);
+        static MemorySegment allocate(verify_chain_async fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GTlsDatabaseClass.verify_chain_async_UP$MH, fi, _GTlsDatabaseClass.verify_chain_async$FUNC, scope);
         }
-        static verify_chain_async ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2, java.lang.foreign.MemoryAddress __x3, java.lang.foreign.MemoryAddress __x4, int __x5, java.lang.foreign.MemoryAddress __x6, java.lang.foreign.MemoryAddress __x7, java.lang.foreign.MemoryAddress __x8) -> {
+        static verify_chain_async ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4, int __x5, java.lang.foreign.MemorySegment __x6, java.lang.foreign.MemorySegment __x7, java.lang.foreign.MemorySegment __x8) -> {
                 try {
-                    _GTlsDatabaseClass.verify_chain_async$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2, (java.lang.foreign.Addressable)__x3, (java.lang.foreign.Addressable)__x4, __x5, (java.lang.foreign.Addressable)__x6, (java.lang.foreign.Addressable)__x7, (java.lang.foreign.Addressable)__x8);
+                    _GTlsDatabaseClass.verify_chain_async_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5, __x6, __x7, __x8);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -133,40 +223,68 @@ public class _GTlsDatabaseClass {
     public static VarHandle verify_chain_async$VH() {
         return _GTlsDatabaseClass.verify_chain_async$VH;
     }
-    public static MemoryAddress verify_chain_async$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GTlsDatabaseClass.verify_chain_async$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*verify_chain_async)(GTlsDatabase*,GTlsCertificate*,const gchar*,GSocketConnectable*,GTlsInteraction*,GTlsDatabaseVerifyFlags,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
+    public static MemorySegment verify_chain_async$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GTlsDatabaseClass.verify_chain_async$VH.get(seg);
     }
-    public static void verify_chain_async$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*verify_chain_async)(GTlsDatabase*,GTlsCertificate*,const gchar*,GSocketConnectable*,GTlsInteraction*,GTlsDatabaseVerifyFlags,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
+    public static void verify_chain_async$set(MemorySegment seg, MemorySegment x) {
         _GTlsDatabaseClass.verify_chain_async$VH.set(seg, x);
     }
-    public static MemoryAddress verify_chain_async$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GTlsDatabaseClass.verify_chain_async$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment verify_chain_async$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GTlsDatabaseClass.verify_chain_async$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void verify_chain_async$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void verify_chain_async$set(MemorySegment seg, long index, MemorySegment x) {
         _GTlsDatabaseClass.verify_chain_async$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static verify_chain_async verify_chain_async (MemorySegment segment, MemorySession session) {
-        return verify_chain_async.ofAddress(verify_chain_async$get(segment), session);
+    public static verify_chain_async verify_chain_async(MemorySegment segment, SegmentScope scope) {
+        return verify_chain_async.ofAddress(verify_chain_async$get(segment), scope);
     }
     static final FunctionDescriptor verify_chain_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle verify_chain_finish$MH = RuntimeHelper.downcallHandle(
-        _GTlsDatabaseClass.verify_chain_finish$FUNC
+    static final FunctionDescriptor verify_chain_finish_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle verify_chain_finish_UP$MH = RuntimeHelper.upcallHandle(verify_chain_finish.class, "apply", _GTlsDatabaseClass.verify_chain_finish_UP$FUNC);
+    static final FunctionDescriptor verify_chain_finish_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle verify_chain_finish_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GTlsDatabaseClass.verify_chain_finish_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * GTlsCertificateFlags (*verify_chain_finish)(GTlsDatabase*,GAsyncResult*,GError**);
+     * }
+     */
     public interface verify_chain_finish {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2);
-        static MemorySegment allocate(verify_chain_finish fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(verify_chain_finish.class, fi, _GTlsDatabaseClass.verify_chain_finish$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2);
+        static MemorySegment allocate(verify_chain_finish fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GTlsDatabaseClass.verify_chain_finish_UP$MH, fi, _GTlsDatabaseClass.verify_chain_finish$FUNC, scope);
         }
-        static verify_chain_finish ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2) -> {
+        static verify_chain_finish ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2) -> {
                 try {
-                    return (int)_GTlsDatabaseClass.verify_chain_finish$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2);
+                    return (int)_GTlsDatabaseClass.verify_chain_finish_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -178,39 +296,65 @@ public class _GTlsDatabaseClass {
     public static VarHandle verify_chain_finish$VH() {
         return _GTlsDatabaseClass.verify_chain_finish$VH;
     }
-    public static MemoryAddress verify_chain_finish$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GTlsDatabaseClass.verify_chain_finish$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GTlsCertificateFlags (*verify_chain_finish)(GTlsDatabase*,GAsyncResult*,GError**);
+     * }
+     */
+    public static MemorySegment verify_chain_finish$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GTlsDatabaseClass.verify_chain_finish$VH.get(seg);
     }
-    public static void verify_chain_finish$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GTlsCertificateFlags (*verify_chain_finish)(GTlsDatabase*,GAsyncResult*,GError**);
+     * }
+     */
+    public static void verify_chain_finish$set(MemorySegment seg, MemorySegment x) {
         _GTlsDatabaseClass.verify_chain_finish$VH.set(seg, x);
     }
-    public static MemoryAddress verify_chain_finish$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GTlsDatabaseClass.verify_chain_finish$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment verify_chain_finish$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GTlsDatabaseClass.verify_chain_finish$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void verify_chain_finish$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void verify_chain_finish$set(MemorySegment seg, long index, MemorySegment x) {
         _GTlsDatabaseClass.verify_chain_finish$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static verify_chain_finish verify_chain_finish (MemorySegment segment, MemorySession session) {
-        return verify_chain_finish.ofAddress(verify_chain_finish$get(segment), session);
+    public static verify_chain_finish verify_chain_finish(MemorySegment segment, SegmentScope scope) {
+        return verify_chain_finish.ofAddress(verify_chain_finish$get(segment), scope);
     }
     static final FunctionDescriptor create_certificate_handle$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle create_certificate_handle$MH = RuntimeHelper.downcallHandle(
-        _GTlsDatabaseClass.create_certificate_handle$FUNC
+    static final FunctionDescriptor create_certificate_handle_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle create_certificate_handle_UP$MH = RuntimeHelper.upcallHandle(create_certificate_handle.class, "apply", _GTlsDatabaseClass.create_certificate_handle_UP$FUNC);
+    static final FunctionDescriptor create_certificate_handle_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle create_certificate_handle_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GTlsDatabaseClass.create_certificate_handle_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gchar* (*create_certificate_handle)(GTlsDatabase*,GTlsCertificate*);
+     * }
+     */
     public interface create_certificate_handle {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(create_certificate_handle fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(create_certificate_handle.class, fi, _GTlsDatabaseClass.create_certificate_handle$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment func_data);
+        static MemorySegment allocate(create_certificate_handle fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GTlsDatabaseClass.create_certificate_handle_UP$MH, fi, _GTlsDatabaseClass.create_certificate_handle$FUNC, scope);
         }
-        static create_certificate_handle ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static create_certificate_handle ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _path, java.lang.foreign.MemorySegment _func_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GTlsDatabaseClass.create_certificate_handle$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    return (java.lang.foreign.MemorySegment)_GTlsDatabaseClass.create_certificate_handle_DOWN$MH.invokeExact(symbol, _path, _func_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -222,20 +366,32 @@ public class _GTlsDatabaseClass {
     public static VarHandle create_certificate_handle$VH() {
         return _GTlsDatabaseClass.create_certificate_handle$VH;
     }
-    public static MemoryAddress create_certificate_handle$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GTlsDatabaseClass.create_certificate_handle$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gchar* (*create_certificate_handle)(GTlsDatabase*,GTlsCertificate*);
+     * }
+     */
+    public static MemorySegment create_certificate_handle$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GTlsDatabaseClass.create_certificate_handle$VH.get(seg);
     }
-    public static void create_certificate_handle$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gchar* (*create_certificate_handle)(GTlsDatabase*,GTlsCertificate*);
+     * }
+     */
+    public static void create_certificate_handle$set(MemorySegment seg, MemorySegment x) {
         _GTlsDatabaseClass.create_certificate_handle$VH.set(seg, x);
     }
-    public static MemoryAddress create_certificate_handle$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GTlsDatabaseClass.create_certificate_handle$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment create_certificate_handle$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GTlsDatabaseClass.create_certificate_handle$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void create_certificate_handle$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void create_certificate_handle$set(MemorySegment seg, long index, MemorySegment x) {
         _GTlsDatabaseClass.create_certificate_handle$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static create_certificate_handle create_certificate_handle (MemorySegment segment, MemorySession session) {
-        return create_certificate_handle.ofAddress(create_certificate_handle$get(segment), session);
+    public static create_certificate_handle create_certificate_handle(MemorySegment segment, SegmentScope scope) {
+        return create_certificate_handle.ofAddress(create_certificate_handle$get(segment), scope);
     }
     static final FunctionDescriptor lookup_certificate_for_handle$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
@@ -245,20 +401,42 @@ public class _GTlsDatabaseClass {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle lookup_certificate_for_handle$MH = RuntimeHelper.downcallHandle(
-        _GTlsDatabaseClass.lookup_certificate_for_handle$FUNC
+    static final FunctionDescriptor lookup_certificate_for_handle_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle lookup_certificate_for_handle_UP$MH = RuntimeHelper.upcallHandle(lookup_certificate_for_handle.class, "apply", _GTlsDatabaseClass.lookup_certificate_for_handle_UP$FUNC);
+    static final FunctionDescriptor lookup_certificate_for_handle_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle lookup_certificate_for_handle_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GTlsDatabaseClass.lookup_certificate_for_handle_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * GTlsCertificate* (*lookup_certificate_for_handle)(GTlsDatabase*,const gchar*,GTlsInteraction*,GTlsDatabaseLookupFlags,GCancellable*,GError**);
+     * }
+     */
     public interface lookup_certificate_for_handle {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2, int _x3, java.lang.foreign.MemoryAddress _x4, java.lang.foreign.MemoryAddress _x5);
-        static MemorySegment allocate(lookup_certificate_for_handle fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(lookup_certificate_for_handle.class, fi, _GTlsDatabaseClass.lookup_certificate_for_handle$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2, int _x3, java.lang.foreign.MemorySegment _x4, java.lang.foreign.MemorySegment _x5);
+        static MemorySegment allocate(lookup_certificate_for_handle fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GTlsDatabaseClass.lookup_certificate_for_handle_UP$MH, fi, _GTlsDatabaseClass.lookup_certificate_for_handle$FUNC, scope);
         }
-        static lookup_certificate_for_handle ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2, int __x3, java.lang.foreign.MemoryAddress __x4, java.lang.foreign.MemoryAddress __x5) -> {
+        static lookup_certificate_for_handle ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2, int __x3, java.lang.foreign.MemorySegment __x4, java.lang.foreign.MemorySegment __x5) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GTlsDatabaseClass.lookup_certificate_for_handle$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2, __x3, (java.lang.foreign.Addressable)__x4, (java.lang.foreign.Addressable)__x5);
+                    return (java.lang.foreign.MemorySegment)_GTlsDatabaseClass.lookup_certificate_for_handle_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -270,20 +448,32 @@ public class _GTlsDatabaseClass {
     public static VarHandle lookup_certificate_for_handle$VH() {
         return _GTlsDatabaseClass.lookup_certificate_for_handle$VH;
     }
-    public static MemoryAddress lookup_certificate_for_handle$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GTlsDatabaseClass.lookup_certificate_for_handle$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GTlsCertificate* (*lookup_certificate_for_handle)(GTlsDatabase*,const gchar*,GTlsInteraction*,GTlsDatabaseLookupFlags,GCancellable*,GError**);
+     * }
+     */
+    public static MemorySegment lookup_certificate_for_handle$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GTlsDatabaseClass.lookup_certificate_for_handle$VH.get(seg);
     }
-    public static void lookup_certificate_for_handle$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GTlsCertificate* (*lookup_certificate_for_handle)(GTlsDatabase*,const gchar*,GTlsInteraction*,GTlsDatabaseLookupFlags,GCancellable*,GError**);
+     * }
+     */
+    public static void lookup_certificate_for_handle$set(MemorySegment seg, MemorySegment x) {
         _GTlsDatabaseClass.lookup_certificate_for_handle$VH.set(seg, x);
     }
-    public static MemoryAddress lookup_certificate_for_handle$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GTlsDatabaseClass.lookup_certificate_for_handle$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment lookup_certificate_for_handle$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GTlsDatabaseClass.lookup_certificate_for_handle$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void lookup_certificate_for_handle$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void lookup_certificate_for_handle$set(MemorySegment seg, long index, MemorySegment x) {
         _GTlsDatabaseClass.lookup_certificate_for_handle$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static lookup_certificate_for_handle lookup_certificate_for_handle (MemorySegment segment, MemorySession session) {
-        return lookup_certificate_for_handle.ofAddress(lookup_certificate_for_handle$get(segment), session);
+    public static lookup_certificate_for_handle lookup_certificate_for_handle(MemorySegment segment, SegmentScope scope) {
+        return lookup_certificate_for_handle.ofAddress(lookup_certificate_for_handle$get(segment), scope);
     }
     static final FunctionDescriptor lookup_certificate_for_handle_async$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
@@ -294,20 +484,44 @@ public class _GTlsDatabaseClass {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle lookup_certificate_for_handle_async$MH = RuntimeHelper.downcallHandle(
-        _GTlsDatabaseClass.lookup_certificate_for_handle_async$FUNC
+    static final FunctionDescriptor lookup_certificate_for_handle_async_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle lookup_certificate_for_handle_async_UP$MH = RuntimeHelper.upcallHandle(lookup_certificate_for_handle_async.class, "apply", _GTlsDatabaseClass.lookup_certificate_for_handle_async_UP$FUNC);
+    static final FunctionDescriptor lookup_certificate_for_handle_async_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle lookup_certificate_for_handle_async_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GTlsDatabaseClass.lookup_certificate_for_handle_async_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*lookup_certificate_for_handle_async)(GTlsDatabase*,const gchar*,GTlsInteraction*,GTlsDatabaseLookupFlags,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
     public interface lookup_certificate_for_handle_async {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2, int _x3, java.lang.foreign.MemoryAddress _x4, java.lang.foreign.MemoryAddress _x5, java.lang.foreign.MemoryAddress _x6);
-        static MemorySegment allocate(lookup_certificate_for_handle_async fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(lookup_certificate_for_handle_async.class, fi, _GTlsDatabaseClass.lookup_certificate_for_handle_async$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2, int _x3, java.lang.foreign.MemorySegment _x4, java.lang.foreign.MemorySegment _x5, java.lang.foreign.MemorySegment _x6);
+        static MemorySegment allocate(lookup_certificate_for_handle_async fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GTlsDatabaseClass.lookup_certificate_for_handle_async_UP$MH, fi, _GTlsDatabaseClass.lookup_certificate_for_handle_async$FUNC, scope);
         }
-        static lookup_certificate_for_handle_async ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2, int __x3, java.lang.foreign.MemoryAddress __x4, java.lang.foreign.MemoryAddress __x5, java.lang.foreign.MemoryAddress __x6) -> {
+        static lookup_certificate_for_handle_async ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2, int __x3, java.lang.foreign.MemorySegment __x4, java.lang.foreign.MemorySegment __x5, java.lang.foreign.MemorySegment __x6) -> {
                 try {
-                    _GTlsDatabaseClass.lookup_certificate_for_handle_async$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2, __x3, (java.lang.foreign.Addressable)__x4, (java.lang.foreign.Addressable)__x5, (java.lang.foreign.Addressable)__x6);
+                    _GTlsDatabaseClass.lookup_certificate_for_handle_async_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5, __x6);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -319,40 +533,68 @@ public class _GTlsDatabaseClass {
     public static VarHandle lookup_certificate_for_handle_async$VH() {
         return _GTlsDatabaseClass.lookup_certificate_for_handle_async$VH;
     }
-    public static MemoryAddress lookup_certificate_for_handle_async$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GTlsDatabaseClass.lookup_certificate_for_handle_async$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*lookup_certificate_for_handle_async)(GTlsDatabase*,const gchar*,GTlsInteraction*,GTlsDatabaseLookupFlags,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
+    public static MemorySegment lookup_certificate_for_handle_async$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GTlsDatabaseClass.lookup_certificate_for_handle_async$VH.get(seg);
     }
-    public static void lookup_certificate_for_handle_async$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*lookup_certificate_for_handle_async)(GTlsDatabase*,const gchar*,GTlsInteraction*,GTlsDatabaseLookupFlags,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
+    public static void lookup_certificate_for_handle_async$set(MemorySegment seg, MemorySegment x) {
         _GTlsDatabaseClass.lookup_certificate_for_handle_async$VH.set(seg, x);
     }
-    public static MemoryAddress lookup_certificate_for_handle_async$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GTlsDatabaseClass.lookup_certificate_for_handle_async$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment lookup_certificate_for_handle_async$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GTlsDatabaseClass.lookup_certificate_for_handle_async$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void lookup_certificate_for_handle_async$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void lookup_certificate_for_handle_async$set(MemorySegment seg, long index, MemorySegment x) {
         _GTlsDatabaseClass.lookup_certificate_for_handle_async$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static lookup_certificate_for_handle_async lookup_certificate_for_handle_async (MemorySegment segment, MemorySession session) {
-        return lookup_certificate_for_handle_async.ofAddress(lookup_certificate_for_handle_async$get(segment), session);
+    public static lookup_certificate_for_handle_async lookup_certificate_for_handle_async(MemorySegment segment, SegmentScope scope) {
+        return lookup_certificate_for_handle_async.ofAddress(lookup_certificate_for_handle_async$get(segment), scope);
     }
     static final FunctionDescriptor lookup_certificate_for_handle_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle lookup_certificate_for_handle_finish$MH = RuntimeHelper.downcallHandle(
-        _GTlsDatabaseClass.lookup_certificate_for_handle_finish$FUNC
+    static final FunctionDescriptor lookup_certificate_for_handle_finish_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle lookup_certificate_for_handle_finish_UP$MH = RuntimeHelper.upcallHandle(lookup_certificate_for_handle_finish.class, "apply", _GTlsDatabaseClass.lookup_certificate_for_handle_finish_UP$FUNC);
+    static final FunctionDescriptor lookup_certificate_for_handle_finish_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle lookup_certificate_for_handle_finish_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GTlsDatabaseClass.lookup_certificate_for_handle_finish_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * GTlsCertificate* (*lookup_certificate_for_handle_finish)(GTlsDatabase*,GAsyncResult*,GError**);
+     * }
+     */
     public interface lookup_certificate_for_handle_finish {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2);
-        static MemorySegment allocate(lookup_certificate_for_handle_finish fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(lookup_certificate_for_handle_finish.class, fi, _GTlsDatabaseClass.lookup_certificate_for_handle_finish$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment vfs, java.lang.foreign.MemorySegment identifier, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(lookup_certificate_for_handle_finish fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GTlsDatabaseClass.lookup_certificate_for_handle_finish_UP$MH, fi, _GTlsDatabaseClass.lookup_certificate_for_handle_finish$FUNC, scope);
         }
-        static lookup_certificate_for_handle_finish ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2) -> {
+        static lookup_certificate_for_handle_finish ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _vfs, java.lang.foreign.MemorySegment _identifier, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GTlsDatabaseClass.lookup_certificate_for_handle_finish$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2);
+                    return (java.lang.foreign.MemorySegment)_GTlsDatabaseClass.lookup_certificate_for_handle_finish_DOWN$MH.invokeExact(symbol, _vfs, _identifier, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -364,20 +606,32 @@ public class _GTlsDatabaseClass {
     public static VarHandle lookup_certificate_for_handle_finish$VH() {
         return _GTlsDatabaseClass.lookup_certificate_for_handle_finish$VH;
     }
-    public static MemoryAddress lookup_certificate_for_handle_finish$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GTlsDatabaseClass.lookup_certificate_for_handle_finish$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GTlsCertificate* (*lookup_certificate_for_handle_finish)(GTlsDatabase*,GAsyncResult*,GError**);
+     * }
+     */
+    public static MemorySegment lookup_certificate_for_handle_finish$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GTlsDatabaseClass.lookup_certificate_for_handle_finish$VH.get(seg);
     }
-    public static void lookup_certificate_for_handle_finish$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GTlsCertificate* (*lookup_certificate_for_handle_finish)(GTlsDatabase*,GAsyncResult*,GError**);
+     * }
+     */
+    public static void lookup_certificate_for_handle_finish$set(MemorySegment seg, MemorySegment x) {
         _GTlsDatabaseClass.lookup_certificate_for_handle_finish$VH.set(seg, x);
     }
-    public static MemoryAddress lookup_certificate_for_handle_finish$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GTlsDatabaseClass.lookup_certificate_for_handle_finish$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment lookup_certificate_for_handle_finish$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GTlsDatabaseClass.lookup_certificate_for_handle_finish$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void lookup_certificate_for_handle_finish$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void lookup_certificate_for_handle_finish$set(MemorySegment seg, long index, MemorySegment x) {
         _GTlsDatabaseClass.lookup_certificate_for_handle_finish$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static lookup_certificate_for_handle_finish lookup_certificate_for_handle_finish (MemorySegment segment, MemorySession session) {
-        return lookup_certificate_for_handle_finish.ofAddress(lookup_certificate_for_handle_finish$get(segment), session);
+    public static lookup_certificate_for_handle_finish lookup_certificate_for_handle_finish(MemorySegment segment, SegmentScope scope) {
+        return lookup_certificate_for_handle_finish.ofAddress(lookup_certificate_for_handle_finish$get(segment), scope);
     }
     static final FunctionDescriptor lookup_certificate_issuer$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
@@ -387,20 +641,42 @@ public class _GTlsDatabaseClass {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle lookup_certificate_issuer$MH = RuntimeHelper.downcallHandle(
-        _GTlsDatabaseClass.lookup_certificate_issuer$FUNC
+    static final FunctionDescriptor lookup_certificate_issuer_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle lookup_certificate_issuer_UP$MH = RuntimeHelper.upcallHandle(lookup_certificate_issuer.class, "apply", _GTlsDatabaseClass.lookup_certificate_issuer_UP$FUNC);
+    static final FunctionDescriptor lookup_certificate_issuer_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle lookup_certificate_issuer_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GTlsDatabaseClass.lookup_certificate_issuer_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * GTlsCertificate* (*lookup_certificate_issuer)(GTlsDatabase*,GTlsCertificate*,GTlsInteraction*,GTlsDatabaseLookupFlags,GCancellable*,GError**);
+     * }
+     */
     public interface lookup_certificate_issuer {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2, int _x3, java.lang.foreign.MemoryAddress _x4, java.lang.foreign.MemoryAddress _x5);
-        static MemorySegment allocate(lookup_certificate_issuer fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(lookup_certificate_issuer.class, fi, _GTlsDatabaseClass.lookup_certificate_issuer$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2, int _x3, java.lang.foreign.MemorySegment _x4, java.lang.foreign.MemorySegment _x5);
+        static MemorySegment allocate(lookup_certificate_issuer fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GTlsDatabaseClass.lookup_certificate_issuer_UP$MH, fi, _GTlsDatabaseClass.lookup_certificate_issuer$FUNC, scope);
         }
-        static lookup_certificate_issuer ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2, int __x3, java.lang.foreign.MemoryAddress __x4, java.lang.foreign.MemoryAddress __x5) -> {
+        static lookup_certificate_issuer ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2, int __x3, java.lang.foreign.MemorySegment __x4, java.lang.foreign.MemorySegment __x5) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GTlsDatabaseClass.lookup_certificate_issuer$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2, __x3, (java.lang.foreign.Addressable)__x4, (java.lang.foreign.Addressable)__x5);
+                    return (java.lang.foreign.MemorySegment)_GTlsDatabaseClass.lookup_certificate_issuer_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -412,20 +688,32 @@ public class _GTlsDatabaseClass {
     public static VarHandle lookup_certificate_issuer$VH() {
         return _GTlsDatabaseClass.lookup_certificate_issuer$VH;
     }
-    public static MemoryAddress lookup_certificate_issuer$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GTlsDatabaseClass.lookup_certificate_issuer$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GTlsCertificate* (*lookup_certificate_issuer)(GTlsDatabase*,GTlsCertificate*,GTlsInteraction*,GTlsDatabaseLookupFlags,GCancellable*,GError**);
+     * }
+     */
+    public static MemorySegment lookup_certificate_issuer$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GTlsDatabaseClass.lookup_certificate_issuer$VH.get(seg);
     }
-    public static void lookup_certificate_issuer$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GTlsCertificate* (*lookup_certificate_issuer)(GTlsDatabase*,GTlsCertificate*,GTlsInteraction*,GTlsDatabaseLookupFlags,GCancellable*,GError**);
+     * }
+     */
+    public static void lookup_certificate_issuer$set(MemorySegment seg, MemorySegment x) {
         _GTlsDatabaseClass.lookup_certificate_issuer$VH.set(seg, x);
     }
-    public static MemoryAddress lookup_certificate_issuer$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GTlsDatabaseClass.lookup_certificate_issuer$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment lookup_certificate_issuer$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GTlsDatabaseClass.lookup_certificate_issuer$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void lookup_certificate_issuer$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void lookup_certificate_issuer$set(MemorySegment seg, long index, MemorySegment x) {
         _GTlsDatabaseClass.lookup_certificate_issuer$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static lookup_certificate_issuer lookup_certificate_issuer (MemorySegment segment, MemorySession session) {
-        return lookup_certificate_issuer.ofAddress(lookup_certificate_issuer$get(segment), session);
+    public static lookup_certificate_issuer lookup_certificate_issuer(MemorySegment segment, SegmentScope scope) {
+        return lookup_certificate_issuer.ofAddress(lookup_certificate_issuer$get(segment), scope);
     }
     static final FunctionDescriptor lookup_certificate_issuer_async$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
@@ -436,20 +724,44 @@ public class _GTlsDatabaseClass {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle lookup_certificate_issuer_async$MH = RuntimeHelper.downcallHandle(
-        _GTlsDatabaseClass.lookup_certificate_issuer_async$FUNC
+    static final FunctionDescriptor lookup_certificate_issuer_async_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle lookup_certificate_issuer_async_UP$MH = RuntimeHelper.upcallHandle(lookup_certificate_issuer_async.class, "apply", _GTlsDatabaseClass.lookup_certificate_issuer_async_UP$FUNC);
+    static final FunctionDescriptor lookup_certificate_issuer_async_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle lookup_certificate_issuer_async_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GTlsDatabaseClass.lookup_certificate_issuer_async_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*lookup_certificate_issuer_async)(GTlsDatabase*,GTlsCertificate*,GTlsInteraction*,GTlsDatabaseLookupFlags,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
     public interface lookup_certificate_issuer_async {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2, int _x3, java.lang.foreign.MemoryAddress _x4, java.lang.foreign.MemoryAddress _x5, java.lang.foreign.MemoryAddress _x6);
-        static MemorySegment allocate(lookup_certificate_issuer_async fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(lookup_certificate_issuer_async.class, fi, _GTlsDatabaseClass.lookup_certificate_issuer_async$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2, int _x3, java.lang.foreign.MemorySegment _x4, java.lang.foreign.MemorySegment _x5, java.lang.foreign.MemorySegment _x6);
+        static MemorySegment allocate(lookup_certificate_issuer_async fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GTlsDatabaseClass.lookup_certificate_issuer_async_UP$MH, fi, _GTlsDatabaseClass.lookup_certificate_issuer_async$FUNC, scope);
         }
-        static lookup_certificate_issuer_async ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2, int __x3, java.lang.foreign.MemoryAddress __x4, java.lang.foreign.MemoryAddress __x5, java.lang.foreign.MemoryAddress __x6) -> {
+        static lookup_certificate_issuer_async ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2, int __x3, java.lang.foreign.MemorySegment __x4, java.lang.foreign.MemorySegment __x5, java.lang.foreign.MemorySegment __x6) -> {
                 try {
-                    _GTlsDatabaseClass.lookup_certificate_issuer_async$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2, __x3, (java.lang.foreign.Addressable)__x4, (java.lang.foreign.Addressable)__x5, (java.lang.foreign.Addressable)__x6);
+                    _GTlsDatabaseClass.lookup_certificate_issuer_async_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5, __x6);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -461,40 +773,68 @@ public class _GTlsDatabaseClass {
     public static VarHandle lookup_certificate_issuer_async$VH() {
         return _GTlsDatabaseClass.lookup_certificate_issuer_async$VH;
     }
-    public static MemoryAddress lookup_certificate_issuer_async$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GTlsDatabaseClass.lookup_certificate_issuer_async$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*lookup_certificate_issuer_async)(GTlsDatabase*,GTlsCertificate*,GTlsInteraction*,GTlsDatabaseLookupFlags,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
+    public static MemorySegment lookup_certificate_issuer_async$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GTlsDatabaseClass.lookup_certificate_issuer_async$VH.get(seg);
     }
-    public static void lookup_certificate_issuer_async$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*lookup_certificate_issuer_async)(GTlsDatabase*,GTlsCertificate*,GTlsInteraction*,GTlsDatabaseLookupFlags,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
+    public static void lookup_certificate_issuer_async$set(MemorySegment seg, MemorySegment x) {
         _GTlsDatabaseClass.lookup_certificate_issuer_async$VH.set(seg, x);
     }
-    public static MemoryAddress lookup_certificate_issuer_async$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GTlsDatabaseClass.lookup_certificate_issuer_async$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment lookup_certificate_issuer_async$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GTlsDatabaseClass.lookup_certificate_issuer_async$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void lookup_certificate_issuer_async$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void lookup_certificate_issuer_async$set(MemorySegment seg, long index, MemorySegment x) {
         _GTlsDatabaseClass.lookup_certificate_issuer_async$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static lookup_certificate_issuer_async lookup_certificate_issuer_async (MemorySegment segment, MemorySession session) {
-        return lookup_certificate_issuer_async.ofAddress(lookup_certificate_issuer_async$get(segment), session);
+    public static lookup_certificate_issuer_async lookup_certificate_issuer_async(MemorySegment segment, SegmentScope scope) {
+        return lookup_certificate_issuer_async.ofAddress(lookup_certificate_issuer_async$get(segment), scope);
     }
     static final FunctionDescriptor lookup_certificate_issuer_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle lookup_certificate_issuer_finish$MH = RuntimeHelper.downcallHandle(
-        _GTlsDatabaseClass.lookup_certificate_issuer_finish$FUNC
+    static final FunctionDescriptor lookup_certificate_issuer_finish_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle lookup_certificate_issuer_finish_UP$MH = RuntimeHelper.upcallHandle(lookup_certificate_issuer_finish.class, "apply", _GTlsDatabaseClass.lookup_certificate_issuer_finish_UP$FUNC);
+    static final FunctionDescriptor lookup_certificate_issuer_finish_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle lookup_certificate_issuer_finish_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GTlsDatabaseClass.lookup_certificate_issuer_finish_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * GTlsCertificate* (*lookup_certificate_issuer_finish)(GTlsDatabase*,GAsyncResult*,GError**);
+     * }
+     */
     public interface lookup_certificate_issuer_finish {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2);
-        static MemorySegment allocate(lookup_certificate_issuer_finish fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(lookup_certificate_issuer_finish.class, fi, _GTlsDatabaseClass.lookup_certificate_issuer_finish$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment vfs, java.lang.foreign.MemorySegment identifier, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(lookup_certificate_issuer_finish fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GTlsDatabaseClass.lookup_certificate_issuer_finish_UP$MH, fi, _GTlsDatabaseClass.lookup_certificate_issuer_finish$FUNC, scope);
         }
-        static lookup_certificate_issuer_finish ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2) -> {
+        static lookup_certificate_issuer_finish ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _vfs, java.lang.foreign.MemorySegment _identifier, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GTlsDatabaseClass.lookup_certificate_issuer_finish$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2);
+                    return (java.lang.foreign.MemorySegment)_GTlsDatabaseClass.lookup_certificate_issuer_finish_DOWN$MH.invokeExact(symbol, _vfs, _identifier, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -506,20 +846,32 @@ public class _GTlsDatabaseClass {
     public static VarHandle lookup_certificate_issuer_finish$VH() {
         return _GTlsDatabaseClass.lookup_certificate_issuer_finish$VH;
     }
-    public static MemoryAddress lookup_certificate_issuer_finish$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GTlsDatabaseClass.lookup_certificate_issuer_finish$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GTlsCertificate* (*lookup_certificate_issuer_finish)(GTlsDatabase*,GAsyncResult*,GError**);
+     * }
+     */
+    public static MemorySegment lookup_certificate_issuer_finish$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GTlsDatabaseClass.lookup_certificate_issuer_finish$VH.get(seg);
     }
-    public static void lookup_certificate_issuer_finish$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GTlsCertificate* (*lookup_certificate_issuer_finish)(GTlsDatabase*,GAsyncResult*,GError**);
+     * }
+     */
+    public static void lookup_certificate_issuer_finish$set(MemorySegment seg, MemorySegment x) {
         _GTlsDatabaseClass.lookup_certificate_issuer_finish$VH.set(seg, x);
     }
-    public static MemoryAddress lookup_certificate_issuer_finish$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GTlsDatabaseClass.lookup_certificate_issuer_finish$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment lookup_certificate_issuer_finish$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GTlsDatabaseClass.lookup_certificate_issuer_finish$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void lookup_certificate_issuer_finish$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void lookup_certificate_issuer_finish$set(MemorySegment seg, long index, MemorySegment x) {
         _GTlsDatabaseClass.lookup_certificate_issuer_finish$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static lookup_certificate_issuer_finish lookup_certificate_issuer_finish (MemorySegment segment, MemorySession session) {
-        return lookup_certificate_issuer_finish.ofAddress(lookup_certificate_issuer_finish$get(segment), session);
+    public static lookup_certificate_issuer_finish lookup_certificate_issuer_finish(MemorySegment segment, SegmentScope scope) {
+        return lookup_certificate_issuer_finish.ofAddress(lookup_certificate_issuer_finish$get(segment), scope);
     }
     static final FunctionDescriptor lookup_certificates_issued_by$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
@@ -529,20 +881,42 @@ public class _GTlsDatabaseClass {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle lookup_certificates_issued_by$MH = RuntimeHelper.downcallHandle(
-        _GTlsDatabaseClass.lookup_certificates_issued_by$FUNC
+    static final FunctionDescriptor lookup_certificates_issued_by_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle lookup_certificates_issued_by_UP$MH = RuntimeHelper.upcallHandle(lookup_certificates_issued_by.class, "apply", _GTlsDatabaseClass.lookup_certificates_issued_by_UP$FUNC);
+    static final FunctionDescriptor lookup_certificates_issued_by_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle lookup_certificates_issued_by_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GTlsDatabaseClass.lookup_certificates_issued_by_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * GList* (*lookup_certificates_issued_by)(GTlsDatabase*,GByteArray*,GTlsInteraction*,GTlsDatabaseLookupFlags,GCancellable*,GError**);
+     * }
+     */
     public interface lookup_certificates_issued_by {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2, int _x3, java.lang.foreign.MemoryAddress _x4, java.lang.foreign.MemoryAddress _x5);
-        static MemorySegment allocate(lookup_certificates_issued_by fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(lookup_certificates_issued_by.class, fi, _GTlsDatabaseClass.lookup_certificates_issued_by$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2, int _x3, java.lang.foreign.MemorySegment _x4, java.lang.foreign.MemorySegment _x5);
+        static MemorySegment allocate(lookup_certificates_issued_by fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GTlsDatabaseClass.lookup_certificates_issued_by_UP$MH, fi, _GTlsDatabaseClass.lookup_certificates_issued_by$FUNC, scope);
         }
-        static lookup_certificates_issued_by ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2, int __x3, java.lang.foreign.MemoryAddress __x4, java.lang.foreign.MemoryAddress __x5) -> {
+        static lookup_certificates_issued_by ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2, int __x3, java.lang.foreign.MemorySegment __x4, java.lang.foreign.MemorySegment __x5) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GTlsDatabaseClass.lookup_certificates_issued_by$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2, __x3, (java.lang.foreign.Addressable)__x4, (java.lang.foreign.Addressable)__x5);
+                    return (java.lang.foreign.MemorySegment)_GTlsDatabaseClass.lookup_certificates_issued_by_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -554,20 +928,32 @@ public class _GTlsDatabaseClass {
     public static VarHandle lookup_certificates_issued_by$VH() {
         return _GTlsDatabaseClass.lookup_certificates_issued_by$VH;
     }
-    public static MemoryAddress lookup_certificates_issued_by$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GTlsDatabaseClass.lookup_certificates_issued_by$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GList* (*lookup_certificates_issued_by)(GTlsDatabase*,GByteArray*,GTlsInteraction*,GTlsDatabaseLookupFlags,GCancellable*,GError**);
+     * }
+     */
+    public static MemorySegment lookup_certificates_issued_by$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GTlsDatabaseClass.lookup_certificates_issued_by$VH.get(seg);
     }
-    public static void lookup_certificates_issued_by$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GList* (*lookup_certificates_issued_by)(GTlsDatabase*,GByteArray*,GTlsInteraction*,GTlsDatabaseLookupFlags,GCancellable*,GError**);
+     * }
+     */
+    public static void lookup_certificates_issued_by$set(MemorySegment seg, MemorySegment x) {
         _GTlsDatabaseClass.lookup_certificates_issued_by$VH.set(seg, x);
     }
-    public static MemoryAddress lookup_certificates_issued_by$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GTlsDatabaseClass.lookup_certificates_issued_by$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment lookup_certificates_issued_by$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GTlsDatabaseClass.lookup_certificates_issued_by$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void lookup_certificates_issued_by$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void lookup_certificates_issued_by$set(MemorySegment seg, long index, MemorySegment x) {
         _GTlsDatabaseClass.lookup_certificates_issued_by$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static lookup_certificates_issued_by lookup_certificates_issued_by (MemorySegment segment, MemorySession session) {
-        return lookup_certificates_issued_by.ofAddress(lookup_certificates_issued_by$get(segment), session);
+    public static lookup_certificates_issued_by lookup_certificates_issued_by(MemorySegment segment, SegmentScope scope) {
+        return lookup_certificates_issued_by.ofAddress(lookup_certificates_issued_by$get(segment), scope);
     }
     static final FunctionDescriptor lookup_certificates_issued_by_async$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
@@ -578,20 +964,44 @@ public class _GTlsDatabaseClass {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle lookup_certificates_issued_by_async$MH = RuntimeHelper.downcallHandle(
-        _GTlsDatabaseClass.lookup_certificates_issued_by_async$FUNC
+    static final FunctionDescriptor lookup_certificates_issued_by_async_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle lookup_certificates_issued_by_async_UP$MH = RuntimeHelper.upcallHandle(lookup_certificates_issued_by_async.class, "apply", _GTlsDatabaseClass.lookup_certificates_issued_by_async_UP$FUNC);
+    static final FunctionDescriptor lookup_certificates_issued_by_async_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle lookup_certificates_issued_by_async_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GTlsDatabaseClass.lookup_certificates_issued_by_async_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*lookup_certificates_issued_by_async)(GTlsDatabase*,GByteArray*,GTlsInteraction*,GTlsDatabaseLookupFlags,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
     public interface lookup_certificates_issued_by_async {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2, int _x3, java.lang.foreign.MemoryAddress _x4, java.lang.foreign.MemoryAddress _x5, java.lang.foreign.MemoryAddress _x6);
-        static MemorySegment allocate(lookup_certificates_issued_by_async fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(lookup_certificates_issued_by_async.class, fi, _GTlsDatabaseClass.lookup_certificates_issued_by_async$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2, int _x3, java.lang.foreign.MemorySegment _x4, java.lang.foreign.MemorySegment _x5, java.lang.foreign.MemorySegment _x6);
+        static MemorySegment allocate(lookup_certificates_issued_by_async fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GTlsDatabaseClass.lookup_certificates_issued_by_async_UP$MH, fi, _GTlsDatabaseClass.lookup_certificates_issued_by_async$FUNC, scope);
         }
-        static lookup_certificates_issued_by_async ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2, int __x3, java.lang.foreign.MemoryAddress __x4, java.lang.foreign.MemoryAddress __x5, java.lang.foreign.MemoryAddress __x6) -> {
+        static lookup_certificates_issued_by_async ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2, int __x3, java.lang.foreign.MemorySegment __x4, java.lang.foreign.MemorySegment __x5, java.lang.foreign.MemorySegment __x6) -> {
                 try {
-                    _GTlsDatabaseClass.lookup_certificates_issued_by_async$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2, __x3, (java.lang.foreign.Addressable)__x4, (java.lang.foreign.Addressable)__x5, (java.lang.foreign.Addressable)__x6);
+                    _GTlsDatabaseClass.lookup_certificates_issued_by_async_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5, __x6);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -603,40 +1013,68 @@ public class _GTlsDatabaseClass {
     public static VarHandle lookup_certificates_issued_by_async$VH() {
         return _GTlsDatabaseClass.lookup_certificates_issued_by_async$VH;
     }
-    public static MemoryAddress lookup_certificates_issued_by_async$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GTlsDatabaseClass.lookup_certificates_issued_by_async$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*lookup_certificates_issued_by_async)(GTlsDatabase*,GByteArray*,GTlsInteraction*,GTlsDatabaseLookupFlags,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
+    public static MemorySegment lookup_certificates_issued_by_async$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GTlsDatabaseClass.lookup_certificates_issued_by_async$VH.get(seg);
     }
-    public static void lookup_certificates_issued_by_async$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*lookup_certificates_issued_by_async)(GTlsDatabase*,GByteArray*,GTlsInteraction*,GTlsDatabaseLookupFlags,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
+    public static void lookup_certificates_issued_by_async$set(MemorySegment seg, MemorySegment x) {
         _GTlsDatabaseClass.lookup_certificates_issued_by_async$VH.set(seg, x);
     }
-    public static MemoryAddress lookup_certificates_issued_by_async$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GTlsDatabaseClass.lookup_certificates_issued_by_async$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment lookup_certificates_issued_by_async$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GTlsDatabaseClass.lookup_certificates_issued_by_async$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void lookup_certificates_issued_by_async$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void lookup_certificates_issued_by_async$set(MemorySegment seg, long index, MemorySegment x) {
         _GTlsDatabaseClass.lookup_certificates_issued_by_async$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static lookup_certificates_issued_by_async lookup_certificates_issued_by_async (MemorySegment segment, MemorySession session) {
-        return lookup_certificates_issued_by_async.ofAddress(lookup_certificates_issued_by_async$get(segment), session);
+    public static lookup_certificates_issued_by_async lookup_certificates_issued_by_async(MemorySegment segment, SegmentScope scope) {
+        return lookup_certificates_issued_by_async.ofAddress(lookup_certificates_issued_by_async$get(segment), scope);
     }
     static final FunctionDescriptor lookup_certificates_issued_by_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle lookup_certificates_issued_by_finish$MH = RuntimeHelper.downcallHandle(
-        _GTlsDatabaseClass.lookup_certificates_issued_by_finish$FUNC
+    static final FunctionDescriptor lookup_certificates_issued_by_finish_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle lookup_certificates_issued_by_finish_UP$MH = RuntimeHelper.upcallHandle(lookup_certificates_issued_by_finish.class, "apply", _GTlsDatabaseClass.lookup_certificates_issued_by_finish_UP$FUNC);
+    static final FunctionDescriptor lookup_certificates_issued_by_finish_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle lookup_certificates_issued_by_finish_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GTlsDatabaseClass.lookup_certificates_issued_by_finish_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * GList* (*lookup_certificates_issued_by_finish)(GTlsDatabase*,GAsyncResult*,GError**);
+     * }
+     */
     public interface lookup_certificates_issued_by_finish {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2);
-        static MemorySegment allocate(lookup_certificates_issued_by_finish fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(lookup_certificates_issued_by_finish.class, fi, _GTlsDatabaseClass.lookup_certificates_issued_by_finish$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment vfs, java.lang.foreign.MemorySegment identifier, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(lookup_certificates_issued_by_finish fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GTlsDatabaseClass.lookup_certificates_issued_by_finish_UP$MH, fi, _GTlsDatabaseClass.lookup_certificates_issued_by_finish$FUNC, scope);
         }
-        static lookup_certificates_issued_by_finish ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2) -> {
+        static lookup_certificates_issued_by_finish ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _vfs, java.lang.foreign.MemorySegment _identifier, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GTlsDatabaseClass.lookup_certificates_issued_by_finish$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2);
+                    return (java.lang.foreign.MemorySegment)_GTlsDatabaseClass.lookup_certificates_issued_by_finish_DOWN$MH.invokeExact(symbol, _vfs, _identifier, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -648,30 +1086,42 @@ public class _GTlsDatabaseClass {
     public static VarHandle lookup_certificates_issued_by_finish$VH() {
         return _GTlsDatabaseClass.lookup_certificates_issued_by_finish$VH;
     }
-    public static MemoryAddress lookup_certificates_issued_by_finish$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GTlsDatabaseClass.lookup_certificates_issued_by_finish$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GList* (*lookup_certificates_issued_by_finish)(GTlsDatabase*,GAsyncResult*,GError**);
+     * }
+     */
+    public static MemorySegment lookup_certificates_issued_by_finish$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GTlsDatabaseClass.lookup_certificates_issued_by_finish$VH.get(seg);
     }
-    public static void lookup_certificates_issued_by_finish$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GList* (*lookup_certificates_issued_by_finish)(GTlsDatabase*,GAsyncResult*,GError**);
+     * }
+     */
+    public static void lookup_certificates_issued_by_finish$set(MemorySegment seg, MemorySegment x) {
         _GTlsDatabaseClass.lookup_certificates_issued_by_finish$VH.set(seg, x);
     }
-    public static MemoryAddress lookup_certificates_issued_by_finish$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GTlsDatabaseClass.lookup_certificates_issued_by_finish$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment lookup_certificates_issued_by_finish$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GTlsDatabaseClass.lookup_certificates_issued_by_finish$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void lookup_certificates_issued_by_finish$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void lookup_certificates_issued_by_finish$set(MemorySegment seg, long index, MemorySegment x) {
         _GTlsDatabaseClass.lookup_certificates_issued_by_finish$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static lookup_certificates_issued_by_finish lookup_certificates_issued_by_finish (MemorySegment segment, MemorySession session) {
-        return lookup_certificates_issued_by_finish.ofAddress(lookup_certificates_issued_by_finish$get(segment), session);
+    public static lookup_certificates_issued_by_finish lookup_certificates_issued_by_finish(MemorySegment segment, SegmentScope scope) {
+        return lookup_certificates_issued_by_finish.ofAddress(lookup_certificates_issued_by_finish$get(segment), scope);
     }
     public static MemorySegment padding$slice(MemorySegment seg) {
         return seg.asSlice(240, 128);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

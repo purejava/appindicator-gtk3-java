@@ -7,8 +7,45 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$125 {
+final class constants$125 {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$125() {}
+    static final FunctionDescriptor g_file_error_from_errno$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_file_error_from_errno$MH = RuntimeHelper.downcallHandle(
+        "g_file_error_from_errno",
+        constants$125.g_file_error_from_errno$FUNC
+    );
+    static final FunctionDescriptor g_file_test$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_file_test$MH = RuntimeHelper.downcallHandle(
+        "g_file_test",
+        constants$125.g_file_test$FUNC
+    );
+    static final FunctionDescriptor g_file_get_contents$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_file_get_contents$MH = RuntimeHelper.downcallHandle(
+        "g_file_get_contents",
+        constants$125.g_file_get_contents$FUNC
+    );
+    static final FunctionDescriptor g_file_set_contents$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_file_set_contents$MH = RuntimeHelper.downcallHandle(
+        "g_file_set_contents",
+        constants$125.g_file_set_contents$FUNC
+    );
     static final FunctionDescriptor g_file_set_contents_full$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
@@ -28,37 +65,6 @@ class constants$125 {
     static final MethodHandle g_file_read_link$MH = RuntimeHelper.downcallHandle(
         "g_file_read_link",
         constants$125.g_file_read_link$FUNC
-    );
-    static final FunctionDescriptor g_mkdtemp$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_mkdtemp$MH = RuntimeHelper.downcallHandle(
-        "g_mkdtemp",
-        constants$125.g_mkdtemp$FUNC
-    );
-    static final FunctionDescriptor g_mkdtemp_full$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_mkdtemp_full$MH = RuntimeHelper.downcallHandle(
-        "g_mkdtemp_full",
-        constants$125.g_mkdtemp_full$FUNC
-    );
-    static final FunctionDescriptor g_mkstemp$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_mkstemp$MH = RuntimeHelper.downcallHandle(
-        "g_mkstemp",
-        constants$125.g_mkstemp$FUNC
-    );
-    static final FunctionDescriptor g_mkstemp_full$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_mkstemp_full$MH = RuntimeHelper.downcallHandle(
-        "g_mkstemp_full",
-        constants$125.g_mkstemp_full$FUNC
     );
 }
 

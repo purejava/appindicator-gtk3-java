@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkUIManager extends _GtkUIManager {
+/**
+ * {@snippet :
+ * typedef struct _GtkUIManager GtkUIManager;
+ * }
+ */
+public final class GtkUIManager extends _GtkUIManager {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkUIManager() {}
 }
 
 

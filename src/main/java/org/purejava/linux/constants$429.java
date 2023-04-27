@@ -7,49 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$429 {
+final class constants$429 {
 
-    static final FunctionDescriptor g_type_add_class_private$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_type_add_class_private$MH = RuntimeHelper.downcallHandle(
-        "g_type_add_class_private",
-        constants$429.g_type_add_class_private$FUNC
-    );
-    static final FunctionDescriptor g_type_class_get_private$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$429() {}
+    static final FunctionDescriptor g_value_take_boxed$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_type_class_get_private$MH = RuntimeHelper.downcallHandle(
-        "g_type_class_get_private",
-        constants$429.g_type_class_get_private$FUNC
-    );
-    static final FunctionDescriptor g_type_class_get_instance_private_offset$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_type_class_get_instance_private_offset$MH = RuntimeHelper.downcallHandle(
-        "g_type_class_get_instance_private_offset",
-        constants$429.g_type_class_get_instance_private_offset$FUNC
+    static final MethodHandle g_value_take_boxed$MH = RuntimeHelper.downcallHandle(
+        "g_value_take_boxed",
+        constants$429.g_value_take_boxed$FUNC
     );
-    static final FunctionDescriptor g_type_ensure$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final FunctionDescriptor g_value_set_boxed_take_ownership$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_type_ensure$MH = RuntimeHelper.downcallHandle(
-        "g_type_ensure",
-        constants$429.g_type_ensure$FUNC
+    static final MethodHandle g_value_set_boxed_take_ownership$MH = RuntimeHelper.downcallHandle(
+        "g_value_set_boxed_take_ownership",
+        constants$429.g_value_set_boxed_take_ownership$FUNC
     );
-    static final FunctionDescriptor g_type_get_type_registration_serial$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle g_type_get_type_registration_serial$MH = RuntimeHelper.downcallHandle(
-        "g_type_get_type_registration_serial",
-        constants$429.g_type_get_type_registration_serial$FUNC
+    static final FunctionDescriptor g_value_get_boxed$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor g_type_get_plugin$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final MethodHandle g_value_get_boxed$MH = RuntimeHelper.downcallHandle(
+        "g_value_get_boxed",
+        constants$429.g_value_get_boxed$FUNC
     );
-    static final MethodHandle g_type_get_plugin$MH = RuntimeHelper.downcallHandle(
-        "g_type_get_plugin",
-        constants$429.g_type_get_plugin$FUNC
+    static final FunctionDescriptor g_value_dup_boxed$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_value_dup_boxed$MH = RuntimeHelper.downcallHandle(
+        "g_value_dup_boxed",
+        constants$429.g_value_dup_boxed$FUNC
+    );
+    static final FunctionDescriptor g_boxed_type_register_static$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_boxed_type_register_static$MH = RuntimeHelper.downcallHandle(
+        "g_boxed_type_register_static",
+        constants$429.g_boxed_type_register_static$FUNC
+    );
+    static final FunctionDescriptor g_closure_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_closure_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_closure_get_type",
+        constants$429.g_closure_get_type$FUNC
     );
 }
 

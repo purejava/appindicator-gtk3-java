@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GdkEventCrossing extends _GdkEventCrossing {
+/**
+ * {@snippet :
+ * typedef struct _GdkEventCrossing GdkEventCrossing;
+ * }
+ */
+public final class GdkEventCrossing extends _GdkEventCrossing {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GdkEventCrossing() {}
 }
 
 

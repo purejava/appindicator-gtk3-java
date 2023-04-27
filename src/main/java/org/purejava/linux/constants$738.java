@@ -7,50 +7,50 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$738 {
+final class constants$738 {
 
-    static final FunctionDescriptor G_LIST_MODEL$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$738() {}
+    static final FunctionDescriptor g_seekable_can_truncate$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle G_LIST_MODEL$MH = RuntimeHelper.downcallHandle(
-        "G_LIST_MODEL",
-        constants$738.G_LIST_MODEL$FUNC
+    static final MethodHandle g_seekable_can_truncate$MH = RuntimeHelper.downcallHandle(
+        "g_seekable_can_truncate",
+        constants$738.g_seekable_can_truncate$FUNC
     );
-    static final FunctionDescriptor G_IS_LIST_MODEL$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle G_IS_LIST_MODEL$MH = RuntimeHelper.downcallHandle(
-        "G_IS_LIST_MODEL",
-        constants$738.G_IS_LIST_MODEL$FUNC
-    );
-    static final FunctionDescriptor G_LIST_MODEL_GET_IFACE$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle G_LIST_MODEL_GET_IFACE$MH = RuntimeHelper.downcallHandle(
-        "G_LIST_MODEL_GET_IFACE",
-        constants$738.G_LIST_MODEL_GET_IFACE$FUNC
-    );
-    static final FunctionDescriptor g_list_model_get_item_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_list_model_get_item_type$MH = RuntimeHelper.downcallHandle(
-        "g_list_model_get_item_type",
-        constants$738.g_list_model_get_item_type$FUNC
-    );
-    static final FunctionDescriptor g_list_model_get_n_items$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_list_model_get_n_items$MH = RuntimeHelper.downcallHandle(
-        "g_list_model_get_n_items",
-        constants$738.g_list_model_get_n_items$FUNC
-    );
-    static final FunctionDescriptor g_list_model_get_item$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_seekable_truncate$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_list_model_get_item$MH = RuntimeHelper.downcallHandle(
-        "g_list_model_get_item",
-        constants$738.g_list_model_get_item$FUNC
+    static final MethodHandle g_seekable_truncate$MH = RuntimeHelper.downcallHandle(
+        "g_seekable_truncate",
+        constants$738.g_seekable_truncate$FUNC
+    );
+    static final FunctionDescriptor g_settings_schema_source_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_settings_schema_source_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_settings_schema_source_get_type",
+        constants$738.g_settings_schema_source_get_type$FUNC
+    );
+    static final FunctionDescriptor g_settings_schema_source_get_default$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle g_settings_schema_source_get_default$MH = RuntimeHelper.downcallHandle(
+        "g_settings_schema_source_get_default",
+        constants$738.g_settings_schema_source_get_default$FUNC
+    );
+    static final FunctionDescriptor g_settings_schema_source_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_settings_schema_source_ref$MH = RuntimeHelper.downcallHandle(
+        "g_settings_schema_source_ref",
+        constants$738.g_settings_schema_source_ref$FUNC
+    );
+    static final FunctionDescriptor g_settings_schema_source_unref$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_settings_schema_source_unref$MH = RuntimeHelper.downcallHandle(
+        "g_settings_schema_source_unref",
+        constants$738.g_settings_schema_source_unref$FUNC
     );
 }
 

@@ -7,51 +7,60 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$26 {
+final class constants$26 {
 
-    static final FunctionDescriptor g_byte_array_steal$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$26() {}
+    static final FunctionDescriptor g_ptr_array_extend_and_steal$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_byte_array_steal$MH = RuntimeHelper.downcallHandle(
-        "g_byte_array_steal",
-        constants$26.g_byte_array_steal$FUNC
+    static final MethodHandle g_ptr_array_extend_and_steal$MH = RuntimeHelper.downcallHandle(
+        "g_ptr_array_extend_and_steal",
+        constants$26.g_ptr_array_extend_and_steal$FUNC
     );
-    static final FunctionDescriptor g_byte_array_sized_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_byte_array_sized_new$MH = RuntimeHelper.downcallHandle(
-        "g_byte_array_sized_new",
-        constants$26.g_byte_array_sized_new$FUNC
-    );
-    static final FunctionDescriptor g_byte_array_free$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_ptr_array_insert$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_byte_array_free$MH = RuntimeHelper.downcallHandle(
-        "g_byte_array_free",
-        constants$26.g_byte_array_free$FUNC
-    );
-    static final FunctionDescriptor g_byte_array_free_to_bytes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_byte_array_free_to_bytes$MH = RuntimeHelper.downcallHandle(
-        "g_byte_array_free_to_bytes",
-        constants$26.g_byte_array_free_to_bytes$FUNC
+    static final MethodHandle g_ptr_array_insert$MH = RuntimeHelper.downcallHandle(
+        "g_ptr_array_insert",
+        constants$26.g_ptr_array_insert$FUNC
     );
-    static final FunctionDescriptor g_byte_array_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_ptr_array_sort$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_byte_array_ref$MH = RuntimeHelper.downcallHandle(
-        "g_byte_array_ref",
-        constants$26.g_byte_array_ref$FUNC
+    static final MethodHandle g_ptr_array_sort$MH = RuntimeHelper.downcallHandle(
+        "g_ptr_array_sort",
+        constants$26.g_ptr_array_sort$FUNC
     );
-    static final FunctionDescriptor g_byte_array_unref$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_ptr_array_sort_with_data$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_byte_array_unref$MH = RuntimeHelper.downcallHandle(
-        "g_byte_array_unref",
-        constants$26.g_byte_array_unref$FUNC
+    static final MethodHandle g_ptr_array_sort_with_data$MH = RuntimeHelper.downcallHandle(
+        "g_ptr_array_sort_with_data",
+        constants$26.g_ptr_array_sort_with_data$FUNC
+    );
+    static final FunctionDescriptor g_ptr_array_sort_values$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_ptr_array_sort_values$MH = RuntimeHelper.downcallHandle(
+        "g_ptr_array_sort_values",
+        constants$26.g_ptr_array_sort_values$FUNC
+    );
+    static final FunctionDescriptor g_ptr_array_sort_values_with_data$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_ptr_array_sort_values_with_data$MH = RuntimeHelper.downcallHandle(
+        "g_ptr_array_sort_values_with_data",
+        constants$26.g_ptr_array_sort_values_with_data$FUNC
     );
 }
 

@@ -7,51 +7,71 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$224 {
+final class constants$224 {
 
-    static final FunctionDescriptor g_variant_type_new_maybe$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_variant_type_new_maybe$MH = RuntimeHelper.downcallHandle(
-        "g_variant_type_new_maybe",
-        constants$224.g_variant_type_new_maybe$FUNC
-    );
-    static final FunctionDescriptor g_variant_type_new_tuple$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$224() {}
+    static final FunctionDescriptor g_key_file_get_uint64$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_variant_type_new_tuple$MH = RuntimeHelper.downcallHandle(
-        "g_variant_type_new_tuple",
-        constants$224.g_variant_type_new_tuple$FUNC
-    );
-    static final FunctionDescriptor g_variant_type_new_dict_entry$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_variant_type_new_dict_entry$MH = RuntimeHelper.downcallHandle(
-        "g_variant_type_new_dict_entry",
-        constants$224.g_variant_type_new_dict_entry$FUNC
+    static final MethodHandle g_key_file_get_uint64$MH = RuntimeHelper.downcallHandle(
+        "g_key_file_get_uint64",
+        constants$224.g_key_file_get_uint64$FUNC
     );
-    static final FunctionDescriptor g_variant_type_checked_$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_key_file_set_uint64$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle g_key_file_set_uint64$MH = RuntimeHelper.downcallHandle(
+        "g_key_file_set_uint64",
+        constants$224.g_key_file_set_uint64$FUNC
+    );
+    static final FunctionDescriptor g_key_file_get_double$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_variant_type_checked_$MH = RuntimeHelper.downcallHandle(
-        "g_variant_type_checked_",
-        constants$224.g_variant_type_checked_$FUNC
+    static final MethodHandle g_key_file_get_double$MH = RuntimeHelper.downcallHandle(
+        "g_key_file_get_double",
+        constants$224.g_key_file_get_double$FUNC
     );
-    static final FunctionDescriptor g_variant_type_string_get_depth_$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+    static final FunctionDescriptor g_key_file_set_double$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle g_key_file_set_double$MH = RuntimeHelper.downcallHandle(
+        "g_key_file_set_double",
+        constants$224.g_key_file_set_double$FUNC
+    );
+    static final FunctionDescriptor g_key_file_get_string_list$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_variant_type_string_get_depth_$MH = RuntimeHelper.downcallHandle(
-        "g_variant_type_string_get_depth_",
-        constants$224.g_variant_type_string_get_depth_$FUNC
+    static final MethodHandle g_key_file_get_string_list$MH = RuntimeHelper.downcallHandle(
+        "g_key_file_get_string_list",
+        constants$224.g_key_file_get_string_list$FUNC
     );
-    static final FunctionDescriptor g_variant_unref$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_key_file_set_string_list$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
     );
-    static final MethodHandle g_variant_unref$MH = RuntimeHelper.downcallHandle(
-        "g_variant_unref",
-        constants$224.g_variant_unref$FUNC
+    static final MethodHandle g_key_file_set_string_list$MH = RuntimeHelper.downcallHandle(
+        "g_key_file_set_string_list",
+        constants$224.g_key_file_set_string_list$FUNC
     );
 }
 

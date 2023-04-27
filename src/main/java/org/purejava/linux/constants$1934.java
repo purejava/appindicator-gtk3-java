@@ -7,46 +7,63 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1934 {
+final class constants$1934 {
 
-    static final FunctionDescriptor gtk_print_context_get_pango_fontmap$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_print_context_get_pango_fontmap$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_context_get_pango_fontmap",
-        constants$1934.gtk_print_context_get_pango_fontmap$FUNC
-    );
-    static final FunctionDescriptor gtk_print_context_create_pango_context$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_print_context_create_pango_context$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_context_create_pango_context",
-        constants$1934.gtk_print_context_create_pango_context$FUNC
-    );
-    static final FunctionDescriptor gtk_print_context_create_pango_layout$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_print_context_create_pango_layout$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_context_create_pango_layout",
-        constants$1934.gtk_print_context_create_pango_layout$FUNC
-    );
-    static final FunctionDescriptor gtk_print_context_set_cairo_context$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1934() {}
+    static final FunctionDescriptor gtk_gradient_new_linear$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
         Constants$root.C_DOUBLE$LAYOUT,
         Constants$root.C_DOUBLE$LAYOUT
     );
-    static final MethodHandle gtk_print_context_set_cairo_context$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_context_set_cairo_context",
-        constants$1934.gtk_print_context_set_cairo_context$FUNC
+    static final MethodHandle gtk_gradient_new_linear$MH = RuntimeHelper.downcallHandle(
+        "gtk_gradient_new_linear",
+        constants$1934.gtk_gradient_new_linear$FUNC
     );
-    static final FunctionDescriptor GtkPrintSettingsFunc$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_gradient_new_radial$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle gtk_gradient_new_radial$MH = RuntimeHelper.downcallHandle(
+        "gtk_gradient_new_radial",
+        constants$1934.gtk_gradient_new_radial$FUNC
+    );
+    static final FunctionDescriptor gtk_gradient_add_color_stop$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_gradient_add_color_stop$MH = RuntimeHelper.downcallHandle(
+        "gtk_gradient_add_color_stop",
+        constants$1934.gtk_gradient_add_color_stop$FUNC
+    );
+    static final FunctionDescriptor gtk_gradient_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_gradient_ref$MH = RuntimeHelper.downcallHandle(
+        "gtk_gradient_ref",
+        constants$1934.gtk_gradient_ref$FUNC
+    );
+    static final FunctionDescriptor gtk_gradient_unref$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_gradient_unref$MH = RuntimeHelper.downcallHandle(
+        "gtk_gradient_unref",
+        constants$1934.gtk_gradient_unref$FUNC
+    );
+    static final FunctionDescriptor gtk_gradient_resolve$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GtkPrintSettingsFunc$MH = RuntimeHelper.downcallHandle(
-        constants$1934.GtkPrintSettingsFunc$FUNC
+    static final MethodHandle gtk_gradient_resolve$MH = RuntimeHelper.downcallHandle(
+        "gtk_gradient_resolve",
+        constants$1934.gtk_gradient_resolve$FUNC
     );
 }
 

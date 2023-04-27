@@ -7,52 +7,57 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$999 {
+final class constants$999 {
 
-    static final FunctionDescriptor hb_unicode_script$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$999() {}
+    static final FunctionDescriptor cairo_set_tolerance$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle cairo_set_tolerance$MH = RuntimeHelper.downcallHandle(
+        "cairo_set_tolerance",
+        constants$999.cairo_set_tolerance$FUNC
+    );
+    static final FunctionDescriptor cairo_set_antialias$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle hb_unicode_script$MH = RuntimeHelper.downcallHandle(
-        "hb_unicode_script",
-        constants$999.hb_unicode_script$FUNC
+    static final MethodHandle cairo_set_antialias$MH = RuntimeHelper.downcallHandle(
+        "cairo_set_antialias",
+        constants$999.cairo_set_antialias$FUNC
     );
-    static final FunctionDescriptor hb_unicode_compose$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor cairo_set_fill_rule$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle hb_unicode_compose$MH = RuntimeHelper.downcallHandle(
-        "hb_unicode_compose",
-        constants$999.hb_unicode_compose$FUNC
+    static final MethodHandle cairo_set_fill_rule$MH = RuntimeHelper.downcallHandle(
+        "cairo_set_fill_rule",
+        constants$999.cairo_set_fill_rule$FUNC
     );
-    static final FunctionDescriptor hb_unicode_decompose$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor cairo_set_line_width$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle cairo_set_line_width$MH = RuntimeHelper.downcallHandle(
+        "cairo_set_line_width",
+        constants$999.cairo_set_line_width$FUNC
+    );
+    static final FunctionDescriptor cairo_set_line_cap$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle hb_unicode_decompose$MH = RuntimeHelper.downcallHandle(
-        "hb_unicode_decompose",
-        constants$999.hb_unicode_decompose$FUNC
+    static final MethodHandle cairo_set_line_cap$MH = RuntimeHelper.downcallHandle(
+        "cairo_set_line_cap",
+        constants$999.cairo_set_line_cap$FUNC
     );
-    static final FunctionDescriptor hb_set_create$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle hb_set_create$MH = RuntimeHelper.downcallHandle(
-        "hb_set_create",
-        constants$999.hb_set_create$FUNC
+    static final FunctionDescriptor cairo_set_line_join$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final FunctionDescriptor hb_set_get_empty$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle hb_set_get_empty$MH = RuntimeHelper.downcallHandle(
-        "hb_set_get_empty",
-        constants$999.hb_set_get_empty$FUNC
-    );
-    static final FunctionDescriptor hb_set_reference$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_set_reference$MH = RuntimeHelper.downcallHandle(
-        "hb_set_reference",
-        constants$999.hb_set_reference$FUNC
+    static final MethodHandle cairo_set_line_join$MH = RuntimeHelper.downcallHandle(
+        "cairo_set_line_join",
+        constants$999.cairo_set_line_join$FUNC
     );
 }
 

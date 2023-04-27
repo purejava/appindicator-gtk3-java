@@ -7,49 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$613 {
+final class constants$613 {
 
-    static final FunctionDescriptor g_dbus_arg_info_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$613() {}
+    static final FunctionDescriptor g_emblemed_icon_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_arg_info_ref$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_arg_info_ref",
-        constants$613.g_dbus_arg_info_ref$FUNC
+    static final MethodHandle g_emblemed_icon_new$MH = RuntimeHelper.downcallHandle(
+        "g_emblemed_icon_new",
+        constants$613.g_emblemed_icon_new$FUNC
     );
-    static final FunctionDescriptor g_dbus_annotation_info_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_emblemed_icon_get_icon$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_annotation_info_ref$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_annotation_info_ref",
-        constants$613.g_dbus_annotation_info_ref$FUNC
+    static final MethodHandle g_emblemed_icon_get_icon$MH = RuntimeHelper.downcallHandle(
+        "g_emblemed_icon_get_icon",
+        constants$613.g_emblemed_icon_get_icon$FUNC
     );
-    static final FunctionDescriptor g_dbus_node_info_unref$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_emblemed_icon_get_emblems$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_node_info_unref$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_node_info_unref",
-        constants$613.g_dbus_node_info_unref$FUNC
+    static final MethodHandle g_emblemed_icon_get_emblems$MH = RuntimeHelper.downcallHandle(
+        "g_emblemed_icon_get_emblems",
+        constants$613.g_emblemed_icon_get_emblems$FUNC
     );
-    static final FunctionDescriptor g_dbus_interface_info_unref$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_emblemed_icon_add_emblem$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_interface_info_unref$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_interface_info_unref",
-        constants$613.g_dbus_interface_info_unref$FUNC
+    static final MethodHandle g_emblemed_icon_add_emblem$MH = RuntimeHelper.downcallHandle(
+        "g_emblemed_icon_add_emblem",
+        constants$613.g_emblemed_icon_add_emblem$FUNC
     );
-    static final FunctionDescriptor g_dbus_method_info_unref$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_emblemed_icon_clear_emblems$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_method_info_unref$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_method_info_unref",
-        constants$613.g_dbus_method_info_unref$FUNC
+    static final MethodHandle g_emblemed_icon_clear_emblems$MH = RuntimeHelper.downcallHandle(
+        "g_emblemed_icon_clear_emblems",
+        constants$613.g_emblemed_icon_clear_emblems$FUNC
     );
-    static final FunctionDescriptor g_dbus_signal_info_unref$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_signal_info_unref$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_signal_info_unref",
-        constants$613.g_dbus_signal_info_unref$FUNC
+    static final FunctionDescriptor g_file_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_file_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_file_get_type",
+        constants$613.g_file_get_type$FUNC
     );
 }
 

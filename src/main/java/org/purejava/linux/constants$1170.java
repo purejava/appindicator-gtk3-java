@@ -7,55 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1170 {
+final class constants$1170 {
 
-    static final FunctionDescriptor cairo_font_options_set_hint_metrics$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1170() {}
+    static final FunctionDescriptor gdk_gl_context_set_forward_compatible$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle cairo_font_options_set_hint_metrics$MH = RuntimeHelper.downcallHandle(
-        "cairo_font_options_set_hint_metrics",
-        constants$1170.cairo_font_options_set_hint_metrics$FUNC
+    static final MethodHandle gdk_gl_context_set_forward_compatible$MH = RuntimeHelper.downcallHandle(
+        "gdk_gl_context_set_forward_compatible",
+        constants$1170.gdk_gl_context_set_forward_compatible$FUNC
     );
-    static final FunctionDescriptor cairo_font_options_get_hint_metrics$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gdk_gl_context_get_forward_compatible$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_font_options_get_hint_metrics$MH = RuntimeHelper.downcallHandle(
-        "cairo_font_options_get_hint_metrics",
-        constants$1170.cairo_font_options_get_hint_metrics$FUNC
+    static final MethodHandle gdk_gl_context_get_forward_compatible$MH = RuntimeHelper.downcallHandle(
+        "gdk_gl_context_get_forward_compatible",
+        constants$1170.gdk_gl_context_get_forward_compatible$FUNC
     );
-    static final FunctionDescriptor cairo_font_options_get_variations$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_font_options_get_variations$MH = RuntimeHelper.downcallHandle(
-        "cairo_font_options_get_variations",
-        constants$1170.cairo_font_options_get_variations$FUNC
-    );
-    static final FunctionDescriptor cairo_font_options_set_variations$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gdk_gl_context_set_use_es$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_font_options_set_variations$MH = RuntimeHelper.downcallHandle(
-        "cairo_font_options_set_variations",
-        constants$1170.cairo_font_options_set_variations$FUNC
-    );
-    static final FunctionDescriptor cairo_select_font_face$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle cairo_select_font_face$MH = RuntimeHelper.downcallHandle(
-        "cairo_select_font_face",
-        constants$1170.cairo_select_font_face$FUNC
+    static final MethodHandle gdk_gl_context_set_use_es$MH = RuntimeHelper.downcallHandle(
+        "gdk_gl_context_set_use_es",
+        constants$1170.gdk_gl_context_set_use_es$FUNC
     );
-    static final FunctionDescriptor cairo_set_font_size$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gdk_gl_context_get_use_es$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_gl_context_get_use_es$MH = RuntimeHelper.downcallHandle(
+        "gdk_gl_context_get_use_es",
+        constants$1170.gdk_gl_context_get_use_es$FUNC
+    );
+    static final FunctionDescriptor gdk_gl_context_realize$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_set_font_size$MH = RuntimeHelper.downcallHandle(
-        "cairo_set_font_size",
-        constants$1170.cairo_set_font_size$FUNC
+    static final MethodHandle gdk_gl_context_realize$MH = RuntimeHelper.downcallHandle(
+        "gdk_gl_context_realize",
+        constants$1170.gdk_gl_context_realize$FUNC
+    );
+    static final FunctionDescriptor gdk_gl_context_make_current$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_gl_context_make_current$MH = RuntimeHelper.downcallHandle(
+        "gdk_gl_context_make_current",
+        constants$1170.gdk_gl_context_make_current$FUNC
     );
 }
 

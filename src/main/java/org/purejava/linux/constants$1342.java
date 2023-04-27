@@ -7,39 +7,57 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1342 {
+final class constants$1342 {
 
-    static final FunctionDescriptor gdk_screen_width$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle gdk_screen_width$MH = RuntimeHelper.downcallHandle(
-        "gdk_screen_width",
-        constants$1342.gdk_screen_width$FUNC
-    );
-    static final FunctionDescriptor gdk_screen_height$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle gdk_screen_height$MH = RuntimeHelper.downcallHandle(
-        "gdk_screen_height",
-        constants$1342.gdk_screen_height$FUNC
-    );
-    static final FunctionDescriptor gdk_screen_width_mm$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle gdk_screen_width_mm$MH = RuntimeHelper.downcallHandle(
-        "gdk_screen_width_mm",
-        constants$1342.gdk_screen_width_mm$FUNC
-    );
-    static final FunctionDescriptor gdk_screen_height_mm$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle gdk_screen_height_mm$MH = RuntimeHelper.downcallHandle(
-        "gdk_screen_height_mm",
-        constants$1342.gdk_screen_height_mm$FUNC
-    );
-    static final FunctionDescriptor gdk_set_double_click_time$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1342() {}
+    static final FunctionDescriptor gtk_label_set_selectable$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gdk_set_double_click_time$MH = RuntimeHelper.downcallHandle(
-        "gdk_set_double_click_time",
-        constants$1342.gdk_set_double_click_time$FUNC
+    static final MethodHandle gtk_label_set_selectable$MH = RuntimeHelper.downcallHandle(
+        "gtk_label_set_selectable",
+        constants$1342.gtk_label_set_selectable$FUNC
     );
-    static final FunctionDescriptor gdk_beep$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle gdk_beep$MH = RuntimeHelper.downcallHandle(
-        "gdk_beep",
-        constants$1342.gdk_beep$FUNC
+    static final FunctionDescriptor gtk_label_get_selectable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_label_get_selectable$MH = RuntimeHelper.downcallHandle(
+        "gtk_label_get_selectable",
+        constants$1342.gtk_label_get_selectable$FUNC
+    );
+    static final FunctionDescriptor gtk_label_set_angle$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle gtk_label_set_angle$MH = RuntimeHelper.downcallHandle(
+        "gtk_label_set_angle",
+        constants$1342.gtk_label_set_angle$FUNC
+    );
+    static final FunctionDescriptor gtk_label_get_angle$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_label_get_angle$MH = RuntimeHelper.downcallHandle(
+        "gtk_label_get_angle",
+        constants$1342.gtk_label_get_angle$FUNC
+    );
+    static final FunctionDescriptor gtk_label_select_region$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_label_select_region$MH = RuntimeHelper.downcallHandle(
+        "gtk_label_select_region",
+        constants$1342.gtk_label_select_region$FUNC
+    );
+    static final FunctionDescriptor gtk_label_get_selection_bounds$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_label_get_selection_bounds$MH = RuntimeHelper.downcallHandle(
+        "gtk_label_get_selection_bounds",
+        constants$1342.gtk_label_get_selection_bounds$FUNC
     );
 }
 

@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GFlagsValue extends _GFlagsValue {
+/**
+ * {@snippet :
+ * typedef struct _GFlagsValue GFlagsValue;
+ * }
+ */
+public final class GFlagsValue extends _GFlagsValue {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GFlagsValue() {}
 }
 
 

@@ -7,56 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1174 {
+final class constants$1174 {
 
-    static final FunctionDescriptor cairo_font_face_get_reference_count$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1174() {}
+    static final FunctionDescriptor gdk_keyval_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gdk_keyval_name$MH = RuntimeHelper.downcallHandle(
+        "gdk_keyval_name",
+        constants$1174.gdk_keyval_name$FUNC
+    );
+    static final FunctionDescriptor gdk_keyval_from_name$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_font_face_get_reference_count$MH = RuntimeHelper.downcallHandle(
-        "cairo_font_face_get_reference_count",
-        constants$1174.cairo_font_face_get_reference_count$FUNC
+    static final MethodHandle gdk_keyval_from_name$MH = RuntimeHelper.downcallHandle(
+        "gdk_keyval_from_name",
+        constants$1174.gdk_keyval_from_name$FUNC
     );
-    static final FunctionDescriptor cairo_font_face_status$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_font_face_status$MH = RuntimeHelper.downcallHandle(
-        "cairo_font_face_status",
-        constants$1174.cairo_font_face_status$FUNC
-    );
-    static final FunctionDescriptor cairo_font_face_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_font_face_get_type$MH = RuntimeHelper.downcallHandle(
-        "cairo_font_face_get_type",
-        constants$1174.cairo_font_face_get_type$FUNC
-    );
-    static final FunctionDescriptor cairo_font_face_get_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gdk_keyval_convert_case$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_font_face_get_user_data$MH = RuntimeHelper.downcallHandle(
-        "cairo_font_face_get_user_data",
-        constants$1174.cairo_font_face_get_user_data$FUNC
+    static final MethodHandle gdk_keyval_convert_case$MH = RuntimeHelper.downcallHandle(
+        "gdk_keyval_convert_case",
+        constants$1174.gdk_keyval_convert_case$FUNC
     );
-    static final FunctionDescriptor cairo_font_face_set_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gdk_keyval_to_upper$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle cairo_font_face_set_user_data$MH = RuntimeHelper.downcallHandle(
-        "cairo_font_face_set_user_data",
-        constants$1174.cairo_font_face_set_user_data$FUNC
+    static final MethodHandle gdk_keyval_to_upper$MH = RuntimeHelper.downcallHandle(
+        "gdk_keyval_to_upper",
+        constants$1174.gdk_keyval_to_upper$FUNC
     );
-    static final FunctionDescriptor cairo_scaled_font_create$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gdk_keyval_to_lower$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle cairo_scaled_font_create$MH = RuntimeHelper.downcallHandle(
-        "cairo_scaled_font_create",
-        constants$1174.cairo_scaled_font_create$FUNC
+    static final MethodHandle gdk_keyval_to_lower$MH = RuntimeHelper.downcallHandle(
+        "gdk_keyval_to_lower",
+        constants$1174.gdk_keyval_to_lower$FUNC
+    );
+    static final FunctionDescriptor gdk_keyval_is_upper$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gdk_keyval_is_upper$MH = RuntimeHelper.downcallHandle(
+        "gdk_keyval_is_upper",
+        constants$1174.gdk_keyval_is_upper$FUNC
     );
 }
 

@@ -7,50 +7,46 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$172 {
+final class constants$172 {
 
-    static final FunctionDescriptor g_main_loop_quit$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_main_loop_quit$MH = RuntimeHelper.downcallHandle(
-        "g_main_loop_quit",
-        constants$172.g_main_loop_quit$FUNC
-    );
-    static final FunctionDescriptor g_main_loop_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_main_loop_ref$MH = RuntimeHelper.downcallHandle(
-        "g_main_loop_ref",
-        constants$172.g_main_loop_ref$FUNC
-    );
-    static final FunctionDescriptor g_main_loop_unref$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_main_loop_unref$MH = RuntimeHelper.downcallHandle(
-        "g_main_loop_unref",
-        constants$172.g_main_loop_unref$FUNC
-    );
-    static final FunctionDescriptor g_main_loop_is_running$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_main_loop_is_running$MH = RuntimeHelper.downcallHandle(
-        "g_main_loop_is_running",
-        constants$172.g_main_loop_is_running$FUNC
-    );
-    static final FunctionDescriptor g_main_loop_get_context$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_main_loop_get_context$MH = RuntimeHelper.downcallHandle(
-        "g_main_loop_get_context",
-        constants$172.g_main_loop_get_context$FUNC
-    );
-    static final FunctionDescriptor g_source_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$172() {}
+    static final FunctionDescriptor g_main_context_remove_poll$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_source_new$MH = RuntimeHelper.downcallHandle(
-        "g_source_new",
-        constants$172.g_source_new$FUNC
+    static final MethodHandle g_main_context_remove_poll$MH = RuntimeHelper.downcallHandle(
+        "g_main_context_remove_poll",
+        constants$172.g_main_context_remove_poll$FUNC
+    );
+    static final FunctionDescriptor g_main_depth$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
+    static final MethodHandle g_main_depth$MH = RuntimeHelper.downcallHandle(
+        "g_main_depth",
+        constants$172.g_main_depth$FUNC
+    );
+    static final FunctionDescriptor g_main_current_source$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle g_main_current_source$MH = RuntimeHelper.downcallHandle(
+        "g_main_current_source",
+        constants$172.g_main_current_source$FUNC
+    );
+    static final FunctionDescriptor g_main_context_push_thread_default$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_main_context_push_thread_default$MH = RuntimeHelper.downcallHandle(
+        "g_main_context_push_thread_default",
+        constants$172.g_main_context_push_thread_default$FUNC
+    );
+    static final FunctionDescriptor g_main_context_pop_thread_default$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_main_context_pop_thread_default$MH = RuntimeHelper.downcallHandle(
+        "g_main_context_pop_thread_default",
+        constants$172.g_main_context_pop_thread_default$FUNC
+    );
+    static final FunctionDescriptor g_main_context_get_thread_default$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle g_main_context_get_thread_default$MH = RuntimeHelper.downcallHandle(
+        "g_main_context_get_thread_default",
+        constants$172.g_main_context_get_thread_default$FUNC
     );
 }
 

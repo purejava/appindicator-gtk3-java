@@ -7,55 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1566 {
+final class constants$1566 {
 
-    static final FunctionDescriptor gtk_cell_renderer_set_padding$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1566() {}
+    static final FunctionDescriptor gtk_expander_get_label_fill$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_expander_get_label_fill$MH = RuntimeHelper.downcallHandle(
+        "gtk_expander_get_label_fill",
+        constants$1566.gtk_expander_get_label_fill$FUNC
+    );
+    static final FunctionDescriptor gtk_expander_set_resize_toplevel$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_expander_set_resize_toplevel$MH = RuntimeHelper.downcallHandle(
+        "gtk_expander_set_resize_toplevel",
+        constants$1566.gtk_expander_set_resize_toplevel$FUNC
+    );
+    static final FunctionDescriptor gtk_expander_get_resize_toplevel$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_expander_get_resize_toplevel$MH = RuntimeHelper.downcallHandle(
+        "gtk_expander_get_resize_toplevel",
+        constants$1566.gtk_expander_get_resize_toplevel$FUNC
+    );
+    static final FunctionDescriptor gtk_fixed_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_fixed_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_fixed_get_type",
+        constants$1566.gtk_fixed_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_fixed_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_fixed_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_fixed_new",
+        constants$1566.gtk_fixed_new$FUNC
+    );
+    static final FunctionDescriptor gtk_fixed_put$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_cell_renderer_set_padding$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_renderer_set_padding",
-        constants$1566.gtk_cell_renderer_set_padding$FUNC
-    );
-    static final FunctionDescriptor gtk_cell_renderer_get_padding$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_cell_renderer_get_padding$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_renderer_get_padding",
-        constants$1566.gtk_cell_renderer_get_padding$FUNC
-    );
-    static final FunctionDescriptor gtk_cell_renderer_set_visible$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_cell_renderer_set_visible$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_renderer_set_visible",
-        constants$1566.gtk_cell_renderer_set_visible$FUNC
-    );
-    static final FunctionDescriptor gtk_cell_renderer_get_visible$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_cell_renderer_get_visible$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_renderer_get_visible",
-        constants$1566.gtk_cell_renderer_get_visible$FUNC
-    );
-    static final FunctionDescriptor gtk_cell_renderer_set_sensitive$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_cell_renderer_set_sensitive$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_renderer_set_sensitive",
-        constants$1566.gtk_cell_renderer_set_sensitive$FUNC
-    );
-    static final FunctionDescriptor gtk_cell_renderer_get_sensitive$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_cell_renderer_get_sensitive$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_renderer_get_sensitive",
-        constants$1566.gtk_cell_renderer_get_sensitive$FUNC
+    static final MethodHandle gtk_fixed_put$MH = RuntimeHelper.downcallHandle(
+        "gtk_fixed_put",
+        constants$1566.gtk_fixed_put$FUNC
     );
 }
 

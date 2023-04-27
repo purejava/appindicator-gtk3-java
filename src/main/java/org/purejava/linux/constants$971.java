@@ -7,49 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$971 {
+final class constants$971 {
 
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GSubprocessLauncher$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$971() {}
+    static final FunctionDescriptor pango_layout_iter_at_last_line$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GSubprocessLauncher$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GSubprocessLauncher",
-        constants$971.glib_slistautoptr_cleanup_GSubprocessLauncher$FUNC
+    static final MethodHandle pango_layout_iter_at_last_line$MH = RuntimeHelper.downcallHandle(
+        "pango_layout_iter_at_last_line",
+        constants$971.pango_layout_iter_at_last_line$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GSubprocessLauncher$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_layout_iter_get_layout$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GSubprocessLauncher$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GSubprocessLauncher",
-        constants$971.glib_queueautoptr_cleanup_GSubprocessLauncher$FUNC
+    static final MethodHandle pango_layout_iter_get_layout$MH = RuntimeHelper.downcallHandle(
+        "pango_layout_iter_get_layout",
+        constants$971.pango_layout_iter_get_layout$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GTask$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_layout_iter_next_char$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GTask$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GTask",
-        constants$971.glib_autoptr_clear_GTask$FUNC
+    static final MethodHandle pango_layout_iter_next_char$MH = RuntimeHelper.downcallHandle(
+        "pango_layout_iter_next_char",
+        constants$971.pango_layout_iter_next_char$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GTask$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_layout_iter_next_cluster$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GTask$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GTask",
-        constants$971.glib_autoptr_cleanup_GTask$FUNC
+    static final MethodHandle pango_layout_iter_next_cluster$MH = RuntimeHelper.downcallHandle(
+        "pango_layout_iter_next_cluster",
+        constants$971.pango_layout_iter_next_cluster$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GTask$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_layout_iter_next_run$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GTask$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GTask",
-        constants$971.glib_listautoptr_cleanup_GTask$FUNC
+    static final MethodHandle pango_layout_iter_next_run$MH = RuntimeHelper.downcallHandle(
+        "pango_layout_iter_next_run",
+        constants$971.pango_layout_iter_next_run$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GTask$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_layout_iter_next_line$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GTask$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GTask",
-        constants$971.glib_slistautoptr_cleanup_GTask$FUNC
+    static final MethodHandle pango_layout_iter_next_line$MH = RuntimeHelper.downcallHandle(
+        "pango_layout_iter_next_line",
+        constants$971.pango_layout_iter_next_line$FUNC
     );
 }
 

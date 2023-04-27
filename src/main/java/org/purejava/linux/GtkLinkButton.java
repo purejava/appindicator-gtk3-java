@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkLinkButton extends _GtkLinkButton {
+/**
+ * {@snippet :
+ * typedef struct _GtkLinkButton GtkLinkButton;
+ * }
+ */
+public final class GtkLinkButton extends _GtkLinkButton {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkLinkButton() {}
 }
 
 

@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * void (*GtkListBoxUpdateHeaderFunc)(struct _GtkListBoxRow* row,struct _GtkListBoxRow* before,void* user_data);
+ * }
+ */
 public interface GtkListBoxUpdateHeaderFunc {
 
-    void apply(java.lang.foreign.MemoryAddress row, java.lang.foreign.MemoryAddress before, java.lang.foreign.MemoryAddress user_data);
-    static MemorySegment allocate(GtkListBoxUpdateHeaderFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GtkListBoxUpdateHeaderFunc.class, fi, constants$1868.GtkListBoxUpdateHeaderFunc$FUNC, session);
+    void apply(java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment user_data);
+    static MemorySegment allocate(GtkListBoxUpdateHeaderFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$1673.GtkListBoxUpdateHeaderFunc_UP$MH, fi, constants$1673.GtkListBoxUpdateHeaderFunc$FUNC, scope);
     }
-    static GtkListBoxUpdateHeaderFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _row, java.lang.foreign.MemoryAddress _before, java.lang.foreign.MemoryAddress _user_data) -> {
+    static GtkListBoxUpdateHeaderFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _key, java.lang.foreign.MemorySegment _value, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                constants$1868.GtkListBoxUpdateHeaderFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_row, (java.lang.foreign.Addressable)_before, (java.lang.foreign.Addressable)_user_data);
+                constants$1673.GtkListBoxUpdateHeaderFunc_DOWN$MH.invokeExact(symbol, _key, _value, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

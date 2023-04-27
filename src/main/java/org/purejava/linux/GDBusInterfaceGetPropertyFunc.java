@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GVariant* (*GDBusInterfaceGetPropertyFunc)(struct _GDBusConnection* connection,char* sender,char* object_path,char* interface_name,char* property_name,struct _GError** error,void* user_data);
+ * }
+ */
 public interface GDBusInterfaceGetPropertyFunc {
 
-    java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress connection, java.lang.foreign.MemoryAddress sender, java.lang.foreign.MemoryAddress object_path, java.lang.foreign.MemoryAddress interface_name, java.lang.foreign.MemoryAddress property_name, java.lang.foreign.MemoryAddress error, java.lang.foreign.MemoryAddress user_data);
-    static MemorySegment allocate(GDBusInterfaceGetPropertyFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GDBusInterfaceGetPropertyFunc.class, fi, constants$601.GDBusInterfaceGetPropertyFunc$FUNC, session);
+    java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment connection, java.lang.foreign.MemorySegment sender, java.lang.foreign.MemorySegment object_path, java.lang.foreign.MemorySegment interface_name, java.lang.foreign.MemorySegment node, java.lang.foreign.MemorySegment out_user_data, java.lang.foreign.MemorySegment user_data);
+    static MemorySegment allocate(GDBusInterfaceGetPropertyFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$555.GDBusInterfaceGetPropertyFunc_UP$MH, fi, constants$555.GDBusInterfaceGetPropertyFunc$FUNC, scope);
     }
-    static GDBusInterfaceGetPropertyFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _connection, java.lang.foreign.MemoryAddress _sender, java.lang.foreign.MemoryAddress _object_path, java.lang.foreign.MemoryAddress _interface_name, java.lang.foreign.MemoryAddress _property_name, java.lang.foreign.MemoryAddress _error, java.lang.foreign.MemoryAddress _user_data) -> {
+    static GDBusInterfaceGetPropertyFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _connection, java.lang.foreign.MemorySegment _sender, java.lang.foreign.MemorySegment _object_path, java.lang.foreign.MemorySegment _interface_name, java.lang.foreign.MemorySegment _node, java.lang.foreign.MemorySegment _out_user_data, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)constants$601.GDBusInterfaceGetPropertyFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_connection, (java.lang.foreign.Addressable)_sender, (java.lang.foreign.Addressable)_object_path, (java.lang.foreign.Addressable)_interface_name, (java.lang.foreign.Addressable)_property_name, (java.lang.foreign.Addressable)_error, (java.lang.foreign.Addressable)_user_data);
+                return (java.lang.foreign.MemorySegment)constants$555.GDBusInterfaceGetPropertyFunc_DOWN$MH.invokeExact(symbol, _connection, _sender, _object_path, _interface_name, _node, _out_user_data, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

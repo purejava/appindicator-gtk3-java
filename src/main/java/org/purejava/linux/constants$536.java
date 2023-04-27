@@ -7,52 +7,44 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$536 {
+final class constants$536 {
 
-    static final FunctionDescriptor g_application_set_option_context_description$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$536() {}
+    static final FunctionDescriptor fsync$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle fsync$MH = RuntimeHelper.downcallHandle(
+        "fsync",
+        constants$536.fsync$FUNC
+    );
+    static final FunctionDescriptor gethostid$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gethostid$MH = RuntimeHelper.downcallHandle(
+        "gethostid",
+        constants$536.gethostid$FUNC
+    );
+    static final FunctionDescriptor sync$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle sync$MH = RuntimeHelper.downcallHandle(
+        "sync",
+        constants$536.sync$FUNC
+    );
+    static final FunctionDescriptor getpagesize$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
+    static final MethodHandle getpagesize$MH = RuntimeHelper.downcallHandle(
+        "getpagesize",
+        constants$536.getpagesize$FUNC
+    );
+    static final FunctionDescriptor getdtablesize$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
+    static final MethodHandle getdtablesize$MH = RuntimeHelper.downcallHandle(
+        "getdtablesize",
+        constants$536.getdtablesize$FUNC
+    );
+    static final FunctionDescriptor truncate$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_LONG_LONG$LAYOUT
     );
-    static final MethodHandle g_application_set_option_context_description$MH = RuntimeHelper.downcallHandle(
-        "g_application_set_option_context_description",
-        constants$536.g_application_set_option_context_description$FUNC
-    );
-    static final FunctionDescriptor g_application_get_is_registered$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_application_get_is_registered$MH = RuntimeHelper.downcallHandle(
-        "g_application_get_is_registered",
-        constants$536.g_application_get_is_registered$FUNC
-    );
-    static final FunctionDescriptor g_application_get_is_remote$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_application_get_is_remote$MH = RuntimeHelper.downcallHandle(
-        "g_application_get_is_remote",
-        constants$536.g_application_get_is_remote$FUNC
-    );
-    static final FunctionDescriptor g_application_register$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_application_register$MH = RuntimeHelper.downcallHandle(
-        "g_application_register",
-        constants$536.g_application_register$FUNC
-    );
-    static final FunctionDescriptor g_application_hold$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_application_hold$MH = RuntimeHelper.downcallHandle(
-        "g_application_hold",
-        constants$536.g_application_hold$FUNC
-    );
-    static final FunctionDescriptor g_application_release$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_application_release$MH = RuntimeHelper.downcallHandle(
-        "g_application_release",
-        constants$536.g_application_release$FUNC
+    static final MethodHandle truncate$MH = RuntimeHelper.downcallHandle(
+        "truncate",
+        constants$536.truncate$FUNC
     );
 }
 

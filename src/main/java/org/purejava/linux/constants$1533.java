@@ -7,48 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1533 {
+final class constants$1533 {
 
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GtkLabel$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1533() {}
+    static final FunctionDescriptor gtk_menu_item_get_submenu$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GtkLabel$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GtkLabel",
-        constants$1533.glib_queueautoptr_cleanup_GtkLabel$FUNC
+    static final MethodHandle gtk_menu_item_get_submenu$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_item_get_submenu",
+        constants$1533.gtk_menu_item_get_submenu$FUNC
     );
-    static final FunctionDescriptor gtk_accel_label_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_accel_label_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_accel_label_get_type",
-        constants$1533.gtk_accel_label_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_accel_label_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_menu_item_select$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_accel_label_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_accel_label_new",
-        constants$1533.gtk_accel_label_new$FUNC
+    static final MethodHandle gtk_menu_item_select$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_item_select",
+        constants$1533.gtk_menu_item_select$FUNC
     );
-    static final FunctionDescriptor gtk_accel_label_get_accel_widget$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_menu_item_deselect$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_accel_label_get_accel_widget$MH = RuntimeHelper.downcallHandle(
-        "gtk_accel_label_get_accel_widget",
-        constants$1533.gtk_accel_label_get_accel_widget$FUNC
+    static final MethodHandle gtk_menu_item_deselect$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_item_deselect",
+        constants$1533.gtk_menu_item_deselect$FUNC
     );
-    static final FunctionDescriptor gtk_accel_label_get_accel_width$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_menu_item_activate$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_accel_label_get_accel_width$MH = RuntimeHelper.downcallHandle(
-        "gtk_accel_label_get_accel_width",
-        constants$1533.gtk_accel_label_get_accel_width$FUNC
+    static final MethodHandle gtk_menu_item_activate$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_item_activate",
+        constants$1533.gtk_menu_item_activate$FUNC
     );
-    static final FunctionDescriptor gtk_accel_label_set_accel_widget$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_menu_item_toggle_size_request$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_accel_label_set_accel_widget$MH = RuntimeHelper.downcallHandle(
-        "gtk_accel_label_set_accel_widget",
-        constants$1533.gtk_accel_label_set_accel_widget$FUNC
+    static final MethodHandle gtk_menu_item_toggle_size_request$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_item_toggle_size_request",
+        constants$1533.gtk_menu_item_toggle_size_request$FUNC
+    );
+    static final FunctionDescriptor gtk_menu_item_toggle_size_allocate$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_menu_item_toggle_size_allocate$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_item_toggle_size_allocate",
+        constants$1533.gtk_menu_item_toggle_size_allocate$FUNC
     );
 }
 

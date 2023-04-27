@@ -7,60 +7,56 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$136 {
+final class constants$136 {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$136() {}
+    static final FunctionDescriptor g_node_insert_after$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_node_insert_after$MH = RuntimeHelper.downcallHandle(
+        "g_node_insert_after",
+        constants$136.g_node_insert_after$FUNC
+    );
+    static final FunctionDescriptor g_node_prepend$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_node_prepend$MH = RuntimeHelper.downcallHandle(
+        "g_node_prepend",
+        constants$136.g_node_prepend$FUNC
+    );
+    static final FunctionDescriptor g_node_n_nodes$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_node_n_nodes$MH = RuntimeHelper.downcallHandle(
+        "g_node_n_nodes",
+        constants$136.g_node_n_nodes$FUNC
+    );
+    static final FunctionDescriptor g_node_get_root$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_node_get_root$MH = RuntimeHelper.downcallHandle(
+        "g_node_get_root",
+        constants$136.g_node_get_root$FUNC
+    );
+    static final FunctionDescriptor g_node_is_ancestor$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_node_is_ancestor$MH = RuntimeHelper.downcallHandle(
+        "g_node_is_ancestor",
+        constants$136.g_node_is_ancestor$FUNC
+    );
     static final FunctionDescriptor g_node_depth$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
     static final MethodHandle g_node_depth$MH = RuntimeHelper.downcallHandle(
         "g_node_depth",
         constants$136.g_node_depth$FUNC
-    );
-    static final FunctionDescriptor g_node_find$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_node_find$MH = RuntimeHelper.downcallHandle(
-        "g_node_find",
-        constants$136.g_node_find$FUNC
-    );
-    static final FunctionDescriptor g_node_traverse$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_node_traverse$MH = RuntimeHelper.downcallHandle(
-        "g_node_traverse",
-        constants$136.g_node_traverse$FUNC
-    );
-    static final FunctionDescriptor g_node_max_height$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_node_max_height$MH = RuntimeHelper.downcallHandle(
-        "g_node_max_height",
-        constants$136.g_node_max_height$FUNC
-    );
-    static final FunctionDescriptor g_node_children_foreach$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_node_children_foreach$MH = RuntimeHelper.downcallHandle(
-        "g_node_children_foreach",
-        constants$136.g_node_children_foreach$FUNC
-    );
-    static final FunctionDescriptor g_node_reverse_children$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_node_reverse_children$MH = RuntimeHelper.downcallHandle(
-        "g_node_reverse_children",
-        constants$136.g_node_reverse_children$FUNC
     );
 }
 

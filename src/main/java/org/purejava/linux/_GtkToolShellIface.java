@@ -7,9 +7,25 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GtkToolShellIface {
+ *     GTypeInterface g_iface;
+ *     GtkIconSize (*get_icon_size)(GtkToolShell*);
+ *     GtkOrientation (*get_orientation)(GtkToolShell*);
+ *     GtkToolbarStyle (*get_style)(GtkToolShell*);
+ *     GtkReliefStyle (*get_relief_style)(GtkToolShell*);
+ *     void (*rebuild_menu)(GtkToolShell*);
+ *     GtkOrientation (*get_text_orientation)(GtkToolShell*);
+ *     gfloat (*get_text_alignment)(GtkToolShell*);
+ *     PangoEllipsizeMode (*get_ellipsize_mode)(GtkToolShell*);
+ *     GtkSizeGroup* (*get_text_size_group)(GtkToolShell*);
+ * };
+ * }
+ */
 public class _GtkToolShellIface {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             Constants$root.C_LONG_LONG$LAYOUT.withName("g_type"),
             Constants$root.C_LONG_LONG$LAYOUT.withName("g_instance_type")
@@ -33,20 +49,32 @@ public class _GtkToolShellIface {
     static final FunctionDescriptor get_icon_size$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_icon_size$MH = RuntimeHelper.downcallHandle(
-        _GtkToolShellIface.get_icon_size$FUNC
+    static final FunctionDescriptor get_icon_size_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_icon_size_UP$MH = RuntimeHelper.upcallHandle(get_icon_size.class, "apply", _GtkToolShellIface.get_icon_size_UP$FUNC);
+    static final FunctionDescriptor get_icon_size_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_icon_size_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkToolShellIface.get_icon_size_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * GtkIconSize (*get_icon_size)(GtkToolShell*);
+     * }
+     */
     public interface get_icon_size {
 
-        int apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(get_icon_size fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_icon_size.class, fi, _GtkToolShellIface.get_icon_size$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0);
+        static MemorySegment allocate(get_icon_size fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkToolShellIface.get_icon_size_UP$MH, fi, _GtkToolShellIface.get_icon_size$FUNC, scope);
         }
-        static get_icon_size ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static get_icon_size ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0) -> {
                 try {
-                    return (int)_GtkToolShellIface.get_icon_size$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (int)_GtkToolShellIface.get_icon_size_DOWN$MH.invokeExact(symbol, __x0);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -58,38 +86,62 @@ public class _GtkToolShellIface {
     public static VarHandle get_icon_size$VH() {
         return _GtkToolShellIface.get_icon_size$VH;
     }
-    public static MemoryAddress get_icon_size$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkToolShellIface.get_icon_size$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GtkIconSize (*get_icon_size)(GtkToolShell*);
+     * }
+     */
+    public static MemorySegment get_icon_size$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkToolShellIface.get_icon_size$VH.get(seg);
     }
-    public static void get_icon_size$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GtkIconSize (*get_icon_size)(GtkToolShell*);
+     * }
+     */
+    public static void get_icon_size$set(MemorySegment seg, MemorySegment x) {
         _GtkToolShellIface.get_icon_size$VH.set(seg, x);
     }
-    public static MemoryAddress get_icon_size$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkToolShellIface.get_icon_size$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_icon_size$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkToolShellIface.get_icon_size$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_icon_size$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_icon_size$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkToolShellIface.get_icon_size$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_icon_size get_icon_size (MemorySegment segment, MemorySession session) {
-        return get_icon_size.ofAddress(get_icon_size$get(segment), session);
+    public static get_icon_size get_icon_size(MemorySegment segment, SegmentScope scope) {
+        return get_icon_size.ofAddress(get_icon_size$get(segment), scope);
     }
     static final FunctionDescriptor get_orientation$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_orientation$MH = RuntimeHelper.downcallHandle(
-        _GtkToolShellIface.get_orientation$FUNC
+    static final FunctionDescriptor get_orientation_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_orientation_UP$MH = RuntimeHelper.upcallHandle(get_orientation.class, "apply", _GtkToolShellIface.get_orientation_UP$FUNC);
+    static final FunctionDescriptor get_orientation_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_orientation_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkToolShellIface.get_orientation_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * GtkOrientation (*get_orientation)(GtkToolShell*);
+     * }
+     */
     public interface get_orientation {
 
-        int apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(get_orientation fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_orientation.class, fi, _GtkToolShellIface.get_orientation$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0);
+        static MemorySegment allocate(get_orientation fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkToolShellIface.get_orientation_UP$MH, fi, _GtkToolShellIface.get_orientation$FUNC, scope);
         }
-        static get_orientation ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static get_orientation ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0) -> {
                 try {
-                    return (int)_GtkToolShellIface.get_orientation$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (int)_GtkToolShellIface.get_orientation_DOWN$MH.invokeExact(symbol, __x0);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -101,38 +153,62 @@ public class _GtkToolShellIface {
     public static VarHandle get_orientation$VH() {
         return _GtkToolShellIface.get_orientation$VH;
     }
-    public static MemoryAddress get_orientation$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkToolShellIface.get_orientation$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GtkOrientation (*get_orientation)(GtkToolShell*);
+     * }
+     */
+    public static MemorySegment get_orientation$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkToolShellIface.get_orientation$VH.get(seg);
     }
-    public static void get_orientation$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GtkOrientation (*get_orientation)(GtkToolShell*);
+     * }
+     */
+    public static void get_orientation$set(MemorySegment seg, MemorySegment x) {
         _GtkToolShellIface.get_orientation$VH.set(seg, x);
     }
-    public static MemoryAddress get_orientation$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkToolShellIface.get_orientation$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_orientation$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkToolShellIface.get_orientation$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_orientation$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_orientation$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkToolShellIface.get_orientation$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_orientation get_orientation (MemorySegment segment, MemorySession session) {
-        return get_orientation.ofAddress(get_orientation$get(segment), session);
+    public static get_orientation get_orientation(MemorySegment segment, SegmentScope scope) {
+        return get_orientation.ofAddress(get_orientation$get(segment), scope);
     }
     static final FunctionDescriptor get_style$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_style$MH = RuntimeHelper.downcallHandle(
-        _GtkToolShellIface.get_style$FUNC
+    static final FunctionDescriptor get_style_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_style_UP$MH = RuntimeHelper.upcallHandle(get_style.class, "apply", _GtkToolShellIface.get_style_UP$FUNC);
+    static final FunctionDescriptor get_style_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_style_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkToolShellIface.get_style_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * GtkToolbarStyle (*get_style)(GtkToolShell*);
+     * }
+     */
     public interface get_style {
 
-        int apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(get_style fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_style.class, fi, _GtkToolShellIface.get_style$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0);
+        static MemorySegment allocate(get_style fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkToolShellIface.get_style_UP$MH, fi, _GtkToolShellIface.get_style$FUNC, scope);
         }
-        static get_style ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static get_style ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0) -> {
                 try {
-                    return (int)_GtkToolShellIface.get_style$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (int)_GtkToolShellIface.get_style_DOWN$MH.invokeExact(symbol, __x0);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -144,38 +220,62 @@ public class _GtkToolShellIface {
     public static VarHandle get_style$VH() {
         return _GtkToolShellIface.get_style$VH;
     }
-    public static MemoryAddress get_style$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkToolShellIface.get_style$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GtkToolbarStyle (*get_style)(GtkToolShell*);
+     * }
+     */
+    public static MemorySegment get_style$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkToolShellIface.get_style$VH.get(seg);
     }
-    public static void get_style$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GtkToolbarStyle (*get_style)(GtkToolShell*);
+     * }
+     */
+    public static void get_style$set(MemorySegment seg, MemorySegment x) {
         _GtkToolShellIface.get_style$VH.set(seg, x);
     }
-    public static MemoryAddress get_style$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkToolShellIface.get_style$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_style$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkToolShellIface.get_style$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_style$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_style$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkToolShellIface.get_style$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_style get_style (MemorySegment segment, MemorySession session) {
-        return get_style.ofAddress(get_style$get(segment), session);
+    public static get_style get_style(MemorySegment segment, SegmentScope scope) {
+        return get_style.ofAddress(get_style$get(segment), scope);
     }
     static final FunctionDescriptor get_relief_style$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_relief_style$MH = RuntimeHelper.downcallHandle(
-        _GtkToolShellIface.get_relief_style$FUNC
+    static final FunctionDescriptor get_relief_style_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_relief_style_UP$MH = RuntimeHelper.upcallHandle(get_relief_style.class, "apply", _GtkToolShellIface.get_relief_style_UP$FUNC);
+    static final FunctionDescriptor get_relief_style_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_relief_style_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkToolShellIface.get_relief_style_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * GtkReliefStyle (*get_relief_style)(GtkToolShell*);
+     * }
+     */
     public interface get_relief_style {
 
-        int apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(get_relief_style fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_relief_style.class, fi, _GtkToolShellIface.get_relief_style$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0);
+        static MemorySegment allocate(get_relief_style fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkToolShellIface.get_relief_style_UP$MH, fi, _GtkToolShellIface.get_relief_style$FUNC, scope);
         }
-        static get_relief_style ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static get_relief_style ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0) -> {
                 try {
-                    return (int)_GtkToolShellIface.get_relief_style$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (int)_GtkToolShellIface.get_relief_style_DOWN$MH.invokeExact(symbol, __x0);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -187,38 +287,62 @@ public class _GtkToolShellIface {
     public static VarHandle get_relief_style$VH() {
         return _GtkToolShellIface.get_relief_style$VH;
     }
-    public static MemoryAddress get_relief_style$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkToolShellIface.get_relief_style$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GtkReliefStyle (*get_relief_style)(GtkToolShell*);
+     * }
+     */
+    public static MemorySegment get_relief_style$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkToolShellIface.get_relief_style$VH.get(seg);
     }
-    public static void get_relief_style$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GtkReliefStyle (*get_relief_style)(GtkToolShell*);
+     * }
+     */
+    public static void get_relief_style$set(MemorySegment seg, MemorySegment x) {
         _GtkToolShellIface.get_relief_style$VH.set(seg, x);
     }
-    public static MemoryAddress get_relief_style$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkToolShellIface.get_relief_style$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_relief_style$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkToolShellIface.get_relief_style$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_relief_style$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_relief_style$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkToolShellIface.get_relief_style$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_relief_style get_relief_style (MemorySegment segment, MemorySession session) {
-        return get_relief_style.ofAddress(get_relief_style$get(segment), session);
+    public static get_relief_style get_relief_style(MemorySegment segment, SegmentScope scope) {
+        return get_relief_style.ofAddress(get_relief_style$get(segment), scope);
     }
     static final FunctionDescriptor rebuild_menu$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle rebuild_menu$MH = RuntimeHelper.downcallHandle(
-        _GtkToolShellIface.rebuild_menu$FUNC
+    static final FunctionDescriptor rebuild_menu_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle rebuild_menu_UP$MH = RuntimeHelper.upcallHandle(rebuild_menu.class, "apply", _GtkToolShellIface.rebuild_menu_UP$FUNC);
+    static final FunctionDescriptor rebuild_menu_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle rebuild_menu_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkToolShellIface.rebuild_menu_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*rebuild_menu)(GtkToolShell*);
+     * }
+     */
     public interface rebuild_menu {
 
-        void apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(rebuild_menu fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(rebuild_menu.class, fi, _GtkToolShellIface.rebuild_menu$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment display);
+        static MemorySegment allocate(rebuild_menu fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkToolShellIface.rebuild_menu_UP$MH, fi, _GtkToolShellIface.rebuild_menu$FUNC, scope);
         }
-        static rebuild_menu ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static rebuild_menu ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GtkToolShellIface.rebuild_menu$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    _GtkToolShellIface.rebuild_menu_DOWN$MH.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -230,38 +354,62 @@ public class _GtkToolShellIface {
     public static VarHandle rebuild_menu$VH() {
         return _GtkToolShellIface.rebuild_menu$VH;
     }
-    public static MemoryAddress rebuild_menu$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkToolShellIface.rebuild_menu$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*rebuild_menu)(GtkToolShell*);
+     * }
+     */
+    public static MemorySegment rebuild_menu$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkToolShellIface.rebuild_menu$VH.get(seg);
     }
-    public static void rebuild_menu$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*rebuild_menu)(GtkToolShell*);
+     * }
+     */
+    public static void rebuild_menu$set(MemorySegment seg, MemorySegment x) {
         _GtkToolShellIface.rebuild_menu$VH.set(seg, x);
     }
-    public static MemoryAddress rebuild_menu$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkToolShellIface.rebuild_menu$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment rebuild_menu$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkToolShellIface.rebuild_menu$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void rebuild_menu$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void rebuild_menu$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkToolShellIface.rebuild_menu$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static rebuild_menu rebuild_menu (MemorySegment segment, MemorySession session) {
-        return rebuild_menu.ofAddress(rebuild_menu$get(segment), session);
+    public static rebuild_menu rebuild_menu(MemorySegment segment, SegmentScope scope) {
+        return rebuild_menu.ofAddress(rebuild_menu$get(segment), scope);
     }
     static final FunctionDescriptor get_text_orientation$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_text_orientation$MH = RuntimeHelper.downcallHandle(
-        _GtkToolShellIface.get_text_orientation$FUNC
+    static final FunctionDescriptor get_text_orientation_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_text_orientation_UP$MH = RuntimeHelper.upcallHandle(get_text_orientation.class, "apply", _GtkToolShellIface.get_text_orientation_UP$FUNC);
+    static final FunctionDescriptor get_text_orientation_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_text_orientation_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkToolShellIface.get_text_orientation_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * GtkOrientation (*get_text_orientation)(GtkToolShell*);
+     * }
+     */
     public interface get_text_orientation {
 
-        int apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(get_text_orientation fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_text_orientation.class, fi, _GtkToolShellIface.get_text_orientation$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0);
+        static MemorySegment allocate(get_text_orientation fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkToolShellIface.get_text_orientation_UP$MH, fi, _GtkToolShellIface.get_text_orientation$FUNC, scope);
         }
-        static get_text_orientation ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static get_text_orientation ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0) -> {
                 try {
-                    return (int)_GtkToolShellIface.get_text_orientation$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (int)_GtkToolShellIface.get_text_orientation_DOWN$MH.invokeExact(symbol, __x0);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -273,38 +421,62 @@ public class _GtkToolShellIface {
     public static VarHandle get_text_orientation$VH() {
         return _GtkToolShellIface.get_text_orientation$VH;
     }
-    public static MemoryAddress get_text_orientation$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkToolShellIface.get_text_orientation$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GtkOrientation (*get_text_orientation)(GtkToolShell*);
+     * }
+     */
+    public static MemorySegment get_text_orientation$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkToolShellIface.get_text_orientation$VH.get(seg);
     }
-    public static void get_text_orientation$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GtkOrientation (*get_text_orientation)(GtkToolShell*);
+     * }
+     */
+    public static void get_text_orientation$set(MemorySegment seg, MemorySegment x) {
         _GtkToolShellIface.get_text_orientation$VH.set(seg, x);
     }
-    public static MemoryAddress get_text_orientation$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkToolShellIface.get_text_orientation$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_text_orientation$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkToolShellIface.get_text_orientation$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_text_orientation$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_text_orientation$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkToolShellIface.get_text_orientation$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_text_orientation get_text_orientation (MemorySegment segment, MemorySession session) {
-        return get_text_orientation.ofAddress(get_text_orientation$get(segment), session);
+    public static get_text_orientation get_text_orientation(MemorySegment segment, SegmentScope scope) {
+        return get_text_orientation.ofAddress(get_text_orientation$get(segment), scope);
     }
     static final FunctionDescriptor get_text_alignment$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_text_alignment$MH = RuntimeHelper.downcallHandle(
-        _GtkToolShellIface.get_text_alignment$FUNC
+    static final FunctionDescriptor get_text_alignment_UP$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_text_alignment_UP$MH = RuntimeHelper.upcallHandle(get_text_alignment.class, "apply", _GtkToolShellIface.get_text_alignment_UP$FUNC);
+    static final FunctionDescriptor get_text_alignment_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_text_alignment_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkToolShellIface.get_text_alignment_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gfloat (*get_text_alignment)(GtkToolShell*);
+     * }
+     */
     public interface get_text_alignment {
 
-        float apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(get_text_alignment fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_text_alignment.class, fi, _GtkToolShellIface.get_text_alignment$FUNC, session);
+        float apply(java.lang.foreign.MemorySegment _x0);
+        static MemorySegment allocate(get_text_alignment fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkToolShellIface.get_text_alignment_UP$MH, fi, _GtkToolShellIface.get_text_alignment$FUNC, scope);
         }
-        static get_text_alignment ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static get_text_alignment ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0) -> {
                 try {
-                    return (float)_GtkToolShellIface.get_text_alignment$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (float)_GtkToolShellIface.get_text_alignment_DOWN$MH.invokeExact(symbol, __x0);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -316,38 +488,62 @@ public class _GtkToolShellIface {
     public static VarHandle get_text_alignment$VH() {
         return _GtkToolShellIface.get_text_alignment$VH;
     }
-    public static MemoryAddress get_text_alignment$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkToolShellIface.get_text_alignment$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gfloat (*get_text_alignment)(GtkToolShell*);
+     * }
+     */
+    public static MemorySegment get_text_alignment$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkToolShellIface.get_text_alignment$VH.get(seg);
     }
-    public static void get_text_alignment$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gfloat (*get_text_alignment)(GtkToolShell*);
+     * }
+     */
+    public static void get_text_alignment$set(MemorySegment seg, MemorySegment x) {
         _GtkToolShellIface.get_text_alignment$VH.set(seg, x);
     }
-    public static MemoryAddress get_text_alignment$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkToolShellIface.get_text_alignment$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_text_alignment$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkToolShellIface.get_text_alignment$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_text_alignment$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_text_alignment$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkToolShellIface.get_text_alignment$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_text_alignment get_text_alignment (MemorySegment segment, MemorySession session) {
-        return get_text_alignment.ofAddress(get_text_alignment$get(segment), session);
+    public static get_text_alignment get_text_alignment(MemorySegment segment, SegmentScope scope) {
+        return get_text_alignment.ofAddress(get_text_alignment$get(segment), scope);
     }
     static final FunctionDescriptor get_ellipsize_mode$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_ellipsize_mode$MH = RuntimeHelper.downcallHandle(
-        _GtkToolShellIface.get_ellipsize_mode$FUNC
+    static final FunctionDescriptor get_ellipsize_mode_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_ellipsize_mode_UP$MH = RuntimeHelper.upcallHandle(get_ellipsize_mode.class, "apply", _GtkToolShellIface.get_ellipsize_mode_UP$FUNC);
+    static final FunctionDescriptor get_ellipsize_mode_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_ellipsize_mode_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkToolShellIface.get_ellipsize_mode_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * PangoEllipsizeMode (*get_ellipsize_mode)(GtkToolShell*);
+     * }
+     */
     public interface get_ellipsize_mode {
 
-        int apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(get_ellipsize_mode fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_ellipsize_mode.class, fi, _GtkToolShellIface.get_ellipsize_mode$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0);
+        static MemorySegment allocate(get_ellipsize_mode fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkToolShellIface.get_ellipsize_mode_UP$MH, fi, _GtkToolShellIface.get_ellipsize_mode$FUNC, scope);
         }
-        static get_ellipsize_mode ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static get_ellipsize_mode ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0) -> {
                 try {
-                    return (int)_GtkToolShellIface.get_ellipsize_mode$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (int)_GtkToolShellIface.get_ellipsize_mode_DOWN$MH.invokeExact(symbol, __x0);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -359,38 +555,62 @@ public class _GtkToolShellIface {
     public static VarHandle get_ellipsize_mode$VH() {
         return _GtkToolShellIface.get_ellipsize_mode$VH;
     }
-    public static MemoryAddress get_ellipsize_mode$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkToolShellIface.get_ellipsize_mode$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * PangoEllipsizeMode (*get_ellipsize_mode)(GtkToolShell*);
+     * }
+     */
+    public static MemorySegment get_ellipsize_mode$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkToolShellIface.get_ellipsize_mode$VH.get(seg);
     }
-    public static void get_ellipsize_mode$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * PangoEllipsizeMode (*get_ellipsize_mode)(GtkToolShell*);
+     * }
+     */
+    public static void get_ellipsize_mode$set(MemorySegment seg, MemorySegment x) {
         _GtkToolShellIface.get_ellipsize_mode$VH.set(seg, x);
     }
-    public static MemoryAddress get_ellipsize_mode$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkToolShellIface.get_ellipsize_mode$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_ellipsize_mode$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkToolShellIface.get_ellipsize_mode$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_ellipsize_mode$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_ellipsize_mode$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkToolShellIface.get_ellipsize_mode$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_ellipsize_mode get_ellipsize_mode (MemorySegment segment, MemorySession session) {
-        return get_ellipsize_mode.ofAddress(get_ellipsize_mode$get(segment), session);
+    public static get_ellipsize_mode get_ellipsize_mode(MemorySegment segment, SegmentScope scope) {
+        return get_ellipsize_mode.ofAddress(get_ellipsize_mode$get(segment), scope);
     }
     static final FunctionDescriptor get_text_size_group$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_text_size_group$MH = RuntimeHelper.downcallHandle(
-        _GtkToolShellIface.get_text_size_group$FUNC
+    static final FunctionDescriptor get_text_size_group_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_text_size_group_UP$MH = RuntimeHelper.upcallHandle(get_text_size_group.class, "apply", _GtkToolShellIface.get_text_size_group_UP$FUNC);
+    static final FunctionDescriptor get_text_size_group_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_text_size_group_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkToolShellIface.get_text_size_group_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * GtkSizeGroup* (*get_text_size_group)(GtkToolShell*);
+     * }
+     */
     public interface get_text_size_group {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(get_text_size_group fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_text_size_group.class, fi, _GtkToolShellIface.get_text_size_group$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(get_text_size_group fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkToolShellIface.get_text_size_group_UP$MH, fi, _GtkToolShellIface.get_text_size_group$FUNC, scope);
         }
-        static get_text_size_group ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static get_text_size_group ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GtkToolShellIface.get_text_size_group$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (java.lang.foreign.MemorySegment)_GtkToolShellIface.get_text_size_group_DOWN$MH.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -402,27 +622,39 @@ public class _GtkToolShellIface {
     public static VarHandle get_text_size_group$VH() {
         return _GtkToolShellIface.get_text_size_group$VH;
     }
-    public static MemoryAddress get_text_size_group$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkToolShellIface.get_text_size_group$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GtkSizeGroup* (*get_text_size_group)(GtkToolShell*);
+     * }
+     */
+    public static MemorySegment get_text_size_group$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkToolShellIface.get_text_size_group$VH.get(seg);
     }
-    public static void get_text_size_group$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GtkSizeGroup* (*get_text_size_group)(GtkToolShell*);
+     * }
+     */
+    public static void get_text_size_group$set(MemorySegment seg, MemorySegment x) {
         _GtkToolShellIface.get_text_size_group$VH.set(seg, x);
     }
-    public static MemoryAddress get_text_size_group$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkToolShellIface.get_text_size_group$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_text_size_group$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkToolShellIface.get_text_size_group$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_text_size_group$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_text_size_group$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkToolShellIface.get_text_size_group$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_text_size_group get_text_size_group (MemorySegment segment, MemorySession session) {
-        return get_text_size_group.ofAddress(get_text_size_group$get(segment), session);
+    public static get_text_size_group get_text_size_group(MemorySegment segment, SegmentScope scope) {
+        return get_text_size_group.ofAddress(get_text_size_group$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

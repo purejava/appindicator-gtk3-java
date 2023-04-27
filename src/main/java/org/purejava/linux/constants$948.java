@@ -7,49 +7,39 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$948 {
+final class constants$948 {
 
-    static final FunctionDescriptor glib_autoptr_clear_GProxyAddress$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$948() {}
+    static final FunctionDescriptor pango_stretch_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle pango_stretch_get_type$MH = RuntimeHelper.downcallHandle(
+        "pango_stretch_get_type",
+        constants$948.pango_stretch_get_type$FUNC
     );
-    static final MethodHandle glib_autoptr_clear_GProxyAddress$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GProxyAddress",
-        constants$948.glib_autoptr_clear_GProxyAddress$FUNC
+    static final FunctionDescriptor pango_font_mask_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle pango_font_mask_get_type$MH = RuntimeHelper.downcallHandle(
+        "pango_font_mask_get_type",
+        constants$948.pango_font_mask_get_type$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GProxyAddress$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor pango_shape_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle pango_shape_flags_get_type$MH = RuntimeHelper.downcallHandle(
+        "pango_shape_flags_get_type",
+        constants$948.pango_shape_flags_get_type$FUNC
     );
-    static final MethodHandle glib_autoptr_cleanup_GProxyAddress$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GProxyAddress",
-        constants$948.glib_autoptr_cleanup_GProxyAddress$FUNC
+    static final FunctionDescriptor pango_gravity_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle pango_gravity_get_type$MH = RuntimeHelper.downcallHandle(
+        "pango_gravity_get_type",
+        constants$948.pango_gravity_get_type$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GProxyAddress$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor pango_gravity_hint_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle pango_gravity_hint_get_type$MH = RuntimeHelper.downcallHandle(
+        "pango_gravity_hint_get_type",
+        constants$948.pango_gravity_hint_get_type$FUNC
     );
-    static final MethodHandle glib_listautoptr_cleanup_GProxyAddress$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GProxyAddress",
-        constants$948.glib_listautoptr_cleanup_GProxyAddress$FUNC
-    );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GProxyAddress$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_slistautoptr_cleanup_GProxyAddress$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GProxyAddress",
-        constants$948.glib_slistautoptr_cleanup_GProxyAddress$FUNC
-    );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GProxyAddress$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_queueautoptr_cleanup_GProxyAddress$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GProxyAddress",
-        constants$948.glib_queueautoptr_cleanup_GProxyAddress$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_clear_GProxy$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_autoptr_clear_GProxy$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GProxy",
-        constants$948.glib_autoptr_clear_GProxy$FUNC
+    static final FunctionDescriptor pango_alignment_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle pango_alignment_get_type$MH = RuntimeHelper.downcallHandle(
+        "pango_alignment_get_type",
+        constants$948.pango_alignment_get_type$FUNC
     );
 }
 

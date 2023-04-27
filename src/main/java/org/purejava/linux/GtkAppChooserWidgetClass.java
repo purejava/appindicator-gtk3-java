@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkAppChooserWidgetClass extends _GtkAppChooserWidgetClass {
+/**
+ * {@snippet :
+ * typedef struct _GtkAppChooserWidgetClass GtkAppChooserWidgetClass;
+ * }
+ */
+public final class GtkAppChooserWidgetClass extends _GtkAppChooserWidgetClass {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkAppChooserWidgetClass() {}
 }
 
 

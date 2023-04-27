@@ -7,70 +7,63 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$278 {
+final class constants$278 {
 
-    static final FunctionDescriptor g_regex_replace$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_regex_replace$MH = RuntimeHelper.downcallHandle(
-        "g_regex_replace",
-        constants$278.g_regex_replace$FUNC
-    );
-    static final FunctionDescriptor g_regex_replace_literal$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_regex_replace_literal$MH = RuntimeHelper.downcallHandle(
-        "g_regex_replace_literal",
-        constants$278.g_regex_replace_literal$FUNC
-    );
-    static final FunctionDescriptor g_regex_replace_eval$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$278() {}
+    static final FunctionDescriptor g_queue_insert_before$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_regex_replace_eval$MH = RuntimeHelper.downcallHandle(
-        "g_regex_replace_eval",
-        constants$278.g_regex_replace_eval$FUNC
+    static final MethodHandle g_queue_insert_before$MH = RuntimeHelper.downcallHandle(
+        "g_queue_insert_before",
+        constants$278.g_queue_insert_before$FUNC
     );
-    static final FunctionDescriptor g_regex_check_replacement$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_queue_insert_before_link$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_regex_check_replacement$MH = RuntimeHelper.downcallHandle(
-        "g_regex_check_replacement",
-        constants$278.g_regex_check_replacement$FUNC
+    static final MethodHandle g_queue_insert_before_link$MH = RuntimeHelper.downcallHandle(
+        "g_queue_insert_before_link",
+        constants$278.g_queue_insert_before_link$FUNC
     );
-    static final FunctionDescriptor g_match_info_get_regex$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_queue_insert_after$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_match_info_get_regex$MH = RuntimeHelper.downcallHandle(
-        "g_match_info_get_regex",
-        constants$278.g_match_info_get_regex$FUNC
+    static final MethodHandle g_queue_insert_after$MH = RuntimeHelper.downcallHandle(
+        "g_queue_insert_after",
+        constants$278.g_queue_insert_after$FUNC
     );
-    static final FunctionDescriptor g_match_info_get_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_queue_insert_after_link$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_match_info_get_string$MH = RuntimeHelper.downcallHandle(
-        "g_match_info_get_string",
-        constants$278.g_match_info_get_string$FUNC
+    static final MethodHandle g_queue_insert_after_link$MH = RuntimeHelper.downcallHandle(
+        "g_queue_insert_after_link",
+        constants$278.g_queue_insert_after_link$FUNC
+    );
+    static final FunctionDescriptor g_queue_insert_sorted$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_queue_insert_sorted$MH = RuntimeHelper.downcallHandle(
+        "g_queue_insert_sorted",
+        constants$278.g_queue_insert_sorted$FUNC
+    );
+    static final FunctionDescriptor g_queue_push_head_link$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_queue_push_head_link$MH = RuntimeHelper.downcallHandle(
+        "g_queue_push_head_link",
+        constants$278.g_queue_push_head_link$FUNC
     );
 }
 

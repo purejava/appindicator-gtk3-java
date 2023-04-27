@@ -7,27 +7,60 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$154 {
+final class constants$154 {
 
-    static final FunctionDescriptor GHookFunc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GHookFunc$MH = RuntimeHelper.downcallHandle(
-        constants$154.GHookFunc$FUNC
-    );
-    static final FunctionDescriptor GHookCheckFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GHookCheckFunc$MH = RuntimeHelper.downcallHandle(
-        constants$154.GHookCheckFunc$FUNC
-    );
-    static final FunctionDescriptor GHookFinalizeFunc$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$154() {}
+    static final FunctionDescriptor g_compute_hmac_for_bytes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GHookFinalizeFunc$MH = RuntimeHelper.downcallHandle(
-        constants$154.GHookFinalizeFunc$FUNC
+    static final MethodHandle g_compute_hmac_for_bytes$MH = RuntimeHelper.downcallHandle(
+        "g_compute_hmac_for_bytes",
+        constants$154.g_compute_hmac_for_bytes$FUNC
     );
+    static final FunctionDescriptor GHookCompareFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final FunctionDescriptor GHookCompareFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GHookCompareFunc_UP$MH = RuntimeHelper.upcallHandle(GHookCompareFunc.class, "apply", constants$154.GHookCompareFunc_UP$FUNC);
+    static final FunctionDescriptor GHookCompareFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GHookCompareFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$154.GHookCompareFunc_DOWN$FUNC
+    );
+    static final FunctionDescriptor GHookFindFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final FunctionDescriptor GHookFindFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GHookFindFunc_UP$MH = RuntimeHelper.upcallHandle(GHookFindFunc.class, "apply", constants$154.GHookFindFunc_UP$FUNC);
+    static final FunctionDescriptor GHookFindFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GHookFindFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$154.GHookFindFunc_DOWN$FUNC
+    );
+    static final FunctionDescriptor GHookMarshaller$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final FunctionDescriptor GHookMarshaller_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GHookMarshaller_UP$MH = RuntimeHelper.upcallHandle(GHookMarshaller.class, "apply", constants$154.GHookMarshaller_UP$FUNC);
 }
 
 

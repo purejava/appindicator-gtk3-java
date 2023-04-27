@@ -7,54 +7,59 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$851 {
+final class constants$851 {
 
-    static final FunctionDescriptor g_task_propagate_pointer$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$851() {}
+    static final FunctionDescriptor hb_face_set_glyph_count$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle hb_face_set_glyph_count$MH = RuntimeHelper.downcallHandle(
+        "hb_face_set_glyph_count",
+        constants$851.hb_face_set_glyph_count$FUNC
+    );
+    static final FunctionDescriptor hb_face_get_glyph_count$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle hb_face_get_glyph_count$MH = RuntimeHelper.downcallHandle(
+        "hb_face_get_glyph_count",
+        constants$851.hb_face_get_glyph_count$FUNC
+    );
+    static final FunctionDescriptor hb_face_get_table_tags$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_task_propagate_pointer$MH = RuntimeHelper.downcallHandle(
-        "g_task_propagate_pointer",
-        constants$851.g_task_propagate_pointer$FUNC
+    static final MethodHandle hb_face_get_table_tags$MH = RuntimeHelper.downcallHandle(
+        "hb_face_get_table_tags",
+        constants$851.hb_face_get_table_tags$FUNC
     );
-    static final FunctionDescriptor g_task_propagate_boolean$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor hb_face_collect_unicodes$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_task_propagate_boolean$MH = RuntimeHelper.downcallHandle(
-        "g_task_propagate_boolean",
-        constants$851.g_task_propagate_boolean$FUNC
+    static final MethodHandle hb_face_collect_unicodes$MH = RuntimeHelper.downcallHandle(
+        "hb_face_collect_unicodes",
+        constants$851.hb_face_collect_unicodes$FUNC
     );
-    static final FunctionDescriptor g_task_propagate_int$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+    static final FunctionDescriptor hb_face_collect_variation_selectors$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_task_propagate_int$MH = RuntimeHelper.downcallHandle(
-        "g_task_propagate_int",
-        constants$851.g_task_propagate_int$FUNC
+    static final MethodHandle hb_face_collect_variation_selectors$MH = RuntimeHelper.downcallHandle(
+        "hb_face_collect_variation_selectors",
+        constants$851.hb_face_collect_variation_selectors$FUNC
     );
-    static final FunctionDescriptor g_task_propagate_value$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor hb_face_collect_variation_unicodes$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_task_propagate_value$MH = RuntimeHelper.downcallHandle(
-        "g_task_propagate_value",
-        constants$851.g_task_propagate_value$FUNC
-    );
-    static final FunctionDescriptor g_task_had_error$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_task_had_error$MH = RuntimeHelper.downcallHandle(
-        "g_task_had_error",
-        constants$851.g_task_had_error$FUNC
-    );
-    static final FunctionDescriptor g_task_get_completed$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_task_get_completed$MH = RuntimeHelper.downcallHandle(
-        "g_task_get_completed",
-        constants$851.g_task_get_completed$FUNC
+    static final MethodHandle hb_face_collect_variation_unicodes$MH = RuntimeHelper.downcallHandle(
+        "hb_face_collect_variation_unicodes",
+        constants$851.hb_face_collect_variation_unicodes$FUNC
     );
 }
 

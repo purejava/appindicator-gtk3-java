@@ -7,52 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1261 {
+final class constants$1261 {
 
-    static final FunctionDescriptor gdk_window_invalidate_maybe_recurse$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1261() {}
+    static final FunctionDescriptor gtk_widget_is_drawable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_is_drawable$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_is_drawable",
+        constants$1261.gtk_widget_is_drawable$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_set_realized$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_widget_set_realized$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_set_realized",
+        constants$1261.gtk_widget_set_realized$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_get_realized$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_get_realized$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_realized",
+        constants$1261.gtk_widget_get_realized$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_set_mapped$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_widget_set_mapped$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_set_mapped",
+        constants$1261.gtk_widget_set_mapped$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_get_mapped$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_get_mapped$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_mapped",
+        constants$1261.gtk_widget_get_mapped$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_set_app_paintable$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gdk_window_invalidate_maybe_recurse$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_invalidate_maybe_recurse",
-        constants$1261.gdk_window_invalidate_maybe_recurse$FUNC
-    );
-    static final FunctionDescriptor gdk_window_get_update_area$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_get_update_area$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_update_area",
-        constants$1261.gdk_window_get_update_area$FUNC
-    );
-    static final FunctionDescriptor gdk_window_freeze_updates$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_freeze_updates$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_freeze_updates",
-        constants$1261.gdk_window_freeze_updates$FUNC
-    );
-    static final FunctionDescriptor gdk_window_thaw_updates$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_thaw_updates$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_thaw_updates",
-        constants$1261.gdk_window_thaw_updates$FUNC
-    );
-    static final FunctionDescriptor gdk_window_freeze_toplevel_updates_libgtk_only$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_freeze_toplevel_updates_libgtk_only$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_freeze_toplevel_updates_libgtk_only",
-        constants$1261.gdk_window_freeze_toplevel_updates_libgtk_only$FUNC
-    );
-    static final FunctionDescriptor gdk_window_thaw_toplevel_updates_libgtk_only$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_thaw_toplevel_updates_libgtk_only$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_thaw_toplevel_updates_libgtk_only",
-        constants$1261.gdk_window_thaw_toplevel_updates_libgtk_only$FUNC
+    static final MethodHandle gtk_widget_set_app_paintable$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_set_app_paintable",
+        constants$1261.gtk_widget_set_app_paintable$FUNC
     );
 }
 

@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkColorChooserWidget extends _GtkColorChooserWidget {
+/**
+ * {@snippet :
+ * typedef struct _GtkColorChooserWidget GtkColorChooserWidget;
+ * }
+ */
+public final class GtkColorChooserWidget extends _GtkColorChooserWidget {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkColorChooserWidget() {}
 }
 
 

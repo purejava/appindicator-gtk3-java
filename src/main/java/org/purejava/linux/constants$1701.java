@@ -7,50 +7,50 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1701 {
+final class constants$1701 {
 
-    static final FunctionDescriptor gtk_button_clicked$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1701() {}
+    static final FunctionDescriptor gtk_tool_item_rebuild_menu$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_button_clicked$MH = RuntimeHelper.downcallHandle(
-        "gtk_button_clicked",
-        constants$1701.gtk_button_clicked$FUNC
+    static final MethodHandle gtk_tool_item_rebuild_menu$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_item_rebuild_menu",
+        constants$1701.gtk_tool_item_rebuild_menu$FUNC
     );
-    static final FunctionDescriptor gtk_button_pressed$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_tool_item_toolbar_reconfigured$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_button_pressed$MH = RuntimeHelper.downcallHandle(
-        "gtk_button_pressed",
-        constants$1701.gtk_button_pressed$FUNC
+    static final MethodHandle gtk_tool_item_toolbar_reconfigured$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_item_toolbar_reconfigured",
+        constants$1701.gtk_tool_item_toolbar_reconfigured$FUNC
     );
-    static final FunctionDescriptor gtk_button_released$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor _gtk_tool_item_create_menu_proxy$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_button_released$MH = RuntimeHelper.downcallHandle(
-        "gtk_button_released",
-        constants$1701.gtk_button_released$FUNC
+    static final MethodHandle _gtk_tool_item_create_menu_proxy$MH = RuntimeHelper.downcallHandle(
+        "_gtk_tool_item_create_menu_proxy",
+        constants$1701._gtk_tool_item_create_menu_proxy$FUNC
     );
-    static final FunctionDescriptor gtk_button_enter$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gtk_tool_button_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_tool_button_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_button_get_type",
+        constants$1701.gtk_tool_button_get_type$FUNC
     );
-    static final MethodHandle gtk_button_enter$MH = RuntimeHelper.downcallHandle(
-        "gtk_button_enter",
-        constants$1701.gtk_button_enter$FUNC
-    );
-    static final FunctionDescriptor gtk_button_leave$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_button_leave$MH = RuntimeHelper.downcallHandle(
-        "gtk_button_leave",
-        constants$1701.gtk_button_leave$FUNC
-    );
-    static final FunctionDescriptor gtk_button_set_relief$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_tool_button_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_button_set_relief$MH = RuntimeHelper.downcallHandle(
-        "gtk_button_set_relief",
-        constants$1701.gtk_button_set_relief$FUNC
+    static final MethodHandle gtk_tool_button_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_button_new",
+        constants$1701.gtk_tool_button_new$FUNC
+    );
+    static final FunctionDescriptor gtk_tool_button_new_from_stock$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_tool_button_new_from_stock$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_button_new_from_stock",
+        constants$1701.gtk_tool_button_new_from_stock$FUNC
     );
 }
 

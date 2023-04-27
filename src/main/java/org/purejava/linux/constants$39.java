@@ -7,55 +7,45 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$39 {
+final class constants$39 {
 
-    static final FunctionDescriptor g_snprintf$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$39() {}
+    static final FunctionDescriptor g_get_host_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle g_get_host_name$MH = RuntimeHelper.downcallHandle(
+        "g_get_host_name",
+        constants$39.g_get_host_name$FUNC
+    );
+    static final FunctionDescriptor g_get_prgname$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle g_get_prgname$MH = RuntimeHelper.downcallHandle(
+        "g_get_prgname",
+        constants$39.g_get_prgname$FUNC
+    );
+    static final FunctionDescriptor g_set_prgname$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_snprintf$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_snprintf",
-        constants$39.g_snprintf$FUNC
+    static final MethodHandle g_set_prgname$MH = RuntimeHelper.downcallHandle(
+        "g_set_prgname",
+        constants$39.g_set_prgname$FUNC
     );
-    static final FunctionDescriptor g_vsnprintf$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_get_application_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle g_get_application_name$MH = RuntimeHelper.downcallHandle(
+        "g_get_application_name",
+        constants$39.g_get_application_name$FUNC
+    );
+    static final FunctionDescriptor g_set_application_name$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_vsnprintf$MH = RuntimeHelper.downcallHandle(
-        "g_vsnprintf",
-        constants$39.g_vsnprintf$FUNC
+    static final MethodHandle g_set_application_name$MH = RuntimeHelper.downcallHandle(
+        "g_set_application_name",
+        constants$39.g_set_application_name$FUNC
     );
-    static final FunctionDescriptor g_nullify_pointer$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_get_os_info$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_nullify_pointer$MH = RuntimeHelper.downcallHandle(
-        "g_nullify_pointer",
-        constants$39.g_nullify_pointer$FUNC
-    );
-    static final FunctionDescriptor g_format_size_full$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_format_size_full$MH = RuntimeHelper.downcallHandle(
-        "g_format_size_full",
-        constants$39.g_format_size_full$FUNC
-    );
-    static final FunctionDescriptor g_format_size$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_format_size$MH = RuntimeHelper.downcallHandle(
-        "g_format_size",
-        constants$39.g_format_size$FUNC
-    );
-    static final FunctionDescriptor g_format_size_for_display$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_format_size_for_display$MH = RuntimeHelper.downcallHandle(
-        "g_format_size_for_display",
-        constants$39.g_format_size_for_display$FUNC
+    static final MethodHandle g_get_os_info$MH = RuntimeHelper.downcallHandle(
+        "g_get_os_info",
+        constants$39.g_get_os_info$FUNC
     );
 }
 

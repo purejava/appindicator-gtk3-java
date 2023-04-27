@@ -7,50 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1910 {
+final class constants$1910 {
 
-    static final FunctionDescriptor gtk_notebook_set_scrollable$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_notebook_set_scrollable$MH = RuntimeHelper.downcallHandle(
-        "gtk_notebook_set_scrollable",
-        constants$1910.gtk_notebook_set_scrollable$FUNC
-    );
-    static final FunctionDescriptor gtk_notebook_get_scrollable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1910() {}
+    static final FunctionDescriptor gtk_action_connect_accelerator$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_notebook_get_scrollable$MH = RuntimeHelper.downcallHandle(
-        "gtk_notebook_get_scrollable",
-        constants$1910.gtk_notebook_get_scrollable$FUNC
+    static final MethodHandle gtk_action_connect_accelerator$MH = RuntimeHelper.downcallHandle(
+        "gtk_action_connect_accelerator",
+        constants$1910.gtk_action_connect_accelerator$FUNC
     );
-    static final FunctionDescriptor gtk_notebook_get_tab_hborder$FUNC = FunctionDescriptor.of(Constants$root.C_SHORT$LAYOUT,
+    static final FunctionDescriptor gtk_action_disconnect_accelerator$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_notebook_get_tab_hborder$MH = RuntimeHelper.downcallHandle(
-        "gtk_notebook_get_tab_hborder",
-        constants$1910.gtk_notebook_get_tab_hborder$FUNC
+    static final MethodHandle gtk_action_disconnect_accelerator$MH = RuntimeHelper.downcallHandle(
+        "gtk_action_disconnect_accelerator",
+        constants$1910.gtk_action_disconnect_accelerator$FUNC
     );
-    static final FunctionDescriptor gtk_notebook_get_tab_vborder$FUNC = FunctionDescriptor.of(Constants$root.C_SHORT$LAYOUT,
+    static final FunctionDescriptor gtk_action_get_accel_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_notebook_get_tab_vborder$MH = RuntimeHelper.downcallHandle(
-        "gtk_notebook_get_tab_vborder",
-        constants$1910.gtk_notebook_get_tab_vborder$FUNC
+    static final MethodHandle gtk_action_get_accel_path$MH = RuntimeHelper.downcallHandle(
+        "gtk_action_get_accel_path",
+        constants$1910.gtk_action_get_accel_path$FUNC
     );
-    static final FunctionDescriptor gtk_notebook_popup_enable$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_action_get_accel_closure$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_notebook_popup_enable$MH = RuntimeHelper.downcallHandle(
-        "gtk_notebook_popup_enable",
-        constants$1910.gtk_notebook_popup_enable$FUNC
+    static final MethodHandle gtk_action_get_accel_closure$MH = RuntimeHelper.downcallHandle(
+        "gtk_action_get_accel_closure",
+        constants$1910.gtk_action_get_accel_closure$FUNC
     );
-    static final FunctionDescriptor gtk_notebook_popup_disable$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_action_block_activate$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_notebook_popup_disable$MH = RuntimeHelper.downcallHandle(
-        "gtk_notebook_popup_disable",
-        constants$1910.gtk_notebook_popup_disable$FUNC
+    static final MethodHandle gtk_action_block_activate$MH = RuntimeHelper.downcallHandle(
+        "gtk_action_block_activate",
+        constants$1910.gtk_action_block_activate$FUNC
+    );
+    static final FunctionDescriptor gtk_action_unblock_activate$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_action_unblock_activate$MH = RuntimeHelper.downcallHandle(
+        "gtk_action_unblock_activate",
+        constants$1910.gtk_action_unblock_activate$FUNC
     );
 }
 

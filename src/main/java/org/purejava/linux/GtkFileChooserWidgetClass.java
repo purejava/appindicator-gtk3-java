@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkFileChooserWidgetClass extends _GtkFileChooserWidgetClass {
+/**
+ * {@snippet :
+ * typedef struct _GtkFileChooserWidgetClass GtkFileChooserWidgetClass;
+ * }
+ */
+public final class GtkFileChooserWidgetClass extends _GtkFileChooserWidgetClass {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkFileChooserWidgetClass() {}
 }
 
 

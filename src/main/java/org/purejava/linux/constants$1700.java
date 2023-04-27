@@ -7,46 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1700 {
+final class constants$1700 {
 
-    static final FunctionDescriptor gtk_button_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_button_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_button_get_type",
-        constants$1700.gtk_button_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_button_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_button_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_button_new",
-        constants$1700.gtk_button_new$FUNC
-    );
-    static final FunctionDescriptor gtk_button_new_with_label$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1700() {}
+    static final FunctionDescriptor gtk_tool_item_get_text_alignment$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_button_new_with_label$MH = RuntimeHelper.downcallHandle(
-        "gtk_button_new_with_label",
-        constants$1700.gtk_button_new_with_label$FUNC
+    static final MethodHandle gtk_tool_item_get_text_alignment$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_item_get_text_alignment",
+        constants$1700.gtk_tool_item_get_text_alignment$FUNC
     );
-    static final FunctionDescriptor gtk_button_new_from_icon_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_tool_item_get_text_orientation$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_tool_item_get_text_orientation$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_item_get_text_orientation",
+        constants$1700.gtk_tool_item_get_text_orientation$FUNC
+    );
+    static final FunctionDescriptor gtk_tool_item_get_text_size_group$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_tool_item_get_text_size_group$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_item_get_text_size_group",
+        constants$1700.gtk_tool_item_get_text_size_group$FUNC
+    );
+    static final FunctionDescriptor gtk_tool_item_retrieve_proxy_menu_item$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_tool_item_retrieve_proxy_menu_item$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_item_retrieve_proxy_menu_item",
+        constants$1700.gtk_tool_item_retrieve_proxy_menu_item$FUNC
+    );
+    static final FunctionDescriptor gtk_tool_item_get_proxy_menu_item$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_button_new_from_icon_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_button_new_from_icon_name",
-        constants$1700.gtk_button_new_from_icon_name$FUNC
-    );
-    static final FunctionDescriptor gtk_button_new_from_stock$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_button_new_from_stock$MH = RuntimeHelper.downcallHandle(
-        "gtk_button_new_from_stock",
-        constants$1700.gtk_button_new_from_stock$FUNC
+    static final MethodHandle gtk_tool_item_get_proxy_menu_item$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_item_get_proxy_menu_item",
+        constants$1700.gtk_tool_item_get_proxy_menu_item$FUNC
     );
-    static final FunctionDescriptor gtk_button_new_with_mnemonic$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_tool_item_set_proxy_menu_item$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_button_new_with_mnemonic$MH = RuntimeHelper.downcallHandle(
-        "gtk_button_new_with_mnemonic",
-        constants$1700.gtk_button_new_with_mnemonic$FUNC
+    static final MethodHandle gtk_tool_item_set_proxy_menu_item$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_item_set_proxy_menu_item",
+        constants$1700.gtk_tool_item_set_proxy_menu_item$FUNC
     );
 }
 

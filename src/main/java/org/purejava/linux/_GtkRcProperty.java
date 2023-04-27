@@ -7,9 +7,19 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GtkRcProperty {
+ *     GQuark type_name;
+ *     GQuark property_name;
+ *     gchar* origin;
+ *     GValue value;
+ * };
+ * }
+ */
 public class _GtkRcProperty {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_INT$LAYOUT.withName("type_name"),
         Constants$root.C_INT$LAYOUT.withName("property_name"),
         Constants$root.C_POINTER$LAYOUT.withName("origin"),
@@ -35,10 +45,22 @@ public class _GtkRcProperty {
     public static VarHandle type_name$VH() {
         return _GtkRcProperty.type_name$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GQuark type_name;
+     * }
+     */
     public static int type_name$get(MemorySegment seg) {
         return (int)_GtkRcProperty.type_name$VH.get(seg);
     }
-    public static void type_name$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GQuark type_name;
+     * }
+     */
+    public static void type_name$set(MemorySegment seg, int x) {
         _GtkRcProperty.type_name$VH.set(seg, x);
     }
     public static int type_name$get(MemorySegment seg, long index) {
@@ -51,10 +73,22 @@ public class _GtkRcProperty {
     public static VarHandle property_name$VH() {
         return _GtkRcProperty.property_name$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GQuark property_name;
+     * }
+     */
     public static int property_name$get(MemorySegment seg) {
         return (int)_GtkRcProperty.property_name$VH.get(seg);
     }
-    public static void property_name$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GQuark property_name;
+     * }
+     */
+    public static void property_name$set(MemorySegment seg, int x) {
         _GtkRcProperty.property_name$VH.set(seg, x);
     }
     public static int property_name$get(MemorySegment seg, long index) {
@@ -67,16 +101,28 @@ public class _GtkRcProperty {
     public static VarHandle origin$VH() {
         return _GtkRcProperty.origin$VH;
     }
-    public static MemoryAddress origin$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkRcProperty.origin$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gchar* origin;
+     * }
+     */
+    public static MemorySegment origin$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkRcProperty.origin$VH.get(seg);
     }
-    public static void origin$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gchar* origin;
+     * }
+     */
+    public static void origin$set(MemorySegment seg, MemorySegment x) {
         _GtkRcProperty.origin$VH.set(seg, x);
     }
-    public static MemoryAddress origin$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkRcProperty.origin$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment origin$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkRcProperty.origin$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void origin$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void origin$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkRcProperty.origin$VH.set(seg.asSlice(index*sizeof()), x);
     }
     public static MemorySegment value$slice(MemorySegment seg) {
@@ -84,10 +130,10 @@ public class _GtkRcProperty {
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

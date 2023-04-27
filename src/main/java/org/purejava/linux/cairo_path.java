@@ -7,9 +7,18 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct cairo_path {
+ *     cairo_status_t status;
+ *     cairo_path_data_t* data;
+ *     int num_data;
+ * };
+ * }
+ */
 public class cairo_path {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_INT$LAYOUT.withName("status"),
         MemoryLayout.paddingLayout(32),
         Constants$root.C_POINTER$LAYOUT.withName("data"),
@@ -23,10 +32,22 @@ public class cairo_path {
     public static VarHandle status$VH() {
         return cairo_path.status$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * cairo_status_t status;
+     * }
+     */
     public static int status$get(MemorySegment seg) {
         return (int)cairo_path.status$VH.get(seg);
     }
-    public static void status$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * cairo_status_t status;
+     * }
+     */
+    public static void status$set(MemorySegment seg, int x) {
         cairo_path.status$VH.set(seg, x);
     }
     public static int status$get(MemorySegment seg, long index) {
@@ -39,26 +60,50 @@ public class cairo_path {
     public static VarHandle data$VH() {
         return cairo_path.data$VH;
     }
-    public static MemoryAddress data$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)cairo_path.data$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * cairo_path_data_t* data;
+     * }
+     */
+    public static MemorySegment data$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)cairo_path.data$VH.get(seg);
     }
-    public static void data$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * cairo_path_data_t* data;
+     * }
+     */
+    public static void data$set(MemorySegment seg, MemorySegment x) {
         cairo_path.data$VH.set(seg, x);
     }
-    public static MemoryAddress data$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)cairo_path.data$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment data$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)cairo_path.data$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void data$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void data$set(MemorySegment seg, long index, MemorySegment x) {
         cairo_path.data$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle num_data$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("num_data"));
     public static VarHandle num_data$VH() {
         return cairo_path.num_data$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * int num_data;
+     * }
+     */
     public static int num_data$get(MemorySegment seg) {
         return (int)cairo_path.num_data$VH.get(seg);
     }
-    public static void num_data$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * int num_data;
+     * }
+     */
+    public static void num_data$set(MemorySegment seg, int x) {
         cairo_path.num_data$VH.set(seg, x);
     }
     public static int num_data$get(MemorySegment seg, long index) {
@@ -69,10 +114,10 @@ public class cairo_path {
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

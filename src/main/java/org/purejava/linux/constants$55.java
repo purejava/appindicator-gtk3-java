@@ -7,48 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$55 {
+final class constants$55 {
 
-    static final FunctionDescriptor mkstemp$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$55() {}
+    static final FunctionDescriptor on_exit$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle mkstemp$MH = RuntimeHelper.downcallHandle(
-        "mkstemp",
-        constants$55.mkstemp$FUNC
+    static final MethodHandle on_exit$MH = RuntimeHelper.downcallHandle(
+        "on_exit",
+        constants$55.on_exit$FUNC
     );
-    static final FunctionDescriptor mkstemps$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor exit$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle mkstemps$MH = RuntimeHelper.downcallHandle(
-        "mkstemps",
-        constants$55.mkstemps$FUNC
+    static final MethodHandle exit$MH = RuntimeHelper.downcallHandle(
+        "exit",
+        constants$55.exit$FUNC
     );
-    static final FunctionDescriptor mkdtemp$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor quick_exit$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle quick_exit$MH = RuntimeHelper.downcallHandle(
+        "quick_exit",
+        constants$55.quick_exit$FUNC
+    );
+    static final FunctionDescriptor _Exit$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle _Exit$MH = RuntimeHelper.downcallHandle(
+        "_Exit",
+        constants$55._Exit$FUNC
+    );
+    static final FunctionDescriptor getenv$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle mkdtemp$MH = RuntimeHelper.downcallHandle(
-        "mkdtemp",
-        constants$55.mkdtemp$FUNC
+    static final MethodHandle getenv$MH = RuntimeHelper.downcallHandle(
+        "getenv",
+        constants$55.getenv$FUNC
     );
-    static final FunctionDescriptor system$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor putenv$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle system$MH = RuntimeHelper.downcallHandle(
-        "system",
-        constants$55.system$FUNC
-    );
-    static final FunctionDescriptor realpath$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle realpath$MH = RuntimeHelper.downcallHandle(
-        "realpath",
-        constants$55.realpath$FUNC
-    );
-    static final FunctionDescriptor __compar_fn_t$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle putenv$MH = RuntimeHelper.downcallHandle(
+        "putenv",
+        constants$55.putenv$FUNC
     );
 }
 

@@ -7,67 +7,39 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$670 {
+final class constants$670 {
 
-    static final FunctionDescriptor g_file_open_readwrite$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$670() {}
+    static final FunctionDescriptor g_drive_start_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_drive_start_flags_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_drive_start_flags_get_type",
+        constants$670.g_drive_start_flags_get_type$FUNC
     );
-    static final MethodHandle g_file_open_readwrite$MH = RuntimeHelper.downcallHandle(
-        "g_file_open_readwrite",
-        constants$670.g_file_open_readwrite$FUNC
+    static final FunctionDescriptor g_drive_start_stop_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_drive_start_stop_type_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_drive_start_stop_type_get_type",
+        constants$670.g_drive_start_stop_type_get_type$FUNC
     );
-    static final FunctionDescriptor g_file_open_readwrite_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_file_copy_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_file_copy_flags_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_file_copy_flags_get_type",
+        constants$670.g_file_copy_flags_get_type$FUNC
     );
-    static final MethodHandle g_file_open_readwrite_async$MH = RuntimeHelper.downcallHandle(
-        "g_file_open_readwrite_async",
-        constants$670.g_file_open_readwrite_async$FUNC
+    static final FunctionDescriptor g_file_monitor_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_file_monitor_flags_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_file_monitor_flags_get_type",
+        constants$670.g_file_monitor_flags_get_type$FUNC
     );
-    static final FunctionDescriptor g_file_open_readwrite_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_file_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_file_type_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_file_type_get_type",
+        constants$670.g_file_type_get_type$FUNC
     );
-    static final MethodHandle g_file_open_readwrite_finish$MH = RuntimeHelper.downcallHandle(
-        "g_file_open_readwrite_finish",
-        constants$670.g_file_open_readwrite_finish$FUNC
-    );
-    static final FunctionDescriptor g_file_create_readwrite$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_create_readwrite$MH = RuntimeHelper.downcallHandle(
-        "g_file_create_readwrite",
-        constants$670.g_file_create_readwrite$FUNC
-    );
-    static final FunctionDescriptor g_file_create_readwrite_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_create_readwrite_async$MH = RuntimeHelper.downcallHandle(
-        "g_file_create_readwrite_async",
-        constants$670.g_file_create_readwrite_async$FUNC
-    );
-    static final FunctionDescriptor g_file_create_readwrite_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_create_readwrite_finish$MH = RuntimeHelper.downcallHandle(
-        "g_file_create_readwrite_finish",
-        constants$670.g_file_create_readwrite_finish$FUNC
+    static final FunctionDescriptor g_filesystem_preview_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_filesystem_preview_type_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_filesystem_preview_type_get_type",
+        constants$670.g_filesystem_preview_type_get_type$FUNC
     );
 }
 

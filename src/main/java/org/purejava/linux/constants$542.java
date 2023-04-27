@@ -7,66 +7,63 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$542 {
+final class constants$542 {
 
-    static final FunctionDescriptor g_initable_newv$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$542() {}
+    static final FunctionDescriptor g_data_input_stream_read_int16$FUNC = FunctionDescriptor.of(Constants$root.C_SHORT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_initable_newv$MH = RuntimeHelper.downcallHandle(
-        "g_initable_newv",
-        constants$542.g_initable_newv$FUNC
+    static final MethodHandle g_data_input_stream_read_int16$MH = RuntimeHelper.downcallHandle(
+        "g_data_input_stream_read_int16",
+        constants$542.g_data_input_stream_read_int16$FUNC
     );
-    static final FunctionDescriptor g_initable_new_valist$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_data_input_stream_read_uint16$FUNC = FunctionDescriptor.of(Constants$root.C_SHORT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_initable_new_valist$MH = RuntimeHelper.downcallHandle(
-        "g_initable_new_valist",
-        constants$542.g_initable_new_valist$FUNC
+    static final MethodHandle g_data_input_stream_read_uint16$MH = RuntimeHelper.downcallHandle(
+        "g_data_input_stream_read_uint16",
+        constants$542.g_data_input_stream_read_uint16$FUNC
     );
-    static final FunctionDescriptor g_async_initable_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_async_initable_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_async_initable_get_type",
-        constants$542.g_async_initable_get_type$FUNC
-    );
-    static final FunctionDescriptor g_async_initable_init_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_data_input_stream_read_int32$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_async_initable_init_async$MH = RuntimeHelper.downcallHandle(
-        "g_async_initable_init_async",
-        constants$542.g_async_initable_init_async$FUNC
+    static final MethodHandle g_data_input_stream_read_int32$MH = RuntimeHelper.downcallHandle(
+        "g_data_input_stream_read_int32",
+        constants$542.g_data_input_stream_read_int32$FUNC
     );
-    static final FunctionDescriptor g_async_initable_init_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_data_input_stream_read_uint32$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_async_initable_init_finish$MH = RuntimeHelper.downcallHandle(
-        "g_async_initable_init_finish",
-        constants$542.g_async_initable_init_finish$FUNC
+    static final MethodHandle g_data_input_stream_read_uint32$MH = RuntimeHelper.downcallHandle(
+        "g_data_input_stream_read_uint32",
+        constants$542.g_data_input_stream_read_uint32$FUNC
     );
-    static final FunctionDescriptor g_async_initable_new_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_data_input_stream_read_int64$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_async_initable_new_async$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_async_initable_new_async",
-        constants$542.g_async_initable_new_async$FUNC
+    static final MethodHandle g_data_input_stream_read_int64$MH = RuntimeHelper.downcallHandle(
+        "g_data_input_stream_read_int64",
+        constants$542.g_data_input_stream_read_int64$FUNC
+    );
+    static final FunctionDescriptor g_data_input_stream_read_uint64$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_data_input_stream_read_uint64$MH = RuntimeHelper.downcallHandle(
+        "g_data_input_stream_read_uint64",
+        constants$542.g_data_input_stream_read_uint64$FUNC
     );
 }
 

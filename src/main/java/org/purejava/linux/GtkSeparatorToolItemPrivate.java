@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkSeparatorToolItemPrivate {
+/**
+ * {@snippet :
+ * typedef struct _GtkSeparatorToolItemPrivate GtkSeparatorToolItemPrivate;
+ * }
+ */
+public final class GtkSeparatorToolItemPrivate {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkSeparatorToolItemPrivate() {}
 }
 
 

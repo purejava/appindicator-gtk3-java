@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GInputVector extends _GInputVector {
+/**
+ * {@snippet :
+ * typedef struct _GInputVector GInputVector;
+ * }
+ */
+public final class GInputVector extends _GInputVector {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GInputVector() {}
 }
 
 

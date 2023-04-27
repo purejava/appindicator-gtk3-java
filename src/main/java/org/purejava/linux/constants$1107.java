@@ -7,48 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1107 {
+final class constants$1107 {
 
-    static final FunctionDescriptor pango_fontset_simple_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_fontset_simple_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_fontset_simple_get_type",
-        constants$1107.pango_fontset_simple_get_type$FUNC
-    );
-    static final FunctionDescriptor pango_fontset_simple_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1107() {}
+    static final FunctionDescriptor gdk_seat_get_display$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_fontset_simple_new$MH = RuntimeHelper.downcallHandle(
-        "pango_fontset_simple_new",
-        constants$1107.pango_fontset_simple_new$FUNC
+    static final MethodHandle gdk_seat_get_display$MH = RuntimeHelper.downcallHandle(
+        "gdk_seat_get_display",
+        constants$1107.gdk_seat_get_display$FUNC
     );
-    static final FunctionDescriptor pango_fontset_simple_append$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gdk_seat_get_capabilities$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_fontset_simple_append$MH = RuntimeHelper.downcallHandle(
-        "pango_fontset_simple_append",
-        constants$1107.pango_fontset_simple_append$FUNC
+    static final MethodHandle gdk_seat_get_capabilities$MH = RuntimeHelper.downcallHandle(
+        "gdk_seat_get_capabilities",
+        constants$1107.gdk_seat_get_capabilities$FUNC
     );
-    static final FunctionDescriptor pango_fontset_simple_size$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_fontset_simple_size$MH = RuntimeHelper.downcallHandle(
-        "pango_fontset_simple_size",
-        constants$1107.pango_fontset_simple_size$FUNC
-    );
-    static final FunctionDescriptor pango_glyph_item_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_glyph_item_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_glyph_item_get_type",
-        constants$1107.pango_glyph_item_get_type$FUNC
-    );
-    static final FunctionDescriptor pango_glyph_item_split$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gdk_seat_get_slaves$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle pango_glyph_item_split$MH = RuntimeHelper.downcallHandle(
-        "pango_glyph_item_split",
-        constants$1107.pango_glyph_item_split$FUNC
+    static final MethodHandle gdk_seat_get_slaves$MH = RuntimeHelper.downcallHandle(
+        "gdk_seat_get_slaves",
+        constants$1107.gdk_seat_get_slaves$FUNC
+    );
+    static final FunctionDescriptor gdk_seat_get_pointer$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_seat_get_pointer$MH = RuntimeHelper.downcallHandle(
+        "gdk_seat_get_pointer",
+        constants$1107.gdk_seat_get_pointer$FUNC
+    );
+    static final FunctionDescriptor gdk_seat_get_keyboard$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_seat_get_keyboard$MH = RuntimeHelper.downcallHandle(
+        "gdk_seat_get_keyboard",
+        constants$1107.gdk_seat_get_keyboard$FUNC
+    );
+    static final FunctionDescriptor gdk_rectangle_intersect$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_rectangle_intersect$MH = RuntimeHelper.downcallHandle(
+        "gdk_rectangle_intersect",
+        constants$1107.gdk_rectangle_intersect$FUNC
     );
 }
 

@@ -7,57 +7,58 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1242 {
+final class constants$1242 {
 
-    static final FunctionDescriptor gdk_window_scroll$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1242() {}
+    static final FunctionDescriptor atk_table_is_row_selected$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle atk_table_is_row_selected$MH = RuntimeHelper.downcallHandle(
+        "atk_table_is_row_selected",
+        constants$1242.atk_table_is_row_selected$FUNC
+    );
+    static final FunctionDescriptor atk_table_is_selected$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gdk_window_scroll$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_scroll",
-        constants$1242.gdk_window_scroll$FUNC
+    static final MethodHandle atk_table_is_selected$MH = RuntimeHelper.downcallHandle(
+        "atk_table_is_selected",
+        constants$1242.atk_table_is_selected$FUNC
     );
-    static final FunctionDescriptor gdk_window_move_region$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor atk_table_add_row_selection$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gdk_window_move_region$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_move_region",
-        constants$1242.gdk_window_move_region$FUNC
+    static final MethodHandle atk_table_add_row_selection$MH = RuntimeHelper.downcallHandle(
+        "atk_table_add_row_selection",
+        constants$1242.atk_table_add_row_selection$FUNC
     );
-    static final FunctionDescriptor gdk_window_ensure_native$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_ensure_native$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_ensure_native",
-        constants$1242.gdk_window_ensure_native$FUNC
-    );
-    static final FunctionDescriptor gdk_window_shape_combine_region$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor atk_table_remove_row_selection$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gdk_window_shape_combine_region$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_shape_combine_region",
-        constants$1242.gdk_window_shape_combine_region$FUNC
+    static final MethodHandle atk_table_remove_row_selection$MH = RuntimeHelper.downcallHandle(
+        "atk_table_remove_row_selection",
+        constants$1242.atk_table_remove_row_selection$FUNC
     );
-    static final FunctionDescriptor gdk_window_set_child_shapes$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor atk_table_add_column_selection$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gdk_window_set_child_shapes$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_child_shapes",
-        constants$1242.gdk_window_set_child_shapes$FUNC
+    static final MethodHandle atk_table_add_column_selection$MH = RuntimeHelper.downcallHandle(
+        "atk_table_add_column_selection",
+        constants$1242.atk_table_add_column_selection$FUNC
     );
-    static final FunctionDescriptor gdk_window_get_composited$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor atk_table_remove_column_selection$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gdk_window_get_composited$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_composited",
-        constants$1242.gdk_window_get_composited$FUNC
+    static final MethodHandle atk_table_remove_column_selection$MH = RuntimeHelper.downcallHandle(
+        "atk_table_remove_column_selection",
+        constants$1242.atk_table_remove_column_selection$FUNC
     );
 }
 

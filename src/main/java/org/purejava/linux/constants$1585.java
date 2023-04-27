@@ -7,52 +7,50 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1585 {
+final class constants$1585 {
 
-    static final FunctionDescriptor gtk_tree_view_column_set_reorderable$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1585() {}
+    static final FunctionDescriptor gtk_file_chooser_native_set_cancel_label$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_column_set_reorderable$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_set_reorderable",
-        constants$1585.gtk_tree_view_column_set_reorderable$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_column_get_reorderable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_tree_view_column_get_reorderable$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_get_reorderable",
-        constants$1585.gtk_tree_view_column_get_reorderable$FUNC
+    static final MethodHandle gtk_file_chooser_native_set_cancel_label$MH = RuntimeHelper.downcallHandle(
+        "gtk_file_chooser_native_set_cancel_label",
+        constants$1585.gtk_file_chooser_native_set_cancel_label$FUNC
     );
-    static final FunctionDescriptor gtk_tree_view_column_set_sort_column_id$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_file_chooser_widget_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_file_chooser_widget_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_file_chooser_widget_get_type",
+        constants$1585.gtk_file_chooser_widget_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_file_chooser_widget_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_tree_view_column_set_sort_column_id$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_set_sort_column_id",
-        constants$1585.gtk_tree_view_column_set_sort_column_id$FUNC
+    static final MethodHandle gtk_file_chooser_widget_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_file_chooser_widget_new",
+        constants$1585.gtk_file_chooser_widget_new$FUNC
     );
-    static final FunctionDescriptor gtk_tree_view_column_get_sort_column_id$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_column_get_sort_column_id$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_get_sort_column_id",
-        constants$1585.gtk_tree_view_column_get_sort_column_id$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_column_set_sort_indicator$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor GtkFlowBoxCreateWidgetFunc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_column_set_sort_indicator$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_set_sort_indicator",
-        constants$1585.gtk_tree_view_column_set_sort_indicator$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_column_get_sort_indicator$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_tree_view_column_get_sort_indicator$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_get_sort_indicator",
-        constants$1585.gtk_tree_view_column_get_sort_indicator$FUNC
+    static final FunctionDescriptor GtkFlowBoxCreateWidgetFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GtkFlowBoxCreateWidgetFunc_UP$MH = RuntimeHelper.upcallHandle(GtkFlowBoxCreateWidgetFunc.class, "apply", constants$1585.GtkFlowBoxCreateWidgetFunc_UP$FUNC);
+    static final FunctionDescriptor GtkFlowBoxCreateWidgetFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GtkFlowBoxCreateWidgetFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$1585.GtkFlowBoxCreateWidgetFunc_DOWN$FUNC
+    );
+    static final FunctionDescriptor gtk_flow_box_child_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_flow_box_child_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_flow_box_child_get_type",
+        constants$1585.gtk_flow_box_child_get_type$FUNC
     );
 }
 

@@ -7,6528 +7,10482 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
- class app_indicator_h_10 extends app_indicator_h_9 {
+public class app_indicator_h_10 extends app_indicator_h_9 {
 
-    public static MethodHandle glib_slistautoptr_cleanup_GDataInputStream$MH() {
-        return RuntimeHelper.requireNonNull(constants$896.glib_slistautoptr_cleanup_GDataInputStream$MH,"glib_slistautoptr_cleanup_GDataInputStream");
-    }
-    public static void glib_slistautoptr_cleanup_GDataInputStream ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GDataInputStream$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GDataInputStream$MH() {
-        return RuntimeHelper.requireNonNull(constants$896.glib_queueautoptr_cleanup_GDataInputStream$MH,"glib_queueautoptr_cleanup_GDataInputStream");
-    }
-    public static void glib_queueautoptr_cleanup_GDataInputStream ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GDataInputStream$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GDataOutputStream_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GDataOutputStream_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GDataOutputStream_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GDataOutputStream_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GDataOutputStream$MH() {
-        return RuntimeHelper.requireNonNull(constants$896.glib_autoptr_clear_GDataOutputStream$MH,"glib_autoptr_clear_GDataOutputStream");
-    }
-    public static void glib_autoptr_clear_GDataOutputStream ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GDataOutputStream$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GDataOutputStream$MH() {
-        return RuntimeHelper.requireNonNull(constants$896.glib_autoptr_cleanup_GDataOutputStream$MH,"glib_autoptr_cleanup_GDataOutputStream");
-    }
-    public static void glib_autoptr_cleanup_GDataOutputStream ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GDataOutputStream$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GDataOutputStream$MH() {
-        return RuntimeHelper.requireNonNull(constants$896.glib_listautoptr_cleanup_GDataOutputStream$MH,"glib_listautoptr_cleanup_GDataOutputStream");
-    }
-    public static void glib_listautoptr_cleanup_GDataOutputStream ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GDataOutputStream$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GDataOutputStream$MH() {
-        return RuntimeHelper.requireNonNull(constants$896.glib_slistautoptr_cleanup_GDataOutputStream$MH,"glib_slistautoptr_cleanup_GDataOutputStream");
-    }
-    public static void glib_slistautoptr_cleanup_GDataOutputStream ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GDataOutputStream$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GDataOutputStream$MH() {
-        return RuntimeHelper.requireNonNull(constants$897.glib_queueautoptr_cleanup_GDataOutputStream$MH,"glib_queueautoptr_cleanup_GDataOutputStream");
-    }
-    public static void glib_queueautoptr_cleanup_GDataOutputStream ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GDataOutputStream$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GDBusActionGroup_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GDBusActionGroup_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GDBusActionGroup_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GDBusActionGroup_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GDBusActionGroup$MH() {
-        return RuntimeHelper.requireNonNull(constants$897.glib_autoptr_clear_GDBusActionGroup$MH,"glib_autoptr_clear_GDBusActionGroup");
-    }
-    public static void glib_autoptr_clear_GDBusActionGroup ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GDBusActionGroup$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GDBusActionGroup$MH() {
-        return RuntimeHelper.requireNonNull(constants$897.glib_autoptr_cleanup_GDBusActionGroup$MH,"glib_autoptr_cleanup_GDBusActionGroup");
-    }
-    public static void glib_autoptr_cleanup_GDBusActionGroup ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GDBusActionGroup$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GDBusActionGroup$MH() {
-        return RuntimeHelper.requireNonNull(constants$897.glib_listautoptr_cleanup_GDBusActionGroup$MH,"glib_listautoptr_cleanup_GDBusActionGroup");
-    }
-    public static void glib_listautoptr_cleanup_GDBusActionGroup ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GDBusActionGroup$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GDBusActionGroup$MH() {
-        return RuntimeHelper.requireNonNull(constants$897.glib_slistautoptr_cleanup_GDBusActionGroup$MH,"glib_slistautoptr_cleanup_GDBusActionGroup");
-    }
-    public static void glib_slistautoptr_cleanup_GDBusActionGroup ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GDBusActionGroup$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GDBusActionGroup$MH() {
-        return RuntimeHelper.requireNonNull(constants$897.glib_queueautoptr_cleanup_GDBusActionGroup$MH,"glib_queueautoptr_cleanup_GDBusActionGroup");
-    }
-    public static void glib_queueautoptr_cleanup_GDBusActionGroup ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GDBusActionGroup$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GDBusAuthObserver_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GDBusAuthObserver_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GDBusAuthObserver_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GDBusAuthObserver_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GDBusAuthObserver$MH() {
-        return RuntimeHelper.requireNonNull(constants$898.glib_autoptr_clear_GDBusAuthObserver$MH,"glib_autoptr_clear_GDBusAuthObserver");
-    }
-    public static void glib_autoptr_clear_GDBusAuthObserver ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GDBusAuthObserver$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GDBusAuthObserver$MH() {
-        return RuntimeHelper.requireNonNull(constants$898.glib_autoptr_cleanup_GDBusAuthObserver$MH,"glib_autoptr_cleanup_GDBusAuthObserver");
-    }
-    public static void glib_autoptr_cleanup_GDBusAuthObserver ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GDBusAuthObserver$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GDBusAuthObserver$MH() {
-        return RuntimeHelper.requireNonNull(constants$898.glib_listautoptr_cleanup_GDBusAuthObserver$MH,"glib_listautoptr_cleanup_GDBusAuthObserver");
-    }
-    public static void glib_listautoptr_cleanup_GDBusAuthObserver ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GDBusAuthObserver$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GDBusAuthObserver$MH() {
-        return RuntimeHelper.requireNonNull(constants$898.glib_slistautoptr_cleanup_GDBusAuthObserver$MH,"glib_slistautoptr_cleanup_GDBusAuthObserver");
-    }
-    public static void glib_slistautoptr_cleanup_GDBusAuthObserver ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GDBusAuthObserver$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GDBusAuthObserver$MH() {
-        return RuntimeHelper.requireNonNull(constants$898.glib_queueautoptr_cleanup_GDBusAuthObserver$MH,"glib_queueautoptr_cleanup_GDBusAuthObserver");
-    }
-    public static void glib_queueautoptr_cleanup_GDBusAuthObserver ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GDBusAuthObserver$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GDBusConnection_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GDBusConnection_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GDBusConnection_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GDBusConnection_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GDBusConnection$MH() {
-        return RuntimeHelper.requireNonNull(constants$898.glib_autoptr_clear_GDBusConnection$MH,"glib_autoptr_clear_GDBusConnection");
-    }
-    public static void glib_autoptr_clear_GDBusConnection ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GDBusConnection$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GDBusConnection$MH() {
-        return RuntimeHelper.requireNonNull(constants$899.glib_autoptr_cleanup_GDBusConnection$MH,"glib_autoptr_cleanup_GDBusConnection");
-    }
-    public static void glib_autoptr_cleanup_GDBusConnection ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GDBusConnection$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GDBusConnection$MH() {
-        return RuntimeHelper.requireNonNull(constants$899.glib_listautoptr_cleanup_GDBusConnection$MH,"glib_listautoptr_cleanup_GDBusConnection");
-    }
-    public static void glib_listautoptr_cleanup_GDBusConnection ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GDBusConnection$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GDBusConnection$MH() {
-        return RuntimeHelper.requireNonNull(constants$899.glib_slistautoptr_cleanup_GDBusConnection$MH,"glib_slistautoptr_cleanup_GDBusConnection");
-    }
-    public static void glib_slistautoptr_cleanup_GDBusConnection ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GDBusConnection$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GDBusConnection$MH() {
-        return RuntimeHelper.requireNonNull(constants$899.glib_queueautoptr_cleanup_GDBusConnection$MH,"glib_queueautoptr_cleanup_GDBusConnection");
-    }
-    public static void glib_queueautoptr_cleanup_GDBusConnection ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GDBusConnection$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GDBusInterface_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GDBusInterface_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GDBusInterface_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GDBusInterface_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GDBusInterface$MH() {
-        return RuntimeHelper.requireNonNull(constants$899.glib_autoptr_clear_GDBusInterface$MH,"glib_autoptr_clear_GDBusInterface");
-    }
-    public static void glib_autoptr_clear_GDBusInterface ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GDBusInterface$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GDBusInterface$MH() {
-        return RuntimeHelper.requireNonNull(constants$899.glib_autoptr_cleanup_GDBusInterface$MH,"glib_autoptr_cleanup_GDBusInterface");
-    }
-    public static void glib_autoptr_cleanup_GDBusInterface ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GDBusInterface$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GDBusInterface$MH() {
-        return RuntimeHelper.requireNonNull(constants$900.glib_listautoptr_cleanup_GDBusInterface$MH,"glib_listautoptr_cleanup_GDBusInterface");
-    }
-    public static void glib_listautoptr_cleanup_GDBusInterface ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GDBusInterface$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GDBusInterface$MH() {
-        return RuntimeHelper.requireNonNull(constants$900.glib_slistautoptr_cleanup_GDBusInterface$MH,"glib_slistautoptr_cleanup_GDBusInterface");
-    }
-    public static void glib_slistautoptr_cleanup_GDBusInterface ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GDBusInterface$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GDBusInterface$MH() {
-        return RuntimeHelper.requireNonNull(constants$900.glib_queueautoptr_cleanup_GDBusInterface$MH,"glib_queueautoptr_cleanup_GDBusInterface");
-    }
-    public static void glib_queueautoptr_cleanup_GDBusInterface ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GDBusInterface$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GDBusInterfaceSkeleton_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GDBusInterfaceSkeleton_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GDBusInterfaceSkeleton_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GDBusInterfaceSkeleton_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GDBusInterfaceSkeleton$MH() {
-        return RuntimeHelper.requireNonNull(constants$900.glib_autoptr_clear_GDBusInterfaceSkeleton$MH,"glib_autoptr_clear_GDBusInterfaceSkeleton");
-    }
-    public static void glib_autoptr_clear_GDBusInterfaceSkeleton ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GDBusInterfaceSkeleton$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GDBusInterfaceSkeleton$MH() {
-        return RuntimeHelper.requireNonNull(constants$900.glib_autoptr_cleanup_GDBusInterfaceSkeleton$MH,"glib_autoptr_cleanup_GDBusInterfaceSkeleton");
-    }
-    public static void glib_autoptr_cleanup_GDBusInterfaceSkeleton ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GDBusInterfaceSkeleton$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GDBusInterfaceSkeleton$MH() {
-        return RuntimeHelper.requireNonNull(constants$900.glib_listautoptr_cleanup_GDBusInterfaceSkeleton$MH,"glib_listautoptr_cleanup_GDBusInterfaceSkeleton");
-    }
-    public static void glib_listautoptr_cleanup_GDBusInterfaceSkeleton ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GDBusInterfaceSkeleton$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GDBusInterfaceSkeleton$MH() {
-        return RuntimeHelper.requireNonNull(constants$901.glib_slistautoptr_cleanup_GDBusInterfaceSkeleton$MH,"glib_slistautoptr_cleanup_GDBusInterfaceSkeleton");
-    }
-    public static void glib_slistautoptr_cleanup_GDBusInterfaceSkeleton ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GDBusInterfaceSkeleton$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GDBusInterfaceSkeleton$MH() {
-        return RuntimeHelper.requireNonNull(constants$901.glib_queueautoptr_cleanup_GDBusInterfaceSkeleton$MH,"glib_queueautoptr_cleanup_GDBusInterfaceSkeleton");
-    }
-    public static void glib_queueautoptr_cleanup_GDBusInterfaceSkeleton ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GDBusInterfaceSkeleton$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GDBusMenuModel_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GDBusMenuModel_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GDBusMenuModel_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GDBusMenuModel_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GDBusMenuModel$MH() {
-        return RuntimeHelper.requireNonNull(constants$901.glib_autoptr_clear_GDBusMenuModel$MH,"glib_autoptr_clear_GDBusMenuModel");
-    }
-    public static void glib_autoptr_clear_GDBusMenuModel ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GDBusMenuModel$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GDBusMenuModel$MH() {
-        return RuntimeHelper.requireNonNull(constants$901.glib_autoptr_cleanup_GDBusMenuModel$MH,"glib_autoptr_cleanup_GDBusMenuModel");
-    }
-    public static void glib_autoptr_cleanup_GDBusMenuModel ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GDBusMenuModel$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GDBusMenuModel$MH() {
-        return RuntimeHelper.requireNonNull(constants$901.glib_listautoptr_cleanup_GDBusMenuModel$MH,"glib_listautoptr_cleanup_GDBusMenuModel");
-    }
-    public static void glib_listautoptr_cleanup_GDBusMenuModel ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GDBusMenuModel$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GDBusMenuModel$MH() {
-        return RuntimeHelper.requireNonNull(constants$901.glib_slistautoptr_cleanup_GDBusMenuModel$MH,"glib_slistautoptr_cleanup_GDBusMenuModel");
-    }
-    public static void glib_slistautoptr_cleanup_GDBusMenuModel ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GDBusMenuModel$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GDBusMenuModel$MH() {
-        return RuntimeHelper.requireNonNull(constants$902.glib_queueautoptr_cleanup_GDBusMenuModel$MH,"glib_queueautoptr_cleanup_GDBusMenuModel");
-    }
-    public static void glib_queueautoptr_cleanup_GDBusMenuModel ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GDBusMenuModel$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GDBusMessage_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GDBusMessage_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GDBusMessage_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GDBusMessage_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GDBusMessage$MH() {
-        return RuntimeHelper.requireNonNull(constants$902.glib_autoptr_clear_GDBusMessage$MH,"glib_autoptr_clear_GDBusMessage");
-    }
-    public static void glib_autoptr_clear_GDBusMessage ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GDBusMessage$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GDBusMessage$MH() {
-        return RuntimeHelper.requireNonNull(constants$902.glib_autoptr_cleanup_GDBusMessage$MH,"glib_autoptr_cleanup_GDBusMessage");
-    }
-    public static void glib_autoptr_cleanup_GDBusMessage ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GDBusMessage$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GDBusMessage$MH() {
-        return RuntimeHelper.requireNonNull(constants$902.glib_listautoptr_cleanup_GDBusMessage$MH,"glib_listautoptr_cleanup_GDBusMessage");
-    }
-    public static void glib_listautoptr_cleanup_GDBusMessage ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GDBusMessage$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GDBusMessage$MH() {
-        return RuntimeHelper.requireNonNull(constants$902.glib_slistautoptr_cleanup_GDBusMessage$MH,"glib_slistautoptr_cleanup_GDBusMessage");
-    }
-    public static void glib_slistautoptr_cleanup_GDBusMessage ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GDBusMessage$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GDBusMessage$MH() {
-        return RuntimeHelper.requireNonNull(constants$902.glib_queueautoptr_cleanup_GDBusMessage$MH,"glib_queueautoptr_cleanup_GDBusMessage");
-    }
-    public static void glib_queueautoptr_cleanup_GDBusMessage ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GDBusMessage$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GDBusMethodInvocation_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GDBusMethodInvocation_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GDBusMethodInvocation_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GDBusMethodInvocation_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GDBusMethodInvocation$MH() {
-        return RuntimeHelper.requireNonNull(constants$903.glib_autoptr_clear_GDBusMethodInvocation$MH,"glib_autoptr_clear_GDBusMethodInvocation");
-    }
-    public static void glib_autoptr_clear_GDBusMethodInvocation ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GDBusMethodInvocation$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GDBusMethodInvocation$MH() {
-        return RuntimeHelper.requireNonNull(constants$903.glib_autoptr_cleanup_GDBusMethodInvocation$MH,"glib_autoptr_cleanup_GDBusMethodInvocation");
-    }
-    public static void glib_autoptr_cleanup_GDBusMethodInvocation ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GDBusMethodInvocation$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GDBusMethodInvocation$MH() {
-        return RuntimeHelper.requireNonNull(constants$903.glib_listautoptr_cleanup_GDBusMethodInvocation$MH,"glib_listautoptr_cleanup_GDBusMethodInvocation");
-    }
-    public static void glib_listautoptr_cleanup_GDBusMethodInvocation ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GDBusMethodInvocation$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GDBusMethodInvocation$MH() {
-        return RuntimeHelper.requireNonNull(constants$903.glib_slistautoptr_cleanup_GDBusMethodInvocation$MH,"glib_slistautoptr_cleanup_GDBusMethodInvocation");
-    }
-    public static void glib_slistautoptr_cleanup_GDBusMethodInvocation ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GDBusMethodInvocation$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GDBusMethodInvocation$MH() {
-        return RuntimeHelper.requireNonNull(constants$903.glib_queueautoptr_cleanup_GDBusMethodInvocation$MH,"glib_queueautoptr_cleanup_GDBusMethodInvocation");
-    }
-    public static void glib_queueautoptr_cleanup_GDBusMethodInvocation ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GDBusMethodInvocation$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GDBusNodeInfo_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GDBusNodeInfo_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GDBusNodeInfo_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GDBusNodeInfo_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GDBusNodeInfo$MH() {
-        return RuntimeHelper.requireNonNull(constants$903.glib_autoptr_clear_GDBusNodeInfo$MH,"glib_autoptr_clear_GDBusNodeInfo");
-    }
-    public static void glib_autoptr_clear_GDBusNodeInfo ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GDBusNodeInfo$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GDBusNodeInfo$MH() {
-        return RuntimeHelper.requireNonNull(constants$904.glib_autoptr_cleanup_GDBusNodeInfo$MH,"glib_autoptr_cleanup_GDBusNodeInfo");
-    }
-    public static void glib_autoptr_cleanup_GDBusNodeInfo ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GDBusNodeInfo$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GDBusNodeInfo$MH() {
-        return RuntimeHelper.requireNonNull(constants$904.glib_listautoptr_cleanup_GDBusNodeInfo$MH,"glib_listautoptr_cleanup_GDBusNodeInfo");
-    }
-    public static void glib_listautoptr_cleanup_GDBusNodeInfo ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GDBusNodeInfo$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GDBusNodeInfo$MH() {
-        return RuntimeHelper.requireNonNull(constants$904.glib_slistautoptr_cleanup_GDBusNodeInfo$MH,"glib_slistautoptr_cleanup_GDBusNodeInfo");
-    }
-    public static void glib_slistautoptr_cleanup_GDBusNodeInfo ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GDBusNodeInfo$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GDBusNodeInfo$MH() {
-        return RuntimeHelper.requireNonNull(constants$904.glib_queueautoptr_cleanup_GDBusNodeInfo$MH,"glib_queueautoptr_cleanup_GDBusNodeInfo");
-    }
-    public static void glib_queueautoptr_cleanup_GDBusNodeInfo ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GDBusNodeInfo$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GDBusObject_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GDBusObject_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GDBusObject_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GDBusObject_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GDBusObject$MH() {
-        return RuntimeHelper.requireNonNull(constants$904.glib_autoptr_clear_GDBusObject$MH,"glib_autoptr_clear_GDBusObject");
-    }
-    public static void glib_autoptr_clear_GDBusObject ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GDBusObject$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GDBusObject$MH() {
-        return RuntimeHelper.requireNonNull(constants$904.glib_autoptr_cleanup_GDBusObject$MH,"glib_autoptr_cleanup_GDBusObject");
-    }
-    public static void glib_autoptr_cleanup_GDBusObject ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GDBusObject$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GDBusObject$MH() {
-        return RuntimeHelper.requireNonNull(constants$905.glib_listautoptr_cleanup_GDBusObject$MH,"glib_listautoptr_cleanup_GDBusObject");
-    }
-    public static void glib_listautoptr_cleanup_GDBusObject ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GDBusObject$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GDBusObject$MH() {
-        return RuntimeHelper.requireNonNull(constants$905.glib_slistautoptr_cleanup_GDBusObject$MH,"glib_slistautoptr_cleanup_GDBusObject");
-    }
-    public static void glib_slistautoptr_cleanup_GDBusObject ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GDBusObject$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GDBusObject$MH() {
-        return RuntimeHelper.requireNonNull(constants$905.glib_queueautoptr_cleanup_GDBusObject$MH,"glib_queueautoptr_cleanup_GDBusObject");
-    }
-    public static void glib_queueautoptr_cleanup_GDBusObject ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GDBusObject$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GDBusObjectManagerClient_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GDBusObjectManagerClient_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GDBusObjectManagerClient_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GDBusObjectManagerClient_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GDBusObjectManagerClient$MH() {
-        return RuntimeHelper.requireNonNull(constants$905.glib_autoptr_clear_GDBusObjectManagerClient$MH,"glib_autoptr_clear_GDBusObjectManagerClient");
-    }
-    public static void glib_autoptr_clear_GDBusObjectManagerClient ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GDBusObjectManagerClient$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GDBusObjectManagerClient$MH() {
-        return RuntimeHelper.requireNonNull(constants$905.glib_autoptr_cleanup_GDBusObjectManagerClient$MH,"glib_autoptr_cleanup_GDBusObjectManagerClient");
-    }
-    public static void glib_autoptr_cleanup_GDBusObjectManagerClient ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GDBusObjectManagerClient$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GDBusObjectManagerClient$MH() {
-        return RuntimeHelper.requireNonNull(constants$905.glib_listautoptr_cleanup_GDBusObjectManagerClient$MH,"glib_listautoptr_cleanup_GDBusObjectManagerClient");
-    }
-    public static void glib_listautoptr_cleanup_GDBusObjectManagerClient ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GDBusObjectManagerClient$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GDBusObjectManagerClient$MH() {
-        return RuntimeHelper.requireNonNull(constants$906.glib_slistautoptr_cleanup_GDBusObjectManagerClient$MH,"glib_slistautoptr_cleanup_GDBusObjectManagerClient");
-    }
-    public static void glib_slistautoptr_cleanup_GDBusObjectManagerClient ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GDBusObjectManagerClient$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GDBusObjectManagerClient$MH() {
-        return RuntimeHelper.requireNonNull(constants$906.glib_queueautoptr_cleanup_GDBusObjectManagerClient$MH,"glib_queueautoptr_cleanup_GDBusObjectManagerClient");
-    }
-    public static void glib_queueautoptr_cleanup_GDBusObjectManagerClient ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GDBusObjectManagerClient$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GDBusObjectManager_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GDBusObjectManager_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GDBusObjectManager_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GDBusObjectManager_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GDBusObjectManager$MH() {
-        return RuntimeHelper.requireNonNull(constants$906.glib_autoptr_clear_GDBusObjectManager$MH,"glib_autoptr_clear_GDBusObjectManager");
-    }
-    public static void glib_autoptr_clear_GDBusObjectManager ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GDBusObjectManager$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GDBusObjectManager$MH() {
-        return RuntimeHelper.requireNonNull(constants$906.glib_autoptr_cleanup_GDBusObjectManager$MH,"glib_autoptr_cleanup_GDBusObjectManager");
-    }
-    public static void glib_autoptr_cleanup_GDBusObjectManager ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GDBusObjectManager$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GDBusObjectManager$MH() {
-        return RuntimeHelper.requireNonNull(constants$906.glib_listautoptr_cleanup_GDBusObjectManager$MH,"glib_listautoptr_cleanup_GDBusObjectManager");
-    }
-    public static void glib_listautoptr_cleanup_GDBusObjectManager ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GDBusObjectManager$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GDBusObjectManager$MH() {
-        return RuntimeHelper.requireNonNull(constants$906.glib_slistautoptr_cleanup_GDBusObjectManager$MH,"glib_slistautoptr_cleanup_GDBusObjectManager");
-    }
-    public static void glib_slistautoptr_cleanup_GDBusObjectManager ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GDBusObjectManager$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GDBusObjectManager$MH() {
-        return RuntimeHelper.requireNonNull(constants$907.glib_queueautoptr_cleanup_GDBusObjectManager$MH,"glib_queueautoptr_cleanup_GDBusObjectManager");
-    }
-    public static void glib_queueautoptr_cleanup_GDBusObjectManager ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GDBusObjectManager$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GDBusObjectManagerServer_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GDBusObjectManagerServer_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GDBusObjectManagerServer_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GDBusObjectManagerServer_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GDBusObjectManagerServer$MH() {
-        return RuntimeHelper.requireNonNull(constants$907.glib_autoptr_clear_GDBusObjectManagerServer$MH,"glib_autoptr_clear_GDBusObjectManagerServer");
-    }
-    public static void glib_autoptr_clear_GDBusObjectManagerServer ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GDBusObjectManagerServer$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GDBusObjectManagerServer$MH() {
-        return RuntimeHelper.requireNonNull(constants$907.glib_autoptr_cleanup_GDBusObjectManagerServer$MH,"glib_autoptr_cleanup_GDBusObjectManagerServer");
-    }
-    public static void glib_autoptr_cleanup_GDBusObjectManagerServer ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GDBusObjectManagerServer$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GDBusObjectManagerServer$MH() {
-        return RuntimeHelper.requireNonNull(constants$907.glib_listautoptr_cleanup_GDBusObjectManagerServer$MH,"glib_listautoptr_cleanup_GDBusObjectManagerServer");
-    }
-    public static void glib_listautoptr_cleanup_GDBusObjectManagerServer ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GDBusObjectManagerServer$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GDBusObjectManagerServer$MH() {
-        return RuntimeHelper.requireNonNull(constants$907.glib_slistautoptr_cleanup_GDBusObjectManagerServer$MH,"glib_slistautoptr_cleanup_GDBusObjectManagerServer");
-    }
-    public static void glib_slistautoptr_cleanup_GDBusObjectManagerServer ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GDBusObjectManagerServer$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GDBusObjectManagerServer$MH() {
-        return RuntimeHelper.requireNonNull(constants$907.glib_queueautoptr_cleanup_GDBusObjectManagerServer$MH,"glib_queueautoptr_cleanup_GDBusObjectManagerServer");
-    }
-    public static void glib_queueautoptr_cleanup_GDBusObjectManagerServer ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GDBusObjectManagerServer$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GDBusObjectProxy_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GDBusObjectProxy_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GDBusObjectProxy_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GDBusObjectProxy_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GDBusObjectProxy$MH() {
-        return RuntimeHelper.requireNonNull(constants$908.glib_autoptr_clear_GDBusObjectProxy$MH,"glib_autoptr_clear_GDBusObjectProxy");
-    }
-    public static void glib_autoptr_clear_GDBusObjectProxy ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GDBusObjectProxy$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GDBusObjectProxy$MH() {
-        return RuntimeHelper.requireNonNull(constants$908.glib_autoptr_cleanup_GDBusObjectProxy$MH,"glib_autoptr_cleanup_GDBusObjectProxy");
-    }
-    public static void glib_autoptr_cleanup_GDBusObjectProxy ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GDBusObjectProxy$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GDBusObjectProxy$MH() {
-        return RuntimeHelper.requireNonNull(constants$908.glib_listautoptr_cleanup_GDBusObjectProxy$MH,"glib_listautoptr_cleanup_GDBusObjectProxy");
-    }
-    public static void glib_listautoptr_cleanup_GDBusObjectProxy ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GDBusObjectProxy$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GDBusObjectProxy$MH() {
-        return RuntimeHelper.requireNonNull(constants$908.glib_slistautoptr_cleanup_GDBusObjectProxy$MH,"glib_slistautoptr_cleanup_GDBusObjectProxy");
-    }
-    public static void glib_slistautoptr_cleanup_GDBusObjectProxy ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GDBusObjectProxy$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GDBusObjectProxy$MH() {
-        return RuntimeHelper.requireNonNull(constants$908.glib_queueautoptr_cleanup_GDBusObjectProxy$MH,"glib_queueautoptr_cleanup_GDBusObjectProxy");
-    }
-    public static void glib_queueautoptr_cleanup_GDBusObjectProxy ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GDBusObjectProxy$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GDBusObjectSkeleton_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GDBusObjectSkeleton_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GDBusObjectSkeleton_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GDBusObjectSkeleton_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GDBusObjectSkeleton$MH() {
-        return RuntimeHelper.requireNonNull(constants$908.glib_autoptr_clear_GDBusObjectSkeleton$MH,"glib_autoptr_clear_GDBusObjectSkeleton");
-    }
-    public static void glib_autoptr_clear_GDBusObjectSkeleton ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GDBusObjectSkeleton$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GDBusObjectSkeleton$MH() {
-        return RuntimeHelper.requireNonNull(constants$909.glib_autoptr_cleanup_GDBusObjectSkeleton$MH,"glib_autoptr_cleanup_GDBusObjectSkeleton");
-    }
-    public static void glib_autoptr_cleanup_GDBusObjectSkeleton ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GDBusObjectSkeleton$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GDBusObjectSkeleton$MH() {
-        return RuntimeHelper.requireNonNull(constants$909.glib_listautoptr_cleanup_GDBusObjectSkeleton$MH,"glib_listautoptr_cleanup_GDBusObjectSkeleton");
-    }
-    public static void glib_listautoptr_cleanup_GDBusObjectSkeleton ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GDBusObjectSkeleton$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GDBusObjectSkeleton$MH() {
-        return RuntimeHelper.requireNonNull(constants$909.glib_slistautoptr_cleanup_GDBusObjectSkeleton$MH,"glib_slistautoptr_cleanup_GDBusObjectSkeleton");
-    }
-    public static void glib_slistautoptr_cleanup_GDBusObjectSkeleton ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GDBusObjectSkeleton$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GDBusObjectSkeleton$MH() {
-        return RuntimeHelper.requireNonNull(constants$909.glib_queueautoptr_cleanup_GDBusObjectSkeleton$MH,"glib_queueautoptr_cleanup_GDBusObjectSkeleton");
-    }
-    public static void glib_queueautoptr_cleanup_GDBusObjectSkeleton ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GDBusObjectSkeleton$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GDBusProxy_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GDBusProxy_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GDBusProxy_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GDBusProxy_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GDBusProxy$MH() {
-        return RuntimeHelper.requireNonNull(constants$909.glib_autoptr_clear_GDBusProxy$MH,"glib_autoptr_clear_GDBusProxy");
-    }
-    public static void glib_autoptr_clear_GDBusProxy ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GDBusProxy$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GDBusProxy$MH() {
-        return RuntimeHelper.requireNonNull(constants$909.glib_autoptr_cleanup_GDBusProxy$MH,"glib_autoptr_cleanup_GDBusProxy");
-    }
-    public static void glib_autoptr_cleanup_GDBusProxy ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GDBusProxy$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GDBusProxy$MH() {
-        return RuntimeHelper.requireNonNull(constants$910.glib_listautoptr_cleanup_GDBusProxy$MH,"glib_listautoptr_cleanup_GDBusProxy");
-    }
-    public static void glib_listautoptr_cleanup_GDBusProxy ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GDBusProxy$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GDBusProxy$MH() {
-        return RuntimeHelper.requireNonNull(constants$910.glib_slistautoptr_cleanup_GDBusProxy$MH,"glib_slistautoptr_cleanup_GDBusProxy");
-    }
-    public static void glib_slistautoptr_cleanup_GDBusProxy ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GDBusProxy$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GDBusProxy$MH() {
-        return RuntimeHelper.requireNonNull(constants$910.glib_queueautoptr_cleanup_GDBusProxy$MH,"glib_queueautoptr_cleanup_GDBusProxy");
-    }
-    public static void glib_queueautoptr_cleanup_GDBusProxy ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GDBusProxy$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GDBusServer_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GDBusServer_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GDBusServer_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GDBusServer_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GDBusServer$MH() {
-        return RuntimeHelper.requireNonNull(constants$910.glib_autoptr_clear_GDBusServer$MH,"glib_autoptr_clear_GDBusServer");
-    }
-    public static void glib_autoptr_clear_GDBusServer ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GDBusServer$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GDBusServer$MH() {
-        return RuntimeHelper.requireNonNull(constants$910.glib_autoptr_cleanup_GDBusServer$MH,"glib_autoptr_cleanup_GDBusServer");
-    }
-    public static void glib_autoptr_cleanup_GDBusServer ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GDBusServer$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GDBusServer$MH() {
-        return RuntimeHelper.requireNonNull(constants$910.glib_listautoptr_cleanup_GDBusServer$MH,"glib_listautoptr_cleanup_GDBusServer");
-    }
-    public static void glib_listautoptr_cleanup_GDBusServer ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GDBusServer$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GDBusServer$MH() {
-        return RuntimeHelper.requireNonNull(constants$911.glib_slistautoptr_cleanup_GDBusServer$MH,"glib_slistautoptr_cleanup_GDBusServer");
-    }
-    public static void glib_slistautoptr_cleanup_GDBusServer ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GDBusServer$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GDBusServer$MH() {
-        return RuntimeHelper.requireNonNull(constants$911.glib_queueautoptr_cleanup_GDBusServer$MH,"glib_queueautoptr_cleanup_GDBusServer");
-    }
-    public static void glib_queueautoptr_cleanup_GDBusServer ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GDBusServer$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GDrive_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GDrive_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GDrive_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GDrive_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GDrive$MH() {
-        return RuntimeHelper.requireNonNull(constants$911.glib_autoptr_clear_GDrive$MH,"glib_autoptr_clear_GDrive");
-    }
-    public static void glib_autoptr_clear_GDrive ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GDrive$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GDrive$MH() {
-        return RuntimeHelper.requireNonNull(constants$911.glib_autoptr_cleanup_GDrive$MH,"glib_autoptr_cleanup_GDrive");
-    }
-    public static void glib_autoptr_cleanup_GDrive ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GDrive$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GDrive$MH() {
-        return RuntimeHelper.requireNonNull(constants$911.glib_listautoptr_cleanup_GDrive$MH,"glib_listautoptr_cleanup_GDrive");
-    }
-    public static void glib_listautoptr_cleanup_GDrive ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GDrive$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GDrive$MH() {
-        return RuntimeHelper.requireNonNull(constants$911.glib_slistautoptr_cleanup_GDrive$MH,"glib_slistautoptr_cleanup_GDrive");
-    }
-    public static void glib_slistautoptr_cleanup_GDrive ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GDrive$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GDrive$MH() {
-        return RuntimeHelper.requireNonNull(constants$912.glib_queueautoptr_cleanup_GDrive$MH,"glib_queueautoptr_cleanup_GDrive");
-    }
-    public static void glib_queueautoptr_cleanup_GDrive ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GDrive$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GEmblemedIcon_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GEmblemedIcon_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GEmblemedIcon_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GEmblemedIcon_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GEmblemedIcon$MH() {
-        return RuntimeHelper.requireNonNull(constants$912.glib_autoptr_clear_GEmblemedIcon$MH,"glib_autoptr_clear_GEmblemedIcon");
-    }
-    public static void glib_autoptr_clear_GEmblemedIcon ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GEmblemedIcon$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GEmblemedIcon$MH() {
-        return RuntimeHelper.requireNonNull(constants$912.glib_autoptr_cleanup_GEmblemedIcon$MH,"glib_autoptr_cleanup_GEmblemedIcon");
-    }
-    public static void glib_autoptr_cleanup_GEmblemedIcon ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GEmblemedIcon$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GEmblemedIcon$MH() {
-        return RuntimeHelper.requireNonNull(constants$912.glib_listautoptr_cleanup_GEmblemedIcon$MH,"glib_listautoptr_cleanup_GEmblemedIcon");
-    }
-    public static void glib_listautoptr_cleanup_GEmblemedIcon ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GEmblemedIcon$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GEmblemedIcon$MH() {
-        return RuntimeHelper.requireNonNull(constants$912.glib_slistautoptr_cleanup_GEmblemedIcon$MH,"glib_slistautoptr_cleanup_GEmblemedIcon");
-    }
-    public static void glib_slistautoptr_cleanup_GEmblemedIcon ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GEmblemedIcon$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GEmblemedIcon$MH() {
-        return RuntimeHelper.requireNonNull(constants$912.glib_queueautoptr_cleanup_GEmblemedIcon$MH,"glib_queueautoptr_cleanup_GEmblemedIcon");
-    }
-    public static void glib_queueautoptr_cleanup_GEmblemedIcon ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GEmblemedIcon$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GEmblem_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GEmblem_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GEmblem_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GEmblem_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GEmblem$MH() {
-        return RuntimeHelper.requireNonNull(constants$913.glib_autoptr_clear_GEmblem$MH,"glib_autoptr_clear_GEmblem");
-    }
-    public static void glib_autoptr_clear_GEmblem ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GEmblem$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GEmblem$MH() {
-        return RuntimeHelper.requireNonNull(constants$913.glib_autoptr_cleanup_GEmblem$MH,"glib_autoptr_cleanup_GEmblem");
-    }
-    public static void glib_autoptr_cleanup_GEmblem ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GEmblem$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GEmblem$MH() {
-        return RuntimeHelper.requireNonNull(constants$913.glib_listautoptr_cleanup_GEmblem$MH,"glib_listautoptr_cleanup_GEmblem");
-    }
-    public static void glib_listautoptr_cleanup_GEmblem ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GEmblem$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GEmblem$MH() {
-        return RuntimeHelper.requireNonNull(constants$913.glib_slistautoptr_cleanup_GEmblem$MH,"glib_slistautoptr_cleanup_GEmblem");
-    }
-    public static void glib_slistautoptr_cleanup_GEmblem ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GEmblem$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GEmblem$MH() {
-        return RuntimeHelper.requireNonNull(constants$913.glib_queueautoptr_cleanup_GEmblem$MH,"glib_queueautoptr_cleanup_GEmblem");
-    }
-    public static void glib_queueautoptr_cleanup_GEmblem ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GEmblem$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GFileEnumerator_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GFileEnumerator_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GFileEnumerator_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GFileEnumerator_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GFileEnumerator$MH() {
-        return RuntimeHelper.requireNonNull(constants$913.glib_autoptr_clear_GFileEnumerator$MH,"glib_autoptr_clear_GFileEnumerator");
-    }
-    public static void glib_autoptr_clear_GFileEnumerator ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GFileEnumerator$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GFileEnumerator$MH() {
-        return RuntimeHelper.requireNonNull(constants$914.glib_autoptr_cleanup_GFileEnumerator$MH,"glib_autoptr_cleanup_GFileEnumerator");
-    }
-    public static void glib_autoptr_cleanup_GFileEnumerator ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GFileEnumerator$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GFileEnumerator$MH() {
-        return RuntimeHelper.requireNonNull(constants$914.glib_listautoptr_cleanup_GFileEnumerator$MH,"glib_listautoptr_cleanup_GFileEnumerator");
-    }
-    public static void glib_listautoptr_cleanup_GFileEnumerator ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GFileEnumerator$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GFileEnumerator$MH() {
-        return RuntimeHelper.requireNonNull(constants$914.glib_slistautoptr_cleanup_GFileEnumerator$MH,"glib_slistautoptr_cleanup_GFileEnumerator");
-    }
-    public static void glib_slistautoptr_cleanup_GFileEnumerator ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GFileEnumerator$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GFileEnumerator$MH() {
-        return RuntimeHelper.requireNonNull(constants$914.glib_queueautoptr_cleanup_GFileEnumerator$MH,"glib_queueautoptr_cleanup_GFileEnumerator");
-    }
-    public static void glib_queueautoptr_cleanup_GFileEnumerator ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GFileEnumerator$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GFile_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GFile_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GFile_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GFile_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GFile$MH() {
-        return RuntimeHelper.requireNonNull(constants$914.glib_autoptr_clear_GFile$MH,"glib_autoptr_clear_GFile");
-    }
-    public static void glib_autoptr_clear_GFile ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GFile$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GFile$MH() {
-        return RuntimeHelper.requireNonNull(constants$914.glib_autoptr_cleanup_GFile$MH,"glib_autoptr_cleanup_GFile");
-    }
-    public static void glib_autoptr_cleanup_GFile ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GFile$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GFile$MH() {
-        return RuntimeHelper.requireNonNull(constants$915.glib_listautoptr_cleanup_GFile$MH,"glib_listautoptr_cleanup_GFile");
-    }
-    public static void glib_listautoptr_cleanup_GFile ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GFile$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GFile$MH() {
-        return RuntimeHelper.requireNonNull(constants$915.glib_slistautoptr_cleanup_GFile$MH,"glib_slistautoptr_cleanup_GFile");
-    }
-    public static void glib_slistautoptr_cleanup_GFile ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GFile$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GFile$MH() {
-        return RuntimeHelper.requireNonNull(constants$915.glib_queueautoptr_cleanup_GFile$MH,"glib_queueautoptr_cleanup_GFile");
-    }
-    public static void glib_queueautoptr_cleanup_GFile ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GFile$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GFileAttributeInfoList_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GFileAttributeInfoList_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GFileAttributeInfoList_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GFileAttributeInfoList_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GFileAttributeInfoList$MH() {
-        return RuntimeHelper.requireNonNull(constants$915.glib_autoptr_clear_GFileAttributeInfoList$MH,"glib_autoptr_clear_GFileAttributeInfoList");
-    }
-    public static void glib_autoptr_clear_GFileAttributeInfoList ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GFileAttributeInfoList$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GFileAttributeInfoList$MH() {
-        return RuntimeHelper.requireNonNull(constants$915.glib_autoptr_cleanup_GFileAttributeInfoList$MH,"glib_autoptr_cleanup_GFileAttributeInfoList");
-    }
-    public static void glib_autoptr_cleanup_GFileAttributeInfoList ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GFileAttributeInfoList$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GFileAttributeInfoList$MH() {
-        return RuntimeHelper.requireNonNull(constants$915.glib_listautoptr_cleanup_GFileAttributeInfoList$MH,"glib_listautoptr_cleanup_GFileAttributeInfoList");
-    }
-    public static void glib_listautoptr_cleanup_GFileAttributeInfoList ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GFileAttributeInfoList$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GFileAttributeInfoList$MH() {
-        return RuntimeHelper.requireNonNull(constants$916.glib_slistautoptr_cleanup_GFileAttributeInfoList$MH,"glib_slistautoptr_cleanup_GFileAttributeInfoList");
-    }
-    public static void glib_slistautoptr_cleanup_GFileAttributeInfoList ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GFileAttributeInfoList$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GFileAttributeInfoList$MH() {
-        return RuntimeHelper.requireNonNull(constants$916.glib_queueautoptr_cleanup_GFileAttributeInfoList$MH,"glib_queueautoptr_cleanup_GFileAttributeInfoList");
-    }
-    public static void glib_queueautoptr_cleanup_GFileAttributeInfoList ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GFileAttributeInfoList$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GFileIcon_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GFileIcon_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GFileIcon_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GFileIcon_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GFileIcon$MH() {
-        return RuntimeHelper.requireNonNull(constants$916.glib_autoptr_clear_GFileIcon$MH,"glib_autoptr_clear_GFileIcon");
-    }
-    public static void glib_autoptr_clear_GFileIcon ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GFileIcon$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GFileIcon$MH() {
-        return RuntimeHelper.requireNonNull(constants$916.glib_autoptr_cleanup_GFileIcon$MH,"glib_autoptr_cleanup_GFileIcon");
-    }
-    public static void glib_autoptr_cleanup_GFileIcon ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GFileIcon$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GFileIcon$MH() {
-        return RuntimeHelper.requireNonNull(constants$916.glib_listautoptr_cleanup_GFileIcon$MH,"glib_listautoptr_cleanup_GFileIcon");
-    }
-    public static void glib_listautoptr_cleanup_GFileIcon ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GFileIcon$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GFileIcon$MH() {
-        return RuntimeHelper.requireNonNull(constants$916.glib_slistautoptr_cleanup_GFileIcon$MH,"glib_slistautoptr_cleanup_GFileIcon");
-    }
-    public static void glib_slistautoptr_cleanup_GFileIcon ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GFileIcon$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GFileIcon$MH() {
-        return RuntimeHelper.requireNonNull(constants$917.glib_queueautoptr_cleanup_GFileIcon$MH,"glib_queueautoptr_cleanup_GFileIcon");
-    }
-    public static void glib_queueautoptr_cleanup_GFileIcon ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GFileIcon$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GFileInfo_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GFileInfo_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GFileInfo_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GFileInfo_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GFileInfo$MH() {
-        return RuntimeHelper.requireNonNull(constants$917.glib_autoptr_clear_GFileInfo$MH,"glib_autoptr_clear_GFileInfo");
-    }
-    public static void glib_autoptr_clear_GFileInfo ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GFileInfo$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GFileInfo$MH() {
-        return RuntimeHelper.requireNonNull(constants$917.glib_autoptr_cleanup_GFileInfo$MH,"glib_autoptr_cleanup_GFileInfo");
-    }
-    public static void glib_autoptr_cleanup_GFileInfo ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GFileInfo$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GFileInfo$MH() {
-        return RuntimeHelper.requireNonNull(constants$917.glib_listautoptr_cleanup_GFileInfo$MH,"glib_listautoptr_cleanup_GFileInfo");
-    }
-    public static void glib_listautoptr_cleanup_GFileInfo ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GFileInfo$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GFileInfo$MH() {
-        return RuntimeHelper.requireNonNull(constants$917.glib_slistautoptr_cleanup_GFileInfo$MH,"glib_slistautoptr_cleanup_GFileInfo");
-    }
-    public static void glib_slistautoptr_cleanup_GFileInfo ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GFileInfo$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GFileInfo$MH() {
-        return RuntimeHelper.requireNonNull(constants$917.glib_queueautoptr_cleanup_GFileInfo$MH,"glib_queueautoptr_cleanup_GFileInfo");
-    }
-    public static void glib_queueautoptr_cleanup_GFileInfo ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GFileInfo$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GFileInputStream_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GFileInputStream_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GFileInputStream_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GFileInputStream_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GFileInputStream$MH() {
-        return RuntimeHelper.requireNonNull(constants$918.glib_autoptr_clear_GFileInputStream$MH,"glib_autoptr_clear_GFileInputStream");
-    }
-    public static void glib_autoptr_clear_GFileInputStream ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GFileInputStream$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GFileInputStream$MH() {
-        return RuntimeHelper.requireNonNull(constants$918.glib_autoptr_cleanup_GFileInputStream$MH,"glib_autoptr_cleanup_GFileInputStream");
-    }
-    public static void glib_autoptr_cleanup_GFileInputStream ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GFileInputStream$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GFileInputStream$MH() {
-        return RuntimeHelper.requireNonNull(constants$918.glib_listautoptr_cleanup_GFileInputStream$MH,"glib_listautoptr_cleanup_GFileInputStream");
-    }
-    public static void glib_listautoptr_cleanup_GFileInputStream ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GFileInputStream$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GFileInputStream$MH() {
-        return RuntimeHelper.requireNonNull(constants$918.glib_slistautoptr_cleanup_GFileInputStream$MH,"glib_slistautoptr_cleanup_GFileInputStream");
-    }
-    public static void glib_slistautoptr_cleanup_GFileInputStream ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GFileInputStream$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GFileInputStream$MH() {
-        return RuntimeHelper.requireNonNull(constants$918.glib_queueautoptr_cleanup_GFileInputStream$MH,"glib_queueautoptr_cleanup_GFileInputStream");
-    }
-    public static void glib_queueautoptr_cleanup_GFileInputStream ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GFileInputStream$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GFileIOStream_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GFileIOStream_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GFileIOStream_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GFileIOStream_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GFileIOStream$MH() {
-        return RuntimeHelper.requireNonNull(constants$918.glib_autoptr_clear_GFileIOStream$MH,"glib_autoptr_clear_GFileIOStream");
-    }
-    public static void glib_autoptr_clear_GFileIOStream ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GFileIOStream$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GFileIOStream$MH() {
-        return RuntimeHelper.requireNonNull(constants$919.glib_autoptr_cleanup_GFileIOStream$MH,"glib_autoptr_cleanup_GFileIOStream");
-    }
-    public static void glib_autoptr_cleanup_GFileIOStream ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GFileIOStream$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GFileIOStream$MH() {
-        return RuntimeHelper.requireNonNull(constants$919.glib_listautoptr_cleanup_GFileIOStream$MH,"glib_listautoptr_cleanup_GFileIOStream");
-    }
-    public static void glib_listautoptr_cleanup_GFileIOStream ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GFileIOStream$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GFileIOStream$MH() {
-        return RuntimeHelper.requireNonNull(constants$919.glib_slistautoptr_cleanup_GFileIOStream$MH,"glib_slistautoptr_cleanup_GFileIOStream");
-    }
-    public static void glib_slistautoptr_cleanup_GFileIOStream ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GFileIOStream$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GFileIOStream$MH() {
-        return RuntimeHelper.requireNonNull(constants$919.glib_queueautoptr_cleanup_GFileIOStream$MH,"glib_queueautoptr_cleanup_GFileIOStream");
-    }
-    public static void glib_queueautoptr_cleanup_GFileIOStream ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GFileIOStream$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GFileMonitor_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GFileMonitor_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GFileMonitor_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GFileMonitor_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GFileMonitor$MH() {
-        return RuntimeHelper.requireNonNull(constants$919.glib_autoptr_clear_GFileMonitor$MH,"glib_autoptr_clear_GFileMonitor");
-    }
-    public static void glib_autoptr_clear_GFileMonitor ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GFileMonitor$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GFileMonitor$MH() {
-        return RuntimeHelper.requireNonNull(constants$919.glib_autoptr_cleanup_GFileMonitor$MH,"glib_autoptr_cleanup_GFileMonitor");
-    }
-    public static void glib_autoptr_cleanup_GFileMonitor ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GFileMonitor$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GFileMonitor$MH() {
-        return RuntimeHelper.requireNonNull(constants$920.glib_listautoptr_cleanup_GFileMonitor$MH,"glib_listautoptr_cleanup_GFileMonitor");
-    }
-    public static void glib_listautoptr_cleanup_GFileMonitor ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GFileMonitor$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GFileMonitor$MH() {
-        return RuntimeHelper.requireNonNull(constants$920.glib_slistautoptr_cleanup_GFileMonitor$MH,"glib_slistautoptr_cleanup_GFileMonitor");
-    }
-    public static void glib_slistautoptr_cleanup_GFileMonitor ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GFileMonitor$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GFileMonitor$MH() {
-        return RuntimeHelper.requireNonNull(constants$920.glib_queueautoptr_cleanup_GFileMonitor$MH,"glib_queueautoptr_cleanup_GFileMonitor");
-    }
-    public static void glib_queueautoptr_cleanup_GFileMonitor ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GFileMonitor$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GFilenameCompleter_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GFilenameCompleter_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GFilenameCompleter_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GFilenameCompleter_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GFilenameCompleter$MH() {
-        return RuntimeHelper.requireNonNull(constants$920.glib_autoptr_clear_GFilenameCompleter$MH,"glib_autoptr_clear_GFilenameCompleter");
-    }
-    public static void glib_autoptr_clear_GFilenameCompleter ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GFilenameCompleter$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GFilenameCompleter$MH() {
-        return RuntimeHelper.requireNonNull(constants$920.glib_autoptr_cleanup_GFilenameCompleter$MH,"glib_autoptr_cleanup_GFilenameCompleter");
-    }
-    public static void glib_autoptr_cleanup_GFilenameCompleter ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GFilenameCompleter$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GFilenameCompleter$MH() {
-        return RuntimeHelper.requireNonNull(constants$920.glib_listautoptr_cleanup_GFilenameCompleter$MH,"glib_listautoptr_cleanup_GFilenameCompleter");
-    }
-    public static void glib_listautoptr_cleanup_GFilenameCompleter ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GFilenameCompleter$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GFilenameCompleter$MH() {
-        return RuntimeHelper.requireNonNull(constants$921.glib_slistautoptr_cleanup_GFilenameCompleter$MH,"glib_slistautoptr_cleanup_GFilenameCompleter");
-    }
-    public static void glib_slistautoptr_cleanup_GFilenameCompleter ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GFilenameCompleter$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GFilenameCompleter$MH() {
-        return RuntimeHelper.requireNonNull(constants$921.glib_queueautoptr_cleanup_GFilenameCompleter$MH,"glib_queueautoptr_cleanup_GFilenameCompleter");
-    }
-    public static void glib_queueautoptr_cleanup_GFilenameCompleter ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GFilenameCompleter$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GFileOutputStream_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GFileOutputStream_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GFileOutputStream_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GFileOutputStream_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GFileOutputStream$MH() {
-        return RuntimeHelper.requireNonNull(constants$921.glib_autoptr_clear_GFileOutputStream$MH,"glib_autoptr_clear_GFileOutputStream");
-    }
-    public static void glib_autoptr_clear_GFileOutputStream ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GFileOutputStream$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GFileOutputStream$MH() {
-        return RuntimeHelper.requireNonNull(constants$921.glib_autoptr_cleanup_GFileOutputStream$MH,"glib_autoptr_cleanup_GFileOutputStream");
-    }
-    public static void glib_autoptr_cleanup_GFileOutputStream ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GFileOutputStream$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GFileOutputStream$MH() {
-        return RuntimeHelper.requireNonNull(constants$921.glib_listautoptr_cleanup_GFileOutputStream$MH,"glib_listautoptr_cleanup_GFileOutputStream");
-    }
-    public static void glib_listautoptr_cleanup_GFileOutputStream ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GFileOutputStream$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GFileOutputStream$MH() {
-        return RuntimeHelper.requireNonNull(constants$921.glib_slistautoptr_cleanup_GFileOutputStream$MH,"glib_slistautoptr_cleanup_GFileOutputStream");
-    }
-    public static void glib_slistautoptr_cleanup_GFileOutputStream ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GFileOutputStream$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GFileOutputStream$MH() {
-        return RuntimeHelper.requireNonNull(constants$922.glib_queueautoptr_cleanup_GFileOutputStream$MH,"glib_queueautoptr_cleanup_GFileOutputStream");
-    }
-    public static void glib_queueautoptr_cleanup_GFileOutputStream ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GFileOutputStream$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GFilterInputStream_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GFilterInputStream_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GFilterInputStream_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GFilterInputStream_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GFilterInputStream$MH() {
-        return RuntimeHelper.requireNonNull(constants$922.glib_autoptr_clear_GFilterInputStream$MH,"glib_autoptr_clear_GFilterInputStream");
-    }
-    public static void glib_autoptr_clear_GFilterInputStream ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GFilterInputStream$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GFilterInputStream$MH() {
-        return RuntimeHelper.requireNonNull(constants$922.glib_autoptr_cleanup_GFilterInputStream$MH,"glib_autoptr_cleanup_GFilterInputStream");
-    }
-    public static void glib_autoptr_cleanup_GFilterInputStream ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GFilterInputStream$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GFilterInputStream$MH() {
-        return RuntimeHelper.requireNonNull(constants$922.glib_listautoptr_cleanup_GFilterInputStream$MH,"glib_listautoptr_cleanup_GFilterInputStream");
-    }
-    public static void glib_listautoptr_cleanup_GFilterInputStream ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GFilterInputStream$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GFilterInputStream$MH() {
-        return RuntimeHelper.requireNonNull(constants$922.glib_slistautoptr_cleanup_GFilterInputStream$MH,"glib_slistautoptr_cleanup_GFilterInputStream");
-    }
-    public static void glib_slistautoptr_cleanup_GFilterInputStream ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GFilterInputStream$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GFilterInputStream$MH() {
-        return RuntimeHelper.requireNonNull(constants$922.glib_queueautoptr_cleanup_GFilterInputStream$MH,"glib_queueautoptr_cleanup_GFilterInputStream");
-    }
-    public static void glib_queueautoptr_cleanup_GFilterInputStream ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GFilterInputStream$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GFilterOutputStream_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GFilterOutputStream_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GFilterOutputStream_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GFilterOutputStream_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GFilterOutputStream$MH() {
-        return RuntimeHelper.requireNonNull(constants$923.glib_autoptr_clear_GFilterOutputStream$MH,"glib_autoptr_clear_GFilterOutputStream");
-    }
-    public static void glib_autoptr_clear_GFilterOutputStream ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GFilterOutputStream$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GFilterOutputStream$MH() {
-        return RuntimeHelper.requireNonNull(constants$923.glib_autoptr_cleanup_GFilterOutputStream$MH,"glib_autoptr_cleanup_GFilterOutputStream");
-    }
-    public static void glib_autoptr_cleanup_GFilterOutputStream ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GFilterOutputStream$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GFilterOutputStream$MH() {
-        return RuntimeHelper.requireNonNull(constants$923.glib_listautoptr_cleanup_GFilterOutputStream$MH,"glib_listautoptr_cleanup_GFilterOutputStream");
-    }
-    public static void glib_listautoptr_cleanup_GFilterOutputStream ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GFilterOutputStream$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GFilterOutputStream$MH() {
-        return RuntimeHelper.requireNonNull(constants$923.glib_slistautoptr_cleanup_GFilterOutputStream$MH,"glib_slistautoptr_cleanup_GFilterOutputStream");
-    }
-    public static void glib_slistautoptr_cleanup_GFilterOutputStream ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GFilterOutputStream$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GFilterOutputStream$MH() {
-        return RuntimeHelper.requireNonNull(constants$923.glib_queueautoptr_cleanup_GFilterOutputStream$MH,"glib_queueautoptr_cleanup_GFilterOutputStream");
-    }
-    public static void glib_queueautoptr_cleanup_GFilterOutputStream ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GFilterOutputStream$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GIcon_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GIcon_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GIcon_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GIcon_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GIcon$MH() {
-        return RuntimeHelper.requireNonNull(constants$923.glib_autoptr_clear_GIcon$MH,"glib_autoptr_clear_GIcon");
-    }
-    public static void glib_autoptr_clear_GIcon ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GIcon$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GIcon$MH() {
-        return RuntimeHelper.requireNonNull(constants$924.glib_autoptr_cleanup_GIcon$MH,"glib_autoptr_cleanup_GIcon");
-    }
-    public static void glib_autoptr_cleanup_GIcon ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GIcon$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GIcon$MH() {
-        return RuntimeHelper.requireNonNull(constants$924.glib_listautoptr_cleanup_GIcon$MH,"glib_listautoptr_cleanup_GIcon");
-    }
-    public static void glib_listautoptr_cleanup_GIcon ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GIcon$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GIcon$MH() {
-        return RuntimeHelper.requireNonNull(constants$924.glib_slistautoptr_cleanup_GIcon$MH,"glib_slistautoptr_cleanup_GIcon");
-    }
-    public static void glib_slistautoptr_cleanup_GIcon ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GIcon$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GIcon$MH() {
-        return RuntimeHelper.requireNonNull(constants$924.glib_queueautoptr_cleanup_GIcon$MH,"glib_queueautoptr_cleanup_GIcon");
-    }
-    public static void glib_queueautoptr_cleanup_GIcon ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GIcon$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GInetAddress_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GInetAddress_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GInetAddress_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GInetAddress_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GInetAddress$MH() {
-        return RuntimeHelper.requireNonNull(constants$924.glib_autoptr_clear_GInetAddress$MH,"glib_autoptr_clear_GInetAddress");
-    }
-    public static void glib_autoptr_clear_GInetAddress ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GInetAddress$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GInetAddress$MH() {
-        return RuntimeHelper.requireNonNull(constants$924.glib_autoptr_cleanup_GInetAddress$MH,"glib_autoptr_cleanup_GInetAddress");
-    }
-    public static void glib_autoptr_cleanup_GInetAddress ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GInetAddress$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GInetAddress$MH() {
-        return RuntimeHelper.requireNonNull(constants$925.glib_listautoptr_cleanup_GInetAddress$MH,"glib_listautoptr_cleanup_GInetAddress");
-    }
-    public static void glib_listautoptr_cleanup_GInetAddress ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GInetAddress$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GInetAddress$MH() {
-        return RuntimeHelper.requireNonNull(constants$925.glib_slistautoptr_cleanup_GInetAddress$MH,"glib_slistautoptr_cleanup_GInetAddress");
-    }
-    public static void glib_slistautoptr_cleanup_GInetAddress ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GInetAddress$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GInetAddress$MH() {
-        return RuntimeHelper.requireNonNull(constants$925.glib_queueautoptr_cleanup_GInetAddress$MH,"glib_queueautoptr_cleanup_GInetAddress");
-    }
-    public static void glib_queueautoptr_cleanup_GInetAddress ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GInetAddress$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GInetAddressMask_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GInetAddressMask_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GInetAddressMask_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GInetAddressMask_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GInetAddressMask$MH() {
-        return RuntimeHelper.requireNonNull(constants$925.glib_autoptr_clear_GInetAddressMask$MH,"glib_autoptr_clear_GInetAddressMask");
-    }
-    public static void glib_autoptr_clear_GInetAddressMask ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GInetAddressMask$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GInetAddressMask$MH() {
-        return RuntimeHelper.requireNonNull(constants$925.glib_autoptr_cleanup_GInetAddressMask$MH,"glib_autoptr_cleanup_GInetAddressMask");
-    }
-    public static void glib_autoptr_cleanup_GInetAddressMask ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GInetAddressMask$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GInetAddressMask$MH() {
-        return RuntimeHelper.requireNonNull(constants$925.glib_listautoptr_cleanup_GInetAddressMask$MH,"glib_listautoptr_cleanup_GInetAddressMask");
-    }
-    public static void glib_listautoptr_cleanup_GInetAddressMask ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GInetAddressMask$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GInetAddressMask$MH() {
-        return RuntimeHelper.requireNonNull(constants$926.glib_slistautoptr_cleanup_GInetAddressMask$MH,"glib_slistautoptr_cleanup_GInetAddressMask");
-    }
-    public static void glib_slistautoptr_cleanup_GInetAddressMask ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GInetAddressMask$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GInetAddressMask$MH() {
-        return RuntimeHelper.requireNonNull(constants$926.glib_queueautoptr_cleanup_GInetAddressMask$MH,"glib_queueautoptr_cleanup_GInetAddressMask");
-    }
-    public static void glib_queueautoptr_cleanup_GInetAddressMask ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GInetAddressMask$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GInetSocketAddress_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GInetSocketAddress_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GInetSocketAddress_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GInetSocketAddress_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GInetSocketAddress$MH() {
-        return RuntimeHelper.requireNonNull(constants$926.glib_autoptr_clear_GInetSocketAddress$MH,"glib_autoptr_clear_GInetSocketAddress");
-    }
-    public static void glib_autoptr_clear_GInetSocketAddress ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GInetSocketAddress$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GInetSocketAddress$MH() {
-        return RuntimeHelper.requireNonNull(constants$926.glib_autoptr_cleanup_GInetSocketAddress$MH,"glib_autoptr_cleanup_GInetSocketAddress");
-    }
-    public static void glib_autoptr_cleanup_GInetSocketAddress ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GInetSocketAddress$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GInetSocketAddress$MH() {
-        return RuntimeHelper.requireNonNull(constants$926.glib_listautoptr_cleanup_GInetSocketAddress$MH,"glib_listautoptr_cleanup_GInetSocketAddress");
-    }
-    public static void glib_listautoptr_cleanup_GInetSocketAddress ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GInetSocketAddress$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GInetSocketAddress$MH() {
-        return RuntimeHelper.requireNonNull(constants$926.glib_slistautoptr_cleanup_GInetSocketAddress$MH,"glib_slistautoptr_cleanup_GInetSocketAddress");
-    }
-    public static void glib_slistautoptr_cleanup_GInetSocketAddress ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GInetSocketAddress$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GInetSocketAddress$MH() {
-        return RuntimeHelper.requireNonNull(constants$927.glib_queueautoptr_cleanup_GInetSocketAddress$MH,"glib_queueautoptr_cleanup_GInetSocketAddress");
-    }
-    public static void glib_queueautoptr_cleanup_GInetSocketAddress ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GInetSocketAddress$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GInitable_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GInitable_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GInitable_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GInitable_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GInitable$MH() {
-        return RuntimeHelper.requireNonNull(constants$927.glib_autoptr_clear_GInitable$MH,"glib_autoptr_clear_GInitable");
-    }
-    public static void glib_autoptr_clear_GInitable ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GInitable$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GInitable$MH() {
-        return RuntimeHelper.requireNonNull(constants$927.glib_autoptr_cleanup_GInitable$MH,"glib_autoptr_cleanup_GInitable");
-    }
-    public static void glib_autoptr_cleanup_GInitable ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GInitable$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GInitable$MH() {
-        return RuntimeHelper.requireNonNull(constants$927.glib_listautoptr_cleanup_GInitable$MH,"glib_listautoptr_cleanup_GInitable");
-    }
-    public static void glib_listautoptr_cleanup_GInitable ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GInitable$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GInitable$MH() {
-        return RuntimeHelper.requireNonNull(constants$927.glib_slistautoptr_cleanup_GInitable$MH,"glib_slistautoptr_cleanup_GInitable");
-    }
-    public static void glib_slistautoptr_cleanup_GInitable ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GInitable$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GInitable$MH() {
-        return RuntimeHelper.requireNonNull(constants$927.glib_queueautoptr_cleanup_GInitable$MH,"glib_queueautoptr_cleanup_GInitable");
-    }
-    public static void glib_queueautoptr_cleanup_GInitable ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GInitable$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GInputStream_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GInputStream_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GInputStream_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GInputStream_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GInputStream$MH() {
-        return RuntimeHelper.requireNonNull(constants$928.glib_autoptr_clear_GInputStream$MH,"glib_autoptr_clear_GInputStream");
-    }
-    public static void glib_autoptr_clear_GInputStream ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GInputStream$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GInputStream$MH() {
-        return RuntimeHelper.requireNonNull(constants$928.glib_autoptr_cleanup_GInputStream$MH,"glib_autoptr_cleanup_GInputStream");
-    }
-    public static void glib_autoptr_cleanup_GInputStream ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GInputStream$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GInputStream$MH() {
-        return RuntimeHelper.requireNonNull(constants$928.glib_listautoptr_cleanup_GInputStream$MH,"glib_listautoptr_cleanup_GInputStream");
-    }
-    public static void glib_listautoptr_cleanup_GInputStream ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GInputStream$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GInputStream$MH() {
-        return RuntimeHelper.requireNonNull(constants$928.glib_slistautoptr_cleanup_GInputStream$MH,"glib_slistautoptr_cleanup_GInputStream");
-    }
-    public static void glib_slistautoptr_cleanup_GInputStream ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GInputStream$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GInputStream$MH() {
-        return RuntimeHelper.requireNonNull(constants$928.glib_queueautoptr_cleanup_GInputStream$MH,"glib_queueautoptr_cleanup_GInputStream");
-    }
-    public static void glib_queueautoptr_cleanup_GInputStream ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GInputStream$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GIOModule_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GIOModule_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GIOModule_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GIOModule_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GIOModule$MH() {
-        return RuntimeHelper.requireNonNull(constants$928.glib_autoptr_clear_GIOModule$MH,"glib_autoptr_clear_GIOModule");
-    }
-    public static void glib_autoptr_clear_GIOModule ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GIOModule$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GIOModule$MH() {
-        return RuntimeHelper.requireNonNull(constants$929.glib_autoptr_cleanup_GIOModule$MH,"glib_autoptr_cleanup_GIOModule");
-    }
-    public static void glib_autoptr_cleanup_GIOModule ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GIOModule$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GIOModule$MH() {
-        return RuntimeHelper.requireNonNull(constants$929.glib_listautoptr_cleanup_GIOModule$MH,"glib_listautoptr_cleanup_GIOModule");
-    }
-    public static void glib_listautoptr_cleanup_GIOModule ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GIOModule$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GIOModule$MH() {
-        return RuntimeHelper.requireNonNull(constants$929.glib_slistautoptr_cleanup_GIOModule$MH,"glib_slistautoptr_cleanup_GIOModule");
-    }
-    public static void glib_slistautoptr_cleanup_GIOModule ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GIOModule$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GIOModule$MH() {
-        return RuntimeHelper.requireNonNull(constants$929.glib_queueautoptr_cleanup_GIOModule$MH,"glib_queueautoptr_cleanup_GIOModule");
-    }
-    public static void glib_queueautoptr_cleanup_GIOModule ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GIOModule$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GIOStream_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GIOStream_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GIOStream_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GIOStream_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GIOStream$MH() {
-        return RuntimeHelper.requireNonNull(constants$929.glib_autoptr_clear_GIOStream$MH,"glib_autoptr_clear_GIOStream");
-    }
-    public static void glib_autoptr_clear_GIOStream ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GIOStream$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GIOStream$MH() {
-        return RuntimeHelper.requireNonNull(constants$929.glib_autoptr_cleanup_GIOStream$MH,"glib_autoptr_cleanup_GIOStream");
-    }
-    public static void glib_autoptr_cleanup_GIOStream ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GIOStream$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GIOStream$MH() {
-        return RuntimeHelper.requireNonNull(constants$930.glib_listautoptr_cleanup_GIOStream$MH,"glib_listautoptr_cleanup_GIOStream");
-    }
-    public static void glib_listautoptr_cleanup_GIOStream ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GIOStream$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GIOStream$MH() {
-        return RuntimeHelper.requireNonNull(constants$930.glib_slistautoptr_cleanup_GIOStream$MH,"glib_slistautoptr_cleanup_GIOStream");
-    }
-    public static void glib_slistautoptr_cleanup_GIOStream ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GIOStream$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GIOStream$MH() {
-        return RuntimeHelper.requireNonNull(constants$930.glib_queueautoptr_cleanup_GIOStream$MH,"glib_queueautoptr_cleanup_GIOStream");
-    }
-    public static void glib_queueautoptr_cleanup_GIOStream ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GIOStream$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GLoadableIcon_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GLoadableIcon_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GLoadableIcon_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GLoadableIcon_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GLoadableIcon$MH() {
-        return RuntimeHelper.requireNonNull(constants$930.glib_autoptr_clear_GLoadableIcon$MH,"glib_autoptr_clear_GLoadableIcon");
-    }
-    public static void glib_autoptr_clear_GLoadableIcon ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GLoadableIcon$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GLoadableIcon$MH() {
-        return RuntimeHelper.requireNonNull(constants$930.glib_autoptr_cleanup_GLoadableIcon$MH,"glib_autoptr_cleanup_GLoadableIcon");
-    }
-    public static void glib_autoptr_cleanup_GLoadableIcon ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GLoadableIcon$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GLoadableIcon$MH() {
-        return RuntimeHelper.requireNonNull(constants$930.glib_listautoptr_cleanup_GLoadableIcon$MH,"glib_listautoptr_cleanup_GLoadableIcon");
-    }
-    public static void glib_listautoptr_cleanup_GLoadableIcon ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GLoadableIcon$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GLoadableIcon$MH() {
-        return RuntimeHelper.requireNonNull(constants$931.glib_slistautoptr_cleanup_GLoadableIcon$MH,"glib_slistautoptr_cleanup_GLoadableIcon");
-    }
-    public static void glib_slistautoptr_cleanup_GLoadableIcon ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GLoadableIcon$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GLoadableIcon$MH() {
-        return RuntimeHelper.requireNonNull(constants$931.glib_queueautoptr_cleanup_GLoadableIcon$MH,"glib_queueautoptr_cleanup_GLoadableIcon");
-    }
-    public static void glib_queueautoptr_cleanup_GLoadableIcon ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GLoadableIcon$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GMemoryInputStream_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GMemoryInputStream_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GMemoryInputStream_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GMemoryInputStream_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GMemoryInputStream$MH() {
-        return RuntimeHelper.requireNonNull(constants$931.glib_autoptr_clear_GMemoryInputStream$MH,"glib_autoptr_clear_GMemoryInputStream");
-    }
-    public static void glib_autoptr_clear_GMemoryInputStream ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GMemoryInputStream$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GMemoryInputStream$MH() {
-        return RuntimeHelper.requireNonNull(constants$931.glib_autoptr_cleanup_GMemoryInputStream$MH,"glib_autoptr_cleanup_GMemoryInputStream");
-    }
-    public static void glib_autoptr_cleanup_GMemoryInputStream ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GMemoryInputStream$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GMemoryInputStream$MH() {
-        return RuntimeHelper.requireNonNull(constants$931.glib_listautoptr_cleanup_GMemoryInputStream$MH,"glib_listautoptr_cleanup_GMemoryInputStream");
-    }
-    public static void glib_listautoptr_cleanup_GMemoryInputStream ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GMemoryInputStream$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GMemoryInputStream$MH() {
-        return RuntimeHelper.requireNonNull(constants$931.glib_slistautoptr_cleanup_GMemoryInputStream$MH,"glib_slistautoptr_cleanup_GMemoryInputStream");
-    }
-    public static void glib_slistautoptr_cleanup_GMemoryInputStream ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GMemoryInputStream$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GMemoryInputStream$MH() {
-        return RuntimeHelper.requireNonNull(constants$932.glib_queueautoptr_cleanup_GMemoryInputStream$MH,"glib_queueautoptr_cleanup_GMemoryInputStream");
-    }
-    public static void glib_queueautoptr_cleanup_GMemoryInputStream ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GMemoryInputStream$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GMemoryOutputStream_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GMemoryOutputStream_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GMemoryOutputStream_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GMemoryOutputStream_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GMemoryOutputStream$MH() {
-        return RuntimeHelper.requireNonNull(constants$932.glib_autoptr_clear_GMemoryOutputStream$MH,"glib_autoptr_clear_GMemoryOutputStream");
-    }
-    public static void glib_autoptr_clear_GMemoryOutputStream ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GMemoryOutputStream$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GMemoryOutputStream$MH() {
-        return RuntimeHelper.requireNonNull(constants$932.glib_autoptr_cleanup_GMemoryOutputStream$MH,"glib_autoptr_cleanup_GMemoryOutputStream");
-    }
-    public static void glib_autoptr_cleanup_GMemoryOutputStream ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GMemoryOutputStream$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GMemoryOutputStream$MH() {
-        return RuntimeHelper.requireNonNull(constants$932.glib_listautoptr_cleanup_GMemoryOutputStream$MH,"glib_listautoptr_cleanup_GMemoryOutputStream");
-    }
-    public static void glib_listautoptr_cleanup_GMemoryOutputStream ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GMemoryOutputStream$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GMemoryOutputStream$MH() {
-        return RuntimeHelper.requireNonNull(constants$932.glib_slistautoptr_cleanup_GMemoryOutputStream$MH,"glib_slistautoptr_cleanup_GMemoryOutputStream");
-    }
-    public static void glib_slistautoptr_cleanup_GMemoryOutputStream ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GMemoryOutputStream$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GMemoryOutputStream$MH() {
-        return RuntimeHelper.requireNonNull(constants$932.glib_queueautoptr_cleanup_GMemoryOutputStream$MH,"glib_queueautoptr_cleanup_GMemoryOutputStream");
-    }
-    public static void glib_queueautoptr_cleanup_GMemoryOutputStream ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GMemoryOutputStream$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GMenu_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GMenu_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GMenu_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GMenu_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GMenu$MH() {
-        return RuntimeHelper.requireNonNull(constants$933.glib_autoptr_clear_GMenu$MH,"glib_autoptr_clear_GMenu");
-    }
-    public static void glib_autoptr_clear_GMenu ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GMenu$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GMenu$MH() {
-        return RuntimeHelper.requireNonNull(constants$933.glib_autoptr_cleanup_GMenu$MH,"glib_autoptr_cleanup_GMenu");
-    }
-    public static void glib_autoptr_cleanup_GMenu ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GMenu$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GMenu$MH() {
-        return RuntimeHelper.requireNonNull(constants$933.glib_listautoptr_cleanup_GMenu$MH,"glib_listautoptr_cleanup_GMenu");
-    }
-    public static void glib_listautoptr_cleanup_GMenu ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GMenu$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GMenu$MH() {
-        return RuntimeHelper.requireNonNull(constants$933.glib_slistautoptr_cleanup_GMenu$MH,"glib_slistautoptr_cleanup_GMenu");
-    }
-    public static void glib_slistautoptr_cleanup_GMenu ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GMenu$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GMenu$MH() {
-        return RuntimeHelper.requireNonNull(constants$933.glib_queueautoptr_cleanup_GMenu$MH,"glib_queueautoptr_cleanup_GMenu");
-    }
-    public static void glib_queueautoptr_cleanup_GMenu ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GMenu$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GMenuItem_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GMenuItem_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GMenuItem_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GMenuItem_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GMenuItem$MH() {
-        return RuntimeHelper.requireNonNull(constants$933.glib_autoptr_clear_GMenuItem$MH,"glib_autoptr_clear_GMenuItem");
-    }
-    public static void glib_autoptr_clear_GMenuItem ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GMenuItem$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GMenuItem$MH() {
-        return RuntimeHelper.requireNonNull(constants$934.glib_autoptr_cleanup_GMenuItem$MH,"glib_autoptr_cleanup_GMenuItem");
-    }
-    public static void glib_autoptr_cleanup_GMenuItem ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GMenuItem$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GMenuItem$MH() {
-        return RuntimeHelper.requireNonNull(constants$934.glib_listautoptr_cleanup_GMenuItem$MH,"glib_listautoptr_cleanup_GMenuItem");
-    }
-    public static void glib_listautoptr_cleanup_GMenuItem ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GMenuItem$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GMenuItem$MH() {
-        return RuntimeHelper.requireNonNull(constants$934.glib_slistautoptr_cleanup_GMenuItem$MH,"glib_slistautoptr_cleanup_GMenuItem");
-    }
-    public static void glib_slistautoptr_cleanup_GMenuItem ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GMenuItem$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GMenuItem$MH() {
-        return RuntimeHelper.requireNonNull(constants$934.glib_queueautoptr_cleanup_GMenuItem$MH,"glib_queueautoptr_cleanup_GMenuItem");
-    }
-    public static void glib_queueautoptr_cleanup_GMenuItem ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GMenuItem$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GMenuModel_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GMenuModel_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GMenuModel_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GMenuModel_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GMenuModel$MH() {
-        return RuntimeHelper.requireNonNull(constants$934.glib_autoptr_clear_GMenuModel$MH,"glib_autoptr_clear_GMenuModel");
-    }
-    public static void glib_autoptr_clear_GMenuModel ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GMenuModel$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GMenuModel$MH() {
-        return RuntimeHelper.requireNonNull(constants$934.glib_autoptr_cleanup_GMenuModel$MH,"glib_autoptr_cleanup_GMenuModel");
-    }
-    public static void glib_autoptr_cleanup_GMenuModel ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GMenuModel$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GMenuModel$MH() {
-        return RuntimeHelper.requireNonNull(constants$935.glib_listautoptr_cleanup_GMenuModel$MH,"glib_listautoptr_cleanup_GMenuModel");
-    }
-    public static void glib_listautoptr_cleanup_GMenuModel ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GMenuModel$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GMenuModel$MH() {
-        return RuntimeHelper.requireNonNull(constants$935.glib_slistautoptr_cleanup_GMenuModel$MH,"glib_slistautoptr_cleanup_GMenuModel");
-    }
-    public static void glib_slistautoptr_cleanup_GMenuModel ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GMenuModel$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GMenuModel$MH() {
-        return RuntimeHelper.requireNonNull(constants$935.glib_queueautoptr_cleanup_GMenuModel$MH,"glib_queueautoptr_cleanup_GMenuModel");
-    }
-    public static void glib_queueautoptr_cleanup_GMenuModel ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GMenuModel$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GMenuAttributeIter_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GMenuAttributeIter_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GMenuAttributeIter_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GMenuAttributeIter_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GMenuAttributeIter$MH() {
-        return RuntimeHelper.requireNonNull(constants$935.glib_autoptr_clear_GMenuAttributeIter$MH,"glib_autoptr_clear_GMenuAttributeIter");
-    }
-    public static void glib_autoptr_clear_GMenuAttributeIter ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GMenuAttributeIter$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GMenuAttributeIter$MH() {
-        return RuntimeHelper.requireNonNull(constants$935.glib_autoptr_cleanup_GMenuAttributeIter$MH,"glib_autoptr_cleanup_GMenuAttributeIter");
-    }
-    public static void glib_autoptr_cleanup_GMenuAttributeIter ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GMenuAttributeIter$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GMenuAttributeIter$MH() {
-        return RuntimeHelper.requireNonNull(constants$935.glib_listautoptr_cleanup_GMenuAttributeIter$MH,"glib_listautoptr_cleanup_GMenuAttributeIter");
-    }
-    public static void glib_listautoptr_cleanup_GMenuAttributeIter ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GMenuAttributeIter$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GMenuAttributeIter$MH() {
-        return RuntimeHelper.requireNonNull(constants$936.glib_slistautoptr_cleanup_GMenuAttributeIter$MH,"glib_slistautoptr_cleanup_GMenuAttributeIter");
-    }
-    public static void glib_slistautoptr_cleanup_GMenuAttributeIter ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GMenuAttributeIter$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GMenuAttributeIter$MH() {
-        return RuntimeHelper.requireNonNull(constants$936.glib_queueautoptr_cleanup_GMenuAttributeIter$MH,"glib_queueautoptr_cleanup_GMenuAttributeIter");
-    }
-    public static void glib_queueautoptr_cleanup_GMenuAttributeIter ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GMenuAttributeIter$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GMenuLinkIter_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GMenuLinkIter_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GMenuLinkIter_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GMenuLinkIter_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GMenuLinkIter$MH() {
-        return RuntimeHelper.requireNonNull(constants$936.glib_autoptr_clear_GMenuLinkIter$MH,"glib_autoptr_clear_GMenuLinkIter");
-    }
-    public static void glib_autoptr_clear_GMenuLinkIter ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GMenuLinkIter$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GMenuLinkIter$MH() {
-        return RuntimeHelper.requireNonNull(constants$936.glib_autoptr_cleanup_GMenuLinkIter$MH,"glib_autoptr_cleanup_GMenuLinkIter");
-    }
-    public static void glib_autoptr_cleanup_GMenuLinkIter ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GMenuLinkIter$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GMenuLinkIter$MH() {
-        return RuntimeHelper.requireNonNull(constants$936.glib_listautoptr_cleanup_GMenuLinkIter$MH,"glib_listautoptr_cleanup_GMenuLinkIter");
-    }
-    public static void glib_listautoptr_cleanup_GMenuLinkIter ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GMenuLinkIter$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GMenuLinkIter$MH() {
-        return RuntimeHelper.requireNonNull(constants$936.glib_slistautoptr_cleanup_GMenuLinkIter$MH,"glib_slistautoptr_cleanup_GMenuLinkIter");
-    }
-    public static void glib_slistautoptr_cleanup_GMenuLinkIter ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GMenuLinkIter$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GMenuLinkIter$MH() {
-        return RuntimeHelper.requireNonNull(constants$937.glib_queueautoptr_cleanup_GMenuLinkIter$MH,"glib_queueautoptr_cleanup_GMenuLinkIter");
-    }
-    public static void glib_queueautoptr_cleanup_GMenuLinkIter ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GMenuLinkIter$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GMount_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GMount_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GMount_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GMount_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GMount$MH() {
-        return RuntimeHelper.requireNonNull(constants$937.glib_autoptr_clear_GMount$MH,"glib_autoptr_clear_GMount");
-    }
-    public static void glib_autoptr_clear_GMount ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GMount$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GMount$MH() {
-        return RuntimeHelper.requireNonNull(constants$937.glib_autoptr_cleanup_GMount$MH,"glib_autoptr_cleanup_GMount");
-    }
-    public static void glib_autoptr_cleanup_GMount ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GMount$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GMount$MH() {
-        return RuntimeHelper.requireNonNull(constants$937.glib_listautoptr_cleanup_GMount$MH,"glib_listautoptr_cleanup_GMount");
-    }
-    public static void glib_listautoptr_cleanup_GMount ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GMount$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GMount$MH() {
-        return RuntimeHelper.requireNonNull(constants$937.glib_slistautoptr_cleanup_GMount$MH,"glib_slistautoptr_cleanup_GMount");
-    }
-    public static void glib_slistautoptr_cleanup_GMount ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GMount$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GMount$MH() {
-        return RuntimeHelper.requireNonNull(constants$937.glib_queueautoptr_cleanup_GMount$MH,"glib_queueautoptr_cleanup_GMount");
-    }
-    public static void glib_queueautoptr_cleanup_GMount ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GMount$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GMountOperation_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GMountOperation_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GMountOperation_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GMountOperation_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GMountOperation$MH() {
-        return RuntimeHelper.requireNonNull(constants$938.glib_autoptr_clear_GMountOperation$MH,"glib_autoptr_clear_GMountOperation");
-    }
-    public static void glib_autoptr_clear_GMountOperation ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GMountOperation$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GMountOperation$MH() {
-        return RuntimeHelper.requireNonNull(constants$938.glib_autoptr_cleanup_GMountOperation$MH,"glib_autoptr_cleanup_GMountOperation");
-    }
-    public static void glib_autoptr_cleanup_GMountOperation ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GMountOperation$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GMountOperation$MH() {
-        return RuntimeHelper.requireNonNull(constants$938.glib_listautoptr_cleanup_GMountOperation$MH,"glib_listautoptr_cleanup_GMountOperation");
-    }
-    public static void glib_listautoptr_cleanup_GMountOperation ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GMountOperation$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GMountOperation$MH() {
-        return RuntimeHelper.requireNonNull(constants$938.glib_slistautoptr_cleanup_GMountOperation$MH,"glib_slistautoptr_cleanup_GMountOperation");
-    }
-    public static void glib_slistautoptr_cleanup_GMountOperation ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GMountOperation$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GMountOperation$MH() {
-        return RuntimeHelper.requireNonNull(constants$938.glib_queueautoptr_cleanup_GMountOperation$MH,"glib_queueautoptr_cleanup_GMountOperation");
-    }
-    public static void glib_queueautoptr_cleanup_GMountOperation ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GMountOperation$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GNativeVolumeMonitor_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GNativeVolumeMonitor_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GNativeVolumeMonitor_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GNativeVolumeMonitor_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GNativeVolumeMonitor$MH() {
-        return RuntimeHelper.requireNonNull(constants$938.glib_autoptr_clear_GNativeVolumeMonitor$MH,"glib_autoptr_clear_GNativeVolumeMonitor");
-    }
-    public static void glib_autoptr_clear_GNativeVolumeMonitor ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GNativeVolumeMonitor$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GNativeVolumeMonitor$MH() {
-        return RuntimeHelper.requireNonNull(constants$939.glib_autoptr_cleanup_GNativeVolumeMonitor$MH,"glib_autoptr_cleanup_GNativeVolumeMonitor");
-    }
-    public static void glib_autoptr_cleanup_GNativeVolumeMonitor ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GNativeVolumeMonitor$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GNativeVolumeMonitor$MH() {
-        return RuntimeHelper.requireNonNull(constants$939.glib_listautoptr_cleanup_GNativeVolumeMonitor$MH,"glib_listautoptr_cleanup_GNativeVolumeMonitor");
-    }
-    public static void glib_listautoptr_cleanup_GNativeVolumeMonitor ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GNativeVolumeMonitor$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GNativeVolumeMonitor$MH() {
-        return RuntimeHelper.requireNonNull(constants$939.glib_slistautoptr_cleanup_GNativeVolumeMonitor$MH,"glib_slistautoptr_cleanup_GNativeVolumeMonitor");
-    }
-    public static void glib_slistautoptr_cleanup_GNativeVolumeMonitor ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GNativeVolumeMonitor$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GNativeVolumeMonitor$MH() {
-        return RuntimeHelper.requireNonNull(constants$939.glib_queueautoptr_cleanup_GNativeVolumeMonitor$MH,"glib_queueautoptr_cleanup_GNativeVolumeMonitor");
-    }
-    public static void glib_queueautoptr_cleanup_GNativeVolumeMonitor ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GNativeVolumeMonitor$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GNetworkAddress_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GNetworkAddress_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GNetworkAddress_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GNetworkAddress_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GNetworkAddress$MH() {
-        return RuntimeHelper.requireNonNull(constants$939.glib_autoptr_clear_GNetworkAddress$MH,"glib_autoptr_clear_GNetworkAddress");
-    }
-    public static void glib_autoptr_clear_GNetworkAddress ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GNetworkAddress$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GNetworkAddress$MH() {
-        return RuntimeHelper.requireNonNull(constants$939.glib_autoptr_cleanup_GNetworkAddress$MH,"glib_autoptr_cleanup_GNetworkAddress");
-    }
-    public static void glib_autoptr_cleanup_GNetworkAddress ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GNetworkAddress$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GNetworkAddress$MH() {
-        return RuntimeHelper.requireNonNull(constants$940.glib_listautoptr_cleanup_GNetworkAddress$MH,"glib_listautoptr_cleanup_GNetworkAddress");
-    }
-    public static void glib_listautoptr_cleanup_GNetworkAddress ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GNetworkAddress$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GNetworkAddress$MH() {
-        return RuntimeHelper.requireNonNull(constants$940.glib_slistautoptr_cleanup_GNetworkAddress$MH,"glib_slistautoptr_cleanup_GNetworkAddress");
-    }
-    public static void glib_slistautoptr_cleanup_GNetworkAddress ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GNetworkAddress$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GNetworkAddress$MH() {
-        return RuntimeHelper.requireNonNull(constants$940.glib_queueautoptr_cleanup_GNetworkAddress$MH,"glib_queueautoptr_cleanup_GNetworkAddress");
-    }
-    public static void glib_queueautoptr_cleanup_GNetworkAddress ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GNetworkAddress$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GNetworkMonitor_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GNetworkMonitor_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GNetworkMonitor_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GNetworkMonitor_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GNetworkMonitor$MH() {
-        return RuntimeHelper.requireNonNull(constants$940.glib_autoptr_clear_GNetworkMonitor$MH,"glib_autoptr_clear_GNetworkMonitor");
-    }
-    public static void glib_autoptr_clear_GNetworkMonitor ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GNetworkMonitor$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GNetworkMonitor$MH() {
-        return RuntimeHelper.requireNonNull(constants$940.glib_autoptr_cleanup_GNetworkMonitor$MH,"glib_autoptr_cleanup_GNetworkMonitor");
-    }
-    public static void glib_autoptr_cleanup_GNetworkMonitor ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GNetworkMonitor$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GNetworkMonitor$MH() {
-        return RuntimeHelper.requireNonNull(constants$940.glib_listautoptr_cleanup_GNetworkMonitor$MH,"glib_listautoptr_cleanup_GNetworkMonitor");
-    }
-    public static void glib_listautoptr_cleanup_GNetworkMonitor ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GNetworkMonitor$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GNetworkMonitor$MH() {
-        return RuntimeHelper.requireNonNull(constants$941.glib_slistautoptr_cleanup_GNetworkMonitor$MH,"glib_slistautoptr_cleanup_GNetworkMonitor");
-    }
-    public static void glib_slistautoptr_cleanup_GNetworkMonitor ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GNetworkMonitor$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GNetworkMonitor$MH() {
-        return RuntimeHelper.requireNonNull(constants$941.glib_queueautoptr_cleanup_GNetworkMonitor$MH,"glib_queueautoptr_cleanup_GNetworkMonitor");
-    }
-    public static void glib_queueautoptr_cleanup_GNetworkMonitor ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GNetworkMonitor$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GNetworkService_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GNetworkService_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GNetworkService_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GNetworkService_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GNetworkService$MH() {
-        return RuntimeHelper.requireNonNull(constants$941.glib_autoptr_clear_GNetworkService$MH,"glib_autoptr_clear_GNetworkService");
-    }
-    public static void glib_autoptr_clear_GNetworkService ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GNetworkService$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GNetworkService$MH() {
-        return RuntimeHelper.requireNonNull(constants$941.glib_autoptr_cleanup_GNetworkService$MH,"glib_autoptr_cleanup_GNetworkService");
-    }
-    public static void glib_autoptr_cleanup_GNetworkService ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GNetworkService$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GNetworkService$MH() {
-        return RuntimeHelper.requireNonNull(constants$941.glib_listautoptr_cleanup_GNetworkService$MH,"glib_listautoptr_cleanup_GNetworkService");
-    }
-    public static void glib_listautoptr_cleanup_GNetworkService ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GNetworkService$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GNetworkService$MH() {
-        return RuntimeHelper.requireNonNull(constants$941.glib_slistautoptr_cleanup_GNetworkService$MH,"glib_slistautoptr_cleanup_GNetworkService");
-    }
-    public static void glib_slistautoptr_cleanup_GNetworkService ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GNetworkService$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GNetworkService$MH() {
-        return RuntimeHelper.requireNonNull(constants$942.glib_queueautoptr_cleanup_GNetworkService$MH,"glib_queueautoptr_cleanup_GNetworkService");
-    }
-    public static void glib_queueautoptr_cleanup_GNetworkService ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GNetworkService$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GNotification_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GNotification_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GNotification_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GNotification_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GNotification$MH() {
-        return RuntimeHelper.requireNonNull(constants$942.glib_autoptr_clear_GNotification$MH,"glib_autoptr_clear_GNotification");
-    }
-    public static void glib_autoptr_clear_GNotification ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GNotification$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GNotification$MH() {
-        return RuntimeHelper.requireNonNull(constants$942.glib_autoptr_cleanup_GNotification$MH,"glib_autoptr_cleanup_GNotification");
-    }
-    public static void glib_autoptr_cleanup_GNotification ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GNotification$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GNotification$MH() {
-        return RuntimeHelper.requireNonNull(constants$942.glib_listautoptr_cleanup_GNotification$MH,"glib_listautoptr_cleanup_GNotification");
-    }
-    public static void glib_listautoptr_cleanup_GNotification ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GNotification$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GNotification$MH() {
-        return RuntimeHelper.requireNonNull(constants$942.glib_slistautoptr_cleanup_GNotification$MH,"glib_slistautoptr_cleanup_GNotification");
-    }
-    public static void glib_slistautoptr_cleanup_GNotification ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GNotification$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GNotification$MH() {
-        return RuntimeHelper.requireNonNull(constants$942.glib_queueautoptr_cleanup_GNotification$MH,"glib_queueautoptr_cleanup_GNotification");
-    }
-    public static void glib_queueautoptr_cleanup_GNotification ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GNotification$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GOutputStream_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GOutputStream_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GOutputStream_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GOutputStream_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GOutputStream$MH() {
-        return RuntimeHelper.requireNonNull(constants$943.glib_autoptr_clear_GOutputStream$MH,"glib_autoptr_clear_GOutputStream");
-    }
-    public static void glib_autoptr_clear_GOutputStream ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GOutputStream$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GOutputStream$MH() {
-        return RuntimeHelper.requireNonNull(constants$943.glib_autoptr_cleanup_GOutputStream$MH,"glib_autoptr_cleanup_GOutputStream");
-    }
-    public static void glib_autoptr_cleanup_GOutputStream ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GOutputStream$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GOutputStream$MH() {
-        return RuntimeHelper.requireNonNull(constants$943.glib_listautoptr_cleanup_GOutputStream$MH,"glib_listautoptr_cleanup_GOutputStream");
-    }
-    public static void glib_listautoptr_cleanup_GOutputStream ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GOutputStream$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GOutputStream$MH() {
-        return RuntimeHelper.requireNonNull(constants$943.glib_slistautoptr_cleanup_GOutputStream$MH,"glib_slistautoptr_cleanup_GOutputStream");
-    }
-    public static void glib_slistautoptr_cleanup_GOutputStream ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GOutputStream$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GOutputStream$MH() {
-        return RuntimeHelper.requireNonNull(constants$943.glib_queueautoptr_cleanup_GOutputStream$MH,"glib_queueautoptr_cleanup_GOutputStream");
-    }
-    public static void glib_queueautoptr_cleanup_GOutputStream ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GOutputStream$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GPermission_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GPermission_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GPermission_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GPermission_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GPermission$MH() {
-        return RuntimeHelper.requireNonNull(constants$943.glib_autoptr_clear_GPermission$MH,"glib_autoptr_clear_GPermission");
-    }
-    public static void glib_autoptr_clear_GPermission ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GPermission$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GPermission$MH() {
-        return RuntimeHelper.requireNonNull(constants$944.glib_autoptr_cleanup_GPermission$MH,"glib_autoptr_cleanup_GPermission");
-    }
-    public static void glib_autoptr_cleanup_GPermission ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GPermission$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GPermission$MH() {
-        return RuntimeHelper.requireNonNull(constants$944.glib_listautoptr_cleanup_GPermission$MH,"glib_listautoptr_cleanup_GPermission");
-    }
-    public static void glib_listautoptr_cleanup_GPermission ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GPermission$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GPermission$MH() {
-        return RuntimeHelper.requireNonNull(constants$944.glib_slistautoptr_cleanup_GPermission$MH,"glib_slistautoptr_cleanup_GPermission");
-    }
-    public static void glib_slistautoptr_cleanup_GPermission ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GPermission$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GPermission$MH() {
-        return RuntimeHelper.requireNonNull(constants$944.glib_queueautoptr_cleanup_GPermission$MH,"glib_queueautoptr_cleanup_GPermission");
-    }
-    public static void glib_queueautoptr_cleanup_GPermission ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GPermission$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GPollableInputStream_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GPollableInputStream_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GPollableInputStream_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GPollableInputStream_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GPollableInputStream$MH() {
-        return RuntimeHelper.requireNonNull(constants$944.glib_autoptr_clear_GPollableInputStream$MH,"glib_autoptr_clear_GPollableInputStream");
-    }
-    public static void glib_autoptr_clear_GPollableInputStream ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GPollableInputStream$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GPollableInputStream$MH() {
-        return RuntimeHelper.requireNonNull(constants$944.glib_autoptr_cleanup_GPollableInputStream$MH,"glib_autoptr_cleanup_GPollableInputStream");
-    }
-    public static void glib_autoptr_cleanup_GPollableInputStream ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GPollableInputStream$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GPollableInputStream$MH() {
-        return RuntimeHelper.requireNonNull(constants$945.glib_listautoptr_cleanup_GPollableInputStream$MH,"glib_listautoptr_cleanup_GPollableInputStream");
-    }
-    public static void glib_listautoptr_cleanup_GPollableInputStream ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GPollableInputStream$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GPollableInputStream$MH() {
-        return RuntimeHelper.requireNonNull(constants$945.glib_slistautoptr_cleanup_GPollableInputStream$MH,"glib_slistautoptr_cleanup_GPollableInputStream");
-    }
-    public static void glib_slistautoptr_cleanup_GPollableInputStream ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GPollableInputStream$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GPollableInputStream$MH() {
-        return RuntimeHelper.requireNonNull(constants$945.glib_queueautoptr_cleanup_GPollableInputStream$MH,"glib_queueautoptr_cleanup_GPollableInputStream");
-    }
-    public static void glib_queueautoptr_cleanup_GPollableInputStream ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GPollableInputStream$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GPollableOutputStream_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GPollableOutputStream_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GPollableOutputStream_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GPollableOutputStream_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GPollableOutputStream$MH() {
-        return RuntimeHelper.requireNonNull(constants$945.glib_autoptr_clear_GPollableOutputStream$MH,"glib_autoptr_clear_GPollableOutputStream");
-    }
-    public static void glib_autoptr_clear_GPollableOutputStream ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GPollableOutputStream$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GPollableOutputStream$MH() {
-        return RuntimeHelper.requireNonNull(constants$945.glib_autoptr_cleanup_GPollableOutputStream$MH,"glib_autoptr_cleanup_GPollableOutputStream");
-    }
-    public static void glib_autoptr_cleanup_GPollableOutputStream ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GPollableOutputStream$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GPollableOutputStream$MH() {
-        return RuntimeHelper.requireNonNull(constants$945.glib_listautoptr_cleanup_GPollableOutputStream$MH,"glib_listautoptr_cleanup_GPollableOutputStream");
-    }
-    public static void glib_listautoptr_cleanup_GPollableOutputStream ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GPollableOutputStream$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GPollableOutputStream$MH() {
-        return RuntimeHelper.requireNonNull(constants$946.glib_slistautoptr_cleanup_GPollableOutputStream$MH,"glib_slistautoptr_cleanup_GPollableOutputStream");
-    }
-    public static void glib_slistautoptr_cleanup_GPollableOutputStream ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GPollableOutputStream$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GPollableOutputStream$MH() {
-        return RuntimeHelper.requireNonNull(constants$946.glib_queueautoptr_cleanup_GPollableOutputStream$MH,"glib_queueautoptr_cleanup_GPollableOutputStream");
-    }
-    public static void glib_queueautoptr_cleanup_GPollableOutputStream ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GPollableOutputStream$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GPropertyAction_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GPropertyAction_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GPropertyAction_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GPropertyAction_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GPropertyAction$MH() {
-        return RuntimeHelper.requireNonNull(constants$946.glib_autoptr_clear_GPropertyAction$MH,"glib_autoptr_clear_GPropertyAction");
-    }
-    public static void glib_autoptr_clear_GPropertyAction ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GPropertyAction$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GPropertyAction$MH() {
-        return RuntimeHelper.requireNonNull(constants$946.glib_autoptr_cleanup_GPropertyAction$MH,"glib_autoptr_cleanup_GPropertyAction");
-    }
-    public static void glib_autoptr_cleanup_GPropertyAction ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GPropertyAction$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GPropertyAction$MH() {
-        return RuntimeHelper.requireNonNull(constants$946.glib_listautoptr_cleanup_GPropertyAction$MH,"glib_listautoptr_cleanup_GPropertyAction");
-    }
-    public static void glib_listautoptr_cleanup_GPropertyAction ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GPropertyAction$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GPropertyAction$MH() {
-        return RuntimeHelper.requireNonNull(constants$946.glib_slistautoptr_cleanup_GPropertyAction$MH,"glib_slistautoptr_cleanup_GPropertyAction");
-    }
-    public static void glib_slistautoptr_cleanup_GPropertyAction ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GPropertyAction$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GPropertyAction$MH() {
-        return RuntimeHelper.requireNonNull(constants$947.glib_queueautoptr_cleanup_GPropertyAction$MH,"glib_queueautoptr_cleanup_GPropertyAction");
-    }
-    public static void glib_queueautoptr_cleanup_GPropertyAction ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GPropertyAction$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GProxyAddressEnumerator_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GProxyAddressEnumerator_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GProxyAddressEnumerator_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GProxyAddressEnumerator_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GProxyAddressEnumerator$MH() {
-        return RuntimeHelper.requireNonNull(constants$947.glib_autoptr_clear_GProxyAddressEnumerator$MH,"glib_autoptr_clear_GProxyAddressEnumerator");
-    }
-    public static void glib_autoptr_clear_GProxyAddressEnumerator ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GProxyAddressEnumerator$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GProxyAddressEnumerator$MH() {
-        return RuntimeHelper.requireNonNull(constants$947.glib_autoptr_cleanup_GProxyAddressEnumerator$MH,"glib_autoptr_cleanup_GProxyAddressEnumerator");
-    }
-    public static void glib_autoptr_cleanup_GProxyAddressEnumerator ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GProxyAddressEnumerator$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GProxyAddressEnumerator$MH() {
-        return RuntimeHelper.requireNonNull(constants$947.glib_listautoptr_cleanup_GProxyAddressEnumerator$MH,"glib_listautoptr_cleanup_GProxyAddressEnumerator");
-    }
-    public static void glib_listautoptr_cleanup_GProxyAddressEnumerator ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GProxyAddressEnumerator$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GProxyAddressEnumerator$MH() {
-        return RuntimeHelper.requireNonNull(constants$947.glib_slistautoptr_cleanup_GProxyAddressEnumerator$MH,"glib_slistautoptr_cleanup_GProxyAddressEnumerator");
-    }
-    public static void glib_slistautoptr_cleanup_GProxyAddressEnumerator ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GProxyAddressEnumerator$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GProxyAddressEnumerator$MH() {
-        return RuntimeHelper.requireNonNull(constants$947.glib_queueautoptr_cleanup_GProxyAddressEnumerator$MH,"glib_queueautoptr_cleanup_GProxyAddressEnumerator");
-    }
-    public static void glib_queueautoptr_cleanup_GProxyAddressEnumerator ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GProxyAddressEnumerator$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GProxyAddress_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GProxyAddress_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GProxyAddress_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GProxyAddress_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GProxyAddress$MH() {
-        return RuntimeHelper.requireNonNull(constants$948.glib_autoptr_clear_GProxyAddress$MH,"glib_autoptr_clear_GProxyAddress");
-    }
-    public static void glib_autoptr_clear_GProxyAddress ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GProxyAddress$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GProxyAddress$MH() {
-        return RuntimeHelper.requireNonNull(constants$948.glib_autoptr_cleanup_GProxyAddress$MH,"glib_autoptr_cleanup_GProxyAddress");
-    }
-    public static void glib_autoptr_cleanup_GProxyAddress ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GProxyAddress$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GProxyAddress$MH() {
-        return RuntimeHelper.requireNonNull(constants$948.glib_listautoptr_cleanup_GProxyAddress$MH,"glib_listautoptr_cleanup_GProxyAddress");
-    }
-    public static void glib_listautoptr_cleanup_GProxyAddress ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GProxyAddress$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GProxyAddress$MH() {
-        return RuntimeHelper.requireNonNull(constants$948.glib_slistautoptr_cleanup_GProxyAddress$MH,"glib_slistautoptr_cleanup_GProxyAddress");
-    }
-    public static void glib_slistautoptr_cleanup_GProxyAddress ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GProxyAddress$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GProxyAddress$MH() {
-        return RuntimeHelper.requireNonNull(constants$948.glib_queueautoptr_cleanup_GProxyAddress$MH,"glib_queueautoptr_cleanup_GProxyAddress");
-    }
-    public static void glib_queueautoptr_cleanup_GProxyAddress ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GProxyAddress$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GProxy_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GProxy_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GProxy_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GProxy_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GProxy$MH() {
-        return RuntimeHelper.requireNonNull(constants$948.glib_autoptr_clear_GProxy$MH,"glib_autoptr_clear_GProxy");
-    }
-    public static void glib_autoptr_clear_GProxy ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GProxy$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GProxy$MH() {
-        return RuntimeHelper.requireNonNull(constants$949.glib_autoptr_cleanup_GProxy$MH,"glib_autoptr_cleanup_GProxy");
-    }
-    public static void glib_autoptr_cleanup_GProxy ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GProxy$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GProxy$MH() {
-        return RuntimeHelper.requireNonNull(constants$949.glib_listautoptr_cleanup_GProxy$MH,"glib_listautoptr_cleanup_GProxy");
-    }
-    public static void glib_listautoptr_cleanup_GProxy ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GProxy$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GProxy$MH() {
-        return RuntimeHelper.requireNonNull(constants$949.glib_slistautoptr_cleanup_GProxy$MH,"glib_slistautoptr_cleanup_GProxy");
-    }
-    public static void glib_slistautoptr_cleanup_GProxy ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GProxy$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GProxy$MH() {
-        return RuntimeHelper.requireNonNull(constants$949.glib_queueautoptr_cleanup_GProxy$MH,"glib_queueautoptr_cleanup_GProxy");
-    }
-    public static void glib_queueautoptr_cleanup_GProxy ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GProxy$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GProxyResolver_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GProxyResolver_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GProxyResolver_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GProxyResolver_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GProxyResolver$MH() {
-        return RuntimeHelper.requireNonNull(constants$949.glib_autoptr_clear_GProxyResolver$MH,"glib_autoptr_clear_GProxyResolver");
-    }
-    public static void glib_autoptr_clear_GProxyResolver ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GProxyResolver$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GProxyResolver$MH() {
-        return RuntimeHelper.requireNonNull(constants$949.glib_autoptr_cleanup_GProxyResolver$MH,"glib_autoptr_cleanup_GProxyResolver");
-    }
-    public static void glib_autoptr_cleanup_GProxyResolver ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GProxyResolver$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GProxyResolver$MH() {
-        return RuntimeHelper.requireNonNull(constants$950.glib_listautoptr_cleanup_GProxyResolver$MH,"glib_listautoptr_cleanup_GProxyResolver");
-    }
-    public static void glib_listautoptr_cleanup_GProxyResolver ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GProxyResolver$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GProxyResolver$MH() {
-        return RuntimeHelper.requireNonNull(constants$950.glib_slistautoptr_cleanup_GProxyResolver$MH,"glib_slistautoptr_cleanup_GProxyResolver");
-    }
-    public static void glib_slistautoptr_cleanup_GProxyResolver ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GProxyResolver$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GProxyResolver$MH() {
-        return RuntimeHelper.requireNonNull(constants$950.glib_queueautoptr_cleanup_GProxyResolver$MH,"glib_queueautoptr_cleanup_GProxyResolver");
-    }
-    public static void glib_queueautoptr_cleanup_GProxyResolver ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GProxyResolver$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GRemoteActionGroup_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GRemoteActionGroup_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GRemoteActionGroup_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GRemoteActionGroup_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GRemoteActionGroup$MH() {
-        return RuntimeHelper.requireNonNull(constants$950.glib_autoptr_clear_GRemoteActionGroup$MH,"glib_autoptr_clear_GRemoteActionGroup");
-    }
-    public static void glib_autoptr_clear_GRemoteActionGroup ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GRemoteActionGroup$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GRemoteActionGroup$MH() {
-        return RuntimeHelper.requireNonNull(constants$950.glib_autoptr_cleanup_GRemoteActionGroup$MH,"glib_autoptr_cleanup_GRemoteActionGroup");
-    }
-    public static void glib_autoptr_cleanup_GRemoteActionGroup ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GRemoteActionGroup$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GRemoteActionGroup$MH() {
-        return RuntimeHelper.requireNonNull(constants$950.glib_listautoptr_cleanup_GRemoteActionGroup$MH,"glib_listautoptr_cleanup_GRemoteActionGroup");
-    }
-    public static void glib_listautoptr_cleanup_GRemoteActionGroup ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GRemoteActionGroup$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GRemoteActionGroup$MH() {
-        return RuntimeHelper.requireNonNull(constants$951.glib_slistautoptr_cleanup_GRemoteActionGroup$MH,"glib_slistautoptr_cleanup_GRemoteActionGroup");
-    }
-    public static void glib_slistautoptr_cleanup_GRemoteActionGroup ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GRemoteActionGroup$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GRemoteActionGroup$MH() {
-        return RuntimeHelper.requireNonNull(constants$951.glib_queueautoptr_cleanup_GRemoteActionGroup$MH,"glib_queueautoptr_cleanup_GRemoteActionGroup");
-    }
-    public static void glib_queueautoptr_cleanup_GRemoteActionGroup ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GRemoteActionGroup$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GResolver_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GResolver_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GResolver_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GResolver_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GResolver$MH() {
-        return RuntimeHelper.requireNonNull(constants$951.glib_autoptr_clear_GResolver$MH,"glib_autoptr_clear_GResolver");
-    }
-    public static void glib_autoptr_clear_GResolver ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GResolver$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GResolver$MH() {
-        return RuntimeHelper.requireNonNull(constants$951.glib_autoptr_cleanup_GResolver$MH,"glib_autoptr_cleanup_GResolver");
-    }
-    public static void glib_autoptr_cleanup_GResolver ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GResolver$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GResolver$MH() {
-        return RuntimeHelper.requireNonNull(constants$951.glib_listautoptr_cleanup_GResolver$MH,"glib_listautoptr_cleanup_GResolver");
-    }
-    public static void glib_listautoptr_cleanup_GResolver ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GResolver$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GResolver$MH() {
-        return RuntimeHelper.requireNonNull(constants$951.glib_slistautoptr_cleanup_GResolver$MH,"glib_slistautoptr_cleanup_GResolver");
-    }
-    public static void glib_slistautoptr_cleanup_GResolver ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GResolver$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GResolver$MH() {
-        return RuntimeHelper.requireNonNull(constants$952.glib_queueautoptr_cleanup_GResolver$MH,"glib_queueautoptr_cleanup_GResolver");
-    }
-    public static void glib_queueautoptr_cleanup_GResolver ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GResolver$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GResource_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GResource_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GResource_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GResource_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GResource$MH() {
-        return RuntimeHelper.requireNonNull(constants$952.glib_autoptr_clear_GResource$MH,"glib_autoptr_clear_GResource");
-    }
-    public static void glib_autoptr_clear_GResource ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GResource$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GResource$MH() {
-        return RuntimeHelper.requireNonNull(constants$952.glib_autoptr_cleanup_GResource$MH,"glib_autoptr_cleanup_GResource");
-    }
-    public static void glib_autoptr_cleanup_GResource ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GResource$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GResource$MH() {
-        return RuntimeHelper.requireNonNull(constants$952.glib_listautoptr_cleanup_GResource$MH,"glib_listautoptr_cleanup_GResource");
-    }
-    public static void glib_listautoptr_cleanup_GResource ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GResource$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GResource$MH() {
-        return RuntimeHelper.requireNonNull(constants$952.glib_slistautoptr_cleanup_GResource$MH,"glib_slistautoptr_cleanup_GResource");
-    }
-    public static void glib_slistautoptr_cleanup_GResource ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GResource$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GResource$MH() {
-        return RuntimeHelper.requireNonNull(constants$952.glib_queueautoptr_cleanup_GResource$MH,"glib_queueautoptr_cleanup_GResource");
-    }
-    public static void glib_queueautoptr_cleanup_GResource ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GResource$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GSeekable_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GSeekable_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GSeekable_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GSeekable_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GSeekable$MH() {
-        return RuntimeHelper.requireNonNull(constants$953.glib_autoptr_clear_GSeekable$MH,"glib_autoptr_clear_GSeekable");
-    }
-    public static void glib_autoptr_clear_GSeekable ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GSeekable$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GSeekable$MH() {
-        return RuntimeHelper.requireNonNull(constants$953.glib_autoptr_cleanup_GSeekable$MH,"glib_autoptr_cleanup_GSeekable");
-    }
-    public static void glib_autoptr_cleanup_GSeekable ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GSeekable$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GSeekable$MH() {
-        return RuntimeHelper.requireNonNull(constants$953.glib_listautoptr_cleanup_GSeekable$MH,"glib_listautoptr_cleanup_GSeekable");
-    }
-    public static void glib_listautoptr_cleanup_GSeekable ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GSeekable$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GSeekable$MH() {
-        return RuntimeHelper.requireNonNull(constants$953.glib_slistautoptr_cleanup_GSeekable$MH,"glib_slistautoptr_cleanup_GSeekable");
-    }
-    public static void glib_slistautoptr_cleanup_GSeekable ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GSeekable$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GSeekable$MH() {
-        return RuntimeHelper.requireNonNull(constants$953.glib_queueautoptr_cleanup_GSeekable$MH,"glib_queueautoptr_cleanup_GSeekable");
-    }
-    public static void glib_queueautoptr_cleanup_GSeekable ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GSeekable$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GSettingsBackend_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GSettingsBackend_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GSettingsBackend_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GSettingsBackend_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GSettingsBackend$MH() {
-        return RuntimeHelper.requireNonNull(constants$953.glib_autoptr_clear_GSettingsBackend$MH,"glib_autoptr_clear_GSettingsBackend");
-    }
-    public static void glib_autoptr_clear_GSettingsBackend ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GSettingsBackend$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GSettingsBackend$MH() {
-        return RuntimeHelper.requireNonNull(constants$954.glib_autoptr_cleanup_GSettingsBackend$MH,"glib_autoptr_cleanup_GSettingsBackend");
-    }
-    public static void glib_autoptr_cleanup_GSettingsBackend ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GSettingsBackend$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GSettingsBackend$MH() {
-        return RuntimeHelper.requireNonNull(constants$954.glib_listautoptr_cleanup_GSettingsBackend$MH,"glib_listautoptr_cleanup_GSettingsBackend");
-    }
-    public static void glib_listautoptr_cleanup_GSettingsBackend ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GSettingsBackend$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GSettingsBackend$MH() {
-        return RuntimeHelper.requireNonNull(constants$954.glib_slistautoptr_cleanup_GSettingsBackend$MH,"glib_slistautoptr_cleanup_GSettingsBackend");
-    }
-    public static void glib_slistautoptr_cleanup_GSettingsBackend ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GSettingsBackend$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GSettingsBackend$MH() {
-        return RuntimeHelper.requireNonNull(constants$954.glib_queueautoptr_cleanup_GSettingsBackend$MH,"glib_queueautoptr_cleanup_GSettingsBackend");
-    }
-    public static void glib_queueautoptr_cleanup_GSettingsBackend ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GSettingsBackend$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GSettingsSchema_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GSettingsSchema_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GSettingsSchema_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GSettingsSchema_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GSettingsSchema$MH() {
-        return RuntimeHelper.requireNonNull(constants$954.glib_autoptr_clear_GSettingsSchema$MH,"glib_autoptr_clear_GSettingsSchema");
-    }
-    public static void glib_autoptr_clear_GSettingsSchema ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GSettingsSchema$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GSettingsSchema$MH() {
-        return RuntimeHelper.requireNonNull(constants$954.glib_autoptr_cleanup_GSettingsSchema$MH,"glib_autoptr_cleanup_GSettingsSchema");
-    }
-    public static void glib_autoptr_cleanup_GSettingsSchema ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GSettingsSchema$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GSettingsSchema$MH() {
-        return RuntimeHelper.requireNonNull(constants$955.glib_listautoptr_cleanup_GSettingsSchema$MH,"glib_listautoptr_cleanup_GSettingsSchema");
-    }
-    public static void glib_listautoptr_cleanup_GSettingsSchema ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GSettingsSchema$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GSettingsSchema$MH() {
-        return RuntimeHelper.requireNonNull(constants$955.glib_slistautoptr_cleanup_GSettingsSchema$MH,"glib_slistautoptr_cleanup_GSettingsSchema");
-    }
-    public static void glib_slistautoptr_cleanup_GSettingsSchema ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GSettingsSchema$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GSettingsSchema$MH() {
-        return RuntimeHelper.requireNonNull(constants$955.glib_queueautoptr_cleanup_GSettingsSchema$MH,"glib_queueautoptr_cleanup_GSettingsSchema");
-    }
-    public static void glib_queueautoptr_cleanup_GSettingsSchema ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GSettingsSchema$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GSettingsSchemaKey_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GSettingsSchemaKey_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GSettingsSchemaKey_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GSettingsSchemaKey_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GSettingsSchemaKey$MH() {
-        return RuntimeHelper.requireNonNull(constants$955.glib_autoptr_clear_GSettingsSchemaKey$MH,"glib_autoptr_clear_GSettingsSchemaKey");
-    }
-    public static void glib_autoptr_clear_GSettingsSchemaKey ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GSettingsSchemaKey$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GSettingsSchemaKey$MH() {
-        return RuntimeHelper.requireNonNull(constants$955.glib_autoptr_cleanup_GSettingsSchemaKey$MH,"glib_autoptr_cleanup_GSettingsSchemaKey");
-    }
-    public static void glib_autoptr_cleanup_GSettingsSchemaKey ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GSettingsSchemaKey$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GSettingsSchemaKey$MH() {
-        return RuntimeHelper.requireNonNull(constants$955.glib_listautoptr_cleanup_GSettingsSchemaKey$MH,"glib_listautoptr_cleanup_GSettingsSchemaKey");
-    }
-    public static void glib_listautoptr_cleanup_GSettingsSchemaKey ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GSettingsSchemaKey$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GSettingsSchemaKey$MH() {
-        return RuntimeHelper.requireNonNull(constants$956.glib_slistautoptr_cleanup_GSettingsSchemaKey$MH,"glib_slistautoptr_cleanup_GSettingsSchemaKey");
-    }
-    public static void glib_slistautoptr_cleanup_GSettingsSchemaKey ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GSettingsSchemaKey$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GSettingsSchemaKey$MH() {
-        return RuntimeHelper.requireNonNull(constants$956.glib_queueautoptr_cleanup_GSettingsSchemaKey$MH,"glib_queueautoptr_cleanup_GSettingsSchemaKey");
-    }
-    public static void glib_queueautoptr_cleanup_GSettingsSchemaKey ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GSettingsSchemaKey$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GSettingsSchemaSource_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GSettingsSchemaSource_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GSettingsSchemaSource_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GSettingsSchemaSource_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GSettingsSchemaSource$MH() {
-        return RuntimeHelper.requireNonNull(constants$956.glib_autoptr_clear_GSettingsSchemaSource$MH,"glib_autoptr_clear_GSettingsSchemaSource");
-    }
-    public static void glib_autoptr_clear_GSettingsSchemaSource ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GSettingsSchemaSource$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GSettingsSchemaSource$MH() {
-        return RuntimeHelper.requireNonNull(constants$956.glib_autoptr_cleanup_GSettingsSchemaSource$MH,"glib_autoptr_cleanup_GSettingsSchemaSource");
-    }
-    public static void glib_autoptr_cleanup_GSettingsSchemaSource ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GSettingsSchemaSource$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GSettingsSchemaSource$MH() {
-        return RuntimeHelper.requireNonNull(constants$956.glib_listautoptr_cleanup_GSettingsSchemaSource$MH,"glib_listautoptr_cleanup_GSettingsSchemaSource");
-    }
-    public static void glib_listautoptr_cleanup_GSettingsSchemaSource ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GSettingsSchemaSource$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GSettingsSchemaSource$MH() {
-        return RuntimeHelper.requireNonNull(constants$956.glib_slistautoptr_cleanup_GSettingsSchemaSource$MH,"glib_slistautoptr_cleanup_GSettingsSchemaSource");
-    }
-    public static void glib_slistautoptr_cleanup_GSettingsSchemaSource ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GSettingsSchemaSource$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GSettingsSchemaSource$MH() {
-        return RuntimeHelper.requireNonNull(constants$957.glib_queueautoptr_cleanup_GSettingsSchemaSource$MH,"glib_queueautoptr_cleanup_GSettingsSchemaSource");
-    }
-    public static void glib_queueautoptr_cleanup_GSettingsSchemaSource ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GSettingsSchemaSource$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GSettings_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GSettings_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GSettings_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GSettings_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GSettings$MH() {
-        return RuntimeHelper.requireNonNull(constants$957.glib_autoptr_clear_GSettings$MH,"glib_autoptr_clear_GSettings");
-    }
-    public static void glib_autoptr_clear_GSettings ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GSettings$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GSettings$MH() {
-        return RuntimeHelper.requireNonNull(constants$957.glib_autoptr_cleanup_GSettings$MH,"glib_autoptr_cleanup_GSettings");
-    }
-    public static void glib_autoptr_cleanup_GSettings ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GSettings$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GSettings$MH() {
-        return RuntimeHelper.requireNonNull(constants$957.glib_listautoptr_cleanup_GSettings$MH,"glib_listautoptr_cleanup_GSettings");
-    }
-    public static void glib_listautoptr_cleanup_GSettings ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GSettings$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GSettings$MH() {
-        return RuntimeHelper.requireNonNull(constants$957.glib_slistautoptr_cleanup_GSettings$MH,"glib_slistautoptr_cleanup_GSettings");
-    }
-    public static void glib_slistautoptr_cleanup_GSettings ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GSettings$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GSettings$MH() {
-        return RuntimeHelper.requireNonNull(constants$957.glib_queueautoptr_cleanup_GSettings$MH,"glib_queueautoptr_cleanup_GSettings");
-    }
-    public static void glib_queueautoptr_cleanup_GSettings ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GSettings$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GSimpleActionGroup_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GSimpleActionGroup_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GSimpleActionGroup_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GSimpleActionGroup_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GSimpleActionGroup$MH() {
-        return RuntimeHelper.requireNonNull(constants$958.glib_autoptr_clear_GSimpleActionGroup$MH,"glib_autoptr_clear_GSimpleActionGroup");
-    }
-    public static void glib_autoptr_clear_GSimpleActionGroup ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GSimpleActionGroup$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GSimpleActionGroup$MH() {
-        return RuntimeHelper.requireNonNull(constants$958.glib_autoptr_cleanup_GSimpleActionGroup$MH,"glib_autoptr_cleanup_GSimpleActionGroup");
-    }
-    public static void glib_autoptr_cleanup_GSimpleActionGroup ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GSimpleActionGroup$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GSimpleActionGroup$MH() {
-        return RuntimeHelper.requireNonNull(constants$958.glib_listautoptr_cleanup_GSimpleActionGroup$MH,"glib_listautoptr_cleanup_GSimpleActionGroup");
-    }
-    public static void glib_listautoptr_cleanup_GSimpleActionGroup ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GSimpleActionGroup$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GSimpleActionGroup$MH() {
-        return RuntimeHelper.requireNonNull(constants$958.glib_slistautoptr_cleanup_GSimpleActionGroup$MH,"glib_slistautoptr_cleanup_GSimpleActionGroup");
-    }
-    public static void glib_slistautoptr_cleanup_GSimpleActionGroup ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GSimpleActionGroup$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GSimpleActionGroup$MH() {
-        return RuntimeHelper.requireNonNull(constants$958.glib_queueautoptr_cleanup_GSimpleActionGroup$MH,"glib_queueautoptr_cleanup_GSimpleActionGroup");
-    }
-    public static void glib_queueautoptr_cleanup_GSimpleActionGroup ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GSimpleActionGroup$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GSimpleAction_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GSimpleAction_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GSimpleAction_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GSimpleAction_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GSimpleAction$MH() {
-        return RuntimeHelper.requireNonNull(constants$958.glib_autoptr_clear_GSimpleAction$MH,"glib_autoptr_clear_GSimpleAction");
-    }
-    public static void glib_autoptr_clear_GSimpleAction ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GSimpleAction$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GSimpleAction$MH() {
-        return RuntimeHelper.requireNonNull(constants$959.glib_autoptr_cleanup_GSimpleAction$MH,"glib_autoptr_cleanup_GSimpleAction");
-    }
-    public static void glib_autoptr_cleanup_GSimpleAction ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GSimpleAction$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GSimpleAction$MH() {
-        return RuntimeHelper.requireNonNull(constants$959.glib_listautoptr_cleanup_GSimpleAction$MH,"glib_listautoptr_cleanup_GSimpleAction");
-    }
-    public static void glib_listautoptr_cleanup_GSimpleAction ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GSimpleAction$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GSimpleAction$MH() {
-        return RuntimeHelper.requireNonNull(constants$959.glib_slistautoptr_cleanup_GSimpleAction$MH,"glib_slistautoptr_cleanup_GSimpleAction");
-    }
-    public static void glib_slistautoptr_cleanup_GSimpleAction ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GSimpleAction$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GSimpleAction$MH() {
-        return RuntimeHelper.requireNonNull(constants$959.glib_queueautoptr_cleanup_GSimpleAction$MH,"glib_queueautoptr_cleanup_GSimpleAction");
-    }
-    public static void glib_queueautoptr_cleanup_GSimpleAction ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GSimpleAction$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GSimpleAsyncResult_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GSimpleAsyncResult_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GSimpleAsyncResult_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GSimpleAsyncResult_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GSimpleAsyncResult$MH() {
-        return RuntimeHelper.requireNonNull(constants$959.glib_autoptr_clear_GSimpleAsyncResult$MH,"glib_autoptr_clear_GSimpleAsyncResult");
-    }
-    public static void glib_autoptr_clear_GSimpleAsyncResult ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GSimpleAsyncResult$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GSimpleAsyncResult$MH() {
-        return RuntimeHelper.requireNonNull(constants$959.glib_autoptr_cleanup_GSimpleAsyncResult$MH,"glib_autoptr_cleanup_GSimpleAsyncResult");
-    }
-    public static void glib_autoptr_cleanup_GSimpleAsyncResult ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GSimpleAsyncResult$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GSimpleAsyncResult$MH() {
-        return RuntimeHelper.requireNonNull(constants$960.glib_listautoptr_cleanup_GSimpleAsyncResult$MH,"glib_listautoptr_cleanup_GSimpleAsyncResult");
-    }
-    public static void glib_listautoptr_cleanup_GSimpleAsyncResult ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GSimpleAsyncResult$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GSimpleAsyncResult$MH() {
-        return RuntimeHelper.requireNonNull(constants$960.glib_slistautoptr_cleanup_GSimpleAsyncResult$MH,"glib_slistautoptr_cleanup_GSimpleAsyncResult");
-    }
-    public static void glib_slistautoptr_cleanup_GSimpleAsyncResult ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GSimpleAsyncResult$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GSimpleAsyncResult$MH() {
-        return RuntimeHelper.requireNonNull(constants$960.glib_queueautoptr_cleanup_GSimpleAsyncResult$MH,"glib_queueautoptr_cleanup_GSimpleAsyncResult");
-    }
-    public static void glib_queueautoptr_cleanup_GSimpleAsyncResult ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GSimpleAsyncResult$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GSimplePermission_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GSimplePermission_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GSimplePermission_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GSimplePermission_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GSimplePermission$MH() {
-        return RuntimeHelper.requireNonNull(constants$960.glib_autoptr_clear_GSimplePermission$MH,"glib_autoptr_clear_GSimplePermission");
-    }
-    public static void glib_autoptr_clear_GSimplePermission ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GSimplePermission$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GSimplePermission$MH() {
-        return RuntimeHelper.requireNonNull(constants$960.glib_autoptr_cleanup_GSimplePermission$MH,"glib_autoptr_cleanup_GSimplePermission");
-    }
-    public static void glib_autoptr_cleanup_GSimplePermission ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GSimplePermission$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GSimplePermission$MH() {
-        return RuntimeHelper.requireNonNull(constants$960.glib_listautoptr_cleanup_GSimplePermission$MH,"glib_listautoptr_cleanup_GSimplePermission");
-    }
-    public static void glib_listautoptr_cleanup_GSimplePermission ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GSimplePermission$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GSimplePermission$MH() {
-        return RuntimeHelper.requireNonNull(constants$961.glib_slistautoptr_cleanup_GSimplePermission$MH,"glib_slistautoptr_cleanup_GSimplePermission");
-    }
-    public static void glib_slistautoptr_cleanup_GSimplePermission ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GSimplePermission$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GSimplePermission$MH() {
-        return RuntimeHelper.requireNonNull(constants$961.glib_queueautoptr_cleanup_GSimplePermission$MH,"glib_queueautoptr_cleanup_GSimplePermission");
-    }
-    public static void glib_queueautoptr_cleanup_GSimplePermission ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GSimplePermission$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GSimpleProxyResolver_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GSimpleProxyResolver_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GSimpleProxyResolver_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GSimpleProxyResolver_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GSimpleProxyResolver$MH() {
-        return RuntimeHelper.requireNonNull(constants$961.glib_autoptr_clear_GSimpleProxyResolver$MH,"glib_autoptr_clear_GSimpleProxyResolver");
-    }
-    public static void glib_autoptr_clear_GSimpleProxyResolver ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GSimpleProxyResolver$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GSimpleProxyResolver$MH() {
-        return RuntimeHelper.requireNonNull(constants$961.glib_autoptr_cleanup_GSimpleProxyResolver$MH,"glib_autoptr_cleanup_GSimpleProxyResolver");
-    }
-    public static void glib_autoptr_cleanup_GSimpleProxyResolver ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GSimpleProxyResolver$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GSimpleProxyResolver$MH() {
-        return RuntimeHelper.requireNonNull(constants$961.glib_listautoptr_cleanup_GSimpleProxyResolver$MH,"glib_listautoptr_cleanup_GSimpleProxyResolver");
-    }
-    public static void glib_listautoptr_cleanup_GSimpleProxyResolver ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GSimpleProxyResolver$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GSimpleProxyResolver$MH() {
-        return RuntimeHelper.requireNonNull(constants$961.glib_slistautoptr_cleanup_GSimpleProxyResolver$MH,"glib_slistautoptr_cleanup_GSimpleProxyResolver");
-    }
-    public static void glib_slistautoptr_cleanup_GSimpleProxyResolver ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GSimpleProxyResolver$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GSimpleProxyResolver$MH() {
-        return RuntimeHelper.requireNonNull(constants$962.glib_queueautoptr_cleanup_GSimpleProxyResolver$MH,"glib_queueautoptr_cleanup_GSimpleProxyResolver");
-    }
-    public static void glib_queueautoptr_cleanup_GSimpleProxyResolver ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GSimpleProxyResolver$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GSocketAddressEnumerator_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GSocketAddressEnumerator_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GSocketAddressEnumerator_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GSocketAddressEnumerator_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GSocketAddressEnumerator$MH() {
-        return RuntimeHelper.requireNonNull(constants$962.glib_autoptr_clear_GSocketAddressEnumerator$MH,"glib_autoptr_clear_GSocketAddressEnumerator");
-    }
-    public static void glib_autoptr_clear_GSocketAddressEnumerator ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GSocketAddressEnumerator$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GSocketAddressEnumerator$MH() {
-        return RuntimeHelper.requireNonNull(constants$962.glib_autoptr_cleanup_GSocketAddressEnumerator$MH,"glib_autoptr_cleanup_GSocketAddressEnumerator");
-    }
-    public static void glib_autoptr_cleanup_GSocketAddressEnumerator ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GSocketAddressEnumerator$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GSocketAddressEnumerator$MH() {
-        return RuntimeHelper.requireNonNull(constants$962.glib_listautoptr_cleanup_GSocketAddressEnumerator$MH,"glib_listautoptr_cleanup_GSocketAddressEnumerator");
-    }
-    public static void glib_listautoptr_cleanup_GSocketAddressEnumerator ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GSocketAddressEnumerator$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GSocketAddressEnumerator$MH() {
-        return RuntimeHelper.requireNonNull(constants$962.glib_slistautoptr_cleanup_GSocketAddressEnumerator$MH,"glib_slistautoptr_cleanup_GSocketAddressEnumerator");
-    }
-    public static void glib_slistautoptr_cleanup_GSocketAddressEnumerator ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GSocketAddressEnumerator$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GSocketAddressEnumerator$MH() {
-        return RuntimeHelper.requireNonNull(constants$962.glib_queueautoptr_cleanup_GSocketAddressEnumerator$MH,"glib_queueautoptr_cleanup_GSocketAddressEnumerator");
-    }
-    public static void glib_queueautoptr_cleanup_GSocketAddressEnumerator ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GSocketAddressEnumerator$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GSocketAddress_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GSocketAddress_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GSocketAddress_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GSocketAddress_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GSocketAddress$MH() {
-        return RuntimeHelper.requireNonNull(constants$963.glib_autoptr_clear_GSocketAddress$MH,"glib_autoptr_clear_GSocketAddress");
-    }
-    public static void glib_autoptr_clear_GSocketAddress ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GSocketAddress$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GSocketAddress$MH() {
-        return RuntimeHelper.requireNonNull(constants$963.glib_autoptr_cleanup_GSocketAddress$MH,"glib_autoptr_cleanup_GSocketAddress");
-    }
-    public static void glib_autoptr_cleanup_GSocketAddress ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GSocketAddress$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GSocketAddress$MH() {
-        return RuntimeHelper.requireNonNull(constants$963.glib_listautoptr_cleanup_GSocketAddress$MH,"glib_listautoptr_cleanup_GSocketAddress");
-    }
-    public static void glib_listautoptr_cleanup_GSocketAddress ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GSocketAddress$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GSocketAddress$MH() {
-        return RuntimeHelper.requireNonNull(constants$963.glib_slistautoptr_cleanup_GSocketAddress$MH,"glib_slistautoptr_cleanup_GSocketAddress");
-    }
-    public static void glib_slistautoptr_cleanup_GSocketAddress ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GSocketAddress$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GSocketAddress$MH() {
-        return RuntimeHelper.requireNonNull(constants$963.glib_queueautoptr_cleanup_GSocketAddress$MH,"glib_queueautoptr_cleanup_GSocketAddress");
-    }
-    public static void glib_queueautoptr_cleanup_GSocketAddress ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GSocketAddress$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GSocketClient_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GSocketClient_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GSocketClient_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GSocketClient_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GSocketClient$MH() {
-        return RuntimeHelper.requireNonNull(constants$963.glib_autoptr_clear_GSocketClient$MH,"glib_autoptr_clear_GSocketClient");
-    }
-    public static void glib_autoptr_clear_GSocketClient ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GSocketClient$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GSocketClient$MH() {
-        return RuntimeHelper.requireNonNull(constants$964.glib_autoptr_cleanup_GSocketClient$MH,"glib_autoptr_cleanup_GSocketClient");
-    }
-    public static void glib_autoptr_cleanup_GSocketClient ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GSocketClient$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GSocketClient$MH() {
-        return RuntimeHelper.requireNonNull(constants$964.glib_listautoptr_cleanup_GSocketClient$MH,"glib_listautoptr_cleanup_GSocketClient");
-    }
-    public static void glib_listautoptr_cleanup_GSocketClient ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GSocketClient$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GSocketClient$MH() {
-        return RuntimeHelper.requireNonNull(constants$964.glib_slistautoptr_cleanup_GSocketClient$MH,"glib_slistautoptr_cleanup_GSocketClient");
-    }
-    public static void glib_slistautoptr_cleanup_GSocketClient ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GSocketClient$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GSocketClient$MH() {
-        return RuntimeHelper.requireNonNull(constants$964.glib_queueautoptr_cleanup_GSocketClient$MH,"glib_queueautoptr_cleanup_GSocketClient");
-    }
-    public static void glib_queueautoptr_cleanup_GSocketClient ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GSocketClient$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GSocketConnectable_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GSocketConnectable_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GSocketConnectable_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GSocketConnectable_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GSocketConnectable$MH() {
-        return RuntimeHelper.requireNonNull(constants$964.glib_autoptr_clear_GSocketConnectable$MH,"glib_autoptr_clear_GSocketConnectable");
-    }
-    public static void glib_autoptr_clear_GSocketConnectable ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GSocketConnectable$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GSocketConnectable$MH() {
-        return RuntimeHelper.requireNonNull(constants$964.glib_autoptr_cleanup_GSocketConnectable$MH,"glib_autoptr_cleanup_GSocketConnectable");
-    }
-    public static void glib_autoptr_cleanup_GSocketConnectable ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GSocketConnectable$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GSocketConnectable$MH() {
-        return RuntimeHelper.requireNonNull(constants$965.glib_listautoptr_cleanup_GSocketConnectable$MH,"glib_listautoptr_cleanup_GSocketConnectable");
-    }
-    public static void glib_listautoptr_cleanup_GSocketConnectable ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GSocketConnectable$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GSocketConnectable$MH() {
-        return RuntimeHelper.requireNonNull(constants$965.glib_slistautoptr_cleanup_GSocketConnectable$MH,"glib_slistautoptr_cleanup_GSocketConnectable");
-    }
-    public static void glib_slistautoptr_cleanup_GSocketConnectable ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GSocketConnectable$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GSocketConnectable$MH() {
-        return RuntimeHelper.requireNonNull(constants$965.glib_queueautoptr_cleanup_GSocketConnectable$MH,"glib_queueautoptr_cleanup_GSocketConnectable");
-    }
-    public static void glib_queueautoptr_cleanup_GSocketConnectable ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GSocketConnectable$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GSocketConnection_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GSocketConnection_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GSocketConnection_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GSocketConnection_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GSocketConnection$MH() {
-        return RuntimeHelper.requireNonNull(constants$965.glib_autoptr_clear_GSocketConnection$MH,"glib_autoptr_clear_GSocketConnection");
-    }
-    public static void glib_autoptr_clear_GSocketConnection ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GSocketConnection$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GSocketConnection$MH() {
-        return RuntimeHelper.requireNonNull(constants$965.glib_autoptr_cleanup_GSocketConnection$MH,"glib_autoptr_cleanup_GSocketConnection");
-    }
-    public static void glib_autoptr_cleanup_GSocketConnection ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GSocketConnection$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GSocketConnection$MH() {
-        return RuntimeHelper.requireNonNull(constants$965.glib_listautoptr_cleanup_GSocketConnection$MH,"glib_listautoptr_cleanup_GSocketConnection");
-    }
-    public static void glib_listautoptr_cleanup_GSocketConnection ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GSocketConnection$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GSocketConnection$MH() {
-        return RuntimeHelper.requireNonNull(constants$966.glib_slistautoptr_cleanup_GSocketConnection$MH,"glib_slistautoptr_cleanup_GSocketConnection");
-    }
-    public static void glib_slistautoptr_cleanup_GSocketConnection ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GSocketConnection$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GSocketConnection$MH() {
-        return RuntimeHelper.requireNonNull(constants$966.glib_queueautoptr_cleanup_GSocketConnection$MH,"glib_queueautoptr_cleanup_GSocketConnection");
-    }
-    public static void glib_queueautoptr_cleanup_GSocketConnection ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GSocketConnection$MH();
-        try {
-            mh$.invokeExact(_q);
+    /**
+     * {@snippet :
+     * typedef struct _GSettingsBackend* GSettingsBackend_autoptr;
+     * }
+     */
+    public static final OfAddress GSettingsBackend_autoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GSettingsBackend_listautoptr;
+     * }
+     */
+    public static final OfAddress GSettingsBackend_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GSettingsBackend_slistautoptr;
+     * }
+     */
+    public static final OfAddress GSettingsBackend_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GSettingsBackend_queueautoptr;
+     * }
+     */
+    public static final OfAddress GSettingsBackend_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSettingsSchema* GSettingsSchema_autoptr;
+     * }
+     */
+    public static final OfAddress GSettingsSchema_autoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GSettingsSchema_listautoptr;
+     * }
+     */
+    public static final OfAddress GSettingsSchema_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GSettingsSchema_slistautoptr;
+     * }
+     */
+    public static final OfAddress GSettingsSchema_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GSettingsSchema_queueautoptr;
+     * }
+     */
+    public static final OfAddress GSettingsSchema_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSettingsSchemaKey* GSettingsSchemaKey_autoptr;
+     * }
+     */
+    public static final OfAddress GSettingsSchemaKey_autoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GSettingsSchemaKey_listautoptr;
+     * }
+     */
+    public static final OfAddress GSettingsSchemaKey_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GSettingsSchemaKey_slistautoptr;
+     * }
+     */
+    public static final OfAddress GSettingsSchemaKey_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GSettingsSchemaKey_queueautoptr;
+     * }
+     */
+    public static final OfAddress GSettingsSchemaKey_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSettingsSchemaSource* GSettingsSchemaSource_autoptr;
+     * }
+     */
+    public static final OfAddress GSettingsSchemaSource_autoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GSettingsSchemaSource_listautoptr;
+     * }
+     */
+    public static final OfAddress GSettingsSchemaSource_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GSettingsSchemaSource_slistautoptr;
+     * }
+     */
+    public static final OfAddress GSettingsSchemaSource_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GSettingsSchemaSource_queueautoptr;
+     * }
+     */
+    public static final OfAddress GSettingsSchemaSource_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSettings* GSettings_autoptr;
+     * }
+     */
+    public static final OfAddress GSettings_autoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GSettings_listautoptr;
+     * }
+     */
+    public static final OfAddress GSettings_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GSettings_slistautoptr;
+     * }
+     */
+    public static final OfAddress GSettings_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GSettings_queueautoptr;
+     * }
+     */
+    public static final OfAddress GSettings_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSimpleActionGroup* GSimpleActionGroup_autoptr;
+     * }
+     */
+    public static final OfAddress GSimpleActionGroup_autoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GSimpleActionGroup_listautoptr;
+     * }
+     */
+    public static final OfAddress GSimpleActionGroup_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GSimpleActionGroup_slistautoptr;
+     * }
+     */
+    public static final OfAddress GSimpleActionGroup_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GSimpleActionGroup_queueautoptr;
+     * }
+     */
+    public static final OfAddress GSimpleActionGroup_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSimpleAction* GSimpleAction_autoptr;
+     * }
+     */
+    public static final OfAddress GSimpleAction_autoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GSimpleAction_listautoptr;
+     * }
+     */
+    public static final OfAddress GSimpleAction_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GSimpleAction_slistautoptr;
+     * }
+     */
+    public static final OfAddress GSimpleAction_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GSimpleAction_queueautoptr;
+     * }
+     */
+    public static final OfAddress GSimpleAction_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSimpleAsyncResult* GSimpleAsyncResult_autoptr;
+     * }
+     */
+    public static final OfAddress GSimpleAsyncResult_autoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GSimpleAsyncResult_listautoptr;
+     * }
+     */
+    public static final OfAddress GSimpleAsyncResult_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GSimpleAsyncResult_slistautoptr;
+     * }
+     */
+    public static final OfAddress GSimpleAsyncResult_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GSimpleAsyncResult_queueautoptr;
+     * }
+     */
+    public static final OfAddress GSimpleAsyncResult_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSimplePermission* GSimplePermission_autoptr;
+     * }
+     */
+    public static final OfAddress GSimplePermission_autoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GSimplePermission_listautoptr;
+     * }
+     */
+    public static final OfAddress GSimplePermission_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GSimplePermission_slistautoptr;
+     * }
+     */
+    public static final OfAddress GSimplePermission_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GSimplePermission_queueautoptr;
+     * }
+     */
+    public static final OfAddress GSimplePermission_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSimpleProxyResolver* GSimpleProxyResolver_autoptr;
+     * }
+     */
+    public static final OfAddress GSimpleProxyResolver_autoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GSimpleProxyResolver_listautoptr;
+     * }
+     */
+    public static final OfAddress GSimpleProxyResolver_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GSimpleProxyResolver_slistautoptr;
+     * }
+     */
+    public static final OfAddress GSimpleProxyResolver_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GSimpleProxyResolver_queueautoptr;
+     * }
+     */
+    public static final OfAddress GSimpleProxyResolver_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSocketAddressEnumerator* GSocketAddressEnumerator_autoptr;
+     * }
+     */
+    public static final OfAddress GSocketAddressEnumerator_autoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GSocketAddressEnumerator_listautoptr;
+     * }
+     */
+    public static final OfAddress GSocketAddressEnumerator_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GSocketAddressEnumerator_slistautoptr;
+     * }
+     */
+    public static final OfAddress GSocketAddressEnumerator_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GSocketAddressEnumerator_queueautoptr;
+     * }
+     */
+    public static final OfAddress GSocketAddressEnumerator_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSocketAddress* GSocketAddress_autoptr;
+     * }
+     */
+    public static final OfAddress GSocketAddress_autoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GSocketAddress_listautoptr;
+     * }
+     */
+    public static final OfAddress GSocketAddress_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GSocketAddress_slistautoptr;
+     * }
+     */
+    public static final OfAddress GSocketAddress_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GSocketAddress_queueautoptr;
+     * }
+     */
+    public static final OfAddress GSocketAddress_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSocketClient* GSocketClient_autoptr;
+     * }
+     */
+    public static final OfAddress GSocketClient_autoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GSocketClient_listautoptr;
+     * }
+     */
+    public static final OfAddress GSocketClient_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GSocketClient_slistautoptr;
+     * }
+     */
+    public static final OfAddress GSocketClient_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GSocketClient_queueautoptr;
+     * }
+     */
+    public static final OfAddress GSocketClient_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSocketConnectable* GSocketConnectable_autoptr;
+     * }
+     */
+    public static final OfAddress GSocketConnectable_autoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GSocketConnectable_listautoptr;
+     * }
+     */
+    public static final OfAddress GSocketConnectable_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GSocketConnectable_slistautoptr;
+     * }
+     */
+    public static final OfAddress GSocketConnectable_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GSocketConnectable_queueautoptr;
+     * }
+     */
+    public static final OfAddress GSocketConnectable_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSocketConnection* GSocketConnection_autoptr;
+     * }
+     */
+    public static final OfAddress GSocketConnection_autoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GSocketConnection_listautoptr;
+     * }
+     */
+    public static final OfAddress GSocketConnection_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GSocketConnection_slistautoptr;
+     * }
+     */
+    public static final OfAddress GSocketConnection_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GSocketConnection_queueautoptr;
+     * }
+     */
+    public static final OfAddress GSocketConnection_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSocketControlMessage* GSocketControlMessage_autoptr;
+     * }
+     */
+    public static final OfAddress GSocketControlMessage_autoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GSocketControlMessage_listautoptr;
+     * }
+     */
+    public static final OfAddress GSocketControlMessage_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GSocketControlMessage_slistautoptr;
+     * }
+     */
+    public static final OfAddress GSocketControlMessage_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GSocketControlMessage_queueautoptr;
+     * }
+     */
+    public static final OfAddress GSocketControlMessage_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSocket* GSocket_autoptr;
+     * }
+     */
+    public static final OfAddress GSocket_autoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GSocket_listautoptr;
+     * }
+     */
+    public static final OfAddress GSocket_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GSocket_slistautoptr;
+     * }
+     */
+    public static final OfAddress GSocket_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GSocket_queueautoptr;
+     * }
+     */
+    public static final OfAddress GSocket_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSocketListener* GSocketListener_autoptr;
+     * }
+     */
+    public static final OfAddress GSocketListener_autoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GSocketListener_listautoptr;
+     * }
+     */
+    public static final OfAddress GSocketListener_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GSocketListener_slistautoptr;
+     * }
+     */
+    public static final OfAddress GSocketListener_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GSocketListener_queueautoptr;
+     * }
+     */
+    public static final OfAddress GSocketListener_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSocketService* GSocketService_autoptr;
+     * }
+     */
+    public static final OfAddress GSocketService_autoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GSocketService_listautoptr;
+     * }
+     */
+    public static final OfAddress GSocketService_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GSocketService_slistautoptr;
+     * }
+     */
+    public static final OfAddress GSocketService_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GSocketService_queueautoptr;
+     * }
+     */
+    public static final OfAddress GSocketService_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSubprocess* GSubprocess_autoptr;
+     * }
+     */
+    public static final OfAddress GSubprocess_autoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GSubprocess_listautoptr;
+     * }
+     */
+    public static final OfAddress GSubprocess_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GSubprocess_slistautoptr;
+     * }
+     */
+    public static final OfAddress GSubprocess_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GSubprocess_queueautoptr;
+     * }
+     */
+    public static final OfAddress GSubprocess_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSubprocessLauncher* GSubprocessLauncher_autoptr;
+     * }
+     */
+    public static final OfAddress GSubprocessLauncher_autoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GSubprocessLauncher_listautoptr;
+     * }
+     */
+    public static final OfAddress GSubprocessLauncher_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GSubprocessLauncher_slistautoptr;
+     * }
+     */
+    public static final OfAddress GSubprocessLauncher_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GSubprocessLauncher_queueautoptr;
+     * }
+     */
+    public static final OfAddress GSubprocessLauncher_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GTask* GTask_autoptr;
+     * }
+     */
+    public static final OfAddress GTask_autoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GTask_listautoptr;
+     * }
+     */
+    public static final OfAddress GTask_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GTask_slistautoptr;
+     * }
+     */
+    public static final OfAddress GTask_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GTask_queueautoptr;
+     * }
+     */
+    public static final OfAddress GTask_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GTcpConnection* GTcpConnection_autoptr;
+     * }
+     */
+    public static final OfAddress GTcpConnection_autoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GTcpConnection_listautoptr;
+     * }
+     */
+    public static final OfAddress GTcpConnection_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GTcpConnection_slistautoptr;
+     * }
+     */
+    public static final OfAddress GTcpConnection_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GTcpConnection_queueautoptr;
+     * }
+     */
+    public static final OfAddress GTcpConnection_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GTcpWrapperConnection* GTcpWrapperConnection_autoptr;
+     * }
+     */
+    public static final OfAddress GTcpWrapperConnection_autoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GTcpWrapperConnection_listautoptr;
+     * }
+     */
+    public static final OfAddress GTcpWrapperConnection_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GTcpWrapperConnection_slistautoptr;
+     * }
+     */
+    public static final OfAddress GTcpWrapperConnection_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GTcpWrapperConnection_queueautoptr;
+     * }
+     */
+    public static final OfAddress GTcpWrapperConnection_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GTestDBus* GTestDBus_autoptr;
+     * }
+     */
+    public static final OfAddress GTestDBus_autoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GTestDBus_listautoptr;
+     * }
+     */
+    public static final OfAddress GTestDBus_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GTestDBus_slistautoptr;
+     * }
+     */
+    public static final OfAddress GTestDBus_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GTestDBus_queueautoptr;
+     * }
+     */
+    public static final OfAddress GTestDBus_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GThemedIcon* GThemedIcon_autoptr;
+     * }
+     */
+    public static final OfAddress GThemedIcon_autoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GThemedIcon_listautoptr;
+     * }
+     */
+    public static final OfAddress GThemedIcon_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GThemedIcon_slistautoptr;
+     * }
+     */
+    public static final OfAddress GThemedIcon_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GThemedIcon_queueautoptr;
+     * }
+     */
+    public static final OfAddress GThemedIcon_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GThreadedSocketService* GThreadedSocketService_autoptr;
+     * }
+     */
+    public static final OfAddress GThreadedSocketService_autoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GThreadedSocketService_listautoptr;
+     * }
+     */
+    public static final OfAddress GThreadedSocketService_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GThreadedSocketService_slistautoptr;
+     * }
+     */
+    public static final OfAddress GThreadedSocketService_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GThreadedSocketService_queueautoptr;
+     * }
+     */
+    public static final OfAddress GThreadedSocketService_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GTlsBackend* GTlsBackend_autoptr;
+     * }
+     */
+    public static final OfAddress GTlsBackend_autoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GTlsBackend_listautoptr;
+     * }
+     */
+    public static final OfAddress GTlsBackend_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GTlsBackend_slistautoptr;
+     * }
+     */
+    public static final OfAddress GTlsBackend_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GTlsBackend_queueautoptr;
+     * }
+     */
+    public static final OfAddress GTlsBackend_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GTlsCertificate* GTlsCertificate_autoptr;
+     * }
+     */
+    public static final OfAddress GTlsCertificate_autoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GTlsCertificate_listautoptr;
+     * }
+     */
+    public static final OfAddress GTlsCertificate_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GTlsCertificate_slistautoptr;
+     * }
+     */
+    public static final OfAddress GTlsCertificate_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GTlsCertificate_queueautoptr;
+     * }
+     */
+    public static final OfAddress GTlsCertificate_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GTlsClientConnection* GTlsClientConnection_autoptr;
+     * }
+     */
+    public static final OfAddress GTlsClientConnection_autoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GTlsClientConnection_listautoptr;
+     * }
+     */
+    public static final OfAddress GTlsClientConnection_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GTlsClientConnection_slistautoptr;
+     * }
+     */
+    public static final OfAddress GTlsClientConnection_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GTlsClientConnection_queueautoptr;
+     * }
+     */
+    public static final OfAddress GTlsClientConnection_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GTlsConnection* GTlsConnection_autoptr;
+     * }
+     */
+    public static final OfAddress GTlsConnection_autoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GTlsConnection_listautoptr;
+     * }
+     */
+    public static final OfAddress GTlsConnection_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GTlsConnection_slistautoptr;
+     * }
+     */
+    public static final OfAddress GTlsConnection_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GTlsConnection_queueautoptr;
+     * }
+     */
+    public static final OfAddress GTlsConnection_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GTlsDatabase* GTlsDatabase_autoptr;
+     * }
+     */
+    public static final OfAddress GTlsDatabase_autoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GTlsDatabase_listautoptr;
+     * }
+     */
+    public static final OfAddress GTlsDatabase_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GTlsDatabase_slistautoptr;
+     * }
+     */
+    public static final OfAddress GTlsDatabase_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GTlsDatabase_queueautoptr;
+     * }
+     */
+    public static final OfAddress GTlsDatabase_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GTlsFileDatabase* GTlsFileDatabase_autoptr;
+     * }
+     */
+    public static final OfAddress GTlsFileDatabase_autoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GTlsFileDatabase_listautoptr;
+     * }
+     */
+    public static final OfAddress GTlsFileDatabase_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GTlsFileDatabase_slistautoptr;
+     * }
+     */
+    public static final OfAddress GTlsFileDatabase_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GTlsFileDatabase_queueautoptr;
+     * }
+     */
+    public static final OfAddress GTlsFileDatabase_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GTlsInteraction* GTlsInteraction_autoptr;
+     * }
+     */
+    public static final OfAddress GTlsInteraction_autoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GTlsInteraction_listautoptr;
+     * }
+     */
+    public static final OfAddress GTlsInteraction_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GTlsInteraction_slistautoptr;
+     * }
+     */
+    public static final OfAddress GTlsInteraction_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GTlsInteraction_queueautoptr;
+     * }
+     */
+    public static final OfAddress GTlsInteraction_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GTlsPassword* GTlsPassword_autoptr;
+     * }
+     */
+    public static final OfAddress GTlsPassword_autoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GTlsPassword_listautoptr;
+     * }
+     */
+    public static final OfAddress GTlsPassword_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GTlsPassword_slistautoptr;
+     * }
+     */
+    public static final OfAddress GTlsPassword_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GTlsPassword_queueautoptr;
+     * }
+     */
+    public static final OfAddress GTlsPassword_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GTlsServerConnection* GTlsServerConnection_autoptr;
+     * }
+     */
+    public static final OfAddress GTlsServerConnection_autoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GTlsServerConnection_listautoptr;
+     * }
+     */
+    public static final OfAddress GTlsServerConnection_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GTlsServerConnection_slistautoptr;
+     * }
+     */
+    public static final OfAddress GTlsServerConnection_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GTlsServerConnection_queueautoptr;
+     * }
+     */
+    public static final OfAddress GTlsServerConnection_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GVfs* GVfs_autoptr;
+     * }
+     */
+    public static final OfAddress GVfs_autoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GVfs_listautoptr;
+     * }
+     */
+    public static final OfAddress GVfs_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GVfs_slistautoptr;
+     * }
+     */
+    public static final OfAddress GVfs_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GVfs_queueautoptr;
+     * }
+     */
+    public static final OfAddress GVfs_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GVolume* GVolume_autoptr;
+     * }
+     */
+    public static final OfAddress GVolume_autoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GVolume_listautoptr;
+     * }
+     */
+    public static final OfAddress GVolume_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GVolume_slistautoptr;
+     * }
+     */
+    public static final OfAddress GVolume_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GVolume_queueautoptr;
+     * }
+     */
+    public static final OfAddress GVolume_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GVolumeMonitor* GVolumeMonitor_autoptr;
+     * }
+     */
+    public static final OfAddress GVolumeMonitor_autoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GVolumeMonitor_listautoptr;
+     * }
+     */
+    public static final OfAddress GVolumeMonitor_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GVolumeMonitor_slistautoptr;
+     * }
+     */
+    public static final OfAddress GVolumeMonitor_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GVolumeMonitor_queueautoptr;
+     * }
+     */
+    public static final OfAddress GVolumeMonitor_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GZlibCompressor* GZlibCompressor_autoptr;
+     * }
+     */
+    public static final OfAddress GZlibCompressor_autoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GZlibCompressor_listautoptr;
+     * }
+     */
+    public static final OfAddress GZlibCompressor_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GZlibCompressor_slistautoptr;
+     * }
+     */
+    public static final OfAddress GZlibCompressor_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GZlibCompressor_queueautoptr;
+     * }
+     */
+    public static final OfAddress GZlibCompressor_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GZlibDecompressor* GZlibDecompressor_autoptr;
+     * }
+     */
+    public static final OfAddress GZlibDecompressor_autoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GZlibDecompressor_listautoptr;
+     * }
+     */
+    public static final OfAddress GZlibDecompressor_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GZlibDecompressor_slistautoptr;
+     * }
+     */
+    public static final OfAddress GZlibDecompressor_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GZlibDecompressor_queueautoptr;
+     * }
+     */
+    public static final OfAddress GZlibDecompressor_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef unsigned char uint8_t;
+     * }
+     */
+    public static final OfByte uint8_t = Constants$root.C_CHAR$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef unsigned short uint16_t;
+     * }
+     */
+    public static final OfShort uint16_t = Constants$root.C_SHORT$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef unsigned int uint32_t;
+     * }
+     */
+    public static final OfInt uint32_t = Constants$root.C_INT$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef unsigned long uint64_t;
+     * }
+     */
+    public static final OfLong uint64_t = Constants$root.C_LONG_LONG$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef signed char int_least8_t;
+     * }
+     */
+    public static final OfByte int_least8_t = Constants$root.C_CHAR$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef short int_least16_t;
+     * }
+     */
+    public static final OfShort int_least16_t = Constants$root.C_SHORT$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef int int_least32_t;
+     * }
+     */
+    public static final OfInt int_least32_t = Constants$root.C_INT$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef long int_least64_t;
+     * }
+     */
+    public static final OfLong int_least64_t = Constants$root.C_LONG_LONG$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef unsigned char uint_least8_t;
+     * }
+     */
+    public static final OfByte uint_least8_t = Constants$root.C_CHAR$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef unsigned short uint_least16_t;
+     * }
+     */
+    public static final OfShort uint_least16_t = Constants$root.C_SHORT$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef unsigned int uint_least32_t;
+     * }
+     */
+    public static final OfInt uint_least32_t = Constants$root.C_INT$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef unsigned long uint_least64_t;
+     * }
+     */
+    public static final OfLong uint_least64_t = Constants$root.C_LONG_LONG$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef signed char int_fast8_t;
+     * }
+     */
+    public static final OfByte int_fast8_t = Constants$root.C_CHAR$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef long int_fast16_t;
+     * }
+     */
+    public static final OfLong int_fast16_t = Constants$root.C_LONG_LONG$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef long int_fast32_t;
+     * }
+     */
+    public static final OfLong int_fast32_t = Constants$root.C_LONG_LONG$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef long int_fast64_t;
+     * }
+     */
+    public static final OfLong int_fast64_t = Constants$root.C_LONG_LONG$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef unsigned char uint_fast8_t;
+     * }
+     */
+    public static final OfByte uint_fast8_t = Constants$root.C_CHAR$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef unsigned long uint_fast16_t;
+     * }
+     */
+    public static final OfLong uint_fast16_t = Constants$root.C_LONG_LONG$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef unsigned long uint_fast32_t;
+     * }
+     */
+    public static final OfLong uint_fast32_t = Constants$root.C_LONG_LONG$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef unsigned long uint_fast64_t;
+     * }
+     */
+    public static final OfLong uint_fast64_t = Constants$root.C_LONG_LONG$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef unsigned long uintptr_t;
+     * }
+     */
+    public static final OfLong uintptr_t = Constants$root.C_LONG_LONG$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef long intmax_t;
+     * }
+     */
+    public static final OfLong intmax_t = Constants$root.C_LONG_LONG$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef unsigned long uintmax_t;
+     * }
+     */
+    public static final OfLong uintmax_t = Constants$root.C_LONG_LONG$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef int hb_bool_t;
+     * }
+     */
+    public static final OfInt hb_bool_t = Constants$root.C_INT$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef unsigned int hb_codepoint_t;
+     * }
+     */
+    public static final OfInt hb_codepoint_t = Constants$root.C_INT$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef int hb_position_t;
+     * }
+     */
+    public static final OfInt hb_position_t = Constants$root.C_INT$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef unsigned int hb_mask_t;
+     * }
+     */
+    public static final OfInt hb_mask_t = Constants$root.C_INT$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef unsigned int hb_tag_t;
+     * }
+     */
+    public static final OfInt hb_tag_t = Constants$root.C_INT$LAYOUT;
+    public static MethodHandle hb_tag_from_string$MH() {
+        return RuntimeHelper.requireNonNull(constants$830.hb_tag_from_string$MH,"hb_tag_from_string");
+    }
+    /**
+     * {@snippet :
+     * hb_tag_t hb_tag_from_string(char* str, int len);
+     * }
+     */
+    public static int hb_tag_from_string(MemorySegment str, int len) {
+        var mh$ = hb_tag_from_string$MH();
+        try {
+            return (int)mh$.invokeExact(str, len);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_tag_to_string$MH() {
+        return RuntimeHelper.requireNonNull(constants$830.hb_tag_to_string$MH,"hb_tag_to_string");
+    }
+    /**
+     * {@snippet :
+     * void hb_tag_to_string(hb_tag_t tag, char* buf);
+     * }
+     */
+    public static void hb_tag_to_string(int tag, MemorySegment buf) {
+        var mh$ = hb_tag_to_string$MH();
+        try {
+            mh$.invokeExact(tag, buf);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    /**
+     * {@snippet :
+     * enum .HB_DIRECTION_INVALID = 0;
+     * }
+     */
+    public static int HB_DIRECTION_INVALID() {
+        return (int)0L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_DIRECTION_LTR = 4;
+     * }
+     */
+    public static int HB_DIRECTION_LTR() {
+        return (int)4L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_DIRECTION_RTL = 5;
+     * }
+     */
+    public static int HB_DIRECTION_RTL() {
+        return (int)5L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_DIRECTION_TTB = 6;
+     * }
+     */
+    public static int HB_DIRECTION_TTB() {
+        return (int)6L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_DIRECTION_BTT = 7;
+     * }
+     */
+    public static int HB_DIRECTION_BTT() {
+        return (int)7L;
+    }
+    public static MethodHandle hb_direction_from_string$MH() {
+        return RuntimeHelper.requireNonNull(constants$830.hb_direction_from_string$MH,"hb_direction_from_string");
+    }
+    /**
+     * {@snippet :
+     * hb_direction_t hb_direction_from_string(char* str, int len);
+     * }
+     */
+    public static int hb_direction_from_string(MemorySegment str, int len) {
+        var mh$ = hb_direction_from_string$MH();
+        try {
+            return (int)mh$.invokeExact(str, len);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_direction_to_string$MH() {
+        return RuntimeHelper.requireNonNull(constants$831.hb_direction_to_string$MH,"hb_direction_to_string");
+    }
+    /**
+     * {@snippet :
+     * char* hb_direction_to_string(hb_direction_t direction);
+     * }
+     */
+    public static MemorySegment hb_direction_to_string(int direction) {
+        var mh$ = hb_direction_to_string$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(direction);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    /**
+     * {@snippet :
+     * typedef struct hb_language_impl_t* hb_language_t;
+     * }
+     */
+    public static final OfAddress hb_language_t = Constants$root.C_POINTER$LAYOUT;
+    public static MethodHandle hb_language_from_string$MH() {
+        return RuntimeHelper.requireNonNull(constants$831.hb_language_from_string$MH,"hb_language_from_string");
+    }
+    /**
+     * {@snippet :
+     * hb_language_t hb_language_from_string(char* str, int len);
+     * }
+     */
+    public static MemorySegment hb_language_from_string(MemorySegment str, int len) {
+        var mh$ = hb_language_from_string$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(str, len);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_language_to_string$MH() {
+        return RuntimeHelper.requireNonNull(constants$831.hb_language_to_string$MH,"hb_language_to_string");
+    }
+    /**
+     * {@snippet :
+     * char* hb_language_to_string(hb_language_t language);
+     * }
+     */
+    public static MemorySegment hb_language_to_string(MemorySegment language) {
+        var mh$ = hb_language_to_string$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(language);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_language_get_default$MH() {
+        return RuntimeHelper.requireNonNull(constants$831.hb_language_get_default$MH,"hb_language_get_default");
+    }
+    /**
+     * {@snippet :
+     * hb_language_t hb_language_get_default();
+     * }
+     */
+    public static MemorySegment hb_language_get_default() {
+        var mh$ = hb_language_get_default$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_language_matches$MH() {
+        return RuntimeHelper.requireNonNull(constants$831.hb_language_matches$MH,"hb_language_matches");
+    }
+    /**
+     * {@snippet :
+     * hb_bool_t hb_language_matches(hb_language_t language, hb_language_t specific);
+     * }
+     */
+    public static int hb_language_matches(MemorySegment language, MemorySegment specific) {
+        var mh$ = hb_language_matches$MH();
+        try {
+            return (int)mh$.invokeExact(language, specific);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_COMMON = 1517910393;
+     * }
+     */
+    public static int HB_SCRIPT_COMMON() {
+        return (int)1517910393L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_INHERITED = 1516858984;
+     * }
+     */
+    public static int HB_SCRIPT_INHERITED() {
+        return (int)1516858984L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_UNKNOWN = 1517976186;
+     * }
+     */
+    public static int HB_SCRIPT_UNKNOWN() {
+        return (int)1517976186L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_ARABIC = 1098015074;
+     * }
+     */
+    public static int HB_SCRIPT_ARABIC() {
+        return (int)1098015074L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_ARMENIAN = 1098018158;
+     * }
+     */
+    public static int HB_SCRIPT_ARMENIAN() {
+        return (int)1098018158L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_BENGALI = 1113943655;
+     * }
+     */
+    public static int HB_SCRIPT_BENGALI() {
+        return (int)1113943655L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_CYRILLIC = 1132032620;
+     * }
+     */
+    public static int HB_SCRIPT_CYRILLIC() {
+        return (int)1132032620L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_DEVANAGARI = 1147500129;
+     * }
+     */
+    public static int HB_SCRIPT_DEVANAGARI() {
+        return (int)1147500129L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_GEORGIAN = 1197830002;
+     * }
+     */
+    public static int HB_SCRIPT_GEORGIAN() {
+        return (int)1197830002L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_GREEK = 1198679403;
+     * }
+     */
+    public static int HB_SCRIPT_GREEK() {
+        return (int)1198679403L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_GUJARATI = 1198877298;
+     * }
+     */
+    public static int HB_SCRIPT_GUJARATI() {
+        return (int)1198877298L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_GURMUKHI = 1198879349;
+     * }
+     */
+    public static int HB_SCRIPT_GURMUKHI() {
+        return (int)1198879349L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_HANGUL = 1214344807;
+     * }
+     */
+    public static int HB_SCRIPT_HANGUL() {
+        return (int)1214344807L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_HAN = 1214344809;
+     * }
+     */
+    public static int HB_SCRIPT_HAN() {
+        return (int)1214344809L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_HEBREW = 1214603890;
+     * }
+     */
+    public static int HB_SCRIPT_HEBREW() {
+        return (int)1214603890L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_HIRAGANA = 1214870113;
+     * }
+     */
+    public static int HB_SCRIPT_HIRAGANA() {
+        return (int)1214870113L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_KANNADA = 1265525857;
+     * }
+     */
+    public static int HB_SCRIPT_KANNADA() {
+        return (int)1265525857L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_KATAKANA = 1264676449;
+     * }
+     */
+    public static int HB_SCRIPT_KATAKANA() {
+        return (int)1264676449L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_LAO = 1281453935;
+     * }
+     */
+    public static int HB_SCRIPT_LAO() {
+        return (int)1281453935L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_LATIN = 1281455214;
+     * }
+     */
+    public static int HB_SCRIPT_LATIN() {
+        return (int)1281455214L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_MALAYALAM = 1298954605;
+     * }
+     */
+    public static int HB_SCRIPT_MALAYALAM() {
+        return (int)1298954605L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_ORIYA = 1332902241;
+     * }
+     */
+    public static int HB_SCRIPT_ORIYA() {
+        return (int)1332902241L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_TAMIL = 1415671148;
+     * }
+     */
+    public static int HB_SCRIPT_TAMIL() {
+        return (int)1415671148L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_TELUGU = 1415933045;
+     * }
+     */
+    public static int HB_SCRIPT_TELUGU() {
+        return (int)1415933045L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_THAI = 1416126825;
+     * }
+     */
+    public static int HB_SCRIPT_THAI() {
+        return (int)1416126825L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_TIBETAN = 1416192628;
+     * }
+     */
+    public static int HB_SCRIPT_TIBETAN() {
+        return (int)1416192628L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_BOPOMOFO = 1114599535;
+     * }
+     */
+    public static int HB_SCRIPT_BOPOMOFO() {
+        return (int)1114599535L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_BRAILLE = 1114792297;
+     * }
+     */
+    public static int HB_SCRIPT_BRAILLE() {
+        return (int)1114792297L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_CANADIAN_SYLLABICS = 1130458739;
+     * }
+     */
+    public static int HB_SCRIPT_CANADIAN_SYLLABICS() {
+        return (int)1130458739L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_CHEROKEE = 1130915186;
+     * }
+     */
+    public static int HB_SCRIPT_CHEROKEE() {
+        return (int)1130915186L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_ETHIOPIC = 1165256809;
+     * }
+     */
+    public static int HB_SCRIPT_ETHIOPIC() {
+        return (int)1165256809L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_KHMER = 1265134962;
+     * }
+     */
+    public static int HB_SCRIPT_KHMER() {
+        return (int)1265134962L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_MONGOLIAN = 1299148391;
+     * }
+     */
+    public static int HB_SCRIPT_MONGOLIAN() {
+        return (int)1299148391L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_MYANMAR = 1299803506;
+     * }
+     */
+    public static int HB_SCRIPT_MYANMAR() {
+        return (int)1299803506L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_OGHAM = 1332175213;
+     * }
+     */
+    public static int HB_SCRIPT_OGHAM() {
+        return (int)1332175213L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_RUNIC = 1383427698;
+     * }
+     */
+    public static int HB_SCRIPT_RUNIC() {
+        return (int)1383427698L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_SINHALA = 1399418472;
+     * }
+     */
+    public static int HB_SCRIPT_SINHALA() {
+        return (int)1399418472L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_SYRIAC = 1400468067;
+     * }
+     */
+    public static int HB_SCRIPT_SYRIAC() {
+        return (int)1400468067L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_THAANA = 1416126817;
+     * }
+     */
+    public static int HB_SCRIPT_THAANA() {
+        return (int)1416126817L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_YI = 1500080489;
+     * }
+     */
+    public static int HB_SCRIPT_YI() {
+        return (int)1500080489L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_DESERET = 1148416628;
+     * }
+     */
+    public static int HB_SCRIPT_DESERET() {
+        return (int)1148416628L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_GOTHIC = 1198486632;
+     * }
+     */
+    public static int HB_SCRIPT_GOTHIC() {
+        return (int)1198486632L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_OLD_ITALIC = 1232363884;
+     * }
+     */
+    public static int HB_SCRIPT_OLD_ITALIC() {
+        return (int)1232363884L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_BUHID = 1114990692;
+     * }
+     */
+    public static int HB_SCRIPT_BUHID() {
+        return (int)1114990692L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_HANUNOO = 1214344815;
+     * }
+     */
+    public static int HB_SCRIPT_HANUNOO() {
+        return (int)1214344815L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_TAGALOG = 1416064103;
+     * }
+     */
+    public static int HB_SCRIPT_TAGALOG() {
+        return (int)1416064103L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_TAGBANWA = 1415669602;
+     * }
+     */
+    public static int HB_SCRIPT_TAGBANWA() {
+        return (int)1415669602L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_CYPRIOT = 1131442804;
+     * }
+     */
+    public static int HB_SCRIPT_CYPRIOT() {
+        return (int)1131442804L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_LIMBU = 1281977698;
+     * }
+     */
+    public static int HB_SCRIPT_LIMBU() {
+        return (int)1281977698L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_LINEAR_B = 1281977954;
+     * }
+     */
+    public static int HB_SCRIPT_LINEAR_B() {
+        return (int)1281977954L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_OSMANYA = 1332964705;
+     * }
+     */
+    public static int HB_SCRIPT_OSMANYA() {
+        return (int)1332964705L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_SHAVIAN = 1399349623;
+     * }
+     */
+    public static int HB_SCRIPT_SHAVIAN() {
+        return (int)1399349623L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_TAI_LE = 1415670885;
+     * }
+     */
+    public static int HB_SCRIPT_TAI_LE() {
+        return (int)1415670885L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_UGARITIC = 1432838514;
+     * }
+     */
+    public static int HB_SCRIPT_UGARITIC() {
+        return (int)1432838514L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_BUGINESE = 1114990441;
+     * }
+     */
+    public static int HB_SCRIPT_BUGINESE() {
+        return (int)1114990441L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_COPTIC = 1131376756;
+     * }
+     */
+    public static int HB_SCRIPT_COPTIC() {
+        return (int)1131376756L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_GLAGOLITIC = 1198285159;
+     * }
+     */
+    public static int HB_SCRIPT_GLAGOLITIC() {
+        return (int)1198285159L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_KHAROSHTHI = 1265131890;
+     * }
+     */
+    public static int HB_SCRIPT_KHAROSHTHI() {
+        return (int)1265131890L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_NEW_TAI_LUE = 1415670901;
+     * }
+     */
+    public static int HB_SCRIPT_NEW_TAI_LUE() {
+        return (int)1415670901L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_OLD_PERSIAN = 1483761007;
+     * }
+     */
+    public static int HB_SCRIPT_OLD_PERSIAN() {
+        return (int)1483761007L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_SYLOTI_NAGRI = 1400466543;
+     * }
+     */
+    public static int HB_SCRIPT_SYLOTI_NAGRI() {
+        return (int)1400466543L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_TIFINAGH = 1415999079;
+     * }
+     */
+    public static int HB_SCRIPT_TIFINAGH() {
+        return (int)1415999079L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_BALINESE = 1113681001;
+     * }
+     */
+    public static int HB_SCRIPT_BALINESE() {
+        return (int)1113681001L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_CUNEIFORM = 1483961720;
+     * }
+     */
+    public static int HB_SCRIPT_CUNEIFORM() {
+        return (int)1483961720L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_NKO = 1315663727;
+     * }
+     */
+    public static int HB_SCRIPT_NKO() {
+        return (int)1315663727L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_PHAGS_PA = 1349017959;
+     * }
+     */
+    public static int HB_SCRIPT_PHAGS_PA() {
+        return (int)1349017959L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_PHOENICIAN = 1349021304;
+     * }
+     */
+    public static int HB_SCRIPT_PHOENICIAN() {
+        return (int)1349021304L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_CARIAN = 1130459753;
+     * }
+     */
+    public static int HB_SCRIPT_CARIAN() {
+        return (int)1130459753L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_CHAM = 1130914157;
+     * }
+     */
+    public static int HB_SCRIPT_CHAM() {
+        return (int)1130914157L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_KAYAH_LI = 1264675945;
+     * }
+     */
+    public static int HB_SCRIPT_KAYAH_LI() {
+        return (int)1264675945L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_LEPCHA = 1281716323;
+     * }
+     */
+    public static int HB_SCRIPT_LEPCHA() {
+        return (int)1281716323L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_LYCIAN = 1283023721;
+     * }
+     */
+    public static int HB_SCRIPT_LYCIAN() {
+        return (int)1283023721L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_LYDIAN = 1283023977;
+     * }
+     */
+    public static int HB_SCRIPT_LYDIAN() {
+        return (int)1283023977L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_OL_CHIKI = 1332503403;
+     * }
+     */
+    public static int HB_SCRIPT_OL_CHIKI() {
+        return (int)1332503403L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_REJANG = 1382706791;
+     * }
+     */
+    public static int HB_SCRIPT_REJANG() {
+        return (int)1382706791L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_SAURASHTRA = 1398895986;
+     * }
+     */
+    public static int HB_SCRIPT_SAURASHTRA() {
+        return (int)1398895986L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_SUNDANESE = 1400204900;
+     * }
+     */
+    public static int HB_SCRIPT_SUNDANESE() {
+        return (int)1400204900L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_VAI = 1449224553;
+     * }
+     */
+    public static int HB_SCRIPT_VAI() {
+        return (int)1449224553L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_AVESTAN = 1098281844;
+     * }
+     */
+    public static int HB_SCRIPT_AVESTAN() {
+        return (int)1098281844L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_BAMUM = 1113681269;
+     * }
+     */
+    public static int HB_SCRIPT_BAMUM() {
+        return (int)1113681269L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_EGYPTIAN_HIEROGLYPHS = 1164409200;
+     * }
+     */
+    public static int HB_SCRIPT_EGYPTIAN_HIEROGLYPHS() {
+        return (int)1164409200L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_IMPERIAL_ARAMAIC = 1098018153;
+     * }
+     */
+    public static int HB_SCRIPT_IMPERIAL_ARAMAIC() {
+        return (int)1098018153L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_INSCRIPTIONAL_PAHLAVI = 1349020777;
+     * }
+     */
+    public static int HB_SCRIPT_INSCRIPTIONAL_PAHLAVI() {
+        return (int)1349020777L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_INSCRIPTIONAL_PARTHIAN = 1349678185;
+     * }
+     */
+    public static int HB_SCRIPT_INSCRIPTIONAL_PARTHIAN() {
+        return (int)1349678185L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_JAVANESE = 1247901281;
+     * }
+     */
+    public static int HB_SCRIPT_JAVANESE() {
+        return (int)1247901281L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_KAITHI = 1265920105;
+     * }
+     */
+    public static int HB_SCRIPT_KAITHI() {
+        return (int)1265920105L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_LISU = 1281979253;
+     * }
+     */
+    public static int HB_SCRIPT_LISU() {
+        return (int)1281979253L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_MEETEI_MAYEK = 1299473769;
+     * }
+     */
+    public static int HB_SCRIPT_MEETEI_MAYEK() {
+        return (int)1299473769L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_OLD_SOUTH_ARABIAN = 1398895202;
+     * }
+     */
+    public static int HB_SCRIPT_OLD_SOUTH_ARABIAN() {
+        return (int)1398895202L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_OLD_TURKIC = 1332898664;
+     * }
+     */
+    public static int HB_SCRIPT_OLD_TURKIC() {
+        return (int)1332898664L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_SAMARITAN = 1398893938;
+     * }
+     */
+    public static int HB_SCRIPT_SAMARITAN() {
+        return (int)1398893938L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_TAI_THAM = 1281453665;
+     * }
+     */
+    public static int HB_SCRIPT_TAI_THAM() {
+        return (int)1281453665L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_TAI_VIET = 1415673460;
+     * }
+     */
+    public static int HB_SCRIPT_TAI_VIET() {
+        return (int)1415673460L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_BATAK = 1113683051;
+     * }
+     */
+    public static int HB_SCRIPT_BATAK() {
+        return (int)1113683051L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_BRAHMI = 1114792296;
+     * }
+     */
+    public static int HB_SCRIPT_BRAHMI() {
+        return (int)1114792296L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_MANDAIC = 1298230884;
+     * }
+     */
+    public static int HB_SCRIPT_MANDAIC() {
+        return (int)1298230884L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_CHAKMA = 1130457965;
+     * }
+     */
+    public static int HB_SCRIPT_CHAKMA() {
+        return (int)1130457965L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_MEROITIC_CURSIVE = 1298494051;
+     * }
+     */
+    public static int HB_SCRIPT_MEROITIC_CURSIVE() {
+        return (int)1298494051L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_MEROITIC_HIEROGLYPHS = 1298494063;
+     * }
+     */
+    public static int HB_SCRIPT_MEROITIC_HIEROGLYPHS() {
+        return (int)1298494063L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_MIAO = 1349284452;
+     * }
+     */
+    public static int HB_SCRIPT_MIAO() {
+        return (int)1349284452L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_SHARADA = 1399353956;
+     * }
+     */
+    public static int HB_SCRIPT_SHARADA() {
+        return (int)1399353956L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_SORA_SOMPENG = 1399812705;
+     * }
+     */
+    public static int HB_SCRIPT_SORA_SOMPENG() {
+        return (int)1399812705L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_TAKRI = 1415670642;
+     * }
+     */
+    public static int HB_SCRIPT_TAKRI() {
+        return (int)1415670642L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_BASSA_VAH = 1113682803;
+     * }
+     */
+    public static int HB_SCRIPT_BASSA_VAH() {
+        return (int)1113682803L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_CAUCASIAN_ALBANIAN = 1097295970;
+     * }
+     */
+    public static int HB_SCRIPT_CAUCASIAN_ALBANIAN() {
+        return (int)1097295970L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_DUPLOYAN = 1148547180;
+     * }
+     */
+    public static int HB_SCRIPT_DUPLOYAN() {
+        return (int)1148547180L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_ELBASAN = 1164730977;
+     * }
+     */
+    public static int HB_SCRIPT_ELBASAN() {
+        return (int)1164730977L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_GRANTHA = 1198678382;
+     * }
+     */
+    public static int HB_SCRIPT_GRANTHA() {
+        return (int)1198678382L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_KHOJKI = 1265135466;
+     * }
+     */
+    public static int HB_SCRIPT_KHOJKI() {
+        return (int)1265135466L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_KHUDAWADI = 1399418468;
+     * }
+     */
+    public static int HB_SCRIPT_KHUDAWADI() {
+        return (int)1399418468L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_LINEAR_A = 1281977953;
+     * }
+     */
+    public static int HB_SCRIPT_LINEAR_A() {
+        return (int)1281977953L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_MAHAJANI = 1298229354;
+     * }
+     */
+    public static int HB_SCRIPT_MAHAJANI() {
+        return (int)1298229354L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_MANICHAEAN = 1298230889;
+     * }
+     */
+    public static int HB_SCRIPT_MANICHAEAN() {
+        return (int)1298230889L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_MENDE_KIKAKUI = 1298493028;
+     * }
+     */
+    public static int HB_SCRIPT_MENDE_KIKAKUI() {
+        return (int)1298493028L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_MODI = 1299145833;
+     * }
+     */
+    public static int HB_SCRIPT_MODI() {
+        return (int)1299145833L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_MRO = 1299345263;
+     * }
+     */
+    public static int HB_SCRIPT_MRO() {
+        return (int)1299345263L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_NABATAEAN = 1315070324;
+     * }
+     */
+    public static int HB_SCRIPT_NABATAEAN() {
+        return (int)1315070324L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_OLD_NORTH_ARABIAN = 1315009122;
+     * }
+     */
+    public static int HB_SCRIPT_OLD_NORTH_ARABIAN() {
+        return (int)1315009122L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_OLD_PERMIC = 1348825709;
+     * }
+     */
+    public static int HB_SCRIPT_OLD_PERMIC() {
+        return (int)1348825709L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_PAHAWH_HMONG = 1215131239;
+     * }
+     */
+    public static int HB_SCRIPT_PAHAWH_HMONG() {
+        return (int)1215131239L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_PALMYRENE = 1348562029;
+     * }
+     */
+    public static int HB_SCRIPT_PALMYRENE() {
+        return (int)1348562029L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_PAU_CIN_HAU = 1348564323;
+     * }
+     */
+    public static int HB_SCRIPT_PAU_CIN_HAU() {
+        return (int)1348564323L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_PSALTER_PAHLAVI = 1349020784;
+     * }
+     */
+    public static int HB_SCRIPT_PSALTER_PAHLAVI() {
+        return (int)1349020784L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_SIDDHAM = 1399415908;
+     * }
+     */
+    public static int HB_SCRIPT_SIDDHAM() {
+        return (int)1399415908L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_TIRHUTA = 1416196712;
+     * }
+     */
+    public static int HB_SCRIPT_TIRHUTA() {
+        return (int)1416196712L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_WARANG_CITI = 1466004065;
+     * }
+     */
+    public static int HB_SCRIPT_WARANG_CITI() {
+        return (int)1466004065L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_AHOM = 1097363309;
+     * }
+     */
+    public static int HB_SCRIPT_AHOM() {
+        return (int)1097363309L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_ANATOLIAN_HIEROGLYPHS = 1215067511;
+     * }
+     */
+    public static int HB_SCRIPT_ANATOLIAN_HIEROGLYPHS() {
+        return (int)1215067511L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_HATRAN = 1214346354;
+     * }
+     */
+    public static int HB_SCRIPT_HATRAN() {
+        return (int)1214346354L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_MULTANI = 1299541108;
+     * }
+     */
+    public static int HB_SCRIPT_MULTANI() {
+        return (int)1299541108L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_OLD_HUNGARIAN = 1215655527;
+     * }
+     */
+    public static int HB_SCRIPT_OLD_HUNGARIAN() {
+        return (int)1215655527L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_SIGNWRITING = 1399287415;
+     * }
+     */
+    public static int HB_SCRIPT_SIGNWRITING() {
+        return (int)1399287415L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_ADLAM = 1097100397;
+     * }
+     */
+    public static int HB_SCRIPT_ADLAM() {
+        return (int)1097100397L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_BHAIKSUKI = 1114139507;
+     * }
+     */
+    public static int HB_SCRIPT_BHAIKSUKI() {
+        return (int)1114139507L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_MARCHEN = 1298231907;
+     * }
+     */
+    public static int HB_SCRIPT_MARCHEN() {
+        return (int)1298231907L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_OSAGE = 1332963173;
+     * }
+     */
+    public static int HB_SCRIPT_OSAGE() {
+        return (int)1332963173L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_TANGUT = 1415671399;
+     * }
+     */
+    public static int HB_SCRIPT_TANGUT() {
+        return (int)1415671399L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_NEWA = 1315272545;
+     * }
+     */
+    public static int HB_SCRIPT_NEWA() {
+        return (int)1315272545L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_MASARAM_GONDI = 1198485101;
+     * }
+     */
+    public static int HB_SCRIPT_MASARAM_GONDI() {
+        return (int)1198485101L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_NUSHU = 1316186229;
+     * }
+     */
+    public static int HB_SCRIPT_NUSHU() {
+        return (int)1316186229L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_SOYOMBO = 1399814511;
+     * }
+     */
+    public static int HB_SCRIPT_SOYOMBO() {
+        return (int)1399814511L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_ZANABAZAR_SQUARE = 1516334690;
+     * }
+     */
+    public static int HB_SCRIPT_ZANABAZAR_SQUARE() {
+        return (int)1516334690L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_DOGRA = 1148151666;
+     * }
+     */
+    public static int HB_SCRIPT_DOGRA() {
+        return (int)1148151666L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_GUNJALA_GONDI = 1198485095;
+     * }
+     */
+    public static int HB_SCRIPT_GUNJALA_GONDI() {
+        return (int)1198485095L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_HANIFI_ROHINGYA = 1383032935;
+     * }
+     */
+    public static int HB_SCRIPT_HANIFI_ROHINGYA() {
+        return (int)1383032935L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_MAKASAR = 1298230113;
+     * }
+     */
+    public static int HB_SCRIPT_MAKASAR() {
+        return (int)1298230113L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_MEDEFAIDRIN = 1298490470;
+     * }
+     */
+    public static int HB_SCRIPT_MEDEFAIDRIN() {
+        return (int)1298490470L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_OLD_SOGDIAN = 1399809903;
+     * }
+     */
+    public static int HB_SCRIPT_OLD_SOGDIAN() {
+        return (int)1399809903L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_SOGDIAN = 1399809892;
+     * }
+     */
+    public static int HB_SCRIPT_SOGDIAN() {
+        return (int)1399809892L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_ELYMAIC = 1164736877;
+     * }
+     */
+    public static int HB_SCRIPT_ELYMAIC() {
+        return (int)1164736877L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_NANDINAGARI = 1315008100;
+     * }
+     */
+    public static int HB_SCRIPT_NANDINAGARI() {
+        return (int)1315008100L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_NYIAKENG_PUACHUE_HMONG = 1215131248;
+     * }
+     */
+    public static int HB_SCRIPT_NYIAKENG_PUACHUE_HMONG() {
+        return (int)1215131248L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_WANCHO = 1466132591;
+     * }
+     */
+    public static int HB_SCRIPT_WANCHO() {
+        return (int)1466132591L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_CHORASMIAN = 1130918515;
+     * }
+     */
+    public static int HB_SCRIPT_CHORASMIAN() {
+        return (int)1130918515L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_DIVES_AKURU = 1147756907;
+     * }
+     */
+    public static int HB_SCRIPT_DIVES_AKURU() {
+        return (int)1147756907L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_KHITAN_SMALL_SCRIPT = 1265202291;
+     * }
+     */
+    public static int HB_SCRIPT_KHITAN_SMALL_SCRIPT() {
+        return (int)1265202291L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_YEZIDI = 1499822697;
+     * }
+     */
+    public static int HB_SCRIPT_YEZIDI() {
+        return (int)1499822697L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_CYPRO_MINOAN = 1131441518;
+     * }
+     */
+    public static int HB_SCRIPT_CYPRO_MINOAN() {
+        return (int)1131441518L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_OLD_UYGHUR = 1333094258;
+     * }
+     */
+    public static int HB_SCRIPT_OLD_UYGHUR() {
+        return (int)1333094258L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_TANGSA = 1416524641;
+     * }
+     */
+    public static int HB_SCRIPT_TANGSA() {
+        return (int)1416524641L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_TOTO = 1416590447;
+     * }
+     */
+    public static int HB_SCRIPT_TOTO() {
+        return (int)1416590447L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_VITHKUQI = 1449751656;
+     * }
+     */
+    public static int HB_SCRIPT_VITHKUQI() {
+        return (int)1449751656L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_MATH = 1517122664;
+     * }
+     */
+    public static int HB_SCRIPT_MATH() {
+        return (int)1517122664L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_KAWI = 1264678761;
+     * }
+     */
+    public static int HB_SCRIPT_KAWI() {
+        return (int)1264678761L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_NAG_MUNDARI = 1315006317;
+     * }
+     */
+    public static int HB_SCRIPT_NAG_MUNDARI() {
+        return (int)1315006317L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_SCRIPT_INVALID = 0;
+     * }
+     */
+    public static int HB_SCRIPT_INVALID() {
+        return (int)0L;
+    }
+    /**
+     * {@snippet :
+     * enum ._HB_SCRIPT_MAX_VALUE = 2147483647;
+     * }
+     */
+    public static int _HB_SCRIPT_MAX_VALUE() {
+        return (int)2147483647L;
+    }
+    /**
+     * {@snippet :
+     * enum ._HB_SCRIPT_MAX_VALUE_SIGNED = 2147483647;
+     * }
+     */
+    public static int _HB_SCRIPT_MAX_VALUE_SIGNED() {
+        return (int)2147483647L;
+    }
+    public static MethodHandle hb_script_from_iso15924_tag$MH() {
+        return RuntimeHelper.requireNonNull(constants$831.hb_script_from_iso15924_tag$MH,"hb_script_from_iso15924_tag");
+    }
+    /**
+     * {@snippet :
+     * hb_script_t hb_script_from_iso15924_tag(hb_tag_t tag);
+     * }
+     */
+    public static int hb_script_from_iso15924_tag(int tag) {
+        var mh$ = hb_script_from_iso15924_tag$MH();
+        try {
+            return (int)mh$.invokeExact(tag);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_script_from_string$MH() {
+        return RuntimeHelper.requireNonNull(constants$832.hb_script_from_string$MH,"hb_script_from_string");
+    }
+    /**
+     * {@snippet :
+     * hb_script_t hb_script_from_string(char* str, int len);
+     * }
+     */
+    public static int hb_script_from_string(MemorySegment str, int len) {
+        var mh$ = hb_script_from_string$MH();
+        try {
+            return (int)mh$.invokeExact(str, len);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_script_to_iso15924_tag$MH() {
+        return RuntimeHelper.requireNonNull(constants$832.hb_script_to_iso15924_tag$MH,"hb_script_to_iso15924_tag");
+    }
+    /**
+     * {@snippet :
+     * hb_tag_t hb_script_to_iso15924_tag(hb_script_t script);
+     * }
+     */
+    public static int hb_script_to_iso15924_tag(int script) {
+        var mh$ = hb_script_to_iso15924_tag$MH();
+        try {
+            return (int)mh$.invokeExact(script);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_script_get_horizontal_direction$MH() {
+        return RuntimeHelper.requireNonNull(constants$832.hb_script_get_horizontal_direction$MH,"hb_script_get_horizontal_direction");
+    }
+    /**
+     * {@snippet :
+     * hb_direction_t hb_script_get_horizontal_direction(hb_script_t script);
+     * }
+     */
+    public static int hb_script_get_horizontal_direction(int script) {
+        var mh$ = hb_script_get_horizontal_direction$MH();
+        try {
+            return (int)mh$.invokeExact(script);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_feature_from_string$MH() {
+        return RuntimeHelper.requireNonNull(constants$832.hb_feature_from_string$MH,"hb_feature_from_string");
+    }
+    /**
+     * {@snippet :
+     * hb_bool_t hb_feature_from_string(char* str, int len, hb_feature_t* feature);
+     * }
+     */
+    public static int hb_feature_from_string(MemorySegment str, int len, MemorySegment feature) {
+        var mh$ = hb_feature_from_string$MH();
+        try {
+            return (int)mh$.invokeExact(str, len, feature);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_feature_to_string$MH() {
+        return RuntimeHelper.requireNonNull(constants$833.hb_feature_to_string$MH,"hb_feature_to_string");
+    }
+    /**
+     * {@snippet :
+     * void hb_feature_to_string(hb_feature_t* feature, char* buf, unsigned int size);
+     * }
+     */
+    public static void hb_feature_to_string(MemorySegment feature, MemorySegment buf, int size) {
+        var mh$ = hb_feature_to_string$MH();
+        try {
+            mh$.invokeExact(feature, buf, size);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_variation_from_string$MH() {
+        return RuntimeHelper.requireNonNull(constants$833.hb_variation_from_string$MH,"hb_variation_from_string");
+    }
+    /**
+     * {@snippet :
+     * hb_bool_t hb_variation_from_string(char* str, int len, hb_variation_t* variation);
+     * }
+     */
+    public static int hb_variation_from_string(MemorySegment str, int len, MemorySegment variation) {
+        var mh$ = hb_variation_from_string$MH();
+        try {
+            return (int)mh$.invokeExact(str, len, variation);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_variation_to_string$MH() {
+        return RuntimeHelper.requireNonNull(constants$833.hb_variation_to_string$MH,"hb_variation_to_string");
+    }
+    /**
+     * {@snippet :
+     * void hb_variation_to_string(hb_variation_t* variation, char* buf, unsigned int size);
+     * }
+     */
+    public static void hb_variation_to_string(MemorySegment variation, MemorySegment buf, int size) {
+        var mh$ = hb_variation_to_string$MH();
+        try {
+            mh$.invokeExact(variation, buf, size);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    /**
+     * {@snippet :
+     * typedef unsigned int hb_color_t;
+     * }
+     */
+    public static final OfInt hb_color_t = Constants$root.C_INT$LAYOUT;
+    public static MethodHandle hb_color_get_alpha$MH() {
+        return RuntimeHelper.requireNonNull(constants$833.hb_color_get_alpha$MH,"hb_color_get_alpha");
+    }
+    /**
+     * {@snippet :
+     * uint8_t hb_color_get_alpha(hb_color_t color);
+     * }
+     */
+    public static byte hb_color_get_alpha(int color) {
+        var mh$ = hb_color_get_alpha$MH();
+        try {
+            return (byte)mh$.invokeExact(color);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_color_get_red$MH() {
+        return RuntimeHelper.requireNonNull(constants$833.hb_color_get_red$MH,"hb_color_get_red");
+    }
+    /**
+     * {@snippet :
+     * uint8_t hb_color_get_red(hb_color_t color);
+     * }
+     */
+    public static byte hb_color_get_red(int color) {
+        var mh$ = hb_color_get_red$MH();
+        try {
+            return (byte)mh$.invokeExact(color);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_color_get_green$MH() {
+        return RuntimeHelper.requireNonNull(constants$833.hb_color_get_green$MH,"hb_color_get_green");
+    }
+    /**
+     * {@snippet :
+     * uint8_t hb_color_get_green(hb_color_t color);
+     * }
+     */
+    public static byte hb_color_get_green(int color) {
+        var mh$ = hb_color_get_green$MH();
+        try {
+            return (byte)mh$.invokeExact(color);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_color_get_blue$MH() {
+        return RuntimeHelper.requireNonNull(constants$834.hb_color_get_blue$MH,"hb_color_get_blue");
+    }
+    /**
+     * {@snippet :
+     * uint8_t hb_color_get_blue(hb_color_t color);
+     * }
+     */
+    public static byte hb_color_get_blue(int color) {
+        var mh$ = hb_color_get_blue$MH();
+        try {
+            return (byte)mh$.invokeExact(color);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    /**
+     * {@snippet :
+     * enum .HB_MEMORY_MODE_DUPLICATE = 0;
+     * }
+     */
+    public static int HB_MEMORY_MODE_DUPLICATE() {
+        return (int)0L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_MEMORY_MODE_READONLY = 1;
+     * }
+     */
+    public static int HB_MEMORY_MODE_READONLY() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_MEMORY_MODE_WRITABLE = 2;
+     * }
+     */
+    public static int HB_MEMORY_MODE_WRITABLE() {
+        return (int)2L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_MEMORY_MODE_READONLY_MAY_MAKE_WRITABLE = 3;
+     * }
+     */
+    public static int HB_MEMORY_MODE_READONLY_MAY_MAKE_WRITABLE() {
+        return (int)3L;
+    }
+    public static MethodHandle hb_blob_create$MH() {
+        return RuntimeHelper.requireNonNull(constants$834.hb_blob_create$MH,"hb_blob_create");
+    }
+    /**
+     * {@snippet :
+     * hb_blob_t* hb_blob_create(char* data, unsigned int length, hb_memory_mode_t mode, void* user_data, hb_destroy_func_t destroy);
+     * }
+     */
+    public static MemorySegment hb_blob_create(MemorySegment data, int length, int mode, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = hb_blob_create$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(data, length, mode, user_data, destroy);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_blob_create_or_fail$MH() {
+        return RuntimeHelper.requireNonNull(constants$834.hb_blob_create_or_fail$MH,"hb_blob_create_or_fail");
+    }
+    /**
+     * {@snippet :
+     * hb_blob_t* hb_blob_create_or_fail(char* data, unsigned int length, hb_memory_mode_t mode, void* user_data, hb_destroy_func_t destroy);
+     * }
+     */
+    public static MemorySegment hb_blob_create_or_fail(MemorySegment data, int length, int mode, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = hb_blob_create_or_fail$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(data, length, mode, user_data, destroy);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_blob_create_from_file$MH() {
+        return RuntimeHelper.requireNonNull(constants$834.hb_blob_create_from_file$MH,"hb_blob_create_from_file");
+    }
+    /**
+     * {@snippet :
+     * hb_blob_t* hb_blob_create_from_file(char* file_name);
+     * }
+     */
+    public static MemorySegment hb_blob_create_from_file(MemorySegment file_name) {
+        var mh$ = hb_blob_create_from_file$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(file_name);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_blob_create_from_file_or_fail$MH() {
+        return RuntimeHelper.requireNonNull(constants$834.hb_blob_create_from_file_or_fail$MH,"hb_blob_create_from_file_or_fail");
+    }
+    /**
+     * {@snippet :
+     * hb_blob_t* hb_blob_create_from_file_or_fail(char* file_name);
+     * }
+     */
+    public static MemorySegment hb_blob_create_from_file_or_fail(MemorySegment file_name) {
+        var mh$ = hb_blob_create_from_file_or_fail$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(file_name);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_blob_create_sub_blob$MH() {
+        return RuntimeHelper.requireNonNull(constants$834.hb_blob_create_sub_blob$MH,"hb_blob_create_sub_blob");
+    }
+    /**
+     * {@snippet :
+     * hb_blob_t* hb_blob_create_sub_blob(hb_blob_t* parent, unsigned int offset, unsigned int length);
+     * }
+     */
+    public static MemorySegment hb_blob_create_sub_blob(MemorySegment parent, int offset, int length) {
+        var mh$ = hb_blob_create_sub_blob$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(parent, offset, length);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_blob_copy_writable_or_fail$MH() {
+        return RuntimeHelper.requireNonNull(constants$835.hb_blob_copy_writable_or_fail$MH,"hb_blob_copy_writable_or_fail");
+    }
+    /**
+     * {@snippet :
+     * hb_blob_t* hb_blob_copy_writable_or_fail(hb_blob_t* blob);
+     * }
+     */
+    public static MemorySegment hb_blob_copy_writable_or_fail(MemorySegment blob) {
+        var mh$ = hb_blob_copy_writable_or_fail$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(blob);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_blob_get_empty$MH() {
+        return RuntimeHelper.requireNonNull(constants$835.hb_blob_get_empty$MH,"hb_blob_get_empty");
+    }
+    /**
+     * {@snippet :
+     * hb_blob_t* hb_blob_get_empty();
+     * }
+     */
+    public static MemorySegment hb_blob_get_empty() {
+        var mh$ = hb_blob_get_empty$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_blob_reference$MH() {
+        return RuntimeHelper.requireNonNull(constants$835.hb_blob_reference$MH,"hb_blob_reference");
+    }
+    /**
+     * {@snippet :
+     * hb_blob_t* hb_blob_reference(hb_blob_t* blob);
+     * }
+     */
+    public static MemorySegment hb_blob_reference(MemorySegment blob) {
+        var mh$ = hb_blob_reference$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(blob);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_blob_destroy$MH() {
+        return RuntimeHelper.requireNonNull(constants$835.hb_blob_destroy$MH,"hb_blob_destroy");
+    }
+    /**
+     * {@snippet :
+     * void hb_blob_destroy(hb_blob_t* blob);
+     * }
+     */
+    public static void hb_blob_destroy(MemorySegment blob) {
+        var mh$ = hb_blob_destroy$MH();
+        try {
+            mh$.invokeExact(blob);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_blob_set_user_data$MH() {
+        return RuntimeHelper.requireNonNull(constants$835.hb_blob_set_user_data$MH,"hb_blob_set_user_data");
+    }
+    /**
+     * {@snippet :
+     * hb_bool_t hb_blob_set_user_data(hb_blob_t* blob, hb_user_data_key_t* key, void* data, hb_destroy_func_t destroy, hb_bool_t replace);
+     * }
+     */
+    public static int hb_blob_set_user_data(MemorySegment blob, MemorySegment key, MemorySegment data, MemorySegment destroy, int replace) {
+        var mh$ = hb_blob_set_user_data$MH();
+        try {
+            return (int)mh$.invokeExact(blob, key, data, destroy, replace);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_blob_get_user_data$MH() {
+        return RuntimeHelper.requireNonNull(constants$835.hb_blob_get_user_data$MH,"hb_blob_get_user_data");
+    }
+    /**
+     * {@snippet :
+     * void* hb_blob_get_user_data(const hb_blob_t* blob, hb_user_data_key_t* key);
+     * }
+     */
+    public static MemorySegment hb_blob_get_user_data(MemorySegment blob, MemorySegment key) {
+        var mh$ = hb_blob_get_user_data$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(blob, key);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_blob_make_immutable$MH() {
+        return RuntimeHelper.requireNonNull(constants$836.hb_blob_make_immutable$MH,"hb_blob_make_immutable");
+    }
+    /**
+     * {@snippet :
+     * void hb_blob_make_immutable(hb_blob_t* blob);
+     * }
+     */
+    public static void hb_blob_make_immutable(MemorySegment blob) {
+        var mh$ = hb_blob_make_immutable$MH();
+        try {
+            mh$.invokeExact(blob);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_blob_is_immutable$MH() {
+        return RuntimeHelper.requireNonNull(constants$836.hb_blob_is_immutable$MH,"hb_blob_is_immutable");
+    }
+    /**
+     * {@snippet :
+     * hb_bool_t hb_blob_is_immutable(hb_blob_t* blob);
+     * }
+     */
+    public static int hb_blob_is_immutable(MemorySegment blob) {
+        var mh$ = hb_blob_is_immutable$MH();
+        try {
+            return (int)mh$.invokeExact(blob);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_blob_get_length$MH() {
+        return RuntimeHelper.requireNonNull(constants$836.hb_blob_get_length$MH,"hb_blob_get_length");
+    }
+    /**
+     * {@snippet :
+     * unsigned int hb_blob_get_length(hb_blob_t* blob);
+     * }
+     */
+    public static int hb_blob_get_length(MemorySegment blob) {
+        var mh$ = hb_blob_get_length$MH();
+        try {
+            return (int)mh$.invokeExact(blob);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_blob_get_data$MH() {
+        return RuntimeHelper.requireNonNull(constants$836.hb_blob_get_data$MH,"hb_blob_get_data");
+    }
+    /**
+     * {@snippet :
+     * char* hb_blob_get_data(hb_blob_t* blob, unsigned int* length);
+     * }
+     */
+    public static MemorySegment hb_blob_get_data(MemorySegment blob, MemorySegment length) {
+        var mh$ = hb_blob_get_data$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(blob, length);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_blob_get_data_writable$MH() {
+        return RuntimeHelper.requireNonNull(constants$836.hb_blob_get_data_writable$MH,"hb_blob_get_data_writable");
+    }
+    /**
+     * {@snippet :
+     * char* hb_blob_get_data_writable(hb_blob_t* blob, unsigned int* length);
+     * }
+     */
+    public static MemorySegment hb_blob_get_data_writable(MemorySegment blob, MemorySegment length) {
+        var mh$ = hb_blob_get_data_writable$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(blob, length);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_GENERAL_CATEGORY_CONTROL = 0;
+     * }
+     */
+    public static int HB_UNICODE_GENERAL_CATEGORY_CONTROL() {
+        return (int)0L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_GENERAL_CATEGORY_FORMAT = 1;
+     * }
+     */
+    public static int HB_UNICODE_GENERAL_CATEGORY_FORMAT() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_GENERAL_CATEGORY_UNASSIGNED = 2;
+     * }
+     */
+    public static int HB_UNICODE_GENERAL_CATEGORY_UNASSIGNED() {
+        return (int)2L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_GENERAL_CATEGORY_PRIVATE_USE = 3;
+     * }
+     */
+    public static int HB_UNICODE_GENERAL_CATEGORY_PRIVATE_USE() {
+        return (int)3L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_GENERAL_CATEGORY_SURROGATE = 4;
+     * }
+     */
+    public static int HB_UNICODE_GENERAL_CATEGORY_SURROGATE() {
+        return (int)4L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_GENERAL_CATEGORY_LOWERCASE_LETTER = 5;
+     * }
+     */
+    public static int HB_UNICODE_GENERAL_CATEGORY_LOWERCASE_LETTER() {
+        return (int)5L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_GENERAL_CATEGORY_MODIFIER_LETTER = 6;
+     * }
+     */
+    public static int HB_UNICODE_GENERAL_CATEGORY_MODIFIER_LETTER() {
+        return (int)6L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_GENERAL_CATEGORY_OTHER_LETTER = 7;
+     * }
+     */
+    public static int HB_UNICODE_GENERAL_CATEGORY_OTHER_LETTER() {
+        return (int)7L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_GENERAL_CATEGORY_TITLECASE_LETTER = 8;
+     * }
+     */
+    public static int HB_UNICODE_GENERAL_CATEGORY_TITLECASE_LETTER() {
+        return (int)8L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_GENERAL_CATEGORY_UPPERCASE_LETTER = 9;
+     * }
+     */
+    public static int HB_UNICODE_GENERAL_CATEGORY_UPPERCASE_LETTER() {
+        return (int)9L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_GENERAL_CATEGORY_SPACING_MARK = 10;
+     * }
+     */
+    public static int HB_UNICODE_GENERAL_CATEGORY_SPACING_MARK() {
+        return (int)10L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_GENERAL_CATEGORY_ENCLOSING_MARK = 11;
+     * }
+     */
+    public static int HB_UNICODE_GENERAL_CATEGORY_ENCLOSING_MARK() {
+        return (int)11L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_GENERAL_CATEGORY_NON_SPACING_MARK = 12;
+     * }
+     */
+    public static int HB_UNICODE_GENERAL_CATEGORY_NON_SPACING_MARK() {
+        return (int)12L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_GENERAL_CATEGORY_DECIMAL_NUMBER = 13;
+     * }
+     */
+    public static int HB_UNICODE_GENERAL_CATEGORY_DECIMAL_NUMBER() {
+        return (int)13L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_GENERAL_CATEGORY_LETTER_NUMBER = 14;
+     * }
+     */
+    public static int HB_UNICODE_GENERAL_CATEGORY_LETTER_NUMBER() {
+        return (int)14L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_GENERAL_CATEGORY_OTHER_NUMBER = 15;
+     * }
+     */
+    public static int HB_UNICODE_GENERAL_CATEGORY_OTHER_NUMBER() {
+        return (int)15L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_GENERAL_CATEGORY_CONNECT_PUNCTUATION = 16;
+     * }
+     */
+    public static int HB_UNICODE_GENERAL_CATEGORY_CONNECT_PUNCTUATION() {
+        return (int)16L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_GENERAL_CATEGORY_DASH_PUNCTUATION = 17;
+     * }
+     */
+    public static int HB_UNICODE_GENERAL_CATEGORY_DASH_PUNCTUATION() {
+        return (int)17L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_GENERAL_CATEGORY_CLOSE_PUNCTUATION = 18;
+     * }
+     */
+    public static int HB_UNICODE_GENERAL_CATEGORY_CLOSE_PUNCTUATION() {
+        return (int)18L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_GENERAL_CATEGORY_FINAL_PUNCTUATION = 19;
+     * }
+     */
+    public static int HB_UNICODE_GENERAL_CATEGORY_FINAL_PUNCTUATION() {
+        return (int)19L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_GENERAL_CATEGORY_INITIAL_PUNCTUATION = 20;
+     * }
+     */
+    public static int HB_UNICODE_GENERAL_CATEGORY_INITIAL_PUNCTUATION() {
+        return (int)20L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_GENERAL_CATEGORY_OTHER_PUNCTUATION = 21;
+     * }
+     */
+    public static int HB_UNICODE_GENERAL_CATEGORY_OTHER_PUNCTUATION() {
+        return (int)21L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_GENERAL_CATEGORY_OPEN_PUNCTUATION = 22;
+     * }
+     */
+    public static int HB_UNICODE_GENERAL_CATEGORY_OPEN_PUNCTUATION() {
+        return (int)22L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_GENERAL_CATEGORY_CURRENCY_SYMBOL = 23;
+     * }
+     */
+    public static int HB_UNICODE_GENERAL_CATEGORY_CURRENCY_SYMBOL() {
+        return (int)23L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_GENERAL_CATEGORY_MODIFIER_SYMBOL = 24;
+     * }
+     */
+    public static int HB_UNICODE_GENERAL_CATEGORY_MODIFIER_SYMBOL() {
+        return (int)24L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_GENERAL_CATEGORY_MATH_SYMBOL = 25;
+     * }
+     */
+    public static int HB_UNICODE_GENERAL_CATEGORY_MATH_SYMBOL() {
+        return (int)25L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_GENERAL_CATEGORY_OTHER_SYMBOL = 26;
+     * }
+     */
+    public static int HB_UNICODE_GENERAL_CATEGORY_OTHER_SYMBOL() {
+        return (int)26L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_GENERAL_CATEGORY_LINE_SEPARATOR = 27;
+     * }
+     */
+    public static int HB_UNICODE_GENERAL_CATEGORY_LINE_SEPARATOR() {
+        return (int)27L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_GENERAL_CATEGORY_PARAGRAPH_SEPARATOR = 28;
+     * }
+     */
+    public static int HB_UNICODE_GENERAL_CATEGORY_PARAGRAPH_SEPARATOR() {
+        return (int)28L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_GENERAL_CATEGORY_SPACE_SEPARATOR = 29;
+     * }
+     */
+    public static int HB_UNICODE_GENERAL_CATEGORY_SPACE_SEPARATOR() {
+        return (int)29L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_COMBINING_CLASS_NOT_REORDERED = 0;
+     * }
+     */
+    public static int HB_UNICODE_COMBINING_CLASS_NOT_REORDERED() {
+        return (int)0L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_COMBINING_CLASS_OVERLAY = 1;
+     * }
+     */
+    public static int HB_UNICODE_COMBINING_CLASS_OVERLAY() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_COMBINING_CLASS_NUKTA = 7;
+     * }
+     */
+    public static int HB_UNICODE_COMBINING_CLASS_NUKTA() {
+        return (int)7L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_COMBINING_CLASS_KANA_VOICING = 8;
+     * }
+     */
+    public static int HB_UNICODE_COMBINING_CLASS_KANA_VOICING() {
+        return (int)8L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_COMBINING_CLASS_VIRAMA = 9;
+     * }
+     */
+    public static int HB_UNICODE_COMBINING_CLASS_VIRAMA() {
+        return (int)9L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_COMBINING_CLASS_CCC10 = 10;
+     * }
+     */
+    public static int HB_UNICODE_COMBINING_CLASS_CCC10() {
+        return (int)10L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_COMBINING_CLASS_CCC11 = 11;
+     * }
+     */
+    public static int HB_UNICODE_COMBINING_CLASS_CCC11() {
+        return (int)11L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_COMBINING_CLASS_CCC12 = 12;
+     * }
+     */
+    public static int HB_UNICODE_COMBINING_CLASS_CCC12() {
+        return (int)12L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_COMBINING_CLASS_CCC13 = 13;
+     * }
+     */
+    public static int HB_UNICODE_COMBINING_CLASS_CCC13() {
+        return (int)13L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_COMBINING_CLASS_CCC14 = 14;
+     * }
+     */
+    public static int HB_UNICODE_COMBINING_CLASS_CCC14() {
+        return (int)14L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_COMBINING_CLASS_CCC15 = 15;
+     * }
+     */
+    public static int HB_UNICODE_COMBINING_CLASS_CCC15() {
+        return (int)15L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_COMBINING_CLASS_CCC16 = 16;
+     * }
+     */
+    public static int HB_UNICODE_COMBINING_CLASS_CCC16() {
+        return (int)16L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_COMBINING_CLASS_CCC17 = 17;
+     * }
+     */
+    public static int HB_UNICODE_COMBINING_CLASS_CCC17() {
+        return (int)17L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_COMBINING_CLASS_CCC18 = 18;
+     * }
+     */
+    public static int HB_UNICODE_COMBINING_CLASS_CCC18() {
+        return (int)18L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_COMBINING_CLASS_CCC19 = 19;
+     * }
+     */
+    public static int HB_UNICODE_COMBINING_CLASS_CCC19() {
+        return (int)19L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_COMBINING_CLASS_CCC20 = 20;
+     * }
+     */
+    public static int HB_UNICODE_COMBINING_CLASS_CCC20() {
+        return (int)20L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_COMBINING_CLASS_CCC21 = 21;
+     * }
+     */
+    public static int HB_UNICODE_COMBINING_CLASS_CCC21() {
+        return (int)21L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_COMBINING_CLASS_CCC22 = 22;
+     * }
+     */
+    public static int HB_UNICODE_COMBINING_CLASS_CCC22() {
+        return (int)22L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_COMBINING_CLASS_CCC23 = 23;
+     * }
+     */
+    public static int HB_UNICODE_COMBINING_CLASS_CCC23() {
+        return (int)23L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_COMBINING_CLASS_CCC24 = 24;
+     * }
+     */
+    public static int HB_UNICODE_COMBINING_CLASS_CCC24() {
+        return (int)24L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_COMBINING_CLASS_CCC25 = 25;
+     * }
+     */
+    public static int HB_UNICODE_COMBINING_CLASS_CCC25() {
+        return (int)25L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_COMBINING_CLASS_CCC26 = 26;
+     * }
+     */
+    public static int HB_UNICODE_COMBINING_CLASS_CCC26() {
+        return (int)26L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_COMBINING_CLASS_CCC27 = 27;
+     * }
+     */
+    public static int HB_UNICODE_COMBINING_CLASS_CCC27() {
+        return (int)27L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_COMBINING_CLASS_CCC28 = 28;
+     * }
+     */
+    public static int HB_UNICODE_COMBINING_CLASS_CCC28() {
+        return (int)28L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_COMBINING_CLASS_CCC29 = 29;
+     * }
+     */
+    public static int HB_UNICODE_COMBINING_CLASS_CCC29() {
+        return (int)29L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_COMBINING_CLASS_CCC30 = 30;
+     * }
+     */
+    public static int HB_UNICODE_COMBINING_CLASS_CCC30() {
+        return (int)30L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_COMBINING_CLASS_CCC31 = 31;
+     * }
+     */
+    public static int HB_UNICODE_COMBINING_CLASS_CCC31() {
+        return (int)31L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_COMBINING_CLASS_CCC32 = 32;
+     * }
+     */
+    public static int HB_UNICODE_COMBINING_CLASS_CCC32() {
+        return (int)32L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_COMBINING_CLASS_CCC33 = 33;
+     * }
+     */
+    public static int HB_UNICODE_COMBINING_CLASS_CCC33() {
+        return (int)33L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_COMBINING_CLASS_CCC34 = 34;
+     * }
+     */
+    public static int HB_UNICODE_COMBINING_CLASS_CCC34() {
+        return (int)34L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_COMBINING_CLASS_CCC35 = 35;
+     * }
+     */
+    public static int HB_UNICODE_COMBINING_CLASS_CCC35() {
+        return (int)35L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_COMBINING_CLASS_CCC36 = 36;
+     * }
+     */
+    public static int HB_UNICODE_COMBINING_CLASS_CCC36() {
+        return (int)36L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_COMBINING_CLASS_CCC84 = 84;
+     * }
+     */
+    public static int HB_UNICODE_COMBINING_CLASS_CCC84() {
+        return (int)84L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_COMBINING_CLASS_CCC91 = 91;
+     * }
+     */
+    public static int HB_UNICODE_COMBINING_CLASS_CCC91() {
+        return (int)91L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_COMBINING_CLASS_CCC103 = 103;
+     * }
+     */
+    public static int HB_UNICODE_COMBINING_CLASS_CCC103() {
+        return (int)103L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_COMBINING_CLASS_CCC107 = 107;
+     * }
+     */
+    public static int HB_UNICODE_COMBINING_CLASS_CCC107() {
+        return (int)107L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_COMBINING_CLASS_CCC118 = 118;
+     * }
+     */
+    public static int HB_UNICODE_COMBINING_CLASS_CCC118() {
+        return (int)118L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_COMBINING_CLASS_CCC122 = 122;
+     * }
+     */
+    public static int HB_UNICODE_COMBINING_CLASS_CCC122() {
+        return (int)122L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_COMBINING_CLASS_CCC129 = 129;
+     * }
+     */
+    public static int HB_UNICODE_COMBINING_CLASS_CCC129() {
+        return (int)129L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_COMBINING_CLASS_CCC130 = 130;
+     * }
+     */
+    public static int HB_UNICODE_COMBINING_CLASS_CCC130() {
+        return (int)130L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_COMBINING_CLASS_CCC133 = 132;
+     * }
+     */
+    public static int HB_UNICODE_COMBINING_CLASS_CCC133() {
+        return (int)132L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_COMBINING_CLASS_ATTACHED_BELOW_LEFT = 200;
+     * }
+     */
+    public static int HB_UNICODE_COMBINING_CLASS_ATTACHED_BELOW_LEFT() {
+        return (int)200L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_COMBINING_CLASS_ATTACHED_BELOW = 202;
+     * }
+     */
+    public static int HB_UNICODE_COMBINING_CLASS_ATTACHED_BELOW() {
+        return (int)202L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_COMBINING_CLASS_ATTACHED_ABOVE = 214;
+     * }
+     */
+    public static int HB_UNICODE_COMBINING_CLASS_ATTACHED_ABOVE() {
+        return (int)214L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_COMBINING_CLASS_ATTACHED_ABOVE_RIGHT = 216;
+     * }
+     */
+    public static int HB_UNICODE_COMBINING_CLASS_ATTACHED_ABOVE_RIGHT() {
+        return (int)216L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_COMBINING_CLASS_BELOW_LEFT = 218;
+     * }
+     */
+    public static int HB_UNICODE_COMBINING_CLASS_BELOW_LEFT() {
+        return (int)218L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_COMBINING_CLASS_BELOW = 220;
+     * }
+     */
+    public static int HB_UNICODE_COMBINING_CLASS_BELOW() {
+        return (int)220L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_COMBINING_CLASS_BELOW_RIGHT = 222;
+     * }
+     */
+    public static int HB_UNICODE_COMBINING_CLASS_BELOW_RIGHT() {
+        return (int)222L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_COMBINING_CLASS_LEFT = 224;
+     * }
+     */
+    public static int HB_UNICODE_COMBINING_CLASS_LEFT() {
+        return (int)224L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_COMBINING_CLASS_RIGHT = 226;
+     * }
+     */
+    public static int HB_UNICODE_COMBINING_CLASS_RIGHT() {
+        return (int)226L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_COMBINING_CLASS_ABOVE_LEFT = 228;
+     * }
+     */
+    public static int HB_UNICODE_COMBINING_CLASS_ABOVE_LEFT() {
+        return (int)228L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_COMBINING_CLASS_ABOVE = 230;
+     * }
+     */
+    public static int HB_UNICODE_COMBINING_CLASS_ABOVE() {
+        return (int)230L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_COMBINING_CLASS_ABOVE_RIGHT = 232;
+     * }
+     */
+    public static int HB_UNICODE_COMBINING_CLASS_ABOVE_RIGHT() {
+        return (int)232L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_COMBINING_CLASS_DOUBLE_BELOW = 233;
+     * }
+     */
+    public static int HB_UNICODE_COMBINING_CLASS_DOUBLE_BELOW() {
+        return (int)233L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_COMBINING_CLASS_DOUBLE_ABOVE = 234;
+     * }
+     */
+    public static int HB_UNICODE_COMBINING_CLASS_DOUBLE_ABOVE() {
+        return (int)234L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_COMBINING_CLASS_IOTA_SUBSCRIPT = 240;
+     * }
+     */
+    public static int HB_UNICODE_COMBINING_CLASS_IOTA_SUBSCRIPT() {
+        return (int)240L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_UNICODE_COMBINING_CLASS_INVALID = 255;
+     * }
+     */
+    public static int HB_UNICODE_COMBINING_CLASS_INVALID() {
+        return (int)255L;
+    }
+    public static MethodHandle hb_unicode_funcs_get_default$MH() {
+        return RuntimeHelper.requireNonNull(constants$836.hb_unicode_funcs_get_default$MH,"hb_unicode_funcs_get_default");
+    }
+    /**
+     * {@snippet :
+     * hb_unicode_funcs_t* hb_unicode_funcs_get_default();
+     * }
+     */
+    public static MemorySegment hb_unicode_funcs_get_default() {
+        var mh$ = hb_unicode_funcs_get_default$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_unicode_funcs_create$MH() {
+        return RuntimeHelper.requireNonNull(constants$837.hb_unicode_funcs_create$MH,"hb_unicode_funcs_create");
+    }
+    /**
+     * {@snippet :
+     * hb_unicode_funcs_t* hb_unicode_funcs_create(hb_unicode_funcs_t* parent);
+     * }
+     */
+    public static MemorySegment hb_unicode_funcs_create(MemorySegment parent) {
+        var mh$ = hb_unicode_funcs_create$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(parent);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_unicode_funcs_get_empty$MH() {
+        return RuntimeHelper.requireNonNull(constants$837.hb_unicode_funcs_get_empty$MH,"hb_unicode_funcs_get_empty");
+    }
+    /**
+     * {@snippet :
+     * hb_unicode_funcs_t* hb_unicode_funcs_get_empty();
+     * }
+     */
+    public static MemorySegment hb_unicode_funcs_get_empty() {
+        var mh$ = hb_unicode_funcs_get_empty$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_unicode_funcs_reference$MH() {
+        return RuntimeHelper.requireNonNull(constants$837.hb_unicode_funcs_reference$MH,"hb_unicode_funcs_reference");
+    }
+    /**
+     * {@snippet :
+     * hb_unicode_funcs_t* hb_unicode_funcs_reference(hb_unicode_funcs_t* ufuncs);
+     * }
+     */
+    public static MemorySegment hb_unicode_funcs_reference(MemorySegment ufuncs) {
+        var mh$ = hb_unicode_funcs_reference$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(ufuncs);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_unicode_funcs_destroy$MH() {
+        return RuntimeHelper.requireNonNull(constants$837.hb_unicode_funcs_destroy$MH,"hb_unicode_funcs_destroy");
+    }
+    /**
+     * {@snippet :
+     * void hb_unicode_funcs_destroy(hb_unicode_funcs_t* ufuncs);
+     * }
+     */
+    public static void hb_unicode_funcs_destroy(MemorySegment ufuncs) {
+        var mh$ = hb_unicode_funcs_destroy$MH();
+        try {
+            mh$.invokeExact(ufuncs);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_unicode_funcs_set_user_data$MH() {
+        return RuntimeHelper.requireNonNull(constants$837.hb_unicode_funcs_set_user_data$MH,"hb_unicode_funcs_set_user_data");
+    }
+    /**
+     * {@snippet :
+     * hb_bool_t hb_unicode_funcs_set_user_data(hb_unicode_funcs_t* ufuncs, hb_user_data_key_t* key, void* data, hb_destroy_func_t destroy, hb_bool_t replace);
+     * }
+     */
+    public static int hb_unicode_funcs_set_user_data(MemorySegment ufuncs, MemorySegment key, MemorySegment data, MemorySegment destroy, int replace) {
+        var mh$ = hb_unicode_funcs_set_user_data$MH();
+        try {
+            return (int)mh$.invokeExact(ufuncs, key, data, destroy, replace);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_unicode_funcs_get_user_data$MH() {
+        return RuntimeHelper.requireNonNull(constants$837.hb_unicode_funcs_get_user_data$MH,"hb_unicode_funcs_get_user_data");
+    }
+    /**
+     * {@snippet :
+     * void* hb_unicode_funcs_get_user_data(const hb_unicode_funcs_t* ufuncs, hb_user_data_key_t* key);
+     * }
+     */
+    public static MemorySegment hb_unicode_funcs_get_user_data(MemorySegment ufuncs, MemorySegment key) {
+        var mh$ = hb_unicode_funcs_get_user_data$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(ufuncs, key);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_unicode_funcs_make_immutable$MH() {
+        return RuntimeHelper.requireNonNull(constants$838.hb_unicode_funcs_make_immutable$MH,"hb_unicode_funcs_make_immutable");
+    }
+    /**
+     * {@snippet :
+     * void hb_unicode_funcs_make_immutable(hb_unicode_funcs_t* ufuncs);
+     * }
+     */
+    public static void hb_unicode_funcs_make_immutable(MemorySegment ufuncs) {
+        var mh$ = hb_unicode_funcs_make_immutable$MH();
+        try {
+            mh$.invokeExact(ufuncs);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_unicode_funcs_is_immutable$MH() {
+        return RuntimeHelper.requireNonNull(constants$838.hb_unicode_funcs_is_immutable$MH,"hb_unicode_funcs_is_immutable");
+    }
+    /**
+     * {@snippet :
+     * hb_bool_t hb_unicode_funcs_is_immutable(hb_unicode_funcs_t* ufuncs);
+     * }
+     */
+    public static int hb_unicode_funcs_is_immutable(MemorySegment ufuncs) {
+        var mh$ = hb_unicode_funcs_is_immutable$MH();
+        try {
+            return (int)mh$.invokeExact(ufuncs);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_unicode_funcs_get_parent$MH() {
+        return RuntimeHelper.requireNonNull(constants$838.hb_unicode_funcs_get_parent$MH,"hb_unicode_funcs_get_parent");
+    }
+    /**
+     * {@snippet :
+     * hb_unicode_funcs_t* hb_unicode_funcs_get_parent(hb_unicode_funcs_t* ufuncs);
+     * }
+     */
+    public static MemorySegment hb_unicode_funcs_get_parent(MemorySegment ufuncs) {
+        var mh$ = hb_unicode_funcs_get_parent$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(ufuncs);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_unicode_funcs_set_combining_class_func$MH() {
+        return RuntimeHelper.requireNonNull(constants$840.hb_unicode_funcs_set_combining_class_func$MH,"hb_unicode_funcs_set_combining_class_func");
+    }
+    /**
+     * {@snippet :
+     * void hb_unicode_funcs_set_combining_class_func(hb_unicode_funcs_t* ufuncs, hb_unicode_combining_class_func_t func, void* user_data, hb_destroy_func_t destroy);
+     * }
+     */
+    public static void hb_unicode_funcs_set_combining_class_func(MemorySegment ufuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = hb_unicode_funcs_set_combining_class_func$MH();
+        try {
+            mh$.invokeExact(ufuncs, func, user_data, destroy);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_unicode_funcs_set_general_category_func$MH() {
+        return RuntimeHelper.requireNonNull(constants$840.hb_unicode_funcs_set_general_category_func$MH,"hb_unicode_funcs_set_general_category_func");
+    }
+    /**
+     * {@snippet :
+     * void hb_unicode_funcs_set_general_category_func(hb_unicode_funcs_t* ufuncs, hb_unicode_general_category_func_t func, void* user_data, hb_destroy_func_t destroy);
+     * }
+     */
+    public static void hb_unicode_funcs_set_general_category_func(MemorySegment ufuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = hb_unicode_funcs_set_general_category_func$MH();
+        try {
+            mh$.invokeExact(ufuncs, func, user_data, destroy);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_unicode_funcs_set_mirroring_func$MH() {
+        return RuntimeHelper.requireNonNull(constants$840.hb_unicode_funcs_set_mirroring_func$MH,"hb_unicode_funcs_set_mirroring_func");
+    }
+    /**
+     * {@snippet :
+     * void hb_unicode_funcs_set_mirroring_func(hb_unicode_funcs_t* ufuncs, hb_unicode_mirroring_func_t func, void* user_data, hb_destroy_func_t destroy);
+     * }
+     */
+    public static void hb_unicode_funcs_set_mirroring_func(MemorySegment ufuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = hb_unicode_funcs_set_mirroring_func$MH();
+        try {
+            mh$.invokeExact(ufuncs, func, user_data, destroy);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_unicode_funcs_set_script_func$MH() {
+        return RuntimeHelper.requireNonNull(constants$841.hb_unicode_funcs_set_script_func$MH,"hb_unicode_funcs_set_script_func");
+    }
+    /**
+     * {@snippet :
+     * void hb_unicode_funcs_set_script_func(hb_unicode_funcs_t* ufuncs, hb_unicode_script_func_t func, void* user_data, hb_destroy_func_t destroy);
+     * }
+     */
+    public static void hb_unicode_funcs_set_script_func(MemorySegment ufuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = hb_unicode_funcs_set_script_func$MH();
+        try {
+            mh$.invokeExact(ufuncs, func, user_data, destroy);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_unicode_funcs_set_compose_func$MH() {
+        return RuntimeHelper.requireNonNull(constants$841.hb_unicode_funcs_set_compose_func$MH,"hb_unicode_funcs_set_compose_func");
+    }
+    /**
+     * {@snippet :
+     * void hb_unicode_funcs_set_compose_func(hb_unicode_funcs_t* ufuncs, hb_unicode_compose_func_t func, void* user_data, hb_destroy_func_t destroy);
+     * }
+     */
+    public static void hb_unicode_funcs_set_compose_func(MemorySegment ufuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = hb_unicode_funcs_set_compose_func$MH();
+        try {
+            mh$.invokeExact(ufuncs, func, user_data, destroy);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_unicode_funcs_set_decompose_func$MH() {
+        return RuntimeHelper.requireNonNull(constants$841.hb_unicode_funcs_set_decompose_func$MH,"hb_unicode_funcs_set_decompose_func");
+    }
+    /**
+     * {@snippet :
+     * void hb_unicode_funcs_set_decompose_func(hb_unicode_funcs_t* ufuncs, hb_unicode_decompose_func_t func, void* user_data, hb_destroy_func_t destroy);
+     * }
+     */
+    public static void hb_unicode_funcs_set_decompose_func(MemorySegment ufuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = hb_unicode_funcs_set_decompose_func$MH();
+        try {
+            mh$.invokeExact(ufuncs, func, user_data, destroy);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_unicode_combining_class$MH() {
+        return RuntimeHelper.requireNonNull(constants$841.hb_unicode_combining_class$MH,"hb_unicode_combining_class");
+    }
+    /**
+     * {@snippet :
+     * hb_unicode_combining_class_t hb_unicode_combining_class(hb_unicode_funcs_t* ufuncs, hb_codepoint_t unicode);
+     * }
+     */
+    public static int hb_unicode_combining_class(MemorySegment ufuncs, int unicode) {
+        var mh$ = hb_unicode_combining_class$MH();
+        try {
+            return (int)mh$.invokeExact(ufuncs, unicode);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_unicode_general_category$MH() {
+        return RuntimeHelper.requireNonNull(constants$841.hb_unicode_general_category$MH,"hb_unicode_general_category");
+    }
+    /**
+     * {@snippet :
+     * hb_unicode_general_category_t hb_unicode_general_category(hb_unicode_funcs_t* ufuncs, hb_codepoint_t unicode);
+     * }
+     */
+    public static int hb_unicode_general_category(MemorySegment ufuncs, int unicode) {
+        var mh$ = hb_unicode_general_category$MH();
+        try {
+            return (int)mh$.invokeExact(ufuncs, unicode);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_unicode_mirroring$MH() {
+        return RuntimeHelper.requireNonNull(constants$841.hb_unicode_mirroring$MH,"hb_unicode_mirroring");
+    }
+    /**
+     * {@snippet :
+     * hb_codepoint_t hb_unicode_mirroring(hb_unicode_funcs_t* ufuncs, hb_codepoint_t unicode);
+     * }
+     */
+    public static int hb_unicode_mirroring(MemorySegment ufuncs, int unicode) {
+        var mh$ = hb_unicode_mirroring$MH();
+        try {
+            return (int)mh$.invokeExact(ufuncs, unicode);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_unicode_script$MH() {
+        return RuntimeHelper.requireNonNull(constants$842.hb_unicode_script$MH,"hb_unicode_script");
+    }
+    /**
+     * {@snippet :
+     * hb_script_t hb_unicode_script(hb_unicode_funcs_t* ufuncs, hb_codepoint_t unicode);
+     * }
+     */
+    public static int hb_unicode_script(MemorySegment ufuncs, int unicode) {
+        var mh$ = hb_unicode_script$MH();
+        try {
+            return (int)mh$.invokeExact(ufuncs, unicode);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_unicode_compose$MH() {
+        return RuntimeHelper.requireNonNull(constants$842.hb_unicode_compose$MH,"hb_unicode_compose");
+    }
+    /**
+     * {@snippet :
+     * hb_bool_t hb_unicode_compose(hb_unicode_funcs_t* ufuncs, hb_codepoint_t a, hb_codepoint_t b, hb_codepoint_t* ab);
+     * }
+     */
+    public static int hb_unicode_compose(MemorySegment ufuncs, int a, int b, MemorySegment ab) {
+        var mh$ = hb_unicode_compose$MH();
+        try {
+            return (int)mh$.invokeExact(ufuncs, a, b, ab);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_unicode_decompose$MH() {
+        return RuntimeHelper.requireNonNull(constants$842.hb_unicode_decompose$MH,"hb_unicode_decompose");
+    }
+    /**
+     * {@snippet :
+     * hb_bool_t hb_unicode_decompose(hb_unicode_funcs_t* ufuncs, hb_codepoint_t ab, hb_codepoint_t* a, hb_codepoint_t* b);
+     * }
+     */
+    public static int hb_unicode_decompose(MemorySegment ufuncs, int ab, MemorySegment a, MemorySegment b) {
+        var mh$ = hb_unicode_decompose$MH();
+        try {
+            return (int)mh$.invokeExact(ufuncs, ab, a, b);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_set_create$MH() {
+        return RuntimeHelper.requireNonNull(constants$842.hb_set_create$MH,"hb_set_create");
+    }
+    /**
+     * {@snippet :
+     * hb_set_t* hb_set_create();
+     * }
+     */
+    public static MemorySegment hb_set_create() {
+        var mh$ = hb_set_create$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_set_get_empty$MH() {
+        return RuntimeHelper.requireNonNull(constants$842.hb_set_get_empty$MH,"hb_set_get_empty");
+    }
+    /**
+     * {@snippet :
+     * hb_set_t* hb_set_get_empty();
+     * }
+     */
+    public static MemorySegment hb_set_get_empty() {
+        var mh$ = hb_set_get_empty$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_set_reference$MH() {
+        return RuntimeHelper.requireNonNull(constants$842.hb_set_reference$MH,"hb_set_reference");
+    }
+    /**
+     * {@snippet :
+     * hb_set_t* hb_set_reference(hb_set_t* set);
+     * }
+     */
+    public static MemorySegment hb_set_reference(MemorySegment set) {
+        var mh$ = hb_set_reference$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(set);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_set_destroy$MH() {
+        return RuntimeHelper.requireNonNull(constants$843.hb_set_destroy$MH,"hb_set_destroy");
+    }
+    /**
+     * {@snippet :
+     * void hb_set_destroy(hb_set_t* set);
+     * }
+     */
+    public static void hb_set_destroy(MemorySegment set) {
+        var mh$ = hb_set_destroy$MH();
+        try {
+            mh$.invokeExact(set);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_set_set_user_data$MH() {
+        return RuntimeHelper.requireNonNull(constants$843.hb_set_set_user_data$MH,"hb_set_set_user_data");
+    }
+    /**
+     * {@snippet :
+     * hb_bool_t hb_set_set_user_data(hb_set_t* set, hb_user_data_key_t* key, void* data, hb_destroy_func_t destroy, hb_bool_t replace);
+     * }
+     */
+    public static int hb_set_set_user_data(MemorySegment set, MemorySegment key, MemorySegment data, MemorySegment destroy, int replace) {
+        var mh$ = hb_set_set_user_data$MH();
+        try {
+            return (int)mh$.invokeExact(set, key, data, destroy, replace);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_set_get_user_data$MH() {
+        return RuntimeHelper.requireNonNull(constants$843.hb_set_get_user_data$MH,"hb_set_get_user_data");
+    }
+    /**
+     * {@snippet :
+     * void* hb_set_get_user_data(const hb_set_t* set, hb_user_data_key_t* key);
+     * }
+     */
+    public static MemorySegment hb_set_get_user_data(MemorySegment set, MemorySegment key) {
+        var mh$ = hb_set_get_user_data$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(set, key);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_set_allocation_successful$MH() {
+        return RuntimeHelper.requireNonNull(constants$843.hb_set_allocation_successful$MH,"hb_set_allocation_successful");
+    }
+    /**
+     * {@snippet :
+     * hb_bool_t hb_set_allocation_successful(const hb_set_t* set);
+     * }
+     */
+    public static int hb_set_allocation_successful(MemorySegment set) {
+        var mh$ = hb_set_allocation_successful$MH();
+        try {
+            return (int)mh$.invokeExact(set);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_set_copy$MH() {
+        return RuntimeHelper.requireNonNull(constants$843.hb_set_copy$MH,"hb_set_copy");
+    }
+    /**
+     * {@snippet :
+     * hb_set_t* hb_set_copy(const hb_set_t* set);
+     * }
+     */
+    public static MemorySegment hb_set_copy(MemorySegment set) {
+        var mh$ = hb_set_copy$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(set);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_set_clear$MH() {
+        return RuntimeHelper.requireNonNull(constants$843.hb_set_clear$MH,"hb_set_clear");
+    }
+    /**
+     * {@snippet :
+     * void hb_set_clear(hb_set_t* set);
+     * }
+     */
+    public static void hb_set_clear(MemorySegment set) {
+        var mh$ = hb_set_clear$MH();
+        try {
+            mh$.invokeExact(set);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_set_is_empty$MH() {
+        return RuntimeHelper.requireNonNull(constants$844.hb_set_is_empty$MH,"hb_set_is_empty");
+    }
+    /**
+     * {@snippet :
+     * hb_bool_t hb_set_is_empty(const hb_set_t* set);
+     * }
+     */
+    public static int hb_set_is_empty(MemorySegment set) {
+        var mh$ = hb_set_is_empty$MH();
+        try {
+            return (int)mh$.invokeExact(set);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_set_invert$MH() {
+        return RuntimeHelper.requireNonNull(constants$844.hb_set_invert$MH,"hb_set_invert");
+    }
+    /**
+     * {@snippet :
+     * void hb_set_invert(hb_set_t* set);
+     * }
+     */
+    public static void hb_set_invert(MemorySegment set) {
+        var mh$ = hb_set_invert$MH();
+        try {
+            mh$.invokeExact(set);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_set_has$MH() {
+        return RuntimeHelper.requireNonNull(constants$844.hb_set_has$MH,"hb_set_has");
+    }
+    /**
+     * {@snippet :
+     * hb_bool_t hb_set_has(const hb_set_t* set, hb_codepoint_t codepoint);
+     * }
+     */
+    public static int hb_set_has(MemorySegment set, int codepoint) {
+        var mh$ = hb_set_has$MH();
+        try {
+            return (int)mh$.invokeExact(set, codepoint);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_set_add$MH() {
+        return RuntimeHelper.requireNonNull(constants$844.hb_set_add$MH,"hb_set_add");
+    }
+    /**
+     * {@snippet :
+     * void hb_set_add(hb_set_t* set, hb_codepoint_t codepoint);
+     * }
+     */
+    public static void hb_set_add(MemorySegment set, int codepoint) {
+        var mh$ = hb_set_add$MH();
+        try {
+            mh$.invokeExact(set, codepoint);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_set_add_range$MH() {
+        return RuntimeHelper.requireNonNull(constants$844.hb_set_add_range$MH,"hb_set_add_range");
+    }
+    /**
+     * {@snippet :
+     * void hb_set_add_range(hb_set_t* set, hb_codepoint_t first, hb_codepoint_t last);
+     * }
+     */
+    public static void hb_set_add_range(MemorySegment set, int first, int last) {
+        var mh$ = hb_set_add_range$MH();
+        try {
+            mh$.invokeExact(set, first, last);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_set_add_sorted_array$MH() {
+        return RuntimeHelper.requireNonNull(constants$844.hb_set_add_sorted_array$MH,"hb_set_add_sorted_array");
+    }
+    /**
+     * {@snippet :
+     * void hb_set_add_sorted_array(hb_set_t* set, const hb_codepoint_t* sorted_codepoints, unsigned int num_codepoints);
+     * }
+     */
+    public static void hb_set_add_sorted_array(MemorySegment set, MemorySegment sorted_codepoints, int num_codepoints) {
+        var mh$ = hb_set_add_sorted_array$MH();
+        try {
+            mh$.invokeExact(set, sorted_codepoints, num_codepoints);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_set_del$MH() {
+        return RuntimeHelper.requireNonNull(constants$845.hb_set_del$MH,"hb_set_del");
+    }
+    /**
+     * {@snippet :
+     * void hb_set_del(hb_set_t* set, hb_codepoint_t codepoint);
+     * }
+     */
+    public static void hb_set_del(MemorySegment set, int codepoint) {
+        var mh$ = hb_set_del$MH();
+        try {
+            mh$.invokeExact(set, codepoint);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_set_del_range$MH() {
+        return RuntimeHelper.requireNonNull(constants$845.hb_set_del_range$MH,"hb_set_del_range");
+    }
+    /**
+     * {@snippet :
+     * void hb_set_del_range(hb_set_t* set, hb_codepoint_t first, hb_codepoint_t last);
+     * }
+     */
+    public static void hb_set_del_range(MemorySegment set, int first, int last) {
+        var mh$ = hb_set_del_range$MH();
+        try {
+            mh$.invokeExact(set, first, last);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_set_is_equal$MH() {
+        return RuntimeHelper.requireNonNull(constants$845.hb_set_is_equal$MH,"hb_set_is_equal");
+    }
+    /**
+     * {@snippet :
+     * hb_bool_t hb_set_is_equal(const hb_set_t* set, const hb_set_t* other);
+     * }
+     */
+    public static int hb_set_is_equal(MemorySegment set, MemorySegment other) {
+        var mh$ = hb_set_is_equal$MH();
+        try {
+            return (int)mh$.invokeExact(set, other);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_set_hash$MH() {
+        return RuntimeHelper.requireNonNull(constants$845.hb_set_hash$MH,"hb_set_hash");
+    }
+    /**
+     * {@snippet :
+     * unsigned int hb_set_hash(const hb_set_t* set);
+     * }
+     */
+    public static int hb_set_hash(MemorySegment set) {
+        var mh$ = hb_set_hash$MH();
+        try {
+            return (int)mh$.invokeExact(set);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_set_is_subset$MH() {
+        return RuntimeHelper.requireNonNull(constants$845.hb_set_is_subset$MH,"hb_set_is_subset");
+    }
+    /**
+     * {@snippet :
+     * hb_bool_t hb_set_is_subset(const hb_set_t* set, const hb_set_t* larger_set);
+     * }
+     */
+    public static int hb_set_is_subset(MemorySegment set, MemorySegment larger_set) {
+        var mh$ = hb_set_is_subset$MH();
+        try {
+            return (int)mh$.invokeExact(set, larger_set);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_set_set$MH() {
+        return RuntimeHelper.requireNonNull(constants$845.hb_set_set$MH,"hb_set_set");
+    }
+    /**
+     * {@snippet :
+     * void hb_set_set(hb_set_t* set, const hb_set_t* other);
+     * }
+     */
+    public static void hb_set_set(MemorySegment set, MemorySegment other) {
+        var mh$ = hb_set_set$MH();
+        try {
+            mh$.invokeExact(set, other);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_set_union$MH() {
+        return RuntimeHelper.requireNonNull(constants$846.hb_set_union$MH,"hb_set_union");
+    }
+    /**
+     * {@snippet :
+     * void hb_set_union(hb_set_t* set, const hb_set_t* other);
+     * }
+     */
+    public static void hb_set_union(MemorySegment set, MemorySegment other) {
+        var mh$ = hb_set_union$MH();
+        try {
+            mh$.invokeExact(set, other);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_set_intersect$MH() {
+        return RuntimeHelper.requireNonNull(constants$846.hb_set_intersect$MH,"hb_set_intersect");
+    }
+    /**
+     * {@snippet :
+     * void hb_set_intersect(hb_set_t* set, const hb_set_t* other);
+     * }
+     */
+    public static void hb_set_intersect(MemorySegment set, MemorySegment other) {
+        var mh$ = hb_set_intersect$MH();
+        try {
+            mh$.invokeExact(set, other);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_set_subtract$MH() {
+        return RuntimeHelper.requireNonNull(constants$846.hb_set_subtract$MH,"hb_set_subtract");
+    }
+    /**
+     * {@snippet :
+     * void hb_set_subtract(hb_set_t* set, const hb_set_t* other);
+     * }
+     */
+    public static void hb_set_subtract(MemorySegment set, MemorySegment other) {
+        var mh$ = hb_set_subtract$MH();
+        try {
+            mh$.invokeExact(set, other);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_set_symmetric_difference$MH() {
+        return RuntimeHelper.requireNonNull(constants$846.hb_set_symmetric_difference$MH,"hb_set_symmetric_difference");
+    }
+    /**
+     * {@snippet :
+     * void hb_set_symmetric_difference(hb_set_t* set, const hb_set_t* other);
+     * }
+     */
+    public static void hb_set_symmetric_difference(MemorySegment set, MemorySegment other) {
+        var mh$ = hb_set_symmetric_difference$MH();
+        try {
+            mh$.invokeExact(set, other);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_set_get_population$MH() {
+        return RuntimeHelper.requireNonNull(constants$846.hb_set_get_population$MH,"hb_set_get_population");
+    }
+    /**
+     * {@snippet :
+     * unsigned int hb_set_get_population(const hb_set_t* set);
+     * }
+     */
+    public static int hb_set_get_population(MemorySegment set) {
+        var mh$ = hb_set_get_population$MH();
+        try {
+            return (int)mh$.invokeExact(set);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_set_get_min$MH() {
+        return RuntimeHelper.requireNonNull(constants$846.hb_set_get_min$MH,"hb_set_get_min");
+    }
+    /**
+     * {@snippet :
+     * hb_codepoint_t hb_set_get_min(const hb_set_t* set);
+     * }
+     */
+    public static int hb_set_get_min(MemorySegment set) {
+        var mh$ = hb_set_get_min$MH();
+        try {
+            return (int)mh$.invokeExact(set);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_set_get_max$MH() {
+        return RuntimeHelper.requireNonNull(constants$847.hb_set_get_max$MH,"hb_set_get_max");
+    }
+    /**
+     * {@snippet :
+     * hb_codepoint_t hb_set_get_max(const hb_set_t* set);
+     * }
+     */
+    public static int hb_set_get_max(MemorySegment set) {
+        var mh$ = hb_set_get_max$MH();
+        try {
+            return (int)mh$.invokeExact(set);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_set_next$MH() {
+        return RuntimeHelper.requireNonNull(constants$847.hb_set_next$MH,"hb_set_next");
+    }
+    /**
+     * {@snippet :
+     * hb_bool_t hb_set_next(const hb_set_t* set, hb_codepoint_t* codepoint);
+     * }
+     */
+    public static int hb_set_next(MemorySegment set, MemorySegment codepoint) {
+        var mh$ = hb_set_next$MH();
+        try {
+            return (int)mh$.invokeExact(set, codepoint);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_set_previous$MH() {
+        return RuntimeHelper.requireNonNull(constants$847.hb_set_previous$MH,"hb_set_previous");
+    }
+    /**
+     * {@snippet :
+     * hb_bool_t hb_set_previous(const hb_set_t* set, hb_codepoint_t* codepoint);
+     * }
+     */
+    public static int hb_set_previous(MemorySegment set, MemorySegment codepoint) {
+        var mh$ = hb_set_previous$MH();
+        try {
+            return (int)mh$.invokeExact(set, codepoint);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_set_next_range$MH() {
+        return RuntimeHelper.requireNonNull(constants$847.hb_set_next_range$MH,"hb_set_next_range");
+    }
+    /**
+     * {@snippet :
+     * hb_bool_t hb_set_next_range(const hb_set_t* set, hb_codepoint_t* first, hb_codepoint_t* last);
+     * }
+     */
+    public static int hb_set_next_range(MemorySegment set, MemorySegment first, MemorySegment last) {
+        var mh$ = hb_set_next_range$MH();
+        try {
+            return (int)mh$.invokeExact(set, first, last);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_set_previous_range$MH() {
+        return RuntimeHelper.requireNonNull(constants$847.hb_set_previous_range$MH,"hb_set_previous_range");
+    }
+    /**
+     * {@snippet :
+     * hb_bool_t hb_set_previous_range(const hb_set_t* set, hb_codepoint_t* first, hb_codepoint_t* last);
+     * }
+     */
+    public static int hb_set_previous_range(MemorySegment set, MemorySegment first, MemorySegment last) {
+        var mh$ = hb_set_previous_range$MH();
+        try {
+            return (int)mh$.invokeExact(set, first, last);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_set_next_many$MH() {
+        return RuntimeHelper.requireNonNull(constants$847.hb_set_next_many$MH,"hb_set_next_many");
+    }
+    /**
+     * {@snippet :
+     * unsigned int hb_set_next_many(const hb_set_t* set, hb_codepoint_t codepoint, hb_codepoint_t* out, unsigned int size);
+     * }
+     */
+    public static int hb_set_next_many(MemorySegment set, int codepoint, MemorySegment out, int size) {
+        var mh$ = hb_set_next_many$MH();
+        try {
+            return (int)mh$.invokeExact(set, codepoint, out, size);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_face_count$MH() {
+        return RuntimeHelper.requireNonNull(constants$848.hb_face_count$MH,"hb_face_count");
+    }
+    /**
+     * {@snippet :
+     * unsigned int hb_face_count(hb_blob_t* blob);
+     * }
+     */
+    public static int hb_face_count(MemorySegment blob) {
+        var mh$ = hb_face_count$MH();
+        try {
+            return (int)mh$.invokeExact(blob);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_face_create$MH() {
+        return RuntimeHelper.requireNonNull(constants$848.hb_face_create$MH,"hb_face_create");
+    }
+    /**
+     * {@snippet :
+     * hb_face_t* hb_face_create(hb_blob_t* blob, unsigned int index);
+     * }
+     */
+    public static MemorySegment hb_face_create(MemorySegment blob, int index) {
+        var mh$ = hb_face_create$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(blob, index);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_face_create_for_tables$MH() {
+        return RuntimeHelper.requireNonNull(constants$848.hb_face_create_for_tables$MH,"hb_face_create_for_tables");
+    }
+    /**
+     * {@snippet :
+     * hb_face_t* hb_face_create_for_tables(hb_reference_table_func_t reference_table_func, void* user_data, hb_destroy_func_t destroy);
+     * }
+     */
+    public static MemorySegment hb_face_create_for_tables(MemorySegment reference_table_func, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = hb_face_create_for_tables$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(reference_table_func, user_data, destroy);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_face_get_empty$MH() {
+        return RuntimeHelper.requireNonNull(constants$848.hb_face_get_empty$MH,"hb_face_get_empty");
+    }
+    /**
+     * {@snippet :
+     * hb_face_t* hb_face_get_empty();
+     * }
+     */
+    public static MemorySegment hb_face_get_empty() {
+        var mh$ = hb_face_get_empty$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_face_reference$MH() {
+        return RuntimeHelper.requireNonNull(constants$849.hb_face_reference$MH,"hb_face_reference");
+    }
+    /**
+     * {@snippet :
+     * hb_face_t* hb_face_reference(hb_face_t* face);
+     * }
+     */
+    public static MemorySegment hb_face_reference(MemorySegment face) {
+        var mh$ = hb_face_reference$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(face);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_face_destroy$MH() {
+        return RuntimeHelper.requireNonNull(constants$849.hb_face_destroy$MH,"hb_face_destroy");
+    }
+    /**
+     * {@snippet :
+     * void hb_face_destroy(hb_face_t* face);
+     * }
+     */
+    public static void hb_face_destroy(MemorySegment face) {
+        var mh$ = hb_face_destroy$MH();
+        try {
+            mh$.invokeExact(face);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_face_set_user_data$MH() {
+        return RuntimeHelper.requireNonNull(constants$849.hb_face_set_user_data$MH,"hb_face_set_user_data");
+    }
+    /**
+     * {@snippet :
+     * hb_bool_t hb_face_set_user_data(hb_face_t* face, hb_user_data_key_t* key, void* data, hb_destroy_func_t destroy, hb_bool_t replace);
+     * }
+     */
+    public static int hb_face_set_user_data(MemorySegment face, MemorySegment key, MemorySegment data, MemorySegment destroy, int replace) {
+        var mh$ = hb_face_set_user_data$MH();
+        try {
+            return (int)mh$.invokeExact(face, key, data, destroy, replace);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_face_get_user_data$MH() {
+        return RuntimeHelper.requireNonNull(constants$849.hb_face_get_user_data$MH,"hb_face_get_user_data");
+    }
+    /**
+     * {@snippet :
+     * void* hb_face_get_user_data(const hb_face_t* face, hb_user_data_key_t* key);
+     * }
+     */
+    public static MemorySegment hb_face_get_user_data(MemorySegment face, MemorySegment key) {
+        var mh$ = hb_face_get_user_data$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(face, key);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_face_make_immutable$MH() {
+        return RuntimeHelper.requireNonNull(constants$849.hb_face_make_immutable$MH,"hb_face_make_immutable");
+    }
+    /**
+     * {@snippet :
+     * void hb_face_make_immutable(hb_face_t* face);
+     * }
+     */
+    public static void hb_face_make_immutable(MemorySegment face) {
+        var mh$ = hb_face_make_immutable$MH();
+        try {
+            mh$.invokeExact(face);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_face_is_immutable$MH() {
+        return RuntimeHelper.requireNonNull(constants$849.hb_face_is_immutable$MH,"hb_face_is_immutable");
+    }
+    /**
+     * {@snippet :
+     * hb_bool_t hb_face_is_immutable(const hb_face_t* face);
+     * }
+     */
+    public static int hb_face_is_immutable(MemorySegment face) {
+        var mh$ = hb_face_is_immutable$MH();
+        try {
+            return (int)mh$.invokeExact(face);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_face_reference_table$MH() {
+        return RuntimeHelper.requireNonNull(constants$850.hb_face_reference_table$MH,"hb_face_reference_table");
+    }
+    /**
+     * {@snippet :
+     * hb_blob_t* hb_face_reference_table(const hb_face_t* face, hb_tag_t tag);
+     * }
+     */
+    public static MemorySegment hb_face_reference_table(MemorySegment face, int tag) {
+        var mh$ = hb_face_reference_table$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(face, tag);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_face_reference_blob$MH() {
+        return RuntimeHelper.requireNonNull(constants$850.hb_face_reference_blob$MH,"hb_face_reference_blob");
+    }
+    /**
+     * {@snippet :
+     * hb_blob_t* hb_face_reference_blob(hb_face_t* face);
+     * }
+     */
+    public static MemorySegment hb_face_reference_blob(MemorySegment face) {
+        var mh$ = hb_face_reference_blob$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(face);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_face_set_index$MH() {
+        return RuntimeHelper.requireNonNull(constants$850.hb_face_set_index$MH,"hb_face_set_index");
+    }
+    /**
+     * {@snippet :
+     * void hb_face_set_index(hb_face_t* face, unsigned int index);
+     * }
+     */
+    public static void hb_face_set_index(MemorySegment face, int index) {
+        var mh$ = hb_face_set_index$MH();
+        try {
+            mh$.invokeExact(face, index);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_face_get_index$MH() {
+        return RuntimeHelper.requireNonNull(constants$850.hb_face_get_index$MH,"hb_face_get_index");
+    }
+    /**
+     * {@snippet :
+     * unsigned int hb_face_get_index(const hb_face_t* face);
+     * }
+     */
+    public static int hb_face_get_index(MemorySegment face) {
+        var mh$ = hb_face_get_index$MH();
+        try {
+            return (int)mh$.invokeExact(face);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_face_set_upem$MH() {
+        return RuntimeHelper.requireNonNull(constants$850.hb_face_set_upem$MH,"hb_face_set_upem");
+    }
+    /**
+     * {@snippet :
+     * void hb_face_set_upem(hb_face_t* face, unsigned int upem);
+     * }
+     */
+    public static void hb_face_set_upem(MemorySegment face, int upem) {
+        var mh$ = hb_face_set_upem$MH();
+        try {
+            mh$.invokeExact(face, upem);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_face_get_upem$MH() {
+        return RuntimeHelper.requireNonNull(constants$850.hb_face_get_upem$MH,"hb_face_get_upem");
+    }
+    /**
+     * {@snippet :
+     * unsigned int hb_face_get_upem(const hb_face_t* face);
+     * }
+     */
+    public static int hb_face_get_upem(MemorySegment face) {
+        var mh$ = hb_face_get_upem$MH();
+        try {
+            return (int)mh$.invokeExact(face);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_face_set_glyph_count$MH() {
+        return RuntimeHelper.requireNonNull(constants$851.hb_face_set_glyph_count$MH,"hb_face_set_glyph_count");
+    }
+    /**
+     * {@snippet :
+     * void hb_face_set_glyph_count(hb_face_t* face, unsigned int glyph_count);
+     * }
+     */
+    public static void hb_face_set_glyph_count(MemorySegment face, int glyph_count) {
+        var mh$ = hb_face_set_glyph_count$MH();
+        try {
+            mh$.invokeExact(face, glyph_count);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_face_get_glyph_count$MH() {
+        return RuntimeHelper.requireNonNull(constants$851.hb_face_get_glyph_count$MH,"hb_face_get_glyph_count");
+    }
+    /**
+     * {@snippet :
+     * unsigned int hb_face_get_glyph_count(const hb_face_t* face);
+     * }
+     */
+    public static int hb_face_get_glyph_count(MemorySegment face) {
+        var mh$ = hb_face_get_glyph_count$MH();
+        try {
+            return (int)mh$.invokeExact(face);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_face_get_table_tags$MH() {
+        return RuntimeHelper.requireNonNull(constants$851.hb_face_get_table_tags$MH,"hb_face_get_table_tags");
+    }
+    /**
+     * {@snippet :
+     * unsigned int hb_face_get_table_tags(const hb_face_t* face, unsigned int start_offset, unsigned int* table_count, hb_tag_t* table_tags);
+     * }
+     */
+    public static int hb_face_get_table_tags(MemorySegment face, int start_offset, MemorySegment table_count, MemorySegment table_tags) {
+        var mh$ = hb_face_get_table_tags$MH();
+        try {
+            return (int)mh$.invokeExact(face, start_offset, table_count, table_tags);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_face_collect_unicodes$MH() {
+        return RuntimeHelper.requireNonNull(constants$851.hb_face_collect_unicodes$MH,"hb_face_collect_unicodes");
+    }
+    /**
+     * {@snippet :
+     * void hb_face_collect_unicodes(hb_face_t* face, hb_set_t* out);
+     * }
+     */
+    public static void hb_face_collect_unicodes(MemorySegment face, MemorySegment out) {
+        var mh$ = hb_face_collect_unicodes$MH();
+        try {
+            mh$.invokeExact(face, out);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_face_collect_variation_selectors$MH() {
+        return RuntimeHelper.requireNonNull(constants$851.hb_face_collect_variation_selectors$MH,"hb_face_collect_variation_selectors");
+    }
+    /**
+     * {@snippet :
+     * void hb_face_collect_variation_selectors(hb_face_t* face, hb_set_t* out);
+     * }
+     */
+    public static void hb_face_collect_variation_selectors(MemorySegment face, MemorySegment out) {
+        var mh$ = hb_face_collect_variation_selectors$MH();
+        try {
+            mh$.invokeExact(face, out);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_face_collect_variation_unicodes$MH() {
+        return RuntimeHelper.requireNonNull(constants$851.hb_face_collect_variation_unicodes$MH,"hb_face_collect_variation_unicodes");
+    }
+    /**
+     * {@snippet :
+     * void hb_face_collect_variation_unicodes(hb_face_t* face, hb_codepoint_t variation_selector, hb_set_t* out);
+     * }
+     */
+    public static void hb_face_collect_variation_unicodes(MemorySegment face, int variation_selector, MemorySegment out) {
+        var mh$ = hb_face_collect_variation_unicodes$MH();
+        try {
+            mh$.invokeExact(face, variation_selector, out);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_face_builder_create$MH() {
+        return RuntimeHelper.requireNonNull(constants$852.hb_face_builder_create$MH,"hb_face_builder_create");
+    }
+    /**
+     * {@snippet :
+     * hb_face_t* hb_face_builder_create();
+     * }
+     */
+    public static MemorySegment hb_face_builder_create() {
+        var mh$ = hb_face_builder_create$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_face_builder_add_table$MH() {
+        return RuntimeHelper.requireNonNull(constants$852.hb_face_builder_add_table$MH,"hb_face_builder_add_table");
+    }
+    /**
+     * {@snippet :
+     * hb_bool_t hb_face_builder_add_table(hb_face_t* face, hb_tag_t tag, hb_blob_t* blob);
+     * }
+     */
+    public static int hb_face_builder_add_table(MemorySegment face, int tag, MemorySegment blob) {
+        var mh$ = hb_face_builder_add_table$MH();
+        try {
+            return (int)mh$.invokeExact(face, tag, blob);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_face_builder_sort_tables$MH() {
+        return RuntimeHelper.requireNonNull(constants$852.hb_face_builder_sort_tables$MH,"hb_face_builder_sort_tables");
+    }
+    /**
+     * {@snippet :
+     * void hb_face_builder_sort_tables(hb_face_t* face, const hb_tag_t* tags);
+     * }
+     */
+    public static void hb_face_builder_sort_tables(MemorySegment face, MemorySegment tags) {
+        var mh$ = hb_face_builder_sort_tables$MH();
+        try {
+            mh$.invokeExact(face, tags);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_draw_funcs_set_move_to_func$MH() {
+        return RuntimeHelper.requireNonNull(constants$854.hb_draw_funcs_set_move_to_func$MH,"hb_draw_funcs_set_move_to_func");
+    }
+    /**
+     * {@snippet :
+     * void hb_draw_funcs_set_move_to_func(hb_draw_funcs_t* dfuncs, hb_draw_move_to_func_t func, void* user_data, hb_destroy_func_t destroy);
+     * }
+     */
+    public static void hb_draw_funcs_set_move_to_func(MemorySegment dfuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = hb_draw_funcs_set_move_to_func$MH();
+        try {
+            mh$.invokeExact(dfuncs, func, user_data, destroy);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_draw_funcs_set_line_to_func$MH() {
+        return RuntimeHelper.requireNonNull(constants$854.hb_draw_funcs_set_line_to_func$MH,"hb_draw_funcs_set_line_to_func");
+    }
+    /**
+     * {@snippet :
+     * void hb_draw_funcs_set_line_to_func(hb_draw_funcs_t* dfuncs, hb_draw_line_to_func_t func, void* user_data, hb_destroy_func_t destroy);
+     * }
+     */
+    public static void hb_draw_funcs_set_line_to_func(MemorySegment dfuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = hb_draw_funcs_set_line_to_func$MH();
+        try {
+            mh$.invokeExact(dfuncs, func, user_data, destroy);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_draw_funcs_set_quadratic_to_func$MH() {
+        return RuntimeHelper.requireNonNull(constants$854.hb_draw_funcs_set_quadratic_to_func$MH,"hb_draw_funcs_set_quadratic_to_func");
+    }
+    /**
+     * {@snippet :
+     * void hb_draw_funcs_set_quadratic_to_func(hb_draw_funcs_t* dfuncs, hb_draw_quadratic_to_func_t func, void* user_data, hb_destroy_func_t destroy);
+     * }
+     */
+    public static void hb_draw_funcs_set_quadratic_to_func(MemorySegment dfuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = hb_draw_funcs_set_quadratic_to_func$MH();
+        try {
+            mh$.invokeExact(dfuncs, func, user_data, destroy);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_draw_funcs_set_cubic_to_func$MH() {
+        return RuntimeHelper.requireNonNull(constants$854.hb_draw_funcs_set_cubic_to_func$MH,"hb_draw_funcs_set_cubic_to_func");
+    }
+    /**
+     * {@snippet :
+     * void hb_draw_funcs_set_cubic_to_func(hb_draw_funcs_t* dfuncs, hb_draw_cubic_to_func_t func, void* user_data, hb_destroy_func_t destroy);
+     * }
+     */
+    public static void hb_draw_funcs_set_cubic_to_func(MemorySegment dfuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = hb_draw_funcs_set_cubic_to_func$MH();
+        try {
+            mh$.invokeExact(dfuncs, func, user_data, destroy);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_draw_funcs_set_close_path_func$MH() {
+        return RuntimeHelper.requireNonNull(constants$854.hb_draw_funcs_set_close_path_func$MH,"hb_draw_funcs_set_close_path_func");
+    }
+    /**
+     * {@snippet :
+     * void hb_draw_funcs_set_close_path_func(hb_draw_funcs_t* dfuncs, hb_draw_close_path_func_t func, void* user_data, hb_destroy_func_t destroy);
+     * }
+     */
+    public static void hb_draw_funcs_set_close_path_func(MemorySegment dfuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = hb_draw_funcs_set_close_path_func$MH();
+        try {
+            mh$.invokeExact(dfuncs, func, user_data, destroy);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_draw_funcs_create$MH() {
+        return RuntimeHelper.requireNonNull(constants$855.hb_draw_funcs_create$MH,"hb_draw_funcs_create");
+    }
+    /**
+     * {@snippet :
+     * hb_draw_funcs_t* hb_draw_funcs_create();
+     * }
+     */
+    public static MemorySegment hb_draw_funcs_create() {
+        var mh$ = hb_draw_funcs_create$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_draw_funcs_reference$MH() {
+        return RuntimeHelper.requireNonNull(constants$855.hb_draw_funcs_reference$MH,"hb_draw_funcs_reference");
+    }
+    /**
+     * {@snippet :
+     * hb_draw_funcs_t* hb_draw_funcs_reference(hb_draw_funcs_t* dfuncs);
+     * }
+     */
+    public static MemorySegment hb_draw_funcs_reference(MemorySegment dfuncs) {
+        var mh$ = hb_draw_funcs_reference$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(dfuncs);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_draw_funcs_destroy$MH() {
+        return RuntimeHelper.requireNonNull(constants$855.hb_draw_funcs_destroy$MH,"hb_draw_funcs_destroy");
+    }
+    /**
+     * {@snippet :
+     * void hb_draw_funcs_destroy(hb_draw_funcs_t* dfuncs);
+     * }
+     */
+    public static void hb_draw_funcs_destroy(MemorySegment dfuncs) {
+        var mh$ = hb_draw_funcs_destroy$MH();
+        try {
+            mh$.invokeExact(dfuncs);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_draw_funcs_make_immutable$MH() {
+        return RuntimeHelper.requireNonNull(constants$855.hb_draw_funcs_make_immutable$MH,"hb_draw_funcs_make_immutable");
+    }
+    /**
+     * {@snippet :
+     * void hb_draw_funcs_make_immutable(hb_draw_funcs_t* dfuncs);
+     * }
+     */
+    public static void hb_draw_funcs_make_immutable(MemorySegment dfuncs) {
+        var mh$ = hb_draw_funcs_make_immutable$MH();
+        try {
+            mh$.invokeExact(dfuncs);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_draw_funcs_is_immutable$MH() {
+        return RuntimeHelper.requireNonNull(constants$855.hb_draw_funcs_is_immutable$MH,"hb_draw_funcs_is_immutable");
+    }
+    /**
+     * {@snippet :
+     * hb_bool_t hb_draw_funcs_is_immutable(hb_draw_funcs_t* dfuncs);
+     * }
+     */
+    public static int hb_draw_funcs_is_immutable(MemorySegment dfuncs) {
+        var mh$ = hb_draw_funcs_is_immutable$MH();
+        try {
+            return (int)mh$.invokeExact(dfuncs);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_draw_move_to$MH() {
+        return RuntimeHelper.requireNonNull(constants$855.hb_draw_move_to$MH,"hb_draw_move_to");
+    }
+    /**
+     * {@snippet :
+     * void hb_draw_move_to(hb_draw_funcs_t* dfuncs, void* draw_data, hb_draw_state_t* st, float to_x, float to_y);
+     * }
+     */
+    public static void hb_draw_move_to(MemorySegment dfuncs, MemorySegment draw_data, MemorySegment st, float to_x, float to_y) {
+        var mh$ = hb_draw_move_to$MH();
+        try {
+            mh$.invokeExact(dfuncs, draw_data, st, to_x, to_y);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_draw_line_to$MH() {
+        return RuntimeHelper.requireNonNull(constants$856.hb_draw_line_to$MH,"hb_draw_line_to");
+    }
+    /**
+     * {@snippet :
+     * void hb_draw_line_to(hb_draw_funcs_t* dfuncs, void* draw_data, hb_draw_state_t* st, float to_x, float to_y);
+     * }
+     */
+    public static void hb_draw_line_to(MemorySegment dfuncs, MemorySegment draw_data, MemorySegment st, float to_x, float to_y) {
+        var mh$ = hb_draw_line_to$MH();
+        try {
+            mh$.invokeExact(dfuncs, draw_data, st, to_x, to_y);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_draw_quadratic_to$MH() {
+        return RuntimeHelper.requireNonNull(constants$856.hb_draw_quadratic_to$MH,"hb_draw_quadratic_to");
+    }
+    /**
+     * {@snippet :
+     * void hb_draw_quadratic_to(hb_draw_funcs_t* dfuncs, void* draw_data, hb_draw_state_t* st, float control_x, float control_y, float to_x, float to_y);
+     * }
+     */
+    public static void hb_draw_quadratic_to(MemorySegment dfuncs, MemorySegment draw_data, MemorySegment st, float control_x, float control_y, float to_x, float to_y) {
+        var mh$ = hb_draw_quadratic_to$MH();
+        try {
+            mh$.invokeExact(dfuncs, draw_data, st, control_x, control_y, to_x, to_y);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_draw_cubic_to$MH() {
+        return RuntimeHelper.requireNonNull(constants$856.hb_draw_cubic_to$MH,"hb_draw_cubic_to");
+    }
+    /**
+     * {@snippet :
+     * void hb_draw_cubic_to(hb_draw_funcs_t* dfuncs, void* draw_data, hb_draw_state_t* st, float control1_x, float control1_y, float control2_x, float control2_y, float to_x, float to_y);
+     * }
+     */
+    public static void hb_draw_cubic_to(MemorySegment dfuncs, MemorySegment draw_data, MemorySegment st, float control1_x, float control1_y, float control2_x, float control2_y, float to_x, float to_y) {
+        var mh$ = hb_draw_cubic_to$MH();
+        try {
+            mh$.invokeExact(dfuncs, draw_data, st, control1_x, control1_y, control2_x, control2_y, to_x, to_y);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_draw_close_path$MH() {
+        return RuntimeHelper.requireNonNull(constants$856.hb_draw_close_path$MH,"hb_draw_close_path");
+    }
+    /**
+     * {@snippet :
+     * void hb_draw_close_path(hb_draw_funcs_t* dfuncs, void* draw_data, hb_draw_state_t* st);
+     * }
+     */
+    public static void hb_draw_close_path(MemorySegment dfuncs, MemorySegment draw_data, MemorySegment st) {
+        var mh$ = hb_draw_close_path$MH();
+        try {
+            mh$.invokeExact(dfuncs, draw_data, st);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_funcs_create$MH() {
+        return RuntimeHelper.requireNonNull(constants$856.hb_font_funcs_create$MH,"hb_font_funcs_create");
+    }
+    /**
+     * {@snippet :
+     * hb_font_funcs_t* hb_font_funcs_create();
+     * }
+     */
+    public static MemorySegment hb_font_funcs_create() {
+        var mh$ = hb_font_funcs_create$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_funcs_get_empty$MH() {
+        return RuntimeHelper.requireNonNull(constants$856.hb_font_funcs_get_empty$MH,"hb_font_funcs_get_empty");
+    }
+    /**
+     * {@snippet :
+     * hb_font_funcs_t* hb_font_funcs_get_empty();
+     * }
+     */
+    public static MemorySegment hb_font_funcs_get_empty() {
+        var mh$ = hb_font_funcs_get_empty$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_funcs_reference$MH() {
+        return RuntimeHelper.requireNonNull(constants$857.hb_font_funcs_reference$MH,"hb_font_funcs_reference");
+    }
+    /**
+     * {@snippet :
+     * hb_font_funcs_t* hb_font_funcs_reference(hb_font_funcs_t* ffuncs);
+     * }
+     */
+    public static MemorySegment hb_font_funcs_reference(MemorySegment ffuncs) {
+        var mh$ = hb_font_funcs_reference$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(ffuncs);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_funcs_destroy$MH() {
+        return RuntimeHelper.requireNonNull(constants$857.hb_font_funcs_destroy$MH,"hb_font_funcs_destroy");
+    }
+    /**
+     * {@snippet :
+     * void hb_font_funcs_destroy(hb_font_funcs_t* ffuncs);
+     * }
+     */
+    public static void hb_font_funcs_destroy(MemorySegment ffuncs) {
+        var mh$ = hb_font_funcs_destroy$MH();
+        try {
+            mh$.invokeExact(ffuncs);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_funcs_set_user_data$MH() {
+        return RuntimeHelper.requireNonNull(constants$857.hb_font_funcs_set_user_data$MH,"hb_font_funcs_set_user_data");
+    }
+    /**
+     * {@snippet :
+     * hb_bool_t hb_font_funcs_set_user_data(hb_font_funcs_t* ffuncs, hb_user_data_key_t* key, void* data, hb_destroy_func_t destroy, hb_bool_t replace);
+     * }
+     */
+    public static int hb_font_funcs_set_user_data(MemorySegment ffuncs, MemorySegment key, MemorySegment data, MemorySegment destroy, int replace) {
+        var mh$ = hb_font_funcs_set_user_data$MH();
+        try {
+            return (int)mh$.invokeExact(ffuncs, key, data, destroy, replace);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_funcs_get_user_data$MH() {
+        return RuntimeHelper.requireNonNull(constants$857.hb_font_funcs_get_user_data$MH,"hb_font_funcs_get_user_data");
+    }
+    /**
+     * {@snippet :
+     * void* hb_font_funcs_get_user_data(const hb_font_funcs_t* ffuncs, hb_user_data_key_t* key);
+     * }
+     */
+    public static MemorySegment hb_font_funcs_get_user_data(MemorySegment ffuncs, MemorySegment key) {
+        var mh$ = hb_font_funcs_get_user_data$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(ffuncs, key);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_funcs_make_immutable$MH() {
+        return RuntimeHelper.requireNonNull(constants$857.hb_font_funcs_make_immutable$MH,"hb_font_funcs_make_immutable");
+    }
+    /**
+     * {@snippet :
+     * void hb_font_funcs_make_immutable(hb_font_funcs_t* ffuncs);
+     * }
+     */
+    public static void hb_font_funcs_make_immutable(MemorySegment ffuncs) {
+        var mh$ = hb_font_funcs_make_immutable$MH();
+        try {
+            mh$.invokeExact(ffuncs);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_funcs_is_immutable$MH() {
+        return RuntimeHelper.requireNonNull(constants$857.hb_font_funcs_is_immutable$MH,"hb_font_funcs_is_immutable");
+    }
+    /**
+     * {@snippet :
+     * hb_bool_t hb_font_funcs_is_immutable(hb_font_funcs_t* ffuncs);
+     * }
+     */
+    public static int hb_font_funcs_is_immutable(MemorySegment ffuncs) {
+        var mh$ = hb_font_funcs_is_immutable$MH();
+        try {
+            return (int)mh$.invokeExact(ffuncs);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_funcs_set_font_h_extents_func$MH() {
+        return RuntimeHelper.requireNonNull(constants$865.hb_font_funcs_set_font_h_extents_func$MH,"hb_font_funcs_set_font_h_extents_func");
+    }
+    /**
+     * {@snippet :
+     * void hb_font_funcs_set_font_h_extents_func(hb_font_funcs_t* ffuncs, hb_font_get_font_h_extents_func_t func, void* user_data, hb_destroy_func_t destroy);
+     * }
+     */
+    public static void hb_font_funcs_set_font_h_extents_func(MemorySegment ffuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = hb_font_funcs_set_font_h_extents_func$MH();
+        try {
+            mh$.invokeExact(ffuncs, func, user_data, destroy);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_funcs_set_font_v_extents_func$MH() {
+        return RuntimeHelper.requireNonNull(constants$865.hb_font_funcs_set_font_v_extents_func$MH,"hb_font_funcs_set_font_v_extents_func");
+    }
+    /**
+     * {@snippet :
+     * void hb_font_funcs_set_font_v_extents_func(hb_font_funcs_t* ffuncs, hb_font_get_font_v_extents_func_t func, void* user_data, hb_destroy_func_t destroy);
+     * }
+     */
+    public static void hb_font_funcs_set_font_v_extents_func(MemorySegment ffuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = hb_font_funcs_set_font_v_extents_func$MH();
+        try {
+            mh$.invokeExact(ffuncs, func, user_data, destroy);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_funcs_set_nominal_glyph_func$MH() {
+        return RuntimeHelper.requireNonNull(constants$865.hb_font_funcs_set_nominal_glyph_func$MH,"hb_font_funcs_set_nominal_glyph_func");
+    }
+    /**
+     * {@snippet :
+     * void hb_font_funcs_set_nominal_glyph_func(hb_font_funcs_t* ffuncs, hb_font_get_nominal_glyph_func_t func, void* user_data, hb_destroy_func_t destroy);
+     * }
+     */
+    public static void hb_font_funcs_set_nominal_glyph_func(MemorySegment ffuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = hb_font_funcs_set_nominal_glyph_func$MH();
+        try {
+            mh$.invokeExact(ffuncs, func, user_data, destroy);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_funcs_set_nominal_glyphs_func$MH() {
+        return RuntimeHelper.requireNonNull(constants$865.hb_font_funcs_set_nominal_glyphs_func$MH,"hb_font_funcs_set_nominal_glyphs_func");
+    }
+    /**
+     * {@snippet :
+     * void hb_font_funcs_set_nominal_glyphs_func(hb_font_funcs_t* ffuncs, hb_font_get_nominal_glyphs_func_t func, void* user_data, hb_destroy_func_t destroy);
+     * }
+     */
+    public static void hb_font_funcs_set_nominal_glyphs_func(MemorySegment ffuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = hb_font_funcs_set_nominal_glyphs_func$MH();
+        try {
+            mh$.invokeExact(ffuncs, func, user_data, destroy);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_funcs_set_variation_glyph_func$MH() {
+        return RuntimeHelper.requireNonNull(constants$866.hb_font_funcs_set_variation_glyph_func$MH,"hb_font_funcs_set_variation_glyph_func");
+    }
+    /**
+     * {@snippet :
+     * void hb_font_funcs_set_variation_glyph_func(hb_font_funcs_t* ffuncs, hb_font_get_variation_glyph_func_t func, void* user_data, hb_destroy_func_t destroy);
+     * }
+     */
+    public static void hb_font_funcs_set_variation_glyph_func(MemorySegment ffuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = hb_font_funcs_set_variation_glyph_func$MH();
+        try {
+            mh$.invokeExact(ffuncs, func, user_data, destroy);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_funcs_set_glyph_h_advance_func$MH() {
+        return RuntimeHelper.requireNonNull(constants$866.hb_font_funcs_set_glyph_h_advance_func$MH,"hb_font_funcs_set_glyph_h_advance_func");
+    }
+    /**
+     * {@snippet :
+     * void hb_font_funcs_set_glyph_h_advance_func(hb_font_funcs_t* ffuncs, hb_font_get_glyph_h_advance_func_t func, void* user_data, hb_destroy_func_t destroy);
+     * }
+     */
+    public static void hb_font_funcs_set_glyph_h_advance_func(MemorySegment ffuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = hb_font_funcs_set_glyph_h_advance_func$MH();
+        try {
+            mh$.invokeExact(ffuncs, func, user_data, destroy);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_funcs_set_glyph_v_advance_func$MH() {
+        return RuntimeHelper.requireNonNull(constants$866.hb_font_funcs_set_glyph_v_advance_func$MH,"hb_font_funcs_set_glyph_v_advance_func");
+    }
+    /**
+     * {@snippet :
+     * void hb_font_funcs_set_glyph_v_advance_func(hb_font_funcs_t* ffuncs, hb_font_get_glyph_v_advance_func_t func, void* user_data, hb_destroy_func_t destroy);
+     * }
+     */
+    public static void hb_font_funcs_set_glyph_v_advance_func(MemorySegment ffuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = hb_font_funcs_set_glyph_v_advance_func$MH();
+        try {
+            mh$.invokeExact(ffuncs, func, user_data, destroy);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_funcs_set_glyph_h_advances_func$MH() {
+        return RuntimeHelper.requireNonNull(constants$866.hb_font_funcs_set_glyph_h_advances_func$MH,"hb_font_funcs_set_glyph_h_advances_func");
+    }
+    /**
+     * {@snippet :
+     * void hb_font_funcs_set_glyph_h_advances_func(hb_font_funcs_t* ffuncs, hb_font_get_glyph_h_advances_func_t func, void* user_data, hb_destroy_func_t destroy);
+     * }
+     */
+    public static void hb_font_funcs_set_glyph_h_advances_func(MemorySegment ffuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = hb_font_funcs_set_glyph_h_advances_func$MH();
+        try {
+            mh$.invokeExact(ffuncs, func, user_data, destroy);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_funcs_set_glyph_v_advances_func$MH() {
+        return RuntimeHelper.requireNonNull(constants$866.hb_font_funcs_set_glyph_v_advances_func$MH,"hb_font_funcs_set_glyph_v_advances_func");
+    }
+    /**
+     * {@snippet :
+     * void hb_font_funcs_set_glyph_v_advances_func(hb_font_funcs_t* ffuncs, hb_font_get_glyph_v_advances_func_t func, void* user_data, hb_destroy_func_t destroy);
+     * }
+     */
+    public static void hb_font_funcs_set_glyph_v_advances_func(MemorySegment ffuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = hb_font_funcs_set_glyph_v_advances_func$MH();
+        try {
+            mh$.invokeExact(ffuncs, func, user_data, destroy);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_funcs_set_glyph_h_origin_func$MH() {
+        return RuntimeHelper.requireNonNull(constants$866.hb_font_funcs_set_glyph_h_origin_func$MH,"hb_font_funcs_set_glyph_h_origin_func");
+    }
+    /**
+     * {@snippet :
+     * void hb_font_funcs_set_glyph_h_origin_func(hb_font_funcs_t* ffuncs, hb_font_get_glyph_h_origin_func_t func, void* user_data, hb_destroy_func_t destroy);
+     * }
+     */
+    public static void hb_font_funcs_set_glyph_h_origin_func(MemorySegment ffuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = hb_font_funcs_set_glyph_h_origin_func$MH();
+        try {
+            mh$.invokeExact(ffuncs, func, user_data, destroy);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_funcs_set_glyph_v_origin_func$MH() {
+        return RuntimeHelper.requireNonNull(constants$867.hb_font_funcs_set_glyph_v_origin_func$MH,"hb_font_funcs_set_glyph_v_origin_func");
+    }
+    /**
+     * {@snippet :
+     * void hb_font_funcs_set_glyph_v_origin_func(hb_font_funcs_t* ffuncs, hb_font_get_glyph_v_origin_func_t func, void* user_data, hb_destroy_func_t destroy);
+     * }
+     */
+    public static void hb_font_funcs_set_glyph_v_origin_func(MemorySegment ffuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = hb_font_funcs_set_glyph_v_origin_func$MH();
+        try {
+            mh$.invokeExact(ffuncs, func, user_data, destroy);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_funcs_set_glyph_h_kerning_func$MH() {
+        return RuntimeHelper.requireNonNull(constants$867.hb_font_funcs_set_glyph_h_kerning_func$MH,"hb_font_funcs_set_glyph_h_kerning_func");
+    }
+    /**
+     * {@snippet :
+     * void hb_font_funcs_set_glyph_h_kerning_func(hb_font_funcs_t* ffuncs, hb_font_get_glyph_h_kerning_func_t func, void* user_data, hb_destroy_func_t destroy);
+     * }
+     */
+    public static void hb_font_funcs_set_glyph_h_kerning_func(MemorySegment ffuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = hb_font_funcs_set_glyph_h_kerning_func$MH();
+        try {
+            mh$.invokeExact(ffuncs, func, user_data, destroy);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_funcs_set_glyph_extents_func$MH() {
+        return RuntimeHelper.requireNonNull(constants$867.hb_font_funcs_set_glyph_extents_func$MH,"hb_font_funcs_set_glyph_extents_func");
+    }
+    /**
+     * {@snippet :
+     * void hb_font_funcs_set_glyph_extents_func(hb_font_funcs_t* ffuncs, hb_font_get_glyph_extents_func_t func, void* user_data, hb_destroy_func_t destroy);
+     * }
+     */
+    public static void hb_font_funcs_set_glyph_extents_func(MemorySegment ffuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = hb_font_funcs_set_glyph_extents_func$MH();
+        try {
+            mh$.invokeExact(ffuncs, func, user_data, destroy);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_funcs_set_glyph_contour_point_func$MH() {
+        return RuntimeHelper.requireNonNull(constants$867.hb_font_funcs_set_glyph_contour_point_func$MH,"hb_font_funcs_set_glyph_contour_point_func");
+    }
+    /**
+     * {@snippet :
+     * void hb_font_funcs_set_glyph_contour_point_func(hb_font_funcs_t* ffuncs, hb_font_get_glyph_contour_point_func_t func, void* user_data, hb_destroy_func_t destroy);
+     * }
+     */
+    public static void hb_font_funcs_set_glyph_contour_point_func(MemorySegment ffuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = hb_font_funcs_set_glyph_contour_point_func$MH();
+        try {
+            mh$.invokeExact(ffuncs, func, user_data, destroy);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_funcs_set_glyph_name_func$MH() {
+        return RuntimeHelper.requireNonNull(constants$867.hb_font_funcs_set_glyph_name_func$MH,"hb_font_funcs_set_glyph_name_func");
+    }
+    /**
+     * {@snippet :
+     * void hb_font_funcs_set_glyph_name_func(hb_font_funcs_t* ffuncs, hb_font_get_glyph_name_func_t func, void* user_data, hb_destroy_func_t destroy);
+     * }
+     */
+    public static void hb_font_funcs_set_glyph_name_func(MemorySegment ffuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = hb_font_funcs_set_glyph_name_func$MH();
+        try {
+            mh$.invokeExact(ffuncs, func, user_data, destroy);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_funcs_set_glyph_from_name_func$MH() {
+        return RuntimeHelper.requireNonNull(constants$867.hb_font_funcs_set_glyph_from_name_func$MH,"hb_font_funcs_set_glyph_from_name_func");
+    }
+    /**
+     * {@snippet :
+     * void hb_font_funcs_set_glyph_from_name_func(hb_font_funcs_t* ffuncs, hb_font_get_glyph_from_name_func_t func, void* user_data, hb_destroy_func_t destroy);
+     * }
+     */
+    public static void hb_font_funcs_set_glyph_from_name_func(MemorySegment ffuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = hb_font_funcs_set_glyph_from_name_func$MH();
+        try {
+            mh$.invokeExact(ffuncs, func, user_data, destroy);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_funcs_set_glyph_shape_func$MH() {
+        return RuntimeHelper.requireNonNull(constants$868.hb_font_funcs_set_glyph_shape_func$MH,"hb_font_funcs_set_glyph_shape_func");
+    }
+    /**
+     * {@snippet :
+     * void hb_font_funcs_set_glyph_shape_func(hb_font_funcs_t* ffuncs, hb_font_get_glyph_shape_func_t func, void* user_data, hb_destroy_func_t destroy);
+     * }
+     */
+    public static void hb_font_funcs_set_glyph_shape_func(MemorySegment ffuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = hb_font_funcs_set_glyph_shape_func$MH();
+        try {
+            mh$.invokeExact(ffuncs, func, user_data, destroy);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_get_h_extents$MH() {
+        return RuntimeHelper.requireNonNull(constants$868.hb_font_get_h_extents$MH,"hb_font_get_h_extents");
+    }
+    /**
+     * {@snippet :
+     * hb_bool_t hb_font_get_h_extents(hb_font_t* font, hb_font_extents_t* extents);
+     * }
+     */
+    public static int hb_font_get_h_extents(MemorySegment font, MemorySegment extents) {
+        var mh$ = hb_font_get_h_extents$MH();
+        try {
+            return (int)mh$.invokeExact(font, extents);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_get_v_extents$MH() {
+        return RuntimeHelper.requireNonNull(constants$868.hb_font_get_v_extents$MH,"hb_font_get_v_extents");
+    }
+    /**
+     * {@snippet :
+     * hb_bool_t hb_font_get_v_extents(hb_font_t* font, hb_font_extents_t* extents);
+     * }
+     */
+    public static int hb_font_get_v_extents(MemorySegment font, MemorySegment extents) {
+        var mh$ = hb_font_get_v_extents$MH();
+        try {
+            return (int)mh$.invokeExact(font, extents);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_get_nominal_glyph$MH() {
+        return RuntimeHelper.requireNonNull(constants$868.hb_font_get_nominal_glyph$MH,"hb_font_get_nominal_glyph");
+    }
+    /**
+     * {@snippet :
+     * hb_bool_t hb_font_get_nominal_glyph(hb_font_t* font, hb_codepoint_t unicode, hb_codepoint_t* glyph);
+     * }
+     */
+    public static int hb_font_get_nominal_glyph(MemorySegment font, int unicode, MemorySegment glyph) {
+        var mh$ = hb_font_get_nominal_glyph$MH();
+        try {
+            return (int)mh$.invokeExact(font, unicode, glyph);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_get_variation_glyph$MH() {
+        return RuntimeHelper.requireNonNull(constants$868.hb_font_get_variation_glyph$MH,"hb_font_get_variation_glyph");
+    }
+    /**
+     * {@snippet :
+     * hb_bool_t hb_font_get_variation_glyph(hb_font_t* font, hb_codepoint_t unicode, hb_codepoint_t variation_selector, hb_codepoint_t* glyph);
+     * }
+     */
+    public static int hb_font_get_variation_glyph(MemorySegment font, int unicode, int variation_selector, MemorySegment glyph) {
+        var mh$ = hb_font_get_variation_glyph$MH();
+        try {
+            return (int)mh$.invokeExact(font, unicode, variation_selector, glyph);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_get_nominal_glyphs$MH() {
+        return RuntimeHelper.requireNonNull(constants$868.hb_font_get_nominal_glyphs$MH,"hb_font_get_nominal_glyphs");
+    }
+    /**
+     * {@snippet :
+     * unsigned int hb_font_get_nominal_glyphs(hb_font_t* font, unsigned int count, const hb_codepoint_t* first_unicode, unsigned int unicode_stride, hb_codepoint_t* first_glyph, unsigned int glyph_stride);
+     * }
+     */
+    public static int hb_font_get_nominal_glyphs(MemorySegment font, int count, MemorySegment first_unicode, int unicode_stride, MemorySegment first_glyph, int glyph_stride) {
+        var mh$ = hb_font_get_nominal_glyphs$MH();
+        try {
+            return (int)mh$.invokeExact(font, count, first_unicode, unicode_stride, first_glyph, glyph_stride);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_get_glyph_h_advance$MH() {
+        return RuntimeHelper.requireNonNull(constants$869.hb_font_get_glyph_h_advance$MH,"hb_font_get_glyph_h_advance");
+    }
+    /**
+     * {@snippet :
+     * hb_position_t hb_font_get_glyph_h_advance(hb_font_t* font, hb_codepoint_t glyph);
+     * }
+     */
+    public static int hb_font_get_glyph_h_advance(MemorySegment font, int glyph) {
+        var mh$ = hb_font_get_glyph_h_advance$MH();
+        try {
+            return (int)mh$.invokeExact(font, glyph);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_get_glyph_v_advance$MH() {
+        return RuntimeHelper.requireNonNull(constants$869.hb_font_get_glyph_v_advance$MH,"hb_font_get_glyph_v_advance");
+    }
+    /**
+     * {@snippet :
+     * hb_position_t hb_font_get_glyph_v_advance(hb_font_t* font, hb_codepoint_t glyph);
+     * }
+     */
+    public static int hb_font_get_glyph_v_advance(MemorySegment font, int glyph) {
+        var mh$ = hb_font_get_glyph_v_advance$MH();
+        try {
+            return (int)mh$.invokeExact(font, glyph);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_get_glyph_h_advances$MH() {
+        return RuntimeHelper.requireNonNull(constants$869.hb_font_get_glyph_h_advances$MH,"hb_font_get_glyph_h_advances");
+    }
+    /**
+     * {@snippet :
+     * void hb_font_get_glyph_h_advances(hb_font_t* font, unsigned int count, const hb_codepoint_t* first_glyph, unsigned int glyph_stride, hb_position_t* first_advance, unsigned int advance_stride);
+     * }
+     */
+    public static void hb_font_get_glyph_h_advances(MemorySegment font, int count, MemorySegment first_glyph, int glyph_stride, MemorySegment first_advance, int advance_stride) {
+        var mh$ = hb_font_get_glyph_h_advances$MH();
+        try {
+            mh$.invokeExact(font, count, first_glyph, glyph_stride, first_advance, advance_stride);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_get_glyph_v_advances$MH() {
+        return RuntimeHelper.requireNonNull(constants$869.hb_font_get_glyph_v_advances$MH,"hb_font_get_glyph_v_advances");
+    }
+    /**
+     * {@snippet :
+     * void hb_font_get_glyph_v_advances(hb_font_t* font, unsigned int count, const hb_codepoint_t* first_glyph, unsigned int glyph_stride, hb_position_t* first_advance, unsigned int advance_stride);
+     * }
+     */
+    public static void hb_font_get_glyph_v_advances(MemorySegment font, int count, MemorySegment first_glyph, int glyph_stride, MemorySegment first_advance, int advance_stride) {
+        var mh$ = hb_font_get_glyph_v_advances$MH();
+        try {
+            mh$.invokeExact(font, count, first_glyph, glyph_stride, first_advance, advance_stride);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_get_glyph_h_origin$MH() {
+        return RuntimeHelper.requireNonNull(constants$869.hb_font_get_glyph_h_origin$MH,"hb_font_get_glyph_h_origin");
+    }
+    /**
+     * {@snippet :
+     * hb_bool_t hb_font_get_glyph_h_origin(hb_font_t* font, hb_codepoint_t glyph, hb_position_t* x, hb_position_t* y);
+     * }
+     */
+    public static int hb_font_get_glyph_h_origin(MemorySegment font, int glyph, MemorySegment x, MemorySegment y) {
+        var mh$ = hb_font_get_glyph_h_origin$MH();
+        try {
+            return (int)mh$.invokeExact(font, glyph, x, y);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_get_glyph_v_origin$MH() {
+        return RuntimeHelper.requireNonNull(constants$869.hb_font_get_glyph_v_origin$MH,"hb_font_get_glyph_v_origin");
+    }
+    /**
+     * {@snippet :
+     * hb_bool_t hb_font_get_glyph_v_origin(hb_font_t* font, hb_codepoint_t glyph, hb_position_t* x, hb_position_t* y);
+     * }
+     */
+    public static int hb_font_get_glyph_v_origin(MemorySegment font, int glyph, MemorySegment x, MemorySegment y) {
+        var mh$ = hb_font_get_glyph_v_origin$MH();
+        try {
+            return (int)mh$.invokeExact(font, glyph, x, y);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_get_glyph_h_kerning$MH() {
+        return RuntimeHelper.requireNonNull(constants$870.hb_font_get_glyph_h_kerning$MH,"hb_font_get_glyph_h_kerning");
+    }
+    /**
+     * {@snippet :
+     * hb_position_t hb_font_get_glyph_h_kerning(hb_font_t* font, hb_codepoint_t left_glyph, hb_codepoint_t right_glyph);
+     * }
+     */
+    public static int hb_font_get_glyph_h_kerning(MemorySegment font, int left_glyph, int right_glyph) {
+        var mh$ = hb_font_get_glyph_h_kerning$MH();
+        try {
+            return (int)mh$.invokeExact(font, left_glyph, right_glyph);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_get_glyph_extents$MH() {
+        return RuntimeHelper.requireNonNull(constants$870.hb_font_get_glyph_extents$MH,"hb_font_get_glyph_extents");
+    }
+    /**
+     * {@snippet :
+     * hb_bool_t hb_font_get_glyph_extents(hb_font_t* font, hb_codepoint_t glyph, hb_glyph_extents_t* extents);
+     * }
+     */
+    public static int hb_font_get_glyph_extents(MemorySegment font, int glyph, MemorySegment extents) {
+        var mh$ = hb_font_get_glyph_extents$MH();
+        try {
+            return (int)mh$.invokeExact(font, glyph, extents);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_get_glyph_contour_point$MH() {
+        return RuntimeHelper.requireNonNull(constants$870.hb_font_get_glyph_contour_point$MH,"hb_font_get_glyph_contour_point");
+    }
+    /**
+     * {@snippet :
+     * hb_bool_t hb_font_get_glyph_contour_point(hb_font_t* font, hb_codepoint_t glyph, unsigned int point_index, hb_position_t* x, hb_position_t* y);
+     * }
+     */
+    public static int hb_font_get_glyph_contour_point(MemorySegment font, int glyph, int point_index, MemorySegment x, MemorySegment y) {
+        var mh$ = hb_font_get_glyph_contour_point$MH();
+        try {
+            return (int)mh$.invokeExact(font, glyph, point_index, x, y);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_get_glyph_name$MH() {
+        return RuntimeHelper.requireNonNull(constants$870.hb_font_get_glyph_name$MH,"hb_font_get_glyph_name");
+    }
+    /**
+     * {@snippet :
+     * hb_bool_t hb_font_get_glyph_name(hb_font_t* font, hb_codepoint_t glyph, char* name, unsigned int size);
+     * }
+     */
+    public static int hb_font_get_glyph_name(MemorySegment font, int glyph, MemorySegment name, int size) {
+        var mh$ = hb_font_get_glyph_name$MH();
+        try {
+            return (int)mh$.invokeExact(font, glyph, name, size);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_get_glyph_from_name$MH() {
+        return RuntimeHelper.requireNonNull(constants$870.hb_font_get_glyph_from_name$MH,"hb_font_get_glyph_from_name");
+    }
+    /**
+     * {@snippet :
+     * hb_bool_t hb_font_get_glyph_from_name(hb_font_t* font, char* name, int len, hb_codepoint_t* glyph);
+     * }
+     */
+    public static int hb_font_get_glyph_from_name(MemorySegment font, MemorySegment name, int len, MemorySegment glyph) {
+        var mh$ = hb_font_get_glyph_from_name$MH();
+        try {
+            return (int)mh$.invokeExact(font, name, len, glyph);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_get_glyph_shape$MH() {
+        return RuntimeHelper.requireNonNull(constants$870.hb_font_get_glyph_shape$MH,"hb_font_get_glyph_shape");
+    }
+    /**
+     * {@snippet :
+     * void hb_font_get_glyph_shape(hb_font_t* font, hb_codepoint_t glyph, hb_draw_funcs_t* dfuncs, void* draw_data);
+     * }
+     */
+    public static void hb_font_get_glyph_shape(MemorySegment font, int glyph, MemorySegment dfuncs, MemorySegment draw_data) {
+        var mh$ = hb_font_get_glyph_shape$MH();
+        try {
+            mh$.invokeExact(font, glyph, dfuncs, draw_data);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_get_glyph$MH() {
+        return RuntimeHelper.requireNonNull(constants$871.hb_font_get_glyph$MH,"hb_font_get_glyph");
+    }
+    /**
+     * {@snippet :
+     * hb_bool_t hb_font_get_glyph(hb_font_t* font, hb_codepoint_t unicode, hb_codepoint_t variation_selector, hb_codepoint_t* glyph);
+     * }
+     */
+    public static int hb_font_get_glyph(MemorySegment font, int unicode, int variation_selector, MemorySegment glyph) {
+        var mh$ = hb_font_get_glyph$MH();
+        try {
+            return (int)mh$.invokeExact(font, unicode, variation_selector, glyph);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_get_extents_for_direction$MH() {
+        return RuntimeHelper.requireNonNull(constants$871.hb_font_get_extents_for_direction$MH,"hb_font_get_extents_for_direction");
+    }
+    /**
+     * {@snippet :
+     * void hb_font_get_extents_for_direction(hb_font_t* font, hb_direction_t direction, hb_font_extents_t* extents);
+     * }
+     */
+    public static void hb_font_get_extents_for_direction(MemorySegment font, int direction, MemorySegment extents) {
+        var mh$ = hb_font_get_extents_for_direction$MH();
+        try {
+            mh$.invokeExact(font, direction, extents);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_get_glyph_advance_for_direction$MH() {
+        return RuntimeHelper.requireNonNull(constants$871.hb_font_get_glyph_advance_for_direction$MH,"hb_font_get_glyph_advance_for_direction");
+    }
+    /**
+     * {@snippet :
+     * void hb_font_get_glyph_advance_for_direction(hb_font_t* font, hb_codepoint_t glyph, hb_direction_t direction, hb_position_t* x, hb_position_t* y);
+     * }
+     */
+    public static void hb_font_get_glyph_advance_for_direction(MemorySegment font, int glyph, int direction, MemorySegment x, MemorySegment y) {
+        var mh$ = hb_font_get_glyph_advance_for_direction$MH();
+        try {
+            mh$.invokeExact(font, glyph, direction, x, y);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_get_glyph_advances_for_direction$MH() {
+        return RuntimeHelper.requireNonNull(constants$871.hb_font_get_glyph_advances_for_direction$MH,"hb_font_get_glyph_advances_for_direction");
+    }
+    /**
+     * {@snippet :
+     * void hb_font_get_glyph_advances_for_direction(hb_font_t* font, hb_direction_t direction, unsigned int count, const hb_codepoint_t* first_glyph, unsigned int glyph_stride, hb_position_t* first_advance, unsigned int advance_stride);
+     * }
+     */
+    public static void hb_font_get_glyph_advances_for_direction(MemorySegment font, int direction, int count, MemorySegment first_glyph, int glyph_stride, MemorySegment first_advance, int advance_stride) {
+        var mh$ = hb_font_get_glyph_advances_for_direction$MH();
+        try {
+            mh$.invokeExact(font, direction, count, first_glyph, glyph_stride, first_advance, advance_stride);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_get_glyph_origin_for_direction$MH() {
+        return RuntimeHelper.requireNonNull(constants$871.hb_font_get_glyph_origin_for_direction$MH,"hb_font_get_glyph_origin_for_direction");
+    }
+    /**
+     * {@snippet :
+     * void hb_font_get_glyph_origin_for_direction(hb_font_t* font, hb_codepoint_t glyph, hb_direction_t direction, hb_position_t* x, hb_position_t* y);
+     * }
+     */
+    public static void hb_font_get_glyph_origin_for_direction(MemorySegment font, int glyph, int direction, MemorySegment x, MemorySegment y) {
+        var mh$ = hb_font_get_glyph_origin_for_direction$MH();
+        try {
+            mh$.invokeExact(font, glyph, direction, x, y);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_add_glyph_origin_for_direction$MH() {
+        return RuntimeHelper.requireNonNull(constants$871.hb_font_add_glyph_origin_for_direction$MH,"hb_font_add_glyph_origin_for_direction");
+    }
+    /**
+     * {@snippet :
+     * void hb_font_add_glyph_origin_for_direction(hb_font_t* font, hb_codepoint_t glyph, hb_direction_t direction, hb_position_t* x, hb_position_t* y);
+     * }
+     */
+    public static void hb_font_add_glyph_origin_for_direction(MemorySegment font, int glyph, int direction, MemorySegment x, MemorySegment y) {
+        var mh$ = hb_font_add_glyph_origin_for_direction$MH();
+        try {
+            mh$.invokeExact(font, glyph, direction, x, y);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_subtract_glyph_origin_for_direction$MH() {
+        return RuntimeHelper.requireNonNull(constants$872.hb_font_subtract_glyph_origin_for_direction$MH,"hb_font_subtract_glyph_origin_for_direction");
+    }
+    /**
+     * {@snippet :
+     * void hb_font_subtract_glyph_origin_for_direction(hb_font_t* font, hb_codepoint_t glyph, hb_direction_t direction, hb_position_t* x, hb_position_t* y);
+     * }
+     */
+    public static void hb_font_subtract_glyph_origin_for_direction(MemorySegment font, int glyph, int direction, MemorySegment x, MemorySegment y) {
+        var mh$ = hb_font_subtract_glyph_origin_for_direction$MH();
+        try {
+            mh$.invokeExact(font, glyph, direction, x, y);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_get_glyph_kerning_for_direction$MH() {
+        return RuntimeHelper.requireNonNull(constants$872.hb_font_get_glyph_kerning_for_direction$MH,"hb_font_get_glyph_kerning_for_direction");
+    }
+    /**
+     * {@snippet :
+     * void hb_font_get_glyph_kerning_for_direction(hb_font_t* font, hb_codepoint_t first_glyph, hb_codepoint_t second_glyph, hb_direction_t direction, hb_position_t* x, hb_position_t* y);
+     * }
+     */
+    public static void hb_font_get_glyph_kerning_for_direction(MemorySegment font, int first_glyph, int second_glyph, int direction, MemorySegment x, MemorySegment y) {
+        var mh$ = hb_font_get_glyph_kerning_for_direction$MH();
+        try {
+            mh$.invokeExact(font, first_glyph, second_glyph, direction, x, y);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_get_glyph_extents_for_origin$MH() {
+        return RuntimeHelper.requireNonNull(constants$872.hb_font_get_glyph_extents_for_origin$MH,"hb_font_get_glyph_extents_for_origin");
+    }
+    /**
+     * {@snippet :
+     * hb_bool_t hb_font_get_glyph_extents_for_origin(hb_font_t* font, hb_codepoint_t glyph, hb_direction_t direction, hb_glyph_extents_t* extents);
+     * }
+     */
+    public static int hb_font_get_glyph_extents_for_origin(MemorySegment font, int glyph, int direction, MemorySegment extents) {
+        var mh$ = hb_font_get_glyph_extents_for_origin$MH();
+        try {
+            return (int)mh$.invokeExact(font, glyph, direction, extents);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_get_glyph_contour_point_for_origin$MH() {
+        return RuntimeHelper.requireNonNull(constants$872.hb_font_get_glyph_contour_point_for_origin$MH,"hb_font_get_glyph_contour_point_for_origin");
+    }
+    /**
+     * {@snippet :
+     * hb_bool_t hb_font_get_glyph_contour_point_for_origin(hb_font_t* font, hb_codepoint_t glyph, unsigned int point_index, hb_direction_t direction, hb_position_t* x, hb_position_t* y);
+     * }
+     */
+    public static int hb_font_get_glyph_contour_point_for_origin(MemorySegment font, int glyph, int point_index, int direction, MemorySegment x, MemorySegment y) {
+        var mh$ = hb_font_get_glyph_contour_point_for_origin$MH();
+        try {
+            return (int)mh$.invokeExact(font, glyph, point_index, direction, x, y);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_glyph_to_string$MH() {
+        return RuntimeHelper.requireNonNull(constants$872.hb_font_glyph_to_string$MH,"hb_font_glyph_to_string");
+    }
+    /**
+     * {@snippet :
+     * void hb_font_glyph_to_string(hb_font_t* font, hb_codepoint_t glyph, char* s, unsigned int size);
+     * }
+     */
+    public static void hb_font_glyph_to_string(MemorySegment font, int glyph, MemorySegment s, int size) {
+        var mh$ = hb_font_glyph_to_string$MH();
+        try {
+            mh$.invokeExact(font, glyph, s, size);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_glyph_from_string$MH() {
+        return RuntimeHelper.requireNonNull(constants$872.hb_font_glyph_from_string$MH,"hb_font_glyph_from_string");
+    }
+    /**
+     * {@snippet :
+     * hb_bool_t hb_font_glyph_from_string(hb_font_t* font, char* s, int len, hb_codepoint_t* glyph);
+     * }
+     */
+    public static int hb_font_glyph_from_string(MemorySegment font, MemorySegment s, int len, MemorySegment glyph) {
+        var mh$ = hb_font_glyph_from_string$MH();
+        try {
+            return (int)mh$.invokeExact(font, s, len, glyph);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_create$MH() {
+        return RuntimeHelper.requireNonNull(constants$873.hb_font_create$MH,"hb_font_create");
+    }
+    /**
+     * {@snippet :
+     * hb_font_t* hb_font_create(hb_face_t* face);
+     * }
+     */
+    public static MemorySegment hb_font_create(MemorySegment face) {
+        var mh$ = hb_font_create$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(face);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_create_sub_font$MH() {
+        return RuntimeHelper.requireNonNull(constants$873.hb_font_create_sub_font$MH,"hb_font_create_sub_font");
+    }
+    /**
+     * {@snippet :
+     * hb_font_t* hb_font_create_sub_font(hb_font_t* parent);
+     * }
+     */
+    public static MemorySegment hb_font_create_sub_font(MemorySegment parent) {
+        var mh$ = hb_font_create_sub_font$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(parent);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_get_empty$MH() {
+        return RuntimeHelper.requireNonNull(constants$873.hb_font_get_empty$MH,"hb_font_get_empty");
+    }
+    /**
+     * {@snippet :
+     * hb_font_t* hb_font_get_empty();
+     * }
+     */
+    public static MemorySegment hb_font_get_empty() {
+        var mh$ = hb_font_get_empty$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_reference$MH() {
+        return RuntimeHelper.requireNonNull(constants$873.hb_font_reference$MH,"hb_font_reference");
+    }
+    /**
+     * {@snippet :
+     * hb_font_t* hb_font_reference(hb_font_t* font);
+     * }
+     */
+    public static MemorySegment hb_font_reference(MemorySegment font) {
+        var mh$ = hb_font_reference$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(font);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_destroy$MH() {
+        return RuntimeHelper.requireNonNull(constants$873.hb_font_destroy$MH,"hb_font_destroy");
+    }
+    /**
+     * {@snippet :
+     * void hb_font_destroy(hb_font_t* font);
+     * }
+     */
+    public static void hb_font_destroy(MemorySegment font) {
+        var mh$ = hb_font_destroy$MH();
+        try {
+            mh$.invokeExact(font);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_set_user_data$MH() {
+        return RuntimeHelper.requireNonNull(constants$873.hb_font_set_user_data$MH,"hb_font_set_user_data");
+    }
+    /**
+     * {@snippet :
+     * hb_bool_t hb_font_set_user_data(hb_font_t* font, hb_user_data_key_t* key, void* data, hb_destroy_func_t destroy, hb_bool_t replace);
+     * }
+     */
+    public static int hb_font_set_user_data(MemorySegment font, MemorySegment key, MemorySegment data, MemorySegment destroy, int replace) {
+        var mh$ = hb_font_set_user_data$MH();
+        try {
+            return (int)mh$.invokeExact(font, key, data, destroy, replace);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_get_user_data$MH() {
+        return RuntimeHelper.requireNonNull(constants$874.hb_font_get_user_data$MH,"hb_font_get_user_data");
+    }
+    /**
+     * {@snippet :
+     * void* hb_font_get_user_data(const hb_font_t* font, hb_user_data_key_t* key);
+     * }
+     */
+    public static MemorySegment hb_font_get_user_data(MemorySegment font, MemorySegment key) {
+        var mh$ = hb_font_get_user_data$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(font, key);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_make_immutable$MH() {
+        return RuntimeHelper.requireNonNull(constants$874.hb_font_make_immutable$MH,"hb_font_make_immutable");
+    }
+    /**
+     * {@snippet :
+     * void hb_font_make_immutable(hb_font_t* font);
+     * }
+     */
+    public static void hb_font_make_immutable(MemorySegment font) {
+        var mh$ = hb_font_make_immutable$MH();
+        try {
+            mh$.invokeExact(font);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_is_immutable$MH() {
+        return RuntimeHelper.requireNonNull(constants$874.hb_font_is_immutable$MH,"hb_font_is_immutable");
+    }
+    /**
+     * {@snippet :
+     * hb_bool_t hb_font_is_immutable(hb_font_t* font);
+     * }
+     */
+    public static int hb_font_is_immutable(MemorySegment font) {
+        var mh$ = hb_font_is_immutable$MH();
+        try {
+            return (int)mh$.invokeExact(font);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_get_serial$MH() {
+        return RuntimeHelper.requireNonNull(constants$874.hb_font_get_serial$MH,"hb_font_get_serial");
+    }
+    /**
+     * {@snippet :
+     * unsigned int hb_font_get_serial(hb_font_t* font);
+     * }
+     */
+    public static int hb_font_get_serial(MemorySegment font) {
+        var mh$ = hb_font_get_serial$MH();
+        try {
+            return (int)mh$.invokeExact(font);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_changed$MH() {
+        return RuntimeHelper.requireNonNull(constants$874.hb_font_changed$MH,"hb_font_changed");
+    }
+    /**
+     * {@snippet :
+     * void hb_font_changed(hb_font_t* font);
+     * }
+     */
+    public static void hb_font_changed(MemorySegment font) {
+        var mh$ = hb_font_changed$MH();
+        try {
+            mh$.invokeExact(font);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_set_parent$MH() {
+        return RuntimeHelper.requireNonNull(constants$874.hb_font_set_parent$MH,"hb_font_set_parent");
+    }
+    /**
+     * {@snippet :
+     * void hb_font_set_parent(hb_font_t* font, hb_font_t* parent);
+     * }
+     */
+    public static void hb_font_set_parent(MemorySegment font, MemorySegment parent) {
+        var mh$ = hb_font_set_parent$MH();
+        try {
+            mh$.invokeExact(font, parent);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_get_parent$MH() {
+        return RuntimeHelper.requireNonNull(constants$875.hb_font_get_parent$MH,"hb_font_get_parent");
+    }
+    /**
+     * {@snippet :
+     * hb_font_t* hb_font_get_parent(hb_font_t* font);
+     * }
+     */
+    public static MemorySegment hb_font_get_parent(MemorySegment font) {
+        var mh$ = hb_font_get_parent$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(font);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_set_face$MH() {
+        return RuntimeHelper.requireNonNull(constants$875.hb_font_set_face$MH,"hb_font_set_face");
+    }
+    /**
+     * {@snippet :
+     * void hb_font_set_face(hb_font_t* font, hb_face_t* face);
+     * }
+     */
+    public static void hb_font_set_face(MemorySegment font, MemorySegment face) {
+        var mh$ = hb_font_set_face$MH();
+        try {
+            mh$.invokeExact(font, face);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_get_face$MH() {
+        return RuntimeHelper.requireNonNull(constants$875.hb_font_get_face$MH,"hb_font_get_face");
+    }
+    /**
+     * {@snippet :
+     * hb_face_t* hb_font_get_face(hb_font_t* font);
+     * }
+     */
+    public static MemorySegment hb_font_get_face(MemorySegment font) {
+        var mh$ = hb_font_get_face$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(font);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_set_funcs$MH() {
+        return RuntimeHelper.requireNonNull(constants$875.hb_font_set_funcs$MH,"hb_font_set_funcs");
+    }
+    /**
+     * {@snippet :
+     * void hb_font_set_funcs(hb_font_t* font, hb_font_funcs_t* klass, void* font_data, hb_destroy_func_t destroy);
+     * }
+     */
+    public static void hb_font_set_funcs(MemorySegment font, MemorySegment klass, MemorySegment font_data, MemorySegment destroy) {
+        var mh$ = hb_font_set_funcs$MH();
+        try {
+            mh$.invokeExact(font, klass, font_data, destroy);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_set_funcs_data$MH() {
+        return RuntimeHelper.requireNonNull(constants$875.hb_font_set_funcs_data$MH,"hb_font_set_funcs_data");
+    }
+    /**
+     * {@snippet :
+     * void hb_font_set_funcs_data(hb_font_t* font, void* font_data, hb_destroy_func_t destroy);
+     * }
+     */
+    public static void hb_font_set_funcs_data(MemorySegment font, MemorySegment font_data, MemorySegment destroy) {
+        var mh$ = hb_font_set_funcs_data$MH();
+        try {
+            mh$.invokeExact(font, font_data, destroy);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_set_scale$MH() {
+        return RuntimeHelper.requireNonNull(constants$875.hb_font_set_scale$MH,"hb_font_set_scale");
+    }
+    /**
+     * {@snippet :
+     * void hb_font_set_scale(hb_font_t* font, int x_scale, int y_scale);
+     * }
+     */
+    public static void hb_font_set_scale(MemorySegment font, int x_scale, int y_scale) {
+        var mh$ = hb_font_set_scale$MH();
+        try {
+            mh$.invokeExact(font, x_scale, y_scale);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_get_scale$MH() {
+        return RuntimeHelper.requireNonNull(constants$876.hb_font_get_scale$MH,"hb_font_get_scale");
+    }
+    /**
+     * {@snippet :
+     * void hb_font_get_scale(hb_font_t* font, int* x_scale, int* y_scale);
+     * }
+     */
+    public static void hb_font_get_scale(MemorySegment font, MemorySegment x_scale, MemorySegment y_scale) {
+        var mh$ = hb_font_get_scale$MH();
+        try {
+            mh$.invokeExact(font, x_scale, y_scale);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_set_ppem$MH() {
+        return RuntimeHelper.requireNonNull(constants$876.hb_font_set_ppem$MH,"hb_font_set_ppem");
+    }
+    /**
+     * {@snippet :
+     * void hb_font_set_ppem(hb_font_t* font, unsigned int x_ppem, unsigned int y_ppem);
+     * }
+     */
+    public static void hb_font_set_ppem(MemorySegment font, int x_ppem, int y_ppem) {
+        var mh$ = hb_font_set_ppem$MH();
+        try {
+            mh$.invokeExact(font, x_ppem, y_ppem);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_get_ppem$MH() {
+        return RuntimeHelper.requireNonNull(constants$876.hb_font_get_ppem$MH,"hb_font_get_ppem");
+    }
+    /**
+     * {@snippet :
+     * void hb_font_get_ppem(hb_font_t* font, unsigned int* x_ppem, unsigned int* y_ppem);
+     * }
+     */
+    public static void hb_font_get_ppem(MemorySegment font, MemorySegment x_ppem, MemorySegment y_ppem) {
+        var mh$ = hb_font_get_ppem$MH();
+        try {
+            mh$.invokeExact(font, x_ppem, y_ppem);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_set_ptem$MH() {
+        return RuntimeHelper.requireNonNull(constants$876.hb_font_set_ptem$MH,"hb_font_set_ptem");
+    }
+    /**
+     * {@snippet :
+     * void hb_font_set_ptem(hb_font_t* font, float ptem);
+     * }
+     */
+    public static void hb_font_set_ptem(MemorySegment font, float ptem) {
+        var mh$ = hb_font_set_ptem$MH();
+        try {
+            mh$.invokeExact(font, ptem);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_get_ptem$MH() {
+        return RuntimeHelper.requireNonNull(constants$876.hb_font_get_ptem$MH,"hb_font_get_ptem");
+    }
+    /**
+     * {@snippet :
+     * float hb_font_get_ptem(hb_font_t* font);
+     * }
+     */
+    public static float hb_font_get_ptem(MemorySegment font) {
+        var mh$ = hb_font_get_ptem$MH();
+        try {
+            return (float)mh$.invokeExact(font);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_set_synthetic_slant$MH() {
+        return RuntimeHelper.requireNonNull(constants$876.hb_font_set_synthetic_slant$MH,"hb_font_set_synthetic_slant");
+    }
+    /**
+     * {@snippet :
+     * void hb_font_set_synthetic_slant(hb_font_t* font, float slant);
+     * }
+     */
+    public static void hb_font_set_synthetic_slant(MemorySegment font, float slant) {
+        var mh$ = hb_font_set_synthetic_slant$MH();
+        try {
+            mh$.invokeExact(font, slant);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_get_synthetic_slant$MH() {
+        return RuntimeHelper.requireNonNull(constants$877.hb_font_get_synthetic_slant$MH,"hb_font_get_synthetic_slant");
+    }
+    /**
+     * {@snippet :
+     * float hb_font_get_synthetic_slant(hb_font_t* font);
+     * }
+     */
+    public static float hb_font_get_synthetic_slant(MemorySegment font) {
+        var mh$ = hb_font_get_synthetic_slant$MH();
+        try {
+            return (float)mh$.invokeExact(font);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_set_variations$MH() {
+        return RuntimeHelper.requireNonNull(constants$877.hb_font_set_variations$MH,"hb_font_set_variations");
+    }
+    /**
+     * {@snippet :
+     * void hb_font_set_variations(hb_font_t* font, const hb_variation_t* variations, unsigned int variations_length);
+     * }
+     */
+    public static void hb_font_set_variations(MemorySegment font, MemorySegment variations, int variations_length) {
+        var mh$ = hb_font_set_variations$MH();
+        try {
+            mh$.invokeExact(font, variations, variations_length);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_set_var_coords_design$MH() {
+        return RuntimeHelper.requireNonNull(constants$877.hb_font_set_var_coords_design$MH,"hb_font_set_var_coords_design");
+    }
+    /**
+     * {@snippet :
+     * void hb_font_set_var_coords_design(hb_font_t* font, float* coords, unsigned int coords_length);
+     * }
+     */
+    public static void hb_font_set_var_coords_design(MemorySegment font, MemorySegment coords, int coords_length) {
+        var mh$ = hb_font_set_var_coords_design$MH();
+        try {
+            mh$.invokeExact(font, coords, coords_length);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_get_var_coords_design$MH() {
+        return RuntimeHelper.requireNonNull(constants$877.hb_font_get_var_coords_design$MH,"hb_font_get_var_coords_design");
+    }
+    /**
+     * {@snippet :
+     * float* hb_font_get_var_coords_design(hb_font_t* font, unsigned int* length);
+     * }
+     */
+    public static MemorySegment hb_font_get_var_coords_design(MemorySegment font, MemorySegment length) {
+        var mh$ = hb_font_get_var_coords_design$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(font, length);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_set_var_coords_normalized$MH() {
+        return RuntimeHelper.requireNonNull(constants$877.hb_font_set_var_coords_normalized$MH,"hb_font_set_var_coords_normalized");
+    }
+    /**
+     * {@snippet :
+     * void hb_font_set_var_coords_normalized(hb_font_t* font, int* coords, unsigned int coords_length);
+     * }
+     */
+    public static void hb_font_set_var_coords_normalized(MemorySegment font, MemorySegment coords, int coords_length) {
+        var mh$ = hb_font_set_var_coords_normalized$MH();
+        try {
+            mh$.invokeExact(font, coords, coords_length);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_get_var_coords_normalized$MH() {
+        return RuntimeHelper.requireNonNull(constants$877.hb_font_get_var_coords_normalized$MH,"hb_font_get_var_coords_normalized");
+    }
+    /**
+     * {@snippet :
+     * int* hb_font_get_var_coords_normalized(hb_font_t* font, unsigned int* length);
+     * }
+     */
+    public static MemorySegment hb_font_get_var_coords_normalized(MemorySegment font, MemorySegment length) {
+        var mh$ = hb_font_get_var_coords_normalized$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(font, length);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_set_var_named_instance$MH() {
+        return RuntimeHelper.requireNonNull(constants$878.hb_font_set_var_named_instance$MH,"hb_font_set_var_named_instance");
+    }
+    /**
+     * {@snippet :
+     * void hb_font_set_var_named_instance(hb_font_t* font, unsigned int instance_index);
+     * }
+     */
+    public static void hb_font_set_var_named_instance(MemorySegment font, int instance_index) {
+        var mh$ = hb_font_set_var_named_instance$MH();
+        try {
+            mh$.invokeExact(font, instance_index);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    /**
+     * {@snippet :
+     * enum .HB_GLYPH_FLAG_UNSAFE_TO_BREAK = 1;
+     * }
+     */
+    public static int HB_GLYPH_FLAG_UNSAFE_TO_BREAK() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_GLYPH_FLAG_UNSAFE_TO_CONCAT = 2;
+     * }
+     */
+    public static int HB_GLYPH_FLAG_UNSAFE_TO_CONCAT() {
+        return (int)2L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_GLYPH_FLAG_SAFE_TO_INSERT_TATWEEL = 4;
+     * }
+     */
+    public static int HB_GLYPH_FLAG_SAFE_TO_INSERT_TATWEEL() {
+        return (int)4L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_GLYPH_FLAG_DEFINED = 7;
+     * }
+     */
+    public static int HB_GLYPH_FLAG_DEFINED() {
+        return (int)7L;
+    }
+    public static MethodHandle hb_glyph_info_get_glyph_flags$MH() {
+        return RuntimeHelper.requireNonNull(constants$878.hb_glyph_info_get_glyph_flags$MH,"hb_glyph_info_get_glyph_flags");
+    }
+    /**
+     * {@snippet :
+     * hb_glyph_flags_t hb_glyph_info_get_glyph_flags(const hb_glyph_info_t* info);
+     * }
+     */
+    public static int hb_glyph_info_get_glyph_flags(MemorySegment info) {
+        var mh$ = hb_glyph_info_get_glyph_flags$MH();
+        try {
+            return (int)mh$.invokeExact(info);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_segment_properties_equal$MH() {
+        return RuntimeHelper.requireNonNull(constants$878.hb_segment_properties_equal$MH,"hb_segment_properties_equal");
+    }
+    /**
+     * {@snippet :
+     * hb_bool_t hb_segment_properties_equal(const hb_segment_properties_t* a, const hb_segment_properties_t* b);
+     * }
+     */
+    public static int hb_segment_properties_equal(MemorySegment a, MemorySegment b) {
+        var mh$ = hb_segment_properties_equal$MH();
+        try {
+            return (int)mh$.invokeExact(a, b);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_segment_properties_hash$MH() {
+        return RuntimeHelper.requireNonNull(constants$878.hb_segment_properties_hash$MH,"hb_segment_properties_hash");
+    }
+    /**
+     * {@snippet :
+     * unsigned int hb_segment_properties_hash(const hb_segment_properties_t* p);
+     * }
+     */
+    public static int hb_segment_properties_hash(MemorySegment p) {
+        var mh$ = hb_segment_properties_hash$MH();
+        try {
+            return (int)mh$.invokeExact(p);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_segment_properties_overlay$MH() {
+        return RuntimeHelper.requireNonNull(constants$878.hb_segment_properties_overlay$MH,"hb_segment_properties_overlay");
+    }
+    /**
+     * {@snippet :
+     * void hb_segment_properties_overlay(hb_segment_properties_t* p, const hb_segment_properties_t* src);
+     * }
+     */
+    public static void hb_segment_properties_overlay(MemorySegment p, MemorySegment src) {
+        var mh$ = hb_segment_properties_overlay$MH();
+        try {
+            mh$.invokeExact(p, src);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_buffer_create$MH() {
+        return RuntimeHelper.requireNonNull(constants$878.hb_buffer_create$MH,"hb_buffer_create");
+    }
+    /**
+     * {@snippet :
+     * hb_buffer_t* hb_buffer_create();
+     * }
+     */
+    public static MemorySegment hb_buffer_create() {
+        var mh$ = hb_buffer_create$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_buffer_create_similar$MH() {
+        return RuntimeHelper.requireNonNull(constants$879.hb_buffer_create_similar$MH,"hb_buffer_create_similar");
+    }
+    /**
+     * {@snippet :
+     * hb_buffer_t* hb_buffer_create_similar(const hb_buffer_t* src);
+     * }
+     */
+    public static MemorySegment hb_buffer_create_similar(MemorySegment src) {
+        var mh$ = hb_buffer_create_similar$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(src);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_buffer_reset$MH() {
+        return RuntimeHelper.requireNonNull(constants$879.hb_buffer_reset$MH,"hb_buffer_reset");
+    }
+    /**
+     * {@snippet :
+     * void hb_buffer_reset(hb_buffer_t* buffer);
+     * }
+     */
+    public static void hb_buffer_reset(MemorySegment buffer) {
+        var mh$ = hb_buffer_reset$MH();
+        try {
+            mh$.invokeExact(buffer);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_buffer_get_empty$MH() {
+        return RuntimeHelper.requireNonNull(constants$879.hb_buffer_get_empty$MH,"hb_buffer_get_empty");
+    }
+    /**
+     * {@snippet :
+     * hb_buffer_t* hb_buffer_get_empty();
+     * }
+     */
+    public static MemorySegment hb_buffer_get_empty() {
+        var mh$ = hb_buffer_get_empty$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_buffer_reference$MH() {
+        return RuntimeHelper.requireNonNull(constants$879.hb_buffer_reference$MH,"hb_buffer_reference");
+    }
+    /**
+     * {@snippet :
+     * hb_buffer_t* hb_buffer_reference(hb_buffer_t* buffer);
+     * }
+     */
+    public static MemorySegment hb_buffer_reference(MemorySegment buffer) {
+        var mh$ = hb_buffer_reference$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(buffer);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_buffer_destroy$MH() {
+        return RuntimeHelper.requireNonNull(constants$879.hb_buffer_destroy$MH,"hb_buffer_destroy");
+    }
+    /**
+     * {@snippet :
+     * void hb_buffer_destroy(hb_buffer_t* buffer);
+     * }
+     */
+    public static void hb_buffer_destroy(MemorySegment buffer) {
+        var mh$ = hb_buffer_destroy$MH();
+        try {
+            mh$.invokeExact(buffer);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_buffer_set_user_data$MH() {
+        return RuntimeHelper.requireNonNull(constants$879.hb_buffer_set_user_data$MH,"hb_buffer_set_user_data");
+    }
+    /**
+     * {@snippet :
+     * hb_bool_t hb_buffer_set_user_data(hb_buffer_t* buffer, hb_user_data_key_t* key, void* data, hb_destroy_func_t destroy, hb_bool_t replace);
+     * }
+     */
+    public static int hb_buffer_set_user_data(MemorySegment buffer, MemorySegment key, MemorySegment data, MemorySegment destroy, int replace) {
+        var mh$ = hb_buffer_set_user_data$MH();
+        try {
+            return (int)mh$.invokeExact(buffer, key, data, destroy, replace);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_buffer_get_user_data$MH() {
+        return RuntimeHelper.requireNonNull(constants$880.hb_buffer_get_user_data$MH,"hb_buffer_get_user_data");
+    }
+    /**
+     * {@snippet :
+     * void* hb_buffer_get_user_data(const hb_buffer_t* buffer, hb_user_data_key_t* key);
+     * }
+     */
+    public static MemorySegment hb_buffer_get_user_data(MemorySegment buffer, MemorySegment key) {
+        var mh$ = hb_buffer_get_user_data$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(buffer, key);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    /**
+     * {@snippet :
+     * enum .HB_BUFFER_CONTENT_TYPE_INVALID = 0;
+     * }
+     */
+    public static int HB_BUFFER_CONTENT_TYPE_INVALID() {
+        return (int)0L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_BUFFER_CONTENT_TYPE_UNICODE = 1;
+     * }
+     */
+    public static int HB_BUFFER_CONTENT_TYPE_UNICODE() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_BUFFER_CONTENT_TYPE_GLYPHS = 2;
+     * }
+     */
+    public static int HB_BUFFER_CONTENT_TYPE_GLYPHS() {
+        return (int)2L;
+    }
+    public static MethodHandle hb_buffer_set_content_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$880.hb_buffer_set_content_type$MH,"hb_buffer_set_content_type");
+    }
+    /**
+     * {@snippet :
+     * void hb_buffer_set_content_type(hb_buffer_t* buffer, hb_buffer_content_type_t content_type);
+     * }
+     */
+    public static void hb_buffer_set_content_type(MemorySegment buffer, int content_type) {
+        var mh$ = hb_buffer_set_content_type$MH();
+        try {
+            mh$.invokeExact(buffer, content_type);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_buffer_get_content_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$880.hb_buffer_get_content_type$MH,"hb_buffer_get_content_type");
+    }
+    /**
+     * {@snippet :
+     * hb_buffer_content_type_t hb_buffer_get_content_type(const hb_buffer_t* buffer);
+     * }
+     */
+    public static int hb_buffer_get_content_type(MemorySegment buffer) {
+        var mh$ = hb_buffer_get_content_type$MH();
+        try {
+            return (int)mh$.invokeExact(buffer);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_buffer_set_unicode_funcs$MH() {
+        return RuntimeHelper.requireNonNull(constants$880.hb_buffer_set_unicode_funcs$MH,"hb_buffer_set_unicode_funcs");
+    }
+    /**
+     * {@snippet :
+     * void hb_buffer_set_unicode_funcs(hb_buffer_t* buffer, hb_unicode_funcs_t* unicode_funcs);
+     * }
+     */
+    public static void hb_buffer_set_unicode_funcs(MemorySegment buffer, MemorySegment unicode_funcs) {
+        var mh$ = hb_buffer_set_unicode_funcs$MH();
+        try {
+            mh$.invokeExact(buffer, unicode_funcs);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_buffer_get_unicode_funcs$MH() {
+        return RuntimeHelper.requireNonNull(constants$880.hb_buffer_get_unicode_funcs$MH,"hb_buffer_get_unicode_funcs");
+    }
+    /**
+     * {@snippet :
+     * hb_unicode_funcs_t* hb_buffer_get_unicode_funcs(const hb_buffer_t* buffer);
+     * }
+     */
+    public static MemorySegment hb_buffer_get_unicode_funcs(MemorySegment buffer) {
+        var mh$ = hb_buffer_get_unicode_funcs$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(buffer);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_buffer_set_direction$MH() {
+        return RuntimeHelper.requireNonNull(constants$880.hb_buffer_set_direction$MH,"hb_buffer_set_direction");
+    }
+    /**
+     * {@snippet :
+     * void hb_buffer_set_direction(hb_buffer_t* buffer, hb_direction_t direction);
+     * }
+     */
+    public static void hb_buffer_set_direction(MemorySegment buffer, int direction) {
+        var mh$ = hb_buffer_set_direction$MH();
+        try {
+            mh$.invokeExact(buffer, direction);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_buffer_get_direction$MH() {
+        return RuntimeHelper.requireNonNull(constants$881.hb_buffer_get_direction$MH,"hb_buffer_get_direction");
+    }
+    /**
+     * {@snippet :
+     * hb_direction_t hb_buffer_get_direction(const hb_buffer_t* buffer);
+     * }
+     */
+    public static int hb_buffer_get_direction(MemorySegment buffer) {
+        var mh$ = hb_buffer_get_direction$MH();
+        try {
+            return (int)mh$.invokeExact(buffer);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_buffer_set_script$MH() {
+        return RuntimeHelper.requireNonNull(constants$881.hb_buffer_set_script$MH,"hb_buffer_set_script");
+    }
+    /**
+     * {@snippet :
+     * void hb_buffer_set_script(hb_buffer_t* buffer, hb_script_t script);
+     * }
+     */
+    public static void hb_buffer_set_script(MemorySegment buffer, int script) {
+        var mh$ = hb_buffer_set_script$MH();
+        try {
+            mh$.invokeExact(buffer, script);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_buffer_get_script$MH() {
+        return RuntimeHelper.requireNonNull(constants$881.hb_buffer_get_script$MH,"hb_buffer_get_script");
+    }
+    /**
+     * {@snippet :
+     * hb_script_t hb_buffer_get_script(const hb_buffer_t* buffer);
+     * }
+     */
+    public static int hb_buffer_get_script(MemorySegment buffer) {
+        var mh$ = hb_buffer_get_script$MH();
+        try {
+            return (int)mh$.invokeExact(buffer);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_buffer_set_language$MH() {
+        return RuntimeHelper.requireNonNull(constants$881.hb_buffer_set_language$MH,"hb_buffer_set_language");
+    }
+    /**
+     * {@snippet :
+     * void hb_buffer_set_language(hb_buffer_t* buffer, hb_language_t language);
+     * }
+     */
+    public static void hb_buffer_set_language(MemorySegment buffer, MemorySegment language) {
+        var mh$ = hb_buffer_set_language$MH();
+        try {
+            mh$.invokeExact(buffer, language);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_buffer_get_language$MH() {
+        return RuntimeHelper.requireNonNull(constants$881.hb_buffer_get_language$MH,"hb_buffer_get_language");
+    }
+    /**
+     * {@snippet :
+     * hb_language_t hb_buffer_get_language(const hb_buffer_t* buffer);
+     * }
+     */
+    public static MemorySegment hb_buffer_get_language(MemorySegment buffer) {
+        var mh$ = hb_buffer_get_language$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(buffer);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_buffer_set_segment_properties$MH() {
+        return RuntimeHelper.requireNonNull(constants$881.hb_buffer_set_segment_properties$MH,"hb_buffer_set_segment_properties");
+    }
+    /**
+     * {@snippet :
+     * void hb_buffer_set_segment_properties(hb_buffer_t* buffer, const hb_segment_properties_t* props);
+     * }
+     */
+    public static void hb_buffer_set_segment_properties(MemorySegment buffer, MemorySegment props) {
+        var mh$ = hb_buffer_set_segment_properties$MH();
+        try {
+            mh$.invokeExact(buffer, props);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_buffer_get_segment_properties$MH() {
+        return RuntimeHelper.requireNonNull(constants$882.hb_buffer_get_segment_properties$MH,"hb_buffer_get_segment_properties");
+    }
+    /**
+     * {@snippet :
+     * void hb_buffer_get_segment_properties(const hb_buffer_t* buffer, hb_segment_properties_t* props);
+     * }
+     */
+    public static void hb_buffer_get_segment_properties(MemorySegment buffer, MemorySegment props) {
+        var mh$ = hb_buffer_get_segment_properties$MH();
+        try {
+            mh$.invokeExact(buffer, props);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_buffer_guess_segment_properties$MH() {
+        return RuntimeHelper.requireNonNull(constants$882.hb_buffer_guess_segment_properties$MH,"hb_buffer_guess_segment_properties");
+    }
+    /**
+     * {@snippet :
+     * void hb_buffer_guess_segment_properties(hb_buffer_t* buffer);
+     * }
+     */
+    public static void hb_buffer_guess_segment_properties(MemorySegment buffer) {
+        var mh$ = hb_buffer_guess_segment_properties$MH();
+        try {
+            mh$.invokeExact(buffer);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    /**
+     * {@snippet :
+     * enum .HB_BUFFER_FLAG_DEFAULT = 0;
+     * }
+     */
+    public static int HB_BUFFER_FLAG_DEFAULT() {
+        return (int)0L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_BUFFER_FLAG_BOT = 1;
+     * }
+     */
+    public static int HB_BUFFER_FLAG_BOT() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_BUFFER_FLAG_EOT = 2;
+     * }
+     */
+    public static int HB_BUFFER_FLAG_EOT() {
+        return (int)2L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_BUFFER_FLAG_PRESERVE_DEFAULT_IGNORABLES = 4;
+     * }
+     */
+    public static int HB_BUFFER_FLAG_PRESERVE_DEFAULT_IGNORABLES() {
+        return (int)4L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_BUFFER_FLAG_REMOVE_DEFAULT_IGNORABLES = 8;
+     * }
+     */
+    public static int HB_BUFFER_FLAG_REMOVE_DEFAULT_IGNORABLES() {
+        return (int)8L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_BUFFER_FLAG_DO_NOT_INSERT_DOTTED_CIRCLE = 16;
+     * }
+     */
+    public static int HB_BUFFER_FLAG_DO_NOT_INSERT_DOTTED_CIRCLE() {
+        return (int)16L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_BUFFER_FLAG_VERIFY = 32;
+     * }
+     */
+    public static int HB_BUFFER_FLAG_VERIFY() {
+        return (int)32L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_BUFFER_FLAG_PRODUCE_UNSAFE_TO_CONCAT = 64;
+     * }
+     */
+    public static int HB_BUFFER_FLAG_PRODUCE_UNSAFE_TO_CONCAT() {
+        return (int)64L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_BUFFER_FLAG_PRODUCE_SAFE_TO_INSERT_TATWEEL = 128;
+     * }
+     */
+    public static int HB_BUFFER_FLAG_PRODUCE_SAFE_TO_INSERT_TATWEEL() {
+        return (int)128L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_BUFFER_FLAG_DEFINED = 255;
+     * }
+     */
+    public static int HB_BUFFER_FLAG_DEFINED() {
+        return (int)255L;
+    }
+    public static MethodHandle hb_buffer_set_flags$MH() {
+        return RuntimeHelper.requireNonNull(constants$882.hb_buffer_set_flags$MH,"hb_buffer_set_flags");
+    }
+    /**
+     * {@snippet :
+     * void hb_buffer_set_flags(hb_buffer_t* buffer, hb_buffer_flags_t flags);
+     * }
+     */
+    public static void hb_buffer_set_flags(MemorySegment buffer, int flags) {
+        var mh$ = hb_buffer_set_flags$MH();
+        try {
+            mh$.invokeExact(buffer, flags);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_buffer_get_flags$MH() {
+        return RuntimeHelper.requireNonNull(constants$882.hb_buffer_get_flags$MH,"hb_buffer_get_flags");
+    }
+    /**
+     * {@snippet :
+     * hb_buffer_flags_t hb_buffer_get_flags(const hb_buffer_t* buffer);
+     * }
+     */
+    public static int hb_buffer_get_flags(MemorySegment buffer) {
+        var mh$ = hb_buffer_get_flags$MH();
+        try {
+            return (int)mh$.invokeExact(buffer);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    /**
+     * {@snippet :
+     * enum .HB_BUFFER_CLUSTER_LEVEL_MONOTONE_GRAPHEMES = 0;
+     * }
+     */
+    public static int HB_BUFFER_CLUSTER_LEVEL_MONOTONE_GRAPHEMES() {
+        return (int)0L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_BUFFER_CLUSTER_LEVEL_MONOTONE_CHARACTERS = 1;
+     * }
+     */
+    public static int HB_BUFFER_CLUSTER_LEVEL_MONOTONE_CHARACTERS() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_BUFFER_CLUSTER_LEVEL_CHARACTERS = 2;
+     * }
+     */
+    public static int HB_BUFFER_CLUSTER_LEVEL_CHARACTERS() {
+        return (int)2L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_BUFFER_CLUSTER_LEVEL_DEFAULT = 0;
+     * }
+     */
+    public static int HB_BUFFER_CLUSTER_LEVEL_DEFAULT() {
+        return (int)0L;
+    }
+    public static MethodHandle hb_buffer_set_cluster_level$MH() {
+        return RuntimeHelper.requireNonNull(constants$882.hb_buffer_set_cluster_level$MH,"hb_buffer_set_cluster_level");
+    }
+    /**
+     * {@snippet :
+     * void hb_buffer_set_cluster_level(hb_buffer_t* buffer, hb_buffer_cluster_level_t cluster_level);
+     * }
+     */
+    public static void hb_buffer_set_cluster_level(MemorySegment buffer, int cluster_level) {
+        var mh$ = hb_buffer_set_cluster_level$MH();
+        try {
+            mh$.invokeExact(buffer, cluster_level);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_buffer_get_cluster_level$MH() {
+        return RuntimeHelper.requireNonNull(constants$882.hb_buffer_get_cluster_level$MH,"hb_buffer_get_cluster_level");
+    }
+    /**
+     * {@snippet :
+     * hb_buffer_cluster_level_t hb_buffer_get_cluster_level(const hb_buffer_t* buffer);
+     * }
+     */
+    public static int hb_buffer_get_cluster_level(MemorySegment buffer) {
+        var mh$ = hb_buffer_get_cluster_level$MH();
+        try {
+            return (int)mh$.invokeExact(buffer);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_buffer_set_replacement_codepoint$MH() {
+        return RuntimeHelper.requireNonNull(constants$883.hb_buffer_set_replacement_codepoint$MH,"hb_buffer_set_replacement_codepoint");
+    }
+    /**
+     * {@snippet :
+     * void hb_buffer_set_replacement_codepoint(hb_buffer_t* buffer, hb_codepoint_t replacement);
+     * }
+     */
+    public static void hb_buffer_set_replacement_codepoint(MemorySegment buffer, int replacement) {
+        var mh$ = hb_buffer_set_replacement_codepoint$MH();
+        try {
+            mh$.invokeExact(buffer, replacement);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_buffer_get_replacement_codepoint$MH() {
+        return RuntimeHelper.requireNonNull(constants$883.hb_buffer_get_replacement_codepoint$MH,"hb_buffer_get_replacement_codepoint");
+    }
+    /**
+     * {@snippet :
+     * hb_codepoint_t hb_buffer_get_replacement_codepoint(const hb_buffer_t* buffer);
+     * }
+     */
+    public static int hb_buffer_get_replacement_codepoint(MemorySegment buffer) {
+        var mh$ = hb_buffer_get_replacement_codepoint$MH();
+        try {
+            return (int)mh$.invokeExact(buffer);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_buffer_set_invisible_glyph$MH() {
+        return RuntimeHelper.requireNonNull(constants$883.hb_buffer_set_invisible_glyph$MH,"hb_buffer_set_invisible_glyph");
+    }
+    /**
+     * {@snippet :
+     * void hb_buffer_set_invisible_glyph(hb_buffer_t* buffer, hb_codepoint_t invisible);
+     * }
+     */
+    public static void hb_buffer_set_invisible_glyph(MemorySegment buffer, int invisible) {
+        var mh$ = hb_buffer_set_invisible_glyph$MH();
+        try {
+            mh$.invokeExact(buffer, invisible);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_buffer_get_invisible_glyph$MH() {
+        return RuntimeHelper.requireNonNull(constants$883.hb_buffer_get_invisible_glyph$MH,"hb_buffer_get_invisible_glyph");
+    }
+    /**
+     * {@snippet :
+     * hb_codepoint_t hb_buffer_get_invisible_glyph(const hb_buffer_t* buffer);
+     * }
+     */
+    public static int hb_buffer_get_invisible_glyph(MemorySegment buffer) {
+        var mh$ = hb_buffer_get_invisible_glyph$MH();
+        try {
+            return (int)mh$.invokeExact(buffer);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_buffer_set_not_found_glyph$MH() {
+        return RuntimeHelper.requireNonNull(constants$883.hb_buffer_set_not_found_glyph$MH,"hb_buffer_set_not_found_glyph");
+    }
+    /**
+     * {@snippet :
+     * void hb_buffer_set_not_found_glyph(hb_buffer_t* buffer, hb_codepoint_t not_found);
+     * }
+     */
+    public static void hb_buffer_set_not_found_glyph(MemorySegment buffer, int not_found) {
+        var mh$ = hb_buffer_set_not_found_glyph$MH();
+        try {
+            mh$.invokeExact(buffer, not_found);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_buffer_get_not_found_glyph$MH() {
+        return RuntimeHelper.requireNonNull(constants$883.hb_buffer_get_not_found_glyph$MH,"hb_buffer_get_not_found_glyph");
+    }
+    /**
+     * {@snippet :
+     * hb_codepoint_t hb_buffer_get_not_found_glyph(const hb_buffer_t* buffer);
+     * }
+     */
+    public static int hb_buffer_get_not_found_glyph(MemorySegment buffer) {
+        var mh$ = hb_buffer_get_not_found_glyph$MH();
+        try {
+            return (int)mh$.invokeExact(buffer);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_buffer_clear_contents$MH() {
+        return RuntimeHelper.requireNonNull(constants$884.hb_buffer_clear_contents$MH,"hb_buffer_clear_contents");
+    }
+    /**
+     * {@snippet :
+     * void hb_buffer_clear_contents(hb_buffer_t* buffer);
+     * }
+     */
+    public static void hb_buffer_clear_contents(MemorySegment buffer) {
+        var mh$ = hb_buffer_clear_contents$MH();
+        try {
+            mh$.invokeExact(buffer);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_buffer_pre_allocate$MH() {
+        return RuntimeHelper.requireNonNull(constants$884.hb_buffer_pre_allocate$MH,"hb_buffer_pre_allocate");
+    }
+    /**
+     * {@snippet :
+     * hb_bool_t hb_buffer_pre_allocate(hb_buffer_t* buffer, unsigned int size);
+     * }
+     */
+    public static int hb_buffer_pre_allocate(MemorySegment buffer, int size) {
+        var mh$ = hb_buffer_pre_allocate$MH();
+        try {
+            return (int)mh$.invokeExact(buffer, size);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_buffer_allocation_successful$MH() {
+        return RuntimeHelper.requireNonNull(constants$884.hb_buffer_allocation_successful$MH,"hb_buffer_allocation_successful");
+    }
+    /**
+     * {@snippet :
+     * hb_bool_t hb_buffer_allocation_successful(hb_buffer_t* buffer);
+     * }
+     */
+    public static int hb_buffer_allocation_successful(MemorySegment buffer) {
+        var mh$ = hb_buffer_allocation_successful$MH();
+        try {
+            return (int)mh$.invokeExact(buffer);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_buffer_reverse$MH() {
+        return RuntimeHelper.requireNonNull(constants$884.hb_buffer_reverse$MH,"hb_buffer_reverse");
+    }
+    /**
+     * {@snippet :
+     * void hb_buffer_reverse(hb_buffer_t* buffer);
+     * }
+     */
+    public static void hb_buffer_reverse(MemorySegment buffer) {
+        var mh$ = hb_buffer_reverse$MH();
+        try {
+            mh$.invokeExact(buffer);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_buffer_reverse_range$MH() {
+        return RuntimeHelper.requireNonNull(constants$884.hb_buffer_reverse_range$MH,"hb_buffer_reverse_range");
+    }
+    /**
+     * {@snippet :
+     * void hb_buffer_reverse_range(hb_buffer_t* buffer, unsigned int start, unsigned int end);
+     * }
+     */
+    public static void hb_buffer_reverse_range(MemorySegment buffer, int start, int end) {
+        var mh$ = hb_buffer_reverse_range$MH();
+        try {
+            mh$.invokeExact(buffer, start, end);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_buffer_reverse_clusters$MH() {
+        return RuntimeHelper.requireNonNull(constants$884.hb_buffer_reverse_clusters$MH,"hb_buffer_reverse_clusters");
+    }
+    /**
+     * {@snippet :
+     * void hb_buffer_reverse_clusters(hb_buffer_t* buffer);
+     * }
+     */
+    public static void hb_buffer_reverse_clusters(MemorySegment buffer) {
+        var mh$ = hb_buffer_reverse_clusters$MH();
+        try {
+            mh$.invokeExact(buffer);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_buffer_add$MH() {
+        return RuntimeHelper.requireNonNull(constants$885.hb_buffer_add$MH,"hb_buffer_add");
+    }
+    /**
+     * {@snippet :
+     * void hb_buffer_add(hb_buffer_t* buffer, hb_codepoint_t codepoint, unsigned int cluster);
+     * }
+     */
+    public static void hb_buffer_add(MemorySegment buffer, int codepoint, int cluster) {
+        var mh$ = hb_buffer_add$MH();
+        try {
+            mh$.invokeExact(buffer, codepoint, cluster);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_buffer_add_utf8$MH() {
+        return RuntimeHelper.requireNonNull(constants$885.hb_buffer_add_utf8$MH,"hb_buffer_add_utf8");
+    }
+    /**
+     * {@snippet :
+     * void hb_buffer_add_utf8(hb_buffer_t* buffer, char* text, int text_length, unsigned int item_offset, int item_length);
+     * }
+     */
+    public static void hb_buffer_add_utf8(MemorySegment buffer, MemorySegment text, int text_length, int item_offset, int item_length) {
+        var mh$ = hb_buffer_add_utf8$MH();
+        try {
+            mh$.invokeExact(buffer, text, text_length, item_offset, item_length);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_buffer_add_utf16$MH() {
+        return RuntimeHelper.requireNonNull(constants$885.hb_buffer_add_utf16$MH,"hb_buffer_add_utf16");
+    }
+    /**
+     * {@snippet :
+     * void hb_buffer_add_utf16(hb_buffer_t* buffer, const uint16_t* text, int text_length, unsigned int item_offset, int item_length);
+     * }
+     */
+    public static void hb_buffer_add_utf16(MemorySegment buffer, MemorySegment text, int text_length, int item_offset, int item_length) {
+        var mh$ = hb_buffer_add_utf16$MH();
+        try {
+            mh$.invokeExact(buffer, text, text_length, item_offset, item_length);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_buffer_add_utf32$MH() {
+        return RuntimeHelper.requireNonNull(constants$885.hb_buffer_add_utf32$MH,"hb_buffer_add_utf32");
+    }
+    /**
+     * {@snippet :
+     * void hb_buffer_add_utf32(hb_buffer_t* buffer, const uint32_t* text, int text_length, unsigned int item_offset, int item_length);
+     * }
+     */
+    public static void hb_buffer_add_utf32(MemorySegment buffer, MemorySegment text, int text_length, int item_offset, int item_length) {
+        var mh$ = hb_buffer_add_utf32$MH();
+        try {
+            mh$.invokeExact(buffer, text, text_length, item_offset, item_length);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_buffer_add_latin1$MH() {
+        return RuntimeHelper.requireNonNull(constants$885.hb_buffer_add_latin1$MH,"hb_buffer_add_latin1");
+    }
+    /**
+     * {@snippet :
+     * void hb_buffer_add_latin1(hb_buffer_t* buffer, const uint8_t* text, int text_length, unsigned int item_offset, int item_length);
+     * }
+     */
+    public static void hb_buffer_add_latin1(MemorySegment buffer, MemorySegment text, int text_length, int item_offset, int item_length) {
+        var mh$ = hb_buffer_add_latin1$MH();
+        try {
+            mh$.invokeExact(buffer, text, text_length, item_offset, item_length);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_buffer_add_codepoints$MH() {
+        return RuntimeHelper.requireNonNull(constants$885.hb_buffer_add_codepoints$MH,"hb_buffer_add_codepoints");
+    }
+    /**
+     * {@snippet :
+     * void hb_buffer_add_codepoints(hb_buffer_t* buffer, const hb_codepoint_t* text, int text_length, unsigned int item_offset, int item_length);
+     * }
+     */
+    public static void hb_buffer_add_codepoints(MemorySegment buffer, MemorySegment text, int text_length, int item_offset, int item_length) {
+        var mh$ = hb_buffer_add_codepoints$MH();
+        try {
+            mh$.invokeExact(buffer, text, text_length, item_offset, item_length);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_buffer_append$MH() {
+        return RuntimeHelper.requireNonNull(constants$886.hb_buffer_append$MH,"hb_buffer_append");
+    }
+    /**
+     * {@snippet :
+     * void hb_buffer_append(hb_buffer_t* buffer, const hb_buffer_t* source, unsigned int start, unsigned int end);
+     * }
+     */
+    public static void hb_buffer_append(MemorySegment buffer, MemorySegment source, int start, int end) {
+        var mh$ = hb_buffer_append$MH();
+        try {
+            mh$.invokeExact(buffer, source, start, end);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_buffer_set_length$MH() {
+        return RuntimeHelper.requireNonNull(constants$886.hb_buffer_set_length$MH,"hb_buffer_set_length");
+    }
+    /**
+     * {@snippet :
+     * hb_bool_t hb_buffer_set_length(hb_buffer_t* buffer, unsigned int length);
+     * }
+     */
+    public static int hb_buffer_set_length(MemorySegment buffer, int length) {
+        var mh$ = hb_buffer_set_length$MH();
+        try {
+            return (int)mh$.invokeExact(buffer, length);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_buffer_get_length$MH() {
+        return RuntimeHelper.requireNonNull(constants$886.hb_buffer_get_length$MH,"hb_buffer_get_length");
+    }
+    /**
+     * {@snippet :
+     * unsigned int hb_buffer_get_length(const hb_buffer_t* buffer);
+     * }
+     */
+    public static int hb_buffer_get_length(MemorySegment buffer) {
+        var mh$ = hb_buffer_get_length$MH();
+        try {
+            return (int)mh$.invokeExact(buffer);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_buffer_get_glyph_infos$MH() {
+        return RuntimeHelper.requireNonNull(constants$886.hb_buffer_get_glyph_infos$MH,"hb_buffer_get_glyph_infos");
+    }
+    /**
+     * {@snippet :
+     * hb_glyph_info_t* hb_buffer_get_glyph_infos(hb_buffer_t* buffer, unsigned int* length);
+     * }
+     */
+    public static MemorySegment hb_buffer_get_glyph_infos(MemorySegment buffer, MemorySegment length) {
+        var mh$ = hb_buffer_get_glyph_infos$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(buffer, length);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_buffer_get_glyph_positions$MH() {
+        return RuntimeHelper.requireNonNull(constants$886.hb_buffer_get_glyph_positions$MH,"hb_buffer_get_glyph_positions");
+    }
+    /**
+     * {@snippet :
+     * hb_glyph_position_t* hb_buffer_get_glyph_positions(hb_buffer_t* buffer, unsigned int* length);
+     * }
+     */
+    public static MemorySegment hb_buffer_get_glyph_positions(MemorySegment buffer, MemorySegment length) {
+        var mh$ = hb_buffer_get_glyph_positions$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(buffer, length);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_buffer_has_positions$MH() {
+        return RuntimeHelper.requireNonNull(constants$886.hb_buffer_has_positions$MH,"hb_buffer_has_positions");
+    }
+    /**
+     * {@snippet :
+     * hb_bool_t hb_buffer_has_positions(hb_buffer_t* buffer);
+     * }
+     */
+    public static int hb_buffer_has_positions(MemorySegment buffer) {
+        var mh$ = hb_buffer_has_positions$MH();
+        try {
+            return (int)mh$.invokeExact(buffer);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_buffer_normalize_glyphs$MH() {
+        return RuntimeHelper.requireNonNull(constants$887.hb_buffer_normalize_glyphs$MH,"hb_buffer_normalize_glyphs");
+    }
+    /**
+     * {@snippet :
+     * void hb_buffer_normalize_glyphs(hb_buffer_t* buffer);
+     * }
+     */
+    public static void hb_buffer_normalize_glyphs(MemorySegment buffer) {
+        var mh$ = hb_buffer_normalize_glyphs$MH();
+        try {
+            mh$.invokeExact(buffer);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    /**
+     * {@snippet :
+     * enum .HB_BUFFER_SERIALIZE_FLAG_DEFAULT = 0;
+     * }
+     */
+    public static int HB_BUFFER_SERIALIZE_FLAG_DEFAULT() {
+        return (int)0L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_BUFFER_SERIALIZE_FLAG_NO_CLUSTERS = 1;
+     * }
+     */
+    public static int HB_BUFFER_SERIALIZE_FLAG_NO_CLUSTERS() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_BUFFER_SERIALIZE_FLAG_NO_POSITIONS = 2;
+     * }
+     */
+    public static int HB_BUFFER_SERIALIZE_FLAG_NO_POSITIONS() {
+        return (int)2L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_BUFFER_SERIALIZE_FLAG_NO_GLYPH_NAMES = 4;
+     * }
+     */
+    public static int HB_BUFFER_SERIALIZE_FLAG_NO_GLYPH_NAMES() {
+        return (int)4L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_BUFFER_SERIALIZE_FLAG_GLYPH_EXTENTS = 8;
+     * }
+     */
+    public static int HB_BUFFER_SERIALIZE_FLAG_GLYPH_EXTENTS() {
+        return (int)8L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_BUFFER_SERIALIZE_FLAG_GLYPH_FLAGS = 16;
+     * }
+     */
+    public static int HB_BUFFER_SERIALIZE_FLAG_GLYPH_FLAGS() {
+        return (int)16L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_BUFFER_SERIALIZE_FLAG_NO_ADVANCES = 32;
+     * }
+     */
+    public static int HB_BUFFER_SERIALIZE_FLAG_NO_ADVANCES() {
+        return (int)32L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_BUFFER_SERIALIZE_FLAG_DEFINED = 63;
+     * }
+     */
+    public static int HB_BUFFER_SERIALIZE_FLAG_DEFINED() {
+        return (int)63L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_BUFFER_SERIALIZE_FORMAT_TEXT = 1413830740;
+     * }
+     */
+    public static int HB_BUFFER_SERIALIZE_FORMAT_TEXT() {
+        return (int)1413830740L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_BUFFER_SERIALIZE_FORMAT_JSON = 1246973774;
+     * }
+     */
+    public static int HB_BUFFER_SERIALIZE_FORMAT_JSON() {
+        return (int)1246973774L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_BUFFER_SERIALIZE_FORMAT_INVALID = 0;
+     * }
+     */
+    public static int HB_BUFFER_SERIALIZE_FORMAT_INVALID() {
+        return (int)0L;
+    }
+    public static MethodHandle hb_buffer_serialize_format_from_string$MH() {
+        return RuntimeHelper.requireNonNull(constants$887.hb_buffer_serialize_format_from_string$MH,"hb_buffer_serialize_format_from_string");
+    }
+    /**
+     * {@snippet :
+     * hb_buffer_serialize_format_t hb_buffer_serialize_format_from_string(char* str, int len);
+     * }
+     */
+    public static int hb_buffer_serialize_format_from_string(MemorySegment str, int len) {
+        var mh$ = hb_buffer_serialize_format_from_string$MH();
+        try {
+            return (int)mh$.invokeExact(str, len);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_buffer_serialize_format_to_string$MH() {
+        return RuntimeHelper.requireNonNull(constants$887.hb_buffer_serialize_format_to_string$MH,"hb_buffer_serialize_format_to_string");
+    }
+    /**
+     * {@snippet :
+     * char* hb_buffer_serialize_format_to_string(hb_buffer_serialize_format_t format);
+     * }
+     */
+    public static MemorySegment hb_buffer_serialize_format_to_string(int format) {
+        var mh$ = hb_buffer_serialize_format_to_string$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(format);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_buffer_serialize_list_formats$MH() {
+        return RuntimeHelper.requireNonNull(constants$887.hb_buffer_serialize_list_formats$MH,"hb_buffer_serialize_list_formats");
+    }
+    /**
+     * {@snippet :
+     * char** hb_buffer_serialize_list_formats();
+     * }
+     */
+    public static MemorySegment hb_buffer_serialize_list_formats() {
+        var mh$ = hb_buffer_serialize_list_formats$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_buffer_serialize_glyphs$MH() {
+        return RuntimeHelper.requireNonNull(constants$887.hb_buffer_serialize_glyphs$MH,"hb_buffer_serialize_glyphs");
+    }
+    /**
+     * {@snippet :
+     * unsigned int hb_buffer_serialize_glyphs(hb_buffer_t* buffer, unsigned int start, unsigned int end, char* buf, unsigned int buf_size, unsigned int* buf_consumed, hb_font_t* font, hb_buffer_serialize_format_t format, hb_buffer_serialize_flags_t flags);
+     * }
+     */
+    public static int hb_buffer_serialize_glyphs(MemorySegment buffer, int start, int end, MemorySegment buf, int buf_size, MemorySegment buf_consumed, MemorySegment font, int format, int flags) {
+        var mh$ = hb_buffer_serialize_glyphs$MH();
+        try {
+            return (int)mh$.invokeExact(buffer, start, end, buf, buf_size, buf_consumed, font, format, flags);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_buffer_serialize_unicode$MH() {
+        return RuntimeHelper.requireNonNull(constants$887.hb_buffer_serialize_unicode$MH,"hb_buffer_serialize_unicode");
+    }
+    /**
+     * {@snippet :
+     * unsigned int hb_buffer_serialize_unicode(hb_buffer_t* buffer, unsigned int start, unsigned int end, char* buf, unsigned int buf_size, unsigned int* buf_consumed, hb_buffer_serialize_format_t format, hb_buffer_serialize_flags_t flags);
+     * }
+     */
+    public static int hb_buffer_serialize_unicode(MemorySegment buffer, int start, int end, MemorySegment buf, int buf_size, MemorySegment buf_consumed, int format, int flags) {
+        var mh$ = hb_buffer_serialize_unicode$MH();
+        try {
+            return (int)mh$.invokeExact(buffer, start, end, buf, buf_size, buf_consumed, format, flags);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_buffer_serialize$MH() {
+        return RuntimeHelper.requireNonNull(constants$888.hb_buffer_serialize$MH,"hb_buffer_serialize");
+    }
+    /**
+     * {@snippet :
+     * unsigned int hb_buffer_serialize(hb_buffer_t* buffer, unsigned int start, unsigned int end, char* buf, unsigned int buf_size, unsigned int* buf_consumed, hb_font_t* font, hb_buffer_serialize_format_t format, hb_buffer_serialize_flags_t flags);
+     * }
+     */
+    public static int hb_buffer_serialize(MemorySegment buffer, int start, int end, MemorySegment buf, int buf_size, MemorySegment buf_consumed, MemorySegment font, int format, int flags) {
+        var mh$ = hb_buffer_serialize$MH();
+        try {
+            return (int)mh$.invokeExact(buffer, start, end, buf, buf_size, buf_consumed, font, format, flags);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_buffer_deserialize_glyphs$MH() {
+        return RuntimeHelper.requireNonNull(constants$888.hb_buffer_deserialize_glyphs$MH,"hb_buffer_deserialize_glyphs");
+    }
+    /**
+     * {@snippet :
+     * hb_bool_t hb_buffer_deserialize_glyphs(hb_buffer_t* buffer, char* buf, int buf_len, char** end_ptr, hb_font_t* font, hb_buffer_serialize_format_t format);
+     * }
+     */
+    public static int hb_buffer_deserialize_glyphs(MemorySegment buffer, MemorySegment buf, int buf_len, MemorySegment end_ptr, MemorySegment font, int format) {
+        var mh$ = hb_buffer_deserialize_glyphs$MH();
+        try {
+            return (int)mh$.invokeExact(buffer, buf, buf_len, end_ptr, font, format);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_buffer_deserialize_unicode$MH() {
+        return RuntimeHelper.requireNonNull(constants$888.hb_buffer_deserialize_unicode$MH,"hb_buffer_deserialize_unicode");
+    }
+    /**
+     * {@snippet :
+     * hb_bool_t hb_buffer_deserialize_unicode(hb_buffer_t* buffer, char* buf, int buf_len, char** end_ptr, hb_buffer_serialize_format_t format);
+     * }
+     */
+    public static int hb_buffer_deserialize_unicode(MemorySegment buffer, MemorySegment buf, int buf_len, MemorySegment end_ptr, int format) {
+        var mh$ = hb_buffer_deserialize_unicode$MH();
+        try {
+            return (int)mh$.invokeExact(buffer, buf, buf_len, end_ptr, format);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    /**
+     * {@snippet :
+     * enum .HB_BUFFER_DIFF_FLAG_EQUAL = 0;
+     * }
+     */
+    public static int HB_BUFFER_DIFF_FLAG_EQUAL() {
+        return (int)0L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_BUFFER_DIFF_FLAG_CONTENT_TYPE_MISMATCH = 1;
+     * }
+     */
+    public static int HB_BUFFER_DIFF_FLAG_CONTENT_TYPE_MISMATCH() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_BUFFER_DIFF_FLAG_LENGTH_MISMATCH = 2;
+     * }
+     */
+    public static int HB_BUFFER_DIFF_FLAG_LENGTH_MISMATCH() {
+        return (int)2L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_BUFFER_DIFF_FLAG_NOTDEF_PRESENT = 4;
+     * }
+     */
+    public static int HB_BUFFER_DIFF_FLAG_NOTDEF_PRESENT() {
+        return (int)4L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_BUFFER_DIFF_FLAG_DOTTED_CIRCLE_PRESENT = 8;
+     * }
+     */
+    public static int HB_BUFFER_DIFF_FLAG_DOTTED_CIRCLE_PRESENT() {
+        return (int)8L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_BUFFER_DIFF_FLAG_CODEPOINT_MISMATCH = 16;
+     * }
+     */
+    public static int HB_BUFFER_DIFF_FLAG_CODEPOINT_MISMATCH() {
+        return (int)16L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_BUFFER_DIFF_FLAG_CLUSTER_MISMATCH = 32;
+     * }
+     */
+    public static int HB_BUFFER_DIFF_FLAG_CLUSTER_MISMATCH() {
+        return (int)32L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_BUFFER_DIFF_FLAG_GLYPH_FLAGS_MISMATCH = 64;
+     * }
+     */
+    public static int HB_BUFFER_DIFF_FLAG_GLYPH_FLAGS_MISMATCH() {
+        return (int)64L;
+    }
+    /**
+     * {@snippet :
+     * enum .HB_BUFFER_DIFF_FLAG_POSITION_MISMATCH = 128;
+     * }
+     */
+    public static int HB_BUFFER_DIFF_FLAG_POSITION_MISMATCH() {
+        return (int)128L;
+    }
+    public static MethodHandle hb_buffer_diff$MH() {
+        return RuntimeHelper.requireNonNull(constants$888.hb_buffer_diff$MH,"hb_buffer_diff");
+    }
+    /**
+     * {@snippet :
+     * hb_buffer_diff_flags_t hb_buffer_diff(hb_buffer_t* buffer, hb_buffer_t* reference, hb_codepoint_t dottedcircle_glyph, unsigned int position_fuzz);
+     * }
+     */
+    public static int hb_buffer_diff(MemorySegment buffer, MemorySegment reference, int dottedcircle_glyph, int position_fuzz) {
+        var mh$ = hb_buffer_diff$MH();
+        try {
+            return (int)mh$.invokeExact(buffer, reference, dottedcircle_glyph, position_fuzz);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_buffer_set_message_func$MH() {
+        return RuntimeHelper.requireNonNull(constants$889.hb_buffer_set_message_func$MH,"hb_buffer_set_message_func");
+    }
+    /**
+     * {@snippet :
+     * void hb_buffer_set_message_func(hb_buffer_t* buffer, hb_buffer_message_func_t func, void* user_data, hb_destroy_func_t destroy);
+     * }
+     */
+    public static void hb_buffer_set_message_func(MemorySegment buffer, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = hb_buffer_set_message_func$MH();
+        try {
+            mh$.invokeExact(buffer, func, user_data, destroy);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static OfAddress GSocketControlMessage_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GSocketControlMessage_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GSocketControlMessage_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GSocketControlMessage_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GSocketControlMessage$MH() {
-        return RuntimeHelper.requireNonNull(constants$966.glib_autoptr_clear_GSocketControlMessage$MH,"glib_autoptr_clear_GSocketControlMessage");
+    public static MethodHandle hb_font_funcs_set_glyph_func$MH() {
+        return RuntimeHelper.requireNonNull(constants$889.hb_font_funcs_set_glyph_func$MH,"hb_font_funcs_set_glyph_func");
     }
-    public static void glib_autoptr_clear_GSocketControlMessage ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GSocketControlMessage$MH();
+    /**
+     * {@snippet :
+     * void hb_font_funcs_set_glyph_func(hb_font_funcs_t* ffuncs, hb_font_get_glyph_func_t func, void* user_data, hb_destroy_func_t destroy);
+     * }
+     */
+    public static void hb_font_funcs_set_glyph_func(MemorySegment ffuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = hb_font_funcs_set_glyph_func$MH();
         try {
-            mh$.invokeExact(_ptr);
+            mh$.invokeExact(ffuncs, func, user_data, destroy);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle glib_autoptr_cleanup_GSocketControlMessage$MH() {
-        return RuntimeHelper.requireNonNull(constants$966.glib_autoptr_cleanup_GSocketControlMessage$MH,"glib_autoptr_cleanup_GSocketControlMessage");
+    public static MethodHandle hb_unicode_funcs_set_eastasian_width_func$MH() {
+        return RuntimeHelper.requireNonNull(constants$890.hb_unicode_funcs_set_eastasian_width_func$MH,"hb_unicode_funcs_set_eastasian_width_func");
     }
-    public static void glib_autoptr_cleanup_GSocketControlMessage ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GSocketControlMessage$MH();
+    /**
+     * {@snippet :
+     * void hb_unicode_funcs_set_eastasian_width_func(hb_unicode_funcs_t* ufuncs, hb_unicode_eastasian_width_func_t func, void* user_data, hb_destroy_func_t destroy);
+     * }
+     */
+    public static void hb_unicode_funcs_set_eastasian_width_func(MemorySegment ufuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = hb_unicode_funcs_set_eastasian_width_func$MH();
         try {
-            mh$.invokeExact(_ptr);
+            mh$.invokeExact(ufuncs, func, user_data, destroy);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle glib_listautoptr_cleanup_GSocketControlMessage$MH() {
-        return RuntimeHelper.requireNonNull(constants$966.glib_listautoptr_cleanup_GSocketControlMessage$MH,"glib_listautoptr_cleanup_GSocketControlMessage");
+    public static MethodHandle hb_unicode_eastasian_width$MH() {
+        return RuntimeHelper.requireNonNull(constants$890.hb_unicode_eastasian_width$MH,"hb_unicode_eastasian_width");
     }
-    public static void glib_listautoptr_cleanup_GSocketControlMessage ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GSocketControlMessage$MH();
+    /**
+     * {@snippet :
+     * unsigned int hb_unicode_eastasian_width(hb_unicode_funcs_t* ufuncs, hb_codepoint_t unicode);
+     * }
+     */
+    public static int hb_unicode_eastasian_width(MemorySegment ufuncs, int unicode) {
+        var mh$ = hb_unicode_eastasian_width$MH();
         try {
-            mh$.invokeExact(_l);
+            return (int)mh$.invokeExact(ufuncs, unicode);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle glib_slistautoptr_cleanup_GSocketControlMessage$MH() {
-        return RuntimeHelper.requireNonNull(constants$966.glib_slistautoptr_cleanup_GSocketControlMessage$MH,"glib_slistautoptr_cleanup_GSocketControlMessage");
+    public static MethodHandle hb_unicode_funcs_set_decompose_compatibility_func$MH() {
+        return RuntimeHelper.requireNonNull(constants$890.hb_unicode_funcs_set_decompose_compatibility_func$MH,"hb_unicode_funcs_set_decompose_compatibility_func");
     }
-    public static void glib_slistautoptr_cleanup_GSocketControlMessage ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GSocketControlMessage$MH();
+    /**
+     * {@snippet :
+     * void hb_unicode_funcs_set_decompose_compatibility_func(hb_unicode_funcs_t* ufuncs, hb_unicode_decompose_compatibility_func_t func, void* user_data, hb_destroy_func_t destroy);
+     * }
+     */
+    public static void hb_unicode_funcs_set_decompose_compatibility_func(MemorySegment ufuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = hb_unicode_funcs_set_decompose_compatibility_func$MH();
         try {
-            mh$.invokeExact(_l);
+            mh$.invokeExact(ufuncs, func, user_data, destroy);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle glib_queueautoptr_cleanup_GSocketControlMessage$MH() {
-        return RuntimeHelper.requireNonNull(constants$967.glib_queueautoptr_cleanup_GSocketControlMessage$MH,"glib_queueautoptr_cleanup_GSocketControlMessage");
+    public static MethodHandle hb_unicode_decompose_compatibility$MH() {
+        return RuntimeHelper.requireNonNull(constants$890.hb_unicode_decompose_compatibility$MH,"hb_unicode_decompose_compatibility");
     }
-    public static void glib_queueautoptr_cleanup_GSocketControlMessage ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GSocketControlMessage$MH();
+    /**
+     * {@snippet :
+     * unsigned int hb_unicode_decompose_compatibility(hb_unicode_funcs_t* ufuncs, hb_codepoint_t u, hb_codepoint_t* decomposed);
+     * }
+     */
+    public static int hb_unicode_decompose_compatibility(MemorySegment ufuncs, int u, MemorySegment decomposed) {
+        var mh$ = hb_unicode_decompose_compatibility$MH();
         try {
-            mh$.invokeExact(_q);
+            return (int)mh$.invokeExact(ufuncs, u, decomposed);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static OfAddress GSocket_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GSocket_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GSocket_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GSocket_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GSocket$MH() {
-        return RuntimeHelper.requireNonNull(constants$967.glib_autoptr_clear_GSocket$MH,"glib_autoptr_clear_GSocket");
+    public static MethodHandle hb_font_funcs_set_glyph_v_kerning_func$MH() {
+        return RuntimeHelper.requireNonNull(constants$891.hb_font_funcs_set_glyph_v_kerning_func$MH,"hb_font_funcs_set_glyph_v_kerning_func");
     }
-    public static void glib_autoptr_clear_GSocket ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GSocket$MH();
+    /**
+     * {@snippet :
+     * void hb_font_funcs_set_glyph_v_kerning_func(hb_font_funcs_t* ffuncs, hb_font_get_glyph_v_kerning_func_t func, void* user_data, hb_destroy_func_t destroy);
+     * }
+     */
+    public static void hb_font_funcs_set_glyph_v_kerning_func(MemorySegment ffuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = hb_font_funcs_set_glyph_v_kerning_func$MH();
         try {
-            mh$.invokeExact(_ptr);
+            mh$.invokeExact(ffuncs, func, user_data, destroy);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle glib_autoptr_cleanup_GSocket$MH() {
-        return RuntimeHelper.requireNonNull(constants$967.glib_autoptr_cleanup_GSocket$MH,"glib_autoptr_cleanup_GSocket");
+    public static MethodHandle hb_font_get_glyph_v_kerning$MH() {
+        return RuntimeHelper.requireNonNull(constants$891.hb_font_get_glyph_v_kerning$MH,"hb_font_get_glyph_v_kerning");
     }
-    public static void glib_autoptr_cleanup_GSocket ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GSocket$MH();
+    /**
+     * {@snippet :
+     * hb_position_t hb_font_get_glyph_v_kerning(hb_font_t* font, hb_codepoint_t top_glyph, hb_codepoint_t bottom_glyph);
+     * }
+     */
+    public static int hb_font_get_glyph_v_kerning(MemorySegment font, int top_glyph, int bottom_glyph) {
+        var mh$ = hb_font_get_glyph_v_kerning$MH();
         try {
-            mh$.invokeExact(_ptr);
+            return (int)mh$.invokeExact(font, top_glyph, bottom_glyph);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle glib_listautoptr_cleanup_GSocket$MH() {
-        return RuntimeHelper.requireNonNull(constants$967.glib_listautoptr_cleanup_GSocket$MH,"glib_listautoptr_cleanup_GSocket");
+    public static MethodHandle hb_map_create$MH() {
+        return RuntimeHelper.requireNonNull(constants$891.hb_map_create$MH,"hb_map_create");
     }
-    public static void glib_listautoptr_cleanup_GSocket ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GSocket$MH();
+    /**
+     * {@snippet :
+     * hb_map_t* hb_map_create();
+     * }
+     */
+    public static MemorySegment hb_map_create() {
+        var mh$ = hb_map_create$MH();
         try {
-            mh$.invokeExact(_l);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle glib_slistautoptr_cleanup_GSocket$MH() {
-        return RuntimeHelper.requireNonNull(constants$967.glib_slistautoptr_cleanup_GSocket$MH,"glib_slistautoptr_cleanup_GSocket");
+    public static MethodHandle hb_map_get_empty$MH() {
+        return RuntimeHelper.requireNonNull(constants$891.hb_map_get_empty$MH,"hb_map_get_empty");
     }
-    public static void glib_slistautoptr_cleanup_GSocket ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GSocket$MH();
+    /**
+     * {@snippet :
+     * hb_map_t* hb_map_get_empty();
+     * }
+     */
+    public static MemorySegment hb_map_get_empty() {
+        var mh$ = hb_map_get_empty$MH();
         try {
-            mh$.invokeExact(_l);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle glib_queueautoptr_cleanup_GSocket$MH() {
-        return RuntimeHelper.requireNonNull(constants$967.glib_queueautoptr_cleanup_GSocket$MH,"glib_queueautoptr_cleanup_GSocket");
+    public static MethodHandle hb_map_reference$MH() {
+        return RuntimeHelper.requireNonNull(constants$892.hb_map_reference$MH,"hb_map_reference");
     }
-    public static void glib_queueautoptr_cleanup_GSocket ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GSocket$MH();
+    /**
+     * {@snippet :
+     * hb_map_t* hb_map_reference(hb_map_t* map);
+     * }
+     */
+    public static MemorySegment hb_map_reference(MemorySegment map) {
+        var mh$ = hb_map_reference$MH();
         try {
-            mh$.invokeExact(_q);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(map);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static OfAddress GSocketListener_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GSocketListener_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GSocketListener_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GSocketListener_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GSocketListener$MH() {
-        return RuntimeHelper.requireNonNull(constants$968.glib_autoptr_clear_GSocketListener$MH,"glib_autoptr_clear_GSocketListener");
+    public static MethodHandle hb_map_destroy$MH() {
+        return RuntimeHelper.requireNonNull(constants$892.hb_map_destroy$MH,"hb_map_destroy");
     }
-    public static void glib_autoptr_clear_GSocketListener ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GSocketListener$MH();
+    /**
+     * {@snippet :
+     * void hb_map_destroy(hb_map_t* map);
+     * }
+     */
+    public static void hb_map_destroy(MemorySegment map) {
+        var mh$ = hb_map_destroy$MH();
         try {
-            mh$.invokeExact(_ptr);
+            mh$.invokeExact(map);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle glib_autoptr_cleanup_GSocketListener$MH() {
-        return RuntimeHelper.requireNonNull(constants$968.glib_autoptr_cleanup_GSocketListener$MH,"glib_autoptr_cleanup_GSocketListener");
+    public static MethodHandle hb_map_set_user_data$MH() {
+        return RuntimeHelper.requireNonNull(constants$892.hb_map_set_user_data$MH,"hb_map_set_user_data");
     }
-    public static void glib_autoptr_cleanup_GSocketListener ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GSocketListener$MH();
+    /**
+     * {@snippet :
+     * hb_bool_t hb_map_set_user_data(hb_map_t* map, hb_user_data_key_t* key, void* data, hb_destroy_func_t destroy, hb_bool_t replace);
+     * }
+     */
+    public static int hb_map_set_user_data(MemorySegment map, MemorySegment key, MemorySegment data, MemorySegment destroy, int replace) {
+        var mh$ = hb_map_set_user_data$MH();
         try {
-            mh$.invokeExact(_ptr);
+            return (int)mh$.invokeExact(map, key, data, destroy, replace);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle glib_listautoptr_cleanup_GSocketListener$MH() {
-        return RuntimeHelper.requireNonNull(constants$968.glib_listautoptr_cleanup_GSocketListener$MH,"glib_listautoptr_cleanup_GSocketListener");
+    public static MethodHandle hb_map_get_user_data$MH() {
+        return RuntimeHelper.requireNonNull(constants$892.hb_map_get_user_data$MH,"hb_map_get_user_data");
     }
-    public static void glib_listautoptr_cleanup_GSocketListener ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GSocketListener$MH();
+    /**
+     * {@snippet :
+     * void* hb_map_get_user_data(const hb_map_t* map, hb_user_data_key_t* key);
+     * }
+     */
+    public static MemorySegment hb_map_get_user_data(MemorySegment map, MemorySegment key) {
+        var mh$ = hb_map_get_user_data$MH();
         try {
-            mh$.invokeExact(_l);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(map, key);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle glib_slistautoptr_cleanup_GSocketListener$MH() {
-        return RuntimeHelper.requireNonNull(constants$968.glib_slistautoptr_cleanup_GSocketListener$MH,"glib_slistautoptr_cleanup_GSocketListener");
+    public static MethodHandle hb_map_allocation_successful$MH() {
+        return RuntimeHelper.requireNonNull(constants$892.hb_map_allocation_successful$MH,"hb_map_allocation_successful");
     }
-    public static void glib_slistautoptr_cleanup_GSocketListener ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GSocketListener$MH();
+    /**
+     * {@snippet :
+     * hb_bool_t hb_map_allocation_successful(const hb_map_t* map);
+     * }
+     */
+    public static int hb_map_allocation_successful(MemorySegment map) {
+        var mh$ = hb_map_allocation_successful$MH();
         try {
-            mh$.invokeExact(_l);
+            return (int)mh$.invokeExact(map);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle glib_queueautoptr_cleanup_GSocketListener$MH() {
-        return RuntimeHelper.requireNonNull(constants$968.glib_queueautoptr_cleanup_GSocketListener$MH,"glib_queueautoptr_cleanup_GSocketListener");
+    public static MethodHandle hb_map_copy$MH() {
+        return RuntimeHelper.requireNonNull(constants$892.hb_map_copy$MH,"hb_map_copy");
     }
-    public static void glib_queueautoptr_cleanup_GSocketListener ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GSocketListener$MH();
+    /**
+     * {@snippet :
+     * hb_map_t* hb_map_copy(const hb_map_t* map);
+     * }
+     */
+    public static MemorySegment hb_map_copy(MemorySegment map) {
+        var mh$ = hb_map_copy$MH();
         try {
-            mh$.invokeExact(_q);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(map);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static OfAddress GSocketService_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GSocketService_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GSocketService_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GSocketService_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GSocketService$MH() {
-        return RuntimeHelper.requireNonNull(constants$968.glib_autoptr_clear_GSocketService$MH,"glib_autoptr_clear_GSocketService");
+    public static MethodHandle hb_map_clear$MH() {
+        return RuntimeHelper.requireNonNull(constants$893.hb_map_clear$MH,"hb_map_clear");
     }
-    public static void glib_autoptr_clear_GSocketService ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GSocketService$MH();
+    /**
+     * {@snippet :
+     * void hb_map_clear(hb_map_t* map);
+     * }
+     */
+    public static void hb_map_clear(MemorySegment map) {
+        var mh$ = hb_map_clear$MH();
         try {
-            mh$.invokeExact(_ptr);
+            mh$.invokeExact(map);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle glib_autoptr_cleanup_GSocketService$MH() {
-        return RuntimeHelper.requireNonNull(constants$969.glib_autoptr_cleanup_GSocketService$MH,"glib_autoptr_cleanup_GSocketService");
+    public static MethodHandle hb_map_is_empty$MH() {
+        return RuntimeHelper.requireNonNull(constants$893.hb_map_is_empty$MH,"hb_map_is_empty");
     }
-    public static void glib_autoptr_cleanup_GSocketService ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GSocketService$MH();
+    /**
+     * {@snippet :
+     * hb_bool_t hb_map_is_empty(const hb_map_t* map);
+     * }
+     */
+    public static int hb_map_is_empty(MemorySegment map) {
+        var mh$ = hb_map_is_empty$MH();
         try {
-            mh$.invokeExact(_ptr);
+            return (int)mh$.invokeExact(map);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle glib_listautoptr_cleanup_GSocketService$MH() {
-        return RuntimeHelper.requireNonNull(constants$969.glib_listautoptr_cleanup_GSocketService$MH,"glib_listautoptr_cleanup_GSocketService");
+    public static MethodHandle hb_map_get_population$MH() {
+        return RuntimeHelper.requireNonNull(constants$893.hb_map_get_population$MH,"hb_map_get_population");
     }
-    public static void glib_listautoptr_cleanup_GSocketService ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GSocketService$MH();
+    /**
+     * {@snippet :
+     * unsigned int hb_map_get_population(const hb_map_t* map);
+     * }
+     */
+    public static int hb_map_get_population(MemorySegment map) {
+        var mh$ = hb_map_get_population$MH();
         try {
-            mh$.invokeExact(_l);
+            return (int)mh$.invokeExact(map);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle glib_slistautoptr_cleanup_GSocketService$MH() {
-        return RuntimeHelper.requireNonNull(constants$969.glib_slistautoptr_cleanup_GSocketService$MH,"glib_slistautoptr_cleanup_GSocketService");
+    public static MethodHandle hb_map_is_equal$MH() {
+        return RuntimeHelper.requireNonNull(constants$893.hb_map_is_equal$MH,"hb_map_is_equal");
     }
-    public static void glib_slistautoptr_cleanup_GSocketService ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GSocketService$MH();
+    /**
+     * {@snippet :
+     * hb_bool_t hb_map_is_equal(const hb_map_t* map, const hb_map_t* other);
+     * }
+     */
+    public static int hb_map_is_equal(MemorySegment map, MemorySegment other) {
+        var mh$ = hb_map_is_equal$MH();
         try {
-            mh$.invokeExact(_l);
+            return (int)mh$.invokeExact(map, other);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle glib_queueautoptr_cleanup_GSocketService$MH() {
-        return RuntimeHelper.requireNonNull(constants$969.glib_queueautoptr_cleanup_GSocketService$MH,"glib_queueautoptr_cleanup_GSocketService");
+    public static MethodHandle hb_map_hash$MH() {
+        return RuntimeHelper.requireNonNull(constants$893.hb_map_hash$MH,"hb_map_hash");
     }
-    public static void glib_queueautoptr_cleanup_GSocketService ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GSocketService$MH();
+    /**
+     * {@snippet :
+     * unsigned int hb_map_hash(const hb_map_t* map);
+     * }
+     */
+    public static int hb_map_hash(MemorySegment map) {
+        var mh$ = hb_map_hash$MH();
         try {
-            mh$.invokeExact(_q);
+            return (int)mh$.invokeExact(map);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static OfAddress GSubprocess_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GSubprocess_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GSubprocess_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GSubprocess_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GSubprocess$MH() {
-        return RuntimeHelper.requireNonNull(constants$969.glib_autoptr_clear_GSubprocess$MH,"glib_autoptr_clear_GSubprocess");
+    public static MethodHandle hb_map_set$MH() {
+        return RuntimeHelper.requireNonNull(constants$893.hb_map_set$MH,"hb_map_set");
     }
-    public static void glib_autoptr_clear_GSubprocess ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GSubprocess$MH();
+    /**
+     * {@snippet :
+     * void hb_map_set(hb_map_t* map, hb_codepoint_t key, hb_codepoint_t value);
+     * }
+     */
+    public static void hb_map_set(MemorySegment map, int key, int value) {
+        var mh$ = hb_map_set$MH();
         try {
-            mh$.invokeExact(_ptr);
+            mh$.invokeExact(map, key, value);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle glib_autoptr_cleanup_GSubprocess$MH() {
-        return RuntimeHelper.requireNonNull(constants$969.glib_autoptr_cleanup_GSubprocess$MH,"glib_autoptr_cleanup_GSubprocess");
+    public static MethodHandle hb_map_get$MH() {
+        return RuntimeHelper.requireNonNull(constants$894.hb_map_get$MH,"hb_map_get");
     }
-    public static void glib_autoptr_cleanup_GSubprocess ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GSubprocess$MH();
+    /**
+     * {@snippet :
+     * hb_codepoint_t hb_map_get(const hb_map_t* map, hb_codepoint_t key);
+     * }
+     */
+    public static int hb_map_get(MemorySegment map, int key) {
+        var mh$ = hb_map_get$MH();
         try {
-            mh$.invokeExact(_ptr);
+            return (int)mh$.invokeExact(map, key);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle glib_listautoptr_cleanup_GSubprocess$MH() {
-        return RuntimeHelper.requireNonNull(constants$970.glib_listautoptr_cleanup_GSubprocess$MH,"glib_listautoptr_cleanup_GSubprocess");
+    public static MethodHandle hb_map_del$MH() {
+        return RuntimeHelper.requireNonNull(constants$894.hb_map_del$MH,"hb_map_del");
     }
-    public static void glib_listautoptr_cleanup_GSubprocess ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GSubprocess$MH();
+    /**
+     * {@snippet :
+     * void hb_map_del(hb_map_t* map, hb_codepoint_t key);
+     * }
+     */
+    public static void hb_map_del(MemorySegment map, int key) {
+        var mh$ = hb_map_del$MH();
         try {
-            mh$.invokeExact(_l);
+            mh$.invokeExact(map, key);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle glib_slistautoptr_cleanup_GSubprocess$MH() {
-        return RuntimeHelper.requireNonNull(constants$970.glib_slistautoptr_cleanup_GSubprocess$MH,"glib_slistautoptr_cleanup_GSubprocess");
+    public static MethodHandle hb_map_has$MH() {
+        return RuntimeHelper.requireNonNull(constants$894.hb_map_has$MH,"hb_map_has");
     }
-    public static void glib_slistautoptr_cleanup_GSubprocess ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GSubprocess$MH();
+    /**
+     * {@snippet :
+     * hb_bool_t hb_map_has(const hb_map_t* map, hb_codepoint_t key);
+     * }
+     */
+    public static int hb_map_has(MemorySegment map, int key) {
+        var mh$ = hb_map_has$MH();
         try {
-            mh$.invokeExact(_l);
+            return (int)mh$.invokeExact(map, key);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle glib_queueautoptr_cleanup_GSubprocess$MH() {
-        return RuntimeHelper.requireNonNull(constants$970.glib_queueautoptr_cleanup_GSubprocess$MH,"glib_queueautoptr_cleanup_GSubprocess");
+    public static MethodHandle hb_shape$MH() {
+        return RuntimeHelper.requireNonNull(constants$894.hb_shape$MH,"hb_shape");
     }
-    public static void glib_queueautoptr_cleanup_GSubprocess ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GSubprocess$MH();
+    /**
+     * {@snippet :
+     * void hb_shape(hb_font_t* font, hb_buffer_t* buffer, const hb_feature_t* features, unsigned int num_features);
+     * }
+     */
+    public static void hb_shape(MemorySegment font, MemorySegment buffer, MemorySegment features, int num_features) {
+        var mh$ = hb_shape$MH();
         try {
-            mh$.invokeExact(_q);
+            mh$.invokeExact(font, buffer, features, num_features);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static OfAddress GSubprocessLauncher_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GSubprocessLauncher_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GSubprocessLauncher_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GSubprocessLauncher_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GSubprocessLauncher$MH() {
-        return RuntimeHelper.requireNonNull(constants$970.glib_autoptr_clear_GSubprocessLauncher$MH,"glib_autoptr_clear_GSubprocessLauncher");
+    public static MethodHandle hb_shape_full$MH() {
+        return RuntimeHelper.requireNonNull(constants$894.hb_shape_full$MH,"hb_shape_full");
     }
-    public static void glib_autoptr_clear_GSubprocessLauncher ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GSubprocessLauncher$MH();
+    /**
+     * {@snippet :
+     * hb_bool_t hb_shape_full(hb_font_t* font, hb_buffer_t* buffer, const hb_feature_t* features, unsigned int num_features, char** shaper_list);
+     * }
+     */
+    public static int hb_shape_full(MemorySegment font, MemorySegment buffer, MemorySegment features, int num_features, MemorySegment shaper_list) {
+        var mh$ = hb_shape_full$MH();
         try {
-            mh$.invokeExact(_ptr);
+            return (int)mh$.invokeExact(font, buffer, features, num_features, shaper_list);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle glib_autoptr_cleanup_GSubprocessLauncher$MH() {
-        return RuntimeHelper.requireNonNull(constants$970.glib_autoptr_cleanup_GSubprocessLauncher$MH,"glib_autoptr_cleanup_GSubprocessLauncher");
+    public static MethodHandle hb_shape_list_shapers$MH() {
+        return RuntimeHelper.requireNonNull(constants$894.hb_shape_list_shapers$MH,"hb_shape_list_shapers");
     }
-    public static void glib_autoptr_cleanup_GSubprocessLauncher ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GSubprocessLauncher$MH();
+    /**
+     * {@snippet :
+     * char** hb_shape_list_shapers();
+     * }
+     */
+    public static MemorySegment hb_shape_list_shapers() {
+        var mh$ = hb_shape_list_shapers$MH();
         try {
-            mh$.invokeExact(_ptr);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle glib_listautoptr_cleanup_GSubprocessLauncher$MH() {
-        return RuntimeHelper.requireNonNull(constants$970.glib_listautoptr_cleanup_GSubprocessLauncher$MH,"glib_listautoptr_cleanup_GSubprocessLauncher");
+    public static MethodHandle hb_shape_plan_create$MH() {
+        return RuntimeHelper.requireNonNull(constants$895.hb_shape_plan_create$MH,"hb_shape_plan_create");
     }
-    public static void glib_listautoptr_cleanup_GSubprocessLauncher ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GSubprocessLauncher$MH();
+    /**
+     * {@snippet :
+     * hb_shape_plan_t* hb_shape_plan_create(hb_face_t* face, const hb_segment_properties_t* props, const hb_feature_t* user_features, unsigned int num_user_features, char** shaper_list);
+     * }
+     */
+    public static MemorySegment hb_shape_plan_create(MemorySegment face, MemorySegment props, MemorySegment user_features, int num_user_features, MemorySegment shaper_list) {
+        var mh$ = hb_shape_plan_create$MH();
         try {
-            mh$.invokeExact(_l);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(face, props, user_features, num_user_features, shaper_list);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle glib_slistautoptr_cleanup_GSubprocessLauncher$MH() {
-        return RuntimeHelper.requireNonNull(constants$971.glib_slistautoptr_cleanup_GSubprocessLauncher$MH,"glib_slistautoptr_cleanup_GSubprocessLauncher");
+    public static MethodHandle hb_shape_plan_create_cached$MH() {
+        return RuntimeHelper.requireNonNull(constants$895.hb_shape_plan_create_cached$MH,"hb_shape_plan_create_cached");
     }
-    public static void glib_slistautoptr_cleanup_GSubprocessLauncher ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GSubprocessLauncher$MH();
+    /**
+     * {@snippet :
+     * hb_shape_plan_t* hb_shape_plan_create_cached(hb_face_t* face, const hb_segment_properties_t* props, const hb_feature_t* user_features, unsigned int num_user_features, char** shaper_list);
+     * }
+     */
+    public static MemorySegment hb_shape_plan_create_cached(MemorySegment face, MemorySegment props, MemorySegment user_features, int num_user_features, MemorySegment shaper_list) {
+        var mh$ = hb_shape_plan_create_cached$MH();
         try {
-            mh$.invokeExact(_l);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(face, props, user_features, num_user_features, shaper_list);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle glib_queueautoptr_cleanup_GSubprocessLauncher$MH() {
-        return RuntimeHelper.requireNonNull(constants$971.glib_queueautoptr_cleanup_GSubprocessLauncher$MH,"glib_queueautoptr_cleanup_GSubprocessLauncher");
+    public static MethodHandle hb_shape_plan_create2$MH() {
+        return RuntimeHelper.requireNonNull(constants$895.hb_shape_plan_create2$MH,"hb_shape_plan_create2");
     }
-    public static void glib_queueautoptr_cleanup_GSubprocessLauncher ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GSubprocessLauncher$MH();
+    /**
+     * {@snippet :
+     * hb_shape_plan_t* hb_shape_plan_create2(hb_face_t* face, const hb_segment_properties_t* props, const hb_feature_t* user_features, unsigned int num_user_features, int* coords, unsigned int num_coords, char** shaper_list);
+     * }
+     */
+    public static MemorySegment hb_shape_plan_create2(MemorySegment face, MemorySegment props, MemorySegment user_features, int num_user_features, MemorySegment coords, int num_coords, MemorySegment shaper_list) {
+        var mh$ = hb_shape_plan_create2$MH();
         try {
-            mh$.invokeExact(_q);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(face, props, user_features, num_user_features, coords, num_coords, shaper_list);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static OfAddress GTask_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GTask_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GTask_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GTask_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GTask$MH() {
-        return RuntimeHelper.requireNonNull(constants$971.glib_autoptr_clear_GTask$MH,"glib_autoptr_clear_GTask");
+    public static MethodHandle hb_shape_plan_create_cached2$MH() {
+        return RuntimeHelper.requireNonNull(constants$895.hb_shape_plan_create_cached2$MH,"hb_shape_plan_create_cached2");
     }
-    public static void glib_autoptr_clear_GTask ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GTask$MH();
+    /**
+     * {@snippet :
+     * hb_shape_plan_t* hb_shape_plan_create_cached2(hb_face_t* face, const hb_segment_properties_t* props, const hb_feature_t* user_features, unsigned int num_user_features, int* coords, unsigned int num_coords, char** shaper_list);
+     * }
+     */
+    public static MemorySegment hb_shape_plan_create_cached2(MemorySegment face, MemorySegment props, MemorySegment user_features, int num_user_features, MemorySegment coords, int num_coords, MemorySegment shaper_list) {
+        var mh$ = hb_shape_plan_create_cached2$MH();
         try {
-            mh$.invokeExact(_ptr);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(face, props, user_features, num_user_features, coords, num_coords, shaper_list);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle glib_autoptr_cleanup_GTask$MH() {
-        return RuntimeHelper.requireNonNull(constants$971.glib_autoptr_cleanup_GTask$MH,"glib_autoptr_cleanup_GTask");
+    public static MethodHandle hb_shape_plan_get_empty$MH() {
+        return RuntimeHelper.requireNonNull(constants$895.hb_shape_plan_get_empty$MH,"hb_shape_plan_get_empty");
     }
-    public static void glib_autoptr_cleanup_GTask ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GTask$MH();
+    /**
+     * {@snippet :
+     * hb_shape_plan_t* hb_shape_plan_get_empty();
+     * }
+     */
+    public static MemorySegment hb_shape_plan_get_empty() {
+        var mh$ = hb_shape_plan_get_empty$MH();
         try {
-            mh$.invokeExact(_ptr);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle glib_listautoptr_cleanup_GTask$MH() {
-        return RuntimeHelper.requireNonNull(constants$971.glib_listautoptr_cleanup_GTask$MH,"glib_listautoptr_cleanup_GTask");
+    public static MethodHandle hb_shape_plan_reference$MH() {
+        return RuntimeHelper.requireNonNull(constants$895.hb_shape_plan_reference$MH,"hb_shape_plan_reference");
     }
-    public static void glib_listautoptr_cleanup_GTask ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GTask$MH();
+    /**
+     * {@snippet :
+     * hb_shape_plan_t* hb_shape_plan_reference(hb_shape_plan_t* shape_plan);
+     * }
+     */
+    public static MemorySegment hb_shape_plan_reference(MemorySegment shape_plan) {
+        var mh$ = hb_shape_plan_reference$MH();
         try {
-            mh$.invokeExact(_l);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(shape_plan);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle glib_slistautoptr_cleanup_GTask$MH() {
-        return RuntimeHelper.requireNonNull(constants$971.glib_slistautoptr_cleanup_GTask$MH,"glib_slistautoptr_cleanup_GTask");
+    public static MethodHandle hb_shape_plan_destroy$MH() {
+        return RuntimeHelper.requireNonNull(constants$896.hb_shape_plan_destroy$MH,"hb_shape_plan_destroy");
     }
-    public static void glib_slistautoptr_cleanup_GTask ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GTask$MH();
+    /**
+     * {@snippet :
+     * void hb_shape_plan_destroy(hb_shape_plan_t* shape_plan);
+     * }
+     */
+    public static void hb_shape_plan_destroy(MemorySegment shape_plan) {
+        var mh$ = hb_shape_plan_destroy$MH();
         try {
-            mh$.invokeExact(_l);
+            mh$.invokeExact(shape_plan);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle glib_queueautoptr_cleanup_GTask$MH() {
-        return RuntimeHelper.requireNonNull(constants$972.glib_queueautoptr_cleanup_GTask$MH,"glib_queueautoptr_cleanup_GTask");
+    public static MethodHandle hb_shape_plan_set_user_data$MH() {
+        return RuntimeHelper.requireNonNull(constants$896.hb_shape_plan_set_user_data$MH,"hb_shape_plan_set_user_data");
     }
-    public static void glib_queueautoptr_cleanup_GTask ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GTask$MH();
+    /**
+     * {@snippet :
+     * hb_bool_t hb_shape_plan_set_user_data(hb_shape_plan_t* shape_plan, hb_user_data_key_t* key, void* data, hb_destroy_func_t destroy, hb_bool_t replace);
+     * }
+     */
+    public static int hb_shape_plan_set_user_data(MemorySegment shape_plan, MemorySegment key, MemorySegment data, MemorySegment destroy, int replace) {
+        var mh$ = hb_shape_plan_set_user_data$MH();
         try {
-            mh$.invokeExact(_q);
+            return (int)mh$.invokeExact(shape_plan, key, data, destroy, replace);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static OfAddress GTcpConnection_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GTcpConnection_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GTcpConnection_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GTcpConnection_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GTcpConnection$MH() {
-        return RuntimeHelper.requireNonNull(constants$972.glib_autoptr_clear_GTcpConnection$MH,"glib_autoptr_clear_GTcpConnection");
+    public static MethodHandle hb_shape_plan_get_user_data$MH() {
+        return RuntimeHelper.requireNonNull(constants$896.hb_shape_plan_get_user_data$MH,"hb_shape_plan_get_user_data");
     }
-    public static void glib_autoptr_clear_GTcpConnection ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GTcpConnection$MH();
+    /**
+     * {@snippet :
+     * void* hb_shape_plan_get_user_data(const hb_shape_plan_t* shape_plan, hb_user_data_key_t* key);
+     * }
+     */
+    public static MemorySegment hb_shape_plan_get_user_data(MemorySegment shape_plan, MemorySegment key) {
+        var mh$ = hb_shape_plan_get_user_data$MH();
         try {
-            mh$.invokeExact(_ptr);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(shape_plan, key);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle glib_autoptr_cleanup_GTcpConnection$MH() {
-        return RuntimeHelper.requireNonNull(constants$972.glib_autoptr_cleanup_GTcpConnection$MH,"glib_autoptr_cleanup_GTcpConnection");
+    public static MethodHandle hb_shape_plan_execute$MH() {
+        return RuntimeHelper.requireNonNull(constants$896.hb_shape_plan_execute$MH,"hb_shape_plan_execute");
     }
-    public static void glib_autoptr_cleanup_GTcpConnection ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GTcpConnection$MH();
+    /**
+     * {@snippet :
+     * hb_bool_t hb_shape_plan_execute(hb_shape_plan_t* shape_plan, hb_font_t* font, hb_buffer_t* buffer, const hb_feature_t* features, unsigned int num_features);
+     * }
+     */
+    public static int hb_shape_plan_execute(MemorySegment shape_plan, MemorySegment font, MemorySegment buffer, MemorySegment features, int num_features) {
+        var mh$ = hb_shape_plan_execute$MH();
         try {
-            mh$.invokeExact(_ptr);
+            return (int)mh$.invokeExact(shape_plan, font, buffer, features, num_features);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle glib_listautoptr_cleanup_GTcpConnection$MH() {
-        return RuntimeHelper.requireNonNull(constants$972.glib_listautoptr_cleanup_GTcpConnection$MH,"glib_listautoptr_cleanup_GTcpConnection");
+    public static MethodHandle hb_shape_plan_get_shaper$MH() {
+        return RuntimeHelper.requireNonNull(constants$896.hb_shape_plan_get_shaper$MH,"hb_shape_plan_get_shaper");
     }
-    public static void glib_listautoptr_cleanup_GTcpConnection ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GTcpConnection$MH();
+    /**
+     * {@snippet :
+     * char* hb_shape_plan_get_shaper(hb_shape_plan_t* shape_plan);
+     * }
+     */
+    public static MemorySegment hb_shape_plan_get_shaper(MemorySegment shape_plan) {
+        var mh$ = hb_shape_plan_get_shaper$MH();
         try {
-            mh$.invokeExact(_l);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(shape_plan);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GTcpConnection$MH() {
-        return RuntimeHelper.requireNonNull(constants$972.glib_slistautoptr_cleanup_GTcpConnection$MH,"glib_slistautoptr_cleanup_GTcpConnection");
     }
-    public static void glib_slistautoptr_cleanup_GTcpConnection ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GTcpConnection$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
+    /**
+     * {@snippet :
+     * enum .HB_STYLE_TAG_ITALIC = 1769234796;
+     * }
+     */
+    public static int HB_STYLE_TAG_ITALIC() {
+        return (int)1769234796L;
     }
-    public static MethodHandle glib_queueautoptr_cleanup_GTcpConnection$MH() {
-        return RuntimeHelper.requireNonNull(constants$972.glib_queueautoptr_cleanup_GTcpConnection$MH,"glib_queueautoptr_cleanup_GTcpConnection");
+    /**
+     * {@snippet :
+     * enum .HB_STYLE_TAG_OPTICAL_SIZE = 1869640570;
+     * }
+     */
+    public static int HB_STYLE_TAG_OPTICAL_SIZE() {
+        return (int)1869640570L;
     }
-    public static void glib_queueautoptr_cleanup_GTcpConnection ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GTcpConnection$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
+    /**
+     * {@snippet :
+     * enum .HB_STYLE_TAG_SLANT_ANGLE = 1936486004;
+     * }
+     */
+    public static int HB_STYLE_TAG_SLANT_ANGLE() {
+        return (int)1936486004L;
     }
-    public static OfAddress GTcpWrapperConnection_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GTcpWrapperConnection_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GTcpWrapperConnection_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GTcpWrapperConnection_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GTcpWrapperConnection$MH() {
-        return RuntimeHelper.requireNonNull(constants$973.glib_autoptr_clear_GTcpWrapperConnection$MH,"glib_autoptr_clear_GTcpWrapperConnection");
+    /**
+     * {@snippet :
+     * enum .HB_STYLE_TAG_SLANT_RATIO = 1399615092;
+     * }
+     */
+    public static int HB_STYLE_TAG_SLANT_RATIO() {
+        return (int)1399615092L;
     }
-    public static void glib_autoptr_clear_GTcpWrapperConnection ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GTcpWrapperConnection$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
+    /**
+     * {@snippet :
+     * enum .HB_STYLE_TAG_WIDTH = 2003072104;
+     * }
+     */
+    public static int HB_STYLE_TAG_WIDTH() {
+        return (int)2003072104L;
     }
-    public static MethodHandle glib_autoptr_cleanup_GTcpWrapperConnection$MH() {
-        return RuntimeHelper.requireNonNull(constants$973.glib_autoptr_cleanup_GTcpWrapperConnection$MH,"glib_autoptr_cleanup_GTcpWrapperConnection");
+    /**
+     * {@snippet :
+     * enum .HB_STYLE_TAG_WEIGHT = 2003265652;
+     * }
+     */
+    public static int HB_STYLE_TAG_WEIGHT() {
+        return (int)2003265652L;
     }
-    public static void glib_autoptr_cleanup_GTcpWrapperConnection ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GTcpWrapperConnection$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
+    /**
+     * {@snippet :
+     * enum ._HB_STYLE_TAG_MAX_VALUE = 2147483647;
+     * }
+     */
+    public static int _HB_STYLE_TAG_MAX_VALUE() {
+        return (int)2147483647L;
     }
-    public static MethodHandle glib_listautoptr_cleanup_GTcpWrapperConnection$MH() {
-        return RuntimeHelper.requireNonNull(constants$973.glib_listautoptr_cleanup_GTcpWrapperConnection$MH,"glib_listautoptr_cleanup_GTcpWrapperConnection");
+    public static MethodHandle hb_style_get_value$MH() {
+        return RuntimeHelper.requireNonNull(constants$896.hb_style_get_value$MH,"hb_style_get_value");
     }
-    public static void glib_listautoptr_cleanup_GTcpWrapperConnection ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GTcpWrapperConnection$MH();
+    /**
+     * {@snippet :
+     * float hb_style_get_value(hb_font_t* font, hb_style_tag_t style_tag);
+     * }
+     */
+    public static float hb_style_get_value(MemorySegment font, int style_tag) {
+        var mh$ = hb_style_get_value$MH();
         try {
-            mh$.invokeExact(_l);
+            return (float)mh$.invokeExact(font, style_tag);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle glib_slistautoptr_cleanup_GTcpWrapperConnection$MH() {
-        return RuntimeHelper.requireNonNull(constants$973.glib_slistautoptr_cleanup_GTcpWrapperConnection$MH,"glib_slistautoptr_cleanup_GTcpWrapperConnection");
+    public static MethodHandle hb_version$MH() {
+        return RuntimeHelper.requireNonNull(constants$897.hb_version$MH,"hb_version");
     }
-    public static void glib_slistautoptr_cleanup_GTcpWrapperConnection ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GTcpWrapperConnection$MH();
+    /**
+     * {@snippet :
+     * void hb_version(unsigned int* major, unsigned int* minor, unsigned int* micro);
+     * }
+     */
+    public static void hb_version(MemorySegment major, MemorySegment minor, MemorySegment micro) {
+        var mh$ = hb_version$MH();
         try {
-            mh$.invokeExact(_l);
+            mh$.invokeExact(major, minor, micro);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle glib_queueautoptr_cleanup_GTcpWrapperConnection$MH() {
-        return RuntimeHelper.requireNonNull(constants$973.glib_queueautoptr_cleanup_GTcpWrapperConnection$MH,"glib_queueautoptr_cleanup_GTcpWrapperConnection");
+    public static MethodHandle hb_version_string$MH() {
+        return RuntimeHelper.requireNonNull(constants$897.hb_version_string$MH,"hb_version_string");
     }
-    public static void glib_queueautoptr_cleanup_GTcpWrapperConnection ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GTcpWrapperConnection$MH();
+    /**
+     * {@snippet :
+     * char* hb_version_string();
+     * }
+     */
+    public static MemorySegment hb_version_string() {
+        var mh$ = hb_version_string$MH();
         try {
-            mh$.invokeExact(_q);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static OfAddress GTestDBus_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GTestDBus_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GTestDBus_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GTestDBus_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GTestDBus$MH() {
-        return RuntimeHelper.requireNonNull(constants$973.glib_autoptr_clear_GTestDBus$MH,"glib_autoptr_clear_GTestDBus");
+    public static MethodHandle hb_version_atleast$MH() {
+        return RuntimeHelper.requireNonNull(constants$897.hb_version_atleast$MH,"hb_version_atleast");
     }
-    public static void glib_autoptr_clear_GTestDBus ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GTestDBus$MH();
+    /**
+     * {@snippet :
+     * hb_bool_t hb_version_atleast(unsigned int major, unsigned int minor, unsigned int micro);
+     * }
+     */
+    public static int hb_version_atleast(int major, int minor, int micro) {
+        var mh$ = hb_version_atleast$MH();
         try {
-            mh$.invokeExact(_ptr);
+            return (int)mh$.invokeExact(major, minor, micro);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle glib_autoptr_cleanup_GTestDBus$MH() {
-        return RuntimeHelper.requireNonNull(constants$974.glib_autoptr_cleanup_GTestDBus$MH,"glib_autoptr_cleanup_GTestDBus");
+    /**
+     * {@snippet :
+     * enum .PANGO_COVERAGE_NONE = 0;
+     * }
+     */
+    public static int PANGO_COVERAGE_NONE() {
+        return (int)0L;
     }
-    public static void glib_autoptr_cleanup_GTestDBus ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GTestDBus$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
+    /**
+     * {@snippet :
+     * enum .PANGO_COVERAGE_FALLBACK = 1;
+     * }
+     */
+    public static int PANGO_COVERAGE_FALLBACK() {
+        return (int)1L;
     }
-    public static MethodHandle glib_listautoptr_cleanup_GTestDBus$MH() {
-        return RuntimeHelper.requireNonNull(constants$974.glib_listautoptr_cleanup_GTestDBus$MH,"glib_listautoptr_cleanup_GTestDBus");
+    /**
+     * {@snippet :
+     * enum .PANGO_COVERAGE_APPROXIMATE = 2;
+     * }
+     */
+    public static int PANGO_COVERAGE_APPROXIMATE() {
+        return (int)2L;
     }
-    public static void glib_listautoptr_cleanup_GTestDBus ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GTestDBus$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
+    /**
+     * {@snippet :
+     * enum .PANGO_COVERAGE_EXACT = 3;
+     * }
+     */
+    public static int PANGO_COVERAGE_EXACT() {
+        return (int)3L;
     }
-    public static MethodHandle glib_slistautoptr_cleanup_GTestDBus$MH() {
-        return RuntimeHelper.requireNonNull(constants$974.glib_slistautoptr_cleanup_GTestDBus$MH,"glib_slistautoptr_cleanup_GTestDBus");
+    public static MethodHandle pango_coverage_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$897.pango_coverage_get_type$MH,"pango_coverage_get_type");
     }
-    public static void glib_slistautoptr_cleanup_GTestDBus ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GTestDBus$MH();
+    /**
+     * {@snippet :
+     * GType pango_coverage_get_type();
+     * }
+     */
+    public static long pango_coverage_get_type() {
+        var mh$ = pango_coverage_get_type$MH();
         try {
-            mh$.invokeExact(_l);
+            return (long)mh$.invokeExact();
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle glib_queueautoptr_cleanup_GTestDBus$MH() {
-        return RuntimeHelper.requireNonNull(constants$974.glib_queueautoptr_cleanup_GTestDBus$MH,"glib_queueautoptr_cleanup_GTestDBus");
+    public static MethodHandle pango_coverage_new$MH() {
+        return RuntimeHelper.requireNonNull(constants$897.pango_coverage_new$MH,"pango_coverage_new");
     }
-    public static void glib_queueautoptr_cleanup_GTestDBus ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GTestDBus$MH();
+    /**
+     * {@snippet :
+     * PangoCoverage* pango_coverage_new();
+     * }
+     */
+    public static MemorySegment pango_coverage_new() {
+        var mh$ = pango_coverage_new$MH();
         try {
-            mh$.invokeExact(_q);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static OfAddress GThemedIcon_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GThemedIcon_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GThemedIcon_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GThemedIcon_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GThemedIcon$MH() {
-        return RuntimeHelper.requireNonNull(constants$974.glib_autoptr_clear_GThemedIcon$MH,"glib_autoptr_clear_GThemedIcon");
+    public static MethodHandle pango_coverage_ref$MH() {
+        return RuntimeHelper.requireNonNull(constants$897.pango_coverage_ref$MH,"pango_coverage_ref");
     }
-    public static void glib_autoptr_clear_GThemedIcon ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GThemedIcon$MH();
+    /**
+     * {@snippet :
+     * PangoCoverage* pango_coverage_ref(PangoCoverage* coverage);
+     * }
+     */
+    public static MemorySegment pango_coverage_ref(MemorySegment coverage) {
+        var mh$ = pango_coverage_ref$MH();
         try {
-            mh$.invokeExact(_ptr);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(coverage);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle glib_autoptr_cleanup_GThemedIcon$MH() {
-        return RuntimeHelper.requireNonNull(constants$974.glib_autoptr_cleanup_GThemedIcon$MH,"glib_autoptr_cleanup_GThemedIcon");
+    public static MethodHandle pango_coverage_unref$MH() {
+        return RuntimeHelper.requireNonNull(constants$898.pango_coverage_unref$MH,"pango_coverage_unref");
     }
-    public static void glib_autoptr_cleanup_GThemedIcon ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GThemedIcon$MH();
+    /**
+     * {@snippet :
+     * void pango_coverage_unref(PangoCoverage* coverage);
+     * }
+     */
+    public static void pango_coverage_unref(MemorySegment coverage) {
+        var mh$ = pango_coverage_unref$MH();
         try {
-            mh$.invokeExact(_ptr);
+            mh$.invokeExact(coverage);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle glib_listautoptr_cleanup_GThemedIcon$MH() {
-        return RuntimeHelper.requireNonNull(constants$975.glib_listautoptr_cleanup_GThemedIcon$MH,"glib_listautoptr_cleanup_GThemedIcon");
+    public static MethodHandle pango_coverage_copy$MH() {
+        return RuntimeHelper.requireNonNull(constants$898.pango_coverage_copy$MH,"pango_coverage_copy");
     }
-    public static void glib_listautoptr_cleanup_GThemedIcon ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GThemedIcon$MH();
+    /**
+     * {@snippet :
+     * PangoCoverage* pango_coverage_copy(PangoCoverage* coverage);
+     * }
+     */
+    public static MemorySegment pango_coverage_copy(MemorySegment coverage) {
+        var mh$ = pango_coverage_copy$MH();
         try {
-            mh$.invokeExact(_l);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(coverage);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle glib_slistautoptr_cleanup_GThemedIcon$MH() {
-        return RuntimeHelper.requireNonNull(constants$975.glib_slistautoptr_cleanup_GThemedIcon$MH,"glib_slistautoptr_cleanup_GThemedIcon");
+    public static MethodHandle pango_coverage_get$MH() {
+        return RuntimeHelper.requireNonNull(constants$898.pango_coverage_get$MH,"pango_coverage_get");
     }
-    public static void glib_slistautoptr_cleanup_GThemedIcon ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GThemedIcon$MH();
+    /**
+     * {@snippet :
+     * PangoCoverageLevel pango_coverage_get(PangoCoverage* coverage, int index_);
+     * }
+     */
+    public static int pango_coverage_get(MemorySegment coverage, int index_) {
+        var mh$ = pango_coverage_get$MH();
         try {
-            mh$.invokeExact(_l);
+            return (int)mh$.invokeExact(coverage, index_);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle glib_queueautoptr_cleanup_GThemedIcon$MH() {
-        return RuntimeHelper.requireNonNull(constants$975.glib_queueautoptr_cleanup_GThemedIcon$MH,"glib_queueautoptr_cleanup_GThemedIcon");
+    public static MethodHandle pango_coverage_set$MH() {
+        return RuntimeHelper.requireNonNull(constants$898.pango_coverage_set$MH,"pango_coverage_set");
     }
-    public static void glib_queueautoptr_cleanup_GThemedIcon ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GThemedIcon$MH();
+    /**
+     * {@snippet :
+     * void pango_coverage_set(PangoCoverage* coverage, int index_, PangoCoverageLevel level);
+     * }
+     */
+    public static void pango_coverage_set(MemorySegment coverage, int index_, int level) {
+        var mh$ = pango_coverage_set$MH();
         try {
-            mh$.invokeExact(_q);
+            mh$.invokeExact(coverage, index_, level);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static OfAddress GThreadedSocketService_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GThreadedSocketService_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GThreadedSocketService_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GThreadedSocketService_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GThreadedSocketService$MH() {
-        return RuntimeHelper.requireNonNull(constants$975.glib_autoptr_clear_GThreadedSocketService$MH,"glib_autoptr_clear_GThreadedSocketService");
+    public static MethodHandle pango_coverage_max$MH() {
+        return RuntimeHelper.requireNonNull(constants$898.pango_coverage_max$MH,"pango_coverage_max");
     }
-    public static void glib_autoptr_clear_GThreadedSocketService ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GThreadedSocketService$MH();
+    /**
+     * {@snippet :
+     * void pango_coverage_max(PangoCoverage* coverage, PangoCoverage* other);
+     * }
+     */
+    public static void pango_coverage_max(MemorySegment coverage, MemorySegment other) {
+        var mh$ = pango_coverage_max$MH();
         try {
-            mh$.invokeExact(_ptr);
+            mh$.invokeExact(coverage, other);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle glib_autoptr_cleanup_GThreadedSocketService$MH() {
-        return RuntimeHelper.requireNonNull(constants$975.glib_autoptr_cleanup_GThreadedSocketService$MH,"glib_autoptr_cleanup_GThreadedSocketService");
+    public static MethodHandle pango_coverage_to_bytes$MH() {
+        return RuntimeHelper.requireNonNull(constants$898.pango_coverage_to_bytes$MH,"pango_coverage_to_bytes");
     }
-    public static void glib_autoptr_cleanup_GThreadedSocketService ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GThreadedSocketService$MH();
+    /**
+     * {@snippet :
+     * void pango_coverage_to_bytes(PangoCoverage* coverage, guchar** bytes, int* n_bytes);
+     * }
+     */
+    public static void pango_coverage_to_bytes(MemorySegment coverage, MemorySegment bytes, MemorySegment n_bytes) {
+        var mh$ = pango_coverage_to_bytes$MH();
         try {
-            mh$.invokeExact(_ptr);
+            mh$.invokeExact(coverage, bytes, n_bytes);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle glib_listautoptr_cleanup_GThreadedSocketService$MH() {
-        return RuntimeHelper.requireNonNull(constants$975.glib_listautoptr_cleanup_GThreadedSocketService$MH,"glib_listautoptr_cleanup_GThreadedSocketService");
+    public static MethodHandle pango_coverage_from_bytes$MH() {
+        return RuntimeHelper.requireNonNull(constants$899.pango_coverage_from_bytes$MH,"pango_coverage_from_bytes");
     }
-    public static void glib_listautoptr_cleanup_GThreadedSocketService ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GThreadedSocketService$MH();
+    /**
+     * {@snippet :
+     * PangoCoverage* pango_coverage_from_bytes(guchar* bytes, int n_bytes);
+     * }
+     */
+    public static MemorySegment pango_coverage_from_bytes(MemorySegment bytes, int n_bytes) {
+        var mh$ = pango_coverage_from_bytes$MH();
         try {
-            mh$.invokeExact(_l);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(bytes, n_bytes);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle glib_slistautoptr_cleanup_GThreadedSocketService$MH() {
-        return RuntimeHelper.requireNonNull(constants$976.glib_slistautoptr_cleanup_GThreadedSocketService$MH,"glib_slistautoptr_cleanup_GThreadedSocketService");
+    /**
+     * {@snippet :
+     * typedef struct _PangoCoverage* PangoCoverage_autoptr;
+     * }
+     */
+    public static final OfAddress PangoCoverage_autoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GList* PangoCoverage_listautoptr;
+     * }
+     */
+    public static final OfAddress PangoCoverage_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* PangoCoverage_slistautoptr;
+     * }
+     */
+    public static final OfAddress PangoCoverage_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* PangoCoverage_queueautoptr;
+     * }
+     */
+    public static final OfAddress PangoCoverage_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef unsigned int PangoGlyph;
+     * }
+     */
+    public static final OfInt PangoGlyph = Constants$root.C_INT$LAYOUT;
+    public static MethodHandle pango_units_from_double$MH() {
+        return RuntimeHelper.requireNonNull(constants$899.pango_units_from_double$MH,"pango_units_from_double");
     }
-    public static void glib_slistautoptr_cleanup_GThreadedSocketService ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GThreadedSocketService$MH();
+    /**
+     * {@snippet :
+     * int pango_units_from_double(double d);
+     * }
+     */
+    public static int pango_units_from_double(double d) {
+        var mh$ = pango_units_from_double$MH();
         try {
-            mh$.invokeExact(_l);
+            return (int)mh$.invokeExact(d);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle glib_queueautoptr_cleanup_GThreadedSocketService$MH() {
-        return RuntimeHelper.requireNonNull(constants$976.glib_queueautoptr_cleanup_GThreadedSocketService$MH,"glib_queueautoptr_cleanup_GThreadedSocketService");
+    public static MethodHandle pango_units_to_double$MH() {
+        return RuntimeHelper.requireNonNull(constants$899.pango_units_to_double$MH,"pango_units_to_double");
     }
-    public static void glib_queueautoptr_cleanup_GThreadedSocketService ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GThreadedSocketService$MH();
+    /**
+     * {@snippet :
+     * double pango_units_to_double(int i);
+     * }
+     */
+    public static double pango_units_to_double(int i) {
+        var mh$ = pango_units_to_double$MH();
         try {
-            mh$.invokeExact(_q);
+            return (double)mh$.invokeExact(i);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static OfAddress GTlsBackend_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GTlsBackend_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GTlsBackend_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GTlsBackend_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GTlsBackend$MH() {
-        return RuntimeHelper.requireNonNull(constants$976.glib_autoptr_clear_GTlsBackend$MH,"glib_autoptr_clear_GTlsBackend");
+    public static MethodHandle pango_extents_to_pixels$MH() {
+        return RuntimeHelper.requireNonNull(constants$899.pango_extents_to_pixels$MH,"pango_extents_to_pixels");
     }
-    public static void glib_autoptr_clear_GTlsBackend ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GTlsBackend$MH();
+    /**
+     * {@snippet :
+     * void pango_extents_to_pixels(PangoRectangle* inclusive, PangoRectangle* nearest);
+     * }
+     */
+    public static void pango_extents_to_pixels(MemorySegment inclusive, MemorySegment nearest) {
+        var mh$ = pango_extents_to_pixels$MH();
         try {
-            mh$.invokeExact(_ptr);
+            mh$.invokeExact(inclusive, nearest);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle glib_autoptr_cleanup_GTlsBackend$MH() {
-        return RuntimeHelper.requireNonNull(constants$976.glib_autoptr_cleanup_GTlsBackend$MH,"glib_autoptr_cleanup_GTlsBackend");
+    /**
+     * {@snippet :
+     * enum .PANGO_GRAVITY_SOUTH = 0;
+     * }
+     */
+    public static int PANGO_GRAVITY_SOUTH() {
+        return (int)0L;
     }
-    public static void glib_autoptr_cleanup_GTlsBackend ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GTlsBackend$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
+    /**
+     * {@snippet :
+     * enum .PANGO_GRAVITY_EAST = 1;
+     * }
+     */
+    public static int PANGO_GRAVITY_EAST() {
+        return (int)1L;
     }
-    public static MethodHandle glib_listautoptr_cleanup_GTlsBackend$MH() {
-        return RuntimeHelper.requireNonNull(constants$976.glib_listautoptr_cleanup_GTlsBackend$MH,"glib_listautoptr_cleanup_GTlsBackend");
+    /**
+     * {@snippet :
+     * enum .PANGO_GRAVITY_NORTH = 2;
+     * }
+     */
+    public static int PANGO_GRAVITY_NORTH() {
+        return (int)2L;
     }
-    public static void glib_listautoptr_cleanup_GTlsBackend ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GTlsBackend$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
+    /**
+     * {@snippet :
+     * enum .PANGO_GRAVITY_WEST = 3;
+     * }
+     */
+    public static int PANGO_GRAVITY_WEST() {
+        return (int)3L;
     }
-    public static MethodHandle glib_slistautoptr_cleanup_GTlsBackend$MH() {
-        return RuntimeHelper.requireNonNull(constants$976.glib_slistautoptr_cleanup_GTlsBackend$MH,"glib_slistautoptr_cleanup_GTlsBackend");
+    /**
+     * {@snippet :
+     * enum .PANGO_GRAVITY_AUTO = 4;
+     * }
+     */
+    public static int PANGO_GRAVITY_AUTO() {
+        return (int)4L;
     }
-    public static void glib_slistautoptr_cleanup_GTlsBackend ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GTlsBackend$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
+    /**
+     * {@snippet :
+     * enum .PANGO_GRAVITY_HINT_NATURAL = 0;
+     * }
+     */
+    public static int PANGO_GRAVITY_HINT_NATURAL() {
+        return (int)0L;
     }
-    public static MethodHandle glib_queueautoptr_cleanup_GTlsBackend$MH() {
-        return RuntimeHelper.requireNonNull(constants$977.glib_queueautoptr_cleanup_GTlsBackend$MH,"glib_queueautoptr_cleanup_GTlsBackend");
+    /**
+     * {@snippet :
+     * enum .PANGO_GRAVITY_HINT_STRONG = 1;
+     * }
+     */
+    public static int PANGO_GRAVITY_HINT_STRONG() {
+        return (int)1L;
     }
-    public static void glib_queueautoptr_cleanup_GTlsBackend ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GTlsBackend$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
+    /**
+     * {@snippet :
+     * enum .PANGO_GRAVITY_HINT_LINE = 2;
+     * }
+     */
+    public static int PANGO_GRAVITY_HINT_LINE() {
+        return (int)2L;
     }
-    public static OfAddress GTlsCertificate_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GTlsCertificate_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GTlsCertificate_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GTlsCertificate_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GTlsCertificate$MH() {
-        return RuntimeHelper.requireNonNull(constants$977.glib_autoptr_clear_GTlsCertificate$MH,"glib_autoptr_clear_GTlsCertificate");
+    public static MethodHandle pango_matrix_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$899.pango_matrix_get_type$MH,"pango_matrix_get_type");
     }
-    public static void glib_autoptr_clear_GTlsCertificate ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GTlsCertificate$MH();
+    /**
+     * {@snippet :
+     * GType pango_matrix_get_type();
+     * }
+     */
+    public static long pango_matrix_get_type() {
+        var mh$ = pango_matrix_get_type$MH();
         try {
-            mh$.invokeExact(_ptr);
+            return (long)mh$.invokeExact();
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle glib_autoptr_cleanup_GTlsCertificate$MH() {
-        return RuntimeHelper.requireNonNull(constants$977.glib_autoptr_cleanup_GTlsCertificate$MH,"glib_autoptr_cleanup_GTlsCertificate");
+    public static MethodHandle pango_matrix_copy$MH() {
+        return RuntimeHelper.requireNonNull(constants$899.pango_matrix_copy$MH,"pango_matrix_copy");
     }
-    public static void glib_autoptr_cleanup_GTlsCertificate ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GTlsCertificate$MH();
+    /**
+     * {@snippet :
+     * PangoMatrix* pango_matrix_copy(const PangoMatrix* matrix);
+     * }
+     */
+    public static MemorySegment pango_matrix_copy(MemorySegment matrix) {
+        var mh$ = pango_matrix_copy$MH();
         try {
-            mh$.invokeExact(_ptr);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(matrix);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle glib_listautoptr_cleanup_GTlsCertificate$MH() {
-        return RuntimeHelper.requireNonNull(constants$977.glib_listautoptr_cleanup_GTlsCertificate$MH,"glib_listautoptr_cleanup_GTlsCertificate");
+    public static MethodHandle pango_matrix_free$MH() {
+        return RuntimeHelper.requireNonNull(constants$900.pango_matrix_free$MH,"pango_matrix_free");
     }
-    public static void glib_listautoptr_cleanup_GTlsCertificate ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GTlsCertificate$MH();
+    /**
+     * {@snippet :
+     * void pango_matrix_free(PangoMatrix* matrix);
+     * }
+     */
+    public static void pango_matrix_free(MemorySegment matrix) {
+        var mh$ = pango_matrix_free$MH();
         try {
-            mh$.invokeExact(_l);
+            mh$.invokeExact(matrix);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle glib_slistautoptr_cleanup_GTlsCertificate$MH() {
-        return RuntimeHelper.requireNonNull(constants$977.glib_slistautoptr_cleanup_GTlsCertificate$MH,"glib_slistautoptr_cleanup_GTlsCertificate");
+    public static MethodHandle pango_matrix_translate$MH() {
+        return RuntimeHelper.requireNonNull(constants$900.pango_matrix_translate$MH,"pango_matrix_translate");
     }
-    public static void glib_slistautoptr_cleanup_GTlsCertificate ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GTlsCertificate$MH();
+    /**
+     * {@snippet :
+     * void pango_matrix_translate(PangoMatrix* matrix, double tx, double ty);
+     * }
+     */
+    public static void pango_matrix_translate(MemorySegment matrix, double tx, double ty) {
+        var mh$ = pango_matrix_translate$MH();
         try {
-            mh$.invokeExact(_l);
+            mh$.invokeExact(matrix, tx, ty);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle glib_queueautoptr_cleanup_GTlsCertificate$MH() {
-        return RuntimeHelper.requireNonNull(constants$977.glib_queueautoptr_cleanup_GTlsCertificate$MH,"glib_queueautoptr_cleanup_GTlsCertificate");
+    public static MethodHandle pango_matrix_scale$MH() {
+        return RuntimeHelper.requireNonNull(constants$900.pango_matrix_scale$MH,"pango_matrix_scale");
     }
-    public static void glib_queueautoptr_cleanup_GTlsCertificate ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GTlsCertificate$MH();
+    /**
+     * {@snippet :
+     * void pango_matrix_scale(PangoMatrix* matrix, double scale_x, double scale_y);
+     * }
+     */
+    public static void pango_matrix_scale(MemorySegment matrix, double scale_x, double scale_y) {
+        var mh$ = pango_matrix_scale$MH();
         try {
-            mh$.invokeExact(_q);
+            mh$.invokeExact(matrix, scale_x, scale_y);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static OfAddress GTlsClientConnection_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GTlsClientConnection_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GTlsClientConnection_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GTlsClientConnection_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GTlsClientConnection$MH() {
-        return RuntimeHelper.requireNonNull(constants$978.glib_autoptr_clear_GTlsClientConnection$MH,"glib_autoptr_clear_GTlsClientConnection");
+    public static MethodHandle pango_matrix_rotate$MH() {
+        return RuntimeHelper.requireNonNull(constants$900.pango_matrix_rotate$MH,"pango_matrix_rotate");
     }
-    public static void glib_autoptr_clear_GTlsClientConnection ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GTlsClientConnection$MH();
+    /**
+     * {@snippet :
+     * void pango_matrix_rotate(PangoMatrix* matrix, double degrees);
+     * }
+     */
+    public static void pango_matrix_rotate(MemorySegment matrix, double degrees) {
+        var mh$ = pango_matrix_rotate$MH();
         try {
-            mh$.invokeExact(_ptr);
+            mh$.invokeExact(matrix, degrees);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle glib_autoptr_cleanup_GTlsClientConnection$MH() {
-        return RuntimeHelper.requireNonNull(constants$978.glib_autoptr_cleanup_GTlsClientConnection$MH,"glib_autoptr_cleanup_GTlsClientConnection");
+    public static MethodHandle pango_matrix_concat$MH() {
+        return RuntimeHelper.requireNonNull(constants$900.pango_matrix_concat$MH,"pango_matrix_concat");
     }
-    public static void glib_autoptr_cleanup_GTlsClientConnection ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GTlsClientConnection$MH();
+    /**
+     * {@snippet :
+     * void pango_matrix_concat(PangoMatrix* matrix, const PangoMatrix* new_matrix);
+     * }
+     */
+    public static void pango_matrix_concat(MemorySegment matrix, MemorySegment new_matrix) {
+        var mh$ = pango_matrix_concat$MH();
         try {
-            mh$.invokeExact(_ptr);
+            mh$.invokeExact(matrix, new_matrix);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle glib_listautoptr_cleanup_GTlsClientConnection$MH() {
-        return RuntimeHelper.requireNonNull(constants$978.glib_listautoptr_cleanup_GTlsClientConnection$MH,"glib_listautoptr_cleanup_GTlsClientConnection");
+    public static MethodHandle pango_matrix_transform_point$MH() {
+        return RuntimeHelper.requireNonNull(constants$900.pango_matrix_transform_point$MH,"pango_matrix_transform_point");
     }
-    public static void glib_listautoptr_cleanup_GTlsClientConnection ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GTlsClientConnection$MH();
+    /**
+     * {@snippet :
+     * void pango_matrix_transform_point(const PangoMatrix* matrix, double* x, double* y);
+     * }
+     */
+    public static void pango_matrix_transform_point(MemorySegment matrix, MemorySegment x, MemorySegment y) {
+        var mh$ = pango_matrix_transform_point$MH();
         try {
-            mh$.invokeExact(_l);
+            mh$.invokeExact(matrix, x, y);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle glib_slistautoptr_cleanup_GTlsClientConnection$MH() {
-        return RuntimeHelper.requireNonNull(constants$978.glib_slistautoptr_cleanup_GTlsClientConnection$MH,"glib_slistautoptr_cleanup_GTlsClientConnection");
+    public static MethodHandle pango_matrix_transform_distance$MH() {
+        return RuntimeHelper.requireNonNull(constants$901.pango_matrix_transform_distance$MH,"pango_matrix_transform_distance");
     }
-    public static void glib_slistautoptr_cleanup_GTlsClientConnection ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GTlsClientConnection$MH();
+    /**
+     * {@snippet :
+     * void pango_matrix_transform_distance(const PangoMatrix* matrix, double* dx, double* dy);
+     * }
+     */
+    public static void pango_matrix_transform_distance(MemorySegment matrix, MemorySegment dx, MemorySegment dy) {
+        var mh$ = pango_matrix_transform_distance$MH();
         try {
-            mh$.invokeExact(_l);
+            mh$.invokeExact(matrix, dx, dy);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle glib_queueautoptr_cleanup_GTlsClientConnection$MH() {
-        return RuntimeHelper.requireNonNull(constants$978.glib_queueautoptr_cleanup_GTlsClientConnection$MH,"glib_queueautoptr_cleanup_GTlsClientConnection");
+    public static MethodHandle pango_matrix_transform_rectangle$MH() {
+        return RuntimeHelper.requireNonNull(constants$901.pango_matrix_transform_rectangle$MH,"pango_matrix_transform_rectangle");
     }
-    public static void glib_queueautoptr_cleanup_GTlsClientConnection ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GTlsClientConnection$MH();
+    /**
+     * {@snippet :
+     * void pango_matrix_transform_rectangle(const PangoMatrix* matrix, PangoRectangle* rect);
+     * }
+     */
+    public static void pango_matrix_transform_rectangle(MemorySegment matrix, MemorySegment rect) {
+        var mh$ = pango_matrix_transform_rectangle$MH();
         try {
-            mh$.invokeExact(_q);
+            mh$.invokeExact(matrix, rect);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static OfAddress GTlsConnection_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GTlsConnection_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GTlsConnection_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GTlsConnection_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GTlsConnection$MH() {
-        return RuntimeHelper.requireNonNull(constants$978.glib_autoptr_clear_GTlsConnection$MH,"glib_autoptr_clear_GTlsConnection");
+    public static MethodHandle pango_matrix_transform_pixel_rectangle$MH() {
+        return RuntimeHelper.requireNonNull(constants$901.pango_matrix_transform_pixel_rectangle$MH,"pango_matrix_transform_pixel_rectangle");
     }
-    public static void glib_autoptr_clear_GTlsConnection ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GTlsConnection$MH();
+    /**
+     * {@snippet :
+     * void pango_matrix_transform_pixel_rectangle(const PangoMatrix* matrix, PangoRectangle* rect);
+     * }
+     */
+    public static void pango_matrix_transform_pixel_rectangle(MemorySegment matrix, MemorySegment rect) {
+        var mh$ = pango_matrix_transform_pixel_rectangle$MH();
         try {
-            mh$.invokeExact(_ptr);
+            mh$.invokeExact(matrix, rect);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle glib_autoptr_cleanup_GTlsConnection$MH() {
-        return RuntimeHelper.requireNonNull(constants$979.glib_autoptr_cleanup_GTlsConnection$MH,"glib_autoptr_cleanup_GTlsConnection");
+    public static MethodHandle pango_matrix_get_font_scale_factor$MH() {
+        return RuntimeHelper.requireNonNull(constants$901.pango_matrix_get_font_scale_factor$MH,"pango_matrix_get_font_scale_factor");
     }
-    public static void glib_autoptr_cleanup_GTlsConnection ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GTlsConnection$MH();
+    /**
+     * {@snippet :
+     * double pango_matrix_get_font_scale_factor(const PangoMatrix* matrix);
+     * }
+     */
+    public static double pango_matrix_get_font_scale_factor(MemorySegment matrix) {
+        var mh$ = pango_matrix_get_font_scale_factor$MH();
         try {
-            mh$.invokeExact(_ptr);
+            return (double)mh$.invokeExact(matrix);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle glib_listautoptr_cleanup_GTlsConnection$MH() {
-        return RuntimeHelper.requireNonNull(constants$979.glib_listautoptr_cleanup_GTlsConnection$MH,"glib_listautoptr_cleanup_GTlsConnection");
+    public static MethodHandle pango_matrix_get_font_scale_factors$MH() {
+        return RuntimeHelper.requireNonNull(constants$901.pango_matrix_get_font_scale_factors$MH,"pango_matrix_get_font_scale_factors");
     }
-    public static void glib_listautoptr_cleanup_GTlsConnection ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GTlsConnection$MH();
+    /**
+     * {@snippet :
+     * void pango_matrix_get_font_scale_factors(const PangoMatrix* matrix, double* xscale, double* yscale);
+     * }
+     */
+    public static void pango_matrix_get_font_scale_factors(MemorySegment matrix, MemorySegment xscale, MemorySegment yscale) {
+        var mh$ = pango_matrix_get_font_scale_factors$MH();
         try {
-            mh$.invokeExact(_l);
+            mh$.invokeExact(matrix, xscale, yscale);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle glib_slistautoptr_cleanup_GTlsConnection$MH() {
-        return RuntimeHelper.requireNonNull(constants$979.glib_slistautoptr_cleanup_GTlsConnection$MH,"glib_slistautoptr_cleanup_GTlsConnection");
+    public static MethodHandle pango_matrix_get_slant_ratio$MH() {
+        return RuntimeHelper.requireNonNull(constants$901.pango_matrix_get_slant_ratio$MH,"pango_matrix_get_slant_ratio");
     }
-    public static void glib_slistautoptr_cleanup_GTlsConnection ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GTlsConnection$MH();
+    /**
+     * {@snippet :
+     * double pango_matrix_get_slant_ratio(const PangoMatrix* matrix);
+     * }
+     */
+    public static double pango_matrix_get_slant_ratio(MemorySegment matrix) {
+        var mh$ = pango_matrix_get_slant_ratio$MH();
         try {
-            mh$.invokeExact(_l);
+            return (double)mh$.invokeExact(matrix);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle glib_queueautoptr_cleanup_GTlsConnection$MH() {
-        return RuntimeHelper.requireNonNull(constants$979.glib_queueautoptr_cleanup_GTlsConnection$MH,"glib_queueautoptr_cleanup_GTlsConnection");
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_INVALID_CODE = -1;
+     * }
+     */
+    public static int PANGO_SCRIPT_INVALID_CODE() {
+        return (int)-1L;
     }
-    public static void glib_queueautoptr_cleanup_GTlsConnection ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GTlsConnection$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_COMMON = 0;
+     * }
+     */
+    public static int PANGO_SCRIPT_COMMON() {
+        return (int)0L;
     }
-    public static OfAddress GTlsDatabase_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GTlsDatabase_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GTlsDatabase_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GTlsDatabase_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GTlsDatabase$MH() {
-        return RuntimeHelper.requireNonNull(constants$979.glib_autoptr_clear_GTlsDatabase$MH,"glib_autoptr_clear_GTlsDatabase");
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_INHERITED = 1;
+     * }
+     */
+    public static int PANGO_SCRIPT_INHERITED() {
+        return (int)1L;
     }
-    public static void glib_autoptr_clear_GTlsDatabase ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GTlsDatabase$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_ARABIC = 2;
+     * }
+     */
+    public static int PANGO_SCRIPT_ARABIC() {
+        return (int)2L;
     }
-    public static MethodHandle glib_autoptr_cleanup_GTlsDatabase$MH() {
-        return RuntimeHelper.requireNonNull(constants$979.glib_autoptr_cleanup_GTlsDatabase$MH,"glib_autoptr_cleanup_GTlsDatabase");
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_ARMENIAN = 3;
+     * }
+     */
+    public static int PANGO_SCRIPT_ARMENIAN() {
+        return (int)3L;
     }
-    public static void glib_autoptr_cleanup_GTlsDatabase ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GTlsDatabase$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_BENGALI = 4;
+     * }
+     */
+    public static int PANGO_SCRIPT_BENGALI() {
+        return (int)4L;
     }
-    public static MethodHandle glib_listautoptr_cleanup_GTlsDatabase$MH() {
-        return RuntimeHelper.requireNonNull(constants$980.glib_listautoptr_cleanup_GTlsDatabase$MH,"glib_listautoptr_cleanup_GTlsDatabase");
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_BOPOMOFO = 5;
+     * }
+     */
+    public static int PANGO_SCRIPT_BOPOMOFO() {
+        return (int)5L;
     }
-    public static void glib_listautoptr_cleanup_GTlsDatabase ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GTlsDatabase$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_CHEROKEE = 6;
+     * }
+     */
+    public static int PANGO_SCRIPT_CHEROKEE() {
+        return (int)6L;
     }
-    public static MethodHandle glib_slistautoptr_cleanup_GTlsDatabase$MH() {
-        return RuntimeHelper.requireNonNull(constants$980.glib_slistautoptr_cleanup_GTlsDatabase$MH,"glib_slistautoptr_cleanup_GTlsDatabase");
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_COPTIC = 7;
+     * }
+     */
+    public static int PANGO_SCRIPT_COPTIC() {
+        return (int)7L;
     }
-    public static void glib_slistautoptr_cleanup_GTlsDatabase ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GTlsDatabase$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_CYRILLIC = 8;
+     * }
+     */
+    public static int PANGO_SCRIPT_CYRILLIC() {
+        return (int)8L;
     }
-    public static MethodHandle glib_queueautoptr_cleanup_GTlsDatabase$MH() {
-        return RuntimeHelper.requireNonNull(constants$980.glib_queueautoptr_cleanup_GTlsDatabase$MH,"glib_queueautoptr_cleanup_GTlsDatabase");
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_DESERET = 9;
+     * }
+     */
+    public static int PANGO_SCRIPT_DESERET() {
+        return (int)9L;
     }
-    public static void glib_queueautoptr_cleanup_GTlsDatabase ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GTlsDatabase$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_DEVANAGARI = 10;
+     * }
+     */
+    public static int PANGO_SCRIPT_DEVANAGARI() {
+        return (int)10L;
     }
-    public static OfAddress GTlsFileDatabase_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GTlsFileDatabase_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GTlsFileDatabase_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GTlsFileDatabase_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GTlsFileDatabase$MH() {
-        return RuntimeHelper.requireNonNull(constants$980.glib_autoptr_clear_GTlsFileDatabase$MH,"glib_autoptr_clear_GTlsFileDatabase");
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_ETHIOPIC = 11;
+     * }
+     */
+    public static int PANGO_SCRIPT_ETHIOPIC() {
+        return (int)11L;
     }
-    public static void glib_autoptr_clear_GTlsFileDatabase ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GTlsFileDatabase$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_GEORGIAN = 12;
+     * }
+     */
+    public static int PANGO_SCRIPT_GEORGIAN() {
+        return (int)12L;
     }
-    public static MethodHandle glib_autoptr_cleanup_GTlsFileDatabase$MH() {
-        return RuntimeHelper.requireNonNull(constants$980.glib_autoptr_cleanup_GTlsFileDatabase$MH,"glib_autoptr_cleanup_GTlsFileDatabase");
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_GOTHIC = 13;
+     * }
+     */
+    public static int PANGO_SCRIPT_GOTHIC() {
+        return (int)13L;
     }
-    public static void glib_autoptr_cleanup_GTlsFileDatabase ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GTlsFileDatabase$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_GREEK = 14;
+     * }
+     */
+    public static int PANGO_SCRIPT_GREEK() {
+        return (int)14L;
     }
-    public static MethodHandle glib_listautoptr_cleanup_GTlsFileDatabase$MH() {
-        return RuntimeHelper.requireNonNull(constants$980.glib_listautoptr_cleanup_GTlsFileDatabase$MH,"glib_listautoptr_cleanup_GTlsFileDatabase");
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_GUJARATI = 15;
+     * }
+     */
+    public static int PANGO_SCRIPT_GUJARATI() {
+        return (int)15L;
     }
-    public static void glib_listautoptr_cleanup_GTlsFileDatabase ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GTlsFileDatabase$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_GURMUKHI = 16;
+     * }
+     */
+    public static int PANGO_SCRIPT_GURMUKHI() {
+        return (int)16L;
     }
-    public static MethodHandle glib_slistautoptr_cleanup_GTlsFileDatabase$MH() {
-        return RuntimeHelper.requireNonNull(constants$981.glib_slistautoptr_cleanup_GTlsFileDatabase$MH,"glib_slistautoptr_cleanup_GTlsFileDatabase");
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_HAN = 17;
+     * }
+     */
+    public static int PANGO_SCRIPT_HAN() {
+        return (int)17L;
     }
-    public static void glib_slistautoptr_cleanup_GTlsFileDatabase ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GTlsFileDatabase$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_HANGUL = 18;
+     * }
+     */
+    public static int PANGO_SCRIPT_HANGUL() {
+        return (int)18L;
     }
-    public static MethodHandle glib_queueautoptr_cleanup_GTlsFileDatabase$MH() {
-        return RuntimeHelper.requireNonNull(constants$981.glib_queueautoptr_cleanup_GTlsFileDatabase$MH,"glib_queueautoptr_cleanup_GTlsFileDatabase");
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_HEBREW = 19;
+     * }
+     */
+    public static int PANGO_SCRIPT_HEBREW() {
+        return (int)19L;
     }
-    public static void glib_queueautoptr_cleanup_GTlsFileDatabase ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GTlsFileDatabase$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_HIRAGANA = 20;
+     * }
+     */
+    public static int PANGO_SCRIPT_HIRAGANA() {
+        return (int)20L;
     }
-    public static OfAddress GTlsInteraction_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GTlsInteraction_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GTlsInteraction_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GTlsInteraction_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GTlsInteraction$MH() {
-        return RuntimeHelper.requireNonNull(constants$981.glib_autoptr_clear_GTlsInteraction$MH,"glib_autoptr_clear_GTlsInteraction");
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_KANNADA = 21;
+     * }
+     */
+    public static int PANGO_SCRIPT_KANNADA() {
+        return (int)21L;
     }
-    public static void glib_autoptr_clear_GTlsInteraction ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GTlsInteraction$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_KATAKANA = 22;
+     * }
+     */
+    public static int PANGO_SCRIPT_KATAKANA() {
+        return (int)22L;
     }
-    public static MethodHandle glib_autoptr_cleanup_GTlsInteraction$MH() {
-        return RuntimeHelper.requireNonNull(constants$981.glib_autoptr_cleanup_GTlsInteraction$MH,"glib_autoptr_cleanup_GTlsInteraction");
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_KHMER = 23;
+     * }
+     */
+    public static int PANGO_SCRIPT_KHMER() {
+        return (int)23L;
     }
-    public static void glib_autoptr_cleanup_GTlsInteraction ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GTlsInteraction$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_LAO = 24;
+     * }
+     */
+    public static int PANGO_SCRIPT_LAO() {
+        return (int)24L;
     }
-    public static MethodHandle glib_listautoptr_cleanup_GTlsInteraction$MH() {
-        return RuntimeHelper.requireNonNull(constants$981.glib_listautoptr_cleanup_GTlsInteraction$MH,"glib_listautoptr_cleanup_GTlsInteraction");
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_LATIN = 25;
+     * }
+     */
+    public static int PANGO_SCRIPT_LATIN() {
+        return (int)25L;
     }
-    public static void glib_listautoptr_cleanup_GTlsInteraction ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GTlsInteraction$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_MALAYALAM = 26;
+     * }
+     */
+    public static int PANGO_SCRIPT_MALAYALAM() {
+        return (int)26L;
     }
-    public static MethodHandle glib_slistautoptr_cleanup_GTlsInteraction$MH() {
-        return RuntimeHelper.requireNonNull(constants$981.glib_slistautoptr_cleanup_GTlsInteraction$MH,"glib_slistautoptr_cleanup_GTlsInteraction");
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_MONGOLIAN = 27;
+     * }
+     */
+    public static int PANGO_SCRIPT_MONGOLIAN() {
+        return (int)27L;
     }
-    public static void glib_slistautoptr_cleanup_GTlsInteraction ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GTlsInteraction$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_MYANMAR = 28;
+     * }
+     */
+    public static int PANGO_SCRIPT_MYANMAR() {
+        return (int)28L;
     }
-    public static MethodHandle glib_queueautoptr_cleanup_GTlsInteraction$MH() {
-        return RuntimeHelper.requireNonNull(constants$982.glib_queueautoptr_cleanup_GTlsInteraction$MH,"glib_queueautoptr_cleanup_GTlsInteraction");
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_OGHAM = 29;
+     * }
+     */
+    public static int PANGO_SCRIPT_OGHAM() {
+        return (int)29L;
     }
-    public static void glib_queueautoptr_cleanup_GTlsInteraction ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GTlsInteraction$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_OLD_ITALIC = 30;
+     * }
+     */
+    public static int PANGO_SCRIPT_OLD_ITALIC() {
+        return (int)30L;
     }
-    public static OfAddress GTlsPassword_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GTlsPassword_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GTlsPassword_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GTlsPassword_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GTlsPassword$MH() {
-        return RuntimeHelper.requireNonNull(constants$982.glib_autoptr_clear_GTlsPassword$MH,"glib_autoptr_clear_GTlsPassword");
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_ORIYA = 31;
+     * }
+     */
+    public static int PANGO_SCRIPT_ORIYA() {
+        return (int)31L;
     }
-    public static void glib_autoptr_clear_GTlsPassword ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GTlsPassword$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_RUNIC = 32;
+     * }
+     */
+    public static int PANGO_SCRIPT_RUNIC() {
+        return (int)32L;
     }
-    public static MethodHandle glib_autoptr_cleanup_GTlsPassword$MH() {
-        return RuntimeHelper.requireNonNull(constants$982.glib_autoptr_cleanup_GTlsPassword$MH,"glib_autoptr_cleanup_GTlsPassword");
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_SINHALA = 33;
+     * }
+     */
+    public static int PANGO_SCRIPT_SINHALA() {
+        return (int)33L;
     }
-    public static void glib_autoptr_cleanup_GTlsPassword ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GTlsPassword$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_SYRIAC = 34;
+     * }
+     */
+    public static int PANGO_SCRIPT_SYRIAC() {
+        return (int)34L;
     }
-    public static MethodHandle glib_listautoptr_cleanup_GTlsPassword$MH() {
-        return RuntimeHelper.requireNonNull(constants$982.glib_listautoptr_cleanup_GTlsPassword$MH,"glib_listautoptr_cleanup_GTlsPassword");
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_TAMIL = 35;
+     * }
+     */
+    public static int PANGO_SCRIPT_TAMIL() {
+        return (int)35L;
     }
-    public static void glib_listautoptr_cleanup_GTlsPassword ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GTlsPassword$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_TELUGU = 36;
+     * }
+     */
+    public static int PANGO_SCRIPT_TELUGU() {
+        return (int)36L;
     }
-    public static MethodHandle glib_slistautoptr_cleanup_GTlsPassword$MH() {
-        return RuntimeHelper.requireNonNull(constants$982.glib_slistautoptr_cleanup_GTlsPassword$MH,"glib_slistautoptr_cleanup_GTlsPassword");
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_THAANA = 37;
+     * }
+     */
+    public static int PANGO_SCRIPT_THAANA() {
+        return (int)37L;
     }
-    public static void glib_slistautoptr_cleanup_GTlsPassword ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GTlsPassword$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_THAI = 38;
+     * }
+     */
+    public static int PANGO_SCRIPT_THAI() {
+        return (int)38L;
     }
-    public static MethodHandle glib_queueautoptr_cleanup_GTlsPassword$MH() {
-        return RuntimeHelper.requireNonNull(constants$982.glib_queueautoptr_cleanup_GTlsPassword$MH,"glib_queueautoptr_cleanup_GTlsPassword");
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_TIBETAN = 39;
+     * }
+     */
+    public static int PANGO_SCRIPT_TIBETAN() {
+        return (int)39L;
     }
-    public static void glib_queueautoptr_cleanup_GTlsPassword ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GTlsPassword$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_CANADIAN_ABORIGINAL = 40;
+     * }
+     */
+    public static int PANGO_SCRIPT_CANADIAN_ABORIGINAL() {
+        return (int)40L;
     }
-    public static OfAddress GTlsServerConnection_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GTlsServerConnection_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GTlsServerConnection_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GTlsServerConnection_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GTlsServerConnection$MH() {
-        return RuntimeHelper.requireNonNull(constants$983.glib_autoptr_clear_GTlsServerConnection$MH,"glib_autoptr_clear_GTlsServerConnection");
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_YI = 41;
+     * }
+     */
+    public static int PANGO_SCRIPT_YI() {
+        return (int)41L;
     }
-    public static void glib_autoptr_clear_GTlsServerConnection ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GTlsServerConnection$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_TAGALOG = 42;
+     * }
+     */
+    public static int PANGO_SCRIPT_TAGALOG() {
+        return (int)42L;
     }
-    public static MethodHandle glib_autoptr_cleanup_GTlsServerConnection$MH() {
-        return RuntimeHelper.requireNonNull(constants$983.glib_autoptr_cleanup_GTlsServerConnection$MH,"glib_autoptr_cleanup_GTlsServerConnection");
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_HANUNOO = 43;
+     * }
+     */
+    public static int PANGO_SCRIPT_HANUNOO() {
+        return (int)43L;
     }
-    public static void glib_autoptr_cleanup_GTlsServerConnection ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GTlsServerConnection$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_BUHID = 44;
+     * }
+     */
+    public static int PANGO_SCRIPT_BUHID() {
+        return (int)44L;
     }
-    public static MethodHandle glib_listautoptr_cleanup_GTlsServerConnection$MH() {
-        return RuntimeHelper.requireNonNull(constants$983.glib_listautoptr_cleanup_GTlsServerConnection$MH,"glib_listautoptr_cleanup_GTlsServerConnection");
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_TAGBANWA = 45;
+     * }
+     */
+    public static int PANGO_SCRIPT_TAGBANWA() {
+        return (int)45L;
     }
-    public static void glib_listautoptr_cleanup_GTlsServerConnection ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GTlsServerConnection$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_BRAILLE = 46;
+     * }
+     */
+    public static int PANGO_SCRIPT_BRAILLE() {
+        return (int)46L;
     }
-    public static MethodHandle glib_slistautoptr_cleanup_GTlsServerConnection$MH() {
-        return RuntimeHelper.requireNonNull(constants$983.glib_slistautoptr_cleanup_GTlsServerConnection$MH,"glib_slistautoptr_cleanup_GTlsServerConnection");
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_CYPRIOT = 47;
+     * }
+     */
+    public static int PANGO_SCRIPT_CYPRIOT() {
+        return (int)47L;
     }
-    public static void glib_slistautoptr_cleanup_GTlsServerConnection ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GTlsServerConnection$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_LIMBU = 48;
+     * }
+     */
+    public static int PANGO_SCRIPT_LIMBU() {
+        return (int)48L;
     }
-    public static MethodHandle glib_queueautoptr_cleanup_GTlsServerConnection$MH() {
-        return RuntimeHelper.requireNonNull(constants$983.glib_queueautoptr_cleanup_GTlsServerConnection$MH,"glib_queueautoptr_cleanup_GTlsServerConnection");
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_OSMANYA = 49;
+     * }
+     */
+    public static int PANGO_SCRIPT_OSMANYA() {
+        return (int)49L;
     }
-    public static void glib_queueautoptr_cleanup_GTlsServerConnection ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GTlsServerConnection$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_SHAVIAN = 50;
+     * }
+     */
+    public static int PANGO_SCRIPT_SHAVIAN() {
+        return (int)50L;
     }
-    public static OfAddress GVfs_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GVfs_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GVfs_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GVfs_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GVfs$MH() {
-        return RuntimeHelper.requireNonNull(constants$983.glib_autoptr_clear_GVfs$MH,"glib_autoptr_clear_GVfs");
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_LINEAR_B = 51;
+     * }
+     */
+    public static int PANGO_SCRIPT_LINEAR_B() {
+        return (int)51L;
     }
-    public static void glib_autoptr_clear_GVfs ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GVfs$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_TAI_LE = 52;
+     * }
+     */
+    public static int PANGO_SCRIPT_TAI_LE() {
+        return (int)52L;
     }
-    public static MethodHandle glib_autoptr_cleanup_GVfs$MH() {
-        return RuntimeHelper.requireNonNull(constants$984.glib_autoptr_cleanup_GVfs$MH,"glib_autoptr_cleanup_GVfs");
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_UGARITIC = 53;
+     * }
+     */
+    public static int PANGO_SCRIPT_UGARITIC() {
+        return (int)53L;
     }
-    public static void glib_autoptr_cleanup_GVfs ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GVfs$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_NEW_TAI_LUE = 54;
+     * }
+     */
+    public static int PANGO_SCRIPT_NEW_TAI_LUE() {
+        return (int)54L;
     }
-    public static MethodHandle glib_listautoptr_cleanup_GVfs$MH() {
-        return RuntimeHelper.requireNonNull(constants$984.glib_listautoptr_cleanup_GVfs$MH,"glib_listautoptr_cleanup_GVfs");
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_BUGINESE = 55;
+     * }
+     */
+    public static int PANGO_SCRIPT_BUGINESE() {
+        return (int)55L;
     }
-    public static void glib_listautoptr_cleanup_GVfs ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GVfs$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_GLAGOLITIC = 56;
+     * }
+     */
+    public static int PANGO_SCRIPT_GLAGOLITIC() {
+        return (int)56L;
     }
-    public static MethodHandle glib_slistautoptr_cleanup_GVfs$MH() {
-        return RuntimeHelper.requireNonNull(constants$984.glib_slistautoptr_cleanup_GVfs$MH,"glib_slistautoptr_cleanup_GVfs");
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_TIFINAGH = 57;
+     * }
+     */
+    public static int PANGO_SCRIPT_TIFINAGH() {
+        return (int)57L;
     }
-    public static void glib_slistautoptr_cleanup_GVfs ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GVfs$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_SYLOTI_NAGRI = 58;
+     * }
+     */
+    public static int PANGO_SCRIPT_SYLOTI_NAGRI() {
+        return (int)58L;
     }
-    public static MethodHandle glib_queueautoptr_cleanup_GVfs$MH() {
-        return RuntimeHelper.requireNonNull(constants$984.glib_queueautoptr_cleanup_GVfs$MH,"glib_queueautoptr_cleanup_GVfs");
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_OLD_PERSIAN = 59;
+     * }
+     */
+    public static int PANGO_SCRIPT_OLD_PERSIAN() {
+        return (int)59L;
     }
-    public static void glib_queueautoptr_cleanup_GVfs ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GVfs$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_KHAROSHTHI = 60;
+     * }
+     */
+    public static int PANGO_SCRIPT_KHAROSHTHI() {
+        return (int)60L;
     }
-    public static OfAddress GVolume_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GVolume_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GVolume_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GVolume_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GVolume$MH() {
-        return RuntimeHelper.requireNonNull(constants$984.glib_autoptr_clear_GVolume$MH,"glib_autoptr_clear_GVolume");
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_UNKNOWN = 61;
+     * }
+     */
+    public static int PANGO_SCRIPT_UNKNOWN() {
+        return (int)61L;
     }
-    public static void glib_autoptr_clear_GVolume ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GVolume$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_BALINESE = 62;
+     * }
+     */
+    public static int PANGO_SCRIPT_BALINESE() {
+        return (int)62L;
     }
-    public static MethodHandle glib_autoptr_cleanup_GVolume$MH() {
-        return RuntimeHelper.requireNonNull(constants$984.glib_autoptr_cleanup_GVolume$MH,"glib_autoptr_cleanup_GVolume");
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_CUNEIFORM = 63;
+     * }
+     */
+    public static int PANGO_SCRIPT_CUNEIFORM() {
+        return (int)63L;
     }
-    public static void glib_autoptr_cleanup_GVolume ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GVolume$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_PHOENICIAN = 64;
+     * }
+     */
+    public static int PANGO_SCRIPT_PHOENICIAN() {
+        return (int)64L;
     }
-    public static MethodHandle glib_listautoptr_cleanup_GVolume$MH() {
-        return RuntimeHelper.requireNonNull(constants$985.glib_listautoptr_cleanup_GVolume$MH,"glib_listautoptr_cleanup_GVolume");
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_PHAGS_PA = 65;
+     * }
+     */
+    public static int PANGO_SCRIPT_PHAGS_PA() {
+        return (int)65L;
     }
-    public static void glib_listautoptr_cleanup_GVolume ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GVolume$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_NKO = 66;
+     * }
+     */
+    public static int PANGO_SCRIPT_NKO() {
+        return (int)66L;
     }
-    public static MethodHandle glib_slistautoptr_cleanup_GVolume$MH() {
-        return RuntimeHelper.requireNonNull(constants$985.glib_slistautoptr_cleanup_GVolume$MH,"glib_slistautoptr_cleanup_GVolume");
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_KAYAH_LI = 67;
+     * }
+     */
+    public static int PANGO_SCRIPT_KAYAH_LI() {
+        return (int)67L;
     }
-    public static void glib_slistautoptr_cleanup_GVolume ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GVolume$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_LEPCHA = 68;
+     * }
+     */
+    public static int PANGO_SCRIPT_LEPCHA() {
+        return (int)68L;
     }
-    public static MethodHandle glib_queueautoptr_cleanup_GVolume$MH() {
-        return RuntimeHelper.requireNonNull(constants$985.glib_queueautoptr_cleanup_GVolume$MH,"glib_queueautoptr_cleanup_GVolume");
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_REJANG = 69;
+     * }
+     */
+    public static int PANGO_SCRIPT_REJANG() {
+        return (int)69L;
     }
-    public static void glib_queueautoptr_cleanup_GVolume ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GVolume$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_SUNDANESE = 70;
+     * }
+     */
+    public static int PANGO_SCRIPT_SUNDANESE() {
+        return (int)70L;
     }
-    public static OfAddress GVolumeMonitor_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GVolumeMonitor_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GVolumeMonitor_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GVolumeMonitor_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GVolumeMonitor$MH() {
-        return RuntimeHelper.requireNonNull(constants$985.glib_autoptr_clear_GVolumeMonitor$MH,"glib_autoptr_clear_GVolumeMonitor");
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_SAURASHTRA = 71;
+     * }
+     */
+    public static int PANGO_SCRIPT_SAURASHTRA() {
+        return (int)71L;
     }
-    public static void glib_autoptr_clear_GVolumeMonitor ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GVolumeMonitor$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_CHAM = 72;
+     * }
+     */
+    public static int PANGO_SCRIPT_CHAM() {
+        return (int)72L;
     }
-    public static MethodHandle glib_autoptr_cleanup_GVolumeMonitor$MH() {
-        return RuntimeHelper.requireNonNull(constants$985.glib_autoptr_cleanup_GVolumeMonitor$MH,"glib_autoptr_cleanup_GVolumeMonitor");
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_OL_CHIKI = 73;
+     * }
+     */
+    public static int PANGO_SCRIPT_OL_CHIKI() {
+        return (int)73L;
     }
-    public static void glib_autoptr_cleanup_GVolumeMonitor ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GVolumeMonitor$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_VAI = 74;
+     * }
+     */
+    public static int PANGO_SCRIPT_VAI() {
+        return (int)74L;
     }
-    public static MethodHandle glib_listautoptr_cleanup_GVolumeMonitor$MH() {
-        return RuntimeHelper.requireNonNull(constants$985.glib_listautoptr_cleanup_GVolumeMonitor$MH,"glib_listautoptr_cleanup_GVolumeMonitor");
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_CARIAN = 75;
+     * }
+     */
+    public static int PANGO_SCRIPT_CARIAN() {
+        return (int)75L;
     }
-    public static void glib_listautoptr_cleanup_GVolumeMonitor ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GVolumeMonitor$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_LYCIAN = 76;
+     * }
+     */
+    public static int PANGO_SCRIPT_LYCIAN() {
+        return (int)76L;
     }
-    public static MethodHandle glib_slistautoptr_cleanup_GVolumeMonitor$MH() {
-        return RuntimeHelper.requireNonNull(constants$986.glib_slistautoptr_cleanup_GVolumeMonitor$MH,"glib_slistautoptr_cleanup_GVolumeMonitor");
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_LYDIAN = 77;
+     * }
+     */
+    public static int PANGO_SCRIPT_LYDIAN() {
+        return (int)77L;
     }
-    public static void glib_slistautoptr_cleanup_GVolumeMonitor ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GVolumeMonitor$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_BATAK = 78;
+     * }
+     */
+    public static int PANGO_SCRIPT_BATAK() {
+        return (int)78L;
     }
-    public static MethodHandle glib_queueautoptr_cleanup_GVolumeMonitor$MH() {
-        return RuntimeHelper.requireNonNull(constants$986.glib_queueautoptr_cleanup_GVolumeMonitor$MH,"glib_queueautoptr_cleanup_GVolumeMonitor");
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_BRAHMI = 79;
+     * }
+     */
+    public static int PANGO_SCRIPT_BRAHMI() {
+        return (int)79L;
     }
-    public static void glib_queueautoptr_cleanup_GVolumeMonitor ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GVolumeMonitor$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_MANDAIC = 80;
+     * }
+     */
+    public static int PANGO_SCRIPT_MANDAIC() {
+        return (int)80L;
     }
-    public static OfAddress GZlibCompressor_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GZlibCompressor_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GZlibCompressor_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GZlibCompressor_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GZlibCompressor$MH() {
-        return RuntimeHelper.requireNonNull(constants$986.glib_autoptr_clear_GZlibCompressor$MH,"glib_autoptr_clear_GZlibCompressor");
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_CHAKMA = 81;
+     * }
+     */
+    public static int PANGO_SCRIPT_CHAKMA() {
+        return (int)81L;
     }
-    public static void glib_autoptr_clear_GZlibCompressor ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GZlibCompressor$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_MEROITIC_CURSIVE = 82;
+     * }
+     */
+    public static int PANGO_SCRIPT_MEROITIC_CURSIVE() {
+        return (int)82L;
     }
-    public static MethodHandle glib_autoptr_cleanup_GZlibCompressor$MH() {
-        return RuntimeHelper.requireNonNull(constants$986.glib_autoptr_cleanup_GZlibCompressor$MH,"glib_autoptr_cleanup_GZlibCompressor");
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_MEROITIC_HIEROGLYPHS = 83;
+     * }
+     */
+    public static int PANGO_SCRIPT_MEROITIC_HIEROGLYPHS() {
+        return (int)83L;
     }
-    public static void glib_autoptr_cleanup_GZlibCompressor ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GZlibCompressor$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_MIAO = 84;
+     * }
+     */
+    public static int PANGO_SCRIPT_MIAO() {
+        return (int)84L;
     }
-    public static MethodHandle glib_listautoptr_cleanup_GZlibCompressor$MH() {
-        return RuntimeHelper.requireNonNull(constants$986.glib_listautoptr_cleanup_GZlibCompressor$MH,"glib_listautoptr_cleanup_GZlibCompressor");
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_SHARADA = 85;
+     * }
+     */
+    public static int PANGO_SCRIPT_SHARADA() {
+        return (int)85L;
     }
-    public static void glib_listautoptr_cleanup_GZlibCompressor ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GZlibCompressor$MH();
-        try {
-            mh$.invokeExact(_l);
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_SORA_SOMPENG = 86;
+     * }
+     */
+    public static int PANGO_SCRIPT_SORA_SOMPENG() {
+        return (int)86L;
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_TAKRI = 87;
+     * }
+     */
+    public static int PANGO_SCRIPT_TAKRI() {
+        return (int)87L;
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_BASSA_VAH = 88;
+     * }
+     */
+    public static int PANGO_SCRIPT_BASSA_VAH() {
+        return (int)88L;
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_CAUCASIAN_ALBANIAN = 89;
+     * }
+     */
+    public static int PANGO_SCRIPT_CAUCASIAN_ALBANIAN() {
+        return (int)89L;
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_DUPLOYAN = 90;
+     * }
+     */
+    public static int PANGO_SCRIPT_DUPLOYAN() {
+        return (int)90L;
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_ELBASAN = 91;
+     * }
+     */
+    public static int PANGO_SCRIPT_ELBASAN() {
+        return (int)91L;
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_GRANTHA = 92;
+     * }
+     */
+    public static int PANGO_SCRIPT_GRANTHA() {
+        return (int)92L;
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_KHOJKI = 93;
+     * }
+     */
+    public static int PANGO_SCRIPT_KHOJKI() {
+        return (int)93L;
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_KHUDAWADI = 94;
+     * }
+     */
+    public static int PANGO_SCRIPT_KHUDAWADI() {
+        return (int)94L;
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_LINEAR_A = 95;
+     * }
+     */
+    public static int PANGO_SCRIPT_LINEAR_A() {
+        return (int)95L;
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_MAHAJANI = 96;
+     * }
+     */
+    public static int PANGO_SCRIPT_MAHAJANI() {
+        return (int)96L;
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_MANICHAEAN = 97;
+     * }
+     */
+    public static int PANGO_SCRIPT_MANICHAEAN() {
+        return (int)97L;
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_MENDE_KIKAKUI = 98;
+     * }
+     */
+    public static int PANGO_SCRIPT_MENDE_KIKAKUI() {
+        return (int)98L;
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_MODI = 99;
+     * }
+     */
+    public static int PANGO_SCRIPT_MODI() {
+        return (int)99L;
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_MRO = 100;
+     * }
+     */
+    public static int PANGO_SCRIPT_MRO() {
+        return (int)100L;
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_NABATAEAN = 101;
+     * }
+     */
+    public static int PANGO_SCRIPT_NABATAEAN() {
+        return (int)101L;
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_OLD_NORTH_ARABIAN = 102;
+     * }
+     */
+    public static int PANGO_SCRIPT_OLD_NORTH_ARABIAN() {
+        return (int)102L;
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_OLD_PERMIC = 103;
+     * }
+     */
+    public static int PANGO_SCRIPT_OLD_PERMIC() {
+        return (int)103L;
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_PAHAWH_HMONG = 104;
+     * }
+     */
+    public static int PANGO_SCRIPT_PAHAWH_HMONG() {
+        return (int)104L;
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_PALMYRENE = 105;
+     * }
+     */
+    public static int PANGO_SCRIPT_PALMYRENE() {
+        return (int)105L;
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_PAU_CIN_HAU = 106;
+     * }
+     */
+    public static int PANGO_SCRIPT_PAU_CIN_HAU() {
+        return (int)106L;
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_PSALTER_PAHLAVI = 107;
+     * }
+     */
+    public static int PANGO_SCRIPT_PSALTER_PAHLAVI() {
+        return (int)107L;
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_SIDDHAM = 108;
+     * }
+     */
+    public static int PANGO_SCRIPT_SIDDHAM() {
+        return (int)108L;
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_TIRHUTA = 109;
+     * }
+     */
+    public static int PANGO_SCRIPT_TIRHUTA() {
+        return (int)109L;
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_WARANG_CITI = 110;
+     * }
+     */
+    public static int PANGO_SCRIPT_WARANG_CITI() {
+        return (int)110L;
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_AHOM = 111;
+     * }
+     */
+    public static int PANGO_SCRIPT_AHOM() {
+        return (int)111L;
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_ANATOLIAN_HIEROGLYPHS = 112;
+     * }
+     */
+    public static int PANGO_SCRIPT_ANATOLIAN_HIEROGLYPHS() {
+        return (int)112L;
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_HATRAN = 113;
+     * }
+     */
+    public static int PANGO_SCRIPT_HATRAN() {
+        return (int)113L;
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_MULTANI = 114;
+     * }
+     */
+    public static int PANGO_SCRIPT_MULTANI() {
+        return (int)114L;
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_OLD_HUNGARIAN = 115;
+     * }
+     */
+    public static int PANGO_SCRIPT_OLD_HUNGARIAN() {
+        return (int)115L;
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_SCRIPT_SIGNWRITING = 116;
+     * }
+     */
+    public static int PANGO_SCRIPT_SIGNWRITING() {
+        return (int)116L;
+    }
+    public static MethodHandle pango_script_for_unichar$MH() {
+        return RuntimeHelper.requireNonNull(constants$902.pango_script_for_unichar$MH,"pango_script_for_unichar");
+    }
+    /**
+     * {@snippet :
+     * PangoScript pango_script_for_unichar(gunichar ch);
+     * }
+     */
+    public static int pango_script_for_unichar(int ch) {
+        var mh$ = pango_script_for_unichar$MH();
+        try {
+            return (int)mh$.invokeExact(ch);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_script_iter_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$902.pango_script_iter_get_type$MH,"pango_script_iter_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType pango_script_iter_get_type();
+     * }
+     */
+    public static long pango_script_iter_get_type() {
+        var mh$ = pango_script_iter_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_script_iter_new$MH() {
+        return RuntimeHelper.requireNonNull(constants$902.pango_script_iter_new$MH,"pango_script_iter_new");
+    }
+    /**
+     * {@snippet :
+     * PangoScriptIter* pango_script_iter_new(char* text, int length);
+     * }
+     */
+    public static MemorySegment pango_script_iter_new(MemorySegment text, int length) {
+        var mh$ = pango_script_iter_new$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(text, length);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle glib_slistautoptr_cleanup_GZlibCompressor$MH() {
-        return RuntimeHelper.requireNonNull(constants$986.glib_slistautoptr_cleanup_GZlibCompressor$MH,"glib_slistautoptr_cleanup_GZlibCompressor");
+    public static MethodHandle pango_script_iter_get_range$MH() {
+        return RuntimeHelper.requireNonNull(constants$902.pango_script_iter_get_range$MH,"pango_script_iter_get_range");
     }
-    public static void glib_slistautoptr_cleanup_GZlibCompressor ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GZlibCompressor$MH();
+    /**
+     * {@snippet :
+     * void pango_script_iter_get_range(PangoScriptIter* iter, char** start, char** end, PangoScript* script);
+     * }
+     */
+    public static void pango_script_iter_get_range(MemorySegment iter, MemorySegment start, MemorySegment end, MemorySegment script) {
+        var mh$ = pango_script_iter_get_range$MH();
         try {
-            mh$.invokeExact(_l);
+            mh$.invokeExact(iter, start, end, script);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle glib_queueautoptr_cleanup_GZlibCompressor$MH() {
-        return RuntimeHelper.requireNonNull(constants$987.glib_queueautoptr_cleanup_GZlibCompressor$MH,"glib_queueautoptr_cleanup_GZlibCompressor");
+    public static MethodHandle pango_script_iter_next$MH() {
+        return RuntimeHelper.requireNonNull(constants$902.pango_script_iter_next$MH,"pango_script_iter_next");
     }
-    public static void glib_queueautoptr_cleanup_GZlibCompressor ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GZlibCompressor$MH();
+    /**
+     * {@snippet :
+     * gboolean pango_script_iter_next(PangoScriptIter* iter);
+     * }
+     */
+    public static int pango_script_iter_next(MemorySegment iter) {
+        var mh$ = pango_script_iter_next$MH();
         try {
-            mh$.invokeExact(_q);
+            return (int)mh$.invokeExact(iter);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static OfAddress GZlibDecompressor_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GZlibDecompressor_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GZlibDecompressor_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GZlibDecompressor_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GZlibDecompressor$MH() {
-        return RuntimeHelper.requireNonNull(constants$987.glib_autoptr_clear_GZlibDecompressor$MH,"glib_autoptr_clear_GZlibDecompressor");
+    public static MethodHandle pango_script_iter_free$MH() {
+        return RuntimeHelper.requireNonNull(constants$902.pango_script_iter_free$MH,"pango_script_iter_free");
     }
-    public static void glib_autoptr_clear_GZlibDecompressor ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GZlibDecompressor$MH();
+    /**
+     * {@snippet :
+     * void pango_script_iter_free(PangoScriptIter* iter);
+     * }
+     */
+    public static void pango_script_iter_free(MemorySegment iter) {
+        var mh$ = pango_script_iter_free$MH();
         try {
-            mh$.invokeExact(_ptr);
+            mh$.invokeExact(iter);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle glib_autoptr_cleanup_GZlibDecompressor$MH() {
-        return RuntimeHelper.requireNonNull(constants$987.glib_autoptr_cleanup_GZlibDecompressor$MH,"glib_autoptr_cleanup_GZlibDecompressor");
+    public static MethodHandle pango_language_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$903.pango_language_get_type$MH,"pango_language_get_type");
     }
-    public static void glib_autoptr_cleanup_GZlibDecompressor ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GZlibDecompressor$MH();
+    /**
+     * {@snippet :
+     * GType pango_language_get_type();
+     * }
+     */
+    public static long pango_language_get_type() {
+        var mh$ = pango_language_get_type$MH();
         try {
-            mh$.invokeExact(_ptr);
+            return (long)mh$.invokeExact();
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle glib_listautoptr_cleanup_GZlibDecompressor$MH() {
-        return RuntimeHelper.requireNonNull(constants$987.glib_listautoptr_cleanup_GZlibDecompressor$MH,"glib_listautoptr_cleanup_GZlibDecompressor");
+    public static MethodHandle pango_language_get_default$MH() {
+        return RuntimeHelper.requireNonNull(constants$903.pango_language_get_default$MH,"pango_language_get_default");
     }
-    public static void glib_listautoptr_cleanup_GZlibDecompressor ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GZlibDecompressor$MH();
+    /**
+     * {@snippet :
+     * PangoLanguage* pango_language_get_default();
+     * }
+     */
+    public static MemorySegment pango_language_get_default() {
+        var mh$ = pango_language_get_default$MH();
         try {
-            mh$.invokeExact(_l);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle glib_slistautoptr_cleanup_GZlibDecompressor$MH() {
-        return RuntimeHelper.requireNonNull(constants$987.glib_slistautoptr_cleanup_GZlibDecompressor$MH,"glib_slistautoptr_cleanup_GZlibDecompressor");
+    public static MethodHandle pango_language_get_preferred$MH() {
+        return RuntimeHelper.requireNonNull(constants$903.pango_language_get_preferred$MH,"pango_language_get_preferred");
     }
-    public static void glib_slistautoptr_cleanup_GZlibDecompressor ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GZlibDecompressor$MH();
+    /**
+     * {@snippet :
+     * PangoLanguage** pango_language_get_preferred();
+     * }
+     */
+    public static MemorySegment pango_language_get_preferred() {
+        var mh$ = pango_language_get_preferred$MH();
         try {
-            mh$.invokeExact(_l);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle glib_queueautoptr_cleanup_GZlibDecompressor$MH() {
-        return RuntimeHelper.requireNonNull(constants$987.glib_queueautoptr_cleanup_GZlibDecompressor$MH,"glib_queueautoptr_cleanup_GZlibDecompressor");
+    public static MethodHandle pango_language_from_string$MH() {
+        return RuntimeHelper.requireNonNull(constants$903.pango_language_from_string$MH,"pango_language_from_string");
     }
-    public static void glib_queueautoptr_cleanup_GZlibDecompressor ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GZlibDecompressor$MH();
+    /**
+     * {@snippet :
+     * PangoLanguage* pango_language_from_string(char* language);
+     * }
+     */
+    public static MemorySegment pango_language_from_string(MemorySegment language) {
+        var mh$ = pango_language_from_string$MH();
         try {
-            mh$.invokeExact(_q);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(language);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static OfShort int_least16_t = Constants$root.C_SHORT$LAYOUT;
-    public static OfInt int_least32_t = Constants$root.C_INT$LAYOUT;
-    public static OfLong int_least64_t = Constants$root.C_LONG_LONG$LAYOUT;
-    public static OfLong int_fast16_t = Constants$root.C_LONG_LONG$LAYOUT;
-    public static OfLong int_fast32_t = Constants$root.C_LONG_LONG$LAYOUT;
-    public static OfLong int_fast64_t = Constants$root.C_LONG_LONG$LAYOUT;
-    public static OfLong intmax_t = Constants$root.C_LONG_LONG$LAYOUT;
-    public static OfInt hb_bool_t = Constants$root.C_INT$LAYOUT;
 }
 
 

@@ -7,49 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$35 {
+final class constants$35 {
 
-    static final FunctionDescriptor g_clear_error$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$35() {}
+    static final FunctionDescriptor GErrorInitFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_clear_error$MH = RuntimeHelper.downcallHandle(
-        "g_clear_error",
-        constants$35.g_clear_error$FUNC
+    static final MethodHandle GErrorInitFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$35.GErrorInitFunc_DOWN$FUNC
     );
-    static final FunctionDescriptor g_prefix_error$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor GErrorCopyFunc$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_prefix_error$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_prefix_error",
-        constants$35.g_prefix_error$FUNC
-    );
-    static final FunctionDescriptor g_prefix_error_literal$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor GErrorCopyFunc_UP$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_prefix_error_literal$MH = RuntimeHelper.downcallHandle(
-        "g_prefix_error_literal",
-        constants$35.g_prefix_error_literal$FUNC
+    static final MethodHandle GErrorCopyFunc_UP$MH = RuntimeHelper.upcallHandle(GErrorCopyFunc.class, "apply", constants$35.GErrorCopyFunc_UP$FUNC);
+    static final FunctionDescriptor GErrorCopyFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor g_propagate_prefixed_error$FUNC = FunctionDescriptor.ofVoid(
+    static final MethodHandle GErrorCopyFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$35.GErrorCopyFunc_DOWN$FUNC
+    );
+    static final FunctionDescriptor GErrorClearFunc$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final FunctionDescriptor GErrorClearFunc_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GErrorClearFunc_UP$MH = RuntimeHelper.upcallHandle(GErrorClearFunc.class, "apply", constants$35.GErrorClearFunc_UP$FUNC);
+    static final FunctionDescriptor GErrorClearFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GErrorClearFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$35.GErrorClearFunc_DOWN$FUNC
+    );
+    static final FunctionDescriptor g_error_domain_register_static$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_propagate_prefixed_error$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_propagate_prefixed_error",
-        constants$35.g_propagate_prefixed_error$FUNC
-    );
-    static final FunctionDescriptor g_get_user_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_get_user_name$MH = RuntimeHelper.downcallHandle(
-        "g_get_user_name",
-        constants$35.g_get_user_name$FUNC
-    );
-    static final FunctionDescriptor g_get_real_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_get_real_name$MH = RuntimeHelper.downcallHandle(
-        "g_get_real_name",
-        constants$35.g_get_real_name$FUNC
+    static final MethodHandle g_error_domain_register_static$MH = RuntimeHelper.downcallHandle(
+        "g_error_domain_register_static",
+        constants$35.g_error_domain_register_static$FUNC
     );
 }
 

@@ -7,9 +7,18 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GtkAppChooserButtonClass {
+ *     GtkComboBoxClass parent_class;
+ *     void (*custom_item_activated)(GtkAppChooserButton*,const gchar*);
+ *     gpointer padding[16];
+ * };
+ * }
+ */
 public class _GtkAppChooserButtonClass {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
                 MemoryLayout.structLayout(
@@ -28,7 +37,10 @@ public class _GtkAppChooserButtonClass {
                             Constants$root.C_POINTER$LAYOUT.withName("notify"),
                             Constants$root.C_POINTER$LAYOUT.withName("constructed"),
                             Constants$root.C_LONG_LONG$LAYOUT.withName("flags"),
-                            MemoryLayout.sequenceLayout(6, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
+                            Constants$root.C_LONG_LONG$LAYOUT.withName("n_construct_properties"),
+                            Constants$root.C_POINTER$LAYOUT.withName("pspecs"),
+                            Constants$root.C_LONG_LONG$LAYOUT.withName("n_pspecs"),
+                            MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
                         ).withName("parent_class"),
                         Constants$root.C_INT$LAYOUT.withName("activate_signal"),
                         MemoryLayout.paddingLayout(32),
@@ -128,10 +140,7 @@ public class _GtkAppChooserButtonClass {
                     Constants$root.C_POINTER$LAYOUT.withName("set_child_property"),
                     Constants$root.C_POINTER$LAYOUT.withName("get_child_property"),
                     Constants$root.C_POINTER$LAYOUT.withName("get_path_for_child"),
-                    MemoryLayout.structLayout(
-                        MemoryLayout.paddingLayout(1).withName("_handle_border_width"),
-                        MemoryLayout.paddingLayout(63)
-                    ),
+                    MemoryLayout.paddingLayout(64),
                     Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved1"),
                     Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved2"),
                     Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved3"),
@@ -165,20 +174,34 @@ public class _GtkAppChooserButtonClass {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle custom_item_activated$MH = RuntimeHelper.downcallHandle(
-        _GtkAppChooserButtonClass.custom_item_activated$FUNC
+    static final FunctionDescriptor custom_item_activated_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle custom_item_activated_UP$MH = RuntimeHelper.upcallHandle(custom_item_activated.class, "apply", _GtkAppChooserButtonClass.custom_item_activated_UP$FUNC);
+    static final FunctionDescriptor custom_item_activated_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle custom_item_activated_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkAppChooserButtonClass.custom_item_activated_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*custom_item_activated)(GtkAppChooserButton*,const gchar*);
+     * }
+     */
     public interface custom_item_activated {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(custom_item_activated fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(custom_item_activated.class, fi, _GtkAppChooserButtonClass.custom_item_activated$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+        static MemorySegment allocate(custom_item_activated fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkAppChooserButtonClass.custom_item_activated_UP$MH, fi, _GtkAppChooserButtonClass.custom_item_activated$FUNC, scope);
         }
-        static custom_item_activated ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static custom_item_activated ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GtkAppChooserButtonClass.custom_item_activated$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    _GtkAppChooserButtonClass.custom_item_activated_DOWN$MH.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -190,30 +213,42 @@ public class _GtkAppChooserButtonClass {
     public static VarHandle custom_item_activated$VH() {
         return _GtkAppChooserButtonClass.custom_item_activated$VH;
     }
-    public static MemoryAddress custom_item_activated$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkAppChooserButtonClass.custom_item_activated$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*custom_item_activated)(GtkAppChooserButton*,const gchar*);
+     * }
+     */
+    public static MemorySegment custom_item_activated$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkAppChooserButtonClass.custom_item_activated$VH.get(seg);
     }
-    public static void custom_item_activated$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*custom_item_activated)(GtkAppChooserButton*,const gchar*);
+     * }
+     */
+    public static void custom_item_activated$set(MemorySegment seg, MemorySegment x) {
         _GtkAppChooserButtonClass.custom_item_activated$VH.set(seg, x);
     }
-    public static MemoryAddress custom_item_activated$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkAppChooserButtonClass.custom_item_activated$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment custom_item_activated$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkAppChooserButtonClass.custom_item_activated$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void custom_item_activated$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void custom_item_activated$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkAppChooserButtonClass.custom_item_activated$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static custom_item_activated custom_item_activated (MemorySegment segment, MemorySession session) {
-        return custom_item_activated.ofAddress(custom_item_activated$get(segment), session);
+    public static custom_item_activated custom_item_activated(MemorySegment segment, SegmentScope scope) {
+        return custom_item_activated.ofAddress(custom_item_activated$get(segment), scope);
     }
     public static MemorySegment padding$slice(MemorySegment seg) {
         return seg.asSlice(1056, 128);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

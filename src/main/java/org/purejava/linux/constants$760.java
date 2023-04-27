@@ -7,65 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$760 {
+final class constants$760 {
 
-    static final FunctionDescriptor g_mount_remount$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$760() {}
+    static final FunctionDescriptor g_simple_proxy_resolver_set_uri_proxy$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_simple_proxy_resolver_set_uri_proxy$MH = RuntimeHelper.downcallHandle(
+        "g_simple_proxy_resolver_set_uri_proxy",
+        constants$760.g_simple_proxy_resolver_set_uri_proxy$FUNC
+    );
+    static final FunctionDescriptor g_socket_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_socket_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_socket_get_type",
+        constants$760.g_socket_get_type$FUNC
+    );
+    static final FunctionDescriptor g_socket_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_mount_remount$MH = RuntimeHelper.downcallHandle(
-        "g_mount_remount",
-        constants$760.g_mount_remount$FUNC
-    );
-    static final FunctionDescriptor g_mount_remount_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_mount_remount_finish$MH = RuntimeHelper.downcallHandle(
-        "g_mount_remount_finish",
-        constants$760.g_mount_remount_finish$FUNC
-    );
-    static final FunctionDescriptor g_mount_guess_content_type$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_mount_guess_content_type$MH = RuntimeHelper.downcallHandle(
-        "g_mount_guess_content_type",
-        constants$760.g_mount_guess_content_type$FUNC
-    );
-    static final FunctionDescriptor g_mount_guess_content_type_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_mount_guess_content_type_finish$MH = RuntimeHelper.downcallHandle(
-        "g_mount_guess_content_type_finish",
-        constants$760.g_mount_guess_content_type_finish$FUNC
-    );
-    static final FunctionDescriptor g_mount_guess_content_type_sync$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_mount_guess_content_type_sync$MH = RuntimeHelper.downcallHandle(
-        "g_mount_guess_content_type_sync",
-        constants$760.g_mount_guess_content_type_sync$FUNC
+    static final MethodHandle g_socket_new$MH = RuntimeHelper.downcallHandle(
+        "g_socket_new",
+        constants$760.g_socket_new$FUNC
     );
-    static final FunctionDescriptor g_mount_is_shadowed$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_socket_new_from_fd$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_mount_is_shadowed$MH = RuntimeHelper.downcallHandle(
-        "g_mount_is_shadowed",
-        constants$760.g_mount_is_shadowed$FUNC
+    static final MethodHandle g_socket_new_from_fd$MH = RuntimeHelper.downcallHandle(
+        "g_socket_new_from_fd",
+        constants$760.g_socket_new_from_fd$FUNC
+    );
+    static final FunctionDescriptor g_socket_get_fd$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_socket_get_fd$MH = RuntimeHelper.downcallHandle(
+        "g_socket_get_fd",
+        constants$760.g_socket_get_fd$FUNC
+    );
+    static final FunctionDescriptor g_socket_get_family$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_socket_get_family$MH = RuntimeHelper.downcallHandle(
+        "g_socket_get_family",
+        constants$760.g_socket_get_family$FUNC
     );
 }
 

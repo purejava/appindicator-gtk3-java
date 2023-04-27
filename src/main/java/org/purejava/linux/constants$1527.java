@@ -7,52 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1527 {
+final class constants$1527 {
 
-    static final FunctionDescriptor gtk_label_set_justify$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1527() {}
+    static final FunctionDescriptor gtk_cell_view_new_with_context$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_label_set_justify$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_set_justify",
-        constants$1527.gtk_label_set_justify$FUNC
-    );
-    static final FunctionDescriptor gtk_label_get_justify$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_label_get_justify$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_get_justify",
-        constants$1527.gtk_label_get_justify$FUNC
+    static final MethodHandle gtk_cell_view_new_with_context$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_view_new_with_context",
+        constants$1527.gtk_cell_view_new_with_context$FUNC
     );
-    static final FunctionDescriptor gtk_label_set_ellipsize$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_label_set_ellipsize$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_set_ellipsize",
-        constants$1527.gtk_label_set_ellipsize$FUNC
-    );
-    static final FunctionDescriptor gtk_label_get_ellipsize$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_cell_view_new_with_text$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_label_get_ellipsize$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_get_ellipsize",
-        constants$1527.gtk_label_get_ellipsize$FUNC
+    static final MethodHandle gtk_cell_view_new_with_text$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_view_new_with_text",
+        constants$1527.gtk_cell_view_new_with_text$FUNC
     );
-    static final FunctionDescriptor gtk_label_set_width_chars$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_label_set_width_chars$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_set_width_chars",
-        constants$1527.gtk_label_set_width_chars$FUNC
-    );
-    static final FunctionDescriptor gtk_label_get_width_chars$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_cell_view_new_with_markup$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_label_get_width_chars$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_get_width_chars",
-        constants$1527.gtk_label_get_width_chars$FUNC
+    static final MethodHandle gtk_cell_view_new_with_markup$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_view_new_with_markup",
+        constants$1527.gtk_cell_view_new_with_markup$FUNC
+    );
+    static final FunctionDescriptor gtk_cell_view_new_with_pixbuf$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_cell_view_new_with_pixbuf$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_view_new_with_pixbuf",
+        constants$1527.gtk_cell_view_new_with_pixbuf$FUNC
+    );
+    static final FunctionDescriptor gtk_cell_view_set_model$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_cell_view_set_model$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_view_set_model",
+        constants$1527.gtk_cell_view_set_model$FUNC
+    );
+    static final FunctionDescriptor gtk_cell_view_get_model$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_cell_view_get_model$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_view_get_model",
+        constants$1527.gtk_cell_view_get_model$FUNC
     );
 }
 

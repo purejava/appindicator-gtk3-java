@@ -7,49 +7,50 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$529 {
+final class constants$529 {
 
-    static final FunctionDescriptor g_app_info_can_delete$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$529() {}
+    static final FunctionDescriptor setregid$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_app_info_can_delete$MH = RuntimeHelper.downcallHandle(
-        "g_app_info_can_delete",
-        constants$529.g_app_info_can_delete$FUNC
+    static final MethodHandle setregid$MH = RuntimeHelper.downcallHandle(
+        "setregid",
+        constants$529.setregid$FUNC
     );
-    static final FunctionDescriptor g_app_info_delete$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor setegid$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_app_info_delete$MH = RuntimeHelper.downcallHandle(
-        "g_app_info_delete",
-        constants$529.g_app_info_delete$FUNC
+    static final MethodHandle setegid$MH = RuntimeHelper.downcallHandle(
+        "setegid",
+        constants$529.setegid$FUNC
     );
-    static final FunctionDescriptor g_app_info_set_as_last_used_for_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor fork$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
+    static final MethodHandle fork$MH = RuntimeHelper.downcallHandle(
+        "fork",
+        constants$529.fork$FUNC
+    );
+    static final FunctionDescriptor vfork$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
+    static final MethodHandle vfork$MH = RuntimeHelper.downcallHandle(
+        "vfork",
+        constants$529.vfork$FUNC
+    );
+    static final FunctionDescriptor ttyname$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle ttyname$MH = RuntimeHelper.downcallHandle(
+        "ttyname",
+        constants$529.ttyname$FUNC
+    );
+    static final FunctionDescriptor ttyname_r$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_LONG_LONG$LAYOUT
     );
-    static final MethodHandle g_app_info_set_as_last_used_for_type$MH = RuntimeHelper.downcallHandle(
-        "g_app_info_set_as_last_used_for_type",
-        constants$529.g_app_info_set_as_last_used_for_type$FUNC
-    );
-    static final FunctionDescriptor g_app_info_get_all$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_app_info_get_all$MH = RuntimeHelper.downcallHandle(
-        "g_app_info_get_all",
-        constants$529.g_app_info_get_all$FUNC
-    );
-    static final FunctionDescriptor g_app_info_get_all_for_type$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_app_info_get_all_for_type$MH = RuntimeHelper.downcallHandle(
-        "g_app_info_get_all_for_type",
-        constants$529.g_app_info_get_all_for_type$FUNC
-    );
-    static final FunctionDescriptor g_app_info_get_recommended_for_type$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_app_info_get_recommended_for_type$MH = RuntimeHelper.downcallHandle(
-        "g_app_info_get_recommended_for_type",
-        constants$529.g_app_info_get_recommended_for_type$FUNC
+    static final MethodHandle ttyname_r$MH = RuntimeHelper.downcallHandle(
+        "ttyname_r",
+        constants$529.ttyname_r$FUNC
     );
 }
 

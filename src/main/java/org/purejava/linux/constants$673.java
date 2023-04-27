@@ -7,70 +7,39 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$673 {
+final class constants$673 {
 
-    static final FunctionDescriptor g_file_find_enclosing_mount_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$673() {}
+    static final FunctionDescriptor g_resource_lookup_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_resource_lookup_flags_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_resource_lookup_flags_get_type",
+        constants$673.g_resource_lookup_flags_get_type$FUNC
     );
-    static final MethodHandle g_file_find_enclosing_mount_async$MH = RuntimeHelper.downcallHandle(
-        "g_file_find_enclosing_mount_async",
-        constants$673.g_file_find_enclosing_mount_async$FUNC
+    static final FunctionDescriptor g_socket_family_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_socket_family_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_socket_family_get_type",
+        constants$673.g_socket_family_get_type$FUNC
     );
-    static final FunctionDescriptor g_file_find_enclosing_mount_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_socket_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_socket_type_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_socket_type_get_type",
+        constants$673.g_socket_type_get_type$FUNC
     );
-    static final MethodHandle g_file_find_enclosing_mount_finish$MH = RuntimeHelper.downcallHandle(
-        "g_file_find_enclosing_mount_finish",
-        constants$673.g_file_find_enclosing_mount_finish$FUNC
+    static final FunctionDescriptor g_socket_msg_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_socket_msg_flags_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_socket_msg_flags_get_type",
+        constants$673.g_socket_msg_flags_get_type$FUNC
     );
-    static final FunctionDescriptor g_file_enumerate_children$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_socket_protocol_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_socket_protocol_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_socket_protocol_get_type",
+        constants$673.g_socket_protocol_get_type$FUNC
     );
-    static final MethodHandle g_file_enumerate_children$MH = RuntimeHelper.downcallHandle(
-        "g_file_enumerate_children",
-        constants$673.g_file_enumerate_children$FUNC
-    );
-    static final FunctionDescriptor g_file_enumerate_children_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_enumerate_children_async$MH = RuntimeHelper.downcallHandle(
-        "g_file_enumerate_children_async",
-        constants$673.g_file_enumerate_children_async$FUNC
-    );
-    static final FunctionDescriptor g_file_enumerate_children_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_enumerate_children_finish$MH = RuntimeHelper.downcallHandle(
-        "g_file_enumerate_children_finish",
-        constants$673.g_file_enumerate_children_finish$FUNC
-    );
-    static final FunctionDescriptor g_file_set_display_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_set_display_name$MH = RuntimeHelper.downcallHandle(
-        "g_file_set_display_name",
-        constants$673.g_file_set_display_name$FUNC
+    static final FunctionDescriptor g_zlib_compressor_format_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_zlib_compressor_format_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_zlib_compressor_format_get_type",
+        constants$673.g_zlib_compressor_format_get_type$FUNC
     );
 }
 

@@ -7,47 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1098 {
+final class constants$1098 {
 
-    static final FunctionDescriptor pango_context_set_matrix$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1098() {}
+    static final FunctionDescriptor gdk_window_deiconify$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_context_set_matrix$MH = RuntimeHelper.downcallHandle(
-        "pango_context_set_matrix",
-        constants$1098.pango_context_set_matrix$FUNC
+    static final MethodHandle gdk_window_deiconify$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_deiconify",
+        constants$1098.gdk_window_deiconify$FUNC
     );
-    static final FunctionDescriptor pango_context_get_matrix$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gdk_window_stick$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_context_get_matrix$MH = RuntimeHelper.downcallHandle(
-        "pango_context_get_matrix",
-        constants$1098.pango_context_get_matrix$FUNC
+    static final MethodHandle gdk_window_stick$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_stick",
+        constants$1098.gdk_window_stick$FUNC
     );
-    static final FunctionDescriptor pango_context_set_round_glyph_positions$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_context_set_round_glyph_positions$MH = RuntimeHelper.downcallHandle(
-        "pango_context_set_round_glyph_positions",
-        constants$1098.pango_context_set_round_glyph_positions$FUNC
-    );
-    static final FunctionDescriptor pango_context_get_round_glyph_positions$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gdk_window_unstick$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_context_get_round_glyph_positions$MH = RuntimeHelper.downcallHandle(
-        "pango_context_get_round_glyph_positions",
-        constants$1098.pango_context_get_round_glyph_positions$FUNC
+    static final MethodHandle gdk_window_unstick$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_unstick",
+        constants$1098.gdk_window_unstick$FUNC
     );
-    static final FunctionDescriptor pango_glyph_string_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_glyph_string_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_glyph_string_get_type",
-        constants$1098.pango_glyph_string_get_type$FUNC
+    static final FunctionDescriptor gdk_window_maximize$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor pango_glyph_string_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle pango_glyph_string_new$MH = RuntimeHelper.downcallHandle(
-        "pango_glyph_string_new",
-        constants$1098.pango_glyph_string_new$FUNC
+    static final MethodHandle gdk_window_maximize$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_maximize",
+        constants$1098.gdk_window_maximize$FUNC
+    );
+    static final FunctionDescriptor gdk_window_unmaximize$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_window_unmaximize$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_unmaximize",
+        constants$1098.gdk_window_unmaximize$FUNC
+    );
+    static final FunctionDescriptor gdk_window_fullscreen$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_window_fullscreen$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_fullscreen",
+        constants$1098.gdk_window_fullscreen$FUNC
     );
 }
 

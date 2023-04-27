@@ -7,39 +7,39 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1881 {
+final class constants$1881 {
 
-    static final FunctionDescriptor gtk_get_locale_direction$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle gtk_get_locale_direction$MH = RuntimeHelper.downcallHandle(
-        "gtk_get_locale_direction",
-        constants$1881.gtk_get_locale_direction$FUNC
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1881() {}
+    static final FunctionDescriptor gtk_dest_defaults_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_dest_defaults_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_dest_defaults_get_type",
+        constants$1881.gtk_dest_defaults_get_type$FUNC
     );
-    static final FunctionDescriptor gtk_events_pending$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle gtk_events_pending$MH = RuntimeHelper.downcallHandle(
-        "gtk_events_pending",
-        constants$1881.gtk_events_pending$FUNC
+    static final FunctionDescriptor gtk_entry_icon_position_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_entry_icon_position_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_icon_position_get_type",
+        constants$1881.gtk_entry_icon_position_get_type$FUNC
     );
-    static final FunctionDescriptor gtk_main_do_event$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gtk_align_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_align_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_align_get_type",
+        constants$1881.gtk_align_get_type$FUNC
     );
-    static final MethodHandle gtk_main_do_event$MH = RuntimeHelper.downcallHandle(
-        "gtk_main_do_event",
-        constants$1881.gtk_main_do_event$FUNC
+    static final FunctionDescriptor gtk_arrow_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_arrow_type_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_arrow_type_get_type",
+        constants$1881.gtk_arrow_type_get_type$FUNC
     );
-    static final FunctionDescriptor gtk_main$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle gtk_main$MH = RuntimeHelper.downcallHandle(
-        "gtk_main",
-        constants$1881.gtk_main$FUNC
+    static final FunctionDescriptor gtk_baseline_position_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_baseline_position_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_baseline_position_get_type",
+        constants$1881.gtk_baseline_position_get_type$FUNC
     );
-    static final FunctionDescriptor gtk_main_level$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle gtk_main_level$MH = RuntimeHelper.downcallHandle(
-        "gtk_main_level",
-        constants$1881.gtk_main_level$FUNC
-    );
-    static final FunctionDescriptor gtk_main_quit$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle gtk_main_quit$MH = RuntimeHelper.downcallHandle(
-        "gtk_main_quit",
-        constants$1881.gtk_main_quit$FUNC
+    static final FunctionDescriptor gtk_delete_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_delete_type_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_delete_type_get_type",
+        constants$1881.gtk_delete_type_get_type$FUNC
     );
 }
 

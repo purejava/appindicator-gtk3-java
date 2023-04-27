@@ -7,77 +7,39 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$678 {
+final class constants$678 {
 
-    static final FunctionDescriptor g_file_set_attributes_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$678() {}
+    static final FunctionDescriptor g_tls_channel_binding_error_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_tls_channel_binding_error_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_tls_channel_binding_error_get_type",
+        constants$678.g_tls_channel_binding_error_get_type$FUNC
     );
-    static final MethodHandle g_file_set_attributes_finish$MH = RuntimeHelper.downcallHandle(
-        "g_file_set_attributes_finish",
-        constants$678.g_file_set_attributes_finish$FUNC
+    static final FunctionDescriptor g_tls_rehandshake_mode_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_tls_rehandshake_mode_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_tls_rehandshake_mode_get_type",
+        constants$678.g_tls_rehandshake_mode_get_type$FUNC
     );
-    static final FunctionDescriptor g_file_set_attribute_string$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_tls_password_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_tls_password_flags_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_tls_password_flags_get_type",
+        constants$678.g_tls_password_flags_get_type$FUNC
     );
-    static final MethodHandle g_file_set_attribute_string$MH = RuntimeHelper.downcallHandle(
-        "g_file_set_attribute_string",
-        constants$678.g_file_set_attribute_string$FUNC
+    static final FunctionDescriptor g_tls_interaction_result_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_tls_interaction_result_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_tls_interaction_result_get_type",
+        constants$678.g_tls_interaction_result_get_type$FUNC
     );
-    static final FunctionDescriptor g_file_set_attribute_byte_string$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_dbus_interface_skeleton_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_dbus_interface_skeleton_flags_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_interface_skeleton_flags_get_type",
+        constants$678.g_dbus_interface_skeleton_flags_get_type$FUNC
     );
-    static final MethodHandle g_file_set_attribute_byte_string$MH = RuntimeHelper.downcallHandle(
-        "g_file_set_attribute_byte_string",
-        constants$678.g_file_set_attribute_byte_string$FUNC
-    );
-    static final FunctionDescriptor g_file_set_attribute_uint32$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_set_attribute_uint32$MH = RuntimeHelper.downcallHandle(
-        "g_file_set_attribute_uint32",
-        constants$678.g_file_set_attribute_uint32$FUNC
-    );
-    static final FunctionDescriptor g_file_set_attribute_int32$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_set_attribute_int32$MH = RuntimeHelper.downcallHandle(
-        "g_file_set_attribute_int32",
-        constants$678.g_file_set_attribute_int32$FUNC
-    );
-    static final FunctionDescriptor g_file_set_attribute_uint64$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_set_attribute_uint64$MH = RuntimeHelper.downcallHandle(
-        "g_file_set_attribute_uint64",
-        constants$678.g_file_set_attribute_uint64$FUNC
+    static final FunctionDescriptor g_dbus_object_manager_client_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_dbus_object_manager_client_flags_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_object_manager_client_flags_get_type",
+        constants$678.g_dbus_object_manager_client_flags_get_type$FUNC
     );
 }
 

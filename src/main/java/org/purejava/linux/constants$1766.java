@@ -7,55 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1766 {
+final class constants$1766 {
 
-    static final FunctionDescriptor gtk_file_chooser_select_file$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1766() {}
+    static final FunctionDescriptor gtk_range_get_inverted$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_file_chooser_select_file$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_select_file",
-        constants$1766.gtk_file_chooser_select_file$FUNC
+    static final MethodHandle gtk_range_get_inverted$MH = RuntimeHelper.downcallHandle(
+        "gtk_range_get_inverted",
+        constants$1766.gtk_range_get_inverted$FUNC
     );
-    static final FunctionDescriptor gtk_file_chooser_unselect_file$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_range_set_flippable$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_range_set_flippable$MH = RuntimeHelper.downcallHandle(
+        "gtk_range_set_flippable",
+        constants$1766.gtk_range_set_flippable$FUNC
+    );
+    static final FunctionDescriptor gtk_range_get_flippable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_file_chooser_unselect_file$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_unselect_file",
-        constants$1766.gtk_file_chooser_unselect_file$FUNC
+    static final MethodHandle gtk_range_get_flippable$MH = RuntimeHelper.downcallHandle(
+        "gtk_range_get_flippable",
+        constants$1766.gtk_range_get_flippable$FUNC
     );
-    static final FunctionDescriptor gtk_file_chooser_get_files$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_file_chooser_get_files$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_get_files",
-        constants$1766.gtk_file_chooser_get_files$FUNC
-    );
-    static final FunctionDescriptor gtk_file_chooser_set_current_folder_file$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_range_set_slider_size_fixed$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_range_set_slider_size_fixed$MH = RuntimeHelper.downcallHandle(
+        "gtk_range_set_slider_size_fixed",
+        constants$1766.gtk_range_set_slider_size_fixed$FUNC
+    );
+    static final FunctionDescriptor gtk_range_get_slider_size_fixed$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_range_get_slider_size_fixed$MH = RuntimeHelper.downcallHandle(
+        "gtk_range_get_slider_size_fixed",
+        constants$1766.gtk_range_get_slider_size_fixed$FUNC
+    );
+    static final FunctionDescriptor gtk_range_set_min_slider_size$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_file_chooser_set_current_folder_file$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_set_current_folder_file",
-        constants$1766.gtk_file_chooser_set_current_folder_file$FUNC
-    );
-    static final FunctionDescriptor gtk_file_chooser_get_current_folder_file$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_file_chooser_get_current_folder_file$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_get_current_folder_file",
-        constants$1766.gtk_file_chooser_get_current_folder_file$FUNC
-    );
-    static final FunctionDescriptor gtk_file_chooser_set_preview_widget$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_file_chooser_set_preview_widget$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_set_preview_widget",
-        constants$1766.gtk_file_chooser_set_preview_widget$FUNC
+    static final MethodHandle gtk_range_set_min_slider_size$MH = RuntimeHelper.downcallHandle(
+        "gtk_range_set_min_slider_size",
+        constants$1766.gtk_range_set_min_slider_size$FUNC
     );
 }
 

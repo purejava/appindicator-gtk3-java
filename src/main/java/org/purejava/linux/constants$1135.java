@@ -7,56 +7,72 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1135 {
+final class constants$1135 {
 
-    static final FunctionDescriptor pango_renderer_set_color$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1135() {}
+    static final FunctionDescriptor gdk_pixbuf_new_from_stream$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_pixbuf_new_from_stream$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_new_from_stream",
+        constants$1135.gdk_pixbuf_new_from_stream$FUNC
+    );
+    static final FunctionDescriptor gdk_pixbuf_new_from_stream_async$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_pixbuf_new_from_stream_async$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_new_from_stream_async",
+        constants$1135.gdk_pixbuf_new_from_stream_async$FUNC
+    );
+    static final FunctionDescriptor gdk_pixbuf_new_from_stream_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_pixbuf_new_from_stream_finish$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_new_from_stream_finish",
+        constants$1135.gdk_pixbuf_new_from_stream_finish$FUNC
+    );
+    static final FunctionDescriptor gdk_pixbuf_new_from_stream_at_scale$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_renderer_set_color$MH = RuntimeHelper.downcallHandle(
-        "pango_renderer_set_color",
-        constants$1135.pango_renderer_set_color$FUNC
+    static final MethodHandle gdk_pixbuf_new_from_stream_at_scale$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_new_from_stream_at_scale",
+        constants$1135.gdk_pixbuf_new_from_stream_at_scale$FUNC
     );
-    static final FunctionDescriptor pango_renderer_get_color$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_renderer_get_color$MH = RuntimeHelper.downcallHandle(
-        "pango_renderer_get_color",
-        constants$1135.pango_renderer_get_color$FUNC
-    );
-    static final FunctionDescriptor pango_renderer_set_alpha$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gdk_pixbuf_new_from_stream_at_scale_async$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
-        Constants$root.C_SHORT$LAYOUT
-    );
-    static final MethodHandle pango_renderer_set_alpha$MH = RuntimeHelper.downcallHandle(
-        "pango_renderer_set_alpha",
-        constants$1135.pango_renderer_set_alpha$FUNC
-    );
-    static final FunctionDescriptor pango_renderer_get_alpha$FUNC = FunctionDescriptor.of(Constants$root.C_SHORT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_renderer_get_alpha$MH = RuntimeHelper.downcallHandle(
-        "pango_renderer_get_alpha",
-        constants$1135.pango_renderer_get_alpha$FUNC
-    );
-    static final FunctionDescriptor pango_renderer_set_matrix$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_renderer_set_matrix$MH = RuntimeHelper.downcallHandle(
-        "pango_renderer_set_matrix",
-        constants$1135.pango_renderer_set_matrix$FUNC
+    static final MethodHandle gdk_pixbuf_new_from_stream_at_scale_async$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_new_from_stream_at_scale_async",
+        constants$1135.gdk_pixbuf_new_from_stream_at_scale_async$FUNC
     );
-    static final FunctionDescriptor pango_renderer_get_matrix$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gdk_pixbuf_save_to_stream$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_renderer_get_matrix$MH = RuntimeHelper.downcallHandle(
-        "pango_renderer_get_matrix",
-        constants$1135.pango_renderer_get_matrix$FUNC
+    static final MethodHandle gdk_pixbuf_save_to_stream$MH = RuntimeHelper.downcallHandleVariadic(
+        "gdk_pixbuf_save_to_stream",
+        constants$1135.gdk_pixbuf_save_to_stream$FUNC
     );
 }
 

@@ -7,49 +7,57 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$979 {
+final class constants$979 {
 
-    static final FunctionDescriptor glib_autoptr_cleanup_GTlsConnection$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$979() {}
+    static final FunctionDescriptor fflush$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GTlsConnection$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GTlsConnection",
-        constants$979.glib_autoptr_cleanup_GTlsConnection$FUNC
+    static final MethodHandle fflush$MH = RuntimeHelper.downcallHandle(
+        "fflush",
+        constants$979.fflush$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GTlsConnection$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor fflush_unlocked$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GTlsConnection$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GTlsConnection",
-        constants$979.glib_listautoptr_cleanup_GTlsConnection$FUNC
+    static final MethodHandle fflush_unlocked$MH = RuntimeHelper.downcallHandle(
+        "fflush_unlocked",
+        constants$979.fflush_unlocked$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GTlsConnection$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor fopen$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GTlsConnection$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GTlsConnection",
-        constants$979.glib_slistautoptr_cleanup_GTlsConnection$FUNC
+    static final MethodHandle fopen$MH = RuntimeHelper.downcallHandle(
+        "fopen",
+        constants$979.fopen$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GTlsConnection$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor freopen$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GTlsConnection$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GTlsConnection",
-        constants$979.glib_queueautoptr_cleanup_GTlsConnection$FUNC
+    static final MethodHandle freopen$MH = RuntimeHelper.downcallHandle(
+        "freopen",
+        constants$979.freopen$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GTlsDatabase$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor fdopen$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GTlsDatabase$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GTlsDatabase",
-        constants$979.glib_autoptr_clear_GTlsDatabase$FUNC
+    static final MethodHandle fdopen$MH = RuntimeHelper.downcallHandle(
+        "fdopen",
+        constants$979.fdopen$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GTlsDatabase$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor fmemopen$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GTlsDatabase$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GTlsDatabase",
-        constants$979.glib_autoptr_cleanup_GTlsDatabase$FUNC
+    static final MethodHandle fmemopen$MH = RuntimeHelper.downcallHandle(
+        "fmemopen",
+        constants$979.fmemopen$FUNC
     );
 }
 

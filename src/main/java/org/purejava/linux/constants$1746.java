@@ -7,58 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1746 {
+final class constants$1746 {
 
-    static final FunctionDescriptor gtk_set_debug_flags$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_set_debug_flags$MH = RuntimeHelper.downcallHandle(
-        "gtk_set_debug_flags",
-        constants$1746.gtk_set_debug_flags$FUNC
-    );
-    static final FunctionDescriptor gtk_drag_dest_set$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_drag_dest_set$MH = RuntimeHelper.downcallHandle(
-        "gtk_drag_dest_set",
-        constants$1746.gtk_drag_dest_set$FUNC
-    );
-    static final FunctionDescriptor gtk_drag_dest_set_proxy$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_drag_dest_set_proxy$MH = RuntimeHelper.downcallHandle(
-        "gtk_drag_dest_set_proxy",
-        constants$1746.gtk_drag_dest_set_proxy$FUNC
-    );
-    static final FunctionDescriptor gtk_drag_dest_unset$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1746() {}
+    static final FunctionDescriptor gtk_print_settings_get_number_up_layout$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_drag_dest_unset$MH = RuntimeHelper.downcallHandle(
-        "gtk_drag_dest_unset",
-        constants$1746.gtk_drag_dest_unset$FUNC
+    static final MethodHandle gtk_print_settings_get_number_up_layout$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_settings_get_number_up_layout",
+        constants$1746.gtk_print_settings_get_number_up_layout$FUNC
     );
-    static final FunctionDescriptor gtk_drag_dest_find_target$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_print_settings_set_number_up_layout$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_print_settings_set_number_up_layout$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_settings_set_number_up_layout",
+        constants$1746.gtk_print_settings_set_number_up_layout$FUNC
+    );
+    static final FunctionDescriptor gtk_print_settings_get_resolution$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_drag_dest_find_target$MH = RuntimeHelper.downcallHandle(
-        "gtk_drag_dest_find_target",
-        constants$1746.gtk_drag_dest_find_target$FUNC
+    static final MethodHandle gtk_print_settings_get_resolution$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_settings_get_resolution",
+        constants$1746.gtk_print_settings_get_resolution$FUNC
     );
-    static final FunctionDescriptor gtk_drag_dest_get_target_list$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_print_settings_set_resolution$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_print_settings_set_resolution$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_settings_set_resolution",
+        constants$1746.gtk_print_settings_set_resolution$FUNC
+    );
+    static final FunctionDescriptor gtk_print_settings_get_resolution_x$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_drag_dest_get_target_list$MH = RuntimeHelper.downcallHandle(
-        "gtk_drag_dest_get_target_list",
-        constants$1746.gtk_drag_dest_get_target_list$FUNC
+    static final MethodHandle gtk_print_settings_get_resolution_x$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_settings_get_resolution_x",
+        constants$1746.gtk_print_settings_get_resolution_x$FUNC
+    );
+    static final FunctionDescriptor gtk_print_settings_get_resolution_y$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_print_settings_get_resolution_y$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_settings_get_resolution_y",
+        constants$1746.gtk_print_settings_get_resolution_y$FUNC
     );
 }
 

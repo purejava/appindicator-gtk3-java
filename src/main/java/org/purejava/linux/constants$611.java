@@ -7,54 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$611 {
+final class constants$611 {
 
-    static final FunctionDescriptor g_dbus_interface_info_lookup_property$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$611() {}
+    static final FunctionDescriptor g_icon_hash$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_icon_hash$MH = RuntimeHelper.downcallHandle(
+        "g_icon_hash",
+        constants$611.g_icon_hash$FUNC
+    );
+    static final FunctionDescriptor g_icon_equal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_interface_info_lookup_property$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_interface_info_lookup_property",
-        constants$611.g_dbus_interface_info_lookup_property$FUNC
+    static final MethodHandle g_icon_equal$MH = RuntimeHelper.downcallHandle(
+        "g_icon_equal",
+        constants$611.g_icon_equal$FUNC
     );
-    static final FunctionDescriptor g_dbus_interface_info_cache_build$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_icon_to_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_interface_info_cache_build$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_interface_info_cache_build",
-        constants$611.g_dbus_interface_info_cache_build$FUNC
+    static final MethodHandle g_icon_to_string$MH = RuntimeHelper.downcallHandle(
+        "g_icon_to_string",
+        constants$611.g_icon_to_string$FUNC
     );
-    static final FunctionDescriptor g_dbus_interface_info_cache_release$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_interface_info_cache_release$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_interface_info_cache_release",
-        constants$611.g_dbus_interface_info_cache_release$FUNC
-    );
-    static final FunctionDescriptor g_dbus_interface_info_generate_xml$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_interface_info_generate_xml$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_interface_info_generate_xml",
-        constants$611.g_dbus_interface_info_generate_xml$FUNC
-    );
-    static final FunctionDescriptor g_dbus_node_info_new_for_xml$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_icon_new_for_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_node_info_new_for_xml$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_node_info_new_for_xml",
-        constants$611.g_dbus_node_info_new_for_xml$FUNC
+    static final MethodHandle g_icon_new_for_string$MH = RuntimeHelper.downcallHandle(
+        "g_icon_new_for_string",
+        constants$611.g_icon_new_for_string$FUNC
     );
-    static final FunctionDescriptor g_dbus_node_info_lookup_interface$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_icon_serialize$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_node_info_lookup_interface$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_node_info_lookup_interface",
-        constants$611.g_dbus_node_info_lookup_interface$FUNC
+    static final MethodHandle g_icon_serialize$MH = RuntimeHelper.downcallHandle(
+        "g_icon_serialize",
+        constants$611.g_icon_serialize$FUNC
+    );
+    static final FunctionDescriptor g_icon_deserialize$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_icon_deserialize$MH = RuntimeHelper.downcallHandle(
+        "g_icon_deserialize",
+        constants$611.g_icon_deserialize$FUNC
     );
 }
 

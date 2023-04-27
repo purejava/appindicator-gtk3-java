@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GdkWindowClass extends _GdkWindowClass {
+/**
+ * {@snippet :
+ * typedef struct _GdkWindowClass GdkWindowClass;
+ * }
+ */
+public final class GdkWindowClass extends _GdkWindowClass {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GdkWindowClass() {}
 }
 
 

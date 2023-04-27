@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GTimer {
+/**
+ * {@snippet :
+ * typedef struct _GTimer GTimer;
+ * }
+ */
+public final class GTimer {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GTimer() {}
 }
 
 

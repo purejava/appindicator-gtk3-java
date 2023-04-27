@@ -7,50 +7,66 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$430 {
+final class constants$430 {
 
-    static final FunctionDescriptor g_type_interface_get_plugin$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$430() {}
+    static final FunctionDescriptor g_value_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_value_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_value_get_type",
+        constants$430.g_value_get_type$FUNC
     );
-    static final MethodHandle g_type_interface_get_plugin$MH = RuntimeHelper.downcallHandle(
-        "g_type_interface_get_plugin",
-        constants$430.g_type_interface_get_plugin$FUNC
-    );
-    static final FunctionDescriptor g_type_fundamental_next$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_type_fundamental_next$MH = RuntimeHelper.downcallHandle(
-        "g_type_fundamental_next",
-        constants$430.g_type_fundamental_next$FUNC
-    );
-    static final FunctionDescriptor g_type_fundamental$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_type_fundamental$MH = RuntimeHelper.downcallHandle(
-        "g_type_fundamental",
-        constants$430.g_type_fundamental$FUNC
-    );
-    static final FunctionDescriptor g_type_create_instance$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_type_create_instance$MH = RuntimeHelper.downcallHandle(
-        "g_type_create_instance",
-        constants$430.g_type_create_instance$FUNC
-    );
-    static final FunctionDescriptor g_type_free_instance$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_type_free_instance$MH = RuntimeHelper.downcallHandle(
-        "g_type_free_instance",
-        constants$430.g_type_free_instance$FUNC
-    );
-    static final FunctionDescriptor g_type_add_class_cache_func$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor GObjectGetPropertyFunc$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_type_add_class_cache_func$MH = RuntimeHelper.downcallHandle(
-        "g_type_add_class_cache_func",
-        constants$430.g_type_add_class_cache_func$FUNC
+    static final FunctionDescriptor GObjectGetPropertyFunc_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle GObjectGetPropertyFunc_UP$MH = RuntimeHelper.upcallHandle(GObjectGetPropertyFunc.class, "apply", constants$430.GObjectGetPropertyFunc_UP$FUNC);
+    static final FunctionDescriptor GObjectGetPropertyFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GObjectGetPropertyFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$430.GObjectGetPropertyFunc_DOWN$FUNC
+    );
+    static final FunctionDescriptor GObjectSetPropertyFunc$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final FunctionDescriptor GObjectSetPropertyFunc_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GObjectSetPropertyFunc_UP$MH = RuntimeHelper.upcallHandle(GObjectSetPropertyFunc.class, "apply", constants$430.GObjectSetPropertyFunc_UP$FUNC);
+    static final FunctionDescriptor GObjectSetPropertyFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GObjectSetPropertyFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$430.GObjectSetPropertyFunc_DOWN$FUNC
+    );
+    static final FunctionDescriptor GObjectFinalizeFunc$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final FunctionDescriptor GObjectFinalizeFunc_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GObjectFinalizeFunc_UP$MH = RuntimeHelper.upcallHandle(GObjectFinalizeFunc.class, "apply", constants$430.GObjectFinalizeFunc_UP$FUNC);
 }
 
 

@@ -7,49 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$881 {
+final class constants$881 {
 
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GActionMap$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$881() {}
+    static final FunctionDescriptor hb_buffer_get_direction$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GActionMap$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GActionMap",
-        constants$881.glib_slistautoptr_cleanup_GActionMap$FUNC
+    static final MethodHandle hb_buffer_get_direction$MH = RuntimeHelper.downcallHandle(
+        "hb_buffer_get_direction",
+        constants$881.hb_buffer_get_direction$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GActionMap$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor hb_buffer_set_script$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle hb_buffer_set_script$MH = RuntimeHelper.downcallHandle(
+        "hb_buffer_set_script",
+        constants$881.hb_buffer_set_script$FUNC
+    );
+    static final FunctionDescriptor hb_buffer_get_script$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GActionMap$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GActionMap",
-        constants$881.glib_queueautoptr_cleanup_GActionMap$FUNC
+    static final MethodHandle hb_buffer_get_script$MH = RuntimeHelper.downcallHandle(
+        "hb_buffer_get_script",
+        constants$881.hb_buffer_get_script$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GAppInfo$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor hb_buffer_set_language$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GAppInfo$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GAppInfo",
-        constants$881.glib_autoptr_clear_GAppInfo$FUNC
+    static final MethodHandle hb_buffer_set_language$MH = RuntimeHelper.downcallHandle(
+        "hb_buffer_set_language",
+        constants$881.hb_buffer_set_language$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GAppInfo$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor hb_buffer_get_language$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GAppInfo$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GAppInfo",
-        constants$881.glib_autoptr_cleanup_GAppInfo$FUNC
+    static final MethodHandle hb_buffer_get_language$MH = RuntimeHelper.downcallHandle(
+        "hb_buffer_get_language",
+        constants$881.hb_buffer_get_language$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GAppInfo$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor hb_buffer_set_segment_properties$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GAppInfo$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GAppInfo",
-        constants$881.glib_listautoptr_cleanup_GAppInfo$FUNC
-    );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GAppInfo$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_slistautoptr_cleanup_GAppInfo$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GAppInfo",
-        constants$881.glib_slistautoptr_cleanup_GAppInfo$FUNC
+    static final MethodHandle hb_buffer_set_segment_properties$MH = RuntimeHelper.downcallHandle(
+        "hb_buffer_set_segment_properties",
+        constants$881.hb_buffer_set_segment_properties$FUNC
     );
 }
 

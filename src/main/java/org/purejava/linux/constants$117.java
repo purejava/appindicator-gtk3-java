@@ -7,8 +7,40 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$117 {
+final class constants$117 {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$117() {}
+    static final FunctionDescriptor g_date_set_julian$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_date_set_julian$MH = RuntimeHelper.downcallHandle(
+        "g_date_set_julian",
+        constants$117.g_date_set_julian$FUNC
+    );
+    static final FunctionDescriptor g_date_is_first_of_month$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_date_is_first_of_month$MH = RuntimeHelper.downcallHandle(
+        "g_date_is_first_of_month",
+        constants$117.g_date_is_first_of_month$FUNC
+    );
+    static final FunctionDescriptor g_date_is_last_of_month$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_date_is_last_of_month$MH = RuntimeHelper.downcallHandle(
+        "g_date_is_last_of_month",
+        constants$117.g_date_is_last_of_month$FUNC
+    );
+    static final FunctionDescriptor g_date_add_days$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_date_add_days$MH = RuntimeHelper.downcallHandle(
+        "g_date_add_days",
+        constants$117.g_date_add_days$FUNC
+    );
     static final FunctionDescriptor g_date_subtract_days$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
@@ -24,37 +56,6 @@ class constants$117 {
     static final MethodHandle g_date_add_months$MH = RuntimeHelper.downcallHandle(
         "g_date_add_months",
         constants$117.g_date_add_months$FUNC
-    );
-    static final FunctionDescriptor g_date_subtract_months$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_date_subtract_months$MH = RuntimeHelper.downcallHandle(
-        "g_date_subtract_months",
-        constants$117.g_date_subtract_months$FUNC
-    );
-    static final FunctionDescriptor g_date_add_years$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_date_add_years$MH = RuntimeHelper.downcallHandle(
-        "g_date_add_years",
-        constants$117.g_date_add_years$FUNC
-    );
-    static final FunctionDescriptor g_date_subtract_years$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_date_subtract_years$MH = RuntimeHelper.downcallHandle(
-        "g_date_subtract_years",
-        constants$117.g_date_subtract_years$FUNC
-    );
-    static final FunctionDescriptor g_date_is_leap_year$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_SHORT$LAYOUT
-    );
-    static final MethodHandle g_date_is_leap_year$MH = RuntimeHelper.downcallHandle(
-        "g_date_is_leap_year",
-        constants$117.g_date_is_leap_year$FUNC
     );
 }
 

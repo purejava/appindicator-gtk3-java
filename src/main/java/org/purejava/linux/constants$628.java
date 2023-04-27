@@ -7,62 +7,72 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$628 {
+final class constants$628 {
 
-    static final FunctionDescriptor GBusNameAcquiredCallback$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$628() {}
+    static final FunctionDescriptor g_file_make_symbolic_link_async$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GBusNameAcquiredCallback$MH = RuntimeHelper.downcallHandle(
-        constants$628.GBusNameAcquiredCallback$FUNC
-    );
-    static final FunctionDescriptor GBusNameLostCallback$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GBusNameLostCallback$MH = RuntimeHelper.downcallHandle(
-        constants$628.GBusNameLostCallback$FUNC
-    );
-    static final FunctionDescriptor g_bus_own_name$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_bus_own_name$MH = RuntimeHelper.downcallHandle(
-        "g_bus_own_name",
-        constants$628.g_bus_own_name$FUNC
-    );
-    static final FunctionDescriptor g_bus_own_name_on_connection$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_bus_own_name_on_connection$MH = RuntimeHelper.downcallHandle(
-        "g_bus_own_name_on_connection",
-        constants$628.g_bus_own_name_on_connection$FUNC
-    );
-    static final FunctionDescriptor g_bus_own_name_with_closures$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_bus_own_name_with_closures$MH = RuntimeHelper.downcallHandle(
-        "g_bus_own_name_with_closures",
-        constants$628.g_bus_own_name_with_closures$FUNC
+    static final MethodHandle g_file_make_symbolic_link_async$MH = RuntimeHelper.downcallHandle(
+        "g_file_make_symbolic_link_async",
+        constants$628.g_file_make_symbolic_link_async$FUNC
+    );
+    static final FunctionDescriptor g_file_make_symbolic_link_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_file_make_symbolic_link_finish$MH = RuntimeHelper.downcallHandle(
+        "g_file_make_symbolic_link_finish",
+        constants$628.g_file_make_symbolic_link_finish$FUNC
+    );
+    static final FunctionDescriptor g_file_query_settable_attributes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_file_query_settable_attributes$MH = RuntimeHelper.downcallHandle(
+        "g_file_query_settable_attributes",
+        constants$628.g_file_query_settable_attributes$FUNC
+    );
+    static final FunctionDescriptor g_file_query_writable_namespaces$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_file_query_writable_namespaces$MH = RuntimeHelper.downcallHandle(
+        "g_file_query_writable_namespaces",
+        constants$628.g_file_query_writable_namespaces$FUNC
+    );
+    static final FunctionDescriptor g_file_set_attribute$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_file_set_attribute$MH = RuntimeHelper.downcallHandle(
+        "g_file_set_attribute",
+        constants$628.g_file_set_attribute$FUNC
+    );
+    static final FunctionDescriptor g_file_set_attributes_from_info$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_file_set_attributes_from_info$MH = RuntimeHelper.downcallHandle(
+        "g_file_set_attributes_from_info",
+        constants$628.g_file_set_attributes_from_info$FUNC
     );
 }
 

@@ -7,49 +7,63 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$891 {
+final class constants$891 {
 
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GCharsetConverter$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$891() {}
+    static final FunctionDescriptor hb_font_get_glyph_v_kerning_func_t$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GCharsetConverter$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GCharsetConverter",
-        constants$891.glib_slistautoptr_cleanup_GCharsetConverter$FUNC
-    );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GCharsetConverter$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor hb_font_get_glyph_v_kerning_func_t_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GCharsetConverter$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GCharsetConverter",
-        constants$891.glib_queueautoptr_cleanup_GCharsetConverter$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_clear_GConverter$FUNC = FunctionDescriptor.ofVoid(
+    static final MethodHandle hb_font_get_glyph_v_kerning_func_t_UP$MH = RuntimeHelper.upcallHandle(hb_font_get_glyph_v_kerning_func_t.class, "apply", constants$891.hb_font_get_glyph_v_kerning_func_t_UP$FUNC);
+    static final FunctionDescriptor hb_font_get_glyph_v_kerning_func_t_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GConverter$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GConverter",
-        constants$891.glib_autoptr_clear_GConverter$FUNC
+    static final MethodHandle hb_font_get_glyph_v_kerning_func_t_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$891.hb_font_get_glyph_v_kerning_func_t_DOWN$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GConverter$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor hb_font_funcs_set_glyph_v_kerning_func$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GConverter$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GConverter",
-        constants$891.glib_autoptr_cleanup_GConverter$FUNC
+    static final MethodHandle hb_font_funcs_set_glyph_v_kerning_func$MH = RuntimeHelper.downcallHandle(
+        "hb_font_funcs_set_glyph_v_kerning_func",
+        constants$891.hb_font_funcs_set_glyph_v_kerning_func$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GConverter$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor hb_font_get_glyph_v_kerning$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GConverter$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GConverter",
-        constants$891.glib_listautoptr_cleanup_GConverter$FUNC
+    static final MethodHandle hb_font_get_glyph_v_kerning$MH = RuntimeHelper.downcallHandle(
+        "hb_font_get_glyph_v_kerning",
+        constants$891.hb_font_get_glyph_v_kerning$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GConverter$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor hb_map_create$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle hb_map_create$MH = RuntimeHelper.downcallHandle(
+        "hb_map_create",
+        constants$891.hb_map_create$FUNC
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GConverter$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GConverter",
-        constants$891.glib_slistautoptr_cleanup_GConverter$FUNC
+    static final FunctionDescriptor hb_map_get_empty$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle hb_map_get_empty$MH = RuntimeHelper.downcallHandle(
+        "hb_map_get_empty",
+        constants$891.hb_map_get_empty$FUNC
     );
 }
 

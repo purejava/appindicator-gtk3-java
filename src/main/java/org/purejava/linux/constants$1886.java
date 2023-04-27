@@ -7,50 +7,39 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1886 {
+final class constants$1886 {
 
-    static final FunctionDescriptor _gtk_menu_bar_cycle_focus$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1886() {}
+    static final FunctionDescriptor gtk_page_set_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_page_set_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_page_set_get_type",
+        constants$1886.gtk_page_set_get_type$FUNC
     );
-    static final MethodHandle _gtk_menu_bar_cycle_focus$MH = RuntimeHelper.downcallHandle(
-        "_gtk_menu_bar_cycle_focus",
-        constants$1886._gtk_menu_bar_cycle_focus$FUNC
+    static final FunctionDescriptor gtk_number_up_layout_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_number_up_layout_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_number_up_layout_get_type",
+        constants$1886.gtk_number_up_layout_get_type$FUNC
     );
-    static final FunctionDescriptor _gtk_menu_bar_get_viewable_menu_bars$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gtk_page_orientation_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_page_orientation_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_page_orientation_get_type",
+        constants$1886.gtk_page_orientation_get_type$FUNC
     );
-    static final MethodHandle _gtk_menu_bar_get_viewable_menu_bars$MH = RuntimeHelper.downcallHandle(
-        "_gtk_menu_bar_get_viewable_menu_bars",
-        constants$1886._gtk_menu_bar_get_viewable_menu_bars$FUNC
+    static final FunctionDescriptor gtk_print_quality_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_print_quality_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_quality_get_type",
+        constants$1886.gtk_print_quality_get_type$FUNC
     );
-    static final FunctionDescriptor gtk_popover_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_popover_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_popover_get_type",
-        constants$1886.gtk_popover_get_type$FUNC
+    static final FunctionDescriptor gtk_print_duplex_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_print_duplex_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_duplex_get_type",
+        constants$1886.gtk_print_duplex_get_type$FUNC
     );
-    static final FunctionDescriptor gtk_popover_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_popover_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_popover_new",
-        constants$1886.gtk_popover_new$FUNC
-    );
-    static final FunctionDescriptor gtk_popover_new_from_model$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_popover_new_from_model$MH = RuntimeHelper.downcallHandle(
-        "gtk_popover_new_from_model",
-        constants$1886.gtk_popover_new_from_model$FUNC
-    );
-    static final FunctionDescriptor gtk_popover_set_relative_to$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_popover_set_relative_to$MH = RuntimeHelper.downcallHandle(
-        "gtk_popover_set_relative_to",
-        constants$1886.gtk_popover_set_relative_to$FUNC
+    static final FunctionDescriptor gtk_unit_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_unit_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_unit_get_type",
+        constants$1886.gtk_unit_get_type$FUNC
     );
 }
 

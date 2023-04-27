@@ -7,54 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1742 {
+final class constants$1742 {
 
-    static final FunctionDescriptor gtk_combo_box_text_insert$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1742() {}
+    static final FunctionDescriptor gtk_print_settings_get_printer$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_print_settings_get_printer$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_settings_get_printer",
+        constants$1742.gtk_print_settings_get_printer$FUNC
+    );
+    static final FunctionDescriptor gtk_print_settings_set_printer$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_combo_box_text_insert$MH = RuntimeHelper.downcallHandle(
-        "gtk_combo_box_text_insert",
-        constants$1742.gtk_combo_box_text_insert$FUNC
+    static final MethodHandle gtk_print_settings_set_printer$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_settings_set_printer",
+        constants$1742.gtk_print_settings_set_printer$FUNC
     );
-    static final FunctionDescriptor gtk_combo_box_text_append$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_print_settings_get_orientation$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_print_settings_get_orientation$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_settings_get_orientation",
+        constants$1742.gtk_print_settings_get_orientation$FUNC
+    );
+    static final FunctionDescriptor gtk_print_settings_set_orientation$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_print_settings_set_orientation$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_settings_set_orientation",
+        constants$1742.gtk_print_settings_set_orientation$FUNC
+    );
+    static final FunctionDescriptor gtk_print_settings_get_paper_size$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_print_settings_get_paper_size$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_settings_get_paper_size",
+        constants$1742.gtk_print_settings_get_paper_size$FUNC
+    );
+    static final FunctionDescriptor gtk_print_settings_set_paper_size$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_combo_box_text_append$MH = RuntimeHelper.downcallHandle(
-        "gtk_combo_box_text_append",
-        constants$1742.gtk_combo_box_text_append$FUNC
-    );
-    static final FunctionDescriptor gtk_combo_box_text_prepend$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_combo_box_text_prepend$MH = RuntimeHelper.downcallHandle(
-        "gtk_combo_box_text_prepend",
-        constants$1742.gtk_combo_box_text_prepend$FUNC
-    );
-    static final FunctionDescriptor gtk_css_section_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_css_section_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_css_section_get_type",
-        constants$1742.gtk_css_section_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_css_section_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_css_section_ref$MH = RuntimeHelper.downcallHandle(
-        "gtk_css_section_ref",
-        constants$1742.gtk_css_section_ref$FUNC
-    );
-    static final FunctionDescriptor gtk_css_section_unref$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_css_section_unref$MH = RuntimeHelper.downcallHandle(
-        "gtk_css_section_unref",
-        constants$1742.gtk_css_section_unref$FUNC
+    static final MethodHandle gtk_print_settings_set_paper_size$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_settings_set_paper_size",
+        constants$1742.gtk_print_settings_set_paper_size$FUNC
     );
 }
 

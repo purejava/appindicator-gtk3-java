@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkCheckMenuItemClass extends _GtkCheckMenuItemClass {
+/**
+ * {@snippet :
+ * typedef struct _GtkCheckMenuItemClass GtkCheckMenuItemClass;
+ * }
+ */
+public final class GtkCheckMenuItemClass extends _GtkCheckMenuItemClass {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkCheckMenuItemClass() {}
 }
 
 

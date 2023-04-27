@@ -7,41 +7,56 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1373 {
+final class constants$1373 {
 
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GtkBorder$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1373() {}
+    static final FunctionDescriptor gtk_cell_editable_editing_done$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GtkBorder$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GtkBorder",
-        constants$1373.glib_slistautoptr_cleanup_GtkBorder$FUNC
+    static final MethodHandle gtk_cell_editable_editing_done$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_editable_editing_done",
+        constants$1373.gtk_cell_editable_editing_done$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GtkBorder$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_cell_editable_remove_widget$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GtkBorder$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GtkBorder",
-        constants$1373.glib_queueautoptr_cleanup_GtkBorder$FUNC
+    static final MethodHandle gtk_cell_editable_remove_widget$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_editable_remove_widget",
+        constants$1373.gtk_cell_editable_remove_widget$FUNC
     );
-    static final FunctionDescriptor GtkRcPropertyParser$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_cell_renderer_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_cell_renderer_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_renderer_get_type",
+        constants$1373.gtk_cell_renderer_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_cell_renderer_get_request_mode$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_cell_renderer_get_request_mode$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_renderer_get_request_mode",
+        constants$1373.gtk_cell_renderer_get_request_mode$FUNC
+    );
+    static final FunctionDescriptor gtk_cell_renderer_get_preferred_width$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GtkRcPropertyParser$MH = RuntimeHelper.downcallHandle(
-        constants$1373.GtkRcPropertyParser$FUNC
+    static final MethodHandle gtk_cell_renderer_get_preferred_width$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_renderer_get_preferred_width",
+        constants$1373.gtk_cell_renderer_get_preferred_width$FUNC
     );
-    static final FunctionDescriptor GtkBuilderConnectFunc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_cell_renderer_get_preferred_height_for_width$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GtkBuilderConnectFunc$MH = RuntimeHelper.downcallHandle(
-        constants$1373.GtkBuilderConnectFunc$FUNC
+    static final MethodHandle gtk_cell_renderer_get_preferred_height_for_width$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_renderer_get_preferred_height_for_width",
+        constants$1373.gtk_cell_renderer_get_preferred_height_for_width$FUNC
     );
 }
 

@@ -7,52 +7,57 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1578 {
+final class constants$1578 {
 
-    static final FunctionDescriptor gtk_cell_area_request_renderer$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1578() {}
+    static final FunctionDescriptor gtk_file_chooser_remove_filter$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_cell_area_request_renderer$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_request_renderer",
-        constants$1578.gtk_cell_area_request_renderer$FUNC
+    static final MethodHandle gtk_file_chooser_remove_filter$MH = RuntimeHelper.downcallHandle(
+        "gtk_file_chooser_remove_filter",
+        constants$1578.gtk_file_chooser_remove_filter$FUNC
     );
-    static final FunctionDescriptor _gtk_cell_area_set_cell_data_func_with_proxy$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_file_chooser_list_filters$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_file_chooser_list_filters$MH = RuntimeHelper.downcallHandle(
+        "gtk_file_chooser_list_filters",
+        constants$1578.gtk_file_chooser_list_filters$FUNC
+    );
+    static final FunctionDescriptor gtk_file_chooser_set_filter$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_file_chooser_set_filter$MH = RuntimeHelper.downcallHandle(
+        "gtk_file_chooser_set_filter",
+        constants$1578.gtk_file_chooser_set_filter$FUNC
+    );
+    static final FunctionDescriptor gtk_file_chooser_get_filter$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_file_chooser_get_filter$MH = RuntimeHelper.downcallHandle(
+        "gtk_file_chooser_get_filter",
+        constants$1578.gtk_file_chooser_get_filter$FUNC
+    );
+    static final FunctionDescriptor gtk_file_chooser_add_shortcut_folder$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle _gtk_cell_area_set_cell_data_func_with_proxy$MH = RuntimeHelper.downcallHandle(
-        "_gtk_cell_area_set_cell_data_func_with_proxy",
-        constants$1578._gtk_cell_area_set_cell_data_func_with_proxy$FUNC
+    static final MethodHandle gtk_file_chooser_add_shortcut_folder$MH = RuntimeHelper.downcallHandle(
+        "gtk_file_chooser_add_shortcut_folder",
+        constants$1578.gtk_file_chooser_add_shortcut_folder$FUNC
     );
-    static final FunctionDescriptor GtkTreeCellDataFunc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_file_chooser_remove_shortcut_folder$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GtkTreeCellDataFunc$MH = RuntimeHelper.downcallHandle(
-        constants$1578.GtkTreeCellDataFunc$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_column_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_tree_view_column_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_get_type",
-        constants$1578.gtk_tree_view_column_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_column_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_tree_view_column_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_new",
-        constants$1578.gtk_tree_view_column_new$FUNC
+    static final MethodHandle gtk_file_chooser_remove_shortcut_folder$MH = RuntimeHelper.downcallHandle(
+        "gtk_file_chooser_remove_shortcut_folder",
+        constants$1578.gtk_file_chooser_remove_shortcut_folder$FUNC
     );
 }
 

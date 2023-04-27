@@ -7,72 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1294 {
+final class constants$1294 {
 
-    static final FunctionDescriptor gdk_pixbuf_save_to_bufferv$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1294() {}
+    static final FunctionDescriptor gtk_container_set_focus_vadjustment$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_pixbuf_save_to_bufferv$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_save_to_bufferv",
-        constants$1294.gdk_pixbuf_save_to_bufferv$FUNC
+    static final MethodHandle gtk_container_set_focus_vadjustment$MH = RuntimeHelper.downcallHandle(
+        "gtk_container_set_focus_vadjustment",
+        constants$1294.gtk_container_set_focus_vadjustment$FUNC
     );
-    static final FunctionDescriptor gdk_pixbuf_new_from_stream$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_container_get_focus_vadjustment$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_container_get_focus_vadjustment$MH = RuntimeHelper.downcallHandle(
+        "gtk_container_get_focus_vadjustment",
+        constants$1294.gtk_container_get_focus_vadjustment$FUNC
+    );
+    static final FunctionDescriptor gtk_container_set_focus_hadjustment$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_pixbuf_new_from_stream$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_new_from_stream",
-        constants$1294.gdk_pixbuf_new_from_stream$FUNC
+    static final MethodHandle gtk_container_set_focus_hadjustment$MH = RuntimeHelper.downcallHandle(
+        "gtk_container_set_focus_hadjustment",
+        constants$1294.gtk_container_set_focus_hadjustment$FUNC
     );
-    static final FunctionDescriptor gdk_pixbuf_new_from_stream_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_container_get_focus_hadjustment$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_pixbuf_new_from_stream_async$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_new_from_stream_async",
-        constants$1294.gdk_pixbuf_new_from_stream_async$FUNC
+    static final MethodHandle gtk_container_get_focus_hadjustment$MH = RuntimeHelper.downcallHandle(
+        "gtk_container_get_focus_hadjustment",
+        constants$1294.gtk_container_get_focus_hadjustment$FUNC
     );
-    static final FunctionDescriptor gdk_pixbuf_new_from_stream_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_container_resize_children$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_pixbuf_new_from_stream_finish$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_new_from_stream_finish",
-        constants$1294.gdk_pixbuf_new_from_stream_finish$FUNC
+    static final MethodHandle gtk_container_resize_children$MH = RuntimeHelper.downcallHandle(
+        "gtk_container_resize_children",
+        constants$1294.gtk_container_resize_children$FUNC
     );
-    static final FunctionDescriptor gdk_pixbuf_new_from_stream_at_scale$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_container_child_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_pixbuf_new_from_stream_at_scale$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_new_from_stream_at_scale",
-        constants$1294.gdk_pixbuf_new_from_stream_at_scale$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_new_from_stream_at_scale_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_new_from_stream_at_scale_async$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_new_from_stream_at_scale_async",
-        constants$1294.gdk_pixbuf_new_from_stream_at_scale_async$FUNC
+    static final MethodHandle gtk_container_child_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_container_child_type",
+        constants$1294.gtk_container_child_type$FUNC
     );
 }
 

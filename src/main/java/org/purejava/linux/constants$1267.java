@@ -7,50 +7,59 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1267 {
+final class constants$1267 {
 
-    static final FunctionDescriptor gdk_rectangle_intersect$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1267() {}
+    static final FunctionDescriptor gtk_widget_set_device_events$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_widget_set_device_events$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_set_device_events",
+        constants$1267.gtk_widget_set_device_events$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_add_device_events$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_widget_add_device_events$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_add_device_events",
+        constants$1267.gtk_widget_add_device_events$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_set_opacity$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle gtk_widget_set_opacity$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_set_opacity",
+        constants$1267.gtk_widget_set_opacity$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_get_opacity$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_get_opacity$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_opacity",
+        constants$1267.gtk_widget_get_opacity$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_set_device_enabled$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_widget_set_device_enabled$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_set_device_enabled",
+        constants$1267.gtk_widget_set_device_enabled$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_get_device_enabled$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_rectangle_intersect$MH = RuntimeHelper.downcallHandle(
-        "gdk_rectangle_intersect",
-        constants$1267.gdk_rectangle_intersect$FUNC
-    );
-    static final FunctionDescriptor gdk_rectangle_union$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_rectangle_union$MH = RuntimeHelper.downcallHandle(
-        "gdk_rectangle_union",
-        constants$1267.gdk_rectangle_union$FUNC
-    );
-    static final FunctionDescriptor gdk_rectangle_equal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_rectangle_equal$MH = RuntimeHelper.downcallHandle(
-        "gdk_rectangle_equal",
-        constants$1267.gdk_rectangle_equal$FUNC
-    );
-    static final FunctionDescriptor gdk_rectangle_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_rectangle_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_rectangle_get_type",
-        constants$1267.gdk_rectangle_get_type$FUNC
-    );
-    static final FunctionDescriptor gdk_monitor_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_monitor_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_monitor_get_type",
-        constants$1267.gdk_monitor_get_type$FUNC
-    );
-    static final FunctionDescriptor gdk_monitor_get_display$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_monitor_get_display$MH = RuntimeHelper.downcallHandle(
-        "gdk_monitor_get_display",
-        constants$1267.gdk_monitor_get_display$FUNC
+    static final MethodHandle gtk_widget_get_device_enabled$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_device_enabled",
+        constants$1267.gtk_widget_get_device_enabled$FUNC
     );
 }
 

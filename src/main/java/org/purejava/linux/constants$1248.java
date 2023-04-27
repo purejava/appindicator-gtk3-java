@@ -7,53 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1248 {
+final class constants$1248 {
 
-    static final FunctionDescriptor gdk_window_end_paint$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1248() {}
+    static final FunctionDescriptor gtk_widget_unparent$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_window_end_paint$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_end_paint",
-        constants$1248.gdk_window_end_paint$FUNC
+    static final MethodHandle gtk_widget_unparent$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_unparent",
+        constants$1248.gtk_widget_unparent$FUNC
     );
-    static final FunctionDescriptor gdk_window_begin_draw_frame$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_widget_show$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_show$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_show",
+        constants$1248.gtk_widget_show$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_hide$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_hide$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_hide",
+        constants$1248.gtk_widget_hide$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_show_now$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_show_now$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_show_now",
+        constants$1248.gtk_widget_show_now$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_show_all$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_show_all$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_show_all",
+        constants$1248.gtk_widget_show_all$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_set_no_show_all$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gdk_window_begin_draw_frame$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_begin_draw_frame",
-        constants$1248.gdk_window_begin_draw_frame$FUNC
-    );
-    static final FunctionDescriptor gdk_window_end_draw_frame$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_end_draw_frame$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_end_draw_frame",
-        constants$1248.gdk_window_end_draw_frame$FUNC
-    );
-    static final FunctionDescriptor gdk_window_flush$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_flush$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_flush",
-        constants$1248.gdk_window_flush$FUNC
-    );
-    static final FunctionDescriptor gdk_window_set_title$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_set_title$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_title",
-        constants$1248.gdk_window_set_title$FUNC
-    );
-    static final FunctionDescriptor gdk_window_set_role$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_set_role$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_role",
-        constants$1248.gdk_window_set_role$FUNC
+    static final MethodHandle gtk_widget_set_no_show_all$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_set_no_show_all",
+        constants$1248.gtk_widget_set_no_show_all$FUNC
     );
 }
 

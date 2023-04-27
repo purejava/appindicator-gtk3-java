@@ -7,58 +7,57 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$27 {
+final class constants$27 {
 
-    static final FunctionDescriptor g_byte_array_append$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$27() {}
+    static final FunctionDescriptor g_ptr_array_foreach$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_byte_array_append$MH = RuntimeHelper.downcallHandle(
-        "g_byte_array_append",
-        constants$27.g_byte_array_append$FUNC
+    static final MethodHandle g_ptr_array_foreach$MH = RuntimeHelper.downcallHandle(
+        "g_ptr_array_foreach",
+        constants$27.g_ptr_array_foreach$FUNC
     );
-    static final FunctionDescriptor g_byte_array_prepend$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_ptr_array_find$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_byte_array_prepend$MH = RuntimeHelper.downcallHandle(
-        "g_byte_array_prepend",
-        constants$27.g_byte_array_prepend$FUNC
+    static final MethodHandle g_ptr_array_find$MH = RuntimeHelper.downcallHandle(
+        "g_ptr_array_find",
+        constants$27.g_ptr_array_find$FUNC
     );
-    static final FunctionDescriptor g_byte_array_set_size$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_ptr_array_find_with_equal_func$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_byte_array_set_size$MH = RuntimeHelper.downcallHandle(
-        "g_byte_array_set_size",
-        constants$27.g_byte_array_set_size$FUNC
-    );
-    static final FunctionDescriptor g_byte_array_remove_index$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_byte_array_remove_index$MH = RuntimeHelper.downcallHandle(
-        "g_byte_array_remove_index",
-        constants$27.g_byte_array_remove_index$FUNC
-    );
-    static final FunctionDescriptor g_byte_array_remove_index_fast$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_byte_array_remove_index_fast$MH = RuntimeHelper.downcallHandle(
-        "g_byte_array_remove_index_fast",
-        constants$27.g_byte_array_remove_index_fast$FUNC
+    static final MethodHandle g_ptr_array_find_with_equal_func$MH = RuntimeHelper.downcallHandle(
+        "g_ptr_array_find_with_equal_func",
+        constants$27.g_ptr_array_find_with_equal_func$FUNC
     );
-    static final FunctionDescriptor g_byte_array_remove_range$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_ptr_array_is_null_terminated$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_ptr_array_is_null_terminated$MH = RuntimeHelper.downcallHandle(
+        "g_ptr_array_is_null_terminated",
+        constants$27.g_ptr_array_is_null_terminated$FUNC
+    );
+    static final FunctionDescriptor g_byte_array_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle g_byte_array_new$MH = RuntimeHelper.downcallHandle(
+        "g_byte_array_new",
+        constants$27.g_byte_array_new$FUNC
+    );
+    static final FunctionDescriptor g_byte_array_new_take$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_LONG_LONG$LAYOUT
     );
-    static final MethodHandle g_byte_array_remove_range$MH = RuntimeHelper.downcallHandle(
-        "g_byte_array_remove_range",
-        constants$27.g_byte_array_remove_range$FUNC
+    static final MethodHandle g_byte_array_new_take$MH = RuntimeHelper.downcallHandle(
+        "g_byte_array_new_take",
+        constants$27.g_byte_array_new_take$FUNC
     );
 }
 

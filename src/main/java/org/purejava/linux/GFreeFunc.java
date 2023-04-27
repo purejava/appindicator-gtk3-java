@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * void (*GFreeFunc)(void* data);
+ * }
+ */
 public interface GFreeFunc {
 
-    void apply(java.lang.foreign.MemoryAddress data);
-    static MemorySegment allocate(GFreeFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GFreeFunc.class, fi, constants$8.GFreeFunc$FUNC, session);
+    void apply(java.lang.foreign.MemorySegment display);
+    static MemorySegment allocate(GFreeFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$9.GFreeFunc_UP$MH, fi, constants$9.GFreeFunc$FUNC, scope);
     }
-    static GFreeFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _data) -> {
+    static GFreeFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _display) -> {
             try {
-                constants$8.GFreeFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_data);
+                constants$9.GFreeFunc_DOWN$MH.invokeExact(symbol, _display);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

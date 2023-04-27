@@ -7,52 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1281 {
+final class constants$1281 {
 
-    static final FunctionDescriptor gdk_screen_get_monitor_at_window$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1281() {}
+    static final FunctionDescriptor gtk_widget_input_shape_combine_region$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_screen_get_monitor_at_window$MH = RuntimeHelper.downcallHandle(
-        "gdk_screen_get_monitor_at_window",
-        constants$1281.gdk_screen_get_monitor_at_window$FUNC
+    static final MethodHandle gtk_widget_input_shape_combine_region$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_input_shape_combine_region",
+        constants$1281.gtk_widget_input_shape_combine_region$FUNC
     );
-    static final FunctionDescriptor gdk_screen_get_monitor_width_mm$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_widget_list_mnemonic_labels$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_list_mnemonic_labels$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_list_mnemonic_labels",
+        constants$1281.gtk_widget_list_mnemonic_labels$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_add_mnemonic_label$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_screen_get_monitor_width_mm$MH = RuntimeHelper.downcallHandle(
-        "gdk_screen_get_monitor_width_mm",
-        constants$1281.gdk_screen_get_monitor_width_mm$FUNC
+    static final MethodHandle gtk_widget_add_mnemonic_label$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_add_mnemonic_label",
+        constants$1281.gtk_widget_add_mnemonic_label$FUNC
     );
-    static final FunctionDescriptor gdk_screen_get_monitor_height_mm$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_widget_remove_mnemonic_label$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_screen_get_monitor_height_mm$MH = RuntimeHelper.downcallHandle(
-        "gdk_screen_get_monitor_height_mm",
-        constants$1281.gdk_screen_get_monitor_height_mm$FUNC
+    static final MethodHandle gtk_widget_remove_mnemonic_label$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_remove_mnemonic_label",
+        constants$1281.gtk_widget_remove_mnemonic_label$FUNC
     );
-    static final FunctionDescriptor gdk_screen_get_monitor_plug_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_widget_set_tooltip_window$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_screen_get_monitor_plug_name$MH = RuntimeHelper.downcallHandle(
-        "gdk_screen_get_monitor_plug_name",
-        constants$1281.gdk_screen_get_monitor_plug_name$FUNC
+    static final MethodHandle gtk_widget_set_tooltip_window$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_set_tooltip_window",
+        constants$1281.gtk_widget_set_tooltip_window$FUNC
     );
-    static final FunctionDescriptor gdk_screen_get_monitor_scale_factor$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor gtk_widget_get_tooltip_window$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_screen_get_monitor_scale_factor$MH = RuntimeHelper.downcallHandle(
-        "gdk_screen_get_monitor_scale_factor",
-        constants$1281.gdk_screen_get_monitor_scale_factor$FUNC
-    );
-    static final FunctionDescriptor gdk_screen_get_default$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gdk_screen_get_default$MH = RuntimeHelper.downcallHandle(
-        "gdk_screen_get_default",
-        constants$1281.gdk_screen_get_default$FUNC
+    static final MethodHandle gtk_widget_get_tooltip_window$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_tooltip_window",
+        constants$1281.gtk_widget_get_tooltip_window$FUNC
     );
 }
 

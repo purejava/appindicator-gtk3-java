@@ -7,9 +7,23 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GtkCellRendererAccelClass {
+ *     GtkCellRendererTextClass parent_class;
+ *     void (*accel_edited)(GtkCellRendererAccel*,const gchar*,guint,GdkModifierType,guint);
+ *     void (*accel_cleared)(GtkCellRendererAccel*,const gchar*);
+ *     void (*_gtk_reserved0)();
+ *     void (*_gtk_reserved1)();
+ *     void (*_gtk_reserved2)();
+ *     void (*_gtk_reserved3)();
+ *     void (*_gtk_reserved4)();
+ * };
+ * }
+ */
 public class _GtkCellRendererAccelClass {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
                 MemoryLayout.structLayout(
@@ -26,7 +40,10 @@ public class _GtkCellRendererAccelClass {
                     Constants$root.C_POINTER$LAYOUT.withName("notify"),
                     Constants$root.C_POINTER$LAYOUT.withName("constructed"),
                     Constants$root.C_LONG_LONG$LAYOUT.withName("flags"),
-                    MemoryLayout.sequenceLayout(6, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
+                    Constants$root.C_LONG_LONG$LAYOUT.withName("n_construct_properties"),
+                    Constants$root.C_POINTER$LAYOUT.withName("pspecs"),
+                    Constants$root.C_LONG_LONG$LAYOUT.withName("n_pspecs"),
+                    MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
                 ).withName("parent_class"),
                 Constants$root.C_POINTER$LAYOUT.withName("get_request_mode"),
                 Constants$root.C_POINTER$LAYOUT.withName("get_preferred_width"),
@@ -72,20 +89,40 @@ public class _GtkCellRendererAccelClass {
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle accel_edited$MH = RuntimeHelper.downcallHandle(
-        _GtkCellRendererAccelClass.accel_edited$FUNC
+    static final FunctionDescriptor accel_edited_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle accel_edited_UP$MH = RuntimeHelper.upcallHandle(accel_edited.class, "apply", _GtkCellRendererAccelClass.accel_edited_UP$FUNC);
+    static final FunctionDescriptor accel_edited_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle accel_edited_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkCellRendererAccelClass.accel_edited_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*accel_edited)(GtkCellRendererAccel*,const gchar*,guint,GdkModifierType,guint);
+     * }
+     */
     public interface accel_edited {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, int _x2, int _x3, int _x4);
-        static MemorySegment allocate(accel_edited fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(accel_edited.class, fi, _GtkCellRendererAccelClass.accel_edited$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2, int _x3, int _x4);
+        static MemorySegment allocate(accel_edited fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkCellRendererAccelClass.accel_edited_UP$MH, fi, _GtkCellRendererAccelClass.accel_edited$FUNC, scope);
         }
-        static accel_edited ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, int __x2, int __x3, int __x4) -> {
+        static accel_edited ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2, int __x3, int __x4) -> {
                 try {
-                    _GtkCellRendererAccelClass.accel_edited$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, __x2, __x3, __x4);
+                    _GtkCellRendererAccelClass.accel_edited_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -97,39 +134,65 @@ public class _GtkCellRendererAccelClass {
     public static VarHandle accel_edited$VH() {
         return _GtkCellRendererAccelClass.accel_edited$VH;
     }
-    public static MemoryAddress accel_edited$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkCellRendererAccelClass.accel_edited$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*accel_edited)(GtkCellRendererAccel*,const gchar*,guint,GdkModifierType,guint);
+     * }
+     */
+    public static MemorySegment accel_edited$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkCellRendererAccelClass.accel_edited$VH.get(seg);
     }
-    public static void accel_edited$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*accel_edited)(GtkCellRendererAccel*,const gchar*,guint,GdkModifierType,guint);
+     * }
+     */
+    public static void accel_edited$set(MemorySegment seg, MemorySegment x) {
         _GtkCellRendererAccelClass.accel_edited$VH.set(seg, x);
     }
-    public static MemoryAddress accel_edited$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkCellRendererAccelClass.accel_edited$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment accel_edited$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkCellRendererAccelClass.accel_edited$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void accel_edited$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void accel_edited$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkCellRendererAccelClass.accel_edited$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static accel_edited accel_edited (MemorySegment segment, MemorySession session) {
-        return accel_edited.ofAddress(accel_edited$get(segment), session);
+    public static accel_edited accel_edited(MemorySegment segment, SegmentScope scope) {
+        return accel_edited.ofAddress(accel_edited$get(segment), scope);
     }
     static final FunctionDescriptor accel_cleared$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle accel_cleared$MH = RuntimeHelper.downcallHandle(
-        _GtkCellRendererAccelClass.accel_cleared$FUNC
+    static final FunctionDescriptor accel_cleared_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle accel_cleared_UP$MH = RuntimeHelper.upcallHandle(accel_cleared.class, "apply", _GtkCellRendererAccelClass.accel_cleared_UP$FUNC);
+    static final FunctionDescriptor accel_cleared_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle accel_cleared_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkCellRendererAccelClass.accel_cleared_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*accel_cleared)(GtkCellRendererAccel*,const gchar*);
+     * }
+     */
     public interface accel_cleared {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(accel_cleared fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(accel_cleared.class, fi, _GtkCellRendererAccelClass.accel_cleared$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+        static MemorySegment allocate(accel_cleared fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkCellRendererAccelClass.accel_cleared_UP$MH, fi, _GtkCellRendererAccelClass.accel_cleared$FUNC, scope);
         }
-        static accel_cleared ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static accel_cleared ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GtkCellRendererAccelClass.accel_cleared$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    _GtkCellRendererAccelClass.accel_cleared_DOWN$MH.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -141,36 +204,56 @@ public class _GtkCellRendererAccelClass {
     public static VarHandle accel_cleared$VH() {
         return _GtkCellRendererAccelClass.accel_cleared$VH;
     }
-    public static MemoryAddress accel_cleared$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkCellRendererAccelClass.accel_cleared$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*accel_cleared)(GtkCellRendererAccel*,const gchar*);
+     * }
+     */
+    public static MemorySegment accel_cleared$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkCellRendererAccelClass.accel_cleared$VH.get(seg);
     }
-    public static void accel_cleared$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*accel_cleared)(GtkCellRendererAccel*,const gchar*);
+     * }
+     */
+    public static void accel_cleared$set(MemorySegment seg, MemorySegment x) {
         _GtkCellRendererAccelClass.accel_cleared$VH.set(seg, x);
     }
-    public static MemoryAddress accel_cleared$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkCellRendererAccelClass.accel_cleared$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment accel_cleared$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkCellRendererAccelClass.accel_cleared$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void accel_cleared$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void accel_cleared$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkCellRendererAccelClass.accel_cleared$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static accel_cleared accel_cleared (MemorySegment segment, MemorySession session) {
-        return accel_cleared.ofAddress(accel_cleared$get(segment), session);
+    public static accel_cleared accel_cleared(MemorySegment segment, SegmentScope scope) {
+        return accel_cleared.ofAddress(accel_cleared$get(segment), scope);
     }
     static final FunctionDescriptor _gtk_reserved0$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved0$MH = RuntimeHelper.downcallHandle(
-        _GtkCellRendererAccelClass._gtk_reserved0$FUNC
+    static final FunctionDescriptor _gtk_reserved0_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved0_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved0.class, "apply", _GtkCellRendererAccelClass._gtk_reserved0_UP$FUNC);
+    static final FunctionDescriptor _gtk_reserved0_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved0_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkCellRendererAccelClass._gtk_reserved0_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_gtk_reserved0)();
+     * }
+     */
     public interface _gtk_reserved0 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved0 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_gtk_reserved0.class, fi, _GtkCellRendererAccelClass._gtk_reserved0$FUNC, session);
+        static MemorySegment allocate(_gtk_reserved0 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkCellRendererAccelClass._gtk_reserved0_UP$MH, fi, _GtkCellRendererAccelClass._gtk_reserved0$FUNC, scope);
         }
-        static _gtk_reserved0 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _gtk_reserved0 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkCellRendererAccelClass._gtk_reserved0$MH.invokeExact((Addressable)symbol);
+                    _GtkCellRendererAccelClass._gtk_reserved0_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -182,36 +265,56 @@ public class _GtkCellRendererAccelClass {
     public static VarHandle _gtk_reserved0$VH() {
         return _GtkCellRendererAccelClass._gtk_reserved0$VH;
     }
-    public static MemoryAddress _gtk_reserved0$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkCellRendererAccelClass._gtk_reserved0$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_gtk_reserved0)();
+     * }
+     */
+    public static MemorySegment _gtk_reserved0$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkCellRendererAccelClass._gtk_reserved0$VH.get(seg);
     }
-    public static void _gtk_reserved0$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_gtk_reserved0)();
+     * }
+     */
+    public static void _gtk_reserved0$set(MemorySegment seg, MemorySegment x) {
         _GtkCellRendererAccelClass._gtk_reserved0$VH.set(seg, x);
     }
-    public static MemoryAddress _gtk_reserved0$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkCellRendererAccelClass._gtk_reserved0$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _gtk_reserved0$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkCellRendererAccelClass._gtk_reserved0$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _gtk_reserved0$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _gtk_reserved0$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkCellRendererAccelClass._gtk_reserved0$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved0 _gtk_reserved0 (MemorySegment segment, MemorySession session) {
-        return _gtk_reserved0.ofAddress(_gtk_reserved0$get(segment), session);
+    public static _gtk_reserved0 _gtk_reserved0(MemorySegment segment, SegmentScope scope) {
+        return _gtk_reserved0.ofAddress(_gtk_reserved0$get(segment), scope);
     }
     static final FunctionDescriptor _gtk_reserved1$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved1$MH = RuntimeHelper.downcallHandle(
-        _GtkCellRendererAccelClass._gtk_reserved1$FUNC
+    static final FunctionDescriptor _gtk_reserved1_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved1_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved1.class, "apply", _GtkCellRendererAccelClass._gtk_reserved1_UP$FUNC);
+    static final FunctionDescriptor _gtk_reserved1_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved1_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkCellRendererAccelClass._gtk_reserved1_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_gtk_reserved1)();
+     * }
+     */
     public interface _gtk_reserved1 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved1 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_gtk_reserved1.class, fi, _GtkCellRendererAccelClass._gtk_reserved1$FUNC, session);
+        static MemorySegment allocate(_gtk_reserved1 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkCellRendererAccelClass._gtk_reserved1_UP$MH, fi, _GtkCellRendererAccelClass._gtk_reserved1$FUNC, scope);
         }
-        static _gtk_reserved1 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _gtk_reserved1 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkCellRendererAccelClass._gtk_reserved1$MH.invokeExact((Addressable)symbol);
+                    _GtkCellRendererAccelClass._gtk_reserved1_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -223,36 +326,56 @@ public class _GtkCellRendererAccelClass {
     public static VarHandle _gtk_reserved1$VH() {
         return _GtkCellRendererAccelClass._gtk_reserved1$VH;
     }
-    public static MemoryAddress _gtk_reserved1$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkCellRendererAccelClass._gtk_reserved1$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_gtk_reserved1)();
+     * }
+     */
+    public static MemorySegment _gtk_reserved1$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkCellRendererAccelClass._gtk_reserved1$VH.get(seg);
     }
-    public static void _gtk_reserved1$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_gtk_reserved1)();
+     * }
+     */
+    public static void _gtk_reserved1$set(MemorySegment seg, MemorySegment x) {
         _GtkCellRendererAccelClass._gtk_reserved1$VH.set(seg, x);
     }
-    public static MemoryAddress _gtk_reserved1$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkCellRendererAccelClass._gtk_reserved1$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _gtk_reserved1$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkCellRendererAccelClass._gtk_reserved1$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _gtk_reserved1$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _gtk_reserved1$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkCellRendererAccelClass._gtk_reserved1$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved1 _gtk_reserved1 (MemorySegment segment, MemorySession session) {
-        return _gtk_reserved1.ofAddress(_gtk_reserved1$get(segment), session);
+    public static _gtk_reserved1 _gtk_reserved1(MemorySegment segment, SegmentScope scope) {
+        return _gtk_reserved1.ofAddress(_gtk_reserved1$get(segment), scope);
     }
     static final FunctionDescriptor _gtk_reserved2$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved2$MH = RuntimeHelper.downcallHandle(
-        _GtkCellRendererAccelClass._gtk_reserved2$FUNC
+    static final FunctionDescriptor _gtk_reserved2_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved2_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved2.class, "apply", _GtkCellRendererAccelClass._gtk_reserved2_UP$FUNC);
+    static final FunctionDescriptor _gtk_reserved2_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved2_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkCellRendererAccelClass._gtk_reserved2_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_gtk_reserved2)();
+     * }
+     */
     public interface _gtk_reserved2 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved2 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_gtk_reserved2.class, fi, _GtkCellRendererAccelClass._gtk_reserved2$FUNC, session);
+        static MemorySegment allocate(_gtk_reserved2 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkCellRendererAccelClass._gtk_reserved2_UP$MH, fi, _GtkCellRendererAccelClass._gtk_reserved2$FUNC, scope);
         }
-        static _gtk_reserved2 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _gtk_reserved2 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkCellRendererAccelClass._gtk_reserved2$MH.invokeExact((Addressable)symbol);
+                    _GtkCellRendererAccelClass._gtk_reserved2_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -264,36 +387,56 @@ public class _GtkCellRendererAccelClass {
     public static VarHandle _gtk_reserved2$VH() {
         return _GtkCellRendererAccelClass._gtk_reserved2$VH;
     }
-    public static MemoryAddress _gtk_reserved2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkCellRendererAccelClass._gtk_reserved2$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_gtk_reserved2)();
+     * }
+     */
+    public static MemorySegment _gtk_reserved2$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkCellRendererAccelClass._gtk_reserved2$VH.get(seg);
     }
-    public static void _gtk_reserved2$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_gtk_reserved2)();
+     * }
+     */
+    public static void _gtk_reserved2$set(MemorySegment seg, MemorySegment x) {
         _GtkCellRendererAccelClass._gtk_reserved2$VH.set(seg, x);
     }
-    public static MemoryAddress _gtk_reserved2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkCellRendererAccelClass._gtk_reserved2$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _gtk_reserved2$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkCellRendererAccelClass._gtk_reserved2$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _gtk_reserved2$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _gtk_reserved2$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkCellRendererAccelClass._gtk_reserved2$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved2 _gtk_reserved2 (MemorySegment segment, MemorySession session) {
-        return _gtk_reserved2.ofAddress(_gtk_reserved2$get(segment), session);
+    public static _gtk_reserved2 _gtk_reserved2(MemorySegment segment, SegmentScope scope) {
+        return _gtk_reserved2.ofAddress(_gtk_reserved2$get(segment), scope);
     }
     static final FunctionDescriptor _gtk_reserved3$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved3$MH = RuntimeHelper.downcallHandle(
-        _GtkCellRendererAccelClass._gtk_reserved3$FUNC
+    static final FunctionDescriptor _gtk_reserved3_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved3_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved3.class, "apply", _GtkCellRendererAccelClass._gtk_reserved3_UP$FUNC);
+    static final FunctionDescriptor _gtk_reserved3_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved3_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkCellRendererAccelClass._gtk_reserved3_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_gtk_reserved3)();
+     * }
+     */
     public interface _gtk_reserved3 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved3 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_gtk_reserved3.class, fi, _GtkCellRendererAccelClass._gtk_reserved3$FUNC, session);
+        static MemorySegment allocate(_gtk_reserved3 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkCellRendererAccelClass._gtk_reserved3_UP$MH, fi, _GtkCellRendererAccelClass._gtk_reserved3$FUNC, scope);
         }
-        static _gtk_reserved3 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _gtk_reserved3 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkCellRendererAccelClass._gtk_reserved3$MH.invokeExact((Addressable)symbol);
+                    _GtkCellRendererAccelClass._gtk_reserved3_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -305,36 +448,56 @@ public class _GtkCellRendererAccelClass {
     public static VarHandle _gtk_reserved3$VH() {
         return _GtkCellRendererAccelClass._gtk_reserved3$VH;
     }
-    public static MemoryAddress _gtk_reserved3$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkCellRendererAccelClass._gtk_reserved3$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_gtk_reserved3)();
+     * }
+     */
+    public static MemorySegment _gtk_reserved3$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkCellRendererAccelClass._gtk_reserved3$VH.get(seg);
     }
-    public static void _gtk_reserved3$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_gtk_reserved3)();
+     * }
+     */
+    public static void _gtk_reserved3$set(MemorySegment seg, MemorySegment x) {
         _GtkCellRendererAccelClass._gtk_reserved3$VH.set(seg, x);
     }
-    public static MemoryAddress _gtk_reserved3$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkCellRendererAccelClass._gtk_reserved3$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _gtk_reserved3$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkCellRendererAccelClass._gtk_reserved3$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _gtk_reserved3$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _gtk_reserved3$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkCellRendererAccelClass._gtk_reserved3$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved3 _gtk_reserved3 (MemorySegment segment, MemorySession session) {
-        return _gtk_reserved3.ofAddress(_gtk_reserved3$get(segment), session);
+    public static _gtk_reserved3 _gtk_reserved3(MemorySegment segment, SegmentScope scope) {
+        return _gtk_reserved3.ofAddress(_gtk_reserved3$get(segment), scope);
     }
     static final FunctionDescriptor _gtk_reserved4$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved4$MH = RuntimeHelper.downcallHandle(
-        _GtkCellRendererAccelClass._gtk_reserved4$FUNC
+    static final FunctionDescriptor _gtk_reserved4_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved4_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved4.class, "apply", _GtkCellRendererAccelClass._gtk_reserved4_UP$FUNC);
+    static final FunctionDescriptor _gtk_reserved4_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved4_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkCellRendererAccelClass._gtk_reserved4_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_gtk_reserved4)();
+     * }
+     */
     public interface _gtk_reserved4 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved4 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_gtk_reserved4.class, fi, _GtkCellRendererAccelClass._gtk_reserved4$FUNC, session);
+        static MemorySegment allocate(_gtk_reserved4 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkCellRendererAccelClass._gtk_reserved4_UP$MH, fi, _GtkCellRendererAccelClass._gtk_reserved4$FUNC, scope);
         }
-        static _gtk_reserved4 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _gtk_reserved4 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkCellRendererAccelClass._gtk_reserved4$MH.invokeExact((Addressable)symbol);
+                    _GtkCellRendererAccelClass._gtk_reserved4_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -346,27 +509,39 @@ public class _GtkCellRendererAccelClass {
     public static VarHandle _gtk_reserved4$VH() {
         return _GtkCellRendererAccelClass._gtk_reserved4$VH;
     }
-    public static MemoryAddress _gtk_reserved4$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkCellRendererAccelClass._gtk_reserved4$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_gtk_reserved4)();
+     * }
+     */
+    public static MemorySegment _gtk_reserved4$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkCellRendererAccelClass._gtk_reserved4$VH.get(seg);
     }
-    public static void _gtk_reserved4$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_gtk_reserved4)();
+     * }
+     */
+    public static void _gtk_reserved4$set(MemorySegment seg, MemorySegment x) {
         _GtkCellRendererAccelClass._gtk_reserved4$VH.set(seg, x);
     }
-    public static MemoryAddress _gtk_reserved4$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkCellRendererAccelClass._gtk_reserved4$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _gtk_reserved4$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkCellRendererAccelClass._gtk_reserved4$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _gtk_reserved4$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _gtk_reserved4$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkCellRendererAccelClass._gtk_reserved4$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved4 _gtk_reserved4 (MemorySegment segment, MemorySession session) {
-        return _gtk_reserved4.ofAddress(_gtk_reserved4$get(segment), session);
+    public static _gtk_reserved4 _gtk_reserved4(MemorySegment segment, SegmentScope scope) {
+        return _gtk_reserved4.ofAddress(_gtk_reserved4$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

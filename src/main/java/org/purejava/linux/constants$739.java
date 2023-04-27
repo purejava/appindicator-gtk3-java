@@ -7,51 +7,57 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$739 {
+final class constants$739 {
 
-    static final FunctionDescriptor g_list_model_get_object$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$739() {}
+    static final FunctionDescriptor g_settings_schema_source_new_from_directory$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_settings_schema_source_new_from_directory$MH = RuntimeHelper.downcallHandle(
+        "g_settings_schema_source_new_from_directory",
+        constants$739.g_settings_schema_source_new_from_directory$FUNC
+    );
+    static final FunctionDescriptor g_settings_schema_source_lookup$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_list_model_get_object$MH = RuntimeHelper.downcallHandle(
-        "g_list_model_get_object",
-        constants$739.g_list_model_get_object$FUNC
+    static final MethodHandle g_settings_schema_source_lookup$MH = RuntimeHelper.downcallHandle(
+        "g_settings_schema_source_lookup",
+        constants$739.g_settings_schema_source_lookup$FUNC
     );
-    static final FunctionDescriptor g_list_model_items_changed$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_settings_schema_source_list_schemas$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_list_model_items_changed$MH = RuntimeHelper.downcallHandle(
-        "g_list_model_items_changed",
-        constants$739.g_list_model_items_changed$FUNC
-    );
-    static final FunctionDescriptor g_list_store_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_list_store_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_list_store_get_type",
-        constants$739.g_list_store_get_type$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_clear_GListStore$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GListStore$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GListStore",
-        constants$739.glib_autoptr_clear_GListStore$FUNC
+    static final MethodHandle g_settings_schema_source_list_schemas$MH = RuntimeHelper.downcallHandle(
+        "g_settings_schema_source_list_schemas",
+        constants$739.g_settings_schema_source_list_schemas$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GListStore$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_settings_schema_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_settings_schema_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_settings_schema_get_type",
+        constants$739.g_settings_schema_get_type$FUNC
+    );
+    static final FunctionDescriptor g_settings_schema_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GListStore$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GListStore",
-        constants$739.glib_autoptr_cleanup_GListStore$FUNC
+    static final MethodHandle g_settings_schema_ref$MH = RuntimeHelper.downcallHandle(
+        "g_settings_schema_ref",
+        constants$739.g_settings_schema_ref$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GListStore$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_settings_schema_unref$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GListStore$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GListStore",
-        constants$739.glib_listautoptr_cleanup_GListStore$FUNC
+    static final MethodHandle g_settings_schema_unref$MH = RuntimeHelper.downcallHandle(
+        "g_settings_schema_unref",
+        constants$739.g_settings_schema_unref$FUNC
     );
 }
 

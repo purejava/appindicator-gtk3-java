@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * void (*GFileMeasureProgressCallback)(int reporting,unsigned long current_size,unsigned long num_dirs,unsigned long num_files,void* data);
+ * }
+ */
 public interface GFileMeasureProgressCallback {
 
-    void apply(int reporting, long current_size, long num_dirs, long num_files, java.lang.foreign.MemoryAddress user_data);
-    static MemorySegment allocate(GFileMeasureProgressCallback fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GFileMeasureProgressCallback.class, fi, constants$516.GFileMeasureProgressCallback$FUNC, session);
+    void apply(int reporting, long current_size, long num_dirs, long num_files, java.lang.foreign.MemorySegment data);
+    static MemorySegment allocate(GFileMeasureProgressCallback fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$470.GFileMeasureProgressCallback_UP$MH, fi, constants$470.GFileMeasureProgressCallback$FUNC, scope);
     }
-    static GFileMeasureProgressCallback ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (int _reporting, long _current_size, long _num_dirs, long _num_files, java.lang.foreign.MemoryAddress _user_data) -> {
+    static GFileMeasureProgressCallback ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (int _reporting, long _current_size, long _num_dirs, long _num_files, java.lang.foreign.MemorySegment _data) -> {
             try {
-                constants$516.GFileMeasureProgressCallback$MH.invokeExact((Addressable)symbol, _reporting, _current_size, _num_dirs, _num_files, (java.lang.foreign.Addressable)_user_data);
+                constants$470.GFileMeasureProgressCallback_DOWN$MH.invokeExact(symbol, _reporting, _current_size, _num_dirs, _num_files, _data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

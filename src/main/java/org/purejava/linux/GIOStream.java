@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GIOStream extends _GIOStream {
+/**
+ * {@snippet :
+ * typedef struct _GIOStream GIOStream;
+ * }
+ */
+public final class GIOStream extends _GIOStream {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GIOStream() {}
 }
 
 

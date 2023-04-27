@@ -7,60 +7,60 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1628 {
+final class constants$1628 {
 
-    static final FunctionDescriptor GtkTreeModelFilterModifyFunc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GtkTreeModelFilterModifyFunc$MH = RuntimeHelper.downcallHandle(
-        constants$1628.GtkTreeModelFilterModifyFunc$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_model_filter_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_tree_model_filter_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_model_filter_get_type",
-        constants$1628.gtk_tree_model_filter_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_model_filter_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_model_filter_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_model_filter_new",
-        constants$1628.gtk_tree_model_filter_new$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_model_filter_set_visible_func$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_model_filter_set_visible_func$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_model_filter_set_visible_func",
-        constants$1628.gtk_tree_model_filter_set_visible_func$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_model_filter_set_modify_func$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_model_filter_set_modify_func$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_model_filter_set_modify_func",
-        constants$1628.gtk_tree_model_filter_set_modify_func$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_model_filter_set_visible_column$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1628() {}
+    static final FunctionDescriptor gtk_style_properties_set$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_tree_model_filter_set_visible_column$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_model_filter_set_visible_column",
-        constants$1628.gtk_tree_model_filter_set_visible_column$FUNC
+    static final MethodHandle gtk_style_properties_set$MH = RuntimeHelper.downcallHandleVariadic(
+        "gtk_style_properties_set",
+        constants$1628.gtk_style_properties_set$FUNC
+    );
+    static final FunctionDescriptor gtk_style_properties_get_property$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_style_properties_get_property$MH = RuntimeHelper.downcallHandle(
+        "gtk_style_properties_get_property",
+        constants$1628.gtk_style_properties_get_property$FUNC
+    );
+    static final FunctionDescriptor gtk_style_properties_get_valist$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_style_properties_get_valist$MH = RuntimeHelper.downcallHandle(
+        "gtk_style_properties_get_valist",
+        constants$1628.gtk_style_properties_get_valist$FUNC
+    );
+    static final FunctionDescriptor gtk_style_properties_get$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_style_properties_get$MH = RuntimeHelper.downcallHandleVariadic(
+        "gtk_style_properties_get",
+        constants$1628.gtk_style_properties_get$FUNC
+    );
+    static final FunctionDescriptor gtk_style_properties_unset_property$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_style_properties_unset_property$MH = RuntimeHelper.downcallHandle(
+        "gtk_style_properties_unset_property",
+        constants$1628.gtk_style_properties_unset_property$FUNC
+    );
+    static final FunctionDescriptor gtk_style_properties_clear$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_style_properties_clear$MH = RuntimeHelper.downcallHandle(
+        "gtk_style_properties_clear",
+        constants$1628.gtk_style_properties_clear$FUNC
     );
 }
 

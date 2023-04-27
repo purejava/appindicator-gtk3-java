@@ -7,56 +7,63 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1218 {
+final class constants$1218 {
 
-    static final FunctionDescriptor gdk_device_ungrab$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1218() {}
+    static final FunctionDescriptor atk_text_set_selection$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_device_ungrab$MH = RuntimeHelper.downcallHandle(
-        "gdk_device_ungrab",
-        constants$1218.gdk_device_ungrab$FUNC
-    );
-    static final FunctionDescriptor gdk_device_warp$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gdk_device_warp$MH = RuntimeHelper.downcallHandle(
-        "gdk_device_warp",
-        constants$1218.gdk_device_warp$FUNC
+    static final MethodHandle atk_text_set_selection$MH = RuntimeHelper.downcallHandle(
+        "atk_text_set_selection",
+        constants$1218.atk_text_set_selection$FUNC
     );
-    static final FunctionDescriptor gdk_device_grab_info_libgtk_only$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor atk_text_set_caret_offset$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle atk_text_set_caret_offset$MH = RuntimeHelper.downcallHandle(
+        "atk_text_set_caret_offset",
+        constants$1218.atk_text_set_caret_offset$FUNC
+    );
+    static final FunctionDescriptor atk_text_get_range_extents$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle atk_text_get_range_extents$MH = RuntimeHelper.downcallHandle(
+        "atk_text_get_range_extents",
+        constants$1218.atk_text_get_range_extents$FUNC
+    );
+    static final FunctionDescriptor atk_text_get_bounded_ranges$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle atk_text_get_bounded_ranges$MH = RuntimeHelper.downcallHandle(
+        "atk_text_get_bounded_ranges",
+        constants$1218.atk_text_get_bounded_ranges$FUNC
+    );
+    static final FunctionDescriptor atk_text_free_ranges$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_device_grab_info_libgtk_only$MH = RuntimeHelper.downcallHandle(
-        "gdk_device_grab_info_libgtk_only",
-        constants$1218.gdk_device_grab_info_libgtk_only$FUNC
+    static final MethodHandle atk_text_free_ranges$MH = RuntimeHelper.downcallHandle(
+        "atk_text_free_ranges",
+        constants$1218.atk_text_free_ranges$FUNC
     );
-    static final FunctionDescriptor gdk_device_get_last_event_window$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor atk_attribute_set_free$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_device_get_last_event_window$MH = RuntimeHelper.downcallHandle(
-        "gdk_device_get_last_event_window",
-        constants$1218.gdk_device_get_last_event_window$FUNC
-    );
-    static final FunctionDescriptor gdk_device_get_vendor_id$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_device_get_vendor_id$MH = RuntimeHelper.downcallHandle(
-        "gdk_device_get_vendor_id",
-        constants$1218.gdk_device_get_vendor_id$FUNC
-    );
-    static final FunctionDescriptor gdk_device_get_product_id$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_device_get_product_id$MH = RuntimeHelper.downcallHandle(
-        "gdk_device_get_product_id",
-        constants$1218.gdk_device_get_product_id$FUNC
+    static final MethodHandle atk_attribute_set_free$MH = RuntimeHelper.downcallHandle(
+        "atk_attribute_set_free",
+        constants$1218.atk_attribute_set_free$FUNC
     );
 }
 

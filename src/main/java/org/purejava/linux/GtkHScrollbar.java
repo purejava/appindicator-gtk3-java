@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkHScrollbar extends _GtkHScrollbar {
+/**
+ * {@snippet :
+ * typedef struct _GtkHScrollbar GtkHScrollbar;
+ * }
+ */
+public final class GtkHScrollbar extends _GtkHScrollbar {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkHScrollbar() {}
 }
 
 

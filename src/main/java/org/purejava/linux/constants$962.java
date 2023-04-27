@@ -7,49 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$962 {
+final class constants$962 {
 
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GSimpleProxyResolver$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$962() {}
+    static final FunctionDescriptor pango_layout_get_tabs$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GSimpleProxyResolver$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GSimpleProxyResolver",
-        constants$962.glib_queueautoptr_cleanup_GSimpleProxyResolver$FUNC
+    static final MethodHandle pango_layout_get_tabs$MH = RuntimeHelper.downcallHandle(
+        "pango_layout_get_tabs",
+        constants$962.pango_layout_get_tabs$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GSocketAddressEnumerator$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_layout_set_single_paragraph_mode$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle pango_layout_set_single_paragraph_mode$MH = RuntimeHelper.downcallHandle(
+        "pango_layout_set_single_paragraph_mode",
+        constants$962.pango_layout_set_single_paragraph_mode$FUNC
+    );
+    static final FunctionDescriptor pango_layout_get_single_paragraph_mode$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GSocketAddressEnumerator$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GSocketAddressEnumerator",
-        constants$962.glib_autoptr_clear_GSocketAddressEnumerator$FUNC
+    static final MethodHandle pango_layout_get_single_paragraph_mode$MH = RuntimeHelper.downcallHandle(
+        "pango_layout_get_single_paragraph_mode",
+        constants$962.pango_layout_get_single_paragraph_mode$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GSocketAddressEnumerator$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_layout_set_ellipsize$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle pango_layout_set_ellipsize$MH = RuntimeHelper.downcallHandle(
+        "pango_layout_set_ellipsize",
+        constants$962.pango_layout_set_ellipsize$FUNC
+    );
+    static final FunctionDescriptor pango_layout_get_ellipsize$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GSocketAddressEnumerator$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GSocketAddressEnumerator",
-        constants$962.glib_autoptr_cleanup_GSocketAddressEnumerator$FUNC
+    static final MethodHandle pango_layout_get_ellipsize$MH = RuntimeHelper.downcallHandle(
+        "pango_layout_get_ellipsize",
+        constants$962.pango_layout_get_ellipsize$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GSocketAddressEnumerator$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_layout_is_ellipsized$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GSocketAddressEnumerator$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GSocketAddressEnumerator",
-        constants$962.glib_listautoptr_cleanup_GSocketAddressEnumerator$FUNC
-    );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GSocketAddressEnumerator$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_slistautoptr_cleanup_GSocketAddressEnumerator$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GSocketAddressEnumerator",
-        constants$962.glib_slistautoptr_cleanup_GSocketAddressEnumerator$FUNC
-    );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GSocketAddressEnumerator$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_queueautoptr_cleanup_GSocketAddressEnumerator$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GSocketAddressEnumerator",
-        constants$962.glib_queueautoptr_cleanup_GSocketAddressEnumerator$FUNC
+    static final MethodHandle pango_layout_is_ellipsized$MH = RuntimeHelper.downcallHandle(
+        "pango_layout_is_ellipsized",
+        constants$962.pango_layout_is_ellipsized$FUNC
     );
 }
 

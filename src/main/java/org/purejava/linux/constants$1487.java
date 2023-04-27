@@ -7,52 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1487 {
+final class constants$1487 {
 
-    static final FunctionDescriptor gtk_window_get_hide_titlebar_when_maximized$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_window_get_hide_titlebar_when_maximized$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_get_hide_titlebar_when_maximized",
-        constants$1487.gtk_window_get_hide_titlebar_when_maximized$FUNC
-    );
-    static final FunctionDescriptor gtk_window_set_mnemonics_visible$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1487() {}
+    static final FunctionDescriptor gtk_combo_box_set_entry_text_column$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_window_set_mnemonics_visible$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_set_mnemonics_visible",
-        constants$1487.gtk_window_set_mnemonics_visible$FUNC
+    static final MethodHandle gtk_combo_box_set_entry_text_column$MH = RuntimeHelper.downcallHandle(
+        "gtk_combo_box_set_entry_text_column",
+        constants$1487.gtk_combo_box_set_entry_text_column$FUNC
     );
-    static final FunctionDescriptor gtk_window_get_mnemonics_visible$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_combo_box_get_entry_text_column$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_window_get_mnemonics_visible$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_get_mnemonics_visible",
-        constants$1487.gtk_window_get_mnemonics_visible$FUNC
+    static final MethodHandle gtk_combo_box_get_entry_text_column$MH = RuntimeHelper.downcallHandle(
+        "gtk_combo_box_get_entry_text_column",
+        constants$1487.gtk_combo_box_get_entry_text_column$FUNC
     );
-    static final FunctionDescriptor gtk_window_set_focus_visible$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_combo_box_set_popup_fixed_width$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_window_set_focus_visible$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_set_focus_visible",
-        constants$1487.gtk_window_set_focus_visible$FUNC
+    static final MethodHandle gtk_combo_box_set_popup_fixed_width$MH = RuntimeHelper.downcallHandle(
+        "gtk_combo_box_set_popup_fixed_width",
+        constants$1487.gtk_combo_box_set_popup_fixed_width$FUNC
     );
-    static final FunctionDescriptor gtk_window_get_focus_visible$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_combo_box_get_popup_fixed_width$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_window_get_focus_visible$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_get_focus_visible",
-        constants$1487.gtk_window_get_focus_visible$FUNC
+    static final MethodHandle gtk_combo_box_get_popup_fixed_width$MH = RuntimeHelper.downcallHandle(
+        "gtk_combo_box_get_popup_fixed_width",
+        constants$1487.gtk_combo_box_get_popup_fixed_width$FUNC
     );
-    static final FunctionDescriptor gtk_window_set_resizable$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_combo_box_popup$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_combo_box_popup$MH = RuntimeHelper.downcallHandle(
+        "gtk_combo_box_popup",
+        constants$1487.gtk_combo_box_popup$FUNC
+    );
+    static final FunctionDescriptor gtk_combo_box_popup_for_device$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_window_set_resizable$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_set_resizable",
-        constants$1487.gtk_window_set_resizable$FUNC
+    static final MethodHandle gtk_combo_box_popup_for_device$MH = RuntimeHelper.downcallHandle(
+        "gtk_combo_box_popup_for_device",
+        constants$1487.gtk_combo_box_popup_for_device$FUNC
     );
 }
 

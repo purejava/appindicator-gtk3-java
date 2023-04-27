@@ -7,51 +7,49 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1110 {
+final class constants$1110 {
 
-    static final FunctionDescriptor pango_tab_array_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_tab_array_new$MH = RuntimeHelper.downcallHandle(
-        "pango_tab_array_new",
-        constants$1110.pango_tab_array_new$FUNC
-    );
-    static final FunctionDescriptor pango_tab_array_new_with_positions$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_tab_array_new_with_positions$MH = RuntimeHelper.downcallHandleVariadic(
-        "pango_tab_array_new_with_positions",
-        constants$1110.pango_tab_array_new_with_positions$FUNC
-    );
-    static final FunctionDescriptor pango_tab_array_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_tab_array_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_tab_array_get_type",
-        constants$1110.pango_tab_array_get_type$FUNC
-    );
-    static final FunctionDescriptor pango_tab_array_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1110() {}
+    static final FunctionDescriptor gdk_monitor_get_refresh_rate$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_tab_array_copy$MH = RuntimeHelper.downcallHandle(
-        "pango_tab_array_copy",
-        constants$1110.pango_tab_array_copy$FUNC
+    static final MethodHandle gdk_monitor_get_refresh_rate$MH = RuntimeHelper.downcallHandle(
+        "gdk_monitor_get_refresh_rate",
+        constants$1110.gdk_monitor_get_refresh_rate$FUNC
     );
-    static final FunctionDescriptor pango_tab_array_free$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gdk_monitor_get_subpixel_layout$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_tab_array_free$MH = RuntimeHelper.downcallHandle(
-        "pango_tab_array_free",
-        constants$1110.pango_tab_array_free$FUNC
+    static final MethodHandle gdk_monitor_get_subpixel_layout$MH = RuntimeHelper.downcallHandle(
+        "gdk_monitor_get_subpixel_layout",
+        constants$1110.gdk_monitor_get_subpixel_layout$FUNC
     );
-    static final FunctionDescriptor pango_tab_array_get_size$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gdk_monitor_is_primary$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_tab_array_get_size$MH = RuntimeHelper.downcallHandle(
-        "pango_tab_array_get_size",
-        constants$1110.pango_tab_array_get_size$FUNC
+    static final MethodHandle gdk_monitor_is_primary$MH = RuntimeHelper.downcallHandle(
+        "gdk_monitor_is_primary",
+        constants$1110.gdk_monitor_is_primary$FUNC
+    );
+    static final FunctionDescriptor gdk_display_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gdk_display_get_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_display_get_type",
+        constants$1110.gdk_display_get_type$FUNC
+    );
+    static final FunctionDescriptor gdk_display_open$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_display_open$MH = RuntimeHelper.downcallHandle(
+        "gdk_display_open",
+        constants$1110.gdk_display_open$FUNC
+    );
+    static final FunctionDescriptor gdk_display_get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_display_get_name$MH = RuntimeHelper.downcallHandle(
+        "gdk_display_get_name",
+        constants$1110.gdk_display_get_name$FUNC
     );
 }
 

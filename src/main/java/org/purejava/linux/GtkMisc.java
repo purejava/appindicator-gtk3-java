@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkMisc extends _GtkMisc {
+/**
+ * {@snippet :
+ * typedef struct _GtkMisc GtkMisc;
+ * }
+ */
+public final class GtkMisc extends _GtkMisc {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkMisc() {}
 }
 
 

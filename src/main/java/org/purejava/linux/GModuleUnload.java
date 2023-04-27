@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * void (*GModuleUnload)(struct _GModule* module);
+ * }
+ */
 public interface GModuleUnload {
 
-    void apply(java.lang.foreign.MemoryAddress module);
-    static MemorySegment allocate(GModuleUnload fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GModuleUnload.class, fi, constants$730.GModuleUnload$FUNC, session);
+    void apply(java.lang.foreign.MemorySegment display);
+    static MemorySegment allocate(GModuleUnload fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$681.GModuleUnload_UP$MH, fi, constants$681.GModuleUnload$FUNC, scope);
     }
-    static GModuleUnload ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _module) -> {
+    static GModuleUnload ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _display) -> {
             try {
-                constants$730.GModuleUnload$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_module);
+                constants$682.GModuleUnload_DOWN$MH.invokeExact(symbol, _display);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

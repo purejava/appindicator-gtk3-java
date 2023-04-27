@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * int (*GTypeClassCacheFunc)(void* cache_data,struct _GTypeClass* g_class);
+ * }
+ */
 public interface GTypeClassCacheFunc {
 
-    int apply(java.lang.foreign.MemoryAddress cache_data, java.lang.foreign.MemoryAddress g_class);
-    static MemorySegment allocate(GTypeClassCacheFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GTypeClassCacheFunc.class, fi, constants$426.GTypeClassCacheFunc$FUNC, session);
+    int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
+    static MemorySegment allocate(GTypeClassCacheFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$386.GTypeClassCacheFunc_UP$MH, fi, constants$386.GTypeClassCacheFunc$FUNC, scope);
     }
-    static GTypeClassCacheFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _cache_data, java.lang.foreign.MemoryAddress _g_class) -> {
+    static GTypeClassCacheFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _filter_info, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                return (int)constants$426.GTypeClassCacheFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_cache_data, (java.lang.foreign.Addressable)_g_class);
+                return (int)constants$386.GTypeClassCacheFunc_DOWN$MH.invokeExact(symbol, _filter_info, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

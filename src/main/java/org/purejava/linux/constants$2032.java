@@ -7,61 +7,16 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$2032 {
+final class constants$2032 {
 
-    static final FunctionDescriptor gtk_text_buffer_remove_selection_clipboard$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_remove_selection_clipboard$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_remove_selection_clipboard",
-        constants$2032.gtk_text_buffer_remove_selection_clipboard$FUNC
-    );
-    static final FunctionDescriptor gtk_text_buffer_cut_clipboard$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_cut_clipboard$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_cut_clipboard",
-        constants$2032.gtk_text_buffer_cut_clipboard$FUNC
-    );
-    static final FunctionDescriptor gtk_text_buffer_copy_clipboard$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_copy_clipboard$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_copy_clipboard",
-        constants$2032.gtk_text_buffer_copy_clipboard$FUNC
-    );
-    static final FunctionDescriptor gtk_text_buffer_paste_clipboard$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_paste_clipboard$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_paste_clipboard",
-        constants$2032.gtk_text_buffer_paste_clipboard$FUNC
-    );
-    static final FunctionDescriptor gtk_text_buffer_get_selection_bounds$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_get_selection_bounds$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_get_selection_bounds",
-        constants$2032.gtk_text_buffer_get_selection_bounds$FUNC
-    );
-    static final FunctionDescriptor gtk_text_buffer_delete_selection$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_delete_selection$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_delete_selection",
-        constants$2032.gtk_text_buffer_delete_selection$FUNC
-    );
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$2032() {}
+    static final MemorySegment GTK_STYLE_CLASS_RADIO$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("radio");
+    static final MemorySegment GTK_STYLE_CLASS_CHECK$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("check");
+    static final MemorySegment GTK_STYLE_CLASS_DEFAULT$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("default");
+    static final MemorySegment GTK_STYLE_CLASS_TROUGH$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("trough");
+    static final MemorySegment GTK_STYLE_CLASS_SCROLLBAR$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("scrollbar");
+    static final MemorySegment GTK_STYLE_CLASS_SCROLLBARS_JUNCTION$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("scrollbars-junction");
 }
 
 

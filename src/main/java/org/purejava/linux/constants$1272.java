@@ -7,50 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1272 {
+final class constants$1272 {
 
-    static final FunctionDescriptor gdk_display_is_closed$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_display_is_closed$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_is_closed",
-        constants$1272.gdk_display_is_closed$FUNC
-    );
-    static final FunctionDescriptor gdk_display_list_devices$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_display_list_devices$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_list_devices",
-        constants$1272.gdk_display_list_devices$FUNC
-    );
-    static final FunctionDescriptor gdk_display_get_event$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_display_get_event$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_get_event",
-        constants$1272.gdk_display_get_event$FUNC
-    );
-    static final FunctionDescriptor gdk_display_peek_event$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_display_peek_event$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_peek_event",
-        constants$1272.gdk_display_peek_event$FUNC
-    );
-    static final FunctionDescriptor gdk_display_put_event$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1272() {}
+    static final FunctionDescriptor gtk_widget_class_set_accessible_role$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_widget_class_set_accessible_role$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_class_set_accessible_role",
+        constants$1272.gtk_widget_class_set_accessible_role$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_get_accessible$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_display_put_event$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_put_event",
-        constants$1272.gdk_display_put_event$FUNC
+    static final MethodHandle gtk_widget_get_accessible$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_accessible",
+        constants$1272.gtk_widget_get_accessible$FUNC
     );
-    static final FunctionDescriptor gdk_display_has_pending$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_widget_get_halign$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_display_has_pending$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_has_pending",
-        constants$1272.gdk_display_has_pending$FUNC
+    static final MethodHandle gtk_widget_get_halign$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_halign",
+        constants$1272.gtk_widget_get_halign$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_set_halign$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_widget_set_halign$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_set_halign",
+        constants$1272.gtk_widget_set_halign$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_get_valign$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_get_valign$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_valign",
+        constants$1272.gtk_widget_get_valign$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_get_valign_with_baseline$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_get_valign_with_baseline$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_valign_with_baseline",
+        constants$1272.gtk_widget_get_valign_with_baseline$FUNC
     );
 }
 

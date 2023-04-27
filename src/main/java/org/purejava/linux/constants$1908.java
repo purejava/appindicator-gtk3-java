@@ -7,52 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1908 {
+final class constants$1908 {
 
-    static final FunctionDescriptor gtk_notebook_get_nth_page$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1908() {}
+    static final FunctionDescriptor gtk_action_is_sensitive$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_action_is_sensitive$MH = RuntimeHelper.downcallHandle(
+        "gtk_action_is_sensitive",
+        constants$1908.gtk_action_is_sensitive$FUNC
+    );
+    static final FunctionDescriptor gtk_action_get_sensitive$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_action_get_sensitive$MH = RuntimeHelper.downcallHandle(
+        "gtk_action_get_sensitive",
+        constants$1908.gtk_action_get_sensitive$FUNC
+    );
+    static final FunctionDescriptor gtk_action_set_sensitive$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_notebook_get_nth_page$MH = RuntimeHelper.downcallHandle(
-        "gtk_notebook_get_nth_page",
-        constants$1908.gtk_notebook_get_nth_page$FUNC
+    static final MethodHandle gtk_action_set_sensitive$MH = RuntimeHelper.downcallHandle(
+        "gtk_action_set_sensitive",
+        constants$1908.gtk_action_set_sensitive$FUNC
     );
-    static final FunctionDescriptor gtk_notebook_get_n_pages$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_action_is_visible$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_notebook_get_n_pages$MH = RuntimeHelper.downcallHandle(
-        "gtk_notebook_get_n_pages",
-        constants$1908.gtk_notebook_get_n_pages$FUNC
+    static final MethodHandle gtk_action_is_visible$MH = RuntimeHelper.downcallHandle(
+        "gtk_action_is_visible",
+        constants$1908.gtk_action_is_visible$FUNC
     );
-    static final FunctionDescriptor gtk_notebook_page_num$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_action_get_visible$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_notebook_page_num$MH = RuntimeHelper.downcallHandle(
-        "gtk_notebook_page_num",
-        constants$1908.gtk_notebook_page_num$FUNC
+    static final MethodHandle gtk_action_get_visible$MH = RuntimeHelper.downcallHandle(
+        "gtk_action_get_visible",
+        constants$1908.gtk_action_get_visible$FUNC
     );
-    static final FunctionDescriptor gtk_notebook_set_current_page$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_action_set_visible$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_notebook_set_current_page$MH = RuntimeHelper.downcallHandle(
-        "gtk_notebook_set_current_page",
-        constants$1908.gtk_notebook_set_current_page$FUNC
-    );
-    static final FunctionDescriptor gtk_notebook_next_page$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_notebook_next_page$MH = RuntimeHelper.downcallHandle(
-        "gtk_notebook_next_page",
-        constants$1908.gtk_notebook_next_page$FUNC
-    );
-    static final FunctionDescriptor gtk_notebook_prev_page$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_notebook_prev_page$MH = RuntimeHelper.downcallHandle(
-        "gtk_notebook_prev_page",
-        constants$1908.gtk_notebook_prev_page$FUNC
+    static final MethodHandle gtk_action_set_visible$MH = RuntimeHelper.downcallHandle(
+        "gtk_action_set_visible",
+        constants$1908.gtk_action_set_visible$FUNC
     );
 }
 

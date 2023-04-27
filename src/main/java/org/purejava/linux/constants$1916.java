@@ -7,59 +7,56 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1916 {
+final class constants$1916 {
 
-    static final FunctionDescriptor gtk_pad_controller_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_pad_controller_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_pad_controller_new",
-        constants$1916.gtk_pad_controller_new$FUNC
-    );
-    static final FunctionDescriptor gtk_pad_controller_set_action_entries$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1916() {}
+    static final FunctionDescriptor gtk_activatable_set_use_action_appearance$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_pad_controller_set_action_entries$MH = RuntimeHelper.downcallHandle(
-        "gtk_pad_controller_set_action_entries",
-        constants$1916.gtk_pad_controller_set_action_entries$FUNC
+    static final MethodHandle gtk_activatable_set_use_action_appearance$MH = RuntimeHelper.downcallHandle(
+        "gtk_activatable_set_use_action_appearance",
+        constants$1916.gtk_activatable_set_use_action_appearance$FUNC
     );
-    static final FunctionDescriptor gtk_pad_controller_set_action$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_activatable_get_use_action_appearance$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_activatable_get_use_action_appearance$MH = RuntimeHelper.downcallHandle(
+        "gtk_activatable_get_use_action_appearance",
+        constants$1916.gtk_activatable_get_use_action_appearance$FUNC
+    );
+    static final FunctionDescriptor gtk_activatable_do_set_related_action$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_pad_controller_set_action$MH = RuntimeHelper.downcallHandle(
-        "gtk_pad_controller_set_action",
-        constants$1916.gtk_pad_controller_set_action$FUNC
+    static final MethodHandle gtk_activatable_do_set_related_action$MH = RuntimeHelper.downcallHandle(
+        "gtk_activatable_do_set_related_action",
+        constants$1916.gtk_activatable_do_set_related_action$FUNC
     );
-    static final FunctionDescriptor gtk_paper_size_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_paper_size_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_paper_size_get_type",
-        constants$1916.gtk_paper_size_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_paper_size_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor GtkTranslateFunc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_paper_size_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_paper_size_new",
-        constants$1916.gtk_paper_size_new$FUNC
-    );
-    static final FunctionDescriptor gtk_paper_size_new_from_ppd$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor GtkTranslateFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_paper_size_new_from_ppd$MH = RuntimeHelper.downcallHandle(
-        "gtk_paper_size_new_from_ppd",
-        constants$1916.gtk_paper_size_new_from_ppd$FUNC
+    static final MethodHandle GtkTranslateFunc_UP$MH = RuntimeHelper.upcallHandle(GtkTranslateFunc.class, "apply", constants$1916.GtkTranslateFunc_UP$FUNC);
+    static final FunctionDescriptor GtkTranslateFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GtkTranslateFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$1916.GtkTranslateFunc_DOWN$FUNC
+    );
+    static final FunctionDescriptor gtk_stock_add$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_stock_add$MH = RuntimeHelper.downcallHandle(
+        "gtk_stock_add",
+        constants$1916.gtk_stock_add$FUNC
     );
 }
 

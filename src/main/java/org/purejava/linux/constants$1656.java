@@ -7,51 +7,56 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1656 {
+final class constants$1656 {
 
-    static final FunctionDescriptor gtk_tree_view_get_vadjustment$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_get_vadjustment$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_vadjustment",
-        constants$1656.gtk_tree_view_get_vadjustment$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_set_vadjustment$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_set_vadjustment$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_set_vadjustment",
-        constants$1656.gtk_tree_view_set_vadjustment$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_get_headers_visible$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_get_headers_visible$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_headers_visible",
-        constants$1656.gtk_tree_view_get_headers_visible$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_set_headers_visible$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1656() {}
+    static final FunctionDescriptor gtk_icon_view_set_activate_on_single_click$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_tree_view_set_headers_visible$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_set_headers_visible",
-        constants$1656.gtk_tree_view_set_headers_visible$FUNC
+    static final MethodHandle gtk_icon_view_set_activate_on_single_click$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_view_set_activate_on_single_click",
+        constants$1656.gtk_icon_view_set_activate_on_single_click$FUNC
     );
-    static final FunctionDescriptor gtk_tree_view_columns_autosize$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_icon_view_get_activate_on_single_click$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_tree_view_columns_autosize$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_columns_autosize",
-        constants$1656.gtk_tree_view_columns_autosize$FUNC
+    static final MethodHandle gtk_icon_view_get_activate_on_single_click$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_view_get_activate_on_single_click",
+        constants$1656.gtk_icon_view_get_activate_on_single_click$FUNC
     );
-    static final FunctionDescriptor gtk_tree_view_get_headers_clickable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_icon_view_selected_foreach$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_tree_view_get_headers_clickable$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_headers_clickable",
-        constants$1656.gtk_tree_view_get_headers_clickable$FUNC
+    static final MethodHandle gtk_icon_view_selected_foreach$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_view_selected_foreach",
+        constants$1656.gtk_icon_view_selected_foreach$FUNC
+    );
+    static final FunctionDescriptor gtk_icon_view_set_selection_mode$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_icon_view_set_selection_mode$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_view_set_selection_mode",
+        constants$1656.gtk_icon_view_set_selection_mode$FUNC
+    );
+    static final FunctionDescriptor gtk_icon_view_get_selection_mode$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_icon_view_get_selection_mode$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_view_get_selection_mode",
+        constants$1656.gtk_icon_view_get_selection_mode$FUNC
+    );
+    static final FunctionDescriptor gtk_icon_view_select_path$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_icon_view_select_path$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_view_select_path",
+        constants$1656.gtk_icon_view_select_path$FUNC
     );
 }
 

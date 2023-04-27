@@ -7,47 +7,58 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1722 {
+final class constants$1722 {
 
-    static final FunctionDescriptor gtk_toggle_button_get_inconsistent$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1722() {}
+    static final FunctionDescriptor gtk_paper_size_is_ipp$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_toggle_button_get_inconsistent$MH = RuntimeHelper.downcallHandle(
-        "gtk_toggle_button_get_inconsistent",
-        constants$1722.gtk_toggle_button_get_inconsistent$FUNC
+    static final MethodHandle gtk_paper_size_is_ipp$MH = RuntimeHelper.downcallHandle(
+        "gtk_paper_size_is_ipp",
+        constants$1722.gtk_paper_size_is_ipp$FUNC
     );
-    static final FunctionDescriptor gtk_check_button_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_check_button_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_check_button_get_type",
-        constants$1722.gtk_check_button_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_check_button_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_check_button_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_check_button_new",
-        constants$1722.gtk_check_button_new$FUNC
-    );
-    static final FunctionDescriptor gtk_check_button_new_with_label$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_check_button_new_with_label$MH = RuntimeHelper.downcallHandle(
-        "gtk_check_button_new_with_label",
-        constants$1722.gtk_check_button_new_with_label$FUNC
-    );
-    static final FunctionDescriptor gtk_check_button_new_with_mnemonic$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_check_button_new_with_mnemonic$MH = RuntimeHelper.downcallHandle(
-        "gtk_check_button_new_with_mnemonic",
-        constants$1722.gtk_check_button_new_with_mnemonic$FUNC
-    );
-    static final FunctionDescriptor _gtk_check_button_get_props$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_paper_size_set_size$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle _gtk_check_button_get_props$MH = RuntimeHelper.downcallHandle(
-        "_gtk_check_button_get_props",
-        constants$1722._gtk_check_button_get_props$FUNC
+    static final MethodHandle gtk_paper_size_set_size$MH = RuntimeHelper.downcallHandle(
+        "gtk_paper_size_set_size",
+        constants$1722.gtk_paper_size_set_size$FUNC
+    );
+    static final FunctionDescriptor gtk_paper_size_get_default_top_margin$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_paper_size_get_default_top_margin$MH = RuntimeHelper.downcallHandle(
+        "gtk_paper_size_get_default_top_margin",
+        constants$1722.gtk_paper_size_get_default_top_margin$FUNC
+    );
+    static final FunctionDescriptor gtk_paper_size_get_default_bottom_margin$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_paper_size_get_default_bottom_margin$MH = RuntimeHelper.downcallHandle(
+        "gtk_paper_size_get_default_bottom_margin",
+        constants$1722.gtk_paper_size_get_default_bottom_margin$FUNC
+    );
+    static final FunctionDescriptor gtk_paper_size_get_default_left_margin$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_paper_size_get_default_left_margin$MH = RuntimeHelper.downcallHandle(
+        "gtk_paper_size_get_default_left_margin",
+        constants$1722.gtk_paper_size_get_default_left_margin$FUNC
+    );
+    static final FunctionDescriptor gtk_paper_size_get_default_right_margin$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_paper_size_get_default_right_margin$MH = RuntimeHelper.downcallHandle(
+        "gtk_paper_size_get_default_right_margin",
+        constants$1722.gtk_paper_size_get_default_right_margin$FUNC
     );
 }
 

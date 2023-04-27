@@ -7,15 +7,42 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$108 {
+final class constants$108 {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$108() {}
+    static final FunctionDescriptor g_filename_display_basename$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_filename_display_basename$MH = RuntimeHelper.downcallHandle(
+        "g_filename_display_basename",
+        constants$108.g_filename_display_basename$FUNC
+    );
+    static final FunctionDescriptor g_uri_list_extract_uris$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_uri_list_extract_uris$MH = RuntimeHelper.downcallHandle(
+        "g_uri_list_extract_uris",
+        constants$108.g_uri_list_extract_uris$FUNC
+    );
     static final FunctionDescriptor GDataForeachFunc$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GDataForeachFunc$MH = RuntimeHelper.downcallHandle(
-        constants$108.GDataForeachFunc$FUNC
+    static final FunctionDescriptor GDataForeachFunc_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GDataForeachFunc_UP$MH = RuntimeHelper.upcallHandle(GDataForeachFunc.class, "apply", constants$108.GDataForeachFunc_UP$FUNC);
+    static final FunctionDescriptor GDataForeachFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GDataForeachFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$108.GDataForeachFunc_DOWN$FUNC
     );
     static final FunctionDescriptor g_datalist_init$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
@@ -30,28 +57,6 @@ class constants$108 {
     static final MethodHandle g_datalist_clear$MH = RuntimeHelper.downcallHandle(
         "g_datalist_clear",
         constants$108.g_datalist_clear$FUNC
-    );
-    static final FunctionDescriptor g_datalist_id_get_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_datalist_id_get_data$MH = RuntimeHelper.downcallHandle(
-        "g_datalist_id_get_data",
-        constants$108.g_datalist_id_get_data$FUNC
-    );
-    static final FunctionDescriptor g_datalist_id_set_data_full$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_datalist_id_set_data_full$MH = RuntimeHelper.downcallHandle(
-        "g_datalist_id_set_data_full",
-        constants$108.g_datalist_id_set_data_full$FUNC
-    );
-    static final FunctionDescriptor GDuplicateFunc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
     );
 }
 

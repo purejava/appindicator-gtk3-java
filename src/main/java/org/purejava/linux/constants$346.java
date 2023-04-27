@@ -7,58 +7,48 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$346 {
+final class constants$346 {
 
-    static final FunctionDescriptor g_relation_destroy$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$346() {}
+    static final FunctionDescriptor GCacheNewFunc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_relation_destroy$MH = RuntimeHelper.downcallHandle(
-        "g_relation_destroy",
-        constants$346.g_relation_destroy$FUNC
-    );
-    static final FunctionDescriptor g_relation_index$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor GCacheNewFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_relation_index$MH = RuntimeHelper.downcallHandle(
-        "g_relation_index",
-        constants$346.g_relation_index$FUNC
-    );
-    static final FunctionDescriptor g_relation_insert$FUNC = FunctionDescriptor.ofVoid(
+    static final MethodHandle GCacheNewFunc_UP$MH = RuntimeHelper.upcallHandle(GCacheNewFunc.class, "apply", constants$346.GCacheNewFunc_UP$FUNC);
+    static final FunctionDescriptor GCacheNewFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_relation_insert$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_relation_insert",
-        constants$346.g_relation_insert$FUNC
+    static final MethodHandle GCacheNewFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$346.GCacheNewFunc_DOWN$FUNC
     );
-    static final FunctionDescriptor g_relation_delete$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor GCacheDupFunc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_relation_delete$MH = RuntimeHelper.downcallHandle(
-        "g_relation_delete",
-        constants$346.g_relation_delete$FUNC
+    static final FunctionDescriptor GCacheDupFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor g_relation_select$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle GCacheDupFunc_UP$MH = RuntimeHelper.upcallHandle(GCacheDupFunc.class, "apply", constants$346.GCacheDupFunc_UP$FUNC);
+    static final FunctionDescriptor GCacheDupFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_relation_select$MH = RuntimeHelper.downcallHandle(
-        "g_relation_select",
-        constants$346.g_relation_select$FUNC
+    static final MethodHandle GCacheDupFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$346.GCacheDupFunc_DOWN$FUNC
     );
-    static final FunctionDescriptor g_relation_count$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor GCacheDestroyFunc$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_relation_count$MH = RuntimeHelper.downcallHandle(
-        "g_relation_count",
-        constants$346.g_relation_count$FUNC
+    static final FunctionDescriptor GCacheDestroyFunc_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GCacheDestroyFunc_UP$MH = RuntimeHelper.upcallHandle(GCacheDestroyFunc.class, "apply", constants$346.GCacheDestroyFunc_UP$FUNC);
+    static final FunctionDescriptor GCacheDestroyFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GCacheDestroyFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$346.GCacheDestroyFunc_DOWN$FUNC
     );
 }
 

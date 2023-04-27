@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class PangoFontsetSimple {
+/**
+ * {@snippet :
+ * typedef struct _PangoFontsetSimple PangoFontsetSimple;
+ * }
+ */
+public final class PangoFontsetSimple {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private PangoFontsetSimple() {}
 }
 
 

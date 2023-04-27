@@ -7,9 +7,20 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GtkSearchEntryClass {
+ *     GtkEntryClass parent_class;
+ *     void (*search_changed)(GtkSearchEntry*);
+ *     void (*next_match)(GtkSearchEntry*);
+ *     void (*previous_match)(GtkSearchEntry*);
+ *     void (*stop_search)(GtkSearchEntry*);
+ * };
+ * }
+ */
 public class _GtkSearchEntryClass {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
                 MemoryLayout.structLayout(
@@ -26,7 +37,10 @@ public class _GtkSearchEntryClass {
                     Constants$root.C_POINTER$LAYOUT.withName("notify"),
                     Constants$root.C_POINTER$LAYOUT.withName("constructed"),
                     Constants$root.C_LONG_LONG$LAYOUT.withName("flags"),
-                    MemoryLayout.sequenceLayout(6, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
+                    Constants$root.C_LONG_LONG$LAYOUT.withName("n_construct_properties"),
+                    Constants$root.C_POINTER$LAYOUT.withName("pspecs"),
+                    Constants$root.C_LONG_LONG$LAYOUT.withName("n_pspecs"),
+                    MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
                 ).withName("parent_class"),
                 Constants$root.C_INT$LAYOUT.withName("activate_signal"),
                 MemoryLayout.paddingLayout(32),
@@ -150,20 +164,32 @@ public class _GtkSearchEntryClass {
     static final FunctionDescriptor search_changed$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle search_changed$MH = RuntimeHelper.downcallHandle(
-        _GtkSearchEntryClass.search_changed$FUNC
+    static final FunctionDescriptor search_changed_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle search_changed_UP$MH = RuntimeHelper.upcallHandle(search_changed.class, "apply", _GtkSearchEntryClass.search_changed_UP$FUNC);
+    static final FunctionDescriptor search_changed_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle search_changed_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkSearchEntryClass.search_changed_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*search_changed)(GtkSearchEntry*);
+     * }
+     */
     public interface search_changed {
 
-        void apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(search_changed fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(search_changed.class, fi, _GtkSearchEntryClass.search_changed$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment display);
+        static MemorySegment allocate(search_changed fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkSearchEntryClass.search_changed_UP$MH, fi, _GtkSearchEntryClass.search_changed$FUNC, scope);
         }
-        static search_changed ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static search_changed ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GtkSearchEntryClass.search_changed$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    _GtkSearchEntryClass.search_changed_DOWN$MH.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -175,38 +201,62 @@ public class _GtkSearchEntryClass {
     public static VarHandle search_changed$VH() {
         return _GtkSearchEntryClass.search_changed$VH;
     }
-    public static MemoryAddress search_changed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkSearchEntryClass.search_changed$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*search_changed)(GtkSearchEntry*);
+     * }
+     */
+    public static MemorySegment search_changed$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkSearchEntryClass.search_changed$VH.get(seg);
     }
-    public static void search_changed$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*search_changed)(GtkSearchEntry*);
+     * }
+     */
+    public static void search_changed$set(MemorySegment seg, MemorySegment x) {
         _GtkSearchEntryClass.search_changed$VH.set(seg, x);
     }
-    public static MemoryAddress search_changed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkSearchEntryClass.search_changed$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment search_changed$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkSearchEntryClass.search_changed$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void search_changed$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void search_changed$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkSearchEntryClass.search_changed$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static search_changed search_changed (MemorySegment segment, MemorySession session) {
-        return search_changed.ofAddress(search_changed$get(segment), session);
+    public static search_changed search_changed(MemorySegment segment, SegmentScope scope) {
+        return search_changed.ofAddress(search_changed$get(segment), scope);
     }
     static final FunctionDescriptor next_match$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle next_match$MH = RuntimeHelper.downcallHandle(
-        _GtkSearchEntryClass.next_match$FUNC
+    static final FunctionDescriptor next_match_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle next_match_UP$MH = RuntimeHelper.upcallHandle(next_match.class, "apply", _GtkSearchEntryClass.next_match_UP$FUNC);
+    static final FunctionDescriptor next_match_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle next_match_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkSearchEntryClass.next_match_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*next_match)(GtkSearchEntry*);
+     * }
+     */
     public interface next_match {
 
-        void apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(next_match fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(next_match.class, fi, _GtkSearchEntryClass.next_match$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment display);
+        static MemorySegment allocate(next_match fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkSearchEntryClass.next_match_UP$MH, fi, _GtkSearchEntryClass.next_match$FUNC, scope);
         }
-        static next_match ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static next_match ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GtkSearchEntryClass.next_match$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    _GtkSearchEntryClass.next_match_DOWN$MH.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -218,38 +268,62 @@ public class _GtkSearchEntryClass {
     public static VarHandle next_match$VH() {
         return _GtkSearchEntryClass.next_match$VH;
     }
-    public static MemoryAddress next_match$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkSearchEntryClass.next_match$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*next_match)(GtkSearchEntry*);
+     * }
+     */
+    public static MemorySegment next_match$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkSearchEntryClass.next_match$VH.get(seg);
     }
-    public static void next_match$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*next_match)(GtkSearchEntry*);
+     * }
+     */
+    public static void next_match$set(MemorySegment seg, MemorySegment x) {
         _GtkSearchEntryClass.next_match$VH.set(seg, x);
     }
-    public static MemoryAddress next_match$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkSearchEntryClass.next_match$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment next_match$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkSearchEntryClass.next_match$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void next_match$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void next_match$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkSearchEntryClass.next_match$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static next_match next_match (MemorySegment segment, MemorySession session) {
-        return next_match.ofAddress(next_match$get(segment), session);
+    public static next_match next_match(MemorySegment segment, SegmentScope scope) {
+        return next_match.ofAddress(next_match$get(segment), scope);
     }
     static final FunctionDescriptor previous_match$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle previous_match$MH = RuntimeHelper.downcallHandle(
-        _GtkSearchEntryClass.previous_match$FUNC
+    static final FunctionDescriptor previous_match_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle previous_match_UP$MH = RuntimeHelper.upcallHandle(previous_match.class, "apply", _GtkSearchEntryClass.previous_match_UP$FUNC);
+    static final FunctionDescriptor previous_match_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle previous_match_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkSearchEntryClass.previous_match_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*previous_match)(GtkSearchEntry*);
+     * }
+     */
     public interface previous_match {
 
-        void apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(previous_match fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(previous_match.class, fi, _GtkSearchEntryClass.previous_match$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment display);
+        static MemorySegment allocate(previous_match fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkSearchEntryClass.previous_match_UP$MH, fi, _GtkSearchEntryClass.previous_match$FUNC, scope);
         }
-        static previous_match ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static previous_match ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GtkSearchEntryClass.previous_match$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    _GtkSearchEntryClass.previous_match_DOWN$MH.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -261,38 +335,62 @@ public class _GtkSearchEntryClass {
     public static VarHandle previous_match$VH() {
         return _GtkSearchEntryClass.previous_match$VH;
     }
-    public static MemoryAddress previous_match$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkSearchEntryClass.previous_match$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*previous_match)(GtkSearchEntry*);
+     * }
+     */
+    public static MemorySegment previous_match$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkSearchEntryClass.previous_match$VH.get(seg);
     }
-    public static void previous_match$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*previous_match)(GtkSearchEntry*);
+     * }
+     */
+    public static void previous_match$set(MemorySegment seg, MemorySegment x) {
         _GtkSearchEntryClass.previous_match$VH.set(seg, x);
     }
-    public static MemoryAddress previous_match$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkSearchEntryClass.previous_match$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment previous_match$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkSearchEntryClass.previous_match$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void previous_match$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void previous_match$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkSearchEntryClass.previous_match$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static previous_match previous_match (MemorySegment segment, MemorySession session) {
-        return previous_match.ofAddress(previous_match$get(segment), session);
+    public static previous_match previous_match(MemorySegment segment, SegmentScope scope) {
+        return previous_match.ofAddress(previous_match$get(segment), scope);
     }
     static final FunctionDescriptor stop_search$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle stop_search$MH = RuntimeHelper.downcallHandle(
-        _GtkSearchEntryClass.stop_search$FUNC
+    static final FunctionDescriptor stop_search_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle stop_search_UP$MH = RuntimeHelper.upcallHandle(stop_search.class, "apply", _GtkSearchEntryClass.stop_search_UP$FUNC);
+    static final FunctionDescriptor stop_search_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle stop_search_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkSearchEntryClass.stop_search_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*stop_search)(GtkSearchEntry*);
+     * }
+     */
     public interface stop_search {
 
-        void apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(stop_search fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(stop_search.class, fi, _GtkSearchEntryClass.stop_search$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment display);
+        static MemorySegment allocate(stop_search fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkSearchEntryClass.stop_search_UP$MH, fi, _GtkSearchEntryClass.stop_search$FUNC, scope);
         }
-        static stop_search ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static stop_search ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GtkSearchEntryClass.stop_search$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    _GtkSearchEntryClass.stop_search_DOWN$MH.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -304,27 +402,39 @@ public class _GtkSearchEntryClass {
     public static VarHandle stop_search$VH() {
         return _GtkSearchEntryClass.stop_search$VH;
     }
-    public static MemoryAddress stop_search$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkSearchEntryClass.stop_search$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*stop_search)(GtkSearchEntry*);
+     * }
+     */
+    public static MemorySegment stop_search$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkSearchEntryClass.stop_search$VH.get(seg);
     }
-    public static void stop_search$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*stop_search)(GtkSearchEntry*);
+     * }
+     */
+    public static void stop_search$set(MemorySegment seg, MemorySegment x) {
         _GtkSearchEntryClass.stop_search$VH.set(seg, x);
     }
-    public static MemoryAddress stop_search$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkSearchEntryClass.stop_search$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment stop_search$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkSearchEntryClass.stop_search$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void stop_search$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void stop_search$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkSearchEntryClass.stop_search$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static stop_search stop_search (MemorySegment segment, MemorySession session) {
-        return stop_search.ofAddress(stop_search$get(segment), session);
+    public static stop_search stop_search(MemorySegment segment, SegmentScope scope) {
+        return stop_search.ofAddress(stop_search$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

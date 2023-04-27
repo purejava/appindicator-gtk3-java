@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkStackSwitcher extends _GtkStackSwitcher {
+/**
+ * {@snippet :
+ * typedef struct _GtkStackSwitcher GtkStackSwitcher;
+ * }
+ */
+public final class GtkStackSwitcher extends _GtkStackSwitcher {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkStackSwitcher() {}
 }
 
 

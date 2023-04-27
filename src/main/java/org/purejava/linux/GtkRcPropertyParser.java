@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * int (*GtkRcPropertyParser)(struct _GParamSpec* pspec,struct _GString* rc_string,struct _GValue* property_value);
+ * }
+ */
 public interface GtkRcPropertyParser {
 
-    int apply(java.lang.foreign.MemoryAddress pspec, java.lang.foreign.MemoryAddress rc_string, java.lang.foreign.MemoryAddress property_value);
-    static MemorySegment allocate(GtkRcPropertyParser fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GtkRcPropertyParser.class, fi, constants$1373.GtkRcPropertyParser$FUNC, session);
+    int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
+    static MemorySegment allocate(GtkRcPropertyParser fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$1195.GtkRcPropertyParser_UP$MH, fi, constants$1195.GtkRcPropertyParser$FUNC, scope);
     }
-    static GtkRcPropertyParser ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _pspec, java.lang.foreign.MemoryAddress _rc_string, java.lang.foreign.MemoryAddress _property_value) -> {
+    static GtkRcPropertyParser ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _a, java.lang.foreign.MemorySegment _b, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                return (int)constants$1373.GtkRcPropertyParser$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_pspec, (java.lang.foreign.Addressable)_rc_string, (java.lang.foreign.Addressable)_property_value);
+                return (int)constants$1195.GtkRcPropertyParser_DOWN$MH.invokeExact(symbol, _a, _b, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

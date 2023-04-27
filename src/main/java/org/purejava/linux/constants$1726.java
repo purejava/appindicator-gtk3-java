@@ -7,46 +7,58 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1726 {
+final class constants$1726 {
 
-    static final FunctionDescriptor gtk_menu_item_get_use_underline$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_menu_item_get_use_underline$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_item_get_use_underline",
-        constants$1726.gtk_menu_item_get_use_underline$FUNC
-    );
-    static final FunctionDescriptor gtk_menu_item_set_reserve_indicator$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1726() {}
+    static final FunctionDescriptor gtk_page_setup_get_right_margin$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_menu_item_set_reserve_indicator$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_item_set_reserve_indicator",
-        constants$1726.gtk_menu_item_set_reserve_indicator$FUNC
+    static final MethodHandle gtk_page_setup_get_right_margin$MH = RuntimeHelper.downcallHandle(
+        "gtk_page_setup_get_right_margin",
+        constants$1726.gtk_page_setup_get_right_margin$FUNC
     );
-    static final FunctionDescriptor gtk_menu_item_get_reserve_indicator$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_page_setup_set_right_margin$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_page_setup_set_right_margin$MH = RuntimeHelper.downcallHandle(
+        "gtk_page_setup_set_right_margin",
+        constants$1726.gtk_page_setup_set_right_margin$FUNC
+    );
+    static final FunctionDescriptor gtk_page_setup_set_paper_size_and_default_margins$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_menu_item_get_reserve_indicator$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_item_get_reserve_indicator",
-        constants$1726.gtk_menu_item_get_reserve_indicator$FUNC
+    static final MethodHandle gtk_page_setup_set_paper_size_and_default_margins$MH = RuntimeHelper.downcallHandle(
+        "gtk_page_setup_set_paper_size_and_default_margins",
+        constants$1726.gtk_page_setup_set_paper_size_and_default_margins$FUNC
     );
-    static final FunctionDescriptor gtk_check_menu_item_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_check_menu_item_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_check_menu_item_get_type",
-        constants$1726.gtk_check_menu_item_get_type$FUNC
+    static final FunctionDescriptor gtk_page_setup_get_paper_width$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final FunctionDescriptor gtk_check_menu_item_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_check_menu_item_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_check_menu_item_new",
-        constants$1726.gtk_check_menu_item_new$FUNC
+    static final MethodHandle gtk_page_setup_get_paper_width$MH = RuntimeHelper.downcallHandle(
+        "gtk_page_setup_get_paper_width",
+        constants$1726.gtk_page_setup_get_paper_width$FUNC
     );
-    static final FunctionDescriptor gtk_check_menu_item_new_with_label$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gtk_page_setup_get_paper_height$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_check_menu_item_new_with_label$MH = RuntimeHelper.downcallHandle(
-        "gtk_check_menu_item_new_with_label",
-        constants$1726.gtk_check_menu_item_new_with_label$FUNC
+    static final MethodHandle gtk_page_setup_get_paper_height$MH = RuntimeHelper.downcallHandle(
+        "gtk_page_setup_get_paper_height",
+        constants$1726.gtk_page_setup_get_paper_height$FUNC
+    );
+    static final FunctionDescriptor gtk_page_setup_get_page_width$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_page_setup_get_page_width$MH = RuntimeHelper.downcallHandle(
+        "gtk_page_setup_get_page_width",
+        constants$1726.gtk_page_setup_get_page_width$FUNC
     );
 }
 

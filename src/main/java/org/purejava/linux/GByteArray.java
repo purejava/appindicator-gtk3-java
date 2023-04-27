@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GByteArray extends _GByteArray {
+/**
+ * {@snippet :
+ * typedef struct _GByteArray GByteArray;
+ * }
+ */
+public final class GByteArray extends _GByteArray {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GByteArray() {}
 }
 
 

@@ -7,57 +7,47 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1160 {
+final class constants$1160 {
 
-    static final FunctionDescriptor cairo_transform$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1160() {}
+    static final FunctionDescriptor gdk_display_manager_set_default_display$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_transform$MH = RuntimeHelper.downcallHandle(
-        "cairo_transform",
-        constants$1160.cairo_transform$FUNC
+    static final MethodHandle gdk_display_manager_set_default_display$MH = RuntimeHelper.downcallHandle(
+        "gdk_display_manager_set_default_display",
+        constants$1160.gdk_display_manager_set_default_display$FUNC
     );
-    static final FunctionDescriptor cairo_set_matrix$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gdk_display_manager_list_displays$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_display_manager_list_displays$MH = RuntimeHelper.downcallHandle(
+        "gdk_display_manager_list_displays",
+        constants$1160.gdk_display_manager_list_displays$FUNC
+    );
+    static final FunctionDescriptor gdk_display_manager_open_display$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_set_matrix$MH = RuntimeHelper.downcallHandle(
-        "cairo_set_matrix",
-        constants$1160.cairo_set_matrix$FUNC
+    static final MethodHandle gdk_display_manager_open_display$MH = RuntimeHelper.downcallHandle(
+        "gdk_display_manager_open_display",
+        constants$1160.gdk_display_manager_open_display$FUNC
     );
-    static final FunctionDescriptor cairo_identity_matrix$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gdk_cursor_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gdk_cursor_type_get_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_cursor_type_get_type",
+        constants$1160.gdk_cursor_type_get_type$FUNC
     );
-    static final MethodHandle cairo_identity_matrix$MH = RuntimeHelper.downcallHandle(
-        "cairo_identity_matrix",
-        constants$1160.cairo_identity_matrix$FUNC
+    static final FunctionDescriptor gdk_input_source_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gdk_input_source_get_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_input_source_get_type",
+        constants$1160.gdk_input_source_get_type$FUNC
     );
-    static final FunctionDescriptor cairo_user_to_device$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_user_to_device$MH = RuntimeHelper.downcallHandle(
-        "cairo_user_to_device",
-        constants$1160.cairo_user_to_device$FUNC
-    );
-    static final FunctionDescriptor cairo_user_to_device_distance$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_user_to_device_distance$MH = RuntimeHelper.downcallHandle(
-        "cairo_user_to_device_distance",
-        constants$1160.cairo_user_to_device_distance$FUNC
-    );
-    static final FunctionDescriptor cairo_device_to_user$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_device_to_user$MH = RuntimeHelper.downcallHandle(
-        "cairo_device_to_user",
-        constants$1160.cairo_device_to_user$FUNC
+    static final FunctionDescriptor gdk_input_mode_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gdk_input_mode_get_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_input_mode_get_type",
+        constants$1160.gdk_input_mode_get_type$FUNC
     );
 }
 

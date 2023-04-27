@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GSimpleProxyResolver extends _GSimpleProxyResolver {
+/**
+ * {@snippet :
+ * typedef struct _GSimpleProxyResolver GSimpleProxyResolver;
+ * }
+ */
+public final class GSimpleProxyResolver extends _GSimpleProxyResolver {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GSimpleProxyResolver() {}
 }
 
 

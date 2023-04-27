@@ -7,56 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1140 {
+final class constants$1140 {
 
-    static final FunctionDescriptor fprintf$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1140() {}
+    static final FunctionDescriptor gdk_pixbuf_animation_new_from_stream_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle fprintf$MH = RuntimeHelper.downcallHandleVariadic(
-        "fprintf",
-        constants$1140.fprintf$FUNC
+    static final MethodHandle gdk_pixbuf_animation_new_from_stream_finish$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_animation_new_from_stream_finish",
+        constants$1140.gdk_pixbuf_animation_new_from_stream_finish$FUNC
     );
-    static final FunctionDescriptor printf$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle printf$MH = RuntimeHelper.downcallHandleVariadic(
-        "printf",
-        constants$1140.printf$FUNC
-    );
-    static final FunctionDescriptor sprintf$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gdk_pixbuf_animation_new_from_resource$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle sprintf$MH = RuntimeHelper.downcallHandleVariadic(
-        "sprintf",
-        constants$1140.sprintf$FUNC
+    static final MethodHandle gdk_pixbuf_animation_new_from_resource$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_animation_new_from_resource",
+        constants$1140.gdk_pixbuf_animation_new_from_resource$FUNC
     );
-    static final FunctionDescriptor vfprintf$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gdk_pixbuf_animation_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle vfprintf$MH = RuntimeHelper.downcallHandle(
-        "vfprintf",
-        constants$1140.vfprintf$FUNC
+    static final MethodHandle gdk_pixbuf_animation_ref$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_animation_ref",
+        constants$1140.gdk_pixbuf_animation_ref$FUNC
     );
-    static final FunctionDescriptor vprintf$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gdk_pixbuf_animation_unref$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle vprintf$MH = RuntimeHelper.downcallHandle(
-        "vprintf",
-        constants$1140.vprintf$FUNC
+    static final MethodHandle gdk_pixbuf_animation_unref$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_animation_unref",
+        constants$1140.gdk_pixbuf_animation_unref$FUNC
     );
-    static final FunctionDescriptor vsprintf$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gdk_pixbuf_animation_get_width$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle vsprintf$MH = RuntimeHelper.downcallHandle(
-        "vsprintf",
-        constants$1140.vsprintf$FUNC
+    static final MethodHandle gdk_pixbuf_animation_get_width$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_animation_get_width",
+        constants$1140.gdk_pixbuf_animation_get_width$FUNC
+    );
+    static final FunctionDescriptor gdk_pixbuf_animation_get_height$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_pixbuf_animation_get_height$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_animation_get_height",
+        constants$1140.gdk_pixbuf_animation_get_height$FUNC
     );
 }
 

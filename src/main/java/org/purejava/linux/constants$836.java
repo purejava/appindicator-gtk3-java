@@ -7,50 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$836 {
+final class constants$836 {
 
-    static final FunctionDescriptor g_socket_service_start$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$836() {}
+    static final FunctionDescriptor hb_blob_make_immutable$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_socket_service_start$MH = RuntimeHelper.downcallHandle(
-        "g_socket_service_start",
-        constants$836.g_socket_service_start$FUNC
+    static final MethodHandle hb_blob_make_immutable$MH = RuntimeHelper.downcallHandle(
+        "hb_blob_make_immutable",
+        constants$836.hb_blob_make_immutable$FUNC
     );
-    static final FunctionDescriptor g_socket_service_stop$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor hb_blob_is_immutable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_socket_service_stop$MH = RuntimeHelper.downcallHandle(
-        "g_socket_service_stop",
-        constants$836.g_socket_service_stop$FUNC
+    static final MethodHandle hb_blob_is_immutable$MH = RuntimeHelper.downcallHandle(
+        "hb_blob_is_immutable",
+        constants$836.hb_blob_is_immutable$FUNC
     );
-    static final FunctionDescriptor g_socket_service_is_active$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor hb_blob_get_length$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_socket_service_is_active$MH = RuntimeHelper.downcallHandle(
-        "g_socket_service_is_active",
-        constants$836.g_socket_service_is_active$FUNC
+    static final MethodHandle hb_blob_get_length$MH = RuntimeHelper.downcallHandle(
+        "hb_blob_get_length",
+        constants$836.hb_blob_get_length$FUNC
     );
-    static final FunctionDescriptor g_srv_target_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_srv_target_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_srv_target_get_type",
-        constants$836.g_srv_target_get_type$FUNC
-    );
-    static final FunctionDescriptor g_srv_target_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor hb_blob_get_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_SHORT$LAYOUT,
-        Constants$root.C_SHORT$LAYOUT,
-        Constants$root.C_SHORT$LAYOUT
-    );
-    static final MethodHandle g_srv_target_new$MH = RuntimeHelper.downcallHandle(
-        "g_srv_target_new",
-        constants$836.g_srv_target_new$FUNC
-    );
-    static final FunctionDescriptor g_srv_target_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_srv_target_copy$MH = RuntimeHelper.downcallHandle(
-        "g_srv_target_copy",
-        constants$836.g_srv_target_copy$FUNC
+    static final MethodHandle hb_blob_get_data$MH = RuntimeHelper.downcallHandle(
+        "hb_blob_get_data",
+        constants$836.hb_blob_get_data$FUNC
+    );
+    static final FunctionDescriptor hb_blob_get_data_writable$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle hb_blob_get_data_writable$MH = RuntimeHelper.downcallHandle(
+        "hb_blob_get_data_writable",
+        constants$836.hb_blob_get_data_writable$FUNC
+    );
+    static final FunctionDescriptor hb_unicode_funcs_get_default$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle hb_unicode_funcs_get_default$MH = RuntimeHelper.downcallHandle(
+        "hb_unicode_funcs_get_default",
+        constants$836.hb_unicode_funcs_get_default$FUNC
     );
 }
 

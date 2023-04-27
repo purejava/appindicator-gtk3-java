@@ -7,59 +7,62 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$560 {
+final class constants$560 {
 
-    static final FunctionDescriptor g_cancellable_connect$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$560() {}
+    static final FunctionDescriptor g_dbus_error_strip_remote_error$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_cancellable_connect$MH = RuntimeHelper.downcallHandle(
-        "g_cancellable_connect",
-        constants$560.g_cancellable_connect$FUNC
+    static final MethodHandle g_dbus_error_strip_remote_error$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_error_strip_remote_error",
+        constants$560.g_dbus_error_strip_remote_error$FUNC
     );
-    static final FunctionDescriptor g_cancellable_disconnect$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_cancellable_disconnect$MH = RuntimeHelper.downcallHandle(
-        "g_cancellable_disconnect",
-        constants$560.g_cancellable_disconnect$FUNC
-    );
-    static final FunctionDescriptor g_cancellable_cancel$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_cancellable_cancel$MH = RuntimeHelper.downcallHandle(
-        "g_cancellable_cancel",
-        constants$560.g_cancellable_cancel$FUNC
-    );
-    static final FunctionDescriptor g_converter_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_converter_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_converter_get_type",
-        constants$560.g_converter_get_type$FUNC
-    );
-    static final FunctionDescriptor g_converter_convert$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
+    static final FunctionDescriptor g_dbus_error_register_error$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_dbus_error_register_error$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_error_register_error",
+        constants$560.g_dbus_error_register_error$FUNC
+    );
+    static final FunctionDescriptor g_dbus_error_unregister_error$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_dbus_error_unregister_error$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_error_unregister_error",
+        constants$560.g_dbus_error_unregister_error$FUNC
+    );
+    static final FunctionDescriptor g_dbus_error_register_error_domain$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_dbus_error_register_error_domain$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_error_register_error_domain",
+        constants$560.g_dbus_error_register_error_domain$FUNC
+    );
+    static final FunctionDescriptor g_dbus_error_new_for_dbus_error$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_dbus_error_new_for_dbus_error$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_error_new_for_dbus_error",
+        constants$560.g_dbus_error_new_for_dbus_error$FUNC
+    );
+    static final FunctionDescriptor g_dbus_error_set_dbus_error$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_converter_convert$MH = RuntimeHelper.downcallHandle(
-        "g_converter_convert",
-        constants$560.g_converter_convert$FUNC
-    );
-    static final FunctionDescriptor g_converter_reset$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_converter_reset$MH = RuntimeHelper.downcallHandle(
-        "g_converter_reset",
-        constants$560.g_converter_reset$FUNC
+    static final MethodHandle g_dbus_error_set_dbus_error$MH = RuntimeHelper.downcallHandleVariadic(
+        "g_dbus_error_set_dbus_error",
+        constants$560.g_dbus_error_set_dbus_error$FUNC
     );
 }
 

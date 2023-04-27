@@ -7,49 +7,56 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$857 {
+final class constants$857 {
 
-    static final FunctionDescriptor g_tls_backend_get_certificate_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$857() {}
+    static final FunctionDescriptor hb_font_funcs_reference$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_tls_backend_get_certificate_type$MH = RuntimeHelper.downcallHandle(
-        "g_tls_backend_get_certificate_type",
-        constants$857.g_tls_backend_get_certificate_type$FUNC
+    static final MethodHandle hb_font_funcs_reference$MH = RuntimeHelper.downcallHandle(
+        "hb_font_funcs_reference",
+        constants$857.hb_font_funcs_reference$FUNC
     );
-    static final FunctionDescriptor g_tls_backend_get_client_connection_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+    static final FunctionDescriptor hb_font_funcs_destroy$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_tls_backend_get_client_connection_type$MH = RuntimeHelper.downcallHandle(
-        "g_tls_backend_get_client_connection_type",
-        constants$857.g_tls_backend_get_client_connection_type$FUNC
+    static final MethodHandle hb_font_funcs_destroy$MH = RuntimeHelper.downcallHandle(
+        "hb_font_funcs_destroy",
+        constants$857.hb_font_funcs_destroy$FUNC
     );
-    static final FunctionDescriptor g_tls_backend_get_server_connection_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+    static final FunctionDescriptor hb_font_funcs_set_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle hb_font_funcs_set_user_data$MH = RuntimeHelper.downcallHandle(
+        "hb_font_funcs_set_user_data",
+        constants$857.hb_font_funcs_set_user_data$FUNC
+    );
+    static final FunctionDescriptor hb_font_funcs_get_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_tls_backend_get_server_connection_type$MH = RuntimeHelper.downcallHandle(
-        "g_tls_backend_get_server_connection_type",
-        constants$857.g_tls_backend_get_server_connection_type$FUNC
+    static final MethodHandle hb_font_funcs_get_user_data$MH = RuntimeHelper.downcallHandle(
+        "hb_font_funcs_get_user_data",
+        constants$857.hb_font_funcs_get_user_data$FUNC
     );
-    static final FunctionDescriptor g_tls_backend_get_file_database_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+    static final FunctionDescriptor hb_font_funcs_make_immutable$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_tls_backend_get_file_database_type$MH = RuntimeHelper.downcallHandle(
-        "g_tls_backend_get_file_database_type",
-        constants$857.g_tls_backend_get_file_database_type$FUNC
+    static final MethodHandle hb_font_funcs_make_immutable$MH = RuntimeHelper.downcallHandle(
+        "hb_font_funcs_make_immutable",
+        constants$857.hb_font_funcs_make_immutable$FUNC
     );
-    static final FunctionDescriptor g_tls_backend_get_dtls_client_connection_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+    static final FunctionDescriptor hb_font_funcs_is_immutable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_tls_backend_get_dtls_client_connection_type$MH = RuntimeHelper.downcallHandle(
-        "g_tls_backend_get_dtls_client_connection_type",
-        constants$857.g_tls_backend_get_dtls_client_connection_type$FUNC
-    );
-    static final FunctionDescriptor g_tls_backend_get_dtls_server_connection_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_tls_backend_get_dtls_server_connection_type$MH = RuntimeHelper.downcallHandle(
-        "g_tls_backend_get_dtls_server_connection_type",
-        constants$857.g_tls_backend_get_dtls_server_connection_type$FUNC
+    static final MethodHandle hb_font_funcs_is_immutable$MH = RuntimeHelper.downcallHandle(
+        "hb_font_funcs_is_immutable",
+        constants$857.hb_font_funcs_is_immutable$FUNC
     );
 }
 

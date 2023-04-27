@@ -7,51 +7,59 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$60 {
+final class constants$60 {
 
-    static final FunctionDescriptor GThreadFunc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$60() {}
+    static final FunctionDescriptor mblen$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
     );
-    static final MethodHandle GThreadFunc$MH = RuntimeHelper.downcallHandle(
-        constants$60.GThreadFunc$FUNC
+    static final MethodHandle mblen$MH = RuntimeHelper.downcallHandle(
+        "mblen",
+        constants$60.mblen$FUNC
     );
-    static final FunctionDescriptor g_thread_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_thread_ref$MH = RuntimeHelper.downcallHandle(
-        "g_thread_ref",
-        constants$60.g_thread_ref$FUNC
-    );
-    static final FunctionDescriptor g_thread_unref$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_thread_unref$MH = RuntimeHelper.downcallHandle(
-        "g_thread_unref",
-        constants$60.g_thread_unref$FUNC
-    );
-    static final FunctionDescriptor g_thread_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor mbtowc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle mbtowc$MH = RuntimeHelper.downcallHandle(
+        "mbtowc",
+        constants$60.mbtowc$FUNC
+    );
+    static final FunctionDescriptor wctomb$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle wctomb$MH = RuntimeHelper.downcallHandle(
+        "wctomb",
+        constants$60.wctomb$FUNC
+    );
+    static final FunctionDescriptor mbstowcs$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle mbstowcs$MH = RuntimeHelper.downcallHandle(
+        "mbstowcs",
+        constants$60.mbstowcs$FUNC
+    );
+    static final FunctionDescriptor wcstombs$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle wcstombs$MH = RuntimeHelper.downcallHandle(
+        "wcstombs",
+        constants$60.wcstombs$FUNC
+    );
+    static final FunctionDescriptor rpmatch$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_thread_new$MH = RuntimeHelper.downcallHandle(
-        "g_thread_new",
-        constants$60.g_thread_new$FUNC
-    );
-    static final FunctionDescriptor g_thread_try_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_thread_try_new$MH = RuntimeHelper.downcallHandle(
-        "g_thread_try_new",
-        constants$60.g_thread_try_new$FUNC
-    );
-    static final FunctionDescriptor g_thread_self$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_thread_self$MH = RuntimeHelper.downcallHandle(
-        "g_thread_self",
-        constants$60.g_thread_self$FUNC
+    static final MethodHandle rpmatch$MH = RuntimeHelper.downcallHandle(
+        "rpmatch",
+        constants$60.rpmatch$FUNC
     );
 }
 

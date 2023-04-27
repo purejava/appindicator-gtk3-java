@@ -10,7 +10,7 @@ Based on libayatana-appindicator3-1 (0.5.92-1)
 Based on libappindicator3-1 (12.10.1+20.10.20200706.1-0ubuntu1)
 
 # Requires
-Java 19 (preview)
+Java 20 (preview)
 - due to the use of the new Foreign Function & Memory API
 
 # Usage

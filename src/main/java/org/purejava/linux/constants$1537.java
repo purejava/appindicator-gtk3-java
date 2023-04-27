@@ -7,50 +7,62 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1537 {
+final class constants$1537 {
 
-    static final FunctionDescriptor gtk_accel_map_load_fd$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1537() {}
+    static final FunctionDescriptor gtk_check_menu_item_get_inconsistent$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_check_menu_item_get_inconsistent$MH = RuntimeHelper.downcallHandle(
+        "gtk_check_menu_item_get_inconsistent",
+        constants$1537.gtk_check_menu_item_get_inconsistent$FUNC
+    );
+    static final FunctionDescriptor gtk_check_menu_item_set_draw_as_radio$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_accel_map_load_fd$MH = RuntimeHelper.downcallHandle(
-        "gtk_accel_map_load_fd",
-        constants$1537.gtk_accel_map_load_fd$FUNC
+    static final MethodHandle gtk_check_menu_item_set_draw_as_radio$MH = RuntimeHelper.downcallHandle(
+        "gtk_check_menu_item_set_draw_as_radio",
+        constants$1537.gtk_check_menu_item_set_draw_as_radio$FUNC
     );
-    static final FunctionDescriptor gtk_accel_map_load_scanner$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_check_menu_item_get_draw_as_radio$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_accel_map_load_scanner$MH = RuntimeHelper.downcallHandle(
-        "gtk_accel_map_load_scanner",
-        constants$1537.gtk_accel_map_load_scanner$FUNC
+    static final MethodHandle gtk_check_menu_item_get_draw_as_radio$MH = RuntimeHelper.downcallHandle(
+        "gtk_check_menu_item_get_draw_as_radio",
+        constants$1537.gtk_check_menu_item_get_draw_as_radio$FUNC
     );
-    static final FunctionDescriptor gtk_accel_map_save_fd$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_accel_map_save_fd$MH = RuntimeHelper.downcallHandle(
-        "gtk_accel_map_save_fd",
-        constants$1537.gtk_accel_map_save_fd$FUNC
-    );
-    static final FunctionDescriptor gtk_accel_map_lock_path$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor GtkClipboardReceivedFunc$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_accel_map_lock_path$MH = RuntimeHelper.downcallHandle(
-        "gtk_accel_map_lock_path",
-        constants$1537.gtk_accel_map_lock_path$FUNC
-    );
-    static final FunctionDescriptor gtk_accel_map_unlock_path$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor GtkClipboardReceivedFunc_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_accel_map_unlock_path$MH = RuntimeHelper.downcallHandle(
-        "gtk_accel_map_unlock_path",
-        constants$1537.gtk_accel_map_unlock_path$FUNC
-    );
-    static final FunctionDescriptor gtk_accel_map_add_filter$FUNC = FunctionDescriptor.ofVoid(
+    static final MethodHandle GtkClipboardReceivedFunc_UP$MH = RuntimeHelper.upcallHandle(GtkClipboardReceivedFunc.class, "apply", constants$1537.GtkClipboardReceivedFunc_UP$FUNC);
+    static final FunctionDescriptor GtkClipboardReceivedFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_accel_map_add_filter$MH = RuntimeHelper.downcallHandle(
-        "gtk_accel_map_add_filter",
-        constants$1537.gtk_accel_map_add_filter$FUNC
+    static final MethodHandle GtkClipboardReceivedFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$1537.GtkClipboardReceivedFunc_DOWN$FUNC
     );
+    static final FunctionDescriptor GtkClipboardTextReceivedFunc$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final FunctionDescriptor GtkClipboardTextReceivedFunc_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GtkClipboardTextReceivedFunc_UP$MH = RuntimeHelper.upcallHandle(GtkClipboardTextReceivedFunc.class, "apply", constants$1537.GtkClipboardTextReceivedFunc_UP$FUNC);
 }
 
 

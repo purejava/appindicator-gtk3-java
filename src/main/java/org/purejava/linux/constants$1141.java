@@ -7,58 +7,50 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1141 {
+final class constants$1141 {
 
-    static final FunctionDescriptor snprintf$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1141() {}
+    static final FunctionDescriptor gdk_pixbuf_animation_is_static_image$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle snprintf$MH = RuntimeHelper.downcallHandleVariadic(
-        "snprintf",
-        constants$1141.snprintf$FUNC
+    static final MethodHandle gdk_pixbuf_animation_is_static_image$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_animation_is_static_image",
+        constants$1141.gdk_pixbuf_animation_is_static_image$FUNC
     );
-    static final FunctionDescriptor vsnprintf$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gdk_pixbuf_animation_get_static_image$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle vsnprintf$MH = RuntimeHelper.downcallHandle(
-        "vsnprintf",
-        constants$1141.vsnprintf$FUNC
+    static final MethodHandle gdk_pixbuf_animation_get_static_image$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_animation_get_static_image",
+        constants$1141.gdk_pixbuf_animation_get_static_image$FUNC
     );
-    static final FunctionDescriptor vdprintf$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gdk_pixbuf_animation_get_iter$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle vdprintf$MH = RuntimeHelper.downcallHandle(
-        "vdprintf",
-        constants$1141.vdprintf$FUNC
+    static final MethodHandle gdk_pixbuf_animation_get_iter$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_animation_get_iter",
+        constants$1141.gdk_pixbuf_animation_get_iter$FUNC
     );
-    static final FunctionDescriptor dprintf$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gdk_pixbuf_animation_iter_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gdk_pixbuf_animation_iter_get_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_animation_iter_get_type",
+        constants$1141.gdk_pixbuf_animation_iter_get_type$FUNC
+    );
+    static final FunctionDescriptor gdk_pixbuf_animation_iter_get_delay_time$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle dprintf$MH = RuntimeHelper.downcallHandleVariadic(
-        "dprintf",
-        constants$1141.dprintf$FUNC
+    static final MethodHandle gdk_pixbuf_animation_iter_get_delay_time$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_animation_iter_get_delay_time",
+        constants$1141.gdk_pixbuf_animation_iter_get_delay_time$FUNC
     );
-    static final FunctionDescriptor fscanf$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gdk_pixbuf_animation_iter_get_pixbuf$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle fscanf$MH = RuntimeHelper.downcallHandleVariadic(
-        "fscanf",
-        constants$1141.fscanf$FUNC
-    );
-    static final FunctionDescriptor scanf$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle scanf$MH = RuntimeHelper.downcallHandleVariadic(
-        "scanf",
-        constants$1141.scanf$FUNC
+    static final MethodHandle gdk_pixbuf_animation_iter_get_pixbuf$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_animation_iter_get_pixbuf",
+        constants$1141.gdk_pixbuf_animation_iter_get_pixbuf$FUNC
     );
 }
 

@@ -7,49 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$186 {
+final class constants$186 {
 
-    static final FunctionDescriptor g_unichar_iszerowidth$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$186() {}
+    static final FunctionDescriptor g_unichar_islower$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_unichar_iszerowidth$MH = RuntimeHelper.downcallHandle(
-        "g_unichar_iszerowidth",
-        constants$186.g_unichar_iszerowidth$FUNC
+    static final MethodHandle g_unichar_islower$MH = RuntimeHelper.downcallHandle(
+        "g_unichar_islower",
+        constants$186.g_unichar_islower$FUNC
     );
-    static final FunctionDescriptor g_unichar_ismark$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_unichar_isprint$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_unichar_ismark$MH = RuntimeHelper.downcallHandle(
-        "g_unichar_ismark",
-        constants$186.g_unichar_ismark$FUNC
+    static final MethodHandle g_unichar_isprint$MH = RuntimeHelper.downcallHandle(
+        "g_unichar_isprint",
+        constants$186.g_unichar_isprint$FUNC
     );
-    static final FunctionDescriptor g_unichar_toupper$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_unichar_ispunct$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_unichar_toupper$MH = RuntimeHelper.downcallHandle(
-        "g_unichar_toupper",
-        constants$186.g_unichar_toupper$FUNC
+    static final MethodHandle g_unichar_ispunct$MH = RuntimeHelper.downcallHandle(
+        "g_unichar_ispunct",
+        constants$186.g_unichar_ispunct$FUNC
     );
-    static final FunctionDescriptor g_unichar_tolower$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_unichar_isspace$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_unichar_tolower$MH = RuntimeHelper.downcallHandle(
-        "g_unichar_tolower",
-        constants$186.g_unichar_tolower$FUNC
+    static final MethodHandle g_unichar_isspace$MH = RuntimeHelper.downcallHandle(
+        "g_unichar_isspace",
+        constants$186.g_unichar_isspace$FUNC
     );
-    static final FunctionDescriptor g_unichar_totitle$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_unichar_isupper$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_unichar_totitle$MH = RuntimeHelper.downcallHandle(
-        "g_unichar_totitle",
-        constants$186.g_unichar_totitle$FUNC
+    static final MethodHandle g_unichar_isupper$MH = RuntimeHelper.downcallHandle(
+        "g_unichar_isupper",
+        constants$186.g_unichar_isupper$FUNC
     );
-    static final FunctionDescriptor g_unichar_digit_value$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_unichar_isxdigit$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_unichar_digit_value$MH = RuntimeHelper.downcallHandle(
-        "g_unichar_digit_value",
-        constants$186.g_unichar_digit_value$FUNC
+    static final MethodHandle g_unichar_isxdigit$MH = RuntimeHelper.downcallHandle(
+        "g_unichar_isxdigit",
+        constants$186.g_unichar_isxdigit$FUNC
     );
 }
 

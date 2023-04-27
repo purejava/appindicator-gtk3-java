@@ -7,49 +7,76 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$889 {
+final class constants$889 {
 
-    static final FunctionDescriptor glib_autoptr_cleanup_GBytesIcon$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$889() {}
+    static final FunctionDescriptor hb_buffer_set_message_func$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GBytesIcon$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GBytesIcon",
-        constants$889.glib_autoptr_cleanup_GBytesIcon$FUNC
+    static final MethodHandle hb_buffer_set_message_func$MH = RuntimeHelper.downcallHandle(
+        "hb_buffer_set_message_func",
+        constants$889.hb_buffer_set_message_func$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GBytesIcon$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor hb_font_get_glyph_func_t$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GBytesIcon$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GBytesIcon",
-        constants$889.glib_listautoptr_cleanup_GBytesIcon$FUNC
-    );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GBytesIcon$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor hb_font_get_glyph_func_t_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GBytesIcon$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GBytesIcon",
-        constants$889.glib_slistautoptr_cleanup_GBytesIcon$FUNC
-    );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GBytesIcon$FUNC = FunctionDescriptor.ofVoid(
+    static final MethodHandle hb_font_get_glyph_func_t_UP$MH = RuntimeHelper.upcallHandle(hb_font_get_glyph_func_t.class, "apply", constants$889.hb_font_get_glyph_func_t_UP$FUNC);
+    static final FunctionDescriptor hb_font_get_glyph_func_t_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GBytesIcon$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GBytesIcon",
-        constants$889.glib_queueautoptr_cleanup_GBytesIcon$FUNC
+    static final MethodHandle hb_font_get_glyph_func_t_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$889.hb_font_get_glyph_func_t_DOWN$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GCancellable$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor hb_font_funcs_set_glyph_func$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GCancellable$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GCancellable",
-        constants$889.glib_autoptr_clear_GCancellable$FUNC
+    static final MethodHandle hb_font_funcs_set_glyph_func$MH = RuntimeHelper.downcallHandle(
+        "hb_font_funcs_set_glyph_func",
+        constants$889.hb_font_funcs_set_glyph_func$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GCancellable$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor hb_unicode_eastasian_width_func_t$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GCancellable$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GCancellable",
-        constants$889.glib_autoptr_cleanup_GCancellable$FUNC
+    static final FunctionDescriptor hb_unicode_eastasian_width_func_t_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle hb_unicode_eastasian_width_func_t_UP$MH = RuntimeHelper.upcallHandle(hb_unicode_eastasian_width_func_t.class, "apply", constants$889.hb_unicode_eastasian_width_func_t_UP$FUNC);
+    static final FunctionDescriptor hb_unicode_eastasian_width_func_t_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle hb_unicode_eastasian_width_func_t_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$889.hb_unicode_eastasian_width_func_t_DOWN$FUNC
     );
 }
 

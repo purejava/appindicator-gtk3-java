@@ -7,49 +7,49 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$513 {
+final class constants$513 {
 
-    static final FunctionDescriptor glib_autoptr_clear_GInitiallyUnowned$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$513() {}
+    static final FunctionDescriptor g_cancellable_release_fd$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GInitiallyUnowned$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GInitiallyUnowned",
-        constants$513.glib_autoptr_clear_GInitiallyUnowned$FUNC
+    static final MethodHandle g_cancellable_release_fd$MH = RuntimeHelper.downcallHandle(
+        "g_cancellable_release_fd",
+        constants$513.g_cancellable_release_fd$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GInitiallyUnowned$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_cancellable_source_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GInitiallyUnowned$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GInitiallyUnowned",
-        constants$513.glib_autoptr_cleanup_GInitiallyUnowned$FUNC
+    static final MethodHandle g_cancellable_source_new$MH = RuntimeHelper.downcallHandle(
+        "g_cancellable_source_new",
+        constants$513.g_cancellable_source_new$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GInitiallyUnowned$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_cancellable_get_current$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle g_cancellable_get_current$MH = RuntimeHelper.downcallHandle(
+        "g_cancellable_get_current",
+        constants$513.g_cancellable_get_current$FUNC
+    );
+    static final FunctionDescriptor g_cancellable_push_current$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GInitiallyUnowned$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GInitiallyUnowned",
-        constants$513.glib_listautoptr_cleanup_GInitiallyUnowned$FUNC
+    static final MethodHandle g_cancellable_push_current$MH = RuntimeHelper.downcallHandle(
+        "g_cancellable_push_current",
+        constants$513.g_cancellable_push_current$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GInitiallyUnowned$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_cancellable_pop_current$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GInitiallyUnowned$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GInitiallyUnowned",
-        constants$513.glib_slistautoptr_cleanup_GInitiallyUnowned$FUNC
+    static final MethodHandle g_cancellable_pop_current$MH = RuntimeHelper.downcallHandle(
+        "g_cancellable_pop_current",
+        constants$513.g_cancellable_pop_current$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GInitiallyUnowned$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_cancellable_reset$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GInitiallyUnowned$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GInitiallyUnowned",
-        constants$513.glib_queueautoptr_cleanup_GInitiallyUnowned$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_clear_GParamSpec$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_autoptr_clear_GParamSpec$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GParamSpec",
-        constants$513.glib_autoptr_clear_GParamSpec$FUNC
+    static final MethodHandle g_cancellable_reset$MH = RuntimeHelper.downcallHandle(
+        "g_cancellable_reset",
+        constants$513.g_cancellable_reset$FUNC
     );
 }
 

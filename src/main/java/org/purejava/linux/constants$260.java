@@ -7,50 +7,64 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$260 {
+final class constants$260 {
 
-    static final FunctionDescriptor g_queue_init$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_queue_init$MH = RuntimeHelper.downcallHandle(
-        "g_queue_init",
-        constants$260.g_queue_init$FUNC
-    );
-    static final FunctionDescriptor g_queue_clear$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_queue_clear$MH = RuntimeHelper.downcallHandle(
-        "g_queue_clear",
-        constants$260.g_queue_clear$FUNC
-    );
-    static final FunctionDescriptor g_queue_is_empty$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_queue_is_empty$MH = RuntimeHelper.downcallHandle(
-        "g_queue_is_empty",
-        constants$260.g_queue_is_empty$FUNC
-    );
-    static final FunctionDescriptor g_queue_clear_full$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$260() {}
+    static final FunctionDescriptor g_log_writer_format_fields$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_log_writer_format_fields$MH = RuntimeHelper.downcallHandle(
+        "g_log_writer_format_fields",
+        constants$260.g_log_writer_format_fields$FUNC
+    );
+    static final FunctionDescriptor g_log_writer_journald$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_queue_clear_full$MH = RuntimeHelper.downcallHandle(
-        "g_queue_clear_full",
-        constants$260.g_queue_clear_full$FUNC
+    static final MethodHandle g_log_writer_journald$MH = RuntimeHelper.downcallHandle(
+        "g_log_writer_journald",
+        constants$260.g_log_writer_journald$FUNC
     );
-    static final FunctionDescriptor g_queue_get_length$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_log_writer_standard_streams$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_queue_get_length$MH = RuntimeHelper.downcallHandle(
-        "g_queue_get_length",
-        constants$260.g_queue_get_length$FUNC
+    static final MethodHandle g_log_writer_standard_streams$MH = RuntimeHelper.downcallHandle(
+        "g_log_writer_standard_streams",
+        constants$260.g_log_writer_standard_streams$FUNC
     );
-    static final FunctionDescriptor g_queue_reverse$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_log_writer_default$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_queue_reverse$MH = RuntimeHelper.downcallHandle(
-        "g_queue_reverse",
-        constants$260.g_queue_reverse$FUNC
+    static final MethodHandle g_log_writer_default$MH = RuntimeHelper.downcallHandle(
+        "g_log_writer_default",
+        constants$260.g_log_writer_default$FUNC
+    );
+    static final FunctionDescriptor g_log_writer_default_set_use_stderr$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_log_writer_default_set_use_stderr$MH = RuntimeHelper.downcallHandle(
+        "g_log_writer_default_set_use_stderr",
+        constants$260.g_log_writer_default_set_use_stderr$FUNC
+    );
+    static final FunctionDescriptor g_log_writer_default_would_drop$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_log_writer_default_would_drop$MH = RuntimeHelper.downcallHandle(
+        "g_log_writer_default_would_drop",
+        constants$260.g_log_writer_default_would_drop$FUNC
     );
 }
 

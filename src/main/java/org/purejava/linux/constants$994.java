@@ -7,52 +7,50 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$994 {
+final class constants$994 {
 
-    static final FunctionDescriptor hb_unicode_funcs_create$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_unicode_funcs_create$MH = RuntimeHelper.downcallHandle(
-        "hb_unicode_funcs_create",
-        constants$994.hb_unicode_funcs_create$FUNC
-    );
-    static final FunctionDescriptor hb_unicode_funcs_get_empty$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle hb_unicode_funcs_get_empty$MH = RuntimeHelper.downcallHandle(
-        "hb_unicode_funcs_get_empty",
-        constants$994.hb_unicode_funcs_get_empty$FUNC
-    );
-    static final FunctionDescriptor hb_unicode_funcs_reference$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_unicode_funcs_reference$MH = RuntimeHelper.downcallHandle(
-        "hb_unicode_funcs_reference",
-        constants$994.hb_unicode_funcs_reference$FUNC
-    );
-    static final FunctionDescriptor hb_unicode_funcs_destroy$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_unicode_funcs_destroy$MH = RuntimeHelper.downcallHandle(
-        "hb_unicode_funcs_destroy",
-        constants$994.hb_unicode_funcs_destroy$FUNC
-    );
-    static final FunctionDescriptor hb_unicode_funcs_set_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$994() {}
+    static final FunctionDescriptor pango_is_zero_width$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle hb_unicode_funcs_set_user_data$MH = RuntimeHelper.downcallHandle(
-        "hb_unicode_funcs_set_user_data",
-        constants$994.hb_unicode_funcs_set_user_data$FUNC
+    static final MethodHandle pango_is_zero_width$MH = RuntimeHelper.downcallHandle(
+        "pango_is_zero_width",
+        constants$994.pango_is_zero_width$FUNC
     );
-    static final FunctionDescriptor hb_unicode_funcs_get_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor pango_find_paragraph_boundary$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_unicode_funcs_get_user_data$MH = RuntimeHelper.downcallHandle(
-        "hb_unicode_funcs_get_user_data",
-        constants$994.hb_unicode_funcs_get_user_data$FUNC
+    static final MethodHandle pango_find_paragraph_boundary$MH = RuntimeHelper.downcallHandle(
+        "pango_find_paragraph_boundary",
+        constants$994.pango_find_paragraph_boundary$FUNC
+    );
+    static final FunctionDescriptor pango_version$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
+    static final MethodHandle pango_version$MH = RuntimeHelper.downcallHandle(
+        "pango_version",
+        constants$994.pango_version$FUNC
+    );
+    static final FunctionDescriptor pango_version_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle pango_version_string$MH = RuntimeHelper.downcallHandle(
+        "pango_version_string",
+        constants$994.pango_version_string$FUNC
+    );
+    static final FunctionDescriptor pango_version_check$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle pango_version_check$MH = RuntimeHelper.downcallHandle(
+        "pango_version_check",
+        constants$994.pango_version_check$FUNC
+    );
+    static final FunctionDescriptor cairo_version$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
+    static final MethodHandle cairo_version$MH = RuntimeHelper.downcallHandle(
+        "cairo_version",
+        constants$994.cairo_version$FUNC
     );
 }
 

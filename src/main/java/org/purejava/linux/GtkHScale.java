@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkHScale extends _GtkHScale {
+/**
+ * {@snippet :
+ * typedef struct _GtkHScale GtkHScale;
+ * }
+ */
+public final class GtkHScale extends _GtkHScale {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkHScale() {}
 }
 
 

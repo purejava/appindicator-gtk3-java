@@ -7,55 +7,47 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$315 {
+final class constants$315 {
 
-    static final FunctionDescriptor g_test_rand_double_range$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$315() {}
+    static final FunctionDescriptor g_test_get_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle g_test_get_path$MH = RuntimeHelper.downcallHandle(
+        "g_test_get_path",
+        constants$315.g_test_get_path$FUNC
     );
-    static final MethodHandle g_test_rand_double_range$MH = RuntimeHelper.downcallHandle(
-        "g_test_rand_double_range",
-        constants$315.g_test_rand_double_range$FUNC
+    static final FunctionDescriptor g_test_fail$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle g_test_fail$MH = RuntimeHelper.downcallHandle(
+        "g_test_fail",
+        constants$315.g_test_fail$FUNC
     );
-    static final FunctionDescriptor g_test_create_case$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_test_fail_printf$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_test_create_case$MH = RuntimeHelper.downcallHandle(
-        "g_test_create_case",
-        constants$315.g_test_create_case$FUNC
+    static final MethodHandle g_test_fail_printf$MH = RuntimeHelper.downcallHandleVariadic(
+        "g_test_fail_printf",
+        constants$315.g_test_fail_printf$FUNC
     );
-    static final FunctionDescriptor g_test_create_suite$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_test_incomplete$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_test_create_suite$MH = RuntimeHelper.downcallHandle(
-        "g_test_create_suite",
-        constants$315.g_test_create_suite$FUNC
+    static final MethodHandle g_test_incomplete$MH = RuntimeHelper.downcallHandle(
+        "g_test_incomplete",
+        constants$315.g_test_incomplete$FUNC
     );
-    static final FunctionDescriptor g_test_get_root$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_test_get_root$MH = RuntimeHelper.downcallHandle(
-        "g_test_get_root",
-        constants$315.g_test_get_root$FUNC
-    );
-    static final FunctionDescriptor g_test_suite_add$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_test_incomplete_printf$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_test_suite_add$MH = RuntimeHelper.downcallHandle(
-        "g_test_suite_add",
-        constants$315.g_test_suite_add$FUNC
+    static final MethodHandle g_test_incomplete_printf$MH = RuntimeHelper.downcallHandleVariadic(
+        "g_test_incomplete_printf",
+        constants$315.g_test_incomplete_printf$FUNC
     );
-    static final FunctionDescriptor g_test_suite_add_suite$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_test_skip$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_test_suite_add_suite$MH = RuntimeHelper.downcallHandle(
-        "g_test_suite_add_suite",
-        constants$315.g_test_suite_add_suite$FUNC
+    static final MethodHandle g_test_skip$MH = RuntimeHelper.downcallHandle(
+        "g_test_skip",
+        constants$315.g_test_skip$FUNC
     );
 }
 

@@ -7,55 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1320 {
+final class constants$1320 {
 
-    static final FunctionDescriptor gdk_cursor_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_cursor_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_cursor_get_type",
-        constants$1320.gdk_cursor_get_type$FUNC
-    );
-    static final FunctionDescriptor gdk_cursor_new_for_display$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1320() {}
+    static final FunctionDescriptor gtk_dialog_set_alternative_button_order$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gdk_cursor_new_for_display$MH = RuntimeHelper.downcallHandle(
-        "gdk_cursor_new_for_display",
-        constants$1320.gdk_cursor_new_for_display$FUNC
+    static final MethodHandle gtk_dialog_set_alternative_button_order$MH = RuntimeHelper.downcallHandleVariadic(
+        "gtk_dialog_set_alternative_button_order",
+        constants$1320.gtk_dialog_set_alternative_button_order$FUNC
     );
-    static final FunctionDescriptor gdk_cursor_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_cursor_new$MH = RuntimeHelper.downcallHandle(
-        "gdk_cursor_new",
-        constants$1320.gdk_cursor_new$FUNC
-    );
-    static final FunctionDescriptor gdk_cursor_new_from_pixbuf$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_dialog_set_alternative_button_order_from_array$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_cursor_new_from_pixbuf$MH = RuntimeHelper.downcallHandle(
-        "gdk_cursor_new_from_pixbuf",
-        constants$1320.gdk_cursor_new_from_pixbuf$FUNC
-    );
-    static final FunctionDescriptor gdk_cursor_new_from_surface$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle gdk_cursor_new_from_surface$MH = RuntimeHelper.downcallHandle(
-        "gdk_cursor_new_from_surface",
-        constants$1320.gdk_cursor_new_from_surface$FUNC
-    );
-    static final FunctionDescriptor gdk_cursor_new_from_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_cursor_new_from_name$MH = RuntimeHelper.downcallHandle(
-        "gdk_cursor_new_from_name",
-        constants$1320.gdk_cursor_new_from_name$FUNC
+    static final MethodHandle gtk_dialog_set_alternative_button_order_from_array$MH = RuntimeHelper.downcallHandle(
+        "gtk_dialog_set_alternative_button_order_from_array",
+        constants$1320.gtk_dialog_set_alternative_button_order_from_array$FUNC
+    );
+    static final FunctionDescriptor gtk_dialog_response$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_dialog_response$MH = RuntimeHelper.downcallHandle(
+        "gtk_dialog_response",
+        constants$1320.gtk_dialog_response$FUNC
+    );
+    static final FunctionDescriptor gtk_dialog_run$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_dialog_run$MH = RuntimeHelper.downcallHandle(
+        "gtk_dialog_run",
+        constants$1320.gtk_dialog_run$FUNC
+    );
+    static final FunctionDescriptor gtk_dialog_get_action_area$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_dialog_get_action_area$MH = RuntimeHelper.downcallHandle(
+        "gtk_dialog_get_action_area",
+        constants$1320.gtk_dialog_get_action_area$FUNC
+    );
+    static final FunctionDescriptor gtk_dialog_get_content_area$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_dialog_get_content_area$MH = RuntimeHelper.downcallHandle(
+        "gtk_dialog_get_content_area",
+        constants$1320.gtk_dialog_get_content_area$FUNC
     );
 }
 

@@ -7,52 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1582 {
+final class constants$1582 {
 
-    static final FunctionDescriptor gtk_tree_view_column_get_width$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1582() {}
+    static final FunctionDescriptor gtk_file_chooser_dialog_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_tree_view_column_get_width$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_get_width",
-        constants$1582.gtk_tree_view_column_get_width$FUNC
+    static final MethodHandle gtk_file_chooser_dialog_new$MH = RuntimeHelper.downcallHandleVariadic(
+        "gtk_file_chooser_dialog_new",
+        constants$1582.gtk_file_chooser_dialog_new$FUNC
     );
-    static final FunctionDescriptor gtk_tree_view_column_get_fixed_width$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_native_dialog_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_native_dialog_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_native_dialog_get_type",
+        constants$1582.gtk_native_dialog_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_native_dialog_show$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_tree_view_column_get_fixed_width$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_get_fixed_width",
-        constants$1582.gtk_tree_view_column_get_fixed_width$FUNC
+    static final MethodHandle gtk_native_dialog_show$MH = RuntimeHelper.downcallHandle(
+        "gtk_native_dialog_show",
+        constants$1582.gtk_native_dialog_show$FUNC
     );
-    static final FunctionDescriptor gtk_tree_view_column_set_fixed_width$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_column_set_fixed_width$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_set_fixed_width",
-        constants$1582.gtk_tree_view_column_set_fixed_width$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_column_set_min_width$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_column_set_min_width$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_set_min_width",
-        constants$1582.gtk_tree_view_column_set_min_width$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_column_get_min_width$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_native_dialog_hide$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_tree_view_column_get_min_width$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_get_min_width",
-        constants$1582.gtk_tree_view_column_get_min_width$FUNC
+    static final MethodHandle gtk_native_dialog_hide$MH = RuntimeHelper.downcallHandle(
+        "gtk_native_dialog_hide",
+        constants$1582.gtk_native_dialog_hide$FUNC
     );
-    static final FunctionDescriptor gtk_tree_view_column_set_max_width$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor gtk_native_dialog_destroy$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_tree_view_column_set_max_width$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_set_max_width",
-        constants$1582.gtk_tree_view_column_set_max_width$FUNC
+    static final MethodHandle gtk_native_dialog_destroy$MH = RuntimeHelper.downcallHandle(
+        "gtk_native_dialog_destroy",
+        constants$1582.gtk_native_dialog_destroy$FUNC
+    );
+    static final FunctionDescriptor gtk_native_dialog_get_visible$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_native_dialog_get_visible$MH = RuntimeHelper.downcallHandle(
+        "gtk_native_dialog_get_visible",
+        constants$1582.gtk_native_dialog_get_visible$FUNC
     );
 }
 

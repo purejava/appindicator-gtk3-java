@@ -7,55 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$793 {
+final class constants$793 {
 
-    static final FunctionDescriptor g_settings_schema_source_get_default$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_settings_schema_source_get_default$MH = RuntimeHelper.downcallHandle(
-        "g_settings_schema_source_get_default",
-        constants$793.g_settings_schema_source_get_default$FUNC
-    );
-    static final FunctionDescriptor g_settings_schema_source_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$793() {}
+    static final FunctionDescriptor g_task_get_task_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_settings_schema_source_ref$MH = RuntimeHelper.downcallHandle(
-        "g_settings_schema_source_ref",
-        constants$793.g_settings_schema_source_ref$FUNC
+    static final MethodHandle g_task_get_task_data$MH = RuntimeHelper.downcallHandle(
+        "g_task_get_task_data",
+        constants$793.g_task_get_task_data$FUNC
     );
-    static final FunctionDescriptor g_settings_schema_source_unref$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_task_get_priority$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_settings_schema_source_unref$MH = RuntimeHelper.downcallHandle(
-        "g_settings_schema_source_unref",
-        constants$793.g_settings_schema_source_unref$FUNC
+    static final MethodHandle g_task_get_priority$MH = RuntimeHelper.downcallHandle(
+        "g_task_get_priority",
+        constants$793.g_task_get_priority$FUNC
     );
-    static final FunctionDescriptor g_settings_schema_source_new_from_directory$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_task_get_context$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_settings_schema_source_new_from_directory$MH = RuntimeHelper.downcallHandle(
-        "g_settings_schema_source_new_from_directory",
-        constants$793.g_settings_schema_source_new_from_directory$FUNC
+    static final MethodHandle g_task_get_context$MH = RuntimeHelper.downcallHandle(
+        "g_task_get_context",
+        constants$793.g_task_get_context$FUNC
     );
-    static final FunctionDescriptor g_settings_schema_source_lookup$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_settings_schema_source_lookup$MH = RuntimeHelper.downcallHandle(
-        "g_settings_schema_source_lookup",
-        constants$793.g_settings_schema_source_lookup$FUNC
-    );
-    static final FunctionDescriptor g_settings_schema_source_list_schemas$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_task_get_cancellable$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_settings_schema_source_list_schemas$MH = RuntimeHelper.downcallHandle(
-        "g_settings_schema_source_list_schemas",
-        constants$793.g_settings_schema_source_list_schemas$FUNC
+    static final MethodHandle g_task_get_cancellable$MH = RuntimeHelper.downcallHandle(
+        "g_task_get_cancellable",
+        constants$793.g_task_get_cancellable$FUNC
+    );
+    static final FunctionDescriptor g_task_get_check_cancellable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_task_get_check_cancellable$MH = RuntimeHelper.downcallHandle(
+        "g_task_get_check_cancellable",
+        constants$793.g_task_get_check_cancellable$FUNC
+    );
+    static final FunctionDescriptor g_task_get_source_tag$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_task_get_source_tag$MH = RuntimeHelper.downcallHandle(
+        "g_task_get_source_tag",
+        constants$793.g_task_get_source_tag$FUNC
     );
 }
 

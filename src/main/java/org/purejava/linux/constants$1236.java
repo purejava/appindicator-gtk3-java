@@ -7,53 +7,57 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1236 {
+final class constants$1236 {
 
-    static final FunctionDescriptor gdk_frame_clock_end_updating$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1236() {}
+    static final FunctionDescriptor atk_state_set_clear_states$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_frame_clock_end_updating$MH = RuntimeHelper.downcallHandle(
-        "gdk_frame_clock_end_updating",
-        constants$1236.gdk_frame_clock_end_updating$FUNC
+    static final MethodHandle atk_state_set_clear_states$MH = RuntimeHelper.downcallHandle(
+        "atk_state_set_clear_states",
+        constants$1236.atk_state_set_clear_states$FUNC
     );
-    static final FunctionDescriptor gdk_frame_clock_get_frame_counter$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_frame_clock_get_frame_counter$MH = RuntimeHelper.downcallHandle(
-        "gdk_frame_clock_get_frame_counter",
-        constants$1236.gdk_frame_clock_get_frame_counter$FUNC
-    );
-    static final FunctionDescriptor gdk_frame_clock_get_history_start$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_frame_clock_get_history_start$MH = RuntimeHelper.downcallHandle(
-        "gdk_frame_clock_get_history_start",
-        constants$1236.gdk_frame_clock_get_history_start$FUNC
-    );
-    static final FunctionDescriptor gdk_frame_clock_get_timings$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor atk_state_set_contains_state$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gdk_frame_clock_get_timings$MH = RuntimeHelper.downcallHandle(
-        "gdk_frame_clock_get_timings",
-        constants$1236.gdk_frame_clock_get_timings$FUNC
+    static final MethodHandle atk_state_set_contains_state$MH = RuntimeHelper.downcallHandle(
+        "atk_state_set_contains_state",
+        constants$1236.atk_state_set_contains_state$FUNC
     );
-    static final FunctionDescriptor gdk_frame_clock_get_current_timings$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_frame_clock_get_current_timings$MH = RuntimeHelper.downcallHandle(
-        "gdk_frame_clock_get_current_timings",
-        constants$1236.gdk_frame_clock_get_current_timings$FUNC
-    );
-    static final FunctionDescriptor gdk_frame_clock_get_refresh_info$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor atk_state_set_contains_states$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle atk_state_set_contains_states$MH = RuntimeHelper.downcallHandle(
+        "atk_state_set_contains_states",
+        constants$1236.atk_state_set_contains_states$FUNC
+    );
+    static final FunctionDescriptor atk_state_set_remove_state$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle atk_state_set_remove_state$MH = RuntimeHelper.downcallHandle(
+        "atk_state_set_remove_state",
+        constants$1236.atk_state_set_remove_state$FUNC
+    );
+    static final FunctionDescriptor atk_state_set_and_sets$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_frame_clock_get_refresh_info$MH = RuntimeHelper.downcallHandle(
-        "gdk_frame_clock_get_refresh_info",
-        constants$1236.gdk_frame_clock_get_refresh_info$FUNC
+    static final MethodHandle atk_state_set_and_sets$MH = RuntimeHelper.downcallHandle(
+        "atk_state_set_and_sets",
+        constants$1236.atk_state_set_and_sets$FUNC
+    );
+    static final FunctionDescriptor atk_state_set_or_sets$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle atk_state_set_or_sets$MH = RuntimeHelper.downcallHandle(
+        "atk_state_set_or_sets",
+        constants$1236.atk_state_set_or_sets$FUNC
     );
 }
 

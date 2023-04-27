@@ -7,57 +7,60 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1001 {
+final class constants$1001 {
 
-    static final FunctionDescriptor hb_set_has$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle hb_set_has$MH = RuntimeHelper.downcallHandle(
-        "hb_set_has",
-        constants$1001.hb_set_has$FUNC
-    );
-    static final FunctionDescriptor hb_set_add$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle hb_set_add$MH = RuntimeHelper.downcallHandle(
-        "hb_set_add",
-        constants$1001.hb_set_add$FUNC
-    );
-    static final FunctionDescriptor hb_set_add_range$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle hb_set_add_range$MH = RuntimeHelper.downcallHandle(
-        "hb_set_add_range",
-        constants$1001.hb_set_add_range$FUNC
-    );
-    static final FunctionDescriptor hb_set_del$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle hb_set_del$MH = RuntimeHelper.downcallHandle(
-        "hb_set_del",
-        constants$1001.hb_set_del$FUNC
-    );
-    static final FunctionDescriptor hb_set_del_range$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle hb_set_del_range$MH = RuntimeHelper.downcallHandle(
-        "hb_set_del_range",
-        constants$1001.hb_set_del_range$FUNC
-    );
-    static final FunctionDescriptor hb_set_is_equal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1001() {}
+    static final FunctionDescriptor cairo_set_matrix$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_set_is_equal$MH = RuntimeHelper.downcallHandle(
-        "hb_set_is_equal",
-        constants$1001.hb_set_is_equal$FUNC
+    static final MethodHandle cairo_set_matrix$MH = RuntimeHelper.downcallHandle(
+        "cairo_set_matrix",
+        constants$1001.cairo_set_matrix$FUNC
+    );
+    static final FunctionDescriptor cairo_identity_matrix$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cairo_identity_matrix$MH = RuntimeHelper.downcallHandle(
+        "cairo_identity_matrix",
+        constants$1001.cairo_identity_matrix$FUNC
+    );
+    static final FunctionDescriptor cairo_user_to_device$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cairo_user_to_device$MH = RuntimeHelper.downcallHandle(
+        "cairo_user_to_device",
+        constants$1001.cairo_user_to_device$FUNC
+    );
+    static final FunctionDescriptor cairo_user_to_device_distance$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cairo_user_to_device_distance$MH = RuntimeHelper.downcallHandle(
+        "cairo_user_to_device_distance",
+        constants$1001.cairo_user_to_device_distance$FUNC
+    );
+    static final FunctionDescriptor cairo_device_to_user$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cairo_device_to_user$MH = RuntimeHelper.downcallHandle(
+        "cairo_device_to_user",
+        constants$1001.cairo_device_to_user$FUNC
+    );
+    static final FunctionDescriptor cairo_device_to_user_distance$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cairo_device_to_user_distance$MH = RuntimeHelper.downcallHandle(
+        "cairo_device_to_user_distance",
+        constants$1001.cairo_device_to_user_distance$FUNC
     );
 }
 

@@ -7,48 +7,63 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1286 {
+final class constants$1286 {
 
-    static final FunctionDescriptor gdk_rgba_free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_rgba_free$MH = RuntimeHelper.downcallHandle(
-        "gdk_rgba_free",
-        constants$1286.gdk_rgba_free$FUNC
-    );
-    static final FunctionDescriptor gdk_rgba_hash$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_rgba_hash$MH = RuntimeHelper.downcallHandle(
-        "gdk_rgba_hash",
-        constants$1286.gdk_rgba_hash$FUNC
-    );
-    static final FunctionDescriptor gdk_rgba_equal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1286() {}
+    static final FunctionDescriptor gtk_widget_class_set_template$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_rgba_equal$MH = RuntimeHelper.downcallHandle(
-        "gdk_rgba_equal",
-        constants$1286.gdk_rgba_equal$FUNC
+    static final MethodHandle gtk_widget_class_set_template$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_class_set_template",
+        constants$1286.gtk_widget_class_set_template$FUNC
     );
-    static final FunctionDescriptor gdk_rgba_parse$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_widget_class_set_template_from_resource$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_rgba_parse$MH = RuntimeHelper.downcallHandle(
-        "gdk_rgba_parse",
-        constants$1286.gdk_rgba_parse$FUNC
+    static final MethodHandle gtk_widget_class_set_template_from_resource$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_class_set_template_from_resource",
+        constants$1286.gtk_widget_class_set_template_from_resource$FUNC
     );
-    static final FunctionDescriptor gdk_rgba_to_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_widget_class_bind_template_callback_full$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_rgba_to_string$MH = RuntimeHelper.downcallHandle(
-        "gdk_rgba_to_string",
-        constants$1286.gdk_rgba_to_string$FUNC
+    static final MethodHandle gtk_widget_class_bind_template_callback_full$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_class_bind_template_callback_full",
+        constants$1286.gtk_widget_class_bind_template_callback_full$FUNC
     );
-    static final  OfInt gdk_pixbuf_major_version$LAYOUT = Constants$root.C_INT$LAYOUT;
-    static final VarHandle gdk_pixbuf_major_version$VH = constants$1286.gdk_pixbuf_major_version$LAYOUT.varHandle();
-    static final MemorySegment gdk_pixbuf_major_version$SEGMENT = RuntimeHelper.lookupGlobalVariable("gdk_pixbuf_major_version", constants$1286.gdk_pixbuf_major_version$LAYOUT);
+    static final FunctionDescriptor gtk_widget_class_set_connect_func$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_class_set_connect_func$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_class_set_connect_func",
+        constants$1286.gtk_widget_class_set_connect_func$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_class_bind_template_child_full$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle gtk_widget_class_bind_template_child_full$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_class_bind_template_child_full",
+        constants$1286.gtk_widget_class_bind_template_child_full$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_get_action_group$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_get_action_group$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_action_group",
+        constants$1286.gtk_widget_get_action_group$FUNC
+    );
 }
 
 

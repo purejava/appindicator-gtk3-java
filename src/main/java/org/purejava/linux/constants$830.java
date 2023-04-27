@@ -7,50 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$830 {
+final class constants$830 {
 
-    static final FunctionDescriptor g_socket_connectable_enumerate$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$830() {}
+    static final FunctionDescriptor g_zlib_decompressor_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_zlib_decompressor_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_zlib_decompressor_get_type",
+        constants$830.g_zlib_decompressor_get_type$FUNC
+    );
+    static final FunctionDescriptor g_zlib_decompressor_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_zlib_decompressor_new$MH = RuntimeHelper.downcallHandle(
+        "g_zlib_decompressor_new",
+        constants$830.g_zlib_decompressor_new$FUNC
+    );
+    static final FunctionDescriptor g_zlib_decompressor_get_file_info$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_socket_connectable_enumerate$MH = RuntimeHelper.downcallHandle(
-        "g_socket_connectable_enumerate",
-        constants$830.g_socket_connectable_enumerate$FUNC
+    static final MethodHandle g_zlib_decompressor_get_file_info$MH = RuntimeHelper.downcallHandle(
+        "g_zlib_decompressor_get_file_info",
+        constants$830.g_zlib_decompressor_get_file_info$FUNC
     );
-    static final FunctionDescriptor g_socket_connectable_proxy_enumerate$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_connectable_proxy_enumerate$MH = RuntimeHelper.downcallHandle(
-        "g_socket_connectable_proxy_enumerate",
-        constants$830.g_socket_connectable_proxy_enumerate$FUNC
-    );
-    static final FunctionDescriptor g_socket_connectable_to_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_connectable_to_string$MH = RuntimeHelper.downcallHandle(
-        "g_socket_connectable_to_string",
-        constants$830.g_socket_connectable_to_string$FUNC
-    );
-    static final FunctionDescriptor g_socket_connection_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_socket_connection_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_socket_connection_get_type",
-        constants$830.g_socket_connection_get_type$FUNC
-    );
-    static final FunctionDescriptor g_socket_connection_is_connected$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_connection_is_connected$MH = RuntimeHelper.downcallHandle(
-        "g_socket_connection_is_connected",
-        constants$830.g_socket_connection_is_connected$FUNC
-    );
-    static final FunctionDescriptor g_socket_connection_connect$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor hb_tag_from_string$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle hb_tag_from_string$MH = RuntimeHelper.downcallHandle(
+        "hb_tag_from_string",
+        constants$830.hb_tag_from_string$FUNC
+    );
+    static final FunctionDescriptor hb_tag_to_string$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_socket_connection_connect$MH = RuntimeHelper.downcallHandle(
-        "g_socket_connection_connect",
-        constants$830.g_socket_connection_connect$FUNC
+    static final MethodHandle hb_tag_to_string$MH = RuntimeHelper.downcallHandle(
+        "hb_tag_to_string",
+        constants$830.hb_tag_to_string$FUNC
+    );
+    static final FunctionDescriptor hb_direction_from_string$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle hb_direction_from_string$MH = RuntimeHelper.downcallHandle(
+        "hb_direction_from_string",
+        constants$830.hb_direction_from_string$FUNC
     );
 }
 

@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GParamSpecBoxed extends _GParamSpecBoxed {
+/**
+ * {@snippet :
+ * typedef struct _GParamSpecBoxed GParamSpecBoxed;
+ * }
+ */
+public final class GParamSpecBoxed extends _GParamSpecBoxed {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GParamSpecBoxed() {}
 }
 
 

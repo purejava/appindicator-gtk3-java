@@ -7,53 +7,59 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1147 {
+final class constants$1147 {
 
-    static final FunctionDescriptor ftell$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle ftell$MH = RuntimeHelper.downcallHandle(
-        "ftell",
-        constants$1147.ftell$FUNC
-    );
-    static final FunctionDescriptor rewind$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rewind$MH = RuntimeHelper.downcallHandle(
-        "rewind",
-        constants$1147.rewind$FUNC
-    );
-    static final FunctionDescriptor fseeko$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1147() {}
+    static final FunctionDescriptor gdk_pixbuf_loader_set_size$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle fseeko$MH = RuntimeHelper.downcallHandle(
-        "fseeko",
-        constants$1147.fseeko$FUNC
+    static final MethodHandle gdk_pixbuf_loader_set_size$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_loader_set_size",
+        constants$1147.gdk_pixbuf_loader_set_size$FUNC
     );
-    static final FunctionDescriptor ftello$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+    static final FunctionDescriptor gdk_pixbuf_loader_write$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle ftello$MH = RuntimeHelper.downcallHandle(
-        "ftello",
-        constants$1147.ftello$FUNC
+    static final MethodHandle gdk_pixbuf_loader_write$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_loader_write",
+        constants$1147.gdk_pixbuf_loader_write$FUNC
     );
-    static final FunctionDescriptor fgetpos$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gdk_pixbuf_loader_write_bytes$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle fgetpos$MH = RuntimeHelper.downcallHandle(
-        "fgetpos",
-        constants$1147.fgetpos$FUNC
+    static final MethodHandle gdk_pixbuf_loader_write_bytes$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_loader_write_bytes",
+        constants$1147.gdk_pixbuf_loader_write_bytes$FUNC
     );
-    static final FunctionDescriptor fsetpos$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gdk_pixbuf_loader_get_pixbuf$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_pixbuf_loader_get_pixbuf$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_loader_get_pixbuf",
+        constants$1147.gdk_pixbuf_loader_get_pixbuf$FUNC
+    );
+    static final FunctionDescriptor gdk_pixbuf_loader_get_animation$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_pixbuf_loader_get_animation$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_loader_get_animation",
+        constants$1147.gdk_pixbuf_loader_get_animation$FUNC
+    );
+    static final FunctionDescriptor gdk_pixbuf_loader_close$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle fsetpos$MH = RuntimeHelper.downcallHandle(
-        "fsetpos",
-        constants$1147.fsetpos$FUNC
+    static final MethodHandle gdk_pixbuf_loader_close$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_loader_close",
+        constants$1147.gdk_pixbuf_loader_close$FUNC
     );
 }
 

@@ -7,50 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$371 {
+final class constants$371 {
 
-    static final FunctionDescriptor g_static_rec_mutex_lock$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_static_rec_mutex_lock$MH = RuntimeHelper.downcallHandle(
-        "g_static_rec_mutex_lock",
-        constants$371.g_static_rec_mutex_lock$FUNC
-    );
-    static final FunctionDescriptor g_static_rec_mutex_trylock$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_static_rec_mutex_trylock$MH = RuntimeHelper.downcallHandle(
-        "g_static_rec_mutex_trylock",
-        constants$371.g_static_rec_mutex_trylock$FUNC
-    );
-    static final FunctionDescriptor g_static_rec_mutex_unlock$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_static_rec_mutex_unlock$MH = RuntimeHelper.downcallHandle(
-        "g_static_rec_mutex_unlock",
-        constants$371.g_static_rec_mutex_unlock$FUNC
-    );
-    static final FunctionDescriptor g_static_rec_mutex_lock_full$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$371() {}
+    static final FunctionDescriptor pthread_barrier_init$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_static_rec_mutex_lock_full$MH = RuntimeHelper.downcallHandle(
-        "g_static_rec_mutex_lock_full",
-        constants$371.g_static_rec_mutex_lock_full$FUNC
+    static final MethodHandle pthread_barrier_init$MH = RuntimeHelper.downcallHandle(
+        "pthread_barrier_init",
+        constants$371.pthread_barrier_init$FUNC
     );
-    static final FunctionDescriptor g_static_rec_mutex_unlock_full$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor pthread_barrier_destroy$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_static_rec_mutex_unlock_full$MH = RuntimeHelper.downcallHandle(
-        "g_static_rec_mutex_unlock_full",
-        constants$371.g_static_rec_mutex_unlock_full$FUNC
+    static final MethodHandle pthread_barrier_destroy$MH = RuntimeHelper.downcallHandle(
+        "pthread_barrier_destroy",
+        constants$371.pthread_barrier_destroy$FUNC
     );
-    static final FunctionDescriptor g_static_rec_mutex_free$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pthread_barrier_wait$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_static_rec_mutex_free$MH = RuntimeHelper.downcallHandle(
-        "g_static_rec_mutex_free",
-        constants$371.g_static_rec_mutex_free$FUNC
+    static final MethodHandle pthread_barrier_wait$MH = RuntimeHelper.downcallHandle(
+        "pthread_barrier_wait",
+        constants$371.pthread_barrier_wait$FUNC
+    );
+    static final FunctionDescriptor pthread_barrierattr_init$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle pthread_barrierattr_init$MH = RuntimeHelper.downcallHandle(
+        "pthread_barrierattr_init",
+        constants$371.pthread_barrierattr_init$FUNC
+    );
+    static final FunctionDescriptor pthread_barrierattr_destroy$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle pthread_barrierattr_destroy$MH = RuntimeHelper.downcallHandle(
+        "pthread_barrierattr_destroy",
+        constants$371.pthread_barrierattr_destroy$FUNC
+    );
+    static final FunctionDescriptor pthread_barrierattr_getpshared$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle pthread_barrierattr_getpshared$MH = RuntimeHelper.downcallHandle(
+        "pthread_barrierattr_getpshared",
+        constants$371.pthread_barrierattr_getpshared$FUNC
     );
 }
 

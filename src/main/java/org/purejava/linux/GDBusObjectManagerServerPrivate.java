@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GDBusObjectManagerServerPrivate {
+/**
+ * {@snippet :
+ * typedef struct _GDBusObjectManagerServerPrivate GDBusObjectManagerServerPrivate;
+ * }
+ */
+public final class GDBusObjectManagerServerPrivate {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GDBusObjectManagerServerPrivate() {}
 }
 
 

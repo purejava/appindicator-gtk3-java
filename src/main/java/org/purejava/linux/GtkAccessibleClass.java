@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkAccessibleClass extends _GtkAccessibleClass {
+/**
+ * {@snippet :
+ * typedef struct _GtkAccessibleClass GtkAccessibleClass;
+ * }
+ */
+public final class GtkAccessibleClass extends _GtkAccessibleClass {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkAccessibleClass() {}
 }
 
 

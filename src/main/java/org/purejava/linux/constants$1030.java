@@ -7,52 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1030 {
+final class constants$1030 {
 
-    static final FunctionDescriptor hb_buffer_set_content_type$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1030() {}
+    static final FunctionDescriptor cairo_surface_observer_print$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle hb_buffer_set_content_type$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_set_content_type",
-        constants$1030.hb_buffer_set_content_type$FUNC
-    );
-    static final FunctionDescriptor hb_buffer_get_content_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_buffer_get_content_type$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_get_content_type",
-        constants$1030.hb_buffer_get_content_type$FUNC
-    );
-    static final FunctionDescriptor hb_buffer_set_unicode_funcs$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_buffer_set_unicode_funcs$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_set_unicode_funcs",
-        constants$1030.hb_buffer_set_unicode_funcs$FUNC
+    static final MethodHandle cairo_surface_observer_print$MH = RuntimeHelper.downcallHandle(
+        "cairo_surface_observer_print",
+        constants$1030.cairo_surface_observer_print$FUNC
     );
-    static final FunctionDescriptor hb_buffer_get_unicode_funcs$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor cairo_surface_observer_elapsed$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_buffer_get_unicode_funcs$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_get_unicode_funcs",
-        constants$1030.hb_buffer_get_unicode_funcs$FUNC
+    static final MethodHandle cairo_surface_observer_elapsed$MH = RuntimeHelper.downcallHandle(
+        "cairo_surface_observer_elapsed",
+        constants$1030.cairo_surface_observer_elapsed$FUNC
     );
-    static final FunctionDescriptor hb_buffer_set_direction$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor cairo_device_observer_print$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle hb_buffer_set_direction$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_set_direction",
-        constants$1030.hb_buffer_set_direction$FUNC
-    );
-    static final FunctionDescriptor hb_buffer_get_direction$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_buffer_get_direction$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_get_direction",
-        constants$1030.hb_buffer_get_direction$FUNC
+    static final MethodHandle cairo_device_observer_print$MH = RuntimeHelper.downcallHandle(
+        "cairo_device_observer_print",
+        constants$1030.cairo_device_observer_print$FUNC
+    );
+    static final FunctionDescriptor cairo_device_observer_elapsed$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cairo_device_observer_elapsed$MH = RuntimeHelper.downcallHandle(
+        "cairo_device_observer_elapsed",
+        constants$1030.cairo_device_observer_elapsed$FUNC
+    );
+    static final FunctionDescriptor cairo_device_observer_paint_elapsed$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cairo_device_observer_paint_elapsed$MH = RuntimeHelper.downcallHandle(
+        "cairo_device_observer_paint_elapsed",
+        constants$1030.cairo_device_observer_paint_elapsed$FUNC
+    );
+    static final FunctionDescriptor cairo_device_observer_mask_elapsed$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cairo_device_observer_mask_elapsed$MH = RuntimeHelper.downcallHandle(
+        "cairo_device_observer_mask_elapsed",
+        constants$1030.cairo_device_observer_mask_elapsed$FUNC
     );
 }
 

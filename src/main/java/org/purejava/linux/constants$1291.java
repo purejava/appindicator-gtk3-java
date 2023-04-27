@@ -7,66 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1291 {
+final class constants$1291 {
 
-    static final FunctionDescriptor gdk_pixbuf_new_subpixbuf$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1291() {}
+    static final FunctionDescriptor gtk_application_get_menu_by_id$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_application_get_menu_by_id$MH = RuntimeHelper.downcallHandle(
+        "gtk_application_get_menu_by_id",
+        constants$1291.gtk_application_get_menu_by_id$FUNC
+    );
+    static final FunctionDescriptor gtk_container_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_container_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_container_get_type",
+        constants$1291.gtk_container_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_container_set_border_width$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gdk_pixbuf_new_subpixbuf$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_new_subpixbuf",
-        constants$1291.gdk_pixbuf_new_subpixbuf$FUNC
+    static final MethodHandle gtk_container_set_border_width$MH = RuntimeHelper.downcallHandle(
+        "gtk_container_set_border_width",
+        constants$1291.gtk_container_set_border_width$FUNC
     );
-    static final FunctionDescriptor gdk_pixbuf_new_from_file$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_container_get_border_width$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_container_get_border_width$MH = RuntimeHelper.downcallHandle(
+        "gtk_container_get_border_width",
+        constants$1291.gtk_container_get_border_width$FUNC
+    );
+    static final FunctionDescriptor gtk_container_add$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_pixbuf_new_from_file$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_new_from_file",
-        constants$1291.gdk_pixbuf_new_from_file$FUNC
+    static final MethodHandle gtk_container_add$MH = RuntimeHelper.downcallHandle(
+        "gtk_container_add",
+        constants$1291.gtk_container_add$FUNC
     );
-    static final FunctionDescriptor gdk_pixbuf_new_from_file_at_size$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_new_from_file_at_size$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_new_from_file_at_size",
-        constants$1291.gdk_pixbuf_new_from_file_at_size$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_new_from_file_at_scale$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_new_from_file_at_scale$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_new_from_file_at_scale",
-        constants$1291.gdk_pixbuf_new_from_file_at_scale$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_new_from_resource$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_container_remove$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_pixbuf_new_from_resource$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_new_from_resource",
-        constants$1291.gdk_pixbuf_new_from_resource$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_new_from_resource_at_scale$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_new_from_resource_at_scale$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_new_from_resource_at_scale",
-        constants$1291.gdk_pixbuf_new_from_resource_at_scale$FUNC
+    static final MethodHandle gtk_container_remove$MH = RuntimeHelper.downcallHandle(
+        "gtk_container_remove",
+        constants$1291.gtk_container_remove$FUNC
     );
 }
 

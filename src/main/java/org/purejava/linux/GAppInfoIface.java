@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GAppInfoIface extends _GAppInfoIface {
+/**
+ * {@snippet :
+ * typedef struct _GAppInfoIface GAppInfoIface;
+ * }
+ */
+public final class GAppInfoIface extends _GAppInfoIface {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GAppInfoIface() {}
 }
 
 

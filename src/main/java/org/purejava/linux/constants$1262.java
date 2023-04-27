@@ -7,53 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1262 {
+final class constants$1262 {
 
-    static final FunctionDescriptor gdk_window_process_all_updates$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle gdk_window_process_all_updates$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_process_all_updates",
-        constants$1262.gdk_window_process_all_updates$FUNC
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1262() {}
+    static final FunctionDescriptor gtk_widget_get_app_paintable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor gdk_window_process_updates$FUNC = FunctionDescriptor.ofVoid(
+    static final MethodHandle gtk_widget_get_app_paintable$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_app_paintable",
+        constants$1262.gtk_widget_get_app_paintable$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_set_double_buffered$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gdk_window_process_updates$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_process_updates",
-        constants$1262.gdk_window_process_updates$FUNC
+    static final MethodHandle gtk_widget_set_double_buffered$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_set_double_buffered",
+        constants$1262.gtk_widget_set_double_buffered$FUNC
     );
-    static final FunctionDescriptor gdk_window_set_debug_updates$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_widget_get_double_buffered$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_get_double_buffered$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_double_buffered",
+        constants$1262.gtk_widget_get_double_buffered$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_set_redraw_on_allocate$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gdk_window_set_debug_updates$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_debug_updates",
-        constants$1262.gdk_window_set_debug_updates$FUNC
+    static final MethodHandle gtk_widget_set_redraw_on_allocate$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_set_redraw_on_allocate",
+        constants$1262.gtk_widget_set_redraw_on_allocate$FUNC
     );
-    static final FunctionDescriptor gdk_window_constrain_size$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_widget_set_parent$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_window_constrain_size$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_constrain_size",
-        constants$1262.gdk_window_constrain_size$FUNC
+    static final MethodHandle gtk_widget_set_parent$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_set_parent",
+        constants$1262.gtk_widget_set_parent$FUNC
     );
-    static final FunctionDescriptor gdk_window_enable_synchronized_configure$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_widget_get_parent$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_window_enable_synchronized_configure$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_enable_synchronized_configure",
-        constants$1262.gdk_window_enable_synchronized_configure$FUNC
-    );
-    static final FunctionDescriptor gdk_window_configure_finished$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_configure_finished$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_configure_finished",
-        constants$1262.gdk_window_configure_finished$FUNC
+    static final MethodHandle gtk_widget_get_parent$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_parent",
+        constants$1262.gtk_widget_get_parent$FUNC
     );
 }
 

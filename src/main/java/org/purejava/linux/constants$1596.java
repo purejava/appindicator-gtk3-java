@@ -7,50 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1596 {
+final class constants$1596 {
 
-    static final FunctionDescriptor gtk_text_iter_starts_line$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1596() {}
+    static final FunctionDescriptor gtk_font_chooser_get_font_family$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_text_iter_starts_line$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_starts_line",
-        constants$1596.gtk_text_iter_starts_line$FUNC
+    static final MethodHandle gtk_font_chooser_get_font_family$MH = RuntimeHelper.downcallHandle(
+        "gtk_font_chooser_get_font_family",
+        constants$1596.gtk_font_chooser_get_font_family$FUNC
     );
-    static final FunctionDescriptor gtk_text_iter_ends_line$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_font_chooser_get_font_face$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_text_iter_ends_line$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_ends_line",
-        constants$1596.gtk_text_iter_ends_line$FUNC
+    static final MethodHandle gtk_font_chooser_get_font_face$MH = RuntimeHelper.downcallHandle(
+        "gtk_font_chooser_get_font_face",
+        constants$1596.gtk_font_chooser_get_font_face$FUNC
     );
-    static final FunctionDescriptor gtk_text_iter_is_cursor_position$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_font_chooser_get_font_size$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_text_iter_is_cursor_position$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_is_cursor_position",
-        constants$1596.gtk_text_iter_is_cursor_position$FUNC
+    static final MethodHandle gtk_font_chooser_get_font_size$MH = RuntimeHelper.downcallHandle(
+        "gtk_font_chooser_get_font_size",
+        constants$1596.gtk_font_chooser_get_font_size$FUNC
     );
-    static final FunctionDescriptor gtk_text_iter_get_chars_in_line$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_font_chooser_get_font_desc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_text_iter_get_chars_in_line$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_get_chars_in_line",
-        constants$1596.gtk_text_iter_get_chars_in_line$FUNC
+    static final MethodHandle gtk_font_chooser_get_font_desc$MH = RuntimeHelper.downcallHandle(
+        "gtk_font_chooser_get_font_desc",
+        constants$1596.gtk_font_chooser_get_font_desc$FUNC
     );
-    static final FunctionDescriptor gtk_text_iter_get_bytes_in_line$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_iter_get_bytes_in_line$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_get_bytes_in_line",
-        constants$1596.gtk_text_iter_get_bytes_in_line$FUNC
-    );
-    static final FunctionDescriptor gtk_text_iter_get_attributes$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_font_chooser_set_font_desc$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_text_iter_get_attributes$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_get_attributes",
-        constants$1596.gtk_text_iter_get_attributes$FUNC
+    static final MethodHandle gtk_font_chooser_set_font_desc$MH = RuntimeHelper.downcallHandle(
+        "gtk_font_chooser_set_font_desc",
+        constants$1596.gtk_font_chooser_set_font_desc$FUNC
+    );
+    static final FunctionDescriptor gtk_font_chooser_get_font$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_font_chooser_get_font$MH = RuntimeHelper.downcallHandle(
+        "gtk_font_chooser_get_font",
+        constants$1596.gtk_font_chooser_get_font$FUNC
     );
 }
 

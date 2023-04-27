@@ -7,50 +7,103 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1962 {
+final class constants$1962 {
 
-    static final FunctionDescriptor gtk_radio_tool_button_get_group$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_radio_tool_button_get_group$MH = RuntimeHelper.downcallHandle(
-        "gtk_radio_tool_button_get_group",
-        constants$1962.gtk_radio_tool_button_get_group$FUNC
-    );
-    static final FunctionDescriptor gtk_radio_tool_button_set_group$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1962() {}
+    static final FunctionDescriptor gtk_paint_focus$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_radio_tool_button_set_group$MH = RuntimeHelper.downcallHandle(
-        "gtk_radio_tool_button_set_group",
-        constants$1962.gtk_radio_tool_button_set_group$FUNC
-    );
-    static final FunctionDescriptor gtk_range_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_range_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_range_get_type",
-        constants$1962.gtk_range_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_range_set_adjustment$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_range_set_adjustment$MH = RuntimeHelper.downcallHandle(
-        "gtk_range_set_adjustment",
-        constants$1962.gtk_range_set_adjustment$FUNC
-    );
-    static final FunctionDescriptor gtk_range_get_adjustment$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_range_get_adjustment$MH = RuntimeHelper.downcallHandle(
-        "gtk_range_get_adjustment",
-        constants$1962.gtk_range_get_adjustment$FUNC
-    );
-    static final FunctionDescriptor gtk_range_set_inverted$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_range_set_inverted$MH = RuntimeHelper.downcallHandle(
-        "gtk_range_set_inverted",
-        constants$1962.gtk_range_set_inverted$FUNC
+    static final MethodHandle gtk_paint_focus$MH = RuntimeHelper.downcallHandle(
+        "gtk_paint_focus",
+        constants$1962.gtk_paint_focus$FUNC
+    );
+    static final FunctionDescriptor gtk_paint_slider$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_paint_slider$MH = RuntimeHelper.downcallHandle(
+        "gtk_paint_slider",
+        constants$1962.gtk_paint_slider$FUNC
+    );
+    static final FunctionDescriptor gtk_paint_handle$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_paint_handle$MH = RuntimeHelper.downcallHandle(
+        "gtk_paint_handle",
+        constants$1962.gtk_paint_handle$FUNC
+    );
+    static final FunctionDescriptor gtk_paint_expander$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_paint_expander$MH = RuntimeHelper.downcallHandle(
+        "gtk_paint_expander",
+        constants$1962.gtk_paint_expander$FUNC
+    );
+    static final FunctionDescriptor gtk_paint_layout$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_paint_layout$MH = RuntimeHelper.downcallHandle(
+        "gtk_paint_layout",
+        constants$1962.gtk_paint_layout$FUNC
+    );
+    static final FunctionDescriptor gtk_paint_resize_grip$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_paint_resize_grip$MH = RuntimeHelper.downcallHandle(
+        "gtk_paint_resize_grip",
+        constants$1962.gtk_paint_resize_grip$FUNC
     );
 }
 

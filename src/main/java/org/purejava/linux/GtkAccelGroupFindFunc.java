@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * int (*GtkAccelGroupFindFunc)(struct _GtkAccelKey* key,struct _GClosure* closure,void* data);
+ * }
+ */
 public interface GtkAccelGroupFindFunc {
 
-    int apply(java.lang.foreign.MemoryAddress key, java.lang.foreign.MemoryAddress closure, java.lang.foreign.MemoryAddress data);
-    static MemorySegment allocate(GtkAccelGroupFindFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GtkAccelGroupFindFunc.class, fi, constants$1366.GtkAccelGroupFindFunc$FUNC, session);
+    int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
+    static MemorySegment allocate(GtkAccelGroupFindFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$1189.GtkAccelGroupFindFunc_UP$MH, fi, constants$1189.GtkAccelGroupFindFunc$FUNC, scope);
     }
-    static GtkAccelGroupFindFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _key, java.lang.foreign.MemoryAddress _closure, java.lang.foreign.MemoryAddress _data) -> {
+    static GtkAccelGroupFindFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _a, java.lang.foreign.MemorySegment _b, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                return (int)constants$1366.GtkAccelGroupFindFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_key, (java.lang.foreign.Addressable)_closure, (java.lang.foreign.Addressable)_data);
+                return (int)constants$1189.GtkAccelGroupFindFunc_DOWN$MH.invokeExact(symbol, _a, _b, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

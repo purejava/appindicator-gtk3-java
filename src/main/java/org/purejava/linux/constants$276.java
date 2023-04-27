@@ -7,57 +7,56 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$276 {
+final class constants$276 {
 
-    static final FunctionDescriptor g_regex_escape_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$276() {}
+    static final FunctionDescriptor g_queue_push_head$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_queue_push_head$MH = RuntimeHelper.downcallHandle(
+        "g_queue_push_head",
+        constants$276.g_queue_push_head$FUNC
+    );
+    static final FunctionDescriptor g_queue_push_tail$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_queue_push_tail$MH = RuntimeHelper.downcallHandle(
+        "g_queue_push_tail",
+        constants$276.g_queue_push_tail$FUNC
+    );
+    static final FunctionDescriptor g_queue_push_nth$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_regex_escape_string$MH = RuntimeHelper.downcallHandle(
-        "g_regex_escape_string",
-        constants$276.g_regex_escape_string$FUNC
+    static final MethodHandle g_queue_push_nth$MH = RuntimeHelper.downcallHandle(
+        "g_queue_push_nth",
+        constants$276.g_queue_push_nth$FUNC
     );
-    static final FunctionDescriptor g_regex_escape_nul$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_queue_pop_head$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_queue_pop_head$MH = RuntimeHelper.downcallHandle(
+        "g_queue_pop_head",
+        constants$276.g_queue_pop_head$FUNC
+    );
+    static final FunctionDescriptor g_queue_pop_tail$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_queue_pop_tail$MH = RuntimeHelper.downcallHandle(
+        "g_queue_pop_tail",
+        constants$276.g_queue_pop_tail$FUNC
+    );
+    static final FunctionDescriptor g_queue_pop_nth$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_regex_escape_nul$MH = RuntimeHelper.downcallHandle(
-        "g_regex_escape_nul",
-        constants$276.g_regex_escape_nul$FUNC
-    );
-    static final FunctionDescriptor g_regex_get_compile_flags$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_regex_get_compile_flags$MH = RuntimeHelper.downcallHandle(
-        "g_regex_get_compile_flags",
-        constants$276.g_regex_get_compile_flags$FUNC
-    );
-    static final FunctionDescriptor g_regex_get_match_flags$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_regex_get_match_flags$MH = RuntimeHelper.downcallHandle(
-        "g_regex_get_match_flags",
-        constants$276.g_regex_get_match_flags$FUNC
-    );
-    static final FunctionDescriptor g_regex_match_simple$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_regex_match_simple$MH = RuntimeHelper.downcallHandle(
-        "g_regex_match_simple",
-        constants$276.g_regex_match_simple$FUNC
-    );
-    static final FunctionDescriptor g_regex_match$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_regex_match$MH = RuntimeHelper.downcallHandle(
-        "g_regex_match",
-        constants$276.g_regex_match$FUNC
+    static final MethodHandle g_queue_pop_nth$MH = RuntimeHelper.downcallHandle(
+        "g_queue_pop_nth",
+        constants$276.g_queue_pop_nth$FUNC
     );
 }
 

@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * void (*GtkCellLayoutDataFunc)(struct _GtkCellLayout* cell_layout,struct _GtkCellRenderer* cell,struct _GtkTreeModel* tree_model,struct _GtkTreeIter* iter,void* data);
+ * }
+ */
 public interface GtkCellLayoutDataFunc {
 
-    void apply(java.lang.foreign.MemoryAddress cell_layout, java.lang.foreign.MemoryAddress cell, java.lang.foreign.MemoryAddress tree_model, java.lang.foreign.MemoryAddress iter, java.lang.foreign.MemoryAddress data);
-    static MemorySegment allocate(GtkCellLayoutDataFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GtkCellLayoutDataFunc.class, fi, constants$1711.GtkCellLayoutDataFunc$FUNC, session);
+    void apply(java.lang.foreign.MemorySegment cell_layout, java.lang.foreign.MemorySegment cell, java.lang.foreign.MemorySegment tree_model, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment data);
+    static MemorySegment allocate(GtkCellLayoutDataFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$1520.GtkCellLayoutDataFunc_UP$MH, fi, constants$1520.GtkCellLayoutDataFunc$FUNC, scope);
     }
-    static GtkCellLayoutDataFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _cell_layout, java.lang.foreign.MemoryAddress _cell, java.lang.foreign.MemoryAddress _tree_model, java.lang.foreign.MemoryAddress _iter, java.lang.foreign.MemoryAddress _data) -> {
+    static GtkCellLayoutDataFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _cell_layout, java.lang.foreign.MemorySegment _cell, java.lang.foreign.MemorySegment _tree_model, java.lang.foreign.MemorySegment _iter, java.lang.foreign.MemorySegment _data) -> {
             try {
-                constants$1711.GtkCellLayoutDataFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_cell_layout, (java.lang.foreign.Addressable)_cell, (java.lang.foreign.Addressable)_tree_model, (java.lang.foreign.Addressable)_iter, (java.lang.foreign.Addressable)_data);
+                constants$1520.GtkCellLayoutDataFunc_DOWN$MH.invokeExact(symbol, _cell_layout, _cell, _tree_model, _iter, _data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

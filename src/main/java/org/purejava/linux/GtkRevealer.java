@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkRevealer extends _GtkRevealer {
+/**
+ * {@snippet :
+ * typedef struct _GtkRevealer GtkRevealer;
+ * }
+ */
+public final class GtkRevealer extends _GtkRevealer {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkRevealer() {}
 }
 
 

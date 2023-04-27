@@ -7,41 +7,39 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1882 {
+final class constants$1882 {
 
-    static final FunctionDescriptor gtk_main_iteration$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle gtk_main_iteration$MH = RuntimeHelper.downcallHandle(
-        "gtk_main_iteration",
-        constants$1882.gtk_main_iteration$FUNC
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1882() {}
+    static final FunctionDescriptor gtk_direction_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_direction_type_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_direction_type_get_type",
+        constants$1882.gtk_direction_type_get_type$FUNC
     );
-    static final FunctionDescriptor gtk_main_iteration_do$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor gtk_icon_size_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_icon_size_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_size_get_type",
+        constants$1882.gtk_icon_size_get_type$FUNC
     );
-    static final MethodHandle gtk_main_iteration_do$MH = RuntimeHelper.downcallHandle(
-        "gtk_main_iteration_do",
-        constants$1882.gtk_main_iteration_do$FUNC
+    static final FunctionDescriptor gtk_sensitivity_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_sensitivity_type_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_sensitivity_type_get_type",
+        constants$1882.gtk_sensitivity_type_get_type$FUNC
     );
-    static final FunctionDescriptor gtk_true$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle gtk_true$MH = RuntimeHelper.downcallHandle(
-        "gtk_true",
-        constants$1882.gtk_true$FUNC
+    static final FunctionDescriptor gtk_text_direction_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_text_direction_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_direction_get_type",
+        constants$1882.gtk_text_direction_get_type$FUNC
     );
-    static final FunctionDescriptor gtk_false$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle gtk_false$MH = RuntimeHelper.downcallHandle(
-        "gtk_false",
-        constants$1882.gtk_false$FUNC
+    static final FunctionDescriptor gtk_justification_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_justification_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_justification_get_type",
+        constants$1882.gtk_justification_get_type$FUNC
     );
-    static final FunctionDescriptor gtk_grab_add$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_grab_add$MH = RuntimeHelper.downcallHandle(
-        "gtk_grab_add",
-        constants$1882.gtk_grab_add$FUNC
-    );
-    static final FunctionDescriptor gtk_grab_get_current$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_grab_get_current$MH = RuntimeHelper.downcallHandle(
-        "gtk_grab_get_current",
-        constants$1882.gtk_grab_get_current$FUNC
+    static final FunctionDescriptor gtk_menu_direction_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_menu_direction_type_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_direction_type_get_type",
+        constants$1882.gtk_menu_direction_type_get_type$FUNC
     );
 }
 

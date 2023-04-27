@@ -7,47 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1269 {
+final class constants$1269 {
 
-    static final FunctionDescriptor gdk_monitor_get_scale_factor$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1269() {}
+    static final FunctionDescriptor gtk_widget_get_scale_factor$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_monitor_get_scale_factor$MH = RuntimeHelper.downcallHandle(
-        "gdk_monitor_get_scale_factor",
-        constants$1269.gdk_monitor_get_scale_factor$FUNC
+    static final MethodHandle gtk_widget_get_scale_factor$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_scale_factor",
+        constants$1269.gtk_widget_get_scale_factor$FUNC
     );
-    static final FunctionDescriptor gdk_monitor_get_refresh_rate$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_widget_get_display$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_monitor_get_refresh_rate$MH = RuntimeHelper.downcallHandle(
-        "gdk_monitor_get_refresh_rate",
-        constants$1269.gdk_monitor_get_refresh_rate$FUNC
+    static final MethodHandle gtk_widget_get_display$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_display",
+        constants$1269.gtk_widget_get_display$FUNC
     );
-    static final FunctionDescriptor gdk_monitor_get_subpixel_layout$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_widget_get_root_window$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_monitor_get_subpixel_layout$MH = RuntimeHelper.downcallHandle(
-        "gdk_monitor_get_subpixel_layout",
-        constants$1269.gdk_monitor_get_subpixel_layout$FUNC
+    static final MethodHandle gtk_widget_get_root_window$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_root_window",
+        constants$1269.gtk_widget_get_root_window$FUNC
     );
-    static final FunctionDescriptor gdk_monitor_is_primary$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_widget_get_settings$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_monitor_is_primary$MH = RuntimeHelper.downcallHandle(
-        "gdk_monitor_is_primary",
-        constants$1269.gdk_monitor_is_primary$FUNC
+    static final MethodHandle gtk_widget_get_settings$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_settings",
+        constants$1269.gtk_widget_get_settings$FUNC
     );
-    static final FunctionDescriptor gdk_display_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_display_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_get_type",
-        constants$1269.gdk_display_get_type$FUNC
-    );
-    static final FunctionDescriptor gdk_display_open$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_widget_get_clipboard$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_display_open$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_open",
-        constants$1269.gdk_display_open$FUNC
+    static final MethodHandle gtk_widget_get_clipboard$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_clipboard",
+        constants$1269.gtk_widget_get_clipboard$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_get_hexpand$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_get_hexpand$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_hexpand",
+        constants$1269.gtk_widget_get_hexpand$FUNC
     );
 }
 

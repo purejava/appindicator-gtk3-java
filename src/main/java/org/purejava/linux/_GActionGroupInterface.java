@@ -7,9 +7,30 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GActionGroupInterface {
+ *     GTypeInterface g_iface;
+ *     gboolean (*has_action)(GActionGroup*,const gchar*);
+ *     gchar** (*list_actions)(GActionGroup*);
+ *     gboolean (*get_action_enabled)(GActionGroup*,const gchar*);
+ *     const GVariantType* (*get_action_parameter_type)(GActionGroup*,const gchar*);
+ *     const GVariantType* (*get_action_state_type)(GActionGroup*,const gchar*);
+ *     GVariant* (*get_action_state_hint)(GActionGroup*,const gchar*);
+ *     GVariant* (*get_action_state)(GActionGroup*,const gchar*);
+ *     void (*change_action_state)(GActionGroup*,const gchar*,GVariant*);
+ *     void (*activate_action)(GActionGroup*,const gchar*,GVariant*);
+ *     void (*action_added)(GActionGroup*,const gchar*);
+ *     void (*action_removed)(GActionGroup*,const gchar*);
+ *     void (*action_enabled_changed)(GActionGroup*,const gchar*,gboolean);
+ *     void (*action_state_changed)(GActionGroup*,const gchar*,GVariant*);
+ *     gboolean (*query_action)(GActionGroup*,const gchar*,gboolean*,const GVariantType**,const GVariantType**,GVariant**,GVariant**);
+ * };
+ * }
+ */
 public class _GActionGroupInterface {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             Constants$root.C_LONG_LONG$LAYOUT.withName("g_type"),
             Constants$root.C_LONG_LONG$LAYOUT.withName("g_instance_type")
@@ -39,20 +60,34 @@ public class _GActionGroupInterface {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle has_action$MH = RuntimeHelper.downcallHandle(
-        _GActionGroupInterface.has_action$FUNC
+    static final FunctionDescriptor has_action_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle has_action_UP$MH = RuntimeHelper.upcallHandle(has_action.class, "apply", _GActionGroupInterface.has_action_UP$FUNC);
+    static final FunctionDescriptor has_action_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle has_action_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GActionGroupInterface.has_action_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*has_action)(GActionGroup*,const gchar*);
+     * }
+     */
     public interface has_action {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(has_action fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(has_action.class, fi, _GActionGroupInterface.has_action$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1);
+        static MemorySegment allocate(has_action fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GActionGroupInterface.has_action_UP$MH, fi, _GActionGroupInterface.has_action$FUNC, scope);
         }
-        static has_action ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static has_action ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1) -> {
                 try {
-                    return (int)_GActionGroupInterface.has_action$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    return (int)_GActionGroupInterface.has_action_DOWN$MH.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -64,38 +99,62 @@ public class _GActionGroupInterface {
     public static VarHandle has_action$VH() {
         return _GActionGroupInterface.has_action$VH;
     }
-    public static MemoryAddress has_action$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GActionGroupInterface.has_action$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*has_action)(GActionGroup*,const gchar*);
+     * }
+     */
+    public static MemorySegment has_action$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GActionGroupInterface.has_action$VH.get(seg);
     }
-    public static void has_action$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*has_action)(GActionGroup*,const gchar*);
+     * }
+     */
+    public static void has_action$set(MemorySegment seg, MemorySegment x) {
         _GActionGroupInterface.has_action$VH.set(seg, x);
     }
-    public static MemoryAddress has_action$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GActionGroupInterface.has_action$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment has_action$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GActionGroupInterface.has_action$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void has_action$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void has_action$set(MemorySegment seg, long index, MemorySegment x) {
         _GActionGroupInterface.has_action$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static has_action has_action (MemorySegment segment, MemorySession session) {
-        return has_action.ofAddress(has_action$get(segment), session);
+    public static has_action has_action(MemorySegment segment, SegmentScope scope) {
+        return has_action.ofAddress(has_action$get(segment), scope);
     }
     static final FunctionDescriptor list_actions$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle list_actions$MH = RuntimeHelper.downcallHandle(
-        _GActionGroupInterface.list_actions$FUNC
+    static final FunctionDescriptor list_actions_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle list_actions_UP$MH = RuntimeHelper.upcallHandle(list_actions.class, "apply", _GActionGroupInterface.list_actions_UP$FUNC);
+    static final FunctionDescriptor list_actions_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle list_actions_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GActionGroupInterface.list_actions_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gchar** (*list_actions)(GActionGroup*);
+     * }
+     */
     public interface list_actions {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(list_actions fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(list_actions.class, fi, _GActionGroupInterface.list_actions$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(list_actions fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GActionGroupInterface.list_actions_UP$MH, fi, _GActionGroupInterface.list_actions$FUNC, scope);
         }
-        static list_actions ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static list_actions ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GActionGroupInterface.list_actions$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (java.lang.foreign.MemorySegment)_GActionGroupInterface.list_actions_DOWN$MH.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -107,39 +166,65 @@ public class _GActionGroupInterface {
     public static VarHandle list_actions$VH() {
         return _GActionGroupInterface.list_actions$VH;
     }
-    public static MemoryAddress list_actions$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GActionGroupInterface.list_actions$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gchar** (*list_actions)(GActionGroup*);
+     * }
+     */
+    public static MemorySegment list_actions$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GActionGroupInterface.list_actions$VH.get(seg);
     }
-    public static void list_actions$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gchar** (*list_actions)(GActionGroup*);
+     * }
+     */
+    public static void list_actions$set(MemorySegment seg, MemorySegment x) {
         _GActionGroupInterface.list_actions$VH.set(seg, x);
     }
-    public static MemoryAddress list_actions$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GActionGroupInterface.list_actions$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment list_actions$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GActionGroupInterface.list_actions$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void list_actions$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void list_actions$set(MemorySegment seg, long index, MemorySegment x) {
         _GActionGroupInterface.list_actions$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static list_actions list_actions (MemorySegment segment, MemorySession session) {
-        return list_actions.ofAddress(list_actions$get(segment), session);
+    public static list_actions list_actions(MemorySegment segment, SegmentScope scope) {
+        return list_actions.ofAddress(list_actions$get(segment), scope);
     }
     static final FunctionDescriptor get_action_enabled$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_action_enabled$MH = RuntimeHelper.downcallHandle(
-        _GActionGroupInterface.get_action_enabled$FUNC
+    static final FunctionDescriptor get_action_enabled_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_action_enabled_UP$MH = RuntimeHelper.upcallHandle(get_action_enabled.class, "apply", _GActionGroupInterface.get_action_enabled_UP$FUNC);
+    static final FunctionDescriptor get_action_enabled_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_action_enabled_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GActionGroupInterface.get_action_enabled_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*get_action_enabled)(GActionGroup*,const gchar*);
+     * }
+     */
     public interface get_action_enabled {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(get_action_enabled fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_action_enabled.class, fi, _GActionGroupInterface.get_action_enabled$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1);
+        static MemorySegment allocate(get_action_enabled fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GActionGroupInterface.get_action_enabled_UP$MH, fi, _GActionGroupInterface.get_action_enabled$FUNC, scope);
         }
-        static get_action_enabled ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static get_action_enabled ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1) -> {
                 try {
-                    return (int)_GActionGroupInterface.get_action_enabled$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    return (int)_GActionGroupInterface.get_action_enabled_DOWN$MH.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -151,39 +236,65 @@ public class _GActionGroupInterface {
     public static VarHandle get_action_enabled$VH() {
         return _GActionGroupInterface.get_action_enabled$VH;
     }
-    public static MemoryAddress get_action_enabled$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GActionGroupInterface.get_action_enabled$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*get_action_enabled)(GActionGroup*,const gchar*);
+     * }
+     */
+    public static MemorySegment get_action_enabled$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GActionGroupInterface.get_action_enabled$VH.get(seg);
     }
-    public static void get_action_enabled$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*get_action_enabled)(GActionGroup*,const gchar*);
+     * }
+     */
+    public static void get_action_enabled$set(MemorySegment seg, MemorySegment x) {
         _GActionGroupInterface.get_action_enabled$VH.set(seg, x);
     }
-    public static MemoryAddress get_action_enabled$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GActionGroupInterface.get_action_enabled$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_action_enabled$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GActionGroupInterface.get_action_enabled$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_action_enabled$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_action_enabled$set(MemorySegment seg, long index, MemorySegment x) {
         _GActionGroupInterface.get_action_enabled$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_action_enabled get_action_enabled (MemorySegment segment, MemorySession session) {
-        return get_action_enabled.ofAddress(get_action_enabled$get(segment), session);
+    public static get_action_enabled get_action_enabled(MemorySegment segment, SegmentScope scope) {
+        return get_action_enabled.ofAddress(get_action_enabled$get(segment), scope);
     }
     static final FunctionDescriptor get_action_parameter_type$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_action_parameter_type$MH = RuntimeHelper.downcallHandle(
-        _GActionGroupInterface.get_action_parameter_type$FUNC
+    static final FunctionDescriptor get_action_parameter_type_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_action_parameter_type_UP$MH = RuntimeHelper.upcallHandle(get_action_parameter_type.class, "apply", _GActionGroupInterface.get_action_parameter_type_UP$FUNC);
+    static final FunctionDescriptor get_action_parameter_type_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_action_parameter_type_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GActionGroupInterface.get_action_parameter_type_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * const GVariantType* (*get_action_parameter_type)(GActionGroup*,const gchar*);
+     * }
+     */
     public interface get_action_parameter_type {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(get_action_parameter_type fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_action_parameter_type.class, fi, _GActionGroupInterface.get_action_parameter_type$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment func_data);
+        static MemorySegment allocate(get_action_parameter_type fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GActionGroupInterface.get_action_parameter_type_UP$MH, fi, _GActionGroupInterface.get_action_parameter_type$FUNC, scope);
         }
-        static get_action_parameter_type ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static get_action_parameter_type ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _path, java.lang.foreign.MemorySegment _func_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GActionGroupInterface.get_action_parameter_type$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    return (java.lang.foreign.MemorySegment)_GActionGroupInterface.get_action_parameter_type_DOWN$MH.invokeExact(symbol, _path, _func_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -195,39 +306,65 @@ public class _GActionGroupInterface {
     public static VarHandle get_action_parameter_type$VH() {
         return _GActionGroupInterface.get_action_parameter_type$VH;
     }
-    public static MemoryAddress get_action_parameter_type$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GActionGroupInterface.get_action_parameter_type$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * const GVariantType* (*get_action_parameter_type)(GActionGroup*,const gchar*);
+     * }
+     */
+    public static MemorySegment get_action_parameter_type$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GActionGroupInterface.get_action_parameter_type$VH.get(seg);
     }
-    public static void get_action_parameter_type$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * const GVariantType* (*get_action_parameter_type)(GActionGroup*,const gchar*);
+     * }
+     */
+    public static void get_action_parameter_type$set(MemorySegment seg, MemorySegment x) {
         _GActionGroupInterface.get_action_parameter_type$VH.set(seg, x);
     }
-    public static MemoryAddress get_action_parameter_type$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GActionGroupInterface.get_action_parameter_type$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_action_parameter_type$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GActionGroupInterface.get_action_parameter_type$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_action_parameter_type$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_action_parameter_type$set(MemorySegment seg, long index, MemorySegment x) {
         _GActionGroupInterface.get_action_parameter_type$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_action_parameter_type get_action_parameter_type (MemorySegment segment, MemorySession session) {
-        return get_action_parameter_type.ofAddress(get_action_parameter_type$get(segment), session);
+    public static get_action_parameter_type get_action_parameter_type(MemorySegment segment, SegmentScope scope) {
+        return get_action_parameter_type.ofAddress(get_action_parameter_type$get(segment), scope);
     }
     static final FunctionDescriptor get_action_state_type$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_action_state_type$MH = RuntimeHelper.downcallHandle(
-        _GActionGroupInterface.get_action_state_type$FUNC
+    static final FunctionDescriptor get_action_state_type_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_action_state_type_UP$MH = RuntimeHelper.upcallHandle(get_action_state_type.class, "apply", _GActionGroupInterface.get_action_state_type_UP$FUNC);
+    static final FunctionDescriptor get_action_state_type_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_action_state_type_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GActionGroupInterface.get_action_state_type_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * const GVariantType* (*get_action_state_type)(GActionGroup*,const gchar*);
+     * }
+     */
     public interface get_action_state_type {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(get_action_state_type fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_action_state_type.class, fi, _GActionGroupInterface.get_action_state_type$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment func_data);
+        static MemorySegment allocate(get_action_state_type fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GActionGroupInterface.get_action_state_type_UP$MH, fi, _GActionGroupInterface.get_action_state_type$FUNC, scope);
         }
-        static get_action_state_type ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static get_action_state_type ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _path, java.lang.foreign.MemorySegment _func_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GActionGroupInterface.get_action_state_type$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    return (java.lang.foreign.MemorySegment)_GActionGroupInterface.get_action_state_type_DOWN$MH.invokeExact(symbol, _path, _func_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -239,39 +376,65 @@ public class _GActionGroupInterface {
     public static VarHandle get_action_state_type$VH() {
         return _GActionGroupInterface.get_action_state_type$VH;
     }
-    public static MemoryAddress get_action_state_type$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GActionGroupInterface.get_action_state_type$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * const GVariantType* (*get_action_state_type)(GActionGroup*,const gchar*);
+     * }
+     */
+    public static MemorySegment get_action_state_type$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GActionGroupInterface.get_action_state_type$VH.get(seg);
     }
-    public static void get_action_state_type$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * const GVariantType* (*get_action_state_type)(GActionGroup*,const gchar*);
+     * }
+     */
+    public static void get_action_state_type$set(MemorySegment seg, MemorySegment x) {
         _GActionGroupInterface.get_action_state_type$VH.set(seg, x);
     }
-    public static MemoryAddress get_action_state_type$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GActionGroupInterface.get_action_state_type$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_action_state_type$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GActionGroupInterface.get_action_state_type$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_action_state_type$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_action_state_type$set(MemorySegment seg, long index, MemorySegment x) {
         _GActionGroupInterface.get_action_state_type$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_action_state_type get_action_state_type (MemorySegment segment, MemorySession session) {
-        return get_action_state_type.ofAddress(get_action_state_type$get(segment), session);
+    public static get_action_state_type get_action_state_type(MemorySegment segment, SegmentScope scope) {
+        return get_action_state_type.ofAddress(get_action_state_type$get(segment), scope);
     }
     static final FunctionDescriptor get_action_state_hint$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_action_state_hint$MH = RuntimeHelper.downcallHandle(
-        _GActionGroupInterface.get_action_state_hint$FUNC
+    static final FunctionDescriptor get_action_state_hint_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_action_state_hint_UP$MH = RuntimeHelper.upcallHandle(get_action_state_hint.class, "apply", _GActionGroupInterface.get_action_state_hint_UP$FUNC);
+    static final FunctionDescriptor get_action_state_hint_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_action_state_hint_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GActionGroupInterface.get_action_state_hint_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * GVariant* (*get_action_state_hint)(GActionGroup*,const gchar*);
+     * }
+     */
     public interface get_action_state_hint {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(get_action_state_hint fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_action_state_hint.class, fi, _GActionGroupInterface.get_action_state_hint$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment func_data);
+        static MemorySegment allocate(get_action_state_hint fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GActionGroupInterface.get_action_state_hint_UP$MH, fi, _GActionGroupInterface.get_action_state_hint$FUNC, scope);
         }
-        static get_action_state_hint ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static get_action_state_hint ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _path, java.lang.foreign.MemorySegment _func_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GActionGroupInterface.get_action_state_hint$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    return (java.lang.foreign.MemorySegment)_GActionGroupInterface.get_action_state_hint_DOWN$MH.invokeExact(symbol, _path, _func_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -283,39 +446,65 @@ public class _GActionGroupInterface {
     public static VarHandle get_action_state_hint$VH() {
         return _GActionGroupInterface.get_action_state_hint$VH;
     }
-    public static MemoryAddress get_action_state_hint$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GActionGroupInterface.get_action_state_hint$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GVariant* (*get_action_state_hint)(GActionGroup*,const gchar*);
+     * }
+     */
+    public static MemorySegment get_action_state_hint$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GActionGroupInterface.get_action_state_hint$VH.get(seg);
     }
-    public static void get_action_state_hint$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GVariant* (*get_action_state_hint)(GActionGroup*,const gchar*);
+     * }
+     */
+    public static void get_action_state_hint$set(MemorySegment seg, MemorySegment x) {
         _GActionGroupInterface.get_action_state_hint$VH.set(seg, x);
     }
-    public static MemoryAddress get_action_state_hint$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GActionGroupInterface.get_action_state_hint$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_action_state_hint$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GActionGroupInterface.get_action_state_hint$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_action_state_hint$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_action_state_hint$set(MemorySegment seg, long index, MemorySegment x) {
         _GActionGroupInterface.get_action_state_hint$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_action_state_hint get_action_state_hint (MemorySegment segment, MemorySession session) {
-        return get_action_state_hint.ofAddress(get_action_state_hint$get(segment), session);
+    public static get_action_state_hint get_action_state_hint(MemorySegment segment, SegmentScope scope) {
+        return get_action_state_hint.ofAddress(get_action_state_hint$get(segment), scope);
     }
     static final FunctionDescriptor get_action_state$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_action_state$MH = RuntimeHelper.downcallHandle(
-        _GActionGroupInterface.get_action_state$FUNC
+    static final FunctionDescriptor get_action_state_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_action_state_UP$MH = RuntimeHelper.upcallHandle(get_action_state.class, "apply", _GActionGroupInterface.get_action_state_UP$FUNC);
+    static final FunctionDescriptor get_action_state_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_action_state_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GActionGroupInterface.get_action_state_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * GVariant* (*get_action_state)(GActionGroup*,const gchar*);
+     * }
+     */
     public interface get_action_state {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(get_action_state fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_action_state.class, fi, _GActionGroupInterface.get_action_state$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment func_data);
+        static MemorySegment allocate(get_action_state fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GActionGroupInterface.get_action_state_UP$MH, fi, _GActionGroupInterface.get_action_state$FUNC, scope);
         }
-        static get_action_state ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static get_action_state ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _path, java.lang.foreign.MemorySegment _func_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GActionGroupInterface.get_action_state$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    return (java.lang.foreign.MemorySegment)_GActionGroupInterface.get_action_state_DOWN$MH.invokeExact(symbol, _path, _func_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -327,40 +516,68 @@ public class _GActionGroupInterface {
     public static VarHandle get_action_state$VH() {
         return _GActionGroupInterface.get_action_state$VH;
     }
-    public static MemoryAddress get_action_state$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GActionGroupInterface.get_action_state$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GVariant* (*get_action_state)(GActionGroup*,const gchar*);
+     * }
+     */
+    public static MemorySegment get_action_state$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GActionGroupInterface.get_action_state$VH.get(seg);
     }
-    public static void get_action_state$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GVariant* (*get_action_state)(GActionGroup*,const gchar*);
+     * }
+     */
+    public static void get_action_state$set(MemorySegment seg, MemorySegment x) {
         _GActionGroupInterface.get_action_state$VH.set(seg, x);
     }
-    public static MemoryAddress get_action_state$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GActionGroupInterface.get_action_state$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_action_state$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GActionGroupInterface.get_action_state$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_action_state$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_action_state$set(MemorySegment seg, long index, MemorySegment x) {
         _GActionGroupInterface.get_action_state$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_action_state get_action_state (MemorySegment segment, MemorySession session) {
-        return get_action_state.ofAddress(get_action_state$get(segment), session);
+    public static get_action_state get_action_state(MemorySegment segment, SegmentScope scope) {
+        return get_action_state.ofAddress(get_action_state$get(segment), scope);
     }
     static final FunctionDescriptor change_action_state$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle change_action_state$MH = RuntimeHelper.downcallHandle(
-        _GActionGroupInterface.change_action_state$FUNC
+    static final FunctionDescriptor change_action_state_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle change_action_state_UP$MH = RuntimeHelper.upcallHandle(change_action_state.class, "apply", _GActionGroupInterface.change_action_state_UP$FUNC);
+    static final FunctionDescriptor change_action_state_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle change_action_state_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GActionGroupInterface.change_action_state_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*change_action_state)(GActionGroup*,const gchar*,GVariant*);
+     * }
+     */
     public interface change_action_state {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2);
-        static MemorySegment allocate(change_action_state fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(change_action_state.class, fi, _GActionGroupInterface.change_action_state$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(change_action_state fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GActionGroupInterface.change_action_state_UP$MH, fi, _GActionGroupInterface.change_action_state$FUNC, scope);
         }
-        static change_action_state ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2) -> {
+        static change_action_state ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _key, java.lang.foreign.MemorySegment _value, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    _GActionGroupInterface.change_action_state$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2);
+                    _GActionGroupInterface.change_action_state_DOWN$MH.invokeExact(symbol, _key, _value, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -372,40 +589,68 @@ public class _GActionGroupInterface {
     public static VarHandle change_action_state$VH() {
         return _GActionGroupInterface.change_action_state$VH;
     }
-    public static MemoryAddress change_action_state$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GActionGroupInterface.change_action_state$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*change_action_state)(GActionGroup*,const gchar*,GVariant*);
+     * }
+     */
+    public static MemorySegment change_action_state$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GActionGroupInterface.change_action_state$VH.get(seg);
     }
-    public static void change_action_state$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*change_action_state)(GActionGroup*,const gchar*,GVariant*);
+     * }
+     */
+    public static void change_action_state$set(MemorySegment seg, MemorySegment x) {
         _GActionGroupInterface.change_action_state$VH.set(seg, x);
     }
-    public static MemoryAddress change_action_state$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GActionGroupInterface.change_action_state$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment change_action_state$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GActionGroupInterface.change_action_state$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void change_action_state$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void change_action_state$set(MemorySegment seg, long index, MemorySegment x) {
         _GActionGroupInterface.change_action_state$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static change_action_state change_action_state (MemorySegment segment, MemorySession session) {
-        return change_action_state.ofAddress(change_action_state$get(segment), session);
+    public static change_action_state change_action_state(MemorySegment segment, SegmentScope scope) {
+        return change_action_state.ofAddress(change_action_state$get(segment), scope);
     }
     static final FunctionDescriptor activate_action$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle activate_action$MH = RuntimeHelper.downcallHandle(
-        _GActionGroupInterface.activate_action$FUNC
+    static final FunctionDescriptor activate_action_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle activate_action_UP$MH = RuntimeHelper.upcallHandle(activate_action.class, "apply", _GActionGroupInterface.activate_action_UP$FUNC);
+    static final FunctionDescriptor activate_action_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle activate_action_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GActionGroupInterface.activate_action_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*activate_action)(GActionGroup*,const gchar*,GVariant*);
+     * }
+     */
     public interface activate_action {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2);
-        static MemorySegment allocate(activate_action fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(activate_action.class, fi, _GActionGroupInterface.activate_action$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(activate_action fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GActionGroupInterface.activate_action_UP$MH, fi, _GActionGroupInterface.activate_action$FUNC, scope);
         }
-        static activate_action ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2) -> {
+        static activate_action ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _key, java.lang.foreign.MemorySegment _value, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    _GActionGroupInterface.activate_action$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2);
+                    _GActionGroupInterface.activate_action_DOWN$MH.invokeExact(symbol, _key, _value, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -417,39 +662,65 @@ public class _GActionGroupInterface {
     public static VarHandle activate_action$VH() {
         return _GActionGroupInterface.activate_action$VH;
     }
-    public static MemoryAddress activate_action$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GActionGroupInterface.activate_action$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*activate_action)(GActionGroup*,const gchar*,GVariant*);
+     * }
+     */
+    public static MemorySegment activate_action$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GActionGroupInterface.activate_action$VH.get(seg);
     }
-    public static void activate_action$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*activate_action)(GActionGroup*,const gchar*,GVariant*);
+     * }
+     */
+    public static void activate_action$set(MemorySegment seg, MemorySegment x) {
         _GActionGroupInterface.activate_action$VH.set(seg, x);
     }
-    public static MemoryAddress activate_action$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GActionGroupInterface.activate_action$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment activate_action$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GActionGroupInterface.activate_action$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void activate_action$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void activate_action$set(MemorySegment seg, long index, MemorySegment x) {
         _GActionGroupInterface.activate_action$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static activate_action activate_action (MemorySegment segment, MemorySession session) {
-        return activate_action.ofAddress(activate_action$get(segment), session);
+    public static activate_action activate_action(MemorySegment segment, SegmentScope scope) {
+        return activate_action.ofAddress(activate_action$get(segment), scope);
     }
     static final FunctionDescriptor action_added$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle action_added$MH = RuntimeHelper.downcallHandle(
-        _GActionGroupInterface.action_added$FUNC
+    static final FunctionDescriptor action_added_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle action_added_UP$MH = RuntimeHelper.upcallHandle(action_added.class, "apply", _GActionGroupInterface.action_added_UP$FUNC);
+    static final FunctionDescriptor action_added_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle action_added_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GActionGroupInterface.action_added_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*action_added)(GActionGroup*,const gchar*);
+     * }
+     */
     public interface action_added {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(action_added fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(action_added.class, fi, _GActionGroupInterface.action_added$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+        static MemorySegment allocate(action_added fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GActionGroupInterface.action_added_UP$MH, fi, _GActionGroupInterface.action_added$FUNC, scope);
         }
-        static action_added ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static action_added ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GActionGroupInterface.action_added$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    _GActionGroupInterface.action_added_DOWN$MH.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -461,39 +732,65 @@ public class _GActionGroupInterface {
     public static VarHandle action_added$VH() {
         return _GActionGroupInterface.action_added$VH;
     }
-    public static MemoryAddress action_added$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GActionGroupInterface.action_added$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*action_added)(GActionGroup*,const gchar*);
+     * }
+     */
+    public static MemorySegment action_added$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GActionGroupInterface.action_added$VH.get(seg);
     }
-    public static void action_added$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*action_added)(GActionGroup*,const gchar*);
+     * }
+     */
+    public static void action_added$set(MemorySegment seg, MemorySegment x) {
         _GActionGroupInterface.action_added$VH.set(seg, x);
     }
-    public static MemoryAddress action_added$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GActionGroupInterface.action_added$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment action_added$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GActionGroupInterface.action_added$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void action_added$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void action_added$set(MemorySegment seg, long index, MemorySegment x) {
         _GActionGroupInterface.action_added$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static action_added action_added (MemorySegment segment, MemorySession session) {
-        return action_added.ofAddress(action_added$get(segment), session);
+    public static action_added action_added(MemorySegment segment, SegmentScope scope) {
+        return action_added.ofAddress(action_added$get(segment), scope);
     }
     static final FunctionDescriptor action_removed$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle action_removed$MH = RuntimeHelper.downcallHandle(
-        _GActionGroupInterface.action_removed$FUNC
+    static final FunctionDescriptor action_removed_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle action_removed_UP$MH = RuntimeHelper.upcallHandle(action_removed.class, "apply", _GActionGroupInterface.action_removed_UP$FUNC);
+    static final FunctionDescriptor action_removed_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle action_removed_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GActionGroupInterface.action_removed_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*action_removed)(GActionGroup*,const gchar*);
+     * }
+     */
     public interface action_removed {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(action_removed fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(action_removed.class, fi, _GActionGroupInterface.action_removed$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+        static MemorySegment allocate(action_removed fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GActionGroupInterface.action_removed_UP$MH, fi, _GActionGroupInterface.action_removed$FUNC, scope);
         }
-        static action_removed ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static action_removed ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GActionGroupInterface.action_removed$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    _GActionGroupInterface.action_removed_DOWN$MH.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -505,40 +802,68 @@ public class _GActionGroupInterface {
     public static VarHandle action_removed$VH() {
         return _GActionGroupInterface.action_removed$VH;
     }
-    public static MemoryAddress action_removed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GActionGroupInterface.action_removed$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*action_removed)(GActionGroup*,const gchar*);
+     * }
+     */
+    public static MemorySegment action_removed$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GActionGroupInterface.action_removed$VH.get(seg);
     }
-    public static void action_removed$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*action_removed)(GActionGroup*,const gchar*);
+     * }
+     */
+    public static void action_removed$set(MemorySegment seg, MemorySegment x) {
         _GActionGroupInterface.action_removed$VH.set(seg, x);
     }
-    public static MemoryAddress action_removed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GActionGroupInterface.action_removed$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment action_removed$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GActionGroupInterface.action_removed$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void action_removed$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void action_removed$set(MemorySegment seg, long index, MemorySegment x) {
         _GActionGroupInterface.action_removed$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static action_removed action_removed (MemorySegment segment, MemorySession session) {
-        return action_removed.ofAddress(action_removed$get(segment), session);
+    public static action_removed action_removed(MemorySegment segment, SegmentScope scope) {
+        return action_removed.ofAddress(action_removed$get(segment), scope);
     }
     static final FunctionDescriptor action_enabled_changed$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle action_enabled_changed$MH = RuntimeHelper.downcallHandle(
-        _GActionGroupInterface.action_enabled_changed$FUNC
+    static final FunctionDescriptor action_enabled_changed_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle action_enabled_changed_UP$MH = RuntimeHelper.upcallHandle(action_enabled_changed.class, "apply", _GActionGroupInterface.action_enabled_changed_UP$FUNC);
+    static final FunctionDescriptor action_enabled_changed_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle action_enabled_changed_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GActionGroupInterface.action_enabled_changed_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*action_enabled_changed)(GActionGroup*,const gchar*,gboolean);
+     * }
+     */
     public interface action_enabled_changed {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, int _x2);
-        static MemorySegment allocate(action_enabled_changed fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(action_enabled_changed.class, fi, _GActionGroupInterface.action_enabled_changed$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2);
+        static MemorySegment allocate(action_enabled_changed fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GActionGroupInterface.action_enabled_changed_UP$MH, fi, _GActionGroupInterface.action_enabled_changed$FUNC, scope);
         }
-        static action_enabled_changed ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, int __x2) -> {
+        static action_enabled_changed ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2) -> {
                 try {
-                    _GActionGroupInterface.action_enabled_changed$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, __x2);
+                    _GActionGroupInterface.action_enabled_changed_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -550,40 +875,68 @@ public class _GActionGroupInterface {
     public static VarHandle action_enabled_changed$VH() {
         return _GActionGroupInterface.action_enabled_changed$VH;
     }
-    public static MemoryAddress action_enabled_changed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GActionGroupInterface.action_enabled_changed$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*action_enabled_changed)(GActionGroup*,const gchar*,gboolean);
+     * }
+     */
+    public static MemorySegment action_enabled_changed$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GActionGroupInterface.action_enabled_changed$VH.get(seg);
     }
-    public static void action_enabled_changed$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*action_enabled_changed)(GActionGroup*,const gchar*,gboolean);
+     * }
+     */
+    public static void action_enabled_changed$set(MemorySegment seg, MemorySegment x) {
         _GActionGroupInterface.action_enabled_changed$VH.set(seg, x);
     }
-    public static MemoryAddress action_enabled_changed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GActionGroupInterface.action_enabled_changed$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment action_enabled_changed$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GActionGroupInterface.action_enabled_changed$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void action_enabled_changed$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void action_enabled_changed$set(MemorySegment seg, long index, MemorySegment x) {
         _GActionGroupInterface.action_enabled_changed$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static action_enabled_changed action_enabled_changed (MemorySegment segment, MemorySession session) {
-        return action_enabled_changed.ofAddress(action_enabled_changed$get(segment), session);
+    public static action_enabled_changed action_enabled_changed(MemorySegment segment, SegmentScope scope) {
+        return action_enabled_changed.ofAddress(action_enabled_changed$get(segment), scope);
     }
     static final FunctionDescriptor action_state_changed$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle action_state_changed$MH = RuntimeHelper.downcallHandle(
-        _GActionGroupInterface.action_state_changed$FUNC
+    static final FunctionDescriptor action_state_changed_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle action_state_changed_UP$MH = RuntimeHelper.upcallHandle(action_state_changed.class, "apply", _GActionGroupInterface.action_state_changed_UP$FUNC);
+    static final FunctionDescriptor action_state_changed_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle action_state_changed_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GActionGroupInterface.action_state_changed_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*action_state_changed)(GActionGroup*,const gchar*,GVariant*);
+     * }
+     */
     public interface action_state_changed {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2);
-        static MemorySegment allocate(action_state_changed fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(action_state_changed.class, fi, _GActionGroupInterface.action_state_changed$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(action_state_changed fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GActionGroupInterface.action_state_changed_UP$MH, fi, _GActionGroupInterface.action_state_changed$FUNC, scope);
         }
-        static action_state_changed ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2) -> {
+        static action_state_changed ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _key, java.lang.foreign.MemorySegment _value, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    _GActionGroupInterface.action_state_changed$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2);
+                    _GActionGroupInterface.action_state_changed_DOWN$MH.invokeExact(symbol, _key, _value, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -595,20 +948,32 @@ public class _GActionGroupInterface {
     public static VarHandle action_state_changed$VH() {
         return _GActionGroupInterface.action_state_changed$VH;
     }
-    public static MemoryAddress action_state_changed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GActionGroupInterface.action_state_changed$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*action_state_changed)(GActionGroup*,const gchar*,GVariant*);
+     * }
+     */
+    public static MemorySegment action_state_changed$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GActionGroupInterface.action_state_changed$VH.get(seg);
     }
-    public static void action_state_changed$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*action_state_changed)(GActionGroup*,const gchar*,GVariant*);
+     * }
+     */
+    public static void action_state_changed$set(MemorySegment seg, MemorySegment x) {
         _GActionGroupInterface.action_state_changed$VH.set(seg, x);
     }
-    public static MemoryAddress action_state_changed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GActionGroupInterface.action_state_changed$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment action_state_changed$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GActionGroupInterface.action_state_changed$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void action_state_changed$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void action_state_changed$set(MemorySegment seg, long index, MemorySegment x) {
         _GActionGroupInterface.action_state_changed$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static action_state_changed action_state_changed (MemorySegment segment, MemorySession session) {
-        return action_state_changed.ofAddress(action_state_changed$get(segment), session);
+    public static action_state_changed action_state_changed(MemorySegment segment, SegmentScope scope) {
+        return action_state_changed.ofAddress(action_state_changed$get(segment), scope);
     }
     static final FunctionDescriptor query_action$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
@@ -619,20 +984,44 @@ public class _GActionGroupInterface {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle query_action$MH = RuntimeHelper.downcallHandle(
-        _GActionGroupInterface.query_action$FUNC
+    static final FunctionDescriptor query_action_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle query_action_UP$MH = RuntimeHelper.upcallHandle(query_action.class, "apply", _GActionGroupInterface.query_action_UP$FUNC);
+    static final FunctionDescriptor query_action_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle query_action_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GActionGroupInterface.query_action_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*query_action)(GActionGroup*,const gchar*,gboolean*,const GVariantType**,const GVariantType**,GVariant**,GVariant**);
+     * }
+     */
     public interface query_action {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2, java.lang.foreign.MemoryAddress _x3, java.lang.foreign.MemoryAddress _x4, java.lang.foreign.MemoryAddress _x5, java.lang.foreign.MemoryAddress _x6);
-        static MemorySegment allocate(query_action fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(query_action.class, fi, _GActionGroupInterface.query_action$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4, java.lang.foreign.MemorySegment _x5, java.lang.foreign.MemorySegment _x6);
+        static MemorySegment allocate(query_action fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GActionGroupInterface.query_action_UP$MH, fi, _GActionGroupInterface.query_action$FUNC, scope);
         }
-        static query_action ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2, java.lang.foreign.MemoryAddress __x3, java.lang.foreign.MemoryAddress __x4, java.lang.foreign.MemoryAddress __x5, java.lang.foreign.MemoryAddress __x6) -> {
+        static query_action ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4, java.lang.foreign.MemorySegment __x5, java.lang.foreign.MemorySegment __x6) -> {
                 try {
-                    return (int)_GActionGroupInterface.query_action$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2, (java.lang.foreign.Addressable)__x3, (java.lang.foreign.Addressable)__x4, (java.lang.foreign.Addressable)__x5, (java.lang.foreign.Addressable)__x6);
+                    return (int)_GActionGroupInterface.query_action_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5, __x6);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -644,27 +1033,39 @@ public class _GActionGroupInterface {
     public static VarHandle query_action$VH() {
         return _GActionGroupInterface.query_action$VH;
     }
-    public static MemoryAddress query_action$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GActionGroupInterface.query_action$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*query_action)(GActionGroup*,const gchar*,gboolean*,const GVariantType**,const GVariantType**,GVariant**,GVariant**);
+     * }
+     */
+    public static MemorySegment query_action$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GActionGroupInterface.query_action$VH.get(seg);
     }
-    public static void query_action$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*query_action)(GActionGroup*,const gchar*,gboolean*,const GVariantType**,const GVariantType**,GVariant**,GVariant**);
+     * }
+     */
+    public static void query_action$set(MemorySegment seg, MemorySegment x) {
         _GActionGroupInterface.query_action$VH.set(seg, x);
     }
-    public static MemoryAddress query_action$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GActionGroupInterface.query_action$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment query_action$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GActionGroupInterface.query_action$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void query_action$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void query_action$set(MemorySegment seg, long index, MemorySegment x) {
         _GActionGroupInterface.query_action$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static query_action query_action (MemorySegment segment, MemorySession session) {
-        return query_action.ofAddress(query_action$get(segment), session);
+    public static query_action query_action(MemorySegment segment, SegmentScope scope) {
+        return query_action.ofAddress(query_action$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

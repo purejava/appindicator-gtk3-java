@@ -7,45 +7,57 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1948 {
+final class constants$1948 {
 
-    static final FunctionDescriptor gtk_print_operation_preview_render_page$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1948() {}
+    static final FunctionDescriptor gtk_rc_get_style_by_paths$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle gtk_rc_get_style_by_paths$MH = RuntimeHelper.downcallHandle(
+        "gtk_rc_get_style_by_paths",
+        constants$1948.gtk_rc_get_style_by_paths$FUNC
+    );
+    static final FunctionDescriptor gtk_rc_reparse_all_for_settings$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_print_operation_preview_render_page$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_operation_preview_render_page",
-        constants$1948.gtk_print_operation_preview_render_page$FUNC
+    static final MethodHandle gtk_rc_reparse_all_for_settings$MH = RuntimeHelper.downcallHandle(
+        "gtk_rc_reparse_all_for_settings",
+        constants$1948.gtk_rc_reparse_all_for_settings$FUNC
     );
-    static final FunctionDescriptor gtk_print_operation_preview_end_preview$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_rc_reset_styles$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_print_operation_preview_end_preview$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_operation_preview_end_preview",
-        constants$1948.gtk_print_operation_preview_end_preview$FUNC
+    static final MethodHandle gtk_rc_reset_styles$MH = RuntimeHelper.downcallHandle(
+        "gtk_rc_reset_styles",
+        constants$1948.gtk_rc_reset_styles$FUNC
     );
-    static final FunctionDescriptor gtk_print_operation_preview_is_selected$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_rc_find_pixmap_in_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_print_operation_preview_is_selected$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_operation_preview_is_selected",
-        constants$1948.gtk_print_operation_preview_is_selected$FUNC
+    static final MethodHandle gtk_rc_find_pixmap_in_path$MH = RuntimeHelper.downcallHandle(
+        "gtk_rc_find_pixmap_in_path",
+        constants$1948.gtk_rc_find_pixmap_in_path$FUNC
     );
-    static final FunctionDescriptor gtk_print_error_quark$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle gtk_print_error_quark$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_error_quark",
-        constants$1948.gtk_print_error_quark$FUNC
+    static final FunctionDescriptor gtk_rc_parse$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor gtk_print_operation_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_print_operation_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_operation_get_type",
-        constants$1948.gtk_print_operation_get_type$FUNC
+    static final MethodHandle gtk_rc_parse$MH = RuntimeHelper.downcallHandle(
+        "gtk_rc_parse",
+        constants$1948.gtk_rc_parse$FUNC
     );
-    static final FunctionDescriptor gtk_print_operation_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_print_operation_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_operation_new",
-        constants$1948.gtk_print_operation_new$FUNC
+    static final FunctionDescriptor gtk_rc_parse_string$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_rc_parse_string$MH = RuntimeHelper.downcallHandle(
+        "gtk_rc_parse_string",
+        constants$1948.gtk_rc_parse_string$FUNC
     );
 }
 

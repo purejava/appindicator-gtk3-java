@@ -7,53 +7,16 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$2021 {
+final class constants$2021 {
 
-    static final FunctionDescriptor gtk_text_tag_table_add$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_tag_table_add$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_tag_table_add",
-        constants$2021.gtk_text_tag_table_add$FUNC
-    );
-    static final FunctionDescriptor gtk_text_tag_table_remove$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_tag_table_remove$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_tag_table_remove",
-        constants$2021.gtk_text_tag_table_remove$FUNC
-    );
-    static final FunctionDescriptor gtk_text_tag_table_lookup$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_tag_table_lookup$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_tag_table_lookup",
-        constants$2021.gtk_text_tag_table_lookup$FUNC
-    );
-    static final FunctionDescriptor gtk_text_tag_table_foreach$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_tag_table_foreach$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_tag_table_foreach",
-        constants$2021.gtk_text_tag_table_foreach$FUNC
-    );
-    static final FunctionDescriptor gtk_text_tag_table_get_size$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_tag_table_get_size$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_tag_table_get_size",
-        constants$2021.gtk_text_tag_table_get_size$FUNC
-    );
-    static final FunctionDescriptor gtk_text_mark_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_text_mark_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_mark_get_type",
-        constants$2021.gtk_text_mark_get_type$FUNC
-    );
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$2021() {}
+    static final MemorySegment CAIRO_VERSION_STRING$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("1.16.0");
+    static final MemorySegment CAIRO_TAG_DEST$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("cairo.dest");
+    static final MemorySegment CAIRO_TAG_LINK$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("Link");
+    static final MemorySegment CAIRO_MIME_TYPE_JPEG$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("image/jpeg");
+    static final MemorySegment CAIRO_MIME_TYPE_PNG$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("image/png");
+    static final MemorySegment CAIRO_MIME_TYPE_JP2$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("image/jp2");
 }
 
 

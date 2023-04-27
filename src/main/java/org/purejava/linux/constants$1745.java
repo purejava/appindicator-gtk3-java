@@ -7,51 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1745 {
+final class constants$1745 {
 
-    static final FunctionDescriptor gtk_css_provider_load_from_file$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1745() {}
+    static final FunctionDescriptor gtk_print_settings_get_quality$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_css_provider_load_from_file$MH = RuntimeHelper.downcallHandle(
-        "gtk_css_provider_load_from_file",
-        constants$1745.gtk_css_provider_load_from_file$FUNC
+    static final MethodHandle gtk_print_settings_get_quality$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_settings_get_quality",
+        constants$1745.gtk_print_settings_get_quality$FUNC
     );
-    static final FunctionDescriptor gtk_css_provider_load_from_path$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_print_settings_set_quality$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_print_settings_set_quality$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_settings_set_quality",
+        constants$1745.gtk_print_settings_set_quality$FUNC
+    );
+    static final FunctionDescriptor gtk_print_settings_get_n_copies$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_css_provider_load_from_path$MH = RuntimeHelper.downcallHandle(
-        "gtk_css_provider_load_from_path",
-        constants$1745.gtk_css_provider_load_from_path$FUNC
+    static final MethodHandle gtk_print_settings_get_n_copies$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_settings_get_n_copies",
+        constants$1745.gtk_print_settings_get_n_copies$FUNC
     );
-    static final FunctionDescriptor gtk_css_provider_load_from_resource$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_print_settings_set_n_copies$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_print_settings_set_n_copies$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_settings_set_n_copies",
+        constants$1745.gtk_print_settings_set_n_copies$FUNC
+    );
+    static final FunctionDescriptor gtk_print_settings_get_number_up$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_css_provider_load_from_resource$MH = RuntimeHelper.downcallHandle(
-        "gtk_css_provider_load_from_resource",
-        constants$1745.gtk_css_provider_load_from_resource$FUNC
+    static final MethodHandle gtk_print_settings_get_number_up$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_settings_get_number_up",
+        constants$1745.gtk_print_settings_get_number_up$FUNC
     );
-    static final FunctionDescriptor gtk_css_provider_get_default$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_css_provider_get_default$MH = RuntimeHelper.downcallHandle(
-        "gtk_css_provider_get_default",
-        constants$1745.gtk_css_provider_get_default$FUNC
-    );
-    static final FunctionDescriptor gtk_css_provider_get_named$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_print_settings_set_number_up$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_css_provider_get_named$MH = RuntimeHelper.downcallHandle(
-        "gtk_css_provider_get_named",
-        constants$1745.gtk_css_provider_get_named$FUNC
-    );
-    static final FunctionDescriptor gtk_get_debug_flags$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle gtk_get_debug_flags$MH = RuntimeHelper.downcallHandle(
-        "gtk_get_debug_flags",
-        constants$1745.gtk_get_debug_flags$FUNC
+    static final MethodHandle gtk_print_settings_set_number_up$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_settings_set_number_up",
+        constants$1745.gtk_print_settings_set_number_up$FUNC
     );
 }
 

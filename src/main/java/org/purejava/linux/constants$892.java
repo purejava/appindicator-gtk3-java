@@ -7,49 +7,56 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$892 {
+final class constants$892 {
 
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GConverter$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$892() {}
+    static final FunctionDescriptor hb_map_reference$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GConverter$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GConverter",
-        constants$892.glib_queueautoptr_cleanup_GConverter$FUNC
+    static final MethodHandle hb_map_reference$MH = RuntimeHelper.downcallHandle(
+        "hb_map_reference",
+        constants$892.hb_map_reference$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GConverterInputStream$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor hb_map_destroy$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GConverterInputStream$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GConverterInputStream",
-        constants$892.glib_autoptr_clear_GConverterInputStream$FUNC
+    static final MethodHandle hb_map_destroy$MH = RuntimeHelper.downcallHandle(
+        "hb_map_destroy",
+        constants$892.hb_map_destroy$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GConverterInputStream$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor hb_map_set_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle hb_map_set_user_data$MH = RuntimeHelper.downcallHandle(
+        "hb_map_set_user_data",
+        constants$892.hb_map_set_user_data$FUNC
+    );
+    static final FunctionDescriptor hb_map_get_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GConverterInputStream$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GConverterInputStream",
-        constants$892.glib_autoptr_cleanup_GConverterInputStream$FUNC
+    static final MethodHandle hb_map_get_user_data$MH = RuntimeHelper.downcallHandle(
+        "hb_map_get_user_data",
+        constants$892.hb_map_get_user_data$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GConverterInputStream$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor hb_map_allocation_successful$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GConverterInputStream$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GConverterInputStream",
-        constants$892.glib_listautoptr_cleanup_GConverterInputStream$FUNC
+    static final MethodHandle hb_map_allocation_successful$MH = RuntimeHelper.downcallHandle(
+        "hb_map_allocation_successful",
+        constants$892.hb_map_allocation_successful$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GConverterInputStream$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor hb_map_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GConverterInputStream$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GConverterInputStream",
-        constants$892.glib_slistautoptr_cleanup_GConverterInputStream$FUNC
-    );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GConverterInputStream$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_queueautoptr_cleanup_GConverterInputStream$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GConverterInputStream",
-        constants$892.glib_queueautoptr_cleanup_GConverterInputStream$FUNC
+    static final MethodHandle hb_map_copy$MH = RuntimeHelper.downcallHandle(
+        "hb_map_copy",
+        constants$892.hb_map_copy$FUNC
     );
 }
 

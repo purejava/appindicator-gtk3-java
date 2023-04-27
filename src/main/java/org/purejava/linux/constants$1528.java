@@ -7,53 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1528 {
+final class constants$1528 {
 
-    static final FunctionDescriptor gtk_label_set_max_width_chars$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_label_set_max_width_chars$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_set_max_width_chars",
-        constants$1528.gtk_label_set_max_width_chars$FUNC
-    );
-    static final FunctionDescriptor gtk_label_get_max_width_chars$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_label_get_max_width_chars$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_get_max_width_chars",
-        constants$1528.gtk_label_get_max_width_chars$FUNC
-    );
-    static final FunctionDescriptor gtk_label_set_lines$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_label_set_lines$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_set_lines",
-        constants$1528.gtk_label_set_lines$FUNC
-    );
-    static final FunctionDescriptor gtk_label_get_lines$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_label_get_lines$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_get_lines",
-        constants$1528.gtk_label_get_lines$FUNC
-    );
-    static final FunctionDescriptor gtk_label_set_pattern$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1528() {}
+    static final FunctionDescriptor gtk_cell_view_set_displayed_row$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_label_set_pattern$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_set_pattern",
-        constants$1528.gtk_label_set_pattern$FUNC
+    static final MethodHandle gtk_cell_view_set_displayed_row$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_view_set_displayed_row",
+        constants$1528.gtk_cell_view_set_displayed_row$FUNC
     );
-    static final FunctionDescriptor gtk_label_set_line_wrap$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_cell_view_get_displayed_row$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_cell_view_get_displayed_row$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_view_get_displayed_row",
+        constants$1528.gtk_cell_view_get_displayed_row$FUNC
+    );
+    static final FunctionDescriptor gtk_cell_view_set_background_rgba$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_cell_view_set_background_rgba$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_view_set_background_rgba",
+        constants$1528.gtk_cell_view_set_background_rgba$FUNC
+    );
+    static final FunctionDescriptor gtk_cell_view_get_draw_sensitive$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_cell_view_get_draw_sensitive$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_view_get_draw_sensitive",
+        constants$1528.gtk_cell_view_get_draw_sensitive$FUNC
+    );
+    static final FunctionDescriptor gtk_cell_view_set_draw_sensitive$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_label_set_line_wrap$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_set_line_wrap",
-        constants$1528.gtk_label_set_line_wrap$FUNC
+    static final MethodHandle gtk_cell_view_set_draw_sensitive$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_view_set_draw_sensitive",
+        constants$1528.gtk_cell_view_set_draw_sensitive$FUNC
+    );
+    static final FunctionDescriptor gtk_cell_view_get_fit_model$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_cell_view_get_fit_model$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_view_get_fit_model",
+        constants$1528.gtk_cell_view_get_fit_model$FUNC
     );
 }
 

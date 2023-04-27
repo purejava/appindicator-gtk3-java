@@ -7,9 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _AtkKeyEventStruct {
+ *     gint type;
+ *     guint state;
+ *     guint keyval;
+ *     gint length;
+ *     gchar* string;
+ *     guint16 keycode;
+ *     guint32 timestamp;
+ * };
+ * }
+ */
 public class _AtkKeyEventStruct {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_INT$LAYOUT.withName("type"),
         Constants$root.C_INT$LAYOUT.withName("state"),
         Constants$root.C_INT$LAYOUT.withName("keyval"),
@@ -26,10 +39,22 @@ public class _AtkKeyEventStruct {
     public static VarHandle type$VH() {
         return _AtkKeyEventStruct.type$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gint type;
+     * }
+     */
     public static int type$get(MemorySegment seg) {
         return (int)_AtkKeyEventStruct.type$VH.get(seg);
     }
-    public static void type$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gint type;
+     * }
+     */
+    public static void type$set(MemorySegment seg, int x) {
         _AtkKeyEventStruct.type$VH.set(seg, x);
     }
     public static int type$get(MemorySegment seg, long index) {
@@ -42,10 +67,22 @@ public class _AtkKeyEventStruct {
     public static VarHandle state$VH() {
         return _AtkKeyEventStruct.state$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * guint state;
+     * }
+     */
     public static int state$get(MemorySegment seg) {
         return (int)_AtkKeyEventStruct.state$VH.get(seg);
     }
-    public static void state$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * guint state;
+     * }
+     */
+    public static void state$set(MemorySegment seg, int x) {
         _AtkKeyEventStruct.state$VH.set(seg, x);
     }
     public static int state$get(MemorySegment seg, long index) {
@@ -58,10 +95,22 @@ public class _AtkKeyEventStruct {
     public static VarHandle keyval$VH() {
         return _AtkKeyEventStruct.keyval$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * guint keyval;
+     * }
+     */
     public static int keyval$get(MemorySegment seg) {
         return (int)_AtkKeyEventStruct.keyval$VH.get(seg);
     }
-    public static void keyval$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * guint keyval;
+     * }
+     */
+    public static void keyval$set(MemorySegment seg, int x) {
         _AtkKeyEventStruct.keyval$VH.set(seg, x);
     }
     public static int keyval$get(MemorySegment seg, long index) {
@@ -74,10 +123,22 @@ public class _AtkKeyEventStruct {
     public static VarHandle length$VH() {
         return _AtkKeyEventStruct.length$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gint length;
+     * }
+     */
     public static int length$get(MemorySegment seg) {
         return (int)_AtkKeyEventStruct.length$VH.get(seg);
     }
-    public static void length$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gint length;
+     * }
+     */
+    public static void length$set(MemorySegment seg, int x) {
         _AtkKeyEventStruct.length$VH.set(seg, x);
     }
     public static int length$get(MemorySegment seg, long index) {
@@ -90,26 +151,50 @@ public class _AtkKeyEventStruct {
     public static VarHandle string$VH() {
         return _AtkKeyEventStruct.string$VH;
     }
-    public static MemoryAddress string$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AtkKeyEventStruct.string$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gchar* string;
+     * }
+     */
+    public static MemorySegment string$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AtkKeyEventStruct.string$VH.get(seg);
     }
-    public static void string$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gchar* string;
+     * }
+     */
+    public static void string$set(MemorySegment seg, MemorySegment x) {
         _AtkKeyEventStruct.string$VH.set(seg, x);
     }
-    public static MemoryAddress string$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AtkKeyEventStruct.string$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment string$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AtkKeyEventStruct.string$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void string$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void string$set(MemorySegment seg, long index, MemorySegment x) {
         _AtkKeyEventStruct.string$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle keycode$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("keycode"));
     public static VarHandle keycode$VH() {
         return _AtkKeyEventStruct.keycode$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * guint16 keycode;
+     * }
+     */
     public static short keycode$get(MemorySegment seg) {
         return (short)_AtkKeyEventStruct.keycode$VH.get(seg);
     }
-    public static void keycode$set( MemorySegment seg, short x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * guint16 keycode;
+     * }
+     */
+    public static void keycode$set(MemorySegment seg, short x) {
         _AtkKeyEventStruct.keycode$VH.set(seg, x);
     }
     public static short keycode$get(MemorySegment seg, long index) {
@@ -122,10 +207,22 @@ public class _AtkKeyEventStruct {
     public static VarHandle timestamp$VH() {
         return _AtkKeyEventStruct.timestamp$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * guint32 timestamp;
+     * }
+     */
     public static int timestamp$get(MemorySegment seg) {
         return (int)_AtkKeyEventStruct.timestamp$VH.get(seg);
     }
-    public static void timestamp$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * guint32 timestamp;
+     * }
+     */
+    public static void timestamp$set(MemorySegment seg, int x) {
         _AtkKeyEventStruct.timestamp$VH.set(seg, x);
     }
     public static int timestamp$get(MemorySegment seg, long index) {
@@ -136,10 +233,10 @@ public class _AtkKeyEventStruct {
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

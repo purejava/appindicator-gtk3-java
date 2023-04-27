@@ -7,49 +7,61 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$968 {
+final class constants$968 {
 
-    static final FunctionDescriptor glib_autoptr_clear_GSocketListener$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$968() {}
+    static final FunctionDescriptor pango_layout_line_get_length$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GSocketListener$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GSocketListener",
-        constants$968.glib_autoptr_clear_GSocketListener$FUNC
+    static final MethodHandle pango_layout_line_get_length$MH = RuntimeHelper.downcallHandle(
+        "pango_layout_line_get_length",
+        constants$968.pango_layout_line_get_length$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GSocketListener$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_layout_line_is_paragraph_start$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GSocketListener$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GSocketListener",
-        constants$968.glib_autoptr_cleanup_GSocketListener$FUNC
+    static final MethodHandle pango_layout_line_is_paragraph_start$MH = RuntimeHelper.downcallHandle(
+        "pango_layout_line_is_paragraph_start",
+        constants$968.pango_layout_line_is_paragraph_start$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GSocketListener$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_layout_line_get_resolved_direction$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GSocketListener$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GSocketListener",
-        constants$968.glib_listautoptr_cleanup_GSocketListener$FUNC
+    static final MethodHandle pango_layout_line_get_resolved_direction$MH = RuntimeHelper.downcallHandle(
+        "pango_layout_line_get_resolved_direction",
+        constants$968.pango_layout_line_get_resolved_direction$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GSocketListener$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_layout_line_x_to_index$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GSocketListener$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GSocketListener",
-        constants$968.glib_slistautoptr_cleanup_GSocketListener$FUNC
+    static final MethodHandle pango_layout_line_x_to_index$MH = RuntimeHelper.downcallHandle(
+        "pango_layout_line_x_to_index",
+        constants$968.pango_layout_line_x_to_index$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GSocketListener$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_layout_line_index_to_x$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GSocketListener$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GSocketListener",
-        constants$968.glib_queueautoptr_cleanup_GSocketListener$FUNC
+    static final MethodHandle pango_layout_line_index_to_x$MH = RuntimeHelper.downcallHandle(
+        "pango_layout_line_index_to_x",
+        constants$968.pango_layout_line_index_to_x$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GSocketService$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_layout_line_get_x_ranges$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GSocketService$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GSocketService",
-        constants$968.glib_autoptr_clear_GSocketService$FUNC
+    static final MethodHandle pango_layout_line_get_x_ranges$MH = RuntimeHelper.downcallHandle(
+        "pango_layout_line_get_x_ranges",
+        constants$968.pango_layout_line_get_x_ranges$FUNC
     );
 }
 

@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * void (*cairo_surface_observer_callback_t)(struct _cairo_surface* observer,struct _cairo_surface* target,void* data);
+ * }
+ */
 public interface cairo_surface_observer_callback_t {
 
-    void apply(java.lang.foreign.MemoryAddress observer, java.lang.foreign.MemoryAddress target, java.lang.foreign.MemoryAddress data);
-    static MemorySegment allocate(cairo_surface_observer_callback_t fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(cairo_surface_observer_callback_t.class, fi, constants$1187.cairo_surface_observer_callback_t$FUNC, session);
+    void apply(java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment user_data);
+    static MemorySegment allocate(cairo_surface_observer_callback_t fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$1028.cairo_surface_observer_callback_t_UP$MH, fi, constants$1028.cairo_surface_observer_callback_t$FUNC, scope);
     }
-    static cairo_surface_observer_callback_t ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _observer, java.lang.foreign.MemoryAddress _target, java.lang.foreign.MemoryAddress _data) -> {
+    static cairo_surface_observer_callback_t ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _key, java.lang.foreign.MemorySegment _value, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                constants$1187.cairo_surface_observer_callback_t$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_observer, (java.lang.foreign.Addressable)_target, (java.lang.foreign.Addressable)_data);
+                constants$1028.cairo_surface_observer_callback_t_DOWN$MH.invokeExact(symbol, _key, _value, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

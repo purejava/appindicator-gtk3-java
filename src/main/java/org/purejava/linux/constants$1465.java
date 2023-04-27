@@ -7,54 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1465 {
+final class constants$1465 {
 
-    static final FunctionDescriptor gtk_widget_class_bind_template_child_full$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle gtk_widget_class_bind_template_child_full$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_class_bind_template_child_full",
-        constants$1465.gtk_widget_class_bind_template_child_full$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_get_action_group$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1465() {}
+    static final FunctionDescriptor gtk_tree_view_new_with_model$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_widget_get_action_group$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_action_group",
-        constants$1465.gtk_widget_get_action_group$FUNC
+    static final MethodHandle gtk_tree_view_new_with_model$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_new_with_model",
+        constants$1465.gtk_tree_view_new_with_model$FUNC
     );
-    static final FunctionDescriptor gtk_widget_list_action_prefixes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_tree_view_get_model$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_widget_list_action_prefixes$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_list_action_prefixes",
-        constants$1465.gtk_widget_list_action_prefixes$FUNC
+    static final MethodHandle gtk_tree_view_get_model$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_get_model",
+        constants$1465.gtk_tree_view_get_model$FUNC
     );
-    static final FunctionDescriptor gtk_widget_set_font_map$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_tree_view_set_model$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_widget_set_font_map$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_font_map",
-        constants$1465.gtk_widget_set_font_map$FUNC
+    static final MethodHandle gtk_tree_view_set_model$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_set_model",
+        constants$1465.gtk_tree_view_set_model$FUNC
     );
-    static final FunctionDescriptor gtk_widget_get_font_map$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_tree_view_get_selection$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_widget_get_font_map$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_font_map",
-        constants$1465.gtk_widget_get_font_map$FUNC
+    static final MethodHandle gtk_tree_view_get_selection$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_get_selection",
+        constants$1465.gtk_tree_view_get_selection$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GtkWidget$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_tree_view_get_hadjustment$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GtkWidget$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GtkWidget",
-        constants$1465.glib_autoptr_clear_GtkWidget$FUNC
+    static final MethodHandle gtk_tree_view_get_hadjustment$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_get_hadjustment",
+        constants$1465.gtk_tree_view_get_hadjustment$FUNC
+    );
+    static final FunctionDescriptor gtk_tree_view_set_hadjustment$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_tree_view_set_hadjustment$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_set_hadjustment",
+        constants$1465.gtk_tree_view_set_hadjustment$FUNC
     );
 }
 

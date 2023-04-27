@@ -7,58 +7,56 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1250 {
+final class constants$1250 {
 
-    static final FunctionDescriptor gdk_window_set_cursor$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1250() {}
+    static final FunctionDescriptor gtk_widget_queue_draw$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_queue_draw$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_queue_draw",
+        constants$1250.gtk_widget_queue_draw$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_queue_draw_area$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_widget_queue_draw_area$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_queue_draw_area",
+        constants$1250.gtk_widget_queue_draw_area$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_queue_draw_region$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_window_set_cursor$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_cursor",
-        constants$1250.gdk_window_set_cursor$FUNC
+    static final MethodHandle gtk_widget_queue_draw_region$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_queue_draw_region",
+        constants$1250.gtk_widget_queue_draw_region$FUNC
     );
-    static final FunctionDescriptor gdk_window_get_cursor$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_widget_queue_resize$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_window_get_cursor$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_cursor",
-        constants$1250.gdk_window_get_cursor$FUNC
+    static final MethodHandle gtk_widget_queue_resize$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_queue_resize",
+        constants$1250.gtk_widget_queue_resize$FUNC
     );
-    static final FunctionDescriptor gdk_window_set_device_cursor$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_widget_queue_resize_no_redraw$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_window_set_device_cursor$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_device_cursor",
-        constants$1250.gdk_window_set_device_cursor$FUNC
+    static final MethodHandle gtk_widget_queue_resize_no_redraw$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_queue_resize_no_redraw",
+        constants$1250.gtk_widget_queue_resize_no_redraw$FUNC
     );
-    static final FunctionDescriptor gdk_window_get_device_cursor$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_widget_queue_allocate$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_window_get_device_cursor$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_device_cursor",
-        constants$1250.gdk_window_get_device_cursor$FUNC
-    );
-    static final FunctionDescriptor gdk_window_get_user_data$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_get_user_data$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_user_data",
-        constants$1250.gdk_window_get_user_data$FUNC
-    );
-    static final FunctionDescriptor gdk_window_get_geometry$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_get_geometry$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_geometry",
-        constants$1250.gdk_window_get_geometry$FUNC
+    static final MethodHandle gtk_widget_queue_allocate$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_queue_allocate",
+        constants$1250.gtk_widget_queue_allocate$FUNC
     );
 }
 

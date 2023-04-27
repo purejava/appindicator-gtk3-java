@@ -7,51 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$270 {
+final class constants$270 {
 
-    static final FunctionDescriptor g_rc_box_release$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$270() {}
+    static final FunctionDescriptor g_path_buf_clear$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_rc_box_release$MH = RuntimeHelper.downcallHandle(
-        "g_rc_box_release",
-        constants$270.g_rc_box_release$FUNC
+    static final MethodHandle g_path_buf_clear$MH = RuntimeHelper.downcallHandle(
+        "g_path_buf_clear",
+        constants$270.g_path_buf_clear$FUNC
     );
-    static final FunctionDescriptor g_rc_box_release_full$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_path_buf_clear_to_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_path_buf_clear_to_path$MH = RuntimeHelper.downcallHandle(
+        "g_path_buf_clear_to_path",
+        constants$270.g_path_buf_clear_to_path$FUNC
+    );
+    static final FunctionDescriptor g_path_buf_free$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_path_buf_free$MH = RuntimeHelper.downcallHandle(
+        "g_path_buf_free",
+        constants$270.g_path_buf_free$FUNC
+    );
+    static final FunctionDescriptor g_path_buf_free_to_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_path_buf_free_to_path$MH = RuntimeHelper.downcallHandle(
+        "g_path_buf_free_to_path",
+        constants$270.g_path_buf_free_to_path$FUNC
+    );
+    static final FunctionDescriptor g_path_buf_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_path_buf_copy$MH = RuntimeHelper.downcallHandle(
+        "g_path_buf_copy",
+        constants$270.g_path_buf_copy$FUNC
+    );
+    static final FunctionDescriptor g_path_buf_push$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_rc_box_release_full$MH = RuntimeHelper.downcallHandle(
-        "g_rc_box_release_full",
-        constants$270.g_rc_box_release_full$FUNC
-    );
-    static final FunctionDescriptor g_rc_box_get_size$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_rc_box_get_size$MH = RuntimeHelper.downcallHandle(
-        "g_rc_box_get_size",
-        constants$270.g_rc_box_get_size$FUNC
-    );
-    static final FunctionDescriptor g_atomic_rc_box_alloc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_atomic_rc_box_alloc$MH = RuntimeHelper.downcallHandle(
-        "g_atomic_rc_box_alloc",
-        constants$270.g_atomic_rc_box_alloc$FUNC
-    );
-    static final FunctionDescriptor g_atomic_rc_box_alloc0$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_atomic_rc_box_alloc0$MH = RuntimeHelper.downcallHandle(
-        "g_atomic_rc_box_alloc0",
-        constants$270.g_atomic_rc_box_alloc0$FUNC
-    );
-    static final FunctionDescriptor g_atomic_rc_box_dup$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_atomic_rc_box_dup$MH = RuntimeHelper.downcallHandle(
-        "g_atomic_rc_box_dup",
-        constants$270.g_atomic_rc_box_dup$FUNC
+    static final MethodHandle g_path_buf_push$MH = RuntimeHelper.downcallHandle(
+        "g_path_buf_push",
+        constants$270.g_path_buf_push$FUNC
     );
 }
 

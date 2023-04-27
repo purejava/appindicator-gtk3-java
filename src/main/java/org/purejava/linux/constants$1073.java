@@ -7,39 +7,48 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1073 {
+final class constants$1073 {
 
-    static final FunctionDescriptor PangoAttrFilterFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1073() {}
+    static final FunctionDescriptor gdk_event_get_pointer_emulated$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_event_get_pointer_emulated$MH = RuntimeHelper.downcallHandle(
+        "gdk_event_get_pointer_emulated",
+        constants$1073.gdk_event_get_pointer_emulated$FUNC
+    );
+    static final FunctionDescriptor gdk_device_manager_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gdk_device_manager_get_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_device_manager_get_type",
+        constants$1073.gdk_device_manager_get_type$FUNC
+    );
+    static final FunctionDescriptor gdk_device_manager_get_display$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_device_manager_get_display$MH = RuntimeHelper.downcallHandle(
+        "gdk_device_manager_get_display",
+        constants$1073.gdk_device_manager_get_display$FUNC
+    );
+    static final FunctionDescriptor gdk_device_manager_list_devices$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle PangoAttrFilterFunc$MH = RuntimeHelper.downcallHandle(
-        constants$1073.PangoAttrFilterFunc$FUNC
-    );
-    static final FunctionDescriptor PangoAttrDataCopyFunc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle PangoAttrDataCopyFunc$MH = RuntimeHelper.downcallHandle(
-        constants$1073.PangoAttrDataCopyFunc$FUNC
-    );
-    static final FunctionDescriptor pango_attribute_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_attribute_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_attribute_get_type",
-        constants$1073.pango_attribute_get_type$FUNC
-    );
-    static final FunctionDescriptor pango_attr_type_register$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_attr_type_register$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_type_register",
-        constants$1073.pango_attr_type_register$FUNC
-    );
-    static final FunctionDescriptor pango_attr_type_get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle pango_attr_type_get_name$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_type_get_name",
-        constants$1073.pango_attr_type_get_name$FUNC
+    static final MethodHandle gdk_device_manager_list_devices$MH = RuntimeHelper.downcallHandle(
+        "gdk_device_manager_list_devices",
+        constants$1073.gdk_device_manager_list_devices$FUNC
+    );
+    static final FunctionDescriptor gdk_device_manager_get_client_pointer$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_device_manager_get_client_pointer$MH = RuntimeHelper.downcallHandle(
+        "gdk_device_manager_get_client_pointer",
+        constants$1073.gdk_device_manager_get_client_pointer$FUNC
+    );
+    static final FunctionDescriptor gdk_drawing_context_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gdk_drawing_context_get_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_drawing_context_get_type",
+        constants$1073.gdk_drawing_context_get_type$FUNC
     );
 }
 

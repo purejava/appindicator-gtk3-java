@@ -7,54 +7,60 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1042 {
+final class constants$1042 {
 
-    static final FunctionDescriptor hb_map_destroy$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1042() {}
+    static final FunctionDescriptor cairo_pattern_create_rgba$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle cairo_pattern_create_rgba$MH = RuntimeHelper.downcallHandle(
+        "cairo_pattern_create_rgba",
+        constants$1042.cairo_pattern_create_rgba$FUNC
+    );
+    static final FunctionDescriptor cairo_pattern_create_for_surface$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_map_destroy$MH = RuntimeHelper.downcallHandle(
-        "hb_map_destroy",
-        constants$1042.hb_map_destroy$FUNC
+    static final MethodHandle cairo_pattern_create_for_surface$MH = RuntimeHelper.downcallHandle(
+        "cairo_pattern_create_for_surface",
+        constants$1042.cairo_pattern_create_for_surface$FUNC
     );
-    static final FunctionDescriptor hb_map_set_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor cairo_pattern_create_linear$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
     );
-    static final MethodHandle hb_map_set_user_data$MH = RuntimeHelper.downcallHandle(
-        "hb_map_set_user_data",
-        constants$1042.hb_map_set_user_data$FUNC
+    static final MethodHandle cairo_pattern_create_linear$MH = RuntimeHelper.downcallHandle(
+        "cairo_pattern_create_linear",
+        constants$1042.cairo_pattern_create_linear$FUNC
     );
-    static final FunctionDescriptor hb_map_get_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor cairo_pattern_create_radial$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle cairo_pattern_create_radial$MH = RuntimeHelper.downcallHandle(
+        "cairo_pattern_create_radial",
+        constants$1042.cairo_pattern_create_radial$FUNC
+    );
+    static final FunctionDescriptor cairo_pattern_create_mesh$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle cairo_pattern_create_mesh$MH = RuntimeHelper.downcallHandle(
+        "cairo_pattern_create_mesh",
+        constants$1042.cairo_pattern_create_mesh$FUNC
+    );
+    static final FunctionDescriptor cairo_pattern_reference$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_map_get_user_data$MH = RuntimeHelper.downcallHandle(
-        "hb_map_get_user_data",
-        constants$1042.hb_map_get_user_data$FUNC
-    );
-    static final FunctionDescriptor hb_map_allocation_successful$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_map_allocation_successful$MH = RuntimeHelper.downcallHandle(
-        "hb_map_allocation_successful",
-        constants$1042.hb_map_allocation_successful$FUNC
-    );
-    static final FunctionDescriptor hb_map_clear$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_map_clear$MH = RuntimeHelper.downcallHandle(
-        "hb_map_clear",
-        constants$1042.hb_map_clear$FUNC
-    );
-    static final FunctionDescriptor hb_map_is_empty$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_map_is_empty$MH = RuntimeHelper.downcallHandle(
-        "hb_map_is_empty",
-        constants$1042.hb_map_is_empty$FUNC
+    static final MethodHandle cairo_pattern_reference$MH = RuntimeHelper.downcallHandle(
+        "cairo_pattern_reference",
+        constants$1042.cairo_pattern_reference$FUNC
     );
 }
 

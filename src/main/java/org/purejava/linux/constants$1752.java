@@ -7,50 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1752 {
+final class constants$1752 {
 
-    static final FunctionDescriptor gtk_event_controller_set_propagation_phase$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1752() {}
+    static final FunctionDescriptor gtk_print_operation_set_default_page_setup$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_print_operation_set_default_page_setup$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_operation_set_default_page_setup",
+        constants$1752.gtk_print_operation_set_default_page_setup$FUNC
+    );
+    static final FunctionDescriptor gtk_print_operation_get_default_page_setup$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_print_operation_get_default_page_setup$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_operation_get_default_page_setup",
+        constants$1752.gtk_print_operation_get_default_page_setup$FUNC
+    );
+    static final FunctionDescriptor gtk_print_operation_set_print_settings$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_print_operation_set_print_settings$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_operation_set_print_settings",
+        constants$1752.gtk_print_operation_set_print_settings$FUNC
+    );
+    static final FunctionDescriptor gtk_print_operation_get_print_settings$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_print_operation_get_print_settings$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_operation_get_print_settings",
+        constants$1752.gtk_print_operation_get_print_settings$FUNC
+    );
+    static final FunctionDescriptor gtk_print_operation_set_job_name$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_print_operation_set_job_name$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_operation_set_job_name",
+        constants$1752.gtk_print_operation_set_job_name$FUNC
+    );
+    static final FunctionDescriptor gtk_print_operation_set_n_pages$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_event_controller_set_propagation_phase$MH = RuntimeHelper.downcallHandle(
-        "gtk_event_controller_set_propagation_phase",
-        constants$1752.gtk_event_controller_set_propagation_phase$FUNC
-    );
-    static final FunctionDescriptor gtk_event_controller_key_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_event_controller_key_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_event_controller_key_get_type",
-        constants$1752.gtk_event_controller_key_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_event_controller_key_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_event_controller_key_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_event_controller_key_new",
-        constants$1752.gtk_event_controller_key_new$FUNC
-    );
-    static final FunctionDescriptor gtk_event_controller_key_set_im_context$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_event_controller_key_set_im_context$MH = RuntimeHelper.downcallHandle(
-        "gtk_event_controller_key_set_im_context",
-        constants$1752.gtk_event_controller_key_set_im_context$FUNC
-    );
-    static final FunctionDescriptor gtk_event_controller_key_get_im_context$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_event_controller_key_get_im_context$MH = RuntimeHelper.downcallHandle(
-        "gtk_event_controller_key_get_im_context",
-        constants$1752.gtk_event_controller_key_get_im_context$FUNC
-    );
-    static final FunctionDescriptor gtk_event_controller_key_forward$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_event_controller_key_forward$MH = RuntimeHelper.downcallHandle(
-        "gtk_event_controller_key_forward",
-        constants$1752.gtk_event_controller_key_forward$FUNC
+    static final MethodHandle gtk_print_operation_set_n_pages$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_operation_set_n_pages",
+        constants$1752.gtk_print_operation_set_n_pages$FUNC
     );
 }
 

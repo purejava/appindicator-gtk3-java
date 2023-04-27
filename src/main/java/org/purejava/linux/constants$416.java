@@ -7,49 +7,63 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$416 {
+final class constants$416 {
 
-    static final FunctionDescriptor glib_autoptr_clear_GVariantDict$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$416() {}
+    static final FunctionDescriptor g_signal_set_va_marshaller$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GVariantDict$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GVariantDict",
-        constants$416.glib_autoptr_clear_GVariantDict$FUNC
+    static final MethodHandle g_signal_set_va_marshaller$MH = RuntimeHelper.downcallHandle(
+        "g_signal_set_va_marshaller",
+        constants$416.g_signal_set_va_marshaller$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GVariantDict$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_signal_emitv$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GVariantDict$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GVariantDict",
-        constants$416.glib_autoptr_cleanup_GVariantDict$FUNC
+    static final MethodHandle g_signal_emitv$MH = RuntimeHelper.downcallHandle(
+        "g_signal_emitv",
+        constants$416.g_signal_emitv$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GVariantDict$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_signal_emit_valist$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GVariantDict$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GVariantDict",
-        constants$416.glib_listautoptr_cleanup_GVariantDict$FUNC
+    static final MethodHandle g_signal_emit_valist$MH = RuntimeHelper.downcallHandle(
+        "g_signal_emit_valist",
+        constants$416.g_signal_emit_valist$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GVariantDict$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_signal_emit$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_signal_emit$MH = RuntimeHelper.downcallHandleVariadic(
+        "g_signal_emit",
+        constants$416.g_signal_emit$FUNC
+    );
+    static final FunctionDescriptor g_signal_emit_by_name$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GVariantDict$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GVariantDict",
-        constants$416.glib_slistautoptr_cleanup_GVariantDict$FUNC
+    static final MethodHandle g_signal_emit_by_name$MH = RuntimeHelper.downcallHandleVariadic(
+        "g_signal_emit_by_name",
+        constants$416.g_signal_emit_by_name$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GVariantDict$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_signal_lookup$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GVariantDict$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GVariantDict",
-        constants$416.glib_queueautoptr_cleanup_GVariantDict$FUNC
-    );
-    static final FunctionDescriptor glib_auto_cleanup_GVariantDict$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_auto_cleanup_GVariantDict$MH = RuntimeHelper.downcallHandle(
-        "glib_auto_cleanup_GVariantDict",
-        constants$416.glib_auto_cleanup_GVariantDict$FUNC
+    static final MethodHandle g_signal_lookup$MH = RuntimeHelper.downcallHandle(
+        "g_signal_lookup",
+        constants$416.g_signal_lookup$FUNC
     );
 }
 

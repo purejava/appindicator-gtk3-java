@@ -7,9 +7,23 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GtkScrolledWindowClass {
+ *     GtkBinClass parent_class;
+ *     gint scrollbar_spacing;
+ *     gboolean (*scroll_child)(GtkScrolledWindow*,GtkScrollType,gboolean);
+ *     void (*move_focus_out)(GtkScrolledWindow*,GtkDirectionType);
+ *     void (*_gtk_reserved1)();
+ *     void (*_gtk_reserved2)();
+ *     void (*_gtk_reserved3)();
+ *     void (*_gtk_reserved4)();
+ * };
+ * }
+ */
 public class _GtkScrolledWindowClass {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
                 MemoryLayout.structLayout(
@@ -27,7 +41,10 @@ public class _GtkScrolledWindowClass {
                         Constants$root.C_POINTER$LAYOUT.withName("notify"),
                         Constants$root.C_POINTER$LAYOUT.withName("constructed"),
                         Constants$root.C_LONG_LONG$LAYOUT.withName("flags"),
-                        MemoryLayout.sequenceLayout(6, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
+                        Constants$root.C_LONG_LONG$LAYOUT.withName("n_construct_properties"),
+                        Constants$root.C_POINTER$LAYOUT.withName("pspecs"),
+                        Constants$root.C_LONG_LONG$LAYOUT.withName("n_pspecs"),
+                        MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
                     ).withName("parent_class"),
                     Constants$root.C_INT$LAYOUT.withName("activate_signal"),
                     MemoryLayout.paddingLayout(32),
@@ -127,10 +144,7 @@ public class _GtkScrolledWindowClass {
                 Constants$root.C_POINTER$LAYOUT.withName("set_child_property"),
                 Constants$root.C_POINTER$LAYOUT.withName("get_child_property"),
                 Constants$root.C_POINTER$LAYOUT.withName("get_path_for_child"),
-                MemoryLayout.structLayout(
-                    MemoryLayout.paddingLayout(1).withName("_handle_border_width"),
-                    MemoryLayout.paddingLayout(63)
-                ),
+                MemoryLayout.paddingLayout(64),
                 Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved1"),
                 Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved2"),
                 Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved3"),
@@ -164,10 +178,22 @@ public class _GtkScrolledWindowClass {
     public static VarHandle scrollbar_spacing$VH() {
         return _GtkScrolledWindowClass.scrollbar_spacing$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gint scrollbar_spacing;
+     * }
+     */
     public static int scrollbar_spacing$get(MemorySegment seg) {
         return (int)_GtkScrolledWindowClass.scrollbar_spacing$VH.get(seg);
     }
-    public static void scrollbar_spacing$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gint scrollbar_spacing;
+     * }
+     */
+    public static void scrollbar_spacing$set(MemorySegment seg, int x) {
         _GtkScrolledWindowClass.scrollbar_spacing$VH.set(seg, x);
     }
     public static int scrollbar_spacing$get(MemorySegment seg, long index) {
@@ -181,20 +207,36 @@ public class _GtkScrolledWindowClass {
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle scroll_child$MH = RuntimeHelper.downcallHandle(
-        _GtkScrolledWindowClass.scroll_child$FUNC
+    static final FunctionDescriptor scroll_child_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle scroll_child_UP$MH = RuntimeHelper.upcallHandle(scroll_child.class, "apply", _GtkScrolledWindowClass.scroll_child_UP$FUNC);
+    static final FunctionDescriptor scroll_child_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle scroll_child_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkScrolledWindowClass.scroll_child_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*scroll_child)(GtkScrolledWindow*,GtkScrollType,gboolean);
+     * }
+     */
     public interface scroll_child {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, int _x1, int _x2);
-        static MemorySegment allocate(scroll_child fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(scroll_child.class, fi, _GtkScrolledWindowClass.scroll_child$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, int _x1, int _x2);
+        static MemorySegment allocate(scroll_child fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkScrolledWindowClass.scroll_child_UP$MH, fi, _GtkScrolledWindowClass.scroll_child$FUNC, scope);
         }
-        static scroll_child ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, int __x1, int __x2) -> {
+        static scroll_child ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, int __x1, int __x2) -> {
                 try {
-                    return (int)_GtkScrolledWindowClass.scroll_child$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, __x1, __x2);
+                    return (int)_GtkScrolledWindowClass.scroll_child_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -206,39 +248,65 @@ public class _GtkScrolledWindowClass {
     public static VarHandle scroll_child$VH() {
         return _GtkScrolledWindowClass.scroll_child$VH;
     }
-    public static MemoryAddress scroll_child$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkScrolledWindowClass.scroll_child$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*scroll_child)(GtkScrolledWindow*,GtkScrollType,gboolean);
+     * }
+     */
+    public static MemorySegment scroll_child$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkScrolledWindowClass.scroll_child$VH.get(seg);
     }
-    public static void scroll_child$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*scroll_child)(GtkScrolledWindow*,GtkScrollType,gboolean);
+     * }
+     */
+    public static void scroll_child$set(MemorySegment seg, MemorySegment x) {
         _GtkScrolledWindowClass.scroll_child$VH.set(seg, x);
     }
-    public static MemoryAddress scroll_child$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkScrolledWindowClass.scroll_child$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment scroll_child$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkScrolledWindowClass.scroll_child$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void scroll_child$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void scroll_child$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkScrolledWindowClass.scroll_child$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static scroll_child scroll_child (MemorySegment segment, MemorySession session) {
-        return scroll_child.ofAddress(scroll_child$get(segment), session);
+    public static scroll_child scroll_child(MemorySegment segment, SegmentScope scope) {
+        return scroll_child.ofAddress(scroll_child$get(segment), scope);
     }
     static final FunctionDescriptor move_focus_out$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle move_focus_out$MH = RuntimeHelper.downcallHandle(
-        _GtkScrolledWindowClass.move_focus_out$FUNC
+    static final FunctionDescriptor move_focus_out_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle move_focus_out_UP$MH = RuntimeHelper.upcallHandle(move_focus_out.class, "apply", _GtkScrolledWindowClass.move_focus_out_UP$FUNC);
+    static final FunctionDescriptor move_focus_out_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle move_focus_out_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkScrolledWindowClass.move_focus_out_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*move_focus_out)(GtkScrolledWindow*,GtkDirectionType);
+     * }
+     */
     public interface move_focus_out {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, int _x1);
-        static MemorySegment allocate(move_focus_out fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(move_focus_out.class, fi, _GtkScrolledWindowClass.move_focus_out$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, int _x1);
+        static MemorySegment allocate(move_focus_out fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkScrolledWindowClass.move_focus_out_UP$MH, fi, _GtkScrolledWindowClass.move_focus_out$FUNC, scope);
         }
-        static move_focus_out ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, int __x1) -> {
+        static move_focus_out ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, int __x1) -> {
                 try {
-                    _GtkScrolledWindowClass.move_focus_out$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, __x1);
+                    _GtkScrolledWindowClass.move_focus_out_DOWN$MH.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -250,36 +318,56 @@ public class _GtkScrolledWindowClass {
     public static VarHandle move_focus_out$VH() {
         return _GtkScrolledWindowClass.move_focus_out$VH;
     }
-    public static MemoryAddress move_focus_out$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkScrolledWindowClass.move_focus_out$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*move_focus_out)(GtkScrolledWindow*,GtkDirectionType);
+     * }
+     */
+    public static MemorySegment move_focus_out$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkScrolledWindowClass.move_focus_out$VH.get(seg);
     }
-    public static void move_focus_out$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*move_focus_out)(GtkScrolledWindow*,GtkDirectionType);
+     * }
+     */
+    public static void move_focus_out$set(MemorySegment seg, MemorySegment x) {
         _GtkScrolledWindowClass.move_focus_out$VH.set(seg, x);
     }
-    public static MemoryAddress move_focus_out$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkScrolledWindowClass.move_focus_out$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment move_focus_out$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkScrolledWindowClass.move_focus_out$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void move_focus_out$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void move_focus_out$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkScrolledWindowClass.move_focus_out$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static move_focus_out move_focus_out (MemorySegment segment, MemorySession session) {
-        return move_focus_out.ofAddress(move_focus_out$get(segment), session);
+    public static move_focus_out move_focus_out(MemorySegment segment, SegmentScope scope) {
+        return move_focus_out.ofAddress(move_focus_out$get(segment), scope);
     }
     static final FunctionDescriptor _gtk_reserved1$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved1$MH = RuntimeHelper.downcallHandle(
-        _GtkScrolledWindowClass._gtk_reserved1$FUNC
+    static final FunctionDescriptor _gtk_reserved1_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved1_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved1.class, "apply", _GtkScrolledWindowClass._gtk_reserved1_UP$FUNC);
+    static final FunctionDescriptor _gtk_reserved1_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved1_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkScrolledWindowClass._gtk_reserved1_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_gtk_reserved1)();
+     * }
+     */
     public interface _gtk_reserved1 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved1 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_gtk_reserved1.class, fi, _GtkScrolledWindowClass._gtk_reserved1$FUNC, session);
+        static MemorySegment allocate(_gtk_reserved1 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkScrolledWindowClass._gtk_reserved1_UP$MH, fi, _GtkScrolledWindowClass._gtk_reserved1$FUNC, scope);
         }
-        static _gtk_reserved1 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _gtk_reserved1 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkScrolledWindowClass._gtk_reserved1$MH.invokeExact((Addressable)symbol);
+                    _GtkScrolledWindowClass._gtk_reserved1_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -291,36 +379,56 @@ public class _GtkScrolledWindowClass {
     public static VarHandle _gtk_reserved1$VH() {
         return _GtkScrolledWindowClass._gtk_reserved1$VH;
     }
-    public static MemoryAddress _gtk_reserved1$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkScrolledWindowClass._gtk_reserved1$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_gtk_reserved1)();
+     * }
+     */
+    public static MemorySegment _gtk_reserved1$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkScrolledWindowClass._gtk_reserved1$VH.get(seg);
     }
-    public static void _gtk_reserved1$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_gtk_reserved1)();
+     * }
+     */
+    public static void _gtk_reserved1$set(MemorySegment seg, MemorySegment x) {
         _GtkScrolledWindowClass._gtk_reserved1$VH.set(seg, x);
     }
-    public static MemoryAddress _gtk_reserved1$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkScrolledWindowClass._gtk_reserved1$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _gtk_reserved1$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkScrolledWindowClass._gtk_reserved1$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _gtk_reserved1$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _gtk_reserved1$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkScrolledWindowClass._gtk_reserved1$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved1 _gtk_reserved1 (MemorySegment segment, MemorySession session) {
-        return _gtk_reserved1.ofAddress(_gtk_reserved1$get(segment), session);
+    public static _gtk_reserved1 _gtk_reserved1(MemorySegment segment, SegmentScope scope) {
+        return _gtk_reserved1.ofAddress(_gtk_reserved1$get(segment), scope);
     }
     static final FunctionDescriptor _gtk_reserved2$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved2$MH = RuntimeHelper.downcallHandle(
-        _GtkScrolledWindowClass._gtk_reserved2$FUNC
+    static final FunctionDescriptor _gtk_reserved2_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved2_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved2.class, "apply", _GtkScrolledWindowClass._gtk_reserved2_UP$FUNC);
+    static final FunctionDescriptor _gtk_reserved2_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved2_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkScrolledWindowClass._gtk_reserved2_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_gtk_reserved2)();
+     * }
+     */
     public interface _gtk_reserved2 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved2 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_gtk_reserved2.class, fi, _GtkScrolledWindowClass._gtk_reserved2$FUNC, session);
+        static MemorySegment allocate(_gtk_reserved2 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkScrolledWindowClass._gtk_reserved2_UP$MH, fi, _GtkScrolledWindowClass._gtk_reserved2$FUNC, scope);
         }
-        static _gtk_reserved2 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _gtk_reserved2 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkScrolledWindowClass._gtk_reserved2$MH.invokeExact((Addressable)symbol);
+                    _GtkScrolledWindowClass._gtk_reserved2_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -332,36 +440,56 @@ public class _GtkScrolledWindowClass {
     public static VarHandle _gtk_reserved2$VH() {
         return _GtkScrolledWindowClass._gtk_reserved2$VH;
     }
-    public static MemoryAddress _gtk_reserved2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkScrolledWindowClass._gtk_reserved2$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_gtk_reserved2)();
+     * }
+     */
+    public static MemorySegment _gtk_reserved2$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkScrolledWindowClass._gtk_reserved2$VH.get(seg);
     }
-    public static void _gtk_reserved2$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_gtk_reserved2)();
+     * }
+     */
+    public static void _gtk_reserved2$set(MemorySegment seg, MemorySegment x) {
         _GtkScrolledWindowClass._gtk_reserved2$VH.set(seg, x);
     }
-    public static MemoryAddress _gtk_reserved2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkScrolledWindowClass._gtk_reserved2$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _gtk_reserved2$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkScrolledWindowClass._gtk_reserved2$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _gtk_reserved2$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _gtk_reserved2$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkScrolledWindowClass._gtk_reserved2$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved2 _gtk_reserved2 (MemorySegment segment, MemorySession session) {
-        return _gtk_reserved2.ofAddress(_gtk_reserved2$get(segment), session);
+    public static _gtk_reserved2 _gtk_reserved2(MemorySegment segment, SegmentScope scope) {
+        return _gtk_reserved2.ofAddress(_gtk_reserved2$get(segment), scope);
     }
     static final FunctionDescriptor _gtk_reserved3$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved3$MH = RuntimeHelper.downcallHandle(
-        _GtkScrolledWindowClass._gtk_reserved3$FUNC
+    static final FunctionDescriptor _gtk_reserved3_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved3_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved3.class, "apply", _GtkScrolledWindowClass._gtk_reserved3_UP$FUNC);
+    static final FunctionDescriptor _gtk_reserved3_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved3_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkScrolledWindowClass._gtk_reserved3_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_gtk_reserved3)();
+     * }
+     */
     public interface _gtk_reserved3 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved3 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_gtk_reserved3.class, fi, _GtkScrolledWindowClass._gtk_reserved3$FUNC, session);
+        static MemorySegment allocate(_gtk_reserved3 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkScrolledWindowClass._gtk_reserved3_UP$MH, fi, _GtkScrolledWindowClass._gtk_reserved3$FUNC, scope);
         }
-        static _gtk_reserved3 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _gtk_reserved3 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkScrolledWindowClass._gtk_reserved3$MH.invokeExact((Addressable)symbol);
+                    _GtkScrolledWindowClass._gtk_reserved3_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -373,36 +501,56 @@ public class _GtkScrolledWindowClass {
     public static VarHandle _gtk_reserved3$VH() {
         return _GtkScrolledWindowClass._gtk_reserved3$VH;
     }
-    public static MemoryAddress _gtk_reserved3$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkScrolledWindowClass._gtk_reserved3$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_gtk_reserved3)();
+     * }
+     */
+    public static MemorySegment _gtk_reserved3$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkScrolledWindowClass._gtk_reserved3$VH.get(seg);
     }
-    public static void _gtk_reserved3$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_gtk_reserved3)();
+     * }
+     */
+    public static void _gtk_reserved3$set(MemorySegment seg, MemorySegment x) {
         _GtkScrolledWindowClass._gtk_reserved3$VH.set(seg, x);
     }
-    public static MemoryAddress _gtk_reserved3$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkScrolledWindowClass._gtk_reserved3$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _gtk_reserved3$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkScrolledWindowClass._gtk_reserved3$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _gtk_reserved3$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _gtk_reserved3$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkScrolledWindowClass._gtk_reserved3$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved3 _gtk_reserved3 (MemorySegment segment, MemorySession session) {
-        return _gtk_reserved3.ofAddress(_gtk_reserved3$get(segment), session);
+    public static _gtk_reserved3 _gtk_reserved3(MemorySegment segment, SegmentScope scope) {
+        return _gtk_reserved3.ofAddress(_gtk_reserved3$get(segment), scope);
     }
     static final FunctionDescriptor _gtk_reserved4$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved4$MH = RuntimeHelper.downcallHandle(
-        _GtkScrolledWindowClass._gtk_reserved4$FUNC
+    static final FunctionDescriptor _gtk_reserved4_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved4_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved4.class, "apply", _GtkScrolledWindowClass._gtk_reserved4_UP$FUNC);
+    static final FunctionDescriptor _gtk_reserved4_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved4_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkScrolledWindowClass._gtk_reserved4_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_gtk_reserved4)();
+     * }
+     */
     public interface _gtk_reserved4 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved4 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_gtk_reserved4.class, fi, _GtkScrolledWindowClass._gtk_reserved4$FUNC, session);
+        static MemorySegment allocate(_gtk_reserved4 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkScrolledWindowClass._gtk_reserved4_UP$MH, fi, _GtkScrolledWindowClass._gtk_reserved4$FUNC, scope);
         }
-        static _gtk_reserved4 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _gtk_reserved4 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkScrolledWindowClass._gtk_reserved4$MH.invokeExact((Addressable)symbol);
+                    _GtkScrolledWindowClass._gtk_reserved4_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -414,27 +562,39 @@ public class _GtkScrolledWindowClass {
     public static VarHandle _gtk_reserved4$VH() {
         return _GtkScrolledWindowClass._gtk_reserved4$VH;
     }
-    public static MemoryAddress _gtk_reserved4$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkScrolledWindowClass._gtk_reserved4$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_gtk_reserved4)();
+     * }
+     */
+    public static MemorySegment _gtk_reserved4$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkScrolledWindowClass._gtk_reserved4$VH.get(seg);
     }
-    public static void _gtk_reserved4$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_gtk_reserved4)();
+     * }
+     */
+    public static void _gtk_reserved4$set(MemorySegment seg, MemorySegment x) {
         _GtkScrolledWindowClass._gtk_reserved4$VH.set(seg, x);
     }
-    public static MemoryAddress _gtk_reserved4$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkScrolledWindowClass._gtk_reserved4$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _gtk_reserved4$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkScrolledWindowClass._gtk_reserved4$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _gtk_reserved4$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _gtk_reserved4$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkScrolledWindowClass._gtk_reserved4$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved4 _gtk_reserved4 (MemorySegment segment, MemorySession session) {
-        return _gtk_reserved4.ofAddress(_gtk_reserved4$get(segment), session);
+    public static _gtk_reserved4 _gtk_reserved4(MemorySegment segment, SegmentScope scope) {
+        return _gtk_reserved4.ofAddress(_gtk_reserved4$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

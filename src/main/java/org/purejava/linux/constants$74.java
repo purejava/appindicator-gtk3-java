@@ -7,8 +7,25 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$74 {
+final class constants$74 {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$74() {}
+    static final FunctionDescriptor raise$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle raise$MH = RuntimeHelper.downcallHandle(
+        "raise",
+        constants$74.raise$FUNC
+    );
+    static final FunctionDescriptor ssignal$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle ssignal$MH = RuntimeHelper.downcallHandle(
+        "ssignal",
+        constants$74.ssignal$FUNC
+    );
     static final FunctionDescriptor gsignal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
@@ -38,18 +55,6 @@ class constants$74 {
     static final MethodHandle sigblock$MH = RuntimeHelper.downcallHandle(
         "sigblock",
         constants$74.sigblock$FUNC
-    );
-    static final FunctionDescriptor sigsetmask$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle sigsetmask$MH = RuntimeHelper.downcallHandle(
-        "sigsetmask",
-        constants$74.sigsetmask$FUNC
-    );
-    static final FunctionDescriptor siggetmask$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle siggetmask$MH = RuntimeHelper.downcallHandle(
-        "siggetmask",
-        constants$74.siggetmask$FUNC
     );
 }
 

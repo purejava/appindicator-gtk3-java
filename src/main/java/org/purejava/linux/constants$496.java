@@ -7,53 +7,68 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$496 {
+final class constants$496 {
 
-    static final FunctionDescriptor g_signal_group_connect_swapped$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$496() {}
+    static final FunctionDescriptor g_initable_newv$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_initable_newv$MH = RuntimeHelper.downcallHandle(
+        "g_initable_newv",
+        constants$496.g_initable_newv$FUNC
+    );
+    static final FunctionDescriptor g_initable_new_valist$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_signal_group_connect_swapped$MH = RuntimeHelper.downcallHandle(
-        "g_signal_group_connect_swapped",
-        constants$496.g_signal_group_connect_swapped$FUNC
+    static final MethodHandle g_initable_new_valist$MH = RuntimeHelper.downcallHandle(
+        "g_initable_new_valist",
+        constants$496.g_initable_new_valist$FUNC
     );
-    static final FunctionDescriptor g_source_set_closure$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_async_initable_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_async_initable_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_async_initable_get_type",
+        constants$496.g_async_initable_get_type$FUNC
+    );
+    static final FunctionDescriptor g_async_initable_init_async$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_source_set_closure$MH = RuntimeHelper.downcallHandle(
-        "g_source_set_closure",
-        constants$496.g_source_set_closure$FUNC
+    static final MethodHandle g_async_initable_init_async$MH = RuntimeHelper.downcallHandle(
+        "g_async_initable_init_async",
+        constants$496.g_async_initable_init_async$FUNC
     );
-    static final FunctionDescriptor g_source_set_dummy_callback$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_async_initable_init_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_source_set_dummy_callback$MH = RuntimeHelper.downcallHandle(
-        "g_source_set_dummy_callback",
-        constants$496.g_source_set_dummy_callback$FUNC
+    static final MethodHandle g_async_initable_init_finish$MH = RuntimeHelper.downcallHandle(
+        "g_async_initable_init_finish",
+        constants$496.g_async_initable_init_finish$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GTypeModule$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_async_initable_new_async$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GTypeModule$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GTypeModule",
-        constants$496.glib_autoptr_clear_GTypeModule$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_cleanup_GTypeModule$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_autoptr_cleanup_GTypeModule$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GTypeModule",
-        constants$496.glib_autoptr_cleanup_GTypeModule$FUNC
-    );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GTypeModule$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_listautoptr_cleanup_GTypeModule$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GTypeModule",
-        constants$496.glib_listautoptr_cleanup_GTypeModule$FUNC
+    static final MethodHandle g_async_initable_new_async$MH = RuntimeHelper.downcallHandleVariadic(
+        "g_async_initable_new_async",
+        constants$496.g_async_initable_new_async$FUNC
     );
 }
 

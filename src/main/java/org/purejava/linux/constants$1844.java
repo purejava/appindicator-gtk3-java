@@ -7,52 +7,58 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1844 {
+final class constants$1844 {
 
-    static final FunctionDescriptor gtk_icon_info_get_display_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_info_get_display_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_info_get_display_name",
-        constants$1844.gtk_icon_info_get_display_name$FUNC
-    );
-    static final FunctionDescriptor gtk_tooltip_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_tooltip_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_tooltip_get_type",
-        constants$1844.gtk_tooltip_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_tooltip_set_markup$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1844() {}
+    static final FunctionDescriptor gtk_text_view_forward_display_line$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_tooltip_set_markup$MH = RuntimeHelper.downcallHandle(
-        "gtk_tooltip_set_markup",
-        constants$1844.gtk_tooltip_set_markup$FUNC
+    static final MethodHandle gtk_text_view_forward_display_line$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_view_forward_display_line",
+        constants$1844.gtk_text_view_forward_display_line$FUNC
     );
-    static final FunctionDescriptor gtk_tooltip_set_text$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_text_view_backward_display_line$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_tooltip_set_text$MH = RuntimeHelper.downcallHandle(
-        "gtk_tooltip_set_text",
-        constants$1844.gtk_tooltip_set_text$FUNC
+    static final MethodHandle gtk_text_view_backward_display_line$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_view_backward_display_line",
+        constants$1844.gtk_text_view_backward_display_line$FUNC
     );
-    static final FunctionDescriptor gtk_tooltip_set_icon$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_text_view_forward_display_line_end$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_tooltip_set_icon$MH = RuntimeHelper.downcallHandle(
-        "gtk_tooltip_set_icon",
-        constants$1844.gtk_tooltip_set_icon$FUNC
+    static final MethodHandle gtk_text_view_forward_display_line_end$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_view_forward_display_line_end",
+        constants$1844.gtk_text_view_forward_display_line_end$FUNC
     );
-    static final FunctionDescriptor gtk_tooltip_set_icon_from_stock$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_text_view_backward_display_line_start$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_text_view_backward_display_line_start$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_view_backward_display_line_start",
+        constants$1844.gtk_text_view_backward_display_line_start$FUNC
+    );
+    static final FunctionDescriptor gtk_text_view_starts_display_line$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_text_view_starts_display_line$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_view_starts_display_line",
+        constants$1844.gtk_text_view_starts_display_line$FUNC
+    );
+    static final FunctionDescriptor gtk_text_view_move_visually$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_tooltip_set_icon_from_stock$MH = RuntimeHelper.downcallHandle(
-        "gtk_tooltip_set_icon_from_stock",
-        constants$1844.gtk_tooltip_set_icon_from_stock$FUNC
+    static final MethodHandle gtk_text_view_move_visually$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_view_move_visually",
+        constants$1844.gtk_text_view_move_visually$FUNC
     );
 }
 

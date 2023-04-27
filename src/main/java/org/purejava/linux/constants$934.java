@@ -7,49 +7,72 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$934 {
+final class constants$934 {
 
-    static final FunctionDescriptor glib_autoptr_cleanup_GMenuItem$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$934() {}
+    static final FunctionDescriptor pango_item_apply_attrs$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GMenuItem$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GMenuItem",
-        constants$934.glib_autoptr_cleanup_GMenuItem$FUNC
+    static final MethodHandle pango_item_apply_attrs$MH = RuntimeHelper.downcallHandle(
+        "pango_item_apply_attrs",
+        constants$934.pango_item_apply_attrs$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GMenuItem$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_reorder_items$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GMenuItem$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GMenuItem",
-        constants$934.glib_listautoptr_cleanup_GMenuItem$FUNC
+    static final MethodHandle pango_reorder_items$MH = RuntimeHelper.downcallHandle(
+        "pango_reorder_items",
+        constants$934.pango_reorder_items$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GMenuItem$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_itemize$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GMenuItem$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GMenuItem",
-        constants$934.glib_slistautoptr_cleanup_GMenuItem$FUNC
+    static final MethodHandle pango_itemize$MH = RuntimeHelper.downcallHandle(
+        "pango_itemize",
+        constants$934.pango_itemize$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GMenuItem$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_itemize_with_base_dir$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GMenuItem$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GMenuItem",
-        constants$934.glib_queueautoptr_cleanup_GMenuItem$FUNC
+    static final MethodHandle pango_itemize_with_base_dir$MH = RuntimeHelper.downcallHandle(
+        "pango_itemize_with_base_dir",
+        constants$934.pango_itemize_with_base_dir$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GMenuModel$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor pango_break$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GMenuModel$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GMenuModel",
-        constants$934.glib_autoptr_clear_GMenuModel$FUNC
+    static final MethodHandle pango_break$MH = RuntimeHelper.downcallHandle(
+        "pango_break",
+        constants$934.pango_break$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GMenuModel$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor pango_get_log_attrs$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GMenuModel$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GMenuModel",
-        constants$934.glib_autoptr_cleanup_GMenuModel$FUNC
+    static final MethodHandle pango_get_log_attrs$MH = RuntimeHelper.downcallHandle(
+        "pango_get_log_attrs",
+        constants$934.pango_get_log_attrs$FUNC
     );
 }
 

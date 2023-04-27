@@ -7,53 +7,16 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1999 {
+final class constants$1999 {
 
-    static final FunctionDescriptor gtk_scrolled_window_get_max_content_width$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_scrolled_window_get_max_content_width$MH = RuntimeHelper.downcallHandle(
-        "gtk_scrolled_window_get_max_content_width",
-        constants$1999.gtk_scrolled_window_get_max_content_width$FUNC
-    );
-    static final FunctionDescriptor gtk_scrolled_window_set_max_content_height$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_scrolled_window_set_max_content_height$MH = RuntimeHelper.downcallHandle(
-        "gtk_scrolled_window_set_max_content_height",
-        constants$1999.gtk_scrolled_window_set_max_content_height$FUNC
-    );
-    static final FunctionDescriptor gtk_scrolled_window_get_max_content_height$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_scrolled_window_get_max_content_height$MH = RuntimeHelper.downcallHandle(
-        "gtk_scrolled_window_get_max_content_height",
-        constants$1999.gtk_scrolled_window_get_max_content_height$FUNC
-    );
-    static final FunctionDescriptor gtk_scrolled_window_set_propagate_natural_width$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_scrolled_window_set_propagate_natural_width$MH = RuntimeHelper.downcallHandle(
-        "gtk_scrolled_window_set_propagate_natural_width",
-        constants$1999.gtk_scrolled_window_set_propagate_natural_width$FUNC
-    );
-    static final FunctionDescriptor gtk_scrolled_window_get_propagate_natural_width$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_scrolled_window_get_propagate_natural_width$MH = RuntimeHelper.downcallHandle(
-        "gtk_scrolled_window_get_propagate_natural_width",
-        constants$1999.gtk_scrolled_window_get_propagate_natural_width$FUNC
-    );
-    static final FunctionDescriptor gtk_scrolled_window_set_propagate_natural_height$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_scrolled_window_set_propagate_natural_height$MH = RuntimeHelper.downcallHandle(
-        "gtk_scrolled_window_set_propagate_natural_height",
-        constants$1999.gtk_scrolled_window_set_propagate_natural_height$FUNC
-    );
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1999() {}
+    static final MemorySegment G_DEBUG_CONTROLLER_EXTENSION_POINT_NAME$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("gio-debug-controller");
+    static final MemorySegment G_DRIVE_IDENTIFIER_KIND_UNIX_DEVICE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("unix-device");
+    static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_TYPE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("standard::type");
+    static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_IS_HIDDEN$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("standard::is-hidden");
+    static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_IS_BACKUP$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("standard::is-backup");
+    static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_IS_SYMLINK$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("standard::is-symlink");
 }
 
 

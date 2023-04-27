@@ -7,9 +7,24 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GtkTextAppearance {
+ *     GdkColor bg_color;
+ *     GdkColor fg_color;
+ *     gint rise;
+ *      *     guint underline;
+ *     guint strikethrough;
+ *     guint draw_bg;
+ *     guint inside_selection;
+ *     guint is_text;
+ *     GdkRGBA* rgba[2];
+ * };
+ * }
+ */
 public class _GtkTextAppearance {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             Constants$root.C_INT$LAYOUT.withName("pixel"),
             Constants$root.C_SHORT$LAYOUT.withName("red"),
@@ -25,14 +40,7 @@ public class _GtkTextAppearance {
             MemoryLayout.paddingLayout(16)
         ).withName("fg_color"),
         Constants$root.C_INT$LAYOUT.withName("rise"),
-        MemoryLayout.structLayout(
-            MemoryLayout.paddingLayout(4).withName("underline"),
-            MemoryLayout.paddingLayout(1).withName("strikethrough"),
-            MemoryLayout.paddingLayout(1).withName("draw_bg"),
-            MemoryLayout.paddingLayout(1).withName("inside_selection"),
-            MemoryLayout.paddingLayout(1).withName("is_text"),
-            MemoryLayout.paddingLayout(24)
-        ),
+        MemoryLayout.paddingLayout(32),
         MemoryLayout.sequenceLayout(2, Constants$root.C_POINTER$LAYOUT).withName("rgba")
     ).withName("_GtkTextAppearance");
     public static MemoryLayout $LAYOUT() {
@@ -48,10 +56,22 @@ public class _GtkTextAppearance {
     public static VarHandle rise$VH() {
         return _GtkTextAppearance.rise$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gint rise;
+     * }
+     */
     public static int rise$get(MemorySegment seg) {
         return (int)_GtkTextAppearance.rise$VH.get(seg);
     }
-    public static void rise$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gint rise;
+     * }
+     */
+    public static void rise$set(MemorySegment seg, int x) {
         _GtkTextAppearance.rise$VH.set(seg, x);
     }
     public static int rise$get(MemorySegment seg, long index) {
@@ -65,10 +85,10 @@ public class _GtkTextAppearance {
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

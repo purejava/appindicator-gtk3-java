@@ -7,55 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1264 {
+final class constants$1264 {
 
-    static final FunctionDescriptor gdk_window_get_support_multidevice$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_get_support_multidevice$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_support_multidevice",
-        constants$1264.gdk_window_get_support_multidevice$FUNC
-    );
-    static final FunctionDescriptor gdk_window_get_frame_clock$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_get_frame_clock$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_frame_clock",
-        constants$1264.gdk_window_get_frame_clock$FUNC
-    );
-    static final FunctionDescriptor gdk_window_set_opaque_region$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1264() {}
+    static final FunctionDescriptor gtk_widget_register_window$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_window_set_opaque_region$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_opaque_region",
-        constants$1264.gdk_window_set_opaque_region$FUNC
+    static final MethodHandle gtk_widget_register_window$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_register_window",
+        constants$1264.gtk_widget_register_window$FUNC
     );
-    static final FunctionDescriptor gdk_window_set_event_compression$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_widget_unregister_window$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_window_set_event_compression$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_event_compression",
-        constants$1264.gdk_window_set_event_compression$FUNC
-    );
-    static final FunctionDescriptor gdk_window_get_event_compression$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_window_get_event_compression$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_event_compression",
-        constants$1264.gdk_window_get_event_compression$FUNC
+    static final MethodHandle gtk_widget_unregister_window$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_unregister_window",
+        constants$1264.gtk_widget_unregister_window$FUNC
     );
-    static final FunctionDescriptor gdk_window_set_shadow_width$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_widget_get_allocated_width$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_get_allocated_width$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_allocated_width",
+        constants$1264.gtk_widget_get_allocated_width$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_get_allocated_height$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_get_allocated_height$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_allocated_height",
+        constants$1264.gtk_widget_get_allocated_height$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_get_allocated_baseline$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_get_allocated_baseline$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_allocated_baseline",
+        constants$1264.gtk_widget_get_allocated_baseline$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_get_allocated_size$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_window_set_shadow_width$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_shadow_width",
-        constants$1264.gdk_window_set_shadow_width$FUNC
+    static final MethodHandle gtk_widget_get_allocated_size$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_allocated_size",
+        constants$1264.gtk_widget_get_allocated_size$FUNC
     );
 }
 

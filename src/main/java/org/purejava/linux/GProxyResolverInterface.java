@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GProxyResolverInterface extends _GProxyResolverInterface {
+/**
+ * {@snippet :
+ * typedef struct _GProxyResolverInterface GProxyResolverInterface;
+ * }
+ */
+public final class GProxyResolverInterface extends _GProxyResolverInterface {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GProxyResolverInterface() {}
 }
 
 

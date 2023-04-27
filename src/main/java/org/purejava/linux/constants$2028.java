@@ -7,57 +7,16 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$2028 {
+final class constants$2028 {
 
-    static final FunctionDescriptor gtk_text_buffer_delete_mark_by_name$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_delete_mark_by_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_delete_mark_by_name",
-        constants$2028.gtk_text_buffer_delete_mark_by_name$FUNC
-    );
-    static final FunctionDescriptor gtk_text_buffer_get_insert$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_get_insert$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_get_insert",
-        constants$2028.gtk_text_buffer_get_insert$FUNC
-    );
-    static final FunctionDescriptor gtk_text_buffer_get_selection_bound$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_get_selection_bound$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_get_selection_bound",
-        constants$2028.gtk_text_buffer_get_selection_bound$FUNC
-    );
-    static final FunctionDescriptor gtk_text_buffer_place_cursor$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_place_cursor$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_place_cursor",
-        constants$2028.gtk_text_buffer_place_cursor$FUNC
-    );
-    static final FunctionDescriptor gtk_text_buffer_select_range$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_select_range$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_select_range",
-        constants$2028.gtk_text_buffer_select_range$FUNC
-    );
-    static final FunctionDescriptor gtk_text_buffer_apply_tag$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_apply_tag$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_apply_tag",
-        constants$2028.gtk_text_buffer_apply_tag$FUNC
-    );
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$2028() {}
+    static final MemorySegment GTK_STYLE_PROPERTY_BACKGROUND_IMAGE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("background-image");
+    static final MemorySegment GTK_STYLE_CLASS_CELL$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("cell");
+    static final MemorySegment GTK_STYLE_CLASS_DIM_LABEL$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("dim-label");
+    static final MemorySegment GTK_STYLE_CLASS_ENTRY$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("entry");
+    static final MemorySegment GTK_STYLE_CLASS_LABEL$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("label");
+    static final MemorySegment GTK_STYLE_CLASS_COMBOBOX_ENTRY$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("combobox-entry");
 }
 
 

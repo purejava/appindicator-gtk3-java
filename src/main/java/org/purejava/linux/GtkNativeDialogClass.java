@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkNativeDialogClass extends _GtkNativeDialogClass {
+/**
+ * {@snippet :
+ * typedef struct _GtkNativeDialogClass GtkNativeDialogClass;
+ * }
+ */
+public final class GtkNativeDialogClass extends _GtkNativeDialogClass {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkNativeDialogClass() {}
 }
 
 

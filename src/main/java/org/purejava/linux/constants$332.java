@@ -7,77 +7,60 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$332 {
+final class constants$332 {
 
-    static final FunctionDescriptor g_uri_split_network$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_uri_split_network$MH = RuntimeHelper.downcallHandle(
-        "g_uri_split_network",
-        constants$332.g_uri_split_network$FUNC
-    );
-    static final FunctionDescriptor g_uri_is_valid$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_uri_is_valid$MH = RuntimeHelper.downcallHandle(
-        "g_uri_is_valid",
-        constants$332.g_uri_is_valid$FUNC
-    );
-    static final FunctionDescriptor g_uri_join$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$332() {}
+    static final FunctionDescriptor g_tree_insert_node$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_uri_join$MH = RuntimeHelper.downcallHandle(
-        "g_uri_join",
-        constants$332.g_uri_join$FUNC
+    static final MethodHandle g_tree_insert_node$MH = RuntimeHelper.downcallHandle(
+        "g_tree_insert_node",
+        constants$332.g_tree_insert_node$FUNC
     );
-    static final FunctionDescriptor g_uri_join_with_user$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_tree_insert$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_uri_join_with_user$MH = RuntimeHelper.downcallHandle(
-        "g_uri_join_with_user",
-        constants$332.g_uri_join_with_user$FUNC
+    static final MethodHandle g_tree_insert$MH = RuntimeHelper.downcallHandle(
+        "g_tree_insert",
+        constants$332.g_tree_insert$FUNC
     );
-    static final FunctionDescriptor g_uri_parse$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_tree_replace_node$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_uri_parse$MH = RuntimeHelper.downcallHandle(
-        "g_uri_parse",
-        constants$332.g_uri_parse$FUNC
+    static final MethodHandle g_tree_replace_node$MH = RuntimeHelper.downcallHandle(
+        "g_tree_replace_node",
+        constants$332.g_tree_replace_node$FUNC
     );
-    static final FunctionDescriptor g_uri_parse_relative$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_tree_replace$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_uri_parse_relative$MH = RuntimeHelper.downcallHandle(
-        "g_uri_parse_relative",
-        constants$332.g_uri_parse_relative$FUNC
+    static final MethodHandle g_tree_replace$MH = RuntimeHelper.downcallHandle(
+        "g_tree_replace",
+        constants$332.g_tree_replace$FUNC
+    );
+    static final FunctionDescriptor g_tree_remove$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_tree_remove$MH = RuntimeHelper.downcallHandle(
+        "g_tree_remove",
+        constants$332.g_tree_remove$FUNC
+    );
+    static final FunctionDescriptor g_tree_remove_all$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_tree_remove_all$MH = RuntimeHelper.downcallHandle(
+        "g_tree_remove_all",
+        constants$332.g_tree_remove_all$FUNC
     );
 }
 

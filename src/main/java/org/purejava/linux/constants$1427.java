@@ -7,50 +7,60 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1427 {
+final class constants$1427 {
 
-    static final FunctionDescriptor gtk_widget_show_all$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_show_all$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_show_all",
-        constants$1427.gtk_widget_show_all$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_set_no_show_all$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1427() {}
+    static final FunctionDescriptor gtk_drag_set_icon_gicon$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_widget_set_no_show_all$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_no_show_all",
-        constants$1427.gtk_widget_set_no_show_all$FUNC
+    static final MethodHandle gtk_drag_set_icon_gicon$MH = RuntimeHelper.downcallHandle(
+        "gtk_drag_set_icon_gicon",
+        constants$1427.gtk_drag_set_icon_gicon$FUNC
     );
-    static final FunctionDescriptor gtk_widget_get_no_show_all$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_drag_set_icon_default$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_widget_get_no_show_all$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_no_show_all",
-        constants$1427.gtk_widget_get_no_show_all$FUNC
+    static final MethodHandle gtk_drag_set_icon_default$MH = RuntimeHelper.downcallHandle(
+        "gtk_drag_set_icon_default",
+        constants$1427.gtk_drag_set_icon_default$FUNC
     );
-    static final FunctionDescriptor gtk_widget_map$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_drag_check_threshold$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_drag_check_threshold$MH = RuntimeHelper.downcallHandle(
+        "gtk_drag_check_threshold",
+        constants$1427.gtk_drag_check_threshold$FUNC
+    );
+    static final FunctionDescriptor gtk_editable_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_editable_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_editable_get_type",
+        constants$1427.gtk_editable_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_editable_select_region$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_editable_select_region$MH = RuntimeHelper.downcallHandle(
+        "gtk_editable_select_region",
+        constants$1427.gtk_editable_select_region$FUNC
+    );
+    static final FunctionDescriptor gtk_editable_get_selection_bounds$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_widget_map$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_map",
-        constants$1427.gtk_widget_map$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_unmap$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_unmap$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_unmap",
-        constants$1427.gtk_widget_unmap$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_realize$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_realize$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_realize",
-        constants$1427.gtk_widget_realize$FUNC
+    static final MethodHandle gtk_editable_get_selection_bounds$MH = RuntimeHelper.downcallHandle(
+        "gtk_editable_get_selection_bounds",
+        constants$1427.gtk_editable_get_selection_bounds$FUNC
     );
 }
 

@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GMemVTable extends _GMemVTable {
+/**
+ * {@snippet :
+ * typedef struct _GMemVTable GMemVTable;
+ * }
+ */
+public final class GMemVTable extends _GMemVTable {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GMemVTable() {}
 }
 
 

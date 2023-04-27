@@ -7,49 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$923 {
+final class constants$923 {
 
-    static final FunctionDescriptor glib_autoptr_clear_GFilterOutputStream$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$923() {}
+    static final FunctionDescriptor pango_attr_font_desc_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GFilterOutputStream$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GFilterOutputStream",
-        constants$923.glib_autoptr_clear_GFilterOutputStream$FUNC
+    static final MethodHandle pango_attr_font_desc_new$MH = RuntimeHelper.downcallHandle(
+        "pango_attr_font_desc_new",
+        constants$923.pango_attr_font_desc_new$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GFilterOutputStream$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor pango_attr_underline_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GFilterOutputStream$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GFilterOutputStream",
-        constants$923.glib_autoptr_cleanup_GFilterOutputStream$FUNC
+    static final MethodHandle pango_attr_underline_new$MH = RuntimeHelper.downcallHandle(
+        "pango_attr_underline_new",
+        constants$923.pango_attr_underline_new$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GFilterOutputStream$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor pango_attr_underline_color_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_SHORT$LAYOUT,
+        Constants$root.C_SHORT$LAYOUT,
+        Constants$root.C_SHORT$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GFilterOutputStream$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GFilterOutputStream",
-        constants$923.glib_listautoptr_cleanup_GFilterOutputStream$FUNC
+    static final MethodHandle pango_attr_underline_color_new$MH = RuntimeHelper.downcallHandle(
+        "pango_attr_underline_color_new",
+        constants$923.pango_attr_underline_color_new$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GFilterOutputStream$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor pango_attr_strikethrough_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GFilterOutputStream$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GFilterOutputStream",
-        constants$923.glib_slistautoptr_cleanup_GFilterOutputStream$FUNC
+    static final MethodHandle pango_attr_strikethrough_new$MH = RuntimeHelper.downcallHandle(
+        "pango_attr_strikethrough_new",
+        constants$923.pango_attr_strikethrough_new$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GFilterOutputStream$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor pango_attr_strikethrough_color_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_SHORT$LAYOUT,
+        Constants$root.C_SHORT$LAYOUT,
+        Constants$root.C_SHORT$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GFilterOutputStream$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GFilterOutputStream",
-        constants$923.glib_queueautoptr_cleanup_GFilterOutputStream$FUNC
+    static final MethodHandle pango_attr_strikethrough_color_new$MH = RuntimeHelper.downcallHandle(
+        "pango_attr_strikethrough_color_new",
+        constants$923.pango_attr_strikethrough_color_new$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GIcon$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor pango_attr_rise_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GIcon$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GIcon",
-        constants$923.glib_autoptr_clear_GIcon$FUNC
+    static final MethodHandle pango_attr_rise_new$MH = RuntimeHelper.downcallHandle(
+        "pango_attr_rise_new",
+        constants$923.pango_attr_rise_new$FUNC
     );
 }
 

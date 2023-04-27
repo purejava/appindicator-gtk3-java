@@ -7,54 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1249 {
+final class constants$1249 {
 
-    static final FunctionDescriptor gdk_window_set_startup_id$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1249() {}
+    static final FunctionDescriptor gtk_widget_get_no_show_all$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_get_no_show_all$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_no_show_all",
+        constants$1249.gtk_widget_get_no_show_all$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_map$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_map$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_map",
+        constants$1249.gtk_widget_map$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_unmap$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_unmap$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_unmap",
+        constants$1249.gtk_widget_unmap$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_realize$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_realize$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_realize",
+        constants$1249.gtk_widget_realize$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_unrealize$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_unrealize$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_unrealize",
+        constants$1249.gtk_widget_unrealize$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_draw$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_window_set_startup_id$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_startup_id",
-        constants$1249.gdk_window_set_startup_id$FUNC
-    );
-    static final FunctionDescriptor gdk_window_set_transient_for$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_set_transient_for$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_transient_for",
-        constants$1249.gdk_window_set_transient_for$FUNC
-    );
-    static final FunctionDescriptor gdk_window_set_background$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_set_background$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_background",
-        constants$1249.gdk_window_set_background$FUNC
-    );
-    static final FunctionDescriptor gdk_window_set_background_rgba$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_set_background_rgba$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_background_rgba",
-        constants$1249.gdk_window_set_background_rgba$FUNC
-    );
-    static final FunctionDescriptor gdk_window_set_background_pattern$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_set_background_pattern$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_background_pattern",
-        constants$1249.gdk_window_set_background_pattern$FUNC
-    );
-    static final FunctionDescriptor gdk_window_get_background_pattern$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_get_background_pattern$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_background_pattern",
-        constants$1249.gdk_window_get_background_pattern$FUNC
+    static final MethodHandle gtk_widget_draw$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_draw",
+        constants$1249.gtk_widget_draw$FUNC
     );
 }
 

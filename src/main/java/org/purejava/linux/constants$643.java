@@ -7,47 +7,58 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$643 {
+final class constants$643 {
 
-    static final FunctionDescriptor g_dbus_generate_guid$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_dbus_generate_guid$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_generate_guid",
-        constants$643.g_dbus_generate_guid$FUNC
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$643() {}
+    static final FunctionDescriptor g_file_info_set_attribute_status$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final FunctionDescriptor g_dbus_is_name$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final MethodHandle g_file_info_set_attribute_status$MH = RuntimeHelper.downcallHandle(
+        "g_file_info_set_attribute_status",
+        constants$643.g_file_info_set_attribute_status$FUNC
+    );
+    static final FunctionDescriptor g_file_info_get_attribute_as_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_is_name$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_is_name",
-        constants$643.g_dbus_is_name$FUNC
+    static final MethodHandle g_file_info_get_attribute_as_string$MH = RuntimeHelper.downcallHandle(
+        "g_file_info_get_attribute_as_string",
+        constants$643.g_file_info_get_attribute_as_string$FUNC
     );
-    static final FunctionDescriptor g_dbus_is_unique_name$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_file_info_get_attribute_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_is_unique_name$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_is_unique_name",
-        constants$643.g_dbus_is_unique_name$FUNC
+    static final MethodHandle g_file_info_get_attribute_string$MH = RuntimeHelper.downcallHandle(
+        "g_file_info_get_attribute_string",
+        constants$643.g_file_info_get_attribute_string$FUNC
     );
-    static final FunctionDescriptor g_dbus_is_member_name$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_file_info_get_attribute_byte_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_is_member_name$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_is_member_name",
-        constants$643.g_dbus_is_member_name$FUNC
+    static final MethodHandle g_file_info_get_attribute_byte_string$MH = RuntimeHelper.downcallHandle(
+        "g_file_info_get_attribute_byte_string",
+        constants$643.g_file_info_get_attribute_byte_string$FUNC
     );
-    static final FunctionDescriptor g_dbus_is_interface_name$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_file_info_get_attribute_boolean$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_is_interface_name$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_is_interface_name",
-        constants$643.g_dbus_is_interface_name$FUNC
+    static final MethodHandle g_file_info_get_attribute_boolean$MH = RuntimeHelper.downcallHandle(
+        "g_file_info_get_attribute_boolean",
+        constants$643.g_file_info_get_attribute_boolean$FUNC
     );
-    static final FunctionDescriptor g_dbus_is_error_name$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_file_info_get_attribute_uint32$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_is_error_name$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_is_error_name",
-        constants$643.g_dbus_is_error_name$FUNC
+    static final MethodHandle g_file_info_get_attribute_uint32$MH = RuntimeHelper.downcallHandle(
+        "g_file_info_get_attribute_uint32",
+        constants$643.g_file_info_get_attribute_uint32$FUNC
     );
 }
 

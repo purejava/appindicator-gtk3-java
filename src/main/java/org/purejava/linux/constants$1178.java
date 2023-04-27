@@ -7,40 +7,47 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1178 {
+final class constants$1178 {
 
-    static final FunctionDescriptor cairo_toy_font_face_get_slant$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_toy_font_face_get_slant$MH = RuntimeHelper.downcallHandle(
-        "cairo_toy_font_face_get_slant",
-        constants$1178.cairo_toy_font_face_get_slant$FUNC
-    );
-    static final FunctionDescriptor cairo_toy_font_face_get_weight$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_toy_font_face_get_weight$MH = RuntimeHelper.downcallHandle(
-        "cairo_toy_font_face_get_weight",
-        constants$1178.cairo_toy_font_face_get_weight$FUNC
-    );
-    static final FunctionDescriptor cairo_user_font_face_create$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle cairo_user_font_face_create$MH = RuntimeHelper.downcallHandle(
-        "cairo_user_font_face_create",
-        constants$1178.cairo_user_font_face_create$FUNC
-    );
-    static final FunctionDescriptor cairo_user_scaled_font_init_func_t$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1178() {}
+    static final FunctionDescriptor gdk_keyboard_grab$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle cairo_user_scaled_font_init_func_t$MH = RuntimeHelper.downcallHandle(
-        constants$1178.cairo_user_scaled_font_init_func_t$FUNC
+    static final MethodHandle gdk_keyboard_grab$MH = RuntimeHelper.downcallHandle(
+        "gdk_keyboard_grab",
+        constants$1178.gdk_keyboard_grab$FUNC
     );
-    static final FunctionDescriptor cairo_user_scaled_font_render_glyph_func_t$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gdk_pointer_ungrab$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gdk_pointer_ungrab$MH = RuntimeHelper.downcallHandle(
+        "gdk_pointer_ungrab",
+        constants$1178.gdk_pointer_ungrab$FUNC
+    );
+    static final FunctionDescriptor gdk_keyboard_ungrab$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gdk_keyboard_ungrab$MH = RuntimeHelper.downcallHandle(
+        "gdk_keyboard_ungrab",
+        constants$1178.gdk_keyboard_ungrab$FUNC
+    );
+    static final FunctionDescriptor gdk_pointer_is_grabbed$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
+    static final MethodHandle gdk_pointer_is_grabbed$MH = RuntimeHelper.downcallHandle(
+        "gdk_pointer_is_grabbed",
+        constants$1178.gdk_pointer_is_grabbed$FUNC
+    );
+    static final FunctionDescriptor gdk_screen_width$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
+    static final MethodHandle gdk_screen_width$MH = RuntimeHelper.downcallHandle(
+        "gdk_screen_width",
+        constants$1178.gdk_screen_width$FUNC
+    );
+    static final FunctionDescriptor gdk_screen_height$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
+    static final MethodHandle gdk_screen_height$MH = RuntimeHelper.downcallHandle(
+        "gdk_screen_height",
+        constants$1178.gdk_screen_height$FUNC
     );
 }
 

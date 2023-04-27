@@ -7,49 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$961 {
+final class constants$961 {
 
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GSimplePermission$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$961() {}
+    static final FunctionDescriptor pango_layout_get_justify_last_line$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GSimplePermission$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GSimplePermission",
-        constants$961.glib_slistautoptr_cleanup_GSimplePermission$FUNC
+    static final MethodHandle pango_layout_get_justify_last_line$MH = RuntimeHelper.downcallHandle(
+        "pango_layout_get_justify_last_line",
+        constants$961.pango_layout_get_justify_last_line$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GSimplePermission$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_layout_set_auto_dir$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle pango_layout_set_auto_dir$MH = RuntimeHelper.downcallHandle(
+        "pango_layout_set_auto_dir",
+        constants$961.pango_layout_set_auto_dir$FUNC
+    );
+    static final FunctionDescriptor pango_layout_get_auto_dir$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GSimplePermission$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GSimplePermission",
-        constants$961.glib_queueautoptr_cleanup_GSimplePermission$FUNC
+    static final MethodHandle pango_layout_get_auto_dir$MH = RuntimeHelper.downcallHandle(
+        "pango_layout_get_auto_dir",
+        constants$961.pango_layout_get_auto_dir$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GSimpleProxyResolver$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_layout_set_alignment$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle pango_layout_set_alignment$MH = RuntimeHelper.downcallHandle(
+        "pango_layout_set_alignment",
+        constants$961.pango_layout_set_alignment$FUNC
+    );
+    static final FunctionDescriptor pango_layout_get_alignment$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GSimpleProxyResolver$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GSimpleProxyResolver",
-        constants$961.glib_autoptr_clear_GSimpleProxyResolver$FUNC
+    static final MethodHandle pango_layout_get_alignment$MH = RuntimeHelper.downcallHandle(
+        "pango_layout_get_alignment",
+        constants$961.pango_layout_get_alignment$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GSimpleProxyResolver$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_layout_set_tabs$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GSimpleProxyResolver$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GSimpleProxyResolver",
-        constants$961.glib_autoptr_cleanup_GSimpleProxyResolver$FUNC
-    );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GSimpleProxyResolver$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_listautoptr_cleanup_GSimpleProxyResolver$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GSimpleProxyResolver",
-        constants$961.glib_listautoptr_cleanup_GSimpleProxyResolver$FUNC
-    );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GSimpleProxyResolver$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_slistautoptr_cleanup_GSimpleProxyResolver$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GSimpleProxyResolver",
-        constants$961.glib_slistautoptr_cleanup_GSimpleProxyResolver$FUNC
+    static final MethodHandle pango_layout_set_tabs$MH = RuntimeHelper.downcallHandle(
+        "pango_layout_set_tabs",
+        constants$961.pango_layout_set_tabs$FUNC
     );
 }
 

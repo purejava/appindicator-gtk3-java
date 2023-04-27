@@ -7,79 +7,50 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$684 {
+final class constants$684 {
 
-    static final FunctionDescriptor g_file_load_contents$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$684() {}
+    static final FunctionDescriptor g_io_module_scope_free$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_io_module_scope_free$MH = RuntimeHelper.downcallHandle(
+        "g_io_module_scope_free",
+        constants$684.g_io_module_scope_free$FUNC
+    );
+    static final FunctionDescriptor g_io_module_scope_block$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_file_load_contents$MH = RuntimeHelper.downcallHandle(
-        "g_file_load_contents",
-        constants$684.g_file_load_contents$FUNC
+    static final MethodHandle g_io_module_scope_block$MH = RuntimeHelper.downcallHandle(
+        "g_io_module_scope_block",
+        constants$684.g_io_module_scope_block$FUNC
     );
-    static final FunctionDescriptor g_file_load_contents_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_io_module_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_io_module_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_io_module_get_type",
+        constants$684.g_io_module_get_type$FUNC
+    );
+    static final FunctionDescriptor g_io_module_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_file_load_contents_async$MH = RuntimeHelper.downcallHandle(
-        "g_file_load_contents_async",
-        constants$684.g_file_load_contents_async$FUNC
+    static final MethodHandle g_io_module_new$MH = RuntimeHelper.downcallHandle(
+        "g_io_module_new",
+        constants$684.g_io_module_new$FUNC
     );
-    static final FunctionDescriptor g_file_load_contents_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_io_modules_scan_all_in_directory$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_file_load_contents_finish$MH = RuntimeHelper.downcallHandle(
-        "g_file_load_contents_finish",
-        constants$684.g_file_load_contents_finish$FUNC
+    static final MethodHandle g_io_modules_scan_all_in_directory$MH = RuntimeHelper.downcallHandle(
+        "g_io_modules_scan_all_in_directory",
+        constants$684.g_io_modules_scan_all_in_directory$FUNC
     );
-    static final FunctionDescriptor g_file_load_partial_contents_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_io_modules_load_all_in_directory$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_file_load_partial_contents_async$MH = RuntimeHelper.downcallHandle(
-        "g_file_load_partial_contents_async",
-        constants$684.g_file_load_partial_contents_async$FUNC
-    );
-    static final FunctionDescriptor g_file_load_partial_contents_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_load_partial_contents_finish$MH = RuntimeHelper.downcallHandle(
-        "g_file_load_partial_contents_finish",
-        constants$684.g_file_load_partial_contents_finish$FUNC
-    );
-    static final FunctionDescriptor g_file_replace_contents$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_replace_contents$MH = RuntimeHelper.downcallHandle(
-        "g_file_replace_contents",
-        constants$684.g_file_replace_contents$FUNC
+    static final MethodHandle g_io_modules_load_all_in_directory$MH = RuntimeHelper.downcallHandle(
+        "g_io_modules_load_all_in_directory",
+        constants$684.g_io_modules_load_all_in_directory$FUNC
     );
 }
 

@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkMenuShellClass extends _GtkMenuShellClass {
+/**
+ * {@snippet :
+ * typedef struct _GtkMenuShellClass GtkMenuShellClass;
+ * }
+ */
+public final class GtkMenuShellClass extends _GtkMenuShellClass {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkMenuShellClass() {}
 }
 
 

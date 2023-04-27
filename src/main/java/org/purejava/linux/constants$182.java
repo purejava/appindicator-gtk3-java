@@ -7,60 +7,68 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$182 {
+final class constants$182 {
 
-    static final FunctionDescriptor g_main_context_invoke$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$182() {}
+    static final FunctionDescriptor g_timeout_add$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_timeout_add$MH = RuntimeHelper.downcallHandle(
+        "g_timeout_add",
+        constants$182.g_timeout_add$FUNC
+    );
+    static final FunctionDescriptor g_timeout_add_once$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_timeout_add_once$MH = RuntimeHelper.downcallHandle(
+        "g_timeout_add_once",
+        constants$182.g_timeout_add_once$FUNC
+    );
+    static final FunctionDescriptor g_timeout_add_seconds_full$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_main_context_invoke$MH = RuntimeHelper.downcallHandle(
-        "g_main_context_invoke",
-        constants$182.g_main_context_invoke$FUNC
+    static final MethodHandle g_timeout_add_seconds_full$MH = RuntimeHelper.downcallHandle(
+        "g_timeout_add_seconds_full",
+        constants$182.g_timeout_add_seconds_full$FUNC
     );
-    static final FunctionDescriptor g_steal_fd$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_timeout_add_seconds$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_steal_fd$MH = RuntimeHelper.downcallHandle(
-        "g_steal_fd",
-        constants$182.g_steal_fd$FUNC
+    static final MethodHandle g_timeout_add_seconds$MH = RuntimeHelper.downcallHandle(
+        "g_timeout_add_seconds",
+        constants$182.g_timeout_add_seconds$FUNC
     );
-    static final  GroupLayout g_timeout_funcs$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_POINTER$LAYOUT.withName("prepare"),
-        Constants$root.C_POINTER$LAYOUT.withName("check"),
-        Constants$root.C_POINTER$LAYOUT.withName("dispatch"),
-        Constants$root.C_POINTER$LAYOUT.withName("finalize"),
-        Constants$root.C_POINTER$LAYOUT.withName("closure_callback"),
-        Constants$root.C_POINTER$LAYOUT.withName("closure_marshal")
-    ).withName("_GSourceFuncs");
-    static final MemorySegment g_timeout_funcs$SEGMENT = RuntimeHelper.lookupGlobalVariable("g_timeout_funcs", constants$182.g_timeout_funcs$LAYOUT);
-    static final  GroupLayout g_child_watch_funcs$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_POINTER$LAYOUT.withName("prepare"),
-        Constants$root.C_POINTER$LAYOUT.withName("check"),
-        Constants$root.C_POINTER$LAYOUT.withName("dispatch"),
-        Constants$root.C_POINTER$LAYOUT.withName("finalize"),
-        Constants$root.C_POINTER$LAYOUT.withName("closure_callback"),
-        Constants$root.C_POINTER$LAYOUT.withName("closure_marshal")
-    ).withName("_GSourceFuncs");
-    static final MemorySegment g_child_watch_funcs$SEGMENT = RuntimeHelper.lookupGlobalVariable("g_child_watch_funcs", constants$182.g_child_watch_funcs$LAYOUT);
-    static final  GroupLayout g_idle_funcs$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_POINTER$LAYOUT.withName("prepare"),
-        Constants$root.C_POINTER$LAYOUT.withName("check"),
-        Constants$root.C_POINTER$LAYOUT.withName("dispatch"),
-        Constants$root.C_POINTER$LAYOUT.withName("finalize"),
-        Constants$root.C_POINTER$LAYOUT.withName("closure_callback"),
-        Constants$root.C_POINTER$LAYOUT.withName("closure_marshal")
-    ).withName("_GSourceFuncs");
-    static final MemorySegment g_idle_funcs$SEGMENT = RuntimeHelper.lookupGlobalVariable("g_idle_funcs", constants$182.g_idle_funcs$LAYOUT);
-    static final  GroupLayout g_unix_signal_funcs$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_POINTER$LAYOUT.withName("prepare"),
-        Constants$root.C_POINTER$LAYOUT.withName("check"),
-        Constants$root.C_POINTER$LAYOUT.withName("dispatch"),
-        Constants$root.C_POINTER$LAYOUT.withName("finalize"),
-        Constants$root.C_POINTER$LAYOUT.withName("closure_callback"),
-        Constants$root.C_POINTER$LAYOUT.withName("closure_marshal")
-    ).withName("_GSourceFuncs");
-    static final MemorySegment g_unix_signal_funcs$SEGMENT = RuntimeHelper.lookupGlobalVariable("g_unix_signal_funcs", constants$182.g_unix_signal_funcs$LAYOUT);
+    static final FunctionDescriptor g_child_watch_add_full$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_child_watch_add_full$MH = RuntimeHelper.downcallHandle(
+        "g_child_watch_add_full",
+        constants$182.g_child_watch_add_full$FUNC
+    );
+    static final FunctionDescriptor g_child_watch_add$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_child_watch_add$MH = RuntimeHelper.downcallHandle(
+        "g_child_watch_add",
+        constants$182.g_child_watch_add$FUNC
+    );
 }
 
 

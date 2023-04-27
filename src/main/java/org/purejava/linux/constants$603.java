@@ -7,51 +7,63 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$603 {
+final class constants$603 {
 
-    static final FunctionDescriptor GDBusSubtreeEnumerateFunc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$603() {}
+    static final FunctionDescriptor g_drive_can_start$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GDBusSubtreeEnumerateFunc$MH = RuntimeHelper.downcallHandle(
-        constants$603.GDBusSubtreeEnumerateFunc$FUNC
+    static final MethodHandle g_drive_can_start$MH = RuntimeHelper.downcallHandle(
+        "g_drive_can_start",
+        constants$603.g_drive_can_start$FUNC
     );
-    static final FunctionDescriptor GDBusSubtreeIntrospectFunc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_drive_can_start_degraded$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GDBusSubtreeIntrospectFunc$MH = RuntimeHelper.downcallHandle(
-        constants$603.GDBusSubtreeIntrospectFunc$FUNC
+    static final MethodHandle g_drive_can_start_degraded$MH = RuntimeHelper.downcallHandle(
+        "g_drive_can_start_degraded",
+        constants$603.g_drive_can_start_degraded$FUNC
     );
-    static final FunctionDescriptor GDBusSubtreeDispatchFunc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GDBusSubtreeDispatchFunc$MH = RuntimeHelper.downcallHandle(
-        constants$603.GDBusSubtreeDispatchFunc$FUNC
-    );
-    static final FunctionDescriptor g_dbus_connection_register_subtree$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_drive_start$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_connection_register_subtree$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_register_subtree",
-        constants$603.g_dbus_connection_register_subtree$FUNC
+    static final MethodHandle g_drive_start$MH = RuntimeHelper.downcallHandle(
+        "g_drive_start",
+        constants$603.g_drive_start$FUNC
+    );
+    static final FunctionDescriptor g_drive_start_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_drive_start_finish$MH = RuntimeHelper.downcallHandle(
+        "g_drive_start_finish",
+        constants$603.g_drive_start_finish$FUNC
+    );
+    static final FunctionDescriptor g_drive_can_stop$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_drive_can_stop$MH = RuntimeHelper.downcallHandle(
+        "g_drive_can_stop",
+        constants$603.g_drive_can_stop$FUNC
+    );
+    static final FunctionDescriptor g_drive_stop$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_drive_stop$MH = RuntimeHelper.downcallHandle(
+        "g_drive_stop",
+        constants$603.g_drive_stop$FUNC
     );
 }
 

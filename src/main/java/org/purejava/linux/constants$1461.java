@@ -7,51 +7,56 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1461 {
+final class constants$1461 {
 
-    static final FunctionDescriptor gtk_widget_get_tooltip_markup$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1461() {}
+    static final FunctionDescriptor gtk_entry_get_icon_area$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_widget_get_tooltip_markup$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_tooltip_markup",
-        constants$1461.gtk_widget_get_tooltip_markup$FUNC
+    static final MethodHandle gtk_entry_get_icon_area$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_get_icon_area",
+        constants$1461.gtk_entry_get_icon_area$FUNC
     );
-    static final FunctionDescriptor gtk_widget_set_has_tooltip$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_entry_im_context_filter_keypress$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_entry_im_context_filter_keypress$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_im_context_filter_keypress",
+        constants$1461.gtk_entry_im_context_filter_keypress$FUNC
+    );
+    static final FunctionDescriptor gtk_entry_reset_im_context$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_entry_reset_im_context$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_reset_im_context",
+        constants$1461.gtk_entry_reset_im_context$FUNC
+    );
+    static final FunctionDescriptor gtk_entry_set_input_purpose$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_widget_set_has_tooltip$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_has_tooltip",
-        constants$1461.gtk_widget_set_has_tooltip$FUNC
+    static final MethodHandle gtk_entry_set_input_purpose$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_set_input_purpose",
+        constants$1461.gtk_entry_set_input_purpose$FUNC
     );
-    static final FunctionDescriptor gtk_widget_get_has_tooltip$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_entry_get_input_purpose$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_widget_get_has_tooltip$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_has_tooltip",
-        constants$1461.gtk_widget_get_has_tooltip$FUNC
+    static final MethodHandle gtk_entry_get_input_purpose$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_get_input_purpose",
+        constants$1461.gtk_entry_get_input_purpose$FUNC
     );
-    static final FunctionDescriptor gtk_cairo_should_draw_window$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_entry_set_input_hints$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_cairo_should_draw_window$MH = RuntimeHelper.downcallHandle(
-        "gtk_cairo_should_draw_window",
-        constants$1461.gtk_cairo_should_draw_window$FUNC
-    );
-    static final FunctionDescriptor gtk_cairo_transform_to_window$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_cairo_transform_to_window$MH = RuntimeHelper.downcallHandle(
-        "gtk_cairo_transform_to_window",
-        constants$1461.gtk_cairo_transform_to_window$FUNC
-    );
-    static final FunctionDescriptor gtk_requisition_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_requisition_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_requisition_get_type",
-        constants$1461.gtk_requisition_get_type$FUNC
+    static final MethodHandle gtk_entry_set_input_hints$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_set_input_hints",
+        constants$1461.gtk_entry_set_input_hints$FUNC
     );
 }
 

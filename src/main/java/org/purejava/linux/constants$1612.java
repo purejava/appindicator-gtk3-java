@@ -7,53 +7,48 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1612 {
+final class constants$1612 {
 
-    static final FunctionDescriptor gtk_selection_data_get_uris$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1612() {}
+    static final FunctionDescriptor gtk_gl_area_make_current$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_selection_data_get_uris$MH = RuntimeHelper.downcallHandle(
-        "gtk_selection_data_get_uris",
-        constants$1612.gtk_selection_data_get_uris$FUNC
+    static final MethodHandle gtk_gl_area_make_current$MH = RuntimeHelper.downcallHandle(
+        "gtk_gl_area_make_current",
+        constants$1612.gtk_gl_area_make_current$FUNC
     );
-    static final FunctionDescriptor gtk_selection_data_get_targets$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_gl_area_attach_buffers$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_selection_data_get_targets$MH = RuntimeHelper.downcallHandle(
-        "gtk_selection_data_get_targets",
-        constants$1612.gtk_selection_data_get_targets$FUNC
+    static final MethodHandle gtk_gl_area_attach_buffers$MH = RuntimeHelper.downcallHandle(
+        "gtk_gl_area_attach_buffers",
+        constants$1612.gtk_gl_area_attach_buffers$FUNC
     );
-    static final FunctionDescriptor gtk_selection_data_targets_include_text$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_selection_data_targets_include_text$MH = RuntimeHelper.downcallHandle(
-        "gtk_selection_data_targets_include_text",
-        constants$1612.gtk_selection_data_targets_include_text$FUNC
-    );
-    static final FunctionDescriptor gtk_selection_data_targets_include_rich_text$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_gl_area_set_error$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_selection_data_targets_include_rich_text$MH = RuntimeHelper.downcallHandle(
-        "gtk_selection_data_targets_include_rich_text",
-        constants$1612.gtk_selection_data_targets_include_rich_text$FUNC
+    static final MethodHandle gtk_gl_area_set_error$MH = RuntimeHelper.downcallHandle(
+        "gtk_gl_area_set_error",
+        constants$1612.gtk_gl_area_set_error$FUNC
     );
-    static final FunctionDescriptor gtk_selection_data_targets_include_image$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_selection_data_targets_include_image$MH = RuntimeHelper.downcallHandle(
-        "gtk_selection_data_targets_include_image",
-        constants$1612.gtk_selection_data_targets_include_image$FUNC
-    );
-    static final FunctionDescriptor gtk_selection_data_targets_include_uri$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_gl_area_get_error$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_selection_data_targets_include_uri$MH = RuntimeHelper.downcallHandle(
-        "gtk_selection_data_targets_include_uri",
-        constants$1612.gtk_selection_data_targets_include_uri$FUNC
+    static final MethodHandle gtk_gl_area_get_error$MH = RuntimeHelper.downcallHandle(
+        "gtk_gl_area_get_error",
+        constants$1612.gtk_gl_area_get_error$FUNC
+    );
+    static final FunctionDescriptor gtk_grid_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_grid_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_grid_get_type",
+        constants$1612.gtk_grid_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_grid_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_grid_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_grid_new",
+        constants$1612.gtk_grid_new$FUNC
     );
 }
 

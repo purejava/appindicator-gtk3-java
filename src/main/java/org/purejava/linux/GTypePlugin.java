@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GTypePlugin {
+/**
+ * {@snippet :
+ * typedef struct _GTypePlugin GTypePlugin;
+ * }
+ */
+public final class GTypePlugin {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GTypePlugin() {}
 }
 
 

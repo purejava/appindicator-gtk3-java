@@ -7,52 +7,58 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1507 {
+final class constants$1507 {
 
-    static final FunctionDescriptor gtk_about_dialog_get_version$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1507() {}
+    static final FunctionDescriptor gtk_builder_get_application$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_about_dialog_get_version$MH = RuntimeHelper.downcallHandle(
-        "gtk_about_dialog_get_version",
-        constants$1507.gtk_about_dialog_get_version$FUNC
+    static final MethodHandle gtk_builder_get_application$MH = RuntimeHelper.downcallHandle(
+        "gtk_builder_get_application",
+        constants$1507.gtk_builder_get_application$FUNC
     );
-    static final FunctionDescriptor gtk_about_dialog_set_version$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_builder_extend_with_template$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_builder_extend_with_template$MH = RuntimeHelper.downcallHandle(
+        "gtk_builder_extend_with_template",
+        constants$1507.gtk_builder_extend_with_template$FUNC
+    );
+    static final FunctionDescriptor gtk_buildable_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_buildable_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_buildable_get_type",
+        constants$1507.gtk_buildable_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_buildable_set_name$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_about_dialog_set_version$MH = RuntimeHelper.downcallHandle(
-        "gtk_about_dialog_set_version",
-        constants$1507.gtk_about_dialog_set_version$FUNC
+    static final MethodHandle gtk_buildable_set_name$MH = RuntimeHelper.downcallHandle(
+        "gtk_buildable_set_name",
+        constants$1507.gtk_buildable_set_name$FUNC
     );
-    static final FunctionDescriptor gtk_about_dialog_get_copyright$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_buildable_get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_about_dialog_get_copyright$MH = RuntimeHelper.downcallHandle(
-        "gtk_about_dialog_get_copyright",
-        constants$1507.gtk_about_dialog_get_copyright$FUNC
+    static final MethodHandle gtk_buildable_get_name$MH = RuntimeHelper.downcallHandle(
+        "gtk_buildable_get_name",
+        constants$1507.gtk_buildable_get_name$FUNC
     );
-    static final FunctionDescriptor gtk_about_dialog_set_copyright$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_buildable_add_child$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_about_dialog_set_copyright$MH = RuntimeHelper.downcallHandle(
-        "gtk_about_dialog_set_copyright",
-        constants$1507.gtk_about_dialog_set_copyright$FUNC
-    );
-    static final FunctionDescriptor gtk_about_dialog_get_comments$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_about_dialog_get_comments$MH = RuntimeHelper.downcallHandle(
-        "gtk_about_dialog_get_comments",
-        constants$1507.gtk_about_dialog_get_comments$FUNC
-    );
-    static final FunctionDescriptor gtk_about_dialog_set_comments$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_about_dialog_set_comments$MH = RuntimeHelper.downcallHandle(
-        "gtk_about_dialog_set_comments",
-        constants$1507.gtk_about_dialog_set_comments$FUNC
+    static final MethodHandle gtk_buildable_add_child$MH = RuntimeHelper.downcallHandle(
+        "gtk_buildable_add_child",
+        constants$1507.gtk_buildable_add_child$FUNC
     );
 }
 

@@ -7,50 +7,80 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$636 {
+final class constants$636 {
 
-    static final FunctionDescriptor g_dbus_object_skeleton_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_dbus_object_skeleton_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_object_skeleton_get_type",
-        constants$636.g_dbus_object_skeleton_get_type$FUNC
-    );
-    static final FunctionDescriptor g_dbus_object_skeleton_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_object_skeleton_new$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_object_skeleton_new",
-        constants$636.g_dbus_object_skeleton_new$FUNC
-    );
-    static final FunctionDescriptor g_dbus_object_skeleton_flush$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_object_skeleton_flush$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_object_skeleton_flush",
-        constants$636.g_dbus_object_skeleton_flush$FUNC
-    );
-    static final FunctionDescriptor g_dbus_object_skeleton_add_interface$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$636() {}
+    static final FunctionDescriptor g_file_replace_contents$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_object_skeleton_add_interface$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_object_skeleton_add_interface",
-        constants$636.g_dbus_object_skeleton_add_interface$FUNC
+    static final MethodHandle g_file_replace_contents$MH = RuntimeHelper.downcallHandle(
+        "g_file_replace_contents",
+        constants$636.g_file_replace_contents$FUNC
     );
-    static final FunctionDescriptor g_dbus_object_skeleton_remove_interface$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_file_replace_contents_async$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_object_skeleton_remove_interface$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_object_skeleton_remove_interface",
-        constants$636.g_dbus_object_skeleton_remove_interface$FUNC
+    static final MethodHandle g_file_replace_contents_async$MH = RuntimeHelper.downcallHandle(
+        "g_file_replace_contents_async",
+        constants$636.g_file_replace_contents_async$FUNC
     );
-    static final FunctionDescriptor g_dbus_object_skeleton_remove_interface_by_name$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_file_replace_contents_bytes_async$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_object_skeleton_remove_interface_by_name$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_object_skeleton_remove_interface_by_name",
-        constants$636.g_dbus_object_skeleton_remove_interface_by_name$FUNC
+    static final MethodHandle g_file_replace_contents_bytes_async$MH = RuntimeHelper.downcallHandle(
+        "g_file_replace_contents_bytes_async",
+        constants$636.g_file_replace_contents_bytes_async$FUNC
+    );
+    static final FunctionDescriptor g_file_replace_contents_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_file_replace_contents_finish$MH = RuntimeHelper.downcallHandle(
+        "g_file_replace_contents_finish",
+        constants$636.g_file_replace_contents_finish$FUNC
+    );
+    static final FunctionDescriptor g_file_supports_thread_contexts$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_file_supports_thread_contexts$MH = RuntimeHelper.downcallHandle(
+        "g_file_supports_thread_contexts",
+        constants$636.g_file_supports_thread_contexts$FUNC
+    );
+    static final FunctionDescriptor g_file_load_bytes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_file_load_bytes$MH = RuntimeHelper.downcallHandle(
+        "g_file_load_bytes",
+        constants$636.g_file_load_bytes$FUNC
     );
 }
 

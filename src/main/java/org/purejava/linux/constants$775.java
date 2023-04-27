@@ -7,50 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$775 {
+final class constants$775 {
 
-    static final FunctionDescriptor g_permission_get_can_acquire$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_permission_get_can_acquire$MH = RuntimeHelper.downcallHandle(
-        "g_permission_get_can_acquire",
-        constants$775.g_permission_get_can_acquire$FUNC
-    );
-    static final FunctionDescriptor g_permission_get_can_release$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_permission_get_can_release$MH = RuntimeHelper.downcallHandle(
-        "g_permission_get_can_release",
-        constants$775.g_permission_get_can_release$FUNC
-    );
-    static final FunctionDescriptor g_permission_impl_update$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$775() {}
+    static final FunctionDescriptor g_socket_client_connect_to_uri_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_permission_impl_update$MH = RuntimeHelper.downcallHandle(
-        "g_permission_impl_update",
-        constants$775.g_permission_impl_update$FUNC
-    );
-    static final FunctionDescriptor g_pollable_input_stream_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_pollable_input_stream_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_pollable_input_stream_get_type",
-        constants$775.g_pollable_input_stream_get_type$FUNC
-    );
-    static final FunctionDescriptor g_pollable_input_stream_can_poll$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_pollable_input_stream_can_poll$MH = RuntimeHelper.downcallHandle(
-        "g_pollable_input_stream_can_poll",
-        constants$775.g_pollable_input_stream_can_poll$FUNC
+    static final MethodHandle g_socket_client_connect_to_uri_finish$MH = RuntimeHelper.downcallHandle(
+        "g_socket_client_connect_to_uri_finish",
+        constants$775.g_socket_client_connect_to_uri_finish$FUNC
     );
-    static final FunctionDescriptor g_pollable_input_stream_is_readable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_socket_client_add_application_proxy$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_pollable_input_stream_is_readable$MH = RuntimeHelper.downcallHandle(
-        "g_pollable_input_stream_is_readable",
-        constants$775.g_pollable_input_stream_is_readable$FUNC
+    static final MethodHandle g_socket_client_add_application_proxy$MH = RuntimeHelper.downcallHandle(
+        "g_socket_client_add_application_proxy",
+        constants$775.g_socket_client_add_application_proxy$FUNC
+    );
+    static final FunctionDescriptor g_socket_connectable_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_socket_connectable_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_socket_connectable_get_type",
+        constants$775.g_socket_connectable_get_type$FUNC
+    );
+    static final FunctionDescriptor g_socket_connectable_enumerate$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_socket_connectable_enumerate$MH = RuntimeHelper.downcallHandle(
+        "g_socket_connectable_enumerate",
+        constants$775.g_socket_connectable_enumerate$FUNC
+    );
+    static final FunctionDescriptor g_socket_connectable_proxy_enumerate$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_socket_connectable_proxy_enumerate$MH = RuntimeHelper.downcallHandle(
+        "g_socket_connectable_proxy_enumerate",
+        constants$775.g_socket_connectable_proxy_enumerate$FUNC
+    );
+    static final FunctionDescriptor g_socket_connectable_to_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_socket_connectable_to_string$MH = RuntimeHelper.downcallHandle(
+        "g_socket_connectable_to_string",
+        constants$775.g_socket_connectable_to_string$FUNC
     );
 }
 

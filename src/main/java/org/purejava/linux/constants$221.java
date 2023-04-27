@@ -7,49 +7,62 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$221 {
+final class constants$221 {
 
-    static final FunctionDescriptor g_variant_type_is_definite$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$221() {}
+    static final FunctionDescriptor g_key_file_get_start_group$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_variant_type_is_definite$MH = RuntimeHelper.downcallHandle(
-        "g_variant_type_is_definite",
-        constants$221.g_variant_type_is_definite$FUNC
+    static final MethodHandle g_key_file_get_start_group$MH = RuntimeHelper.downcallHandle(
+        "g_key_file_get_start_group",
+        constants$221.g_key_file_get_start_group$FUNC
     );
-    static final FunctionDescriptor g_variant_type_is_container$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_key_file_get_groups$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_variant_type_is_container$MH = RuntimeHelper.downcallHandle(
-        "g_variant_type_is_container",
-        constants$221.g_variant_type_is_container$FUNC
+    static final MethodHandle g_key_file_get_groups$MH = RuntimeHelper.downcallHandle(
+        "g_key_file_get_groups",
+        constants$221.g_key_file_get_groups$FUNC
     );
-    static final FunctionDescriptor g_variant_type_is_basic$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_key_file_get_keys$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_variant_type_is_basic$MH = RuntimeHelper.downcallHandle(
-        "g_variant_type_is_basic",
-        constants$221.g_variant_type_is_basic$FUNC
+    static final MethodHandle g_key_file_get_keys$MH = RuntimeHelper.downcallHandle(
+        "g_key_file_get_keys",
+        constants$221.g_key_file_get_keys$FUNC
     );
-    static final FunctionDescriptor g_variant_type_is_maybe$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_key_file_has_group$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_variant_type_is_maybe$MH = RuntimeHelper.downcallHandle(
-        "g_variant_type_is_maybe",
-        constants$221.g_variant_type_is_maybe$FUNC
+    static final MethodHandle g_key_file_has_group$MH = RuntimeHelper.downcallHandle(
+        "g_key_file_has_group",
+        constants$221.g_key_file_has_group$FUNC
     );
-    static final FunctionDescriptor g_variant_type_is_array$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_key_file_has_key$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_variant_type_is_array$MH = RuntimeHelper.downcallHandle(
-        "g_variant_type_is_array",
-        constants$221.g_variant_type_is_array$FUNC
+    static final MethodHandle g_key_file_has_key$MH = RuntimeHelper.downcallHandle(
+        "g_key_file_has_key",
+        constants$221.g_key_file_has_key$FUNC
     );
-    static final FunctionDescriptor g_variant_type_is_tuple$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_key_file_get_value$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_variant_type_is_tuple$MH = RuntimeHelper.downcallHandle(
-        "g_variant_type_is_tuple",
-        constants$221.g_variant_type_is_tuple$FUNC
+    static final MethodHandle g_key_file_get_value$MH = RuntimeHelper.downcallHandle(
+        "g_key_file_get_value",
+        constants$221.g_key_file_get_value$FUNC
     );
 }
 

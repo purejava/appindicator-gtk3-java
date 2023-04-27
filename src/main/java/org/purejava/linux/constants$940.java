@@ -7,49 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$940 {
+final class constants$940 {
 
-    static final FunctionDescriptor glib_listautoptr_cleanup_GNetworkAddress$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$940() {}
+    static final FunctionDescriptor pango_context_set_language$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GNetworkAddress$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GNetworkAddress",
-        constants$940.glib_listautoptr_cleanup_GNetworkAddress$FUNC
+    static final MethodHandle pango_context_set_language$MH = RuntimeHelper.downcallHandle(
+        "pango_context_set_language",
+        constants$940.pango_context_set_language$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GNetworkAddress$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_context_set_base_dir$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle pango_context_set_base_dir$MH = RuntimeHelper.downcallHandle(
+        "pango_context_set_base_dir",
+        constants$940.pango_context_set_base_dir$FUNC
+    );
+    static final FunctionDescriptor pango_context_get_base_dir$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GNetworkAddress$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GNetworkAddress",
-        constants$940.glib_slistautoptr_cleanup_GNetworkAddress$FUNC
+    static final MethodHandle pango_context_get_base_dir$MH = RuntimeHelper.downcallHandle(
+        "pango_context_get_base_dir",
+        constants$940.pango_context_get_base_dir$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GNetworkAddress$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_context_set_base_gravity$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle pango_context_set_base_gravity$MH = RuntimeHelper.downcallHandle(
+        "pango_context_set_base_gravity",
+        constants$940.pango_context_set_base_gravity$FUNC
+    );
+    static final FunctionDescriptor pango_context_get_base_gravity$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GNetworkAddress$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GNetworkAddress",
-        constants$940.glib_queueautoptr_cleanup_GNetworkAddress$FUNC
+    static final MethodHandle pango_context_get_base_gravity$MH = RuntimeHelper.downcallHandle(
+        "pango_context_get_base_gravity",
+        constants$940.pango_context_get_base_gravity$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GNetworkMonitor$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_context_get_gravity$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GNetworkMonitor$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GNetworkMonitor",
-        constants$940.glib_autoptr_clear_GNetworkMonitor$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_cleanup_GNetworkMonitor$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_autoptr_cleanup_GNetworkMonitor$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GNetworkMonitor",
-        constants$940.glib_autoptr_cleanup_GNetworkMonitor$FUNC
-    );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GNetworkMonitor$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_listautoptr_cleanup_GNetworkMonitor$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GNetworkMonitor",
-        constants$940.glib_listautoptr_cleanup_GNetworkMonitor$FUNC
+    static final MethodHandle pango_context_get_gravity$MH = RuntimeHelper.downcallHandle(
+        "pango_context_get_gravity",
+        constants$940.pango_context_get_gravity$FUNC
     );
 }
 

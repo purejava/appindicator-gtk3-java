@@ -7,37 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1103 {
+final class constants$1103 {
 
-    static final FunctionDescriptor pango_show_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_show_flags_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_show_flags_get_type",
-        constants$1103.pango_show_flags_get_type$FUNC
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1103() {}
+    static final FunctionDescriptor gdk_window_process_updates$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final FunctionDescriptor pango_text_transform_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_text_transform_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_text_transform_get_type",
-        constants$1103.pango_text_transform_get_type$FUNC
+    static final MethodHandle gdk_window_process_updates$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_process_updates",
+        constants$1103.gdk_window_process_updates$FUNC
     );
-    static final FunctionDescriptor pango_baseline_shift_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_baseline_shift_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_baseline_shift_get_type",
-        constants$1103.pango_baseline_shift_get_type$FUNC
+    static final FunctionDescriptor gdk_window_set_debug_updates$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_INT$LAYOUT
     );
-    static final FunctionDescriptor pango_font_scale_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_font_scale_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_font_scale_get_type",
-        constants$1103.pango_font_scale_get_type$FUNC
+    static final MethodHandle gdk_window_set_debug_updates$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_set_debug_updates",
+        constants$1103.gdk_window_set_debug_updates$FUNC
     );
-    static final FunctionDescriptor pango_bidi_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_bidi_type_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_bidi_type_get_type",
-        constants$1103.pango_bidi_type_get_type$FUNC
+    static final FunctionDescriptor gdk_window_constrain_size$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor pango_coverage_level_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_coverage_level_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_coverage_level_get_type",
-        constants$1103.pango_coverage_level_get_type$FUNC
+    static final MethodHandle gdk_window_constrain_size$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_constrain_size",
+        constants$1103.gdk_window_constrain_size$FUNC
+    );
+    static final FunctionDescriptor gdk_window_enable_synchronized_configure$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_window_enable_synchronized_configure$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_enable_synchronized_configure",
+        constants$1103.gdk_window_enable_synchronized_configure$FUNC
+    );
+    static final FunctionDescriptor gdk_window_configure_finished$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_window_configure_finished$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_configure_finished",
+        constants$1103.gdk_window_configure_finished$FUNC
+    );
+    static final FunctionDescriptor gdk_get_default_root_window$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gdk_get_default_root_window$MH = RuntimeHelper.downcallHandle(
+        "gdk_get_default_root_window",
+        constants$1103.gdk_get_default_root_window$FUNC
     );
 }
 

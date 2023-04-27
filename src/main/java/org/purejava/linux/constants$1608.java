@@ -7,61 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1608 {
+final class constants$1608 {
 
-    static final FunctionDescriptor gtk_target_list_find$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1608() {}
+    static final FunctionDescriptor gtk_gesture_stylus_get_axes$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_target_list_find$MH = RuntimeHelper.downcallHandle(
-        "gtk_target_list_find",
-        constants$1608.gtk_target_list_find$FUNC
+    static final MethodHandle gtk_gesture_stylus_get_axes$MH = RuntimeHelper.downcallHandle(
+        "gtk_gesture_stylus_get_axes",
+        constants$1608.gtk_gesture_stylus_get_axes$FUNC
     );
-    static final FunctionDescriptor gtk_target_table_new_from_list$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_gesture_stylus_get_device_tool$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_gesture_stylus_get_device_tool$MH = RuntimeHelper.downcallHandle(
+        "gtk_gesture_stylus_get_device_tool",
+        constants$1608.gtk_gesture_stylus_get_device_tool$FUNC
+    );
+    static final FunctionDescriptor gtk_gesture_swipe_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_gesture_swipe_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_gesture_swipe_get_type",
+        constants$1608.gtk_gesture_swipe_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_gesture_swipe_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_gesture_swipe_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_gesture_swipe_new",
+        constants$1608.gtk_gesture_swipe_new$FUNC
+    );
+    static final FunctionDescriptor gtk_gesture_swipe_get_velocity$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_target_table_new_from_list$MH = RuntimeHelper.downcallHandle(
-        "gtk_target_table_new_from_list",
-        constants$1608.gtk_target_table_new_from_list$FUNC
+    static final MethodHandle gtk_gesture_swipe_get_velocity$MH = RuntimeHelper.downcallHandle(
+        "gtk_gesture_swipe_get_velocity",
+        constants$1608.gtk_gesture_swipe_get_velocity$FUNC
     );
-    static final FunctionDescriptor gtk_target_table_free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_target_table_free$MH = RuntimeHelper.downcallHandle(
-        "gtk_target_table_free",
-        constants$1608.gtk_target_table_free$FUNC
-    );
-    static final FunctionDescriptor gtk_selection_owner_set$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_selection_owner_set$MH = RuntimeHelper.downcallHandle(
-        "gtk_selection_owner_set",
-        constants$1608.gtk_selection_owner_set$FUNC
-    );
-    static final FunctionDescriptor gtk_selection_owner_set_for_display$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_selection_owner_set_for_display$MH = RuntimeHelper.downcallHandle(
-        "gtk_selection_owner_set_for_display",
-        constants$1608.gtk_selection_owner_set_for_display$FUNC
-    );
-    static final FunctionDescriptor gtk_selection_add_target$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_selection_add_target$MH = RuntimeHelper.downcallHandle(
-        "gtk_selection_add_target",
-        constants$1608.gtk_selection_add_target$FUNC
+    static final FunctionDescriptor gtk_gesture_zoom_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_gesture_zoom_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_gesture_zoom_get_type",
+        constants$1608.gtk_gesture_zoom_get_type$FUNC
     );
 }
 

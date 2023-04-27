@@ -7,45 +7,62 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$804 {
+final class constants$804 {
 
-    static final FunctionDescriptor g_settings_delay$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$804() {}
+    static final FunctionDescriptor g_tls_certificate_new_from_pkcs12$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_settings_delay$MH = RuntimeHelper.downcallHandle(
-        "g_settings_delay",
-        constants$804.g_settings_delay$FUNC
+    static final MethodHandle g_tls_certificate_new_from_pkcs12$MH = RuntimeHelper.downcallHandle(
+        "g_tls_certificate_new_from_pkcs12",
+        constants$804.g_tls_certificate_new_from_pkcs12$FUNC
     );
-    static final FunctionDescriptor g_settings_apply$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_settings_apply$MH = RuntimeHelper.downcallHandle(
-        "g_settings_apply",
-        constants$804.g_settings_apply$FUNC
-    );
-    static final FunctionDescriptor g_settings_revert$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_settings_revert$MH = RuntimeHelper.downcallHandle(
-        "g_settings_revert",
-        constants$804.g_settings_revert$FUNC
-    );
-    static final FunctionDescriptor g_settings_get_has_unapplied$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_settings_get_has_unapplied$MH = RuntimeHelper.downcallHandle(
-        "g_settings_get_has_unapplied",
-        constants$804.g_settings_get_has_unapplied$FUNC
-    );
-    static final FunctionDescriptor g_settings_sync$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle g_settings_sync$MH = RuntimeHelper.downcallHandle(
-        "g_settings_sync",
-        constants$804.g_settings_sync$FUNC
-    );
-    static final FunctionDescriptor GSettingsBindSetMapping$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_tls_certificate_new_from_file_with_password$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_tls_certificate_new_from_file_with_password$MH = RuntimeHelper.downcallHandle(
+        "g_tls_certificate_new_from_file_with_password",
+        constants$804.g_tls_certificate_new_from_file_with_password$FUNC
+    );
+    static final FunctionDescriptor g_tls_certificate_new_from_file$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_tls_certificate_new_from_file$MH = RuntimeHelper.downcallHandle(
+        "g_tls_certificate_new_from_file",
+        constants$804.g_tls_certificate_new_from_file$FUNC
+    );
+    static final FunctionDescriptor g_tls_certificate_new_from_files$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_tls_certificate_new_from_files$MH = RuntimeHelper.downcallHandle(
+        "g_tls_certificate_new_from_files",
+        constants$804.g_tls_certificate_new_from_files$FUNC
+    );
+    static final FunctionDescriptor g_tls_certificate_new_from_pkcs11_uris$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_tls_certificate_new_from_pkcs11_uris$MH = RuntimeHelper.downcallHandle(
+        "g_tls_certificate_new_from_pkcs11_uris",
+        constants$804.g_tls_certificate_new_from_pkcs11_uris$FUNC
+    );
+    static final FunctionDescriptor g_tls_certificate_list_new_from_file$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_tls_certificate_list_new_from_file$MH = RuntimeHelper.downcallHandle(
+        "g_tls_certificate_list_new_from_file",
+        constants$804.g_tls_certificate_list_new_from_file$FUNC
     );
 }
 

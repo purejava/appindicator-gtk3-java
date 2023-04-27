@@ -7,58 +7,16 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$2036 {
+final class constants$2036 {
 
-    static final FunctionDescriptor gtk_text_buffer_serialize$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_serialize$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_serialize",
-        constants$2036.gtk_text_buffer_serialize$FUNC
-    );
-    static final FunctionDescriptor gtk_text_buffer_deserialize$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_deserialize$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_deserialize",
-        constants$2036.gtk_text_buffer_deserialize$FUNC
-    );
-    static final FunctionDescriptor gtk_text_view_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_text_view_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_get_type",
-        constants$2036.gtk_text_view_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_text_view_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_text_view_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_new",
-        constants$2036.gtk_text_view_new$FUNC
-    );
-    static final FunctionDescriptor gtk_text_view_new_with_buffer$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_view_new_with_buffer$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_new_with_buffer",
-        constants$2036.gtk_text_view_new_with_buffer$FUNC
-    );
-    static final FunctionDescriptor gtk_text_view_set_buffer$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_view_set_buffer$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_set_buffer",
-        constants$2036.gtk_text_view_set_buffer$FUNC
-    );
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$2036() {}
+    static final MemorySegment GTK_STYLE_CLASS_HIGHLIGHT$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("highlight");
+    static final MemorySegment GTK_STYLE_CLASS_FRAME$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("frame");
+    static final MemorySegment GTK_STYLE_CLASS_DND$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("dnd");
+    static final MemorySegment GTK_STYLE_CLASS_PANE_SEPARATOR$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("pane-separator");
+    static final MemorySegment GTK_STYLE_CLASS_SEPARATOR$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("separator");
+    static final MemorySegment GTK_STYLE_CLASS_INFO$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("info");
 }
 
 

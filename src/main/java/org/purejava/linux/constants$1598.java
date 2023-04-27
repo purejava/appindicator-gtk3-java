@@ -7,52 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1598 {
+final class constants$1598 {
 
-    static final FunctionDescriptor gtk_text_iter_backward_chars$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1598() {}
+    static final FunctionDescriptor gtk_font_chooser_set_font_map$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_font_chooser_set_font_map$MH = RuntimeHelper.downcallHandle(
+        "gtk_font_chooser_set_font_map",
+        constants$1598.gtk_font_chooser_set_font_map$FUNC
+    );
+    static final FunctionDescriptor gtk_font_chooser_get_font_map$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_font_chooser_get_font_map$MH = RuntimeHelper.downcallHandle(
+        "gtk_font_chooser_get_font_map",
+        constants$1598.gtk_font_chooser_get_font_map$FUNC
+    );
+    static final FunctionDescriptor gtk_font_chooser_set_level$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_text_iter_backward_chars$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_backward_chars",
-        constants$1598.gtk_text_iter_backward_chars$FUNC
+    static final MethodHandle gtk_font_chooser_set_level$MH = RuntimeHelper.downcallHandle(
+        "gtk_font_chooser_set_level",
+        constants$1598.gtk_font_chooser_set_level$FUNC
     );
-    static final FunctionDescriptor gtk_text_iter_forward_line$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_font_chooser_get_level$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_text_iter_forward_line$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_forward_line",
-        constants$1598.gtk_text_iter_forward_line$FUNC
+    static final MethodHandle gtk_font_chooser_get_level$MH = RuntimeHelper.downcallHandle(
+        "gtk_font_chooser_get_level",
+        constants$1598.gtk_font_chooser_get_level$FUNC
     );
-    static final FunctionDescriptor gtk_text_iter_backward_line$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_font_chooser_get_font_features$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_text_iter_backward_line$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_backward_line",
-        constants$1598.gtk_text_iter_backward_line$FUNC
+    static final MethodHandle gtk_font_chooser_get_font_features$MH = RuntimeHelper.downcallHandle(
+        "gtk_font_chooser_get_font_features",
+        constants$1598.gtk_font_chooser_get_font_features$FUNC
     );
-    static final FunctionDescriptor gtk_text_iter_forward_lines$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_text_iter_forward_lines$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_forward_lines",
-        constants$1598.gtk_text_iter_forward_lines$FUNC
-    );
-    static final FunctionDescriptor gtk_text_iter_backward_lines$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_text_iter_backward_lines$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_backward_lines",
-        constants$1598.gtk_text_iter_backward_lines$FUNC
-    );
-    static final FunctionDescriptor gtk_text_iter_forward_word_end$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_font_chooser_get_language$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_text_iter_forward_word_end$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_forward_word_end",
-        constants$1598.gtk_text_iter_forward_word_end$FUNC
+    static final MethodHandle gtk_font_chooser_get_language$MH = RuntimeHelper.downcallHandle(
+        "gtk_font_chooser_get_language",
+        constants$1598.gtk_font_chooser_get_language$FUNC
     );
 }
 

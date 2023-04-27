@@ -7,49 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$269 {
+final class constants$269 {
 
-    static final FunctionDescriptor g_random_double$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT);
-    static final MethodHandle g_random_double$MH = RuntimeHelper.downcallHandle(
-        "g_random_double",
-        constants$269.g_random_double$FUNC
-    );
-    static final FunctionDescriptor g_random_double_range$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle g_random_double_range$MH = RuntimeHelper.downcallHandle(
-        "g_random_double_range",
-        constants$269.g_random_double_range$FUNC
-    );
-    static final FunctionDescriptor g_rc_box_alloc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_rc_box_alloc$MH = RuntimeHelper.downcallHandle(
-        "g_rc_box_alloc",
-        constants$269.g_rc_box_alloc$FUNC
-    );
-    static final FunctionDescriptor g_rc_box_alloc0$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_rc_box_alloc0$MH = RuntimeHelper.downcallHandle(
-        "g_rc_box_alloc0",
-        constants$269.g_rc_box_alloc0$FUNC
-    );
-    static final FunctionDescriptor g_rc_box_dup$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$269() {}
+    static final FunctionDescriptor g_option_group_set_translate_func$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_rc_box_dup$MH = RuntimeHelper.downcallHandle(
-        "g_rc_box_dup",
-        constants$269.g_rc_box_dup$FUNC
+    static final MethodHandle g_option_group_set_translate_func$MH = RuntimeHelper.downcallHandle(
+        "g_option_group_set_translate_func",
+        constants$269.g_option_group_set_translate_func$FUNC
     );
-    static final FunctionDescriptor g_rc_box_acquire$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_option_group_set_translation_domain$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_rc_box_acquire$MH = RuntimeHelper.downcallHandle(
-        "g_rc_box_acquire",
-        constants$269.g_rc_box_acquire$FUNC
+    static final MethodHandle g_option_group_set_translation_domain$MH = RuntimeHelper.downcallHandle(
+        "g_option_group_set_translation_domain",
+        constants$269.g_option_group_set_translation_domain$FUNC
+    );
+    static final FunctionDescriptor g_path_buf_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle g_path_buf_new$MH = RuntimeHelper.downcallHandle(
+        "g_path_buf_new",
+        constants$269.g_path_buf_new$FUNC
+    );
+    static final FunctionDescriptor g_path_buf_new_from_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_path_buf_new_from_path$MH = RuntimeHelper.downcallHandle(
+        "g_path_buf_new_from_path",
+        constants$269.g_path_buf_new_from_path$FUNC
+    );
+    static final FunctionDescriptor g_path_buf_init$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_path_buf_init$MH = RuntimeHelper.downcallHandle(
+        "g_path_buf_init",
+        constants$269.g_path_buf_init$FUNC
+    );
+    static final FunctionDescriptor g_path_buf_init_from_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_path_buf_init_from_path$MH = RuntimeHelper.downcallHandle(
+        "g_path_buf_init_from_path",
+        constants$269.g_path_buf_init_from_path$FUNC
     );
 }
 

@@ -7,9 +7,23 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GtkSwitchClass {
+ *     GtkWidgetClass parent_class;
+ *     void (*activate)(GtkSwitch*);
+ *     gboolean (*state_set)(GtkSwitch*,gboolean);
+ *     void (*_switch_padding_1)();
+ *     void (*_switch_padding_2)();
+ *     void (*_switch_padding_3)();
+ *     void (*_switch_padding_4)();
+ *     void (*_switch_padding_5)();
+ * };
+ * }
+ */
 public class _GtkSwitchClass {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
                 MemoryLayout.structLayout(
@@ -25,7 +39,10 @@ public class _GtkSwitchClass {
                 Constants$root.C_POINTER$LAYOUT.withName("notify"),
                 Constants$root.C_POINTER$LAYOUT.withName("constructed"),
                 Constants$root.C_LONG_LONG$LAYOUT.withName("flags"),
-                MemoryLayout.sequenceLayout(6, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
+                Constants$root.C_LONG_LONG$LAYOUT.withName("n_construct_properties"),
+                Constants$root.C_POINTER$LAYOUT.withName("pspecs"),
+                Constants$root.C_LONG_LONG$LAYOUT.withName("n_pspecs"),
+                MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
             ).withName("parent_class"),
             Constants$root.C_INT$LAYOUT.withName("activate_signal"),
             MemoryLayout.paddingLayout(32),
@@ -132,20 +149,32 @@ public class _GtkSwitchClass {
     static final FunctionDescriptor activate$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle activate$MH = RuntimeHelper.downcallHandle(
-        _GtkSwitchClass.activate$FUNC
+    static final FunctionDescriptor activate_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle activate_UP$MH = RuntimeHelper.upcallHandle(activate.class, "apply", _GtkSwitchClass.activate_UP$FUNC);
+    static final FunctionDescriptor activate_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle activate_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkSwitchClass.activate_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*activate)(GtkSwitch*);
+     * }
+     */
     public interface activate {
 
-        void apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(activate fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(activate.class, fi, _GtkSwitchClass.activate$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment display);
+        static MemorySegment allocate(activate fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkSwitchClass.activate_UP$MH, fi, _GtkSwitchClass.activate$FUNC, scope);
         }
-        static activate ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static activate ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GtkSwitchClass.activate$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    _GtkSwitchClass.activate_DOWN$MH.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -157,39 +186,65 @@ public class _GtkSwitchClass {
     public static VarHandle activate$VH() {
         return _GtkSwitchClass.activate$VH;
     }
-    public static MemoryAddress activate$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkSwitchClass.activate$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*activate)(GtkSwitch*);
+     * }
+     */
+    public static MemorySegment activate$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkSwitchClass.activate$VH.get(seg);
     }
-    public static void activate$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*activate)(GtkSwitch*);
+     * }
+     */
+    public static void activate$set(MemorySegment seg, MemorySegment x) {
         _GtkSwitchClass.activate$VH.set(seg, x);
     }
-    public static MemoryAddress activate$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkSwitchClass.activate$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment activate$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkSwitchClass.activate$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void activate$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void activate$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkSwitchClass.activate$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static activate activate (MemorySegment segment, MemorySession session) {
-        return activate.ofAddress(activate$get(segment), session);
+    public static activate activate(MemorySegment segment, SegmentScope scope) {
+        return activate.ofAddress(activate$get(segment), scope);
     }
     static final FunctionDescriptor state_set$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle state_set$MH = RuntimeHelper.downcallHandle(
-        _GtkSwitchClass.state_set$FUNC
+    static final FunctionDescriptor state_set_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle state_set_UP$MH = RuntimeHelper.upcallHandle(state_set.class, "apply", _GtkSwitchClass.state_set_UP$FUNC);
+    static final FunctionDescriptor state_set_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle state_set_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkSwitchClass.state_set_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*state_set)(GtkSwitch*,gboolean);
+     * }
+     */
     public interface state_set {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, int _x1);
-        static MemorySegment allocate(state_set fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(state_set.class, fi, _GtkSwitchClass.state_set$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, int _x1);
+        static MemorySegment allocate(state_set fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkSwitchClass.state_set_UP$MH, fi, _GtkSwitchClass.state_set$FUNC, scope);
         }
-        static state_set ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, int __x1) -> {
+        static state_set ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, int __x1) -> {
                 try {
-                    return (int)_GtkSwitchClass.state_set$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, __x1);
+                    return (int)_GtkSwitchClass.state_set_DOWN$MH.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -201,36 +256,56 @@ public class _GtkSwitchClass {
     public static VarHandle state_set$VH() {
         return _GtkSwitchClass.state_set$VH;
     }
-    public static MemoryAddress state_set$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkSwitchClass.state_set$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*state_set)(GtkSwitch*,gboolean);
+     * }
+     */
+    public static MemorySegment state_set$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkSwitchClass.state_set$VH.get(seg);
     }
-    public static void state_set$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*state_set)(GtkSwitch*,gboolean);
+     * }
+     */
+    public static void state_set$set(MemorySegment seg, MemorySegment x) {
         _GtkSwitchClass.state_set$VH.set(seg, x);
     }
-    public static MemoryAddress state_set$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkSwitchClass.state_set$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment state_set$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkSwitchClass.state_set$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void state_set$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void state_set$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkSwitchClass.state_set$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static state_set state_set (MemorySegment segment, MemorySession session) {
-        return state_set.ofAddress(state_set$get(segment), session);
+    public static state_set state_set(MemorySegment segment, SegmentScope scope) {
+        return state_set.ofAddress(state_set$get(segment), scope);
     }
     static final FunctionDescriptor _switch_padding_1$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _switch_padding_1$MH = RuntimeHelper.downcallHandle(
-        _GtkSwitchClass._switch_padding_1$FUNC
+    static final FunctionDescriptor _switch_padding_1_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _switch_padding_1_UP$MH = RuntimeHelper.upcallHandle(_switch_padding_1.class, "apply", _GtkSwitchClass._switch_padding_1_UP$FUNC);
+    static final FunctionDescriptor _switch_padding_1_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _switch_padding_1_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkSwitchClass._switch_padding_1_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_switch_padding_1)();
+     * }
+     */
     public interface _switch_padding_1 {
 
         void apply();
-        static MemorySegment allocate(_switch_padding_1 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_switch_padding_1.class, fi, _GtkSwitchClass._switch_padding_1$FUNC, session);
+        static MemorySegment allocate(_switch_padding_1 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkSwitchClass._switch_padding_1_UP$MH, fi, _GtkSwitchClass._switch_padding_1$FUNC, scope);
         }
-        static _switch_padding_1 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _switch_padding_1 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkSwitchClass._switch_padding_1$MH.invokeExact((Addressable)symbol);
+                    _GtkSwitchClass._switch_padding_1_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -242,36 +317,56 @@ public class _GtkSwitchClass {
     public static VarHandle _switch_padding_1$VH() {
         return _GtkSwitchClass._switch_padding_1$VH;
     }
-    public static MemoryAddress _switch_padding_1$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkSwitchClass._switch_padding_1$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_switch_padding_1)();
+     * }
+     */
+    public static MemorySegment _switch_padding_1$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkSwitchClass._switch_padding_1$VH.get(seg);
     }
-    public static void _switch_padding_1$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_switch_padding_1)();
+     * }
+     */
+    public static void _switch_padding_1$set(MemorySegment seg, MemorySegment x) {
         _GtkSwitchClass._switch_padding_1$VH.set(seg, x);
     }
-    public static MemoryAddress _switch_padding_1$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkSwitchClass._switch_padding_1$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _switch_padding_1$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkSwitchClass._switch_padding_1$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _switch_padding_1$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _switch_padding_1$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkSwitchClass._switch_padding_1$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _switch_padding_1 _switch_padding_1 (MemorySegment segment, MemorySession session) {
-        return _switch_padding_1.ofAddress(_switch_padding_1$get(segment), session);
+    public static _switch_padding_1 _switch_padding_1(MemorySegment segment, SegmentScope scope) {
+        return _switch_padding_1.ofAddress(_switch_padding_1$get(segment), scope);
     }
     static final FunctionDescriptor _switch_padding_2$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _switch_padding_2$MH = RuntimeHelper.downcallHandle(
-        _GtkSwitchClass._switch_padding_2$FUNC
+    static final FunctionDescriptor _switch_padding_2_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _switch_padding_2_UP$MH = RuntimeHelper.upcallHandle(_switch_padding_2.class, "apply", _GtkSwitchClass._switch_padding_2_UP$FUNC);
+    static final FunctionDescriptor _switch_padding_2_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _switch_padding_2_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkSwitchClass._switch_padding_2_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_switch_padding_2)();
+     * }
+     */
     public interface _switch_padding_2 {
 
         void apply();
-        static MemorySegment allocate(_switch_padding_2 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_switch_padding_2.class, fi, _GtkSwitchClass._switch_padding_2$FUNC, session);
+        static MemorySegment allocate(_switch_padding_2 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkSwitchClass._switch_padding_2_UP$MH, fi, _GtkSwitchClass._switch_padding_2$FUNC, scope);
         }
-        static _switch_padding_2 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _switch_padding_2 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkSwitchClass._switch_padding_2$MH.invokeExact((Addressable)symbol);
+                    _GtkSwitchClass._switch_padding_2_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -283,36 +378,56 @@ public class _GtkSwitchClass {
     public static VarHandle _switch_padding_2$VH() {
         return _GtkSwitchClass._switch_padding_2$VH;
     }
-    public static MemoryAddress _switch_padding_2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkSwitchClass._switch_padding_2$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_switch_padding_2)();
+     * }
+     */
+    public static MemorySegment _switch_padding_2$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkSwitchClass._switch_padding_2$VH.get(seg);
     }
-    public static void _switch_padding_2$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_switch_padding_2)();
+     * }
+     */
+    public static void _switch_padding_2$set(MemorySegment seg, MemorySegment x) {
         _GtkSwitchClass._switch_padding_2$VH.set(seg, x);
     }
-    public static MemoryAddress _switch_padding_2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkSwitchClass._switch_padding_2$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _switch_padding_2$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkSwitchClass._switch_padding_2$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _switch_padding_2$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _switch_padding_2$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkSwitchClass._switch_padding_2$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _switch_padding_2 _switch_padding_2 (MemorySegment segment, MemorySession session) {
-        return _switch_padding_2.ofAddress(_switch_padding_2$get(segment), session);
+    public static _switch_padding_2 _switch_padding_2(MemorySegment segment, SegmentScope scope) {
+        return _switch_padding_2.ofAddress(_switch_padding_2$get(segment), scope);
     }
     static final FunctionDescriptor _switch_padding_3$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _switch_padding_3$MH = RuntimeHelper.downcallHandle(
-        _GtkSwitchClass._switch_padding_3$FUNC
+    static final FunctionDescriptor _switch_padding_3_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _switch_padding_3_UP$MH = RuntimeHelper.upcallHandle(_switch_padding_3.class, "apply", _GtkSwitchClass._switch_padding_3_UP$FUNC);
+    static final FunctionDescriptor _switch_padding_3_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _switch_padding_3_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkSwitchClass._switch_padding_3_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_switch_padding_3)();
+     * }
+     */
     public interface _switch_padding_3 {
 
         void apply();
-        static MemorySegment allocate(_switch_padding_3 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_switch_padding_3.class, fi, _GtkSwitchClass._switch_padding_3$FUNC, session);
+        static MemorySegment allocate(_switch_padding_3 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkSwitchClass._switch_padding_3_UP$MH, fi, _GtkSwitchClass._switch_padding_3$FUNC, scope);
         }
-        static _switch_padding_3 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _switch_padding_3 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkSwitchClass._switch_padding_3$MH.invokeExact((Addressable)symbol);
+                    _GtkSwitchClass._switch_padding_3_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -324,36 +439,56 @@ public class _GtkSwitchClass {
     public static VarHandle _switch_padding_3$VH() {
         return _GtkSwitchClass._switch_padding_3$VH;
     }
-    public static MemoryAddress _switch_padding_3$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkSwitchClass._switch_padding_3$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_switch_padding_3)();
+     * }
+     */
+    public static MemorySegment _switch_padding_3$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkSwitchClass._switch_padding_3$VH.get(seg);
     }
-    public static void _switch_padding_3$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_switch_padding_3)();
+     * }
+     */
+    public static void _switch_padding_3$set(MemorySegment seg, MemorySegment x) {
         _GtkSwitchClass._switch_padding_3$VH.set(seg, x);
     }
-    public static MemoryAddress _switch_padding_3$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkSwitchClass._switch_padding_3$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _switch_padding_3$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkSwitchClass._switch_padding_3$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _switch_padding_3$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _switch_padding_3$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkSwitchClass._switch_padding_3$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _switch_padding_3 _switch_padding_3 (MemorySegment segment, MemorySession session) {
-        return _switch_padding_3.ofAddress(_switch_padding_3$get(segment), session);
+    public static _switch_padding_3 _switch_padding_3(MemorySegment segment, SegmentScope scope) {
+        return _switch_padding_3.ofAddress(_switch_padding_3$get(segment), scope);
     }
     static final FunctionDescriptor _switch_padding_4$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _switch_padding_4$MH = RuntimeHelper.downcallHandle(
-        _GtkSwitchClass._switch_padding_4$FUNC
+    static final FunctionDescriptor _switch_padding_4_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _switch_padding_4_UP$MH = RuntimeHelper.upcallHandle(_switch_padding_4.class, "apply", _GtkSwitchClass._switch_padding_4_UP$FUNC);
+    static final FunctionDescriptor _switch_padding_4_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _switch_padding_4_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkSwitchClass._switch_padding_4_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_switch_padding_4)();
+     * }
+     */
     public interface _switch_padding_4 {
 
         void apply();
-        static MemorySegment allocate(_switch_padding_4 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_switch_padding_4.class, fi, _GtkSwitchClass._switch_padding_4$FUNC, session);
+        static MemorySegment allocate(_switch_padding_4 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkSwitchClass._switch_padding_4_UP$MH, fi, _GtkSwitchClass._switch_padding_4$FUNC, scope);
         }
-        static _switch_padding_4 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _switch_padding_4 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkSwitchClass._switch_padding_4$MH.invokeExact((Addressable)symbol);
+                    _GtkSwitchClass._switch_padding_4_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -365,36 +500,56 @@ public class _GtkSwitchClass {
     public static VarHandle _switch_padding_4$VH() {
         return _GtkSwitchClass._switch_padding_4$VH;
     }
-    public static MemoryAddress _switch_padding_4$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkSwitchClass._switch_padding_4$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_switch_padding_4)();
+     * }
+     */
+    public static MemorySegment _switch_padding_4$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkSwitchClass._switch_padding_4$VH.get(seg);
     }
-    public static void _switch_padding_4$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_switch_padding_4)();
+     * }
+     */
+    public static void _switch_padding_4$set(MemorySegment seg, MemorySegment x) {
         _GtkSwitchClass._switch_padding_4$VH.set(seg, x);
     }
-    public static MemoryAddress _switch_padding_4$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkSwitchClass._switch_padding_4$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _switch_padding_4$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkSwitchClass._switch_padding_4$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _switch_padding_4$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _switch_padding_4$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkSwitchClass._switch_padding_4$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _switch_padding_4 _switch_padding_4 (MemorySegment segment, MemorySession session) {
-        return _switch_padding_4.ofAddress(_switch_padding_4$get(segment), session);
+    public static _switch_padding_4 _switch_padding_4(MemorySegment segment, SegmentScope scope) {
+        return _switch_padding_4.ofAddress(_switch_padding_4$get(segment), scope);
     }
     static final FunctionDescriptor _switch_padding_5$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _switch_padding_5$MH = RuntimeHelper.downcallHandle(
-        _GtkSwitchClass._switch_padding_5$FUNC
+    static final FunctionDescriptor _switch_padding_5_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _switch_padding_5_UP$MH = RuntimeHelper.upcallHandle(_switch_padding_5.class, "apply", _GtkSwitchClass._switch_padding_5_UP$FUNC);
+    static final FunctionDescriptor _switch_padding_5_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _switch_padding_5_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkSwitchClass._switch_padding_5_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_switch_padding_5)();
+     * }
+     */
     public interface _switch_padding_5 {
 
         void apply();
-        static MemorySegment allocate(_switch_padding_5 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_switch_padding_5.class, fi, _GtkSwitchClass._switch_padding_5$FUNC, session);
+        static MemorySegment allocate(_switch_padding_5 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkSwitchClass._switch_padding_5_UP$MH, fi, _GtkSwitchClass._switch_padding_5$FUNC, scope);
         }
-        static _switch_padding_5 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _switch_padding_5 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkSwitchClass._switch_padding_5$MH.invokeExact((Addressable)symbol);
+                    _GtkSwitchClass._switch_padding_5_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -406,27 +561,39 @@ public class _GtkSwitchClass {
     public static VarHandle _switch_padding_5$VH() {
         return _GtkSwitchClass._switch_padding_5$VH;
     }
-    public static MemoryAddress _switch_padding_5$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkSwitchClass._switch_padding_5$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_switch_padding_5)();
+     * }
+     */
+    public static MemorySegment _switch_padding_5$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkSwitchClass._switch_padding_5$VH.get(seg);
     }
-    public static void _switch_padding_5$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_switch_padding_5)();
+     * }
+     */
+    public static void _switch_padding_5$set(MemorySegment seg, MemorySegment x) {
         _GtkSwitchClass._switch_padding_5$VH.set(seg, x);
     }
-    public static MemoryAddress _switch_padding_5$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkSwitchClass._switch_padding_5$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _switch_padding_5$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkSwitchClass._switch_padding_5$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _switch_padding_5$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _switch_padding_5$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkSwitchClass._switch_padding_5$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _switch_padding_5 _switch_padding_5 (MemorySegment segment, MemorySession session) {
-        return _switch_padding_5.ofAddress(_switch_padding_5$get(segment), session);
+    public static _switch_padding_5 _switch_padding_5(MemorySegment segment, SegmentScope scope) {
+        return _switch_padding_5.ofAddress(_switch_padding_5$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

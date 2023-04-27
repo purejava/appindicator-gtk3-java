@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GVolumeMonitorClass extends _GVolumeMonitorClass {
+/**
+ * {@snippet :
+ * typedef struct _GVolumeMonitorClass GVolumeMonitorClass;
+ * }
+ */
+public final class GVolumeMonitorClass extends _GVolumeMonitorClass {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GVolumeMonitorClass() {}
 }
 
 

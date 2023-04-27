@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GDebugControllerInterface extends _GDebugControllerInterface {
+/**
+ * {@snippet :
+ * typedef struct _GDebugControllerInterface GDebugControllerInterface;
+ * }
+ */
+public final class GDebugControllerInterface extends _GDebugControllerInterface {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GDebugControllerInterface() {}
 }
 
 

@@ -7,29 +7,11 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$787 {
+final class constants$787 {
 
-    static final FunctionDescriptor g_resolver_lookup_by_address_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_resolver_lookup_by_address_async$MH = RuntimeHelper.downcallHandle(
-        "g_resolver_lookup_by_address_async",
-        constants$787.g_resolver_lookup_by_address_async$FUNC
-    );
-    static final FunctionDescriptor g_resolver_lookup_by_address_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_resolver_lookup_by_address_finish$MH = RuntimeHelper.downcallHandle(
-        "g_resolver_lookup_by_address_finish",
-        constants$787.g_resolver_lookup_by_address_finish$FUNC
-    );
-    static final FunctionDescriptor g_resolver_lookup_service$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$787() {}
+    static final FunctionDescriptor g_subprocess_communicate$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
@@ -37,12 +19,33 @@ class constants$787 {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_resolver_lookup_service$MH = RuntimeHelper.downcallHandle(
-        "g_resolver_lookup_service",
-        constants$787.g_resolver_lookup_service$FUNC
+    static final MethodHandle g_subprocess_communicate$MH = RuntimeHelper.downcallHandle(
+        "g_subprocess_communicate",
+        constants$787.g_subprocess_communicate$FUNC
     );
-    static final FunctionDescriptor g_resolver_lookup_service_async$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_subprocess_communicate_async$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_subprocess_communicate_async$MH = RuntimeHelper.downcallHandle(
+        "g_subprocess_communicate_async",
+        constants$787.g_subprocess_communicate_async$FUNC
+    );
+    static final FunctionDescriptor g_subprocess_communicate_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_subprocess_communicate_finish$MH = RuntimeHelper.downcallHandle(
+        "g_subprocess_communicate_finish",
+        constants$787.g_subprocess_communicate_finish$FUNC
+    );
+    static final FunctionDescriptor g_subprocess_communicate_utf8$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
@@ -50,29 +53,31 @@ class constants$787 {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_resolver_lookup_service_async$MH = RuntimeHelper.downcallHandle(
-        "g_resolver_lookup_service_async",
-        constants$787.g_resolver_lookup_service_async$FUNC
+    static final MethodHandle g_subprocess_communicate_utf8$MH = RuntimeHelper.downcallHandle(
+        "g_subprocess_communicate_utf8",
+        constants$787.g_subprocess_communicate_utf8$FUNC
     );
-    static final FunctionDescriptor g_resolver_lookup_service_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_subprocess_communicate_utf8_async$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_resolver_lookup_service_finish$MH = RuntimeHelper.downcallHandle(
-        "g_resolver_lookup_service_finish",
-        constants$787.g_resolver_lookup_service_finish$FUNC
+    static final MethodHandle g_subprocess_communicate_utf8_async$MH = RuntimeHelper.downcallHandle(
+        "g_subprocess_communicate_utf8_async",
+        constants$787.g_subprocess_communicate_utf8_async$FUNC
     );
-    static final FunctionDescriptor g_resolver_lookup_records$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_subprocess_communicate_utf8_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_resolver_lookup_records$MH = RuntimeHelper.downcallHandle(
-        "g_resolver_lookup_records",
-        constants$787.g_resolver_lookup_records$FUNC
+    static final MethodHandle g_subprocess_communicate_utf8_finish$MH = RuntimeHelper.downcallHandle(
+        "g_subprocess_communicate_utf8_finish",
+        constants$787.g_subprocess_communicate_utf8_finish$FUNC
     );
 }
 

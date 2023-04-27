@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GTypeValueTable extends _GTypeValueTable {
+/**
+ * {@snippet :
+ * typedef struct _GTypeValueTable GTypeValueTable;
+ * }
+ */
+public final class GTypeValueTable extends _GTypeValueTable {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GTypeValueTable() {}
 }
 
 

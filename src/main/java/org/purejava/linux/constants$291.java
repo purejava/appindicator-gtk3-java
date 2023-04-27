@@ -7,50 +7,74 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$291 {
+final class constants$291 {
 
-    static final FunctionDescriptor g_sequence_iter_move$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$291() {}
+    static final FunctionDescriptor g_regex_match$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_regex_match$MH = RuntimeHelper.downcallHandle(
+        "g_regex_match",
+        constants$291.g_regex_match$FUNC
+    );
+    static final FunctionDescriptor g_regex_match_full$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_regex_match_full$MH = RuntimeHelper.downcallHandle(
+        "g_regex_match_full",
+        constants$291.g_regex_match_full$FUNC
+    );
+    static final FunctionDescriptor g_regex_match_all$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_regex_match_all$MH = RuntimeHelper.downcallHandle(
+        "g_regex_match_all",
+        constants$291.g_regex_match_all$FUNC
+    );
+    static final FunctionDescriptor g_regex_match_all_full$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_regex_match_all_full$MH = RuntimeHelper.downcallHandle(
+        "g_regex_match_all_full",
+        constants$291.g_regex_match_all_full$FUNC
+    );
+    static final FunctionDescriptor g_regex_split_simple$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_regex_split_simple$MH = RuntimeHelper.downcallHandle(
+        "g_regex_split_simple",
+        constants$291.g_regex_split_simple$FUNC
+    );
+    static final FunctionDescriptor g_regex_split$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_sequence_iter_move$MH = RuntimeHelper.downcallHandle(
-        "g_sequence_iter_move",
-        constants$291.g_sequence_iter_move$FUNC
-    );
-    static final FunctionDescriptor g_sequence_iter_get_sequence$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_sequence_iter_get_sequence$MH = RuntimeHelper.downcallHandle(
-        "g_sequence_iter_get_sequence",
-        constants$291.g_sequence_iter_get_sequence$FUNC
-    );
-    static final FunctionDescriptor g_sequence_iter_compare$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_sequence_iter_compare$MH = RuntimeHelper.downcallHandle(
-        "g_sequence_iter_compare",
-        constants$291.g_sequence_iter_compare$FUNC
-    );
-    static final FunctionDescriptor g_sequence_range_get_midpoint$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_sequence_range_get_midpoint$MH = RuntimeHelper.downcallHandle(
-        "g_sequence_range_get_midpoint",
-        constants$291.g_sequence_range_get_midpoint$FUNC
-    );
-    static final FunctionDescriptor g_shell_error_quark$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle g_shell_error_quark$MH = RuntimeHelper.downcallHandle(
-        "g_shell_error_quark",
-        constants$291.g_shell_error_quark$FUNC
-    );
-    static final FunctionDescriptor g_shell_quote$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_shell_quote$MH = RuntimeHelper.downcallHandle(
-        "g_shell_quote",
-        constants$291.g_shell_quote$FUNC
+    static final MethodHandle g_regex_split$MH = RuntimeHelper.downcallHandle(
+        "g_regex_split",
+        constants$291.g_regex_split$FUNC
     );
 }
 

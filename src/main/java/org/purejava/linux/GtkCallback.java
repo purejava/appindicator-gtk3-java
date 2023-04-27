@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * void (*GtkCallback)(struct _GtkWidget* widget,void* data);
+ * }
+ */
 public interface GtkCallback {
 
-    void apply(java.lang.foreign.MemoryAddress widget, java.lang.foreign.MemoryAddress data);
-    static MemorySegment allocate(GtkCallback fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GtkCallback.class, fi, constants$1425.GtkCallback$FUNC, session);
+    void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+    static MemorySegment allocate(GtkCallback fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$1246.GtkCallback_UP$MH, fi, constants$1246.GtkCallback$FUNC, scope);
     }
-    static GtkCallback ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _widget, java.lang.foreign.MemoryAddress _data) -> {
+    static GtkCallback ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
             try {
-                constants$1425.GtkCallback$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_widget, (java.lang.foreign.Addressable)_data);
+                constants$1246.GtkCallback_DOWN$MH.invokeExact(symbol, _tag, _data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

@@ -7,74 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1564 {
+final class constants$1564 {
 
-    static final FunctionDescriptor gtk_cell_renderer_get_preferred_height$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1564() {}
+    static final FunctionDescriptor gtk_expander_get_expanded$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_cell_renderer_get_preferred_height$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_renderer_get_preferred_height",
-        constants$1564.gtk_cell_renderer_get_preferred_height$FUNC
+    static final MethodHandle gtk_expander_get_expanded$MH = RuntimeHelper.downcallHandle(
+        "gtk_expander_get_expanded",
+        constants$1564.gtk_expander_get_expanded$FUNC
     );
-    static final FunctionDescriptor gtk_cell_renderer_get_preferred_width_for_height$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_cell_renderer_get_preferred_width_for_height$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_renderer_get_preferred_width_for_height",
-        constants$1564.gtk_cell_renderer_get_preferred_width_for_height$FUNC
-    );
-    static final FunctionDescriptor gtk_cell_renderer_get_preferred_size$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_cell_renderer_get_preferred_size$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_renderer_get_preferred_size",
-        constants$1564.gtk_cell_renderer_get_preferred_size$FUNC
-    );
-    static final FunctionDescriptor gtk_cell_renderer_get_aligned_area$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_cell_renderer_get_aligned_area$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_renderer_get_aligned_area",
-        constants$1564.gtk_cell_renderer_get_aligned_area$FUNC
-    );
-    static final FunctionDescriptor gtk_cell_renderer_get_size$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_cell_renderer_get_size$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_renderer_get_size",
-        constants$1564.gtk_cell_renderer_get_size$FUNC
-    );
-    static final FunctionDescriptor gtk_cell_renderer_render$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_expander_set_spacing$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_cell_renderer_render$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_renderer_render",
-        constants$1564.gtk_cell_renderer_render$FUNC
+    static final MethodHandle gtk_expander_set_spacing$MH = RuntimeHelper.downcallHandle(
+        "gtk_expander_set_spacing",
+        constants$1564.gtk_expander_set_spacing$FUNC
+    );
+    static final FunctionDescriptor gtk_expander_get_spacing$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_expander_get_spacing$MH = RuntimeHelper.downcallHandle(
+        "gtk_expander_get_spacing",
+        constants$1564.gtk_expander_get_spacing$FUNC
+    );
+    static final FunctionDescriptor gtk_expander_set_label$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_expander_set_label$MH = RuntimeHelper.downcallHandle(
+        "gtk_expander_set_label",
+        constants$1564.gtk_expander_set_label$FUNC
+    );
+    static final FunctionDescriptor gtk_expander_get_label$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_expander_get_label$MH = RuntimeHelper.downcallHandle(
+        "gtk_expander_get_label",
+        constants$1564.gtk_expander_get_label$FUNC
+    );
+    static final FunctionDescriptor gtk_expander_set_use_underline$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_expander_set_use_underline$MH = RuntimeHelper.downcallHandle(
+        "gtk_expander_set_use_underline",
+        constants$1564.gtk_expander_set_use_underline$FUNC
     );
 }
 

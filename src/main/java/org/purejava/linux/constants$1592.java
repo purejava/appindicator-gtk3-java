@@ -7,53 +7,62 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1592 {
+final class constants$1592 {
 
-    static final FunctionDescriptor gtk_text_iter_get_visible_line_index$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_iter_get_visible_line_index$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_get_visible_line_index",
-        constants$1592.gtk_text_iter_get_visible_line_index$FUNC
-    );
-    static final FunctionDescriptor gtk_text_iter_get_char$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_iter_get_char$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_get_char",
-        constants$1592.gtk_text_iter_get_char$FUNC
-    );
-    static final FunctionDescriptor gtk_text_iter_get_slice$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1592() {}
+    static final FunctionDescriptor gtk_flow_box_set_filter_func$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_text_iter_get_slice$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_get_slice",
-        constants$1592.gtk_text_iter_get_slice$FUNC
+    static final MethodHandle gtk_flow_box_set_filter_func$MH = RuntimeHelper.downcallHandle(
+        "gtk_flow_box_set_filter_func",
+        constants$1592.gtk_flow_box_set_filter_func$FUNC
     );
-    static final FunctionDescriptor gtk_text_iter_get_text$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_flow_box_invalidate_filter$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_flow_box_invalidate_filter$MH = RuntimeHelper.downcallHandle(
+        "gtk_flow_box_invalidate_filter",
+        constants$1592.gtk_flow_box_invalidate_filter$FUNC
+    );
+    static final FunctionDescriptor GtkFlowBoxSortFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_text_iter_get_text$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_get_text",
-        constants$1592.gtk_text_iter_get_text$FUNC
-    );
-    static final FunctionDescriptor gtk_text_iter_get_visible_slice$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor GtkFlowBoxSortFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_text_iter_get_visible_slice$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_get_visible_slice",
-        constants$1592.gtk_text_iter_get_visible_slice$FUNC
-    );
-    static final FunctionDescriptor gtk_text_iter_get_visible_text$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final MethodHandle GtkFlowBoxSortFunc_UP$MH = RuntimeHelper.upcallHandle(GtkFlowBoxSortFunc.class, "apply", constants$1592.GtkFlowBoxSortFunc_UP$FUNC);
+    static final FunctionDescriptor GtkFlowBoxSortFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_text_iter_get_visible_text$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_get_visible_text",
-        constants$1592.gtk_text_iter_get_visible_text$FUNC
+    static final MethodHandle GtkFlowBoxSortFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$1592.GtkFlowBoxSortFunc_DOWN$FUNC
+    );
+    static final FunctionDescriptor gtk_flow_box_set_sort_func$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_flow_box_set_sort_func$MH = RuntimeHelper.downcallHandle(
+        "gtk_flow_box_set_sort_func",
+        constants$1592.gtk_flow_box_set_sort_func$FUNC
+    );
+    static final FunctionDescriptor gtk_flow_box_invalidate_sort$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_flow_box_invalidate_sort$MH = RuntimeHelper.downcallHandle(
+        "gtk_flow_box_invalidate_sort",
+        constants$1592.gtk_flow_box_invalidate_sort$FUNC
     );
 }
 

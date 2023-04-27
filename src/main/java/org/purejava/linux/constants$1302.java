@@ -7,48 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1302 {
+final class constants$1302 {
 
-    static final FunctionDescriptor gdk_pixbuf_simple_anim_add_frame$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_simple_anim_add_frame$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_simple_anim_add_frame",
-        constants$1302.gdk_pixbuf_simple_anim_add_frame$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_simple_anim_set_loop$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1302() {}
+    static final FunctionDescriptor gtk_window_set_type_hint$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gdk_pixbuf_simple_anim_set_loop$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_simple_anim_set_loop",
-        constants$1302.gdk_pixbuf_simple_anim_set_loop$FUNC
+    static final MethodHandle gtk_window_set_type_hint$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_set_type_hint",
+        constants$1302.gtk_window_set_type_hint$FUNC
     );
-    static final FunctionDescriptor gdk_pixbuf_simple_anim_get_loop$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_window_get_type_hint$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_pixbuf_simple_anim_get_loop$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_simple_anim_get_loop",
-        constants$1302.gdk_pixbuf_simple_anim_get_loop$FUNC
+    static final MethodHandle gtk_window_get_type_hint$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_get_type_hint",
+        constants$1302.gtk_window_get_type_hint$FUNC
     );
-    static final FunctionDescriptor gdk_pixbuf_init_modules$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_window_set_skip_taskbar_hint$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_window_set_skip_taskbar_hint$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_set_skip_taskbar_hint",
+        constants$1302.gtk_window_set_skip_taskbar_hint$FUNC
+    );
+    static final FunctionDescriptor gtk_window_get_skip_taskbar_hint$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_pixbuf_init_modules$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_init_modules",
-        constants$1302.gdk_pixbuf_init_modules$FUNC
+    static final MethodHandle gtk_window_get_skip_taskbar_hint$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_get_skip_taskbar_hint",
+        constants$1302.gtk_window_get_skip_taskbar_hint$FUNC
     );
-    static final FunctionDescriptor gdk_pixbuf_format_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_pixbuf_format_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_format_get_type",
-        constants$1302.gdk_pixbuf_format_get_type$FUNC
+    static final FunctionDescriptor gtk_window_set_skip_pager_hint$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final FunctionDescriptor gdk_pixbuf_get_formats$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gdk_pixbuf_get_formats$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_get_formats",
-        constants$1302.gdk_pixbuf_get_formats$FUNC
+    static final MethodHandle gtk_window_set_skip_pager_hint$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_set_skip_pager_hint",
+        constants$1302.gtk_window_set_skip_pager_hint$FUNC
+    );
+    static final FunctionDescriptor gtk_window_get_skip_pager_hint$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_window_get_skip_pager_hint$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_get_skip_pager_hint",
+        constants$1302.gtk_window_get_skip_pager_hint$FUNC
     );
 }
 

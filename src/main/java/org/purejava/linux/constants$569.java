@@ -7,49 +7,43 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$569 {
+final class constants$569 {
 
-    static final FunctionDescriptor getcwd$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$569() {}
+    static final FunctionDescriptor g_dbus_signal_info_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_dbus_signal_info_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_signal_info_get_type",
+        constants$569.g_dbus_signal_info_get_type$FUNC
     );
-    static final MethodHandle getcwd$MH = RuntimeHelper.downcallHandle(
-        "getcwd",
-        constants$569.getcwd$FUNC
+    static final FunctionDescriptor g_dbus_property_info_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_dbus_property_info_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_property_info_get_type",
+        constants$569.g_dbus_property_info_get_type$FUNC
     );
-    static final FunctionDescriptor getwd$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_dbus_arg_info_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_dbus_arg_info_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_arg_info_get_type",
+        constants$569.g_dbus_arg_info_get_type$FUNC
     );
-    static final MethodHandle getwd$MH = RuntimeHelper.downcallHandle(
-        "getwd",
-        constants$569.getwd$FUNC
+    static final FunctionDescriptor g_dbus_annotation_info_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_dbus_annotation_info_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_annotation_info_get_type",
+        constants$569.g_dbus_annotation_info_get_type$FUNC
     );
-    static final FunctionDescriptor dup$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor g_dbus_menu_model_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_dbus_menu_model_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_menu_model_get_type",
+        constants$569.g_dbus_menu_model_get_type$FUNC
     );
-    static final MethodHandle dup$MH = RuntimeHelper.downcallHandle(
-        "dup",
-        constants$569.dup$FUNC
-    );
-    static final FunctionDescriptor dup2$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle dup2$MH = RuntimeHelper.downcallHandle(
-        "dup2",
-        constants$569.dup2$FUNC
-    );
-    static final  OfAddress __environ$LAYOUT = Constants$root.C_POINTER$LAYOUT;
-    static final VarHandle __environ$VH = constants$569.__environ$LAYOUT.varHandle();
-    static final MemorySegment __environ$SEGMENT = RuntimeHelper.lookupGlobalVariable("__environ", constants$569.__environ$LAYOUT);
-    static final FunctionDescriptor execve$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_dbus_menu_model_get$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle execve$MH = RuntimeHelper.downcallHandle(
-        "execve",
-        constants$569.execve$FUNC
+    static final MethodHandle g_dbus_menu_model_get$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_menu_model_get",
+        constants$569.g_dbus_menu_model_get$FUNC
     );
 }
 

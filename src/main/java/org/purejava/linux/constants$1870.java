@@ -7,51 +7,56 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1870 {
+final class constants$1870 {
 
-    static final FunctionDescriptor gtk_list_box_row_changed$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1870() {}
+    static final FunctionDescriptor gtk_tree_selection_get_mode$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_list_box_row_changed$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_box_row_changed",
-        constants$1870.gtk_list_box_row_changed$FUNC
+    static final MethodHandle gtk_tree_selection_get_mode$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_selection_get_mode",
+        constants$1870.gtk_tree_selection_get_mode$FUNC
     );
-    static final FunctionDescriptor gtk_list_box_row_is_selected$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_list_box_row_is_selected$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_box_row_is_selected",
-        constants$1870.gtk_list_box_row_is_selected$FUNC
-    );
-    static final FunctionDescriptor gtk_list_box_row_set_selectable$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_tree_selection_set_select_function$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_list_box_row_set_selectable$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_box_row_set_selectable",
-        constants$1870.gtk_list_box_row_set_selectable$FUNC
-    );
-    static final FunctionDescriptor gtk_list_box_row_get_selectable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_list_box_row_get_selectable$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_box_row_get_selectable",
-        constants$1870.gtk_list_box_row_get_selectable$FUNC
-    );
-    static final FunctionDescriptor gtk_list_box_row_set_activatable$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_list_box_row_set_activatable$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_box_row_set_activatable",
-        constants$1870.gtk_list_box_row_set_activatable$FUNC
-    );
-    static final FunctionDescriptor gtk_list_box_row_get_activatable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_list_box_row_get_activatable$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_box_row_get_activatable",
-        constants$1870.gtk_list_box_row_get_activatable$FUNC
+    static final MethodHandle gtk_tree_selection_set_select_function$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_selection_set_select_function",
+        constants$1870.gtk_tree_selection_set_select_function$FUNC
+    );
+    static final FunctionDescriptor gtk_tree_selection_get_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_tree_selection_get_user_data$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_selection_get_user_data",
+        constants$1870.gtk_tree_selection_get_user_data$FUNC
+    );
+    static final FunctionDescriptor gtk_tree_selection_get_tree_view$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_tree_selection_get_tree_view$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_selection_get_tree_view",
+        constants$1870.gtk_tree_selection_get_tree_view$FUNC
+    );
+    static final FunctionDescriptor gtk_tree_selection_get_select_function$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_tree_selection_get_select_function$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_selection_get_select_function",
+        constants$1870.gtk_tree_selection_get_select_function$FUNC
+    );
+    static final FunctionDescriptor gtk_tree_selection_get_selected$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_tree_selection_get_selected$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_selection_get_selected",
+        constants$1870.gtk_tree_selection_get_selected$FUNC
     );
 }
 

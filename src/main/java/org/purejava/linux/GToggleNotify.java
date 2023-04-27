@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * void (*GToggleNotify)(void* data,struct _GObject* object,int is_last_ref);
+ * }
+ */
 public interface GToggleNotify {
 
-    void apply(java.lang.foreign.MemoryAddress data, java.lang.foreign.MemoryAddress object, int is_last_ref);
-    static MemorySegment allocate(GToggleNotify fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GToggleNotify.class, fi, constants$477.GToggleNotify$FUNC, session);
+    void apply(java.lang.foreign.MemorySegment screen, java.lang.foreign.MemorySegment colors, int n_colors);
+    static MemorySegment allocate(GToggleNotify fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$437.GToggleNotify_UP$MH, fi, constants$437.GToggleNotify$FUNC, scope);
     }
-    static GToggleNotify ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _data, java.lang.foreign.MemoryAddress _object, int _is_last_ref) -> {
+    static GToggleNotify ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _screen, java.lang.foreign.MemorySegment _colors, int _n_colors) -> {
             try {
-                constants$477.GToggleNotify$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_data, (java.lang.foreign.Addressable)_object, _is_last_ref);
+                constants$437.GToggleNotify_DOWN$MH.invokeExact(symbol, _screen, _colors, _n_colors);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

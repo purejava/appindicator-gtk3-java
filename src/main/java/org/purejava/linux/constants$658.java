@@ -7,57 +7,56 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$658 {
+final class constants$658 {
 
-    static final FunctionDescriptor g_dtls_connection_close_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$658() {}
+    static final FunctionDescriptor g_file_io_stream_query_info_async$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dtls_connection_close_finish$MH = RuntimeHelper.downcallHandle(
-        "g_dtls_connection_close_finish",
-        constants$658.g_dtls_connection_close_finish$FUNC
-    );
-    static final FunctionDescriptor g_dtls_connection_emit_accept_certificate$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_dtls_connection_emit_accept_certificate$MH = RuntimeHelper.downcallHandle(
-        "g_dtls_connection_emit_accept_certificate",
-        constants$658.g_dtls_connection_emit_accept_certificate$FUNC
-    );
-    static final FunctionDescriptor g_dtls_connection_set_advertised_protocols$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dtls_connection_set_advertised_protocols$MH = RuntimeHelper.downcallHandle(
-        "g_dtls_connection_set_advertised_protocols",
-        constants$658.g_dtls_connection_set_advertised_protocols$FUNC
-    );
-    static final FunctionDescriptor g_dtls_connection_get_negotiated_protocol$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dtls_connection_get_negotiated_protocol$MH = RuntimeHelper.downcallHandle(
-        "g_dtls_connection_get_negotiated_protocol",
-        constants$658.g_dtls_connection_get_negotiated_protocol$FUNC
-    );
-    static final FunctionDescriptor g_dtls_connection_get_channel_binding_data$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dtls_connection_get_channel_binding_data$MH = RuntimeHelper.downcallHandle(
-        "g_dtls_connection_get_channel_binding_data",
-        constants$658.g_dtls_connection_get_channel_binding_data$FUNC
+    static final MethodHandle g_file_io_stream_query_info_async$MH = RuntimeHelper.downcallHandle(
+        "g_file_io_stream_query_info_async",
+        constants$658.g_file_io_stream_query_info_async$FUNC
     );
-    static final FunctionDescriptor g_dtls_connection_get_protocol_version$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_file_io_stream_query_info_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dtls_connection_get_protocol_version$MH = RuntimeHelper.downcallHandle(
-        "g_dtls_connection_get_protocol_version",
-        constants$658.g_dtls_connection_get_protocol_version$FUNC
+    static final MethodHandle g_file_io_stream_query_info_finish$MH = RuntimeHelper.downcallHandle(
+        "g_file_io_stream_query_info_finish",
+        constants$658.g_file_io_stream_query_info_finish$FUNC
+    );
+    static final FunctionDescriptor g_file_io_stream_get_etag$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_file_io_stream_get_etag$MH = RuntimeHelper.downcallHandle(
+        "g_file_io_stream_get_etag",
+        constants$658.g_file_io_stream_get_etag$FUNC
+    );
+    static final FunctionDescriptor g_file_monitor_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_file_monitor_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_file_monitor_get_type",
+        constants$658.g_file_monitor_get_type$FUNC
+    );
+    static final FunctionDescriptor g_file_monitor_cancel$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_file_monitor_cancel$MH = RuntimeHelper.downcallHandle(
+        "g_file_monitor_cancel",
+        constants$658.g_file_monitor_cancel$FUNC
+    );
+    static final FunctionDescriptor g_file_monitor_is_cancelled$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_file_monitor_is_cancelled$MH = RuntimeHelper.downcallHandle(
+        "g_file_monitor_is_cancelled",
+        constants$658.g_file_monitor_is_cancelled$FUNC
     );
 }
 

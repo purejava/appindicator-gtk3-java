@@ -7,49 +7,50 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$931 {
+final class constants$931 {
 
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GLoadableIcon$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$931() {}
+    static final FunctionDescriptor pango_attr_list_get_attributes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GLoadableIcon$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GLoadableIcon",
-        constants$931.glib_slistautoptr_cleanup_GLoadableIcon$FUNC
+    static final MethodHandle pango_attr_list_get_attributes$MH = RuntimeHelper.downcallHandle(
+        "pango_attr_list_get_attributes",
+        constants$931.pango_attr_list_get_attributes$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GLoadableIcon$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_attr_list_equal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GLoadableIcon$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GLoadableIcon",
-        constants$931.glib_queueautoptr_cleanup_GLoadableIcon$FUNC
+    static final MethodHandle pango_attr_list_equal$MH = RuntimeHelper.downcallHandle(
+        "pango_attr_list_equal",
+        constants$931.pango_attr_list_equal$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GMemoryInputStream$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_attr_list_to_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GMemoryInputStream$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GMemoryInputStream",
-        constants$931.glib_autoptr_clear_GMemoryInputStream$FUNC
+    static final MethodHandle pango_attr_list_to_string$MH = RuntimeHelper.downcallHandle(
+        "pango_attr_list_to_string",
+        constants$931.pango_attr_list_to_string$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GMemoryInputStream$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_attr_list_from_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GMemoryInputStream$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GMemoryInputStream",
-        constants$931.glib_autoptr_cleanup_GMemoryInputStream$FUNC
+    static final MethodHandle pango_attr_list_from_string$MH = RuntimeHelper.downcallHandle(
+        "pango_attr_list_from_string",
+        constants$931.pango_attr_list_from_string$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GMemoryInputStream$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_attr_iterator_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle pango_attr_iterator_get_type$MH = RuntimeHelper.downcallHandle(
+        "pango_attr_iterator_get_type",
+        constants$931.pango_attr_iterator_get_type$FUNC
+    );
+    static final FunctionDescriptor pango_attr_list_get_iterator$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GMemoryInputStream$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GMemoryInputStream",
-        constants$931.glib_listautoptr_cleanup_GMemoryInputStream$FUNC
-    );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GMemoryInputStream$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_slistautoptr_cleanup_GMemoryInputStream$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GMemoryInputStream",
-        constants$931.glib_slistautoptr_cleanup_GMemoryInputStream$FUNC
+    static final MethodHandle pango_attr_list_get_iterator$MH = RuntimeHelper.downcallHandle(
+        "pango_attr_list_get_iterator",
+        constants$931.pango_attr_list_get_iterator$FUNC
     );
 }
 

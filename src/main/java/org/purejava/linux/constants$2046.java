@@ -7,53 +7,16 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$2046 {
+final class constants$2046 {
 
-    static final FunctionDescriptor gtk_text_view_get_right_margin$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_view_get_right_margin$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_get_right_margin",
-        constants$2046.gtk_text_view_get_right_margin$FUNC
-    );
-    static final FunctionDescriptor gtk_text_view_set_top_margin$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_text_view_set_top_margin$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_set_top_margin",
-        constants$2046.gtk_text_view_set_top_margin$FUNC
-    );
-    static final FunctionDescriptor gtk_text_view_get_top_margin$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_view_get_top_margin$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_get_top_margin",
-        constants$2046.gtk_text_view_get_top_margin$FUNC
-    );
-    static final FunctionDescriptor gtk_text_view_set_bottom_margin$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_text_view_set_bottom_margin$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_set_bottom_margin",
-        constants$2046.gtk_text_view_set_bottom_margin$FUNC
-    );
-    static final FunctionDescriptor gtk_text_view_get_bottom_margin$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_view_get_bottom_margin$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_get_bottom_margin",
-        constants$2046.gtk_text_view_get_bottom_margin$FUNC
-    );
-    static final FunctionDescriptor gtk_text_view_set_indent$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_text_view_set_indent$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_set_indent",
-        constants$2046.gtk_text_view_set_indent$FUNC
-    );
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$2046() {}
+    static final MemorySegment GTK_PRINT_SETTINGS_USE_COLOR$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("use-color");
+    static final MemorySegment GTK_PRINT_SETTINGS_DUPLEX$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("duplex");
+    static final MemorySegment GTK_PRINT_SETTINGS_COLLATE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("collate");
+    static final MemorySegment GTK_PRINT_SETTINGS_REVERSE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("reverse");
+    static final MemorySegment GTK_PRINT_SETTINGS_MEDIA_TYPE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("media-type");
+    static final MemorySegment GTK_PRINT_SETTINGS_DITHER$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("dither");
 }
 
 

@@ -7,49 +7,50 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1351 {
+final class constants$1351 {
 
-    static final FunctionDescriptor gdk_visual_get_screen$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1351() {}
+    static final FunctionDescriptor gtk_actionable_set_detailed_action_name$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_visual_get_screen$MH = RuntimeHelper.downcallHandle(
-        "gdk_visual_get_screen",
-        constants$1351.gdk_visual_get_screen$FUNC
+    static final MethodHandle gtk_actionable_set_detailed_action_name$MH = RuntimeHelper.downcallHandle(
+        "gtk_actionable_set_detailed_action_name",
+        constants$1351.gtk_actionable_set_detailed_action_name$FUNC
     );
-    static final FunctionDescriptor gdk_visual_get_visual_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_action_bar_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_action_bar_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_action_bar_get_type",
+        constants$1351.gtk_action_bar_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_action_bar_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_action_bar_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_action_bar_new",
+        constants$1351.gtk_action_bar_new$FUNC
+    );
+    static final FunctionDescriptor gtk_action_bar_get_center_widget$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_visual_get_visual_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_visual_get_visual_type",
-        constants$1351.gdk_visual_get_visual_type$FUNC
+    static final MethodHandle gtk_action_bar_get_center_widget$MH = RuntimeHelper.downcallHandle(
+        "gtk_action_bar_get_center_widget",
+        constants$1351.gtk_action_bar_get_center_widget$FUNC
     );
-    static final FunctionDescriptor gdk_visual_get_depth$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_action_bar_set_center_widget$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_visual_get_depth$MH = RuntimeHelper.downcallHandle(
-        "gdk_visual_get_depth",
-        constants$1351.gdk_visual_get_depth$FUNC
+    static final MethodHandle gtk_action_bar_set_center_widget$MH = RuntimeHelper.downcallHandle(
+        "gtk_action_bar_set_center_widget",
+        constants$1351.gtk_action_bar_set_center_widget$FUNC
     );
-    static final FunctionDescriptor gdk_visual_get_byte_order$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_action_bar_pack_start$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_visual_get_byte_order$MH = RuntimeHelper.downcallHandle(
-        "gdk_visual_get_byte_order",
-        constants$1351.gdk_visual_get_byte_order$FUNC
-    );
-    static final FunctionDescriptor gdk_visual_get_colormap_size$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_visual_get_colormap_size$MH = RuntimeHelper.downcallHandle(
-        "gdk_visual_get_colormap_size",
-        constants$1351.gdk_visual_get_colormap_size$FUNC
-    );
-    static final FunctionDescriptor gdk_visual_get_bits_per_rgb$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_visual_get_bits_per_rgb$MH = RuntimeHelper.downcallHandle(
-        "gdk_visual_get_bits_per_rgb",
-        constants$1351.gdk_visual_get_bits_per_rgb$FUNC
+    static final MethodHandle gtk_action_bar_pack_start$MH = RuntimeHelper.downcallHandle(
+        "gtk_action_bar_pack_start",
+        constants$1351.gtk_action_bar_pack_start$FUNC
     );
 }
 

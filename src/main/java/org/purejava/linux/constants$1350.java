@@ -7,50 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1350 {
+final class constants$1350 {
 
-    static final FunctionDescriptor gdk_visual_get_best_with_depth$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1350() {}
+    static final FunctionDescriptor gtk_actionable_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_actionable_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_actionable_get_type",
+        constants$1350.gtk_actionable_get_type$FUNC
     );
-    static final MethodHandle gdk_visual_get_best_with_depth$MH = RuntimeHelper.downcallHandle(
-        "gdk_visual_get_best_with_depth",
-        constants$1350.gdk_visual_get_best_with_depth$FUNC
+    static final FunctionDescriptor gtk_actionable_get_action_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor gdk_visual_get_best_with_type$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle gtk_actionable_get_action_name$MH = RuntimeHelper.downcallHandle(
+        "gtk_actionable_get_action_name",
+        constants$1350.gtk_actionable_get_action_name$FUNC
     );
-    static final MethodHandle gdk_visual_get_best_with_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_visual_get_best_with_type",
-        constants$1350.gdk_visual_get_best_with_type$FUNC
-    );
-    static final FunctionDescriptor gdk_visual_get_best_with_both$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_visual_get_best_with_both$MH = RuntimeHelper.downcallHandle(
-        "gdk_visual_get_best_with_both",
-        constants$1350.gdk_visual_get_best_with_both$FUNC
-    );
-    static final FunctionDescriptor gdk_query_depths$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_actionable_set_action_name$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_query_depths$MH = RuntimeHelper.downcallHandle(
-        "gdk_query_depths",
-        constants$1350.gdk_query_depths$FUNC
+    static final MethodHandle gtk_actionable_set_action_name$MH = RuntimeHelper.downcallHandle(
+        "gtk_actionable_set_action_name",
+        constants$1350.gtk_actionable_set_action_name$FUNC
     );
-    static final FunctionDescriptor gdk_query_visual_types$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_actionable_get_action_target_value$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_actionable_get_action_target_value$MH = RuntimeHelper.downcallHandle(
+        "gtk_actionable_get_action_target_value",
+        constants$1350.gtk_actionable_get_action_target_value$FUNC
+    );
+    static final FunctionDescriptor gtk_actionable_set_action_target_value$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_query_visual_types$MH = RuntimeHelper.downcallHandle(
-        "gdk_query_visual_types",
-        constants$1350.gdk_query_visual_types$FUNC
+    static final MethodHandle gtk_actionable_set_action_target_value$MH = RuntimeHelper.downcallHandle(
+        "gtk_actionable_set_action_target_value",
+        constants$1350.gtk_actionable_set_action_target_value$FUNC
     );
-    static final FunctionDescriptor gdk_list_visuals$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gdk_list_visuals$MH = RuntimeHelper.downcallHandle(
-        "gdk_list_visuals",
-        constants$1350.gdk_list_visuals$FUNC
+    static final FunctionDescriptor gtk_actionable_set_action_target$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_actionable_set_action_target$MH = RuntimeHelper.downcallHandleVariadic(
+        "gtk_actionable_set_action_target",
+        constants$1350.gtk_actionable_set_action_target$FUNC
     );
 }
 

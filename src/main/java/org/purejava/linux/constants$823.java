@@ -7,72 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$823 {
+final class constants$823 {
 
-    static final FunctionDescriptor g_socket_create_source$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$823() {}
+    static final FunctionDescriptor g_unix_socket_address_new_with_type$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_unix_socket_address_new_with_type$MH = RuntimeHelper.downcallHandle(
+        "g_unix_socket_address_new_with_type",
+        constants$823.g_unix_socket_address_new_with_type$FUNC
+    );
+    static final FunctionDescriptor g_unix_socket_address_get_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_socket_create_source$MH = RuntimeHelper.downcallHandle(
-        "g_socket_create_source",
-        constants$823.g_socket_create_source$FUNC
+    static final MethodHandle g_unix_socket_address_get_path$MH = RuntimeHelper.downcallHandle(
+        "g_unix_socket_address_get_path",
+        constants$823.g_unix_socket_address_get_path$FUNC
     );
-    static final FunctionDescriptor g_socket_speaks_ipv4$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_unix_socket_address_get_path_len$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_socket_speaks_ipv4$MH = RuntimeHelper.downcallHandle(
-        "g_socket_speaks_ipv4",
-        constants$823.g_socket_speaks_ipv4$FUNC
+    static final MethodHandle g_unix_socket_address_get_path_len$MH = RuntimeHelper.downcallHandle(
+        "g_unix_socket_address_get_path_len",
+        constants$823.g_unix_socket_address_get_path_len$FUNC
     );
-    static final FunctionDescriptor g_socket_get_credentials$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_unix_socket_address_get_address_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_socket_get_credentials$MH = RuntimeHelper.downcallHandle(
-        "g_socket_get_credentials",
-        constants$823.g_socket_get_credentials$FUNC
+    static final MethodHandle g_unix_socket_address_get_address_type$MH = RuntimeHelper.downcallHandle(
+        "g_unix_socket_address_get_address_type",
+        constants$823.g_unix_socket_address_get_address_type$FUNC
     );
-    static final FunctionDescriptor g_socket_receive_with_blocking$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_unix_socket_address_get_is_abstract$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_socket_receive_with_blocking$MH = RuntimeHelper.downcallHandle(
-        "g_socket_receive_with_blocking",
-        constants$823.g_socket_receive_with_blocking$FUNC
+    static final MethodHandle g_unix_socket_address_get_is_abstract$MH = RuntimeHelper.downcallHandle(
+        "g_unix_socket_address_get_is_abstract",
+        constants$823.g_unix_socket_address_get_is_abstract$FUNC
     );
-    static final FunctionDescriptor g_socket_send_with_blocking$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_send_with_blocking$MH = RuntimeHelper.downcallHandle(
-        "g_socket_send_with_blocking",
-        constants$823.g_socket_send_with_blocking$FUNC
-    );
-    static final FunctionDescriptor g_socket_send_message_with_timeout$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_send_message_with_timeout$MH = RuntimeHelper.downcallHandle(
-        "g_socket_send_message_with_timeout",
-        constants$823.g_socket_send_message_with_timeout$FUNC
+    static final FunctionDescriptor g_unix_socket_address_abstract_names_supported$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
+    static final MethodHandle g_unix_socket_address_abstract_names_supported$MH = RuntimeHelper.downcallHandle(
+        "g_unix_socket_address_abstract_names_supported",
+        constants$823.g_unix_socket_address_abstract_names_supported$FUNC
     );
 }
 

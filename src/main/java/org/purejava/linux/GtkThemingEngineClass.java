@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkThemingEngineClass extends _GtkThemingEngineClass {
+/**
+ * {@snippet :
+ * typedef struct _GtkThemingEngineClass GtkThemingEngineClass;
+ * }
+ */
+public final class GtkThemingEngineClass extends _GtkThemingEngineClass {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkThemingEngineClass() {}
 }
 
 

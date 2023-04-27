@@ -7,52 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1440 {
+final class constants$1440 {
 
-    static final FunctionDescriptor gtk_widget_get_mapped$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1440() {}
+    static final FunctionDescriptor gtk_tree_model_filter_clear_cache$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_widget_get_mapped$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_mapped",
-        constants$1440.gtk_widget_get_mapped$FUNC
+    static final MethodHandle gtk_tree_model_filter_clear_cache$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_model_filter_clear_cache",
+        constants$1440.gtk_tree_model_filter_clear_cache$FUNC
     );
-    static final FunctionDescriptor gtk_widget_set_app_paintable$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor GtkEntryCompletionMatchFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_widget_set_app_paintable$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_app_paintable",
-        constants$1440.gtk_widget_set_app_paintable$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_get_app_paintable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_widget_get_app_paintable$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_app_paintable",
-        constants$1440.gtk_widget_get_app_paintable$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_set_double_buffered$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor GtkEntryCompletionMatchFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_widget_set_double_buffered$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_double_buffered",
-        constants$1440.gtk_widget_set_double_buffered$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_get_double_buffered$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_widget_get_double_buffered$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_double_buffered",
-        constants$1440.gtk_widget_get_double_buffered$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_set_redraw_on_allocate$FUNC = FunctionDescriptor.ofVoid(
+    static final MethodHandle GtkEntryCompletionMatchFunc_UP$MH = RuntimeHelper.upcallHandle(GtkEntryCompletionMatchFunc.class, "apply", constants$1440.GtkEntryCompletionMatchFunc_UP$FUNC);
+    static final FunctionDescriptor GtkEntryCompletionMatchFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_widget_set_redraw_on_allocate$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_redraw_on_allocate",
-        constants$1440.gtk_widget_set_redraw_on_allocate$FUNC
+    static final MethodHandle GtkEntryCompletionMatchFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$1440.GtkEntryCompletionMatchFunc_DOWN$FUNC
+    );
+    static final FunctionDescriptor gtk_entry_completion_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_entry_completion_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_completion_get_type",
+        constants$1440.gtk_entry_completion_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_entry_completion_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_entry_completion_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_completion_new",
+        constants$1440.gtk_entry_completion_new$FUNC
+    );
+    static final FunctionDescriptor gtk_entry_completion_new_with_area$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_entry_completion_new_with_area$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_completion_new_with_area",
+        constants$1440.gtk_entry_completion_new_with_area$FUNC
     );
 }
 

@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * int (*GtkCellCallback)(struct _GtkCellRenderer* renderer,void* data);
+ * }
+ */
 public interface GtkCellCallback {
 
-    int apply(java.lang.foreign.MemoryAddress renderer, java.lang.foreign.MemoryAddress data);
-    static MemorySegment allocate(GtkCellCallback fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GtkCellCallback.class, fi, constants$1569.GtkCellCallback$FUNC, session);
+    int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
+    static MemorySegment allocate(GtkCellCallback fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$1379.GtkCellCallback_UP$MH, fi, constants$1379.GtkCellCallback$FUNC, scope);
     }
-    static GtkCellCallback ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _renderer, java.lang.foreign.MemoryAddress _data) -> {
+    static GtkCellCallback ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _filter_info, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                return (int)constants$1569.GtkCellCallback$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_renderer, (java.lang.foreign.Addressable)_data);
+                return (int)constants$1379.GtkCellCallback_DOWN$MH.invokeExact(symbol, _filter_info, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

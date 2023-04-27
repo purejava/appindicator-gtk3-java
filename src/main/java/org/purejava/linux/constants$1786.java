@@ -7,52 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1786 {
+final class constants$1786 {
 
-    static final FunctionDescriptor gtk_flow_box_select_all$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1786() {}
+    static final FunctionDescriptor gtk_recent_chooser_menu_get_show_numbers$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_flow_box_select_all$MH = RuntimeHelper.downcallHandle(
-        "gtk_flow_box_select_all",
-        constants$1786.gtk_flow_box_select_all$FUNC
+    static final MethodHandle gtk_recent_chooser_menu_get_show_numbers$MH = RuntimeHelper.downcallHandle(
+        "gtk_recent_chooser_menu_get_show_numbers",
+        constants$1786.gtk_recent_chooser_menu_get_show_numbers$FUNC
     );
-    static final FunctionDescriptor gtk_flow_box_unselect_all$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_flow_box_unselect_all$MH = RuntimeHelper.downcallHandle(
-        "gtk_flow_box_unselect_all",
-        constants$1786.gtk_flow_box_unselect_all$FUNC
-    );
-    static final FunctionDescriptor gtk_flow_box_set_selection_mode$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_recent_chooser_menu_set_show_numbers$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_flow_box_set_selection_mode$MH = RuntimeHelper.downcallHandle(
-        "gtk_flow_box_set_selection_mode",
-        constants$1786.gtk_flow_box_set_selection_mode$FUNC
+    static final MethodHandle gtk_recent_chooser_menu_set_show_numbers$MH = RuntimeHelper.downcallHandle(
+        "gtk_recent_chooser_menu_set_show_numbers",
+        constants$1786.gtk_recent_chooser_menu_set_show_numbers$FUNC
     );
-    static final FunctionDescriptor gtk_flow_box_get_selection_mode$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_recent_chooser_widget_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_recent_chooser_widget_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_recent_chooser_widget_get_type",
+        constants$1786.gtk_recent_chooser_widget_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_recent_chooser_widget_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_recent_chooser_widget_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_recent_chooser_widget_new",
+        constants$1786.gtk_recent_chooser_widget_new$FUNC
+    );
+    static final FunctionDescriptor gtk_recent_chooser_widget_new_for_manager$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_flow_box_get_selection_mode$MH = RuntimeHelper.downcallHandle(
-        "gtk_flow_box_get_selection_mode",
-        constants$1786.gtk_flow_box_get_selection_mode$FUNC
+    static final MethodHandle gtk_recent_chooser_widget_new_for_manager$MH = RuntimeHelper.downcallHandle(
+        "gtk_recent_chooser_widget_new_for_manager",
+        constants$1786.gtk_recent_chooser_widget_new_for_manager$FUNC
     );
-    static final FunctionDescriptor gtk_flow_box_set_hadjustment$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_render_check$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_flow_box_set_hadjustment$MH = RuntimeHelper.downcallHandle(
-        "gtk_flow_box_set_hadjustment",
-        constants$1786.gtk_flow_box_set_hadjustment$FUNC
-    );
-    static final FunctionDescriptor gtk_flow_box_set_vadjustment$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
     );
-    static final MethodHandle gtk_flow_box_set_vadjustment$MH = RuntimeHelper.downcallHandle(
-        "gtk_flow_box_set_vadjustment",
-        constants$1786.gtk_flow_box_set_vadjustment$FUNC
+    static final MethodHandle gtk_render_check$MH = RuntimeHelper.downcallHandle(
+        "gtk_render_check",
+        constants$1786.gtk_render_check$FUNC
     );
 }
 

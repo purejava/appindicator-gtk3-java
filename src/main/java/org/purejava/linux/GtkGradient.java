@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkGradient {
+/**
+ * {@snippet :
+ * typedef struct _GtkGradient GtkGradient;
+ * }
+ */
+public final class GtkGradient {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkGradient() {}
 }
 
 

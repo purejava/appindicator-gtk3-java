@@ -7,42 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$805 {
+final class constants$805 {
 
-    static final FunctionDescriptor GSettingsBindSetMapping$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$805() {}
+    static final FunctionDescriptor g_tls_certificate_get_issuer$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_tls_certificate_get_issuer$MH = RuntimeHelper.downcallHandle(
+        "g_tls_certificate_get_issuer",
+        constants$805.g_tls_certificate_get_issuer$FUNC
+    );
+    static final FunctionDescriptor g_tls_certificate_verify$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GSettingsBindSetMapping$MH = RuntimeHelper.downcallHandle(
-        constants$805.GSettingsBindSetMapping$FUNC
+    static final MethodHandle g_tls_certificate_verify$MH = RuntimeHelper.downcallHandle(
+        "g_tls_certificate_verify",
+        constants$805.g_tls_certificate_verify$FUNC
     );
-    static final FunctionDescriptor GSettingsBindGetMapping$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_tls_certificate_is_same$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GSettingsBindGetMapping$MH = RuntimeHelper.downcallHandle(
-        constants$805.GSettingsBindGetMapping$FUNC
+    static final MethodHandle g_tls_certificate_is_same$MH = RuntimeHelper.downcallHandle(
+        "g_tls_certificate_is_same",
+        constants$805.g_tls_certificate_is_same$FUNC
     );
-    static final FunctionDescriptor GSettingsGetMapping$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_tls_certificate_get_not_valid_before$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GSettingsGetMapping$MH = RuntimeHelper.downcallHandle(
-        constants$805.GSettingsGetMapping$FUNC
+    static final MethodHandle g_tls_certificate_get_not_valid_before$MH = RuntimeHelper.downcallHandle(
+        "g_tls_certificate_get_not_valid_before",
+        constants$805.g_tls_certificate_get_not_valid_before$FUNC
     );
-    static final FunctionDescriptor g_settings_bind$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor g_tls_certificate_get_not_valid_after$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_settings_bind$MH = RuntimeHelper.downcallHandle(
-        "g_settings_bind",
-        constants$805.g_settings_bind$FUNC
+    static final MethodHandle g_tls_certificate_get_not_valid_after$MH = RuntimeHelper.downcallHandle(
+        "g_tls_certificate_get_not_valid_after",
+        constants$805.g_tls_certificate_get_not_valid_after$FUNC
+    );
+    static final FunctionDescriptor g_tls_certificate_get_subject_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_tls_certificate_get_subject_name$MH = RuntimeHelper.downcallHandle(
+        "g_tls_certificate_get_subject_name",
+        constants$805.g_tls_certificate_get_subject_name$FUNC
     );
 }
 

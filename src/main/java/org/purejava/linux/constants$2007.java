@@ -7,48 +7,16 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$2007 {
+final class constants$2007 {
 
-    static final FunctionDescriptor gtk_shortcuts_section_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_shortcuts_section_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_shortcuts_section_get_type",
-        constants$2007.gtk_shortcuts_section_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_shortcuts_shortcut_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_shortcuts_shortcut_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_shortcuts_shortcut_get_type",
-        constants$2007.gtk_shortcuts_shortcut_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_show_uri$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_show_uri$MH = RuntimeHelper.downcallHandle(
-        "gtk_show_uri",
-        constants$2007.gtk_show_uri$FUNC
-    );
-    static final FunctionDescriptor gtk_show_uri_on_window$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_show_uri_on_window$MH = RuntimeHelper.downcallHandle(
-        "gtk_show_uri_on_window",
-        constants$2007.gtk_show_uri_on_window$FUNC
-    );
-    static final FunctionDescriptor gtk_stack_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_stack_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_stack_get_type",
-        constants$2007.gtk_stack_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_stack_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_stack_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_stack_new",
-        constants$2007.gtk_stack_new$FUNC
-    );
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$2007() {}
+    static final MemorySegment G_FILE_ATTRIBUTE_TIME_ACCESS_NSEC$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("time::access-nsec");
+    static final MemorySegment G_FILE_ATTRIBUTE_TIME_CHANGED$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("time::changed");
+    static final MemorySegment G_FILE_ATTRIBUTE_TIME_CHANGED_USEC$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("time::changed-usec");
+    static final MemorySegment G_FILE_ATTRIBUTE_TIME_CHANGED_NSEC$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("time::changed-nsec");
+    static final MemorySegment G_FILE_ATTRIBUTE_TIME_CREATED$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("time::created");
+    static final MemorySegment G_FILE_ATTRIBUTE_TIME_CREATED_USEC$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("time::created-usec");
 }
 
 

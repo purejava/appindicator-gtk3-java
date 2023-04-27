@@ -7,9 +7,18 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GSignalInvocationHint {
+ *     guint signal_id;
+ *     GQuark detail;
+ *     GSignalFlags run_type;
+ * };
+ * }
+ */
 public class _GSignalInvocationHint {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_INT$LAYOUT.withName("signal_id"),
         Constants$root.C_INT$LAYOUT.withName("detail"),
         Constants$root.C_INT$LAYOUT.withName("run_type")
@@ -21,10 +30,22 @@ public class _GSignalInvocationHint {
     public static VarHandle signal_id$VH() {
         return _GSignalInvocationHint.signal_id$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * guint signal_id;
+     * }
+     */
     public static int signal_id$get(MemorySegment seg) {
         return (int)_GSignalInvocationHint.signal_id$VH.get(seg);
     }
-    public static void signal_id$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * guint signal_id;
+     * }
+     */
+    public static void signal_id$set(MemorySegment seg, int x) {
         _GSignalInvocationHint.signal_id$VH.set(seg, x);
     }
     public static int signal_id$get(MemorySegment seg, long index) {
@@ -37,10 +58,22 @@ public class _GSignalInvocationHint {
     public static VarHandle detail$VH() {
         return _GSignalInvocationHint.detail$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GQuark detail;
+     * }
+     */
     public static int detail$get(MemorySegment seg) {
         return (int)_GSignalInvocationHint.detail$VH.get(seg);
     }
-    public static void detail$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GQuark detail;
+     * }
+     */
+    public static void detail$set(MemorySegment seg, int x) {
         _GSignalInvocationHint.detail$VH.set(seg, x);
     }
     public static int detail$get(MemorySegment seg, long index) {
@@ -53,10 +86,22 @@ public class _GSignalInvocationHint {
     public static VarHandle run_type$VH() {
         return _GSignalInvocationHint.run_type$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GSignalFlags run_type;
+     * }
+     */
     public static int run_type$get(MemorySegment seg) {
         return (int)_GSignalInvocationHint.run_type$VH.get(seg);
     }
-    public static void run_type$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GSignalFlags run_type;
+     * }
+     */
+    public static void run_type$set(MemorySegment seg, int x) {
         _GSignalInvocationHint.run_type$VH.set(seg, x);
     }
     public static int run_type$get(MemorySegment seg, long index) {
@@ -67,10 +112,10 @@ public class _GSignalInvocationHint {
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

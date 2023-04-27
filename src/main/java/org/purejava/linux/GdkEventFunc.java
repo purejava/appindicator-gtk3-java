@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * void (*GdkEventFunc)(union _GdkEvent* event,void* data);
+ * }
+ */
 public interface GdkEventFunc {
 
-    void apply(java.lang.foreign.MemoryAddress event, java.lang.foreign.MemoryAddress data);
-    static MemorySegment allocate(GdkEventFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GdkEventFunc.class, fi, constants$1224.GdkEventFunc$FUNC, session);
+    void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+    static MemorySegment allocate(GdkEventFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$1065.GdkEventFunc_UP$MH, fi, constants$1065.GdkEventFunc$FUNC, scope);
     }
-    static GdkEventFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _event, java.lang.foreign.MemoryAddress _data) -> {
+    static GdkEventFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
             try {
-                constants$1224.GdkEventFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_event, (java.lang.foreign.Addressable)_data);
+                constants$1065.GdkEventFunc_DOWN$MH.invokeExact(symbol, _tag, _data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

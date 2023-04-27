@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * void (*GInstanceInitFunc)(struct _GTypeInstance* instance,void* g_class);
+ * }
+ */
 public interface GInstanceInitFunc {
 
-    void apply(java.lang.foreign.MemoryAddress instance, java.lang.foreign.MemoryAddress g_class);
-    static MemorySegment allocate(GInstanceInitFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GInstanceInitFunc.class, fi, constants$425.GInstanceInitFunc$FUNC, session);
+    void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+    static MemorySegment allocate(GInstanceInitFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$385.GInstanceInitFunc_UP$MH, fi, constants$385.GInstanceInitFunc$FUNC, scope);
     }
-    static GInstanceInitFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _instance, java.lang.foreign.MemoryAddress _g_class) -> {
+    static GInstanceInitFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
             try {
-                constants$425.GInstanceInitFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_instance, (java.lang.foreign.Addressable)_g_class);
+                constants$385.GInstanceInitFunc_DOWN$MH.invokeExact(symbol, _tag, _data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

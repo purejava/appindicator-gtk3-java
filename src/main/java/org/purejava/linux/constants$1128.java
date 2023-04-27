@@ -7,49 +7,41 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1128 {
+final class constants$1128 {
 
-    static final FunctionDescriptor pango_layout_iter_get_run_readonly$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1128() {}
+    static final OfInt gdk_pixbuf_micro_version$LAYOUT = Constants$root.C_INT$LAYOUT;
+    static final VarHandle gdk_pixbuf_micro_version$VH = constants$1128.gdk_pixbuf_micro_version$LAYOUT.varHandle();
+    static final MemorySegment gdk_pixbuf_micro_version$SEGMENT = RuntimeHelper.lookupGlobalVariable("gdk_pixbuf_micro_version", constants$1128.gdk_pixbuf_micro_version$LAYOUT);
+    static final OfAddress gdk_pixbuf_version$LAYOUT = Constants$root.C_POINTER$LAYOUT;
+    static final VarHandle gdk_pixbuf_version$VH = constants$1128.gdk_pixbuf_version$LAYOUT.varHandle();
+    static final MemorySegment gdk_pixbuf_version$SEGMENT = RuntimeHelper.lookupGlobalVariable("gdk_pixbuf_version", constants$1128.gdk_pixbuf_version$LAYOUT);
+    static final FunctionDescriptor GdkPixbufDestroyNotify$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_layout_iter_get_run_readonly$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_iter_get_run_readonly",
-        constants$1128.pango_layout_iter_get_run_readonly$FUNC
-    );
-    static final FunctionDescriptor pango_layout_iter_get_line$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor GdkPixbufDestroyNotify_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_layout_iter_get_line$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_iter_get_line",
-        constants$1128.pango_layout_iter_get_line$FUNC
-    );
-    static final FunctionDescriptor pango_layout_iter_get_line_readonly$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final MethodHandle GdkPixbufDestroyNotify_UP$MH = RuntimeHelper.upcallHandle(GdkPixbufDestroyNotify.class, "apply", constants$1128.GdkPixbufDestroyNotify_UP$FUNC);
+    static final FunctionDescriptor GdkPixbufDestroyNotify_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_layout_iter_get_line_readonly$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_iter_get_line_readonly",
-        constants$1128.pango_layout_iter_get_line_readonly$FUNC
+    static final MethodHandle GdkPixbufDestroyNotify_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$1128.GdkPixbufDestroyNotify_DOWN$FUNC
     );
-    static final FunctionDescriptor pango_layout_iter_at_last_line$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gdk_pixbuf_error_quark$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
+    static final MethodHandle gdk_pixbuf_error_quark$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_error_quark",
+        constants$1128.gdk_pixbuf_error_quark$FUNC
     );
-    static final MethodHandle pango_layout_iter_at_last_line$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_iter_at_last_line",
-        constants$1128.pango_layout_iter_at_last_line$FUNC
-    );
-    static final FunctionDescriptor pango_layout_iter_get_layout$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_layout_iter_get_layout$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_iter_get_layout",
-        constants$1128.pango_layout_iter_get_layout$FUNC
-    );
-    static final FunctionDescriptor pango_layout_iter_next_char$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_layout_iter_next_char$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_iter_next_char",
-        constants$1128.pango_layout_iter_next_char$FUNC
+    static final FunctionDescriptor gdk_pixbuf_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gdk_pixbuf_get_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_get_type",
+        constants$1128.gdk_pixbuf_get_type$FUNC
     );
 }
 

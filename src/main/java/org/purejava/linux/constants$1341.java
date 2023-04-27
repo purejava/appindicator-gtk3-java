@@ -7,52 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1341 {
+final class constants$1341 {
 
-    static final FunctionDescriptor gdk_get_display$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gdk_get_display$MH = RuntimeHelper.downcallHandle(
-        "gdk_get_display",
-        constants$1341.gdk_get_display$FUNC
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1341() {}
+    static final FunctionDescriptor gtk_label_get_lines$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor gdk_pointer_grab$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final MethodHandle gtk_label_get_lines$MH = RuntimeHelper.downcallHandle(
+        "gtk_label_get_lines",
+        constants$1341.gtk_label_get_lines$FUNC
+    );
+    static final FunctionDescriptor gtk_label_set_pattern$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_label_set_pattern$MH = RuntimeHelper.downcallHandle(
+        "gtk_label_set_pattern",
+        constants$1341.gtk_label_set_pattern$FUNC
+    );
+    static final FunctionDescriptor gtk_label_set_line_wrap$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gdk_pointer_grab$MH = RuntimeHelper.downcallHandle(
-        "gdk_pointer_grab",
-        constants$1341.gdk_pointer_grab$FUNC
+    static final MethodHandle gtk_label_set_line_wrap$MH = RuntimeHelper.downcallHandle(
+        "gtk_label_set_line_wrap",
+        constants$1341.gtk_label_set_line_wrap$FUNC
     );
-    static final FunctionDescriptor gdk_keyboard_grab$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_label_get_line_wrap$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_label_get_line_wrap$MH = RuntimeHelper.downcallHandle(
+        "gtk_label_get_line_wrap",
+        constants$1341.gtk_label_get_line_wrap$FUNC
+    );
+    static final FunctionDescriptor gtk_label_set_line_wrap_mode$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gdk_keyboard_grab$MH = RuntimeHelper.downcallHandle(
-        "gdk_keyboard_grab",
-        constants$1341.gdk_keyboard_grab$FUNC
+    static final MethodHandle gtk_label_set_line_wrap_mode$MH = RuntimeHelper.downcallHandle(
+        "gtk_label_set_line_wrap_mode",
+        constants$1341.gtk_label_set_line_wrap_mode$FUNC
     );
-    static final FunctionDescriptor gdk_pointer_ungrab$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor gtk_label_get_line_wrap_mode$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_pointer_ungrab$MH = RuntimeHelper.downcallHandle(
-        "gdk_pointer_ungrab",
-        constants$1341.gdk_pointer_ungrab$FUNC
-    );
-    static final FunctionDescriptor gdk_keyboard_ungrab$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_keyboard_ungrab$MH = RuntimeHelper.downcallHandle(
-        "gdk_keyboard_ungrab",
-        constants$1341.gdk_keyboard_ungrab$FUNC
-    );
-    static final FunctionDescriptor gdk_pointer_is_grabbed$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle gdk_pointer_is_grabbed$MH = RuntimeHelper.downcallHandle(
-        "gdk_pointer_is_grabbed",
-        constants$1341.gdk_pointer_is_grabbed$FUNC
+    static final MethodHandle gtk_label_get_line_wrap_mode$MH = RuntimeHelper.downcallHandle(
+        "gtk_label_get_line_wrap_mode",
+        constants$1341.gtk_label_get_line_wrap_mode$FUNC
     );
 }
 

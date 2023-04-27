@@ -7,56 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1919 {
+final class constants$1919 {
 
-    static final FunctionDescriptor gtk_paper_size_is_ipp$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1919() {}
+    static final FunctionDescriptor gtk_action_group_set_visible$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_action_group_set_visible$MH = RuntimeHelper.downcallHandle(
+        "gtk_action_group_set_visible",
+        constants$1919.gtk_action_group_set_visible$FUNC
+    );
+    static final FunctionDescriptor gtk_action_group_get_accel_group$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_paper_size_is_ipp$MH = RuntimeHelper.downcallHandle(
-        "gtk_paper_size_is_ipp",
-        constants$1919.gtk_paper_size_is_ipp$FUNC
+    static final MethodHandle gtk_action_group_get_accel_group$MH = RuntimeHelper.downcallHandle(
+        "gtk_action_group_get_accel_group",
+        constants$1919.gtk_action_group_get_accel_group$FUNC
     );
-    static final FunctionDescriptor gtk_paper_size_set_size$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_action_group_set_accel_group$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_paper_size_set_size$MH = RuntimeHelper.downcallHandle(
-        "gtk_paper_size_set_size",
-        constants$1919.gtk_paper_size_set_size$FUNC
+    static final MethodHandle gtk_action_group_set_accel_group$MH = RuntimeHelper.downcallHandle(
+        "gtk_action_group_set_accel_group",
+        constants$1919.gtk_action_group_set_accel_group$FUNC
     );
-    static final FunctionDescriptor gtk_paper_size_get_default_top_margin$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
+    static final FunctionDescriptor gtk_action_group_get_action$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_paper_size_get_default_top_margin$MH = RuntimeHelper.downcallHandle(
-        "gtk_paper_size_get_default_top_margin",
-        constants$1919.gtk_paper_size_get_default_top_margin$FUNC
+    static final MethodHandle gtk_action_group_get_action$MH = RuntimeHelper.downcallHandle(
+        "gtk_action_group_get_action",
+        constants$1919.gtk_action_group_get_action$FUNC
     );
-    static final FunctionDescriptor gtk_paper_size_get_default_bottom_margin$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
+    static final FunctionDescriptor gtk_action_group_list_actions$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_action_group_list_actions$MH = RuntimeHelper.downcallHandle(
+        "gtk_action_group_list_actions",
+        constants$1919.gtk_action_group_list_actions$FUNC
+    );
+    static final FunctionDescriptor gtk_action_group_add_action$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_paper_size_get_default_bottom_margin$MH = RuntimeHelper.downcallHandle(
-        "gtk_paper_size_get_default_bottom_margin",
-        constants$1919.gtk_paper_size_get_default_bottom_margin$FUNC
-    );
-    static final FunctionDescriptor gtk_paper_size_get_default_left_margin$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_paper_size_get_default_left_margin$MH = RuntimeHelper.downcallHandle(
-        "gtk_paper_size_get_default_left_margin",
-        constants$1919.gtk_paper_size_get_default_left_margin$FUNC
-    );
-    static final FunctionDescriptor gtk_paper_size_get_default_right_margin$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_paper_size_get_default_right_margin$MH = RuntimeHelper.downcallHandle(
-        "gtk_paper_size_get_default_right_margin",
-        constants$1919.gtk_paper_size_get_default_right_margin$FUNC
+    static final MethodHandle gtk_action_group_add_action$MH = RuntimeHelper.downcallHandle(
+        "gtk_action_group_add_action",
+        constants$1919.gtk_action_group_add_action$FUNC
     );
 }
 

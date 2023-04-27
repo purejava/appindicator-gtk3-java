@@ -7,50 +7,60 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$847 {
+final class constants$847 {
 
-    static final FunctionDescriptor g_task_set_name$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$847() {}
+    static final FunctionDescriptor hb_set_get_max$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle hb_set_get_max$MH = RuntimeHelper.downcallHandle(
+        "hb_set_get_max",
+        constants$847.hb_set_get_max$FUNC
+    );
+    static final FunctionDescriptor hb_set_next$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_task_set_name$MH = RuntimeHelper.downcallHandle(
-        "g_task_set_name",
-        constants$847.g_task_set_name$FUNC
+    static final MethodHandle hb_set_next$MH = RuntimeHelper.downcallHandle(
+        "hb_set_next",
+        constants$847.hb_set_next$FUNC
     );
-    static final FunctionDescriptor g_task_get_source_object$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor hb_set_previous$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_task_get_source_object$MH = RuntimeHelper.downcallHandle(
-        "g_task_get_source_object",
-        constants$847.g_task_get_source_object$FUNC
+    static final MethodHandle hb_set_previous$MH = RuntimeHelper.downcallHandle(
+        "hb_set_previous",
+        constants$847.hb_set_previous$FUNC
     );
-    static final FunctionDescriptor g_task_get_task_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor hb_set_next_range$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_task_get_task_data$MH = RuntimeHelper.downcallHandle(
-        "g_task_get_task_data",
-        constants$847.g_task_get_task_data$FUNC
+    static final MethodHandle hb_set_next_range$MH = RuntimeHelper.downcallHandle(
+        "hb_set_next_range",
+        constants$847.hb_set_next_range$FUNC
     );
-    static final FunctionDescriptor g_task_get_priority$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor hb_set_previous_range$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_task_get_priority$MH = RuntimeHelper.downcallHandle(
-        "g_task_get_priority",
-        constants$847.g_task_get_priority$FUNC
+    static final MethodHandle hb_set_previous_range$MH = RuntimeHelper.downcallHandle(
+        "hb_set_previous_range",
+        constants$847.hb_set_previous_range$FUNC
     );
-    static final FunctionDescriptor g_task_get_context$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor hb_set_next_many$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_task_get_context$MH = RuntimeHelper.downcallHandle(
-        "g_task_get_context",
-        constants$847.g_task_get_context$FUNC
-    );
-    static final FunctionDescriptor g_task_get_cancellable$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_task_get_cancellable$MH = RuntimeHelper.downcallHandle(
-        "g_task_get_cancellable",
-        constants$847.g_task_get_cancellable$FUNC
+    static final MethodHandle hb_set_next_many$MH = RuntimeHelper.downcallHandle(
+        "hb_set_next_many",
+        constants$847.hb_set_next_many$FUNC
     );
 }
 

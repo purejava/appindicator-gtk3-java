@@ -7,49 +7,62 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1289 {
+final class constants$1289 {
 
-    static final FunctionDescriptor gdk_pixbuf_get_bits_per_sample$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1289() {}
+    static final FunctionDescriptor gtk_application_add_accelerator$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_pixbuf_get_bits_per_sample$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_get_bits_per_sample",
-        constants$1289.gdk_pixbuf_get_bits_per_sample$FUNC
+    static final MethodHandle gtk_application_add_accelerator$MH = RuntimeHelper.downcallHandle(
+        "gtk_application_add_accelerator",
+        constants$1289.gtk_application_add_accelerator$FUNC
     );
-    static final FunctionDescriptor gdk_pixbuf_get_pixels$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_application_remove_accelerator$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_pixbuf_get_pixels$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_get_pixels",
-        constants$1289.gdk_pixbuf_get_pixels$FUNC
+    static final MethodHandle gtk_application_remove_accelerator$MH = RuntimeHelper.downcallHandle(
+        "gtk_application_remove_accelerator",
+        constants$1289.gtk_application_remove_accelerator$FUNC
     );
-    static final FunctionDescriptor gdk_pixbuf_get_width$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_application_inhibit$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_pixbuf_get_width$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_get_width",
-        constants$1289.gdk_pixbuf_get_width$FUNC
+    static final MethodHandle gtk_application_inhibit$MH = RuntimeHelper.downcallHandle(
+        "gtk_application_inhibit",
+        constants$1289.gtk_application_inhibit$FUNC
     );
-    static final FunctionDescriptor gdk_pixbuf_get_height$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gtk_application_uninhibit$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gdk_pixbuf_get_height$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_get_height",
-        constants$1289.gdk_pixbuf_get_height$FUNC
+    static final MethodHandle gtk_application_uninhibit$MH = RuntimeHelper.downcallHandle(
+        "gtk_application_uninhibit",
+        constants$1289.gtk_application_uninhibit$FUNC
     );
-    static final FunctionDescriptor gdk_pixbuf_get_rowstride$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gtk_application_is_inhibited$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gdk_pixbuf_get_rowstride$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_get_rowstride",
-        constants$1289.gdk_pixbuf_get_rowstride$FUNC
+    static final MethodHandle gtk_application_is_inhibited$MH = RuntimeHelper.downcallHandle(
+        "gtk_application_is_inhibited",
+        constants$1289.gtk_application_is_inhibited$FUNC
     );
-    static final FunctionDescriptor gdk_pixbuf_get_byte_length$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gtk_application_get_window_by_id$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gdk_pixbuf_get_byte_length$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_get_byte_length",
-        constants$1289.gdk_pixbuf_get_byte_length$FUNC
+    static final MethodHandle gtk_application_get_window_by_id$MH = RuntimeHelper.downcallHandle(
+        "gtk_application_get_window_by_id",
+        constants$1289.gtk_application_get_window_by_id$FUNC
     );
 }
 

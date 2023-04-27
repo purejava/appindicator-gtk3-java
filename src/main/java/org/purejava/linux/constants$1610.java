@@ -7,50 +7,57 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1610 {
+final class constants$1610 {
 
-    static final FunctionDescriptor gtk_selection_data_get_data_type$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1610() {}
+    static final FunctionDescriptor gtk_gl_area_set_required_version$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_selection_data_get_data_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_selection_data_get_data_type",
-        constants$1610.gtk_selection_data_get_data_type$FUNC
+    static final MethodHandle gtk_gl_area_set_required_version$MH = RuntimeHelper.downcallHandle(
+        "gtk_gl_area_set_required_version",
+        constants$1610.gtk_gl_area_set_required_version$FUNC
     );
-    static final FunctionDescriptor gtk_selection_data_get_format$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_selection_data_get_format$MH = RuntimeHelper.downcallHandle(
-        "gtk_selection_data_get_format",
-        constants$1610.gtk_selection_data_get_format$FUNC
-    );
-    static final FunctionDescriptor gtk_selection_data_get_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_selection_data_get_data$MH = RuntimeHelper.downcallHandle(
-        "gtk_selection_data_get_data",
-        constants$1610.gtk_selection_data_get_data$FUNC
-    );
-    static final FunctionDescriptor gtk_selection_data_get_length$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_selection_data_get_length$MH = RuntimeHelper.downcallHandle(
-        "gtk_selection_data_get_length",
-        constants$1610.gtk_selection_data_get_length$FUNC
-    );
-    static final FunctionDescriptor gtk_selection_data_get_data_with_length$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_gl_area_get_required_version$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_selection_data_get_data_with_length$MH = RuntimeHelper.downcallHandle(
-        "gtk_selection_data_get_data_with_length",
-        constants$1610.gtk_selection_data_get_data_with_length$FUNC
+    static final MethodHandle gtk_gl_area_get_required_version$MH = RuntimeHelper.downcallHandle(
+        "gtk_gl_area_get_required_version",
+        constants$1610.gtk_gl_area_get_required_version$FUNC
     );
-    static final FunctionDescriptor gtk_selection_data_get_display$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_gl_area_get_has_alpha$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_selection_data_get_display$MH = RuntimeHelper.downcallHandle(
-        "gtk_selection_data_get_display",
-        constants$1610.gtk_selection_data_get_display$FUNC
+    static final MethodHandle gtk_gl_area_get_has_alpha$MH = RuntimeHelper.downcallHandle(
+        "gtk_gl_area_get_has_alpha",
+        constants$1610.gtk_gl_area_get_has_alpha$FUNC
+    );
+    static final FunctionDescriptor gtk_gl_area_set_has_alpha$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_gl_area_set_has_alpha$MH = RuntimeHelper.downcallHandle(
+        "gtk_gl_area_set_has_alpha",
+        constants$1610.gtk_gl_area_set_has_alpha$FUNC
+    );
+    static final FunctionDescriptor gtk_gl_area_get_has_depth_buffer$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_gl_area_get_has_depth_buffer$MH = RuntimeHelper.downcallHandle(
+        "gtk_gl_area_get_has_depth_buffer",
+        constants$1610.gtk_gl_area_get_has_depth_buffer$FUNC
+    );
+    static final FunctionDescriptor gtk_gl_area_set_has_depth_buffer$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_gl_area_set_has_depth_buffer$MH = RuntimeHelper.downcallHandle(
+        "gtk_gl_area_set_has_depth_buffer",
+        constants$1610.gtk_gl_area_set_has_depth_buffer$FUNC
     );
 }
 

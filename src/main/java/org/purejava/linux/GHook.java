@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GHook extends _GHook {
+/**
+ * {@snippet :
+ * typedef struct _GHook GHook;
+ * }
+ */
+public final class GHook extends _GHook {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GHook() {}
 }
 
 

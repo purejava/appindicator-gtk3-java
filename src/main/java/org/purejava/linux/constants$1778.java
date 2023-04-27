@@ -7,49 +7,58 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1778 {
+final class constants$1778 {
 
-    static final FunctionDescriptor glib_listautoptr_cleanup_GtkFileChooserNative$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1778() {}
+    static final FunctionDescriptor gtk_recent_filter_add_pixbuf_formats$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GtkFileChooserNative$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GtkFileChooserNative",
-        constants$1778.glib_listautoptr_cleanup_GtkFileChooserNative$FUNC
+    static final MethodHandle gtk_recent_filter_add_pixbuf_formats$MH = RuntimeHelper.downcallHandle(
+        "gtk_recent_filter_add_pixbuf_formats",
+        constants$1778.gtk_recent_filter_add_pixbuf_formats$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GtkFileChooserNative$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_recent_filter_add_application$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GtkFileChooserNative$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GtkFileChooserNative",
-        constants$1778.glib_slistautoptr_cleanup_GtkFileChooserNative$FUNC
+    static final MethodHandle gtk_recent_filter_add_application$MH = RuntimeHelper.downcallHandle(
+        "gtk_recent_filter_add_application",
+        constants$1778.gtk_recent_filter_add_application$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GtkFileChooserNative$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_recent_filter_add_group$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GtkFileChooserNative$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GtkFileChooserNative",
-        constants$1778.glib_queueautoptr_cleanup_GtkFileChooserNative$FUNC
+    static final MethodHandle gtk_recent_filter_add_group$MH = RuntimeHelper.downcallHandle(
+        "gtk_recent_filter_add_group",
+        constants$1778.gtk_recent_filter_add_group$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GtkFileChooserNativeClass$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_recent_filter_add_age$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_recent_filter_add_age$MH = RuntimeHelper.downcallHandle(
+        "gtk_recent_filter_add_age",
+        constants$1778.gtk_recent_filter_add_age$FUNC
+    );
+    static final FunctionDescriptor gtk_recent_filter_add_custom$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GtkFileChooserNativeClass$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GtkFileChooserNativeClass",
-        constants$1778.glib_autoptr_clear_GtkFileChooserNativeClass$FUNC
+    static final MethodHandle gtk_recent_filter_add_custom$MH = RuntimeHelper.downcallHandle(
+        "gtk_recent_filter_add_custom",
+        constants$1778.gtk_recent_filter_add_custom$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GtkFileChooserNativeClass$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_recent_filter_get_needed$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GtkFileChooserNativeClass$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GtkFileChooserNativeClass",
-        constants$1778.glib_autoptr_cleanup_GtkFileChooserNativeClass$FUNC
-    );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GtkFileChooserNativeClass$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_listautoptr_cleanup_GtkFileChooserNativeClass$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GtkFileChooserNativeClass",
-        constants$1778.glib_listautoptr_cleanup_GtkFileChooserNativeClass$FUNC
+    static final MethodHandle gtk_recent_filter_get_needed$MH = RuntimeHelper.downcallHandle(
+        "gtk_recent_filter_get_needed",
+        constants$1778.gtk_recent_filter_get_needed$FUNC
     );
 }
 

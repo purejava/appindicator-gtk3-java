@@ -7,44 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$989 {
+final class constants$989 {
 
-    static final FunctionDescriptor hb_language_get_default$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle hb_language_get_default$MH = RuntimeHelper.downcallHandle(
-        "hb_language_get_default",
-        constants$989.hb_language_get_default$FUNC
-    );
-    static final FunctionDescriptor hb_script_from_iso15924_tag$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle hb_script_from_iso15924_tag$MH = RuntimeHelper.downcallHandle(
-        "hb_script_from_iso15924_tag",
-        constants$989.hb_script_from_iso15924_tag$FUNC
-    );
-    static final FunctionDescriptor hb_script_from_string$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle hb_script_from_string$MH = RuntimeHelper.downcallHandle(
-        "hb_script_from_string",
-        constants$989.hb_script_from_string$FUNC
-    );
-    static final FunctionDescriptor hb_script_to_iso15924_tag$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle hb_script_to_iso15924_tag$MH = RuntimeHelper.downcallHandle(
-        "hb_script_to_iso15924_tag",
-        constants$989.hb_script_to_iso15924_tag$FUNC
-    );
-    static final FunctionDescriptor hb_script_get_horizontal_direction$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle hb_script_get_horizontal_direction$MH = RuntimeHelper.downcallHandle(
-        "hb_script_get_horizontal_direction",
-        constants$989.hb_script_get_horizontal_direction$FUNC
-    );
-    static final FunctionDescriptor hb_destroy_func_t$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$989() {}
+    static final FunctionDescriptor feof$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle feof$MH = RuntimeHelper.downcallHandle(
+        "feof",
+        constants$989.feof$FUNC
+    );
+    static final FunctionDescriptor ferror$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle ferror$MH = RuntimeHelper.downcallHandle(
+        "ferror",
+        constants$989.ferror$FUNC
+    );
+    static final FunctionDescriptor clearerr_unlocked$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle clearerr_unlocked$MH = RuntimeHelper.downcallHandle(
+        "clearerr_unlocked",
+        constants$989.clearerr_unlocked$FUNC
+    );
+    static final FunctionDescriptor feof_unlocked$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle feof_unlocked$MH = RuntimeHelper.downcallHandle(
+        "feof_unlocked",
+        constants$989.feof_unlocked$FUNC
+    );
+    static final FunctionDescriptor ferror_unlocked$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle ferror_unlocked$MH = RuntimeHelper.downcallHandle(
+        "ferror_unlocked",
+        constants$989.ferror_unlocked$FUNC
+    );
+    static final FunctionDescriptor perror$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle perror$MH = RuntimeHelper.downcallHandle(
+        "perror",
+        constants$989.perror$FUNC
     );
 }
 

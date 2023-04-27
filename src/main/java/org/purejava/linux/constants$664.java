@@ -7,52 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$664 {
+final class constants$664 {
 
-    static final FunctionDescriptor g_file_new_for_uri$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$664() {}
+    static final FunctionDescriptor g_inet_address_get_is_mc_org_local$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_file_new_for_uri$MH = RuntimeHelper.downcallHandle(
-        "g_file_new_for_uri",
-        constants$664.g_file_new_for_uri$FUNC
+    static final MethodHandle g_inet_address_get_is_mc_org_local$MH = RuntimeHelper.downcallHandle(
+        "g_inet_address_get_is_mc_org_local",
+        constants$664.g_inet_address_get_is_mc_org_local$FUNC
     );
-    static final FunctionDescriptor g_file_new_for_commandline_arg$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_inet_address_get_is_mc_site_local$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_file_new_for_commandline_arg$MH = RuntimeHelper.downcallHandle(
-        "g_file_new_for_commandline_arg",
-        constants$664.g_file_new_for_commandline_arg$FUNC
+    static final MethodHandle g_inet_address_get_is_mc_site_local$MH = RuntimeHelper.downcallHandle(
+        "g_inet_address_get_is_mc_site_local",
+        constants$664.g_inet_address_get_is_mc_site_local$FUNC
     );
-    static final FunctionDescriptor g_file_new_for_commandline_arg_and_cwd$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_inet_address_mask_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_inet_address_mask_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_inet_address_mask_get_type",
+        constants$664.g_inet_address_mask_get_type$FUNC
+    );
+    static final FunctionDescriptor g_inet_address_mask_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_inet_address_mask_new$MH = RuntimeHelper.downcallHandle(
+        "g_inet_address_mask_new",
+        constants$664.g_inet_address_mask_new$FUNC
+    );
+    static final FunctionDescriptor g_inet_address_mask_new_from_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_file_new_for_commandline_arg_and_cwd$MH = RuntimeHelper.downcallHandle(
-        "g_file_new_for_commandline_arg_and_cwd",
-        constants$664.g_file_new_for_commandline_arg_and_cwd$FUNC
+    static final MethodHandle g_inet_address_mask_new_from_string$MH = RuntimeHelper.downcallHandle(
+        "g_inet_address_mask_new_from_string",
+        constants$664.g_inet_address_mask_new_from_string$FUNC
     );
-    static final FunctionDescriptor g_file_new_tmp$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_inet_address_mask_to_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_file_new_tmp$MH = RuntimeHelper.downcallHandle(
-        "g_file_new_tmp",
-        constants$664.g_file_new_tmp$FUNC
-    );
-    static final FunctionDescriptor g_file_parse_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_parse_name$MH = RuntimeHelper.downcallHandle(
-        "g_file_parse_name",
-        constants$664.g_file_parse_name$FUNC
-    );
-    static final FunctionDescriptor g_file_new_build_filename$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_new_build_filename$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_file_new_build_filename",
-        constants$664.g_file_new_build_filename$FUNC
+    static final MethodHandle g_inet_address_mask_to_string$MH = RuntimeHelper.downcallHandle(
+        "g_inet_address_mask_to_string",
+        constants$664.g_inet_address_mask_to_string$FUNC
     );
 }
 

@@ -7,51 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1456 {
+final class constants$1456 {
 
-    static final FunctionDescriptor gtk_widget_get_font_options$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_get_font_options$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_font_options",
-        constants$1456.gtk_widget_get_font_options$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_create_pango_layout$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_create_pango_layout$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_create_pango_layout",
-        constants$1456.gtk_widget_create_pango_layout$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_render_icon_pixbuf$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1456() {}
+    static final FunctionDescriptor gtk_entry_text_index_to_layout_index$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_widget_render_icon_pixbuf$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_render_icon_pixbuf",
-        constants$1456.gtk_widget_render_icon_pixbuf$FUNC
+    static final MethodHandle gtk_entry_text_index_to_layout_index$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_text_index_to_layout_index",
+        constants$1456.gtk_entry_text_index_to_layout_index$FUNC
     );
-    static final FunctionDescriptor gtk_widget_set_composite_name$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_entry_set_cursor_hadjustment$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_widget_set_composite_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_composite_name",
-        constants$1456.gtk_widget_set_composite_name$FUNC
+    static final MethodHandle gtk_entry_set_cursor_hadjustment$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_set_cursor_hadjustment",
+        constants$1456.gtk_entry_set_cursor_hadjustment$FUNC
     );
-    static final FunctionDescriptor gtk_widget_get_composite_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_entry_get_cursor_hadjustment$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_widget_get_composite_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_composite_name",
-        constants$1456.gtk_widget_get_composite_name$FUNC
+    static final MethodHandle gtk_entry_get_cursor_hadjustment$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_get_cursor_hadjustment",
+        constants$1456.gtk_entry_get_cursor_hadjustment$FUNC
     );
-    static final FunctionDescriptor gtk_widget_push_composite_child$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle gtk_widget_push_composite_child$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_push_composite_child",
-        constants$1456.gtk_widget_push_composite_child$FUNC
+    static final FunctionDescriptor gtk_entry_set_progress_fraction$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle gtk_entry_set_progress_fraction$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_set_progress_fraction",
+        constants$1456.gtk_entry_set_progress_fraction$FUNC
+    );
+    static final FunctionDescriptor gtk_entry_get_progress_fraction$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_entry_get_progress_fraction$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_get_progress_fraction",
+        constants$1456.gtk_entry_get_progress_fraction$FUNC
+    );
+    static final FunctionDescriptor gtk_entry_set_progress_pulse_step$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle gtk_entry_set_progress_pulse_step$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_set_progress_pulse_step",
+        constants$1456.gtk_entry_set_progress_pulse_step$FUNC
     );
 }
 

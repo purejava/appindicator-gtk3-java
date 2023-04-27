@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * void (*GTaskThreadFunc)(struct _GTask* task,void* source_object,void* task_data,struct _GCancellable* cancellable);
+ * }
+ */
 public interface GTaskThreadFunc {
 
-    void apply(java.lang.foreign.MemoryAddress task, java.lang.foreign.MemoryAddress source_object, java.lang.foreign.MemoryAddress task_data, java.lang.foreign.MemoryAddress cancellable);
-    static MemorySegment allocate(GTaskThreadFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GTaskThreadFunc.class, fi, constants$848.GTaskThreadFunc$FUNC, session);
+    void apply(java.lang.foreign.MemorySegment model, java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment data);
+    static MemorySegment allocate(GTaskThreadFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$794.GTaskThreadFunc_UP$MH, fi, constants$794.GTaskThreadFunc$FUNC, scope);
     }
-    static GTaskThreadFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _task, java.lang.foreign.MemoryAddress _source_object, java.lang.foreign.MemoryAddress _task_data, java.lang.foreign.MemoryAddress _cancellable) -> {
+    static GTaskThreadFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _model, java.lang.foreign.MemorySegment _path, java.lang.foreign.MemorySegment _iter, java.lang.foreign.MemorySegment _data) -> {
             try {
-                constants$848.GTaskThreadFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_task, (java.lang.foreign.Addressable)_source_object, (java.lang.foreign.Addressable)_task_data, (java.lang.foreign.Addressable)_cancellable);
+                constants$794.GTaskThreadFunc_DOWN$MH.invokeExact(symbol, _model, _path, _iter, _data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

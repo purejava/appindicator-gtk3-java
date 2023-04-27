@@ -7,49 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$893 {
+final class constants$893 {
 
-    static final FunctionDescriptor glib_autoptr_clear_GConverterOutputStream$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$893() {}
+    static final FunctionDescriptor hb_map_clear$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GConverterOutputStream$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GConverterOutputStream",
-        constants$893.glib_autoptr_clear_GConverterOutputStream$FUNC
+    static final MethodHandle hb_map_clear$MH = RuntimeHelper.downcallHandle(
+        "hb_map_clear",
+        constants$893.hb_map_clear$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GConverterOutputStream$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor hb_map_is_empty$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GConverterOutputStream$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GConverterOutputStream",
-        constants$893.glib_autoptr_cleanup_GConverterOutputStream$FUNC
+    static final MethodHandle hb_map_is_empty$MH = RuntimeHelper.downcallHandle(
+        "hb_map_is_empty",
+        constants$893.hb_map_is_empty$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GConverterOutputStream$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor hb_map_get_population$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GConverterOutputStream$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GConverterOutputStream",
-        constants$893.glib_listautoptr_cleanup_GConverterOutputStream$FUNC
+    static final MethodHandle hb_map_get_population$MH = RuntimeHelper.downcallHandle(
+        "hb_map_get_population",
+        constants$893.hb_map_get_population$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GConverterOutputStream$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor hb_map_is_equal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GConverterOutputStream$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GConverterOutputStream",
-        constants$893.glib_slistautoptr_cleanup_GConverterOutputStream$FUNC
+    static final MethodHandle hb_map_is_equal$MH = RuntimeHelper.downcallHandle(
+        "hb_map_is_equal",
+        constants$893.hb_map_is_equal$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GConverterOutputStream$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor hb_map_hash$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GConverterOutputStream$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GConverterOutputStream",
-        constants$893.glib_queueautoptr_cleanup_GConverterOutputStream$FUNC
+    static final MethodHandle hb_map_hash$MH = RuntimeHelper.downcallHandle(
+        "hb_map_hash",
+        constants$893.hb_map_hash$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GCredentials$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor hb_map_set$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GCredentials$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GCredentials",
-        constants$893.glib_autoptr_clear_GCredentials$FUNC
+    static final MethodHandle hb_map_set$MH = RuntimeHelper.downcallHandle(
+        "hb_map_set",
+        constants$893.hb_map_set$FUNC
     );
 }
 

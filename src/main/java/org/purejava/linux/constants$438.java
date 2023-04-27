@@ -7,55 +7,62 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$438 {
+final class constants$438 {
 
-    static final FunctionDescriptor g_param_value_validate$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$438() {}
+    static final FunctionDescriptor g_object_add_toggle_ref$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_param_value_validate$MH = RuntimeHelper.downcallHandle(
-        "g_param_value_validate",
-        constants$438.g_param_value_validate$FUNC
+    static final MethodHandle g_object_add_toggle_ref$MH = RuntimeHelper.downcallHandle(
+        "g_object_add_toggle_ref",
+        constants$438.g_object_add_toggle_ref$FUNC
     );
-    static final FunctionDescriptor g_param_value_convert$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_object_remove_toggle_ref$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_object_remove_toggle_ref$MH = RuntimeHelper.downcallHandle(
+        "g_object_remove_toggle_ref",
+        constants$438.g_object_remove_toggle_ref$FUNC
+    );
+    static final FunctionDescriptor g_object_get_qdata$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_param_value_convert$MH = RuntimeHelper.downcallHandle(
-        "g_param_value_convert",
-        constants$438.g_param_value_convert$FUNC
+    static final MethodHandle g_object_get_qdata$MH = RuntimeHelper.downcallHandle(
+        "g_object_get_qdata",
+        constants$438.g_object_get_qdata$FUNC
     );
-    static final FunctionDescriptor g_param_values_cmp$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_object_set_qdata$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_object_set_qdata$MH = RuntimeHelper.downcallHandle(
+        "g_object_set_qdata",
+        constants$438.g_object_set_qdata$FUNC
+    );
+    static final FunctionDescriptor g_object_set_qdata_full$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_param_values_cmp$MH = RuntimeHelper.downcallHandle(
-        "g_param_values_cmp",
-        constants$438.g_param_values_cmp$FUNC
+    static final MethodHandle g_object_set_qdata_full$MH = RuntimeHelper.downcallHandle(
+        "g_object_set_qdata_full",
+        constants$438.g_object_set_qdata_full$FUNC
     );
-    static final FunctionDescriptor g_param_spec_get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_object_steal_qdata$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_param_spec_get_name$MH = RuntimeHelper.downcallHandle(
-        "g_param_spec_get_name",
-        constants$438.g_param_spec_get_name$FUNC
-    );
-    static final FunctionDescriptor g_param_spec_get_nick$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_param_spec_get_nick$MH = RuntimeHelper.downcallHandle(
-        "g_param_spec_get_nick",
-        constants$438.g_param_spec_get_nick$FUNC
-    );
-    static final FunctionDescriptor g_param_spec_get_blurb$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_param_spec_get_blurb$MH = RuntimeHelper.downcallHandle(
-        "g_param_spec_get_blurb",
-        constants$438.g_param_spec_get_blurb$FUNC
+    static final MethodHandle g_object_steal_qdata$MH = RuntimeHelper.downcallHandle(
+        "g_object_steal_qdata",
+        constants$438.g_object_steal_qdata$FUNC
     );
 }
 

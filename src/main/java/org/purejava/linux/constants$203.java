@@ -7,55 +7,59 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$203 {
+final class constants$203 {
 
-    static final FunctionDescriptor g_io_channel_set_flags$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$203() {}
+    static final FunctionDescriptor g_strescape$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_io_channel_set_flags$MH = RuntimeHelper.downcallHandle(
-        "g_io_channel_set_flags",
-        constants$203.g_io_channel_set_flags$FUNC
+    static final MethodHandle g_strescape$MH = RuntimeHelper.downcallHandle(
+        "g_strescape",
+        constants$203.g_strescape$FUNC
     );
-    static final FunctionDescriptor g_io_channel_get_flags$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_memdup$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_io_channel_get_flags$MH = RuntimeHelper.downcallHandle(
-        "g_io_channel_get_flags",
-        constants$203.g_io_channel_get_flags$FUNC
+    static final MethodHandle g_memdup$MH = RuntimeHelper.downcallHandle(
+        "g_memdup",
+        constants$203.g_memdup$FUNC
     );
-    static final FunctionDescriptor g_io_channel_set_line_term$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_memdup2$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle g_memdup2$MH = RuntimeHelper.downcallHandle(
+        "g_memdup2",
+        constants$203.g_memdup2$FUNC
+    );
+    static final FunctionDescriptor g_strsplit$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_io_channel_set_line_term$MH = RuntimeHelper.downcallHandle(
-        "g_io_channel_set_line_term",
-        constants$203.g_io_channel_set_line_term$FUNC
+    static final MethodHandle g_strsplit$MH = RuntimeHelper.downcallHandle(
+        "g_strsplit",
+        constants$203.g_strsplit$FUNC
     );
-    static final FunctionDescriptor g_io_channel_get_line_term$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_strsplit_set$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_io_channel_get_line_term$MH = RuntimeHelper.downcallHandle(
-        "g_io_channel_get_line_term",
-        constants$203.g_io_channel_get_line_term$FUNC
-    );
-    static final FunctionDescriptor g_io_channel_set_buffered$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_io_channel_set_buffered$MH = RuntimeHelper.downcallHandle(
-        "g_io_channel_set_buffered",
-        constants$203.g_io_channel_set_buffered$FUNC
+    static final MethodHandle g_strsplit_set$MH = RuntimeHelper.downcallHandle(
+        "g_strsplit_set",
+        constants$203.g_strsplit_set$FUNC
     );
-    static final FunctionDescriptor g_io_channel_get_buffered$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_strjoinv$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_io_channel_get_buffered$MH = RuntimeHelper.downcallHandle(
-        "g_io_channel_get_buffered",
-        constants$203.g_io_channel_get_buffered$FUNC
+    static final MethodHandle g_strjoinv$MH = RuntimeHelper.downcallHandle(
+        "g_strjoinv",
+        constants$203.g_strjoinv$FUNC
     );
 }
 

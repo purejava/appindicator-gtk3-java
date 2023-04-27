@@ -7,62 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1855 {
+final class constants$1855 {
 
-    static final FunctionDescriptor gtk_icon_view_get_reorderable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1855() {}
+    static final FunctionDescriptor gtk_tool_item_group_set_label_widget$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_icon_view_get_reorderable$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_get_reorderable",
-        constants$1855.gtk_icon_view_get_reorderable$FUNC
+    static final MethodHandle gtk_tool_item_group_set_label_widget$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_item_group_set_label_widget",
+        constants$1855.gtk_tool_item_group_set_label_widget$FUNC
     );
-    static final FunctionDescriptor gtk_icon_view_set_drag_dest_item$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_tool_item_group_set_collapsed$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_icon_view_set_drag_dest_item$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_set_drag_dest_item",
-        constants$1855.gtk_icon_view_set_drag_dest_item$FUNC
+    static final MethodHandle gtk_tool_item_group_set_collapsed$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_item_group_set_collapsed",
+        constants$1855.gtk_tool_item_group_set_collapsed$FUNC
     );
-    static final FunctionDescriptor gtk_icon_view_get_drag_dest_item$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_tool_item_group_set_ellipsize$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_tool_item_group_set_ellipsize$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_item_group_set_ellipsize",
+        constants$1855.gtk_tool_item_group_set_ellipsize$FUNC
+    );
+    static final FunctionDescriptor gtk_tool_item_group_set_header_relief$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_tool_item_group_set_header_relief$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_item_group_set_header_relief",
+        constants$1855.gtk_tool_item_group_set_header_relief$FUNC
+    );
+    static final FunctionDescriptor gtk_tool_item_group_get_label$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_icon_view_get_drag_dest_item$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_get_drag_dest_item",
-        constants$1855.gtk_icon_view_get_drag_dest_item$FUNC
+    static final MethodHandle gtk_tool_item_group_get_label$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_item_group_get_label",
+        constants$1855.gtk_tool_item_group_get_label$FUNC
     );
-    static final FunctionDescriptor gtk_icon_view_get_dest_item_at_pos$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_tool_item_group_get_label_widget$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_icon_view_get_dest_item_at_pos$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_get_dest_item_at_pos",
-        constants$1855.gtk_icon_view_get_dest_item_at_pos$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_view_create_drag_icon$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_view_create_drag_icon$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_create_drag_icon",
-        constants$1855.gtk_icon_view_create_drag_icon$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_view_convert_widget_to_bin_window_coords$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_view_convert_widget_to_bin_window_coords$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_convert_widget_to_bin_window_coords",
-        constants$1855.gtk_icon_view_convert_widget_to_bin_window_coords$FUNC
+    static final MethodHandle gtk_tool_item_group_get_label_widget$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_item_group_get_label_widget",
+        constants$1855.gtk_tool_item_group_get_label_widget$FUNC
     );
 }
 

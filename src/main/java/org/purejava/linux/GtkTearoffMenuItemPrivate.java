@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkTearoffMenuItemPrivate {
+/**
+ * {@snippet :
+ * typedef struct _GtkTearoffMenuItemPrivate GtkTearoffMenuItemPrivate;
+ * }
+ */
+public final class GtkTearoffMenuItemPrivate {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkTearoffMenuItemPrivate() {}
 }
 
 

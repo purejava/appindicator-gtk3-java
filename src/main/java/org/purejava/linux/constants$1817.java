@@ -7,58 +7,57 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1817 {
+final class constants$1817 {
 
-    static final FunctionDescriptor gtk_icon_set_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_set_ref$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_set_ref",
-        constants$1817.gtk_icon_set_ref$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_set_unref$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_set_unref$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_set_unref",
-        constants$1817.gtk_icon_set_unref$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_set_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_set_copy$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_set_copy",
-        constants$1817.gtk_icon_set_copy$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_set_render_icon$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1817() {}
+    static final FunctionDescriptor gtk_spin_button_set_range$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
     );
-    static final MethodHandle gtk_icon_set_render_icon$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_set_render_icon",
-        constants$1817.gtk_icon_set_render_icon$FUNC
+    static final MethodHandle gtk_spin_button_set_range$MH = RuntimeHelper.downcallHandle(
+        "gtk_spin_button_set_range",
+        constants$1817.gtk_spin_button_set_range$FUNC
     );
-    static final FunctionDescriptor gtk_icon_set_add_source$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_set_add_source$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_set_add_source",
-        constants$1817.gtk_icon_set_add_source$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_set_get_sizes$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_spin_button_get_range$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_icon_set_get_sizes$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_set_get_sizes",
-        constants$1817.gtk_icon_set_get_sizes$FUNC
+    static final MethodHandle gtk_spin_button_get_range$MH = RuntimeHelper.downcallHandle(
+        "gtk_spin_button_get_range",
+        constants$1817.gtk_spin_button_get_range$FUNC
+    );
+    static final FunctionDescriptor gtk_spin_button_get_value$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_spin_button_get_value$MH = RuntimeHelper.downcallHandle(
+        "gtk_spin_button_get_value",
+        constants$1817.gtk_spin_button_get_value$FUNC
+    );
+    static final FunctionDescriptor gtk_spin_button_get_value_as_int$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_spin_button_get_value_as_int$MH = RuntimeHelper.downcallHandle(
+        "gtk_spin_button_get_value_as_int",
+        constants$1817.gtk_spin_button_get_value_as_int$FUNC
+    );
+    static final FunctionDescriptor gtk_spin_button_set_value$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle gtk_spin_button_set_value$MH = RuntimeHelper.downcallHandle(
+        "gtk_spin_button_set_value",
+        constants$1817.gtk_spin_button_set_value$FUNC
+    );
+    static final FunctionDescriptor gtk_spin_button_set_update_policy$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_spin_button_set_update_policy$MH = RuntimeHelper.downcallHandle(
+        "gtk_spin_button_set_update_policy",
+        constants$1817.gtk_spin_button_set_update_policy$FUNC
     );
 }
 

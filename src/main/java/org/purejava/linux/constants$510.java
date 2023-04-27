@@ -7,49 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$510 {
+final class constants$510 {
 
-    static final FunctionDescriptor glib_listautoptr_cleanup_GClosure$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$510() {}
+    static final FunctionDescriptor g_filter_output_stream_get_close_base_stream$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GClosure$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GClosure",
-        constants$510.glib_listautoptr_cleanup_GClosure$FUNC
+    static final MethodHandle g_filter_output_stream_get_close_base_stream$MH = RuntimeHelper.downcallHandle(
+        "g_filter_output_stream_get_close_base_stream",
+        constants$510.g_filter_output_stream_get_close_base_stream$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GClosure$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_filter_output_stream_set_close_base_stream$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_filter_output_stream_set_close_base_stream$MH = RuntimeHelper.downcallHandle(
+        "g_filter_output_stream_set_close_base_stream",
+        constants$510.g_filter_output_stream_set_close_base_stream$FUNC
+    );
+    static final FunctionDescriptor g_buffered_output_stream_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_buffered_output_stream_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_buffered_output_stream_get_type",
+        constants$510.g_buffered_output_stream_get_type$FUNC
+    );
+    static final FunctionDescriptor g_buffered_output_stream_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GClosure$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GClosure",
-        constants$510.glib_slistautoptr_cleanup_GClosure$FUNC
+    static final MethodHandle g_buffered_output_stream_new$MH = RuntimeHelper.downcallHandle(
+        "g_buffered_output_stream_new",
+        constants$510.g_buffered_output_stream_new$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GClosure$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_buffered_output_stream_new_sized$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle g_buffered_output_stream_new_sized$MH = RuntimeHelper.downcallHandle(
+        "g_buffered_output_stream_new_sized",
+        constants$510.g_buffered_output_stream_new_sized$FUNC
+    );
+    static final FunctionDescriptor g_buffered_output_stream_get_buffer_size$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GClosure$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GClosure",
-        constants$510.glib_queueautoptr_cleanup_GClosure$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_clear_GEnumClass$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_autoptr_clear_GEnumClass$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GEnumClass",
-        constants$510.glib_autoptr_clear_GEnumClass$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_cleanup_GEnumClass$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_autoptr_cleanup_GEnumClass$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GEnumClass",
-        constants$510.glib_autoptr_cleanup_GEnumClass$FUNC
-    );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GEnumClass$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_listautoptr_cleanup_GEnumClass$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GEnumClass",
-        constants$510.glib_listautoptr_cleanup_GEnumClass$FUNC
+    static final MethodHandle g_buffered_output_stream_get_buffer_size$MH = RuntimeHelper.downcallHandle(
+        "g_buffered_output_stream_get_buffer_size",
+        constants$510.g_buffered_output_stream_get_buffer_size$FUNC
     );
 }
 

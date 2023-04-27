@@ -7,52 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1686 {
+final class constants$1686 {
 
-    static final FunctionDescriptor gtk_assistant_previous_page$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1686() {}
+    static final FunctionDescriptor gtk_grab_remove$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_assistant_previous_page$MH = RuntimeHelper.downcallHandle(
-        "gtk_assistant_previous_page",
-        constants$1686.gtk_assistant_previous_page$FUNC
+    static final MethodHandle gtk_grab_remove$MH = RuntimeHelper.downcallHandle(
+        "gtk_grab_remove",
+        constants$1686.gtk_grab_remove$FUNC
     );
-    static final FunctionDescriptor gtk_assistant_get_current_page$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_assistant_get_current_page$MH = RuntimeHelper.downcallHandle(
-        "gtk_assistant_get_current_page",
-        constants$1686.gtk_assistant_get_current_page$FUNC
-    );
-    static final FunctionDescriptor gtk_assistant_set_current_page$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_device_grab_add$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_assistant_set_current_page$MH = RuntimeHelper.downcallHandle(
-        "gtk_assistant_set_current_page",
-        constants$1686.gtk_assistant_set_current_page$FUNC
+    static final MethodHandle gtk_device_grab_add$MH = RuntimeHelper.downcallHandle(
+        "gtk_device_grab_add",
+        constants$1686.gtk_device_grab_add$FUNC
     );
-    static final FunctionDescriptor gtk_assistant_get_n_pages$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_device_grab_remove$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_assistant_get_n_pages$MH = RuntimeHelper.downcallHandle(
-        "gtk_assistant_get_n_pages",
-        constants$1686.gtk_assistant_get_n_pages$FUNC
+    static final MethodHandle gtk_device_grab_remove$MH = RuntimeHelper.downcallHandle(
+        "gtk_device_grab_remove",
+        constants$1686.gtk_device_grab_remove$FUNC
     );
-    static final FunctionDescriptor gtk_assistant_get_nth_page$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_key_snooper_install$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_key_snooper_install$MH = RuntimeHelper.downcallHandle(
+        "gtk_key_snooper_install",
+        constants$1686.gtk_key_snooper_install$FUNC
+    );
+    static final FunctionDescriptor gtk_key_snooper_remove$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_assistant_get_nth_page$MH = RuntimeHelper.downcallHandle(
-        "gtk_assistant_get_nth_page",
-        constants$1686.gtk_assistant_get_nth_page$FUNC
+    static final MethodHandle gtk_key_snooper_remove$MH = RuntimeHelper.downcallHandle(
+        "gtk_key_snooper_remove",
+        constants$1686.gtk_key_snooper_remove$FUNC
     );
-    static final FunctionDescriptor gtk_assistant_prepend_page$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_assistant_prepend_page$MH = RuntimeHelper.downcallHandle(
-        "gtk_assistant_prepend_page",
-        constants$1686.gtk_assistant_prepend_page$FUNC
+    static final FunctionDescriptor gtk_get_current_event$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_get_current_event$MH = RuntimeHelper.downcallHandle(
+        "gtk_get_current_event",
+        constants$1686.gtk_get_current_event$FUNC
     );
 }
 

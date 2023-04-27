@@ -7,46 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1736 {
+final class constants$1736 {
 
-    static final FunctionDescriptor gtk_clipboard_get_selection$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1736() {}
+    static final FunctionDescriptor gtk_print_context_get_page_setup$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_clipboard_get_selection$MH = RuntimeHelper.downcallHandle(
-        "gtk_clipboard_get_selection",
-        constants$1736.gtk_clipboard_get_selection$FUNC
+    static final MethodHandle gtk_print_context_get_page_setup$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_context_get_page_setup",
+        constants$1736.gtk_print_context_get_page_setup$FUNC
     );
-    static final FunctionDescriptor gtk_color_button_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_color_button_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_color_button_get_type",
-        constants$1736.gtk_color_button_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_color_button_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_color_button_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_color_button_new",
-        constants$1736.gtk_color_button_new$FUNC
-    );
-    static final FunctionDescriptor gtk_color_button_new_with_rgba$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_print_context_get_width$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_color_button_new_with_rgba$MH = RuntimeHelper.downcallHandle(
-        "gtk_color_button_new_with_rgba",
-        constants$1736.gtk_color_button_new_with_rgba$FUNC
+    static final MethodHandle gtk_print_context_get_width$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_context_get_width",
+        constants$1736.gtk_print_context_get_width$FUNC
     );
-    static final FunctionDescriptor gtk_color_button_set_title$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_print_context_get_height$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_print_context_get_height$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_context_get_height",
+        constants$1736.gtk_print_context_get_height$FUNC
+    );
+    static final FunctionDescriptor gtk_print_context_get_dpi_x$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_print_context_get_dpi_x$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_context_get_dpi_x",
+        constants$1736.gtk_print_context_get_dpi_x$FUNC
+    );
+    static final FunctionDescriptor gtk_print_context_get_dpi_y$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_print_context_get_dpi_y$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_context_get_dpi_y",
+        constants$1736.gtk_print_context_get_dpi_y$FUNC
+    );
+    static final FunctionDescriptor gtk_print_context_get_hard_margins$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_color_button_set_title$MH = RuntimeHelper.downcallHandle(
-        "gtk_color_button_set_title",
-        constants$1736.gtk_color_button_set_title$FUNC
-    );
-    static final FunctionDescriptor gtk_color_button_get_title$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_color_button_get_title$MH = RuntimeHelper.downcallHandle(
-        "gtk_color_button_get_title",
-        constants$1736.gtk_color_button_get_title$FUNC
+    static final MethodHandle gtk_print_context_get_hard_margins$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_context_get_hard_margins",
+        constants$1736.gtk_print_context_get_hard_margins$FUNC
     );
 }
 

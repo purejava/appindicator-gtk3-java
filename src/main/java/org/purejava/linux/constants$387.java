@@ -7,49 +7,69 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$387 {
+final class constants$387 {
 
-    static final FunctionDescriptor glib_autoptr_clear_GArray$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$387() {}
+    static final FunctionDescriptor GTypeInterfaceCheckFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GArray$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GArray",
-        constants$387.glib_autoptr_clear_GArray$FUNC
+    static final MethodHandle GTypeInterfaceCheckFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$387.GTypeInterfaceCheckFunc_DOWN$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GArray$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_type_register_static$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_type_register_static$MH = RuntimeHelper.downcallHandle(
+        "g_type_register_static",
+        constants$387.g_type_register_static$FUNC
+    );
+    static final FunctionDescriptor g_type_register_static_simple$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_type_register_static_simple$MH = RuntimeHelper.downcallHandle(
+        "g_type_register_static_simple",
+        constants$387.g_type_register_static_simple$FUNC
+    );
+    static final FunctionDescriptor g_type_register_dynamic$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_type_register_dynamic$MH = RuntimeHelper.downcallHandle(
+        "g_type_register_dynamic",
+        constants$387.g_type_register_dynamic$FUNC
+    );
+    static final FunctionDescriptor g_type_register_fundamental$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_type_register_fundamental$MH = RuntimeHelper.downcallHandle(
+        "g_type_register_fundamental",
+        constants$387.g_type_register_fundamental$FUNC
+    );
+    static final FunctionDescriptor g_type_add_interface_static$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GArray$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GArray",
-        constants$387.glib_autoptr_cleanup_GArray$FUNC
-    );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GArray$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_listautoptr_cleanup_GArray$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GArray",
-        constants$387.glib_listautoptr_cleanup_GArray$FUNC
-    );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GArray$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_slistautoptr_cleanup_GArray$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GArray",
-        constants$387.glib_slistautoptr_cleanup_GArray$FUNC
-    );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GArray$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_queueautoptr_cleanup_GArray$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GArray",
-        constants$387.glib_queueautoptr_cleanup_GArray$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_clear_GPtrArray$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_autoptr_clear_GPtrArray$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GPtrArray",
-        constants$387.glib_autoptr_clear_GPtrArray$FUNC
+    static final MethodHandle g_type_add_interface_static$MH = RuntimeHelper.downcallHandle(
+        "g_type_add_interface_static",
+        constants$387.g_type_add_interface_static$FUNC
     );
 }
 

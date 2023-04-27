@@ -7,71 +7,46 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$317 {
+final class constants$317 {
 
-    static final FunctionDescriptor g_assertion_message_cmpstr$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$317() {}
+    static final FunctionDescriptor g_test_summary$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_test_summary$MH = RuntimeHelper.downcallHandle(
+        "g_test_summary",
+        constants$317.g_test_summary$FUNC
+    );
+    static final FunctionDescriptor g_test_timer_start$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle g_test_timer_start$MH = RuntimeHelper.downcallHandle(
+        "g_test_timer_start",
+        constants$317.g_test_timer_start$FUNC
+    );
+    static final FunctionDescriptor g_test_timer_elapsed$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT);
+    static final MethodHandle g_test_timer_elapsed$MH = RuntimeHelper.downcallHandle(
+        "g_test_timer_elapsed",
+        constants$317.g_test_timer_elapsed$FUNC
+    );
+    static final FunctionDescriptor g_test_timer_last$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT);
+    static final MethodHandle g_test_timer_last$MH = RuntimeHelper.downcallHandle(
+        "g_test_timer_last",
+        constants$317.g_test_timer_last$FUNC
+    );
+    static final FunctionDescriptor g_test_queue_free$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_test_queue_free$MH = RuntimeHelper.downcallHandle(
+        "g_test_queue_free",
+        constants$317.g_test_queue_free$FUNC
+    );
+    static final FunctionDescriptor g_test_queue_destroy$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_assertion_message_cmpstr$MH = RuntimeHelper.downcallHandle(
-        "g_assertion_message_cmpstr",
-        constants$317.g_assertion_message_cmpstr$FUNC
-    );
-    static final FunctionDescriptor g_assertion_message_cmpstrv$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_assertion_message_cmpstrv$MH = RuntimeHelper.downcallHandle(
-        "g_assertion_message_cmpstrv",
-        constants$317.g_assertion_message_cmpstrv$FUNC
-    );
-    static final FunctionDescriptor g_assertion_message_error$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_assertion_message_error$MH = RuntimeHelper.downcallHandle(
-        "g_assertion_message_error",
-        constants$317.g_assertion_message_error$FUNC
-    );
-    static final FunctionDescriptor g_test_add_vtable$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_test_add_vtable$MH = RuntimeHelper.downcallHandle(
-        "g_test_add_vtable",
-        constants$317.g_test_add_vtable$FUNC
-    );
-    static final  OfAddress g_test_config_vars$LAYOUT = Constants$root.C_POINTER$LAYOUT;
-    static final VarHandle g_test_config_vars$VH = constants$317.g_test_config_vars$LAYOUT.varHandle();
-    static final MemorySegment g_test_config_vars$SEGMENT = RuntimeHelper.lookupGlobalVariable("g_test_config_vars", constants$317.g_test_config_vars$LAYOUT);
-    static final FunctionDescriptor g_test_log_type_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_test_log_type_name$MH = RuntimeHelper.downcallHandle(
-        "g_test_log_type_name",
-        constants$317.g_test_log_type_name$FUNC
+    static final MethodHandle g_test_queue_destroy$MH = RuntimeHelper.downcallHandle(
+        "g_test_queue_destroy",
+        constants$317.g_test_queue_destroy$FUNC
     );
 }
 

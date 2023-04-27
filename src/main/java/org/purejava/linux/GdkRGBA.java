@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GdkRGBA extends _GdkRGBA {
+/**
+ * {@snippet :
+ * typedef struct _GdkRGBA GdkRGBA;
+ * }
+ */
+public final class GdkRGBA extends _GdkRGBA {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GdkRGBA() {}
 }
 
 

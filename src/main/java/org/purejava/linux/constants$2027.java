@@ -7,61 +7,16 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$2027 {
+final class constants$2027 {
 
-    static final FunctionDescriptor gtk_text_buffer_add_mark$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_add_mark$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_add_mark",
-        constants$2027.gtk_text_buffer_add_mark$FUNC
-    );
-    static final FunctionDescriptor gtk_text_buffer_create_mark$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_create_mark$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_create_mark",
-        constants$2027.gtk_text_buffer_create_mark$FUNC
-    );
-    static final FunctionDescriptor gtk_text_buffer_move_mark$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_move_mark$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_move_mark",
-        constants$2027.gtk_text_buffer_move_mark$FUNC
-    );
-    static final FunctionDescriptor gtk_text_buffer_delete_mark$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_delete_mark$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_delete_mark",
-        constants$2027.gtk_text_buffer_delete_mark$FUNC
-    );
-    static final FunctionDescriptor gtk_text_buffer_get_mark$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_get_mark$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_get_mark",
-        constants$2027.gtk_text_buffer_get_mark$FUNC
-    );
-    static final FunctionDescriptor gtk_text_buffer_move_mark_by_name$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_move_mark_by_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_move_mark_by_name",
-        constants$2027.gtk_text_buffer_move_mark_by_name$FUNC
-    );
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$2027() {}
+    static final MemorySegment GTK_STYLE_PROPERTY_PADDING$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("padding");
+    static final MemorySegment GTK_STYLE_PROPERTY_BORDER_WIDTH$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("border-width");
+    static final MemorySegment GTK_STYLE_PROPERTY_MARGIN$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("margin");
+    static final MemorySegment GTK_STYLE_PROPERTY_BORDER_RADIUS$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("border-radius");
+    static final MemorySegment GTK_STYLE_PROPERTY_BORDER_STYLE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("border-style");
+    static final MemorySegment GTK_STYLE_PROPERTY_BORDER_COLOR$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("border-color");
 }
 
 

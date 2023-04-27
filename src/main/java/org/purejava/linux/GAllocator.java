@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GAllocator {
+/**
+ * {@snippet :
+ * typedef struct _GAllocator GAllocator;
+ * }
+ */
+public final class GAllocator {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GAllocator() {}
 }
 
 

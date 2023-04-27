@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkClipboard {
+/**
+ * {@snippet :
+ * typedef struct _GtkClipboard GtkClipboard;
+ * }
+ */
+public final class GtkClipboard {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkClipboard() {}
 }
 
 

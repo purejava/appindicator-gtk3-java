@@ -7,60 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1936 {
+final class constants$1936 {
 
-    static final FunctionDescriptor gtk_print_settings_new_from_key_file$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1936() {}
+    static final FunctionDescriptor gtk_handle_box_set_handle_position$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_handle_box_set_handle_position$MH = RuntimeHelper.downcallHandle(
+        "gtk_handle_box_set_handle_position",
+        constants$1936.gtk_handle_box_set_handle_position$FUNC
+    );
+    static final FunctionDescriptor gtk_handle_box_get_handle_position$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_print_settings_new_from_key_file$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_new_from_key_file",
-        constants$1936.gtk_print_settings_new_from_key_file$FUNC
+    static final MethodHandle gtk_handle_box_get_handle_position$MH = RuntimeHelper.downcallHandle(
+        "gtk_handle_box_get_handle_position",
+        constants$1936.gtk_handle_box_get_handle_position$FUNC
     );
-    static final FunctionDescriptor gtk_print_settings_load_key_file$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_handle_box_set_snap_edge$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_handle_box_set_snap_edge$MH = RuntimeHelper.downcallHandle(
+        "gtk_handle_box_set_snap_edge",
+        constants$1936.gtk_handle_box_set_snap_edge$FUNC
+    );
+    static final FunctionDescriptor gtk_handle_box_get_snap_edge$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_print_settings_load_key_file$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_load_key_file",
-        constants$1936.gtk_print_settings_load_key_file$FUNC
+    static final MethodHandle gtk_handle_box_get_snap_edge$MH = RuntimeHelper.downcallHandle(
+        "gtk_handle_box_get_snap_edge",
+        constants$1936.gtk_handle_box_get_snap_edge$FUNC
     );
-    static final FunctionDescriptor gtk_print_settings_to_key_file$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_handle_box_get_child_detached$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_print_settings_to_key_file$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_to_key_file",
-        constants$1936.gtk_print_settings_to_key_file$FUNC
+    static final MethodHandle gtk_handle_box_get_child_detached$MH = RuntimeHelper.downcallHandle(
+        "gtk_handle_box_get_child_detached",
+        constants$1936.gtk_handle_box_get_child_detached$FUNC
     );
-    static final FunctionDescriptor gtk_print_settings_has_key$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_print_settings_has_key$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_has_key",
-        constants$1936.gtk_print_settings_has_key$FUNC
-    );
-    static final FunctionDescriptor gtk_print_settings_get$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_print_settings_get$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_get",
-        constants$1936.gtk_print_settings_get$FUNC
-    );
-    static final FunctionDescriptor gtk_print_settings_set$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_print_settings_set$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_set",
-        constants$1936.gtk_print_settings_set$FUNC
+    static final FunctionDescriptor gtk_hbutton_box_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_hbutton_box_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_hbutton_box_get_type",
+        constants$1936.gtk_hbutton_box_get_type$FUNC
     );
 }
 

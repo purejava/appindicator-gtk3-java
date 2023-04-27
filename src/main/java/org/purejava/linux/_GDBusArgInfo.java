@@ -7,9 +7,19 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GDBusArgInfo {
+ *     gint ref_count;
+ *     gchar* name;
+ *     gchar* signature;
+ *     GDBusAnnotationInfo** annotations;
+ * };
+ * }
+ */
 public class _GDBusArgInfo {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_INT$LAYOUT.withName("ref_count"),
         MemoryLayout.paddingLayout(32),
         Constants$root.C_POINTER$LAYOUT.withName("name"),
@@ -23,10 +33,22 @@ public class _GDBusArgInfo {
     public static VarHandle ref_count$VH() {
         return _GDBusArgInfo.ref_count$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gint ref_count;
+     * }
+     */
     public static int ref_count$get(MemorySegment seg) {
         return (int)_GDBusArgInfo.ref_count$VH.get(seg);
     }
-    public static void ref_count$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gint ref_count;
+     * }
+     */
+    public static void ref_count$set(MemorySegment seg, int x) {
         _GDBusArgInfo.ref_count$VH.set(seg, x);
     }
     public static int ref_count$get(MemorySegment seg, long index) {
@@ -39,56 +61,92 @@ public class _GDBusArgInfo {
     public static VarHandle name$VH() {
         return _GDBusArgInfo.name$VH;
     }
-    public static MemoryAddress name$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GDBusArgInfo.name$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gchar* name;
+     * }
+     */
+    public static MemorySegment name$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GDBusArgInfo.name$VH.get(seg);
     }
-    public static void name$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gchar* name;
+     * }
+     */
+    public static void name$set(MemorySegment seg, MemorySegment x) {
         _GDBusArgInfo.name$VH.set(seg, x);
     }
-    public static MemoryAddress name$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GDBusArgInfo.name$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment name$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GDBusArgInfo.name$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void name$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void name$set(MemorySegment seg, long index, MemorySegment x) {
         _GDBusArgInfo.name$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle signature$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("signature"));
     public static VarHandle signature$VH() {
         return _GDBusArgInfo.signature$VH;
     }
-    public static MemoryAddress signature$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GDBusArgInfo.signature$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gchar* signature;
+     * }
+     */
+    public static MemorySegment signature$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GDBusArgInfo.signature$VH.get(seg);
     }
-    public static void signature$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gchar* signature;
+     * }
+     */
+    public static void signature$set(MemorySegment seg, MemorySegment x) {
         _GDBusArgInfo.signature$VH.set(seg, x);
     }
-    public static MemoryAddress signature$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GDBusArgInfo.signature$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment signature$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GDBusArgInfo.signature$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void signature$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void signature$set(MemorySegment seg, long index, MemorySegment x) {
         _GDBusArgInfo.signature$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle annotations$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("annotations"));
     public static VarHandle annotations$VH() {
         return _GDBusArgInfo.annotations$VH;
     }
-    public static MemoryAddress annotations$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GDBusArgInfo.annotations$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GDBusAnnotationInfo** annotations;
+     * }
+     */
+    public static MemorySegment annotations$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GDBusArgInfo.annotations$VH.get(seg);
     }
-    public static void annotations$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GDBusAnnotationInfo** annotations;
+     * }
+     */
+    public static void annotations$set(MemorySegment seg, MemorySegment x) {
         _GDBusArgInfo.annotations$VH.set(seg, x);
     }
-    public static MemoryAddress annotations$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GDBusArgInfo.annotations$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment annotations$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GDBusArgInfo.annotations$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void annotations$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void annotations$set(MemorySegment seg, long index, MemorySegment x) {
         _GDBusArgInfo.annotations$VH.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

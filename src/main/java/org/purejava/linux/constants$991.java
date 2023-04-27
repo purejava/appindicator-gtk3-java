@@ -7,55 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$991 {
+final class constants$991 {
 
-    static final FunctionDescriptor hb_color_get_red$FUNC = FunctionDescriptor.of(Constants$root.C_CHAR$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle hb_color_get_red$MH = RuntimeHelper.downcallHandle(
-        "hb_color_get_red",
-        constants$991.hb_color_get_red$FUNC
-    );
-    static final FunctionDescriptor hb_color_get_green$FUNC = FunctionDescriptor.of(Constants$root.C_CHAR$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle hb_color_get_green$MH = RuntimeHelper.downcallHandle(
-        "hb_color_get_green",
-        constants$991.hb_color_get_green$FUNC
-    );
-    static final FunctionDescriptor hb_color_get_blue$FUNC = FunctionDescriptor.of(Constants$root.C_CHAR$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle hb_color_get_blue$MH = RuntimeHelper.downcallHandle(
-        "hb_color_get_blue",
-        constants$991.hb_color_get_blue$FUNC
-    );
-    static final FunctionDescriptor hb_blob_create$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$991() {}
+    static final FunctionDescriptor ftrylockfile$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_blob_create$MH = RuntimeHelper.downcallHandle(
-        "hb_blob_create",
-        constants$991.hb_blob_create$FUNC
+    static final MethodHandle ftrylockfile$MH = RuntimeHelper.downcallHandle(
+        "ftrylockfile",
+        constants$991.ftrylockfile$FUNC
     );
-    static final FunctionDescriptor hb_blob_create_from_file$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor funlockfile$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_blob_create_from_file$MH = RuntimeHelper.downcallHandle(
-        "hb_blob_create_from_file",
-        constants$991.hb_blob_create_from_file$FUNC
+    static final MethodHandle funlockfile$MH = RuntimeHelper.downcallHandle(
+        "funlockfile",
+        constants$991.funlockfile$FUNC
     );
-    static final FunctionDescriptor hb_blob_create_sub_blob$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor __uflow$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle __uflow$MH = RuntimeHelper.downcallHandle(
+        "__uflow",
+        constants$991.__uflow$FUNC
+    );
+    static final FunctionDescriptor __overflow$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle hb_blob_create_sub_blob$MH = RuntimeHelper.downcallHandle(
-        "hb_blob_create_sub_blob",
-        constants$991.hb_blob_create_sub_blob$FUNC
+    static final MethodHandle __overflow$MH = RuntimeHelper.downcallHandle(
+        "__overflow",
+        constants$991.__overflow$FUNC
+    );
+    static final FunctionDescriptor pango_split_file_list$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle pango_split_file_list$MH = RuntimeHelper.downcallHandle(
+        "pango_split_file_list",
+        constants$991.pango_split_file_list$FUNC
+    );
+    static final FunctionDescriptor pango_trim_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle pango_trim_string$MH = RuntimeHelper.downcallHandle(
+        "pango_trim_string",
+        constants$991.pango_trim_string$FUNC
     );
 }
 

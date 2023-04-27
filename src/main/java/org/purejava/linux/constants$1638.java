@@ -7,56 +7,62 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1638 {
+final class constants$1638 {
 
-    static final FunctionDescriptor gtk_image_set_from_animation$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1638() {}
+    static final FunctionDescriptor gtk_style_context_get_color$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_image_set_from_animation$MH = RuntimeHelper.downcallHandle(
-        "gtk_image_set_from_animation",
-        constants$1638.gtk_image_set_from_animation$FUNC
+    static final MethodHandle gtk_style_context_get_color$MH = RuntimeHelper.downcallHandle(
+        "gtk_style_context_get_color",
+        constants$1638.gtk_style_context_get_color$FUNC
     );
-    static final FunctionDescriptor gtk_image_set_from_icon_name$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_style_context_get_background_color$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_style_context_get_background_color$MH = RuntimeHelper.downcallHandle(
+        "gtk_style_context_get_background_color",
+        constants$1638.gtk_style_context_get_background_color$FUNC
+    );
+    static final FunctionDescriptor gtk_style_context_get_border_color$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_style_context_get_border_color$MH = RuntimeHelper.downcallHandle(
+        "gtk_style_context_get_border_color",
+        constants$1638.gtk_style_context_get_border_color$FUNC
+    );
+    static final FunctionDescriptor gtk_style_context_get_font$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_image_set_from_icon_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_image_set_from_icon_name",
-        constants$1638.gtk_image_set_from_icon_name$FUNC
+    static final MethodHandle gtk_style_context_get_font$MH = RuntimeHelper.downcallHandle(
+        "gtk_style_context_get_font",
+        constants$1638.gtk_style_context_get_font$FUNC
     );
-    static final FunctionDescriptor gtk_image_set_from_gicon$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_style_context_get_border$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_image_set_from_gicon$MH = RuntimeHelper.downcallHandle(
-        "gtk_image_set_from_gicon",
-        constants$1638.gtk_image_set_from_gicon$FUNC
-    );
-    static final FunctionDescriptor gtk_image_set_from_surface$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_image_set_from_surface$MH = RuntimeHelper.downcallHandle(
-        "gtk_image_set_from_surface",
-        constants$1638.gtk_image_set_from_surface$FUNC
+    static final MethodHandle gtk_style_context_get_border$MH = RuntimeHelper.downcallHandle(
+        "gtk_style_context_get_border",
+        constants$1638.gtk_style_context_get_border$FUNC
     );
-    static final FunctionDescriptor gtk_image_set_pixel_size$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_style_context_get_padding$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_image_set_pixel_size$MH = RuntimeHelper.downcallHandle(
-        "gtk_image_set_pixel_size",
-        constants$1638.gtk_image_set_pixel_size$FUNC
-    );
-    static final FunctionDescriptor gtk_image_get_storage_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_image_get_storage_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_image_get_storage_type",
-        constants$1638.gtk_image_get_storage_type$FUNC
+    static final MethodHandle gtk_style_context_get_padding$MH = RuntimeHelper.downcallHandle(
+        "gtk_style_context_get_padding",
+        constants$1638.gtk_style_context_get_padding$FUNC
     );
 }
 

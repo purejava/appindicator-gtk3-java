@@ -7,61 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$588 {
+final class constants$588 {
 
-    static final FunctionDescriptor g_data_input_stream_read_int16$FUNC = FunctionDescriptor.of(Constants$root.C_SHORT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$588() {}
+    static final FunctionDescriptor g_dbus_object_manager_client_get_name_owner$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_dbus_object_manager_client_get_name_owner$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_object_manager_client_get_name_owner",
+        constants$588.g_dbus_object_manager_client_get_name_owner$FUNC
+    );
+    static final FunctionDescriptor g_dbus_object_manager_server_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_dbus_object_manager_server_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_object_manager_server_get_type",
+        constants$588.g_dbus_object_manager_server_get_type$FUNC
+    );
+    static final FunctionDescriptor g_dbus_object_manager_server_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_dbus_object_manager_server_new$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_object_manager_server_new",
+        constants$588.g_dbus_object_manager_server_new$FUNC
+    );
+    static final FunctionDescriptor g_dbus_object_manager_server_get_connection$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_dbus_object_manager_server_get_connection$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_object_manager_server_get_connection",
+        constants$588.g_dbus_object_manager_server_get_connection$FUNC
+    );
+    static final FunctionDescriptor g_dbus_object_manager_server_set_connection$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_data_input_stream_read_int16$MH = RuntimeHelper.downcallHandle(
-        "g_data_input_stream_read_int16",
-        constants$588.g_data_input_stream_read_int16$FUNC
+    static final MethodHandle g_dbus_object_manager_server_set_connection$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_object_manager_server_set_connection",
+        constants$588.g_dbus_object_manager_server_set_connection$FUNC
     );
-    static final FunctionDescriptor g_data_input_stream_read_uint16$FUNC = FunctionDescriptor.of(Constants$root.C_SHORT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_data_input_stream_read_uint16$MH = RuntimeHelper.downcallHandle(
-        "g_data_input_stream_read_uint16",
-        constants$588.g_data_input_stream_read_uint16$FUNC
-    );
-    static final FunctionDescriptor g_data_input_stream_read_int32$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_dbus_object_manager_server_export$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_data_input_stream_read_int32$MH = RuntimeHelper.downcallHandle(
-        "g_data_input_stream_read_int32",
-        constants$588.g_data_input_stream_read_int32$FUNC
-    );
-    static final FunctionDescriptor g_data_input_stream_read_uint32$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_data_input_stream_read_uint32$MH = RuntimeHelper.downcallHandle(
-        "g_data_input_stream_read_uint32",
-        constants$588.g_data_input_stream_read_uint32$FUNC
-    );
-    static final FunctionDescriptor g_data_input_stream_read_int64$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_data_input_stream_read_int64$MH = RuntimeHelper.downcallHandle(
-        "g_data_input_stream_read_int64",
-        constants$588.g_data_input_stream_read_int64$FUNC
-    );
-    static final FunctionDescriptor g_data_input_stream_read_uint64$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_data_input_stream_read_uint64$MH = RuntimeHelper.downcallHandle(
-        "g_data_input_stream_read_uint64",
-        constants$588.g_data_input_stream_read_uint64$FUNC
+    static final MethodHandle g_dbus_object_manager_server_export$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_object_manager_server_export",
+        constants$588.g_dbus_object_manager_server_export$FUNC
     );
 }
 

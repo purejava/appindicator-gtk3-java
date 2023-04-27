@@ -7,44 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$873 {
+final class constants$873 {
 
-    static final FunctionDescriptor g_tls_server_connection_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$873() {}
+    static final FunctionDescriptor hb_font_create$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_tls_server_connection_new$MH = RuntimeHelper.downcallHandle(
-        "g_tls_server_connection_new",
-        constants$873.g_tls_server_connection_new$FUNC
+    static final MethodHandle hb_font_create$MH = RuntimeHelper.downcallHandle(
+        "hb_font_create",
+        constants$873.hb_font_create$FUNC
     );
-    static final FunctionDescriptor GVfsFileLookupFunc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor hb_font_create_sub_font$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GVfsFileLookupFunc$MH = RuntimeHelper.downcallHandle(
-        constants$873.GVfsFileLookupFunc$FUNC
+    static final MethodHandle hb_font_create_sub_font$MH = RuntimeHelper.downcallHandle(
+        "hb_font_create_sub_font",
+        constants$873.hb_font_create_sub_font$FUNC
     );
-    static final FunctionDescriptor g_vfs_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_vfs_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_vfs_get_type",
-        constants$873.g_vfs_get_type$FUNC
+    static final FunctionDescriptor hb_font_get_empty$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle hb_font_get_empty$MH = RuntimeHelper.downcallHandle(
+        "hb_font_get_empty",
+        constants$873.hb_font_get_empty$FUNC
     );
-    static final FunctionDescriptor g_vfs_is_active$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor hb_font_reference$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_vfs_is_active$MH = RuntimeHelper.downcallHandle(
-        "g_vfs_is_active",
-        constants$873.g_vfs_is_active$FUNC
+    static final MethodHandle hb_font_reference$MH = RuntimeHelper.downcallHandle(
+        "hb_font_reference",
+        constants$873.hb_font_reference$FUNC
     );
-    static final FunctionDescriptor g_vfs_get_file_for_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor hb_font_destroy$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle hb_font_destroy$MH = RuntimeHelper.downcallHandle(
+        "hb_font_destroy",
+        constants$873.hb_font_destroy$FUNC
+    );
+    static final FunctionDescriptor hb_font_set_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_vfs_get_file_for_path$MH = RuntimeHelper.downcallHandle(
-        "g_vfs_get_file_for_path",
-        constants$873.g_vfs_get_file_for_path$FUNC
+    static final MethodHandle hb_font_set_user_data$MH = RuntimeHelper.downcallHandle(
+        "hb_font_set_user_data",
+        constants$873.hb_font_set_user_data$FUNC
     );
 }
 

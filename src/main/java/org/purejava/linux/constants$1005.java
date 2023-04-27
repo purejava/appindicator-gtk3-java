@@ -7,52 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1005 {
+final class constants$1005 {
 
-    static final FunctionDescriptor hb_face_get_empty$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle hb_face_get_empty$MH = RuntimeHelper.downcallHandle(
-        "hb_face_get_empty",
-        constants$1005.hb_face_get_empty$FUNC
-    );
-    static final FunctionDescriptor hb_face_reference$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1005() {}
+    static final FunctionDescriptor cairo_stroke_preserve$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_face_reference$MH = RuntimeHelper.downcallHandle(
-        "hb_face_reference",
-        constants$1005.hb_face_reference$FUNC
+    static final MethodHandle cairo_stroke_preserve$MH = RuntimeHelper.downcallHandle(
+        "cairo_stroke_preserve",
+        constants$1005.cairo_stroke_preserve$FUNC
     );
-    static final FunctionDescriptor hb_face_destroy$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor cairo_fill$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_face_destroy$MH = RuntimeHelper.downcallHandle(
-        "hb_face_destroy",
-        constants$1005.hb_face_destroy$FUNC
+    static final MethodHandle cairo_fill$MH = RuntimeHelper.downcallHandle(
+        "cairo_fill",
+        constants$1005.cairo_fill$FUNC
     );
-    static final FunctionDescriptor hb_face_set_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle hb_face_set_user_data$MH = RuntimeHelper.downcallHandle(
-        "hb_face_set_user_data",
-        constants$1005.hb_face_set_user_data$FUNC
-    );
-    static final FunctionDescriptor hb_face_get_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor cairo_fill_preserve$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_face_get_user_data$MH = RuntimeHelper.downcallHandle(
-        "hb_face_get_user_data",
-        constants$1005.hb_face_get_user_data$FUNC
+    static final MethodHandle cairo_fill_preserve$MH = RuntimeHelper.downcallHandle(
+        "cairo_fill_preserve",
+        constants$1005.cairo_fill_preserve$FUNC
     );
-    static final FunctionDescriptor hb_face_make_immutable$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor cairo_copy_page$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_face_make_immutable$MH = RuntimeHelper.downcallHandle(
-        "hb_face_make_immutable",
-        constants$1005.hb_face_make_immutable$FUNC
+    static final MethodHandle cairo_copy_page$MH = RuntimeHelper.downcallHandle(
+        "cairo_copy_page",
+        constants$1005.cairo_copy_page$FUNC
+    );
+    static final FunctionDescriptor cairo_show_page$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cairo_show_page$MH = RuntimeHelper.downcallHandle(
+        "cairo_show_page",
+        constants$1005.cairo_show_page$FUNC
+    );
+    static final FunctionDescriptor cairo_in_stroke$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle cairo_in_stroke$MH = RuntimeHelper.downcallHandle(
+        "cairo_in_stroke",
+        constants$1005.cairo_in_stroke$FUNC
     );
 }
 

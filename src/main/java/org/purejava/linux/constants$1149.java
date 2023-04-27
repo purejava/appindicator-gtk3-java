@@ -7,50 +7,63 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1149 {
+final class constants$1149 {
 
-    static final FunctionDescriptor perror$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle perror$MH = RuntimeHelper.downcallHandle(
-        "perror",
-        constants$1149.perror$FUNC
-    );
-    static final FunctionDescriptor fileno$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle fileno$MH = RuntimeHelper.downcallHandle(
-        "fileno",
-        constants$1149.fileno$FUNC
-    );
-    static final FunctionDescriptor fileno_unlocked$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle fileno_unlocked$MH = RuntimeHelper.downcallHandle(
-        "fileno_unlocked",
-        constants$1149.fileno_unlocked$FUNC
-    );
-    static final FunctionDescriptor pclose$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pclose$MH = RuntimeHelper.downcallHandle(
-        "pclose",
-        constants$1149.pclose$FUNC
-    );
-    static final FunctionDescriptor popen$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1149() {}
+    static final FunctionDescriptor gdk_pixbuf_get_from_window$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gdk_pixbuf_get_from_window$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_get_from_window",
+        constants$1149.gdk_pixbuf_get_from_window$FUNC
+    );
+    static final FunctionDescriptor gdk_pixbuf_get_from_surface$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gdk_pixbuf_get_from_surface$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_get_from_surface",
+        constants$1149.gdk_pixbuf_get_from_surface$FUNC
+    );
+    static final FunctionDescriptor PangoCairoShapeRendererFunc$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle popen$MH = RuntimeHelper.downcallHandle(
-        "popen",
-        constants$1149.popen$FUNC
-    );
-    static final FunctionDescriptor ctermid$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor PangoCairoShapeRendererFunc_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle ctermid$MH = RuntimeHelper.downcallHandle(
-        "ctermid",
-        constants$1149.ctermid$FUNC
+    static final MethodHandle PangoCairoShapeRendererFunc_UP$MH = RuntimeHelper.upcallHandle(PangoCairoShapeRendererFunc.class, "apply", constants$1149.PangoCairoShapeRendererFunc_UP$FUNC);
+    static final FunctionDescriptor PangoCairoShapeRendererFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle PangoCairoShapeRendererFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$1149.PangoCairoShapeRendererFunc_DOWN$FUNC
+    );
+    static final FunctionDescriptor pango_cairo_font_map_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle pango_cairo_font_map_get_type$MH = RuntimeHelper.downcallHandle(
+        "pango_cairo_font_map_get_type",
+        constants$1149.pango_cairo_font_map_get_type$FUNC
+    );
+    static final FunctionDescriptor pango_cairo_font_map_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle pango_cairo_font_map_new$MH = RuntimeHelper.downcallHandle(
+        "pango_cairo_font_map_new",
+        constants$1149.pango_cairo_font_map_new$FUNC
     );
 }
 

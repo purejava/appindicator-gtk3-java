@@ -7,69 +7,39 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$676 {
+final class constants$676 {
 
-    static final FunctionDescriptor g_file_move_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$676() {}
+    static final FunctionDescriptor g_dbus_property_info_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_dbus_property_info_flags_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_property_info_flags_get_type",
+        constants$676.g_dbus_property_info_flags_get_type$FUNC
     );
-    static final MethodHandle g_file_move_async$MH = RuntimeHelper.downcallHandle(
-        "g_file_move_async",
-        constants$676.g_file_move_async$FUNC
+    static final FunctionDescriptor g_dbus_subtree_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_dbus_subtree_flags_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_subtree_flags_get_type",
+        constants$676.g_dbus_subtree_flags_get_type$FUNC
     );
-    static final FunctionDescriptor g_file_move_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_dbus_server_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_dbus_server_flags_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_server_flags_get_type",
+        constants$676.g_dbus_server_flags_get_type$FUNC
     );
-    static final MethodHandle g_file_move_finish$MH = RuntimeHelper.downcallHandle(
-        "g_file_move_finish",
-        constants$676.g_file_move_finish$FUNC
+    static final FunctionDescriptor g_dbus_signal_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_dbus_signal_flags_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_signal_flags_get_type",
+        constants$676.g_dbus_signal_flags_get_type$FUNC
     );
-    static final FunctionDescriptor g_file_make_directory$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_dbus_send_message_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_dbus_send_message_flags_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_send_message_flags_get_type",
+        constants$676.g_dbus_send_message_flags_get_type$FUNC
     );
-    static final MethodHandle g_file_make_directory$MH = RuntimeHelper.downcallHandle(
-        "g_file_make_directory",
-        constants$676.g_file_make_directory$FUNC
-    );
-    static final FunctionDescriptor g_file_make_directory_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_make_directory_async$MH = RuntimeHelper.downcallHandle(
-        "g_file_make_directory_async",
-        constants$676.g_file_make_directory_async$FUNC
-    );
-    static final FunctionDescriptor g_file_make_directory_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_make_directory_finish$MH = RuntimeHelper.downcallHandle(
-        "g_file_make_directory_finish",
-        constants$676.g_file_make_directory_finish$FUNC
-    );
-    static final FunctionDescriptor g_file_make_directory_with_parents$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_make_directory_with_parents$MH = RuntimeHelper.downcallHandle(
-        "g_file_make_directory_with_parents",
-        constants$676.g_file_make_directory_with_parents$FUNC
+    static final FunctionDescriptor g_credentials_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_credentials_type_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_credentials_type_get_type",
+        constants$676.g_credentials_type_get_type$FUNC
     );
 }
 

@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkPadActionEntry extends _GtkPadActionEntry {
+/**
+ * {@snippet :
+ * typedef struct _GtkPadActionEntry GtkPadActionEntry;
+ * }
+ */
+public final class GtkPadActionEntry extends _GtkPadActionEntry {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkPadActionEntry() {}
 }
 
 

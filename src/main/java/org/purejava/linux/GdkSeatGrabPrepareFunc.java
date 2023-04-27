@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * void (*GdkSeatGrabPrepareFunc)(struct _GdkSeat* seat,struct _GdkWindow* window,void* user_data);
+ * }
+ */
 public interface GdkSeatGrabPrepareFunc {
 
-    void apply(java.lang.foreign.MemoryAddress seat, java.lang.foreign.MemoryAddress window, java.lang.foreign.MemoryAddress user_data);
-    static MemorySegment allocate(GdkSeatGrabPrepareFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GdkSeatGrabPrepareFunc.class, fi, constants$1265.GdkSeatGrabPrepareFunc$FUNC, session);
+    void apply(java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment user_data);
+    static MemorySegment allocate(GdkSeatGrabPrepareFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$1106.GdkSeatGrabPrepareFunc_UP$MH, fi, constants$1106.GdkSeatGrabPrepareFunc$FUNC, scope);
     }
-    static GdkSeatGrabPrepareFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _seat, java.lang.foreign.MemoryAddress _window, java.lang.foreign.MemoryAddress _user_data) -> {
+    static GdkSeatGrabPrepareFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _key, java.lang.foreign.MemorySegment _value, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                constants$1265.GdkSeatGrabPrepareFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_seat, (java.lang.foreign.Addressable)_window, (java.lang.foreign.Addressable)_user_data);
+                constants$1106.GdkSeatGrabPrepareFunc_DOWN$MH.invokeExact(symbol, _key, _value, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

@@ -7,50 +7,50 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1540 {
+final class constants$1540 {
 
-    static final FunctionDescriptor gtk_actionable_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_actionable_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_actionable_get_type",
-        constants$1540.gtk_actionable_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_actionable_get_action_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_actionable_get_action_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_actionable_get_action_name",
-        constants$1540.gtk_actionable_get_action_name$FUNC
-    );
-    static final FunctionDescriptor gtk_actionable_set_action_name$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1540() {}
+    static final FunctionDescriptor GtkClipboardClearFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_actionable_set_action_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_actionable_set_action_name",
-        constants$1540.gtk_actionable_set_action_name$FUNC
+    static final MethodHandle GtkClipboardClearFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$1540.GtkClipboardClearFunc_DOWN$FUNC
     );
-    static final FunctionDescriptor gtk_actionable_get_action_target_value$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gtk_clipboard_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_clipboard_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_clipboard_get_type",
+        constants$1540.gtk_clipboard_get_type$FUNC
     );
-    static final MethodHandle gtk_actionable_get_action_target_value$MH = RuntimeHelper.downcallHandle(
-        "gtk_actionable_get_action_target_value",
-        constants$1540.gtk_actionable_get_action_target_value$FUNC
-    );
-    static final FunctionDescriptor gtk_actionable_set_action_target_value$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_clipboard_get_for_display$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_actionable_set_action_target_value$MH = RuntimeHelper.downcallHandle(
-        "gtk_actionable_set_action_target_value",
-        constants$1540.gtk_actionable_set_action_target_value$FUNC
+    static final MethodHandle gtk_clipboard_get_for_display$MH = RuntimeHelper.downcallHandle(
+        "gtk_clipboard_get_for_display",
+        constants$1540.gtk_clipboard_get_for_display$FUNC
     );
-    static final FunctionDescriptor gtk_actionable_set_action_target$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_clipboard_get$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_actionable_set_action_target$MH = RuntimeHelper.downcallHandleVariadic(
-        "gtk_actionable_set_action_target",
-        constants$1540.gtk_actionable_set_action_target$FUNC
+    static final MethodHandle gtk_clipboard_get$MH = RuntimeHelper.downcallHandle(
+        "gtk_clipboard_get",
+        constants$1540.gtk_clipboard_get$FUNC
+    );
+    static final FunctionDescriptor gtk_clipboard_get_default$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_clipboard_get_default$MH = RuntimeHelper.downcallHandle(
+        "gtk_clipboard_get_default",
+        constants$1540.gtk_clipboard_get_default$FUNC
+    );
+    static final FunctionDescriptor gtk_clipboard_get_display$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_clipboard_get_display$MH = RuntimeHelper.downcallHandle(
+        "gtk_clipboard_get_display",
+        constants$1540.gtk_clipboard_get_display$FUNC
     );
 }
 

@@ -7,58 +7,50 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$693 {
+final class constants$693 {
 
-    static final FunctionDescriptor g_file_info_get_attribute_uint64$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$693() {}
+    static final FunctionDescriptor g_memory_monitor_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_memory_monitor_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_memory_monitor_get_type",
+        constants$693.g_memory_monitor_get_type$FUNC
+    );
+    static final FunctionDescriptor g_memory_monitor_dup_default$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle g_memory_monitor_dup_default$MH = RuntimeHelper.downcallHandle(
+        "g_memory_monitor_dup_default",
+        constants$693.g_memory_monitor_dup_default$FUNC
+    );
+    static final FunctionDescriptor GReallocFunc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final FunctionDescriptor GReallocFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle GReallocFunc_UP$MH = RuntimeHelper.upcallHandle(GReallocFunc.class, "apply", constants$693.GReallocFunc_UP$FUNC);
+    static final FunctionDescriptor GReallocFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle GReallocFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$693.GReallocFunc_DOWN$FUNC
+    );
+    static final FunctionDescriptor g_memory_output_stream_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_memory_output_stream_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_memory_output_stream_get_type",
+        constants$693.g_memory_output_stream_get_type$FUNC
+    );
+    static final FunctionDescriptor g_memory_output_stream_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_file_info_get_attribute_uint64$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_get_attribute_uint64",
-        constants$693.g_file_info_get_attribute_uint64$FUNC
-    );
-    static final FunctionDescriptor g_file_info_get_attribute_int64$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_info_get_attribute_int64$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_get_attribute_int64",
-        constants$693.g_file_info_get_attribute_int64$FUNC
-    );
-    static final FunctionDescriptor g_file_info_get_attribute_object$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_info_get_attribute_object$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_get_attribute_object",
-        constants$693.g_file_info_get_attribute_object$FUNC
-    );
-    static final FunctionDescriptor g_file_info_get_attribute_stringv$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_info_get_attribute_stringv$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_get_attribute_stringv",
-        constants$693.g_file_info_get_attribute_stringv$FUNC
-    );
-    static final FunctionDescriptor g_file_info_set_attribute$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_info_set_attribute$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_set_attribute",
-        constants$693.g_file_info_set_attribute$FUNC
-    );
-    static final FunctionDescriptor g_file_info_set_attribute_string$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_info_set_attribute_string$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_set_attribute_string",
-        constants$693.g_file_info_set_attribute_string$FUNC
+    static final MethodHandle g_memory_output_stream_new$MH = RuntimeHelper.downcallHandle(
+        "g_memory_output_stream_new",
+        constants$693.g_memory_output_stream_new$FUNC
     );
 }
 

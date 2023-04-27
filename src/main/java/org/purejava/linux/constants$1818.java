@@ -7,47 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1818 {
+final class constants$1818 {
 
-    static final FunctionDescriptor gtk_icon_source_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_icon_source_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_source_get_type",
-        constants$1818.gtk_icon_source_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_source_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_icon_source_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_source_new",
-        constants$1818.gtk_icon_source_new$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_source_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1818() {}
+    static final FunctionDescriptor gtk_spin_button_get_update_policy$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_icon_source_copy$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_source_copy",
-        constants$1818.gtk_icon_source_copy$FUNC
+    static final MethodHandle gtk_spin_button_get_update_policy$MH = RuntimeHelper.downcallHandle(
+        "gtk_spin_button_get_update_policy",
+        constants$1818.gtk_spin_button_get_update_policy$FUNC
     );
-    static final FunctionDescriptor gtk_icon_source_free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_source_free$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_source_free",
-        constants$1818.gtk_icon_source_free$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_source_set_filename$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_spin_button_set_numeric$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_spin_button_set_numeric$MH = RuntimeHelper.downcallHandle(
+        "gtk_spin_button_set_numeric",
+        constants$1818.gtk_spin_button_set_numeric$FUNC
+    );
+    static final FunctionDescriptor gtk_spin_button_get_numeric$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_icon_source_set_filename$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_source_set_filename",
-        constants$1818.gtk_icon_source_set_filename$FUNC
+    static final MethodHandle gtk_spin_button_get_numeric$MH = RuntimeHelper.downcallHandle(
+        "gtk_spin_button_get_numeric",
+        constants$1818.gtk_spin_button_get_numeric$FUNC
     );
-    static final FunctionDescriptor gtk_icon_source_set_icon_name$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_spin_button_spin$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle gtk_spin_button_spin$MH = RuntimeHelper.downcallHandle(
+        "gtk_spin_button_spin",
+        constants$1818.gtk_spin_button_spin$FUNC
+    );
+    static final FunctionDescriptor gtk_spin_button_set_wrap$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_spin_button_set_wrap$MH = RuntimeHelper.downcallHandle(
+        "gtk_spin_button_set_wrap",
+        constants$1818.gtk_spin_button_set_wrap$FUNC
+    );
+    static final FunctionDescriptor gtk_spin_button_get_wrap$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_icon_source_set_icon_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_source_set_icon_name",
-        constants$1818.gtk_icon_source_set_icon_name$FUNC
+    static final MethodHandle gtk_spin_button_get_wrap$MH = RuntimeHelper.downcallHandle(
+        "gtk_spin_button_get_wrap",
+        constants$1818.gtk_spin_button_get_wrap$FUNC
     );
 }
 

@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkBorder extends _GtkBorder {
+/**
+ * {@snippet :
+ * typedef struct _GtkBorder GtkBorder;
+ * }
+ */
+public final class GtkBorder extends _GtkBorder {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkBorder() {}
 }
 
 

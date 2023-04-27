@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GRecMutex extends _GRecMutex {
+/**
+ * {@snippet :
+ * typedef struct _GRecMutex GRecMutex;
+ * }
+ */
+public final class GRecMutex extends _GRecMutex {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GRecMutex() {}
 }
 
 

@@ -7,52 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$130 {
+final class constants$130 {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$130() {}
+    static final FunctionDescriptor g_dpgettext2$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_dpgettext2$MH = RuntimeHelper.downcallHandle(
+        "g_dpgettext2",
+        constants$130.g_dpgettext2$FUNC
+    );
+    static final FunctionDescriptor g_free$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_free$MH = RuntimeHelper.downcallHandle(
+        "g_free",
+        constants$130.g_free$FUNC
+    );
+    static final FunctionDescriptor g_free_sized$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle g_free_sized$MH = RuntimeHelper.downcallHandle(
+        "g_free_sized",
+        constants$130.g_free_sized$FUNC
+    );
+    static final FunctionDescriptor g_clear_pointer$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_clear_pointer$MH = RuntimeHelper.downcallHandle(
+        "g_clear_pointer",
+        constants$130.g_clear_pointer$FUNC
+    );
+    static final FunctionDescriptor g_malloc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle g_malloc$MH = RuntimeHelper.downcallHandle(
+        "g_malloc",
+        constants$130.g_malloc$FUNC
+    );
     static final FunctionDescriptor g_malloc0$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_LONG_LONG$LAYOUT
     );
     static final MethodHandle g_malloc0$MH = RuntimeHelper.downcallHandle(
         "g_malloc0",
         constants$130.g_malloc0$FUNC
-    );
-    static final FunctionDescriptor g_realloc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_realloc$MH = RuntimeHelper.downcallHandle(
-        "g_realloc",
-        constants$130.g_realloc$FUNC
-    );
-    static final FunctionDescriptor g_try_malloc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_try_malloc$MH = RuntimeHelper.downcallHandle(
-        "g_try_malloc",
-        constants$130.g_try_malloc$FUNC
-    );
-    static final FunctionDescriptor g_try_malloc0$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_try_malloc0$MH = RuntimeHelper.downcallHandle(
-        "g_try_malloc0",
-        constants$130.g_try_malloc0$FUNC
-    );
-    static final FunctionDescriptor g_try_realloc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_try_realloc$MH = RuntimeHelper.downcallHandle(
-        "g_try_realloc",
-        constants$130.g_try_realloc$FUNC
-    );
-    static final FunctionDescriptor g_malloc_n$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_malloc_n$MH = RuntimeHelper.downcallHandle(
-        "g_malloc_n",
-        constants$130.g_malloc_n$FUNC
     );
 }
 

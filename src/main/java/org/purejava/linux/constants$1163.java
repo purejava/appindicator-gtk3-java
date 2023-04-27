@@ -7,58 +7,39 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1163 {
+final class constants$1163 {
 
-    static final FunctionDescriptor cairo_close_path$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1163() {}
+    static final FunctionDescriptor gdk_crossing_mode_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gdk_crossing_mode_get_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_crossing_mode_get_type",
+        constants$1163.gdk_crossing_mode_get_type$FUNC
     );
-    static final MethodHandle cairo_close_path$MH = RuntimeHelper.downcallHandle(
-        "cairo_close_path",
-        constants$1163.cairo_close_path$FUNC
+    static final FunctionDescriptor gdk_property_state_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gdk_property_state_get_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_property_state_get_type",
+        constants$1163.gdk_property_state_get_type$FUNC
     );
-    static final FunctionDescriptor cairo_path_extents$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gdk_window_state_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gdk_window_state_get_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_state_get_type",
+        constants$1163.gdk_window_state_get_type$FUNC
     );
-    static final MethodHandle cairo_path_extents$MH = RuntimeHelper.downcallHandle(
-        "cairo_path_extents",
-        constants$1163.cairo_path_extents$FUNC
+    static final FunctionDescriptor gdk_setting_action_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gdk_setting_action_get_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_setting_action_get_type",
+        constants$1163.gdk_setting_action_get_type$FUNC
     );
-    static final FunctionDescriptor cairo_paint$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gdk_owner_change_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gdk_owner_change_get_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_owner_change_get_type",
+        constants$1163.gdk_owner_change_get_type$FUNC
     );
-    static final MethodHandle cairo_paint$MH = RuntimeHelper.downcallHandle(
-        "cairo_paint",
-        constants$1163.cairo_paint$FUNC
-    );
-    static final FunctionDescriptor cairo_paint_with_alpha$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle cairo_paint_with_alpha$MH = RuntimeHelper.downcallHandle(
-        "cairo_paint_with_alpha",
-        constants$1163.cairo_paint_with_alpha$FUNC
-    );
-    static final FunctionDescriptor cairo_mask$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_mask$MH = RuntimeHelper.downcallHandle(
-        "cairo_mask",
-        constants$1163.cairo_mask$FUNC
-    );
-    static final FunctionDescriptor cairo_mask_surface$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle cairo_mask_surface$MH = RuntimeHelper.downcallHandle(
-        "cairo_mask_surface",
-        constants$1163.cairo_mask_surface$FUNC
+    static final FunctionDescriptor gdk_frame_clock_phase_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gdk_frame_clock_phase_get_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_frame_clock_phase_get_type",
+        constants$1163.gdk_frame_clock_phase_get_type$FUNC
     );
 }
 

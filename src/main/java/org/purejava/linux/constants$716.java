@@ -7,43 +7,60 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$716 {
+final class constants$716 {
 
-    static final FunctionDescriptor g_inet_socket_address_get_port$FUNC = FunctionDescriptor.of(Constants$root.C_SHORT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$716() {}
+    static final FunctionDescriptor g_network_monitor_get_network_available$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_inet_socket_address_get_port$MH = RuntimeHelper.downcallHandle(
-        "g_inet_socket_address_get_port",
-        constants$716.g_inet_socket_address_get_port$FUNC
+    static final MethodHandle g_network_monitor_get_network_available$MH = RuntimeHelper.downcallHandle(
+        "g_network_monitor_get_network_available",
+        constants$716.g_network_monitor_get_network_available$FUNC
     );
-    static final FunctionDescriptor g_inet_socket_address_get_flowinfo$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_network_monitor_get_network_metered$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_inet_socket_address_get_flowinfo$MH = RuntimeHelper.downcallHandle(
-        "g_inet_socket_address_get_flowinfo",
-        constants$716.g_inet_socket_address_get_flowinfo$FUNC
+    static final MethodHandle g_network_monitor_get_network_metered$MH = RuntimeHelper.downcallHandle(
+        "g_network_monitor_get_network_metered",
+        constants$716.g_network_monitor_get_network_metered$FUNC
     );
-    static final FunctionDescriptor g_inet_socket_address_get_scope_id$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_network_monitor_get_connectivity$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_inet_socket_address_get_scope_id$MH = RuntimeHelper.downcallHandle(
-        "g_inet_socket_address_get_scope_id",
-        constants$716.g_inet_socket_address_get_scope_id$FUNC
+    static final MethodHandle g_network_monitor_get_connectivity$MH = RuntimeHelper.downcallHandle(
+        "g_network_monitor_get_connectivity",
+        constants$716.g_network_monitor_get_connectivity$FUNC
     );
-    static final FunctionDescriptor g_app_info_create_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_app_info_create_flags_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_app_info_create_flags_get_type",
-        constants$716.g_app_info_create_flags_get_type$FUNC
+    static final FunctionDescriptor g_network_monitor_can_reach$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor g_converter_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_converter_flags_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_converter_flags_get_type",
-        constants$716.g_converter_flags_get_type$FUNC
+    static final MethodHandle g_network_monitor_can_reach$MH = RuntimeHelper.downcallHandle(
+        "g_network_monitor_can_reach",
+        constants$716.g_network_monitor_can_reach$FUNC
     );
-    static final FunctionDescriptor g_converter_result_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_converter_result_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_converter_result_get_type",
-        constants$716.g_converter_result_get_type$FUNC
+    static final FunctionDescriptor g_network_monitor_can_reach_async$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_network_monitor_can_reach_async$MH = RuntimeHelper.downcallHandle(
+        "g_network_monitor_can_reach_async",
+        constants$716.g_network_monitor_can_reach_async$FUNC
+    );
+    static final FunctionDescriptor g_network_monitor_can_reach_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_network_monitor_can_reach_finish$MH = RuntimeHelper.downcallHandle(
+        "g_network_monitor_can_reach_finish",
+        constants$716.g_network_monitor_can_reach_finish$FUNC
     );
 }
 

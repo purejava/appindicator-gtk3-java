@@ -7,52 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$436 {
+final class constants$436 {
 
-    static final FunctionDescriptor g_value_register_transform_func$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$436() {}
+    static final FunctionDescriptor g_object_thaw_notify$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_value_register_transform_func$MH = RuntimeHelper.downcallHandle(
-        "g_value_register_transform_func",
-        constants$436.g_value_register_transform_func$FUNC
+    static final MethodHandle g_object_thaw_notify$MH = RuntimeHelper.downcallHandle(
+        "g_object_thaw_notify",
+        constants$436.g_object_thaw_notify$FUNC
     );
-    static final FunctionDescriptor g_param_spec_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_object_is_floating$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_param_spec_ref$MH = RuntimeHelper.downcallHandle(
-        "g_param_spec_ref",
-        constants$436.g_param_spec_ref$FUNC
+    static final MethodHandle g_object_is_floating$MH = RuntimeHelper.downcallHandle(
+        "g_object_is_floating",
+        constants$436.g_object_is_floating$FUNC
     );
-    static final FunctionDescriptor g_param_spec_unref$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_object_ref_sink$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_param_spec_unref$MH = RuntimeHelper.downcallHandle(
-        "g_param_spec_unref",
-        constants$436.g_param_spec_unref$FUNC
+    static final MethodHandle g_object_ref_sink$MH = RuntimeHelper.downcallHandle(
+        "g_object_ref_sink",
+        constants$436.g_object_ref_sink$FUNC
     );
-    static final FunctionDescriptor g_param_spec_sink$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_object_take_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_param_spec_sink$MH = RuntimeHelper.downcallHandle(
-        "g_param_spec_sink",
-        constants$436.g_param_spec_sink$FUNC
+    static final MethodHandle g_object_take_ref$MH = RuntimeHelper.downcallHandle(
+        "g_object_take_ref",
+        constants$436.g_object_take_ref$FUNC
     );
-    static final FunctionDescriptor g_param_spec_ref_sink$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_object_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_param_spec_ref_sink$MH = RuntimeHelper.downcallHandle(
-        "g_param_spec_ref_sink",
-        constants$436.g_param_spec_ref_sink$FUNC
+    static final MethodHandle g_object_ref$MH = RuntimeHelper.downcallHandle(
+        "g_object_ref",
+        constants$436.g_object_ref$FUNC
     );
-    static final FunctionDescriptor g_param_spec_get_qdata$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor g_object_unref$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_param_spec_get_qdata$MH = RuntimeHelper.downcallHandle(
-        "g_param_spec_get_qdata",
-        constants$436.g_param_spec_get_qdata$FUNC
+    static final MethodHandle g_object_unref$MH = RuntimeHelper.downcallHandle(
+        "g_object_unref",
+        constants$436.g_object_unref$FUNC
     );
 }
 

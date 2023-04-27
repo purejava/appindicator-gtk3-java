@@ -7,53 +7,70 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1003 {
+final class constants$1003 {
 
-    static final FunctionDescriptor hb_set_get_population$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_set_get_population$MH = RuntimeHelper.downcallHandle(
-        "hb_set_get_population",
-        constants$1003.hb_set_get_population$FUNC
-    );
-    static final FunctionDescriptor hb_set_get_min$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_set_get_min$MH = RuntimeHelper.downcallHandle(
-        "hb_set_get_min",
-        constants$1003.hb_set_get_min$FUNC
-    );
-    static final FunctionDescriptor hb_set_get_max$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_set_get_max$MH = RuntimeHelper.downcallHandle(
-        "hb_set_get_max",
-        constants$1003.hb_set_get_max$FUNC
-    );
-    static final FunctionDescriptor hb_set_next$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1003() {}
+    static final FunctionDescriptor cairo_arc_negative$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle cairo_arc_negative$MH = RuntimeHelper.downcallHandle(
+        "cairo_arc_negative",
+        constants$1003.cairo_arc_negative$FUNC
+    );
+    static final FunctionDescriptor cairo_rel_move_to$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle cairo_rel_move_to$MH = RuntimeHelper.downcallHandle(
+        "cairo_rel_move_to",
+        constants$1003.cairo_rel_move_to$FUNC
+    );
+    static final FunctionDescriptor cairo_rel_line_to$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle cairo_rel_line_to$MH = RuntimeHelper.downcallHandle(
+        "cairo_rel_line_to",
+        constants$1003.cairo_rel_line_to$FUNC
+    );
+    static final FunctionDescriptor cairo_rel_curve_to$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle cairo_rel_curve_to$MH = RuntimeHelper.downcallHandle(
+        "cairo_rel_curve_to",
+        constants$1003.cairo_rel_curve_to$FUNC
+    );
+    static final FunctionDescriptor cairo_rectangle$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle cairo_rectangle$MH = RuntimeHelper.downcallHandle(
+        "cairo_rectangle",
+        constants$1003.cairo_rectangle$FUNC
+    );
+    static final FunctionDescriptor cairo_close_path$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_set_next$MH = RuntimeHelper.downcallHandle(
-        "hb_set_next",
-        constants$1003.hb_set_next$FUNC
-    );
-    static final FunctionDescriptor hb_set_previous$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_set_previous$MH = RuntimeHelper.downcallHandle(
-        "hb_set_previous",
-        constants$1003.hb_set_previous$FUNC
-    );
-    static final FunctionDescriptor hb_set_next_range$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_set_next_range$MH = RuntimeHelper.downcallHandle(
-        "hb_set_next_range",
-        constants$1003.hb_set_next_range$FUNC
+    static final MethodHandle cairo_close_path$MH = RuntimeHelper.downcallHandle(
+        "cairo_close_path",
+        constants$1003.cairo_close_path$FUNC
     );
 }
 

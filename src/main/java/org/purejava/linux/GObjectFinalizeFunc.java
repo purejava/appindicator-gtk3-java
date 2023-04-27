@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * void (*GObjectFinalizeFunc)(struct _GObject* object);
+ * }
+ */
 public interface GObjectFinalizeFunc {
 
-    void apply(java.lang.foreign.MemoryAddress object);
-    static MemorySegment allocate(GObjectFinalizeFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GObjectFinalizeFunc.class, fi, constants$470.GObjectFinalizeFunc$FUNC, session);
+    void apply(java.lang.foreign.MemorySegment display);
+    static MemorySegment allocate(GObjectFinalizeFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$430.GObjectFinalizeFunc_UP$MH, fi, constants$430.GObjectFinalizeFunc$FUNC, scope);
     }
-    static GObjectFinalizeFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _object) -> {
+    static GObjectFinalizeFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _display) -> {
             try {
-                constants$470.GObjectFinalizeFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_object);
+                constants$431.GObjectFinalizeFunc_DOWN$MH.invokeExact(symbol, _display);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

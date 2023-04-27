@@ -7,51 +7,48 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1531 {
+final class constants$1531 {
 
-    static final FunctionDescriptor gtk_label_get_single_line_mode$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_label_get_single_line_mode$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_get_single_line_mode",
-        constants$1531.gtk_label_get_single_line_mode$FUNC
-    );
-    static final FunctionDescriptor gtk_label_get_current_uri$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_label_get_current_uri$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_get_current_uri",
-        constants$1531.gtk_label_get_current_uri$FUNC
-    );
-    static final FunctionDescriptor gtk_label_set_track_visited_links$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1531() {}
+    static final FunctionDescriptor gtk_toggle_button_set_inconsistent$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_label_set_track_visited_links$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_set_track_visited_links",
-        constants$1531.gtk_label_set_track_visited_links$FUNC
+    static final MethodHandle gtk_toggle_button_set_inconsistent$MH = RuntimeHelper.downcallHandle(
+        "gtk_toggle_button_set_inconsistent",
+        constants$1531.gtk_toggle_button_set_inconsistent$FUNC
     );
-    static final FunctionDescriptor gtk_label_get_track_visited_links$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_toggle_button_get_inconsistent$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_label_get_track_visited_links$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_get_track_visited_links",
-        constants$1531.gtk_label_get_track_visited_links$FUNC
+    static final MethodHandle gtk_toggle_button_get_inconsistent$MH = RuntimeHelper.downcallHandle(
+        "gtk_toggle_button_get_inconsistent",
+        constants$1531.gtk_toggle_button_get_inconsistent$FUNC
     );
-    static final FunctionDescriptor gtk_label_set_xalign$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
+    static final FunctionDescriptor gtk_check_button_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_check_button_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_check_button_get_type",
+        constants$1531.gtk_check_button_get_type$FUNC
     );
-    static final MethodHandle gtk_label_set_xalign$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_set_xalign",
-        constants$1531.gtk_label_set_xalign$FUNC
+    static final FunctionDescriptor gtk_check_button_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_check_button_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_check_button_new",
+        constants$1531.gtk_check_button_new$FUNC
     );
-    static final FunctionDescriptor gtk_label_get_xalign$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
+    static final FunctionDescriptor gtk_check_button_new_with_label$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_label_get_xalign$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_get_xalign",
-        constants$1531.gtk_label_get_xalign$FUNC
+    static final MethodHandle gtk_check_button_new_with_label$MH = RuntimeHelper.downcallHandle(
+        "gtk_check_button_new_with_label",
+        constants$1531.gtk_check_button_new_with_label$FUNC
+    );
+    static final FunctionDescriptor gtk_check_button_new_with_mnemonic$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_check_button_new_with_mnemonic$MH = RuntimeHelper.downcallHandle(
+        "gtk_check_button_new_with_mnemonic",
+        constants$1531.gtk_check_button_new_with_mnemonic$FUNC
     );
 }
 

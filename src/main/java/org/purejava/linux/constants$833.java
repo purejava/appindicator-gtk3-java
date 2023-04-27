@@ -7,53 +7,57 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$833 {
+final class constants$833 {
 
-    static final FunctionDescriptor g_socket_control_message_serialize$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$833() {}
+    static final FunctionDescriptor hb_feature_to_string$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_control_message_serialize$MH = RuntimeHelper.downcallHandle(
-        "g_socket_control_message_serialize",
-        constants$833.g_socket_control_message_serialize$FUNC
-    );
-    static final FunctionDescriptor g_socket_control_message_deserialize$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_control_message_deserialize$MH = RuntimeHelper.downcallHandle(
-        "g_socket_control_message_deserialize",
-        constants$833.g_socket_control_message_deserialize$FUNC
-    );
-    static final FunctionDescriptor g_socket_listener_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_socket_listener_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_socket_listener_get_type",
-        constants$833.g_socket_listener_get_type$FUNC
-    );
-    static final FunctionDescriptor g_socket_listener_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_socket_listener_new$MH = RuntimeHelper.downcallHandle(
-        "g_socket_listener_new",
-        constants$833.g_socket_listener_new$FUNC
-    );
-    static final FunctionDescriptor g_socket_listener_set_backlog$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_socket_listener_set_backlog$MH = RuntimeHelper.downcallHandle(
-        "g_socket_listener_set_backlog",
-        constants$833.g_socket_listener_set_backlog$FUNC
+    static final MethodHandle hb_feature_to_string$MH = RuntimeHelper.downcallHandle(
+        "hb_feature_to_string",
+        constants$833.hb_feature_to_string$FUNC
     );
-    static final FunctionDescriptor g_socket_listener_add_socket$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor hb_variation_from_string$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_socket_listener_add_socket$MH = RuntimeHelper.downcallHandle(
-        "g_socket_listener_add_socket",
-        constants$833.g_socket_listener_add_socket$FUNC
+    static final MethodHandle hb_variation_from_string$MH = RuntimeHelper.downcallHandle(
+        "hb_variation_from_string",
+        constants$833.hb_variation_from_string$FUNC
+    );
+    static final FunctionDescriptor hb_variation_to_string$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle hb_variation_to_string$MH = RuntimeHelper.downcallHandle(
+        "hb_variation_to_string",
+        constants$833.hb_variation_to_string$FUNC
+    );
+    static final FunctionDescriptor hb_color_get_alpha$FUNC = FunctionDescriptor.of(Constants$root.C_CHAR$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle hb_color_get_alpha$MH = RuntimeHelper.downcallHandle(
+        "hb_color_get_alpha",
+        constants$833.hb_color_get_alpha$FUNC
+    );
+    static final FunctionDescriptor hb_color_get_red$FUNC = FunctionDescriptor.of(Constants$root.C_CHAR$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle hb_color_get_red$MH = RuntimeHelper.downcallHandle(
+        "hb_color_get_red",
+        constants$833.hb_color_get_red$FUNC
+    );
+    static final FunctionDescriptor hb_color_get_green$FUNC = FunctionDescriptor.of(Constants$root.C_CHAR$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle hb_color_get_green$MH = RuntimeHelper.downcallHandle(
+        "hb_color_get_green",
+        constants$833.hb_color_get_green$FUNC
     );
 }
 

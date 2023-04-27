@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * int (*GtkTreeModelFilterVisibleFunc)(struct _GtkTreeModel* model,struct _GtkTreeIter* iter,void* data);
+ * }
+ */
 public interface GtkTreeModelFilterVisibleFunc {
 
-    int apply(java.lang.foreign.MemoryAddress model, java.lang.foreign.MemoryAddress iter, java.lang.foreign.MemoryAddress data);
-    static MemorySegment allocate(GtkTreeModelFilterVisibleFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GtkTreeModelFilterVisibleFunc.class, fi, constants$1627.GtkTreeModelFilterVisibleFunc$FUNC, session);
+    int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
+    static MemorySegment allocate(GtkTreeModelFilterVisibleFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$1437.GtkTreeModelFilterVisibleFunc_UP$MH, fi, constants$1437.GtkTreeModelFilterVisibleFunc$FUNC, scope);
     }
-    static GtkTreeModelFilterVisibleFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _model, java.lang.foreign.MemoryAddress _iter, java.lang.foreign.MemoryAddress _data) -> {
+    static GtkTreeModelFilterVisibleFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _a, java.lang.foreign.MemorySegment _b, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                return (int)constants$1627.GtkTreeModelFilterVisibleFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_model, (java.lang.foreign.Addressable)_iter, (java.lang.foreign.Addressable)_data);
+                return (int)constants$1437.GtkTreeModelFilterVisibleFunc_DOWN$MH.invokeExact(symbol, _a, _b, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

@@ -7,63 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$753 {
+final class constants$753 {
 
-    static final FunctionDescriptor g_menu_append$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_menu_append$MH = RuntimeHelper.downcallHandle(
-        "g_menu_append",
-        constants$753.g_menu_append$FUNC
-    );
-    static final FunctionDescriptor g_menu_insert_section$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$753() {}
+    static final FunctionDescriptor g_simple_action_set_state$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_menu_insert_section$MH = RuntimeHelper.downcallHandle(
-        "g_menu_insert_section",
-        constants$753.g_menu_insert_section$FUNC
+    static final MethodHandle g_simple_action_set_state$MH = RuntimeHelper.downcallHandle(
+        "g_simple_action_set_state",
+        constants$753.g_simple_action_set_state$FUNC
     );
-    static final FunctionDescriptor g_menu_prepend_section$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_menu_prepend_section$MH = RuntimeHelper.downcallHandle(
-        "g_menu_prepend_section",
-        constants$753.g_menu_prepend_section$FUNC
-    );
-    static final FunctionDescriptor g_menu_append_section$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_simple_action_set_state_hint$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_menu_append_section$MH = RuntimeHelper.downcallHandle(
-        "g_menu_append_section",
-        constants$753.g_menu_append_section$FUNC
+    static final MethodHandle g_simple_action_set_state_hint$MH = RuntimeHelper.downcallHandle(
+        "g_simple_action_set_state_hint",
+        constants$753.g_simple_action_set_state_hint$FUNC
     );
-    static final FunctionDescriptor g_menu_insert_submenu$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_simple_action_group_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_simple_action_group_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_simple_action_group_get_type",
+        constants$753.g_simple_action_group_get_type$FUNC
+    );
+    static final FunctionDescriptor g_simple_action_group_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle g_simple_action_group_new$MH = RuntimeHelper.downcallHandle(
+        "g_simple_action_group_new",
+        constants$753.g_simple_action_group_new$FUNC
+    );
+    static final FunctionDescriptor g_simple_action_group_lookup$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_menu_insert_submenu$MH = RuntimeHelper.downcallHandle(
-        "g_menu_insert_submenu",
-        constants$753.g_menu_insert_submenu$FUNC
+    static final MethodHandle g_simple_action_group_lookup$MH = RuntimeHelper.downcallHandle(
+        "g_simple_action_group_lookup",
+        constants$753.g_simple_action_group_lookup$FUNC
     );
-    static final FunctionDescriptor g_menu_prepend_submenu$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_simple_action_group_insert$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_menu_prepend_submenu$MH = RuntimeHelper.downcallHandle(
-        "g_menu_prepend_submenu",
-        constants$753.g_menu_prepend_submenu$FUNC
+    static final MethodHandle g_simple_action_group_insert$MH = RuntimeHelper.downcallHandle(
+        "g_simple_action_group_insert",
+        constants$753.g_simple_action_group_insert$FUNC
     );
 }
 

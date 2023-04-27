@@ -7,67 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1699 {
+final class constants$1699 {
 
-    static final FunctionDescriptor gtk_buildable_construct_child$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1699() {}
+    static final FunctionDescriptor gtk_tool_item_set_is_important$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_tool_item_set_is_important$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_item_set_is_important",
+        constants$1699.gtk_tool_item_set_is_important$FUNC
+    );
+    static final FunctionDescriptor gtk_tool_item_get_ellipsize_mode$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_buildable_construct_child$MH = RuntimeHelper.downcallHandle(
-        "gtk_buildable_construct_child",
-        constants$1699.gtk_buildable_construct_child$FUNC
+    static final MethodHandle gtk_tool_item_get_ellipsize_mode$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_item_get_ellipsize_mode",
+        constants$1699.gtk_tool_item_get_ellipsize_mode$FUNC
     );
-    static final FunctionDescriptor gtk_buildable_custom_tag_start$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_tool_item_get_icon_size$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_buildable_custom_tag_start$MH = RuntimeHelper.downcallHandle(
-        "gtk_buildable_custom_tag_start",
-        constants$1699.gtk_buildable_custom_tag_start$FUNC
+    static final MethodHandle gtk_tool_item_get_icon_size$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_item_get_icon_size",
+        constants$1699.gtk_tool_item_get_icon_size$FUNC
     );
-    static final FunctionDescriptor gtk_buildable_custom_tag_end$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_tool_item_get_orientation$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_buildable_custom_tag_end$MH = RuntimeHelper.downcallHandle(
-        "gtk_buildable_custom_tag_end",
-        constants$1699.gtk_buildable_custom_tag_end$FUNC
+    static final MethodHandle gtk_tool_item_get_orientation$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_item_get_orientation",
+        constants$1699.gtk_tool_item_get_orientation$FUNC
     );
-    static final FunctionDescriptor gtk_buildable_custom_finished$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_tool_item_get_toolbar_style$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_buildable_custom_finished$MH = RuntimeHelper.downcallHandle(
-        "gtk_buildable_custom_finished",
-        constants$1699.gtk_buildable_custom_finished$FUNC
+    static final MethodHandle gtk_tool_item_get_toolbar_style$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_item_get_toolbar_style",
+        constants$1699.gtk_tool_item_get_toolbar_style$FUNC
     );
-    static final FunctionDescriptor gtk_buildable_parser_finished$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_tool_item_get_relief_style$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_buildable_parser_finished$MH = RuntimeHelper.downcallHandle(
-        "gtk_buildable_parser_finished",
-        constants$1699.gtk_buildable_parser_finished$FUNC
-    );
-    static final FunctionDescriptor gtk_buildable_get_internal_child$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_buildable_get_internal_child$MH = RuntimeHelper.downcallHandle(
-        "gtk_buildable_get_internal_child",
-        constants$1699.gtk_buildable_get_internal_child$FUNC
+    static final MethodHandle gtk_tool_item_get_relief_style$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_item_get_relief_style",
+        constants$1699.gtk_tool_item_get_relief_style$FUNC
     );
 }
 

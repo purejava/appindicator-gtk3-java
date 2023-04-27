@@ -7,55 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1796 {
+final class constants$1796 {
 
-    static final FunctionDescriptor gtk_gesture_get_sequences$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1796() {}
+    static final FunctionDescriptor gtk_scrollable_get_vadjustment$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_gesture_get_sequences$MH = RuntimeHelper.downcallHandle(
-        "gtk_gesture_get_sequences",
-        constants$1796.gtk_gesture_get_sequences$FUNC
+    static final MethodHandle gtk_scrollable_get_vadjustment$MH = RuntimeHelper.downcallHandle(
+        "gtk_scrollable_get_vadjustment",
+        constants$1796.gtk_scrollable_get_vadjustment$FUNC
     );
-    static final FunctionDescriptor gtk_gesture_get_last_updated_sequence$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_gesture_get_last_updated_sequence$MH = RuntimeHelper.downcallHandle(
-        "gtk_gesture_get_last_updated_sequence",
-        constants$1796.gtk_gesture_get_last_updated_sequence$FUNC
-    );
-    static final FunctionDescriptor gtk_gesture_handles_sequence$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_scrollable_set_vadjustment$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_gesture_handles_sequence$MH = RuntimeHelper.downcallHandle(
-        "gtk_gesture_handles_sequence",
-        constants$1796.gtk_gesture_handles_sequence$FUNC
+    static final MethodHandle gtk_scrollable_set_vadjustment$MH = RuntimeHelper.downcallHandle(
+        "gtk_scrollable_set_vadjustment",
+        constants$1796.gtk_scrollable_set_vadjustment$FUNC
     );
-    static final FunctionDescriptor gtk_gesture_get_last_event$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_scrollable_get_hscroll_policy$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_gesture_get_last_event$MH = RuntimeHelper.downcallHandle(
-        "gtk_gesture_get_last_event",
-        constants$1796.gtk_gesture_get_last_event$FUNC
+    static final MethodHandle gtk_scrollable_get_hscroll_policy$MH = RuntimeHelper.downcallHandle(
+        "gtk_scrollable_get_hscroll_policy",
+        constants$1796.gtk_scrollable_get_hscroll_policy$FUNC
     );
-    static final FunctionDescriptor gtk_gesture_get_point$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_scrollable_set_hscroll_policy$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_scrollable_set_hscroll_policy$MH = RuntimeHelper.downcallHandle(
+        "gtk_scrollable_set_hscroll_policy",
+        constants$1796.gtk_scrollable_set_hscroll_policy$FUNC
+    );
+    static final FunctionDescriptor gtk_scrollable_get_vscroll_policy$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_gesture_get_point$MH = RuntimeHelper.downcallHandle(
-        "gtk_gesture_get_point",
-        constants$1796.gtk_gesture_get_point$FUNC
+    static final MethodHandle gtk_scrollable_get_vscroll_policy$MH = RuntimeHelper.downcallHandle(
+        "gtk_scrollable_get_vscroll_policy",
+        constants$1796.gtk_scrollable_get_vscroll_policy$FUNC
     );
-    static final FunctionDescriptor gtk_gesture_get_bounding_box$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_scrollable_set_vscroll_policy$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_gesture_get_bounding_box$MH = RuntimeHelper.downcallHandle(
-        "gtk_gesture_get_bounding_box",
-        constants$1796.gtk_gesture_get_bounding_box$FUNC
+    static final MethodHandle gtk_scrollable_set_vscroll_policy$MH = RuntimeHelper.downcallHandle(
+        "gtk_scrollable_set_vscroll_policy",
+        constants$1796.gtk_scrollable_set_vscroll_policy$FUNC
     );
 }
 

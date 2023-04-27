@@ -7,57 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$598 {
+final class constants$598 {
 
-    static final FunctionDescriptor g_dbus_connection_set_exit_on_close$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_dbus_connection_set_exit_on_close$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_set_exit_on_close",
-        constants$598.g_dbus_connection_set_exit_on_close$FUNC
-    );
-    static final FunctionDescriptor g_dbus_connection_get_capabilities$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_connection_get_capabilities$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_get_capabilities",
-        constants$598.g_dbus_connection_get_capabilities$FUNC
-    );
-    static final FunctionDescriptor g_dbus_connection_get_flags$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_connection_get_flags$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_get_flags",
-        constants$598.g_dbus_connection_get_flags$FUNC
-    );
-    static final FunctionDescriptor g_dbus_connection_close$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$598() {}
+    static final FunctionDescriptor g_dbus_gvariant_to_gvalue$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_connection_close$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_close",
-        constants$598.g_dbus_connection_close$FUNC
+    static final MethodHandle g_dbus_gvariant_to_gvalue$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_gvariant_to_gvalue",
+        constants$598.g_dbus_gvariant_to_gvalue$FUNC
     );
-    static final FunctionDescriptor g_dbus_connection_close_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_connection_close_finish$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_close_finish",
-        constants$598.g_dbus_connection_close_finish$FUNC
-    );
-    static final FunctionDescriptor g_dbus_connection_close_sync$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_dbus_gvalue_to_gvariant$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_connection_close_sync$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_close_sync",
-        constants$598.g_dbus_connection_close_sync$FUNC
+    static final MethodHandle g_dbus_gvalue_to_gvariant$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_gvalue_to_gvariant",
+        constants$598.g_dbus_gvalue_to_gvariant$FUNC
+    );
+    static final FunctionDescriptor g_dbus_escape_object_path_bytestring$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_dbus_escape_object_path_bytestring$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_escape_object_path_bytestring",
+        constants$598.g_dbus_escape_object_path_bytestring$FUNC
+    );
+    static final FunctionDescriptor g_dbus_escape_object_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_dbus_escape_object_path$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_escape_object_path",
+        constants$598.g_dbus_escape_object_path$FUNC
+    );
+    static final FunctionDescriptor g_dbus_unescape_object_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_dbus_unescape_object_path$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_unescape_object_path",
+        constants$598.g_dbus_unescape_object_path$FUNC
+    );
+    static final FunctionDescriptor g_debug_controller_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_debug_controller_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_debug_controller_get_type",
+        constants$598.g_debug_controller_get_type$FUNC
     );
 }
 

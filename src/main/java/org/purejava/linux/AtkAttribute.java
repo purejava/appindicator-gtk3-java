@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class AtkAttribute extends _AtkAttribute {
+/**
+ * {@snippet :
+ * typedef struct _AtkAttribute AtkAttribute;
+ * }
+ */
+public final class AtkAttribute extends _AtkAttribute {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private AtkAttribute() {}
 }
 
 

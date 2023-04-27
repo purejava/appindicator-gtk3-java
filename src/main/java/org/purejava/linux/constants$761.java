@@ -7,63 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$761 {
+final class constants$761 {
 
-    static final FunctionDescriptor g_mount_shadow$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$761() {}
+    static final FunctionDescriptor g_socket_get_socket_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_mount_shadow$MH = RuntimeHelper.downcallHandle(
-        "g_mount_shadow",
-        constants$761.g_mount_shadow$FUNC
+    static final MethodHandle g_socket_get_socket_type$MH = RuntimeHelper.downcallHandle(
+        "g_socket_get_socket_type",
+        constants$761.g_socket_get_socket_type$FUNC
     );
-    static final FunctionDescriptor g_mount_unshadow$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_socket_get_protocol$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_mount_unshadow$MH = RuntimeHelper.downcallHandle(
-        "g_mount_unshadow",
-        constants$761.g_mount_unshadow$FUNC
+    static final MethodHandle g_socket_get_protocol$MH = RuntimeHelper.downcallHandle(
+        "g_socket_get_protocol",
+        constants$761.g_socket_get_protocol$FUNC
     );
-    static final FunctionDescriptor g_mount_unmount_with_operation$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_mount_unmount_with_operation$MH = RuntimeHelper.downcallHandle(
-        "g_mount_unmount_with_operation",
-        constants$761.g_mount_unmount_with_operation$FUNC
-    );
-    static final FunctionDescriptor g_mount_unmount_with_operation_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_socket_get_local_address$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_mount_unmount_with_operation_finish$MH = RuntimeHelper.downcallHandle(
-        "g_mount_unmount_with_operation_finish",
-        constants$761.g_mount_unmount_with_operation_finish$FUNC
+    static final MethodHandle g_socket_get_local_address$MH = RuntimeHelper.downcallHandle(
+        "g_socket_get_local_address",
+        constants$761.g_socket_get_local_address$FUNC
     );
-    static final FunctionDescriptor g_mount_eject_with_operation$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_socket_get_remote_address$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_mount_eject_with_operation$MH = RuntimeHelper.downcallHandle(
-        "g_mount_eject_with_operation",
-        constants$761.g_mount_eject_with_operation$FUNC
+    static final MethodHandle g_socket_get_remote_address$MH = RuntimeHelper.downcallHandle(
+        "g_socket_get_remote_address",
+        constants$761.g_socket_get_remote_address$FUNC
     );
-    static final FunctionDescriptor g_mount_eject_with_operation_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_socket_set_blocking$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_socket_set_blocking$MH = RuntimeHelper.downcallHandle(
+        "g_socket_set_blocking",
+        constants$761.g_socket_set_blocking$FUNC
+    );
+    static final FunctionDescriptor g_socket_get_blocking$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_mount_eject_with_operation_finish$MH = RuntimeHelper.downcallHandle(
-        "g_mount_eject_with_operation_finish",
-        constants$761.g_mount_eject_with_operation_finish$FUNC
+    static final MethodHandle g_socket_get_blocking$MH = RuntimeHelper.downcallHandle(
+        "g_socket_get_blocking",
+        constants$761.g_socket_get_blocking$FUNC
     );
 }
 

@@ -7,68 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1122 {
+final class constants$1122 {
 
-    static final FunctionDescriptor pango_layout_get_caret_pos$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1122() {}
+    static final FunctionDescriptor gdk_screen_get_monitor_width_mm$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gdk_screen_get_monitor_width_mm$MH = RuntimeHelper.downcallHandle(
+        "gdk_screen_get_monitor_width_mm",
+        constants$1122.gdk_screen_get_monitor_width_mm$FUNC
+    );
+    static final FunctionDescriptor gdk_screen_get_monitor_height_mm$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle pango_layout_get_caret_pos$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_get_caret_pos",
-        constants$1122.pango_layout_get_caret_pos$FUNC
+    static final MethodHandle gdk_screen_get_monitor_height_mm$MH = RuntimeHelper.downcallHandle(
+        "gdk_screen_get_monitor_height_mm",
+        constants$1122.gdk_screen_get_monitor_height_mm$FUNC
     );
-    static final FunctionDescriptor pango_layout_move_cursor_visually$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gdk_screen_get_monitor_plug_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gdk_screen_get_monitor_plug_name$MH = RuntimeHelper.downcallHandle(
+        "gdk_screen_get_monitor_plug_name",
+        constants$1122.gdk_screen_get_monitor_plug_name$FUNC
+    );
+    static final FunctionDescriptor gdk_screen_get_monitor_scale_factor$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle pango_layout_move_cursor_visually$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_move_cursor_visually",
-        constants$1122.pango_layout_move_cursor_visually$FUNC
+    static final MethodHandle gdk_screen_get_monitor_scale_factor$MH = RuntimeHelper.downcallHandle(
+        "gdk_screen_get_monitor_scale_factor",
+        constants$1122.gdk_screen_get_monitor_scale_factor$FUNC
     );
-    static final FunctionDescriptor pango_layout_xy_to_index$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gdk_screen_get_default$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gdk_screen_get_default$MH = RuntimeHelper.downcallHandle(
+        "gdk_screen_get_default",
+        constants$1122.gdk_screen_get_default$FUNC
     );
-    static final MethodHandle pango_layout_xy_to_index$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_xy_to_index",
-        constants$1122.pango_layout_xy_to_index$FUNC
-    );
-    static final FunctionDescriptor pango_layout_get_extents$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_layout_get_extents$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_get_extents",
-        constants$1122.pango_layout_get_extents$FUNC
-    );
-    static final FunctionDescriptor pango_layout_get_pixel_extents$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gdk_screen_get_setting$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_layout_get_pixel_extents$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_get_pixel_extents",
-        constants$1122.pango_layout_get_pixel_extents$FUNC
-    );
-    static final FunctionDescriptor pango_layout_get_size$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_layout_get_size$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_get_size",
-        constants$1122.pango_layout_get_size$FUNC
+    static final MethodHandle gdk_screen_get_setting$MH = RuntimeHelper.downcallHandle(
+        "gdk_screen_get_setting",
+        constants$1122.gdk_screen_get_setting$FUNC
     );
 }
 

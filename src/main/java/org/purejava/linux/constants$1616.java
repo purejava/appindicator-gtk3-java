@@ -7,62 +7,49 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1616 {
+final class constants$1616 {
 
-    static final FunctionDescriptor gtk_drag_cancel$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1616() {}
+    static final FunctionDescriptor gtk_grid_set_baseline_row$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_grid_set_baseline_row$MH = RuntimeHelper.downcallHandle(
+        "gtk_grid_set_baseline_row",
+        constants$1616.gtk_grid_set_baseline_row$FUNC
+    );
+    static final FunctionDescriptor gtk_grid_get_baseline_row$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_drag_cancel$MH = RuntimeHelper.downcallHandle(
-        "gtk_drag_cancel",
-        constants$1616.gtk_drag_cancel$FUNC
+    static final MethodHandle gtk_grid_get_baseline_row$MH = RuntimeHelper.downcallHandle(
+        "gtk_grid_get_baseline_row",
+        constants$1616.gtk_grid_get_baseline_row$FUNC
     );
-    static final FunctionDescriptor gtk_drag_set_icon_widget$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor gtk_header_bar_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_header_bar_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_header_bar_get_type",
+        constants$1616.gtk_header_bar_get_type$FUNC
     );
-    static final MethodHandle gtk_drag_set_icon_widget$MH = RuntimeHelper.downcallHandle(
-        "gtk_drag_set_icon_widget",
-        constants$1616.gtk_drag_set_icon_widget$FUNC
+    static final FunctionDescriptor gtk_header_bar_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_header_bar_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_header_bar_new",
+        constants$1616.gtk_header_bar_new$FUNC
     );
-    static final FunctionDescriptor gtk_drag_set_icon_pixbuf$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_drag_set_icon_pixbuf$MH = RuntimeHelper.downcallHandle(
-        "gtk_drag_set_icon_pixbuf",
-        constants$1616.gtk_drag_set_icon_pixbuf$FUNC
-    );
-    static final FunctionDescriptor gtk_drag_set_icon_stock$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_drag_set_icon_stock$MH = RuntimeHelper.downcallHandle(
-        "gtk_drag_set_icon_stock",
-        constants$1616.gtk_drag_set_icon_stock$FUNC
-    );
-    static final FunctionDescriptor gtk_drag_set_icon_surface$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_header_bar_set_title$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_drag_set_icon_surface$MH = RuntimeHelper.downcallHandle(
-        "gtk_drag_set_icon_surface",
-        constants$1616.gtk_drag_set_icon_surface$FUNC
+    static final MethodHandle gtk_header_bar_set_title$MH = RuntimeHelper.downcallHandle(
+        "gtk_header_bar_set_title",
+        constants$1616.gtk_header_bar_set_title$FUNC
     );
-    static final FunctionDescriptor gtk_drag_set_icon_name$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor gtk_header_bar_get_title$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_drag_set_icon_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_drag_set_icon_name",
-        constants$1616.gtk_drag_set_icon_name$FUNC
+    static final MethodHandle gtk_header_bar_get_title$MH = RuntimeHelper.downcallHandle(
+        "gtk_header_bar_get_title",
+        constants$1616.gtk_header_bar_get_title$FUNC
     );
 }
 

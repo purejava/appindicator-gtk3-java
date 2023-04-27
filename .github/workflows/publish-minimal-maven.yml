@@ -17,8 +17,8 @@ jobs:
             ref: 'minimal'
       - uses: actions/setup-java@v3
         with:
-          distribution: 'temurin'
-          java-version: 19
+          distribution: 'zulu'
+          java-version: 20
           cache: 'maven'
           server-id: ossrh
           server-username: MAVEN_USERNAME

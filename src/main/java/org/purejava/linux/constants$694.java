@@ -7,61 +7,49 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$694 {
+final class constants$694 {
 
-    static final FunctionDescriptor g_file_info_set_attribute_byte_string$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$694() {}
+    static final FunctionDescriptor g_memory_output_stream_new_resizable$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle g_memory_output_stream_new_resizable$MH = RuntimeHelper.downcallHandle(
+        "g_memory_output_stream_new_resizable",
+        constants$694.g_memory_output_stream_new_resizable$FUNC
+    );
+    static final FunctionDescriptor g_memory_output_stream_get_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_file_info_set_attribute_byte_string$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_set_attribute_byte_string",
-        constants$694.g_file_info_set_attribute_byte_string$FUNC
+    static final MethodHandle g_memory_output_stream_get_data$MH = RuntimeHelper.downcallHandle(
+        "g_memory_output_stream_get_data",
+        constants$694.g_memory_output_stream_get_data$FUNC
     );
-    static final FunctionDescriptor g_file_info_set_attribute_boolean$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor g_memory_output_stream_get_size$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_file_info_set_attribute_boolean$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_set_attribute_boolean",
-        constants$694.g_file_info_set_attribute_boolean$FUNC
+    static final MethodHandle g_memory_output_stream_get_size$MH = RuntimeHelper.downcallHandle(
+        "g_memory_output_stream_get_size",
+        constants$694.g_memory_output_stream_get_size$FUNC
     );
-    static final FunctionDescriptor g_file_info_set_attribute_uint32$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor g_memory_output_stream_get_data_size$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_file_info_set_attribute_uint32$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_set_attribute_uint32",
-        constants$694.g_file_info_set_attribute_uint32$FUNC
+    static final MethodHandle g_memory_output_stream_get_data_size$MH = RuntimeHelper.downcallHandle(
+        "g_memory_output_stream_get_data_size",
+        constants$694.g_memory_output_stream_get_data_size$FUNC
     );
-    static final FunctionDescriptor g_file_info_set_attribute_int32$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor g_memory_output_stream_steal_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_file_info_set_attribute_int32$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_set_attribute_int32",
-        constants$694.g_file_info_set_attribute_int32$FUNC
+    static final MethodHandle g_memory_output_stream_steal_data$MH = RuntimeHelper.downcallHandle(
+        "g_memory_output_stream_steal_data",
+        constants$694.g_memory_output_stream_steal_data$FUNC
     );
-    static final FunctionDescriptor g_file_info_set_attribute_uint64$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final FunctionDescriptor g_memory_output_stream_steal_as_bytes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_file_info_set_attribute_uint64$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_set_attribute_uint64",
-        constants$694.g_file_info_set_attribute_uint64$FUNC
-    );
-    static final FunctionDescriptor g_file_info_set_attribute_int64$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_file_info_set_attribute_int64$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_set_attribute_int64",
-        constants$694.g_file_info_set_attribute_int64$FUNC
+    static final MethodHandle g_memory_output_stream_steal_as_bytes$MH = RuntimeHelper.downcallHandle(
+        "g_memory_output_stream_steal_as_bytes",
+        constants$694.g_memory_output_stream_steal_as_bytes$FUNC
     );
 }
 

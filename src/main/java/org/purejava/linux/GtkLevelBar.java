@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkLevelBar extends _GtkLevelBar {
+/**
+ * {@snippet :
+ * typedef struct _GtkLevelBar GtkLevelBar;
+ * }
+ */
+public final class GtkLevelBar extends _GtkLevelBar {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkLevelBar() {}
 }
 
 

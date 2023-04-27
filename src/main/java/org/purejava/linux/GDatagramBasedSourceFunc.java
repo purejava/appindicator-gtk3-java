@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * int (*GDatagramBasedSourceFunc)(struct _GDatagramBased* datagram_based,enum  condition,void* data);
+ * }
+ */
 public interface GDatagramBasedSourceFunc {
 
-    int apply(java.lang.foreign.MemoryAddress datagram_based, int condition, java.lang.foreign.MemoryAddress user_data);
-    static MemorySegment allocate(GDatagramBasedSourceFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GDatagramBasedSourceFunc.class, fi, constants$518.GDatagramBasedSourceFunc$FUNC, session);
+    int apply(java.lang.foreign.MemorySegment datagram_based, int condition, java.lang.foreign.MemorySegment data);
+    static MemorySegment allocate(GDatagramBasedSourceFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$471.GDatagramBasedSourceFunc_UP$MH, fi, constants$471.GDatagramBasedSourceFunc$FUNC, scope);
     }
-    static GDatagramBasedSourceFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _datagram_based, int _condition, java.lang.foreign.MemoryAddress _user_data) -> {
+    static GDatagramBasedSourceFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _datagram_based, int _condition, java.lang.foreign.MemorySegment _data) -> {
             try {
-                return (int)constants$518.GDatagramBasedSourceFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_datagram_based, _condition, (java.lang.foreign.Addressable)_user_data);
+                return (int)constants$471.GDatagramBasedSourceFunc_DOWN$MH.invokeExact(symbol, _datagram_based, _condition, _data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

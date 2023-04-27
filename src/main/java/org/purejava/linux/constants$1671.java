@@ -7,62 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1671 {
+final class constants$1671 {
 
-    static final FunctionDescriptor gtk_tree_view_get_level_indentation$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_get_level_indentation$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_level_indentation",
-        constants$1671.gtk_tree_view_get_level_indentation$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_set_tooltip_row$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1671() {}
+    static final FunctionDescriptor gtk_level_bar_remove_offset_value$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_tree_view_set_tooltip_row$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_set_tooltip_row",
-        constants$1671.gtk_tree_view_set_tooltip_row$FUNC
+    static final MethodHandle gtk_level_bar_remove_offset_value$MH = RuntimeHelper.downcallHandle(
+        "gtk_level_bar_remove_offset_value",
+        constants$1671.gtk_level_bar_remove_offset_value$FUNC
     );
-    static final FunctionDescriptor gtk_tree_view_set_tooltip_cell$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_level_bar_get_offset_value$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_tree_view_set_tooltip_cell$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_set_tooltip_cell",
-        constants$1671.gtk_tree_view_set_tooltip_cell$FUNC
+    static final MethodHandle gtk_level_bar_get_offset_value$MH = RuntimeHelper.downcallHandle(
+        "gtk_level_bar_get_offset_value",
+        constants$1671.gtk_level_bar_get_offset_value$FUNC
     );
-    static final FunctionDescriptor gtk_tree_view_get_tooltip_context$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_link_button_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_link_button_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_link_button_get_type",
+        constants$1671.gtk_link_button_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_link_button_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_link_button_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_link_button_new",
+        constants$1671.gtk_link_button_new$FUNC
+    );
+    static final FunctionDescriptor gtk_link_button_new_with_label$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_tree_view_get_tooltip_context$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_tooltip_context",
-        constants$1671.gtk_tree_view_get_tooltip_context$FUNC
+    static final MethodHandle gtk_link_button_new_with_label$MH = RuntimeHelper.downcallHandle(
+        "gtk_link_button_new_with_label",
+        constants$1671.gtk_link_button_new_with_label$FUNC
     );
-    static final FunctionDescriptor gtk_tree_view_set_tooltip_column$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_set_tooltip_column$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_set_tooltip_column",
-        constants$1671.gtk_tree_view_set_tooltip_column$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_get_tooltip_column$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_link_button_get_uri$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_tree_view_get_tooltip_column$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_tooltip_column",
-        constants$1671.gtk_tree_view_get_tooltip_column$FUNC
+    static final MethodHandle gtk_link_button_get_uri$MH = RuntimeHelper.downcallHandle(
+        "gtk_link_button_get_uri",
+        constants$1671.gtk_link_button_get_uri$FUNC
     );
 }
 

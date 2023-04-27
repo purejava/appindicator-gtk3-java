@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GTcpWrapperConnectionClass extends _GTcpWrapperConnectionClass {
+/**
+ * {@snippet :
+ * typedef struct _GTcpWrapperConnectionClass GTcpWrapperConnectionClass;
+ * }
+ */
+public final class GTcpWrapperConnectionClass extends _GTcpWrapperConnectionClass {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GTcpWrapperConnectionClass() {}
 }
 
 

@@ -7,49 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$910 {
+final class constants$910 {
 
-    static final FunctionDescriptor glib_listautoptr_cleanup_GDBusProxy$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$910() {}
+    static final FunctionDescriptor pango_font_description_get_gravity$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GDBusProxy$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GDBusProxy",
-        constants$910.glib_listautoptr_cleanup_GDBusProxy$FUNC
+    static final MethodHandle pango_font_description_get_gravity$MH = RuntimeHelper.downcallHandle(
+        "pango_font_description_get_gravity",
+        constants$910.pango_font_description_get_gravity$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GDBusProxy$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_font_description_set_variations_static$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GDBusProxy$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GDBusProxy",
-        constants$910.glib_slistautoptr_cleanup_GDBusProxy$FUNC
+    static final MethodHandle pango_font_description_set_variations_static$MH = RuntimeHelper.downcallHandle(
+        "pango_font_description_set_variations_static",
+        constants$910.pango_font_description_set_variations_static$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GDBusProxy$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_font_description_set_variations$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GDBusProxy$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GDBusProxy",
-        constants$910.glib_queueautoptr_cleanup_GDBusProxy$FUNC
+    static final MethodHandle pango_font_description_set_variations$MH = RuntimeHelper.downcallHandle(
+        "pango_font_description_set_variations",
+        constants$910.pango_font_description_set_variations$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GDBusServer$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_font_description_get_variations$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GDBusServer$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GDBusServer",
-        constants$910.glib_autoptr_clear_GDBusServer$FUNC
+    static final MethodHandle pango_font_description_get_variations$MH = RuntimeHelper.downcallHandle(
+        "pango_font_description_get_variations",
+        constants$910.pango_font_description_get_variations$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GDBusServer$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_font_description_get_set_fields$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GDBusServer$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GDBusServer",
-        constants$910.glib_autoptr_cleanup_GDBusServer$FUNC
+    static final MethodHandle pango_font_description_get_set_fields$MH = RuntimeHelper.downcallHandle(
+        "pango_font_description_get_set_fields",
+        constants$910.pango_font_description_get_set_fields$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GDBusServer$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor pango_font_description_unset_fields$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GDBusServer$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GDBusServer",
-        constants$910.glib_listautoptr_cleanup_GDBusServer$FUNC
+    static final MethodHandle pango_font_description_unset_fields$MH = RuntimeHelper.downcallHandle(
+        "pango_font_description_unset_fields",
+        constants$910.pango_font_description_unset_fields$FUNC
     );
 }
 

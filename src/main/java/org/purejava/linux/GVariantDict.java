@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GVariantDict extends _GVariantDict {
+/**
+ * {@snippet :
+ * typedef struct _GVariantDict GVariantDict;
+ * }
+ */
+public final class GVariantDict extends _GVariantDict {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GVariantDict() {}
 }
 
 

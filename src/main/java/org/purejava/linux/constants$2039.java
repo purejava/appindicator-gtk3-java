@@ -7,73 +7,16 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$2039 {
+final class constants$2039 {
 
-    static final FunctionDescriptor gtk_text_view_get_iter_at_location$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_text_view_get_iter_at_location$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_get_iter_at_location",
-        constants$2039.gtk_text_view_get_iter_at_location$FUNC
-    );
-    static final FunctionDescriptor gtk_text_view_get_iter_at_position$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_text_view_get_iter_at_position$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_get_iter_at_position",
-        constants$2039.gtk_text_view_get_iter_at_position$FUNC
-    );
-    static final FunctionDescriptor gtk_text_view_get_line_yrange$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_view_get_line_yrange$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_get_line_yrange",
-        constants$2039.gtk_text_view_get_line_yrange$FUNC
-    );
-    static final FunctionDescriptor gtk_text_view_get_line_at_y$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_view_get_line_at_y$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_get_line_at_y",
-        constants$2039.gtk_text_view_get_line_at_y$FUNC
-    );
-    static final FunctionDescriptor gtk_text_view_buffer_to_window_coords$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_view_buffer_to_window_coords$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_buffer_to_window_coords",
-        constants$2039.gtk_text_view_buffer_to_window_coords$FUNC
-    );
-    static final FunctionDescriptor gtk_text_view_window_to_buffer_coords$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_view_window_to_buffer_coords$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_window_to_buffer_coords",
-        constants$2039.gtk_text_view_window_to_buffer_coords$FUNC
-    );
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$2039() {}
+    static final MemorySegment GTK_STYLE_CLASS_LEVEL_BAR$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("level-bar");
+    static final MemorySegment GTK_STYLE_CLASS_CURSOR_HANDLE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("cursor-handle");
+    static final MemorySegment GTK_STYLE_CLASS_INSERTION_CURSOR$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("insertion-cursor");
+    static final MemorySegment GTK_STYLE_CLASS_TITLEBAR$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("titlebar");
+    static final MemorySegment GTK_STYLE_CLASS_TITLE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("title");
+    static final MemorySegment GTK_STYLE_CLASS_SUBTITLE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("subtitle");
 }
 
 

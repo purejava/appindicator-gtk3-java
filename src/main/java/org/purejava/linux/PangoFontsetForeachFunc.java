@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * int (*PangoFontsetForeachFunc)(struct _PangoFontset* fontset,struct _PangoFont* font,void* user_data);
+ * }
+ */
 public interface PangoFontsetForeachFunc {
 
-    int apply(java.lang.foreign.MemoryAddress fontset, java.lang.foreign.MemoryAddress font, java.lang.foreign.MemoryAddress user_data);
-    static MemorySegment allocate(PangoFontsetForeachFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(PangoFontsetForeachFunc.class, fi, constants$1091.PangoFontsetForeachFunc$FUNC, session);
+    int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
+    static MemorySegment allocate(PangoFontsetForeachFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$935.PangoFontsetForeachFunc_UP$MH, fi, constants$935.PangoFontsetForeachFunc$FUNC, scope);
     }
-    static PangoFontsetForeachFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _fontset, java.lang.foreign.MemoryAddress _font, java.lang.foreign.MemoryAddress _user_data) -> {
+    static PangoFontsetForeachFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _a, java.lang.foreign.MemorySegment _b, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                return (int)constants$1091.PangoFontsetForeachFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_fontset, (java.lang.foreign.Addressable)_font, (java.lang.foreign.Addressable)_user_data);
+                return (int)constants$935.PangoFontsetForeachFunc_DOWN$MH.invokeExact(symbol, _a, _b, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

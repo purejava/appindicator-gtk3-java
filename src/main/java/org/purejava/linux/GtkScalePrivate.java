@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkScalePrivate {
+/**
+ * {@snippet :
+ * typedef struct _GtkScalePrivate GtkScalePrivate;
+ * }
+ */
+public final class GtkScalePrivate {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkScalePrivate() {}
 }
 
 

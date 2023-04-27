@@ -7,44 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1821 {
+final class constants$1821 {
 
-    static final FunctionDescriptor gtk_icon_source_set_size$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1821() {}
+    static final FunctionDescriptor gtk_statusbar_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_statusbar_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_statusbar_get_type",
+        constants$1821.gtk_statusbar_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_statusbar_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_statusbar_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_statusbar_new",
+        constants$1821.gtk_statusbar_new$FUNC
+    );
+    static final FunctionDescriptor gtk_statusbar_get_context_id$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_statusbar_get_context_id$MH = RuntimeHelper.downcallHandle(
+        "gtk_statusbar_get_context_id",
+        constants$1821.gtk_statusbar_get_context_id$FUNC
+    );
+    static final FunctionDescriptor gtk_statusbar_push$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_statusbar_push$MH = RuntimeHelper.downcallHandle(
+        "gtk_statusbar_push",
+        constants$1821.gtk_statusbar_push$FUNC
+    );
+    static final FunctionDescriptor gtk_statusbar_pop$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_icon_source_set_size$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_source_set_size",
-        constants$1821.gtk_icon_source_set_size$FUNC
+    static final MethodHandle gtk_statusbar_pop$MH = RuntimeHelper.downcallHandle(
+        "gtk_statusbar_pop",
+        constants$1821.gtk_statusbar_pop$FUNC
     );
-    static final FunctionDescriptor gtk_icon_source_get_direction$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_source_get_direction$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_source_get_direction",
-        constants$1821.gtk_icon_source_get_direction$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_source_get_state$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_source_get_state$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_source_get_state",
-        constants$1821.gtk_icon_source_get_state$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_source_get_size$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_source_get_size$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_source_get_size",
-        constants$1821.gtk_icon_source_get_size$FUNC
-    );
-    static final FunctionDescriptor GtkStylePropertyParser$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_statusbar_remove$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle GtkStylePropertyParser$MH = RuntimeHelper.downcallHandle(
-        constants$1821.GtkStylePropertyParser$FUNC
+    static final MethodHandle gtk_statusbar_remove$MH = RuntimeHelper.downcallHandle(
+        "gtk_statusbar_remove",
+        constants$1821.gtk_statusbar_remove$FUNC
     );
 }
 

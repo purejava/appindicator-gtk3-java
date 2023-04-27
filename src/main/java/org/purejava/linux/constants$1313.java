@@ -7,43 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1313 {
+final class constants$1313 {
 
-    static final FunctionDescriptor pango_cairo_font_map_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_cairo_font_map_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_cairo_font_map_get_type",
-        constants$1313.pango_cairo_font_map_get_type$FUNC
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1313() {}
+    static final FunctionDescriptor gtk_window_fullscreen$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor pango_cairo_font_map_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle pango_cairo_font_map_new$MH = RuntimeHelper.downcallHandle(
-        "pango_cairo_font_map_new",
-        constants$1313.pango_cairo_font_map_new$FUNC
+    static final MethodHandle gtk_window_fullscreen$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_fullscreen",
+        constants$1313.gtk_window_fullscreen$FUNC
     );
-    static final FunctionDescriptor pango_cairo_font_map_new_for_font_type$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_window_unfullscreen$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_window_unfullscreen$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_unfullscreen",
+        constants$1313.gtk_window_unfullscreen$FUNC
+    );
+    static final FunctionDescriptor gtk_window_fullscreen_on_monitor$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle pango_cairo_font_map_new_for_font_type$MH = RuntimeHelper.downcallHandle(
-        "pango_cairo_font_map_new_for_font_type",
-        constants$1313.pango_cairo_font_map_new_for_font_type$FUNC
+    static final MethodHandle gtk_window_fullscreen_on_monitor$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_fullscreen_on_monitor",
+        constants$1313.gtk_window_fullscreen_on_monitor$FUNC
     );
-    static final FunctionDescriptor pango_cairo_font_map_get_default$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle pango_cairo_font_map_get_default$MH = RuntimeHelper.downcallHandle(
-        "pango_cairo_font_map_get_default",
-        constants$1313.pango_cairo_font_map_get_default$FUNC
-    );
-    static final FunctionDescriptor pango_cairo_font_map_set_default$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_window_close$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_cairo_font_map_set_default$MH = RuntimeHelper.downcallHandle(
-        "pango_cairo_font_map_set_default",
-        constants$1313.pango_cairo_font_map_set_default$FUNC
+    static final MethodHandle gtk_window_close$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_close",
+        constants$1313.gtk_window_close$FUNC
     );
-    static final FunctionDescriptor pango_cairo_font_map_get_font_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gtk_window_set_keep_above$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle pango_cairo_font_map_get_font_type$MH = RuntimeHelper.downcallHandle(
-        "pango_cairo_font_map_get_font_type",
-        constants$1313.pango_cairo_font_map_get_font_type$FUNC
+    static final MethodHandle gtk_window_set_keep_above$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_set_keep_above",
+        constants$1313.gtk_window_set_keep_above$FUNC
+    );
+    static final FunctionDescriptor gtk_window_set_keep_below$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_window_set_keep_below$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_set_keep_below",
+        constants$1313.gtk_window_set_keep_below$FUNC
     );
 }
 

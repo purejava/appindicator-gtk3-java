@@ -7,48 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1898 {
+final class constants$1898 {
 
-    static final FunctionDescriptor gtk_tool_item_rebuild_menu$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tool_item_rebuild_menu$MH = RuntimeHelper.downcallHandle(
-        "gtk_tool_item_rebuild_menu",
-        constants$1898.gtk_tool_item_rebuild_menu$FUNC
-    );
-    static final FunctionDescriptor gtk_tool_item_toolbar_reconfigured$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tool_item_toolbar_reconfigured$MH = RuntimeHelper.downcallHandle(
-        "gtk_tool_item_toolbar_reconfigured",
-        constants$1898.gtk_tool_item_toolbar_reconfigured$FUNC
-    );
-    static final FunctionDescriptor _gtk_tool_item_create_menu_proxy$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle _gtk_tool_item_create_menu_proxy$MH = RuntimeHelper.downcallHandle(
-        "_gtk_tool_item_create_menu_proxy",
-        constants$1898._gtk_tool_item_create_menu_proxy$FUNC
-    );
-    static final FunctionDescriptor gtk_tool_button_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_tool_button_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_tool_button_get_type",
-        constants$1898.gtk_tool_button_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_tool_button_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1898() {}
+    static final FunctionDescriptor gtk_viewport_set_hadjustment$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_tool_button_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_tool_button_new",
-        constants$1898.gtk_tool_button_new$FUNC
+    static final MethodHandle gtk_viewport_set_hadjustment$MH = RuntimeHelper.downcallHandle(
+        "gtk_viewport_set_hadjustment",
+        constants$1898.gtk_viewport_set_hadjustment$FUNC
     );
-    static final FunctionDescriptor gtk_tool_button_new_from_stock$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_viewport_set_vadjustment$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_tool_button_new_from_stock$MH = RuntimeHelper.downcallHandle(
-        "gtk_tool_button_new_from_stock",
-        constants$1898.gtk_tool_button_new_from_stock$FUNC
+    static final MethodHandle gtk_viewport_set_vadjustment$MH = RuntimeHelper.downcallHandle(
+        "gtk_viewport_set_vadjustment",
+        constants$1898.gtk_viewport_set_vadjustment$FUNC
+    );
+    static final FunctionDescriptor gtk_viewport_set_shadow_type$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_viewport_set_shadow_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_viewport_set_shadow_type",
+        constants$1898.gtk_viewport_set_shadow_type$FUNC
+    );
+    static final FunctionDescriptor gtk_viewport_get_shadow_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_viewport_get_shadow_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_viewport_get_shadow_type",
+        constants$1898.gtk_viewport_get_shadow_type$FUNC
+    );
+    static final FunctionDescriptor gtk_viewport_get_bin_window$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_viewport_get_bin_window$MH = RuntimeHelper.downcallHandle(
+        "gtk_viewport_get_bin_window",
+        constants$1898.gtk_viewport_get_bin_window$FUNC
+    );
+    static final FunctionDescriptor gtk_viewport_get_view_window$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_viewport_get_view_window$MH = RuntimeHelper.downcallHandle(
+        "gtk_viewport_get_view_window",
+        constants$1898.gtk_viewport_get_view_window$FUNC
     );
 }
 

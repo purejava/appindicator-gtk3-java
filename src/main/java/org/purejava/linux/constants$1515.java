@@ -7,51 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1515 {
+final class constants$1515 {
 
-    static final FunctionDescriptor gtk_menu_shell_select_first$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1515() {}
+    static final FunctionDescriptor gtk_calendar_select_day$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_menu_shell_select_first$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_shell_select_first",
-        constants$1515.gtk_menu_shell_select_first$FUNC
+    static final MethodHandle gtk_calendar_select_day$MH = RuntimeHelper.downcallHandle(
+        "gtk_calendar_select_day",
+        constants$1515.gtk_calendar_select_day$FUNC
     );
-    static final FunctionDescriptor gtk_menu_shell_cancel$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_menu_shell_cancel$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_shell_cancel",
-        constants$1515.gtk_menu_shell_cancel$FUNC
-    );
-    static final FunctionDescriptor gtk_menu_shell_get_take_focus$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_menu_shell_get_take_focus$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_shell_get_take_focus",
-        constants$1515.gtk_menu_shell_get_take_focus$FUNC
-    );
-    static final FunctionDescriptor gtk_menu_shell_set_take_focus$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_calendar_mark_day$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_menu_shell_set_take_focus$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_shell_set_take_focus",
-        constants$1515.gtk_menu_shell_set_take_focus$FUNC
+    static final MethodHandle gtk_calendar_mark_day$MH = RuntimeHelper.downcallHandle(
+        "gtk_calendar_mark_day",
+        constants$1515.gtk_calendar_mark_day$FUNC
     );
-    static final FunctionDescriptor gtk_menu_shell_get_selected_item$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_calendar_unmark_day$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_calendar_unmark_day$MH = RuntimeHelper.downcallHandle(
+        "gtk_calendar_unmark_day",
+        constants$1515.gtk_calendar_unmark_day$FUNC
+    );
+    static final FunctionDescriptor gtk_calendar_clear_marks$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_menu_shell_get_selected_item$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_shell_get_selected_item",
-        constants$1515.gtk_menu_shell_get_selected_item$FUNC
+    static final MethodHandle gtk_calendar_clear_marks$MH = RuntimeHelper.downcallHandle(
+        "gtk_calendar_clear_marks",
+        constants$1515.gtk_calendar_clear_marks$FUNC
     );
-    static final FunctionDescriptor gtk_menu_shell_get_parent_shell$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_calendar_set_display_options$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_calendar_set_display_options$MH = RuntimeHelper.downcallHandle(
+        "gtk_calendar_set_display_options",
+        constants$1515.gtk_calendar_set_display_options$FUNC
+    );
+    static final FunctionDescriptor gtk_calendar_get_display_options$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_menu_shell_get_parent_shell$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_shell_get_parent_shell",
-        constants$1515.gtk_menu_shell_get_parent_shell$FUNC
+    static final MethodHandle gtk_calendar_get_display_options$MH = RuntimeHelper.downcallHandle(
+        "gtk_calendar_get_display_options",
+        constants$1515.gtk_calendar_get_display_options$FUNC
     );
 }
 

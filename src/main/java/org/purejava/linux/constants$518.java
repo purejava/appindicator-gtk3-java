@@ -7,29 +7,46 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$518 {
+final class constants$518 {
 
-    static final FunctionDescriptor GDatagramBasedSourceFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$518() {}
+    static final FunctionDescriptor g_content_types_get_registered$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle g_content_types_get_registered$MH = RuntimeHelper.downcallHandle(
+        "g_content_types_get_registered",
+        constants$518.g_content_types_get_registered$FUNC
+    );
+    static final FunctionDescriptor g_content_type_get_mime_dirs$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle g_content_type_get_mime_dirs$MH = RuntimeHelper.downcallHandle(
+        "g_content_type_get_mime_dirs",
+        constants$518.g_content_type_get_mime_dirs$FUNC
+    );
+    static final FunctionDescriptor g_content_type_set_mime_dirs$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GDatagramBasedSourceFunc$MH = RuntimeHelper.downcallHandle(
-        constants$518.GDatagramBasedSourceFunc$FUNC
+    static final MethodHandle g_content_type_set_mime_dirs$MH = RuntimeHelper.downcallHandle(
+        "g_content_type_set_mime_dirs",
+        constants$518.g_content_type_set_mime_dirs$FUNC
     );
-    static final FunctionDescriptor GCancellableSourceFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_converter_input_stream_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_converter_input_stream_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_converter_input_stream_get_type",
+        constants$518.g_converter_input_stream_get_type$FUNC
+    );
+    static final FunctionDescriptor g_converter_input_stream_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GCancellableSourceFunc$MH = RuntimeHelper.downcallHandle(
-        constants$518.GCancellableSourceFunc$FUNC
+    static final MethodHandle g_converter_input_stream_new$MH = RuntimeHelper.downcallHandle(
+        "g_converter_input_stream_new",
+        constants$518.g_converter_input_stream_new$FUNC
     );
-    static final FunctionDescriptor GPollableSourceFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_converter_input_stream_get_converter$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GPollableSourceFunc$MH = RuntimeHelper.downcallHandle(
-        constants$518.GPollableSourceFunc$FUNC
+    static final MethodHandle g_converter_input_stream_get_converter$MH = RuntimeHelper.downcallHandle(
+        "g_converter_input_stream_get_converter",
+        constants$518.g_converter_input_stream_get_converter$FUNC
     );
 }
 

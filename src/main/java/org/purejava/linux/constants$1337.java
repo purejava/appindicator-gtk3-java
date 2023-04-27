@@ -7,53 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1337 {
+final class constants$1337 {
 
-    static final FunctionDescriptor gdk_keymap_map_virtual_modifiers$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1337() {}
+    static final FunctionDescriptor gtk_label_get_text$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_label_get_text$MH = RuntimeHelper.downcallHandle(
+        "gtk_label_get_text",
+        constants$1337.gtk_label_get_text$FUNC
+    );
+    static final FunctionDescriptor gtk_label_set_attributes$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_keymap_map_virtual_modifiers$MH = RuntimeHelper.downcallHandle(
-        "gdk_keymap_map_virtual_modifiers",
-        constants$1337.gdk_keymap_map_virtual_modifiers$FUNC
+    static final MethodHandle gtk_label_set_attributes$MH = RuntimeHelper.downcallHandle(
+        "gtk_label_set_attributes",
+        constants$1337.gtk_label_set_attributes$FUNC
     );
-    static final FunctionDescriptor gdk_keymap_get_modifier_mask$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_keymap_get_modifier_mask$MH = RuntimeHelper.downcallHandle(
-        "gdk_keymap_get_modifier_mask",
-        constants$1337.gdk_keymap_get_modifier_mask$FUNC
-    );
-    static final FunctionDescriptor gdk_keyval_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_keyval_name$MH = RuntimeHelper.downcallHandle(
-        "gdk_keyval_name",
-        constants$1337.gdk_keyval_name$FUNC
-    );
-    static final FunctionDescriptor gdk_keyval_from_name$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_label_get_attributes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_keyval_from_name$MH = RuntimeHelper.downcallHandle(
-        "gdk_keyval_from_name",
-        constants$1337.gdk_keyval_from_name$FUNC
+    static final MethodHandle gtk_label_get_attributes$MH = RuntimeHelper.downcallHandle(
+        "gtk_label_get_attributes",
+        constants$1337.gtk_label_get_attributes$FUNC
     );
-    static final FunctionDescriptor gdk_keyval_convert_case$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_label_set_label$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_keyval_convert_case$MH = RuntimeHelper.downcallHandle(
-        "gdk_keyval_convert_case",
-        constants$1337.gdk_keyval_convert_case$FUNC
+    static final MethodHandle gtk_label_set_label$MH = RuntimeHelper.downcallHandle(
+        "gtk_label_set_label",
+        constants$1337.gtk_label_set_label$FUNC
     );
-    static final FunctionDescriptor gdk_keyval_to_upper$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor gtk_label_get_label$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_keyval_to_upper$MH = RuntimeHelper.downcallHandle(
-        "gdk_keyval_to_upper",
-        constants$1337.gdk_keyval_to_upper$FUNC
+    static final MethodHandle gtk_label_get_label$MH = RuntimeHelper.downcallHandle(
+        "gtk_label_get_label",
+        constants$1337.gtk_label_get_label$FUNC
+    );
+    static final FunctionDescriptor gtk_label_set_markup$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_label_set_markup$MH = RuntimeHelper.downcallHandle(
+        "gtk_label_set_markup",
+        constants$1337.gtk_label_set_markup$FUNC
     );
 }
 

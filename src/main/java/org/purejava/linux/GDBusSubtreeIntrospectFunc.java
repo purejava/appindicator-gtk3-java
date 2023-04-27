@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GDBusInterfaceInfo** (*GDBusSubtreeIntrospectFunc)(struct _GDBusConnection* connection,char* sender,char* object_path,char* node,void* user_data);
+ * }
+ */
 public interface GDBusSubtreeIntrospectFunc {
 
-    java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress connection, java.lang.foreign.MemoryAddress sender, java.lang.foreign.MemoryAddress object_path, java.lang.foreign.MemoryAddress node, java.lang.foreign.MemoryAddress user_data);
-    static MemorySegment allocate(GDBusSubtreeIntrospectFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GDBusSubtreeIntrospectFunc.class, fi, constants$603.GDBusSubtreeIntrospectFunc$FUNC, session);
+    java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment connection, java.lang.foreign.MemorySegment sender, java.lang.foreign.MemorySegment object_path, java.lang.foreign.MemorySegment node, java.lang.foreign.MemorySegment user_data);
+    static MemorySegment allocate(GDBusSubtreeIntrospectFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$557.GDBusSubtreeIntrospectFunc_UP$MH, fi, constants$557.GDBusSubtreeIntrospectFunc$FUNC, scope);
     }
-    static GDBusSubtreeIntrospectFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _connection, java.lang.foreign.MemoryAddress _sender, java.lang.foreign.MemoryAddress _object_path, java.lang.foreign.MemoryAddress _node, java.lang.foreign.MemoryAddress _user_data) -> {
+    static GDBusSubtreeIntrospectFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _connection, java.lang.foreign.MemorySegment _sender, java.lang.foreign.MemorySegment _object_path, java.lang.foreign.MemorySegment _node, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)constants$603.GDBusSubtreeIntrospectFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_connection, (java.lang.foreign.Addressable)_sender, (java.lang.foreign.Addressable)_object_path, (java.lang.foreign.Addressable)_node, (java.lang.foreign.Addressable)_user_data);
+                return (java.lang.foreign.MemorySegment)constants$557.GDBusSubtreeIntrospectFunc_DOWN$MH.invokeExact(symbol, _connection, _sender, _object_path, _node, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

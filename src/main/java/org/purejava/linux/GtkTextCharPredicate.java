@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * int (*GtkTextCharPredicate)(unsigned int ch,void* user_data);
+ * }
+ */
 public interface GtkTextCharPredicate {
 
-    int apply(int ch, java.lang.foreign.MemoryAddress user_data);
-    static MemorySegment allocate(GtkTextCharPredicate fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GtkTextCharPredicate.class, fi, constants$1604.GtkTextCharPredicate$FUNC, session);
+    int apply(int ch, java.lang.foreign.MemorySegment user_data);
+    static MemorySegment allocate(GtkTextCharPredicate fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$1414.GtkTextCharPredicate_UP$MH, fi, constants$1414.GtkTextCharPredicate$FUNC, scope);
     }
-    static GtkTextCharPredicate ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (int _ch, java.lang.foreign.MemoryAddress _user_data) -> {
+    static GtkTextCharPredicate ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (int _ch, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                return (int)constants$1604.GtkTextCharPredicate$MH.invokeExact((Addressable)symbol, _ch, (java.lang.foreign.Addressable)_user_data);
+                return (int)constants$1414.GtkTextCharPredicate_DOWN$MH.invokeExact(symbol, _ch, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

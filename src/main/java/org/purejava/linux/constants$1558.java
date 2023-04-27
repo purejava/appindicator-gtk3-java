@@ -7,52 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1558 {
+final class constants$1558 {
 
-    static final FunctionDescriptor gtk_tree_model_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_tree_model_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_model_get_type",
-        constants$1558.gtk_tree_model_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_model_get_flags$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1558() {}
+    static final FunctionDescriptor gtk_drag_source_add_image_targets$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_tree_model_get_flags$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_model_get_flags",
-        constants$1558.gtk_tree_model_get_flags$FUNC
+    static final MethodHandle gtk_drag_source_add_image_targets$MH = RuntimeHelper.downcallHandle(
+        "gtk_drag_source_add_image_targets",
+        constants$1558.gtk_drag_source_add_image_targets$FUNC
     );
-    static final FunctionDescriptor gtk_tree_model_get_n_columns$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_drag_source_add_uri_targets$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_tree_model_get_n_columns$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_model_get_n_columns",
-        constants$1558.gtk_tree_model_get_n_columns$FUNC
+    static final MethodHandle gtk_drag_source_add_uri_targets$MH = RuntimeHelper.downcallHandle(
+        "gtk_drag_source_add_uri_targets",
+        constants$1558.gtk_drag_source_add_uri_targets$FUNC
     );
-    static final FunctionDescriptor gtk_tree_model_get_column_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_tree_model_get_column_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_model_get_column_type",
-        constants$1558.gtk_tree_model_get_column_type$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_model_get_iter$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_drag_source_set_icon_pixbuf$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_tree_model_get_iter$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_model_get_iter",
-        constants$1558.gtk_tree_model_get_iter$FUNC
+    static final MethodHandle gtk_drag_source_set_icon_pixbuf$MH = RuntimeHelper.downcallHandle(
+        "gtk_drag_source_set_icon_pixbuf",
+        constants$1558.gtk_drag_source_set_icon_pixbuf$FUNC
     );
-    static final FunctionDescriptor gtk_tree_model_get_iter_from_string$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_drag_source_set_icon_stock$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_tree_model_get_iter_from_string$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_model_get_iter_from_string",
-        constants$1558.gtk_tree_model_get_iter_from_string$FUNC
+    static final MethodHandle gtk_drag_source_set_icon_stock$MH = RuntimeHelper.downcallHandle(
+        "gtk_drag_source_set_icon_stock",
+        constants$1558.gtk_drag_source_set_icon_stock$FUNC
+    );
+    static final FunctionDescriptor gtk_drag_source_set_icon_name$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_drag_source_set_icon_name$MH = RuntimeHelper.downcallHandle(
+        "gtk_drag_source_set_icon_name",
+        constants$1558.gtk_drag_source_set_icon_name$FUNC
+    );
+    static final FunctionDescriptor gtk_drag_source_set_icon_gicon$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_drag_source_set_icon_gicon$MH = RuntimeHelper.downcallHandle(
+        "gtk_drag_source_set_icon_gicon",
+        constants$1558.gtk_drag_source_set_icon_gicon$FUNC
     );
 }
 

@@ -7,58 +7,63 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$471 {
+final class constants$471 {
 
-    static final FunctionDescriptor g_object_class_install_property$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$471() {}
+    static final FunctionDescriptor GSocketSourceFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_object_class_install_property$MH = RuntimeHelper.downcallHandle(
-        "g_object_class_install_property",
-        constants$471.g_object_class_install_property$FUNC
-    );
-    static final FunctionDescriptor g_object_class_find_property$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_object_class_find_property$MH = RuntimeHelper.downcallHandle(
-        "g_object_class_find_property",
-        constants$471.g_object_class_find_property$FUNC
-    );
-    static final FunctionDescriptor g_object_class_list_properties$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_object_class_list_properties$MH = RuntimeHelper.downcallHandle(
-        "g_object_class_list_properties",
-        constants$471.g_object_class_list_properties$FUNC
-    );
-    static final FunctionDescriptor g_object_class_override_property$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor GSocketSourceFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_object_class_override_property$MH = RuntimeHelper.downcallHandle(
-        "g_object_class_override_property",
-        constants$471.g_object_class_override_property$FUNC
-    );
-    static final FunctionDescriptor g_object_class_install_properties$FUNC = FunctionDescriptor.ofVoid(
+    static final MethodHandle GSocketSourceFunc_UP$MH = RuntimeHelper.upcallHandle(GSocketSourceFunc.class, "apply", constants$471.GSocketSourceFunc_UP$FUNC);
+    static final FunctionDescriptor GSocketSourceFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_object_class_install_properties$MH = RuntimeHelper.downcallHandle(
-        "g_object_class_install_properties",
-        constants$471.g_object_class_install_properties$FUNC
+    static final MethodHandle GSocketSourceFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$471.GSocketSourceFunc_DOWN$FUNC
     );
-    static final FunctionDescriptor g_object_interface_install_property$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor GDatagramBasedSourceFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final FunctionDescriptor GDatagramBasedSourceFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GDatagramBasedSourceFunc_UP$MH = RuntimeHelper.upcallHandle(GDatagramBasedSourceFunc.class, "apply", constants$471.GDatagramBasedSourceFunc_UP$FUNC);
+    static final FunctionDescriptor GDatagramBasedSourceFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GDatagramBasedSourceFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$471.GDatagramBasedSourceFunc_DOWN$FUNC
+    );
+    static final FunctionDescriptor GCancellableSourceFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_object_interface_install_property$MH = RuntimeHelper.downcallHandle(
-        "g_object_interface_install_property",
-        constants$471.g_object_interface_install_property$FUNC
+    static final FunctionDescriptor GCancellableSourceFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GCancellableSourceFunc_UP$MH = RuntimeHelper.upcallHandle(GCancellableSourceFunc.class, "apply", constants$471.GCancellableSourceFunc_UP$FUNC);
+    static final FunctionDescriptor GCancellableSourceFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GCancellableSourceFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$471.GCancellableSourceFunc_DOWN$FUNC
     );
 }
 

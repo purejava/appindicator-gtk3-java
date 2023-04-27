@@ -7,49 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$395 {
+final class constants$395 {
 
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GNode$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$395() {}
+    static final FunctionDescriptor g_value_unset$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GNode$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GNode",
-        constants$395.glib_slistautoptr_cleanup_GNode$FUNC
+    static final MethodHandle g_value_unset$MH = RuntimeHelper.downcallHandle(
+        "g_value_unset",
+        constants$395.g_value_unset$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GNode$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_value_set_instance$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GNode$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GNode",
-        constants$395.glib_queueautoptr_cleanup_GNode$FUNC
+    static final MethodHandle g_value_set_instance$MH = RuntimeHelper.downcallHandle(
+        "g_value_set_instance",
+        constants$395.g_value_set_instance$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GOptionContext$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_value_init_from_instance$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GOptionContext$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GOptionContext",
-        constants$395.glib_autoptr_clear_GOptionContext$FUNC
+    static final MethodHandle g_value_init_from_instance$MH = RuntimeHelper.downcallHandle(
+        "g_value_init_from_instance",
+        constants$395.g_value_init_from_instance$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GOptionContext$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_value_fits_pointer$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GOptionContext$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GOptionContext",
-        constants$395.glib_autoptr_cleanup_GOptionContext$FUNC
+    static final MethodHandle g_value_fits_pointer$MH = RuntimeHelper.downcallHandle(
+        "g_value_fits_pointer",
+        constants$395.g_value_fits_pointer$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GOptionContext$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_value_peek_pointer$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GOptionContext$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GOptionContext",
-        constants$395.glib_listautoptr_cleanup_GOptionContext$FUNC
+    static final MethodHandle g_value_peek_pointer$MH = RuntimeHelper.downcallHandle(
+        "g_value_peek_pointer",
+        constants$395.g_value_peek_pointer$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GOptionContext$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_value_type_compatible$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GOptionContext$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GOptionContext",
-        constants$395.glib_slistautoptr_cleanup_GOptionContext$FUNC
+    static final MethodHandle g_value_type_compatible$MH = RuntimeHelper.downcallHandle(
+        "g_value_type_compatible",
+        constants$395.g_value_type_compatible$FUNC
     );
 }
 

@@ -7,53 +7,16 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1998 {
+final class constants$1998 {
 
-    static final FunctionDescriptor gtk_scrolled_window_get_kinetic_scrolling$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_scrolled_window_get_kinetic_scrolling$MH = RuntimeHelper.downcallHandle(
-        "gtk_scrolled_window_get_kinetic_scrolling",
-        constants$1998.gtk_scrolled_window_get_kinetic_scrolling$FUNC
-    );
-    static final FunctionDescriptor gtk_scrolled_window_set_capture_button_press$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_scrolled_window_set_capture_button_press$MH = RuntimeHelper.downcallHandle(
-        "gtk_scrolled_window_set_capture_button_press",
-        constants$1998.gtk_scrolled_window_set_capture_button_press$FUNC
-    );
-    static final FunctionDescriptor gtk_scrolled_window_get_capture_button_press$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_scrolled_window_get_capture_button_press$MH = RuntimeHelper.downcallHandle(
-        "gtk_scrolled_window_get_capture_button_press",
-        constants$1998.gtk_scrolled_window_get_capture_button_press$FUNC
-    );
-    static final FunctionDescriptor gtk_scrolled_window_set_overlay_scrolling$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_scrolled_window_set_overlay_scrolling$MH = RuntimeHelper.downcallHandle(
-        "gtk_scrolled_window_set_overlay_scrolling",
-        constants$1998.gtk_scrolled_window_set_overlay_scrolling$FUNC
-    );
-    static final FunctionDescriptor gtk_scrolled_window_get_overlay_scrolling$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_scrolled_window_get_overlay_scrolling$MH = RuntimeHelper.downcallHandle(
-        "gtk_scrolled_window_get_overlay_scrolling",
-        constants$1998.gtk_scrolled_window_get_overlay_scrolling$FUNC
-    );
-    static final FunctionDescriptor gtk_scrolled_window_set_max_content_width$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_scrolled_window_set_max_content_width$MH = RuntimeHelper.downcallHandle(
-        "gtk_scrolled_window_set_max_content_width",
-        constants$1998.gtk_scrolled_window_set_max_content_width$FUNC
-    );
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1998() {}
+    static final MemorySegment __ILP32_OFF32_CFLAGS$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("-m32");
+    static final MemorySegment __ILP32_OFF32_LDFLAGS$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("-m32");
+    static final MemorySegment __ILP32_OFFBIG_CFLAGS$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("-m32 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64");
+    static final MemorySegment __ILP32_OFFBIG_LDFLAGS$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("-m32");
+    static final MemorySegment __LP64_OFF64_CFLAGS$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("-m64");
+    static final MemorySegment __LP64_OFF64_LDFLAGS$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("-m64");
 }
 
 

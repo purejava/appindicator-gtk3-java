@@ -7,53 +7,46 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1735 {
+final class constants$1735 {
 
-    static final FunctionDescriptor gtk_clipboard_wait_is_rich_text_available$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1735() {}
+    static final FunctionDescriptor gtk_places_sidebar_get_show_starred_location$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_places_sidebar_get_show_starred_location$MH = RuntimeHelper.downcallHandle(
+        "gtk_places_sidebar_get_show_starred_location",
+        constants$1735.gtk_places_sidebar_get_show_starred_location$FUNC
+    );
+    static final FunctionDescriptor gtk_popover_menu_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_popover_menu_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_popover_menu_get_type",
+        constants$1735.gtk_popover_menu_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_popover_menu_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_popover_menu_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_popover_menu_new",
+        constants$1735.gtk_popover_menu_new$FUNC
+    );
+    static final FunctionDescriptor gtk_popover_menu_open_submenu$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_clipboard_wait_is_rich_text_available$MH = RuntimeHelper.downcallHandle(
-        "gtk_clipboard_wait_is_rich_text_available",
-        constants$1735.gtk_clipboard_wait_is_rich_text_available$FUNC
+    static final MethodHandle gtk_popover_menu_open_submenu$MH = RuntimeHelper.downcallHandle(
+        "gtk_popover_menu_open_submenu",
+        constants$1735.gtk_popover_menu_open_submenu$FUNC
     );
-    static final FunctionDescriptor gtk_clipboard_wait_is_image_available$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_print_context_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_print_context_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_context_get_type",
+        constants$1735.gtk_print_context_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_print_context_get_cairo_context$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_clipboard_wait_is_image_available$MH = RuntimeHelper.downcallHandle(
-        "gtk_clipboard_wait_is_image_available",
-        constants$1735.gtk_clipboard_wait_is_image_available$FUNC
-    );
-    static final FunctionDescriptor gtk_clipboard_wait_is_uris_available$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_clipboard_wait_is_uris_available$MH = RuntimeHelper.downcallHandle(
-        "gtk_clipboard_wait_is_uris_available",
-        constants$1735.gtk_clipboard_wait_is_uris_available$FUNC
-    );
-    static final FunctionDescriptor gtk_clipboard_wait_is_target_available$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_clipboard_wait_is_target_available$MH = RuntimeHelper.downcallHandle(
-        "gtk_clipboard_wait_is_target_available",
-        constants$1735.gtk_clipboard_wait_is_target_available$FUNC
-    );
-    static final FunctionDescriptor gtk_clipboard_set_can_store$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_clipboard_set_can_store$MH = RuntimeHelper.downcallHandle(
-        "gtk_clipboard_set_can_store",
-        constants$1735.gtk_clipboard_set_can_store$FUNC
-    );
-    static final FunctionDescriptor gtk_clipboard_store$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_clipboard_store$MH = RuntimeHelper.downcallHandle(
-        "gtk_clipboard_store",
-        constants$1735.gtk_clipboard_store$FUNC
+    static final MethodHandle gtk_print_context_get_cairo_context$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_context_get_cairo_context",
+        constants$1735.gtk_print_context_get_cairo_context$FUNC
     );
 }
 

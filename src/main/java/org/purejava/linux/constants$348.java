@@ -7,45 +7,56 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$348 {
+final class constants$348 {
 
-    static final FunctionDescriptor g_thread_gettime$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_thread_gettime$MH = RuntimeHelper.downcallHandle(
-        constants$348.g_thread_gettime$FUNC
-    );
-    static final  OfAddress g_thread_gettime$LAYOUT = Constants$root.C_POINTER$LAYOUT;
-    static final VarHandle g_thread_gettime$VH = constants$348.g_thread_gettime$LAYOUT.varHandle();
-    static final MemorySegment g_thread_gettime$SEGMENT = RuntimeHelper.lookupGlobalVariable("g_thread_gettime", constants$348.g_thread_gettime$LAYOUT);
-    static final FunctionDescriptor g_thread_create$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$348() {}
+    static final FunctionDescriptor GCompletionFunc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_thread_create$MH = RuntimeHelper.downcallHandle(
-        "g_thread_create",
-        constants$348.g_thread_create$FUNC
-    );
-    static final FunctionDescriptor g_thread_create_full$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor GCompletionFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_thread_create_full$MH = RuntimeHelper.downcallHandle(
-        "g_thread_create_full",
-        constants$348.g_thread_create_full$FUNC
+    static final MethodHandle GCompletionFunc_UP$MH = RuntimeHelper.upcallHandle(GCompletionFunc.class, "apply", constants$348.GCompletionFunc_UP$FUNC);
+    static final FunctionDescriptor GCompletionFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor g_thread_set_priority$FUNC = FunctionDescriptor.ofVoid(
+    static final MethodHandle GCompletionFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$348.GCompletionFunc_DOWN$FUNC
+    );
+    static final FunctionDescriptor GCompletionStrncmpFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
     );
-    static final MethodHandle g_thread_set_priority$MH = RuntimeHelper.downcallHandle(
-        "g_thread_set_priority",
-        constants$348.g_thread_set_priority$FUNC
+    static final FunctionDescriptor GCompletionStrncmpFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle GCompletionStrncmpFunc_UP$MH = RuntimeHelper.upcallHandle(GCompletionStrncmpFunc.class, "apply", constants$348.GCompletionStrncmpFunc_UP$FUNC);
+    static final FunctionDescriptor GCompletionStrncmpFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle GCompletionStrncmpFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$348.GCompletionStrncmpFunc_DOWN$FUNC
+    );
+    static final FunctionDescriptor g_completion_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_completion_new$MH = RuntimeHelper.downcallHandle(
+        "g_completion_new",
+        constants$348.g_completion_new$FUNC
+    );
+    static final FunctionDescriptor g_completion_add_items$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_completion_add_items$MH = RuntimeHelper.downcallHandle(
+        "g_completion_add_items",
+        constants$348.g_completion_add_items$FUNC
     );
 }
 

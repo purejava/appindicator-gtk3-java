@@ -7,45 +7,59 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1635 {
+final class constants$1635 {
 
-    static final FunctionDescriptor gtk_entry_completion_get_text_column$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1635() {}
+    static final FunctionDescriptor gtk_style_context_get_style$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_entry_completion_get_text_column$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_completion_get_text_column",
-        constants$1635.gtk_entry_completion_get_text_column$FUNC
+    static final MethodHandle gtk_style_context_get_style$MH = RuntimeHelper.downcallHandleVariadic(
+        "gtk_style_context_get_style",
+        constants$1635.gtk_style_context_get_style$FUNC
     );
-    static final FunctionDescriptor gtk_image_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_image_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_image_get_type",
-        constants$1635.gtk_image_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_image_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_image_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_image_new",
-        constants$1635.gtk_image_new$FUNC
-    );
-    static final FunctionDescriptor gtk_image_new_from_file$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_style_context_lookup_icon_set$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_image_new_from_file$MH = RuntimeHelper.downcallHandle(
-        "gtk_image_new_from_file",
-        constants$1635.gtk_image_new_from_file$FUNC
+    static final MethodHandle gtk_style_context_lookup_icon_set$MH = RuntimeHelper.downcallHandle(
+        "gtk_style_context_lookup_icon_set",
+        constants$1635.gtk_style_context_lookup_icon_set$FUNC
     );
-    static final FunctionDescriptor gtk_image_new_from_resource$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_icon_set_render_icon_pixbuf$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_icon_set_render_icon_pixbuf$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_set_render_icon_pixbuf",
+        constants$1635.gtk_icon_set_render_icon_pixbuf$FUNC
+    );
+    static final FunctionDescriptor gtk_icon_set_render_icon_surface$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_image_new_from_resource$MH = RuntimeHelper.downcallHandle(
-        "gtk_image_new_from_resource",
-        constants$1635.gtk_image_new_from_resource$FUNC
+    static final MethodHandle gtk_icon_set_render_icon_surface$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_set_render_icon_surface",
+        constants$1635.gtk_icon_set_render_icon_surface$FUNC
     );
-    static final FunctionDescriptor gtk_image_new_from_pixbuf$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_style_context_set_screen$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_image_new_from_pixbuf$MH = RuntimeHelper.downcallHandle(
-        "gtk_image_new_from_pixbuf",
-        constants$1635.gtk_image_new_from_pixbuf$FUNC
+    static final MethodHandle gtk_style_context_set_screen$MH = RuntimeHelper.downcallHandle(
+        "gtk_style_context_set_screen",
+        constants$1635.gtk_style_context_set_screen$FUNC
+    );
+    static final FunctionDescriptor gtk_style_context_get_screen$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_style_context_get_screen$MH = RuntimeHelper.downcallHandle(
+        "gtk_style_context_get_screen",
+        constants$1635.gtk_style_context_get_screen$FUNC
     );
 }
 

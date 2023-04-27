@@ -7,54 +7,58 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$147 {
+final class constants$147 {
 
-    static final FunctionDescriptor g_hash_table_foreach_remove$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$147() {}
+    static final FunctionDescriptor g_hash_table_steal_all_keys$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_hash_table_steal_all_keys$MH = RuntimeHelper.downcallHandle(
+        "g_hash_table_steal_all_keys",
+        constants$147.g_hash_table_steal_all_keys$FUNC
+    );
+    static final FunctionDescriptor g_hash_table_steal_all_values$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_hash_table_steal_all_values$MH = RuntimeHelper.downcallHandle(
+        "g_hash_table_steal_all_values",
+        constants$147.g_hash_table_steal_all_values$FUNC
+    );
+    static final FunctionDescriptor g_hash_table_lookup$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_hash_table_lookup$MH = RuntimeHelper.downcallHandle(
+        "g_hash_table_lookup",
+        constants$147.g_hash_table_lookup$FUNC
+    );
+    static final FunctionDescriptor g_hash_table_contains$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_hash_table_contains$MH = RuntimeHelper.downcallHandle(
+        "g_hash_table_contains",
+        constants$147.g_hash_table_contains$FUNC
+    );
+    static final FunctionDescriptor g_hash_table_lookup_extended$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_hash_table_lookup_extended$MH = RuntimeHelper.downcallHandle(
+        "g_hash_table_lookup_extended",
+        constants$147.g_hash_table_lookup_extended$FUNC
+    );
+    static final FunctionDescriptor g_hash_table_foreach$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_hash_table_foreach_remove$MH = RuntimeHelper.downcallHandle(
-        "g_hash_table_foreach_remove",
-        constants$147.g_hash_table_foreach_remove$FUNC
-    );
-    static final FunctionDescriptor g_hash_table_foreach_steal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_hash_table_foreach_steal$MH = RuntimeHelper.downcallHandle(
-        "g_hash_table_foreach_steal",
-        constants$147.g_hash_table_foreach_steal$FUNC
-    );
-    static final FunctionDescriptor g_hash_table_size$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_hash_table_size$MH = RuntimeHelper.downcallHandle(
-        "g_hash_table_size",
-        constants$147.g_hash_table_size$FUNC
-    );
-    static final FunctionDescriptor g_hash_table_get_keys$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_hash_table_get_keys$MH = RuntimeHelper.downcallHandle(
-        "g_hash_table_get_keys",
-        constants$147.g_hash_table_get_keys$FUNC
-    );
-    static final FunctionDescriptor g_hash_table_get_values$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_hash_table_get_values$MH = RuntimeHelper.downcallHandle(
-        "g_hash_table_get_values",
-        constants$147.g_hash_table_get_values$FUNC
-    );
-    static final FunctionDescriptor g_hash_table_get_keys_as_array$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_hash_table_get_keys_as_array$MH = RuntimeHelper.downcallHandle(
-        "g_hash_table_get_keys_as_array",
-        constants$147.g_hash_table_get_keys_as_array$FUNC
+    static final MethodHandle g_hash_table_foreach$MH = RuntimeHelper.downcallHandle(
+        "g_hash_table_foreach",
+        constants$147.g_hash_table_foreach$FUNC
     );
 }
 

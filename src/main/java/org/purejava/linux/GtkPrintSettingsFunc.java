@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * void (*GtkPrintSettingsFunc)(char* key,char* value,void* user_data);
+ * }
+ */
 public interface GtkPrintSettingsFunc {
 
-    void apply(java.lang.foreign.MemoryAddress key, java.lang.foreign.MemoryAddress value, java.lang.foreign.MemoryAddress user_data);
-    static MemorySegment allocate(GtkPrintSettingsFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GtkPrintSettingsFunc.class, fi, constants$1934.GtkPrintSettingsFunc$FUNC, session);
+    void apply(java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment user_data);
+    static MemorySegment allocate(GtkPrintSettingsFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$1737.GtkPrintSettingsFunc_UP$MH, fi, constants$1737.GtkPrintSettingsFunc$FUNC, scope);
     }
-    static GtkPrintSettingsFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _key, java.lang.foreign.MemoryAddress _value, java.lang.foreign.MemoryAddress _user_data) -> {
+    static GtkPrintSettingsFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _key, java.lang.foreign.MemorySegment _value, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                constants$1934.GtkPrintSettingsFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_key, (java.lang.foreign.Addressable)_value, (java.lang.foreign.Addressable)_user_data);
+                constants$1737.GtkPrintSettingsFunc_DOWN$MH.invokeExact(symbol, _key, _value, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

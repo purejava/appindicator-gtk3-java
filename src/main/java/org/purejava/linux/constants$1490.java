@@ -7,54 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1490 {
+final class constants$1490 {
 
-    static final FunctionDescriptor gtk_window_set_icon_list$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1490() {}
+    static final FunctionDescriptor gtk_app_chooser_button_get_show_dialog_item$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_app_chooser_button_get_show_dialog_item$MH = RuntimeHelper.downcallHandle(
+        "gtk_app_chooser_button_get_show_dialog_item",
+        constants$1490.gtk_app_chooser_button_get_show_dialog_item$FUNC
+    );
+    static final FunctionDescriptor gtk_app_chooser_button_set_heading$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_window_set_icon_list$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_set_icon_list",
-        constants$1490.gtk_window_set_icon_list$FUNC
+    static final MethodHandle gtk_app_chooser_button_set_heading$MH = RuntimeHelper.downcallHandle(
+        "gtk_app_chooser_button_set_heading",
+        constants$1490.gtk_app_chooser_button_set_heading$FUNC
     );
-    static final FunctionDescriptor gtk_window_get_icon_list$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_app_chooser_button_get_heading$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_window_get_icon_list$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_get_icon_list",
-        constants$1490.gtk_window_get_icon_list$FUNC
+    static final MethodHandle gtk_app_chooser_button_get_heading$MH = RuntimeHelper.downcallHandle(
+        "gtk_app_chooser_button_get_heading",
+        constants$1490.gtk_app_chooser_button_get_heading$FUNC
     );
-    static final FunctionDescriptor gtk_window_set_icon$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_app_chooser_button_set_show_default_item$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_app_chooser_button_set_show_default_item$MH = RuntimeHelper.downcallHandle(
+        "gtk_app_chooser_button_set_show_default_item",
+        constants$1490.gtk_app_chooser_button_set_show_default_item$FUNC
+    );
+    static final FunctionDescriptor gtk_app_chooser_button_get_show_default_item$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_window_set_icon$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_set_icon",
-        constants$1490.gtk_window_set_icon$FUNC
+    static final MethodHandle gtk_app_chooser_button_get_show_default_item$MH = RuntimeHelper.downcallHandle(
+        "gtk_app_chooser_button_get_show_default_item",
+        constants$1490.gtk_app_chooser_button_get_show_default_item$FUNC
     );
-    static final FunctionDescriptor gtk_window_set_icon_name$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_window_set_icon_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_set_icon_name",
-        constants$1490.gtk_window_set_icon_name$FUNC
-    );
-    static final FunctionDescriptor gtk_window_set_icon_from_file$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_window_set_icon_from_file$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_set_icon_from_file",
-        constants$1490.gtk_window_set_icon_from_file$FUNC
-    );
-    static final FunctionDescriptor gtk_window_get_icon$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_window_get_icon$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_get_icon",
-        constants$1490.gtk_window_get_icon$FUNC
+    static final FunctionDescriptor gtk_shortcuts_window_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_shortcuts_window_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_shortcuts_window_get_type",
+        constants$1490.gtk_shortcuts_window_get_type$FUNC
     );
 }
 

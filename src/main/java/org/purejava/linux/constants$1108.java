@@ -7,54 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1108 {
+final class constants$1108 {
 
-    static final FunctionDescriptor pango_glyph_item_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_glyph_item_copy$MH = RuntimeHelper.downcallHandle(
-        "pango_glyph_item_copy",
-        constants$1108.pango_glyph_item_copy$FUNC
-    );
-    static final FunctionDescriptor pango_glyph_item_free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_glyph_item_free$MH = RuntimeHelper.downcallHandle(
-        "pango_glyph_item_free",
-        constants$1108.pango_glyph_item_free$FUNC
-    );
-    static final FunctionDescriptor pango_glyph_item_apply_attrs$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1108() {}
+    static final FunctionDescriptor gdk_rectangle_union$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_glyph_item_apply_attrs$MH = RuntimeHelper.downcallHandle(
-        "pango_glyph_item_apply_attrs",
-        constants$1108.pango_glyph_item_apply_attrs$FUNC
+    static final MethodHandle gdk_rectangle_union$MH = RuntimeHelper.downcallHandle(
+        "gdk_rectangle_union",
+        constants$1108.gdk_rectangle_union$FUNC
     );
-    static final FunctionDescriptor pango_glyph_item_letter_space$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_glyph_item_letter_space$MH = RuntimeHelper.downcallHandle(
-        "pango_glyph_item_letter_space",
-        constants$1108.pango_glyph_item_letter_space$FUNC
-    );
-    static final FunctionDescriptor pango_glyph_item_get_logical_widths$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gdk_rectangle_equal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_glyph_item_get_logical_widths$MH = RuntimeHelper.downcallHandle(
-        "pango_glyph_item_get_logical_widths",
-        constants$1108.pango_glyph_item_get_logical_widths$FUNC
+    static final MethodHandle gdk_rectangle_equal$MH = RuntimeHelper.downcallHandle(
+        "gdk_rectangle_equal",
+        constants$1108.gdk_rectangle_equal$FUNC
     );
-    static final FunctionDescriptor pango_glyph_item_iter_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_glyph_item_iter_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_glyph_item_iter_get_type",
-        constants$1108.pango_glyph_item_iter_get_type$FUNC
+    static final FunctionDescriptor gdk_rectangle_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gdk_rectangle_get_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_rectangle_get_type",
+        constants$1108.gdk_rectangle_get_type$FUNC
+    );
+    static final FunctionDescriptor gdk_monitor_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gdk_monitor_get_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_monitor_get_type",
+        constants$1108.gdk_monitor_get_type$FUNC
+    );
+    static final FunctionDescriptor gdk_monitor_get_display$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_monitor_get_display$MH = RuntimeHelper.downcallHandle(
+        "gdk_monitor_get_display",
+        constants$1108.gdk_monitor_get_display$FUNC
+    );
+    static final FunctionDescriptor gdk_monitor_get_geometry$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_monitor_get_geometry$MH = RuntimeHelper.downcallHandle(
+        "gdk_monitor_get_geometry",
+        constants$1108.gdk_monitor_get_geometry$FUNC
     );
 }
 

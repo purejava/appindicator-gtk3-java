@@ -7,52 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1761 {
+final class constants$1761 {
 
-    static final FunctionDescriptor gtk_file_chooser_set_local_only$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1761() {}
+    static final FunctionDescriptor gtk_radio_button_new_with_mnemonic_from_widget$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_file_chooser_set_local_only$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_set_local_only",
-        constants$1761.gtk_file_chooser_set_local_only$FUNC
-    );
-    static final FunctionDescriptor gtk_file_chooser_get_local_only$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_file_chooser_get_local_only$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_get_local_only",
-        constants$1761.gtk_file_chooser_get_local_only$FUNC
+    static final MethodHandle gtk_radio_button_new_with_mnemonic_from_widget$MH = RuntimeHelper.downcallHandle(
+        "gtk_radio_button_new_with_mnemonic_from_widget",
+        constants$1761.gtk_radio_button_new_with_mnemonic_from_widget$FUNC
     );
-    static final FunctionDescriptor gtk_file_chooser_set_select_multiple$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_file_chooser_set_select_multiple$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_set_select_multiple",
-        constants$1761.gtk_file_chooser_set_select_multiple$FUNC
-    );
-    static final FunctionDescriptor gtk_file_chooser_get_select_multiple$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_radio_button_get_group$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_file_chooser_get_select_multiple$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_get_select_multiple",
-        constants$1761.gtk_file_chooser_get_select_multiple$FUNC
+    static final MethodHandle gtk_radio_button_get_group$MH = RuntimeHelper.downcallHandle(
+        "gtk_radio_button_get_group",
+        constants$1761.gtk_radio_button_get_group$FUNC
     );
-    static final FunctionDescriptor gtk_file_chooser_set_show_hidden$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_radio_button_set_group$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_file_chooser_set_show_hidden$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_set_show_hidden",
-        constants$1761.gtk_file_chooser_set_show_hidden$FUNC
-    );
-    static final FunctionDescriptor gtk_file_chooser_get_show_hidden$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_file_chooser_get_show_hidden$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_get_show_hidden",
-        constants$1761.gtk_file_chooser_get_show_hidden$FUNC
+    static final MethodHandle gtk_radio_button_set_group$MH = RuntimeHelper.downcallHandle(
+        "gtk_radio_button_set_group",
+        constants$1761.gtk_radio_button_set_group$FUNC
+    );
+    static final FunctionDescriptor gtk_radio_button_join_group$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_radio_button_join_group$MH = RuntimeHelper.downcallHandle(
+        "gtk_radio_button_join_group",
+        constants$1761.gtk_radio_button_join_group$FUNC
+    );
+    static final FunctionDescriptor gtk_radio_menu_item_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_radio_menu_item_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_radio_menu_item_get_type",
+        constants$1761.gtk_radio_menu_item_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_radio_menu_item_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_radio_menu_item_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_radio_menu_item_new",
+        constants$1761.gtk_radio_menu_item_new$FUNC
     );
 }
 

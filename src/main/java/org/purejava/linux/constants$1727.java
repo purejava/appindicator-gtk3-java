@@ -7,51 +7,62 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1727 {
+final class constants$1727 {
 
-    static final FunctionDescriptor gtk_check_menu_item_new_with_mnemonic$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_check_menu_item_new_with_mnemonic$MH = RuntimeHelper.downcallHandle(
-        "gtk_check_menu_item_new_with_mnemonic",
-        constants$1727.gtk_check_menu_item_new_with_mnemonic$FUNC
-    );
-    static final FunctionDescriptor gtk_check_menu_item_set_active$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1727() {}
+    static final FunctionDescriptor gtk_page_setup_get_page_height$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_check_menu_item_set_active$MH = RuntimeHelper.downcallHandle(
-        "gtk_check_menu_item_set_active",
-        constants$1727.gtk_check_menu_item_set_active$FUNC
+    static final MethodHandle gtk_page_setup_get_page_height$MH = RuntimeHelper.downcallHandle(
+        "gtk_page_setup_get_page_height",
+        constants$1727.gtk_page_setup_get_page_height$FUNC
     );
-    static final FunctionDescriptor gtk_check_menu_item_get_active$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_check_menu_item_get_active$MH = RuntimeHelper.downcallHandle(
-        "gtk_check_menu_item_get_active",
-        constants$1727.gtk_check_menu_item_get_active$FUNC
-    );
-    static final FunctionDescriptor gtk_check_menu_item_toggled$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_check_menu_item_toggled$MH = RuntimeHelper.downcallHandle(
-        "gtk_check_menu_item_toggled",
-        constants$1727.gtk_check_menu_item_toggled$FUNC
-    );
-    static final FunctionDescriptor gtk_check_menu_item_set_inconsistent$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_page_setup_new_from_file$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_check_menu_item_set_inconsistent$MH = RuntimeHelper.downcallHandle(
-        "gtk_check_menu_item_set_inconsistent",
-        constants$1727.gtk_check_menu_item_set_inconsistent$FUNC
-    );
-    static final FunctionDescriptor gtk_check_menu_item_get_inconsistent$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_check_menu_item_get_inconsistent$MH = RuntimeHelper.downcallHandle(
-        "gtk_check_menu_item_get_inconsistent",
-        constants$1727.gtk_check_menu_item_get_inconsistent$FUNC
+    static final MethodHandle gtk_page_setup_new_from_file$MH = RuntimeHelper.downcallHandle(
+        "gtk_page_setup_new_from_file",
+        constants$1727.gtk_page_setup_new_from_file$FUNC
+    );
+    static final FunctionDescriptor gtk_page_setup_load_file$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_page_setup_load_file$MH = RuntimeHelper.downcallHandle(
+        "gtk_page_setup_load_file",
+        constants$1727.gtk_page_setup_load_file$FUNC
+    );
+    static final FunctionDescriptor gtk_page_setup_to_file$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_page_setup_to_file$MH = RuntimeHelper.downcallHandle(
+        "gtk_page_setup_to_file",
+        constants$1727.gtk_page_setup_to_file$FUNC
+    );
+    static final FunctionDescriptor gtk_page_setup_new_from_key_file$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_page_setup_new_from_key_file$MH = RuntimeHelper.downcallHandle(
+        "gtk_page_setup_new_from_key_file",
+        constants$1727.gtk_page_setup_new_from_key_file$FUNC
+    );
+    static final FunctionDescriptor gtk_page_setup_load_key_file$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_page_setup_load_key_file$MH = RuntimeHelper.downcallHandle(
+        "gtk_page_setup_load_key_file",
+        constants$1727.gtk_page_setup_load_key_file$FUNC
     );
 }
 

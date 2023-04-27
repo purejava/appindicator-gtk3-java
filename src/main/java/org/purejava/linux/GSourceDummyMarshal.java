@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * void (*GSourceDummyMarshal)();
+ * }
+ */
 public interface GSourceDummyMarshal {
 
     void apply();
-    static MemorySegment allocate(GSourceDummyMarshal fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GSourceDummyMarshal.class, fi, constants$166.GSourceDummyMarshal$FUNC, session);
+    static MemorySegment allocate(GSourceDummyMarshal fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$168.GSourceDummyMarshal_UP$MH, fi, constants$168.GSourceDummyMarshal$FUNC, scope);
     }
-    static GSourceDummyMarshal ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+    static GSourceDummyMarshal ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
         return () -> {
             try {
-                constants$166.GSourceDummyMarshal$MH.invokeExact((Addressable)symbol);
+                constants$168.GSourceDummyMarshal_DOWN$MH.invokeExact(symbol);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

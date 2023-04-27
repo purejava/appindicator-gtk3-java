@@ -7,52 +7,50 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$173 {
+final class constants$173 {
 
-    static final FunctionDescriptor g_source_set_dispose_function$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$173() {}
+    static final FunctionDescriptor g_main_context_ref_thread_default$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle g_main_context_ref_thread_default$MH = RuntimeHelper.downcallHandle(
+        "g_main_context_ref_thread_default",
+        constants$173.g_main_context_ref_thread_default$FUNC
     );
-    static final MethodHandle g_source_set_dispose_function$MH = RuntimeHelper.downcallHandle(
-        "g_source_set_dispose_function",
-        constants$173.g_source_set_dispose_function$FUNC
-    );
-    static final FunctionDescriptor g_source_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_source_ref$MH = RuntimeHelper.downcallHandle(
-        "g_source_ref",
-        constants$173.g_source_ref$FUNC
-    );
-    static final FunctionDescriptor g_source_unref$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_source_unref$MH = RuntimeHelper.downcallHandle(
-        "g_source_unref",
-        constants$173.g_source_unref$FUNC
-    );
-    static final FunctionDescriptor g_source_attach$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_source_attach$MH = RuntimeHelper.downcallHandle(
-        "g_source_attach",
-        constants$173.g_source_attach$FUNC
-    );
-    static final FunctionDescriptor g_source_destroy$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_source_destroy$MH = RuntimeHelper.downcallHandle(
-        "g_source_destroy",
-        constants$173.g_source_destroy$FUNC
-    );
-    static final FunctionDescriptor g_source_set_priority$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_main_loop_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_source_set_priority$MH = RuntimeHelper.downcallHandle(
-        "g_source_set_priority",
-        constants$173.g_source_set_priority$FUNC
+    static final MethodHandle g_main_loop_new$MH = RuntimeHelper.downcallHandle(
+        "g_main_loop_new",
+        constants$173.g_main_loop_new$FUNC
+    );
+    static final FunctionDescriptor g_main_loop_run$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_main_loop_run$MH = RuntimeHelper.downcallHandle(
+        "g_main_loop_run",
+        constants$173.g_main_loop_run$FUNC
+    );
+    static final FunctionDescriptor g_main_loop_quit$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_main_loop_quit$MH = RuntimeHelper.downcallHandle(
+        "g_main_loop_quit",
+        constants$173.g_main_loop_quit$FUNC
+    );
+    static final FunctionDescriptor g_main_loop_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_main_loop_ref$MH = RuntimeHelper.downcallHandle(
+        "g_main_loop_ref",
+        constants$173.g_main_loop_ref$FUNC
+    );
+    static final FunctionDescriptor g_main_loop_unref$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_main_loop_unref$MH = RuntimeHelper.downcallHandle(
+        "g_main_loop_unref",
+        constants$173.g_main_loop_unref$FUNC
     );
 }
 

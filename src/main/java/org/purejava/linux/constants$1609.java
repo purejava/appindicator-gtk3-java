@@ -7,56 +7,48 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1609 {
+final class constants$1609 {
 
-    static final FunctionDescriptor gtk_selection_add_targets$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1609() {}
+    static final FunctionDescriptor gtk_gesture_zoom_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_gesture_zoom_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_gesture_zoom_new",
+        constants$1609.gtk_gesture_zoom_new$FUNC
+    );
+    static final FunctionDescriptor gtk_gesture_zoom_get_scale_delta$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_gesture_zoom_get_scale_delta$MH = RuntimeHelper.downcallHandle(
+        "gtk_gesture_zoom_get_scale_delta",
+        constants$1609.gtk_gesture_zoom_get_scale_delta$FUNC
+    );
+    static final FunctionDescriptor gtk_gl_area_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_gl_area_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_gl_area_get_type",
+        constants$1609.gtk_gl_area_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_gl_area_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_gl_area_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_gl_area_new",
+        constants$1609.gtk_gl_area_new$FUNC
+    );
+    static final FunctionDescriptor gtk_gl_area_set_use_es$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_selection_add_targets$MH = RuntimeHelper.downcallHandle(
-        "gtk_selection_add_targets",
-        constants$1609.gtk_selection_add_targets$FUNC
+    static final MethodHandle gtk_gl_area_set_use_es$MH = RuntimeHelper.downcallHandle(
+        "gtk_gl_area_set_use_es",
+        constants$1609.gtk_gl_area_set_use_es$FUNC
     );
-    static final FunctionDescriptor gtk_selection_clear_targets$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_gl_area_get_use_es$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_selection_clear_targets$MH = RuntimeHelper.downcallHandle(
-        "gtk_selection_clear_targets",
-        constants$1609.gtk_selection_clear_targets$FUNC
-    );
-    static final FunctionDescriptor gtk_selection_convert$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_selection_convert$MH = RuntimeHelper.downcallHandle(
-        "gtk_selection_convert",
-        constants$1609.gtk_selection_convert$FUNC
-    );
-    static final FunctionDescriptor gtk_selection_remove_all$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_selection_remove_all$MH = RuntimeHelper.downcallHandle(
-        "gtk_selection_remove_all",
-        constants$1609.gtk_selection_remove_all$FUNC
-    );
-    static final FunctionDescriptor gtk_selection_data_get_selection$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_selection_data_get_selection$MH = RuntimeHelper.downcallHandle(
-        "gtk_selection_data_get_selection",
-        constants$1609.gtk_selection_data_get_selection$FUNC
-    );
-    static final FunctionDescriptor gtk_selection_data_get_target$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_selection_data_get_target$MH = RuntimeHelper.downcallHandle(
-        "gtk_selection_data_get_target",
-        constants$1609.gtk_selection_data_get_target$FUNC
+    static final MethodHandle gtk_gl_area_get_use_es$MH = RuntimeHelper.downcallHandle(
+        "gtk_gl_area_get_use_es",
+        constants$1609.gtk_gl_area_get_use_es$FUNC
     );
 }
 

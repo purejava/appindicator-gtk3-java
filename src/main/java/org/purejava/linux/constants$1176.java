@@ -7,67 +7,45 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1176 {
+final class constants$1176 {
 
-    static final FunctionDescriptor cairo_scaled_font_set_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1176() {}
+    static final FunctionDescriptor gdk_add_option_entries_libgtk_only$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_scaled_font_set_user_data$MH = RuntimeHelper.downcallHandle(
-        "cairo_scaled_font_set_user_data",
-        constants$1176.cairo_scaled_font_set_user_data$FUNC
+    static final MethodHandle gdk_add_option_entries_libgtk_only$MH = RuntimeHelper.downcallHandle(
+        "gdk_add_option_entries_libgtk_only",
+        constants$1176.gdk_add_option_entries_libgtk_only$FUNC
     );
-    static final FunctionDescriptor cairo_scaled_font_extents$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gdk_pre_parse_libgtk_only$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle gdk_pre_parse_libgtk_only$MH = RuntimeHelper.downcallHandle(
+        "gdk_pre_parse_libgtk_only",
+        constants$1176.gdk_pre_parse_libgtk_only$FUNC
+    );
+    static final FunctionDescriptor gdk_get_program_class$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gdk_get_program_class$MH = RuntimeHelper.downcallHandle(
+        "gdk_get_program_class",
+        constants$1176.gdk_get_program_class$FUNC
+    );
+    static final FunctionDescriptor gdk_set_program_class$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_scaled_font_extents$MH = RuntimeHelper.downcallHandle(
-        "cairo_scaled_font_extents",
-        constants$1176.cairo_scaled_font_extents$FUNC
+    static final MethodHandle gdk_set_program_class$MH = RuntimeHelper.downcallHandle(
+        "gdk_set_program_class",
+        constants$1176.gdk_set_program_class$FUNC
     );
-    static final FunctionDescriptor cairo_scaled_font_text_extents$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gdk_notify_startup_complete$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle gdk_notify_startup_complete$MH = RuntimeHelper.downcallHandle(
+        "gdk_notify_startup_complete",
+        constants$1176.gdk_notify_startup_complete$FUNC
+    );
+    static final FunctionDescriptor gdk_notify_startup_complete_with_id$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_scaled_font_text_extents$MH = RuntimeHelper.downcallHandle(
-        "cairo_scaled_font_text_extents",
-        constants$1176.cairo_scaled_font_text_extents$FUNC
-    );
-    static final FunctionDescriptor cairo_scaled_font_glyph_extents$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_scaled_font_glyph_extents$MH = RuntimeHelper.downcallHandle(
-        "cairo_scaled_font_glyph_extents",
-        constants$1176.cairo_scaled_font_glyph_extents$FUNC
-    );
-    static final FunctionDescriptor cairo_scaled_font_text_to_glyphs$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_scaled_font_text_to_glyphs$MH = RuntimeHelper.downcallHandle(
-        "cairo_scaled_font_text_to_glyphs",
-        constants$1176.cairo_scaled_font_text_to_glyphs$FUNC
-    );
-    static final FunctionDescriptor cairo_scaled_font_get_font_face$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_scaled_font_get_font_face$MH = RuntimeHelper.downcallHandle(
-        "cairo_scaled_font_get_font_face",
-        constants$1176.cairo_scaled_font_get_font_face$FUNC
+    static final MethodHandle gdk_notify_startup_complete_with_id$MH = RuntimeHelper.downcallHandle(
+        "gdk_notify_startup_complete_with_id",
+        constants$1176.gdk_notify_startup_complete_with_id$FUNC
     );
 }
 

@@ -7,37 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1326 {
+final class constants$1326 {
 
-    static final FunctionDescriptor gdk_scroll_direction_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_scroll_direction_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_scroll_direction_get_type",
-        constants$1326.gdk_scroll_direction_get_type$FUNC
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1326() {}
+    static final FunctionDescriptor gtk_about_dialog_get_logo$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor gdk_notify_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_notify_type_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_notify_type_get_type",
-        constants$1326.gdk_notify_type_get_type$FUNC
+    static final MethodHandle gtk_about_dialog_get_logo$MH = RuntimeHelper.downcallHandle(
+        "gtk_about_dialog_get_logo",
+        constants$1326.gtk_about_dialog_get_logo$FUNC
     );
-    static final FunctionDescriptor gdk_crossing_mode_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_crossing_mode_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_crossing_mode_get_type",
-        constants$1326.gdk_crossing_mode_get_type$FUNC
+    static final FunctionDescriptor gtk_about_dialog_set_logo$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor gdk_property_state_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_property_state_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_property_state_get_type",
-        constants$1326.gdk_property_state_get_type$FUNC
+    static final MethodHandle gtk_about_dialog_set_logo$MH = RuntimeHelper.downcallHandle(
+        "gtk_about_dialog_set_logo",
+        constants$1326.gtk_about_dialog_set_logo$FUNC
     );
-    static final FunctionDescriptor gdk_window_state_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_window_state_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_state_get_type",
-        constants$1326.gdk_window_state_get_type$FUNC
+    static final FunctionDescriptor gtk_about_dialog_get_logo_icon_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor gdk_setting_action_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_setting_action_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_setting_action_get_type",
-        constants$1326.gdk_setting_action_get_type$FUNC
+    static final MethodHandle gtk_about_dialog_get_logo_icon_name$MH = RuntimeHelper.downcallHandle(
+        "gtk_about_dialog_get_logo_icon_name",
+        constants$1326.gtk_about_dialog_get_logo_icon_name$FUNC
+    );
+    static final FunctionDescriptor gtk_about_dialog_set_logo_icon_name$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_about_dialog_set_logo_icon_name$MH = RuntimeHelper.downcallHandle(
+        "gtk_about_dialog_set_logo_icon_name",
+        constants$1326.gtk_about_dialog_set_logo_icon_name$FUNC
+    );
+    static final FunctionDescriptor gtk_about_dialog_add_credit_section$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_about_dialog_add_credit_section$MH = RuntimeHelper.downcallHandle(
+        "gtk_about_dialog_add_credit_section",
+        constants$1326.gtk_about_dialog_add_credit_section$FUNC
+    );
+    static final FunctionDescriptor gtk_misc_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_misc_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_misc_get_type",
+        constants$1326.gtk_misc_get_type$FUNC
     );
 }
 

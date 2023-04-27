@@ -7,54 +7,41 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1209 {
+final class constants$1209 {
 
-    static final FunctionDescriptor cairo_matrix_multiply$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_matrix_multiply$MH = RuntimeHelper.downcallHandle(
-        "cairo_matrix_multiply",
-        constants$1209.cairo_matrix_multiply$FUNC
-    );
-    static final FunctionDescriptor cairo_matrix_transform_distance$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_matrix_transform_distance$MH = RuntimeHelper.downcallHandle(
-        "cairo_matrix_transform_distance",
-        constants$1209.cairo_matrix_transform_distance$FUNC
-    );
-    static final FunctionDescriptor cairo_matrix_transform_point$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_matrix_transform_point$MH = RuntimeHelper.downcallHandle(
-        "cairo_matrix_transform_point",
-        constants$1209.cairo_matrix_transform_point$FUNC
-    );
-    static final FunctionDescriptor cairo_region_create$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle cairo_region_create$MH = RuntimeHelper.downcallHandle(
-        "cairo_region_create",
-        constants$1209.cairo_region_create$FUNC
-    );
-    static final FunctionDescriptor cairo_region_create_rectangle$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_region_create_rectangle$MH = RuntimeHelper.downcallHandle(
-        "cairo_region_create_rectangle",
-        constants$1209.cairo_region_create_rectangle$FUNC
-    );
-    static final FunctionDescriptor cairo_region_create_rectangles$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1209() {}
+    static final FunctionDescriptor atk_remove_key_event_listener$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle cairo_region_create_rectangles$MH = RuntimeHelper.downcallHandle(
-        "cairo_region_create_rectangles",
-        constants$1209.cairo_region_create_rectangles$FUNC
+    static final MethodHandle atk_remove_key_event_listener$MH = RuntimeHelper.downcallHandle(
+        "atk_remove_key_event_listener",
+        constants$1209.atk_remove_key_event_listener$FUNC
+    );
+    static final FunctionDescriptor atk_get_root$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle atk_get_root$MH = RuntimeHelper.downcallHandle(
+        "atk_get_root",
+        constants$1209.atk_get_root$FUNC
+    );
+    static final FunctionDescriptor atk_get_focus_object$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle atk_get_focus_object$MH = RuntimeHelper.downcallHandle(
+        "atk_get_focus_object",
+        constants$1209.atk_get_focus_object$FUNC
+    );
+    static final FunctionDescriptor atk_get_toolkit_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle atk_get_toolkit_name$MH = RuntimeHelper.downcallHandle(
+        "atk_get_toolkit_name",
+        constants$1209.atk_get_toolkit_name$FUNC
+    );
+    static final FunctionDescriptor atk_get_toolkit_version$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle atk_get_toolkit_version$MH = RuntimeHelper.downcallHandle(
+        "atk_get_toolkit_version",
+        constants$1209.atk_get_toolkit_version$FUNC
+    );
+    static final FunctionDescriptor atk_get_version$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle atk_get_version$MH = RuntimeHelper.downcallHandle(
+        "atk_get_version",
+        constants$1209.atk_get_version$FUNC
     );
 }
 

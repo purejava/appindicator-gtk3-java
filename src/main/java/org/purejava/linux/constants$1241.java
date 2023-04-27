@@ -7,55 +7,59 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1241 {
+final class constants$1241 {
 
-    static final FunctionDescriptor gdk_window_get_accept_focus$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1241() {}
+    static final FunctionDescriptor atk_table_set_row_description$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_window_get_accept_focus$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_accept_focus",
-        constants$1241.gdk_window_get_accept_focus$FUNC
+    static final MethodHandle atk_table_set_row_description$MH = RuntimeHelper.downcallHandle(
+        "atk_table_set_row_description",
+        constants$1241.atk_table_set_row_description$FUNC
     );
-    static final FunctionDescriptor gdk_window_set_accept_focus$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor atk_table_set_row_header$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle atk_table_set_row_header$MH = RuntimeHelper.downcallHandle(
+        "atk_table_set_row_header",
+        constants$1241.atk_table_set_row_header$FUNC
+    );
+    static final FunctionDescriptor atk_table_set_summary$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle atk_table_set_summary$MH = RuntimeHelper.downcallHandle(
+        "atk_table_set_summary",
+        constants$1241.atk_table_set_summary$FUNC
+    );
+    static final FunctionDescriptor atk_table_get_selected_columns$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle atk_table_get_selected_columns$MH = RuntimeHelper.downcallHandle(
+        "atk_table_get_selected_columns",
+        constants$1241.atk_table_get_selected_columns$FUNC
+    );
+    static final FunctionDescriptor atk_table_get_selected_rows$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle atk_table_get_selected_rows$MH = RuntimeHelper.downcallHandle(
+        "atk_table_get_selected_rows",
+        constants$1241.atk_table_get_selected_rows$FUNC
+    );
+    static final FunctionDescriptor atk_table_is_column_selected$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gdk_window_set_accept_focus$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_accept_focus",
-        constants$1241.gdk_window_set_accept_focus$FUNC
-    );
-    static final FunctionDescriptor gdk_window_get_focus_on_map$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_get_focus_on_map$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_focus_on_map",
-        constants$1241.gdk_window_get_focus_on_map$FUNC
-    );
-    static final FunctionDescriptor gdk_window_set_focus_on_map$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_window_set_focus_on_map$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_focus_on_map",
-        constants$1241.gdk_window_set_focus_on_map$FUNC
-    );
-    static final FunctionDescriptor gdk_window_add_filter$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_add_filter$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_add_filter",
-        constants$1241.gdk_window_add_filter$FUNC
-    );
-    static final FunctionDescriptor gdk_window_remove_filter$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_remove_filter$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_remove_filter",
-        constants$1241.gdk_window_remove_filter$FUNC
+    static final MethodHandle atk_table_is_column_selected$MH = RuntimeHelper.downcallHandle(
+        "atk_table_is_column_selected",
+        constants$1241.atk_table_is_column_selected$FUNC
     );
 }
 

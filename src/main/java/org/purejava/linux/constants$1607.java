@@ -7,59 +7,49 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1607 {
+final class constants$1607 {
 
-    static final FunctionDescriptor gtk_target_list_add_text_targets$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1607() {}
+    static final FunctionDescriptor gtk_gesture_rotate_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_gesture_rotate_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_gesture_rotate_get_type",
+        constants$1607.gtk_gesture_rotate_get_type$FUNC
     );
-    static final MethodHandle gtk_target_list_add_text_targets$MH = RuntimeHelper.downcallHandle(
-        "gtk_target_list_add_text_targets",
-        constants$1607.gtk_target_list_add_text_targets$FUNC
+    static final FunctionDescriptor gtk_gesture_rotate_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor gtk_target_list_add_rich_text_targets$FUNC = FunctionDescriptor.ofVoid(
+    static final MethodHandle gtk_gesture_rotate_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_gesture_rotate_new",
+        constants$1607.gtk_gesture_rotate_new$FUNC
+    );
+    static final FunctionDescriptor gtk_gesture_rotate_get_angle_delta$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_gesture_rotate_get_angle_delta$MH = RuntimeHelper.downcallHandle(
+        "gtk_gesture_rotate_get_angle_delta",
+        constants$1607.gtk_gesture_rotate_get_angle_delta$FUNC
+    );
+    static final FunctionDescriptor gtk_gesture_stylus_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_gesture_stylus_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_gesture_stylus_get_type",
+        constants$1607.gtk_gesture_stylus_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_gesture_stylus_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_gesture_stylus_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_gesture_stylus_new",
+        constants$1607.gtk_gesture_stylus_new$FUNC
+    );
+    static final FunctionDescriptor gtk_gesture_stylus_get_axis$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_target_list_add_rich_text_targets$MH = RuntimeHelper.downcallHandle(
-        "gtk_target_list_add_rich_text_targets",
-        constants$1607.gtk_target_list_add_rich_text_targets$FUNC
-    );
-    static final FunctionDescriptor gtk_target_list_add_image_targets$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_target_list_add_image_targets$MH = RuntimeHelper.downcallHandle(
-        "gtk_target_list_add_image_targets",
-        constants$1607.gtk_target_list_add_image_targets$FUNC
-    );
-    static final FunctionDescriptor gtk_target_list_add_uri_targets$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_target_list_add_uri_targets$MH = RuntimeHelper.downcallHandle(
-        "gtk_target_list_add_uri_targets",
-        constants$1607.gtk_target_list_add_uri_targets$FUNC
-    );
-    static final FunctionDescriptor gtk_target_list_add_table$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_target_list_add_table$MH = RuntimeHelper.downcallHandle(
-        "gtk_target_list_add_table",
-        constants$1607.gtk_target_list_add_table$FUNC
-    );
-    static final FunctionDescriptor gtk_target_list_remove$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_target_list_remove$MH = RuntimeHelper.downcallHandle(
-        "gtk_target_list_remove",
-        constants$1607.gtk_target_list_remove$FUNC
+    static final MethodHandle gtk_gesture_stylus_get_axis$MH = RuntimeHelper.downcallHandle(
+        "gtk_gesture_stylus_get_axis",
+        constants$1607.gtk_gesture_stylus_get_axis$FUNC
     );
 }
 

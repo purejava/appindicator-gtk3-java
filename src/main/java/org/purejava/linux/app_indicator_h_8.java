@@ -7,1953 +7,17 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
- class app_indicator_h_8 extends app_indicator_h_7 {
+public class app_indicator_h_8 extends app_indicator_h_7 {
 
-    public static MethodHandle symlink$MH() {
-        return RuntimeHelper.requireNonNull(constants$576.symlink$MH,"symlink");
-    }
-    public static int symlink ( Addressable __from,  Addressable __to) {
-        var mh$ = symlink$MH();
-        try {
-            return (int)mh$.invokeExact(__from, __to);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle readlink$MH() {
-        return RuntimeHelper.requireNonNull(constants$576.readlink$MH,"readlink");
-    }
-    public static long readlink ( Addressable __path,  Addressable __buf,  long __len) {
-        var mh$ = readlink$MH();
-        try {
-            return (long)mh$.invokeExact(__path, __buf, __len);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle symlinkat$MH() {
-        return RuntimeHelper.requireNonNull(constants$577.symlinkat$MH,"symlinkat");
-    }
-    public static int symlinkat ( Addressable __from,  int __tofd,  Addressable __to) {
-        var mh$ = symlinkat$MH();
-        try {
-            return (int)mh$.invokeExact(__from, __tofd, __to);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle readlinkat$MH() {
-        return RuntimeHelper.requireNonNull(constants$577.readlinkat$MH,"readlinkat");
-    }
-    public static long readlinkat ( int __fd,  Addressable __path,  Addressable __buf,  long __len) {
-        var mh$ = readlinkat$MH();
-        try {
-            return (long)mh$.invokeExact(__fd, __path, __buf, __len);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle unlink$MH() {
-        return RuntimeHelper.requireNonNull(constants$577.unlink$MH,"unlink");
-    }
-    public static int unlink ( Addressable __name) {
-        var mh$ = unlink$MH();
-        try {
-            return (int)mh$.invokeExact(__name);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle unlinkat$MH() {
-        return RuntimeHelper.requireNonNull(constants$577.unlinkat$MH,"unlinkat");
-    }
-    public static int unlinkat ( int __fd,  Addressable __name,  int __flag) {
-        var mh$ = unlinkat$MH();
-        try {
-            return (int)mh$.invokeExact(__fd, __name, __flag);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle rmdir$MH() {
-        return RuntimeHelper.requireNonNull(constants$577.rmdir$MH,"rmdir");
-    }
-    public static int rmdir ( Addressable __path) {
-        var mh$ = rmdir$MH();
-        try {
-            return (int)mh$.invokeExact(__path);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle tcgetpgrp$MH() {
-        return RuntimeHelper.requireNonNull(constants$577.tcgetpgrp$MH,"tcgetpgrp");
-    }
-    public static int tcgetpgrp ( int __fd) {
-        var mh$ = tcgetpgrp$MH();
-        try {
-            return (int)mh$.invokeExact(__fd);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle tcsetpgrp$MH() {
-        return RuntimeHelper.requireNonNull(constants$578.tcsetpgrp$MH,"tcsetpgrp");
-    }
-    public static int tcsetpgrp ( int __fd,  int __pgrp_id) {
-        var mh$ = tcsetpgrp$MH();
-        try {
-            return (int)mh$.invokeExact(__fd, __pgrp_id);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle getlogin$MH() {
-        return RuntimeHelper.requireNonNull(constants$578.getlogin$MH,"getlogin");
-    }
-    public static MemoryAddress getlogin () {
-        var mh$ = getlogin$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle getlogin_r$MH() {
-        return RuntimeHelper.requireNonNull(constants$578.getlogin_r$MH,"getlogin_r");
-    }
-    public static int getlogin_r ( Addressable __name,  long __name_len) {
-        var mh$ = getlogin_r$MH();
-        try {
-            return (int)mh$.invokeExact(__name, __name_len);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle setlogin$MH() {
-        return RuntimeHelper.requireNonNull(constants$578.setlogin$MH,"setlogin");
-    }
-    public static int setlogin ( Addressable __name) {
-        var mh$ = setlogin$MH();
-        try {
-            return (int)mh$.invokeExact(__name);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MemoryLayout optarg$LAYOUT() {
-        return constants$578.optarg$LAYOUT;
-    }
-    public static VarHandle optarg$VH() {
-        return constants$578.optarg$VH;
-    }
-    public static MemorySegment optarg$SEGMENT() {
-        return RuntimeHelper.requireNonNull(constants$578.optarg$SEGMENT,"optarg");
-    }
-    public static MemoryAddress optarg$get() {
-        return (java.lang.foreign.MemoryAddress) constants$578.optarg$VH.get(RuntimeHelper.requireNonNull(constants$578.optarg$SEGMENT, "optarg"));
-    }
-    public static void optarg$set( MemoryAddress x) {
-        constants$578.optarg$VH.set(RuntimeHelper.requireNonNull(constants$578.optarg$SEGMENT, "optarg"), x);
-    }
-    public static MemoryLayout optind$LAYOUT() {
-        return constants$578.optind$LAYOUT;
-    }
-    public static VarHandle optind$VH() {
-        return constants$578.optind$VH;
-    }
-    public static MemorySegment optind$SEGMENT() {
-        return RuntimeHelper.requireNonNull(constants$578.optind$SEGMENT,"optind");
-    }
-    public static int optind$get() {
-        return (int) constants$578.optind$VH.get(RuntimeHelper.requireNonNull(constants$578.optind$SEGMENT, "optind"));
-    }
-    public static void optind$set( int x) {
-        constants$578.optind$VH.set(RuntimeHelper.requireNonNull(constants$578.optind$SEGMENT, "optind"), x);
-    }
-    public static MemoryLayout opterr$LAYOUT() {
-        return constants$579.opterr$LAYOUT;
-    }
-    public static VarHandle opterr$VH() {
-        return constants$579.opterr$VH;
-    }
-    public static MemorySegment opterr$SEGMENT() {
-        return RuntimeHelper.requireNonNull(constants$579.opterr$SEGMENT,"opterr");
-    }
-    public static int opterr$get() {
-        return (int) constants$579.opterr$VH.get(RuntimeHelper.requireNonNull(constants$579.opterr$SEGMENT, "opterr"));
-    }
-    public static void opterr$set( int x) {
-        constants$579.opterr$VH.set(RuntimeHelper.requireNonNull(constants$579.opterr$SEGMENT, "opterr"), x);
-    }
-    public static MemoryLayout optopt$LAYOUT() {
-        return constants$579.optopt$LAYOUT;
-    }
-    public static VarHandle optopt$VH() {
-        return constants$579.optopt$VH;
-    }
-    public static MemorySegment optopt$SEGMENT() {
-        return RuntimeHelper.requireNonNull(constants$579.optopt$SEGMENT,"optopt");
-    }
-    public static int optopt$get() {
-        return (int) constants$579.optopt$VH.get(RuntimeHelper.requireNonNull(constants$579.optopt$SEGMENT, "optopt"));
-    }
-    public static void optopt$set( int x) {
-        constants$579.optopt$VH.set(RuntimeHelper.requireNonNull(constants$579.optopt$SEGMENT, "optopt"), x);
-    }
-    public static MethodHandle getopt$MH() {
-        return RuntimeHelper.requireNonNull(constants$579.getopt$MH,"getopt");
-    }
-    public static int getopt ( int ___argc,  Addressable ___argv,  Addressable __shortopts) {
-        var mh$ = getopt$MH();
-        try {
-            return (int)mh$.invokeExact(___argc, ___argv, __shortopts);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gethostname$MH() {
-        return RuntimeHelper.requireNonNull(constants$579.gethostname$MH,"gethostname");
-    }
-    public static int gethostname ( Addressable __name,  long __len) {
-        var mh$ = gethostname$MH();
-        try {
-            return (int)mh$.invokeExact(__name, __len);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle sethostname$MH() {
-        return RuntimeHelper.requireNonNull(constants$579.sethostname$MH,"sethostname");
-    }
-    public static int sethostname ( Addressable __name,  long __len) {
-        var mh$ = sethostname$MH();
-        try {
-            return (int)mh$.invokeExact(__name, __len);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle sethostid$MH() {
-        return RuntimeHelper.requireNonNull(constants$579.sethostid$MH,"sethostid");
-    }
-    public static int sethostid ( long __id) {
-        var mh$ = sethostid$MH();
-        try {
-            return (int)mh$.invokeExact(__id);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle getdomainname$MH() {
-        return RuntimeHelper.requireNonNull(constants$580.getdomainname$MH,"getdomainname");
-    }
-    public static int getdomainname ( Addressable __name,  long __len) {
-        var mh$ = getdomainname$MH();
-        try {
-            return (int)mh$.invokeExact(__name, __len);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle setdomainname$MH() {
-        return RuntimeHelper.requireNonNull(constants$580.setdomainname$MH,"setdomainname");
-    }
-    public static int setdomainname ( Addressable __name,  long __len) {
-        var mh$ = setdomainname$MH();
-        try {
-            return (int)mh$.invokeExact(__name, __len);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle vhangup$MH() {
-        return RuntimeHelper.requireNonNull(constants$580.vhangup$MH,"vhangup");
-    }
-    public static int vhangup () {
-        var mh$ = vhangup$MH();
-        try {
-            return (int)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle revoke$MH() {
-        return RuntimeHelper.requireNonNull(constants$580.revoke$MH,"revoke");
-    }
-    public static int revoke ( Addressable __file) {
-        var mh$ = revoke$MH();
-        try {
-            return (int)mh$.invokeExact(__file);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle profil$MH() {
-        return RuntimeHelper.requireNonNull(constants$580.profil$MH,"profil");
-    }
-    public static int profil ( Addressable __sample_buffer,  long __size,  long __offset,  int __scale) {
-        var mh$ = profil$MH();
-        try {
-            return (int)mh$.invokeExact(__sample_buffer, __size, __offset, __scale);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle acct$MH() {
-        return RuntimeHelper.requireNonNull(constants$580.acct$MH,"acct");
-    }
-    public static int acct ( Addressable __name) {
-        var mh$ = acct$MH();
-        try {
-            return (int)mh$.invokeExact(__name);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle getusershell$MH() {
-        return RuntimeHelper.requireNonNull(constants$581.getusershell$MH,"getusershell");
-    }
-    public static MemoryAddress getusershell () {
-        var mh$ = getusershell$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle endusershell$MH() {
-        return RuntimeHelper.requireNonNull(constants$581.endusershell$MH,"endusershell");
-    }
-    public static void endusershell () {
-        var mh$ = endusershell$MH();
-        try {
-            mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle setusershell$MH() {
-        return RuntimeHelper.requireNonNull(constants$581.setusershell$MH,"setusershell");
-    }
-    public static void setusershell () {
-        var mh$ = setusershell$MH();
-        try {
-            mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle daemon$MH() {
-        return RuntimeHelper.requireNonNull(constants$581.daemon$MH,"daemon");
-    }
-    public static int daemon ( int __nochdir,  int __noclose) {
-        var mh$ = daemon$MH();
-        try {
-            return (int)mh$.invokeExact(__nochdir, __noclose);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle chroot$MH() {
-        return RuntimeHelper.requireNonNull(constants$581.chroot$MH,"chroot");
-    }
-    public static int chroot ( Addressable __path) {
-        var mh$ = chroot$MH();
-        try {
-            return (int)mh$.invokeExact(__path);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle getpass$MH() {
-        return RuntimeHelper.requireNonNull(constants$581.getpass$MH,"getpass");
-    }
-    public static MemoryAddress getpass ( Addressable __prompt) {
-        var mh$ = getpass$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(__prompt);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle fsync$MH() {
-        return RuntimeHelper.requireNonNull(constants$582.fsync$MH,"fsync");
-    }
-    public static int fsync ( int __fd) {
-        var mh$ = fsync$MH();
-        try {
-            return (int)mh$.invokeExact(__fd);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gethostid$MH() {
-        return RuntimeHelper.requireNonNull(constants$582.gethostid$MH,"gethostid");
-    }
-    public static long gethostid () {
-        var mh$ = gethostid$MH();
-        try {
-            return (long)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle sync$MH() {
-        return RuntimeHelper.requireNonNull(constants$582.sync$MH,"sync");
-    }
-    public static void sync () {
-        var mh$ = sync$MH();
-        try {
-            mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle getpagesize$MH() {
-        return RuntimeHelper.requireNonNull(constants$582.getpagesize$MH,"getpagesize");
-    }
-    public static int getpagesize () {
-        var mh$ = getpagesize$MH();
-        try {
-            return (int)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle getdtablesize$MH() {
-        return RuntimeHelper.requireNonNull(constants$582.getdtablesize$MH,"getdtablesize");
-    }
-    public static int getdtablesize () {
-        var mh$ = getdtablesize$MH();
-        try {
-            return (int)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle truncate$MH() {
-        return RuntimeHelper.requireNonNull(constants$582.truncate$MH,"truncate");
-    }
-    public static int truncate ( Addressable __file,  long __length) {
-        var mh$ = truncate$MH();
-        try {
-            return (int)mh$.invokeExact(__file, __length);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle ftruncate$MH() {
-        return RuntimeHelper.requireNonNull(constants$583.ftruncate$MH,"ftruncate");
-    }
-    public static int ftruncate ( int __fd,  long __length) {
-        var mh$ = ftruncate$MH();
-        try {
-            return (int)mh$.invokeExact(__fd, __length);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle brk$MH() {
-        return RuntimeHelper.requireNonNull(constants$583.brk$MH,"brk");
-    }
-    public static int brk ( Addressable __addr) {
-        var mh$ = brk$MH();
-        try {
-            return (int)mh$.invokeExact(__addr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle sbrk$MH() {
-        return RuntimeHelper.requireNonNull(constants$583.sbrk$MH,"sbrk");
-    }
-    public static MemoryAddress sbrk ( long __delta) {
-        var mh$ = sbrk$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(__delta);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle syscall$MH() {
-        return RuntimeHelper.requireNonNull(constants$583.syscall$MH,"syscall");
-    }
-    public static long syscall ( long __sysno, Object... x1) {
-        var mh$ = syscall$MH();
-        try {
-            return (long)mh$.invokeExact(__sysno, x1);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle lockf$MH() {
-        return RuntimeHelper.requireNonNull(constants$583.lockf$MH,"lockf");
-    }
-    public static int lockf ( int __fd,  int __cmd,  long __len) {
-        var mh$ = lockf$MH();
-        try {
-            return (int)mh$.invokeExact(__fd, __cmd, __len);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle fdatasync$MH() {
-        return RuntimeHelper.requireNonNull(constants$583.fdatasync$MH,"fdatasync");
-    }
-    public static int fdatasync ( int __fildes) {
-        var mh$ = fdatasync$MH();
-        try {
-            return (int)mh$.invokeExact(__fildes);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle crypt$MH() {
-        return RuntimeHelper.requireNonNull(constants$584.crypt$MH,"crypt");
-    }
-    public static MemoryAddress crypt ( Addressable __key,  Addressable __salt) {
-        var mh$ = crypt$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(__key, __salt);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle getentropy$MH() {
-        return RuntimeHelper.requireNonNull(constants$584.getentropy$MH,"getentropy");
-    }
-    public static int getentropy ( Addressable __buffer,  long __length) {
-        var mh$ = getentropy$MH();
-        try {
-            return (int)mh$.invokeExact(__buffer, __length);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_credentials_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$584.g_credentials_get_type$MH,"g_credentials_get_type");
-    }
-    public static long g_credentials_get_type () {
-        var mh$ = g_credentials_get_type$MH();
-        try {
-            return (long)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_credentials_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$584.g_credentials_new$MH,"g_credentials_new");
-    }
-    public static MemoryAddress g_credentials_new () {
-        var mh$ = g_credentials_new$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_credentials_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$584.g_credentials_to_string$MH,"g_credentials_to_string");
-    }
-    public static MemoryAddress g_credentials_to_string ( Addressable credentials) {
-        var mh$ = g_credentials_to_string$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(credentials);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_credentials_get_native$MH() {
-        return RuntimeHelper.requireNonNull(constants$584.g_credentials_get_native$MH,"g_credentials_get_native");
-    }
-    public static MemoryAddress g_credentials_get_native ( Addressable credentials,  int native_type) {
-        var mh$ = g_credentials_get_native$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(credentials, native_type);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_credentials_set_native$MH() {
-        return RuntimeHelper.requireNonNull(constants$585.g_credentials_set_native$MH,"g_credentials_set_native");
-    }
-    public static void g_credentials_set_native ( Addressable credentials,  int native_type,  Addressable native_) {
-        var mh$ = g_credentials_set_native$MH();
-        try {
-            mh$.invokeExact(credentials, native_type, native_);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_credentials_is_same_user$MH() {
-        return RuntimeHelper.requireNonNull(constants$585.g_credentials_is_same_user$MH,"g_credentials_is_same_user");
-    }
-    public static int g_credentials_is_same_user ( Addressable credentials,  Addressable other_credentials,  Addressable error) {
-        var mh$ = g_credentials_is_same_user$MH();
-        try {
-            return (int)mh$.invokeExact(credentials, other_credentials, error);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_credentials_get_unix_pid$MH() {
-        return RuntimeHelper.requireNonNull(constants$585.g_credentials_get_unix_pid$MH,"g_credentials_get_unix_pid");
-    }
-    public static int g_credentials_get_unix_pid ( Addressable credentials,  Addressable error) {
-        var mh$ = g_credentials_get_unix_pid$MH();
-        try {
-            return (int)mh$.invokeExact(credentials, error);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_credentials_get_unix_user$MH() {
-        return RuntimeHelper.requireNonNull(constants$585.g_credentials_get_unix_user$MH,"g_credentials_get_unix_user");
-    }
-    public static int g_credentials_get_unix_user ( Addressable credentials,  Addressable error) {
-        var mh$ = g_credentials_get_unix_user$MH();
-        try {
-            return (int)mh$.invokeExact(credentials, error);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_credentials_set_unix_user$MH() {
-        return RuntimeHelper.requireNonNull(constants$585.g_credentials_set_unix_user$MH,"g_credentials_set_unix_user");
-    }
-    public static int g_credentials_set_unix_user ( Addressable credentials,  int uid,  Addressable error) {
-        var mh$ = g_credentials_set_unix_user$MH();
-        try {
-            return (int)mh$.invokeExact(credentials, uid, error);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_datagram_based_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$585.g_datagram_based_get_type$MH,"g_datagram_based_get_type");
-    }
-    public static long g_datagram_based_get_type () {
-        var mh$ = g_datagram_based_get_type$MH();
-        try {
-            return (long)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_datagram_based_receive_messages$MH() {
-        return RuntimeHelper.requireNonNull(constants$586.g_datagram_based_receive_messages$MH,"g_datagram_based_receive_messages");
-    }
-    public static int g_datagram_based_receive_messages ( Addressable datagram_based,  Addressable messages,  int num_messages,  int flags,  long timeout,  Addressable cancellable,  Addressable error) {
-        var mh$ = g_datagram_based_receive_messages$MH();
-        try {
-            return (int)mh$.invokeExact(datagram_based, messages, num_messages, flags, timeout, cancellable, error);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_datagram_based_send_messages$MH() {
-        return RuntimeHelper.requireNonNull(constants$586.g_datagram_based_send_messages$MH,"g_datagram_based_send_messages");
-    }
-    public static int g_datagram_based_send_messages ( Addressable datagram_based,  Addressable messages,  int num_messages,  int flags,  long timeout,  Addressable cancellable,  Addressable error) {
-        var mh$ = g_datagram_based_send_messages$MH();
-        try {
-            return (int)mh$.invokeExact(datagram_based, messages, num_messages, flags, timeout, cancellable, error);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_datagram_based_create_source$MH() {
-        return RuntimeHelper.requireNonNull(constants$586.g_datagram_based_create_source$MH,"g_datagram_based_create_source");
-    }
-    public static MemoryAddress g_datagram_based_create_source ( Addressable datagram_based,  int condition,  Addressable cancellable) {
-        var mh$ = g_datagram_based_create_source$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(datagram_based, condition, cancellable);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_datagram_based_condition_check$MH() {
-        return RuntimeHelper.requireNonNull(constants$586.g_datagram_based_condition_check$MH,"g_datagram_based_condition_check");
-    }
-    public static int g_datagram_based_condition_check ( Addressable datagram_based,  int condition) {
-        var mh$ = g_datagram_based_condition_check$MH();
-        try {
-            return (int)mh$.invokeExact(datagram_based, condition);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_datagram_based_condition_wait$MH() {
-        return RuntimeHelper.requireNonNull(constants$586.g_datagram_based_condition_wait$MH,"g_datagram_based_condition_wait");
-    }
-    public static int g_datagram_based_condition_wait ( Addressable datagram_based,  int condition,  long timeout,  Addressable cancellable,  Addressable error) {
-        var mh$ = g_datagram_based_condition_wait$MH();
-        try {
-            return (int)mh$.invokeExact(datagram_based, condition, timeout, cancellable, error);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_data_input_stream_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$586.g_data_input_stream_get_type$MH,"g_data_input_stream_get_type");
-    }
-    public static long g_data_input_stream_get_type () {
-        var mh$ = g_data_input_stream_get_type$MH();
-        try {
-            return (long)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_data_input_stream_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$587.g_data_input_stream_new$MH,"g_data_input_stream_new");
-    }
-    public static MemoryAddress g_data_input_stream_new ( Addressable base_stream) {
-        var mh$ = g_data_input_stream_new$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(base_stream);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_data_input_stream_set_byte_order$MH() {
-        return RuntimeHelper.requireNonNull(constants$587.g_data_input_stream_set_byte_order$MH,"g_data_input_stream_set_byte_order");
-    }
-    public static void g_data_input_stream_set_byte_order ( Addressable stream,  int order) {
-        var mh$ = g_data_input_stream_set_byte_order$MH();
-        try {
-            mh$.invokeExact(stream, order);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_data_input_stream_get_byte_order$MH() {
-        return RuntimeHelper.requireNonNull(constants$587.g_data_input_stream_get_byte_order$MH,"g_data_input_stream_get_byte_order");
-    }
-    public static int g_data_input_stream_get_byte_order ( Addressable stream) {
-        var mh$ = g_data_input_stream_get_byte_order$MH();
-        try {
-            return (int)mh$.invokeExact(stream);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_data_input_stream_set_newline_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$587.g_data_input_stream_set_newline_type$MH,"g_data_input_stream_set_newline_type");
-    }
-    public static void g_data_input_stream_set_newline_type ( Addressable stream,  int type) {
-        var mh$ = g_data_input_stream_set_newline_type$MH();
-        try {
-            mh$.invokeExact(stream, type);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_data_input_stream_get_newline_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$587.g_data_input_stream_get_newline_type$MH,"g_data_input_stream_get_newline_type");
-    }
-    public static int g_data_input_stream_get_newline_type ( Addressable stream) {
-        var mh$ = g_data_input_stream_get_newline_type$MH();
-        try {
-            return (int)mh$.invokeExact(stream);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_data_input_stream_read_byte$MH() {
-        return RuntimeHelper.requireNonNull(constants$587.g_data_input_stream_read_byte$MH,"g_data_input_stream_read_byte");
-    }
-    public static byte g_data_input_stream_read_byte ( Addressable stream,  Addressable cancellable,  Addressable error) {
-        var mh$ = g_data_input_stream_read_byte$MH();
-        try {
-            return (byte)mh$.invokeExact(stream, cancellable, error);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_data_input_stream_read_int16$MH() {
-        return RuntimeHelper.requireNonNull(constants$588.g_data_input_stream_read_int16$MH,"g_data_input_stream_read_int16");
-    }
-    public static short g_data_input_stream_read_int16 ( Addressable stream,  Addressable cancellable,  Addressable error) {
-        var mh$ = g_data_input_stream_read_int16$MH();
-        try {
-            return (short)mh$.invokeExact(stream, cancellable, error);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_data_input_stream_read_uint16$MH() {
-        return RuntimeHelper.requireNonNull(constants$588.g_data_input_stream_read_uint16$MH,"g_data_input_stream_read_uint16");
-    }
-    public static short g_data_input_stream_read_uint16 ( Addressable stream,  Addressable cancellable,  Addressable error) {
-        var mh$ = g_data_input_stream_read_uint16$MH();
-        try {
-            return (short)mh$.invokeExact(stream, cancellable, error);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_data_input_stream_read_int32$MH() {
-        return RuntimeHelper.requireNonNull(constants$588.g_data_input_stream_read_int32$MH,"g_data_input_stream_read_int32");
-    }
-    public static int g_data_input_stream_read_int32 ( Addressable stream,  Addressable cancellable,  Addressable error) {
-        var mh$ = g_data_input_stream_read_int32$MH();
-        try {
-            return (int)mh$.invokeExact(stream, cancellable, error);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_data_input_stream_read_uint32$MH() {
-        return RuntimeHelper.requireNonNull(constants$588.g_data_input_stream_read_uint32$MH,"g_data_input_stream_read_uint32");
-    }
-    public static int g_data_input_stream_read_uint32 ( Addressable stream,  Addressable cancellable,  Addressable error) {
-        var mh$ = g_data_input_stream_read_uint32$MH();
-        try {
-            return (int)mh$.invokeExact(stream, cancellable, error);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_data_input_stream_read_int64$MH() {
-        return RuntimeHelper.requireNonNull(constants$588.g_data_input_stream_read_int64$MH,"g_data_input_stream_read_int64");
-    }
-    public static long g_data_input_stream_read_int64 ( Addressable stream,  Addressable cancellable,  Addressable error) {
-        var mh$ = g_data_input_stream_read_int64$MH();
-        try {
-            return (long)mh$.invokeExact(stream, cancellable, error);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_data_input_stream_read_uint64$MH() {
-        return RuntimeHelper.requireNonNull(constants$588.g_data_input_stream_read_uint64$MH,"g_data_input_stream_read_uint64");
-    }
-    public static long g_data_input_stream_read_uint64 ( Addressable stream,  Addressable cancellable,  Addressable error) {
-        var mh$ = g_data_input_stream_read_uint64$MH();
-        try {
-            return (long)mh$.invokeExact(stream, cancellable, error);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_data_input_stream_read_line$MH() {
-        return RuntimeHelper.requireNonNull(constants$589.g_data_input_stream_read_line$MH,"g_data_input_stream_read_line");
-    }
-    public static MemoryAddress g_data_input_stream_read_line ( Addressable stream,  Addressable length,  Addressable cancellable,  Addressable error) {
-        var mh$ = g_data_input_stream_read_line$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(stream, length, cancellable, error);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_data_input_stream_read_line_utf8$MH() {
-        return RuntimeHelper.requireNonNull(constants$589.g_data_input_stream_read_line_utf8$MH,"g_data_input_stream_read_line_utf8");
-    }
-    public static MemoryAddress g_data_input_stream_read_line_utf8 ( Addressable stream,  Addressable length,  Addressable cancellable,  Addressable error) {
-        var mh$ = g_data_input_stream_read_line_utf8$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(stream, length, cancellable, error);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_data_input_stream_read_line_async$MH() {
-        return RuntimeHelper.requireNonNull(constants$589.g_data_input_stream_read_line_async$MH,"g_data_input_stream_read_line_async");
-    }
-    public static void g_data_input_stream_read_line_async ( Addressable stream,  int io_priority,  Addressable cancellable,  Addressable callback,  Addressable user_data) {
-        var mh$ = g_data_input_stream_read_line_async$MH();
-        try {
-            mh$.invokeExact(stream, io_priority, cancellable, callback, user_data);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_data_input_stream_read_line_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$589.g_data_input_stream_read_line_finish$MH,"g_data_input_stream_read_line_finish");
-    }
-    public static MemoryAddress g_data_input_stream_read_line_finish ( Addressable stream,  Addressable result,  Addressable length,  Addressable error) {
-        var mh$ = g_data_input_stream_read_line_finish$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(stream, result, length, error);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_data_input_stream_read_line_finish_utf8$MH() {
-        return RuntimeHelper.requireNonNull(constants$589.g_data_input_stream_read_line_finish_utf8$MH,"g_data_input_stream_read_line_finish_utf8");
-    }
-    public static MemoryAddress g_data_input_stream_read_line_finish_utf8 ( Addressable stream,  Addressable result,  Addressable length,  Addressable error) {
-        var mh$ = g_data_input_stream_read_line_finish_utf8$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(stream, result, length, error);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_data_input_stream_read_until$MH() {
-        return RuntimeHelper.requireNonNull(constants$589.g_data_input_stream_read_until$MH,"g_data_input_stream_read_until");
-    }
-    public static MemoryAddress g_data_input_stream_read_until ( Addressable stream,  Addressable stop_chars,  Addressable length,  Addressable cancellable,  Addressable error) {
-        var mh$ = g_data_input_stream_read_until$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(stream, stop_chars, length, cancellable, error);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_data_input_stream_read_until_async$MH() {
-        return RuntimeHelper.requireNonNull(constants$590.g_data_input_stream_read_until_async$MH,"g_data_input_stream_read_until_async");
-    }
-    public static void g_data_input_stream_read_until_async ( Addressable stream,  Addressable stop_chars,  int io_priority,  Addressable cancellable,  Addressable callback,  Addressable user_data) {
-        var mh$ = g_data_input_stream_read_until_async$MH();
-        try {
-            mh$.invokeExact(stream, stop_chars, io_priority, cancellable, callback, user_data);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_data_input_stream_read_until_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$590.g_data_input_stream_read_until_finish$MH,"g_data_input_stream_read_until_finish");
-    }
-    public static MemoryAddress g_data_input_stream_read_until_finish ( Addressable stream,  Addressable result,  Addressable length,  Addressable error) {
-        var mh$ = g_data_input_stream_read_until_finish$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(stream, result, length, error);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_data_input_stream_read_upto$MH() {
-        return RuntimeHelper.requireNonNull(constants$590.g_data_input_stream_read_upto$MH,"g_data_input_stream_read_upto");
-    }
-    public static MemoryAddress g_data_input_stream_read_upto ( Addressable stream,  Addressable stop_chars,  long stop_chars_len,  Addressable length,  Addressable cancellable,  Addressable error) {
-        var mh$ = g_data_input_stream_read_upto$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(stream, stop_chars, stop_chars_len, length, cancellable, error);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_data_input_stream_read_upto_async$MH() {
-        return RuntimeHelper.requireNonNull(constants$590.g_data_input_stream_read_upto_async$MH,"g_data_input_stream_read_upto_async");
-    }
-    public static void g_data_input_stream_read_upto_async ( Addressable stream,  Addressable stop_chars,  long stop_chars_len,  int io_priority,  Addressable cancellable,  Addressable callback,  Addressable user_data) {
-        var mh$ = g_data_input_stream_read_upto_async$MH();
-        try {
-            mh$.invokeExact(stream, stop_chars, stop_chars_len, io_priority, cancellable, callback, user_data);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_data_input_stream_read_upto_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$590.g_data_input_stream_read_upto_finish$MH,"g_data_input_stream_read_upto_finish");
-    }
-    public static MemoryAddress g_data_input_stream_read_upto_finish ( Addressable stream,  Addressable result,  Addressable length,  Addressable error) {
-        var mh$ = g_data_input_stream_read_upto_finish$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(stream, result, length, error);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_data_output_stream_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$590.g_data_output_stream_get_type$MH,"g_data_output_stream_get_type");
-    }
-    public static long g_data_output_stream_get_type () {
-        var mh$ = g_data_output_stream_get_type$MH();
-        try {
-            return (long)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_data_output_stream_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$591.g_data_output_stream_new$MH,"g_data_output_stream_new");
-    }
-    public static MemoryAddress g_data_output_stream_new ( Addressable base_stream) {
-        var mh$ = g_data_output_stream_new$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(base_stream);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_data_output_stream_set_byte_order$MH() {
-        return RuntimeHelper.requireNonNull(constants$591.g_data_output_stream_set_byte_order$MH,"g_data_output_stream_set_byte_order");
-    }
-    public static void g_data_output_stream_set_byte_order ( Addressable stream,  int order) {
-        var mh$ = g_data_output_stream_set_byte_order$MH();
-        try {
-            mh$.invokeExact(stream, order);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_data_output_stream_get_byte_order$MH() {
-        return RuntimeHelper.requireNonNull(constants$591.g_data_output_stream_get_byte_order$MH,"g_data_output_stream_get_byte_order");
-    }
-    public static int g_data_output_stream_get_byte_order ( Addressable stream) {
-        var mh$ = g_data_output_stream_get_byte_order$MH();
-        try {
-            return (int)mh$.invokeExact(stream);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_data_output_stream_put_byte$MH() {
-        return RuntimeHelper.requireNonNull(constants$591.g_data_output_stream_put_byte$MH,"g_data_output_stream_put_byte");
-    }
-    public static int g_data_output_stream_put_byte ( Addressable stream,  byte data,  Addressable cancellable,  Addressable error) {
-        var mh$ = g_data_output_stream_put_byte$MH();
-        try {
-            return (int)mh$.invokeExact(stream, data, cancellable, error);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_data_output_stream_put_int16$MH() {
-        return RuntimeHelper.requireNonNull(constants$591.g_data_output_stream_put_int16$MH,"g_data_output_stream_put_int16");
-    }
-    public static int g_data_output_stream_put_int16 ( Addressable stream,  short data,  Addressable cancellable,  Addressable error) {
-        var mh$ = g_data_output_stream_put_int16$MH();
-        try {
-            return (int)mh$.invokeExact(stream, data, cancellable, error);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_data_output_stream_put_uint16$MH() {
-        return RuntimeHelper.requireNonNull(constants$591.g_data_output_stream_put_uint16$MH,"g_data_output_stream_put_uint16");
-    }
-    public static int g_data_output_stream_put_uint16 ( Addressable stream,  short data,  Addressable cancellable,  Addressable error) {
-        var mh$ = g_data_output_stream_put_uint16$MH();
-        try {
-            return (int)mh$.invokeExact(stream, data, cancellable, error);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_data_output_stream_put_int32$MH() {
-        return RuntimeHelper.requireNonNull(constants$592.g_data_output_stream_put_int32$MH,"g_data_output_stream_put_int32");
-    }
-    public static int g_data_output_stream_put_int32 ( Addressable stream,  int data,  Addressable cancellable,  Addressable error) {
-        var mh$ = g_data_output_stream_put_int32$MH();
-        try {
-            return (int)mh$.invokeExact(stream, data, cancellable, error);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_data_output_stream_put_uint32$MH() {
-        return RuntimeHelper.requireNonNull(constants$592.g_data_output_stream_put_uint32$MH,"g_data_output_stream_put_uint32");
-    }
-    public static int g_data_output_stream_put_uint32 ( Addressable stream,  int data,  Addressable cancellable,  Addressable error) {
-        var mh$ = g_data_output_stream_put_uint32$MH();
-        try {
-            return (int)mh$.invokeExact(stream, data, cancellable, error);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_data_output_stream_put_int64$MH() {
-        return RuntimeHelper.requireNonNull(constants$592.g_data_output_stream_put_int64$MH,"g_data_output_stream_put_int64");
-    }
-    public static int g_data_output_stream_put_int64 ( Addressable stream,  long data,  Addressable cancellable,  Addressable error) {
-        var mh$ = g_data_output_stream_put_int64$MH();
-        try {
-            return (int)mh$.invokeExact(stream, data, cancellable, error);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_data_output_stream_put_uint64$MH() {
-        return RuntimeHelper.requireNonNull(constants$592.g_data_output_stream_put_uint64$MH,"g_data_output_stream_put_uint64");
-    }
-    public static int g_data_output_stream_put_uint64 ( Addressable stream,  long data,  Addressable cancellable,  Addressable error) {
-        var mh$ = g_data_output_stream_put_uint64$MH();
-        try {
-            return (int)mh$.invokeExact(stream, data, cancellable, error);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_data_output_stream_put_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$592.g_data_output_stream_put_string$MH,"g_data_output_stream_put_string");
-    }
-    public static int g_data_output_stream_put_string ( Addressable stream,  Addressable str,  Addressable cancellable,  Addressable error) {
-        var mh$ = g_data_output_stream_put_string$MH();
-        try {
-            return (int)mh$.invokeExact(stream, str, cancellable, error);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_action_group_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$592.g_dbus_action_group_get_type$MH,"g_dbus_action_group_get_type");
-    }
-    public static long g_dbus_action_group_get_type () {
-        var mh$ = g_dbus_action_group_get_type$MH();
-        try {
-            return (long)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_action_group_get$MH() {
-        return RuntimeHelper.requireNonNull(constants$593.g_dbus_action_group_get$MH,"g_dbus_action_group_get");
-    }
-    public static MemoryAddress g_dbus_action_group_get ( Addressable connection,  Addressable bus_name,  Addressable object_path) {
-        var mh$ = g_dbus_action_group_get$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(connection, bus_name, object_path);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_address_escape_value$MH() {
-        return RuntimeHelper.requireNonNull(constants$593.g_dbus_address_escape_value$MH,"g_dbus_address_escape_value");
-    }
-    public static MemoryAddress g_dbus_address_escape_value ( Addressable string) {
-        var mh$ = g_dbus_address_escape_value$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(string);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_is_address$MH() {
-        return RuntimeHelper.requireNonNull(constants$593.g_dbus_is_address$MH,"g_dbus_is_address");
-    }
-    public static int g_dbus_is_address ( Addressable string) {
-        var mh$ = g_dbus_is_address$MH();
-        try {
-            return (int)mh$.invokeExact(string);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_is_supported_address$MH() {
-        return RuntimeHelper.requireNonNull(constants$593.g_dbus_is_supported_address$MH,"g_dbus_is_supported_address");
-    }
-    public static int g_dbus_is_supported_address ( Addressable string,  Addressable error) {
-        var mh$ = g_dbus_is_supported_address$MH();
-        try {
-            return (int)mh$.invokeExact(string, error);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_address_get_stream$MH() {
-        return RuntimeHelper.requireNonNull(constants$593.g_dbus_address_get_stream$MH,"g_dbus_address_get_stream");
-    }
-    public static void g_dbus_address_get_stream ( Addressable address,  Addressable cancellable,  Addressable callback,  Addressable user_data) {
-        var mh$ = g_dbus_address_get_stream$MH();
-        try {
-            mh$.invokeExact(address, cancellable, callback, user_data);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_address_get_stream_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$593.g_dbus_address_get_stream_finish$MH,"g_dbus_address_get_stream_finish");
-    }
-    public static MemoryAddress g_dbus_address_get_stream_finish ( Addressable res,  Addressable out_guid,  Addressable error) {
-        var mh$ = g_dbus_address_get_stream_finish$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(res, out_guid, error);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_address_get_stream_sync$MH() {
-        return RuntimeHelper.requireNonNull(constants$594.g_dbus_address_get_stream_sync$MH,"g_dbus_address_get_stream_sync");
-    }
-    public static MemoryAddress g_dbus_address_get_stream_sync ( Addressable address,  Addressable out_guid,  Addressable cancellable,  Addressable error) {
-        var mh$ = g_dbus_address_get_stream_sync$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(address, out_guid, cancellable, error);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_address_get_for_bus_sync$MH() {
-        return RuntimeHelper.requireNonNull(constants$594.g_dbus_address_get_for_bus_sync$MH,"g_dbus_address_get_for_bus_sync");
-    }
-    public static MemoryAddress g_dbus_address_get_for_bus_sync ( int bus_type,  Addressable cancellable,  Addressable error) {
-        var mh$ = g_dbus_address_get_for_bus_sync$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(bus_type, cancellable, error);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_auth_observer_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$594.g_dbus_auth_observer_get_type$MH,"g_dbus_auth_observer_get_type");
-    }
-    public static long g_dbus_auth_observer_get_type () {
-        var mh$ = g_dbus_auth_observer_get_type$MH();
-        try {
-            return (long)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_auth_observer_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$594.g_dbus_auth_observer_new$MH,"g_dbus_auth_observer_new");
-    }
-    public static MemoryAddress g_dbus_auth_observer_new () {
-        var mh$ = g_dbus_auth_observer_new$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_auth_observer_authorize_authenticated_peer$MH() {
-        return RuntimeHelper.requireNonNull(constants$594.g_dbus_auth_observer_authorize_authenticated_peer$MH,"g_dbus_auth_observer_authorize_authenticated_peer");
-    }
-    public static int g_dbus_auth_observer_authorize_authenticated_peer ( Addressable observer,  Addressable stream,  Addressable credentials) {
-        var mh$ = g_dbus_auth_observer_authorize_authenticated_peer$MH();
-        try {
-            return (int)mh$.invokeExact(observer, stream, credentials);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_auth_observer_allow_mechanism$MH() {
-        return RuntimeHelper.requireNonNull(constants$594.g_dbus_auth_observer_allow_mechanism$MH,"g_dbus_auth_observer_allow_mechanism");
-    }
-    public static int g_dbus_auth_observer_allow_mechanism ( Addressable observer,  Addressable mechanism) {
-        var mh$ = g_dbus_auth_observer_allow_mechanism$MH();
-        try {
-            return (int)mh$.invokeExact(observer, mechanism);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_connection_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$595.g_dbus_connection_get_type$MH,"g_dbus_connection_get_type");
-    }
-    public static long g_dbus_connection_get_type () {
-        var mh$ = g_dbus_connection_get_type$MH();
-        try {
-            return (long)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_bus_get$MH() {
-        return RuntimeHelper.requireNonNull(constants$595.g_bus_get$MH,"g_bus_get");
-    }
-    public static void g_bus_get ( int bus_type,  Addressable cancellable,  Addressable callback,  Addressable user_data) {
-        var mh$ = g_bus_get$MH();
-        try {
-            mh$.invokeExact(bus_type, cancellable, callback, user_data);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_bus_get_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$595.g_bus_get_finish$MH,"g_bus_get_finish");
-    }
-    public static MemoryAddress g_bus_get_finish ( Addressable res,  Addressable error) {
-        var mh$ = g_bus_get_finish$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(res, error);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_bus_get_sync$MH() {
-        return RuntimeHelper.requireNonNull(constants$595.g_bus_get_sync$MH,"g_bus_get_sync");
-    }
-    public static MemoryAddress g_bus_get_sync ( int bus_type,  Addressable cancellable,  Addressable error) {
-        var mh$ = g_bus_get_sync$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(bus_type, cancellable, error);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_connection_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$595.g_dbus_connection_new$MH,"g_dbus_connection_new");
-    }
-    public static void g_dbus_connection_new ( Addressable stream,  Addressable guid,  int flags,  Addressable observer,  Addressable cancellable,  Addressable callback,  Addressable user_data) {
-        var mh$ = g_dbus_connection_new$MH();
-        try {
-            mh$.invokeExact(stream, guid, flags, observer, cancellable, callback, user_data);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_connection_new_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$595.g_dbus_connection_new_finish$MH,"g_dbus_connection_new_finish");
-    }
-    public static MemoryAddress g_dbus_connection_new_finish ( Addressable res,  Addressable error) {
-        var mh$ = g_dbus_connection_new_finish$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(res, error);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_connection_new_sync$MH() {
-        return RuntimeHelper.requireNonNull(constants$596.g_dbus_connection_new_sync$MH,"g_dbus_connection_new_sync");
-    }
-    public static MemoryAddress g_dbus_connection_new_sync ( Addressable stream,  Addressable guid,  int flags,  Addressable observer,  Addressable cancellable,  Addressable error) {
-        var mh$ = g_dbus_connection_new_sync$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(stream, guid, flags, observer, cancellable, error);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_connection_new_for_address$MH() {
-        return RuntimeHelper.requireNonNull(constants$596.g_dbus_connection_new_for_address$MH,"g_dbus_connection_new_for_address");
-    }
-    public static void g_dbus_connection_new_for_address ( Addressable address,  int flags,  Addressable observer,  Addressable cancellable,  Addressable callback,  Addressable user_data) {
-        var mh$ = g_dbus_connection_new_for_address$MH();
-        try {
-            mh$.invokeExact(address, flags, observer, cancellable, callback, user_data);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_connection_new_for_address_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$596.g_dbus_connection_new_for_address_finish$MH,"g_dbus_connection_new_for_address_finish");
-    }
-    public static MemoryAddress g_dbus_connection_new_for_address_finish ( Addressable res,  Addressable error) {
-        var mh$ = g_dbus_connection_new_for_address_finish$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(res, error);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_connection_new_for_address_sync$MH() {
-        return RuntimeHelper.requireNonNull(constants$596.g_dbus_connection_new_for_address_sync$MH,"g_dbus_connection_new_for_address_sync");
-    }
-    public static MemoryAddress g_dbus_connection_new_for_address_sync ( Addressable address,  int flags,  Addressable observer,  Addressable cancellable,  Addressable error) {
-        var mh$ = g_dbus_connection_new_for_address_sync$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(address, flags, observer, cancellable, error);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_connection_start_message_processing$MH() {
-        return RuntimeHelper.requireNonNull(constants$596.g_dbus_connection_start_message_processing$MH,"g_dbus_connection_start_message_processing");
-    }
-    public static void g_dbus_connection_start_message_processing ( Addressable connection) {
-        var mh$ = g_dbus_connection_start_message_processing$MH();
-        try {
-            mh$.invokeExact(connection);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_connection_is_closed$MH() {
-        return RuntimeHelper.requireNonNull(constants$596.g_dbus_connection_is_closed$MH,"g_dbus_connection_is_closed");
-    }
-    public static int g_dbus_connection_is_closed ( Addressable connection) {
-        var mh$ = g_dbus_connection_is_closed$MH();
-        try {
-            return (int)mh$.invokeExact(connection);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_connection_get_stream$MH() {
-        return RuntimeHelper.requireNonNull(constants$597.g_dbus_connection_get_stream$MH,"g_dbus_connection_get_stream");
-    }
-    public static MemoryAddress g_dbus_connection_get_stream ( Addressable connection) {
-        var mh$ = g_dbus_connection_get_stream$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(connection);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_connection_get_guid$MH() {
-        return RuntimeHelper.requireNonNull(constants$597.g_dbus_connection_get_guid$MH,"g_dbus_connection_get_guid");
-    }
-    public static MemoryAddress g_dbus_connection_get_guid ( Addressable connection) {
-        var mh$ = g_dbus_connection_get_guid$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(connection);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_connection_get_unique_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$597.g_dbus_connection_get_unique_name$MH,"g_dbus_connection_get_unique_name");
-    }
-    public static MemoryAddress g_dbus_connection_get_unique_name ( Addressable connection) {
-        var mh$ = g_dbus_connection_get_unique_name$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(connection);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_connection_get_peer_credentials$MH() {
-        return RuntimeHelper.requireNonNull(constants$597.g_dbus_connection_get_peer_credentials$MH,"g_dbus_connection_get_peer_credentials");
-    }
-    public static MemoryAddress g_dbus_connection_get_peer_credentials ( Addressable connection) {
-        var mh$ = g_dbus_connection_get_peer_credentials$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(connection);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_connection_get_last_serial$MH() {
-        return RuntimeHelper.requireNonNull(constants$597.g_dbus_connection_get_last_serial$MH,"g_dbus_connection_get_last_serial");
-    }
-    public static int g_dbus_connection_get_last_serial ( Addressable connection) {
-        var mh$ = g_dbus_connection_get_last_serial$MH();
-        try {
-            return (int)mh$.invokeExact(connection);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_connection_get_exit_on_close$MH() {
-        return RuntimeHelper.requireNonNull(constants$597.g_dbus_connection_get_exit_on_close$MH,"g_dbus_connection_get_exit_on_close");
-    }
-    public static int g_dbus_connection_get_exit_on_close ( Addressable connection) {
-        var mh$ = g_dbus_connection_get_exit_on_close$MH();
-        try {
-            return (int)mh$.invokeExact(connection);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_connection_set_exit_on_close$MH() {
-        return RuntimeHelper.requireNonNull(constants$598.g_dbus_connection_set_exit_on_close$MH,"g_dbus_connection_set_exit_on_close");
-    }
-    public static void g_dbus_connection_set_exit_on_close ( Addressable connection,  int exit_on_close) {
-        var mh$ = g_dbus_connection_set_exit_on_close$MH();
-        try {
-            mh$.invokeExact(connection, exit_on_close);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_connection_get_capabilities$MH() {
-        return RuntimeHelper.requireNonNull(constants$598.g_dbus_connection_get_capabilities$MH,"g_dbus_connection_get_capabilities");
-    }
-    public static int g_dbus_connection_get_capabilities ( Addressable connection) {
-        var mh$ = g_dbus_connection_get_capabilities$MH();
-        try {
-            return (int)mh$.invokeExact(connection);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_connection_get_flags$MH() {
-        return RuntimeHelper.requireNonNull(constants$598.g_dbus_connection_get_flags$MH,"g_dbus_connection_get_flags");
-    }
-    public static int g_dbus_connection_get_flags ( Addressable connection) {
-        var mh$ = g_dbus_connection_get_flags$MH();
-        try {
-            return (int)mh$.invokeExact(connection);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_connection_close$MH() {
-        return RuntimeHelper.requireNonNull(constants$598.g_dbus_connection_close$MH,"g_dbus_connection_close");
-    }
-    public static void g_dbus_connection_close ( Addressable connection,  Addressable cancellable,  Addressable callback,  Addressable user_data) {
-        var mh$ = g_dbus_connection_close$MH();
-        try {
-            mh$.invokeExact(connection, cancellable, callback, user_data);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_connection_close_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$598.g_dbus_connection_close_finish$MH,"g_dbus_connection_close_finish");
-    }
-    public static int g_dbus_connection_close_finish ( Addressable connection,  Addressable res,  Addressable error) {
-        var mh$ = g_dbus_connection_close_finish$MH();
-        try {
-            return (int)mh$.invokeExact(connection, res, error);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_connection_close_sync$MH() {
-        return RuntimeHelper.requireNonNull(constants$598.g_dbus_connection_close_sync$MH,"g_dbus_connection_close_sync");
-    }
-    public static int g_dbus_connection_close_sync ( Addressable connection,  Addressable cancellable,  Addressable error) {
-        var mh$ = g_dbus_connection_close_sync$MH();
-        try {
-            return (int)mh$.invokeExact(connection, cancellable, error);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_connection_flush$MH() {
-        return RuntimeHelper.requireNonNull(constants$599.g_dbus_connection_flush$MH,"g_dbus_connection_flush");
-    }
-    public static void g_dbus_connection_flush ( Addressable connection,  Addressable cancellable,  Addressable callback,  Addressable user_data) {
-        var mh$ = g_dbus_connection_flush$MH();
-        try {
-            mh$.invokeExact(connection, cancellable, callback, user_data);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_connection_flush_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$599.g_dbus_connection_flush_finish$MH,"g_dbus_connection_flush_finish");
-    }
-    public static int g_dbus_connection_flush_finish ( Addressable connection,  Addressable res,  Addressable error) {
-        var mh$ = g_dbus_connection_flush_finish$MH();
-        try {
-            return (int)mh$.invokeExact(connection, res, error);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_connection_flush_sync$MH() {
-        return RuntimeHelper.requireNonNull(constants$599.g_dbus_connection_flush_sync$MH,"g_dbus_connection_flush_sync");
-    }
-    public static int g_dbus_connection_flush_sync ( Addressable connection,  Addressable cancellable,  Addressable error) {
-        var mh$ = g_dbus_connection_flush_sync$MH();
-        try {
-            return (int)mh$.invokeExact(connection, cancellable, error);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_connection_send_message$MH() {
-        return RuntimeHelper.requireNonNull(constants$599.g_dbus_connection_send_message$MH,"g_dbus_connection_send_message");
-    }
-    public static int g_dbus_connection_send_message ( Addressable connection,  Addressable message,  int flags,  Addressable out_serial,  Addressable error) {
-        var mh$ = g_dbus_connection_send_message$MH();
-        try {
-            return (int)mh$.invokeExact(connection, message, flags, out_serial, error);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_connection_send_message_with_reply$MH() {
-        return RuntimeHelper.requireNonNull(constants$599.g_dbus_connection_send_message_with_reply$MH,"g_dbus_connection_send_message_with_reply");
-    }
-    public static void g_dbus_connection_send_message_with_reply ( Addressable connection,  Addressable message,  int flags,  int timeout_msec,  Addressable out_serial,  Addressable cancellable,  Addressable callback,  Addressable user_data) {
-        var mh$ = g_dbus_connection_send_message_with_reply$MH();
-        try {
-            mh$.invokeExact(connection, message, flags, timeout_msec, out_serial, cancellable, callback, user_data);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_connection_send_message_with_reply_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$599.g_dbus_connection_send_message_with_reply_finish$MH,"g_dbus_connection_send_message_with_reply_finish");
-    }
-    public static MemoryAddress g_dbus_connection_send_message_with_reply_finish ( Addressable connection,  Addressable res,  Addressable error) {
-        var mh$ = g_dbus_connection_send_message_with_reply_finish$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(connection, res, error);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_connection_send_message_with_reply_sync$MH() {
-        return RuntimeHelper.requireNonNull(constants$600.g_dbus_connection_send_message_with_reply_sync$MH,"g_dbus_connection_send_message_with_reply_sync");
-    }
-    public static MemoryAddress g_dbus_connection_send_message_with_reply_sync ( Addressable connection,  Addressable message,  int flags,  int timeout_msec,  Addressable out_serial,  Addressable cancellable,  Addressable error) {
-        var mh$ = g_dbus_connection_send_message_with_reply_sync$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(connection, message, flags, timeout_msec, out_serial, cancellable, error);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_connection_emit_signal$MH() {
-        return RuntimeHelper.requireNonNull(constants$600.g_dbus_connection_emit_signal$MH,"g_dbus_connection_emit_signal");
-    }
-    public static int g_dbus_connection_emit_signal ( Addressable connection,  Addressable destination_bus_name,  Addressable object_path,  Addressable interface_name,  Addressable signal_name,  Addressable parameters,  Addressable error) {
-        var mh$ = g_dbus_connection_emit_signal$MH();
-        try {
-            return (int)mh$.invokeExact(connection, destination_bus_name, object_path, interface_name, signal_name, parameters, error);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_connection_call$MH() {
-        return RuntimeHelper.requireNonNull(constants$600.g_dbus_connection_call$MH,"g_dbus_connection_call");
-    }
-    public static void g_dbus_connection_call ( Addressable connection,  Addressable bus_name,  Addressable object_path,  Addressable interface_name,  Addressable method_name,  Addressable parameters,  Addressable reply_type,  int flags,  int timeout_msec,  Addressable cancellable,  Addressable callback,  Addressable user_data) {
-        var mh$ = g_dbus_connection_call$MH();
-        try {
-            mh$.invokeExact(connection, bus_name, object_path, interface_name, method_name, parameters, reply_type, flags, timeout_msec, cancellable, callback, user_data);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_connection_call_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$600.g_dbus_connection_call_finish$MH,"g_dbus_connection_call_finish");
-    }
-    public static MemoryAddress g_dbus_connection_call_finish ( Addressable connection,  Addressable res,  Addressable error) {
-        var mh$ = g_dbus_connection_call_finish$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(connection, res, error);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_connection_call_sync$MH() {
-        return RuntimeHelper.requireNonNull(constants$600.g_dbus_connection_call_sync$MH,"g_dbus_connection_call_sync");
-    }
-    public static MemoryAddress g_dbus_connection_call_sync ( Addressable connection,  Addressable bus_name,  Addressable object_path,  Addressable interface_name,  Addressable method_name,  Addressable parameters,  Addressable reply_type,  int flags,  int timeout_msec,  Addressable cancellable,  Addressable error) {
-        var mh$ = g_dbus_connection_call_sync$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(connection, bus_name, object_path, interface_name, method_name, parameters, reply_type, flags, timeout_msec, cancellable, error);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_connection_call_with_unix_fd_list$MH() {
-        return RuntimeHelper.requireNonNull(constants$600.g_dbus_connection_call_with_unix_fd_list$MH,"g_dbus_connection_call_with_unix_fd_list");
-    }
-    public static void g_dbus_connection_call_with_unix_fd_list ( Addressable connection,  Addressable bus_name,  Addressable object_path,  Addressable interface_name,  Addressable method_name,  Addressable parameters,  Addressable reply_type,  int flags,  int timeout_msec,  Addressable fd_list,  Addressable cancellable,  Addressable callback,  Addressable user_data) {
-        var mh$ = g_dbus_connection_call_with_unix_fd_list$MH();
-        try {
-            mh$.invokeExact(connection, bus_name, object_path, interface_name, method_name, parameters, reply_type, flags, timeout_msec, fd_list, cancellable, callback, user_data);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_connection_call_with_unix_fd_list_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$601.g_dbus_connection_call_with_unix_fd_list_finish$MH,"g_dbus_connection_call_with_unix_fd_list_finish");
-    }
-    public static MemoryAddress g_dbus_connection_call_with_unix_fd_list_finish ( Addressable connection,  Addressable out_fd_list,  Addressable res,  Addressable error) {
-        var mh$ = g_dbus_connection_call_with_unix_fd_list_finish$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(connection, out_fd_list, res, error);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_connection_call_with_unix_fd_list_sync$MH() {
-        return RuntimeHelper.requireNonNull(constants$601.g_dbus_connection_call_with_unix_fd_list_sync$MH,"g_dbus_connection_call_with_unix_fd_list_sync");
-    }
-    public static MemoryAddress g_dbus_connection_call_with_unix_fd_list_sync ( Addressable connection,  Addressable bus_name,  Addressable object_path,  Addressable interface_name,  Addressable method_name,  Addressable parameters,  Addressable reply_type,  int flags,  int timeout_msec,  Addressable fd_list,  Addressable out_fd_list,  Addressable cancellable,  Addressable error) {
-        var mh$ = g_dbus_connection_call_with_unix_fd_list_sync$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(connection, bus_name, object_path, interface_name, method_name, parameters, reply_type, flags, timeout_msec, fd_list, out_fd_list, cancellable, error);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_connection_register_object$MH() {
-        return RuntimeHelper.requireNonNull(constants$602.g_dbus_connection_register_object$MH,"g_dbus_connection_register_object");
-    }
-    public static int g_dbus_connection_register_object ( Addressable connection,  Addressable object_path,  Addressable interface_info,  Addressable vtable,  Addressable user_data,  Addressable user_data_free_func,  Addressable error) {
-        var mh$ = g_dbus_connection_register_object$MH();
-        try {
-            return (int)mh$.invokeExact(connection, object_path, interface_info, vtable, user_data, user_data_free_func, error);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_connection_register_object_with_closures$MH() {
-        return RuntimeHelper.requireNonNull(constants$602.g_dbus_connection_register_object_with_closures$MH,"g_dbus_connection_register_object_with_closures");
-    }
-    public static int g_dbus_connection_register_object_with_closures ( Addressable connection,  Addressable object_path,  Addressable interface_info,  Addressable method_call_closure,  Addressable get_property_closure,  Addressable set_property_closure,  Addressable error) {
-        var mh$ = g_dbus_connection_register_object_with_closures$MH();
-        try {
-            return (int)mh$.invokeExact(connection, object_path, interface_info, method_call_closure, get_property_closure, set_property_closure, error);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_connection_unregister_object$MH() {
-        return RuntimeHelper.requireNonNull(constants$602.g_dbus_connection_unregister_object$MH,"g_dbus_connection_unregister_object");
-    }
-    public static int g_dbus_connection_unregister_object ( Addressable connection,  int registration_id) {
-        var mh$ = g_dbus_connection_unregister_object$MH();
-        try {
-            return (int)mh$.invokeExact(connection, registration_id);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_connection_register_subtree$MH() {
-        return RuntimeHelper.requireNonNull(constants$603.g_dbus_connection_register_subtree$MH,"g_dbus_connection_register_subtree");
-    }
-    public static int g_dbus_connection_register_subtree ( Addressable connection,  Addressable object_path,  Addressable vtable,  int flags,  Addressable user_data,  Addressable user_data_free_func,  Addressable error) {
-        var mh$ = g_dbus_connection_register_subtree$MH();
-        try {
-            return (int)mh$.invokeExact(connection, object_path, vtable, flags, user_data, user_data_free_func, error);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_connection_unregister_subtree$MH() {
-        return RuntimeHelper.requireNonNull(constants$604.g_dbus_connection_unregister_subtree$MH,"g_dbus_connection_unregister_subtree");
-    }
-    public static int g_dbus_connection_unregister_subtree ( Addressable connection,  int registration_id) {
-        var mh$ = g_dbus_connection_unregister_subtree$MH();
-        try {
-            return (int)mh$.invokeExact(connection, registration_id);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_connection_signal_subscribe$MH() {
-        return RuntimeHelper.requireNonNull(constants$604.g_dbus_connection_signal_subscribe$MH,"g_dbus_connection_signal_subscribe");
-    }
-    public static int g_dbus_connection_signal_subscribe ( Addressable connection,  Addressable sender,  Addressable interface_name,  Addressable member,  Addressable object_path,  Addressable arg0,  int flags,  Addressable callback,  Addressable user_data,  Addressable user_data_free_func) {
-        var mh$ = g_dbus_connection_signal_subscribe$MH();
-        try {
-            return (int)mh$.invokeExact(connection, sender, interface_name, member, object_path, arg0, flags, callback, user_data, user_data_free_func);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_connection_signal_unsubscribe$MH() {
-        return RuntimeHelper.requireNonNull(constants$604.g_dbus_connection_signal_unsubscribe$MH,"g_dbus_connection_signal_unsubscribe");
-    }
-    public static void g_dbus_connection_signal_unsubscribe ( Addressable connection,  int subscription_id) {
-        var mh$ = g_dbus_connection_signal_unsubscribe$MH();
-        try {
-            mh$.invokeExact(connection, subscription_id);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_connection_add_filter$MH() {
-        return RuntimeHelper.requireNonNull(constants$605.g_dbus_connection_add_filter$MH,"g_dbus_connection_add_filter");
-    }
-    public static int g_dbus_connection_add_filter ( Addressable connection,  Addressable filter_function,  Addressable user_data,  Addressable user_data_free_func) {
-        var mh$ = g_dbus_connection_add_filter$MH();
-        try {
-            return (int)mh$.invokeExact(connection, filter_function, user_data, user_data_free_func);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_connection_remove_filter$MH() {
-        return RuntimeHelper.requireNonNull(constants$605.g_dbus_connection_remove_filter$MH,"g_dbus_connection_remove_filter");
-    }
-    public static void g_dbus_connection_remove_filter ( Addressable connection,  int filter_id) {
-        var mh$ = g_dbus_connection_remove_filter$MH();
-        try {
-            mh$.invokeExact(connection, filter_id);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_error_quark$MH() {
-        return RuntimeHelper.requireNonNull(constants$605.g_dbus_error_quark$MH,"g_dbus_error_quark");
-    }
-    public static int g_dbus_error_quark () {
-        var mh$ = g_dbus_error_quark$MH();
-        try {
-            return (int)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_error_is_remote_error$MH() {
-        return RuntimeHelper.requireNonNull(constants$605.g_dbus_error_is_remote_error$MH,"g_dbus_error_is_remote_error");
-    }
-    public static int g_dbus_error_is_remote_error ( Addressable error) {
-        var mh$ = g_dbus_error_is_remote_error$MH();
-        try {
-            return (int)mh$.invokeExact(error);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_error_get_remote_error$MH() {
-        return RuntimeHelper.requireNonNull(constants$605.g_dbus_error_get_remote_error$MH,"g_dbus_error_get_remote_error");
-    }
-    public static MemoryAddress g_dbus_error_get_remote_error ( Addressable error) {
-        var mh$ = g_dbus_error_get_remote_error$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(error);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_error_strip_remote_error$MH() {
-        return RuntimeHelper.requireNonNull(constants$606.g_dbus_error_strip_remote_error$MH,"g_dbus_error_strip_remote_error");
-    }
-    public static int g_dbus_error_strip_remote_error ( Addressable error) {
-        var mh$ = g_dbus_error_strip_remote_error$MH();
-        try {
-            return (int)mh$.invokeExact(error);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_error_register_error$MH() {
-        return RuntimeHelper.requireNonNull(constants$606.g_dbus_error_register_error$MH,"g_dbus_error_register_error");
-    }
-    public static int g_dbus_error_register_error ( int error_domain,  int error_code,  Addressable dbus_error_name) {
-        var mh$ = g_dbus_error_register_error$MH();
-        try {
-            return (int)mh$.invokeExact(error_domain, error_code, dbus_error_name);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_error_unregister_error$MH() {
-        return RuntimeHelper.requireNonNull(constants$606.g_dbus_error_unregister_error$MH,"g_dbus_error_unregister_error");
-    }
-    public static int g_dbus_error_unregister_error ( int error_domain,  int error_code,  Addressable dbus_error_name) {
-        var mh$ = g_dbus_error_unregister_error$MH();
-        try {
-            return (int)mh$.invokeExact(error_domain, error_code, dbus_error_name);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_error_register_error_domain$MH() {
-        return RuntimeHelper.requireNonNull(constants$606.g_dbus_error_register_error_domain$MH,"g_dbus_error_register_error_domain");
-    }
-    public static void g_dbus_error_register_error_domain ( Addressable error_domain_quark_name,  Addressable quark_volatile,  Addressable entries,  int num_entries) {
-        var mh$ = g_dbus_error_register_error_domain$MH();
-        try {
-            mh$.invokeExact(error_domain_quark_name, quark_volatile, entries, num_entries);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_error_new_for_dbus_error$MH() {
-        return RuntimeHelper.requireNonNull(constants$606.g_dbus_error_new_for_dbus_error$MH,"g_dbus_error_new_for_dbus_error");
-    }
-    public static MemoryAddress g_dbus_error_new_for_dbus_error ( Addressable dbus_error_name,  Addressable dbus_error_message) {
-        var mh$ = g_dbus_error_new_for_dbus_error$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(dbus_error_name, dbus_error_message);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_error_set_dbus_error$MH() {
-        return RuntimeHelper.requireNonNull(constants$606.g_dbus_error_set_dbus_error$MH,"g_dbus_error_set_dbus_error");
-    }
-    public static void g_dbus_error_set_dbus_error ( Addressable error,  Addressable dbus_error_name,  Addressable dbus_error_message,  Addressable format, Object... x4) {
-        var mh$ = g_dbus_error_set_dbus_error$MH();
-        try {
-            mh$.invokeExact(error, dbus_error_name, dbus_error_message, format, x4);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_error_set_dbus_error_valist$MH() {
-        return RuntimeHelper.requireNonNull(constants$607.g_dbus_error_set_dbus_error_valist$MH,"g_dbus_error_set_dbus_error_valist");
-    }
-    public static void g_dbus_error_set_dbus_error_valist ( Addressable error,  Addressable dbus_error_name,  Addressable dbus_error_message,  Addressable format,  Addressable var_args) {
-        var mh$ = g_dbus_error_set_dbus_error_valist$MH();
-        try {
-            mh$.invokeExact(error, dbus_error_name, dbus_error_message, format, var_args);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_error_encode_gerror$MH() {
-        return RuntimeHelper.requireNonNull(constants$607.g_dbus_error_encode_gerror$MH,"g_dbus_error_encode_gerror");
-    }
-    public static MemoryAddress g_dbus_error_encode_gerror ( Addressable error) {
-        var mh$ = g_dbus_error_encode_gerror$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(error);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_interface_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$607.g_dbus_interface_get_type$MH,"g_dbus_interface_get_type");
-    }
-    public static long g_dbus_interface_get_type () {
-        var mh$ = g_dbus_interface_get_type$MH();
-        try {
-            return (long)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_interface_get_info$MH() {
-        return RuntimeHelper.requireNonNull(constants$607.g_dbus_interface_get_info$MH,"g_dbus_interface_get_info");
-    }
-    public static MemoryAddress g_dbus_interface_get_info ( Addressable interface_) {
-        var mh$ = g_dbus_interface_get_info$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(interface_);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_interface_get_object$MH() {
-        return RuntimeHelper.requireNonNull(constants$607.g_dbus_interface_get_object$MH,"g_dbus_interface_get_object");
-    }
-    public static MemoryAddress g_dbus_interface_get_object ( Addressable interface_) {
-        var mh$ = g_dbus_interface_get_object$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(interface_);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_interface_set_object$MH() {
-        return RuntimeHelper.requireNonNull(constants$607.g_dbus_interface_set_object$MH,"g_dbus_interface_set_object");
-    }
-    public static void g_dbus_interface_set_object ( Addressable interface_,  Addressable object) {
-        var mh$ = g_dbus_interface_set_object$MH();
-        try {
-            mh$.invokeExact(interface_, object);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_interface_dup_object$MH() {
-        return RuntimeHelper.requireNonNull(constants$608.g_dbus_interface_dup_object$MH,"g_dbus_interface_dup_object");
-    }
-    public static MemoryAddress g_dbus_interface_dup_object ( Addressable interface_) {
-        var mh$ = g_dbus_interface_dup_object$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(interface_);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_interface_skeleton_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$608.g_dbus_interface_skeleton_get_type$MH,"g_dbus_interface_skeleton_get_type");
-    }
-    public static long g_dbus_interface_skeleton_get_type () {
-        var mh$ = g_dbus_interface_skeleton_get_type$MH();
-        try {
-            return (long)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_interface_skeleton_get_flags$MH() {
-        return RuntimeHelper.requireNonNull(constants$608.g_dbus_interface_skeleton_get_flags$MH,"g_dbus_interface_skeleton_get_flags");
-    }
-    public static int g_dbus_interface_skeleton_get_flags ( Addressable interface_) {
-        var mh$ = g_dbus_interface_skeleton_get_flags$MH();
-        try {
-            return (int)mh$.invokeExact(interface_);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
     public static MethodHandle g_dbus_interface_skeleton_set_flags$MH() {
-        return RuntimeHelper.requireNonNull(constants$608.g_dbus_interface_skeleton_set_flags$MH,"g_dbus_interface_skeleton_set_flags");
+        return RuntimeHelper.requireNonNull(constants$562.g_dbus_interface_skeleton_set_flags$MH,"g_dbus_interface_skeleton_set_flags");
     }
-    public static void g_dbus_interface_skeleton_set_flags ( Addressable interface_,  int flags) {
+    /**
+     * {@snippet :
+     * void g_dbus_interface_skeleton_set_flags(GDBusInterfaceSkeleton* interface_, GDBusInterfaceSkeletonFlags flags);
+     * }
+     */
+    public static void g_dbus_interface_skeleton_set_flags(MemorySegment interface_, int flags) {
         var mh$ = g_dbus_interface_skeleton_set_flags$MH();
         try {
             mh$.invokeExact(interface_, flags);
@@ -1962,42 +26,62 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_interface_skeleton_get_info$MH() {
-        return RuntimeHelper.requireNonNull(constants$608.g_dbus_interface_skeleton_get_info$MH,"g_dbus_interface_skeleton_get_info");
+        return RuntimeHelper.requireNonNull(constants$562.g_dbus_interface_skeleton_get_info$MH,"g_dbus_interface_skeleton_get_info");
     }
-    public static MemoryAddress g_dbus_interface_skeleton_get_info ( Addressable interface_) {
+    /**
+     * {@snippet :
+     * GDBusInterfaceInfo* g_dbus_interface_skeleton_get_info(GDBusInterfaceSkeleton* interface_);
+     * }
+     */
+    public static MemorySegment g_dbus_interface_skeleton_get_info(MemorySegment interface_) {
         var mh$ = g_dbus_interface_skeleton_get_info$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(interface_);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(interface_);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_interface_skeleton_get_vtable$MH() {
-        return RuntimeHelper.requireNonNull(constants$608.g_dbus_interface_skeleton_get_vtable$MH,"g_dbus_interface_skeleton_get_vtable");
+        return RuntimeHelper.requireNonNull(constants$562.g_dbus_interface_skeleton_get_vtable$MH,"g_dbus_interface_skeleton_get_vtable");
     }
-    public static MemoryAddress g_dbus_interface_skeleton_get_vtable ( Addressable interface_) {
+    /**
+     * {@snippet :
+     * GDBusInterfaceVTable* g_dbus_interface_skeleton_get_vtable(GDBusInterfaceSkeleton* interface_);
+     * }
+     */
+    public static MemorySegment g_dbus_interface_skeleton_get_vtable(MemorySegment interface_) {
         var mh$ = g_dbus_interface_skeleton_get_vtable$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(interface_);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(interface_);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_interface_skeleton_get_properties$MH() {
-        return RuntimeHelper.requireNonNull(constants$609.g_dbus_interface_skeleton_get_properties$MH,"g_dbus_interface_skeleton_get_properties");
+        return RuntimeHelper.requireNonNull(constants$563.g_dbus_interface_skeleton_get_properties$MH,"g_dbus_interface_skeleton_get_properties");
     }
-    public static MemoryAddress g_dbus_interface_skeleton_get_properties ( Addressable interface_) {
+    /**
+     * {@snippet :
+     * GVariant* g_dbus_interface_skeleton_get_properties(GDBusInterfaceSkeleton* interface_);
+     * }
+     */
+    public static MemorySegment g_dbus_interface_skeleton_get_properties(MemorySegment interface_) {
         var mh$ = g_dbus_interface_skeleton_get_properties$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(interface_);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(interface_);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_interface_skeleton_flush$MH() {
-        return RuntimeHelper.requireNonNull(constants$609.g_dbus_interface_skeleton_flush$MH,"g_dbus_interface_skeleton_flush");
+        return RuntimeHelper.requireNonNull(constants$563.g_dbus_interface_skeleton_flush$MH,"g_dbus_interface_skeleton_flush");
     }
-    public static void g_dbus_interface_skeleton_flush ( Addressable interface_) {
+    /**
+     * {@snippet :
+     * void g_dbus_interface_skeleton_flush(GDBusInterfaceSkeleton* interface_);
+     * }
+     */
+    public static void g_dbus_interface_skeleton_flush(MemorySegment interface_) {
         var mh$ = g_dbus_interface_skeleton_flush$MH();
         try {
             mh$.invokeExact(interface_);
@@ -2006,9 +90,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_interface_skeleton_export$MH() {
-        return RuntimeHelper.requireNonNull(constants$609.g_dbus_interface_skeleton_export$MH,"g_dbus_interface_skeleton_export");
+        return RuntimeHelper.requireNonNull(constants$563.g_dbus_interface_skeleton_export$MH,"g_dbus_interface_skeleton_export");
     }
-    public static int g_dbus_interface_skeleton_export ( Addressable interface_,  Addressable connection,  Addressable object_path,  Addressable error) {
+    /**
+     * {@snippet :
+     * gboolean g_dbus_interface_skeleton_export(GDBusInterfaceSkeleton* interface_, GDBusConnection* connection, const gchar* object_path, GError** error);
+     * }
+     */
+    public static int g_dbus_interface_skeleton_export(MemorySegment interface_, MemorySegment connection, MemorySegment object_path, MemorySegment error) {
         var mh$ = g_dbus_interface_skeleton_export$MH();
         try {
             return (int)mh$.invokeExact(interface_, connection, object_path, error);
@@ -2017,9 +106,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_interface_skeleton_unexport$MH() {
-        return RuntimeHelper.requireNonNull(constants$609.g_dbus_interface_skeleton_unexport$MH,"g_dbus_interface_skeleton_unexport");
+        return RuntimeHelper.requireNonNull(constants$563.g_dbus_interface_skeleton_unexport$MH,"g_dbus_interface_skeleton_unexport");
     }
-    public static void g_dbus_interface_skeleton_unexport ( Addressable interface_) {
+    /**
+     * {@snippet :
+     * void g_dbus_interface_skeleton_unexport(GDBusInterfaceSkeleton* interface_);
+     * }
+     */
+    public static void g_dbus_interface_skeleton_unexport(MemorySegment interface_) {
         var mh$ = g_dbus_interface_skeleton_unexport$MH();
         try {
             mh$.invokeExact(interface_);
@@ -2028,9 +122,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_interface_skeleton_unexport_from_connection$MH() {
-        return RuntimeHelper.requireNonNull(constants$609.g_dbus_interface_skeleton_unexport_from_connection$MH,"g_dbus_interface_skeleton_unexport_from_connection");
+        return RuntimeHelper.requireNonNull(constants$563.g_dbus_interface_skeleton_unexport_from_connection$MH,"g_dbus_interface_skeleton_unexport_from_connection");
     }
-    public static void g_dbus_interface_skeleton_unexport_from_connection ( Addressable interface_,  Addressable connection) {
+    /**
+     * {@snippet :
+     * void g_dbus_interface_skeleton_unexport_from_connection(GDBusInterfaceSkeleton* interface_, GDBusConnection* connection);
+     * }
+     */
+    public static void g_dbus_interface_skeleton_unexport_from_connection(MemorySegment interface_, MemorySegment connection) {
         var mh$ = g_dbus_interface_skeleton_unexport_from_connection$MH();
         try {
             mh$.invokeExact(interface_, connection);
@@ -2039,31 +138,46 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_interface_skeleton_get_connection$MH() {
-        return RuntimeHelper.requireNonNull(constants$609.g_dbus_interface_skeleton_get_connection$MH,"g_dbus_interface_skeleton_get_connection");
+        return RuntimeHelper.requireNonNull(constants$563.g_dbus_interface_skeleton_get_connection$MH,"g_dbus_interface_skeleton_get_connection");
     }
-    public static MemoryAddress g_dbus_interface_skeleton_get_connection ( Addressable interface_) {
+    /**
+     * {@snippet :
+     * GDBusConnection* g_dbus_interface_skeleton_get_connection(GDBusInterfaceSkeleton* interface_);
+     * }
+     */
+    public static MemorySegment g_dbus_interface_skeleton_get_connection(MemorySegment interface_) {
         var mh$ = g_dbus_interface_skeleton_get_connection$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(interface_);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(interface_);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_interface_skeleton_get_connections$MH() {
-        return RuntimeHelper.requireNonNull(constants$610.g_dbus_interface_skeleton_get_connections$MH,"g_dbus_interface_skeleton_get_connections");
+        return RuntimeHelper.requireNonNull(constants$564.g_dbus_interface_skeleton_get_connections$MH,"g_dbus_interface_skeleton_get_connections");
     }
-    public static MemoryAddress g_dbus_interface_skeleton_get_connections ( Addressable interface_) {
+    /**
+     * {@snippet :
+     * GList* g_dbus_interface_skeleton_get_connections(GDBusInterfaceSkeleton* interface_);
+     * }
+     */
+    public static MemorySegment g_dbus_interface_skeleton_get_connections(MemorySegment interface_) {
         var mh$ = g_dbus_interface_skeleton_get_connections$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(interface_);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(interface_);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_interface_skeleton_has_connection$MH() {
-        return RuntimeHelper.requireNonNull(constants$610.g_dbus_interface_skeleton_has_connection$MH,"g_dbus_interface_skeleton_has_connection");
+        return RuntimeHelper.requireNonNull(constants$564.g_dbus_interface_skeleton_has_connection$MH,"g_dbus_interface_skeleton_has_connection");
     }
-    public static int g_dbus_interface_skeleton_has_connection ( Addressable interface_,  Addressable connection) {
+    /**
+     * {@snippet :
+     * gboolean g_dbus_interface_skeleton_has_connection(GDBusInterfaceSkeleton* interface_, GDBusConnection* connection);
+     * }
+     */
+    public static int g_dbus_interface_skeleton_has_connection(MemorySegment interface_, MemorySegment connection) {
         var mh$ = g_dbus_interface_skeleton_has_connection$MH();
         try {
             return (int)mh$.invokeExact(interface_, connection);
@@ -2072,64 +186,94 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_interface_skeleton_get_object_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$610.g_dbus_interface_skeleton_get_object_path$MH,"g_dbus_interface_skeleton_get_object_path");
+        return RuntimeHelper.requireNonNull(constants$564.g_dbus_interface_skeleton_get_object_path$MH,"g_dbus_interface_skeleton_get_object_path");
     }
-    public static MemoryAddress g_dbus_interface_skeleton_get_object_path ( Addressable interface_) {
+    /**
+     * {@snippet :
+     * const gchar* g_dbus_interface_skeleton_get_object_path(GDBusInterfaceSkeleton* interface_);
+     * }
+     */
+    public static MemorySegment g_dbus_interface_skeleton_get_object_path(MemorySegment interface_) {
         var mh$ = g_dbus_interface_skeleton_get_object_path$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(interface_);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(interface_);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_annotation_info_lookup$MH() {
-        return RuntimeHelper.requireNonNull(constants$610.g_dbus_annotation_info_lookup$MH,"g_dbus_annotation_info_lookup");
+        return RuntimeHelper.requireNonNull(constants$564.g_dbus_annotation_info_lookup$MH,"g_dbus_annotation_info_lookup");
     }
-    public static MemoryAddress g_dbus_annotation_info_lookup ( Addressable annotations,  Addressable name) {
+    /**
+     * {@snippet :
+     * const gchar* g_dbus_annotation_info_lookup(GDBusAnnotationInfo** annotations, const gchar* name);
+     * }
+     */
+    public static MemorySegment g_dbus_annotation_info_lookup(MemorySegment annotations, MemorySegment name) {
         var mh$ = g_dbus_annotation_info_lookup$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(annotations, name);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(annotations, name);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_interface_info_lookup_method$MH() {
-        return RuntimeHelper.requireNonNull(constants$610.g_dbus_interface_info_lookup_method$MH,"g_dbus_interface_info_lookup_method");
+        return RuntimeHelper.requireNonNull(constants$564.g_dbus_interface_info_lookup_method$MH,"g_dbus_interface_info_lookup_method");
     }
-    public static MemoryAddress g_dbus_interface_info_lookup_method ( Addressable info,  Addressable name) {
+    /**
+     * {@snippet :
+     * GDBusMethodInfo* g_dbus_interface_info_lookup_method(GDBusInterfaceInfo* info, const gchar* name);
+     * }
+     */
+    public static MemorySegment g_dbus_interface_info_lookup_method(MemorySegment info, MemorySegment name) {
         var mh$ = g_dbus_interface_info_lookup_method$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(info, name);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(info, name);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_interface_info_lookup_signal$MH() {
-        return RuntimeHelper.requireNonNull(constants$610.g_dbus_interface_info_lookup_signal$MH,"g_dbus_interface_info_lookup_signal");
+        return RuntimeHelper.requireNonNull(constants$564.g_dbus_interface_info_lookup_signal$MH,"g_dbus_interface_info_lookup_signal");
     }
-    public static MemoryAddress g_dbus_interface_info_lookup_signal ( Addressable info,  Addressable name) {
+    /**
+     * {@snippet :
+     * GDBusSignalInfo* g_dbus_interface_info_lookup_signal(GDBusInterfaceInfo* info, const gchar* name);
+     * }
+     */
+    public static MemorySegment g_dbus_interface_info_lookup_signal(MemorySegment info, MemorySegment name) {
         var mh$ = g_dbus_interface_info_lookup_signal$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(info, name);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(info, name);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_interface_info_lookup_property$MH() {
-        return RuntimeHelper.requireNonNull(constants$611.g_dbus_interface_info_lookup_property$MH,"g_dbus_interface_info_lookup_property");
+        return RuntimeHelper.requireNonNull(constants$565.g_dbus_interface_info_lookup_property$MH,"g_dbus_interface_info_lookup_property");
     }
-    public static MemoryAddress g_dbus_interface_info_lookup_property ( Addressable info,  Addressable name) {
+    /**
+     * {@snippet :
+     * GDBusPropertyInfo* g_dbus_interface_info_lookup_property(GDBusInterfaceInfo* info, const gchar* name);
+     * }
+     */
+    public static MemorySegment g_dbus_interface_info_lookup_property(MemorySegment info, MemorySegment name) {
         var mh$ = g_dbus_interface_info_lookup_property$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(info, name);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(info, name);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_interface_info_cache_build$MH() {
-        return RuntimeHelper.requireNonNull(constants$611.g_dbus_interface_info_cache_build$MH,"g_dbus_interface_info_cache_build");
+        return RuntimeHelper.requireNonNull(constants$565.g_dbus_interface_info_cache_build$MH,"g_dbus_interface_info_cache_build");
     }
-    public static void g_dbus_interface_info_cache_build ( Addressable info) {
+    /**
+     * {@snippet :
+     * void g_dbus_interface_info_cache_build(GDBusInterfaceInfo* info);
+     * }
+     */
+    public static void g_dbus_interface_info_cache_build(MemorySegment info) {
         var mh$ = g_dbus_interface_info_cache_build$MH();
         try {
             mh$.invokeExact(info);
@@ -2138,9 +282,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_interface_info_cache_release$MH() {
-        return RuntimeHelper.requireNonNull(constants$611.g_dbus_interface_info_cache_release$MH,"g_dbus_interface_info_cache_release");
+        return RuntimeHelper.requireNonNull(constants$565.g_dbus_interface_info_cache_release$MH,"g_dbus_interface_info_cache_release");
     }
-    public static void g_dbus_interface_info_cache_release ( Addressable info) {
+    /**
+     * {@snippet :
+     * void g_dbus_interface_info_cache_release(GDBusInterfaceInfo* info);
+     * }
+     */
+    public static void g_dbus_interface_info_cache_release(MemorySegment info) {
         var mh$ = g_dbus_interface_info_cache_release$MH();
         try {
             mh$.invokeExact(info);
@@ -2149,9 +298,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_interface_info_generate_xml$MH() {
-        return RuntimeHelper.requireNonNull(constants$611.g_dbus_interface_info_generate_xml$MH,"g_dbus_interface_info_generate_xml");
+        return RuntimeHelper.requireNonNull(constants$565.g_dbus_interface_info_generate_xml$MH,"g_dbus_interface_info_generate_xml");
     }
-    public static void g_dbus_interface_info_generate_xml ( Addressable info,  int indent,  Addressable string_builder) {
+    /**
+     * {@snippet :
+     * void g_dbus_interface_info_generate_xml(GDBusInterfaceInfo* info, guint indent, GString* string_builder);
+     * }
+     */
+    public static void g_dbus_interface_info_generate_xml(MemorySegment info, int indent, MemorySegment string_builder) {
         var mh$ = g_dbus_interface_info_generate_xml$MH();
         try {
             mh$.invokeExact(info, indent, string_builder);
@@ -2160,31 +314,46 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_node_info_new_for_xml$MH() {
-        return RuntimeHelper.requireNonNull(constants$611.g_dbus_node_info_new_for_xml$MH,"g_dbus_node_info_new_for_xml");
+        return RuntimeHelper.requireNonNull(constants$565.g_dbus_node_info_new_for_xml$MH,"g_dbus_node_info_new_for_xml");
     }
-    public static MemoryAddress g_dbus_node_info_new_for_xml ( Addressable xml_data,  Addressable error) {
+    /**
+     * {@snippet :
+     * GDBusNodeInfo* g_dbus_node_info_new_for_xml(const gchar* xml_data, GError** error);
+     * }
+     */
+    public static MemorySegment g_dbus_node_info_new_for_xml(MemorySegment xml_data, MemorySegment error) {
         var mh$ = g_dbus_node_info_new_for_xml$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(xml_data, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(xml_data, error);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_node_info_lookup_interface$MH() {
-        return RuntimeHelper.requireNonNull(constants$611.g_dbus_node_info_lookup_interface$MH,"g_dbus_node_info_lookup_interface");
+        return RuntimeHelper.requireNonNull(constants$565.g_dbus_node_info_lookup_interface$MH,"g_dbus_node_info_lookup_interface");
     }
-    public static MemoryAddress g_dbus_node_info_lookup_interface ( Addressable info,  Addressable name) {
+    /**
+     * {@snippet :
+     * GDBusInterfaceInfo* g_dbus_node_info_lookup_interface(GDBusNodeInfo* info, const gchar* name);
+     * }
+     */
+    public static MemorySegment g_dbus_node_info_lookup_interface(MemorySegment info, MemorySegment name) {
         var mh$ = g_dbus_node_info_lookup_interface$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(info, name);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(info, name);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_node_info_generate_xml$MH() {
-        return RuntimeHelper.requireNonNull(constants$612.g_dbus_node_info_generate_xml$MH,"g_dbus_node_info_generate_xml");
+        return RuntimeHelper.requireNonNull(constants$566.g_dbus_node_info_generate_xml$MH,"g_dbus_node_info_generate_xml");
     }
-    public static void g_dbus_node_info_generate_xml ( Addressable info,  int indent,  Addressable string_builder) {
+    /**
+     * {@snippet :
+     * void g_dbus_node_info_generate_xml(GDBusNodeInfo* info, guint indent, GString* string_builder);
+     * }
+     */
+    public static void g_dbus_node_info_generate_xml(MemorySegment info, int indent, MemorySegment string_builder) {
         var mh$ = g_dbus_node_info_generate_xml$MH();
         try {
             mh$.invokeExact(info, indent, string_builder);
@@ -2193,86 +362,126 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_node_info_ref$MH() {
-        return RuntimeHelper.requireNonNull(constants$612.g_dbus_node_info_ref$MH,"g_dbus_node_info_ref");
+        return RuntimeHelper.requireNonNull(constants$566.g_dbus_node_info_ref$MH,"g_dbus_node_info_ref");
     }
-    public static MemoryAddress g_dbus_node_info_ref ( Addressable info) {
+    /**
+     * {@snippet :
+     * GDBusNodeInfo* g_dbus_node_info_ref(GDBusNodeInfo* info);
+     * }
+     */
+    public static MemorySegment g_dbus_node_info_ref(MemorySegment info) {
         var mh$ = g_dbus_node_info_ref$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(info);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(info);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_interface_info_ref$MH() {
-        return RuntimeHelper.requireNonNull(constants$612.g_dbus_interface_info_ref$MH,"g_dbus_interface_info_ref");
+        return RuntimeHelper.requireNonNull(constants$566.g_dbus_interface_info_ref$MH,"g_dbus_interface_info_ref");
     }
-    public static MemoryAddress g_dbus_interface_info_ref ( Addressable info) {
+    /**
+     * {@snippet :
+     * GDBusInterfaceInfo* g_dbus_interface_info_ref(GDBusInterfaceInfo* info);
+     * }
+     */
+    public static MemorySegment g_dbus_interface_info_ref(MemorySegment info) {
         var mh$ = g_dbus_interface_info_ref$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(info);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(info);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_method_info_ref$MH() {
-        return RuntimeHelper.requireNonNull(constants$612.g_dbus_method_info_ref$MH,"g_dbus_method_info_ref");
+        return RuntimeHelper.requireNonNull(constants$566.g_dbus_method_info_ref$MH,"g_dbus_method_info_ref");
     }
-    public static MemoryAddress g_dbus_method_info_ref ( Addressable info) {
+    /**
+     * {@snippet :
+     * GDBusMethodInfo* g_dbus_method_info_ref(GDBusMethodInfo* info);
+     * }
+     */
+    public static MemorySegment g_dbus_method_info_ref(MemorySegment info) {
         var mh$ = g_dbus_method_info_ref$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(info);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(info);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_signal_info_ref$MH() {
-        return RuntimeHelper.requireNonNull(constants$612.g_dbus_signal_info_ref$MH,"g_dbus_signal_info_ref");
+        return RuntimeHelper.requireNonNull(constants$566.g_dbus_signal_info_ref$MH,"g_dbus_signal_info_ref");
     }
-    public static MemoryAddress g_dbus_signal_info_ref ( Addressable info) {
+    /**
+     * {@snippet :
+     * GDBusSignalInfo* g_dbus_signal_info_ref(GDBusSignalInfo* info);
+     * }
+     */
+    public static MemorySegment g_dbus_signal_info_ref(MemorySegment info) {
         var mh$ = g_dbus_signal_info_ref$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(info);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(info);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_property_info_ref$MH() {
-        return RuntimeHelper.requireNonNull(constants$612.g_dbus_property_info_ref$MH,"g_dbus_property_info_ref");
+        return RuntimeHelper.requireNonNull(constants$566.g_dbus_property_info_ref$MH,"g_dbus_property_info_ref");
     }
-    public static MemoryAddress g_dbus_property_info_ref ( Addressable info) {
+    /**
+     * {@snippet :
+     * GDBusPropertyInfo* g_dbus_property_info_ref(GDBusPropertyInfo* info);
+     * }
+     */
+    public static MemorySegment g_dbus_property_info_ref(MemorySegment info) {
         var mh$ = g_dbus_property_info_ref$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(info);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(info);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_arg_info_ref$MH() {
-        return RuntimeHelper.requireNonNull(constants$613.g_dbus_arg_info_ref$MH,"g_dbus_arg_info_ref");
+        return RuntimeHelper.requireNonNull(constants$567.g_dbus_arg_info_ref$MH,"g_dbus_arg_info_ref");
     }
-    public static MemoryAddress g_dbus_arg_info_ref ( Addressable info) {
+    /**
+     * {@snippet :
+     * GDBusArgInfo* g_dbus_arg_info_ref(GDBusArgInfo* info);
+     * }
+     */
+    public static MemorySegment g_dbus_arg_info_ref(MemorySegment info) {
         var mh$ = g_dbus_arg_info_ref$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(info);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(info);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_annotation_info_ref$MH() {
-        return RuntimeHelper.requireNonNull(constants$613.g_dbus_annotation_info_ref$MH,"g_dbus_annotation_info_ref");
+        return RuntimeHelper.requireNonNull(constants$567.g_dbus_annotation_info_ref$MH,"g_dbus_annotation_info_ref");
     }
-    public static MemoryAddress g_dbus_annotation_info_ref ( Addressable info) {
+    /**
+     * {@snippet :
+     * GDBusAnnotationInfo* g_dbus_annotation_info_ref(GDBusAnnotationInfo* info);
+     * }
+     */
+    public static MemorySegment g_dbus_annotation_info_ref(MemorySegment info) {
         var mh$ = g_dbus_annotation_info_ref$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(info);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(info);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_node_info_unref$MH() {
-        return RuntimeHelper.requireNonNull(constants$613.g_dbus_node_info_unref$MH,"g_dbus_node_info_unref");
+        return RuntimeHelper.requireNonNull(constants$567.g_dbus_node_info_unref$MH,"g_dbus_node_info_unref");
     }
-    public static void g_dbus_node_info_unref ( Addressable info) {
+    /**
+     * {@snippet :
+     * void g_dbus_node_info_unref(GDBusNodeInfo* info);
+     * }
+     */
+    public static void g_dbus_node_info_unref(MemorySegment info) {
         var mh$ = g_dbus_node_info_unref$MH();
         try {
             mh$.invokeExact(info);
@@ -2281,9 +490,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_interface_info_unref$MH() {
-        return RuntimeHelper.requireNonNull(constants$613.g_dbus_interface_info_unref$MH,"g_dbus_interface_info_unref");
+        return RuntimeHelper.requireNonNull(constants$567.g_dbus_interface_info_unref$MH,"g_dbus_interface_info_unref");
     }
-    public static void g_dbus_interface_info_unref ( Addressable info) {
+    /**
+     * {@snippet :
+     * void g_dbus_interface_info_unref(GDBusInterfaceInfo* info);
+     * }
+     */
+    public static void g_dbus_interface_info_unref(MemorySegment info) {
         var mh$ = g_dbus_interface_info_unref$MH();
         try {
             mh$.invokeExact(info);
@@ -2292,9 +506,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_method_info_unref$MH() {
-        return RuntimeHelper.requireNonNull(constants$613.g_dbus_method_info_unref$MH,"g_dbus_method_info_unref");
+        return RuntimeHelper.requireNonNull(constants$567.g_dbus_method_info_unref$MH,"g_dbus_method_info_unref");
     }
-    public static void g_dbus_method_info_unref ( Addressable info) {
+    /**
+     * {@snippet :
+     * void g_dbus_method_info_unref(GDBusMethodInfo* info);
+     * }
+     */
+    public static void g_dbus_method_info_unref(MemorySegment info) {
         var mh$ = g_dbus_method_info_unref$MH();
         try {
             mh$.invokeExact(info);
@@ -2303,9 +522,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_signal_info_unref$MH() {
-        return RuntimeHelper.requireNonNull(constants$613.g_dbus_signal_info_unref$MH,"g_dbus_signal_info_unref");
+        return RuntimeHelper.requireNonNull(constants$567.g_dbus_signal_info_unref$MH,"g_dbus_signal_info_unref");
     }
-    public static void g_dbus_signal_info_unref ( Addressable info) {
+    /**
+     * {@snippet :
+     * void g_dbus_signal_info_unref(GDBusSignalInfo* info);
+     * }
+     */
+    public static void g_dbus_signal_info_unref(MemorySegment info) {
         var mh$ = g_dbus_signal_info_unref$MH();
         try {
             mh$.invokeExact(info);
@@ -2314,9 +538,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_property_info_unref$MH() {
-        return RuntimeHelper.requireNonNull(constants$614.g_dbus_property_info_unref$MH,"g_dbus_property_info_unref");
+        return RuntimeHelper.requireNonNull(constants$568.g_dbus_property_info_unref$MH,"g_dbus_property_info_unref");
     }
-    public static void g_dbus_property_info_unref ( Addressable info) {
+    /**
+     * {@snippet :
+     * void g_dbus_property_info_unref(GDBusPropertyInfo* info);
+     * }
+     */
+    public static void g_dbus_property_info_unref(MemorySegment info) {
         var mh$ = g_dbus_property_info_unref$MH();
         try {
             mh$.invokeExact(info);
@@ -2325,9 +554,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_arg_info_unref$MH() {
-        return RuntimeHelper.requireNonNull(constants$614.g_dbus_arg_info_unref$MH,"g_dbus_arg_info_unref");
+        return RuntimeHelper.requireNonNull(constants$568.g_dbus_arg_info_unref$MH,"g_dbus_arg_info_unref");
     }
-    public static void g_dbus_arg_info_unref ( Addressable info) {
+    /**
+     * {@snippet :
+     * void g_dbus_arg_info_unref(GDBusArgInfo* info);
+     * }
+     */
+    public static void g_dbus_arg_info_unref(MemorySegment info) {
         var mh$ = g_dbus_arg_info_unref$MH();
         try {
             mh$.invokeExact(info);
@@ -2336,9 +570,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_annotation_info_unref$MH() {
-        return RuntimeHelper.requireNonNull(constants$614.g_dbus_annotation_info_unref$MH,"g_dbus_annotation_info_unref");
+        return RuntimeHelper.requireNonNull(constants$568.g_dbus_annotation_info_unref$MH,"g_dbus_annotation_info_unref");
     }
-    public static void g_dbus_annotation_info_unref ( Addressable info) {
+    /**
+     * {@snippet :
+     * void g_dbus_annotation_info_unref(GDBusAnnotationInfo* info);
+     * }
+     */
+    public static void g_dbus_annotation_info_unref(MemorySegment info) {
         var mh$ = g_dbus_annotation_info_unref$MH();
         try {
             mh$.invokeExact(info);
@@ -2347,9 +586,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_node_info_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$614.g_dbus_node_info_get_type$MH,"g_dbus_node_info_get_type");
+        return RuntimeHelper.requireNonNull(constants$568.g_dbus_node_info_get_type$MH,"g_dbus_node_info_get_type");
     }
-    public static long g_dbus_node_info_get_type () {
+    /**
+     * {@snippet :
+     * GType g_dbus_node_info_get_type();
+     * }
+     */
+    public static long g_dbus_node_info_get_type() {
         var mh$ = g_dbus_node_info_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -2358,9 +602,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_interface_info_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$614.g_dbus_interface_info_get_type$MH,"g_dbus_interface_info_get_type");
+        return RuntimeHelper.requireNonNull(constants$568.g_dbus_interface_info_get_type$MH,"g_dbus_interface_info_get_type");
     }
-    public static long g_dbus_interface_info_get_type () {
+    /**
+     * {@snippet :
+     * GType g_dbus_interface_info_get_type();
+     * }
+     */
+    public static long g_dbus_interface_info_get_type() {
         var mh$ = g_dbus_interface_info_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -2369,9 +618,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_method_info_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$614.g_dbus_method_info_get_type$MH,"g_dbus_method_info_get_type");
+        return RuntimeHelper.requireNonNull(constants$568.g_dbus_method_info_get_type$MH,"g_dbus_method_info_get_type");
     }
-    public static long g_dbus_method_info_get_type () {
+    /**
+     * {@snippet :
+     * GType g_dbus_method_info_get_type();
+     * }
+     */
+    public static long g_dbus_method_info_get_type() {
         var mh$ = g_dbus_method_info_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -2380,9 +634,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_signal_info_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$615.g_dbus_signal_info_get_type$MH,"g_dbus_signal_info_get_type");
+        return RuntimeHelper.requireNonNull(constants$569.g_dbus_signal_info_get_type$MH,"g_dbus_signal_info_get_type");
     }
-    public static long g_dbus_signal_info_get_type () {
+    /**
+     * {@snippet :
+     * GType g_dbus_signal_info_get_type();
+     * }
+     */
+    public static long g_dbus_signal_info_get_type() {
         var mh$ = g_dbus_signal_info_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -2391,9 +650,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_property_info_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$615.g_dbus_property_info_get_type$MH,"g_dbus_property_info_get_type");
+        return RuntimeHelper.requireNonNull(constants$569.g_dbus_property_info_get_type$MH,"g_dbus_property_info_get_type");
     }
-    public static long g_dbus_property_info_get_type () {
+    /**
+     * {@snippet :
+     * GType g_dbus_property_info_get_type();
+     * }
+     */
+    public static long g_dbus_property_info_get_type() {
         var mh$ = g_dbus_property_info_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -2402,9 +666,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_arg_info_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$615.g_dbus_arg_info_get_type$MH,"g_dbus_arg_info_get_type");
+        return RuntimeHelper.requireNonNull(constants$569.g_dbus_arg_info_get_type$MH,"g_dbus_arg_info_get_type");
     }
-    public static long g_dbus_arg_info_get_type () {
+    /**
+     * {@snippet :
+     * GType g_dbus_arg_info_get_type();
+     * }
+     */
+    public static long g_dbus_arg_info_get_type() {
         var mh$ = g_dbus_arg_info_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -2413,9 +682,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_annotation_info_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$615.g_dbus_annotation_info_get_type$MH,"g_dbus_annotation_info_get_type");
+        return RuntimeHelper.requireNonNull(constants$569.g_dbus_annotation_info_get_type$MH,"g_dbus_annotation_info_get_type");
     }
-    public static long g_dbus_annotation_info_get_type () {
+    /**
+     * {@snippet :
+     * GType g_dbus_annotation_info_get_type();
+     * }
+     */
+    public static long g_dbus_annotation_info_get_type() {
         var mh$ = g_dbus_annotation_info_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -2424,9 +698,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_menu_model_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$615.g_dbus_menu_model_get_type$MH,"g_dbus_menu_model_get_type");
+        return RuntimeHelper.requireNonNull(constants$569.g_dbus_menu_model_get_type$MH,"g_dbus_menu_model_get_type");
     }
-    public static long g_dbus_menu_model_get_type () {
+    /**
+     * {@snippet :
+     * GType g_dbus_menu_model_get_type();
+     * }
+     */
+    public static long g_dbus_menu_model_get_type() {
         var mh$ = g_dbus_menu_model_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -2435,20 +714,30 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_menu_model_get$MH() {
-        return RuntimeHelper.requireNonNull(constants$615.g_dbus_menu_model_get$MH,"g_dbus_menu_model_get");
+        return RuntimeHelper.requireNonNull(constants$569.g_dbus_menu_model_get$MH,"g_dbus_menu_model_get");
     }
-    public static MemoryAddress g_dbus_menu_model_get ( Addressable connection,  Addressable bus_name,  Addressable object_path) {
+    /**
+     * {@snippet :
+     * GDBusMenuModel* g_dbus_menu_model_get(GDBusConnection* connection, const gchar* bus_name, const gchar* object_path);
+     * }
+     */
+    public static MemorySegment g_dbus_menu_model_get(MemorySegment connection, MemorySegment bus_name, MemorySegment object_path) {
         var mh$ = g_dbus_menu_model_get$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(connection, bus_name, object_path);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(connection, bus_name, object_path);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_message_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$616.g_dbus_message_get_type$MH,"g_dbus_message_get_type");
+        return RuntimeHelper.requireNonNull(constants$570.g_dbus_message_get_type$MH,"g_dbus_message_get_type");
     }
-    public static long g_dbus_message_get_type () {
+    /**
+     * {@snippet :
+     * GType g_dbus_message_get_type();
+     * }
+     */
+    public static long g_dbus_message_get_type() {
         var mh$ = g_dbus_message_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -2457,97 +746,142 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_message_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$616.g_dbus_message_new$MH,"g_dbus_message_new");
+        return RuntimeHelper.requireNonNull(constants$570.g_dbus_message_new$MH,"g_dbus_message_new");
     }
-    public static MemoryAddress g_dbus_message_new () {
+    /**
+     * {@snippet :
+     * GDBusMessage* g_dbus_message_new();
+     * }
+     */
+    public static MemorySegment g_dbus_message_new() {
         var mh$ = g_dbus_message_new$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact();
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_message_new_signal$MH() {
-        return RuntimeHelper.requireNonNull(constants$616.g_dbus_message_new_signal$MH,"g_dbus_message_new_signal");
+        return RuntimeHelper.requireNonNull(constants$570.g_dbus_message_new_signal$MH,"g_dbus_message_new_signal");
     }
-    public static MemoryAddress g_dbus_message_new_signal ( Addressable path,  Addressable interface_,  Addressable signal) {
+    /**
+     * {@snippet :
+     * GDBusMessage* g_dbus_message_new_signal(const gchar* path, const gchar* interface_, const gchar* signal);
+     * }
+     */
+    public static MemorySegment g_dbus_message_new_signal(MemorySegment path, MemorySegment interface_, MemorySegment signal) {
         var mh$ = g_dbus_message_new_signal$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(path, interface_, signal);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(path, interface_, signal);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_message_new_method_call$MH() {
-        return RuntimeHelper.requireNonNull(constants$616.g_dbus_message_new_method_call$MH,"g_dbus_message_new_method_call");
+        return RuntimeHelper.requireNonNull(constants$570.g_dbus_message_new_method_call$MH,"g_dbus_message_new_method_call");
     }
-    public static MemoryAddress g_dbus_message_new_method_call ( Addressable name,  Addressable path,  Addressable interface_,  Addressable method) {
+    /**
+     * {@snippet :
+     * GDBusMessage* g_dbus_message_new_method_call(const gchar* name, const gchar* path, const gchar* interface_, const gchar* method);
+     * }
+     */
+    public static MemorySegment g_dbus_message_new_method_call(MemorySegment name, MemorySegment path, MemorySegment interface_, MemorySegment method) {
         var mh$ = g_dbus_message_new_method_call$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(name, path, interface_, method);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(name, path, interface_, method);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_message_new_method_reply$MH() {
-        return RuntimeHelper.requireNonNull(constants$616.g_dbus_message_new_method_reply$MH,"g_dbus_message_new_method_reply");
+        return RuntimeHelper.requireNonNull(constants$570.g_dbus_message_new_method_reply$MH,"g_dbus_message_new_method_reply");
     }
-    public static MemoryAddress g_dbus_message_new_method_reply ( Addressable method_call_message) {
+    /**
+     * {@snippet :
+     * GDBusMessage* g_dbus_message_new_method_reply(GDBusMessage* method_call_message);
+     * }
+     */
+    public static MemorySegment g_dbus_message_new_method_reply(MemorySegment method_call_message) {
         var mh$ = g_dbus_message_new_method_reply$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(method_call_message);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(method_call_message);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_message_new_method_error$MH() {
-        return RuntimeHelper.requireNonNull(constants$616.g_dbus_message_new_method_error$MH,"g_dbus_message_new_method_error");
+        return RuntimeHelper.requireNonNull(constants$570.g_dbus_message_new_method_error$MH,"g_dbus_message_new_method_error");
     }
-    public static MemoryAddress g_dbus_message_new_method_error ( Addressable method_call_message,  Addressable error_name,  Addressable error_message_format, Object... x3) {
+    /**
+     * {@snippet :
+     * GDBusMessage* g_dbus_message_new_method_error(GDBusMessage* method_call_message, const gchar* error_name, const gchar* error_message_format,...);
+     * }
+     */
+    public static MemorySegment g_dbus_message_new_method_error(MemorySegment method_call_message, MemorySegment error_name, MemorySegment error_message_format, Object... x3) {
         var mh$ = g_dbus_message_new_method_error$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(method_call_message, error_name, error_message_format, x3);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(method_call_message, error_name, error_message_format, x3);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_message_new_method_error_valist$MH() {
-        return RuntimeHelper.requireNonNull(constants$617.g_dbus_message_new_method_error_valist$MH,"g_dbus_message_new_method_error_valist");
+        return RuntimeHelper.requireNonNull(constants$571.g_dbus_message_new_method_error_valist$MH,"g_dbus_message_new_method_error_valist");
     }
-    public static MemoryAddress g_dbus_message_new_method_error_valist ( Addressable method_call_message,  Addressable error_name,  Addressable error_message_format,  Addressable var_args) {
+    /**
+     * {@snippet :
+     * GDBusMessage* g_dbus_message_new_method_error_valist(GDBusMessage* method_call_message, const gchar* error_name, const gchar* error_message_format, va_list var_args);
+     * }
+     */
+    public static MemorySegment g_dbus_message_new_method_error_valist(MemorySegment method_call_message, MemorySegment error_name, MemorySegment error_message_format, MemorySegment var_args) {
         var mh$ = g_dbus_message_new_method_error_valist$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(method_call_message, error_name, error_message_format, var_args);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(method_call_message, error_name, error_message_format, var_args);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_message_new_method_error_literal$MH() {
-        return RuntimeHelper.requireNonNull(constants$617.g_dbus_message_new_method_error_literal$MH,"g_dbus_message_new_method_error_literal");
+        return RuntimeHelper.requireNonNull(constants$571.g_dbus_message_new_method_error_literal$MH,"g_dbus_message_new_method_error_literal");
     }
-    public static MemoryAddress g_dbus_message_new_method_error_literal ( Addressable method_call_message,  Addressable error_name,  Addressable error_message) {
+    /**
+     * {@snippet :
+     * GDBusMessage* g_dbus_message_new_method_error_literal(GDBusMessage* method_call_message, const gchar* error_name, const gchar* error_message);
+     * }
+     */
+    public static MemorySegment g_dbus_message_new_method_error_literal(MemorySegment method_call_message, MemorySegment error_name, MemorySegment error_message) {
         var mh$ = g_dbus_message_new_method_error_literal$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(method_call_message, error_name, error_message);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(method_call_message, error_name, error_message);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_message_print$MH() {
-        return RuntimeHelper.requireNonNull(constants$617.g_dbus_message_print$MH,"g_dbus_message_print");
+        return RuntimeHelper.requireNonNull(constants$571.g_dbus_message_print$MH,"g_dbus_message_print");
     }
-    public static MemoryAddress g_dbus_message_print ( Addressable message,  int indent) {
+    /**
+     * {@snippet :
+     * gchar* g_dbus_message_print(GDBusMessage* message, guint indent);
+     * }
+     */
+    public static MemorySegment g_dbus_message_print(MemorySegment message, int indent) {
         var mh$ = g_dbus_message_print$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(message, indent);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(message, indent);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_message_get_locked$MH() {
-        return RuntimeHelper.requireNonNull(constants$617.g_dbus_message_get_locked$MH,"g_dbus_message_get_locked");
+        return RuntimeHelper.requireNonNull(constants$571.g_dbus_message_get_locked$MH,"g_dbus_message_get_locked");
     }
-    public static int g_dbus_message_get_locked ( Addressable message) {
+    /**
+     * {@snippet :
+     * gboolean g_dbus_message_get_locked(GDBusMessage* message);
+     * }
+     */
+    public static int g_dbus_message_get_locked(MemorySegment message) {
         var mh$ = g_dbus_message_get_locked$MH();
         try {
             return (int)mh$.invokeExact(message);
@@ -2556,9 +890,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_message_lock$MH() {
-        return RuntimeHelper.requireNonNull(constants$617.g_dbus_message_lock$MH,"g_dbus_message_lock");
+        return RuntimeHelper.requireNonNull(constants$571.g_dbus_message_lock$MH,"g_dbus_message_lock");
     }
-    public static void g_dbus_message_lock ( Addressable message) {
+    /**
+     * {@snippet :
+     * void g_dbus_message_lock(GDBusMessage* message);
+     * }
+     */
+    public static void g_dbus_message_lock(MemorySegment message) {
         var mh$ = g_dbus_message_lock$MH();
         try {
             mh$.invokeExact(message);
@@ -2567,20 +906,30 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_message_copy$MH() {
-        return RuntimeHelper.requireNonNull(constants$617.g_dbus_message_copy$MH,"g_dbus_message_copy");
+        return RuntimeHelper.requireNonNull(constants$571.g_dbus_message_copy$MH,"g_dbus_message_copy");
     }
-    public static MemoryAddress g_dbus_message_copy ( Addressable message,  Addressable error) {
+    /**
+     * {@snippet :
+     * GDBusMessage* g_dbus_message_copy(GDBusMessage* message, GError** error);
+     * }
+     */
+    public static MemorySegment g_dbus_message_copy(MemorySegment message, MemorySegment error) {
         var mh$ = g_dbus_message_copy$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(message, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(message, error);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_message_get_byte_order$MH() {
-        return RuntimeHelper.requireNonNull(constants$618.g_dbus_message_get_byte_order$MH,"g_dbus_message_get_byte_order");
+        return RuntimeHelper.requireNonNull(constants$572.g_dbus_message_get_byte_order$MH,"g_dbus_message_get_byte_order");
     }
-    public static int g_dbus_message_get_byte_order ( Addressable message) {
+    /**
+     * {@snippet :
+     * GDBusMessageByteOrder g_dbus_message_get_byte_order(GDBusMessage* message);
+     * }
+     */
+    public static int g_dbus_message_get_byte_order(MemorySegment message) {
         var mh$ = g_dbus_message_get_byte_order$MH();
         try {
             return (int)mh$.invokeExact(message);
@@ -2589,9 +938,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_message_set_byte_order$MH() {
-        return RuntimeHelper.requireNonNull(constants$618.g_dbus_message_set_byte_order$MH,"g_dbus_message_set_byte_order");
+        return RuntimeHelper.requireNonNull(constants$572.g_dbus_message_set_byte_order$MH,"g_dbus_message_set_byte_order");
     }
-    public static void g_dbus_message_set_byte_order ( Addressable message,  int byte_order) {
+    /**
+     * {@snippet :
+     * void g_dbus_message_set_byte_order(GDBusMessage* message, GDBusMessageByteOrder byte_order);
+     * }
+     */
+    public static void g_dbus_message_set_byte_order(MemorySegment message, int byte_order) {
         var mh$ = g_dbus_message_set_byte_order$MH();
         try {
             mh$.invokeExact(message, byte_order);
@@ -2600,9 +954,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_message_get_message_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$618.g_dbus_message_get_message_type$MH,"g_dbus_message_get_message_type");
+        return RuntimeHelper.requireNonNull(constants$572.g_dbus_message_get_message_type$MH,"g_dbus_message_get_message_type");
     }
-    public static int g_dbus_message_get_message_type ( Addressable message) {
+    /**
+     * {@snippet :
+     * GDBusMessageType g_dbus_message_get_message_type(GDBusMessage* message);
+     * }
+     */
+    public static int g_dbus_message_get_message_type(MemorySegment message) {
         var mh$ = g_dbus_message_get_message_type$MH();
         try {
             return (int)mh$.invokeExact(message);
@@ -2611,9 +970,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_message_set_message_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$618.g_dbus_message_set_message_type$MH,"g_dbus_message_set_message_type");
+        return RuntimeHelper.requireNonNull(constants$572.g_dbus_message_set_message_type$MH,"g_dbus_message_set_message_type");
     }
-    public static void g_dbus_message_set_message_type ( Addressable message,  int type) {
+    /**
+     * {@snippet :
+     * void g_dbus_message_set_message_type(GDBusMessage* message, GDBusMessageType type);
+     * }
+     */
+    public static void g_dbus_message_set_message_type(MemorySegment message, int type) {
         var mh$ = g_dbus_message_set_message_type$MH();
         try {
             mh$.invokeExact(message, type);
@@ -2622,9 +986,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_message_get_flags$MH() {
-        return RuntimeHelper.requireNonNull(constants$618.g_dbus_message_get_flags$MH,"g_dbus_message_get_flags");
+        return RuntimeHelper.requireNonNull(constants$572.g_dbus_message_get_flags$MH,"g_dbus_message_get_flags");
     }
-    public static int g_dbus_message_get_flags ( Addressable message) {
+    /**
+     * {@snippet :
+     * GDBusMessageFlags g_dbus_message_get_flags(GDBusMessage* message);
+     * }
+     */
+    public static int g_dbus_message_get_flags(MemorySegment message) {
         var mh$ = g_dbus_message_get_flags$MH();
         try {
             return (int)mh$.invokeExact(message);
@@ -2633,9 +1002,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_message_set_flags$MH() {
-        return RuntimeHelper.requireNonNull(constants$618.g_dbus_message_set_flags$MH,"g_dbus_message_set_flags");
+        return RuntimeHelper.requireNonNull(constants$572.g_dbus_message_set_flags$MH,"g_dbus_message_set_flags");
     }
-    public static void g_dbus_message_set_flags ( Addressable message,  int flags) {
+    /**
+     * {@snippet :
+     * void g_dbus_message_set_flags(GDBusMessage* message, GDBusMessageFlags flags);
+     * }
+     */
+    public static void g_dbus_message_set_flags(MemorySegment message, int flags) {
         var mh$ = g_dbus_message_set_flags$MH();
         try {
             mh$.invokeExact(message, flags);
@@ -2644,9 +1018,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_message_get_serial$MH() {
-        return RuntimeHelper.requireNonNull(constants$619.g_dbus_message_get_serial$MH,"g_dbus_message_get_serial");
+        return RuntimeHelper.requireNonNull(constants$573.g_dbus_message_get_serial$MH,"g_dbus_message_get_serial");
     }
-    public static int g_dbus_message_get_serial ( Addressable message) {
+    /**
+     * {@snippet :
+     * guint32 g_dbus_message_get_serial(GDBusMessage* message);
+     * }
+     */
+    public static int g_dbus_message_get_serial(MemorySegment message) {
         var mh$ = g_dbus_message_get_serial$MH();
         try {
             return (int)mh$.invokeExact(message);
@@ -2655,9 +1034,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_message_set_serial$MH() {
-        return RuntimeHelper.requireNonNull(constants$619.g_dbus_message_set_serial$MH,"g_dbus_message_set_serial");
+        return RuntimeHelper.requireNonNull(constants$573.g_dbus_message_set_serial$MH,"g_dbus_message_set_serial");
     }
-    public static void g_dbus_message_set_serial ( Addressable message,  int serial) {
+    /**
+     * {@snippet :
+     * void g_dbus_message_set_serial(GDBusMessage* message, guint32 serial);
+     * }
+     */
+    public static void g_dbus_message_set_serial(MemorySegment message, int serial) {
         var mh$ = g_dbus_message_set_serial$MH();
         try {
             mh$.invokeExact(message, serial);
@@ -2666,20 +1050,30 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_message_get_header$MH() {
-        return RuntimeHelper.requireNonNull(constants$619.g_dbus_message_get_header$MH,"g_dbus_message_get_header");
+        return RuntimeHelper.requireNonNull(constants$573.g_dbus_message_get_header$MH,"g_dbus_message_get_header");
     }
-    public static MemoryAddress g_dbus_message_get_header ( Addressable message,  int header_field) {
+    /**
+     * {@snippet :
+     * GVariant* g_dbus_message_get_header(GDBusMessage* message, GDBusMessageHeaderField header_field);
+     * }
+     */
+    public static MemorySegment g_dbus_message_get_header(MemorySegment message, int header_field) {
         var mh$ = g_dbus_message_get_header$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(message, header_field);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(message, header_field);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_message_set_header$MH() {
-        return RuntimeHelper.requireNonNull(constants$619.g_dbus_message_set_header$MH,"g_dbus_message_set_header");
+        return RuntimeHelper.requireNonNull(constants$573.g_dbus_message_set_header$MH,"g_dbus_message_set_header");
     }
-    public static void g_dbus_message_set_header ( Addressable message,  int header_field,  Addressable value) {
+    /**
+     * {@snippet :
+     * void g_dbus_message_set_header(GDBusMessage* message, GDBusMessageHeaderField header_field, GVariant* value);
+     * }
+     */
+    public static void g_dbus_message_set_header(MemorySegment message, int header_field, MemorySegment value) {
         var mh$ = g_dbus_message_set_header$MH();
         try {
             mh$.invokeExact(message, header_field, value);
@@ -2688,31 +1082,46 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_message_get_header_fields$MH() {
-        return RuntimeHelper.requireNonNull(constants$619.g_dbus_message_get_header_fields$MH,"g_dbus_message_get_header_fields");
+        return RuntimeHelper.requireNonNull(constants$573.g_dbus_message_get_header_fields$MH,"g_dbus_message_get_header_fields");
     }
-    public static MemoryAddress g_dbus_message_get_header_fields ( Addressable message) {
+    /**
+     * {@snippet :
+     * guchar* g_dbus_message_get_header_fields(GDBusMessage* message);
+     * }
+     */
+    public static MemorySegment g_dbus_message_get_header_fields(MemorySegment message) {
         var mh$ = g_dbus_message_get_header_fields$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(message);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(message);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_message_get_body$MH() {
-        return RuntimeHelper.requireNonNull(constants$619.g_dbus_message_get_body$MH,"g_dbus_message_get_body");
+        return RuntimeHelper.requireNonNull(constants$573.g_dbus_message_get_body$MH,"g_dbus_message_get_body");
     }
-    public static MemoryAddress g_dbus_message_get_body ( Addressable message) {
+    /**
+     * {@snippet :
+     * GVariant* g_dbus_message_get_body(GDBusMessage* message);
+     * }
+     */
+    public static MemorySegment g_dbus_message_get_body(MemorySegment message) {
         var mh$ = g_dbus_message_get_body$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(message);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(message);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_message_set_body$MH() {
-        return RuntimeHelper.requireNonNull(constants$620.g_dbus_message_set_body$MH,"g_dbus_message_set_body");
+        return RuntimeHelper.requireNonNull(constants$574.g_dbus_message_set_body$MH,"g_dbus_message_set_body");
     }
-    public static void g_dbus_message_set_body ( Addressable message,  Addressable body) {
+    /**
+     * {@snippet :
+     * void g_dbus_message_set_body(GDBusMessage* message, GVariant* body);
+     * }
+     */
+    public static void g_dbus_message_set_body(MemorySegment message, MemorySegment body) {
         var mh$ = g_dbus_message_set_body$MH();
         try {
             mh$.invokeExact(message, body);
@@ -2721,20 +1130,30 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_message_get_unix_fd_list$MH() {
-        return RuntimeHelper.requireNonNull(constants$620.g_dbus_message_get_unix_fd_list$MH,"g_dbus_message_get_unix_fd_list");
+        return RuntimeHelper.requireNonNull(constants$574.g_dbus_message_get_unix_fd_list$MH,"g_dbus_message_get_unix_fd_list");
     }
-    public static MemoryAddress g_dbus_message_get_unix_fd_list ( Addressable message) {
+    /**
+     * {@snippet :
+     * GUnixFDList* g_dbus_message_get_unix_fd_list(GDBusMessage* message);
+     * }
+     */
+    public static MemorySegment g_dbus_message_get_unix_fd_list(MemorySegment message) {
         var mh$ = g_dbus_message_get_unix_fd_list$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(message);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(message);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_message_set_unix_fd_list$MH() {
-        return RuntimeHelper.requireNonNull(constants$620.g_dbus_message_set_unix_fd_list$MH,"g_dbus_message_set_unix_fd_list");
+        return RuntimeHelper.requireNonNull(constants$574.g_dbus_message_set_unix_fd_list$MH,"g_dbus_message_set_unix_fd_list");
     }
-    public static void g_dbus_message_set_unix_fd_list ( Addressable message,  Addressable fd_list) {
+    /**
+     * {@snippet :
+     * void g_dbus_message_set_unix_fd_list(GDBusMessage* message, GUnixFDList* fd_list);
+     * }
+     */
+    public static void g_dbus_message_set_unix_fd_list(MemorySegment message, MemorySegment fd_list) {
         var mh$ = g_dbus_message_set_unix_fd_list$MH();
         try {
             mh$.invokeExact(message, fd_list);
@@ -2743,9 +1162,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_message_get_reply_serial$MH() {
-        return RuntimeHelper.requireNonNull(constants$620.g_dbus_message_get_reply_serial$MH,"g_dbus_message_get_reply_serial");
+        return RuntimeHelper.requireNonNull(constants$574.g_dbus_message_get_reply_serial$MH,"g_dbus_message_get_reply_serial");
     }
-    public static int g_dbus_message_get_reply_serial ( Addressable message) {
+    /**
+     * {@snippet :
+     * guint32 g_dbus_message_get_reply_serial(GDBusMessage* message);
+     * }
+     */
+    public static int g_dbus_message_get_reply_serial(MemorySegment message) {
         var mh$ = g_dbus_message_get_reply_serial$MH();
         try {
             return (int)mh$.invokeExact(message);
@@ -2754,9 +1178,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_message_set_reply_serial$MH() {
-        return RuntimeHelper.requireNonNull(constants$620.g_dbus_message_set_reply_serial$MH,"g_dbus_message_set_reply_serial");
+        return RuntimeHelper.requireNonNull(constants$574.g_dbus_message_set_reply_serial$MH,"g_dbus_message_set_reply_serial");
     }
-    public static void g_dbus_message_set_reply_serial ( Addressable message,  int value) {
+    /**
+     * {@snippet :
+     * void g_dbus_message_set_reply_serial(GDBusMessage* message, guint32 value);
+     * }
+     */
+    public static void g_dbus_message_set_reply_serial(MemorySegment message, int value) {
         var mh$ = g_dbus_message_set_reply_serial$MH();
         try {
             mh$.invokeExact(message, value);
@@ -2765,20 +1194,30 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_message_get_interface$MH() {
-        return RuntimeHelper.requireNonNull(constants$620.g_dbus_message_get_interface$MH,"g_dbus_message_get_interface");
+        return RuntimeHelper.requireNonNull(constants$574.g_dbus_message_get_interface$MH,"g_dbus_message_get_interface");
     }
-    public static MemoryAddress g_dbus_message_get_interface ( Addressable message) {
+    /**
+     * {@snippet :
+     * const gchar* g_dbus_message_get_interface(GDBusMessage* message);
+     * }
+     */
+    public static MemorySegment g_dbus_message_get_interface(MemorySegment message) {
         var mh$ = g_dbus_message_get_interface$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(message);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(message);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_message_set_interface$MH() {
-        return RuntimeHelper.requireNonNull(constants$621.g_dbus_message_set_interface$MH,"g_dbus_message_set_interface");
+        return RuntimeHelper.requireNonNull(constants$575.g_dbus_message_set_interface$MH,"g_dbus_message_set_interface");
     }
-    public static void g_dbus_message_set_interface ( Addressable message,  Addressable value) {
+    /**
+     * {@snippet :
+     * void g_dbus_message_set_interface(GDBusMessage* message, const gchar* value);
+     * }
+     */
+    public static void g_dbus_message_set_interface(MemorySegment message, MemorySegment value) {
         var mh$ = g_dbus_message_set_interface$MH();
         try {
             mh$.invokeExact(message, value);
@@ -2787,20 +1226,30 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_message_get_member$MH() {
-        return RuntimeHelper.requireNonNull(constants$621.g_dbus_message_get_member$MH,"g_dbus_message_get_member");
+        return RuntimeHelper.requireNonNull(constants$575.g_dbus_message_get_member$MH,"g_dbus_message_get_member");
     }
-    public static MemoryAddress g_dbus_message_get_member ( Addressable message) {
+    /**
+     * {@snippet :
+     * const gchar* g_dbus_message_get_member(GDBusMessage* message);
+     * }
+     */
+    public static MemorySegment g_dbus_message_get_member(MemorySegment message) {
         var mh$ = g_dbus_message_get_member$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(message);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(message);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_message_set_member$MH() {
-        return RuntimeHelper.requireNonNull(constants$621.g_dbus_message_set_member$MH,"g_dbus_message_set_member");
+        return RuntimeHelper.requireNonNull(constants$575.g_dbus_message_set_member$MH,"g_dbus_message_set_member");
     }
-    public static void g_dbus_message_set_member ( Addressable message,  Addressable value) {
+    /**
+     * {@snippet :
+     * void g_dbus_message_set_member(GDBusMessage* message, const gchar* value);
+     * }
+     */
+    public static void g_dbus_message_set_member(MemorySegment message, MemorySegment value) {
         var mh$ = g_dbus_message_set_member$MH();
         try {
             mh$.invokeExact(message, value);
@@ -2809,20 +1258,30 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_message_get_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$621.g_dbus_message_get_path$MH,"g_dbus_message_get_path");
+        return RuntimeHelper.requireNonNull(constants$575.g_dbus_message_get_path$MH,"g_dbus_message_get_path");
     }
-    public static MemoryAddress g_dbus_message_get_path ( Addressable message) {
+    /**
+     * {@snippet :
+     * const gchar* g_dbus_message_get_path(GDBusMessage* message);
+     * }
+     */
+    public static MemorySegment g_dbus_message_get_path(MemorySegment message) {
         var mh$ = g_dbus_message_get_path$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(message);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(message);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_message_set_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$621.g_dbus_message_set_path$MH,"g_dbus_message_set_path");
+        return RuntimeHelper.requireNonNull(constants$575.g_dbus_message_set_path$MH,"g_dbus_message_set_path");
     }
-    public static void g_dbus_message_set_path ( Addressable message,  Addressable value) {
+    /**
+     * {@snippet :
+     * void g_dbus_message_set_path(GDBusMessage* message, const gchar* value);
+     * }
+     */
+    public static void g_dbus_message_set_path(MemorySegment message, MemorySegment value) {
         var mh$ = g_dbus_message_set_path$MH();
         try {
             mh$.invokeExact(message, value);
@@ -2831,20 +1290,30 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_message_get_sender$MH() {
-        return RuntimeHelper.requireNonNull(constants$621.g_dbus_message_get_sender$MH,"g_dbus_message_get_sender");
+        return RuntimeHelper.requireNonNull(constants$575.g_dbus_message_get_sender$MH,"g_dbus_message_get_sender");
     }
-    public static MemoryAddress g_dbus_message_get_sender ( Addressable message) {
+    /**
+     * {@snippet :
+     * const gchar* g_dbus_message_get_sender(GDBusMessage* message);
+     * }
+     */
+    public static MemorySegment g_dbus_message_get_sender(MemorySegment message) {
         var mh$ = g_dbus_message_get_sender$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(message);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(message);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_message_set_sender$MH() {
-        return RuntimeHelper.requireNonNull(constants$622.g_dbus_message_set_sender$MH,"g_dbus_message_set_sender");
+        return RuntimeHelper.requireNonNull(constants$576.g_dbus_message_set_sender$MH,"g_dbus_message_set_sender");
     }
-    public static void g_dbus_message_set_sender ( Addressable message,  Addressable value) {
+    /**
+     * {@snippet :
+     * void g_dbus_message_set_sender(GDBusMessage* message, const gchar* value);
+     * }
+     */
+    public static void g_dbus_message_set_sender(MemorySegment message, MemorySegment value) {
         var mh$ = g_dbus_message_set_sender$MH();
         try {
             mh$.invokeExact(message, value);
@@ -2853,20 +1322,30 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_message_get_destination$MH() {
-        return RuntimeHelper.requireNonNull(constants$622.g_dbus_message_get_destination$MH,"g_dbus_message_get_destination");
+        return RuntimeHelper.requireNonNull(constants$576.g_dbus_message_get_destination$MH,"g_dbus_message_get_destination");
     }
-    public static MemoryAddress g_dbus_message_get_destination ( Addressable message) {
+    /**
+     * {@snippet :
+     * const gchar* g_dbus_message_get_destination(GDBusMessage* message);
+     * }
+     */
+    public static MemorySegment g_dbus_message_get_destination(MemorySegment message) {
         var mh$ = g_dbus_message_get_destination$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(message);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(message);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_message_set_destination$MH() {
-        return RuntimeHelper.requireNonNull(constants$622.g_dbus_message_set_destination$MH,"g_dbus_message_set_destination");
+        return RuntimeHelper.requireNonNull(constants$576.g_dbus_message_set_destination$MH,"g_dbus_message_set_destination");
     }
-    public static void g_dbus_message_set_destination ( Addressable message,  Addressable value) {
+    /**
+     * {@snippet :
+     * void g_dbus_message_set_destination(GDBusMessage* message, const gchar* value);
+     * }
+     */
+    public static void g_dbus_message_set_destination(MemorySegment message, MemorySegment value) {
         var mh$ = g_dbus_message_set_destination$MH();
         try {
             mh$.invokeExact(message, value);
@@ -2875,20 +1354,30 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_message_get_error_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$622.g_dbus_message_get_error_name$MH,"g_dbus_message_get_error_name");
+        return RuntimeHelper.requireNonNull(constants$576.g_dbus_message_get_error_name$MH,"g_dbus_message_get_error_name");
     }
-    public static MemoryAddress g_dbus_message_get_error_name ( Addressable message) {
+    /**
+     * {@snippet :
+     * const gchar* g_dbus_message_get_error_name(GDBusMessage* message);
+     * }
+     */
+    public static MemorySegment g_dbus_message_get_error_name(MemorySegment message) {
         var mh$ = g_dbus_message_get_error_name$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(message);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(message);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_message_set_error_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$622.g_dbus_message_set_error_name$MH,"g_dbus_message_set_error_name");
+        return RuntimeHelper.requireNonNull(constants$576.g_dbus_message_set_error_name$MH,"g_dbus_message_set_error_name");
     }
-    public static void g_dbus_message_set_error_name ( Addressable message,  Addressable value) {
+    /**
+     * {@snippet :
+     * void g_dbus_message_set_error_name(GDBusMessage* message, const gchar* value);
+     * }
+     */
+    public static void g_dbus_message_set_error_name(MemorySegment message, MemorySegment value) {
         var mh$ = g_dbus_message_set_error_name$MH();
         try {
             mh$.invokeExact(message, value);
@@ -2897,20 +1386,30 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_message_get_signature$MH() {
-        return RuntimeHelper.requireNonNull(constants$622.g_dbus_message_get_signature$MH,"g_dbus_message_get_signature");
+        return RuntimeHelper.requireNonNull(constants$576.g_dbus_message_get_signature$MH,"g_dbus_message_get_signature");
     }
-    public static MemoryAddress g_dbus_message_get_signature ( Addressable message) {
+    /**
+     * {@snippet :
+     * const gchar* g_dbus_message_get_signature(GDBusMessage* message);
+     * }
+     */
+    public static MemorySegment g_dbus_message_get_signature(MemorySegment message) {
         var mh$ = g_dbus_message_get_signature$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(message);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(message);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_message_set_signature$MH() {
-        return RuntimeHelper.requireNonNull(constants$623.g_dbus_message_set_signature$MH,"g_dbus_message_set_signature");
+        return RuntimeHelper.requireNonNull(constants$577.g_dbus_message_set_signature$MH,"g_dbus_message_set_signature");
     }
-    public static void g_dbus_message_set_signature ( Addressable message,  Addressable value) {
+    /**
+     * {@snippet :
+     * void g_dbus_message_set_signature(GDBusMessage* message, const gchar* value);
+     * }
+     */
+    public static void g_dbus_message_set_signature(MemorySegment message, MemorySegment value) {
         var mh$ = g_dbus_message_set_signature$MH();
         try {
             mh$.invokeExact(message, value);
@@ -2919,9 +1418,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_message_get_num_unix_fds$MH() {
-        return RuntimeHelper.requireNonNull(constants$623.g_dbus_message_get_num_unix_fds$MH,"g_dbus_message_get_num_unix_fds");
+        return RuntimeHelper.requireNonNull(constants$577.g_dbus_message_get_num_unix_fds$MH,"g_dbus_message_get_num_unix_fds");
     }
-    public static int g_dbus_message_get_num_unix_fds ( Addressable message) {
+    /**
+     * {@snippet :
+     * guint32 g_dbus_message_get_num_unix_fds(GDBusMessage* message);
+     * }
+     */
+    public static int g_dbus_message_get_num_unix_fds(MemorySegment message) {
         var mh$ = g_dbus_message_get_num_unix_fds$MH();
         try {
             return (int)mh$.invokeExact(message);
@@ -2930,9 +1434,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_message_set_num_unix_fds$MH() {
-        return RuntimeHelper.requireNonNull(constants$623.g_dbus_message_set_num_unix_fds$MH,"g_dbus_message_set_num_unix_fds");
+        return RuntimeHelper.requireNonNull(constants$577.g_dbus_message_set_num_unix_fds$MH,"g_dbus_message_set_num_unix_fds");
     }
-    public static void g_dbus_message_set_num_unix_fds ( Addressable message,  int value) {
+    /**
+     * {@snippet :
+     * void g_dbus_message_set_num_unix_fds(GDBusMessage* message, guint32 value);
+     * }
+     */
+    public static void g_dbus_message_set_num_unix_fds(MemorySegment message, int value) {
         var mh$ = g_dbus_message_set_num_unix_fds$MH();
         try {
             mh$.invokeExact(message, value);
@@ -2941,31 +1450,46 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_message_get_arg0$MH() {
-        return RuntimeHelper.requireNonNull(constants$623.g_dbus_message_get_arg0$MH,"g_dbus_message_get_arg0");
+        return RuntimeHelper.requireNonNull(constants$577.g_dbus_message_get_arg0$MH,"g_dbus_message_get_arg0");
     }
-    public static MemoryAddress g_dbus_message_get_arg0 ( Addressable message) {
+    /**
+     * {@snippet :
+     * const gchar* g_dbus_message_get_arg0(GDBusMessage* message);
+     * }
+     */
+    public static MemorySegment g_dbus_message_get_arg0(MemorySegment message) {
         var mh$ = g_dbus_message_get_arg0$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(message);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(message);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_message_new_from_blob$MH() {
-        return RuntimeHelper.requireNonNull(constants$623.g_dbus_message_new_from_blob$MH,"g_dbus_message_new_from_blob");
+        return RuntimeHelper.requireNonNull(constants$577.g_dbus_message_new_from_blob$MH,"g_dbus_message_new_from_blob");
     }
-    public static MemoryAddress g_dbus_message_new_from_blob ( Addressable blob,  long blob_len,  int capabilities,  Addressable error) {
+    /**
+     * {@snippet :
+     * GDBusMessage* g_dbus_message_new_from_blob(guchar* blob, gsize blob_len, GDBusCapabilityFlags capabilities, GError** error);
+     * }
+     */
+    public static MemorySegment g_dbus_message_new_from_blob(MemorySegment blob, long blob_len, int capabilities, MemorySegment error) {
         var mh$ = g_dbus_message_new_from_blob$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(blob, blob_len, capabilities, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(blob, blob_len, capabilities, error);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_message_bytes_needed$MH() {
-        return RuntimeHelper.requireNonNull(constants$623.g_dbus_message_bytes_needed$MH,"g_dbus_message_bytes_needed");
+        return RuntimeHelper.requireNonNull(constants$577.g_dbus_message_bytes_needed$MH,"g_dbus_message_bytes_needed");
     }
-    public static long g_dbus_message_bytes_needed ( Addressable blob,  long blob_len,  Addressable error) {
+    /**
+     * {@snippet :
+     * gssize g_dbus_message_bytes_needed(guchar* blob, gsize blob_len, GError** error);
+     * }
+     */
+    public static long g_dbus_message_bytes_needed(MemorySegment blob, long blob_len, MemorySegment error) {
         var mh$ = g_dbus_message_bytes_needed$MH();
         try {
             return (long)mh$.invokeExact(blob, blob_len, error);
@@ -2974,20 +1498,30 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_message_to_blob$MH() {
-        return RuntimeHelper.requireNonNull(constants$624.g_dbus_message_to_blob$MH,"g_dbus_message_to_blob");
+        return RuntimeHelper.requireNonNull(constants$578.g_dbus_message_to_blob$MH,"g_dbus_message_to_blob");
     }
-    public static MemoryAddress g_dbus_message_to_blob ( Addressable message,  Addressable out_size,  int capabilities,  Addressable error) {
+    /**
+     * {@snippet :
+     * guchar* g_dbus_message_to_blob(GDBusMessage* message, gsize* out_size, GDBusCapabilityFlags capabilities, GError** error);
+     * }
+     */
+    public static MemorySegment g_dbus_message_to_blob(MemorySegment message, MemorySegment out_size, int capabilities, MemorySegment error) {
         var mh$ = g_dbus_message_to_blob$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(message, out_size, capabilities, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(message, out_size, capabilities, error);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_message_to_gerror$MH() {
-        return RuntimeHelper.requireNonNull(constants$624.g_dbus_message_to_gerror$MH,"g_dbus_message_to_gerror");
+        return RuntimeHelper.requireNonNull(constants$578.g_dbus_message_to_gerror$MH,"g_dbus_message_to_gerror");
     }
-    public static int g_dbus_message_to_gerror ( Addressable message,  Addressable error) {
+    /**
+     * {@snippet :
+     * gboolean g_dbus_message_to_gerror(GDBusMessage* message, GError** error);
+     * }
+     */
+    public static int g_dbus_message_to_gerror(MemorySegment message, MemorySegment error) {
         var mh$ = g_dbus_message_to_gerror$MH();
         try {
             return (int)mh$.invokeExact(message, error);
@@ -2996,9 +1530,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_method_invocation_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$624.g_dbus_method_invocation_get_type$MH,"g_dbus_method_invocation_get_type");
+        return RuntimeHelper.requireNonNull(constants$578.g_dbus_method_invocation_get_type$MH,"g_dbus_method_invocation_get_type");
     }
-    public static long g_dbus_method_invocation_get_type () {
+    /**
+     * {@snippet :
+     * GType g_dbus_method_invocation_get_type();
+     * }
+     */
+    public static long g_dbus_method_invocation_get_type() {
         var mh$ = g_dbus_method_invocation_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -3007,119 +1546,174 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_method_invocation_get_sender$MH() {
-        return RuntimeHelper.requireNonNull(constants$624.g_dbus_method_invocation_get_sender$MH,"g_dbus_method_invocation_get_sender");
+        return RuntimeHelper.requireNonNull(constants$578.g_dbus_method_invocation_get_sender$MH,"g_dbus_method_invocation_get_sender");
     }
-    public static MemoryAddress g_dbus_method_invocation_get_sender ( Addressable invocation) {
+    /**
+     * {@snippet :
+     * const gchar* g_dbus_method_invocation_get_sender(GDBusMethodInvocation* invocation);
+     * }
+     */
+    public static MemorySegment g_dbus_method_invocation_get_sender(MemorySegment invocation) {
         var mh$ = g_dbus_method_invocation_get_sender$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(invocation);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(invocation);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_method_invocation_get_object_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$624.g_dbus_method_invocation_get_object_path$MH,"g_dbus_method_invocation_get_object_path");
+        return RuntimeHelper.requireNonNull(constants$578.g_dbus_method_invocation_get_object_path$MH,"g_dbus_method_invocation_get_object_path");
     }
-    public static MemoryAddress g_dbus_method_invocation_get_object_path ( Addressable invocation) {
+    /**
+     * {@snippet :
+     * const gchar* g_dbus_method_invocation_get_object_path(GDBusMethodInvocation* invocation);
+     * }
+     */
+    public static MemorySegment g_dbus_method_invocation_get_object_path(MemorySegment invocation) {
         var mh$ = g_dbus_method_invocation_get_object_path$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(invocation);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(invocation);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_method_invocation_get_interface_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$624.g_dbus_method_invocation_get_interface_name$MH,"g_dbus_method_invocation_get_interface_name");
+        return RuntimeHelper.requireNonNull(constants$578.g_dbus_method_invocation_get_interface_name$MH,"g_dbus_method_invocation_get_interface_name");
     }
-    public static MemoryAddress g_dbus_method_invocation_get_interface_name ( Addressable invocation) {
+    /**
+     * {@snippet :
+     * const gchar* g_dbus_method_invocation_get_interface_name(GDBusMethodInvocation* invocation);
+     * }
+     */
+    public static MemorySegment g_dbus_method_invocation_get_interface_name(MemorySegment invocation) {
         var mh$ = g_dbus_method_invocation_get_interface_name$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(invocation);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(invocation);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_method_invocation_get_method_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$625.g_dbus_method_invocation_get_method_name$MH,"g_dbus_method_invocation_get_method_name");
+        return RuntimeHelper.requireNonNull(constants$579.g_dbus_method_invocation_get_method_name$MH,"g_dbus_method_invocation_get_method_name");
     }
-    public static MemoryAddress g_dbus_method_invocation_get_method_name ( Addressable invocation) {
+    /**
+     * {@snippet :
+     * const gchar* g_dbus_method_invocation_get_method_name(GDBusMethodInvocation* invocation);
+     * }
+     */
+    public static MemorySegment g_dbus_method_invocation_get_method_name(MemorySegment invocation) {
         var mh$ = g_dbus_method_invocation_get_method_name$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(invocation);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(invocation);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_method_invocation_get_method_info$MH() {
-        return RuntimeHelper.requireNonNull(constants$625.g_dbus_method_invocation_get_method_info$MH,"g_dbus_method_invocation_get_method_info");
+        return RuntimeHelper.requireNonNull(constants$579.g_dbus_method_invocation_get_method_info$MH,"g_dbus_method_invocation_get_method_info");
     }
-    public static MemoryAddress g_dbus_method_invocation_get_method_info ( Addressable invocation) {
+    /**
+     * {@snippet :
+     * const GDBusMethodInfo* g_dbus_method_invocation_get_method_info(GDBusMethodInvocation* invocation);
+     * }
+     */
+    public static MemorySegment g_dbus_method_invocation_get_method_info(MemorySegment invocation) {
         var mh$ = g_dbus_method_invocation_get_method_info$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(invocation);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(invocation);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_method_invocation_get_property_info$MH() {
-        return RuntimeHelper.requireNonNull(constants$625.g_dbus_method_invocation_get_property_info$MH,"g_dbus_method_invocation_get_property_info");
+        return RuntimeHelper.requireNonNull(constants$579.g_dbus_method_invocation_get_property_info$MH,"g_dbus_method_invocation_get_property_info");
     }
-    public static MemoryAddress g_dbus_method_invocation_get_property_info ( Addressable invocation) {
+    /**
+     * {@snippet :
+     * const GDBusPropertyInfo* g_dbus_method_invocation_get_property_info(GDBusMethodInvocation* invocation);
+     * }
+     */
+    public static MemorySegment g_dbus_method_invocation_get_property_info(MemorySegment invocation) {
         var mh$ = g_dbus_method_invocation_get_property_info$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(invocation);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(invocation);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_method_invocation_get_connection$MH() {
-        return RuntimeHelper.requireNonNull(constants$625.g_dbus_method_invocation_get_connection$MH,"g_dbus_method_invocation_get_connection");
+        return RuntimeHelper.requireNonNull(constants$579.g_dbus_method_invocation_get_connection$MH,"g_dbus_method_invocation_get_connection");
     }
-    public static MemoryAddress g_dbus_method_invocation_get_connection ( Addressable invocation) {
+    /**
+     * {@snippet :
+     * GDBusConnection* g_dbus_method_invocation_get_connection(GDBusMethodInvocation* invocation);
+     * }
+     */
+    public static MemorySegment g_dbus_method_invocation_get_connection(MemorySegment invocation) {
         var mh$ = g_dbus_method_invocation_get_connection$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(invocation);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(invocation);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_method_invocation_get_message$MH() {
-        return RuntimeHelper.requireNonNull(constants$625.g_dbus_method_invocation_get_message$MH,"g_dbus_method_invocation_get_message");
+        return RuntimeHelper.requireNonNull(constants$579.g_dbus_method_invocation_get_message$MH,"g_dbus_method_invocation_get_message");
     }
-    public static MemoryAddress g_dbus_method_invocation_get_message ( Addressable invocation) {
+    /**
+     * {@snippet :
+     * GDBusMessage* g_dbus_method_invocation_get_message(GDBusMethodInvocation* invocation);
+     * }
+     */
+    public static MemorySegment g_dbus_method_invocation_get_message(MemorySegment invocation) {
         var mh$ = g_dbus_method_invocation_get_message$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(invocation);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(invocation);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_method_invocation_get_parameters$MH() {
-        return RuntimeHelper.requireNonNull(constants$625.g_dbus_method_invocation_get_parameters$MH,"g_dbus_method_invocation_get_parameters");
+        return RuntimeHelper.requireNonNull(constants$579.g_dbus_method_invocation_get_parameters$MH,"g_dbus_method_invocation_get_parameters");
     }
-    public static MemoryAddress g_dbus_method_invocation_get_parameters ( Addressable invocation) {
+    /**
+     * {@snippet :
+     * GVariant* g_dbus_method_invocation_get_parameters(GDBusMethodInvocation* invocation);
+     * }
+     */
+    public static MemorySegment g_dbus_method_invocation_get_parameters(MemorySegment invocation) {
         var mh$ = g_dbus_method_invocation_get_parameters$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(invocation);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(invocation);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_method_invocation_get_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$626.g_dbus_method_invocation_get_user_data$MH,"g_dbus_method_invocation_get_user_data");
+        return RuntimeHelper.requireNonNull(constants$580.g_dbus_method_invocation_get_user_data$MH,"g_dbus_method_invocation_get_user_data");
     }
-    public static MemoryAddress g_dbus_method_invocation_get_user_data ( Addressable invocation) {
+    /**
+     * {@snippet :
+     * gpointer g_dbus_method_invocation_get_user_data(GDBusMethodInvocation* invocation);
+     * }
+     */
+    public static MemorySegment g_dbus_method_invocation_get_user_data(MemorySegment invocation) {
         var mh$ = g_dbus_method_invocation_get_user_data$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(invocation);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(invocation);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_method_invocation_return_value$MH() {
-        return RuntimeHelper.requireNonNull(constants$626.g_dbus_method_invocation_return_value$MH,"g_dbus_method_invocation_return_value");
+        return RuntimeHelper.requireNonNull(constants$580.g_dbus_method_invocation_return_value$MH,"g_dbus_method_invocation_return_value");
     }
-    public static void g_dbus_method_invocation_return_value ( Addressable invocation,  Addressable parameters) {
+    /**
+     * {@snippet :
+     * void g_dbus_method_invocation_return_value(GDBusMethodInvocation* invocation, GVariant* parameters);
+     * }
+     */
+    public static void g_dbus_method_invocation_return_value(MemorySegment invocation, MemorySegment parameters) {
         var mh$ = g_dbus_method_invocation_return_value$MH();
         try {
             mh$.invokeExact(invocation, parameters);
@@ -3128,9 +1722,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_method_invocation_return_value_with_unix_fd_list$MH() {
-        return RuntimeHelper.requireNonNull(constants$626.g_dbus_method_invocation_return_value_with_unix_fd_list$MH,"g_dbus_method_invocation_return_value_with_unix_fd_list");
+        return RuntimeHelper.requireNonNull(constants$580.g_dbus_method_invocation_return_value_with_unix_fd_list$MH,"g_dbus_method_invocation_return_value_with_unix_fd_list");
     }
-    public static void g_dbus_method_invocation_return_value_with_unix_fd_list ( Addressable invocation,  Addressable parameters,  Addressable fd_list) {
+    /**
+     * {@snippet :
+     * void g_dbus_method_invocation_return_value_with_unix_fd_list(GDBusMethodInvocation* invocation, GVariant* parameters, GUnixFDList* fd_list);
+     * }
+     */
+    public static void g_dbus_method_invocation_return_value_with_unix_fd_list(MemorySegment invocation, MemorySegment parameters, MemorySegment fd_list) {
         var mh$ = g_dbus_method_invocation_return_value_with_unix_fd_list$MH();
         try {
             mh$.invokeExact(invocation, parameters, fd_list);
@@ -3139,9 +1738,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_method_invocation_return_error$MH() {
-        return RuntimeHelper.requireNonNull(constants$626.g_dbus_method_invocation_return_error$MH,"g_dbus_method_invocation_return_error");
+        return RuntimeHelper.requireNonNull(constants$580.g_dbus_method_invocation_return_error$MH,"g_dbus_method_invocation_return_error");
     }
-    public static void g_dbus_method_invocation_return_error ( Addressable invocation,  int domain,  int code,  Addressable format, Object... x4) {
+    /**
+     * {@snippet :
+     * void g_dbus_method_invocation_return_error(GDBusMethodInvocation* invocation, GQuark domain, gint code, const gchar* format,...);
+     * }
+     */
+    public static void g_dbus_method_invocation_return_error(MemorySegment invocation, int domain, int code, MemorySegment format, Object... x4) {
         var mh$ = g_dbus_method_invocation_return_error$MH();
         try {
             mh$.invokeExact(invocation, domain, code, format, x4);
@@ -3150,9 +1754,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_method_invocation_return_error_valist$MH() {
-        return RuntimeHelper.requireNonNull(constants$626.g_dbus_method_invocation_return_error_valist$MH,"g_dbus_method_invocation_return_error_valist");
+        return RuntimeHelper.requireNonNull(constants$580.g_dbus_method_invocation_return_error_valist$MH,"g_dbus_method_invocation_return_error_valist");
     }
-    public static void g_dbus_method_invocation_return_error_valist ( Addressable invocation,  int domain,  int code,  Addressable format,  Addressable var_args) {
+    /**
+     * {@snippet :
+     * void g_dbus_method_invocation_return_error_valist(GDBusMethodInvocation* invocation, GQuark domain, gint code, const gchar* format, va_list var_args);
+     * }
+     */
+    public static void g_dbus_method_invocation_return_error_valist(MemorySegment invocation, int domain, int code, MemorySegment format, MemorySegment var_args) {
         var mh$ = g_dbus_method_invocation_return_error_valist$MH();
         try {
             mh$.invokeExact(invocation, domain, code, format, var_args);
@@ -3161,9 +1770,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_method_invocation_return_error_literal$MH() {
-        return RuntimeHelper.requireNonNull(constants$626.g_dbus_method_invocation_return_error_literal$MH,"g_dbus_method_invocation_return_error_literal");
+        return RuntimeHelper.requireNonNull(constants$580.g_dbus_method_invocation_return_error_literal$MH,"g_dbus_method_invocation_return_error_literal");
     }
-    public static void g_dbus_method_invocation_return_error_literal ( Addressable invocation,  int domain,  int code,  Addressable message) {
+    /**
+     * {@snippet :
+     * void g_dbus_method_invocation_return_error_literal(GDBusMethodInvocation* invocation, GQuark domain, gint code, const gchar* message);
+     * }
+     */
+    public static void g_dbus_method_invocation_return_error_literal(MemorySegment invocation, int domain, int code, MemorySegment message) {
         var mh$ = g_dbus_method_invocation_return_error_literal$MH();
         try {
             mh$.invokeExact(invocation, domain, code, message);
@@ -3172,9 +1786,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_method_invocation_return_gerror$MH() {
-        return RuntimeHelper.requireNonNull(constants$627.g_dbus_method_invocation_return_gerror$MH,"g_dbus_method_invocation_return_gerror");
+        return RuntimeHelper.requireNonNull(constants$581.g_dbus_method_invocation_return_gerror$MH,"g_dbus_method_invocation_return_gerror");
     }
-    public static void g_dbus_method_invocation_return_gerror ( Addressable invocation,  Addressable error) {
+    /**
+     * {@snippet :
+     * void g_dbus_method_invocation_return_gerror(GDBusMethodInvocation* invocation, const GError* error);
+     * }
+     */
+    public static void g_dbus_method_invocation_return_gerror(MemorySegment invocation, MemorySegment error) {
         var mh$ = g_dbus_method_invocation_return_gerror$MH();
         try {
             mh$.invokeExact(invocation, error);
@@ -3183,9 +1802,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_method_invocation_take_error$MH() {
-        return RuntimeHelper.requireNonNull(constants$627.g_dbus_method_invocation_take_error$MH,"g_dbus_method_invocation_take_error");
+        return RuntimeHelper.requireNonNull(constants$581.g_dbus_method_invocation_take_error$MH,"g_dbus_method_invocation_take_error");
     }
-    public static void g_dbus_method_invocation_take_error ( Addressable invocation,  Addressable error) {
+    /**
+     * {@snippet :
+     * void g_dbus_method_invocation_take_error(GDBusMethodInvocation* invocation, GError* error);
+     * }
+     */
+    public static void g_dbus_method_invocation_take_error(MemorySegment invocation, MemorySegment error) {
         var mh$ = g_dbus_method_invocation_take_error$MH();
         try {
             mh$.invokeExact(invocation, error);
@@ -3194,9 +1818,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_method_invocation_return_dbus_error$MH() {
-        return RuntimeHelper.requireNonNull(constants$627.g_dbus_method_invocation_return_dbus_error$MH,"g_dbus_method_invocation_return_dbus_error");
+        return RuntimeHelper.requireNonNull(constants$581.g_dbus_method_invocation_return_dbus_error$MH,"g_dbus_method_invocation_return_dbus_error");
     }
-    public static void g_dbus_method_invocation_return_dbus_error ( Addressable invocation,  Addressable error_name,  Addressable error_message) {
+    /**
+     * {@snippet :
+     * void g_dbus_method_invocation_return_dbus_error(GDBusMethodInvocation* invocation, const gchar* error_name, const gchar* error_message);
+     * }
+     */
+    public static void g_dbus_method_invocation_return_dbus_error(MemorySegment invocation, MemorySegment error_name, MemorySegment error_message) {
         var mh$ = g_dbus_method_invocation_return_dbus_error$MH();
         try {
             mh$.invokeExact(invocation, error_name, error_message);
@@ -3205,9 +1834,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_bus_own_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$628.g_bus_own_name$MH,"g_bus_own_name");
+        return RuntimeHelper.requireNonNull(constants$582.g_bus_own_name$MH,"g_bus_own_name");
     }
-    public static int g_bus_own_name ( int bus_type,  Addressable name,  int flags,  Addressable bus_acquired_handler,  Addressable name_acquired_handler,  Addressable name_lost_handler,  Addressable user_data,  Addressable user_data_free_func) {
+    /**
+     * {@snippet :
+     * guint g_bus_own_name(GBusType bus_type, const gchar* name, GBusNameOwnerFlags flags, GBusAcquiredCallback bus_acquired_handler, GBusNameAcquiredCallback name_acquired_handler, GBusNameLostCallback name_lost_handler, gpointer user_data, GDestroyNotify user_data_free_func);
+     * }
+     */
+    public static int g_bus_own_name(int bus_type, MemorySegment name, int flags, MemorySegment bus_acquired_handler, MemorySegment name_acquired_handler, MemorySegment name_lost_handler, MemorySegment user_data, MemorySegment user_data_free_func) {
         var mh$ = g_bus_own_name$MH();
         try {
             return (int)mh$.invokeExact(bus_type, name, flags, bus_acquired_handler, name_acquired_handler, name_lost_handler, user_data, user_data_free_func);
@@ -3216,9 +1850,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_bus_own_name_on_connection$MH() {
-        return RuntimeHelper.requireNonNull(constants$628.g_bus_own_name_on_connection$MH,"g_bus_own_name_on_connection");
+        return RuntimeHelper.requireNonNull(constants$582.g_bus_own_name_on_connection$MH,"g_bus_own_name_on_connection");
     }
-    public static int g_bus_own_name_on_connection ( Addressable connection,  Addressable name,  int flags,  Addressable name_acquired_handler,  Addressable name_lost_handler,  Addressable user_data,  Addressable user_data_free_func) {
+    /**
+     * {@snippet :
+     * guint g_bus_own_name_on_connection(GDBusConnection* connection, const gchar* name, GBusNameOwnerFlags flags, GBusNameAcquiredCallback name_acquired_handler, GBusNameLostCallback name_lost_handler, gpointer user_data, GDestroyNotify user_data_free_func);
+     * }
+     */
+    public static int g_bus_own_name_on_connection(MemorySegment connection, MemorySegment name, int flags, MemorySegment name_acquired_handler, MemorySegment name_lost_handler, MemorySegment user_data, MemorySegment user_data_free_func) {
         var mh$ = g_bus_own_name_on_connection$MH();
         try {
             return (int)mh$.invokeExact(connection, name, flags, name_acquired_handler, name_lost_handler, user_data, user_data_free_func);
@@ -3227,9 +1866,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_bus_own_name_with_closures$MH() {
-        return RuntimeHelper.requireNonNull(constants$628.g_bus_own_name_with_closures$MH,"g_bus_own_name_with_closures");
+        return RuntimeHelper.requireNonNull(constants$582.g_bus_own_name_with_closures$MH,"g_bus_own_name_with_closures");
     }
-    public static int g_bus_own_name_with_closures ( int bus_type,  Addressable name,  int flags,  Addressable bus_acquired_closure,  Addressable name_acquired_closure,  Addressable name_lost_closure) {
+    /**
+     * {@snippet :
+     * guint g_bus_own_name_with_closures(GBusType bus_type, const gchar* name, GBusNameOwnerFlags flags, GClosure* bus_acquired_closure, GClosure* name_acquired_closure, GClosure* name_lost_closure);
+     * }
+     */
+    public static int g_bus_own_name_with_closures(int bus_type, MemorySegment name, int flags, MemorySegment bus_acquired_closure, MemorySegment name_acquired_closure, MemorySegment name_lost_closure) {
         var mh$ = g_bus_own_name_with_closures$MH();
         try {
             return (int)mh$.invokeExact(bus_type, name, flags, bus_acquired_closure, name_acquired_closure, name_lost_closure);
@@ -3238,9 +1882,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_bus_own_name_on_connection_with_closures$MH() {
-        return RuntimeHelper.requireNonNull(constants$629.g_bus_own_name_on_connection_with_closures$MH,"g_bus_own_name_on_connection_with_closures");
+        return RuntimeHelper.requireNonNull(constants$583.g_bus_own_name_on_connection_with_closures$MH,"g_bus_own_name_on_connection_with_closures");
     }
-    public static int g_bus_own_name_on_connection_with_closures ( Addressable connection,  Addressable name,  int flags,  Addressable name_acquired_closure,  Addressable name_lost_closure) {
+    /**
+     * {@snippet :
+     * guint g_bus_own_name_on_connection_with_closures(GDBusConnection* connection, const gchar* name, GBusNameOwnerFlags flags, GClosure* name_acquired_closure, GClosure* name_lost_closure);
+     * }
+     */
+    public static int g_bus_own_name_on_connection_with_closures(MemorySegment connection, MemorySegment name, int flags, MemorySegment name_acquired_closure, MemorySegment name_lost_closure) {
         var mh$ = g_bus_own_name_on_connection_with_closures$MH();
         try {
             return (int)mh$.invokeExact(connection, name, flags, name_acquired_closure, name_lost_closure);
@@ -3249,9 +1898,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_bus_unown_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$629.g_bus_unown_name$MH,"g_bus_unown_name");
+        return RuntimeHelper.requireNonNull(constants$583.g_bus_unown_name$MH,"g_bus_unown_name");
     }
-    public static void g_bus_unown_name ( int owner_id) {
+    /**
+     * {@snippet :
+     * void g_bus_unown_name(guint owner_id);
+     * }
+     */
+    public static void g_bus_unown_name(int owner_id) {
         var mh$ = g_bus_unown_name$MH();
         try {
             mh$.invokeExact(owner_id);
@@ -3260,9 +1914,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_bus_watch_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$630.g_bus_watch_name$MH,"g_bus_watch_name");
+        return RuntimeHelper.requireNonNull(constants$584.g_bus_watch_name$MH,"g_bus_watch_name");
     }
-    public static int g_bus_watch_name ( int bus_type,  Addressable name,  int flags,  Addressable name_appeared_handler,  Addressable name_vanished_handler,  Addressable user_data,  Addressable user_data_free_func) {
+    /**
+     * {@snippet :
+     * guint g_bus_watch_name(GBusType bus_type, const gchar* name, GBusNameWatcherFlags flags, GBusNameAppearedCallback name_appeared_handler, GBusNameVanishedCallback name_vanished_handler, gpointer user_data, GDestroyNotify user_data_free_func);
+     * }
+     */
+    public static int g_bus_watch_name(int bus_type, MemorySegment name, int flags, MemorySegment name_appeared_handler, MemorySegment name_vanished_handler, MemorySegment user_data, MemorySegment user_data_free_func) {
         var mh$ = g_bus_watch_name$MH();
         try {
             return (int)mh$.invokeExact(bus_type, name, flags, name_appeared_handler, name_vanished_handler, user_data, user_data_free_func);
@@ -3271,9 +1930,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_bus_watch_name_on_connection$MH() {
-        return RuntimeHelper.requireNonNull(constants$630.g_bus_watch_name_on_connection$MH,"g_bus_watch_name_on_connection");
+        return RuntimeHelper.requireNonNull(constants$584.g_bus_watch_name_on_connection$MH,"g_bus_watch_name_on_connection");
     }
-    public static int g_bus_watch_name_on_connection ( Addressable connection,  Addressable name,  int flags,  Addressable name_appeared_handler,  Addressable name_vanished_handler,  Addressable user_data,  Addressable user_data_free_func) {
+    /**
+     * {@snippet :
+     * guint g_bus_watch_name_on_connection(GDBusConnection* connection, const gchar* name, GBusNameWatcherFlags flags, GBusNameAppearedCallback name_appeared_handler, GBusNameVanishedCallback name_vanished_handler, gpointer user_data, GDestroyNotify user_data_free_func);
+     * }
+     */
+    public static int g_bus_watch_name_on_connection(MemorySegment connection, MemorySegment name, int flags, MemorySegment name_appeared_handler, MemorySegment name_vanished_handler, MemorySegment user_data, MemorySegment user_data_free_func) {
         var mh$ = g_bus_watch_name_on_connection$MH();
         try {
             return (int)mh$.invokeExact(connection, name, flags, name_appeared_handler, name_vanished_handler, user_data, user_data_free_func);
@@ -3282,9 +1946,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_bus_watch_name_with_closures$MH() {
-        return RuntimeHelper.requireNonNull(constants$630.g_bus_watch_name_with_closures$MH,"g_bus_watch_name_with_closures");
+        return RuntimeHelper.requireNonNull(constants$584.g_bus_watch_name_with_closures$MH,"g_bus_watch_name_with_closures");
     }
-    public static int g_bus_watch_name_with_closures ( int bus_type,  Addressable name,  int flags,  Addressable name_appeared_closure,  Addressable name_vanished_closure) {
+    /**
+     * {@snippet :
+     * guint g_bus_watch_name_with_closures(GBusType bus_type, const gchar* name, GBusNameWatcherFlags flags, GClosure* name_appeared_closure, GClosure* name_vanished_closure);
+     * }
+     */
+    public static int g_bus_watch_name_with_closures(int bus_type, MemorySegment name, int flags, MemorySegment name_appeared_closure, MemorySegment name_vanished_closure) {
         var mh$ = g_bus_watch_name_with_closures$MH();
         try {
             return (int)mh$.invokeExact(bus_type, name, flags, name_appeared_closure, name_vanished_closure);
@@ -3293,9 +1962,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_bus_watch_name_on_connection_with_closures$MH() {
-        return RuntimeHelper.requireNonNull(constants$630.g_bus_watch_name_on_connection_with_closures$MH,"g_bus_watch_name_on_connection_with_closures");
+        return RuntimeHelper.requireNonNull(constants$584.g_bus_watch_name_on_connection_with_closures$MH,"g_bus_watch_name_on_connection_with_closures");
     }
-    public static int g_bus_watch_name_on_connection_with_closures ( Addressable connection,  Addressable name,  int flags,  Addressable name_appeared_closure,  Addressable name_vanished_closure) {
+    /**
+     * {@snippet :
+     * guint g_bus_watch_name_on_connection_with_closures(GDBusConnection* connection, const gchar* name, GBusNameWatcherFlags flags, GClosure* name_appeared_closure, GClosure* name_vanished_closure);
+     * }
+     */
+    public static int g_bus_watch_name_on_connection_with_closures(MemorySegment connection, MemorySegment name, int flags, MemorySegment name_appeared_closure, MemorySegment name_vanished_closure) {
         var mh$ = g_bus_watch_name_on_connection_with_closures$MH();
         try {
             return (int)mh$.invokeExact(connection, name, flags, name_appeared_closure, name_vanished_closure);
@@ -3304,9 +1978,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_bus_unwatch_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$630.g_bus_unwatch_name$MH,"g_bus_unwatch_name");
+        return RuntimeHelper.requireNonNull(constants$584.g_bus_unwatch_name$MH,"g_bus_unwatch_name");
     }
-    public static void g_bus_unwatch_name ( int watcher_id) {
+    /**
+     * {@snippet :
+     * void g_bus_unwatch_name(guint watcher_id);
+     * }
+     */
+    public static void g_bus_unwatch_name(int watcher_id) {
         var mh$ = g_bus_unwatch_name$MH();
         try {
             mh$.invokeExact(watcher_id);
@@ -3315,9 +1994,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_object_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$630.g_dbus_object_get_type$MH,"g_dbus_object_get_type");
+        return RuntimeHelper.requireNonNull(constants$584.g_dbus_object_get_type$MH,"g_dbus_object_get_type");
     }
-    public static long g_dbus_object_get_type () {
+    /**
+     * {@snippet :
+     * GType g_dbus_object_get_type();
+     * }
+     */
+    public static long g_dbus_object_get_type() {
         var mh$ = g_dbus_object_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -3326,42 +2010,62 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_object_get_object_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$631.g_dbus_object_get_object_path$MH,"g_dbus_object_get_object_path");
+        return RuntimeHelper.requireNonNull(constants$585.g_dbus_object_get_object_path$MH,"g_dbus_object_get_object_path");
     }
-    public static MemoryAddress g_dbus_object_get_object_path ( Addressable object) {
+    /**
+     * {@snippet :
+     * const gchar* g_dbus_object_get_object_path(GDBusObject* object);
+     * }
+     */
+    public static MemorySegment g_dbus_object_get_object_path(MemorySegment object) {
         var mh$ = g_dbus_object_get_object_path$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(object);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(object);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_object_get_interfaces$MH() {
-        return RuntimeHelper.requireNonNull(constants$631.g_dbus_object_get_interfaces$MH,"g_dbus_object_get_interfaces");
+        return RuntimeHelper.requireNonNull(constants$585.g_dbus_object_get_interfaces$MH,"g_dbus_object_get_interfaces");
     }
-    public static MemoryAddress g_dbus_object_get_interfaces ( Addressable object) {
+    /**
+     * {@snippet :
+     * GList* g_dbus_object_get_interfaces(GDBusObject* object);
+     * }
+     */
+    public static MemorySegment g_dbus_object_get_interfaces(MemorySegment object) {
         var mh$ = g_dbus_object_get_interfaces$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(object);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(object);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_object_get_interface$MH() {
-        return RuntimeHelper.requireNonNull(constants$631.g_dbus_object_get_interface$MH,"g_dbus_object_get_interface");
+        return RuntimeHelper.requireNonNull(constants$585.g_dbus_object_get_interface$MH,"g_dbus_object_get_interface");
     }
-    public static MemoryAddress g_dbus_object_get_interface ( Addressable object,  Addressable interface_name) {
+    /**
+     * {@snippet :
+     * GDBusInterface* g_dbus_object_get_interface(GDBusObject* object, const gchar* interface_name);
+     * }
+     */
+    public static MemorySegment g_dbus_object_get_interface(MemorySegment object, MemorySegment interface_name) {
         var mh$ = g_dbus_object_get_interface$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(object, interface_name);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(object, interface_name);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_object_manager_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$631.g_dbus_object_manager_get_type$MH,"g_dbus_object_manager_get_type");
+        return RuntimeHelper.requireNonNull(constants$585.g_dbus_object_manager_get_type$MH,"g_dbus_object_manager_get_type");
     }
-    public static long g_dbus_object_manager_get_type () {
+    /**
+     * {@snippet :
+     * GType g_dbus_object_manager_get_type();
+     * }
+     */
+    public static long g_dbus_object_manager_get_type() {
         var mh$ = g_dbus_object_manager_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -3370,53 +2074,78 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_object_manager_get_object_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$631.g_dbus_object_manager_get_object_path$MH,"g_dbus_object_manager_get_object_path");
+        return RuntimeHelper.requireNonNull(constants$585.g_dbus_object_manager_get_object_path$MH,"g_dbus_object_manager_get_object_path");
     }
-    public static MemoryAddress g_dbus_object_manager_get_object_path ( Addressable manager) {
+    /**
+     * {@snippet :
+     * const gchar* g_dbus_object_manager_get_object_path(GDBusObjectManager* manager);
+     * }
+     */
+    public static MemorySegment g_dbus_object_manager_get_object_path(MemorySegment manager) {
         var mh$ = g_dbus_object_manager_get_object_path$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(manager);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(manager);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_object_manager_get_objects$MH() {
-        return RuntimeHelper.requireNonNull(constants$631.g_dbus_object_manager_get_objects$MH,"g_dbus_object_manager_get_objects");
+        return RuntimeHelper.requireNonNull(constants$585.g_dbus_object_manager_get_objects$MH,"g_dbus_object_manager_get_objects");
     }
-    public static MemoryAddress g_dbus_object_manager_get_objects ( Addressable manager) {
+    /**
+     * {@snippet :
+     * GList* g_dbus_object_manager_get_objects(GDBusObjectManager* manager);
+     * }
+     */
+    public static MemorySegment g_dbus_object_manager_get_objects(MemorySegment manager) {
         var mh$ = g_dbus_object_manager_get_objects$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(manager);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(manager);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_object_manager_get_object$MH() {
-        return RuntimeHelper.requireNonNull(constants$632.g_dbus_object_manager_get_object$MH,"g_dbus_object_manager_get_object");
+        return RuntimeHelper.requireNonNull(constants$586.g_dbus_object_manager_get_object$MH,"g_dbus_object_manager_get_object");
     }
-    public static MemoryAddress g_dbus_object_manager_get_object ( Addressable manager,  Addressable object_path) {
+    /**
+     * {@snippet :
+     * GDBusObject* g_dbus_object_manager_get_object(GDBusObjectManager* manager, const gchar* object_path);
+     * }
+     */
+    public static MemorySegment g_dbus_object_manager_get_object(MemorySegment manager, MemorySegment object_path) {
         var mh$ = g_dbus_object_manager_get_object$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(manager, object_path);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(manager, object_path);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_object_manager_get_interface$MH() {
-        return RuntimeHelper.requireNonNull(constants$632.g_dbus_object_manager_get_interface$MH,"g_dbus_object_manager_get_interface");
+        return RuntimeHelper.requireNonNull(constants$586.g_dbus_object_manager_get_interface$MH,"g_dbus_object_manager_get_interface");
     }
-    public static MemoryAddress g_dbus_object_manager_get_interface ( Addressable manager,  Addressable object_path,  Addressable interface_name) {
+    /**
+     * {@snippet :
+     * GDBusInterface* g_dbus_object_manager_get_interface(GDBusObjectManager* manager, const gchar* object_path, const gchar* interface_name);
+     * }
+     */
+    public static MemorySegment g_dbus_object_manager_get_interface(MemorySegment manager, MemorySegment object_path, MemorySegment interface_name) {
         var mh$ = g_dbus_object_manager_get_interface$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(manager, object_path, interface_name);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(manager, object_path, interface_name);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_object_manager_client_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$632.g_dbus_object_manager_client_get_type$MH,"g_dbus_object_manager_client_get_type");
+        return RuntimeHelper.requireNonNull(constants$586.g_dbus_object_manager_client_get_type$MH,"g_dbus_object_manager_client_get_type");
     }
-    public static long g_dbus_object_manager_client_get_type () {
+    /**
+     * {@snippet :
+     * GType g_dbus_object_manager_client_get_type();
+     * }
+     */
+    public static long g_dbus_object_manager_client_get_type() {
         var mh$ = g_dbus_object_manager_client_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -3425,9 +2154,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_object_manager_client_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$632.g_dbus_object_manager_client_new$MH,"g_dbus_object_manager_client_new");
+        return RuntimeHelper.requireNonNull(constants$586.g_dbus_object_manager_client_new$MH,"g_dbus_object_manager_client_new");
     }
-    public static void g_dbus_object_manager_client_new ( Addressable connection,  int flags,  Addressable name,  Addressable object_path,  Addressable get_proxy_type_func,  Addressable get_proxy_type_user_data,  Addressable get_proxy_type_destroy_notify,  Addressable cancellable,  Addressable callback,  Addressable user_data) {
+    /**
+     * {@snippet :
+     * void g_dbus_object_manager_client_new(GDBusConnection* connection, GDBusObjectManagerClientFlags flags, const gchar* name, const gchar* object_path, GDBusProxyTypeFunc get_proxy_type_func, gpointer get_proxy_type_user_data, GDestroyNotify get_proxy_type_destroy_notify, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
+     * }
+     */
+    public static void g_dbus_object_manager_client_new(MemorySegment connection, int flags, MemorySegment name, MemorySegment object_path, MemorySegment get_proxy_type_func, MemorySegment get_proxy_type_user_data, MemorySegment get_proxy_type_destroy_notify, MemorySegment cancellable, MemorySegment callback, MemorySegment user_data) {
         var mh$ = g_dbus_object_manager_client_new$MH();
         try {
             mh$.invokeExact(connection, flags, name, object_path, get_proxy_type_func, get_proxy_type_user_data, get_proxy_type_destroy_notify, cancellable, callback, user_data);
@@ -3436,31 +2170,46 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_object_manager_client_new_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$632.g_dbus_object_manager_client_new_finish$MH,"g_dbus_object_manager_client_new_finish");
+        return RuntimeHelper.requireNonNull(constants$586.g_dbus_object_manager_client_new_finish$MH,"g_dbus_object_manager_client_new_finish");
     }
-    public static MemoryAddress g_dbus_object_manager_client_new_finish ( Addressable res,  Addressable error) {
+    /**
+     * {@snippet :
+     * GDBusObjectManager* g_dbus_object_manager_client_new_finish(GAsyncResult* res, GError** error);
+     * }
+     */
+    public static MemorySegment g_dbus_object_manager_client_new_finish(MemorySegment res, MemorySegment error) {
         var mh$ = g_dbus_object_manager_client_new_finish$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(res, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(res, error);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_object_manager_client_new_sync$MH() {
-        return RuntimeHelper.requireNonNull(constants$632.g_dbus_object_manager_client_new_sync$MH,"g_dbus_object_manager_client_new_sync");
+        return RuntimeHelper.requireNonNull(constants$586.g_dbus_object_manager_client_new_sync$MH,"g_dbus_object_manager_client_new_sync");
     }
-    public static MemoryAddress g_dbus_object_manager_client_new_sync ( Addressable connection,  int flags,  Addressable name,  Addressable object_path,  Addressable get_proxy_type_func,  Addressable get_proxy_type_user_data,  Addressable get_proxy_type_destroy_notify,  Addressable cancellable,  Addressable error) {
+    /**
+     * {@snippet :
+     * GDBusObjectManager* g_dbus_object_manager_client_new_sync(GDBusConnection* connection, GDBusObjectManagerClientFlags flags, const gchar* name, const gchar* object_path, GDBusProxyTypeFunc get_proxy_type_func, gpointer get_proxy_type_user_data, GDestroyNotify get_proxy_type_destroy_notify, GCancellable* cancellable, GError** error);
+     * }
+     */
+    public static MemorySegment g_dbus_object_manager_client_new_sync(MemorySegment connection, int flags, MemorySegment name, MemorySegment object_path, MemorySegment get_proxy_type_func, MemorySegment get_proxy_type_user_data, MemorySegment get_proxy_type_destroy_notify, MemorySegment cancellable, MemorySegment error) {
         var mh$ = g_dbus_object_manager_client_new_sync$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(connection, flags, name, object_path, get_proxy_type_func, get_proxy_type_user_data, get_proxy_type_destroy_notify, cancellable, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(connection, flags, name, object_path, get_proxy_type_func, get_proxy_type_user_data, get_proxy_type_destroy_notify, cancellable, error);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_object_manager_client_new_for_bus$MH() {
-        return RuntimeHelper.requireNonNull(constants$633.g_dbus_object_manager_client_new_for_bus$MH,"g_dbus_object_manager_client_new_for_bus");
+        return RuntimeHelper.requireNonNull(constants$587.g_dbus_object_manager_client_new_for_bus$MH,"g_dbus_object_manager_client_new_for_bus");
     }
-    public static void g_dbus_object_manager_client_new_for_bus ( int bus_type,  int flags,  Addressable name,  Addressable object_path,  Addressable get_proxy_type_func,  Addressable get_proxy_type_user_data,  Addressable get_proxy_type_destroy_notify,  Addressable cancellable,  Addressable callback,  Addressable user_data) {
+    /**
+     * {@snippet :
+     * void g_dbus_object_manager_client_new_for_bus(GBusType bus_type, GDBusObjectManagerClientFlags flags, const gchar* name, const gchar* object_path, GDBusProxyTypeFunc get_proxy_type_func, gpointer get_proxy_type_user_data, GDestroyNotify get_proxy_type_destroy_notify, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
+     * }
+     */
+    public static void g_dbus_object_manager_client_new_for_bus(int bus_type, int flags, MemorySegment name, MemorySegment object_path, MemorySegment get_proxy_type_func, MemorySegment get_proxy_type_user_data, MemorySegment get_proxy_type_destroy_notify, MemorySegment cancellable, MemorySegment callback, MemorySegment user_data) {
         var mh$ = g_dbus_object_manager_client_new_for_bus$MH();
         try {
             mh$.invokeExact(bus_type, flags, name, object_path, get_proxy_type_func, get_proxy_type_user_data, get_proxy_type_destroy_notify, cancellable, callback, user_data);
@@ -3469,42 +2218,62 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_object_manager_client_new_for_bus_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$633.g_dbus_object_manager_client_new_for_bus_finish$MH,"g_dbus_object_manager_client_new_for_bus_finish");
+        return RuntimeHelper.requireNonNull(constants$587.g_dbus_object_manager_client_new_for_bus_finish$MH,"g_dbus_object_manager_client_new_for_bus_finish");
     }
-    public static MemoryAddress g_dbus_object_manager_client_new_for_bus_finish ( Addressable res,  Addressable error) {
+    /**
+     * {@snippet :
+     * GDBusObjectManager* g_dbus_object_manager_client_new_for_bus_finish(GAsyncResult* res, GError** error);
+     * }
+     */
+    public static MemorySegment g_dbus_object_manager_client_new_for_bus_finish(MemorySegment res, MemorySegment error) {
         var mh$ = g_dbus_object_manager_client_new_for_bus_finish$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(res, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(res, error);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_object_manager_client_new_for_bus_sync$MH() {
-        return RuntimeHelper.requireNonNull(constants$633.g_dbus_object_manager_client_new_for_bus_sync$MH,"g_dbus_object_manager_client_new_for_bus_sync");
+        return RuntimeHelper.requireNonNull(constants$587.g_dbus_object_manager_client_new_for_bus_sync$MH,"g_dbus_object_manager_client_new_for_bus_sync");
     }
-    public static MemoryAddress g_dbus_object_manager_client_new_for_bus_sync ( int bus_type,  int flags,  Addressable name,  Addressable object_path,  Addressable get_proxy_type_func,  Addressable get_proxy_type_user_data,  Addressable get_proxy_type_destroy_notify,  Addressable cancellable,  Addressable error) {
+    /**
+     * {@snippet :
+     * GDBusObjectManager* g_dbus_object_manager_client_new_for_bus_sync(GBusType bus_type, GDBusObjectManagerClientFlags flags, const gchar* name, const gchar* object_path, GDBusProxyTypeFunc get_proxy_type_func, gpointer get_proxy_type_user_data, GDestroyNotify get_proxy_type_destroy_notify, GCancellable* cancellable, GError** error);
+     * }
+     */
+    public static MemorySegment g_dbus_object_manager_client_new_for_bus_sync(int bus_type, int flags, MemorySegment name, MemorySegment object_path, MemorySegment get_proxy_type_func, MemorySegment get_proxy_type_user_data, MemorySegment get_proxy_type_destroy_notify, MemorySegment cancellable, MemorySegment error) {
         var mh$ = g_dbus_object_manager_client_new_for_bus_sync$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(bus_type, flags, name, object_path, get_proxy_type_func, get_proxy_type_user_data, get_proxy_type_destroy_notify, cancellable, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(bus_type, flags, name, object_path, get_proxy_type_func, get_proxy_type_user_data, get_proxy_type_destroy_notify, cancellable, error);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_object_manager_client_get_connection$MH() {
-        return RuntimeHelper.requireNonNull(constants$633.g_dbus_object_manager_client_get_connection$MH,"g_dbus_object_manager_client_get_connection");
+        return RuntimeHelper.requireNonNull(constants$587.g_dbus_object_manager_client_get_connection$MH,"g_dbus_object_manager_client_get_connection");
     }
-    public static MemoryAddress g_dbus_object_manager_client_get_connection ( Addressable manager) {
+    /**
+     * {@snippet :
+     * GDBusConnection* g_dbus_object_manager_client_get_connection(GDBusObjectManagerClient* manager);
+     * }
+     */
+    public static MemorySegment g_dbus_object_manager_client_get_connection(MemorySegment manager) {
         var mh$ = g_dbus_object_manager_client_get_connection$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(manager);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(manager);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_object_manager_client_get_flags$MH() {
-        return RuntimeHelper.requireNonNull(constants$633.g_dbus_object_manager_client_get_flags$MH,"g_dbus_object_manager_client_get_flags");
+        return RuntimeHelper.requireNonNull(constants$587.g_dbus_object_manager_client_get_flags$MH,"g_dbus_object_manager_client_get_flags");
     }
-    public static int g_dbus_object_manager_client_get_flags ( Addressable manager) {
+    /**
+     * {@snippet :
+     * GDBusObjectManagerClientFlags g_dbus_object_manager_client_get_flags(GDBusObjectManagerClient* manager);
+     * }
+     */
+    public static int g_dbus_object_manager_client_get_flags(MemorySegment manager) {
         var mh$ = g_dbus_object_manager_client_get_flags$MH();
         try {
             return (int)mh$.invokeExact(manager);
@@ -3513,31 +2282,46 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_object_manager_client_get_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$633.g_dbus_object_manager_client_get_name$MH,"g_dbus_object_manager_client_get_name");
+        return RuntimeHelper.requireNonNull(constants$587.g_dbus_object_manager_client_get_name$MH,"g_dbus_object_manager_client_get_name");
     }
-    public static MemoryAddress g_dbus_object_manager_client_get_name ( Addressable manager) {
+    /**
+     * {@snippet :
+     * const gchar* g_dbus_object_manager_client_get_name(GDBusObjectManagerClient* manager);
+     * }
+     */
+    public static MemorySegment g_dbus_object_manager_client_get_name(MemorySegment manager) {
         var mh$ = g_dbus_object_manager_client_get_name$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(manager);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(manager);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_object_manager_client_get_name_owner$MH() {
-        return RuntimeHelper.requireNonNull(constants$634.g_dbus_object_manager_client_get_name_owner$MH,"g_dbus_object_manager_client_get_name_owner");
+        return RuntimeHelper.requireNonNull(constants$588.g_dbus_object_manager_client_get_name_owner$MH,"g_dbus_object_manager_client_get_name_owner");
     }
-    public static MemoryAddress g_dbus_object_manager_client_get_name_owner ( Addressable manager) {
+    /**
+     * {@snippet :
+     * gchar* g_dbus_object_manager_client_get_name_owner(GDBusObjectManagerClient* manager);
+     * }
+     */
+    public static MemorySegment g_dbus_object_manager_client_get_name_owner(MemorySegment manager) {
         var mh$ = g_dbus_object_manager_client_get_name_owner$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(manager);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(manager);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_object_manager_server_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$634.g_dbus_object_manager_server_get_type$MH,"g_dbus_object_manager_server_get_type");
+        return RuntimeHelper.requireNonNull(constants$588.g_dbus_object_manager_server_get_type$MH,"g_dbus_object_manager_server_get_type");
     }
-    public static long g_dbus_object_manager_server_get_type () {
+    /**
+     * {@snippet :
+     * GType g_dbus_object_manager_server_get_type();
+     * }
+     */
+    public static long g_dbus_object_manager_server_get_type() {
         var mh$ = g_dbus_object_manager_server_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -3546,31 +2330,46 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_object_manager_server_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$634.g_dbus_object_manager_server_new$MH,"g_dbus_object_manager_server_new");
+        return RuntimeHelper.requireNonNull(constants$588.g_dbus_object_manager_server_new$MH,"g_dbus_object_manager_server_new");
     }
-    public static MemoryAddress g_dbus_object_manager_server_new ( Addressable object_path) {
+    /**
+     * {@snippet :
+     * GDBusObjectManagerServer* g_dbus_object_manager_server_new(const gchar* object_path);
+     * }
+     */
+    public static MemorySegment g_dbus_object_manager_server_new(MemorySegment object_path) {
         var mh$ = g_dbus_object_manager_server_new$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(object_path);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(object_path);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_object_manager_server_get_connection$MH() {
-        return RuntimeHelper.requireNonNull(constants$634.g_dbus_object_manager_server_get_connection$MH,"g_dbus_object_manager_server_get_connection");
+        return RuntimeHelper.requireNonNull(constants$588.g_dbus_object_manager_server_get_connection$MH,"g_dbus_object_manager_server_get_connection");
     }
-    public static MemoryAddress g_dbus_object_manager_server_get_connection ( Addressable manager) {
+    /**
+     * {@snippet :
+     * GDBusConnection* g_dbus_object_manager_server_get_connection(GDBusObjectManagerServer* manager);
+     * }
+     */
+    public static MemorySegment g_dbus_object_manager_server_get_connection(MemorySegment manager) {
         var mh$ = g_dbus_object_manager_server_get_connection$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(manager);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(manager);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_object_manager_server_set_connection$MH() {
-        return RuntimeHelper.requireNonNull(constants$634.g_dbus_object_manager_server_set_connection$MH,"g_dbus_object_manager_server_set_connection");
+        return RuntimeHelper.requireNonNull(constants$588.g_dbus_object_manager_server_set_connection$MH,"g_dbus_object_manager_server_set_connection");
     }
-    public static void g_dbus_object_manager_server_set_connection ( Addressable manager,  Addressable connection) {
+    /**
+     * {@snippet :
+     * void g_dbus_object_manager_server_set_connection(GDBusObjectManagerServer* manager, GDBusConnection* connection);
+     * }
+     */
+    public static void g_dbus_object_manager_server_set_connection(MemorySegment manager, MemorySegment connection) {
         var mh$ = g_dbus_object_manager_server_set_connection$MH();
         try {
             mh$.invokeExact(manager, connection);
@@ -3579,9 +2378,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_object_manager_server_export$MH() {
-        return RuntimeHelper.requireNonNull(constants$634.g_dbus_object_manager_server_export$MH,"g_dbus_object_manager_server_export");
+        return RuntimeHelper.requireNonNull(constants$588.g_dbus_object_manager_server_export$MH,"g_dbus_object_manager_server_export");
     }
-    public static void g_dbus_object_manager_server_export ( Addressable manager,  Addressable object) {
+    /**
+     * {@snippet :
+     * void g_dbus_object_manager_server_export(GDBusObjectManagerServer* manager, GDBusObjectSkeleton* object);
+     * }
+     */
+    public static void g_dbus_object_manager_server_export(MemorySegment manager, MemorySegment object) {
         var mh$ = g_dbus_object_manager_server_export$MH();
         try {
             mh$.invokeExact(manager, object);
@@ -3590,9 +2394,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_object_manager_server_export_uniquely$MH() {
-        return RuntimeHelper.requireNonNull(constants$635.g_dbus_object_manager_server_export_uniquely$MH,"g_dbus_object_manager_server_export_uniquely");
+        return RuntimeHelper.requireNonNull(constants$589.g_dbus_object_manager_server_export_uniquely$MH,"g_dbus_object_manager_server_export_uniquely");
     }
-    public static void g_dbus_object_manager_server_export_uniquely ( Addressable manager,  Addressable object) {
+    /**
+     * {@snippet :
+     * void g_dbus_object_manager_server_export_uniquely(GDBusObjectManagerServer* manager, GDBusObjectSkeleton* object);
+     * }
+     */
+    public static void g_dbus_object_manager_server_export_uniquely(MemorySegment manager, MemorySegment object) {
         var mh$ = g_dbus_object_manager_server_export_uniquely$MH();
         try {
             mh$.invokeExact(manager, object);
@@ -3601,9 +2410,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_object_manager_server_is_exported$MH() {
-        return RuntimeHelper.requireNonNull(constants$635.g_dbus_object_manager_server_is_exported$MH,"g_dbus_object_manager_server_is_exported");
+        return RuntimeHelper.requireNonNull(constants$589.g_dbus_object_manager_server_is_exported$MH,"g_dbus_object_manager_server_is_exported");
     }
-    public static int g_dbus_object_manager_server_is_exported ( Addressable manager,  Addressable object) {
+    /**
+     * {@snippet :
+     * gboolean g_dbus_object_manager_server_is_exported(GDBusObjectManagerServer* manager, GDBusObjectSkeleton* object);
+     * }
+     */
+    public static int g_dbus_object_manager_server_is_exported(MemorySegment manager, MemorySegment object) {
         var mh$ = g_dbus_object_manager_server_is_exported$MH();
         try {
             return (int)mh$.invokeExact(manager, object);
@@ -3612,9 +2426,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_object_manager_server_unexport$MH() {
-        return RuntimeHelper.requireNonNull(constants$635.g_dbus_object_manager_server_unexport$MH,"g_dbus_object_manager_server_unexport");
+        return RuntimeHelper.requireNonNull(constants$589.g_dbus_object_manager_server_unexport$MH,"g_dbus_object_manager_server_unexport");
     }
-    public static int g_dbus_object_manager_server_unexport ( Addressable manager,  Addressable object_path) {
+    /**
+     * {@snippet :
+     * gboolean g_dbus_object_manager_server_unexport(GDBusObjectManagerServer* manager, const gchar* object_path);
+     * }
+     */
+    public static int g_dbus_object_manager_server_unexport(MemorySegment manager, MemorySegment object_path) {
         var mh$ = g_dbus_object_manager_server_unexport$MH();
         try {
             return (int)mh$.invokeExact(manager, object_path);
@@ -3623,9 +2442,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_object_proxy_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$635.g_dbus_object_proxy_get_type$MH,"g_dbus_object_proxy_get_type");
+        return RuntimeHelper.requireNonNull(constants$589.g_dbus_object_proxy_get_type$MH,"g_dbus_object_proxy_get_type");
     }
-    public static long g_dbus_object_proxy_get_type () {
+    /**
+     * {@snippet :
+     * GType g_dbus_object_proxy_get_type();
+     * }
+     */
+    public static long g_dbus_object_proxy_get_type() {
         var mh$ = g_dbus_object_proxy_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -3634,31 +2458,46 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_object_proxy_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$635.g_dbus_object_proxy_new$MH,"g_dbus_object_proxy_new");
+        return RuntimeHelper.requireNonNull(constants$589.g_dbus_object_proxy_new$MH,"g_dbus_object_proxy_new");
     }
-    public static MemoryAddress g_dbus_object_proxy_new ( Addressable connection,  Addressable object_path) {
+    /**
+     * {@snippet :
+     * GDBusObjectProxy* g_dbus_object_proxy_new(GDBusConnection* connection, const gchar* object_path);
+     * }
+     */
+    public static MemorySegment g_dbus_object_proxy_new(MemorySegment connection, MemorySegment object_path) {
         var mh$ = g_dbus_object_proxy_new$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(connection, object_path);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(connection, object_path);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_object_proxy_get_connection$MH() {
-        return RuntimeHelper.requireNonNull(constants$635.g_dbus_object_proxy_get_connection$MH,"g_dbus_object_proxy_get_connection");
+        return RuntimeHelper.requireNonNull(constants$589.g_dbus_object_proxy_get_connection$MH,"g_dbus_object_proxy_get_connection");
     }
-    public static MemoryAddress g_dbus_object_proxy_get_connection ( Addressable proxy) {
+    /**
+     * {@snippet :
+     * GDBusConnection* g_dbus_object_proxy_get_connection(GDBusObjectProxy* proxy);
+     * }
+     */
+    public static MemorySegment g_dbus_object_proxy_get_connection(MemorySegment proxy) {
         var mh$ = g_dbus_object_proxy_get_connection$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(proxy);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(proxy);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_object_skeleton_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$636.g_dbus_object_skeleton_get_type$MH,"g_dbus_object_skeleton_get_type");
+        return RuntimeHelper.requireNonNull(constants$590.g_dbus_object_skeleton_get_type$MH,"g_dbus_object_skeleton_get_type");
     }
-    public static long g_dbus_object_skeleton_get_type () {
+    /**
+     * {@snippet :
+     * GType g_dbus_object_skeleton_get_type();
+     * }
+     */
+    public static long g_dbus_object_skeleton_get_type() {
         var mh$ = g_dbus_object_skeleton_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -3667,20 +2506,30 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_object_skeleton_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$636.g_dbus_object_skeleton_new$MH,"g_dbus_object_skeleton_new");
+        return RuntimeHelper.requireNonNull(constants$590.g_dbus_object_skeleton_new$MH,"g_dbus_object_skeleton_new");
     }
-    public static MemoryAddress g_dbus_object_skeleton_new ( Addressable object_path) {
+    /**
+     * {@snippet :
+     * GDBusObjectSkeleton* g_dbus_object_skeleton_new(const gchar* object_path);
+     * }
+     */
+    public static MemorySegment g_dbus_object_skeleton_new(MemorySegment object_path) {
         var mh$ = g_dbus_object_skeleton_new$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(object_path);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(object_path);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_object_skeleton_flush$MH() {
-        return RuntimeHelper.requireNonNull(constants$636.g_dbus_object_skeleton_flush$MH,"g_dbus_object_skeleton_flush");
+        return RuntimeHelper.requireNonNull(constants$590.g_dbus_object_skeleton_flush$MH,"g_dbus_object_skeleton_flush");
     }
-    public static void g_dbus_object_skeleton_flush ( Addressable object) {
+    /**
+     * {@snippet :
+     * void g_dbus_object_skeleton_flush(GDBusObjectSkeleton* object);
+     * }
+     */
+    public static void g_dbus_object_skeleton_flush(MemorySegment object) {
         var mh$ = g_dbus_object_skeleton_flush$MH();
         try {
             mh$.invokeExact(object);
@@ -3689,9 +2538,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_object_skeleton_add_interface$MH() {
-        return RuntimeHelper.requireNonNull(constants$636.g_dbus_object_skeleton_add_interface$MH,"g_dbus_object_skeleton_add_interface");
+        return RuntimeHelper.requireNonNull(constants$590.g_dbus_object_skeleton_add_interface$MH,"g_dbus_object_skeleton_add_interface");
     }
-    public static void g_dbus_object_skeleton_add_interface ( Addressable object,  Addressable interface_) {
+    /**
+     * {@snippet :
+     * void g_dbus_object_skeleton_add_interface(GDBusObjectSkeleton* object, GDBusInterfaceSkeleton* interface_);
+     * }
+     */
+    public static void g_dbus_object_skeleton_add_interface(MemorySegment object, MemorySegment interface_) {
         var mh$ = g_dbus_object_skeleton_add_interface$MH();
         try {
             mh$.invokeExact(object, interface_);
@@ -3700,9 +2554,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_object_skeleton_remove_interface$MH() {
-        return RuntimeHelper.requireNonNull(constants$636.g_dbus_object_skeleton_remove_interface$MH,"g_dbus_object_skeleton_remove_interface");
+        return RuntimeHelper.requireNonNull(constants$590.g_dbus_object_skeleton_remove_interface$MH,"g_dbus_object_skeleton_remove_interface");
     }
-    public static void g_dbus_object_skeleton_remove_interface ( Addressable object,  Addressable interface_) {
+    /**
+     * {@snippet :
+     * void g_dbus_object_skeleton_remove_interface(GDBusObjectSkeleton* object, GDBusInterfaceSkeleton* interface_);
+     * }
+     */
+    public static void g_dbus_object_skeleton_remove_interface(MemorySegment object, MemorySegment interface_) {
         var mh$ = g_dbus_object_skeleton_remove_interface$MH();
         try {
             mh$.invokeExact(object, interface_);
@@ -3711,9 +2570,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_object_skeleton_remove_interface_by_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$636.g_dbus_object_skeleton_remove_interface_by_name$MH,"g_dbus_object_skeleton_remove_interface_by_name");
+        return RuntimeHelper.requireNonNull(constants$590.g_dbus_object_skeleton_remove_interface_by_name$MH,"g_dbus_object_skeleton_remove_interface_by_name");
     }
-    public static void g_dbus_object_skeleton_remove_interface_by_name ( Addressable object,  Addressable interface_name) {
+    /**
+     * {@snippet :
+     * void g_dbus_object_skeleton_remove_interface_by_name(GDBusObjectSkeleton* object, const gchar* interface_name);
+     * }
+     */
+    public static void g_dbus_object_skeleton_remove_interface_by_name(MemorySegment object, MemorySegment interface_name) {
         var mh$ = g_dbus_object_skeleton_remove_interface_by_name$MH();
         try {
             mh$.invokeExact(object, interface_name);
@@ -3722,9 +2586,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_object_skeleton_set_object_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$637.g_dbus_object_skeleton_set_object_path$MH,"g_dbus_object_skeleton_set_object_path");
+        return RuntimeHelper.requireNonNull(constants$591.g_dbus_object_skeleton_set_object_path$MH,"g_dbus_object_skeleton_set_object_path");
     }
-    public static void g_dbus_object_skeleton_set_object_path ( Addressable object,  Addressable object_path) {
+    /**
+     * {@snippet :
+     * void g_dbus_object_skeleton_set_object_path(GDBusObjectSkeleton* object, const gchar* object_path);
+     * }
+     */
+    public static void g_dbus_object_skeleton_set_object_path(MemorySegment object, MemorySegment object_path) {
         var mh$ = g_dbus_object_skeleton_set_object_path$MH();
         try {
             mh$.invokeExact(object, object_path);
@@ -3733,9 +2602,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_proxy_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$637.g_dbus_proxy_get_type$MH,"g_dbus_proxy_get_type");
+        return RuntimeHelper.requireNonNull(constants$591.g_dbus_proxy_get_type$MH,"g_dbus_proxy_get_type");
     }
-    public static long g_dbus_proxy_get_type () {
+    /**
+     * {@snippet :
+     * GType g_dbus_proxy_get_type();
+     * }
+     */
+    public static long g_dbus_proxy_get_type() {
         var mh$ = g_dbus_proxy_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -3744,9 +2618,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_proxy_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$637.g_dbus_proxy_new$MH,"g_dbus_proxy_new");
+        return RuntimeHelper.requireNonNull(constants$591.g_dbus_proxy_new$MH,"g_dbus_proxy_new");
     }
-    public static void g_dbus_proxy_new ( Addressable connection,  int flags,  Addressable info,  Addressable name,  Addressable object_path,  Addressable interface_name,  Addressable cancellable,  Addressable callback,  Addressable user_data) {
+    /**
+     * {@snippet :
+     * void g_dbus_proxy_new(GDBusConnection* connection, GDBusProxyFlags flags, GDBusInterfaceInfo* info, const gchar* name, const gchar* object_path, const gchar* interface_name, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
+     * }
+     */
+    public static void g_dbus_proxy_new(MemorySegment connection, int flags, MemorySegment info, MemorySegment name, MemorySegment object_path, MemorySegment interface_name, MemorySegment cancellable, MemorySegment callback, MemorySegment user_data) {
         var mh$ = g_dbus_proxy_new$MH();
         try {
             mh$.invokeExact(connection, flags, info, name, object_path, interface_name, cancellable, callback, user_data);
@@ -3755,31 +2634,46 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_proxy_new_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$637.g_dbus_proxy_new_finish$MH,"g_dbus_proxy_new_finish");
+        return RuntimeHelper.requireNonNull(constants$591.g_dbus_proxy_new_finish$MH,"g_dbus_proxy_new_finish");
     }
-    public static MemoryAddress g_dbus_proxy_new_finish ( Addressable res,  Addressable error) {
+    /**
+     * {@snippet :
+     * GDBusProxy* g_dbus_proxy_new_finish(GAsyncResult* res, GError** error);
+     * }
+     */
+    public static MemorySegment g_dbus_proxy_new_finish(MemorySegment res, MemorySegment error) {
         var mh$ = g_dbus_proxy_new_finish$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(res, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(res, error);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_proxy_new_sync$MH() {
-        return RuntimeHelper.requireNonNull(constants$637.g_dbus_proxy_new_sync$MH,"g_dbus_proxy_new_sync");
+        return RuntimeHelper.requireNonNull(constants$591.g_dbus_proxy_new_sync$MH,"g_dbus_proxy_new_sync");
     }
-    public static MemoryAddress g_dbus_proxy_new_sync ( Addressable connection,  int flags,  Addressable info,  Addressable name,  Addressable object_path,  Addressable interface_name,  Addressable cancellable,  Addressable error) {
+    /**
+     * {@snippet :
+     * GDBusProxy* g_dbus_proxy_new_sync(GDBusConnection* connection, GDBusProxyFlags flags, GDBusInterfaceInfo* info, const gchar* name, const gchar* object_path, const gchar* interface_name, GCancellable* cancellable, GError** error);
+     * }
+     */
+    public static MemorySegment g_dbus_proxy_new_sync(MemorySegment connection, int flags, MemorySegment info, MemorySegment name, MemorySegment object_path, MemorySegment interface_name, MemorySegment cancellable, MemorySegment error) {
         var mh$ = g_dbus_proxy_new_sync$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(connection, flags, info, name, object_path, interface_name, cancellable, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(connection, flags, info, name, object_path, interface_name, cancellable, error);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_proxy_new_for_bus$MH() {
-        return RuntimeHelper.requireNonNull(constants$637.g_dbus_proxy_new_for_bus$MH,"g_dbus_proxy_new_for_bus");
+        return RuntimeHelper.requireNonNull(constants$591.g_dbus_proxy_new_for_bus$MH,"g_dbus_proxy_new_for_bus");
     }
-    public static void g_dbus_proxy_new_for_bus ( int bus_type,  int flags,  Addressable info,  Addressable name,  Addressable object_path,  Addressable interface_name,  Addressable cancellable,  Addressable callback,  Addressable user_data) {
+    /**
+     * {@snippet :
+     * void g_dbus_proxy_new_for_bus(GBusType bus_type, GDBusProxyFlags flags, GDBusInterfaceInfo* info, const gchar* name, const gchar* object_path, const gchar* interface_name, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
+     * }
+     */
+    public static void g_dbus_proxy_new_for_bus(int bus_type, int flags, MemorySegment info, MemorySegment name, MemorySegment object_path, MemorySegment interface_name, MemorySegment cancellable, MemorySegment callback, MemorySegment user_data) {
         var mh$ = g_dbus_proxy_new_for_bus$MH();
         try {
             mh$.invokeExact(bus_type, flags, info, name, object_path, interface_name, cancellable, callback, user_data);
@@ -3788,42 +2682,62 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_proxy_new_for_bus_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$638.g_dbus_proxy_new_for_bus_finish$MH,"g_dbus_proxy_new_for_bus_finish");
+        return RuntimeHelper.requireNonNull(constants$592.g_dbus_proxy_new_for_bus_finish$MH,"g_dbus_proxy_new_for_bus_finish");
     }
-    public static MemoryAddress g_dbus_proxy_new_for_bus_finish ( Addressable res,  Addressable error) {
+    /**
+     * {@snippet :
+     * GDBusProxy* g_dbus_proxy_new_for_bus_finish(GAsyncResult* res, GError** error);
+     * }
+     */
+    public static MemorySegment g_dbus_proxy_new_for_bus_finish(MemorySegment res, MemorySegment error) {
         var mh$ = g_dbus_proxy_new_for_bus_finish$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(res, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(res, error);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_proxy_new_for_bus_sync$MH() {
-        return RuntimeHelper.requireNonNull(constants$638.g_dbus_proxy_new_for_bus_sync$MH,"g_dbus_proxy_new_for_bus_sync");
+        return RuntimeHelper.requireNonNull(constants$592.g_dbus_proxy_new_for_bus_sync$MH,"g_dbus_proxy_new_for_bus_sync");
     }
-    public static MemoryAddress g_dbus_proxy_new_for_bus_sync ( int bus_type,  int flags,  Addressable info,  Addressable name,  Addressable object_path,  Addressable interface_name,  Addressable cancellable,  Addressable error) {
+    /**
+     * {@snippet :
+     * GDBusProxy* g_dbus_proxy_new_for_bus_sync(GBusType bus_type, GDBusProxyFlags flags, GDBusInterfaceInfo* info, const gchar* name, const gchar* object_path, const gchar* interface_name, GCancellable* cancellable, GError** error);
+     * }
+     */
+    public static MemorySegment g_dbus_proxy_new_for_bus_sync(int bus_type, int flags, MemorySegment info, MemorySegment name, MemorySegment object_path, MemorySegment interface_name, MemorySegment cancellable, MemorySegment error) {
         var mh$ = g_dbus_proxy_new_for_bus_sync$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(bus_type, flags, info, name, object_path, interface_name, cancellable, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(bus_type, flags, info, name, object_path, interface_name, cancellable, error);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_proxy_get_connection$MH() {
-        return RuntimeHelper.requireNonNull(constants$638.g_dbus_proxy_get_connection$MH,"g_dbus_proxy_get_connection");
+        return RuntimeHelper.requireNonNull(constants$592.g_dbus_proxy_get_connection$MH,"g_dbus_proxy_get_connection");
     }
-    public static MemoryAddress g_dbus_proxy_get_connection ( Addressable proxy) {
+    /**
+     * {@snippet :
+     * GDBusConnection* g_dbus_proxy_get_connection(GDBusProxy* proxy);
+     * }
+     */
+    public static MemorySegment g_dbus_proxy_get_connection(MemorySegment proxy) {
         var mh$ = g_dbus_proxy_get_connection$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(proxy);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(proxy);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_proxy_get_flags$MH() {
-        return RuntimeHelper.requireNonNull(constants$638.g_dbus_proxy_get_flags$MH,"g_dbus_proxy_get_flags");
+        return RuntimeHelper.requireNonNull(constants$592.g_dbus_proxy_get_flags$MH,"g_dbus_proxy_get_flags");
     }
-    public static int g_dbus_proxy_get_flags ( Addressable proxy) {
+    /**
+     * {@snippet :
+     * GDBusProxyFlags g_dbus_proxy_get_flags(GDBusProxy* proxy);
+     * }
+     */
+    public static int g_dbus_proxy_get_flags(MemorySegment proxy) {
         var mh$ = g_dbus_proxy_get_flags$MH();
         try {
             return (int)mh$.invokeExact(proxy);
@@ -3832,53 +2746,78 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_proxy_get_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$638.g_dbus_proxy_get_name$MH,"g_dbus_proxy_get_name");
+        return RuntimeHelper.requireNonNull(constants$592.g_dbus_proxy_get_name$MH,"g_dbus_proxy_get_name");
     }
-    public static MemoryAddress g_dbus_proxy_get_name ( Addressable proxy) {
+    /**
+     * {@snippet :
+     * const gchar* g_dbus_proxy_get_name(GDBusProxy* proxy);
+     * }
+     */
+    public static MemorySegment g_dbus_proxy_get_name(MemorySegment proxy) {
         var mh$ = g_dbus_proxy_get_name$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(proxy);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(proxy);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_proxy_get_name_owner$MH() {
-        return RuntimeHelper.requireNonNull(constants$638.g_dbus_proxy_get_name_owner$MH,"g_dbus_proxy_get_name_owner");
+        return RuntimeHelper.requireNonNull(constants$592.g_dbus_proxy_get_name_owner$MH,"g_dbus_proxy_get_name_owner");
     }
-    public static MemoryAddress g_dbus_proxy_get_name_owner ( Addressable proxy) {
+    /**
+     * {@snippet :
+     * gchar* g_dbus_proxy_get_name_owner(GDBusProxy* proxy);
+     * }
+     */
+    public static MemorySegment g_dbus_proxy_get_name_owner(MemorySegment proxy) {
         var mh$ = g_dbus_proxy_get_name_owner$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(proxy);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(proxy);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_proxy_get_object_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$639.g_dbus_proxy_get_object_path$MH,"g_dbus_proxy_get_object_path");
+        return RuntimeHelper.requireNonNull(constants$593.g_dbus_proxy_get_object_path$MH,"g_dbus_proxy_get_object_path");
     }
-    public static MemoryAddress g_dbus_proxy_get_object_path ( Addressable proxy) {
+    /**
+     * {@snippet :
+     * const gchar* g_dbus_proxy_get_object_path(GDBusProxy* proxy);
+     * }
+     */
+    public static MemorySegment g_dbus_proxy_get_object_path(MemorySegment proxy) {
         var mh$ = g_dbus_proxy_get_object_path$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(proxy);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(proxy);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_proxy_get_interface_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$639.g_dbus_proxy_get_interface_name$MH,"g_dbus_proxy_get_interface_name");
+        return RuntimeHelper.requireNonNull(constants$593.g_dbus_proxy_get_interface_name$MH,"g_dbus_proxy_get_interface_name");
     }
-    public static MemoryAddress g_dbus_proxy_get_interface_name ( Addressable proxy) {
+    /**
+     * {@snippet :
+     * const gchar* g_dbus_proxy_get_interface_name(GDBusProxy* proxy);
+     * }
+     */
+    public static MemorySegment g_dbus_proxy_get_interface_name(MemorySegment proxy) {
         var mh$ = g_dbus_proxy_get_interface_name$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(proxy);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(proxy);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_proxy_get_default_timeout$MH() {
-        return RuntimeHelper.requireNonNull(constants$639.g_dbus_proxy_get_default_timeout$MH,"g_dbus_proxy_get_default_timeout");
+        return RuntimeHelper.requireNonNull(constants$593.g_dbus_proxy_get_default_timeout$MH,"g_dbus_proxy_get_default_timeout");
     }
-    public static int g_dbus_proxy_get_default_timeout ( Addressable proxy) {
+    /**
+     * {@snippet :
+     * gint g_dbus_proxy_get_default_timeout(GDBusProxy* proxy);
+     * }
+     */
+    public static int g_dbus_proxy_get_default_timeout(MemorySegment proxy) {
         var mh$ = g_dbus_proxy_get_default_timeout$MH();
         try {
             return (int)mh$.invokeExact(proxy);
@@ -3887,9 +2826,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_proxy_set_default_timeout$MH() {
-        return RuntimeHelper.requireNonNull(constants$639.g_dbus_proxy_set_default_timeout$MH,"g_dbus_proxy_set_default_timeout");
+        return RuntimeHelper.requireNonNull(constants$593.g_dbus_proxy_set_default_timeout$MH,"g_dbus_proxy_set_default_timeout");
     }
-    public static void g_dbus_proxy_set_default_timeout ( Addressable proxy,  int timeout_msec) {
+    /**
+     * {@snippet :
+     * void g_dbus_proxy_set_default_timeout(GDBusProxy* proxy, gint timeout_msec);
+     * }
+     */
+    public static void g_dbus_proxy_set_default_timeout(MemorySegment proxy, int timeout_msec) {
         var mh$ = g_dbus_proxy_set_default_timeout$MH();
         try {
             mh$.invokeExact(proxy, timeout_msec);
@@ -3898,20 +2842,30 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_proxy_get_interface_info$MH() {
-        return RuntimeHelper.requireNonNull(constants$639.g_dbus_proxy_get_interface_info$MH,"g_dbus_proxy_get_interface_info");
+        return RuntimeHelper.requireNonNull(constants$593.g_dbus_proxy_get_interface_info$MH,"g_dbus_proxy_get_interface_info");
     }
-    public static MemoryAddress g_dbus_proxy_get_interface_info ( Addressable proxy) {
+    /**
+     * {@snippet :
+     * GDBusInterfaceInfo* g_dbus_proxy_get_interface_info(GDBusProxy* proxy);
+     * }
+     */
+    public static MemorySegment g_dbus_proxy_get_interface_info(MemorySegment proxy) {
         var mh$ = g_dbus_proxy_get_interface_info$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(proxy);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(proxy);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_proxy_set_interface_info$MH() {
-        return RuntimeHelper.requireNonNull(constants$639.g_dbus_proxy_set_interface_info$MH,"g_dbus_proxy_set_interface_info");
+        return RuntimeHelper.requireNonNull(constants$593.g_dbus_proxy_set_interface_info$MH,"g_dbus_proxy_set_interface_info");
     }
-    public static void g_dbus_proxy_set_interface_info ( Addressable proxy,  Addressable info) {
+    /**
+     * {@snippet :
+     * void g_dbus_proxy_set_interface_info(GDBusProxy* proxy, GDBusInterfaceInfo* info);
+     * }
+     */
+    public static void g_dbus_proxy_set_interface_info(MemorySegment proxy, MemorySegment info) {
         var mh$ = g_dbus_proxy_set_interface_info$MH();
         try {
             mh$.invokeExact(proxy, info);
@@ -3920,20 +2874,30 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_proxy_get_cached_property$MH() {
-        return RuntimeHelper.requireNonNull(constants$640.g_dbus_proxy_get_cached_property$MH,"g_dbus_proxy_get_cached_property");
+        return RuntimeHelper.requireNonNull(constants$594.g_dbus_proxy_get_cached_property$MH,"g_dbus_proxy_get_cached_property");
     }
-    public static MemoryAddress g_dbus_proxy_get_cached_property ( Addressable proxy,  Addressable property_name) {
+    /**
+     * {@snippet :
+     * GVariant* g_dbus_proxy_get_cached_property(GDBusProxy* proxy, const gchar* property_name);
+     * }
+     */
+    public static MemorySegment g_dbus_proxy_get_cached_property(MemorySegment proxy, MemorySegment property_name) {
         var mh$ = g_dbus_proxy_get_cached_property$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(proxy, property_name);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(proxy, property_name);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_proxy_set_cached_property$MH() {
-        return RuntimeHelper.requireNonNull(constants$640.g_dbus_proxy_set_cached_property$MH,"g_dbus_proxy_set_cached_property");
+        return RuntimeHelper.requireNonNull(constants$594.g_dbus_proxy_set_cached_property$MH,"g_dbus_proxy_set_cached_property");
     }
-    public static void g_dbus_proxy_set_cached_property ( Addressable proxy,  Addressable property_name,  Addressable value) {
+    /**
+     * {@snippet :
+     * void g_dbus_proxy_set_cached_property(GDBusProxy* proxy, const gchar* property_name, GVariant* value);
+     * }
+     */
+    public static void g_dbus_proxy_set_cached_property(MemorySegment proxy, MemorySegment property_name, MemorySegment value) {
         var mh$ = g_dbus_proxy_set_cached_property$MH();
         try {
             mh$.invokeExact(proxy, property_name, value);
@@ -3942,20 +2906,30 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_proxy_get_cached_property_names$MH() {
-        return RuntimeHelper.requireNonNull(constants$640.g_dbus_proxy_get_cached_property_names$MH,"g_dbus_proxy_get_cached_property_names");
+        return RuntimeHelper.requireNonNull(constants$594.g_dbus_proxy_get_cached_property_names$MH,"g_dbus_proxy_get_cached_property_names");
     }
-    public static MemoryAddress g_dbus_proxy_get_cached_property_names ( Addressable proxy) {
+    /**
+     * {@snippet :
+     * gchar** g_dbus_proxy_get_cached_property_names(GDBusProxy* proxy);
+     * }
+     */
+    public static MemorySegment g_dbus_proxy_get_cached_property_names(MemorySegment proxy) {
         var mh$ = g_dbus_proxy_get_cached_property_names$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(proxy);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(proxy);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_proxy_call$MH() {
-        return RuntimeHelper.requireNonNull(constants$640.g_dbus_proxy_call$MH,"g_dbus_proxy_call");
+        return RuntimeHelper.requireNonNull(constants$594.g_dbus_proxy_call$MH,"g_dbus_proxy_call");
     }
-    public static void g_dbus_proxy_call ( Addressable proxy,  Addressable method_name,  Addressable parameters,  int flags,  int timeout_msec,  Addressable cancellable,  Addressable callback,  Addressable user_data) {
+    /**
+     * {@snippet :
+     * void g_dbus_proxy_call(GDBusProxy* proxy, const gchar* method_name, GVariant* parameters, GDBusCallFlags flags, gint timeout_msec, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
+     * }
+     */
+    public static void g_dbus_proxy_call(MemorySegment proxy, MemorySegment method_name, MemorySegment parameters, int flags, int timeout_msec, MemorySegment cancellable, MemorySegment callback, MemorySegment user_data) {
         var mh$ = g_dbus_proxy_call$MH();
         try {
             mh$.invokeExact(proxy, method_name, parameters, flags, timeout_msec, cancellable, callback, user_data);
@@ -3964,31 +2938,46 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_proxy_call_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$640.g_dbus_proxy_call_finish$MH,"g_dbus_proxy_call_finish");
+        return RuntimeHelper.requireNonNull(constants$594.g_dbus_proxy_call_finish$MH,"g_dbus_proxy_call_finish");
     }
-    public static MemoryAddress g_dbus_proxy_call_finish ( Addressable proxy,  Addressable res,  Addressable error) {
+    /**
+     * {@snippet :
+     * GVariant* g_dbus_proxy_call_finish(GDBusProxy* proxy, GAsyncResult* res, GError** error);
+     * }
+     */
+    public static MemorySegment g_dbus_proxy_call_finish(MemorySegment proxy, MemorySegment res, MemorySegment error) {
         var mh$ = g_dbus_proxy_call_finish$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(proxy, res, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(proxy, res, error);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_proxy_call_sync$MH() {
-        return RuntimeHelper.requireNonNull(constants$640.g_dbus_proxy_call_sync$MH,"g_dbus_proxy_call_sync");
+        return RuntimeHelper.requireNonNull(constants$594.g_dbus_proxy_call_sync$MH,"g_dbus_proxy_call_sync");
     }
-    public static MemoryAddress g_dbus_proxy_call_sync ( Addressable proxy,  Addressable method_name,  Addressable parameters,  int flags,  int timeout_msec,  Addressable cancellable,  Addressable error) {
+    /**
+     * {@snippet :
+     * GVariant* g_dbus_proxy_call_sync(GDBusProxy* proxy, const gchar* method_name, GVariant* parameters, GDBusCallFlags flags, gint timeout_msec, GCancellable* cancellable, GError** error);
+     * }
+     */
+    public static MemorySegment g_dbus_proxy_call_sync(MemorySegment proxy, MemorySegment method_name, MemorySegment parameters, int flags, int timeout_msec, MemorySegment cancellable, MemorySegment error) {
         var mh$ = g_dbus_proxy_call_sync$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(proxy, method_name, parameters, flags, timeout_msec, cancellable, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(proxy, method_name, parameters, flags, timeout_msec, cancellable, error);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_proxy_call_with_unix_fd_list$MH() {
-        return RuntimeHelper.requireNonNull(constants$641.g_dbus_proxy_call_with_unix_fd_list$MH,"g_dbus_proxy_call_with_unix_fd_list");
+        return RuntimeHelper.requireNonNull(constants$595.g_dbus_proxy_call_with_unix_fd_list$MH,"g_dbus_proxy_call_with_unix_fd_list");
     }
-    public static void g_dbus_proxy_call_with_unix_fd_list ( Addressable proxy,  Addressable method_name,  Addressable parameters,  int flags,  int timeout_msec,  Addressable fd_list,  Addressable cancellable,  Addressable callback,  Addressable user_data) {
+    /**
+     * {@snippet :
+     * void g_dbus_proxy_call_with_unix_fd_list(GDBusProxy* proxy, const gchar* method_name, GVariant* parameters, GDBusCallFlags flags, gint timeout_msec, GUnixFDList* fd_list, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
+     * }
+     */
+    public static void g_dbus_proxy_call_with_unix_fd_list(MemorySegment proxy, MemorySegment method_name, MemorySegment parameters, int flags, int timeout_msec, MemorySegment fd_list, MemorySegment cancellable, MemorySegment callback, MemorySegment user_data) {
         var mh$ = g_dbus_proxy_call_with_unix_fd_list$MH();
         try {
             mh$.invokeExact(proxy, method_name, parameters, flags, timeout_msec, fd_list, cancellable, callback, user_data);
@@ -3997,31 +2986,46 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_proxy_call_with_unix_fd_list_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$641.g_dbus_proxy_call_with_unix_fd_list_finish$MH,"g_dbus_proxy_call_with_unix_fd_list_finish");
+        return RuntimeHelper.requireNonNull(constants$595.g_dbus_proxy_call_with_unix_fd_list_finish$MH,"g_dbus_proxy_call_with_unix_fd_list_finish");
     }
-    public static MemoryAddress g_dbus_proxy_call_with_unix_fd_list_finish ( Addressable proxy,  Addressable out_fd_list,  Addressable res,  Addressable error) {
+    /**
+     * {@snippet :
+     * GVariant* g_dbus_proxy_call_with_unix_fd_list_finish(GDBusProxy* proxy, GUnixFDList** out_fd_list, GAsyncResult* res, GError** error);
+     * }
+     */
+    public static MemorySegment g_dbus_proxy_call_with_unix_fd_list_finish(MemorySegment proxy, MemorySegment out_fd_list, MemorySegment res, MemorySegment error) {
         var mh$ = g_dbus_proxy_call_with_unix_fd_list_finish$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(proxy, out_fd_list, res, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(proxy, out_fd_list, res, error);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_proxy_call_with_unix_fd_list_sync$MH() {
-        return RuntimeHelper.requireNonNull(constants$641.g_dbus_proxy_call_with_unix_fd_list_sync$MH,"g_dbus_proxy_call_with_unix_fd_list_sync");
+        return RuntimeHelper.requireNonNull(constants$595.g_dbus_proxy_call_with_unix_fd_list_sync$MH,"g_dbus_proxy_call_with_unix_fd_list_sync");
     }
-    public static MemoryAddress g_dbus_proxy_call_with_unix_fd_list_sync ( Addressable proxy,  Addressable method_name,  Addressable parameters,  int flags,  int timeout_msec,  Addressable fd_list,  Addressable out_fd_list,  Addressable cancellable,  Addressable error) {
+    /**
+     * {@snippet :
+     * GVariant* g_dbus_proxy_call_with_unix_fd_list_sync(GDBusProxy* proxy, const gchar* method_name, GVariant* parameters, GDBusCallFlags flags, gint timeout_msec, GUnixFDList* fd_list, GUnixFDList** out_fd_list, GCancellable* cancellable, GError** error);
+     * }
+     */
+    public static MemorySegment g_dbus_proxy_call_with_unix_fd_list_sync(MemorySegment proxy, MemorySegment method_name, MemorySegment parameters, int flags, int timeout_msec, MemorySegment fd_list, MemorySegment out_fd_list, MemorySegment cancellable, MemorySegment error) {
         var mh$ = g_dbus_proxy_call_with_unix_fd_list_sync$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(proxy, method_name, parameters, flags, timeout_msec, fd_list, out_fd_list, cancellable, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(proxy, method_name, parameters, flags, timeout_msec, fd_list, out_fd_list, cancellable, error);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_server_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$641.g_dbus_server_get_type$MH,"g_dbus_server_get_type");
+        return RuntimeHelper.requireNonNull(constants$595.g_dbus_server_get_type$MH,"g_dbus_server_get_type");
     }
-    public static long g_dbus_server_get_type () {
+    /**
+     * {@snippet :
+     * GType g_dbus_server_get_type();
+     * }
+     */
+    public static long g_dbus_server_get_type() {
         var mh$ = g_dbus_server_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -4030,42 +3034,62 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_server_new_sync$MH() {
-        return RuntimeHelper.requireNonNull(constants$641.g_dbus_server_new_sync$MH,"g_dbus_server_new_sync");
+        return RuntimeHelper.requireNonNull(constants$595.g_dbus_server_new_sync$MH,"g_dbus_server_new_sync");
     }
-    public static MemoryAddress g_dbus_server_new_sync ( Addressable address,  int flags,  Addressable guid,  Addressable observer,  Addressable cancellable,  Addressable error) {
+    /**
+     * {@snippet :
+     * GDBusServer* g_dbus_server_new_sync(const gchar* address, GDBusServerFlags flags, const gchar* guid, GDBusAuthObserver* observer, GCancellable* cancellable, GError** error);
+     * }
+     */
+    public static MemorySegment g_dbus_server_new_sync(MemorySegment address, int flags, MemorySegment guid, MemorySegment observer, MemorySegment cancellable, MemorySegment error) {
         var mh$ = g_dbus_server_new_sync$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(address, flags, guid, observer, cancellable, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(address, flags, guid, observer, cancellable, error);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_server_get_client_address$MH() {
-        return RuntimeHelper.requireNonNull(constants$641.g_dbus_server_get_client_address$MH,"g_dbus_server_get_client_address");
+        return RuntimeHelper.requireNonNull(constants$595.g_dbus_server_get_client_address$MH,"g_dbus_server_get_client_address");
     }
-    public static MemoryAddress g_dbus_server_get_client_address ( Addressable server) {
+    /**
+     * {@snippet :
+     * const gchar* g_dbus_server_get_client_address(GDBusServer* server);
+     * }
+     */
+    public static MemorySegment g_dbus_server_get_client_address(MemorySegment server) {
         var mh$ = g_dbus_server_get_client_address$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(server);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(server);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_server_get_guid$MH() {
-        return RuntimeHelper.requireNonNull(constants$642.g_dbus_server_get_guid$MH,"g_dbus_server_get_guid");
+        return RuntimeHelper.requireNonNull(constants$596.g_dbus_server_get_guid$MH,"g_dbus_server_get_guid");
     }
-    public static MemoryAddress g_dbus_server_get_guid ( Addressable server) {
+    /**
+     * {@snippet :
+     * const gchar* g_dbus_server_get_guid(GDBusServer* server);
+     * }
+     */
+    public static MemorySegment g_dbus_server_get_guid(MemorySegment server) {
         var mh$ = g_dbus_server_get_guid$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(server);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(server);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_server_get_flags$MH() {
-        return RuntimeHelper.requireNonNull(constants$642.g_dbus_server_get_flags$MH,"g_dbus_server_get_flags");
+        return RuntimeHelper.requireNonNull(constants$596.g_dbus_server_get_flags$MH,"g_dbus_server_get_flags");
     }
-    public static int g_dbus_server_get_flags ( Addressable server) {
+    /**
+     * {@snippet :
+     * GDBusServerFlags g_dbus_server_get_flags(GDBusServer* server);
+     * }
+     */
+    public static int g_dbus_server_get_flags(MemorySegment server) {
         var mh$ = g_dbus_server_get_flags$MH();
         try {
             return (int)mh$.invokeExact(server);
@@ -4074,9 +3098,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_server_start$MH() {
-        return RuntimeHelper.requireNonNull(constants$642.g_dbus_server_start$MH,"g_dbus_server_start");
+        return RuntimeHelper.requireNonNull(constants$596.g_dbus_server_start$MH,"g_dbus_server_start");
     }
-    public static void g_dbus_server_start ( Addressable server) {
+    /**
+     * {@snippet :
+     * void g_dbus_server_start(GDBusServer* server);
+     * }
+     */
+    public static void g_dbus_server_start(MemorySegment server) {
         var mh$ = g_dbus_server_start$MH();
         try {
             mh$.invokeExact(server);
@@ -4085,9 +3114,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_server_stop$MH() {
-        return RuntimeHelper.requireNonNull(constants$642.g_dbus_server_stop$MH,"g_dbus_server_stop");
+        return RuntimeHelper.requireNonNull(constants$596.g_dbus_server_stop$MH,"g_dbus_server_stop");
     }
-    public static void g_dbus_server_stop ( Addressable server) {
+    /**
+     * {@snippet :
+     * void g_dbus_server_stop(GDBusServer* server);
+     * }
+     */
+    public static void g_dbus_server_stop(MemorySegment server) {
         var mh$ = g_dbus_server_stop$MH();
         try {
             mh$.invokeExact(server);
@@ -4096,9 +3130,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_server_is_active$MH() {
-        return RuntimeHelper.requireNonNull(constants$642.g_dbus_server_is_active$MH,"g_dbus_server_is_active");
+        return RuntimeHelper.requireNonNull(constants$596.g_dbus_server_is_active$MH,"g_dbus_server_is_active");
     }
-    public static int g_dbus_server_is_active ( Addressable server) {
+    /**
+     * {@snippet :
+     * gboolean g_dbus_server_is_active(GDBusServer* server);
+     * }
+     */
+    public static int g_dbus_server_is_active(MemorySegment server) {
         var mh$ = g_dbus_server_is_active$MH();
         try {
             return (int)mh$.invokeExact(server);
@@ -4107,9 +3146,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_is_guid$MH() {
-        return RuntimeHelper.requireNonNull(constants$642.g_dbus_is_guid$MH,"g_dbus_is_guid");
+        return RuntimeHelper.requireNonNull(constants$596.g_dbus_is_guid$MH,"g_dbus_is_guid");
     }
-    public static int g_dbus_is_guid ( Addressable string) {
+    /**
+     * {@snippet :
+     * gboolean g_dbus_is_guid(const gchar* string);
+     * }
+     */
+    public static int g_dbus_is_guid(MemorySegment string) {
         var mh$ = g_dbus_is_guid$MH();
         try {
             return (int)mh$.invokeExact(string);
@@ -4118,20 +3162,30 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_generate_guid$MH() {
-        return RuntimeHelper.requireNonNull(constants$643.g_dbus_generate_guid$MH,"g_dbus_generate_guid");
+        return RuntimeHelper.requireNonNull(constants$597.g_dbus_generate_guid$MH,"g_dbus_generate_guid");
     }
-    public static MemoryAddress g_dbus_generate_guid () {
+    /**
+     * {@snippet :
+     * gchar* g_dbus_generate_guid();
+     * }
+     */
+    public static MemorySegment g_dbus_generate_guid() {
         var mh$ = g_dbus_generate_guid$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact();
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_is_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$643.g_dbus_is_name$MH,"g_dbus_is_name");
+        return RuntimeHelper.requireNonNull(constants$597.g_dbus_is_name$MH,"g_dbus_is_name");
     }
-    public static int g_dbus_is_name ( Addressable string) {
+    /**
+     * {@snippet :
+     * gboolean g_dbus_is_name(const gchar* string);
+     * }
+     */
+    public static int g_dbus_is_name(MemorySegment string) {
         var mh$ = g_dbus_is_name$MH();
         try {
             return (int)mh$.invokeExact(string);
@@ -4140,9 +3194,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_is_unique_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$643.g_dbus_is_unique_name$MH,"g_dbus_is_unique_name");
+        return RuntimeHelper.requireNonNull(constants$597.g_dbus_is_unique_name$MH,"g_dbus_is_unique_name");
     }
-    public static int g_dbus_is_unique_name ( Addressable string) {
+    /**
+     * {@snippet :
+     * gboolean g_dbus_is_unique_name(const gchar* string);
+     * }
+     */
+    public static int g_dbus_is_unique_name(MemorySegment string) {
         var mh$ = g_dbus_is_unique_name$MH();
         try {
             return (int)mh$.invokeExact(string);
@@ -4151,9 +3210,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_is_member_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$643.g_dbus_is_member_name$MH,"g_dbus_is_member_name");
+        return RuntimeHelper.requireNonNull(constants$597.g_dbus_is_member_name$MH,"g_dbus_is_member_name");
     }
-    public static int g_dbus_is_member_name ( Addressable string) {
+    /**
+     * {@snippet :
+     * gboolean g_dbus_is_member_name(const gchar* string);
+     * }
+     */
+    public static int g_dbus_is_member_name(MemorySegment string) {
         var mh$ = g_dbus_is_member_name$MH();
         try {
             return (int)mh$.invokeExact(string);
@@ -4162,9 +3226,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_is_interface_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$643.g_dbus_is_interface_name$MH,"g_dbus_is_interface_name");
+        return RuntimeHelper.requireNonNull(constants$597.g_dbus_is_interface_name$MH,"g_dbus_is_interface_name");
     }
-    public static int g_dbus_is_interface_name ( Addressable string) {
+    /**
+     * {@snippet :
+     * gboolean g_dbus_is_interface_name(const gchar* string);
+     * }
+     */
+    public static int g_dbus_is_interface_name(MemorySegment string) {
         var mh$ = g_dbus_is_interface_name$MH();
         try {
             return (int)mh$.invokeExact(string);
@@ -4173,9 +3242,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_is_error_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$643.g_dbus_is_error_name$MH,"g_dbus_is_error_name");
+        return RuntimeHelper.requireNonNull(constants$597.g_dbus_is_error_name$MH,"g_dbus_is_error_name");
     }
-    public static int g_dbus_is_error_name ( Addressable string) {
+    /**
+     * {@snippet :
+     * gboolean g_dbus_is_error_name(const gchar* string);
+     * }
+     */
+    public static int g_dbus_is_error_name(MemorySegment string) {
         var mh$ = g_dbus_is_error_name$MH();
         try {
             return (int)mh$.invokeExact(string);
@@ -4184,9 +3258,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_gvariant_to_gvalue$MH() {
-        return RuntimeHelper.requireNonNull(constants$644.g_dbus_gvariant_to_gvalue$MH,"g_dbus_gvariant_to_gvalue");
+        return RuntimeHelper.requireNonNull(constants$598.g_dbus_gvariant_to_gvalue$MH,"g_dbus_gvariant_to_gvalue");
     }
-    public static void g_dbus_gvariant_to_gvalue ( Addressable value,  Addressable out_gvalue) {
+    /**
+     * {@snippet :
+     * void g_dbus_gvariant_to_gvalue(GVariant* value, GValue* out_gvalue);
+     * }
+     */
+    public static void g_dbus_gvariant_to_gvalue(MemorySegment value, MemorySegment out_gvalue) {
         var mh$ = g_dbus_gvariant_to_gvalue$MH();
         try {
             mh$.invokeExact(value, out_gvalue);
@@ -4195,53 +3274,78 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_gvalue_to_gvariant$MH() {
-        return RuntimeHelper.requireNonNull(constants$644.g_dbus_gvalue_to_gvariant$MH,"g_dbus_gvalue_to_gvariant");
+        return RuntimeHelper.requireNonNull(constants$598.g_dbus_gvalue_to_gvariant$MH,"g_dbus_gvalue_to_gvariant");
     }
-    public static MemoryAddress g_dbus_gvalue_to_gvariant ( Addressable gvalue,  Addressable type) {
+    /**
+     * {@snippet :
+     * GVariant* g_dbus_gvalue_to_gvariant(const GValue* gvalue, const GVariantType* type);
+     * }
+     */
+    public static MemorySegment g_dbus_gvalue_to_gvariant(MemorySegment gvalue, MemorySegment type) {
         var mh$ = g_dbus_gvalue_to_gvariant$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(gvalue, type);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(gvalue, type);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_escape_object_path_bytestring$MH() {
-        return RuntimeHelper.requireNonNull(constants$644.g_dbus_escape_object_path_bytestring$MH,"g_dbus_escape_object_path_bytestring");
+        return RuntimeHelper.requireNonNull(constants$598.g_dbus_escape_object_path_bytestring$MH,"g_dbus_escape_object_path_bytestring");
     }
-    public static MemoryAddress g_dbus_escape_object_path_bytestring ( Addressable bytes) {
+    /**
+     * {@snippet :
+     * gchar* g_dbus_escape_object_path_bytestring(const guint8* bytes);
+     * }
+     */
+    public static MemorySegment g_dbus_escape_object_path_bytestring(MemorySegment bytes) {
         var mh$ = g_dbus_escape_object_path_bytestring$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(bytes);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(bytes);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_escape_object_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$644.g_dbus_escape_object_path$MH,"g_dbus_escape_object_path");
+        return RuntimeHelper.requireNonNull(constants$598.g_dbus_escape_object_path$MH,"g_dbus_escape_object_path");
     }
-    public static MemoryAddress g_dbus_escape_object_path ( Addressable s) {
+    /**
+     * {@snippet :
+     * gchar* g_dbus_escape_object_path(const gchar* s);
+     * }
+     */
+    public static MemorySegment g_dbus_escape_object_path(MemorySegment s) {
         var mh$ = g_dbus_escape_object_path$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(s);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(s);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dbus_unescape_object_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$644.g_dbus_unescape_object_path$MH,"g_dbus_unescape_object_path");
+        return RuntimeHelper.requireNonNull(constants$598.g_dbus_unescape_object_path$MH,"g_dbus_unescape_object_path");
     }
-    public static MemoryAddress g_dbus_unescape_object_path ( Addressable s) {
+    /**
+     * {@snippet :
+     * guint8* g_dbus_unescape_object_path(const gchar* s);
+     * }
+     */
+    public static MemorySegment g_dbus_unescape_object_path(MemorySegment s) {
         var mh$ = g_dbus_unescape_object_path$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(s);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(s);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_debug_controller_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$644.g_debug_controller_get_type$MH,"g_debug_controller_get_type");
+        return RuntimeHelper.requireNonNull(constants$598.g_debug_controller_get_type$MH,"g_debug_controller_get_type");
     }
-    public static long g_debug_controller_get_type () {
+    /**
+     * {@snippet :
+     * GType g_debug_controller_get_type();
+     * }
+     */
+    public static long g_debug_controller_get_type() {
         var mh$ = g_debug_controller_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -4249,102 +3353,39 @@ import static java.lang.foreign.ValueLayout.*;
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static OfAddress GDebugController_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GDebugController_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GDebugController_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GDebugController_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GDebugController$MH() {
-        return RuntimeHelper.requireNonNull(constants$645.glib_autoptr_clear_GDebugController$MH,"glib_autoptr_clear_GDebugController");
-    }
-    public static void glib_autoptr_clear_GDebugController ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GDebugController$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GDebugController$MH() {
-        return RuntimeHelper.requireNonNull(constants$645.glib_autoptr_cleanup_GDebugController$MH,"glib_autoptr_cleanup_GDebugController");
-    }
-    public static void glib_autoptr_cleanup_GDebugController ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GDebugController$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GDebugController$MH() {
-        return RuntimeHelper.requireNonNull(constants$645.glib_listautoptr_cleanup_GDebugController$MH,"glib_listautoptr_cleanup_GDebugController");
-    }
-    public static void glib_listautoptr_cleanup_GDebugController ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GDebugController$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GDebugController$MH() {
-        return RuntimeHelper.requireNonNull(constants$645.glib_slistautoptr_cleanup_GDebugController$MH,"glib_slistautoptr_cleanup_GDebugController");
-    }
-    public static void glib_slistautoptr_cleanup_GDebugController ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GDebugController$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GDebugController$MH() {
-        return RuntimeHelper.requireNonNull(constants$645.glib_queueautoptr_cleanup_GDebugController$MH,"glib_queueautoptr_cleanup_GDebugController");
-    }
-    public static void glib_queueautoptr_cleanup_GDebugController ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GDebugController$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_debug_controller$MH() {
-        return RuntimeHelper.requireNonNull(constants$645.g_debug_controller$MH,"g_debug_controller");
-    }
-    public static MemoryAddress g_debug_controller ( Addressable ptr) {
-        var mh$ = g_debug_controller$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_IS_debug_controller$MH() {
-        return RuntimeHelper.requireNonNull(constants$646.g_IS_debug_controller$MH,"g_IS_debug_controller");
-    }
-    public static int g_IS_debug_controller ( Addressable ptr) {
-        var mh$ = g_IS_debug_controller$MH();
-        try {
-            return (int)mh$.invokeExact(ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_debug_controller_GET_IFACE$MH() {
-        return RuntimeHelper.requireNonNull(constants$646.g_debug_controller_GET_IFACE$MH,"g_debug_controller_GET_IFACE");
-    }
-    public static MemoryAddress g_debug_controller_GET_IFACE ( Addressable ptr) {
-        var mh$ = g_debug_controller_GET_IFACE$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
+    /**
+     * {@snippet :
+     * typedef struct _GDebugController* GDebugController_autoptr;
+     * }
+     */
+    public static final OfAddress GDebugController_autoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GDebugController_listautoptr;
+     * }
+     */
+    public static final OfAddress GDebugController_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GDebugController_slistautoptr;
+     * }
+     */
+    public static final OfAddress GDebugController_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GDebugController_queueautoptr;
+     * }
+     */
+    public static final OfAddress GDebugController_queueautoptr = Constants$root.C_POINTER$LAYOUT;
     public static MethodHandle g_debug_controller_get_debug_enabled$MH() {
-        return RuntimeHelper.requireNonNull(constants$646.g_debug_controller_get_debug_enabled$MH,"g_debug_controller_get_debug_enabled");
+        return RuntimeHelper.requireNonNull(constants$599.g_debug_controller_get_debug_enabled$MH,"g_debug_controller_get_debug_enabled");
     }
-    public static int g_debug_controller_get_debug_enabled ( Addressable self) {
+    /**
+     * {@snippet :
+     * gboolean g_debug_controller_get_debug_enabled(GDebugController* self);
+     * }
+     */
+    public static int g_debug_controller_get_debug_enabled(MemorySegment self) {
         var mh$ = g_debug_controller_get_debug_enabled$MH();
         try {
             return (int)mh$.invokeExact(self);
@@ -4353,9 +3394,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_debug_controller_set_debug_enabled$MH() {
-        return RuntimeHelper.requireNonNull(constants$646.g_debug_controller_set_debug_enabled$MH,"g_debug_controller_set_debug_enabled");
+        return RuntimeHelper.requireNonNull(constants$599.g_debug_controller_set_debug_enabled$MH,"g_debug_controller_set_debug_enabled");
     }
-    public static void g_debug_controller_set_debug_enabled ( Addressable self,  int debug_enabled) {
+    /**
+     * {@snippet :
+     * void g_debug_controller_set_debug_enabled(GDebugController* self, gboolean debug_enabled);
+     * }
+     */
+    public static void g_debug_controller_set_debug_enabled(MemorySegment self, int debug_enabled) {
         var mh$ = g_debug_controller_set_debug_enabled$MH();
         try {
             mh$.invokeExact(self, debug_enabled);
@@ -4364,9 +3410,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_debug_controller_dbus_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$646.g_debug_controller_dbus_get_type$MH,"g_debug_controller_dbus_get_type");
+        return RuntimeHelper.requireNonNull(constants$599.g_debug_controller_dbus_get_type$MH,"g_debug_controller_dbus_get_type");
     }
-    public static long g_debug_controller_dbus_get_type () {
+    /**
+     * {@snippet :
+     * GType g_debug_controller_dbus_get_type();
+     * }
+     */
+    public static long g_debug_controller_dbus_get_type() {
         var mh$ = g_debug_controller_dbus_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -4374,194 +3425,79 @@ import static java.lang.foreign.ValueLayout.*;
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static OfAddress GDebugControllerDBus_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GDebugControllerDBus_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GDebugControllerDBus_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GDebugControllerDBus_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GDebugControllerDBus$MH() {
-        return RuntimeHelper.requireNonNull(constants$646.glib_autoptr_clear_GDebugControllerDBus$MH,"glib_autoptr_clear_GDebugControllerDBus");
-    }
-    public static void glib_autoptr_clear_GDebugControllerDBus ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GDebugControllerDBus$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GDebugControllerDBus$MH() {
-        return RuntimeHelper.requireNonNull(constants$647.glib_autoptr_cleanup_GDebugControllerDBus$MH,"glib_autoptr_cleanup_GDebugControllerDBus");
-    }
-    public static void glib_autoptr_cleanup_GDebugControllerDBus ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GDebugControllerDBus$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GDebugControllerDBus$MH() {
-        return RuntimeHelper.requireNonNull(constants$647.glib_listautoptr_cleanup_GDebugControllerDBus$MH,"glib_listautoptr_cleanup_GDebugControllerDBus");
-    }
-    public static void glib_listautoptr_cleanup_GDebugControllerDBus ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GDebugControllerDBus$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GDebugControllerDBus$MH() {
-        return RuntimeHelper.requireNonNull(constants$647.glib_slistautoptr_cleanup_GDebugControllerDBus$MH,"glib_slistautoptr_cleanup_GDebugControllerDBus");
-    }
-    public static void glib_slistautoptr_cleanup_GDebugControllerDBus ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GDebugControllerDBus$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GDebugControllerDBus$MH() {
-        return RuntimeHelper.requireNonNull(constants$647.glib_queueautoptr_cleanup_GDebugControllerDBus$MH,"glib_queueautoptr_cleanup_GDebugControllerDBus");
-    }
-    public static void glib_queueautoptr_cleanup_GDebugControllerDBus ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GDebugControllerDBus$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GDebugControllerDBusClass_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GDebugControllerDBusClass_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GDebugControllerDBusClass_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GDebugControllerDBusClass_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GDebugControllerDBusClass$MH() {
-        return RuntimeHelper.requireNonNull(constants$647.glib_autoptr_clear_GDebugControllerDBusClass$MH,"glib_autoptr_clear_GDebugControllerDBusClass");
-    }
-    public static void glib_autoptr_clear_GDebugControllerDBusClass ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GDebugControllerDBusClass$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GDebugControllerDBusClass$MH() {
-        return RuntimeHelper.requireNonNull(constants$647.glib_autoptr_cleanup_GDebugControllerDBusClass$MH,"glib_autoptr_cleanup_GDebugControllerDBusClass");
-    }
-    public static void glib_autoptr_cleanup_GDebugControllerDBusClass ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GDebugControllerDBusClass$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GDebugControllerDBusClass$MH() {
-        return RuntimeHelper.requireNonNull(constants$648.glib_listautoptr_cleanup_GDebugControllerDBusClass$MH,"glib_listautoptr_cleanup_GDebugControllerDBusClass");
-    }
-    public static void glib_listautoptr_cleanup_GDebugControllerDBusClass ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GDebugControllerDBusClass$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GDebugControllerDBusClass$MH() {
-        return RuntimeHelper.requireNonNull(constants$648.glib_slistautoptr_cleanup_GDebugControllerDBusClass$MH,"glib_slistautoptr_cleanup_GDebugControllerDBusClass");
-    }
-    public static void glib_slistautoptr_cleanup_GDebugControllerDBusClass ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GDebugControllerDBusClass$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GDebugControllerDBusClass$MH() {
-        return RuntimeHelper.requireNonNull(constants$648.glib_queueautoptr_cleanup_GDebugControllerDBusClass$MH,"glib_queueautoptr_cleanup_GDebugControllerDBusClass");
-    }
-    public static void glib_queueautoptr_cleanup_GDebugControllerDBusClass ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GDebugControllerDBusClass$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle G_DEBUG_CONTROLLER_DBUS$MH() {
-        return RuntimeHelper.requireNonNull(constants$648.G_DEBUG_CONTROLLER_DBUS$MH,"G_DEBUG_CONTROLLER_DBUS");
-    }
-    public static MemoryAddress G_DEBUG_CONTROLLER_DBUS ( Addressable ptr) {
-        var mh$ = G_DEBUG_CONTROLLER_DBUS$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle G_DEBUG_CONTROLLER_DBUS_CLASS$MH() {
-        return RuntimeHelper.requireNonNull(constants$648.G_DEBUG_CONTROLLER_DBUS_CLASS$MH,"G_DEBUG_CONTROLLER_DBUS_CLASS");
-    }
-    public static MemoryAddress G_DEBUG_CONTROLLER_DBUS_CLASS ( Addressable ptr) {
-        var mh$ = G_DEBUG_CONTROLLER_DBUS_CLASS$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle G_IS_DEBUG_CONTROLLER_DBUS$MH() {
-        return RuntimeHelper.requireNonNull(constants$648.G_IS_DEBUG_CONTROLLER_DBUS$MH,"G_IS_DEBUG_CONTROLLER_DBUS");
-    }
-    public static int G_IS_DEBUG_CONTROLLER_DBUS ( Addressable ptr) {
-        var mh$ = G_IS_DEBUG_CONTROLLER_DBUS$MH();
-        try {
-            return (int)mh$.invokeExact(ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle G_IS_DEBUG_CONTROLLER_DBUS_CLASS$MH() {
-        return RuntimeHelper.requireNonNull(constants$649.G_IS_DEBUG_CONTROLLER_DBUS_CLASS$MH,"G_IS_DEBUG_CONTROLLER_DBUS_CLASS");
-    }
-    public static int G_IS_DEBUG_CONTROLLER_DBUS_CLASS ( Addressable ptr) {
-        var mh$ = G_IS_DEBUG_CONTROLLER_DBUS_CLASS$MH();
-        try {
-            return (int)mh$.invokeExact(ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle G_DEBUG_CONTROLLER_DBUS_GET_CLASS$MH() {
-        return RuntimeHelper.requireNonNull(constants$649.G_DEBUG_CONTROLLER_DBUS_GET_CLASS$MH,"G_DEBUG_CONTROLLER_DBUS_GET_CLASS");
-    }
-    public static MemoryAddress G_DEBUG_CONTROLLER_DBUS_GET_CLASS ( Addressable ptr) {
-        var mh$ = G_DEBUG_CONTROLLER_DBUS_GET_CLASS$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
+    /**
+     * {@snippet :
+     * typedef struct _GDebugControllerDBus* GDebugControllerDBus_autoptr;
+     * }
+     */
+    public static final OfAddress GDebugControllerDBus_autoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GDebugControllerDBus_listautoptr;
+     * }
+     */
+    public static final OfAddress GDebugControllerDBus_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GDebugControllerDBus_slistautoptr;
+     * }
+     */
+    public static final OfAddress GDebugControllerDBus_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GDebugControllerDBus_queueautoptr;
+     * }
+     */
+    public static final OfAddress GDebugControllerDBus_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GDebugControllerDBusClass* GDebugControllerDBusClass_autoptr;
+     * }
+     */
+    public static final OfAddress GDebugControllerDBusClass_autoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GDebugControllerDBusClass_listautoptr;
+     * }
+     */
+    public static final OfAddress GDebugControllerDBusClass_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GDebugControllerDBusClass_slistautoptr;
+     * }
+     */
+    public static final OfAddress GDebugControllerDBusClass_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GDebugControllerDBusClass_queueautoptr;
+     * }
+     */
+    public static final OfAddress GDebugControllerDBusClass_queueautoptr = Constants$root.C_POINTER$LAYOUT;
     public static MethodHandle g_debug_controller_dbus_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$649.g_debug_controller_dbus_new$MH,"g_debug_controller_dbus_new");
+        return RuntimeHelper.requireNonNull(constants$599.g_debug_controller_dbus_new$MH,"g_debug_controller_dbus_new");
     }
-    public static MemoryAddress g_debug_controller_dbus_new ( Addressable connection,  Addressable cancellable,  Addressable error) {
+    /**
+     * {@snippet :
+     * GDebugControllerDBus* g_debug_controller_dbus_new(GDBusConnection* connection, GCancellable* cancellable, GError** error);
+     * }
+     */
+    public static MemorySegment g_debug_controller_dbus_new(MemorySegment connection, MemorySegment cancellable, MemorySegment error) {
         var mh$ = g_debug_controller_dbus_new$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(connection, cancellable, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(connection, cancellable, error);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_debug_controller_dbus_stop$MH() {
-        return RuntimeHelper.requireNonNull(constants$649.g_debug_controller_dbus_stop$MH,"g_debug_controller_dbus_stop");
+        return RuntimeHelper.requireNonNull(constants$599.g_debug_controller_dbus_stop$MH,"g_debug_controller_dbus_stop");
     }
-    public static void g_debug_controller_dbus_stop ( Addressable self) {
+    /**
+     * {@snippet :
+     * void g_debug_controller_dbus_stop(GDebugControllerDBus* self);
+     * }
+     */
+    public static void g_debug_controller_dbus_stop(MemorySegment self) {
         var mh$ = g_debug_controller_dbus_stop$MH();
         try {
             mh$.invokeExact(self);
@@ -4570,9 +3506,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_drive_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$649.g_drive_get_type$MH,"g_drive_get_type");
+        return RuntimeHelper.requireNonNull(constants$599.g_drive_get_type$MH,"g_drive_get_type");
     }
-    public static long g_drive_get_type () {
+    /**
+     * {@snippet :
+     * GType g_drive_get_type();
+     * }
+     */
+    public static long g_drive_get_type() {
         var mh$ = g_drive_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -4581,42 +3522,62 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_drive_get_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$649.g_drive_get_name$MH,"g_drive_get_name");
+        return RuntimeHelper.requireNonNull(constants$600.g_drive_get_name$MH,"g_drive_get_name");
     }
-    public static MemoryAddress g_drive_get_name ( Addressable drive) {
+    /**
+     * {@snippet :
+     * char* g_drive_get_name(GDrive* drive);
+     * }
+     */
+    public static MemorySegment g_drive_get_name(MemorySegment drive) {
         var mh$ = g_drive_get_name$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(drive);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(drive);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_drive_get_icon$MH() {
-        return RuntimeHelper.requireNonNull(constants$650.g_drive_get_icon$MH,"g_drive_get_icon");
+        return RuntimeHelper.requireNonNull(constants$600.g_drive_get_icon$MH,"g_drive_get_icon");
     }
-    public static MemoryAddress g_drive_get_icon ( Addressable drive) {
+    /**
+     * {@snippet :
+     * GIcon* g_drive_get_icon(GDrive* drive);
+     * }
+     */
+    public static MemorySegment g_drive_get_icon(MemorySegment drive) {
         var mh$ = g_drive_get_icon$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(drive);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(drive);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_drive_get_symbolic_icon$MH() {
-        return RuntimeHelper.requireNonNull(constants$650.g_drive_get_symbolic_icon$MH,"g_drive_get_symbolic_icon");
+        return RuntimeHelper.requireNonNull(constants$600.g_drive_get_symbolic_icon$MH,"g_drive_get_symbolic_icon");
     }
-    public static MemoryAddress g_drive_get_symbolic_icon ( Addressable drive) {
+    /**
+     * {@snippet :
+     * GIcon* g_drive_get_symbolic_icon(GDrive* drive);
+     * }
+     */
+    public static MemorySegment g_drive_get_symbolic_icon(MemorySegment drive) {
         var mh$ = g_drive_get_symbolic_icon$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(drive);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(drive);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_drive_has_volumes$MH() {
-        return RuntimeHelper.requireNonNull(constants$650.g_drive_has_volumes$MH,"g_drive_has_volumes");
+        return RuntimeHelper.requireNonNull(constants$600.g_drive_has_volumes$MH,"g_drive_has_volumes");
     }
-    public static int g_drive_has_volumes ( Addressable drive) {
+    /**
+     * {@snippet :
+     * gboolean g_drive_has_volumes(GDrive* drive);
+     * }
+     */
+    public static int g_drive_has_volumes(MemorySegment drive) {
         var mh$ = g_drive_has_volumes$MH();
         try {
             return (int)mh$.invokeExact(drive);
@@ -4625,20 +3586,30 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_drive_get_volumes$MH() {
-        return RuntimeHelper.requireNonNull(constants$650.g_drive_get_volumes$MH,"g_drive_get_volumes");
+        return RuntimeHelper.requireNonNull(constants$600.g_drive_get_volumes$MH,"g_drive_get_volumes");
     }
-    public static MemoryAddress g_drive_get_volumes ( Addressable drive) {
+    /**
+     * {@snippet :
+     * GList* g_drive_get_volumes(GDrive* drive);
+     * }
+     */
+    public static MemorySegment g_drive_get_volumes(MemorySegment drive) {
         var mh$ = g_drive_get_volumes$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(drive);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(drive);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_drive_is_removable$MH() {
-        return RuntimeHelper.requireNonNull(constants$650.g_drive_is_removable$MH,"g_drive_is_removable");
+        return RuntimeHelper.requireNonNull(constants$600.g_drive_is_removable$MH,"g_drive_is_removable");
     }
-    public static int g_drive_is_removable ( Addressable drive) {
+    /**
+     * {@snippet :
+     * gboolean g_drive_is_removable(GDrive* drive);
+     * }
+     */
+    public static int g_drive_is_removable(MemorySegment drive) {
         var mh$ = g_drive_is_removable$MH();
         try {
             return (int)mh$.invokeExact(drive);
@@ -4647,9 +3618,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_drive_is_media_removable$MH() {
-        return RuntimeHelper.requireNonNull(constants$650.g_drive_is_media_removable$MH,"g_drive_is_media_removable");
+        return RuntimeHelper.requireNonNull(constants$601.g_drive_is_media_removable$MH,"g_drive_is_media_removable");
     }
-    public static int g_drive_is_media_removable ( Addressable drive) {
+    /**
+     * {@snippet :
+     * gboolean g_drive_is_media_removable(GDrive* drive);
+     * }
+     */
+    public static int g_drive_is_media_removable(MemorySegment drive) {
         var mh$ = g_drive_is_media_removable$MH();
         try {
             return (int)mh$.invokeExact(drive);
@@ -4658,9 +3634,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_drive_has_media$MH() {
-        return RuntimeHelper.requireNonNull(constants$651.g_drive_has_media$MH,"g_drive_has_media");
+        return RuntimeHelper.requireNonNull(constants$601.g_drive_has_media$MH,"g_drive_has_media");
     }
-    public static int g_drive_has_media ( Addressable drive) {
+    /**
+     * {@snippet :
+     * gboolean g_drive_has_media(GDrive* drive);
+     * }
+     */
+    public static int g_drive_has_media(MemorySegment drive) {
         var mh$ = g_drive_has_media$MH();
         try {
             return (int)mh$.invokeExact(drive);
@@ -4669,9 +3650,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_drive_is_media_check_automatic$MH() {
-        return RuntimeHelper.requireNonNull(constants$651.g_drive_is_media_check_automatic$MH,"g_drive_is_media_check_automatic");
+        return RuntimeHelper.requireNonNull(constants$601.g_drive_is_media_check_automatic$MH,"g_drive_is_media_check_automatic");
     }
-    public static int g_drive_is_media_check_automatic ( Addressable drive) {
+    /**
+     * {@snippet :
+     * gboolean g_drive_is_media_check_automatic(GDrive* drive);
+     * }
+     */
+    public static int g_drive_is_media_check_automatic(MemorySegment drive) {
         var mh$ = g_drive_is_media_check_automatic$MH();
         try {
             return (int)mh$.invokeExact(drive);
@@ -4680,9 +3666,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_drive_can_poll_for_media$MH() {
-        return RuntimeHelper.requireNonNull(constants$651.g_drive_can_poll_for_media$MH,"g_drive_can_poll_for_media");
+        return RuntimeHelper.requireNonNull(constants$601.g_drive_can_poll_for_media$MH,"g_drive_can_poll_for_media");
     }
-    public static int g_drive_can_poll_for_media ( Addressable drive) {
+    /**
+     * {@snippet :
+     * gboolean g_drive_can_poll_for_media(GDrive* drive);
+     * }
+     */
+    public static int g_drive_can_poll_for_media(MemorySegment drive) {
         var mh$ = g_drive_can_poll_for_media$MH();
         try {
             return (int)mh$.invokeExact(drive);
@@ -4691,9 +3682,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_drive_can_eject$MH() {
-        return RuntimeHelper.requireNonNull(constants$651.g_drive_can_eject$MH,"g_drive_can_eject");
+        return RuntimeHelper.requireNonNull(constants$601.g_drive_can_eject$MH,"g_drive_can_eject");
     }
-    public static int g_drive_can_eject ( Addressable drive) {
+    /**
+     * {@snippet :
+     * gboolean g_drive_can_eject(GDrive* drive);
+     * }
+     */
+    public static int g_drive_can_eject(MemorySegment drive) {
         var mh$ = g_drive_can_eject$MH();
         try {
             return (int)mh$.invokeExact(drive);
@@ -4702,9 +3698,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_drive_eject$MH() {
-        return RuntimeHelper.requireNonNull(constants$651.g_drive_eject$MH,"g_drive_eject");
+        return RuntimeHelper.requireNonNull(constants$601.g_drive_eject$MH,"g_drive_eject");
     }
-    public static void g_drive_eject ( Addressable drive,  int flags,  Addressable cancellable,  Addressable callback,  Addressable user_data) {
+    /**
+     * {@snippet :
+     * void g_drive_eject(GDrive* drive, GMountUnmountFlags flags, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
+     * }
+     */
+    public static void g_drive_eject(MemorySegment drive, int flags, MemorySegment cancellable, MemorySegment callback, MemorySegment user_data) {
         var mh$ = g_drive_eject$MH();
         try {
             mh$.invokeExact(drive, flags, cancellable, callback, user_data);
@@ -4713,9 +3714,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_drive_eject_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$651.g_drive_eject_finish$MH,"g_drive_eject_finish");
+        return RuntimeHelper.requireNonNull(constants$602.g_drive_eject_finish$MH,"g_drive_eject_finish");
     }
-    public static int g_drive_eject_finish ( Addressable drive,  Addressable result,  Addressable error) {
+    /**
+     * {@snippet :
+     * gboolean g_drive_eject_finish(GDrive* drive, GAsyncResult* result, GError** error);
+     * }
+     */
+    public static int g_drive_eject_finish(MemorySegment drive, MemorySegment result, MemorySegment error) {
         var mh$ = g_drive_eject_finish$MH();
         try {
             return (int)mh$.invokeExact(drive, result, error);
@@ -4724,9 +3730,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_drive_poll_for_media$MH() {
-        return RuntimeHelper.requireNonNull(constants$652.g_drive_poll_for_media$MH,"g_drive_poll_for_media");
+        return RuntimeHelper.requireNonNull(constants$602.g_drive_poll_for_media$MH,"g_drive_poll_for_media");
     }
-    public static void g_drive_poll_for_media ( Addressable drive,  Addressable cancellable,  Addressable callback,  Addressable user_data) {
+    /**
+     * {@snippet :
+     * void g_drive_poll_for_media(GDrive* drive, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
+     * }
+     */
+    public static void g_drive_poll_for_media(MemorySegment drive, MemorySegment cancellable, MemorySegment callback, MemorySegment user_data) {
         var mh$ = g_drive_poll_for_media$MH();
         try {
             mh$.invokeExact(drive, cancellable, callback, user_data);
@@ -4735,9 +3746,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_drive_poll_for_media_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$652.g_drive_poll_for_media_finish$MH,"g_drive_poll_for_media_finish");
+        return RuntimeHelper.requireNonNull(constants$602.g_drive_poll_for_media_finish$MH,"g_drive_poll_for_media_finish");
     }
-    public static int g_drive_poll_for_media_finish ( Addressable drive,  Addressable result,  Addressable error) {
+    /**
+     * {@snippet :
+     * gboolean g_drive_poll_for_media_finish(GDrive* drive, GAsyncResult* result, GError** error);
+     * }
+     */
+    public static int g_drive_poll_for_media_finish(MemorySegment drive, MemorySegment result, MemorySegment error) {
         var mh$ = g_drive_poll_for_media_finish$MH();
         try {
             return (int)mh$.invokeExact(drive, result, error);
@@ -4746,31 +3762,46 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_drive_get_identifier$MH() {
-        return RuntimeHelper.requireNonNull(constants$652.g_drive_get_identifier$MH,"g_drive_get_identifier");
+        return RuntimeHelper.requireNonNull(constants$602.g_drive_get_identifier$MH,"g_drive_get_identifier");
     }
-    public static MemoryAddress g_drive_get_identifier ( Addressable drive,  Addressable kind) {
+    /**
+     * {@snippet :
+     * char* g_drive_get_identifier(GDrive* drive, char* kind);
+     * }
+     */
+    public static MemorySegment g_drive_get_identifier(MemorySegment drive, MemorySegment kind) {
         var mh$ = g_drive_get_identifier$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(drive, kind);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(drive, kind);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_drive_enumerate_identifiers$MH() {
-        return RuntimeHelper.requireNonNull(constants$652.g_drive_enumerate_identifiers$MH,"g_drive_enumerate_identifiers");
+        return RuntimeHelper.requireNonNull(constants$602.g_drive_enumerate_identifiers$MH,"g_drive_enumerate_identifiers");
     }
-    public static MemoryAddress g_drive_enumerate_identifiers ( Addressable drive) {
+    /**
+     * {@snippet :
+     * char** g_drive_enumerate_identifiers(GDrive* drive);
+     * }
+     */
+    public static MemorySegment g_drive_enumerate_identifiers(MemorySegment drive) {
         var mh$ = g_drive_enumerate_identifiers$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(drive);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(drive);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_drive_get_start_stop_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$652.g_drive_get_start_stop_type$MH,"g_drive_get_start_stop_type");
+        return RuntimeHelper.requireNonNull(constants$602.g_drive_get_start_stop_type$MH,"g_drive_get_start_stop_type");
     }
-    public static int g_drive_get_start_stop_type ( Addressable drive) {
+    /**
+     * {@snippet :
+     * GDriveStartStopType g_drive_get_start_stop_type(GDrive* drive);
+     * }
+     */
+    public static int g_drive_get_start_stop_type(MemorySegment drive) {
         var mh$ = g_drive_get_start_stop_type$MH();
         try {
             return (int)mh$.invokeExact(drive);
@@ -4779,9 +3810,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_drive_can_start$MH() {
-        return RuntimeHelper.requireNonNull(constants$652.g_drive_can_start$MH,"g_drive_can_start");
+        return RuntimeHelper.requireNonNull(constants$603.g_drive_can_start$MH,"g_drive_can_start");
     }
-    public static int g_drive_can_start ( Addressable drive) {
+    /**
+     * {@snippet :
+     * gboolean g_drive_can_start(GDrive* drive);
+     * }
+     */
+    public static int g_drive_can_start(MemorySegment drive) {
         var mh$ = g_drive_can_start$MH();
         try {
             return (int)mh$.invokeExact(drive);
@@ -4790,9 +3826,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_drive_can_start_degraded$MH() {
-        return RuntimeHelper.requireNonNull(constants$653.g_drive_can_start_degraded$MH,"g_drive_can_start_degraded");
+        return RuntimeHelper.requireNonNull(constants$603.g_drive_can_start_degraded$MH,"g_drive_can_start_degraded");
     }
-    public static int g_drive_can_start_degraded ( Addressable drive) {
+    /**
+     * {@snippet :
+     * gboolean g_drive_can_start_degraded(GDrive* drive);
+     * }
+     */
+    public static int g_drive_can_start_degraded(MemorySegment drive) {
         var mh$ = g_drive_can_start_degraded$MH();
         try {
             return (int)mh$.invokeExact(drive);
@@ -4801,9 +3842,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_drive_start$MH() {
-        return RuntimeHelper.requireNonNull(constants$653.g_drive_start$MH,"g_drive_start");
+        return RuntimeHelper.requireNonNull(constants$603.g_drive_start$MH,"g_drive_start");
     }
-    public static void g_drive_start ( Addressable drive,  int flags,  Addressable mount_operation,  Addressable cancellable,  Addressable callback,  Addressable user_data) {
+    /**
+     * {@snippet :
+     * void g_drive_start(GDrive* drive, GDriveStartFlags flags, GMountOperation* mount_operation, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
+     * }
+     */
+    public static void g_drive_start(MemorySegment drive, int flags, MemorySegment mount_operation, MemorySegment cancellable, MemorySegment callback, MemorySegment user_data) {
         var mh$ = g_drive_start$MH();
         try {
             mh$.invokeExact(drive, flags, mount_operation, cancellable, callback, user_data);
@@ -4812,9 +3858,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_drive_start_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$653.g_drive_start_finish$MH,"g_drive_start_finish");
+        return RuntimeHelper.requireNonNull(constants$603.g_drive_start_finish$MH,"g_drive_start_finish");
     }
-    public static int g_drive_start_finish ( Addressable drive,  Addressable result,  Addressable error) {
+    /**
+     * {@snippet :
+     * gboolean g_drive_start_finish(GDrive* drive, GAsyncResult* result, GError** error);
+     * }
+     */
+    public static int g_drive_start_finish(MemorySegment drive, MemorySegment result, MemorySegment error) {
         var mh$ = g_drive_start_finish$MH();
         try {
             return (int)mh$.invokeExact(drive, result, error);
@@ -4823,9 +3874,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_drive_can_stop$MH() {
-        return RuntimeHelper.requireNonNull(constants$653.g_drive_can_stop$MH,"g_drive_can_stop");
+        return RuntimeHelper.requireNonNull(constants$603.g_drive_can_stop$MH,"g_drive_can_stop");
     }
-    public static int g_drive_can_stop ( Addressable drive) {
+    /**
+     * {@snippet :
+     * gboolean g_drive_can_stop(GDrive* drive);
+     * }
+     */
+    public static int g_drive_can_stop(MemorySegment drive) {
         var mh$ = g_drive_can_stop$MH();
         try {
             return (int)mh$.invokeExact(drive);
@@ -4834,9 +3890,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_drive_stop$MH() {
-        return RuntimeHelper.requireNonNull(constants$653.g_drive_stop$MH,"g_drive_stop");
+        return RuntimeHelper.requireNonNull(constants$603.g_drive_stop$MH,"g_drive_stop");
     }
-    public static void g_drive_stop ( Addressable drive,  int flags,  Addressable mount_operation,  Addressable cancellable,  Addressable callback,  Addressable user_data) {
+    /**
+     * {@snippet :
+     * void g_drive_stop(GDrive* drive, GMountUnmountFlags flags, GMountOperation* mount_operation, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
+     * }
+     */
+    public static void g_drive_stop(MemorySegment drive, int flags, MemorySegment mount_operation, MemorySegment cancellable, MemorySegment callback, MemorySegment user_data) {
         var mh$ = g_drive_stop$MH();
         try {
             mh$.invokeExact(drive, flags, mount_operation, cancellable, callback, user_data);
@@ -4845,9 +3906,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_drive_stop_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$653.g_drive_stop_finish$MH,"g_drive_stop_finish");
+        return RuntimeHelper.requireNonNull(constants$604.g_drive_stop_finish$MH,"g_drive_stop_finish");
     }
-    public static int g_drive_stop_finish ( Addressable drive,  Addressable result,  Addressable error) {
+    /**
+     * {@snippet :
+     * gboolean g_drive_stop_finish(GDrive* drive, GAsyncResult* result, GError** error);
+     * }
+     */
+    public static int g_drive_stop_finish(MemorySegment drive, MemorySegment result, MemorySegment error) {
         var mh$ = g_drive_stop_finish$MH();
         try {
             return (int)mh$.invokeExact(drive, result, error);
@@ -4856,9 +3922,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_drive_eject_with_operation$MH() {
-        return RuntimeHelper.requireNonNull(constants$654.g_drive_eject_with_operation$MH,"g_drive_eject_with_operation");
+        return RuntimeHelper.requireNonNull(constants$604.g_drive_eject_with_operation$MH,"g_drive_eject_with_operation");
     }
-    public static void g_drive_eject_with_operation ( Addressable drive,  int flags,  Addressable mount_operation,  Addressable cancellable,  Addressable callback,  Addressable user_data) {
+    /**
+     * {@snippet :
+     * void g_drive_eject_with_operation(GDrive* drive, GMountUnmountFlags flags, GMountOperation* mount_operation, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
+     * }
+     */
+    public static void g_drive_eject_with_operation(MemorySegment drive, int flags, MemorySegment mount_operation, MemorySegment cancellable, MemorySegment callback, MemorySegment user_data) {
         var mh$ = g_drive_eject_with_operation$MH();
         try {
             mh$.invokeExact(drive, flags, mount_operation, cancellable, callback, user_data);
@@ -4867,9 +3938,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_drive_eject_with_operation_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$654.g_drive_eject_with_operation_finish$MH,"g_drive_eject_with_operation_finish");
+        return RuntimeHelper.requireNonNull(constants$604.g_drive_eject_with_operation_finish$MH,"g_drive_eject_with_operation_finish");
     }
-    public static int g_drive_eject_with_operation_finish ( Addressable drive,  Addressable result,  Addressable error) {
+    /**
+     * {@snippet :
+     * gboolean g_drive_eject_with_operation_finish(GDrive* drive, GAsyncResult* result, GError** error);
+     * }
+     */
+    public static int g_drive_eject_with_operation_finish(MemorySegment drive, MemorySegment result, MemorySegment error) {
         var mh$ = g_drive_eject_with_operation_finish$MH();
         try {
             return (int)mh$.invokeExact(drive, result, error);
@@ -4878,20 +3954,30 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_drive_get_sort_key$MH() {
-        return RuntimeHelper.requireNonNull(constants$654.g_drive_get_sort_key$MH,"g_drive_get_sort_key");
+        return RuntimeHelper.requireNonNull(constants$604.g_drive_get_sort_key$MH,"g_drive_get_sort_key");
     }
-    public static MemoryAddress g_drive_get_sort_key ( Addressable drive) {
+    /**
+     * {@snippet :
+     * const gchar* g_drive_get_sort_key(GDrive* drive);
+     * }
+     */
+    public static MemorySegment g_drive_get_sort_key(MemorySegment drive) {
         var mh$ = g_drive_get_sort_key$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(drive);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(drive);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dtls_connection_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$654.g_dtls_connection_get_type$MH,"g_dtls_connection_get_type");
+        return RuntimeHelper.requireNonNull(constants$604.g_dtls_connection_get_type$MH,"g_dtls_connection_get_type");
     }
-    public static long g_dtls_connection_get_type () {
+    /**
+     * {@snippet :
+     * GType g_dtls_connection_get_type();
+     * }
+     */
+    public static long g_dtls_connection_get_type() {
         var mh$ = g_dtls_connection_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -4900,9 +3986,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dtls_connection_set_database$MH() {
-        return RuntimeHelper.requireNonNull(constants$654.g_dtls_connection_set_database$MH,"g_dtls_connection_set_database");
+        return RuntimeHelper.requireNonNull(constants$604.g_dtls_connection_set_database$MH,"g_dtls_connection_set_database");
     }
-    public static void g_dtls_connection_set_database ( Addressable conn,  Addressable database) {
+    /**
+     * {@snippet :
+     * void g_dtls_connection_set_database(GDtlsConnection* conn, GTlsDatabase* database);
+     * }
+     */
+    public static void g_dtls_connection_set_database(MemorySegment conn, MemorySegment database) {
         var mh$ = g_dtls_connection_set_database$MH();
         try {
             mh$.invokeExact(conn, database);
@@ -4911,20 +4002,30 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dtls_connection_get_database$MH() {
-        return RuntimeHelper.requireNonNull(constants$654.g_dtls_connection_get_database$MH,"g_dtls_connection_get_database");
+        return RuntimeHelper.requireNonNull(constants$605.g_dtls_connection_get_database$MH,"g_dtls_connection_get_database");
     }
-    public static MemoryAddress g_dtls_connection_get_database ( Addressable conn) {
+    /**
+     * {@snippet :
+     * GTlsDatabase* g_dtls_connection_get_database(GDtlsConnection* conn);
+     * }
+     */
+    public static MemorySegment g_dtls_connection_get_database(MemorySegment conn) {
         var mh$ = g_dtls_connection_get_database$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(conn);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(conn);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dtls_connection_set_certificate$MH() {
-        return RuntimeHelper.requireNonNull(constants$655.g_dtls_connection_set_certificate$MH,"g_dtls_connection_set_certificate");
+        return RuntimeHelper.requireNonNull(constants$605.g_dtls_connection_set_certificate$MH,"g_dtls_connection_set_certificate");
     }
-    public static void g_dtls_connection_set_certificate ( Addressable conn,  Addressable certificate) {
+    /**
+     * {@snippet :
+     * void g_dtls_connection_set_certificate(GDtlsConnection* conn, GTlsCertificate* certificate);
+     * }
+     */
+    public static void g_dtls_connection_set_certificate(MemorySegment conn, MemorySegment certificate) {
         var mh$ = g_dtls_connection_set_certificate$MH();
         try {
             mh$.invokeExact(conn, certificate);
@@ -4933,20 +4034,30 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dtls_connection_get_certificate$MH() {
-        return RuntimeHelper.requireNonNull(constants$655.g_dtls_connection_get_certificate$MH,"g_dtls_connection_get_certificate");
+        return RuntimeHelper.requireNonNull(constants$605.g_dtls_connection_get_certificate$MH,"g_dtls_connection_get_certificate");
     }
-    public static MemoryAddress g_dtls_connection_get_certificate ( Addressable conn) {
+    /**
+     * {@snippet :
+     * GTlsCertificate* g_dtls_connection_get_certificate(GDtlsConnection* conn);
+     * }
+     */
+    public static MemorySegment g_dtls_connection_get_certificate(MemorySegment conn) {
         var mh$ = g_dtls_connection_get_certificate$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(conn);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(conn);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dtls_connection_set_interaction$MH() {
-        return RuntimeHelper.requireNonNull(constants$655.g_dtls_connection_set_interaction$MH,"g_dtls_connection_set_interaction");
+        return RuntimeHelper.requireNonNull(constants$605.g_dtls_connection_set_interaction$MH,"g_dtls_connection_set_interaction");
     }
-    public static void g_dtls_connection_set_interaction ( Addressable conn,  Addressable interaction) {
+    /**
+     * {@snippet :
+     * void g_dtls_connection_set_interaction(GDtlsConnection* conn, GTlsInteraction* interaction);
+     * }
+     */
+    public static void g_dtls_connection_set_interaction(MemorySegment conn, MemorySegment interaction) {
         var mh$ = g_dtls_connection_set_interaction$MH();
         try {
             mh$.invokeExact(conn, interaction);
@@ -4955,31 +4066,46 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dtls_connection_get_interaction$MH() {
-        return RuntimeHelper.requireNonNull(constants$655.g_dtls_connection_get_interaction$MH,"g_dtls_connection_get_interaction");
+        return RuntimeHelper.requireNonNull(constants$605.g_dtls_connection_get_interaction$MH,"g_dtls_connection_get_interaction");
     }
-    public static MemoryAddress g_dtls_connection_get_interaction ( Addressable conn) {
+    /**
+     * {@snippet :
+     * GTlsInteraction* g_dtls_connection_get_interaction(GDtlsConnection* conn);
+     * }
+     */
+    public static MemorySegment g_dtls_connection_get_interaction(MemorySegment conn) {
         var mh$ = g_dtls_connection_get_interaction$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(conn);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(conn);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dtls_connection_get_peer_certificate$MH() {
-        return RuntimeHelper.requireNonNull(constants$655.g_dtls_connection_get_peer_certificate$MH,"g_dtls_connection_get_peer_certificate");
+        return RuntimeHelper.requireNonNull(constants$605.g_dtls_connection_get_peer_certificate$MH,"g_dtls_connection_get_peer_certificate");
     }
-    public static MemoryAddress g_dtls_connection_get_peer_certificate ( Addressable conn) {
+    /**
+     * {@snippet :
+     * GTlsCertificate* g_dtls_connection_get_peer_certificate(GDtlsConnection* conn);
+     * }
+     */
+    public static MemorySegment g_dtls_connection_get_peer_certificate(MemorySegment conn) {
         var mh$ = g_dtls_connection_get_peer_certificate$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(conn);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(conn);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dtls_connection_get_peer_certificate_errors$MH() {
-        return RuntimeHelper.requireNonNull(constants$655.g_dtls_connection_get_peer_certificate_errors$MH,"g_dtls_connection_get_peer_certificate_errors");
+        return RuntimeHelper.requireNonNull(constants$606.g_dtls_connection_get_peer_certificate_errors$MH,"g_dtls_connection_get_peer_certificate_errors");
     }
-    public static int g_dtls_connection_get_peer_certificate_errors ( Addressable conn) {
+    /**
+     * {@snippet :
+     * GTlsCertificateFlags g_dtls_connection_get_peer_certificate_errors(GDtlsConnection* conn);
+     * }
+     */
+    public static int g_dtls_connection_get_peer_certificate_errors(MemorySegment conn) {
         var mh$ = g_dtls_connection_get_peer_certificate_errors$MH();
         try {
             return (int)mh$.invokeExact(conn);
@@ -4988,9 +4114,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dtls_connection_set_require_close_notify$MH() {
-        return RuntimeHelper.requireNonNull(constants$656.g_dtls_connection_set_require_close_notify$MH,"g_dtls_connection_set_require_close_notify");
+        return RuntimeHelper.requireNonNull(constants$606.g_dtls_connection_set_require_close_notify$MH,"g_dtls_connection_set_require_close_notify");
     }
-    public static void g_dtls_connection_set_require_close_notify ( Addressable conn,  int require_close_notify) {
+    /**
+     * {@snippet :
+     * void g_dtls_connection_set_require_close_notify(GDtlsConnection* conn, gboolean require_close_notify);
+     * }
+     */
+    public static void g_dtls_connection_set_require_close_notify(MemorySegment conn, int require_close_notify) {
         var mh$ = g_dtls_connection_set_require_close_notify$MH();
         try {
             mh$.invokeExact(conn, require_close_notify);
@@ -4999,9 +4130,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dtls_connection_get_require_close_notify$MH() {
-        return RuntimeHelper.requireNonNull(constants$656.g_dtls_connection_get_require_close_notify$MH,"g_dtls_connection_get_require_close_notify");
+        return RuntimeHelper.requireNonNull(constants$606.g_dtls_connection_get_require_close_notify$MH,"g_dtls_connection_get_require_close_notify");
     }
-    public static int g_dtls_connection_get_require_close_notify ( Addressable conn) {
+    /**
+     * {@snippet :
+     * gboolean g_dtls_connection_get_require_close_notify(GDtlsConnection* conn);
+     * }
+     */
+    public static int g_dtls_connection_get_require_close_notify(MemorySegment conn) {
         var mh$ = g_dtls_connection_get_require_close_notify$MH();
         try {
             return (int)mh$.invokeExact(conn);
@@ -5010,9 +4146,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dtls_connection_set_rehandshake_mode$MH() {
-        return RuntimeHelper.requireNonNull(constants$656.g_dtls_connection_set_rehandshake_mode$MH,"g_dtls_connection_set_rehandshake_mode");
+        return RuntimeHelper.requireNonNull(constants$606.g_dtls_connection_set_rehandshake_mode$MH,"g_dtls_connection_set_rehandshake_mode");
     }
-    public static void g_dtls_connection_set_rehandshake_mode ( Addressable conn,  int mode) {
+    /**
+     * {@snippet :
+     * void g_dtls_connection_set_rehandshake_mode(GDtlsConnection* conn, GTlsRehandshakeMode mode);
+     * }
+     */
+    public static void g_dtls_connection_set_rehandshake_mode(MemorySegment conn, int mode) {
         var mh$ = g_dtls_connection_set_rehandshake_mode$MH();
         try {
             mh$.invokeExact(conn, mode);
@@ -5021,9 +4162,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dtls_connection_get_rehandshake_mode$MH() {
-        return RuntimeHelper.requireNonNull(constants$656.g_dtls_connection_get_rehandshake_mode$MH,"g_dtls_connection_get_rehandshake_mode");
+        return RuntimeHelper.requireNonNull(constants$606.g_dtls_connection_get_rehandshake_mode$MH,"g_dtls_connection_get_rehandshake_mode");
     }
-    public static int g_dtls_connection_get_rehandshake_mode ( Addressable conn) {
+    /**
+     * {@snippet :
+     * GTlsRehandshakeMode g_dtls_connection_get_rehandshake_mode(GDtlsConnection* conn);
+     * }
+     */
+    public static int g_dtls_connection_get_rehandshake_mode(MemorySegment conn) {
         var mh$ = g_dtls_connection_get_rehandshake_mode$MH();
         try {
             return (int)mh$.invokeExact(conn);
@@ -5032,9 +4178,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dtls_connection_handshake$MH() {
-        return RuntimeHelper.requireNonNull(constants$656.g_dtls_connection_handshake$MH,"g_dtls_connection_handshake");
+        return RuntimeHelper.requireNonNull(constants$606.g_dtls_connection_handshake$MH,"g_dtls_connection_handshake");
     }
-    public static int g_dtls_connection_handshake ( Addressable conn,  Addressable cancellable,  Addressable error) {
+    /**
+     * {@snippet :
+     * gboolean g_dtls_connection_handshake(GDtlsConnection* conn, GCancellable* cancellable, GError** error);
+     * }
+     */
+    public static int g_dtls_connection_handshake(MemorySegment conn, MemorySegment cancellable, MemorySegment error) {
         var mh$ = g_dtls_connection_handshake$MH();
         try {
             return (int)mh$.invokeExact(conn, cancellable, error);
@@ -5043,9 +4194,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dtls_connection_handshake_async$MH() {
-        return RuntimeHelper.requireNonNull(constants$656.g_dtls_connection_handshake_async$MH,"g_dtls_connection_handshake_async");
+        return RuntimeHelper.requireNonNull(constants$607.g_dtls_connection_handshake_async$MH,"g_dtls_connection_handshake_async");
     }
-    public static void g_dtls_connection_handshake_async ( Addressable conn,  int io_priority,  Addressable cancellable,  Addressable callback,  Addressable user_data) {
+    /**
+     * {@snippet :
+     * void g_dtls_connection_handshake_async(GDtlsConnection* conn, int io_priority, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
+     * }
+     */
+    public static void g_dtls_connection_handshake_async(MemorySegment conn, int io_priority, MemorySegment cancellable, MemorySegment callback, MemorySegment user_data) {
         var mh$ = g_dtls_connection_handshake_async$MH();
         try {
             mh$.invokeExact(conn, io_priority, cancellable, callback, user_data);
@@ -5054,9 +4210,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dtls_connection_handshake_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$657.g_dtls_connection_handshake_finish$MH,"g_dtls_connection_handshake_finish");
+        return RuntimeHelper.requireNonNull(constants$607.g_dtls_connection_handshake_finish$MH,"g_dtls_connection_handshake_finish");
     }
-    public static int g_dtls_connection_handshake_finish ( Addressable conn,  Addressable result,  Addressable error) {
+    /**
+     * {@snippet :
+     * gboolean g_dtls_connection_handshake_finish(GDtlsConnection* conn, GAsyncResult* result, GError** error);
+     * }
+     */
+    public static int g_dtls_connection_handshake_finish(MemorySegment conn, MemorySegment result, MemorySegment error) {
         var mh$ = g_dtls_connection_handshake_finish$MH();
         try {
             return (int)mh$.invokeExact(conn, result, error);
@@ -5065,9 +4226,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dtls_connection_shutdown$MH() {
-        return RuntimeHelper.requireNonNull(constants$657.g_dtls_connection_shutdown$MH,"g_dtls_connection_shutdown");
+        return RuntimeHelper.requireNonNull(constants$607.g_dtls_connection_shutdown$MH,"g_dtls_connection_shutdown");
     }
-    public static int g_dtls_connection_shutdown ( Addressable conn,  int shutdown_read,  int shutdown_write,  Addressable cancellable,  Addressable error) {
+    /**
+     * {@snippet :
+     * gboolean g_dtls_connection_shutdown(GDtlsConnection* conn, gboolean shutdown_read, gboolean shutdown_write, GCancellable* cancellable, GError** error);
+     * }
+     */
+    public static int g_dtls_connection_shutdown(MemorySegment conn, int shutdown_read, int shutdown_write, MemorySegment cancellable, MemorySegment error) {
         var mh$ = g_dtls_connection_shutdown$MH();
         try {
             return (int)mh$.invokeExact(conn, shutdown_read, shutdown_write, cancellable, error);
@@ -5076,9 +4242,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dtls_connection_shutdown_async$MH() {
-        return RuntimeHelper.requireNonNull(constants$657.g_dtls_connection_shutdown_async$MH,"g_dtls_connection_shutdown_async");
+        return RuntimeHelper.requireNonNull(constants$607.g_dtls_connection_shutdown_async$MH,"g_dtls_connection_shutdown_async");
     }
-    public static void g_dtls_connection_shutdown_async ( Addressable conn,  int shutdown_read,  int shutdown_write,  int io_priority,  Addressable cancellable,  Addressable callback,  Addressable user_data) {
+    /**
+     * {@snippet :
+     * void g_dtls_connection_shutdown_async(GDtlsConnection* conn, gboolean shutdown_read, gboolean shutdown_write, int io_priority, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
+     * }
+     */
+    public static void g_dtls_connection_shutdown_async(MemorySegment conn, int shutdown_read, int shutdown_write, int io_priority, MemorySegment cancellable, MemorySegment callback, MemorySegment user_data) {
         var mh$ = g_dtls_connection_shutdown_async$MH();
         try {
             mh$.invokeExact(conn, shutdown_read, shutdown_write, io_priority, cancellable, callback, user_data);
@@ -5087,9 +4258,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dtls_connection_shutdown_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$657.g_dtls_connection_shutdown_finish$MH,"g_dtls_connection_shutdown_finish");
+        return RuntimeHelper.requireNonNull(constants$607.g_dtls_connection_shutdown_finish$MH,"g_dtls_connection_shutdown_finish");
     }
-    public static int g_dtls_connection_shutdown_finish ( Addressable conn,  Addressable result,  Addressable error) {
+    /**
+     * {@snippet :
+     * gboolean g_dtls_connection_shutdown_finish(GDtlsConnection* conn, GAsyncResult* result, GError** error);
+     * }
+     */
+    public static int g_dtls_connection_shutdown_finish(MemorySegment conn, MemorySegment result, MemorySegment error) {
         var mh$ = g_dtls_connection_shutdown_finish$MH();
         try {
             return (int)mh$.invokeExact(conn, result, error);
@@ -5098,9 +4274,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dtls_connection_close$MH() {
-        return RuntimeHelper.requireNonNull(constants$657.g_dtls_connection_close$MH,"g_dtls_connection_close");
+        return RuntimeHelper.requireNonNull(constants$607.g_dtls_connection_close$MH,"g_dtls_connection_close");
     }
-    public static int g_dtls_connection_close ( Addressable conn,  Addressable cancellable,  Addressable error) {
+    /**
+     * {@snippet :
+     * gboolean g_dtls_connection_close(GDtlsConnection* conn, GCancellable* cancellable, GError** error);
+     * }
+     */
+    public static int g_dtls_connection_close(MemorySegment conn, MemorySegment cancellable, MemorySegment error) {
         var mh$ = g_dtls_connection_close$MH();
         try {
             return (int)mh$.invokeExact(conn, cancellable, error);
@@ -5109,9 +4290,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dtls_connection_close_async$MH() {
-        return RuntimeHelper.requireNonNull(constants$657.g_dtls_connection_close_async$MH,"g_dtls_connection_close_async");
+        return RuntimeHelper.requireNonNull(constants$608.g_dtls_connection_close_async$MH,"g_dtls_connection_close_async");
     }
-    public static void g_dtls_connection_close_async ( Addressable conn,  int io_priority,  Addressable cancellable,  Addressable callback,  Addressable user_data) {
+    /**
+     * {@snippet :
+     * void g_dtls_connection_close_async(GDtlsConnection* conn, int io_priority, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
+     * }
+     */
+    public static void g_dtls_connection_close_async(MemorySegment conn, int io_priority, MemorySegment cancellable, MemorySegment callback, MemorySegment user_data) {
         var mh$ = g_dtls_connection_close_async$MH();
         try {
             mh$.invokeExact(conn, io_priority, cancellable, callback, user_data);
@@ -5120,9 +4306,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dtls_connection_close_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$658.g_dtls_connection_close_finish$MH,"g_dtls_connection_close_finish");
+        return RuntimeHelper.requireNonNull(constants$608.g_dtls_connection_close_finish$MH,"g_dtls_connection_close_finish");
     }
-    public static int g_dtls_connection_close_finish ( Addressable conn,  Addressable result,  Addressable error) {
+    /**
+     * {@snippet :
+     * gboolean g_dtls_connection_close_finish(GDtlsConnection* conn, GAsyncResult* result, GError** error);
+     * }
+     */
+    public static int g_dtls_connection_close_finish(MemorySegment conn, MemorySegment result, MemorySegment error) {
         var mh$ = g_dtls_connection_close_finish$MH();
         try {
             return (int)mh$.invokeExact(conn, result, error);
@@ -5131,9 +4322,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dtls_connection_emit_accept_certificate$MH() {
-        return RuntimeHelper.requireNonNull(constants$658.g_dtls_connection_emit_accept_certificate$MH,"g_dtls_connection_emit_accept_certificate");
+        return RuntimeHelper.requireNonNull(constants$608.g_dtls_connection_emit_accept_certificate$MH,"g_dtls_connection_emit_accept_certificate");
     }
-    public static int g_dtls_connection_emit_accept_certificate ( Addressable conn,  Addressable peer_cert,  int errors) {
+    /**
+     * {@snippet :
+     * gboolean g_dtls_connection_emit_accept_certificate(GDtlsConnection* conn, GTlsCertificate* peer_cert, GTlsCertificateFlags errors);
+     * }
+     */
+    public static int g_dtls_connection_emit_accept_certificate(MemorySegment conn, MemorySegment peer_cert, int errors) {
         var mh$ = g_dtls_connection_emit_accept_certificate$MH();
         try {
             return (int)mh$.invokeExact(conn, peer_cert, errors);
@@ -5142,9 +4338,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dtls_connection_set_advertised_protocols$MH() {
-        return RuntimeHelper.requireNonNull(constants$658.g_dtls_connection_set_advertised_protocols$MH,"g_dtls_connection_set_advertised_protocols");
+        return RuntimeHelper.requireNonNull(constants$608.g_dtls_connection_set_advertised_protocols$MH,"g_dtls_connection_set_advertised_protocols");
     }
-    public static void g_dtls_connection_set_advertised_protocols ( Addressable conn,  Addressable protocols) {
+    /**
+     * {@snippet :
+     * void g_dtls_connection_set_advertised_protocols(GDtlsConnection* conn, const gchar** protocols);
+     * }
+     */
+    public static void g_dtls_connection_set_advertised_protocols(MemorySegment conn, MemorySegment protocols) {
         var mh$ = g_dtls_connection_set_advertised_protocols$MH();
         try {
             mh$.invokeExact(conn, protocols);
@@ -5153,20 +4354,30 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dtls_connection_get_negotiated_protocol$MH() {
-        return RuntimeHelper.requireNonNull(constants$658.g_dtls_connection_get_negotiated_protocol$MH,"g_dtls_connection_get_negotiated_protocol");
+        return RuntimeHelper.requireNonNull(constants$608.g_dtls_connection_get_negotiated_protocol$MH,"g_dtls_connection_get_negotiated_protocol");
     }
-    public static MemoryAddress g_dtls_connection_get_negotiated_protocol ( Addressable conn) {
+    /**
+     * {@snippet :
+     * const gchar* g_dtls_connection_get_negotiated_protocol(GDtlsConnection* conn);
+     * }
+     */
+    public static MemorySegment g_dtls_connection_get_negotiated_protocol(MemorySegment conn) {
         var mh$ = g_dtls_connection_get_negotiated_protocol$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(conn);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(conn);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dtls_connection_get_channel_binding_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$658.g_dtls_connection_get_channel_binding_data$MH,"g_dtls_connection_get_channel_binding_data");
+        return RuntimeHelper.requireNonNull(constants$608.g_dtls_connection_get_channel_binding_data$MH,"g_dtls_connection_get_channel_binding_data");
     }
-    public static int g_dtls_connection_get_channel_binding_data ( Addressable conn,  int type,  Addressable data,  Addressable error) {
+    /**
+     * {@snippet :
+     * gboolean g_dtls_connection_get_channel_binding_data(GDtlsConnection* conn, GTlsChannelBindingType type, GByteArray* data, GError** error);
+     * }
+     */
+    public static int g_dtls_connection_get_channel_binding_data(MemorySegment conn, int type, MemorySegment data, MemorySegment error) {
         var mh$ = g_dtls_connection_get_channel_binding_data$MH();
         try {
             return (int)mh$.invokeExact(conn, type, data, error);
@@ -5175,9 +4386,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dtls_connection_get_protocol_version$MH() {
-        return RuntimeHelper.requireNonNull(constants$658.g_dtls_connection_get_protocol_version$MH,"g_dtls_connection_get_protocol_version");
+        return RuntimeHelper.requireNonNull(constants$609.g_dtls_connection_get_protocol_version$MH,"g_dtls_connection_get_protocol_version");
     }
-    public static int g_dtls_connection_get_protocol_version ( Addressable conn) {
+    /**
+     * {@snippet :
+     * GTlsProtocolVersion g_dtls_connection_get_protocol_version(GDtlsConnection* conn);
+     * }
+     */
+    public static int g_dtls_connection_get_protocol_version(MemorySegment conn) {
         var mh$ = g_dtls_connection_get_protocol_version$MH();
         try {
             return (int)mh$.invokeExact(conn);
@@ -5186,20 +4402,30 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dtls_connection_get_ciphersuite_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$659.g_dtls_connection_get_ciphersuite_name$MH,"g_dtls_connection_get_ciphersuite_name");
+        return RuntimeHelper.requireNonNull(constants$609.g_dtls_connection_get_ciphersuite_name$MH,"g_dtls_connection_get_ciphersuite_name");
     }
-    public static MemoryAddress g_dtls_connection_get_ciphersuite_name ( Addressable conn) {
+    /**
+     * {@snippet :
+     * gchar* g_dtls_connection_get_ciphersuite_name(GDtlsConnection* conn);
+     * }
+     */
+    public static MemorySegment g_dtls_connection_get_ciphersuite_name(MemorySegment conn) {
         var mh$ = g_dtls_connection_get_ciphersuite_name$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(conn);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(conn);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dtls_client_connection_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$659.g_dtls_client_connection_get_type$MH,"g_dtls_client_connection_get_type");
+        return RuntimeHelper.requireNonNull(constants$609.g_dtls_client_connection_get_type$MH,"g_dtls_client_connection_get_type");
     }
-    public static long g_dtls_client_connection_get_type () {
+    /**
+     * {@snippet :
+     * GType g_dtls_client_connection_get_type();
+     * }
+     */
+    public static long g_dtls_client_connection_get_type() {
         var mh$ = g_dtls_client_connection_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -5208,20 +4434,30 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dtls_client_connection_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$659.g_dtls_client_connection_new$MH,"g_dtls_client_connection_new");
+        return RuntimeHelper.requireNonNull(constants$609.g_dtls_client_connection_new$MH,"g_dtls_client_connection_new");
     }
-    public static MemoryAddress g_dtls_client_connection_new ( Addressable base_socket,  Addressable server_identity,  Addressable error) {
+    /**
+     * {@snippet :
+     * GDatagramBased* g_dtls_client_connection_new(GDatagramBased* base_socket, GSocketConnectable* server_identity, GError** error);
+     * }
+     */
+    public static MemorySegment g_dtls_client_connection_new(MemorySegment base_socket, MemorySegment server_identity, MemorySegment error) {
         var mh$ = g_dtls_client_connection_new$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(base_socket, server_identity, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(base_socket, server_identity, error);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dtls_client_connection_get_validation_flags$MH() {
-        return RuntimeHelper.requireNonNull(constants$659.g_dtls_client_connection_get_validation_flags$MH,"g_dtls_client_connection_get_validation_flags");
+        return RuntimeHelper.requireNonNull(constants$609.g_dtls_client_connection_get_validation_flags$MH,"g_dtls_client_connection_get_validation_flags");
     }
-    public static int g_dtls_client_connection_get_validation_flags ( Addressable conn) {
+    /**
+     * {@snippet :
+     * GTlsCertificateFlags g_dtls_client_connection_get_validation_flags(GDtlsClientConnection* conn);
+     * }
+     */
+    public static int g_dtls_client_connection_get_validation_flags(MemorySegment conn) {
         var mh$ = g_dtls_client_connection_get_validation_flags$MH();
         try {
             return (int)mh$.invokeExact(conn);
@@ -5230,9 +4466,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dtls_client_connection_set_validation_flags$MH() {
-        return RuntimeHelper.requireNonNull(constants$659.g_dtls_client_connection_set_validation_flags$MH,"g_dtls_client_connection_set_validation_flags");
+        return RuntimeHelper.requireNonNull(constants$609.g_dtls_client_connection_set_validation_flags$MH,"g_dtls_client_connection_set_validation_flags");
     }
-    public static void g_dtls_client_connection_set_validation_flags ( Addressable conn,  int flags) {
+    /**
+     * {@snippet :
+     * void g_dtls_client_connection_set_validation_flags(GDtlsClientConnection* conn, GTlsCertificateFlags flags);
+     * }
+     */
+    public static void g_dtls_client_connection_set_validation_flags(MemorySegment conn, int flags) {
         var mh$ = g_dtls_client_connection_set_validation_flags$MH();
         try {
             mh$.invokeExact(conn, flags);
@@ -5241,20 +4482,30 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dtls_client_connection_get_server_identity$MH() {
-        return RuntimeHelper.requireNonNull(constants$659.g_dtls_client_connection_get_server_identity$MH,"g_dtls_client_connection_get_server_identity");
+        return RuntimeHelper.requireNonNull(constants$610.g_dtls_client_connection_get_server_identity$MH,"g_dtls_client_connection_get_server_identity");
     }
-    public static MemoryAddress g_dtls_client_connection_get_server_identity ( Addressable conn) {
+    /**
+     * {@snippet :
+     * GSocketConnectable* g_dtls_client_connection_get_server_identity(GDtlsClientConnection* conn);
+     * }
+     */
+    public static MemorySegment g_dtls_client_connection_get_server_identity(MemorySegment conn) {
         var mh$ = g_dtls_client_connection_get_server_identity$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(conn);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(conn);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dtls_client_connection_set_server_identity$MH() {
-        return RuntimeHelper.requireNonNull(constants$660.g_dtls_client_connection_set_server_identity$MH,"g_dtls_client_connection_set_server_identity");
+        return RuntimeHelper.requireNonNull(constants$610.g_dtls_client_connection_set_server_identity$MH,"g_dtls_client_connection_set_server_identity");
     }
-    public static void g_dtls_client_connection_set_server_identity ( Addressable conn,  Addressable identity) {
+    /**
+     * {@snippet :
+     * void g_dtls_client_connection_set_server_identity(GDtlsClientConnection* conn, GSocketConnectable* identity);
+     * }
+     */
+    public static void g_dtls_client_connection_set_server_identity(MemorySegment conn, MemorySegment identity) {
         var mh$ = g_dtls_client_connection_set_server_identity$MH();
         try {
             mh$.invokeExact(conn, identity);
@@ -5263,20 +4514,30 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dtls_client_connection_get_accepted_cas$MH() {
-        return RuntimeHelper.requireNonNull(constants$660.g_dtls_client_connection_get_accepted_cas$MH,"g_dtls_client_connection_get_accepted_cas");
+        return RuntimeHelper.requireNonNull(constants$610.g_dtls_client_connection_get_accepted_cas$MH,"g_dtls_client_connection_get_accepted_cas");
     }
-    public static MemoryAddress g_dtls_client_connection_get_accepted_cas ( Addressable conn) {
+    /**
+     * {@snippet :
+     * GList* g_dtls_client_connection_get_accepted_cas(GDtlsClientConnection* conn);
+     * }
+     */
+    public static MemorySegment g_dtls_client_connection_get_accepted_cas(MemorySegment conn) {
         var mh$ = g_dtls_client_connection_get_accepted_cas$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(conn);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(conn);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_dtls_server_connection_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$660.g_dtls_server_connection_get_type$MH,"g_dtls_server_connection_get_type");
+        return RuntimeHelper.requireNonNull(constants$610.g_dtls_server_connection_get_type$MH,"g_dtls_server_connection_get_type");
     }
-    public static long g_dtls_server_connection_get_type () {
+    /**
+     * {@snippet :
+     * GType g_dtls_server_connection_get_type();
+     * }
+     */
+    public static long g_dtls_server_connection_get_type() {
         var mh$ = g_dtls_server_connection_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -5285,20 +4546,30 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dtls_server_connection_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$660.g_dtls_server_connection_new$MH,"g_dtls_server_connection_new");
+        return RuntimeHelper.requireNonNull(constants$610.g_dtls_server_connection_new$MH,"g_dtls_server_connection_new");
     }
-    public static MemoryAddress g_dtls_server_connection_new ( Addressable base_socket,  Addressable certificate,  Addressable error) {
+    /**
+     * {@snippet :
+     * GDatagramBased* g_dtls_server_connection_new(GDatagramBased* base_socket, GTlsCertificate* certificate, GError** error);
+     * }
+     */
+    public static MemorySegment g_dtls_server_connection_new(MemorySegment base_socket, MemorySegment certificate, MemorySegment error) {
         var mh$ = g_dtls_server_connection_new$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(base_socket, certificate, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(base_socket, certificate, error);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_icon_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$660.g_icon_get_type$MH,"g_icon_get_type");
+        return RuntimeHelper.requireNonNull(constants$610.g_icon_get_type$MH,"g_icon_get_type");
     }
-    public static long g_icon_get_type () {
+    /**
+     * {@snippet :
+     * GType g_icon_get_type();
+     * }
+     */
+    public static long g_icon_get_type() {
         var mh$ = g_icon_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -5307,9 +4578,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_icon_hash$MH() {
-        return RuntimeHelper.requireNonNull(constants$660.g_icon_hash$MH,"g_icon_hash");
+        return RuntimeHelper.requireNonNull(constants$611.g_icon_hash$MH,"g_icon_hash");
     }
-    public static int g_icon_hash ( Addressable icon) {
+    /**
+     * {@snippet :
+     * guint g_icon_hash(gconstpointer icon);
+     * }
+     */
+    public static int g_icon_hash(MemorySegment icon) {
         var mh$ = g_icon_hash$MH();
         try {
             return (int)mh$.invokeExact(icon);
@@ -5318,9 +4594,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_icon_equal$MH() {
-        return RuntimeHelper.requireNonNull(constants$661.g_icon_equal$MH,"g_icon_equal");
+        return RuntimeHelper.requireNonNull(constants$611.g_icon_equal$MH,"g_icon_equal");
     }
-    public static int g_icon_equal ( Addressable icon1,  Addressable icon2) {
+    /**
+     * {@snippet :
+     * gboolean g_icon_equal(GIcon* icon1, GIcon* icon2);
+     * }
+     */
+    public static int g_icon_equal(MemorySegment icon1, MemorySegment icon2) {
         var mh$ = g_icon_equal$MH();
         try {
             return (int)mh$.invokeExact(icon1, icon2);
@@ -5329,53 +4610,78 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_icon_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$661.g_icon_to_string$MH,"g_icon_to_string");
+        return RuntimeHelper.requireNonNull(constants$611.g_icon_to_string$MH,"g_icon_to_string");
     }
-    public static MemoryAddress g_icon_to_string ( Addressable icon) {
+    /**
+     * {@snippet :
+     * gchar* g_icon_to_string(GIcon* icon);
+     * }
+     */
+    public static MemorySegment g_icon_to_string(MemorySegment icon) {
         var mh$ = g_icon_to_string$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(icon);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(icon);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_icon_new_for_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$661.g_icon_new_for_string$MH,"g_icon_new_for_string");
+        return RuntimeHelper.requireNonNull(constants$611.g_icon_new_for_string$MH,"g_icon_new_for_string");
     }
-    public static MemoryAddress g_icon_new_for_string ( Addressable str,  Addressable error) {
+    /**
+     * {@snippet :
+     * GIcon* g_icon_new_for_string(const gchar* str, GError** error);
+     * }
+     */
+    public static MemorySegment g_icon_new_for_string(MemorySegment str, MemorySegment error) {
         var mh$ = g_icon_new_for_string$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(str, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(str, error);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_icon_serialize$MH() {
-        return RuntimeHelper.requireNonNull(constants$661.g_icon_serialize$MH,"g_icon_serialize");
+        return RuntimeHelper.requireNonNull(constants$611.g_icon_serialize$MH,"g_icon_serialize");
     }
-    public static MemoryAddress g_icon_serialize ( Addressable icon) {
+    /**
+     * {@snippet :
+     * GVariant* g_icon_serialize(GIcon* icon);
+     * }
+     */
+    public static MemorySegment g_icon_serialize(MemorySegment icon) {
         var mh$ = g_icon_serialize$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(icon);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(icon);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_icon_deserialize$MH() {
-        return RuntimeHelper.requireNonNull(constants$661.g_icon_deserialize$MH,"g_icon_deserialize");
+        return RuntimeHelper.requireNonNull(constants$611.g_icon_deserialize$MH,"g_icon_deserialize");
     }
-    public static MemoryAddress g_icon_deserialize ( Addressable value) {
+    /**
+     * {@snippet :
+     * GIcon* g_icon_deserialize(GVariant* value);
+     * }
+     */
+    public static MemorySegment g_icon_deserialize(MemorySegment value) {
         var mh$ = g_icon_deserialize$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(value);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(value);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_emblem_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$661.g_emblem_get_type$MH,"g_emblem_get_type");
+        return RuntimeHelper.requireNonNull(constants$612.g_emblem_get_type$MH,"g_emblem_get_type");
     }
-    public static long g_emblem_get_type () {
+    /**
+     * {@snippet :
+     * GType g_emblem_get_type();
+     * }
+     */
+    public static long g_emblem_get_type() {
         var mh$ = g_emblem_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -5384,42 +4690,62 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_emblem_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$662.g_emblem_new$MH,"g_emblem_new");
+        return RuntimeHelper.requireNonNull(constants$612.g_emblem_new$MH,"g_emblem_new");
     }
-    public static MemoryAddress g_emblem_new ( Addressable icon) {
+    /**
+     * {@snippet :
+     * GEmblem* g_emblem_new(GIcon* icon);
+     * }
+     */
+    public static MemorySegment g_emblem_new(MemorySegment icon) {
         var mh$ = g_emblem_new$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(icon);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(icon);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_emblem_new_with_origin$MH() {
-        return RuntimeHelper.requireNonNull(constants$662.g_emblem_new_with_origin$MH,"g_emblem_new_with_origin");
+        return RuntimeHelper.requireNonNull(constants$612.g_emblem_new_with_origin$MH,"g_emblem_new_with_origin");
     }
-    public static MemoryAddress g_emblem_new_with_origin ( Addressable icon,  int origin) {
+    /**
+     * {@snippet :
+     * GEmblem* g_emblem_new_with_origin(GIcon* icon, GEmblemOrigin origin);
+     * }
+     */
+    public static MemorySegment g_emblem_new_with_origin(MemorySegment icon, int origin) {
         var mh$ = g_emblem_new_with_origin$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(icon, origin);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(icon, origin);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_emblem_get_icon$MH() {
-        return RuntimeHelper.requireNonNull(constants$662.g_emblem_get_icon$MH,"g_emblem_get_icon");
+        return RuntimeHelper.requireNonNull(constants$612.g_emblem_get_icon$MH,"g_emblem_get_icon");
     }
-    public static MemoryAddress g_emblem_get_icon ( Addressable emblem) {
+    /**
+     * {@snippet :
+     * GIcon* g_emblem_get_icon(GEmblem* emblem);
+     * }
+     */
+    public static MemorySegment g_emblem_get_icon(MemorySegment emblem) {
         var mh$ = g_emblem_get_icon$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(emblem);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(emblem);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_emblem_get_origin$MH() {
-        return RuntimeHelper.requireNonNull(constants$662.g_emblem_get_origin$MH,"g_emblem_get_origin");
+        return RuntimeHelper.requireNonNull(constants$612.g_emblem_get_origin$MH,"g_emblem_get_origin");
     }
-    public static int g_emblem_get_origin ( Addressable emblem) {
+    /**
+     * {@snippet :
+     * GEmblemOrigin g_emblem_get_origin(GEmblem* emblem);
+     * }
+     */
+    public static int g_emblem_get_origin(MemorySegment emblem) {
         var mh$ = g_emblem_get_origin$MH();
         try {
             return (int)mh$.invokeExact(emblem);
@@ -5428,9 +4754,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_emblemed_icon_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$662.g_emblemed_icon_get_type$MH,"g_emblemed_icon_get_type");
+        return RuntimeHelper.requireNonNull(constants$612.g_emblemed_icon_get_type$MH,"g_emblemed_icon_get_type");
     }
-    public static long g_emblemed_icon_get_type () {
+    /**
+     * {@snippet :
+     * GType g_emblemed_icon_get_type();
+     * }
+     */
+    public static long g_emblemed_icon_get_type() {
         var mh$ = g_emblemed_icon_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -5439,42 +4770,62 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_emblemed_icon_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$662.g_emblemed_icon_new$MH,"g_emblemed_icon_new");
+        return RuntimeHelper.requireNonNull(constants$613.g_emblemed_icon_new$MH,"g_emblemed_icon_new");
     }
-    public static MemoryAddress g_emblemed_icon_new ( Addressable icon,  Addressable emblem) {
+    /**
+     * {@snippet :
+     * GIcon* g_emblemed_icon_new(GIcon* icon, GEmblem* emblem);
+     * }
+     */
+    public static MemorySegment g_emblemed_icon_new(MemorySegment icon, MemorySegment emblem) {
         var mh$ = g_emblemed_icon_new$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(icon, emblem);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(icon, emblem);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_emblemed_icon_get_icon$MH() {
-        return RuntimeHelper.requireNonNull(constants$663.g_emblemed_icon_get_icon$MH,"g_emblemed_icon_get_icon");
+        return RuntimeHelper.requireNonNull(constants$613.g_emblemed_icon_get_icon$MH,"g_emblemed_icon_get_icon");
     }
-    public static MemoryAddress g_emblemed_icon_get_icon ( Addressable emblemed) {
+    /**
+     * {@snippet :
+     * GIcon* g_emblemed_icon_get_icon(GEmblemedIcon* emblemed);
+     * }
+     */
+    public static MemorySegment g_emblemed_icon_get_icon(MemorySegment emblemed) {
         var mh$ = g_emblemed_icon_get_icon$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(emblemed);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(emblemed);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_emblemed_icon_get_emblems$MH() {
-        return RuntimeHelper.requireNonNull(constants$663.g_emblemed_icon_get_emblems$MH,"g_emblemed_icon_get_emblems");
+        return RuntimeHelper.requireNonNull(constants$613.g_emblemed_icon_get_emblems$MH,"g_emblemed_icon_get_emblems");
     }
-    public static MemoryAddress g_emblemed_icon_get_emblems ( Addressable emblemed) {
+    /**
+     * {@snippet :
+     * GList* g_emblemed_icon_get_emblems(GEmblemedIcon* emblemed);
+     * }
+     */
+    public static MemorySegment g_emblemed_icon_get_emblems(MemorySegment emblemed) {
         var mh$ = g_emblemed_icon_get_emblems$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(emblemed);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(emblemed);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_emblemed_icon_add_emblem$MH() {
-        return RuntimeHelper.requireNonNull(constants$663.g_emblemed_icon_add_emblem$MH,"g_emblemed_icon_add_emblem");
+        return RuntimeHelper.requireNonNull(constants$613.g_emblemed_icon_add_emblem$MH,"g_emblemed_icon_add_emblem");
     }
-    public static void g_emblemed_icon_add_emblem ( Addressable emblemed,  Addressable emblem) {
+    /**
+     * {@snippet :
+     * void g_emblemed_icon_add_emblem(GEmblemedIcon* emblemed, GEmblem* emblem);
+     * }
+     */
+    public static void g_emblemed_icon_add_emblem(MemorySegment emblemed, MemorySegment emblem) {
         var mh$ = g_emblemed_icon_add_emblem$MH();
         try {
             mh$.invokeExact(emblemed, emblem);
@@ -5483,9 +4834,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_emblemed_icon_clear_emblems$MH() {
-        return RuntimeHelper.requireNonNull(constants$663.g_emblemed_icon_clear_emblems$MH,"g_emblemed_icon_clear_emblems");
+        return RuntimeHelper.requireNonNull(constants$613.g_emblemed_icon_clear_emblems$MH,"g_emblemed_icon_clear_emblems");
     }
-    public static void g_emblemed_icon_clear_emblems ( Addressable emblemed) {
+    /**
+     * {@snippet :
+     * void g_emblemed_icon_clear_emblems(GEmblemedIcon* emblemed);
+     * }
+     */
+    public static void g_emblemed_icon_clear_emblems(MemorySegment emblemed) {
         var mh$ = g_emblemed_icon_clear_emblems$MH();
         try {
             mh$.invokeExact(emblemed);
@@ -5494,9 +4850,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$663.g_file_get_type$MH,"g_file_get_type");
+        return RuntimeHelper.requireNonNull(constants$613.g_file_get_type$MH,"g_file_get_type");
     }
-    public static long g_file_get_type () {
+    /**
+     * {@snippet :
+     * GType g_file_get_type();
+     * }
+     */
+    public static long g_file_get_type() {
         var mh$ = g_file_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -5505,97 +4866,206 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_new_for_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$663.g_file_new_for_path$MH,"g_file_new_for_path");
+        return RuntimeHelper.requireNonNull(constants$614.g_file_new_for_path$MH,"g_file_new_for_path");
     }
-    public static MemoryAddress g_file_new_for_path ( Addressable path) {
+    /**
+     * {@snippet :
+     * GFile* g_file_new_for_path(char* path);
+     * }
+     */
+    public static MemorySegment g_file_new_for_path(MemorySegment path) {
         var mh$ = g_file_new_for_path$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(path);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(path);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_new_for_uri$MH() {
-        return RuntimeHelper.requireNonNull(constants$664.g_file_new_for_uri$MH,"g_file_new_for_uri");
+        return RuntimeHelper.requireNonNull(constants$614.g_file_new_for_uri$MH,"g_file_new_for_uri");
     }
-    public static MemoryAddress g_file_new_for_uri ( Addressable uri) {
+    /**
+     * {@snippet :
+     * GFile* g_file_new_for_uri(char* uri);
+     * }
+     */
+    public static MemorySegment g_file_new_for_uri(MemorySegment uri) {
         var mh$ = g_file_new_for_uri$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(uri);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(uri);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_new_for_commandline_arg$MH() {
-        return RuntimeHelper.requireNonNull(constants$664.g_file_new_for_commandline_arg$MH,"g_file_new_for_commandline_arg");
+        return RuntimeHelper.requireNonNull(constants$614.g_file_new_for_commandline_arg$MH,"g_file_new_for_commandline_arg");
     }
-    public static MemoryAddress g_file_new_for_commandline_arg ( Addressable arg) {
+    /**
+     * {@snippet :
+     * GFile* g_file_new_for_commandline_arg(char* arg);
+     * }
+     */
+    public static MemorySegment g_file_new_for_commandline_arg(MemorySegment arg) {
         var mh$ = g_file_new_for_commandline_arg$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(arg);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(arg);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_new_for_commandline_arg_and_cwd$MH() {
-        return RuntimeHelper.requireNonNull(constants$664.g_file_new_for_commandline_arg_and_cwd$MH,"g_file_new_for_commandline_arg_and_cwd");
+        return RuntimeHelper.requireNonNull(constants$614.g_file_new_for_commandline_arg_and_cwd$MH,"g_file_new_for_commandline_arg_and_cwd");
     }
-    public static MemoryAddress g_file_new_for_commandline_arg_and_cwd ( Addressable arg,  Addressable cwd) {
+    /**
+     * {@snippet :
+     * GFile* g_file_new_for_commandline_arg_and_cwd(const gchar* arg, const gchar* cwd);
+     * }
+     */
+    public static MemorySegment g_file_new_for_commandline_arg_and_cwd(MemorySegment arg, MemorySegment cwd) {
         var mh$ = g_file_new_for_commandline_arg_and_cwd$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(arg, cwd);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(arg, cwd);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_new_tmp$MH() {
-        return RuntimeHelper.requireNonNull(constants$664.g_file_new_tmp$MH,"g_file_new_tmp");
+        return RuntimeHelper.requireNonNull(constants$614.g_file_new_tmp$MH,"g_file_new_tmp");
     }
-    public static MemoryAddress g_file_new_tmp ( Addressable tmpl,  Addressable iostream,  Addressable error) {
+    /**
+     * {@snippet :
+     * GFile* g_file_new_tmp(char* tmpl, GFileIOStream** iostream, GError** error);
+     * }
+     */
+    public static MemorySegment g_file_new_tmp(MemorySegment tmpl, MemorySegment iostream, MemorySegment error) {
         var mh$ = g_file_new_tmp$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(tmpl, iostream, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(tmpl, iostream, error);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_file_new_tmp_async$MH() {
+        return RuntimeHelper.requireNonNull(constants$614.g_file_new_tmp_async$MH,"g_file_new_tmp_async");
+    }
+    /**
+     * {@snippet :
+     * void g_file_new_tmp_async(char* tmpl, int io_priority, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
+     * }
+     */
+    public static void g_file_new_tmp_async(MemorySegment tmpl, int io_priority, MemorySegment cancellable, MemorySegment callback, MemorySegment user_data) {
+        var mh$ = g_file_new_tmp_async$MH();
+        try {
+            mh$.invokeExact(tmpl, io_priority, cancellable, callback, user_data);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_file_new_tmp_finish$MH() {
+        return RuntimeHelper.requireNonNull(constants$615.g_file_new_tmp_finish$MH,"g_file_new_tmp_finish");
+    }
+    /**
+     * {@snippet :
+     * GFile* g_file_new_tmp_finish(GAsyncResult* result, GFileIOStream** iostream, GError** error);
+     * }
+     */
+    public static MemorySegment g_file_new_tmp_finish(MemorySegment result, MemorySegment iostream, MemorySegment error) {
+        var mh$ = g_file_new_tmp_finish$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(result, iostream, error);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_file_new_tmp_dir_async$MH() {
+        return RuntimeHelper.requireNonNull(constants$615.g_file_new_tmp_dir_async$MH,"g_file_new_tmp_dir_async");
+    }
+    /**
+     * {@snippet :
+     * void g_file_new_tmp_dir_async(char* tmpl, int io_priority, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
+     * }
+     */
+    public static void g_file_new_tmp_dir_async(MemorySegment tmpl, int io_priority, MemorySegment cancellable, MemorySegment callback, MemorySegment user_data) {
+        var mh$ = g_file_new_tmp_dir_async$MH();
+        try {
+            mh$.invokeExact(tmpl, io_priority, cancellable, callback, user_data);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_file_new_tmp_dir_finish$MH() {
+        return RuntimeHelper.requireNonNull(constants$615.g_file_new_tmp_dir_finish$MH,"g_file_new_tmp_dir_finish");
+    }
+    /**
+     * {@snippet :
+     * GFile* g_file_new_tmp_dir_finish(GAsyncResult* result, GError** error);
+     * }
+     */
+    public static MemorySegment g_file_new_tmp_dir_finish(MemorySegment result, MemorySegment error) {
+        var mh$ = g_file_new_tmp_dir_finish$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(result, error);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_parse_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$664.g_file_parse_name$MH,"g_file_parse_name");
+        return RuntimeHelper.requireNonNull(constants$615.g_file_parse_name$MH,"g_file_parse_name");
     }
-    public static MemoryAddress g_file_parse_name ( Addressable parse_name) {
+    /**
+     * {@snippet :
+     * GFile* g_file_parse_name(char* parse_name);
+     * }
+     */
+    public static MemorySegment g_file_parse_name(MemorySegment parse_name) {
         var mh$ = g_file_parse_name$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(parse_name);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(parse_name);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_new_build_filename$MH() {
-        return RuntimeHelper.requireNonNull(constants$664.g_file_new_build_filename$MH,"g_file_new_build_filename");
+        return RuntimeHelper.requireNonNull(constants$615.g_file_new_build_filename$MH,"g_file_new_build_filename");
     }
-    public static MemoryAddress g_file_new_build_filename ( Addressable first_element, Object... x1) {
+    /**
+     * {@snippet :
+     * GFile* g_file_new_build_filename(const gchar* first_element,...);
+     * }
+     */
+    public static MemorySegment g_file_new_build_filename(MemorySegment first_element, Object... x1) {
         var mh$ = g_file_new_build_filename$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(first_element, x1);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(first_element, x1);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_dup$MH() {
-        return RuntimeHelper.requireNonNull(constants$665.g_file_dup$MH,"g_file_dup");
+        return RuntimeHelper.requireNonNull(constants$615.g_file_dup$MH,"g_file_dup");
     }
-    public static MemoryAddress g_file_dup ( Addressable file) {
+    /**
+     * {@snippet :
+     * GFile* g_file_dup(GFile* file);
+     * }
+     */
+    public static MemorySegment g_file_dup(MemorySegment file) {
         var mh$ = g_file_dup$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(file);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(file);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_hash$MH() {
-        return RuntimeHelper.requireNonNull(constants$665.g_file_hash$MH,"g_file_hash");
+        return RuntimeHelper.requireNonNull(constants$616.g_file_hash$MH,"g_file_hash");
     }
-    public static int g_file_hash ( Addressable file) {
+    /**
+     * {@snippet :
+     * guint g_file_hash(gconstpointer file);
+     * }
+     */
+    public static int g_file_hash(MemorySegment file) {
         var mh$ = g_file_hash$MH();
         try {
             return (int)mh$.invokeExact(file);
@@ -5604,9 +5074,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_equal$MH() {
-        return RuntimeHelper.requireNonNull(constants$665.g_file_equal$MH,"g_file_equal");
+        return RuntimeHelper.requireNonNull(constants$616.g_file_equal$MH,"g_file_equal");
     }
-    public static int g_file_equal ( Addressable file1,  Addressable file2) {
+    /**
+     * {@snippet :
+     * gboolean g_file_equal(GFile* file1, GFile* file2);
+     * }
+     */
+    public static int g_file_equal(MemorySegment file1, MemorySegment file2) {
         var mh$ = g_file_equal$MH();
         try {
             return (int)mh$.invokeExact(file1, file2);
@@ -5615,75 +5090,110 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_get_basename$MH() {
-        return RuntimeHelper.requireNonNull(constants$665.g_file_get_basename$MH,"g_file_get_basename");
+        return RuntimeHelper.requireNonNull(constants$616.g_file_get_basename$MH,"g_file_get_basename");
     }
-    public static MemoryAddress g_file_get_basename ( Addressable file) {
+    /**
+     * {@snippet :
+     * char* g_file_get_basename(GFile* file);
+     * }
+     */
+    public static MemorySegment g_file_get_basename(MemorySegment file) {
         var mh$ = g_file_get_basename$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(file);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(file);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_get_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$665.g_file_get_path$MH,"g_file_get_path");
+        return RuntimeHelper.requireNonNull(constants$616.g_file_get_path$MH,"g_file_get_path");
     }
-    public static MemoryAddress g_file_get_path ( Addressable file) {
+    /**
+     * {@snippet :
+     * char* g_file_get_path(GFile* file);
+     * }
+     */
+    public static MemorySegment g_file_get_path(MemorySegment file) {
         var mh$ = g_file_get_path$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(file);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(file);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_peek_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$665.g_file_peek_path$MH,"g_file_peek_path");
+        return RuntimeHelper.requireNonNull(constants$616.g_file_peek_path$MH,"g_file_peek_path");
     }
-    public static MemoryAddress g_file_peek_path ( Addressable file) {
+    /**
+     * {@snippet :
+     * char* g_file_peek_path(GFile* file);
+     * }
+     */
+    public static MemorySegment g_file_peek_path(MemorySegment file) {
         var mh$ = g_file_peek_path$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(file);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(file);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_get_uri$MH() {
-        return RuntimeHelper.requireNonNull(constants$666.g_file_get_uri$MH,"g_file_get_uri");
+        return RuntimeHelper.requireNonNull(constants$616.g_file_get_uri$MH,"g_file_get_uri");
     }
-    public static MemoryAddress g_file_get_uri ( Addressable file) {
+    /**
+     * {@snippet :
+     * char* g_file_get_uri(GFile* file);
+     * }
+     */
+    public static MemorySegment g_file_get_uri(MemorySegment file) {
         var mh$ = g_file_get_uri$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(file);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(file);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_get_parse_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$666.g_file_get_parse_name$MH,"g_file_get_parse_name");
+        return RuntimeHelper.requireNonNull(constants$617.g_file_get_parse_name$MH,"g_file_get_parse_name");
     }
-    public static MemoryAddress g_file_get_parse_name ( Addressable file) {
+    /**
+     * {@snippet :
+     * char* g_file_get_parse_name(GFile* file);
+     * }
+     */
+    public static MemorySegment g_file_get_parse_name(MemorySegment file) {
         var mh$ = g_file_get_parse_name$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(file);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(file);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_get_parent$MH() {
-        return RuntimeHelper.requireNonNull(constants$666.g_file_get_parent$MH,"g_file_get_parent");
+        return RuntimeHelper.requireNonNull(constants$617.g_file_get_parent$MH,"g_file_get_parent");
     }
-    public static MemoryAddress g_file_get_parent ( Addressable file) {
+    /**
+     * {@snippet :
+     * GFile* g_file_get_parent(GFile* file);
+     * }
+     */
+    public static MemorySegment g_file_get_parent(MemorySegment file) {
         var mh$ = g_file_get_parent$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(file);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(file);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_has_parent$MH() {
-        return RuntimeHelper.requireNonNull(constants$666.g_file_has_parent$MH,"g_file_has_parent");
+        return RuntimeHelper.requireNonNull(constants$617.g_file_has_parent$MH,"g_file_has_parent");
     }
-    public static int g_file_has_parent ( Addressable file,  Addressable parent) {
+    /**
+     * {@snippet :
+     * gboolean g_file_has_parent(GFile* file, GFile* parent);
+     * }
+     */
+    public static int g_file_has_parent(MemorySegment file, MemorySegment parent) {
         var mh$ = g_file_has_parent$MH();
         try {
             return (int)mh$.invokeExact(file, parent);
@@ -5692,31 +5202,46 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_get_child$MH() {
-        return RuntimeHelper.requireNonNull(constants$666.g_file_get_child$MH,"g_file_get_child");
+        return RuntimeHelper.requireNonNull(constants$617.g_file_get_child$MH,"g_file_get_child");
     }
-    public static MemoryAddress g_file_get_child ( Addressable file,  Addressable name) {
+    /**
+     * {@snippet :
+     * GFile* g_file_get_child(GFile* file, char* name);
+     * }
+     */
+    public static MemorySegment g_file_get_child(MemorySegment file, MemorySegment name) {
         var mh$ = g_file_get_child$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(file, name);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(file, name);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_get_child_for_display_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$666.g_file_get_child_for_display_name$MH,"g_file_get_child_for_display_name");
+        return RuntimeHelper.requireNonNull(constants$617.g_file_get_child_for_display_name$MH,"g_file_get_child_for_display_name");
     }
-    public static MemoryAddress g_file_get_child_for_display_name ( Addressable file,  Addressable display_name,  Addressable error) {
+    /**
+     * {@snippet :
+     * GFile* g_file_get_child_for_display_name(GFile* file, char* display_name, GError** error);
+     * }
+     */
+    public static MemorySegment g_file_get_child_for_display_name(MemorySegment file, MemorySegment display_name, MemorySegment error) {
         var mh$ = g_file_get_child_for_display_name$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(file, display_name, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(file, display_name, error);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_has_prefix$MH() {
-        return RuntimeHelper.requireNonNull(constants$667.g_file_has_prefix$MH,"g_file_has_prefix");
+        return RuntimeHelper.requireNonNull(constants$617.g_file_has_prefix$MH,"g_file_has_prefix");
     }
-    public static int g_file_has_prefix ( Addressable file,  Addressable prefix) {
+    /**
+     * {@snippet :
+     * gboolean g_file_has_prefix(GFile* file, GFile* prefix);
+     * }
+     */
+    public static int g_file_has_prefix(MemorySegment file, MemorySegment prefix) {
         var mh$ = g_file_has_prefix$MH();
         try {
             return (int)mh$.invokeExact(file, prefix);
@@ -5725,31 +5250,46 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_get_relative_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$667.g_file_get_relative_path$MH,"g_file_get_relative_path");
+        return RuntimeHelper.requireNonNull(constants$618.g_file_get_relative_path$MH,"g_file_get_relative_path");
     }
-    public static MemoryAddress g_file_get_relative_path ( Addressable parent,  Addressable descendant) {
+    /**
+     * {@snippet :
+     * char* g_file_get_relative_path(GFile* parent, GFile* descendant);
+     * }
+     */
+    public static MemorySegment g_file_get_relative_path(MemorySegment parent, MemorySegment descendant) {
         var mh$ = g_file_get_relative_path$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(parent, descendant);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(parent, descendant);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_resolve_relative_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$667.g_file_resolve_relative_path$MH,"g_file_resolve_relative_path");
+        return RuntimeHelper.requireNonNull(constants$618.g_file_resolve_relative_path$MH,"g_file_resolve_relative_path");
     }
-    public static MemoryAddress g_file_resolve_relative_path ( Addressable file,  Addressable relative_path) {
+    /**
+     * {@snippet :
+     * GFile* g_file_resolve_relative_path(GFile* file, char* relative_path);
+     * }
+     */
+    public static MemorySegment g_file_resolve_relative_path(MemorySegment file, MemorySegment relative_path) {
         var mh$ = g_file_resolve_relative_path$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(file, relative_path);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(file, relative_path);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_is_native$MH() {
-        return RuntimeHelper.requireNonNull(constants$667.g_file_is_native$MH,"g_file_is_native");
+        return RuntimeHelper.requireNonNull(constants$618.g_file_is_native$MH,"g_file_is_native");
     }
-    public static int g_file_is_native ( Addressable file) {
+    /**
+     * {@snippet :
+     * gboolean g_file_is_native(GFile* file);
+     * }
+     */
+    public static int g_file_is_native(MemorySegment file) {
         var mh$ = g_file_is_native$MH();
         try {
             return (int)mh$.invokeExact(file);
@@ -5758,9 +5298,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_has_uri_scheme$MH() {
-        return RuntimeHelper.requireNonNull(constants$667.g_file_has_uri_scheme$MH,"g_file_has_uri_scheme");
+        return RuntimeHelper.requireNonNull(constants$618.g_file_has_uri_scheme$MH,"g_file_has_uri_scheme");
     }
-    public static int g_file_has_uri_scheme ( Addressable file,  Addressable uri_scheme) {
+    /**
+     * {@snippet :
+     * gboolean g_file_has_uri_scheme(GFile* file, char* uri_scheme);
+     * }
+     */
+    public static int g_file_has_uri_scheme(MemorySegment file, MemorySegment uri_scheme) {
         var mh$ = g_file_has_uri_scheme$MH();
         try {
             return (int)mh$.invokeExact(file, uri_scheme);
@@ -5769,31 +5314,46 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_get_uri_scheme$MH() {
-        return RuntimeHelper.requireNonNull(constants$667.g_file_get_uri_scheme$MH,"g_file_get_uri_scheme");
+        return RuntimeHelper.requireNonNull(constants$618.g_file_get_uri_scheme$MH,"g_file_get_uri_scheme");
     }
-    public static MemoryAddress g_file_get_uri_scheme ( Addressable file) {
+    /**
+     * {@snippet :
+     * char* g_file_get_uri_scheme(GFile* file);
+     * }
+     */
+    public static MemorySegment g_file_get_uri_scheme(MemorySegment file) {
         var mh$ = g_file_get_uri_scheme$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(file);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(file);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_read$MH() {
-        return RuntimeHelper.requireNonNull(constants$668.g_file_read$MH,"g_file_read");
+        return RuntimeHelper.requireNonNull(constants$618.g_file_read$MH,"g_file_read");
     }
-    public static MemoryAddress g_file_read ( Addressable file,  Addressable cancellable,  Addressable error) {
+    /**
+     * {@snippet :
+     * GFileInputStream* g_file_read(GFile* file, GCancellable* cancellable, GError** error);
+     * }
+     */
+    public static MemorySegment g_file_read(MemorySegment file, MemorySegment cancellable, MemorySegment error) {
         var mh$ = g_file_read$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(file, cancellable, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(file, cancellable, error);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_read_async$MH() {
-        return RuntimeHelper.requireNonNull(constants$668.g_file_read_async$MH,"g_file_read_async");
+        return RuntimeHelper.requireNonNull(constants$619.g_file_read_async$MH,"g_file_read_async");
     }
-    public static void g_file_read_async ( Addressable file,  int io_priority,  Addressable cancellable,  Addressable callback,  Addressable user_data) {
+    /**
+     * {@snippet :
+     * void g_file_read_async(GFile* file, int io_priority, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
+     * }
+     */
+    public static void g_file_read_async(MemorySegment file, int io_priority, MemorySegment cancellable, MemorySegment callback, MemorySegment user_data) {
         var mh$ = g_file_read_async$MH();
         try {
             mh$.invokeExact(file, io_priority, cancellable, callback, user_data);
@@ -5802,53 +5362,78 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_read_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$668.g_file_read_finish$MH,"g_file_read_finish");
+        return RuntimeHelper.requireNonNull(constants$619.g_file_read_finish$MH,"g_file_read_finish");
     }
-    public static MemoryAddress g_file_read_finish ( Addressable file,  Addressable res,  Addressable error) {
+    /**
+     * {@snippet :
+     * GFileInputStream* g_file_read_finish(GFile* file, GAsyncResult* res, GError** error);
+     * }
+     */
+    public static MemorySegment g_file_read_finish(MemorySegment file, MemorySegment res, MemorySegment error) {
         var mh$ = g_file_read_finish$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(file, res, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(file, res, error);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_append_to$MH() {
-        return RuntimeHelper.requireNonNull(constants$668.g_file_append_to$MH,"g_file_append_to");
+        return RuntimeHelper.requireNonNull(constants$619.g_file_append_to$MH,"g_file_append_to");
     }
-    public static MemoryAddress g_file_append_to ( Addressable file,  int flags,  Addressable cancellable,  Addressable error) {
+    /**
+     * {@snippet :
+     * GFileOutputStream* g_file_append_to(GFile* file, GFileCreateFlags flags, GCancellable* cancellable, GError** error);
+     * }
+     */
+    public static MemorySegment g_file_append_to(MemorySegment file, int flags, MemorySegment cancellable, MemorySegment error) {
         var mh$ = g_file_append_to$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(file, flags, cancellable, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(file, flags, cancellable, error);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_create$MH() {
-        return RuntimeHelper.requireNonNull(constants$668.g_file_create$MH,"g_file_create");
+        return RuntimeHelper.requireNonNull(constants$619.g_file_create$MH,"g_file_create");
     }
-    public static MemoryAddress g_file_create ( Addressable file,  int flags,  Addressable cancellable,  Addressable error) {
+    /**
+     * {@snippet :
+     * GFileOutputStream* g_file_create(GFile* file, GFileCreateFlags flags, GCancellable* cancellable, GError** error);
+     * }
+     */
+    public static MemorySegment g_file_create(MemorySegment file, int flags, MemorySegment cancellable, MemorySegment error) {
         var mh$ = g_file_create$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(file, flags, cancellable, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(file, flags, cancellable, error);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_replace$MH() {
-        return RuntimeHelper.requireNonNull(constants$668.g_file_replace$MH,"g_file_replace");
+        return RuntimeHelper.requireNonNull(constants$619.g_file_replace$MH,"g_file_replace");
     }
-    public static MemoryAddress g_file_replace ( Addressable file,  Addressable etag,  int make_backup,  int flags,  Addressable cancellable,  Addressable error) {
+    /**
+     * {@snippet :
+     * GFileOutputStream* g_file_replace(GFile* file, char* etag, gboolean make_backup, GFileCreateFlags flags, GCancellable* cancellable, GError** error);
+     * }
+     */
+    public static MemorySegment g_file_replace(MemorySegment file, MemorySegment etag, int make_backup, int flags, MemorySegment cancellable, MemorySegment error) {
         var mh$ = g_file_replace$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(file, etag, make_backup, flags, cancellable, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(file, etag, make_backup, flags, cancellable, error);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_append_to_async$MH() {
-        return RuntimeHelper.requireNonNull(constants$669.g_file_append_to_async$MH,"g_file_append_to_async");
+        return RuntimeHelper.requireNonNull(constants$619.g_file_append_to_async$MH,"g_file_append_to_async");
     }
-    public static void g_file_append_to_async ( Addressable file,  int flags,  int io_priority,  Addressable cancellable,  Addressable callback,  Addressable user_data) {
+    /**
+     * {@snippet :
+     * void g_file_append_to_async(GFile* file, GFileCreateFlags flags, int io_priority, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
+     * }
+     */
+    public static void g_file_append_to_async(MemorySegment file, int flags, int io_priority, MemorySegment cancellable, MemorySegment callback, MemorySegment user_data) {
         var mh$ = g_file_append_to_async$MH();
         try {
             mh$.invokeExact(file, flags, io_priority, cancellable, callback, user_data);
@@ -5857,20 +5442,30 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_append_to_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$669.g_file_append_to_finish$MH,"g_file_append_to_finish");
+        return RuntimeHelper.requireNonNull(constants$620.g_file_append_to_finish$MH,"g_file_append_to_finish");
     }
-    public static MemoryAddress g_file_append_to_finish ( Addressable file,  Addressable res,  Addressable error) {
+    /**
+     * {@snippet :
+     * GFileOutputStream* g_file_append_to_finish(GFile* file, GAsyncResult* res, GError** error);
+     * }
+     */
+    public static MemorySegment g_file_append_to_finish(MemorySegment file, MemorySegment res, MemorySegment error) {
         var mh$ = g_file_append_to_finish$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(file, res, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(file, res, error);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_create_async$MH() {
-        return RuntimeHelper.requireNonNull(constants$669.g_file_create_async$MH,"g_file_create_async");
+        return RuntimeHelper.requireNonNull(constants$620.g_file_create_async$MH,"g_file_create_async");
     }
-    public static void g_file_create_async ( Addressable file,  int flags,  int io_priority,  Addressable cancellable,  Addressable callback,  Addressable user_data) {
+    /**
+     * {@snippet :
+     * void g_file_create_async(GFile* file, GFileCreateFlags flags, int io_priority, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
+     * }
+     */
+    public static void g_file_create_async(MemorySegment file, int flags, int io_priority, MemorySegment cancellable, MemorySegment callback, MemorySegment user_data) {
         var mh$ = g_file_create_async$MH();
         try {
             mh$.invokeExact(file, flags, io_priority, cancellable, callback, user_data);
@@ -5879,20 +5474,30 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_create_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$669.g_file_create_finish$MH,"g_file_create_finish");
+        return RuntimeHelper.requireNonNull(constants$620.g_file_create_finish$MH,"g_file_create_finish");
     }
-    public static MemoryAddress g_file_create_finish ( Addressable file,  Addressable res,  Addressable error) {
+    /**
+     * {@snippet :
+     * GFileOutputStream* g_file_create_finish(GFile* file, GAsyncResult* res, GError** error);
+     * }
+     */
+    public static MemorySegment g_file_create_finish(MemorySegment file, MemorySegment res, MemorySegment error) {
         var mh$ = g_file_create_finish$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(file, res, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(file, res, error);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_replace_async$MH() {
-        return RuntimeHelper.requireNonNull(constants$669.g_file_replace_async$MH,"g_file_replace_async");
+        return RuntimeHelper.requireNonNull(constants$620.g_file_replace_async$MH,"g_file_replace_async");
     }
-    public static void g_file_replace_async ( Addressable file,  Addressable etag,  int make_backup,  int flags,  int io_priority,  Addressable cancellable,  Addressable callback,  Addressable user_data) {
+    /**
+     * {@snippet :
+     * void g_file_replace_async(GFile* file, char* etag, gboolean make_backup, GFileCreateFlags flags, int io_priority, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
+     * }
+     */
+    public static void g_file_replace_async(MemorySegment file, MemorySegment etag, int make_backup, int flags, int io_priority, MemorySegment cancellable, MemorySegment callback, MemorySegment user_data) {
         var mh$ = g_file_replace_async$MH();
         try {
             mh$.invokeExact(file, etag, make_backup, flags, io_priority, cancellable, callback, user_data);
@@ -5901,31 +5506,46 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_replace_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$669.g_file_replace_finish$MH,"g_file_replace_finish");
+        return RuntimeHelper.requireNonNull(constants$620.g_file_replace_finish$MH,"g_file_replace_finish");
     }
-    public static MemoryAddress g_file_replace_finish ( Addressable file,  Addressable res,  Addressable error) {
+    /**
+     * {@snippet :
+     * GFileOutputStream* g_file_replace_finish(GFile* file, GAsyncResult* res, GError** error);
+     * }
+     */
+    public static MemorySegment g_file_replace_finish(MemorySegment file, MemorySegment res, MemorySegment error) {
         var mh$ = g_file_replace_finish$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(file, res, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(file, res, error);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_open_readwrite$MH() {
-        return RuntimeHelper.requireNonNull(constants$670.g_file_open_readwrite$MH,"g_file_open_readwrite");
+        return RuntimeHelper.requireNonNull(constants$620.g_file_open_readwrite$MH,"g_file_open_readwrite");
     }
-    public static MemoryAddress g_file_open_readwrite ( Addressable file,  Addressable cancellable,  Addressable error) {
+    /**
+     * {@snippet :
+     * GFileIOStream* g_file_open_readwrite(GFile* file, GCancellable* cancellable, GError** error);
+     * }
+     */
+    public static MemorySegment g_file_open_readwrite(MemorySegment file, MemorySegment cancellable, MemorySegment error) {
         var mh$ = g_file_open_readwrite$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(file, cancellable, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(file, cancellable, error);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_open_readwrite_async$MH() {
-        return RuntimeHelper.requireNonNull(constants$670.g_file_open_readwrite_async$MH,"g_file_open_readwrite_async");
+        return RuntimeHelper.requireNonNull(constants$621.g_file_open_readwrite_async$MH,"g_file_open_readwrite_async");
     }
-    public static void g_file_open_readwrite_async ( Addressable file,  int io_priority,  Addressable cancellable,  Addressable callback,  Addressable user_data) {
+    /**
+     * {@snippet :
+     * void g_file_open_readwrite_async(GFile* file, int io_priority, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
+     * }
+     */
+    public static void g_file_open_readwrite_async(MemorySegment file, int io_priority, MemorySegment cancellable, MemorySegment callback, MemorySegment user_data) {
         var mh$ = g_file_open_readwrite_async$MH();
         try {
             mh$.invokeExact(file, io_priority, cancellable, callback, user_data);
@@ -5934,31 +5554,46 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_open_readwrite_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$670.g_file_open_readwrite_finish$MH,"g_file_open_readwrite_finish");
+        return RuntimeHelper.requireNonNull(constants$621.g_file_open_readwrite_finish$MH,"g_file_open_readwrite_finish");
     }
-    public static MemoryAddress g_file_open_readwrite_finish ( Addressable file,  Addressable res,  Addressable error) {
+    /**
+     * {@snippet :
+     * GFileIOStream* g_file_open_readwrite_finish(GFile* file, GAsyncResult* res, GError** error);
+     * }
+     */
+    public static MemorySegment g_file_open_readwrite_finish(MemorySegment file, MemorySegment res, MemorySegment error) {
         var mh$ = g_file_open_readwrite_finish$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(file, res, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(file, res, error);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_create_readwrite$MH() {
-        return RuntimeHelper.requireNonNull(constants$670.g_file_create_readwrite$MH,"g_file_create_readwrite");
+        return RuntimeHelper.requireNonNull(constants$621.g_file_create_readwrite$MH,"g_file_create_readwrite");
     }
-    public static MemoryAddress g_file_create_readwrite ( Addressable file,  int flags,  Addressable cancellable,  Addressable error) {
+    /**
+     * {@snippet :
+     * GFileIOStream* g_file_create_readwrite(GFile* file, GFileCreateFlags flags, GCancellable* cancellable, GError** error);
+     * }
+     */
+    public static MemorySegment g_file_create_readwrite(MemorySegment file, int flags, MemorySegment cancellable, MemorySegment error) {
         var mh$ = g_file_create_readwrite$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(file, flags, cancellable, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(file, flags, cancellable, error);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_create_readwrite_async$MH() {
-        return RuntimeHelper.requireNonNull(constants$670.g_file_create_readwrite_async$MH,"g_file_create_readwrite_async");
+        return RuntimeHelper.requireNonNull(constants$621.g_file_create_readwrite_async$MH,"g_file_create_readwrite_async");
     }
-    public static void g_file_create_readwrite_async ( Addressable file,  int flags,  int io_priority,  Addressable cancellable,  Addressable callback,  Addressable user_data) {
+    /**
+     * {@snippet :
+     * void g_file_create_readwrite_async(GFile* file, GFileCreateFlags flags, int io_priority, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
+     * }
+     */
+    public static void g_file_create_readwrite_async(MemorySegment file, int flags, int io_priority, MemorySegment cancellable, MemorySegment callback, MemorySegment user_data) {
         var mh$ = g_file_create_readwrite_async$MH();
         try {
             mh$.invokeExact(file, flags, io_priority, cancellable, callback, user_data);
@@ -5967,31 +5602,46 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_create_readwrite_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$670.g_file_create_readwrite_finish$MH,"g_file_create_readwrite_finish");
+        return RuntimeHelper.requireNonNull(constants$621.g_file_create_readwrite_finish$MH,"g_file_create_readwrite_finish");
     }
-    public static MemoryAddress g_file_create_readwrite_finish ( Addressable file,  Addressable res,  Addressable error) {
+    /**
+     * {@snippet :
+     * GFileIOStream* g_file_create_readwrite_finish(GFile* file, GAsyncResult* res, GError** error);
+     * }
+     */
+    public static MemorySegment g_file_create_readwrite_finish(MemorySegment file, MemorySegment res, MemorySegment error) {
         var mh$ = g_file_create_readwrite_finish$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(file, res, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(file, res, error);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_replace_readwrite$MH() {
-        return RuntimeHelper.requireNonNull(constants$671.g_file_replace_readwrite$MH,"g_file_replace_readwrite");
+        return RuntimeHelper.requireNonNull(constants$621.g_file_replace_readwrite$MH,"g_file_replace_readwrite");
     }
-    public static MemoryAddress g_file_replace_readwrite ( Addressable file,  Addressable etag,  int make_backup,  int flags,  Addressable cancellable,  Addressable error) {
+    /**
+     * {@snippet :
+     * GFileIOStream* g_file_replace_readwrite(GFile* file, char* etag, gboolean make_backup, GFileCreateFlags flags, GCancellable* cancellable, GError** error);
+     * }
+     */
+    public static MemorySegment g_file_replace_readwrite(MemorySegment file, MemorySegment etag, int make_backup, int flags, MemorySegment cancellable, MemorySegment error) {
         var mh$ = g_file_replace_readwrite$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(file, etag, make_backup, flags, cancellable, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(file, etag, make_backup, flags, cancellable, error);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_replace_readwrite_async$MH() {
-        return RuntimeHelper.requireNonNull(constants$671.g_file_replace_readwrite_async$MH,"g_file_replace_readwrite_async");
+        return RuntimeHelper.requireNonNull(constants$622.g_file_replace_readwrite_async$MH,"g_file_replace_readwrite_async");
     }
-    public static void g_file_replace_readwrite_async ( Addressable file,  Addressable etag,  int make_backup,  int flags,  int io_priority,  Addressable cancellable,  Addressable callback,  Addressable user_data) {
+    /**
+     * {@snippet :
+     * void g_file_replace_readwrite_async(GFile* file, char* etag, gboolean make_backup, GFileCreateFlags flags, int io_priority, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
+     * }
+     */
+    public static void g_file_replace_readwrite_async(MemorySegment file, MemorySegment etag, int make_backup, int flags, int io_priority, MemorySegment cancellable, MemorySegment callback, MemorySegment user_data) {
         var mh$ = g_file_replace_readwrite_async$MH();
         try {
             mh$.invokeExact(file, etag, make_backup, flags, io_priority, cancellable, callback, user_data);
@@ -6000,20 +5650,30 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_replace_readwrite_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$671.g_file_replace_readwrite_finish$MH,"g_file_replace_readwrite_finish");
+        return RuntimeHelper.requireNonNull(constants$622.g_file_replace_readwrite_finish$MH,"g_file_replace_readwrite_finish");
     }
-    public static MemoryAddress g_file_replace_readwrite_finish ( Addressable file,  Addressable res,  Addressable error) {
+    /**
+     * {@snippet :
+     * GFileIOStream* g_file_replace_readwrite_finish(GFile* file, GAsyncResult* res, GError** error);
+     * }
+     */
+    public static MemorySegment g_file_replace_readwrite_finish(MemorySegment file, MemorySegment res, MemorySegment error) {
         var mh$ = g_file_replace_readwrite_finish$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(file, res, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(file, res, error);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_query_exists$MH() {
-        return RuntimeHelper.requireNonNull(constants$671.g_file_query_exists$MH,"g_file_query_exists");
+        return RuntimeHelper.requireNonNull(constants$622.g_file_query_exists$MH,"g_file_query_exists");
     }
-    public static int g_file_query_exists ( Addressable file,  Addressable cancellable) {
+    /**
+     * {@snippet :
+     * gboolean g_file_query_exists(GFile* file, GCancellable* cancellable);
+     * }
+     */
+    public static int g_file_query_exists(MemorySegment file, MemorySegment cancellable) {
         var mh$ = g_file_query_exists$MH();
         try {
             return (int)mh$.invokeExact(file, cancellable);
@@ -6022,9 +5682,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_query_file_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$671.g_file_query_file_type$MH,"g_file_query_file_type");
+        return RuntimeHelper.requireNonNull(constants$622.g_file_query_file_type$MH,"g_file_query_file_type");
     }
-    public static int g_file_query_file_type ( Addressable file,  int flags,  Addressable cancellable) {
+    /**
+     * {@snippet :
+     * GFileType g_file_query_file_type(GFile* file, GFileQueryInfoFlags flags, GCancellable* cancellable);
+     * }
+     */
+    public static int g_file_query_file_type(MemorySegment file, int flags, MemorySegment cancellable) {
         var mh$ = g_file_query_file_type$MH();
         try {
             return (int)mh$.invokeExact(file, flags, cancellable);
@@ -6033,20 +5698,30 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_query_info$MH() {
-        return RuntimeHelper.requireNonNull(constants$671.g_file_query_info$MH,"g_file_query_info");
+        return RuntimeHelper.requireNonNull(constants$622.g_file_query_info$MH,"g_file_query_info");
     }
-    public static MemoryAddress g_file_query_info ( Addressable file,  Addressable attributes,  int flags,  Addressable cancellable,  Addressable error) {
+    /**
+     * {@snippet :
+     * GFileInfo* g_file_query_info(GFile* file, char* attributes, GFileQueryInfoFlags flags, GCancellable* cancellable, GError** error);
+     * }
+     */
+    public static MemorySegment g_file_query_info(MemorySegment file, MemorySegment attributes, int flags, MemorySegment cancellable, MemorySegment error) {
         var mh$ = g_file_query_info$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(file, attributes, flags, cancellable, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(file, attributes, flags, cancellable, error);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_query_info_async$MH() {
-        return RuntimeHelper.requireNonNull(constants$672.g_file_query_info_async$MH,"g_file_query_info_async");
+        return RuntimeHelper.requireNonNull(constants$622.g_file_query_info_async$MH,"g_file_query_info_async");
     }
-    public static void g_file_query_info_async ( Addressable file,  Addressable attributes,  int flags,  int io_priority,  Addressable cancellable,  Addressable callback,  Addressable user_data) {
+    /**
+     * {@snippet :
+     * void g_file_query_info_async(GFile* file, char* attributes, GFileQueryInfoFlags flags, int io_priority, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
+     * }
+     */
+    public static void g_file_query_info_async(MemorySegment file, MemorySegment attributes, int flags, int io_priority, MemorySegment cancellable, MemorySegment callback, MemorySegment user_data) {
         var mh$ = g_file_query_info_async$MH();
         try {
             mh$.invokeExact(file, attributes, flags, io_priority, cancellable, callback, user_data);
@@ -6055,31 +5730,46 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_query_info_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$672.g_file_query_info_finish$MH,"g_file_query_info_finish");
+        return RuntimeHelper.requireNonNull(constants$623.g_file_query_info_finish$MH,"g_file_query_info_finish");
     }
-    public static MemoryAddress g_file_query_info_finish ( Addressable file,  Addressable res,  Addressable error) {
+    /**
+     * {@snippet :
+     * GFileInfo* g_file_query_info_finish(GFile* file, GAsyncResult* res, GError** error);
+     * }
+     */
+    public static MemorySegment g_file_query_info_finish(MemorySegment file, MemorySegment res, MemorySegment error) {
         var mh$ = g_file_query_info_finish$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(file, res, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(file, res, error);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_query_filesystem_info$MH() {
-        return RuntimeHelper.requireNonNull(constants$672.g_file_query_filesystem_info$MH,"g_file_query_filesystem_info");
+        return RuntimeHelper.requireNonNull(constants$623.g_file_query_filesystem_info$MH,"g_file_query_filesystem_info");
     }
-    public static MemoryAddress g_file_query_filesystem_info ( Addressable file,  Addressable attributes,  Addressable cancellable,  Addressable error) {
+    /**
+     * {@snippet :
+     * GFileInfo* g_file_query_filesystem_info(GFile* file, char* attributes, GCancellable* cancellable, GError** error);
+     * }
+     */
+    public static MemorySegment g_file_query_filesystem_info(MemorySegment file, MemorySegment attributes, MemorySegment cancellable, MemorySegment error) {
         var mh$ = g_file_query_filesystem_info$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(file, attributes, cancellable, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(file, attributes, cancellable, error);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_query_filesystem_info_async$MH() {
-        return RuntimeHelper.requireNonNull(constants$672.g_file_query_filesystem_info_async$MH,"g_file_query_filesystem_info_async");
+        return RuntimeHelper.requireNonNull(constants$623.g_file_query_filesystem_info_async$MH,"g_file_query_filesystem_info_async");
     }
-    public static void g_file_query_filesystem_info_async ( Addressable file,  Addressable attributes,  int io_priority,  Addressable cancellable,  Addressable callback,  Addressable user_data) {
+    /**
+     * {@snippet :
+     * void g_file_query_filesystem_info_async(GFile* file, char* attributes, int io_priority, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
+     * }
+     */
+    public static void g_file_query_filesystem_info_async(MemorySegment file, MemorySegment attributes, int io_priority, MemorySegment cancellable, MemorySegment callback, MemorySegment user_data) {
         var mh$ = g_file_query_filesystem_info_async$MH();
         try {
             mh$.invokeExact(file, attributes, io_priority, cancellable, callback, user_data);
@@ -6088,31 +5778,46 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_query_filesystem_info_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$672.g_file_query_filesystem_info_finish$MH,"g_file_query_filesystem_info_finish");
+        return RuntimeHelper.requireNonNull(constants$623.g_file_query_filesystem_info_finish$MH,"g_file_query_filesystem_info_finish");
     }
-    public static MemoryAddress g_file_query_filesystem_info_finish ( Addressable file,  Addressable res,  Addressable error) {
+    /**
+     * {@snippet :
+     * GFileInfo* g_file_query_filesystem_info_finish(GFile* file, GAsyncResult* res, GError** error);
+     * }
+     */
+    public static MemorySegment g_file_query_filesystem_info_finish(MemorySegment file, MemorySegment res, MemorySegment error) {
         var mh$ = g_file_query_filesystem_info_finish$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(file, res, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(file, res, error);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_find_enclosing_mount$MH() {
-        return RuntimeHelper.requireNonNull(constants$672.g_file_find_enclosing_mount$MH,"g_file_find_enclosing_mount");
+        return RuntimeHelper.requireNonNull(constants$623.g_file_find_enclosing_mount$MH,"g_file_find_enclosing_mount");
     }
-    public static MemoryAddress g_file_find_enclosing_mount ( Addressable file,  Addressable cancellable,  Addressable error) {
+    /**
+     * {@snippet :
+     * GMount* g_file_find_enclosing_mount(GFile* file, GCancellable* cancellable, GError** error);
+     * }
+     */
+    public static MemorySegment g_file_find_enclosing_mount(MemorySegment file, MemorySegment cancellable, MemorySegment error) {
         var mh$ = g_file_find_enclosing_mount$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(file, cancellable, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(file, cancellable, error);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_find_enclosing_mount_async$MH() {
-        return RuntimeHelper.requireNonNull(constants$673.g_file_find_enclosing_mount_async$MH,"g_file_find_enclosing_mount_async");
+        return RuntimeHelper.requireNonNull(constants$623.g_file_find_enclosing_mount_async$MH,"g_file_find_enclosing_mount_async");
     }
-    public static void g_file_find_enclosing_mount_async ( Addressable file,  int io_priority,  Addressable cancellable,  Addressable callback,  Addressable user_data) {
+    /**
+     * {@snippet :
+     * void g_file_find_enclosing_mount_async(GFile* file, int io_priority, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
+     * }
+     */
+    public static void g_file_find_enclosing_mount_async(MemorySegment file, int io_priority, MemorySegment cancellable, MemorySegment callback, MemorySegment user_data) {
         var mh$ = g_file_find_enclosing_mount_async$MH();
         try {
             mh$.invokeExact(file, io_priority, cancellable, callback, user_data);
@@ -6121,31 +5826,46 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_find_enclosing_mount_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$673.g_file_find_enclosing_mount_finish$MH,"g_file_find_enclosing_mount_finish");
+        return RuntimeHelper.requireNonNull(constants$624.g_file_find_enclosing_mount_finish$MH,"g_file_find_enclosing_mount_finish");
     }
-    public static MemoryAddress g_file_find_enclosing_mount_finish ( Addressable file,  Addressable res,  Addressable error) {
+    /**
+     * {@snippet :
+     * GMount* g_file_find_enclosing_mount_finish(GFile* file, GAsyncResult* res, GError** error);
+     * }
+     */
+    public static MemorySegment g_file_find_enclosing_mount_finish(MemorySegment file, MemorySegment res, MemorySegment error) {
         var mh$ = g_file_find_enclosing_mount_finish$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(file, res, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(file, res, error);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_enumerate_children$MH() {
-        return RuntimeHelper.requireNonNull(constants$673.g_file_enumerate_children$MH,"g_file_enumerate_children");
+        return RuntimeHelper.requireNonNull(constants$624.g_file_enumerate_children$MH,"g_file_enumerate_children");
     }
-    public static MemoryAddress g_file_enumerate_children ( Addressable file,  Addressable attributes,  int flags,  Addressable cancellable,  Addressable error) {
+    /**
+     * {@snippet :
+     * GFileEnumerator* g_file_enumerate_children(GFile* file, char* attributes, GFileQueryInfoFlags flags, GCancellable* cancellable, GError** error);
+     * }
+     */
+    public static MemorySegment g_file_enumerate_children(MemorySegment file, MemorySegment attributes, int flags, MemorySegment cancellable, MemorySegment error) {
         var mh$ = g_file_enumerate_children$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(file, attributes, flags, cancellable, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(file, attributes, flags, cancellable, error);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_enumerate_children_async$MH() {
-        return RuntimeHelper.requireNonNull(constants$673.g_file_enumerate_children_async$MH,"g_file_enumerate_children_async");
+        return RuntimeHelper.requireNonNull(constants$624.g_file_enumerate_children_async$MH,"g_file_enumerate_children_async");
     }
-    public static void g_file_enumerate_children_async ( Addressable file,  Addressable attributes,  int flags,  int io_priority,  Addressable cancellable,  Addressable callback,  Addressable user_data) {
+    /**
+     * {@snippet :
+     * void g_file_enumerate_children_async(GFile* file, char* attributes, GFileQueryInfoFlags flags, int io_priority, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
+     * }
+     */
+    public static void g_file_enumerate_children_async(MemorySegment file, MemorySegment attributes, int flags, int io_priority, MemorySegment cancellable, MemorySegment callback, MemorySegment user_data) {
         var mh$ = g_file_enumerate_children_async$MH();
         try {
             mh$.invokeExact(file, attributes, flags, io_priority, cancellable, callback, user_data);
@@ -6154,31 +5874,46 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_enumerate_children_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$673.g_file_enumerate_children_finish$MH,"g_file_enumerate_children_finish");
+        return RuntimeHelper.requireNonNull(constants$624.g_file_enumerate_children_finish$MH,"g_file_enumerate_children_finish");
     }
-    public static MemoryAddress g_file_enumerate_children_finish ( Addressable file,  Addressable res,  Addressable error) {
+    /**
+     * {@snippet :
+     * GFileEnumerator* g_file_enumerate_children_finish(GFile* file, GAsyncResult* res, GError** error);
+     * }
+     */
+    public static MemorySegment g_file_enumerate_children_finish(MemorySegment file, MemorySegment res, MemorySegment error) {
         var mh$ = g_file_enumerate_children_finish$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(file, res, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(file, res, error);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_set_display_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$673.g_file_set_display_name$MH,"g_file_set_display_name");
+        return RuntimeHelper.requireNonNull(constants$624.g_file_set_display_name$MH,"g_file_set_display_name");
     }
-    public static MemoryAddress g_file_set_display_name ( Addressable file,  Addressable display_name,  Addressable cancellable,  Addressable error) {
+    /**
+     * {@snippet :
+     * GFile* g_file_set_display_name(GFile* file, char* display_name, GCancellable* cancellable, GError** error);
+     * }
+     */
+    public static MemorySegment g_file_set_display_name(MemorySegment file, MemorySegment display_name, MemorySegment cancellable, MemorySegment error) {
         var mh$ = g_file_set_display_name$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(file, display_name, cancellable, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(file, display_name, cancellable, error);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_set_display_name_async$MH() {
-        return RuntimeHelper.requireNonNull(constants$674.g_file_set_display_name_async$MH,"g_file_set_display_name_async");
+        return RuntimeHelper.requireNonNull(constants$624.g_file_set_display_name_async$MH,"g_file_set_display_name_async");
     }
-    public static void g_file_set_display_name_async ( Addressable file,  Addressable display_name,  int io_priority,  Addressable cancellable,  Addressable callback,  Addressable user_data) {
+    /**
+     * {@snippet :
+     * void g_file_set_display_name_async(GFile* file, char* display_name, int io_priority, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
+     * }
+     */
+    public static void g_file_set_display_name_async(MemorySegment file, MemorySegment display_name, int io_priority, MemorySegment cancellable, MemorySegment callback, MemorySegment user_data) {
         var mh$ = g_file_set_display_name_async$MH();
         try {
             mh$.invokeExact(file, display_name, io_priority, cancellable, callback, user_data);
@@ -6187,20 +5922,30 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_set_display_name_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$674.g_file_set_display_name_finish$MH,"g_file_set_display_name_finish");
+        return RuntimeHelper.requireNonNull(constants$625.g_file_set_display_name_finish$MH,"g_file_set_display_name_finish");
     }
-    public static MemoryAddress g_file_set_display_name_finish ( Addressable file,  Addressable res,  Addressable error) {
+    /**
+     * {@snippet :
+     * GFile* g_file_set_display_name_finish(GFile* file, GAsyncResult* res, GError** error);
+     * }
+     */
+    public static MemorySegment g_file_set_display_name_finish(MemorySegment file, MemorySegment res, MemorySegment error) {
         var mh$ = g_file_set_display_name_finish$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(file, res, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(file, res, error);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_delete$MH() {
-        return RuntimeHelper.requireNonNull(constants$674.g_file_delete$MH,"g_file_delete");
+        return RuntimeHelper.requireNonNull(constants$625.g_file_delete$MH,"g_file_delete");
     }
-    public static int g_file_delete ( Addressable file,  Addressable cancellable,  Addressable error) {
+    /**
+     * {@snippet :
+     * gboolean g_file_delete(GFile* file, GCancellable* cancellable, GError** error);
+     * }
+     */
+    public static int g_file_delete(MemorySegment file, MemorySegment cancellable, MemorySegment error) {
         var mh$ = g_file_delete$MH();
         try {
             return (int)mh$.invokeExact(file, cancellable, error);
@@ -6209,9 +5954,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_delete_async$MH() {
-        return RuntimeHelper.requireNonNull(constants$674.g_file_delete_async$MH,"g_file_delete_async");
+        return RuntimeHelper.requireNonNull(constants$625.g_file_delete_async$MH,"g_file_delete_async");
     }
-    public static void g_file_delete_async ( Addressable file,  int io_priority,  Addressable cancellable,  Addressable callback,  Addressable user_data) {
+    /**
+     * {@snippet :
+     * void g_file_delete_async(GFile* file, int io_priority, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
+     * }
+     */
+    public static void g_file_delete_async(MemorySegment file, int io_priority, MemorySegment cancellable, MemorySegment callback, MemorySegment user_data) {
         var mh$ = g_file_delete_async$MH();
         try {
             mh$.invokeExact(file, io_priority, cancellable, callback, user_data);
@@ -6220,9 +5970,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_delete_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$674.g_file_delete_finish$MH,"g_file_delete_finish");
+        return RuntimeHelper.requireNonNull(constants$625.g_file_delete_finish$MH,"g_file_delete_finish");
     }
-    public static int g_file_delete_finish ( Addressable file,  Addressable result,  Addressable error) {
+    /**
+     * {@snippet :
+     * gboolean g_file_delete_finish(GFile* file, GAsyncResult* result, GError** error);
+     * }
+     */
+    public static int g_file_delete_finish(MemorySegment file, MemorySegment result, MemorySegment error) {
         var mh$ = g_file_delete_finish$MH();
         try {
             return (int)mh$.invokeExact(file, result, error);
@@ -6231,9 +5986,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_trash$MH() {
-        return RuntimeHelper.requireNonNull(constants$674.g_file_trash$MH,"g_file_trash");
+        return RuntimeHelper.requireNonNull(constants$625.g_file_trash$MH,"g_file_trash");
     }
-    public static int g_file_trash ( Addressable file,  Addressable cancellable,  Addressable error) {
+    /**
+     * {@snippet :
+     * gboolean g_file_trash(GFile* file, GCancellable* cancellable, GError** error);
+     * }
+     */
+    public static int g_file_trash(MemorySegment file, MemorySegment cancellable, MemorySegment error) {
         var mh$ = g_file_trash$MH();
         try {
             return (int)mh$.invokeExact(file, cancellable, error);
@@ -6242,9 +6002,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_trash_async$MH() {
-        return RuntimeHelper.requireNonNull(constants$675.g_file_trash_async$MH,"g_file_trash_async");
+        return RuntimeHelper.requireNonNull(constants$625.g_file_trash_async$MH,"g_file_trash_async");
     }
-    public static void g_file_trash_async ( Addressable file,  int io_priority,  Addressable cancellable,  Addressable callback,  Addressable user_data) {
+    /**
+     * {@snippet :
+     * void g_file_trash_async(GFile* file, int io_priority, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
+     * }
+     */
+    public static void g_file_trash_async(MemorySegment file, int io_priority, MemorySegment cancellable, MemorySegment callback, MemorySegment user_data) {
         var mh$ = g_file_trash_async$MH();
         try {
             mh$.invokeExact(file, io_priority, cancellable, callback, user_data);
@@ -6253,9 +6018,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_trash_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$675.g_file_trash_finish$MH,"g_file_trash_finish");
+        return RuntimeHelper.requireNonNull(constants$626.g_file_trash_finish$MH,"g_file_trash_finish");
     }
-    public static int g_file_trash_finish ( Addressable file,  Addressable result,  Addressable error) {
+    /**
+     * {@snippet :
+     * gboolean g_file_trash_finish(GFile* file, GAsyncResult* result, GError** error);
+     * }
+     */
+    public static int g_file_trash_finish(MemorySegment file, MemorySegment result, MemorySegment error) {
         var mh$ = g_file_trash_finish$MH();
         try {
             return (int)mh$.invokeExact(file, result, error);
@@ -6264,9 +6034,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_copy$MH() {
-        return RuntimeHelper.requireNonNull(constants$675.g_file_copy$MH,"g_file_copy");
+        return RuntimeHelper.requireNonNull(constants$626.g_file_copy$MH,"g_file_copy");
     }
-    public static int g_file_copy ( Addressable source,  Addressable destination,  int flags,  Addressable cancellable,  Addressable progress_callback,  Addressable progress_callback_data,  Addressable error) {
+    /**
+     * {@snippet :
+     * gboolean g_file_copy(GFile* source, GFile* destination, GFileCopyFlags flags, GCancellable* cancellable, GFileProgressCallback progress_callback, gpointer progress_callback_data, GError** error);
+     * }
+     */
+    public static int g_file_copy(MemorySegment source, MemorySegment destination, int flags, MemorySegment cancellable, MemorySegment progress_callback, MemorySegment progress_callback_data, MemorySegment error) {
         var mh$ = g_file_copy$MH();
         try {
             return (int)mh$.invokeExact(source, destination, flags, cancellable, progress_callback, progress_callback_data, error);
@@ -6275,9 +6050,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_copy_async$MH() {
-        return RuntimeHelper.requireNonNull(constants$675.g_file_copy_async$MH,"g_file_copy_async");
+        return RuntimeHelper.requireNonNull(constants$626.g_file_copy_async$MH,"g_file_copy_async");
     }
-    public static void g_file_copy_async ( Addressable source,  Addressable destination,  int flags,  int io_priority,  Addressable cancellable,  Addressable progress_callback,  Addressable progress_callback_data,  Addressable callback,  Addressable user_data) {
+    /**
+     * {@snippet :
+     * void g_file_copy_async(GFile* source, GFile* destination, GFileCopyFlags flags, int io_priority, GCancellable* cancellable, GFileProgressCallback progress_callback, gpointer progress_callback_data, GAsyncReadyCallback callback, gpointer user_data);
+     * }
+     */
+    public static void g_file_copy_async(MemorySegment source, MemorySegment destination, int flags, int io_priority, MemorySegment cancellable, MemorySegment progress_callback, MemorySegment progress_callback_data, MemorySegment callback, MemorySegment user_data) {
         var mh$ = g_file_copy_async$MH();
         try {
             mh$.invokeExact(source, destination, flags, io_priority, cancellable, progress_callback, progress_callback_data, callback, user_data);
@@ -6286,9 +6066,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_copy_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$675.g_file_copy_finish$MH,"g_file_copy_finish");
+        return RuntimeHelper.requireNonNull(constants$626.g_file_copy_finish$MH,"g_file_copy_finish");
     }
-    public static int g_file_copy_finish ( Addressable file,  Addressable res,  Addressable error) {
+    /**
+     * {@snippet :
+     * gboolean g_file_copy_finish(GFile* file, GAsyncResult* res, GError** error);
+     * }
+     */
+    public static int g_file_copy_finish(MemorySegment file, MemorySegment res, MemorySegment error) {
         var mh$ = g_file_copy_finish$MH();
         try {
             return (int)mh$.invokeExact(file, res, error);
@@ -6297,9 +6082,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_move$MH() {
-        return RuntimeHelper.requireNonNull(constants$675.g_file_move$MH,"g_file_move");
+        return RuntimeHelper.requireNonNull(constants$626.g_file_move$MH,"g_file_move");
     }
-    public static int g_file_move ( Addressable source,  Addressable destination,  int flags,  Addressable cancellable,  Addressable progress_callback,  Addressable progress_callback_data,  Addressable error) {
+    /**
+     * {@snippet :
+     * gboolean g_file_move(GFile* source, GFile* destination, GFileCopyFlags flags, GCancellable* cancellable, GFileProgressCallback progress_callback, gpointer progress_callback_data, GError** error);
+     * }
+     */
+    public static int g_file_move(MemorySegment source, MemorySegment destination, int flags, MemorySegment cancellable, MemorySegment progress_callback, MemorySegment progress_callback_data, MemorySegment error) {
         var mh$ = g_file_move$MH();
         try {
             return (int)mh$.invokeExact(source, destination, flags, cancellable, progress_callback, progress_callback_data, error);
@@ -6308,9 +6098,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_move_async$MH() {
-        return RuntimeHelper.requireNonNull(constants$676.g_file_move_async$MH,"g_file_move_async");
+        return RuntimeHelper.requireNonNull(constants$626.g_file_move_async$MH,"g_file_move_async");
     }
-    public static void g_file_move_async ( Addressable source,  Addressable destination,  int flags,  int io_priority,  Addressable cancellable,  Addressable progress_callback,  Addressable progress_callback_data,  Addressable callback,  Addressable user_data) {
+    /**
+     * {@snippet :
+     * void g_file_move_async(GFile* source, GFile* destination, GFileCopyFlags flags, int io_priority, GCancellable* cancellable, GFileProgressCallback progress_callback, gpointer progress_callback_data, GAsyncReadyCallback callback, gpointer user_data);
+     * }
+     */
+    public static void g_file_move_async(MemorySegment source, MemorySegment destination, int flags, int io_priority, MemorySegment cancellable, MemorySegment progress_callback, MemorySegment progress_callback_data, MemorySegment callback, MemorySegment user_data) {
         var mh$ = g_file_move_async$MH();
         try {
             mh$.invokeExact(source, destination, flags, io_priority, cancellable, progress_callback, progress_callback_data, callback, user_data);
@@ -6319,9 +6114,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_move_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$676.g_file_move_finish$MH,"g_file_move_finish");
+        return RuntimeHelper.requireNonNull(constants$627.g_file_move_finish$MH,"g_file_move_finish");
     }
-    public static int g_file_move_finish ( Addressable file,  Addressable result,  Addressable error) {
+    /**
+     * {@snippet :
+     * gboolean g_file_move_finish(GFile* file, GAsyncResult* result, GError** error);
+     * }
+     */
+    public static int g_file_move_finish(MemorySegment file, MemorySegment result, MemorySegment error) {
         var mh$ = g_file_move_finish$MH();
         try {
             return (int)mh$.invokeExact(file, result, error);
@@ -6330,9 +6130,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_make_directory$MH() {
-        return RuntimeHelper.requireNonNull(constants$676.g_file_make_directory$MH,"g_file_make_directory");
+        return RuntimeHelper.requireNonNull(constants$627.g_file_make_directory$MH,"g_file_make_directory");
     }
-    public static int g_file_make_directory ( Addressable file,  Addressable cancellable,  Addressable error) {
+    /**
+     * {@snippet :
+     * gboolean g_file_make_directory(GFile* file, GCancellable* cancellable, GError** error);
+     * }
+     */
+    public static int g_file_make_directory(MemorySegment file, MemorySegment cancellable, MemorySegment error) {
         var mh$ = g_file_make_directory$MH();
         try {
             return (int)mh$.invokeExact(file, cancellable, error);
@@ -6341,9 +6146,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_make_directory_async$MH() {
-        return RuntimeHelper.requireNonNull(constants$676.g_file_make_directory_async$MH,"g_file_make_directory_async");
+        return RuntimeHelper.requireNonNull(constants$627.g_file_make_directory_async$MH,"g_file_make_directory_async");
     }
-    public static void g_file_make_directory_async ( Addressable file,  int io_priority,  Addressable cancellable,  Addressable callback,  Addressable user_data) {
+    /**
+     * {@snippet :
+     * void g_file_make_directory_async(GFile* file, int io_priority, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
+     * }
+     */
+    public static void g_file_make_directory_async(MemorySegment file, int io_priority, MemorySegment cancellable, MemorySegment callback, MemorySegment user_data) {
         var mh$ = g_file_make_directory_async$MH();
         try {
             mh$.invokeExact(file, io_priority, cancellable, callback, user_data);
@@ -6352,9 +6162,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_make_directory_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$676.g_file_make_directory_finish$MH,"g_file_make_directory_finish");
+        return RuntimeHelper.requireNonNull(constants$627.g_file_make_directory_finish$MH,"g_file_make_directory_finish");
     }
-    public static int g_file_make_directory_finish ( Addressable file,  Addressable result,  Addressable error) {
+    /**
+     * {@snippet :
+     * gboolean g_file_make_directory_finish(GFile* file, GAsyncResult* result, GError** error);
+     * }
+     */
+    public static int g_file_make_directory_finish(MemorySegment file, MemorySegment result, MemorySegment error) {
         var mh$ = g_file_make_directory_finish$MH();
         try {
             return (int)mh$.invokeExact(file, result, error);
@@ -6363,9 +6178,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_make_directory_with_parents$MH() {
-        return RuntimeHelper.requireNonNull(constants$676.g_file_make_directory_with_parents$MH,"g_file_make_directory_with_parents");
+        return RuntimeHelper.requireNonNull(constants$627.g_file_make_directory_with_parents$MH,"g_file_make_directory_with_parents");
     }
-    public static int g_file_make_directory_with_parents ( Addressable file,  Addressable cancellable,  Addressable error) {
+    /**
+     * {@snippet :
+     * gboolean g_file_make_directory_with_parents(GFile* file, GCancellable* cancellable, GError** error);
+     * }
+     */
+    public static int g_file_make_directory_with_parents(MemorySegment file, MemorySegment cancellable, MemorySegment error) {
         var mh$ = g_file_make_directory_with_parents$MH();
         try {
             return (int)mh$.invokeExact(file, cancellable, error);
@@ -6374,9 +6194,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_make_symbolic_link$MH() {
-        return RuntimeHelper.requireNonNull(constants$677.g_file_make_symbolic_link$MH,"g_file_make_symbolic_link");
+        return RuntimeHelper.requireNonNull(constants$627.g_file_make_symbolic_link$MH,"g_file_make_symbolic_link");
     }
-    public static int g_file_make_symbolic_link ( Addressable file,  Addressable symlink_value,  Addressable cancellable,  Addressable error) {
+    /**
+     * {@snippet :
+     * gboolean g_file_make_symbolic_link(GFile* file, char* symlink_value, GCancellable* cancellable, GError** error);
+     * }
+     */
+    public static int g_file_make_symbolic_link(MemorySegment file, MemorySegment symlink_value, MemorySegment cancellable, MemorySegment error) {
         var mh$ = g_file_make_symbolic_link$MH();
         try {
             return (int)mh$.invokeExact(file, symlink_value, cancellable, error);
@@ -6384,32 +6209,79 @@ import static java.lang.foreign.ValueLayout.*;
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle g_file_query_settable_attributes$MH() {
-        return RuntimeHelper.requireNonNull(constants$677.g_file_query_settable_attributes$MH,"g_file_query_settable_attributes");
+    public static MethodHandle g_file_make_symbolic_link_async$MH() {
+        return RuntimeHelper.requireNonNull(constants$628.g_file_make_symbolic_link_async$MH,"g_file_make_symbolic_link_async");
     }
-    public static MemoryAddress g_file_query_settable_attributes ( Addressable file,  Addressable cancellable,  Addressable error) {
+    /**
+     * {@snippet :
+     * void g_file_make_symbolic_link_async(GFile* file, char* symlink_value, int io_priority, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
+     * }
+     */
+    public static void g_file_make_symbolic_link_async(MemorySegment file, MemorySegment symlink_value, int io_priority, MemorySegment cancellable, MemorySegment callback, MemorySegment user_data) {
+        var mh$ = g_file_make_symbolic_link_async$MH();
+        try {
+            mh$.invokeExact(file, symlink_value, io_priority, cancellable, callback, user_data);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_file_make_symbolic_link_finish$MH() {
+        return RuntimeHelper.requireNonNull(constants$628.g_file_make_symbolic_link_finish$MH,"g_file_make_symbolic_link_finish");
+    }
+    /**
+     * {@snippet :
+     * gboolean g_file_make_symbolic_link_finish(GFile* file, GAsyncResult* result, GError** error);
+     * }
+     */
+    public static int g_file_make_symbolic_link_finish(MemorySegment file, MemorySegment result, MemorySegment error) {
+        var mh$ = g_file_make_symbolic_link_finish$MH();
+        try {
+            return (int)mh$.invokeExact(file, result, error);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_file_query_settable_attributes$MH() {
+        return RuntimeHelper.requireNonNull(constants$628.g_file_query_settable_attributes$MH,"g_file_query_settable_attributes");
+    }
+    /**
+     * {@snippet :
+     * GFileAttributeInfoList* g_file_query_settable_attributes(GFile* file, GCancellable* cancellable, GError** error);
+     * }
+     */
+    public static MemorySegment g_file_query_settable_attributes(MemorySegment file, MemorySegment cancellable, MemorySegment error) {
         var mh$ = g_file_query_settable_attributes$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(file, cancellable, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(file, cancellable, error);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_query_writable_namespaces$MH() {
-        return RuntimeHelper.requireNonNull(constants$677.g_file_query_writable_namespaces$MH,"g_file_query_writable_namespaces");
+        return RuntimeHelper.requireNonNull(constants$628.g_file_query_writable_namespaces$MH,"g_file_query_writable_namespaces");
     }
-    public static MemoryAddress g_file_query_writable_namespaces ( Addressable file,  Addressable cancellable,  Addressable error) {
+    /**
+     * {@snippet :
+     * GFileAttributeInfoList* g_file_query_writable_namespaces(GFile* file, GCancellable* cancellable, GError** error);
+     * }
+     */
+    public static MemorySegment g_file_query_writable_namespaces(MemorySegment file, MemorySegment cancellable, MemorySegment error) {
         var mh$ = g_file_query_writable_namespaces$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(file, cancellable, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(file, cancellable, error);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_set_attribute$MH() {
-        return RuntimeHelper.requireNonNull(constants$677.g_file_set_attribute$MH,"g_file_set_attribute");
+        return RuntimeHelper.requireNonNull(constants$628.g_file_set_attribute$MH,"g_file_set_attribute");
     }
-    public static int g_file_set_attribute ( Addressable file,  Addressable attribute,  int type,  Addressable value_p,  int flags,  Addressable cancellable,  Addressable error) {
+    /**
+     * {@snippet :
+     * gboolean g_file_set_attribute(GFile* file, char* attribute, GFileAttributeType type, gpointer value_p, GFileQueryInfoFlags flags, GCancellable* cancellable, GError** error);
+     * }
+     */
+    public static int g_file_set_attribute(MemorySegment file, MemorySegment attribute, int type, MemorySegment value_p, int flags, MemorySegment cancellable, MemorySegment error) {
         var mh$ = g_file_set_attribute$MH();
         try {
             return (int)mh$.invokeExact(file, attribute, type, value_p, flags, cancellable, error);
@@ -6418,9 +6290,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_set_attributes_from_info$MH() {
-        return RuntimeHelper.requireNonNull(constants$677.g_file_set_attributes_from_info$MH,"g_file_set_attributes_from_info");
+        return RuntimeHelper.requireNonNull(constants$628.g_file_set_attributes_from_info$MH,"g_file_set_attributes_from_info");
     }
-    public static int g_file_set_attributes_from_info ( Addressable file,  Addressable info,  int flags,  Addressable cancellable,  Addressable error) {
+    /**
+     * {@snippet :
+     * gboolean g_file_set_attributes_from_info(GFile* file, GFileInfo* info, GFileQueryInfoFlags flags, GCancellable* cancellable, GError** error);
+     * }
+     */
+    public static int g_file_set_attributes_from_info(MemorySegment file, MemorySegment info, int flags, MemorySegment cancellable, MemorySegment error) {
         var mh$ = g_file_set_attributes_from_info$MH();
         try {
             return (int)mh$.invokeExact(file, info, flags, cancellable, error);
@@ -6429,9 +6306,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_set_attributes_async$MH() {
-        return RuntimeHelper.requireNonNull(constants$677.g_file_set_attributes_async$MH,"g_file_set_attributes_async");
+        return RuntimeHelper.requireNonNull(constants$629.g_file_set_attributes_async$MH,"g_file_set_attributes_async");
     }
-    public static void g_file_set_attributes_async ( Addressable file,  Addressable info,  int flags,  int io_priority,  Addressable cancellable,  Addressable callback,  Addressable user_data) {
+    /**
+     * {@snippet :
+     * void g_file_set_attributes_async(GFile* file, GFileInfo* info, GFileQueryInfoFlags flags, int io_priority, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
+     * }
+     */
+    public static void g_file_set_attributes_async(MemorySegment file, MemorySegment info, int flags, int io_priority, MemorySegment cancellable, MemorySegment callback, MemorySegment user_data) {
         var mh$ = g_file_set_attributes_async$MH();
         try {
             mh$.invokeExact(file, info, flags, io_priority, cancellable, callback, user_data);
@@ -6440,9 +6322,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_set_attributes_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$678.g_file_set_attributes_finish$MH,"g_file_set_attributes_finish");
+        return RuntimeHelper.requireNonNull(constants$629.g_file_set_attributes_finish$MH,"g_file_set_attributes_finish");
     }
-    public static int g_file_set_attributes_finish ( Addressable file,  Addressable result,  Addressable info,  Addressable error) {
+    /**
+     * {@snippet :
+     * gboolean g_file_set_attributes_finish(GFile* file, GAsyncResult* result, GFileInfo** info, GError** error);
+     * }
+     */
+    public static int g_file_set_attributes_finish(MemorySegment file, MemorySegment result, MemorySegment info, MemorySegment error) {
         var mh$ = g_file_set_attributes_finish$MH();
         try {
             return (int)mh$.invokeExact(file, result, info, error);
@@ -6451,9 +6338,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_set_attribute_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$678.g_file_set_attribute_string$MH,"g_file_set_attribute_string");
+        return RuntimeHelper.requireNonNull(constants$629.g_file_set_attribute_string$MH,"g_file_set_attribute_string");
     }
-    public static int g_file_set_attribute_string ( Addressable file,  Addressable attribute,  Addressable value,  int flags,  Addressable cancellable,  Addressable error) {
+    /**
+     * {@snippet :
+     * gboolean g_file_set_attribute_string(GFile* file, char* attribute, char* value, GFileQueryInfoFlags flags, GCancellable* cancellable, GError** error);
+     * }
+     */
+    public static int g_file_set_attribute_string(MemorySegment file, MemorySegment attribute, MemorySegment value, int flags, MemorySegment cancellable, MemorySegment error) {
         var mh$ = g_file_set_attribute_string$MH();
         try {
             return (int)mh$.invokeExact(file, attribute, value, flags, cancellable, error);
@@ -6462,9 +6354,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_set_attribute_byte_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$678.g_file_set_attribute_byte_string$MH,"g_file_set_attribute_byte_string");
+        return RuntimeHelper.requireNonNull(constants$629.g_file_set_attribute_byte_string$MH,"g_file_set_attribute_byte_string");
     }
-    public static int g_file_set_attribute_byte_string ( Addressable file,  Addressable attribute,  Addressable value,  int flags,  Addressable cancellable,  Addressable error) {
+    /**
+     * {@snippet :
+     * gboolean g_file_set_attribute_byte_string(GFile* file, char* attribute, char* value, GFileQueryInfoFlags flags, GCancellable* cancellable, GError** error);
+     * }
+     */
+    public static int g_file_set_attribute_byte_string(MemorySegment file, MemorySegment attribute, MemorySegment value, int flags, MemorySegment cancellable, MemorySegment error) {
         var mh$ = g_file_set_attribute_byte_string$MH();
         try {
             return (int)mh$.invokeExact(file, attribute, value, flags, cancellable, error);
@@ -6473,9 +6370,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_set_attribute_uint32$MH() {
-        return RuntimeHelper.requireNonNull(constants$678.g_file_set_attribute_uint32$MH,"g_file_set_attribute_uint32");
+        return RuntimeHelper.requireNonNull(constants$629.g_file_set_attribute_uint32$MH,"g_file_set_attribute_uint32");
     }
-    public static int g_file_set_attribute_uint32 ( Addressable file,  Addressable attribute,  int value,  int flags,  Addressable cancellable,  Addressable error) {
+    /**
+     * {@snippet :
+     * gboolean g_file_set_attribute_uint32(GFile* file, char* attribute, guint32 value, GFileQueryInfoFlags flags, GCancellable* cancellable, GError** error);
+     * }
+     */
+    public static int g_file_set_attribute_uint32(MemorySegment file, MemorySegment attribute, int value, int flags, MemorySegment cancellable, MemorySegment error) {
         var mh$ = g_file_set_attribute_uint32$MH();
         try {
             return (int)mh$.invokeExact(file, attribute, value, flags, cancellable, error);
@@ -6484,9 +6386,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_set_attribute_int32$MH() {
-        return RuntimeHelper.requireNonNull(constants$678.g_file_set_attribute_int32$MH,"g_file_set_attribute_int32");
+        return RuntimeHelper.requireNonNull(constants$629.g_file_set_attribute_int32$MH,"g_file_set_attribute_int32");
     }
-    public static int g_file_set_attribute_int32 ( Addressable file,  Addressable attribute,  int value,  int flags,  Addressable cancellable,  Addressable error) {
+    /**
+     * {@snippet :
+     * gboolean g_file_set_attribute_int32(GFile* file, char* attribute, gint32 value, GFileQueryInfoFlags flags, GCancellable* cancellable, GError** error);
+     * }
+     */
+    public static int g_file_set_attribute_int32(MemorySegment file, MemorySegment attribute, int value, int flags, MemorySegment cancellable, MemorySegment error) {
         var mh$ = g_file_set_attribute_int32$MH();
         try {
             return (int)mh$.invokeExact(file, attribute, value, flags, cancellable, error);
@@ -6495,9 +6402,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_set_attribute_uint64$MH() {
-        return RuntimeHelper.requireNonNull(constants$678.g_file_set_attribute_uint64$MH,"g_file_set_attribute_uint64");
+        return RuntimeHelper.requireNonNull(constants$630.g_file_set_attribute_uint64$MH,"g_file_set_attribute_uint64");
     }
-    public static int g_file_set_attribute_uint64 ( Addressable file,  Addressable attribute,  long value,  int flags,  Addressable cancellable,  Addressable error) {
+    /**
+     * {@snippet :
+     * gboolean g_file_set_attribute_uint64(GFile* file, char* attribute, guint64 value, GFileQueryInfoFlags flags, GCancellable* cancellable, GError** error);
+     * }
+     */
+    public static int g_file_set_attribute_uint64(MemorySegment file, MemorySegment attribute, long value, int flags, MemorySegment cancellable, MemorySegment error) {
         var mh$ = g_file_set_attribute_uint64$MH();
         try {
             return (int)mh$.invokeExact(file, attribute, value, flags, cancellable, error);
@@ -6506,9 +6418,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_set_attribute_int64$MH() {
-        return RuntimeHelper.requireNonNull(constants$679.g_file_set_attribute_int64$MH,"g_file_set_attribute_int64");
+        return RuntimeHelper.requireNonNull(constants$630.g_file_set_attribute_int64$MH,"g_file_set_attribute_int64");
     }
-    public static int g_file_set_attribute_int64 ( Addressable file,  Addressable attribute,  long value,  int flags,  Addressable cancellable,  Addressable error) {
+    /**
+     * {@snippet :
+     * gboolean g_file_set_attribute_int64(GFile* file, char* attribute, gint64 value, GFileQueryInfoFlags flags, GCancellable* cancellable, GError** error);
+     * }
+     */
+    public static int g_file_set_attribute_int64(MemorySegment file, MemorySegment attribute, long value, int flags, MemorySegment cancellable, MemorySegment error) {
         var mh$ = g_file_set_attribute_int64$MH();
         try {
             return (int)mh$.invokeExact(file, attribute, value, flags, cancellable, error);
@@ -6517,9 +6434,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_mount_enclosing_volume$MH() {
-        return RuntimeHelper.requireNonNull(constants$679.g_file_mount_enclosing_volume$MH,"g_file_mount_enclosing_volume");
+        return RuntimeHelper.requireNonNull(constants$630.g_file_mount_enclosing_volume$MH,"g_file_mount_enclosing_volume");
     }
-    public static void g_file_mount_enclosing_volume ( Addressable location,  int flags,  Addressable mount_operation,  Addressable cancellable,  Addressable callback,  Addressable user_data) {
+    /**
+     * {@snippet :
+     * void g_file_mount_enclosing_volume(GFile* location, GMountMountFlags flags, GMountOperation* mount_operation, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
+     * }
+     */
+    public static void g_file_mount_enclosing_volume(MemorySegment location, int flags, MemorySegment mount_operation, MemorySegment cancellable, MemorySegment callback, MemorySegment user_data) {
         var mh$ = g_file_mount_enclosing_volume$MH();
         try {
             mh$.invokeExact(location, flags, mount_operation, cancellable, callback, user_data);
@@ -6528,9 +6450,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_mount_enclosing_volume_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$679.g_file_mount_enclosing_volume_finish$MH,"g_file_mount_enclosing_volume_finish");
+        return RuntimeHelper.requireNonNull(constants$630.g_file_mount_enclosing_volume_finish$MH,"g_file_mount_enclosing_volume_finish");
     }
-    public static int g_file_mount_enclosing_volume_finish ( Addressable location,  Addressable result,  Addressable error) {
+    /**
+     * {@snippet :
+     * gboolean g_file_mount_enclosing_volume_finish(GFile* location, GAsyncResult* result, GError** error);
+     * }
+     */
+    public static int g_file_mount_enclosing_volume_finish(MemorySegment location, MemorySegment result, MemorySegment error) {
         var mh$ = g_file_mount_enclosing_volume_finish$MH();
         try {
             return (int)mh$.invokeExact(location, result, error);
@@ -6539,9 +6466,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_mount_mountable$MH() {
-        return RuntimeHelper.requireNonNull(constants$679.g_file_mount_mountable$MH,"g_file_mount_mountable");
+        return RuntimeHelper.requireNonNull(constants$630.g_file_mount_mountable$MH,"g_file_mount_mountable");
     }
-    public static void g_file_mount_mountable ( Addressable file,  int flags,  Addressable mount_operation,  Addressable cancellable,  Addressable callback,  Addressable user_data) {
+    /**
+     * {@snippet :
+     * void g_file_mount_mountable(GFile* file, GMountMountFlags flags, GMountOperation* mount_operation, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
+     * }
+     */
+    public static void g_file_mount_mountable(MemorySegment file, int flags, MemorySegment mount_operation, MemorySegment cancellable, MemorySegment callback, MemorySegment user_data) {
         var mh$ = g_file_mount_mountable$MH();
         try {
             mh$.invokeExact(file, flags, mount_operation, cancellable, callback, user_data);
@@ -6550,20 +6482,30 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_mount_mountable_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$679.g_file_mount_mountable_finish$MH,"g_file_mount_mountable_finish");
+        return RuntimeHelper.requireNonNull(constants$630.g_file_mount_mountable_finish$MH,"g_file_mount_mountable_finish");
     }
-    public static MemoryAddress g_file_mount_mountable_finish ( Addressable file,  Addressable result,  Addressable error) {
+    /**
+     * {@snippet :
+     * GFile* g_file_mount_mountable_finish(GFile* file, GAsyncResult* result, GError** error);
+     * }
+     */
+    public static MemorySegment g_file_mount_mountable_finish(MemorySegment file, MemorySegment result, MemorySegment error) {
         var mh$ = g_file_mount_mountable_finish$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(file, result, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(file, result, error);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_unmount_mountable$MH() {
-        return RuntimeHelper.requireNonNull(constants$679.g_file_unmount_mountable$MH,"g_file_unmount_mountable");
+        return RuntimeHelper.requireNonNull(constants$631.g_file_unmount_mountable$MH,"g_file_unmount_mountable");
     }
-    public static void g_file_unmount_mountable ( Addressable file,  int flags,  Addressable cancellable,  Addressable callback,  Addressable user_data) {
+    /**
+     * {@snippet :
+     * void g_file_unmount_mountable(GFile* file, GMountUnmountFlags flags, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
+     * }
+     */
+    public static void g_file_unmount_mountable(MemorySegment file, int flags, MemorySegment cancellable, MemorySegment callback, MemorySegment user_data) {
         var mh$ = g_file_unmount_mountable$MH();
         try {
             mh$.invokeExact(file, flags, cancellable, callback, user_data);
@@ -6572,9 +6514,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_unmount_mountable_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$680.g_file_unmount_mountable_finish$MH,"g_file_unmount_mountable_finish");
+        return RuntimeHelper.requireNonNull(constants$631.g_file_unmount_mountable_finish$MH,"g_file_unmount_mountable_finish");
     }
-    public static int g_file_unmount_mountable_finish ( Addressable file,  Addressable result,  Addressable error) {
+    /**
+     * {@snippet :
+     * gboolean g_file_unmount_mountable_finish(GFile* file, GAsyncResult* result, GError** error);
+     * }
+     */
+    public static int g_file_unmount_mountable_finish(MemorySegment file, MemorySegment result, MemorySegment error) {
         var mh$ = g_file_unmount_mountable_finish$MH();
         try {
             return (int)mh$.invokeExact(file, result, error);
@@ -6583,9 +6530,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_unmount_mountable_with_operation$MH() {
-        return RuntimeHelper.requireNonNull(constants$680.g_file_unmount_mountable_with_operation$MH,"g_file_unmount_mountable_with_operation");
+        return RuntimeHelper.requireNonNull(constants$631.g_file_unmount_mountable_with_operation$MH,"g_file_unmount_mountable_with_operation");
     }
-    public static void g_file_unmount_mountable_with_operation ( Addressable file,  int flags,  Addressable mount_operation,  Addressable cancellable,  Addressable callback,  Addressable user_data) {
+    /**
+     * {@snippet :
+     * void g_file_unmount_mountable_with_operation(GFile* file, GMountUnmountFlags flags, GMountOperation* mount_operation, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
+     * }
+     */
+    public static void g_file_unmount_mountable_with_operation(MemorySegment file, int flags, MemorySegment mount_operation, MemorySegment cancellable, MemorySegment callback, MemorySegment user_data) {
         var mh$ = g_file_unmount_mountable_with_operation$MH();
         try {
             mh$.invokeExact(file, flags, mount_operation, cancellable, callback, user_data);
@@ -6594,9 +6546,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_unmount_mountable_with_operation_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$680.g_file_unmount_mountable_with_operation_finish$MH,"g_file_unmount_mountable_with_operation_finish");
+        return RuntimeHelper.requireNonNull(constants$631.g_file_unmount_mountable_with_operation_finish$MH,"g_file_unmount_mountable_with_operation_finish");
     }
-    public static int g_file_unmount_mountable_with_operation_finish ( Addressable file,  Addressable result,  Addressable error) {
+    /**
+     * {@snippet :
+     * gboolean g_file_unmount_mountable_with_operation_finish(GFile* file, GAsyncResult* result, GError** error);
+     * }
+     */
+    public static int g_file_unmount_mountable_with_operation_finish(MemorySegment file, MemorySegment result, MemorySegment error) {
         var mh$ = g_file_unmount_mountable_with_operation_finish$MH();
         try {
             return (int)mh$.invokeExact(file, result, error);
@@ -6605,9 +6562,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_eject_mountable$MH() {
-        return RuntimeHelper.requireNonNull(constants$680.g_file_eject_mountable$MH,"g_file_eject_mountable");
+        return RuntimeHelper.requireNonNull(constants$631.g_file_eject_mountable$MH,"g_file_eject_mountable");
     }
-    public static void g_file_eject_mountable ( Addressable file,  int flags,  Addressable cancellable,  Addressable callback,  Addressable user_data) {
+    /**
+     * {@snippet :
+     * void g_file_eject_mountable(GFile* file, GMountUnmountFlags flags, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
+     * }
+     */
+    public static void g_file_eject_mountable(MemorySegment file, int flags, MemorySegment cancellable, MemorySegment callback, MemorySegment user_data) {
         var mh$ = g_file_eject_mountable$MH();
         try {
             mh$.invokeExact(file, flags, cancellable, callback, user_data);
@@ -6616,9 +6578,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_eject_mountable_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$680.g_file_eject_mountable_finish$MH,"g_file_eject_mountable_finish");
+        return RuntimeHelper.requireNonNull(constants$631.g_file_eject_mountable_finish$MH,"g_file_eject_mountable_finish");
     }
-    public static int g_file_eject_mountable_finish ( Addressable file,  Addressable result,  Addressable error) {
+    /**
+     * {@snippet :
+     * gboolean g_file_eject_mountable_finish(GFile* file, GAsyncResult* result, GError** error);
+     * }
+     */
+    public static int g_file_eject_mountable_finish(MemorySegment file, MemorySegment result, MemorySegment error) {
         var mh$ = g_file_eject_mountable_finish$MH();
         try {
             return (int)mh$.invokeExact(file, result, error);
@@ -6627,9 +6594,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_eject_mountable_with_operation$MH() {
-        return RuntimeHelper.requireNonNull(constants$680.g_file_eject_mountable_with_operation$MH,"g_file_eject_mountable_with_operation");
+        return RuntimeHelper.requireNonNull(constants$632.g_file_eject_mountable_with_operation$MH,"g_file_eject_mountable_with_operation");
     }
-    public static void g_file_eject_mountable_with_operation ( Addressable file,  int flags,  Addressable mount_operation,  Addressable cancellable,  Addressable callback,  Addressable user_data) {
+    /**
+     * {@snippet :
+     * void g_file_eject_mountable_with_operation(GFile* file, GMountUnmountFlags flags, GMountOperation* mount_operation, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
+     * }
+     */
+    public static void g_file_eject_mountable_with_operation(MemorySegment file, int flags, MemorySegment mount_operation, MemorySegment cancellable, MemorySegment callback, MemorySegment user_data) {
         var mh$ = g_file_eject_mountable_with_operation$MH();
         try {
             mh$.invokeExact(file, flags, mount_operation, cancellable, callback, user_data);
@@ -6638,9 +6610,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_eject_mountable_with_operation_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$681.g_file_eject_mountable_with_operation_finish$MH,"g_file_eject_mountable_with_operation_finish");
+        return RuntimeHelper.requireNonNull(constants$632.g_file_eject_mountable_with_operation_finish$MH,"g_file_eject_mountable_with_operation_finish");
     }
-    public static int g_file_eject_mountable_with_operation_finish ( Addressable file,  Addressable result,  Addressable error) {
+    /**
+     * {@snippet :
+     * gboolean g_file_eject_mountable_with_operation_finish(GFile* file, GAsyncResult* result, GError** error);
+     * }
+     */
+    public static int g_file_eject_mountable_with_operation_finish(MemorySegment file, MemorySegment result, MemorySegment error) {
         var mh$ = g_file_eject_mountable_with_operation_finish$MH();
         try {
             return (int)mh$.invokeExact(file, result, error);
@@ -6649,20 +6626,30 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_build_attribute_list_for_copy$MH() {
-        return RuntimeHelper.requireNonNull(constants$681.g_file_build_attribute_list_for_copy$MH,"g_file_build_attribute_list_for_copy");
+        return RuntimeHelper.requireNonNull(constants$632.g_file_build_attribute_list_for_copy$MH,"g_file_build_attribute_list_for_copy");
     }
-    public static MemoryAddress g_file_build_attribute_list_for_copy ( Addressable file,  int flags,  Addressable cancellable,  Addressable error) {
+    /**
+     * {@snippet :
+     * char* g_file_build_attribute_list_for_copy(GFile* file, GFileCopyFlags flags, GCancellable* cancellable, GError** error);
+     * }
+     */
+    public static MemorySegment g_file_build_attribute_list_for_copy(MemorySegment file, int flags, MemorySegment cancellable, MemorySegment error) {
         var mh$ = g_file_build_attribute_list_for_copy$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(file, flags, cancellable, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(file, flags, cancellable, error);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_copy_attributes$MH() {
-        return RuntimeHelper.requireNonNull(constants$681.g_file_copy_attributes$MH,"g_file_copy_attributes");
+        return RuntimeHelper.requireNonNull(constants$632.g_file_copy_attributes$MH,"g_file_copy_attributes");
     }
-    public static int g_file_copy_attributes ( Addressable source,  Addressable destination,  int flags,  Addressable cancellable,  Addressable error) {
+    /**
+     * {@snippet :
+     * gboolean g_file_copy_attributes(GFile* source, GFile* destination, GFileCopyFlags flags, GCancellable* cancellable, GError** error);
+     * }
+     */
+    public static int g_file_copy_attributes(MemorySegment source, MemorySegment destination, int flags, MemorySegment cancellable, MemorySegment error) {
         var mh$ = g_file_copy_attributes$MH();
         try {
             return (int)mh$.invokeExact(source, destination, flags, cancellable, error);
@@ -6671,42 +6658,62 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_monitor_directory$MH() {
-        return RuntimeHelper.requireNonNull(constants$681.g_file_monitor_directory$MH,"g_file_monitor_directory");
+        return RuntimeHelper.requireNonNull(constants$632.g_file_monitor_directory$MH,"g_file_monitor_directory");
     }
-    public static MemoryAddress g_file_monitor_directory ( Addressable file,  int flags,  Addressable cancellable,  Addressable error) {
+    /**
+     * {@snippet :
+     * GFileMonitor* g_file_monitor_directory(GFile* file, GFileMonitorFlags flags, GCancellable* cancellable, GError** error);
+     * }
+     */
+    public static MemorySegment g_file_monitor_directory(MemorySegment file, int flags, MemorySegment cancellable, MemorySegment error) {
         var mh$ = g_file_monitor_directory$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(file, flags, cancellable, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(file, flags, cancellable, error);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_monitor_file$MH() {
-        return RuntimeHelper.requireNonNull(constants$681.g_file_monitor_file$MH,"g_file_monitor_file");
+        return RuntimeHelper.requireNonNull(constants$632.g_file_monitor_file$MH,"g_file_monitor_file");
     }
-    public static MemoryAddress g_file_monitor_file ( Addressable file,  int flags,  Addressable cancellable,  Addressable error) {
+    /**
+     * {@snippet :
+     * GFileMonitor* g_file_monitor_file(GFile* file, GFileMonitorFlags flags, GCancellable* cancellable, GError** error);
+     * }
+     */
+    public static MemorySegment g_file_monitor_file(MemorySegment file, int flags, MemorySegment cancellable, MemorySegment error) {
         var mh$ = g_file_monitor_file$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(file, flags, cancellable, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(file, flags, cancellable, error);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_monitor$MH() {
-        return RuntimeHelper.requireNonNull(constants$681.g_file_monitor$MH,"g_file_monitor");
+        return RuntimeHelper.requireNonNull(constants$633.g_file_monitor$MH,"g_file_monitor");
     }
-    public static MemoryAddress g_file_monitor ( Addressable file,  int flags,  Addressable cancellable,  Addressable error) {
+    /**
+     * {@snippet :
+     * GFileMonitor* g_file_monitor(GFile* file, GFileMonitorFlags flags, GCancellable* cancellable, GError** error);
+     * }
+     */
+    public static MemorySegment g_file_monitor(MemorySegment file, int flags, MemorySegment cancellable, MemorySegment error) {
         var mh$ = g_file_monitor$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(file, flags, cancellable, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(file, flags, cancellable, error);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_measure_disk_usage$MH() {
-        return RuntimeHelper.requireNonNull(constants$682.g_file_measure_disk_usage$MH,"g_file_measure_disk_usage");
+        return RuntimeHelper.requireNonNull(constants$633.g_file_measure_disk_usage$MH,"g_file_measure_disk_usage");
     }
-    public static int g_file_measure_disk_usage ( Addressable file,  int flags,  Addressable cancellable,  Addressable progress_callback,  Addressable progress_data,  Addressable disk_usage,  Addressable num_dirs,  Addressable num_files,  Addressable error) {
+    /**
+     * {@snippet :
+     * gboolean g_file_measure_disk_usage(GFile* file, GFileMeasureFlags flags, GCancellable* cancellable, GFileMeasureProgressCallback progress_callback, gpointer progress_data, guint64* disk_usage, guint64* num_dirs, guint64* num_files, GError** error);
+     * }
+     */
+    public static int g_file_measure_disk_usage(MemorySegment file, int flags, MemorySegment cancellable, MemorySegment progress_callback, MemorySegment progress_data, MemorySegment disk_usage, MemorySegment num_dirs, MemorySegment num_files, MemorySegment error) {
         var mh$ = g_file_measure_disk_usage$MH();
         try {
             return (int)mh$.invokeExact(file, flags, cancellable, progress_callback, progress_data, disk_usage, num_dirs, num_files, error);
@@ -6715,9 +6722,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_measure_disk_usage_async$MH() {
-        return RuntimeHelper.requireNonNull(constants$682.g_file_measure_disk_usage_async$MH,"g_file_measure_disk_usage_async");
+        return RuntimeHelper.requireNonNull(constants$633.g_file_measure_disk_usage_async$MH,"g_file_measure_disk_usage_async");
     }
-    public static void g_file_measure_disk_usage_async ( Addressable file,  int flags,  int io_priority,  Addressable cancellable,  Addressable progress_callback,  Addressable progress_data,  Addressable callback,  Addressable user_data) {
+    /**
+     * {@snippet :
+     * void g_file_measure_disk_usage_async(GFile* file, GFileMeasureFlags flags, gint io_priority, GCancellable* cancellable, GFileMeasureProgressCallback progress_callback, gpointer progress_data, GAsyncReadyCallback callback, gpointer user_data);
+     * }
+     */
+    public static void g_file_measure_disk_usage_async(MemorySegment file, int flags, int io_priority, MemorySegment cancellable, MemorySegment progress_callback, MemorySegment progress_data, MemorySegment callback, MemorySegment user_data) {
         var mh$ = g_file_measure_disk_usage_async$MH();
         try {
             mh$.invokeExact(file, flags, io_priority, cancellable, progress_callback, progress_data, callback, user_data);
@@ -6726,9 +6738,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_measure_disk_usage_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$682.g_file_measure_disk_usage_finish$MH,"g_file_measure_disk_usage_finish");
+        return RuntimeHelper.requireNonNull(constants$633.g_file_measure_disk_usage_finish$MH,"g_file_measure_disk_usage_finish");
     }
-    public static int g_file_measure_disk_usage_finish ( Addressable file,  Addressable result,  Addressable disk_usage,  Addressable num_dirs,  Addressable num_files,  Addressable error) {
+    /**
+     * {@snippet :
+     * gboolean g_file_measure_disk_usage_finish(GFile* file, GAsyncResult* result, guint64* disk_usage, guint64* num_dirs, guint64* num_files, GError** error);
+     * }
+     */
+    public static int g_file_measure_disk_usage_finish(MemorySegment file, MemorySegment result, MemorySegment disk_usage, MemorySegment num_dirs, MemorySegment num_files, MemorySegment error) {
         var mh$ = g_file_measure_disk_usage_finish$MH();
         try {
             return (int)mh$.invokeExact(file, result, disk_usage, num_dirs, num_files, error);
@@ -6737,9 +6754,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_start_mountable$MH() {
-        return RuntimeHelper.requireNonNull(constants$682.g_file_start_mountable$MH,"g_file_start_mountable");
+        return RuntimeHelper.requireNonNull(constants$633.g_file_start_mountable$MH,"g_file_start_mountable");
     }
-    public static void g_file_start_mountable ( Addressable file,  int flags,  Addressable start_operation,  Addressable cancellable,  Addressable callback,  Addressable user_data) {
+    /**
+     * {@snippet :
+     * void g_file_start_mountable(GFile* file, GDriveStartFlags flags, GMountOperation* start_operation, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
+     * }
+     */
+    public static void g_file_start_mountable(MemorySegment file, int flags, MemorySegment start_operation, MemorySegment cancellable, MemorySegment callback, MemorySegment user_data) {
         var mh$ = g_file_start_mountable$MH();
         try {
             mh$.invokeExact(file, flags, start_operation, cancellable, callback, user_data);
@@ -6748,9 +6770,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_start_mountable_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$682.g_file_start_mountable_finish$MH,"g_file_start_mountable_finish");
+        return RuntimeHelper.requireNonNull(constants$633.g_file_start_mountable_finish$MH,"g_file_start_mountable_finish");
     }
-    public static int g_file_start_mountable_finish ( Addressable file,  Addressable result,  Addressable error) {
+    /**
+     * {@snippet :
+     * gboolean g_file_start_mountable_finish(GFile* file, GAsyncResult* result, GError** error);
+     * }
+     */
+    public static int g_file_start_mountable_finish(MemorySegment file, MemorySegment result, MemorySegment error) {
         var mh$ = g_file_start_mountable_finish$MH();
         try {
             return (int)mh$.invokeExact(file, result, error);
@@ -6759,9 +6786,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_stop_mountable$MH() {
-        return RuntimeHelper.requireNonNull(constants$682.g_file_stop_mountable$MH,"g_file_stop_mountable");
+        return RuntimeHelper.requireNonNull(constants$634.g_file_stop_mountable$MH,"g_file_stop_mountable");
     }
-    public static void g_file_stop_mountable ( Addressable file,  int flags,  Addressable mount_operation,  Addressable cancellable,  Addressable callback,  Addressable user_data) {
+    /**
+     * {@snippet :
+     * void g_file_stop_mountable(GFile* file, GMountUnmountFlags flags, GMountOperation* mount_operation, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
+     * }
+     */
+    public static void g_file_stop_mountable(MemorySegment file, int flags, MemorySegment mount_operation, MemorySegment cancellable, MemorySegment callback, MemorySegment user_data) {
         var mh$ = g_file_stop_mountable$MH();
         try {
             mh$.invokeExact(file, flags, mount_operation, cancellable, callback, user_data);
@@ -6770,9 +6802,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_stop_mountable_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$683.g_file_stop_mountable_finish$MH,"g_file_stop_mountable_finish");
+        return RuntimeHelper.requireNonNull(constants$634.g_file_stop_mountable_finish$MH,"g_file_stop_mountable_finish");
     }
-    public static int g_file_stop_mountable_finish ( Addressable file,  Addressable result,  Addressable error) {
+    /**
+     * {@snippet :
+     * gboolean g_file_stop_mountable_finish(GFile* file, GAsyncResult* result, GError** error);
+     * }
+     */
+    public static int g_file_stop_mountable_finish(MemorySegment file, MemorySegment result, MemorySegment error) {
         var mh$ = g_file_stop_mountable_finish$MH();
         try {
             return (int)mh$.invokeExact(file, result, error);
@@ -6781,9 +6818,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_poll_mountable$MH() {
-        return RuntimeHelper.requireNonNull(constants$683.g_file_poll_mountable$MH,"g_file_poll_mountable");
+        return RuntimeHelper.requireNonNull(constants$634.g_file_poll_mountable$MH,"g_file_poll_mountable");
     }
-    public static void g_file_poll_mountable ( Addressable file,  Addressable cancellable,  Addressable callback,  Addressable user_data) {
+    /**
+     * {@snippet :
+     * void g_file_poll_mountable(GFile* file, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
+     * }
+     */
+    public static void g_file_poll_mountable(MemorySegment file, MemorySegment cancellable, MemorySegment callback, MemorySegment user_data) {
         var mh$ = g_file_poll_mountable$MH();
         try {
             mh$.invokeExact(file, cancellable, callback, user_data);
@@ -6792,9 +6834,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_poll_mountable_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$683.g_file_poll_mountable_finish$MH,"g_file_poll_mountable_finish");
+        return RuntimeHelper.requireNonNull(constants$634.g_file_poll_mountable_finish$MH,"g_file_poll_mountable_finish");
     }
-    public static int g_file_poll_mountable_finish ( Addressable file,  Addressable result,  Addressable error) {
+    /**
+     * {@snippet :
+     * gboolean g_file_poll_mountable_finish(GFile* file, GAsyncResult* result, GError** error);
+     * }
+     */
+    public static int g_file_poll_mountable_finish(MemorySegment file, MemorySegment result, MemorySegment error) {
         var mh$ = g_file_poll_mountable_finish$MH();
         try {
             return (int)mh$.invokeExact(file, result, error);
@@ -6803,20 +6850,30 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_query_default_handler$MH() {
-        return RuntimeHelper.requireNonNull(constants$683.g_file_query_default_handler$MH,"g_file_query_default_handler");
+        return RuntimeHelper.requireNonNull(constants$634.g_file_query_default_handler$MH,"g_file_query_default_handler");
     }
-    public static MemoryAddress g_file_query_default_handler ( Addressable file,  Addressable cancellable,  Addressable error) {
+    /**
+     * {@snippet :
+     * GAppInfo* g_file_query_default_handler(GFile* file, GCancellable* cancellable, GError** error);
+     * }
+     */
+    public static MemorySegment g_file_query_default_handler(MemorySegment file, MemorySegment cancellable, MemorySegment error) {
         var mh$ = g_file_query_default_handler$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(file, cancellable, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(file, cancellable, error);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_query_default_handler_async$MH() {
-        return RuntimeHelper.requireNonNull(constants$683.g_file_query_default_handler_async$MH,"g_file_query_default_handler_async");
+        return RuntimeHelper.requireNonNull(constants$634.g_file_query_default_handler_async$MH,"g_file_query_default_handler_async");
     }
-    public static void g_file_query_default_handler_async ( Addressable file,  int io_priority,  Addressable cancellable,  Addressable callback,  Addressable user_data) {
+    /**
+     * {@snippet :
+     * void g_file_query_default_handler_async(GFile* file, int io_priority, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
+     * }
+     */
+    public static void g_file_query_default_handler_async(MemorySegment file, int io_priority, MemorySegment cancellable, MemorySegment callback, MemorySegment user_data) {
         var mh$ = g_file_query_default_handler_async$MH();
         try {
             mh$.invokeExact(file, io_priority, cancellable, callback, user_data);
@@ -6825,20 +6882,30 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_query_default_handler_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$683.g_file_query_default_handler_finish$MH,"g_file_query_default_handler_finish");
+        return RuntimeHelper.requireNonNull(constants$635.g_file_query_default_handler_finish$MH,"g_file_query_default_handler_finish");
     }
-    public static MemoryAddress g_file_query_default_handler_finish ( Addressable file,  Addressable result,  Addressable error) {
+    /**
+     * {@snippet :
+     * GAppInfo* g_file_query_default_handler_finish(GFile* file, GAsyncResult* result, GError** error);
+     * }
+     */
+    public static MemorySegment g_file_query_default_handler_finish(MemorySegment file, MemorySegment result, MemorySegment error) {
         var mh$ = g_file_query_default_handler_finish$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(file, result, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(file, result, error);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_load_contents$MH() {
-        return RuntimeHelper.requireNonNull(constants$684.g_file_load_contents$MH,"g_file_load_contents");
+        return RuntimeHelper.requireNonNull(constants$635.g_file_load_contents$MH,"g_file_load_contents");
     }
-    public static int g_file_load_contents ( Addressable file,  Addressable cancellable,  Addressable contents,  Addressable length,  Addressable etag_out,  Addressable error) {
+    /**
+     * {@snippet :
+     * gboolean g_file_load_contents(GFile* file, GCancellable* cancellable, char** contents, gsize* length, char** etag_out, GError** error);
+     * }
+     */
+    public static int g_file_load_contents(MemorySegment file, MemorySegment cancellable, MemorySegment contents, MemorySegment length, MemorySegment etag_out, MemorySegment error) {
         var mh$ = g_file_load_contents$MH();
         try {
             return (int)mh$.invokeExact(file, cancellable, contents, length, etag_out, error);
@@ -6847,9 +6914,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_load_contents_async$MH() {
-        return RuntimeHelper.requireNonNull(constants$684.g_file_load_contents_async$MH,"g_file_load_contents_async");
+        return RuntimeHelper.requireNonNull(constants$635.g_file_load_contents_async$MH,"g_file_load_contents_async");
     }
-    public static void g_file_load_contents_async ( Addressable file,  Addressable cancellable,  Addressable callback,  Addressable user_data) {
+    /**
+     * {@snippet :
+     * void g_file_load_contents_async(GFile* file, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
+     * }
+     */
+    public static void g_file_load_contents_async(MemorySegment file, MemorySegment cancellable, MemorySegment callback, MemorySegment user_data) {
         var mh$ = g_file_load_contents_async$MH();
         try {
             mh$.invokeExact(file, cancellable, callback, user_data);
@@ -6858,9 +6930,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_load_contents_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$684.g_file_load_contents_finish$MH,"g_file_load_contents_finish");
+        return RuntimeHelper.requireNonNull(constants$635.g_file_load_contents_finish$MH,"g_file_load_contents_finish");
     }
-    public static int g_file_load_contents_finish ( Addressable file,  Addressable res,  Addressable contents,  Addressable length,  Addressable etag_out,  Addressable error) {
+    /**
+     * {@snippet :
+     * gboolean g_file_load_contents_finish(GFile* file, GAsyncResult* res, char** contents, gsize* length, char** etag_out, GError** error);
+     * }
+     */
+    public static int g_file_load_contents_finish(MemorySegment file, MemorySegment res, MemorySegment contents, MemorySegment length, MemorySegment etag_out, MemorySegment error) {
         var mh$ = g_file_load_contents_finish$MH();
         try {
             return (int)mh$.invokeExact(file, res, contents, length, etag_out, error);
@@ -6869,9 +6946,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_load_partial_contents_async$MH() {
-        return RuntimeHelper.requireNonNull(constants$684.g_file_load_partial_contents_async$MH,"g_file_load_partial_contents_async");
+        return RuntimeHelper.requireNonNull(constants$635.g_file_load_partial_contents_async$MH,"g_file_load_partial_contents_async");
     }
-    public static void g_file_load_partial_contents_async ( Addressable file,  Addressable cancellable,  Addressable read_more_callback,  Addressable callback,  Addressable user_data) {
+    /**
+     * {@snippet :
+     * void g_file_load_partial_contents_async(GFile* file, GCancellable* cancellable, GFileReadMoreCallback read_more_callback, GAsyncReadyCallback callback, gpointer user_data);
+     * }
+     */
+    public static void g_file_load_partial_contents_async(MemorySegment file, MemorySegment cancellable, MemorySegment read_more_callback, MemorySegment callback, MemorySegment user_data) {
         var mh$ = g_file_load_partial_contents_async$MH();
         try {
             mh$.invokeExact(file, cancellable, read_more_callback, callback, user_data);
@@ -6880,9 +6962,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_load_partial_contents_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$684.g_file_load_partial_contents_finish$MH,"g_file_load_partial_contents_finish");
+        return RuntimeHelper.requireNonNull(constants$635.g_file_load_partial_contents_finish$MH,"g_file_load_partial_contents_finish");
     }
-    public static int g_file_load_partial_contents_finish ( Addressable file,  Addressable res,  Addressable contents,  Addressable length,  Addressable etag_out,  Addressable error) {
+    /**
+     * {@snippet :
+     * gboolean g_file_load_partial_contents_finish(GFile* file, GAsyncResult* res, char** contents, gsize* length, char** etag_out, GError** error);
+     * }
+     */
+    public static int g_file_load_partial_contents_finish(MemorySegment file, MemorySegment res, MemorySegment contents, MemorySegment length, MemorySegment etag_out, MemorySegment error) {
         var mh$ = g_file_load_partial_contents_finish$MH();
         try {
             return (int)mh$.invokeExact(file, res, contents, length, etag_out, error);
@@ -6891,9 +6978,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_replace_contents$MH() {
-        return RuntimeHelper.requireNonNull(constants$684.g_file_replace_contents$MH,"g_file_replace_contents");
+        return RuntimeHelper.requireNonNull(constants$636.g_file_replace_contents$MH,"g_file_replace_contents");
     }
-    public static int g_file_replace_contents ( Addressable file,  Addressable contents,  long length,  Addressable etag,  int make_backup,  int flags,  Addressable new_etag,  Addressable cancellable,  Addressable error) {
+    /**
+     * {@snippet :
+     * gboolean g_file_replace_contents(GFile* file, char* contents, gsize length, char* etag, gboolean make_backup, GFileCreateFlags flags, char** new_etag, GCancellable* cancellable, GError** error);
+     * }
+     */
+    public static int g_file_replace_contents(MemorySegment file, MemorySegment contents, long length, MemorySegment etag, int make_backup, int flags, MemorySegment new_etag, MemorySegment cancellable, MemorySegment error) {
         var mh$ = g_file_replace_contents$MH();
         try {
             return (int)mh$.invokeExact(file, contents, length, etag, make_backup, flags, new_etag, cancellable, error);
@@ -6902,9 +6994,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_replace_contents_async$MH() {
-        return RuntimeHelper.requireNonNull(constants$685.g_file_replace_contents_async$MH,"g_file_replace_contents_async");
+        return RuntimeHelper.requireNonNull(constants$636.g_file_replace_contents_async$MH,"g_file_replace_contents_async");
     }
-    public static void g_file_replace_contents_async ( Addressable file,  Addressable contents,  long length,  Addressable etag,  int make_backup,  int flags,  Addressable cancellable,  Addressable callback,  Addressable user_data) {
+    /**
+     * {@snippet :
+     * void g_file_replace_contents_async(GFile* file, char* contents, gsize length, char* etag, gboolean make_backup, GFileCreateFlags flags, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
+     * }
+     */
+    public static void g_file_replace_contents_async(MemorySegment file, MemorySegment contents, long length, MemorySegment etag, int make_backup, int flags, MemorySegment cancellable, MemorySegment callback, MemorySegment user_data) {
         var mh$ = g_file_replace_contents_async$MH();
         try {
             mh$.invokeExact(file, contents, length, etag, make_backup, flags, cancellable, callback, user_data);
@@ -6913,9 +7010,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_replace_contents_bytes_async$MH() {
-        return RuntimeHelper.requireNonNull(constants$685.g_file_replace_contents_bytes_async$MH,"g_file_replace_contents_bytes_async");
+        return RuntimeHelper.requireNonNull(constants$636.g_file_replace_contents_bytes_async$MH,"g_file_replace_contents_bytes_async");
     }
-    public static void g_file_replace_contents_bytes_async ( Addressable file,  Addressable contents,  Addressable etag,  int make_backup,  int flags,  Addressable cancellable,  Addressable callback,  Addressable user_data) {
+    /**
+     * {@snippet :
+     * void g_file_replace_contents_bytes_async(GFile* file, GBytes* contents, char* etag, gboolean make_backup, GFileCreateFlags flags, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
+     * }
+     */
+    public static void g_file_replace_contents_bytes_async(MemorySegment file, MemorySegment contents, MemorySegment etag, int make_backup, int flags, MemorySegment cancellable, MemorySegment callback, MemorySegment user_data) {
         var mh$ = g_file_replace_contents_bytes_async$MH();
         try {
             mh$.invokeExact(file, contents, etag, make_backup, flags, cancellable, callback, user_data);
@@ -6924,9 +7026,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_replace_contents_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$685.g_file_replace_contents_finish$MH,"g_file_replace_contents_finish");
+        return RuntimeHelper.requireNonNull(constants$636.g_file_replace_contents_finish$MH,"g_file_replace_contents_finish");
     }
-    public static int g_file_replace_contents_finish ( Addressable file,  Addressable res,  Addressable new_etag,  Addressable error) {
+    /**
+     * {@snippet :
+     * gboolean g_file_replace_contents_finish(GFile* file, GAsyncResult* res, char** new_etag, GError** error);
+     * }
+     */
+    public static int g_file_replace_contents_finish(MemorySegment file, MemorySegment res, MemorySegment new_etag, MemorySegment error) {
         var mh$ = g_file_replace_contents_finish$MH();
         try {
             return (int)mh$.invokeExact(file, res, new_etag, error);
@@ -6935,9 +7042,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_supports_thread_contexts$MH() {
-        return RuntimeHelper.requireNonNull(constants$685.g_file_supports_thread_contexts$MH,"g_file_supports_thread_contexts");
+        return RuntimeHelper.requireNonNull(constants$636.g_file_supports_thread_contexts$MH,"g_file_supports_thread_contexts");
     }
-    public static int g_file_supports_thread_contexts ( Addressable file) {
+    /**
+     * {@snippet :
+     * gboolean g_file_supports_thread_contexts(GFile* file);
+     * }
+     */
+    public static int g_file_supports_thread_contexts(MemorySegment file) {
         var mh$ = g_file_supports_thread_contexts$MH();
         try {
             return (int)mh$.invokeExact(file);
@@ -6946,20 +7058,30 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_load_bytes$MH() {
-        return RuntimeHelper.requireNonNull(constants$685.g_file_load_bytes$MH,"g_file_load_bytes");
+        return RuntimeHelper.requireNonNull(constants$636.g_file_load_bytes$MH,"g_file_load_bytes");
     }
-    public static MemoryAddress g_file_load_bytes ( Addressable file,  Addressable cancellable,  Addressable etag_out,  Addressable error) {
+    /**
+     * {@snippet :
+     * GBytes* g_file_load_bytes(GFile* file, GCancellable* cancellable, gchar** etag_out, GError** error);
+     * }
+     */
+    public static MemorySegment g_file_load_bytes(MemorySegment file, MemorySegment cancellable, MemorySegment etag_out, MemorySegment error) {
         var mh$ = g_file_load_bytes$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(file, cancellable, etag_out, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(file, cancellable, etag_out, error);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_load_bytes_async$MH() {
-        return RuntimeHelper.requireNonNull(constants$685.g_file_load_bytes_async$MH,"g_file_load_bytes_async");
+        return RuntimeHelper.requireNonNull(constants$637.g_file_load_bytes_async$MH,"g_file_load_bytes_async");
     }
-    public static void g_file_load_bytes_async ( Addressable file,  Addressable cancellable,  Addressable callback,  Addressable user_data) {
+    /**
+     * {@snippet :
+     * void g_file_load_bytes_async(GFile* file, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
+     * }
+     */
+    public static void g_file_load_bytes_async(MemorySegment file, MemorySegment cancellable, MemorySegment callback, MemorySegment user_data) {
         var mh$ = g_file_load_bytes_async$MH();
         try {
             mh$.invokeExact(file, cancellable, callback, user_data);
@@ -6968,20 +7090,30 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_load_bytes_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$686.g_file_load_bytes_finish$MH,"g_file_load_bytes_finish");
+        return RuntimeHelper.requireNonNull(constants$637.g_file_load_bytes_finish$MH,"g_file_load_bytes_finish");
     }
-    public static MemoryAddress g_file_load_bytes_finish ( Addressable file,  Addressable result,  Addressable etag_out,  Addressable error) {
+    /**
+     * {@snippet :
+     * GBytes* g_file_load_bytes_finish(GFile* file, GAsyncResult* result, gchar** etag_out, GError** error);
+     * }
+     */
+    public static MemorySegment g_file_load_bytes_finish(MemorySegment file, MemorySegment result, MemorySegment etag_out, MemorySegment error) {
         var mh$ = g_file_load_bytes_finish$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(file, result, etag_out, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(file, result, etag_out, error);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_attribute_info_list_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$686.g_file_attribute_info_list_get_type$MH,"g_file_attribute_info_list_get_type");
+        return RuntimeHelper.requireNonNull(constants$637.g_file_attribute_info_list_get_type$MH,"g_file_attribute_info_list_get_type");
     }
-    public static long g_file_attribute_info_list_get_type () {
+    /**
+     * {@snippet :
+     * GType g_file_attribute_info_list_get_type();
+     * }
+     */
+    public static long g_file_attribute_info_list_get_type() {
         var mh$ = g_file_attribute_info_list_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -6990,31 +7122,46 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_attribute_info_list_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$686.g_file_attribute_info_list_new$MH,"g_file_attribute_info_list_new");
+        return RuntimeHelper.requireNonNull(constants$637.g_file_attribute_info_list_new$MH,"g_file_attribute_info_list_new");
     }
-    public static MemoryAddress g_file_attribute_info_list_new () {
+    /**
+     * {@snippet :
+     * GFileAttributeInfoList* g_file_attribute_info_list_new();
+     * }
+     */
+    public static MemorySegment g_file_attribute_info_list_new() {
         var mh$ = g_file_attribute_info_list_new$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact();
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_attribute_info_list_ref$MH() {
-        return RuntimeHelper.requireNonNull(constants$686.g_file_attribute_info_list_ref$MH,"g_file_attribute_info_list_ref");
+        return RuntimeHelper.requireNonNull(constants$637.g_file_attribute_info_list_ref$MH,"g_file_attribute_info_list_ref");
     }
-    public static MemoryAddress g_file_attribute_info_list_ref ( Addressable list) {
+    /**
+     * {@snippet :
+     * GFileAttributeInfoList* g_file_attribute_info_list_ref(GFileAttributeInfoList* list);
+     * }
+     */
+    public static MemorySegment g_file_attribute_info_list_ref(MemorySegment list) {
         var mh$ = g_file_attribute_info_list_ref$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(list);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(list);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_attribute_info_list_unref$MH() {
-        return RuntimeHelper.requireNonNull(constants$686.g_file_attribute_info_list_unref$MH,"g_file_attribute_info_list_unref");
+        return RuntimeHelper.requireNonNull(constants$637.g_file_attribute_info_list_unref$MH,"g_file_attribute_info_list_unref");
     }
-    public static void g_file_attribute_info_list_unref ( Addressable list) {
+    /**
+     * {@snippet :
+     * void g_file_attribute_info_list_unref(GFileAttributeInfoList* list);
+     * }
+     */
+    public static void g_file_attribute_info_list_unref(MemorySegment list) {
         var mh$ = g_file_attribute_info_list_unref$MH();
         try {
             mh$.invokeExact(list);
@@ -7023,31 +7170,46 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_attribute_info_list_dup$MH() {
-        return RuntimeHelper.requireNonNull(constants$686.g_file_attribute_info_list_dup$MH,"g_file_attribute_info_list_dup");
+        return RuntimeHelper.requireNonNull(constants$638.g_file_attribute_info_list_dup$MH,"g_file_attribute_info_list_dup");
     }
-    public static MemoryAddress g_file_attribute_info_list_dup ( Addressable list) {
+    /**
+     * {@snippet :
+     * GFileAttributeInfoList* g_file_attribute_info_list_dup(GFileAttributeInfoList* list);
+     * }
+     */
+    public static MemorySegment g_file_attribute_info_list_dup(MemorySegment list) {
         var mh$ = g_file_attribute_info_list_dup$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(list);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(list);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_attribute_info_list_lookup$MH() {
-        return RuntimeHelper.requireNonNull(constants$687.g_file_attribute_info_list_lookup$MH,"g_file_attribute_info_list_lookup");
+        return RuntimeHelper.requireNonNull(constants$638.g_file_attribute_info_list_lookup$MH,"g_file_attribute_info_list_lookup");
     }
-    public static MemoryAddress g_file_attribute_info_list_lookup ( Addressable list,  Addressable name) {
+    /**
+     * {@snippet :
+     * const GFileAttributeInfo* g_file_attribute_info_list_lookup(GFileAttributeInfoList* list, char* name);
+     * }
+     */
+    public static MemorySegment g_file_attribute_info_list_lookup(MemorySegment list, MemorySegment name) {
         var mh$ = g_file_attribute_info_list_lookup$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(list, name);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(list, name);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_attribute_info_list_add$MH() {
-        return RuntimeHelper.requireNonNull(constants$687.g_file_attribute_info_list_add$MH,"g_file_attribute_info_list_add");
+        return RuntimeHelper.requireNonNull(constants$638.g_file_attribute_info_list_add$MH,"g_file_attribute_info_list_add");
     }
-    public static void g_file_attribute_info_list_add ( Addressable list,  Addressable name,  int type,  int flags) {
+    /**
+     * {@snippet :
+     * void g_file_attribute_info_list_add(GFileAttributeInfoList* list, char* name, GFileAttributeType type, GFileAttributeInfoFlags flags);
+     * }
+     */
+    public static void g_file_attribute_info_list_add(MemorySegment list, MemorySegment name, int type, int flags) {
         var mh$ = g_file_attribute_info_list_add$MH();
         try {
             mh$.invokeExact(list, name, type, flags);
@@ -7056,9 +7218,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_enumerator_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$687.g_file_enumerator_get_type$MH,"g_file_enumerator_get_type");
+        return RuntimeHelper.requireNonNull(constants$638.g_file_enumerator_get_type$MH,"g_file_enumerator_get_type");
     }
-    public static long g_file_enumerator_get_type () {
+    /**
+     * {@snippet :
+     * GType g_file_enumerator_get_type();
+     * }
+     */
+    public static long g_file_enumerator_get_type() {
         var mh$ = g_file_enumerator_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -7067,20 +7234,30 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_enumerator_next_file$MH() {
-        return RuntimeHelper.requireNonNull(constants$687.g_file_enumerator_next_file$MH,"g_file_enumerator_next_file");
+        return RuntimeHelper.requireNonNull(constants$638.g_file_enumerator_next_file$MH,"g_file_enumerator_next_file");
     }
-    public static MemoryAddress g_file_enumerator_next_file ( Addressable enumerator,  Addressable cancellable,  Addressable error) {
+    /**
+     * {@snippet :
+     * GFileInfo* g_file_enumerator_next_file(GFileEnumerator* enumerator, GCancellable* cancellable, GError** error);
+     * }
+     */
+    public static MemorySegment g_file_enumerator_next_file(MemorySegment enumerator, MemorySegment cancellable, MemorySegment error) {
         var mh$ = g_file_enumerator_next_file$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(enumerator, cancellable, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(enumerator, cancellable, error);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_enumerator_close$MH() {
-        return RuntimeHelper.requireNonNull(constants$687.g_file_enumerator_close$MH,"g_file_enumerator_close");
+        return RuntimeHelper.requireNonNull(constants$638.g_file_enumerator_close$MH,"g_file_enumerator_close");
     }
-    public static int g_file_enumerator_close ( Addressable enumerator,  Addressable cancellable,  Addressable error) {
+    /**
+     * {@snippet :
+     * gboolean g_file_enumerator_close(GFileEnumerator* enumerator, GCancellable* cancellable, GError** error);
+     * }
+     */
+    public static int g_file_enumerator_close(MemorySegment enumerator, MemorySegment cancellable, MemorySegment error) {
         var mh$ = g_file_enumerator_close$MH();
         try {
             return (int)mh$.invokeExact(enumerator, cancellable, error);
@@ -7089,9 +7266,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_enumerator_next_files_async$MH() {
-        return RuntimeHelper.requireNonNull(constants$687.g_file_enumerator_next_files_async$MH,"g_file_enumerator_next_files_async");
+        return RuntimeHelper.requireNonNull(constants$639.g_file_enumerator_next_files_async$MH,"g_file_enumerator_next_files_async");
     }
-    public static void g_file_enumerator_next_files_async ( Addressable enumerator,  int num_files,  int io_priority,  Addressable cancellable,  Addressable callback,  Addressable user_data) {
+    /**
+     * {@snippet :
+     * void g_file_enumerator_next_files_async(GFileEnumerator* enumerator, int num_files, int io_priority, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
+     * }
+     */
+    public static void g_file_enumerator_next_files_async(MemorySegment enumerator, int num_files, int io_priority, MemorySegment cancellable, MemorySegment callback, MemorySegment user_data) {
         var mh$ = g_file_enumerator_next_files_async$MH();
         try {
             mh$.invokeExact(enumerator, num_files, io_priority, cancellable, callback, user_data);
@@ -7100,20 +7282,30 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_enumerator_next_files_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$688.g_file_enumerator_next_files_finish$MH,"g_file_enumerator_next_files_finish");
+        return RuntimeHelper.requireNonNull(constants$639.g_file_enumerator_next_files_finish$MH,"g_file_enumerator_next_files_finish");
     }
-    public static MemoryAddress g_file_enumerator_next_files_finish ( Addressable enumerator,  Addressable result,  Addressable error) {
+    /**
+     * {@snippet :
+     * GList* g_file_enumerator_next_files_finish(GFileEnumerator* enumerator, GAsyncResult* result, GError** error);
+     * }
+     */
+    public static MemorySegment g_file_enumerator_next_files_finish(MemorySegment enumerator, MemorySegment result, MemorySegment error) {
         var mh$ = g_file_enumerator_next_files_finish$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(enumerator, result, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(enumerator, result, error);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_enumerator_close_async$MH() {
-        return RuntimeHelper.requireNonNull(constants$688.g_file_enumerator_close_async$MH,"g_file_enumerator_close_async");
+        return RuntimeHelper.requireNonNull(constants$639.g_file_enumerator_close_async$MH,"g_file_enumerator_close_async");
     }
-    public static void g_file_enumerator_close_async ( Addressable enumerator,  int io_priority,  Addressable cancellable,  Addressable callback,  Addressable user_data) {
+    /**
+     * {@snippet :
+     * void g_file_enumerator_close_async(GFileEnumerator* enumerator, int io_priority, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
+     * }
+     */
+    public static void g_file_enumerator_close_async(MemorySegment enumerator, int io_priority, MemorySegment cancellable, MemorySegment callback, MemorySegment user_data) {
         var mh$ = g_file_enumerator_close_async$MH();
         try {
             mh$.invokeExact(enumerator, io_priority, cancellable, callback, user_data);
@@ -7122,9 +7314,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_enumerator_close_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$688.g_file_enumerator_close_finish$MH,"g_file_enumerator_close_finish");
+        return RuntimeHelper.requireNonNull(constants$639.g_file_enumerator_close_finish$MH,"g_file_enumerator_close_finish");
     }
-    public static int g_file_enumerator_close_finish ( Addressable enumerator,  Addressable result,  Addressable error) {
+    /**
+     * {@snippet :
+     * gboolean g_file_enumerator_close_finish(GFileEnumerator* enumerator, GAsyncResult* result, GError** error);
+     * }
+     */
+    public static int g_file_enumerator_close_finish(MemorySegment enumerator, MemorySegment result, MemorySegment error) {
         var mh$ = g_file_enumerator_close_finish$MH();
         try {
             return (int)mh$.invokeExact(enumerator, result, error);
@@ -7133,9 +7330,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_enumerator_is_closed$MH() {
-        return RuntimeHelper.requireNonNull(constants$688.g_file_enumerator_is_closed$MH,"g_file_enumerator_is_closed");
+        return RuntimeHelper.requireNonNull(constants$639.g_file_enumerator_is_closed$MH,"g_file_enumerator_is_closed");
     }
-    public static int g_file_enumerator_is_closed ( Addressable enumerator) {
+    /**
+     * {@snippet :
+     * gboolean g_file_enumerator_is_closed(GFileEnumerator* enumerator);
+     * }
+     */
+    public static int g_file_enumerator_is_closed(MemorySegment enumerator) {
         var mh$ = g_file_enumerator_is_closed$MH();
         try {
             return (int)mh$.invokeExact(enumerator);
@@ -7144,9 +7346,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_enumerator_has_pending$MH() {
-        return RuntimeHelper.requireNonNull(constants$688.g_file_enumerator_has_pending$MH,"g_file_enumerator_has_pending");
+        return RuntimeHelper.requireNonNull(constants$639.g_file_enumerator_has_pending$MH,"g_file_enumerator_has_pending");
     }
-    public static int g_file_enumerator_has_pending ( Addressable enumerator) {
+    /**
+     * {@snippet :
+     * gboolean g_file_enumerator_has_pending(GFileEnumerator* enumerator);
+     * }
+     */
+    public static int g_file_enumerator_has_pending(MemorySegment enumerator) {
         var mh$ = g_file_enumerator_has_pending$MH();
         try {
             return (int)mh$.invokeExact(enumerator);
@@ -7155,9 +7362,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_enumerator_set_pending$MH() {
-        return RuntimeHelper.requireNonNull(constants$688.g_file_enumerator_set_pending$MH,"g_file_enumerator_set_pending");
+        return RuntimeHelper.requireNonNull(constants$640.g_file_enumerator_set_pending$MH,"g_file_enumerator_set_pending");
     }
-    public static void g_file_enumerator_set_pending ( Addressable enumerator,  int pending) {
+    /**
+     * {@snippet :
+     * void g_file_enumerator_set_pending(GFileEnumerator* enumerator, gboolean pending);
+     * }
+     */
+    public static void g_file_enumerator_set_pending(MemorySegment enumerator, int pending) {
         var mh$ = g_file_enumerator_set_pending$MH();
         try {
             mh$.invokeExact(enumerator, pending);
@@ -7166,31 +7378,46 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_enumerator_get_container$MH() {
-        return RuntimeHelper.requireNonNull(constants$689.g_file_enumerator_get_container$MH,"g_file_enumerator_get_container");
+        return RuntimeHelper.requireNonNull(constants$640.g_file_enumerator_get_container$MH,"g_file_enumerator_get_container");
     }
-    public static MemoryAddress g_file_enumerator_get_container ( Addressable enumerator) {
+    /**
+     * {@snippet :
+     * GFile* g_file_enumerator_get_container(GFileEnumerator* enumerator);
+     * }
+     */
+    public static MemorySegment g_file_enumerator_get_container(MemorySegment enumerator) {
         var mh$ = g_file_enumerator_get_container$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(enumerator);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(enumerator);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_enumerator_get_child$MH() {
-        return RuntimeHelper.requireNonNull(constants$689.g_file_enumerator_get_child$MH,"g_file_enumerator_get_child");
+        return RuntimeHelper.requireNonNull(constants$640.g_file_enumerator_get_child$MH,"g_file_enumerator_get_child");
     }
-    public static MemoryAddress g_file_enumerator_get_child ( Addressable enumerator,  Addressable info) {
+    /**
+     * {@snippet :
+     * GFile* g_file_enumerator_get_child(GFileEnumerator* enumerator, GFileInfo* info);
+     * }
+     */
+    public static MemorySegment g_file_enumerator_get_child(MemorySegment enumerator, MemorySegment info) {
         var mh$ = g_file_enumerator_get_child$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(enumerator, info);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(enumerator, info);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_enumerator_iterate$MH() {
-        return RuntimeHelper.requireNonNull(constants$689.g_file_enumerator_iterate$MH,"g_file_enumerator_iterate");
+        return RuntimeHelper.requireNonNull(constants$640.g_file_enumerator_iterate$MH,"g_file_enumerator_iterate");
     }
-    public static int g_file_enumerator_iterate ( Addressable direnum,  Addressable out_info,  Addressable out_child,  Addressable cancellable,  Addressable error) {
+    /**
+     * {@snippet :
+     * gboolean g_file_enumerator_iterate(GFileEnumerator* direnum, GFileInfo** out_info, GFile** out_child, GCancellable* cancellable, GError** error);
+     * }
+     */
+    public static int g_file_enumerator_iterate(MemorySegment direnum, MemorySegment out_info, MemorySegment out_child, MemorySegment cancellable, MemorySegment error) {
         var mh$ = g_file_enumerator_iterate$MH();
         try {
             return (int)mh$.invokeExact(direnum, out_info, out_child, cancellable, error);
@@ -7199,9 +7426,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_icon_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$689.g_file_icon_get_type$MH,"g_file_icon_get_type");
+        return RuntimeHelper.requireNonNull(constants$640.g_file_icon_get_type$MH,"g_file_icon_get_type");
     }
-    public static long g_file_icon_get_type () {
+    /**
+     * {@snippet :
+     * GType g_file_icon_get_type();
+     * }
+     */
+    public static long g_file_icon_get_type() {
         var mh$ = g_file_icon_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -7210,31 +7442,46 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_icon_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$689.g_file_icon_new$MH,"g_file_icon_new");
+        return RuntimeHelper.requireNonNull(constants$640.g_file_icon_new$MH,"g_file_icon_new");
     }
-    public static MemoryAddress g_file_icon_new ( Addressable file) {
+    /**
+     * {@snippet :
+     * GIcon* g_file_icon_new(GFile* file);
+     * }
+     */
+    public static MemorySegment g_file_icon_new(MemorySegment file) {
         var mh$ = g_file_icon_new$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(file);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(file);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_icon_get_file$MH() {
-        return RuntimeHelper.requireNonNull(constants$689.g_file_icon_get_file$MH,"g_file_icon_get_file");
+        return RuntimeHelper.requireNonNull(constants$641.g_file_icon_get_file$MH,"g_file_icon_get_file");
     }
-    public static MemoryAddress g_file_icon_get_file ( Addressable icon) {
+    /**
+     * {@snippet :
+     * GFile* g_file_icon_get_file(GFileIcon* icon);
+     * }
+     */
+    public static MemorySegment g_file_icon_get_file(MemorySegment icon) {
         var mh$ = g_file_icon_get_file$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(icon);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(icon);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_info_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$690.g_file_info_get_type$MH,"g_file_info_get_type");
+        return RuntimeHelper.requireNonNull(constants$641.g_file_info_get_type$MH,"g_file_info_get_type");
     }
-    public static long g_file_info_get_type () {
+    /**
+     * {@snippet :
+     * GType g_file_info_get_type();
+     * }
+     */
+    public static long g_file_info_get_type() {
         var mh$ = g_file_info_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -7243,31 +7490,46 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_info_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$690.g_file_info_new$MH,"g_file_info_new");
+        return RuntimeHelper.requireNonNull(constants$641.g_file_info_new$MH,"g_file_info_new");
     }
-    public static MemoryAddress g_file_info_new () {
+    /**
+     * {@snippet :
+     * GFileInfo* g_file_info_new();
+     * }
+     */
+    public static MemorySegment g_file_info_new() {
         var mh$ = g_file_info_new$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact();
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_info_dup$MH() {
-        return RuntimeHelper.requireNonNull(constants$690.g_file_info_dup$MH,"g_file_info_dup");
+        return RuntimeHelper.requireNonNull(constants$641.g_file_info_dup$MH,"g_file_info_dup");
     }
-    public static MemoryAddress g_file_info_dup ( Addressable other) {
+    /**
+     * {@snippet :
+     * GFileInfo* g_file_info_dup(GFileInfo* other);
+     * }
+     */
+    public static MemorySegment g_file_info_dup(MemorySegment other) {
         var mh$ = g_file_info_dup$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(other);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(other);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_info_copy_into$MH() {
-        return RuntimeHelper.requireNonNull(constants$690.g_file_info_copy_into$MH,"g_file_info_copy_into");
+        return RuntimeHelper.requireNonNull(constants$641.g_file_info_copy_into$MH,"g_file_info_copy_into");
     }
-    public static void g_file_info_copy_into ( Addressable src_info,  Addressable dest_info) {
+    /**
+     * {@snippet :
+     * void g_file_info_copy_into(GFileInfo* src_info, GFileInfo* dest_info);
+     * }
+     */
+    public static void g_file_info_copy_into(MemorySegment src_info, MemorySegment dest_info) {
         var mh$ = g_file_info_copy_into$MH();
         try {
             mh$.invokeExact(src_info, dest_info);
@@ -7276,9 +7538,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_info_has_attribute$MH() {
-        return RuntimeHelper.requireNonNull(constants$690.g_file_info_has_attribute$MH,"g_file_info_has_attribute");
+        return RuntimeHelper.requireNonNull(constants$641.g_file_info_has_attribute$MH,"g_file_info_has_attribute");
     }
-    public static int g_file_info_has_attribute ( Addressable info,  Addressable attribute) {
+    /**
+     * {@snippet :
+     * gboolean g_file_info_has_attribute(GFileInfo* info, char* attribute);
+     * }
+     */
+    public static int g_file_info_has_attribute(MemorySegment info, MemorySegment attribute) {
         var mh$ = g_file_info_has_attribute$MH();
         try {
             return (int)mh$.invokeExact(info, attribute);
@@ -7287,9 +7554,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_info_has_namespace$MH() {
-        return RuntimeHelper.requireNonNull(constants$690.g_file_info_has_namespace$MH,"g_file_info_has_namespace");
+        return RuntimeHelper.requireNonNull(constants$642.g_file_info_has_namespace$MH,"g_file_info_has_namespace");
     }
-    public static int g_file_info_has_namespace ( Addressable info,  Addressable name_space) {
+    /**
+     * {@snippet :
+     * gboolean g_file_info_has_namespace(GFileInfo* info, char* name_space);
+     * }
+     */
+    public static int g_file_info_has_namespace(MemorySegment info, MemorySegment name_space) {
         var mh$ = g_file_info_has_namespace$MH();
         try {
             return (int)mh$.invokeExact(info, name_space);
@@ -7298,20 +7570,30 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_info_list_attributes$MH() {
-        return RuntimeHelper.requireNonNull(constants$691.g_file_info_list_attributes$MH,"g_file_info_list_attributes");
+        return RuntimeHelper.requireNonNull(constants$642.g_file_info_list_attributes$MH,"g_file_info_list_attributes");
     }
-    public static MemoryAddress g_file_info_list_attributes ( Addressable info,  Addressable name_space) {
+    /**
+     * {@snippet :
+     * char** g_file_info_list_attributes(GFileInfo* info, char* name_space);
+     * }
+     */
+    public static MemorySegment g_file_info_list_attributes(MemorySegment info, MemorySegment name_space) {
         var mh$ = g_file_info_list_attributes$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(info, name_space);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(info, name_space);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_info_get_attribute_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$691.g_file_info_get_attribute_data$MH,"g_file_info_get_attribute_data");
+        return RuntimeHelper.requireNonNull(constants$642.g_file_info_get_attribute_data$MH,"g_file_info_get_attribute_data");
     }
-    public static int g_file_info_get_attribute_data ( Addressable info,  Addressable attribute,  Addressable type,  Addressable value_pp,  Addressable status) {
+    /**
+     * {@snippet :
+     * gboolean g_file_info_get_attribute_data(GFileInfo* info, char* attribute, GFileAttributeType* type, gpointer* value_pp, GFileAttributeStatus* status);
+     * }
+     */
+    public static int g_file_info_get_attribute_data(MemorySegment info, MemorySegment attribute, MemorySegment type, MemorySegment value_pp, MemorySegment status) {
         var mh$ = g_file_info_get_attribute_data$MH();
         try {
             return (int)mh$.invokeExact(info, attribute, type, value_pp, status);
@@ -7320,9 +7602,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_info_get_attribute_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$691.g_file_info_get_attribute_type$MH,"g_file_info_get_attribute_type");
+        return RuntimeHelper.requireNonNull(constants$642.g_file_info_get_attribute_type$MH,"g_file_info_get_attribute_type");
     }
-    public static int g_file_info_get_attribute_type ( Addressable info,  Addressable attribute) {
+    /**
+     * {@snippet :
+     * GFileAttributeType g_file_info_get_attribute_type(GFileInfo* info, char* attribute);
+     * }
+     */
+    public static int g_file_info_get_attribute_type(MemorySegment info, MemorySegment attribute) {
         var mh$ = g_file_info_get_attribute_type$MH();
         try {
             return (int)mh$.invokeExact(info, attribute);
@@ -7331,9 +7618,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_info_remove_attribute$MH() {
-        return RuntimeHelper.requireNonNull(constants$691.g_file_info_remove_attribute$MH,"g_file_info_remove_attribute");
+        return RuntimeHelper.requireNonNull(constants$642.g_file_info_remove_attribute$MH,"g_file_info_remove_attribute");
     }
-    public static void g_file_info_remove_attribute ( Addressable info,  Addressable attribute) {
+    /**
+     * {@snippet :
+     * void g_file_info_remove_attribute(GFileInfo* info, char* attribute);
+     * }
+     */
+    public static void g_file_info_remove_attribute(MemorySegment info, MemorySegment attribute) {
         var mh$ = g_file_info_remove_attribute$MH();
         try {
             mh$.invokeExact(info, attribute);
@@ -7342,9 +7634,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_info_get_attribute_status$MH() {
-        return RuntimeHelper.requireNonNull(constants$691.g_file_info_get_attribute_status$MH,"g_file_info_get_attribute_status");
+        return RuntimeHelper.requireNonNull(constants$642.g_file_info_get_attribute_status$MH,"g_file_info_get_attribute_status");
     }
-    public static int g_file_info_get_attribute_status ( Addressable info,  Addressable attribute) {
+    /**
+     * {@snippet :
+     * GFileAttributeStatus g_file_info_get_attribute_status(GFileInfo* info, char* attribute);
+     * }
+     */
+    public static int g_file_info_get_attribute_status(MemorySegment info, MemorySegment attribute) {
         var mh$ = g_file_info_get_attribute_status$MH();
         try {
             return (int)mh$.invokeExact(info, attribute);
@@ -7353,9 +7650,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_info_set_attribute_status$MH() {
-        return RuntimeHelper.requireNonNull(constants$691.g_file_info_set_attribute_status$MH,"g_file_info_set_attribute_status");
+        return RuntimeHelper.requireNonNull(constants$643.g_file_info_set_attribute_status$MH,"g_file_info_set_attribute_status");
     }
-    public static int g_file_info_set_attribute_status ( Addressable info,  Addressable attribute,  int status) {
+    /**
+     * {@snippet :
+     * gboolean g_file_info_set_attribute_status(GFileInfo* info, char* attribute, GFileAttributeStatus status);
+     * }
+     */
+    public static int g_file_info_set_attribute_status(MemorySegment info, MemorySegment attribute, int status) {
         var mh$ = g_file_info_set_attribute_status$MH();
         try {
             return (int)mh$.invokeExact(info, attribute, status);
@@ -7364,42 +7666,62 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_info_get_attribute_as_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$692.g_file_info_get_attribute_as_string$MH,"g_file_info_get_attribute_as_string");
+        return RuntimeHelper.requireNonNull(constants$643.g_file_info_get_attribute_as_string$MH,"g_file_info_get_attribute_as_string");
     }
-    public static MemoryAddress g_file_info_get_attribute_as_string ( Addressable info,  Addressable attribute) {
+    /**
+     * {@snippet :
+     * char* g_file_info_get_attribute_as_string(GFileInfo* info, char* attribute);
+     * }
+     */
+    public static MemorySegment g_file_info_get_attribute_as_string(MemorySegment info, MemorySegment attribute) {
         var mh$ = g_file_info_get_attribute_as_string$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(info, attribute);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(info, attribute);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_info_get_attribute_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$692.g_file_info_get_attribute_string$MH,"g_file_info_get_attribute_string");
+        return RuntimeHelper.requireNonNull(constants$643.g_file_info_get_attribute_string$MH,"g_file_info_get_attribute_string");
     }
-    public static MemoryAddress g_file_info_get_attribute_string ( Addressable info,  Addressable attribute) {
+    /**
+     * {@snippet :
+     * char* g_file_info_get_attribute_string(GFileInfo* info, char* attribute);
+     * }
+     */
+    public static MemorySegment g_file_info_get_attribute_string(MemorySegment info, MemorySegment attribute) {
         var mh$ = g_file_info_get_attribute_string$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(info, attribute);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(info, attribute);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_info_get_attribute_byte_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$692.g_file_info_get_attribute_byte_string$MH,"g_file_info_get_attribute_byte_string");
+        return RuntimeHelper.requireNonNull(constants$643.g_file_info_get_attribute_byte_string$MH,"g_file_info_get_attribute_byte_string");
     }
-    public static MemoryAddress g_file_info_get_attribute_byte_string ( Addressable info,  Addressable attribute) {
+    /**
+     * {@snippet :
+     * char* g_file_info_get_attribute_byte_string(GFileInfo* info, char* attribute);
+     * }
+     */
+    public static MemorySegment g_file_info_get_attribute_byte_string(MemorySegment info, MemorySegment attribute) {
         var mh$ = g_file_info_get_attribute_byte_string$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(info, attribute);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(info, attribute);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_info_get_attribute_boolean$MH() {
-        return RuntimeHelper.requireNonNull(constants$692.g_file_info_get_attribute_boolean$MH,"g_file_info_get_attribute_boolean");
+        return RuntimeHelper.requireNonNull(constants$643.g_file_info_get_attribute_boolean$MH,"g_file_info_get_attribute_boolean");
     }
-    public static int g_file_info_get_attribute_boolean ( Addressable info,  Addressable attribute) {
+    /**
+     * {@snippet :
+     * gboolean g_file_info_get_attribute_boolean(GFileInfo* info, char* attribute);
+     * }
+     */
+    public static int g_file_info_get_attribute_boolean(MemorySegment info, MemorySegment attribute) {
         var mh$ = g_file_info_get_attribute_boolean$MH();
         try {
             return (int)mh$.invokeExact(info, attribute);
@@ -7408,9 +7730,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_info_get_attribute_uint32$MH() {
-        return RuntimeHelper.requireNonNull(constants$692.g_file_info_get_attribute_uint32$MH,"g_file_info_get_attribute_uint32");
+        return RuntimeHelper.requireNonNull(constants$643.g_file_info_get_attribute_uint32$MH,"g_file_info_get_attribute_uint32");
     }
-    public static int g_file_info_get_attribute_uint32 ( Addressable info,  Addressable attribute) {
+    /**
+     * {@snippet :
+     * guint32 g_file_info_get_attribute_uint32(GFileInfo* info, char* attribute);
+     * }
+     */
+    public static int g_file_info_get_attribute_uint32(MemorySegment info, MemorySegment attribute) {
         var mh$ = g_file_info_get_attribute_uint32$MH();
         try {
             return (int)mh$.invokeExact(info, attribute);
@@ -7419,9 +7746,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_info_get_attribute_int32$MH() {
-        return RuntimeHelper.requireNonNull(constants$692.g_file_info_get_attribute_int32$MH,"g_file_info_get_attribute_int32");
+        return RuntimeHelper.requireNonNull(constants$644.g_file_info_get_attribute_int32$MH,"g_file_info_get_attribute_int32");
     }
-    public static int g_file_info_get_attribute_int32 ( Addressable info,  Addressable attribute) {
+    /**
+     * {@snippet :
+     * gint32 g_file_info_get_attribute_int32(GFileInfo* info, char* attribute);
+     * }
+     */
+    public static int g_file_info_get_attribute_int32(MemorySegment info, MemorySegment attribute) {
         var mh$ = g_file_info_get_attribute_int32$MH();
         try {
             return (int)mh$.invokeExact(info, attribute);
@@ -7430,9 +7762,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_info_get_attribute_uint64$MH() {
-        return RuntimeHelper.requireNonNull(constants$693.g_file_info_get_attribute_uint64$MH,"g_file_info_get_attribute_uint64");
+        return RuntimeHelper.requireNonNull(constants$644.g_file_info_get_attribute_uint64$MH,"g_file_info_get_attribute_uint64");
     }
-    public static long g_file_info_get_attribute_uint64 ( Addressable info,  Addressable attribute) {
+    /**
+     * {@snippet :
+     * guint64 g_file_info_get_attribute_uint64(GFileInfo* info, char* attribute);
+     * }
+     */
+    public static long g_file_info_get_attribute_uint64(MemorySegment info, MemorySegment attribute) {
         var mh$ = g_file_info_get_attribute_uint64$MH();
         try {
             return (long)mh$.invokeExact(info, attribute);
@@ -7441,9 +7778,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_info_get_attribute_int64$MH() {
-        return RuntimeHelper.requireNonNull(constants$693.g_file_info_get_attribute_int64$MH,"g_file_info_get_attribute_int64");
+        return RuntimeHelper.requireNonNull(constants$644.g_file_info_get_attribute_int64$MH,"g_file_info_get_attribute_int64");
     }
-    public static long g_file_info_get_attribute_int64 ( Addressable info,  Addressable attribute) {
+    /**
+     * {@snippet :
+     * gint64 g_file_info_get_attribute_int64(GFileInfo* info, char* attribute);
+     * }
+     */
+    public static long g_file_info_get_attribute_int64(MemorySegment info, MemorySegment attribute) {
         var mh$ = g_file_info_get_attribute_int64$MH();
         try {
             return (long)mh$.invokeExact(info, attribute);
@@ -7452,31 +7794,46 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_info_get_attribute_object$MH() {
-        return RuntimeHelper.requireNonNull(constants$693.g_file_info_get_attribute_object$MH,"g_file_info_get_attribute_object");
+        return RuntimeHelper.requireNonNull(constants$644.g_file_info_get_attribute_object$MH,"g_file_info_get_attribute_object");
     }
-    public static MemoryAddress g_file_info_get_attribute_object ( Addressable info,  Addressable attribute) {
+    /**
+     * {@snippet :
+     * GObject* g_file_info_get_attribute_object(GFileInfo* info, char* attribute);
+     * }
+     */
+    public static MemorySegment g_file_info_get_attribute_object(MemorySegment info, MemorySegment attribute) {
         var mh$ = g_file_info_get_attribute_object$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(info, attribute);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(info, attribute);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_info_get_attribute_stringv$MH() {
-        return RuntimeHelper.requireNonNull(constants$693.g_file_info_get_attribute_stringv$MH,"g_file_info_get_attribute_stringv");
+        return RuntimeHelper.requireNonNull(constants$644.g_file_info_get_attribute_stringv$MH,"g_file_info_get_attribute_stringv");
     }
-    public static MemoryAddress g_file_info_get_attribute_stringv ( Addressable info,  Addressable attribute) {
+    /**
+     * {@snippet :
+     * char** g_file_info_get_attribute_stringv(GFileInfo* info, char* attribute);
+     * }
+     */
+    public static MemorySegment g_file_info_get_attribute_stringv(MemorySegment info, MemorySegment attribute) {
         var mh$ = g_file_info_get_attribute_stringv$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(info, attribute);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(info, attribute);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_info_set_attribute$MH() {
-        return RuntimeHelper.requireNonNull(constants$693.g_file_info_set_attribute$MH,"g_file_info_set_attribute");
+        return RuntimeHelper.requireNonNull(constants$644.g_file_info_set_attribute$MH,"g_file_info_set_attribute");
     }
-    public static void g_file_info_set_attribute ( Addressable info,  Addressable attribute,  int type,  Addressable value_p) {
+    /**
+     * {@snippet :
+     * void g_file_info_set_attribute(GFileInfo* info, char* attribute, GFileAttributeType type, gpointer value_p);
+     * }
+     */
+    public static void g_file_info_set_attribute(MemorySegment info, MemorySegment attribute, int type, MemorySegment value_p) {
         var mh$ = g_file_info_set_attribute$MH();
         try {
             mh$.invokeExact(info, attribute, type, value_p);
@@ -7485,9 +7842,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_info_set_attribute_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$693.g_file_info_set_attribute_string$MH,"g_file_info_set_attribute_string");
+        return RuntimeHelper.requireNonNull(constants$645.g_file_info_set_attribute_string$MH,"g_file_info_set_attribute_string");
     }
-    public static void g_file_info_set_attribute_string ( Addressable info,  Addressable attribute,  Addressable attr_value) {
+    /**
+     * {@snippet :
+     * void g_file_info_set_attribute_string(GFileInfo* info, char* attribute, char* attr_value);
+     * }
+     */
+    public static void g_file_info_set_attribute_string(MemorySegment info, MemorySegment attribute, MemorySegment attr_value) {
         var mh$ = g_file_info_set_attribute_string$MH();
         try {
             mh$.invokeExact(info, attribute, attr_value);
@@ -7496,9 +7858,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_info_set_attribute_byte_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$694.g_file_info_set_attribute_byte_string$MH,"g_file_info_set_attribute_byte_string");
+        return RuntimeHelper.requireNonNull(constants$645.g_file_info_set_attribute_byte_string$MH,"g_file_info_set_attribute_byte_string");
     }
-    public static void g_file_info_set_attribute_byte_string ( Addressable info,  Addressable attribute,  Addressable attr_value) {
+    /**
+     * {@snippet :
+     * void g_file_info_set_attribute_byte_string(GFileInfo* info, char* attribute, char* attr_value);
+     * }
+     */
+    public static void g_file_info_set_attribute_byte_string(MemorySegment info, MemorySegment attribute, MemorySegment attr_value) {
         var mh$ = g_file_info_set_attribute_byte_string$MH();
         try {
             mh$.invokeExact(info, attribute, attr_value);
@@ -7507,9 +7874,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_info_set_attribute_boolean$MH() {
-        return RuntimeHelper.requireNonNull(constants$694.g_file_info_set_attribute_boolean$MH,"g_file_info_set_attribute_boolean");
+        return RuntimeHelper.requireNonNull(constants$645.g_file_info_set_attribute_boolean$MH,"g_file_info_set_attribute_boolean");
     }
-    public static void g_file_info_set_attribute_boolean ( Addressable info,  Addressable attribute,  int attr_value) {
+    /**
+     * {@snippet :
+     * void g_file_info_set_attribute_boolean(GFileInfo* info, char* attribute, gboolean attr_value);
+     * }
+     */
+    public static void g_file_info_set_attribute_boolean(MemorySegment info, MemorySegment attribute, int attr_value) {
         var mh$ = g_file_info_set_attribute_boolean$MH();
         try {
             mh$.invokeExact(info, attribute, attr_value);
@@ -7518,9 +7890,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_info_set_attribute_uint32$MH() {
-        return RuntimeHelper.requireNonNull(constants$694.g_file_info_set_attribute_uint32$MH,"g_file_info_set_attribute_uint32");
+        return RuntimeHelper.requireNonNull(constants$645.g_file_info_set_attribute_uint32$MH,"g_file_info_set_attribute_uint32");
     }
-    public static void g_file_info_set_attribute_uint32 ( Addressable info,  Addressable attribute,  int attr_value) {
+    /**
+     * {@snippet :
+     * void g_file_info_set_attribute_uint32(GFileInfo* info, char* attribute, guint32 attr_value);
+     * }
+     */
+    public static void g_file_info_set_attribute_uint32(MemorySegment info, MemorySegment attribute, int attr_value) {
         var mh$ = g_file_info_set_attribute_uint32$MH();
         try {
             mh$.invokeExact(info, attribute, attr_value);
@@ -7529,9 +7906,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_info_set_attribute_int32$MH() {
-        return RuntimeHelper.requireNonNull(constants$694.g_file_info_set_attribute_int32$MH,"g_file_info_set_attribute_int32");
+        return RuntimeHelper.requireNonNull(constants$645.g_file_info_set_attribute_int32$MH,"g_file_info_set_attribute_int32");
     }
-    public static void g_file_info_set_attribute_int32 ( Addressable info,  Addressable attribute,  int attr_value) {
+    /**
+     * {@snippet :
+     * void g_file_info_set_attribute_int32(GFileInfo* info, char* attribute, gint32 attr_value);
+     * }
+     */
+    public static void g_file_info_set_attribute_int32(MemorySegment info, MemorySegment attribute, int attr_value) {
         var mh$ = g_file_info_set_attribute_int32$MH();
         try {
             mh$.invokeExact(info, attribute, attr_value);
@@ -7540,9 +7922,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_info_set_attribute_uint64$MH() {
-        return RuntimeHelper.requireNonNull(constants$694.g_file_info_set_attribute_uint64$MH,"g_file_info_set_attribute_uint64");
+        return RuntimeHelper.requireNonNull(constants$645.g_file_info_set_attribute_uint64$MH,"g_file_info_set_attribute_uint64");
     }
-    public static void g_file_info_set_attribute_uint64 ( Addressable info,  Addressable attribute,  long attr_value) {
+    /**
+     * {@snippet :
+     * void g_file_info_set_attribute_uint64(GFileInfo* info, char* attribute, guint64 attr_value);
+     * }
+     */
+    public static void g_file_info_set_attribute_uint64(MemorySegment info, MemorySegment attribute, long attr_value) {
         var mh$ = g_file_info_set_attribute_uint64$MH();
         try {
             mh$.invokeExact(info, attribute, attr_value);
@@ -7551,9 +7938,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_info_set_attribute_int64$MH() {
-        return RuntimeHelper.requireNonNull(constants$694.g_file_info_set_attribute_int64$MH,"g_file_info_set_attribute_int64");
+        return RuntimeHelper.requireNonNull(constants$646.g_file_info_set_attribute_int64$MH,"g_file_info_set_attribute_int64");
     }
-    public static void g_file_info_set_attribute_int64 ( Addressable info,  Addressable attribute,  long attr_value) {
+    /**
+     * {@snippet :
+     * void g_file_info_set_attribute_int64(GFileInfo* info, char* attribute, gint64 attr_value);
+     * }
+     */
+    public static void g_file_info_set_attribute_int64(MemorySegment info, MemorySegment attribute, long attr_value) {
         var mh$ = g_file_info_set_attribute_int64$MH();
         try {
             mh$.invokeExact(info, attribute, attr_value);
@@ -7562,9 +7954,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_info_set_attribute_object$MH() {
-        return RuntimeHelper.requireNonNull(constants$695.g_file_info_set_attribute_object$MH,"g_file_info_set_attribute_object");
+        return RuntimeHelper.requireNonNull(constants$646.g_file_info_set_attribute_object$MH,"g_file_info_set_attribute_object");
     }
-    public static void g_file_info_set_attribute_object ( Addressable info,  Addressable attribute,  Addressable attr_value) {
+    /**
+     * {@snippet :
+     * void g_file_info_set_attribute_object(GFileInfo* info, char* attribute, GObject* attr_value);
+     * }
+     */
+    public static void g_file_info_set_attribute_object(MemorySegment info, MemorySegment attribute, MemorySegment attr_value) {
         var mh$ = g_file_info_set_attribute_object$MH();
         try {
             mh$.invokeExact(info, attribute, attr_value);
@@ -7573,9 +7970,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_info_set_attribute_stringv$MH() {
-        return RuntimeHelper.requireNonNull(constants$695.g_file_info_set_attribute_stringv$MH,"g_file_info_set_attribute_stringv");
+        return RuntimeHelper.requireNonNull(constants$646.g_file_info_set_attribute_stringv$MH,"g_file_info_set_attribute_stringv");
     }
-    public static void g_file_info_set_attribute_stringv ( Addressable info,  Addressable attribute,  Addressable attr_value) {
+    /**
+     * {@snippet :
+     * void g_file_info_set_attribute_stringv(GFileInfo* info, char* attribute, char** attr_value);
+     * }
+     */
+    public static void g_file_info_set_attribute_stringv(MemorySegment info, MemorySegment attribute, MemorySegment attr_value) {
         var mh$ = g_file_info_set_attribute_stringv$MH();
         try {
             mh$.invokeExact(info, attribute, attr_value);
@@ -7584,9 +7986,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_info_clear_status$MH() {
-        return RuntimeHelper.requireNonNull(constants$695.g_file_info_clear_status$MH,"g_file_info_clear_status");
+        return RuntimeHelper.requireNonNull(constants$646.g_file_info_clear_status$MH,"g_file_info_clear_status");
     }
-    public static void g_file_info_clear_status ( Addressable info) {
+    /**
+     * {@snippet :
+     * void g_file_info_clear_status(GFileInfo* info);
+     * }
+     */
+    public static void g_file_info_clear_status(MemorySegment info) {
         var mh$ = g_file_info_clear_status$MH();
         try {
             mh$.invokeExact(info);
@@ -7595,20 +8002,30 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_info_get_deletion_date$MH() {
-        return RuntimeHelper.requireNonNull(constants$695.g_file_info_get_deletion_date$MH,"g_file_info_get_deletion_date");
+        return RuntimeHelper.requireNonNull(constants$646.g_file_info_get_deletion_date$MH,"g_file_info_get_deletion_date");
     }
-    public static MemoryAddress g_file_info_get_deletion_date ( Addressable info) {
+    /**
+     * {@snippet :
+     * GDateTime* g_file_info_get_deletion_date(GFileInfo* info);
+     * }
+     */
+    public static MemorySegment g_file_info_get_deletion_date(MemorySegment info) {
         var mh$ = g_file_info_get_deletion_date$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(info);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(info);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_info_get_file_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$695.g_file_info_get_file_type$MH,"g_file_info_get_file_type");
+        return RuntimeHelper.requireNonNull(constants$646.g_file_info_get_file_type$MH,"g_file_info_get_file_type");
     }
-    public static int g_file_info_get_file_type ( Addressable info) {
+    /**
+     * {@snippet :
+     * GFileType g_file_info_get_file_type(GFileInfo* info);
+     * }
+     */
+    public static int g_file_info_get_file_type(MemorySegment info) {
         var mh$ = g_file_info_get_file_type$MH();
         try {
             return (int)mh$.invokeExact(info);
@@ -7617,9 +8034,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_info_get_is_hidden$MH() {
-        return RuntimeHelper.requireNonNull(constants$695.g_file_info_get_is_hidden$MH,"g_file_info_get_is_hidden");
+        return RuntimeHelper.requireNonNull(constants$647.g_file_info_get_is_hidden$MH,"g_file_info_get_is_hidden");
     }
-    public static int g_file_info_get_is_hidden ( Addressable info) {
+    /**
+     * {@snippet :
+     * gboolean g_file_info_get_is_hidden(GFileInfo* info);
+     * }
+     */
+    public static int g_file_info_get_is_hidden(MemorySegment info) {
         var mh$ = g_file_info_get_is_hidden$MH();
         try {
             return (int)mh$.invokeExact(info);
@@ -7628,9 +8050,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_info_get_is_backup$MH() {
-        return RuntimeHelper.requireNonNull(constants$696.g_file_info_get_is_backup$MH,"g_file_info_get_is_backup");
+        return RuntimeHelper.requireNonNull(constants$647.g_file_info_get_is_backup$MH,"g_file_info_get_is_backup");
     }
-    public static int g_file_info_get_is_backup ( Addressable info) {
+    /**
+     * {@snippet :
+     * gboolean g_file_info_get_is_backup(GFileInfo* info);
+     * }
+     */
+    public static int g_file_info_get_is_backup(MemorySegment info) {
         var mh$ = g_file_info_get_is_backup$MH();
         try {
             return (int)mh$.invokeExact(info);
@@ -7639,9 +8066,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_info_get_is_symlink$MH() {
-        return RuntimeHelper.requireNonNull(constants$696.g_file_info_get_is_symlink$MH,"g_file_info_get_is_symlink");
+        return RuntimeHelper.requireNonNull(constants$647.g_file_info_get_is_symlink$MH,"g_file_info_get_is_symlink");
     }
-    public static int g_file_info_get_is_symlink ( Addressable info) {
+    /**
+     * {@snippet :
+     * gboolean g_file_info_get_is_symlink(GFileInfo* info);
+     * }
+     */
+    public static int g_file_info_get_is_symlink(MemorySegment info) {
         var mh$ = g_file_info_get_is_symlink$MH();
         try {
             return (int)mh$.invokeExact(info);
@@ -7650,75 +8082,110 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_info_get_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$696.g_file_info_get_name$MH,"g_file_info_get_name");
+        return RuntimeHelper.requireNonNull(constants$647.g_file_info_get_name$MH,"g_file_info_get_name");
     }
-    public static MemoryAddress g_file_info_get_name ( Addressable info) {
+    /**
+     * {@snippet :
+     * char* g_file_info_get_name(GFileInfo* info);
+     * }
+     */
+    public static MemorySegment g_file_info_get_name(MemorySegment info) {
         var mh$ = g_file_info_get_name$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(info);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(info);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_info_get_display_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$696.g_file_info_get_display_name$MH,"g_file_info_get_display_name");
+        return RuntimeHelper.requireNonNull(constants$647.g_file_info_get_display_name$MH,"g_file_info_get_display_name");
     }
-    public static MemoryAddress g_file_info_get_display_name ( Addressable info) {
+    /**
+     * {@snippet :
+     * char* g_file_info_get_display_name(GFileInfo* info);
+     * }
+     */
+    public static MemorySegment g_file_info_get_display_name(MemorySegment info) {
         var mh$ = g_file_info_get_display_name$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(info);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(info);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_info_get_edit_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$696.g_file_info_get_edit_name$MH,"g_file_info_get_edit_name");
+        return RuntimeHelper.requireNonNull(constants$647.g_file_info_get_edit_name$MH,"g_file_info_get_edit_name");
     }
-    public static MemoryAddress g_file_info_get_edit_name ( Addressable info) {
+    /**
+     * {@snippet :
+     * char* g_file_info_get_edit_name(GFileInfo* info);
+     * }
+     */
+    public static MemorySegment g_file_info_get_edit_name(MemorySegment info) {
         var mh$ = g_file_info_get_edit_name$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(info);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(info);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_info_get_icon$MH() {
-        return RuntimeHelper.requireNonNull(constants$696.g_file_info_get_icon$MH,"g_file_info_get_icon");
+        return RuntimeHelper.requireNonNull(constants$648.g_file_info_get_icon$MH,"g_file_info_get_icon");
     }
-    public static MemoryAddress g_file_info_get_icon ( Addressable info) {
+    /**
+     * {@snippet :
+     * GIcon* g_file_info_get_icon(GFileInfo* info);
+     * }
+     */
+    public static MemorySegment g_file_info_get_icon(MemorySegment info) {
         var mh$ = g_file_info_get_icon$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(info);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(info);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_info_get_symbolic_icon$MH() {
-        return RuntimeHelper.requireNonNull(constants$697.g_file_info_get_symbolic_icon$MH,"g_file_info_get_symbolic_icon");
+        return RuntimeHelper.requireNonNull(constants$648.g_file_info_get_symbolic_icon$MH,"g_file_info_get_symbolic_icon");
     }
-    public static MemoryAddress g_file_info_get_symbolic_icon ( Addressable info) {
+    /**
+     * {@snippet :
+     * GIcon* g_file_info_get_symbolic_icon(GFileInfo* info);
+     * }
+     */
+    public static MemorySegment g_file_info_get_symbolic_icon(MemorySegment info) {
         var mh$ = g_file_info_get_symbolic_icon$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(info);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(info);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_info_get_content_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$697.g_file_info_get_content_type$MH,"g_file_info_get_content_type");
+        return RuntimeHelper.requireNonNull(constants$648.g_file_info_get_content_type$MH,"g_file_info_get_content_type");
     }
-    public static MemoryAddress g_file_info_get_content_type ( Addressable info) {
+    /**
+     * {@snippet :
+     * char* g_file_info_get_content_type(GFileInfo* info);
+     * }
+     */
+    public static MemorySegment g_file_info_get_content_type(MemorySegment info) {
         var mh$ = g_file_info_get_content_type$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(info);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(info);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_info_get_size$MH() {
-        return RuntimeHelper.requireNonNull(constants$697.g_file_info_get_size$MH,"g_file_info_get_size");
+        return RuntimeHelper.requireNonNull(constants$648.g_file_info_get_size$MH,"g_file_info_get_size");
     }
-    public static long g_file_info_get_size ( Addressable info) {
+    /**
+     * {@snippet :
+     * goffset g_file_info_get_size(GFileInfo* info);
+     * }
+     */
+    public static long g_file_info_get_size(MemorySegment info) {
         var mh$ = g_file_info_get_size$MH();
         try {
             return (long)mh$.invokeExact(info);
@@ -7727,9 +8194,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_info_get_modification_time$MH() {
-        return RuntimeHelper.requireNonNull(constants$697.g_file_info_get_modification_time$MH,"g_file_info_get_modification_time");
+        return RuntimeHelper.requireNonNull(constants$648.g_file_info_get_modification_time$MH,"g_file_info_get_modification_time");
     }
-    public static void g_file_info_get_modification_time ( Addressable info,  Addressable result) {
+    /**
+     * {@snippet :
+     * void g_file_info_get_modification_time(GFileInfo* info, GTimeVal* result);
+     * }
+     */
+    public static void g_file_info_get_modification_time(MemorySegment info, MemorySegment result) {
         var mh$ = g_file_info_get_modification_time$MH();
         try {
             mh$.invokeExact(info, result);
@@ -7738,64 +8210,94 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_info_get_modification_date_time$MH() {
-        return RuntimeHelper.requireNonNull(constants$697.g_file_info_get_modification_date_time$MH,"g_file_info_get_modification_date_time");
+        return RuntimeHelper.requireNonNull(constants$648.g_file_info_get_modification_date_time$MH,"g_file_info_get_modification_date_time");
     }
-    public static MemoryAddress g_file_info_get_modification_date_time ( Addressable info) {
+    /**
+     * {@snippet :
+     * GDateTime* g_file_info_get_modification_date_time(GFileInfo* info);
+     * }
+     */
+    public static MemorySegment g_file_info_get_modification_date_time(MemorySegment info) {
         var mh$ = g_file_info_get_modification_date_time$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(info);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(info);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_info_get_access_date_time$MH() {
-        return RuntimeHelper.requireNonNull(constants$697.g_file_info_get_access_date_time$MH,"g_file_info_get_access_date_time");
+        return RuntimeHelper.requireNonNull(constants$649.g_file_info_get_access_date_time$MH,"g_file_info_get_access_date_time");
     }
-    public static MemoryAddress g_file_info_get_access_date_time ( Addressable info) {
+    /**
+     * {@snippet :
+     * GDateTime* g_file_info_get_access_date_time(GFileInfo* info);
+     * }
+     */
+    public static MemorySegment g_file_info_get_access_date_time(MemorySegment info) {
         var mh$ = g_file_info_get_access_date_time$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(info);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(info);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_info_get_creation_date_time$MH() {
-        return RuntimeHelper.requireNonNull(constants$698.g_file_info_get_creation_date_time$MH,"g_file_info_get_creation_date_time");
+        return RuntimeHelper.requireNonNull(constants$649.g_file_info_get_creation_date_time$MH,"g_file_info_get_creation_date_time");
     }
-    public static MemoryAddress g_file_info_get_creation_date_time ( Addressable info) {
+    /**
+     * {@snippet :
+     * GDateTime* g_file_info_get_creation_date_time(GFileInfo* info);
+     * }
+     */
+    public static MemorySegment g_file_info_get_creation_date_time(MemorySegment info) {
         var mh$ = g_file_info_get_creation_date_time$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(info);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(info);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_info_get_symlink_target$MH() {
-        return RuntimeHelper.requireNonNull(constants$698.g_file_info_get_symlink_target$MH,"g_file_info_get_symlink_target");
+        return RuntimeHelper.requireNonNull(constants$649.g_file_info_get_symlink_target$MH,"g_file_info_get_symlink_target");
     }
-    public static MemoryAddress g_file_info_get_symlink_target ( Addressable info) {
+    /**
+     * {@snippet :
+     * char* g_file_info_get_symlink_target(GFileInfo* info);
+     * }
+     */
+    public static MemorySegment g_file_info_get_symlink_target(MemorySegment info) {
         var mh$ = g_file_info_get_symlink_target$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(info);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(info);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_info_get_etag$MH() {
-        return RuntimeHelper.requireNonNull(constants$698.g_file_info_get_etag$MH,"g_file_info_get_etag");
+        return RuntimeHelper.requireNonNull(constants$649.g_file_info_get_etag$MH,"g_file_info_get_etag");
     }
-    public static MemoryAddress g_file_info_get_etag ( Addressable info) {
+    /**
+     * {@snippet :
+     * char* g_file_info_get_etag(GFileInfo* info);
+     * }
+     */
+    public static MemorySegment g_file_info_get_etag(MemorySegment info) {
         var mh$ = g_file_info_get_etag$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(info);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(info);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_info_get_sort_order$MH() {
-        return RuntimeHelper.requireNonNull(constants$698.g_file_info_get_sort_order$MH,"g_file_info_get_sort_order");
+        return RuntimeHelper.requireNonNull(constants$649.g_file_info_get_sort_order$MH,"g_file_info_get_sort_order");
     }
-    public static int g_file_info_get_sort_order ( Addressable info) {
+    /**
+     * {@snippet :
+     * gint32 g_file_info_get_sort_order(GFileInfo* info);
+     * }
+     */
+    public static int g_file_info_get_sort_order(MemorySegment info) {
         var mh$ = g_file_info_get_sort_order$MH();
         try {
             return (int)mh$.invokeExact(info);
@@ -7804,9 +8306,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_info_set_attribute_mask$MH() {
-        return RuntimeHelper.requireNonNull(constants$698.g_file_info_set_attribute_mask$MH,"g_file_info_set_attribute_mask");
+        return RuntimeHelper.requireNonNull(constants$649.g_file_info_set_attribute_mask$MH,"g_file_info_set_attribute_mask");
     }
-    public static void g_file_info_set_attribute_mask ( Addressable info,  Addressable mask) {
+    /**
+     * {@snippet :
+     * void g_file_info_set_attribute_mask(GFileInfo* info, GFileAttributeMatcher* mask);
+     * }
+     */
+    public static void g_file_info_set_attribute_mask(MemorySegment info, MemorySegment mask) {
         var mh$ = g_file_info_set_attribute_mask$MH();
         try {
             mh$.invokeExact(info, mask);
@@ -7815,9 +8322,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_info_unset_attribute_mask$MH() {
-        return RuntimeHelper.requireNonNull(constants$698.g_file_info_unset_attribute_mask$MH,"g_file_info_unset_attribute_mask");
+        return RuntimeHelper.requireNonNull(constants$650.g_file_info_unset_attribute_mask$MH,"g_file_info_unset_attribute_mask");
     }
-    public static void g_file_info_unset_attribute_mask ( Addressable info) {
+    /**
+     * {@snippet :
+     * void g_file_info_unset_attribute_mask(GFileInfo* info);
+     * }
+     */
+    public static void g_file_info_unset_attribute_mask(MemorySegment info) {
         var mh$ = g_file_info_unset_attribute_mask$MH();
         try {
             mh$.invokeExact(info);
@@ -7826,9 +8338,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_info_set_file_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$699.g_file_info_set_file_type$MH,"g_file_info_set_file_type");
+        return RuntimeHelper.requireNonNull(constants$650.g_file_info_set_file_type$MH,"g_file_info_set_file_type");
     }
-    public static void g_file_info_set_file_type ( Addressable info,  int type) {
+    /**
+     * {@snippet :
+     * void g_file_info_set_file_type(GFileInfo* info, GFileType type);
+     * }
+     */
+    public static void g_file_info_set_file_type(MemorySegment info, int type) {
         var mh$ = g_file_info_set_file_type$MH();
         try {
             mh$.invokeExact(info, type);
@@ -7837,9 +8354,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_info_set_is_hidden$MH() {
-        return RuntimeHelper.requireNonNull(constants$699.g_file_info_set_is_hidden$MH,"g_file_info_set_is_hidden");
+        return RuntimeHelper.requireNonNull(constants$650.g_file_info_set_is_hidden$MH,"g_file_info_set_is_hidden");
     }
-    public static void g_file_info_set_is_hidden ( Addressable info,  int is_hidden) {
+    /**
+     * {@snippet :
+     * void g_file_info_set_is_hidden(GFileInfo* info, gboolean is_hidden);
+     * }
+     */
+    public static void g_file_info_set_is_hidden(MemorySegment info, int is_hidden) {
         var mh$ = g_file_info_set_is_hidden$MH();
         try {
             mh$.invokeExact(info, is_hidden);
@@ -7848,9 +8370,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_info_set_is_symlink$MH() {
-        return RuntimeHelper.requireNonNull(constants$699.g_file_info_set_is_symlink$MH,"g_file_info_set_is_symlink");
+        return RuntimeHelper.requireNonNull(constants$650.g_file_info_set_is_symlink$MH,"g_file_info_set_is_symlink");
     }
-    public static void g_file_info_set_is_symlink ( Addressable info,  int is_symlink) {
+    /**
+     * {@snippet :
+     * void g_file_info_set_is_symlink(GFileInfo* info, gboolean is_symlink);
+     * }
+     */
+    public static void g_file_info_set_is_symlink(MemorySegment info, int is_symlink) {
         var mh$ = g_file_info_set_is_symlink$MH();
         try {
             mh$.invokeExact(info, is_symlink);
@@ -7859,9 +8386,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_info_set_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$699.g_file_info_set_name$MH,"g_file_info_set_name");
+        return RuntimeHelper.requireNonNull(constants$650.g_file_info_set_name$MH,"g_file_info_set_name");
     }
-    public static void g_file_info_set_name ( Addressable info,  Addressable name) {
+    /**
+     * {@snippet :
+     * void g_file_info_set_name(GFileInfo* info, char* name);
+     * }
+     */
+    public static void g_file_info_set_name(MemorySegment info, MemorySegment name) {
         var mh$ = g_file_info_set_name$MH();
         try {
             mh$.invokeExact(info, name);
@@ -7870,9 +8402,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_info_set_display_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$699.g_file_info_set_display_name$MH,"g_file_info_set_display_name");
+        return RuntimeHelper.requireNonNull(constants$650.g_file_info_set_display_name$MH,"g_file_info_set_display_name");
     }
-    public static void g_file_info_set_display_name ( Addressable info,  Addressable display_name) {
+    /**
+     * {@snippet :
+     * void g_file_info_set_display_name(GFileInfo* info, char* display_name);
+     * }
+     */
+    public static void g_file_info_set_display_name(MemorySegment info, MemorySegment display_name) {
         var mh$ = g_file_info_set_display_name$MH();
         try {
             mh$.invokeExact(info, display_name);
@@ -7881,9 +8418,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_info_set_edit_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$699.g_file_info_set_edit_name$MH,"g_file_info_set_edit_name");
+        return RuntimeHelper.requireNonNull(constants$651.g_file_info_set_edit_name$MH,"g_file_info_set_edit_name");
     }
-    public static void g_file_info_set_edit_name ( Addressable info,  Addressable edit_name) {
+    /**
+     * {@snippet :
+     * void g_file_info_set_edit_name(GFileInfo* info, char* edit_name);
+     * }
+     */
+    public static void g_file_info_set_edit_name(MemorySegment info, MemorySegment edit_name) {
         var mh$ = g_file_info_set_edit_name$MH();
         try {
             mh$.invokeExact(info, edit_name);
@@ -7892,9 +8434,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_info_set_icon$MH() {
-        return RuntimeHelper.requireNonNull(constants$700.g_file_info_set_icon$MH,"g_file_info_set_icon");
+        return RuntimeHelper.requireNonNull(constants$651.g_file_info_set_icon$MH,"g_file_info_set_icon");
     }
-    public static void g_file_info_set_icon ( Addressable info,  Addressable icon) {
+    /**
+     * {@snippet :
+     * void g_file_info_set_icon(GFileInfo* info, GIcon* icon);
+     * }
+     */
+    public static void g_file_info_set_icon(MemorySegment info, MemorySegment icon) {
         var mh$ = g_file_info_set_icon$MH();
         try {
             mh$.invokeExact(info, icon);
@@ -7903,9 +8450,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_info_set_symbolic_icon$MH() {
-        return RuntimeHelper.requireNonNull(constants$700.g_file_info_set_symbolic_icon$MH,"g_file_info_set_symbolic_icon");
+        return RuntimeHelper.requireNonNull(constants$651.g_file_info_set_symbolic_icon$MH,"g_file_info_set_symbolic_icon");
     }
-    public static void g_file_info_set_symbolic_icon ( Addressable info,  Addressable icon) {
+    /**
+     * {@snippet :
+     * void g_file_info_set_symbolic_icon(GFileInfo* info, GIcon* icon);
+     * }
+     */
+    public static void g_file_info_set_symbolic_icon(MemorySegment info, MemorySegment icon) {
         var mh$ = g_file_info_set_symbolic_icon$MH();
         try {
             mh$.invokeExact(info, icon);
@@ -7914,9 +8466,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_info_set_content_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$700.g_file_info_set_content_type$MH,"g_file_info_set_content_type");
+        return RuntimeHelper.requireNonNull(constants$651.g_file_info_set_content_type$MH,"g_file_info_set_content_type");
     }
-    public static void g_file_info_set_content_type ( Addressable info,  Addressable content_type) {
+    /**
+     * {@snippet :
+     * void g_file_info_set_content_type(GFileInfo* info, char* content_type);
+     * }
+     */
+    public static void g_file_info_set_content_type(MemorySegment info, MemorySegment content_type) {
         var mh$ = g_file_info_set_content_type$MH();
         try {
             mh$.invokeExact(info, content_type);
@@ -7925,9 +8482,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_info_set_size$MH() {
-        return RuntimeHelper.requireNonNull(constants$700.g_file_info_set_size$MH,"g_file_info_set_size");
+        return RuntimeHelper.requireNonNull(constants$651.g_file_info_set_size$MH,"g_file_info_set_size");
     }
-    public static void g_file_info_set_size ( Addressable info,  long size) {
+    /**
+     * {@snippet :
+     * void g_file_info_set_size(GFileInfo* info, goffset size);
+     * }
+     */
+    public static void g_file_info_set_size(MemorySegment info, long size) {
         var mh$ = g_file_info_set_size$MH();
         try {
             mh$.invokeExact(info, size);
@@ -7936,9 +8498,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_info_set_modification_time$MH() {
-        return RuntimeHelper.requireNonNull(constants$700.g_file_info_set_modification_time$MH,"g_file_info_set_modification_time");
+        return RuntimeHelper.requireNonNull(constants$651.g_file_info_set_modification_time$MH,"g_file_info_set_modification_time");
     }
-    public static void g_file_info_set_modification_time ( Addressable info,  Addressable mtime) {
+    /**
+     * {@snippet :
+     * void g_file_info_set_modification_time(GFileInfo* info, GTimeVal* mtime);
+     * }
+     */
+    public static void g_file_info_set_modification_time(MemorySegment info, MemorySegment mtime) {
         var mh$ = g_file_info_set_modification_time$MH();
         try {
             mh$.invokeExact(info, mtime);
@@ -7947,9 +8514,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_info_set_modification_date_time$MH() {
-        return RuntimeHelper.requireNonNull(constants$700.g_file_info_set_modification_date_time$MH,"g_file_info_set_modification_date_time");
+        return RuntimeHelper.requireNonNull(constants$652.g_file_info_set_modification_date_time$MH,"g_file_info_set_modification_date_time");
     }
-    public static void g_file_info_set_modification_date_time ( Addressable info,  Addressable mtime) {
+    /**
+     * {@snippet :
+     * void g_file_info_set_modification_date_time(GFileInfo* info, GDateTime* mtime);
+     * }
+     */
+    public static void g_file_info_set_modification_date_time(MemorySegment info, MemorySegment mtime) {
         var mh$ = g_file_info_set_modification_date_time$MH();
         try {
             mh$.invokeExact(info, mtime);
@@ -7958,9 +8530,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_info_set_access_date_time$MH() {
-        return RuntimeHelper.requireNonNull(constants$701.g_file_info_set_access_date_time$MH,"g_file_info_set_access_date_time");
+        return RuntimeHelper.requireNonNull(constants$652.g_file_info_set_access_date_time$MH,"g_file_info_set_access_date_time");
     }
-    public static void g_file_info_set_access_date_time ( Addressable info,  Addressable atime) {
+    /**
+     * {@snippet :
+     * void g_file_info_set_access_date_time(GFileInfo* info, GDateTime* atime);
+     * }
+     */
+    public static void g_file_info_set_access_date_time(MemorySegment info, MemorySegment atime) {
         var mh$ = g_file_info_set_access_date_time$MH();
         try {
             mh$.invokeExact(info, atime);
@@ -7969,9 +8546,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_info_set_creation_date_time$MH() {
-        return RuntimeHelper.requireNonNull(constants$701.g_file_info_set_creation_date_time$MH,"g_file_info_set_creation_date_time");
+        return RuntimeHelper.requireNonNull(constants$652.g_file_info_set_creation_date_time$MH,"g_file_info_set_creation_date_time");
     }
-    public static void g_file_info_set_creation_date_time ( Addressable info,  Addressable creation_time) {
+    /**
+     * {@snippet :
+     * void g_file_info_set_creation_date_time(GFileInfo* info, GDateTime* creation_time);
+     * }
+     */
+    public static void g_file_info_set_creation_date_time(MemorySegment info, MemorySegment creation_time) {
         var mh$ = g_file_info_set_creation_date_time$MH();
         try {
             mh$.invokeExact(info, creation_time);
@@ -7980,9 +8562,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_info_set_symlink_target$MH() {
-        return RuntimeHelper.requireNonNull(constants$701.g_file_info_set_symlink_target$MH,"g_file_info_set_symlink_target");
+        return RuntimeHelper.requireNonNull(constants$652.g_file_info_set_symlink_target$MH,"g_file_info_set_symlink_target");
     }
-    public static void g_file_info_set_symlink_target ( Addressable info,  Addressable symlink_target) {
+    /**
+     * {@snippet :
+     * void g_file_info_set_symlink_target(GFileInfo* info, char* symlink_target);
+     * }
+     */
+    public static void g_file_info_set_symlink_target(MemorySegment info, MemorySegment symlink_target) {
         var mh$ = g_file_info_set_symlink_target$MH();
         try {
             mh$.invokeExact(info, symlink_target);
@@ -7991,9 +8578,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_info_set_sort_order$MH() {
-        return RuntimeHelper.requireNonNull(constants$701.g_file_info_set_sort_order$MH,"g_file_info_set_sort_order");
+        return RuntimeHelper.requireNonNull(constants$652.g_file_info_set_sort_order$MH,"g_file_info_set_sort_order");
     }
-    public static void g_file_info_set_sort_order ( Addressable info,  int sort_order) {
+    /**
+     * {@snippet :
+     * void g_file_info_set_sort_order(GFileInfo* info, gint32 sort_order);
+     * }
+     */
+    public static void g_file_info_set_sort_order(MemorySegment info, int sort_order) {
         var mh$ = g_file_info_set_sort_order$MH();
         try {
             mh$.invokeExact(info, sort_order);
@@ -8002,9 +8594,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_attribute_matcher_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$701.g_file_attribute_matcher_get_type$MH,"g_file_attribute_matcher_get_type");
+        return RuntimeHelper.requireNonNull(constants$652.g_file_attribute_matcher_get_type$MH,"g_file_attribute_matcher_get_type");
     }
-    public static long g_file_attribute_matcher_get_type () {
+    /**
+     * {@snippet :
+     * GType g_file_attribute_matcher_get_type();
+     * }
+     */
+    public static long g_file_attribute_matcher_get_type() {
         var mh$ = g_file_attribute_matcher_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -8013,31 +8610,46 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_attribute_matcher_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$701.g_file_attribute_matcher_new$MH,"g_file_attribute_matcher_new");
+        return RuntimeHelper.requireNonNull(constants$653.g_file_attribute_matcher_new$MH,"g_file_attribute_matcher_new");
     }
-    public static MemoryAddress g_file_attribute_matcher_new ( Addressable attributes) {
+    /**
+     * {@snippet :
+     * GFileAttributeMatcher* g_file_attribute_matcher_new(char* attributes);
+     * }
+     */
+    public static MemorySegment g_file_attribute_matcher_new(MemorySegment attributes) {
         var mh$ = g_file_attribute_matcher_new$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(attributes);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(attributes);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_attribute_matcher_ref$MH() {
-        return RuntimeHelper.requireNonNull(constants$702.g_file_attribute_matcher_ref$MH,"g_file_attribute_matcher_ref");
+        return RuntimeHelper.requireNonNull(constants$653.g_file_attribute_matcher_ref$MH,"g_file_attribute_matcher_ref");
     }
-    public static MemoryAddress g_file_attribute_matcher_ref ( Addressable matcher) {
+    /**
+     * {@snippet :
+     * GFileAttributeMatcher* g_file_attribute_matcher_ref(GFileAttributeMatcher* matcher);
+     * }
+     */
+    public static MemorySegment g_file_attribute_matcher_ref(MemorySegment matcher) {
         var mh$ = g_file_attribute_matcher_ref$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(matcher);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(matcher);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_attribute_matcher_unref$MH() {
-        return RuntimeHelper.requireNonNull(constants$702.g_file_attribute_matcher_unref$MH,"g_file_attribute_matcher_unref");
+        return RuntimeHelper.requireNonNull(constants$653.g_file_attribute_matcher_unref$MH,"g_file_attribute_matcher_unref");
     }
-    public static void g_file_attribute_matcher_unref ( Addressable matcher) {
+    /**
+     * {@snippet :
+     * void g_file_attribute_matcher_unref(GFileAttributeMatcher* matcher);
+     * }
+     */
+    public static void g_file_attribute_matcher_unref(MemorySegment matcher) {
         var mh$ = g_file_attribute_matcher_unref$MH();
         try {
             mh$.invokeExact(matcher);
@@ -8046,20 +8658,30 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_attribute_matcher_subtract$MH() {
-        return RuntimeHelper.requireNonNull(constants$702.g_file_attribute_matcher_subtract$MH,"g_file_attribute_matcher_subtract");
+        return RuntimeHelper.requireNonNull(constants$653.g_file_attribute_matcher_subtract$MH,"g_file_attribute_matcher_subtract");
     }
-    public static MemoryAddress g_file_attribute_matcher_subtract ( Addressable matcher,  Addressable subtract) {
+    /**
+     * {@snippet :
+     * GFileAttributeMatcher* g_file_attribute_matcher_subtract(GFileAttributeMatcher* matcher, GFileAttributeMatcher* subtract);
+     * }
+     */
+    public static MemorySegment g_file_attribute_matcher_subtract(MemorySegment matcher, MemorySegment subtract) {
         var mh$ = g_file_attribute_matcher_subtract$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(matcher, subtract);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(matcher, subtract);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_attribute_matcher_matches$MH() {
-        return RuntimeHelper.requireNonNull(constants$702.g_file_attribute_matcher_matches$MH,"g_file_attribute_matcher_matches");
+        return RuntimeHelper.requireNonNull(constants$653.g_file_attribute_matcher_matches$MH,"g_file_attribute_matcher_matches");
     }
-    public static int g_file_attribute_matcher_matches ( Addressable matcher,  Addressable attribute) {
+    /**
+     * {@snippet :
+     * gboolean g_file_attribute_matcher_matches(GFileAttributeMatcher* matcher, char* attribute);
+     * }
+     */
+    public static int g_file_attribute_matcher_matches(MemorySegment matcher, MemorySegment attribute) {
         var mh$ = g_file_attribute_matcher_matches$MH();
         try {
             return (int)mh$.invokeExact(matcher, attribute);
@@ -8068,9 +8690,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_attribute_matcher_matches_only$MH() {
-        return RuntimeHelper.requireNonNull(constants$702.g_file_attribute_matcher_matches_only$MH,"g_file_attribute_matcher_matches_only");
+        return RuntimeHelper.requireNonNull(constants$653.g_file_attribute_matcher_matches_only$MH,"g_file_attribute_matcher_matches_only");
     }
-    public static int g_file_attribute_matcher_matches_only ( Addressable matcher,  Addressable attribute) {
+    /**
+     * {@snippet :
+     * gboolean g_file_attribute_matcher_matches_only(GFileAttributeMatcher* matcher, char* attribute);
+     * }
+     */
+    public static int g_file_attribute_matcher_matches_only(MemorySegment matcher, MemorySegment attribute) {
         var mh$ = g_file_attribute_matcher_matches_only$MH();
         try {
             return (int)mh$.invokeExact(matcher, attribute);
@@ -8079,9 +8706,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_attribute_matcher_enumerate_namespace$MH() {
-        return RuntimeHelper.requireNonNull(constants$702.g_file_attribute_matcher_enumerate_namespace$MH,"g_file_attribute_matcher_enumerate_namespace");
+        return RuntimeHelper.requireNonNull(constants$654.g_file_attribute_matcher_enumerate_namespace$MH,"g_file_attribute_matcher_enumerate_namespace");
     }
-    public static int g_file_attribute_matcher_enumerate_namespace ( Addressable matcher,  Addressable ns) {
+    /**
+     * {@snippet :
+     * gboolean g_file_attribute_matcher_enumerate_namespace(GFileAttributeMatcher* matcher, char* ns);
+     * }
+     */
+    public static int g_file_attribute_matcher_enumerate_namespace(MemorySegment matcher, MemorySegment ns) {
         var mh$ = g_file_attribute_matcher_enumerate_namespace$MH();
         try {
             return (int)mh$.invokeExact(matcher, ns);
@@ -8090,31 +8722,46 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_attribute_matcher_enumerate_next$MH() {
-        return RuntimeHelper.requireNonNull(constants$703.g_file_attribute_matcher_enumerate_next$MH,"g_file_attribute_matcher_enumerate_next");
+        return RuntimeHelper.requireNonNull(constants$654.g_file_attribute_matcher_enumerate_next$MH,"g_file_attribute_matcher_enumerate_next");
     }
-    public static MemoryAddress g_file_attribute_matcher_enumerate_next ( Addressable matcher) {
+    /**
+     * {@snippet :
+     * char* g_file_attribute_matcher_enumerate_next(GFileAttributeMatcher* matcher);
+     * }
+     */
+    public static MemorySegment g_file_attribute_matcher_enumerate_next(MemorySegment matcher) {
         var mh$ = g_file_attribute_matcher_enumerate_next$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(matcher);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(matcher);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_attribute_matcher_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$703.g_file_attribute_matcher_to_string$MH,"g_file_attribute_matcher_to_string");
+        return RuntimeHelper.requireNonNull(constants$654.g_file_attribute_matcher_to_string$MH,"g_file_attribute_matcher_to_string");
     }
-    public static MemoryAddress g_file_attribute_matcher_to_string ( Addressable matcher) {
+    /**
+     * {@snippet :
+     * char* g_file_attribute_matcher_to_string(GFileAttributeMatcher* matcher);
+     * }
+     */
+    public static MemorySegment g_file_attribute_matcher_to_string(MemorySegment matcher) {
         var mh$ = g_file_attribute_matcher_to_string$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(matcher);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(matcher);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_input_stream_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$703.g_file_input_stream_get_type$MH,"g_file_input_stream_get_type");
+        return RuntimeHelper.requireNonNull(constants$654.g_file_input_stream_get_type$MH,"g_file_input_stream_get_type");
     }
-    public static long g_file_input_stream_get_type () {
+    /**
+     * {@snippet :
+     * GType g_file_input_stream_get_type();
+     * }
+     */
+    public static long g_file_input_stream_get_type() {
         var mh$ = g_file_input_stream_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -8123,20 +8770,30 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_input_stream_query_info$MH() {
-        return RuntimeHelper.requireNonNull(constants$703.g_file_input_stream_query_info$MH,"g_file_input_stream_query_info");
+        return RuntimeHelper.requireNonNull(constants$654.g_file_input_stream_query_info$MH,"g_file_input_stream_query_info");
     }
-    public static MemoryAddress g_file_input_stream_query_info ( Addressable stream,  Addressable attributes,  Addressable cancellable,  Addressable error) {
+    /**
+     * {@snippet :
+     * GFileInfo* g_file_input_stream_query_info(GFileInputStream* stream, char* attributes, GCancellable* cancellable, GError** error);
+     * }
+     */
+    public static MemorySegment g_file_input_stream_query_info(MemorySegment stream, MemorySegment attributes, MemorySegment cancellable, MemorySegment error) {
         var mh$ = g_file_input_stream_query_info$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(stream, attributes, cancellable, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(stream, attributes, cancellable, error);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_input_stream_query_info_async$MH() {
-        return RuntimeHelper.requireNonNull(constants$703.g_file_input_stream_query_info_async$MH,"g_file_input_stream_query_info_async");
+        return RuntimeHelper.requireNonNull(constants$654.g_file_input_stream_query_info_async$MH,"g_file_input_stream_query_info_async");
     }
-    public static void g_file_input_stream_query_info_async ( Addressable stream,  Addressable attributes,  int io_priority,  Addressable cancellable,  Addressable callback,  Addressable user_data) {
+    /**
+     * {@snippet :
+     * void g_file_input_stream_query_info_async(GFileInputStream* stream, char* attributes, int io_priority, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
+     * }
+     */
+    public static void g_file_input_stream_query_info_async(MemorySegment stream, MemorySegment attributes, int io_priority, MemorySegment cancellable, MemorySegment callback, MemorySegment user_data) {
         var mh$ = g_file_input_stream_query_info_async$MH();
         try {
             mh$.invokeExact(stream, attributes, io_priority, cancellable, callback, user_data);
@@ -8145,20 +8802,30 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_input_stream_query_info_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$703.g_file_input_stream_query_info_finish$MH,"g_file_input_stream_query_info_finish");
+        return RuntimeHelper.requireNonNull(constants$655.g_file_input_stream_query_info_finish$MH,"g_file_input_stream_query_info_finish");
     }
-    public static MemoryAddress g_file_input_stream_query_info_finish ( Addressable stream,  Addressable result,  Addressable error) {
+    /**
+     * {@snippet :
+     * GFileInfo* g_file_input_stream_query_info_finish(GFileInputStream* stream, GAsyncResult* result, GError** error);
+     * }
+     */
+    public static MemorySegment g_file_input_stream_query_info_finish(MemorySegment stream, MemorySegment result, MemorySegment error) {
         var mh$ = g_file_input_stream_query_info_finish$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(stream, result, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(stream, result, error);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_io_error_quark$MH() {
-        return RuntimeHelper.requireNonNull(constants$704.g_io_error_quark$MH,"g_io_error_quark");
+        return RuntimeHelper.requireNonNull(constants$655.g_io_error_quark$MH,"g_io_error_quark");
     }
-    public static int g_io_error_quark () {
+    /**
+     * {@snippet :
+     * GQuark g_io_error_quark();
+     * }
+     */
+    public static int g_io_error_quark() {
         var mh$ = g_io_error_quark$MH();
         try {
             return (int)mh$.invokeExact();
@@ -8167,9 +8834,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_io_error_from_errno$MH() {
-        return RuntimeHelper.requireNonNull(constants$704.g_io_error_from_errno$MH,"g_io_error_from_errno");
+        return RuntimeHelper.requireNonNull(constants$655.g_io_error_from_errno$MH,"g_io_error_from_errno");
     }
-    public static int g_io_error_from_errno ( int err_no) {
+    /**
+     * {@snippet :
+     * GIOErrorEnum g_io_error_from_errno(gint err_no);
+     * }
+     */
+    public static int g_io_error_from_errno(int err_no) {
         var mh$ = g_io_error_from_errno$MH();
         try {
             return (int)mh$.invokeExact(err_no);
@@ -8177,10 +8849,31 @@ import static java.lang.foreign.ValueLayout.*;
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle g_io_stream_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$704.g_io_stream_get_type$MH,"g_io_stream_get_type");
+    public static MethodHandle g_io_error_from_file_error$MH() {
+        return RuntimeHelper.requireNonNull(constants$655.g_io_error_from_file_error$MH,"g_io_error_from_file_error");
     }
-    public static long g_io_stream_get_type () {
+    /**
+     * {@snippet :
+     * GIOErrorEnum g_io_error_from_file_error(GFileError file_error);
+     * }
+     */
+    public static int g_io_error_from_file_error(int file_error) {
+        var mh$ = g_io_error_from_file_error$MH();
+        try {
+            return (int)mh$.invokeExact(file_error);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_io_stream_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$655.g_io_stream_get_type$MH,"g_io_stream_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType g_io_stream_get_type();
+     * }
+     */
+    public static long g_io_stream_get_type() {
         var mh$ = g_io_stream_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -8189,31 +8882,46 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_io_stream_get_input_stream$MH() {
-        return RuntimeHelper.requireNonNull(constants$704.g_io_stream_get_input_stream$MH,"g_io_stream_get_input_stream");
+        return RuntimeHelper.requireNonNull(constants$655.g_io_stream_get_input_stream$MH,"g_io_stream_get_input_stream");
     }
-    public static MemoryAddress g_io_stream_get_input_stream ( Addressable stream) {
+    /**
+     * {@snippet :
+     * GInputStream* g_io_stream_get_input_stream(GIOStream* stream);
+     * }
+     */
+    public static MemorySegment g_io_stream_get_input_stream(MemorySegment stream) {
         var mh$ = g_io_stream_get_input_stream$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(stream);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(stream);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_io_stream_get_output_stream$MH() {
-        return RuntimeHelper.requireNonNull(constants$704.g_io_stream_get_output_stream$MH,"g_io_stream_get_output_stream");
+        return RuntimeHelper.requireNonNull(constants$656.g_io_stream_get_output_stream$MH,"g_io_stream_get_output_stream");
     }
-    public static MemoryAddress g_io_stream_get_output_stream ( Addressable stream) {
+    /**
+     * {@snippet :
+     * GOutputStream* g_io_stream_get_output_stream(GIOStream* stream);
+     * }
+     */
+    public static MemorySegment g_io_stream_get_output_stream(MemorySegment stream) {
         var mh$ = g_io_stream_get_output_stream$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(stream);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(stream);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_io_stream_splice_async$MH() {
-        return RuntimeHelper.requireNonNull(constants$704.g_io_stream_splice_async$MH,"g_io_stream_splice_async");
+        return RuntimeHelper.requireNonNull(constants$656.g_io_stream_splice_async$MH,"g_io_stream_splice_async");
     }
-    public static void g_io_stream_splice_async ( Addressable stream1,  Addressable stream2,  int flags,  int io_priority,  Addressable cancellable,  Addressable callback,  Addressable user_data) {
+    /**
+     * {@snippet :
+     * void g_io_stream_splice_async(GIOStream* stream1, GIOStream* stream2, GIOStreamSpliceFlags flags, int io_priority, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
+     * }
+     */
+    public static void g_io_stream_splice_async(MemorySegment stream1, MemorySegment stream2, int flags, int io_priority, MemorySegment cancellable, MemorySegment callback, MemorySegment user_data) {
         var mh$ = g_io_stream_splice_async$MH();
         try {
             mh$.invokeExact(stream1, stream2, flags, io_priority, cancellable, callback, user_data);
@@ -8222,9 +8930,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_io_stream_splice_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$705.g_io_stream_splice_finish$MH,"g_io_stream_splice_finish");
+        return RuntimeHelper.requireNonNull(constants$656.g_io_stream_splice_finish$MH,"g_io_stream_splice_finish");
     }
-    public static int g_io_stream_splice_finish ( Addressable result,  Addressable error) {
+    /**
+     * {@snippet :
+     * gboolean g_io_stream_splice_finish(GAsyncResult* result, GError** error);
+     * }
+     */
+    public static int g_io_stream_splice_finish(MemorySegment result, MemorySegment error) {
         var mh$ = g_io_stream_splice_finish$MH();
         try {
             return (int)mh$.invokeExact(result, error);
@@ -8233,9 +8946,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_io_stream_close$MH() {
-        return RuntimeHelper.requireNonNull(constants$705.g_io_stream_close$MH,"g_io_stream_close");
+        return RuntimeHelper.requireNonNull(constants$656.g_io_stream_close$MH,"g_io_stream_close");
     }
-    public static int g_io_stream_close ( Addressable stream,  Addressable cancellable,  Addressable error) {
+    /**
+     * {@snippet :
+     * gboolean g_io_stream_close(GIOStream* stream, GCancellable* cancellable, GError** error);
+     * }
+     */
+    public static int g_io_stream_close(MemorySegment stream, MemorySegment cancellable, MemorySegment error) {
         var mh$ = g_io_stream_close$MH();
         try {
             return (int)mh$.invokeExact(stream, cancellable, error);
@@ -8244,9 +8962,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_io_stream_close_async$MH() {
-        return RuntimeHelper.requireNonNull(constants$705.g_io_stream_close_async$MH,"g_io_stream_close_async");
+        return RuntimeHelper.requireNonNull(constants$656.g_io_stream_close_async$MH,"g_io_stream_close_async");
     }
-    public static void g_io_stream_close_async ( Addressable stream,  int io_priority,  Addressable cancellable,  Addressable callback,  Addressable user_data) {
+    /**
+     * {@snippet :
+     * void g_io_stream_close_async(GIOStream* stream, int io_priority, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
+     * }
+     */
+    public static void g_io_stream_close_async(MemorySegment stream, int io_priority, MemorySegment cancellable, MemorySegment callback, MemorySegment user_data) {
         var mh$ = g_io_stream_close_async$MH();
         try {
             mh$.invokeExact(stream, io_priority, cancellable, callback, user_data);
@@ -8255,9 +8978,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_io_stream_close_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$705.g_io_stream_close_finish$MH,"g_io_stream_close_finish");
+        return RuntimeHelper.requireNonNull(constants$656.g_io_stream_close_finish$MH,"g_io_stream_close_finish");
     }
-    public static int g_io_stream_close_finish ( Addressable stream,  Addressable result,  Addressable error) {
+    /**
+     * {@snippet :
+     * gboolean g_io_stream_close_finish(GIOStream* stream, GAsyncResult* result, GError** error);
+     * }
+     */
+    public static int g_io_stream_close_finish(MemorySegment stream, MemorySegment result, MemorySegment error) {
         var mh$ = g_io_stream_close_finish$MH();
         try {
             return (int)mh$.invokeExact(stream, result, error);
@@ -8266,9 +8994,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_io_stream_is_closed$MH() {
-        return RuntimeHelper.requireNonNull(constants$705.g_io_stream_is_closed$MH,"g_io_stream_is_closed");
+        return RuntimeHelper.requireNonNull(constants$657.g_io_stream_is_closed$MH,"g_io_stream_is_closed");
     }
-    public static int g_io_stream_is_closed ( Addressable stream) {
+    /**
+     * {@snippet :
+     * gboolean g_io_stream_is_closed(GIOStream* stream);
+     * }
+     */
+    public static int g_io_stream_is_closed(MemorySegment stream) {
         var mh$ = g_io_stream_is_closed$MH();
         try {
             return (int)mh$.invokeExact(stream);
@@ -8277,9 +9010,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_io_stream_has_pending$MH() {
-        return RuntimeHelper.requireNonNull(constants$705.g_io_stream_has_pending$MH,"g_io_stream_has_pending");
+        return RuntimeHelper.requireNonNull(constants$657.g_io_stream_has_pending$MH,"g_io_stream_has_pending");
     }
-    public static int g_io_stream_has_pending ( Addressable stream) {
+    /**
+     * {@snippet :
+     * gboolean g_io_stream_has_pending(GIOStream* stream);
+     * }
+     */
+    public static int g_io_stream_has_pending(MemorySegment stream) {
         var mh$ = g_io_stream_has_pending$MH();
         try {
             return (int)mh$.invokeExact(stream);
@@ -8288,9 +9026,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_io_stream_set_pending$MH() {
-        return RuntimeHelper.requireNonNull(constants$706.g_io_stream_set_pending$MH,"g_io_stream_set_pending");
+        return RuntimeHelper.requireNonNull(constants$657.g_io_stream_set_pending$MH,"g_io_stream_set_pending");
     }
-    public static int g_io_stream_set_pending ( Addressable stream,  Addressable error) {
+    /**
+     * {@snippet :
+     * gboolean g_io_stream_set_pending(GIOStream* stream, GError** error);
+     * }
+     */
+    public static int g_io_stream_set_pending(MemorySegment stream, MemorySegment error) {
         var mh$ = g_io_stream_set_pending$MH();
         try {
             return (int)mh$.invokeExact(stream, error);
@@ -8299,9 +9042,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_io_stream_clear_pending$MH() {
-        return RuntimeHelper.requireNonNull(constants$706.g_io_stream_clear_pending$MH,"g_io_stream_clear_pending");
+        return RuntimeHelper.requireNonNull(constants$657.g_io_stream_clear_pending$MH,"g_io_stream_clear_pending");
     }
-    public static void g_io_stream_clear_pending ( Addressable stream) {
+    /**
+     * {@snippet :
+     * void g_io_stream_clear_pending(GIOStream* stream);
+     * }
+     */
+    public static void g_io_stream_clear_pending(MemorySegment stream) {
         var mh$ = g_io_stream_clear_pending$MH();
         try {
             mh$.invokeExact(stream);
@@ -8310,9 +9058,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_io_stream_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$706.g_file_io_stream_get_type$MH,"g_file_io_stream_get_type");
+        return RuntimeHelper.requireNonNull(constants$657.g_file_io_stream_get_type$MH,"g_file_io_stream_get_type");
     }
-    public static long g_file_io_stream_get_type () {
+    /**
+     * {@snippet :
+     * GType g_file_io_stream_get_type();
+     * }
+     */
+    public static long g_file_io_stream_get_type() {
         var mh$ = g_file_io_stream_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -8321,20 +9074,30 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_io_stream_query_info$MH() {
-        return RuntimeHelper.requireNonNull(constants$706.g_file_io_stream_query_info$MH,"g_file_io_stream_query_info");
+        return RuntimeHelper.requireNonNull(constants$657.g_file_io_stream_query_info$MH,"g_file_io_stream_query_info");
     }
-    public static MemoryAddress g_file_io_stream_query_info ( Addressable stream,  Addressable attributes,  Addressable cancellable,  Addressable error) {
+    /**
+     * {@snippet :
+     * GFileInfo* g_file_io_stream_query_info(GFileIOStream* stream, char* attributes, GCancellable* cancellable, GError** error);
+     * }
+     */
+    public static MemorySegment g_file_io_stream_query_info(MemorySegment stream, MemorySegment attributes, MemorySegment cancellable, MemorySegment error) {
         var mh$ = g_file_io_stream_query_info$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(stream, attributes, cancellable, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(stream, attributes, cancellable, error);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_io_stream_query_info_async$MH() {
-        return RuntimeHelper.requireNonNull(constants$706.g_file_io_stream_query_info_async$MH,"g_file_io_stream_query_info_async");
+        return RuntimeHelper.requireNonNull(constants$658.g_file_io_stream_query_info_async$MH,"g_file_io_stream_query_info_async");
     }
-    public static void g_file_io_stream_query_info_async ( Addressable stream,  Addressable attributes,  int io_priority,  Addressable cancellable,  Addressable callback,  Addressable user_data) {
+    /**
+     * {@snippet :
+     * void g_file_io_stream_query_info_async(GFileIOStream* stream, char* attributes, int io_priority, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
+     * }
+     */
+    public static void g_file_io_stream_query_info_async(MemorySegment stream, MemorySegment attributes, int io_priority, MemorySegment cancellable, MemorySegment callback, MemorySegment user_data) {
         var mh$ = g_file_io_stream_query_info_async$MH();
         try {
             mh$.invokeExact(stream, attributes, io_priority, cancellable, callback, user_data);
@@ -8343,31 +9106,46 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_io_stream_query_info_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$706.g_file_io_stream_query_info_finish$MH,"g_file_io_stream_query_info_finish");
+        return RuntimeHelper.requireNonNull(constants$658.g_file_io_stream_query_info_finish$MH,"g_file_io_stream_query_info_finish");
     }
-    public static MemoryAddress g_file_io_stream_query_info_finish ( Addressable stream,  Addressable result,  Addressable error) {
+    /**
+     * {@snippet :
+     * GFileInfo* g_file_io_stream_query_info_finish(GFileIOStream* stream, GAsyncResult* result, GError** error);
+     * }
+     */
+    public static MemorySegment g_file_io_stream_query_info_finish(MemorySegment stream, MemorySegment result, MemorySegment error) {
         var mh$ = g_file_io_stream_query_info_finish$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(stream, result, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(stream, result, error);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_io_stream_get_etag$MH() {
-        return RuntimeHelper.requireNonNull(constants$707.g_file_io_stream_get_etag$MH,"g_file_io_stream_get_etag");
+        return RuntimeHelper.requireNonNull(constants$658.g_file_io_stream_get_etag$MH,"g_file_io_stream_get_etag");
     }
-    public static MemoryAddress g_file_io_stream_get_etag ( Addressable stream) {
+    /**
+     * {@snippet :
+     * char* g_file_io_stream_get_etag(GFileIOStream* stream);
+     * }
+     */
+    public static MemorySegment g_file_io_stream_get_etag(MemorySegment stream) {
         var mh$ = g_file_io_stream_get_etag$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(stream);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(stream);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_monitor_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$707.g_file_monitor_get_type$MH,"g_file_monitor_get_type");
+        return RuntimeHelper.requireNonNull(constants$658.g_file_monitor_get_type$MH,"g_file_monitor_get_type");
     }
-    public static long g_file_monitor_get_type () {
+    /**
+     * {@snippet :
+     * GType g_file_monitor_get_type();
+     * }
+     */
+    public static long g_file_monitor_get_type() {
         var mh$ = g_file_monitor_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -8376,9 +9154,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_monitor_cancel$MH() {
-        return RuntimeHelper.requireNonNull(constants$707.g_file_monitor_cancel$MH,"g_file_monitor_cancel");
+        return RuntimeHelper.requireNonNull(constants$658.g_file_monitor_cancel$MH,"g_file_monitor_cancel");
     }
-    public static int g_file_monitor_cancel ( Addressable monitor) {
+    /**
+     * {@snippet :
+     * gboolean g_file_monitor_cancel(GFileMonitor* monitor);
+     * }
+     */
+    public static int g_file_monitor_cancel(MemorySegment monitor) {
         var mh$ = g_file_monitor_cancel$MH();
         try {
             return (int)mh$.invokeExact(monitor);
@@ -8387,9 +9170,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_monitor_is_cancelled$MH() {
-        return RuntimeHelper.requireNonNull(constants$707.g_file_monitor_is_cancelled$MH,"g_file_monitor_is_cancelled");
+        return RuntimeHelper.requireNonNull(constants$658.g_file_monitor_is_cancelled$MH,"g_file_monitor_is_cancelled");
     }
-    public static int g_file_monitor_is_cancelled ( Addressable monitor) {
+    /**
+     * {@snippet :
+     * gboolean g_file_monitor_is_cancelled(GFileMonitor* monitor);
+     * }
+     */
+    public static int g_file_monitor_is_cancelled(MemorySegment monitor) {
         var mh$ = g_file_monitor_is_cancelled$MH();
         try {
             return (int)mh$.invokeExact(monitor);
@@ -8398,9 +9186,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_monitor_set_rate_limit$MH() {
-        return RuntimeHelper.requireNonNull(constants$707.g_file_monitor_set_rate_limit$MH,"g_file_monitor_set_rate_limit");
+        return RuntimeHelper.requireNonNull(constants$659.g_file_monitor_set_rate_limit$MH,"g_file_monitor_set_rate_limit");
     }
-    public static void g_file_monitor_set_rate_limit ( Addressable monitor,  int limit_msecs) {
+    /**
+     * {@snippet :
+     * void g_file_monitor_set_rate_limit(GFileMonitor* monitor, gint limit_msecs);
+     * }
+     */
+    public static void g_file_monitor_set_rate_limit(MemorySegment monitor, int limit_msecs) {
         var mh$ = g_file_monitor_set_rate_limit$MH();
         try {
             mh$.invokeExact(monitor, limit_msecs);
@@ -8409,9 +9202,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_monitor_emit_event$MH() {
-        return RuntimeHelper.requireNonNull(constants$707.g_file_monitor_emit_event$MH,"g_file_monitor_emit_event");
+        return RuntimeHelper.requireNonNull(constants$659.g_file_monitor_emit_event$MH,"g_file_monitor_emit_event");
     }
-    public static void g_file_monitor_emit_event ( Addressable monitor,  Addressable child,  Addressable other_file,  int event_type) {
+    /**
+     * {@snippet :
+     * void g_file_monitor_emit_event(GFileMonitor* monitor, GFile* child, GFile* other_file, GFileMonitorEvent event_type);
+     * }
+     */
+    public static void g_file_monitor_emit_event(MemorySegment monitor, MemorySegment child, MemorySegment other_file, int event_type) {
         var mh$ = g_file_monitor_emit_event$MH();
         try {
             mh$.invokeExact(monitor, child, other_file, event_type);
@@ -8420,9 +9218,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_filename_completer_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$708.g_filename_completer_get_type$MH,"g_filename_completer_get_type");
+        return RuntimeHelper.requireNonNull(constants$659.g_filename_completer_get_type$MH,"g_filename_completer_get_type");
     }
-    public static long g_filename_completer_get_type () {
+    /**
+     * {@snippet :
+     * GType g_filename_completer_get_type();
+     * }
+     */
+    public static long g_filename_completer_get_type() {
         var mh$ = g_filename_completer_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -8431,42 +9234,62 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_filename_completer_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$708.g_filename_completer_new$MH,"g_filename_completer_new");
+        return RuntimeHelper.requireNonNull(constants$659.g_filename_completer_new$MH,"g_filename_completer_new");
     }
-    public static MemoryAddress g_filename_completer_new () {
+    /**
+     * {@snippet :
+     * GFilenameCompleter* g_filename_completer_new();
+     * }
+     */
+    public static MemorySegment g_filename_completer_new() {
         var mh$ = g_filename_completer_new$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact();
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_filename_completer_get_completion_suffix$MH() {
-        return RuntimeHelper.requireNonNull(constants$708.g_filename_completer_get_completion_suffix$MH,"g_filename_completer_get_completion_suffix");
+        return RuntimeHelper.requireNonNull(constants$659.g_filename_completer_get_completion_suffix$MH,"g_filename_completer_get_completion_suffix");
     }
-    public static MemoryAddress g_filename_completer_get_completion_suffix ( Addressable completer,  Addressable initial_text) {
+    /**
+     * {@snippet :
+     * char* g_filename_completer_get_completion_suffix(GFilenameCompleter* completer, char* initial_text);
+     * }
+     */
+    public static MemorySegment g_filename_completer_get_completion_suffix(MemorySegment completer, MemorySegment initial_text) {
         var mh$ = g_filename_completer_get_completion_suffix$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(completer, initial_text);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(completer, initial_text);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_filename_completer_get_completions$MH() {
-        return RuntimeHelper.requireNonNull(constants$708.g_filename_completer_get_completions$MH,"g_filename_completer_get_completions");
+        return RuntimeHelper.requireNonNull(constants$659.g_filename_completer_get_completions$MH,"g_filename_completer_get_completions");
     }
-    public static MemoryAddress g_filename_completer_get_completions ( Addressable completer,  Addressable initial_text) {
+    /**
+     * {@snippet :
+     * char** g_filename_completer_get_completions(GFilenameCompleter* completer, char* initial_text);
+     * }
+     */
+    public static MemorySegment g_filename_completer_get_completions(MemorySegment completer, MemorySegment initial_text) {
         var mh$ = g_filename_completer_get_completions$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(completer, initial_text);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(completer, initial_text);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_filename_completer_set_dirs_only$MH() {
-        return RuntimeHelper.requireNonNull(constants$708.g_filename_completer_set_dirs_only$MH,"g_filename_completer_set_dirs_only");
+        return RuntimeHelper.requireNonNull(constants$660.g_filename_completer_set_dirs_only$MH,"g_filename_completer_set_dirs_only");
     }
-    public static void g_filename_completer_set_dirs_only ( Addressable completer,  int dirs_only) {
+    /**
+     * {@snippet :
+     * void g_filename_completer_set_dirs_only(GFilenameCompleter* completer, gboolean dirs_only);
+     * }
+     */
+    public static void g_filename_completer_set_dirs_only(MemorySegment completer, int dirs_only) {
         var mh$ = g_filename_completer_set_dirs_only$MH();
         try {
             mh$.invokeExact(completer, dirs_only);
@@ -8475,9 +9298,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_output_stream_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$708.g_file_output_stream_get_type$MH,"g_file_output_stream_get_type");
+        return RuntimeHelper.requireNonNull(constants$660.g_file_output_stream_get_type$MH,"g_file_output_stream_get_type");
     }
-    public static long g_file_output_stream_get_type () {
+    /**
+     * {@snippet :
+     * GType g_file_output_stream_get_type();
+     * }
+     */
+    public static long g_file_output_stream_get_type() {
         var mh$ = g_file_output_stream_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -8486,20 +9314,30 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_output_stream_query_info$MH() {
-        return RuntimeHelper.requireNonNull(constants$709.g_file_output_stream_query_info$MH,"g_file_output_stream_query_info");
+        return RuntimeHelper.requireNonNull(constants$660.g_file_output_stream_query_info$MH,"g_file_output_stream_query_info");
     }
-    public static MemoryAddress g_file_output_stream_query_info ( Addressable stream,  Addressable attributes,  Addressable cancellable,  Addressable error) {
+    /**
+     * {@snippet :
+     * GFileInfo* g_file_output_stream_query_info(GFileOutputStream* stream, char* attributes, GCancellable* cancellable, GError** error);
+     * }
+     */
+    public static MemorySegment g_file_output_stream_query_info(MemorySegment stream, MemorySegment attributes, MemorySegment cancellable, MemorySegment error) {
         var mh$ = g_file_output_stream_query_info$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(stream, attributes, cancellable, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(stream, attributes, cancellable, error);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_output_stream_query_info_async$MH() {
-        return RuntimeHelper.requireNonNull(constants$709.g_file_output_stream_query_info_async$MH,"g_file_output_stream_query_info_async");
+        return RuntimeHelper.requireNonNull(constants$660.g_file_output_stream_query_info_async$MH,"g_file_output_stream_query_info_async");
     }
-    public static void g_file_output_stream_query_info_async ( Addressable stream,  Addressable attributes,  int io_priority,  Addressable cancellable,  Addressable callback,  Addressable user_data) {
+    /**
+     * {@snippet :
+     * void g_file_output_stream_query_info_async(GFileOutputStream* stream, char* attributes, int io_priority, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
+     * }
+     */
+    public static void g_file_output_stream_query_info_async(MemorySegment stream, MemorySegment attributes, int io_priority, MemorySegment cancellable, MemorySegment callback, MemorySegment user_data) {
         var mh$ = g_file_output_stream_query_info_async$MH();
         try {
             mh$.invokeExact(stream, attributes, io_priority, cancellable, callback, user_data);
@@ -8508,31 +9346,46 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_output_stream_query_info_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$709.g_file_output_stream_query_info_finish$MH,"g_file_output_stream_query_info_finish");
+        return RuntimeHelper.requireNonNull(constants$660.g_file_output_stream_query_info_finish$MH,"g_file_output_stream_query_info_finish");
     }
-    public static MemoryAddress g_file_output_stream_query_info_finish ( Addressable stream,  Addressable result,  Addressable error) {
+    /**
+     * {@snippet :
+     * GFileInfo* g_file_output_stream_query_info_finish(GFileOutputStream* stream, GAsyncResult* result, GError** error);
+     * }
+     */
+    public static MemorySegment g_file_output_stream_query_info_finish(MemorySegment stream, MemorySegment result, MemorySegment error) {
         var mh$ = g_file_output_stream_query_info_finish$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(stream, result, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(stream, result, error);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_file_output_stream_get_etag$MH() {
-        return RuntimeHelper.requireNonNull(constants$709.g_file_output_stream_get_etag$MH,"g_file_output_stream_get_etag");
+        return RuntimeHelper.requireNonNull(constants$660.g_file_output_stream_get_etag$MH,"g_file_output_stream_get_etag");
     }
-    public static MemoryAddress g_file_output_stream_get_etag ( Addressable stream) {
+    /**
+     * {@snippet :
+     * char* g_file_output_stream_get_etag(GFileOutputStream* stream);
+     * }
+     */
+    public static MemorySegment g_file_output_stream_get_etag(MemorySegment stream) {
         var mh$ = g_file_output_stream_get_etag$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(stream);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(stream);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_inet_address_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$709.g_inet_address_get_type$MH,"g_inet_address_get_type");
+        return RuntimeHelper.requireNonNull(constants$661.g_inet_address_get_type$MH,"g_inet_address_get_type");
     }
-    public static long g_inet_address_get_type () {
+    /**
+     * {@snippet :
+     * GType g_inet_address_get_type();
+     * }
+     */
+    public static long g_inet_address_get_type() {
         var mh$ = g_inet_address_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -8541,53 +9394,78 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_inet_address_new_from_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$709.g_inet_address_new_from_string$MH,"g_inet_address_new_from_string");
+        return RuntimeHelper.requireNonNull(constants$661.g_inet_address_new_from_string$MH,"g_inet_address_new_from_string");
     }
-    public static MemoryAddress g_inet_address_new_from_string ( Addressable string) {
+    /**
+     * {@snippet :
+     * GInetAddress* g_inet_address_new_from_string(const gchar* string);
+     * }
+     */
+    public static MemorySegment g_inet_address_new_from_string(MemorySegment string) {
         var mh$ = g_inet_address_new_from_string$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(string);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(string);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_inet_address_new_from_bytes$MH() {
-        return RuntimeHelper.requireNonNull(constants$710.g_inet_address_new_from_bytes$MH,"g_inet_address_new_from_bytes");
+        return RuntimeHelper.requireNonNull(constants$661.g_inet_address_new_from_bytes$MH,"g_inet_address_new_from_bytes");
     }
-    public static MemoryAddress g_inet_address_new_from_bytes ( Addressable bytes,  int family) {
+    /**
+     * {@snippet :
+     * GInetAddress* g_inet_address_new_from_bytes(const guint8* bytes, GSocketFamily family);
+     * }
+     */
+    public static MemorySegment g_inet_address_new_from_bytes(MemorySegment bytes, int family) {
         var mh$ = g_inet_address_new_from_bytes$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(bytes, family);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(bytes, family);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_inet_address_new_loopback$MH() {
-        return RuntimeHelper.requireNonNull(constants$710.g_inet_address_new_loopback$MH,"g_inet_address_new_loopback");
+        return RuntimeHelper.requireNonNull(constants$661.g_inet_address_new_loopback$MH,"g_inet_address_new_loopback");
     }
-    public static MemoryAddress g_inet_address_new_loopback ( int family) {
+    /**
+     * {@snippet :
+     * GInetAddress* g_inet_address_new_loopback(GSocketFamily family);
+     * }
+     */
+    public static MemorySegment g_inet_address_new_loopback(int family) {
         var mh$ = g_inet_address_new_loopback$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(family);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(family);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_inet_address_new_any$MH() {
-        return RuntimeHelper.requireNonNull(constants$710.g_inet_address_new_any$MH,"g_inet_address_new_any");
+        return RuntimeHelper.requireNonNull(constants$661.g_inet_address_new_any$MH,"g_inet_address_new_any");
     }
-    public static MemoryAddress g_inet_address_new_any ( int family) {
+    /**
+     * {@snippet :
+     * GInetAddress* g_inet_address_new_any(GSocketFamily family);
+     * }
+     */
+    public static MemorySegment g_inet_address_new_any(int family) {
         var mh$ = g_inet_address_new_any$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(family);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(family);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_inet_address_equal$MH() {
-        return RuntimeHelper.requireNonNull(constants$710.g_inet_address_equal$MH,"g_inet_address_equal");
+        return RuntimeHelper.requireNonNull(constants$661.g_inet_address_equal$MH,"g_inet_address_equal");
     }
-    public static int g_inet_address_equal ( Addressable address,  Addressable other_address) {
+    /**
+     * {@snippet :
+     * gboolean g_inet_address_equal(GInetAddress* address, GInetAddress* other_address);
+     * }
+     */
+    public static int g_inet_address_equal(MemorySegment address, MemorySegment other_address) {
         var mh$ = g_inet_address_equal$MH();
         try {
             return (int)mh$.invokeExact(address, other_address);
@@ -8596,31 +9474,46 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_inet_address_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$710.g_inet_address_to_string$MH,"g_inet_address_to_string");
+        return RuntimeHelper.requireNonNull(constants$662.g_inet_address_to_string$MH,"g_inet_address_to_string");
     }
-    public static MemoryAddress g_inet_address_to_string ( Addressable address) {
+    /**
+     * {@snippet :
+     * gchar* g_inet_address_to_string(GInetAddress* address);
+     * }
+     */
+    public static MemorySegment g_inet_address_to_string(MemorySegment address) {
         var mh$ = g_inet_address_to_string$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(address);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(address);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_inet_address_to_bytes$MH() {
-        return RuntimeHelper.requireNonNull(constants$710.g_inet_address_to_bytes$MH,"g_inet_address_to_bytes");
+        return RuntimeHelper.requireNonNull(constants$662.g_inet_address_to_bytes$MH,"g_inet_address_to_bytes");
     }
-    public static MemoryAddress g_inet_address_to_bytes ( Addressable address) {
+    /**
+     * {@snippet :
+     * const guint8* g_inet_address_to_bytes(GInetAddress* address);
+     * }
+     */
+    public static MemorySegment g_inet_address_to_bytes(MemorySegment address) {
         var mh$ = g_inet_address_to_bytes$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(address);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(address);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_inet_address_get_native_size$MH() {
-        return RuntimeHelper.requireNonNull(constants$711.g_inet_address_get_native_size$MH,"g_inet_address_get_native_size");
+        return RuntimeHelper.requireNonNull(constants$662.g_inet_address_get_native_size$MH,"g_inet_address_get_native_size");
     }
-    public static long g_inet_address_get_native_size ( Addressable address) {
+    /**
+     * {@snippet :
+     * gsize g_inet_address_get_native_size(GInetAddress* address);
+     * }
+     */
+    public static long g_inet_address_get_native_size(MemorySegment address) {
         var mh$ = g_inet_address_get_native_size$MH();
         try {
             return (long)mh$.invokeExact(address);
@@ -8629,9 +9522,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_inet_address_get_family$MH() {
-        return RuntimeHelper.requireNonNull(constants$711.g_inet_address_get_family$MH,"g_inet_address_get_family");
+        return RuntimeHelper.requireNonNull(constants$662.g_inet_address_get_family$MH,"g_inet_address_get_family");
     }
-    public static int g_inet_address_get_family ( Addressable address) {
+    /**
+     * {@snippet :
+     * GSocketFamily g_inet_address_get_family(GInetAddress* address);
+     * }
+     */
+    public static int g_inet_address_get_family(MemorySegment address) {
         var mh$ = g_inet_address_get_family$MH();
         try {
             return (int)mh$.invokeExact(address);
@@ -8640,9 +9538,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_inet_address_get_is_any$MH() {
-        return RuntimeHelper.requireNonNull(constants$711.g_inet_address_get_is_any$MH,"g_inet_address_get_is_any");
+        return RuntimeHelper.requireNonNull(constants$662.g_inet_address_get_is_any$MH,"g_inet_address_get_is_any");
     }
-    public static int g_inet_address_get_is_any ( Addressable address) {
+    /**
+     * {@snippet :
+     * gboolean g_inet_address_get_is_any(GInetAddress* address);
+     * }
+     */
+    public static int g_inet_address_get_is_any(MemorySegment address) {
         var mh$ = g_inet_address_get_is_any$MH();
         try {
             return (int)mh$.invokeExact(address);
@@ -8651,9 +9554,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_inet_address_get_is_loopback$MH() {
-        return RuntimeHelper.requireNonNull(constants$711.g_inet_address_get_is_loopback$MH,"g_inet_address_get_is_loopback");
+        return RuntimeHelper.requireNonNull(constants$662.g_inet_address_get_is_loopback$MH,"g_inet_address_get_is_loopback");
     }
-    public static int g_inet_address_get_is_loopback ( Addressable address) {
+    /**
+     * {@snippet :
+     * gboolean g_inet_address_get_is_loopback(GInetAddress* address);
+     * }
+     */
+    public static int g_inet_address_get_is_loopback(MemorySegment address) {
         var mh$ = g_inet_address_get_is_loopback$MH();
         try {
             return (int)mh$.invokeExact(address);
@@ -8662,9 +9570,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_inet_address_get_is_link_local$MH() {
-        return RuntimeHelper.requireNonNull(constants$711.g_inet_address_get_is_link_local$MH,"g_inet_address_get_is_link_local");
+        return RuntimeHelper.requireNonNull(constants$663.g_inet_address_get_is_link_local$MH,"g_inet_address_get_is_link_local");
     }
-    public static int g_inet_address_get_is_link_local ( Addressable address) {
+    /**
+     * {@snippet :
+     * gboolean g_inet_address_get_is_link_local(GInetAddress* address);
+     * }
+     */
+    public static int g_inet_address_get_is_link_local(MemorySegment address) {
         var mh$ = g_inet_address_get_is_link_local$MH();
         try {
             return (int)mh$.invokeExact(address);
@@ -8673,9 +9586,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_inet_address_get_is_site_local$MH() {
-        return RuntimeHelper.requireNonNull(constants$711.g_inet_address_get_is_site_local$MH,"g_inet_address_get_is_site_local");
+        return RuntimeHelper.requireNonNull(constants$663.g_inet_address_get_is_site_local$MH,"g_inet_address_get_is_site_local");
     }
-    public static int g_inet_address_get_is_site_local ( Addressable address) {
+    /**
+     * {@snippet :
+     * gboolean g_inet_address_get_is_site_local(GInetAddress* address);
+     * }
+     */
+    public static int g_inet_address_get_is_site_local(MemorySegment address) {
         var mh$ = g_inet_address_get_is_site_local$MH();
         try {
             return (int)mh$.invokeExact(address);
@@ -8684,9 +9602,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_inet_address_get_is_multicast$MH() {
-        return RuntimeHelper.requireNonNull(constants$712.g_inet_address_get_is_multicast$MH,"g_inet_address_get_is_multicast");
+        return RuntimeHelper.requireNonNull(constants$663.g_inet_address_get_is_multicast$MH,"g_inet_address_get_is_multicast");
     }
-    public static int g_inet_address_get_is_multicast ( Addressable address) {
+    /**
+     * {@snippet :
+     * gboolean g_inet_address_get_is_multicast(GInetAddress* address);
+     * }
+     */
+    public static int g_inet_address_get_is_multicast(MemorySegment address) {
         var mh$ = g_inet_address_get_is_multicast$MH();
         try {
             return (int)mh$.invokeExact(address);
@@ -8695,9 +9618,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_inet_address_get_is_mc_global$MH() {
-        return RuntimeHelper.requireNonNull(constants$712.g_inet_address_get_is_mc_global$MH,"g_inet_address_get_is_mc_global");
+        return RuntimeHelper.requireNonNull(constants$663.g_inet_address_get_is_mc_global$MH,"g_inet_address_get_is_mc_global");
     }
-    public static int g_inet_address_get_is_mc_global ( Addressable address) {
+    /**
+     * {@snippet :
+     * gboolean g_inet_address_get_is_mc_global(GInetAddress* address);
+     * }
+     */
+    public static int g_inet_address_get_is_mc_global(MemorySegment address) {
         var mh$ = g_inet_address_get_is_mc_global$MH();
         try {
             return (int)mh$.invokeExact(address);
@@ -8706,9 +9634,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_inet_address_get_is_mc_link_local$MH() {
-        return RuntimeHelper.requireNonNull(constants$712.g_inet_address_get_is_mc_link_local$MH,"g_inet_address_get_is_mc_link_local");
+        return RuntimeHelper.requireNonNull(constants$663.g_inet_address_get_is_mc_link_local$MH,"g_inet_address_get_is_mc_link_local");
     }
-    public static int g_inet_address_get_is_mc_link_local ( Addressable address) {
+    /**
+     * {@snippet :
+     * gboolean g_inet_address_get_is_mc_link_local(GInetAddress* address);
+     * }
+     */
+    public static int g_inet_address_get_is_mc_link_local(MemorySegment address) {
         var mh$ = g_inet_address_get_is_mc_link_local$MH();
         try {
             return (int)mh$.invokeExact(address);
@@ -8717,9 +9650,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_inet_address_get_is_mc_node_local$MH() {
-        return RuntimeHelper.requireNonNull(constants$712.g_inet_address_get_is_mc_node_local$MH,"g_inet_address_get_is_mc_node_local");
+        return RuntimeHelper.requireNonNull(constants$663.g_inet_address_get_is_mc_node_local$MH,"g_inet_address_get_is_mc_node_local");
     }
-    public static int g_inet_address_get_is_mc_node_local ( Addressable address) {
+    /**
+     * {@snippet :
+     * gboolean g_inet_address_get_is_mc_node_local(GInetAddress* address);
+     * }
+     */
+    public static int g_inet_address_get_is_mc_node_local(MemorySegment address) {
         var mh$ = g_inet_address_get_is_mc_node_local$MH();
         try {
             return (int)mh$.invokeExact(address);
@@ -8728,9 +9666,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_inet_address_get_is_mc_org_local$MH() {
-        return RuntimeHelper.requireNonNull(constants$712.g_inet_address_get_is_mc_org_local$MH,"g_inet_address_get_is_mc_org_local");
+        return RuntimeHelper.requireNonNull(constants$664.g_inet_address_get_is_mc_org_local$MH,"g_inet_address_get_is_mc_org_local");
     }
-    public static int g_inet_address_get_is_mc_org_local ( Addressable address) {
+    /**
+     * {@snippet :
+     * gboolean g_inet_address_get_is_mc_org_local(GInetAddress* address);
+     * }
+     */
+    public static int g_inet_address_get_is_mc_org_local(MemorySegment address) {
         var mh$ = g_inet_address_get_is_mc_org_local$MH();
         try {
             return (int)mh$.invokeExact(address);
@@ -8739,9 +9682,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_inet_address_get_is_mc_site_local$MH() {
-        return RuntimeHelper.requireNonNull(constants$712.g_inet_address_get_is_mc_site_local$MH,"g_inet_address_get_is_mc_site_local");
+        return RuntimeHelper.requireNonNull(constants$664.g_inet_address_get_is_mc_site_local$MH,"g_inet_address_get_is_mc_site_local");
     }
-    public static int g_inet_address_get_is_mc_site_local ( Addressable address) {
+    /**
+     * {@snippet :
+     * gboolean g_inet_address_get_is_mc_site_local(GInetAddress* address);
+     * }
+     */
+    public static int g_inet_address_get_is_mc_site_local(MemorySegment address) {
         var mh$ = g_inet_address_get_is_mc_site_local$MH();
         try {
             return (int)mh$.invokeExact(address);
@@ -8750,9 +9698,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_inet_address_mask_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$713.g_inet_address_mask_get_type$MH,"g_inet_address_mask_get_type");
+        return RuntimeHelper.requireNonNull(constants$664.g_inet_address_mask_get_type$MH,"g_inet_address_mask_get_type");
     }
-    public static long g_inet_address_mask_get_type () {
+    /**
+     * {@snippet :
+     * GType g_inet_address_mask_get_type();
+     * }
+     */
+    public static long g_inet_address_mask_get_type() {
         var mh$ = g_inet_address_mask_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -8761,42 +9714,62 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_inet_address_mask_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$713.g_inet_address_mask_new$MH,"g_inet_address_mask_new");
+        return RuntimeHelper.requireNonNull(constants$664.g_inet_address_mask_new$MH,"g_inet_address_mask_new");
     }
-    public static MemoryAddress g_inet_address_mask_new ( Addressable addr,  int length,  Addressable error) {
+    /**
+     * {@snippet :
+     * GInetAddressMask* g_inet_address_mask_new(GInetAddress* addr, guint length, GError** error);
+     * }
+     */
+    public static MemorySegment g_inet_address_mask_new(MemorySegment addr, int length, MemorySegment error) {
         var mh$ = g_inet_address_mask_new$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(addr, length, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(addr, length, error);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_inet_address_mask_new_from_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$713.g_inet_address_mask_new_from_string$MH,"g_inet_address_mask_new_from_string");
+        return RuntimeHelper.requireNonNull(constants$664.g_inet_address_mask_new_from_string$MH,"g_inet_address_mask_new_from_string");
     }
-    public static MemoryAddress g_inet_address_mask_new_from_string ( Addressable mask_string,  Addressable error) {
+    /**
+     * {@snippet :
+     * GInetAddressMask* g_inet_address_mask_new_from_string(const gchar* mask_string, GError** error);
+     * }
+     */
+    public static MemorySegment g_inet_address_mask_new_from_string(MemorySegment mask_string, MemorySegment error) {
         var mh$ = g_inet_address_mask_new_from_string$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(mask_string, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(mask_string, error);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_inet_address_mask_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$713.g_inet_address_mask_to_string$MH,"g_inet_address_mask_to_string");
+        return RuntimeHelper.requireNonNull(constants$664.g_inet_address_mask_to_string$MH,"g_inet_address_mask_to_string");
     }
-    public static MemoryAddress g_inet_address_mask_to_string ( Addressable mask) {
+    /**
+     * {@snippet :
+     * gchar* g_inet_address_mask_to_string(GInetAddressMask* mask);
+     * }
+     */
+    public static MemorySegment g_inet_address_mask_to_string(MemorySegment mask) {
         var mh$ = g_inet_address_mask_to_string$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(mask);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(mask);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_inet_address_mask_get_family$MH() {
-        return RuntimeHelper.requireNonNull(constants$713.g_inet_address_mask_get_family$MH,"g_inet_address_mask_get_family");
+        return RuntimeHelper.requireNonNull(constants$665.g_inet_address_mask_get_family$MH,"g_inet_address_mask_get_family");
     }
-    public static int g_inet_address_mask_get_family ( Addressable mask) {
+    /**
+     * {@snippet :
+     * GSocketFamily g_inet_address_mask_get_family(GInetAddressMask* mask);
+     * }
+     */
+    public static int g_inet_address_mask_get_family(MemorySegment mask) {
         var mh$ = g_inet_address_mask_get_family$MH();
         try {
             return (int)mh$.invokeExact(mask);
@@ -8805,20 +9778,30 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_inet_address_mask_get_address$MH() {
-        return RuntimeHelper.requireNonNull(constants$713.g_inet_address_mask_get_address$MH,"g_inet_address_mask_get_address");
+        return RuntimeHelper.requireNonNull(constants$665.g_inet_address_mask_get_address$MH,"g_inet_address_mask_get_address");
     }
-    public static MemoryAddress g_inet_address_mask_get_address ( Addressable mask) {
+    /**
+     * {@snippet :
+     * GInetAddress* g_inet_address_mask_get_address(GInetAddressMask* mask);
+     * }
+     */
+    public static MemorySegment g_inet_address_mask_get_address(MemorySegment mask) {
         var mh$ = g_inet_address_mask_get_address$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(mask);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(mask);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_inet_address_mask_get_length$MH() {
-        return RuntimeHelper.requireNonNull(constants$714.g_inet_address_mask_get_length$MH,"g_inet_address_mask_get_length");
+        return RuntimeHelper.requireNonNull(constants$665.g_inet_address_mask_get_length$MH,"g_inet_address_mask_get_length");
     }
-    public static int g_inet_address_mask_get_length ( Addressable mask) {
+    /**
+     * {@snippet :
+     * guint g_inet_address_mask_get_length(GInetAddressMask* mask);
+     * }
+     */
+    public static int g_inet_address_mask_get_length(MemorySegment mask) {
         var mh$ = g_inet_address_mask_get_length$MH();
         try {
             return (int)mh$.invokeExact(mask);
@@ -8827,9 +9810,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_inet_address_mask_matches$MH() {
-        return RuntimeHelper.requireNonNull(constants$714.g_inet_address_mask_matches$MH,"g_inet_address_mask_matches");
+        return RuntimeHelper.requireNonNull(constants$665.g_inet_address_mask_matches$MH,"g_inet_address_mask_matches");
     }
-    public static int g_inet_address_mask_matches ( Addressable mask,  Addressable address) {
+    /**
+     * {@snippet :
+     * gboolean g_inet_address_mask_matches(GInetAddressMask* mask, GInetAddress* address);
+     * }
+     */
+    public static int g_inet_address_mask_matches(MemorySegment mask, MemorySegment address) {
         var mh$ = g_inet_address_mask_matches$MH();
         try {
             return (int)mh$.invokeExact(mask, address);
@@ -8838,9 +9826,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_inet_address_mask_equal$MH() {
-        return RuntimeHelper.requireNonNull(constants$714.g_inet_address_mask_equal$MH,"g_inet_address_mask_equal");
+        return RuntimeHelper.requireNonNull(constants$665.g_inet_address_mask_equal$MH,"g_inet_address_mask_equal");
     }
-    public static int g_inet_address_mask_equal ( Addressable mask,  Addressable mask2) {
+    /**
+     * {@snippet :
+     * gboolean g_inet_address_mask_equal(GInetAddressMask* mask, GInetAddressMask* mask2);
+     * }
+     */
+    public static int g_inet_address_mask_equal(MemorySegment mask, MemorySegment mask2) {
         var mh$ = g_inet_address_mask_equal$MH();
         try {
             return (int)mh$.invokeExact(mask, mask2);
@@ -8849,9 +9842,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_socket_address_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$714.g_socket_address_get_type$MH,"g_socket_address_get_type");
+        return RuntimeHelper.requireNonNull(constants$665.g_socket_address_get_type$MH,"g_socket_address_get_type");
     }
-    public static long g_socket_address_get_type () {
+    /**
+     * {@snippet :
+     * GType g_socket_address_get_type();
+     * }
+     */
+    public static long g_socket_address_get_type() {
         var mh$ = g_socket_address_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -8860,9 +9858,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_socket_address_get_family$MH() {
-        return RuntimeHelper.requireNonNull(constants$714.g_socket_address_get_family$MH,"g_socket_address_get_family");
+        return RuntimeHelper.requireNonNull(constants$666.g_socket_address_get_family$MH,"g_socket_address_get_family");
     }
-    public static int g_socket_address_get_family ( Addressable address) {
+    /**
+     * {@snippet :
+     * GSocketFamily g_socket_address_get_family(GSocketAddress* address);
+     * }
+     */
+    public static int g_socket_address_get_family(MemorySegment address) {
         var mh$ = g_socket_address_get_family$MH();
         try {
             return (int)mh$.invokeExact(address);
@@ -8871,20 +9874,30 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_socket_address_new_from_native$MH() {
-        return RuntimeHelper.requireNonNull(constants$714.g_socket_address_new_from_native$MH,"g_socket_address_new_from_native");
+        return RuntimeHelper.requireNonNull(constants$666.g_socket_address_new_from_native$MH,"g_socket_address_new_from_native");
     }
-    public static MemoryAddress g_socket_address_new_from_native ( Addressable native_,  long len) {
+    /**
+     * {@snippet :
+     * GSocketAddress* g_socket_address_new_from_native(gpointer native, gsize len);
+     * }
+     */
+    public static MemorySegment g_socket_address_new_from_native(MemorySegment native_, long len) {
         var mh$ = g_socket_address_new_from_native$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(native_, len);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(native_, len);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_socket_address_to_native$MH() {
-        return RuntimeHelper.requireNonNull(constants$715.g_socket_address_to_native$MH,"g_socket_address_to_native");
+        return RuntimeHelper.requireNonNull(constants$666.g_socket_address_to_native$MH,"g_socket_address_to_native");
     }
-    public static int g_socket_address_to_native ( Addressable address,  Addressable dest,  long destlen,  Addressable error) {
+    /**
+     * {@snippet :
+     * gboolean g_socket_address_to_native(GSocketAddress* address, gpointer dest, gsize destlen, GError** error);
+     * }
+     */
+    public static int g_socket_address_to_native(MemorySegment address, MemorySegment dest, long destlen, MemorySegment error) {
         var mh$ = g_socket_address_to_native$MH();
         try {
             return (int)mh$.invokeExact(address, dest, destlen, error);
@@ -8893,9 +9906,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_socket_address_get_native_size$MH() {
-        return RuntimeHelper.requireNonNull(constants$715.g_socket_address_get_native_size$MH,"g_socket_address_get_native_size");
+        return RuntimeHelper.requireNonNull(constants$666.g_socket_address_get_native_size$MH,"g_socket_address_get_native_size");
     }
-    public static long g_socket_address_get_native_size ( Addressable address) {
+    /**
+     * {@snippet :
+     * gssize g_socket_address_get_native_size(GSocketAddress* address);
+     * }
+     */
+    public static long g_socket_address_get_native_size(MemorySegment address) {
         var mh$ = g_socket_address_get_native_size$MH();
         try {
             return (long)mh$.invokeExact(address);
@@ -8904,9 +9922,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_inet_socket_address_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$715.g_inet_socket_address_get_type$MH,"g_inet_socket_address_get_type");
+        return RuntimeHelper.requireNonNull(constants$666.g_inet_socket_address_get_type$MH,"g_inet_socket_address_get_type");
     }
-    public static long g_inet_socket_address_get_type () {
+    /**
+     * {@snippet :
+     * GType g_inet_socket_address_get_type();
+     * }
+     */
+    public static long g_inet_socket_address_get_type() {
         var mh$ = g_inet_socket_address_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -8915,42 +9938,62 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_inet_socket_address_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$715.g_inet_socket_address_new$MH,"g_inet_socket_address_new");
+        return RuntimeHelper.requireNonNull(constants$666.g_inet_socket_address_new$MH,"g_inet_socket_address_new");
     }
-    public static MemoryAddress g_inet_socket_address_new ( Addressable address,  short port) {
+    /**
+     * {@snippet :
+     * GSocketAddress* g_inet_socket_address_new(GInetAddress* address, guint16 port);
+     * }
+     */
+    public static MemorySegment g_inet_socket_address_new(MemorySegment address, short port) {
         var mh$ = g_inet_socket_address_new$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(address, port);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(address, port);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_inet_socket_address_new_from_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$715.g_inet_socket_address_new_from_string$MH,"g_inet_socket_address_new_from_string");
+        return RuntimeHelper.requireNonNull(constants$667.g_inet_socket_address_new_from_string$MH,"g_inet_socket_address_new_from_string");
     }
-    public static MemoryAddress g_inet_socket_address_new_from_string ( Addressable address,  int port) {
+    /**
+     * {@snippet :
+     * GSocketAddress* g_inet_socket_address_new_from_string(char* address, guint port);
+     * }
+     */
+    public static MemorySegment g_inet_socket_address_new_from_string(MemorySegment address, int port) {
         var mh$ = g_inet_socket_address_new_from_string$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(address, port);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(address, port);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_inet_socket_address_get_address$MH() {
-        return RuntimeHelper.requireNonNull(constants$715.g_inet_socket_address_get_address$MH,"g_inet_socket_address_get_address");
+        return RuntimeHelper.requireNonNull(constants$667.g_inet_socket_address_get_address$MH,"g_inet_socket_address_get_address");
     }
-    public static MemoryAddress g_inet_socket_address_get_address ( Addressable address) {
+    /**
+     * {@snippet :
+     * GInetAddress* g_inet_socket_address_get_address(GInetSocketAddress* address);
+     * }
+     */
+    public static MemorySegment g_inet_socket_address_get_address(MemorySegment address) {
         var mh$ = g_inet_socket_address_get_address$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(address);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(address);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_inet_socket_address_get_port$MH() {
-        return RuntimeHelper.requireNonNull(constants$716.g_inet_socket_address_get_port$MH,"g_inet_socket_address_get_port");
+        return RuntimeHelper.requireNonNull(constants$667.g_inet_socket_address_get_port$MH,"g_inet_socket_address_get_port");
     }
-    public static short g_inet_socket_address_get_port ( Addressable address) {
+    /**
+     * {@snippet :
+     * guint16 g_inet_socket_address_get_port(GInetSocketAddress* address);
+     * }
+     */
+    public static short g_inet_socket_address_get_port(MemorySegment address) {
         var mh$ = g_inet_socket_address_get_port$MH();
         try {
             return (short)mh$.invokeExact(address);
@@ -8959,9 +10002,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_inet_socket_address_get_flowinfo$MH() {
-        return RuntimeHelper.requireNonNull(constants$716.g_inet_socket_address_get_flowinfo$MH,"g_inet_socket_address_get_flowinfo");
+        return RuntimeHelper.requireNonNull(constants$667.g_inet_socket_address_get_flowinfo$MH,"g_inet_socket_address_get_flowinfo");
     }
-    public static int g_inet_socket_address_get_flowinfo ( Addressable address) {
+    /**
+     * {@snippet :
+     * guint32 g_inet_socket_address_get_flowinfo(GInetSocketAddress* address);
+     * }
+     */
+    public static int g_inet_socket_address_get_flowinfo(MemorySegment address) {
         var mh$ = g_inet_socket_address_get_flowinfo$MH();
         try {
             return (int)mh$.invokeExact(address);
@@ -8970,9 +10018,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_inet_socket_address_get_scope_id$MH() {
-        return RuntimeHelper.requireNonNull(constants$716.g_inet_socket_address_get_scope_id$MH,"g_inet_socket_address_get_scope_id");
+        return RuntimeHelper.requireNonNull(constants$667.g_inet_socket_address_get_scope_id$MH,"g_inet_socket_address_get_scope_id");
     }
-    public static int g_inet_socket_address_get_scope_id ( Addressable address) {
+    /**
+     * {@snippet :
+     * guint32 g_inet_socket_address_get_scope_id(GInetSocketAddress* address);
+     * }
+     */
+    public static int g_inet_socket_address_get_scope_id(MemorySegment address) {
         var mh$ = g_inet_socket_address_get_scope_id$MH();
         try {
             return (int)mh$.invokeExact(address);
@@ -8981,9 +10034,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_app_info_create_flags_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$716.g_app_info_create_flags_get_type$MH,"g_app_info_create_flags_get_type");
+        return RuntimeHelper.requireNonNull(constants$667.g_app_info_create_flags_get_type$MH,"g_app_info_create_flags_get_type");
     }
-    public static long g_app_info_create_flags_get_type () {
+    /**
+     * {@snippet :
+     * GType g_app_info_create_flags_get_type();
+     * }
+     */
+    public static long g_app_info_create_flags_get_type() {
         var mh$ = g_app_info_create_flags_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -8992,9 +10050,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_converter_flags_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$716.g_converter_flags_get_type$MH,"g_converter_flags_get_type");
+        return RuntimeHelper.requireNonNull(constants$668.g_converter_flags_get_type$MH,"g_converter_flags_get_type");
     }
-    public static long g_converter_flags_get_type () {
+    /**
+     * {@snippet :
+     * GType g_converter_flags_get_type();
+     * }
+     */
+    public static long g_converter_flags_get_type() {
         var mh$ = g_converter_flags_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9003,9 +10066,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_converter_result_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$716.g_converter_result_get_type$MH,"g_converter_result_get_type");
+        return RuntimeHelper.requireNonNull(constants$668.g_converter_result_get_type$MH,"g_converter_result_get_type");
     }
-    public static long g_converter_result_get_type () {
+    /**
+     * {@snippet :
+     * GType g_converter_result_get_type();
+     * }
+     */
+    public static long g_converter_result_get_type() {
         var mh$ = g_converter_result_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9014,9 +10082,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_data_stream_byte_order_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$717.g_data_stream_byte_order_get_type$MH,"g_data_stream_byte_order_get_type");
+        return RuntimeHelper.requireNonNull(constants$668.g_data_stream_byte_order_get_type$MH,"g_data_stream_byte_order_get_type");
     }
-    public static long g_data_stream_byte_order_get_type () {
+    /**
+     * {@snippet :
+     * GType g_data_stream_byte_order_get_type();
+     * }
+     */
+    public static long g_data_stream_byte_order_get_type() {
         var mh$ = g_data_stream_byte_order_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9025,9 +10098,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_data_stream_newline_type_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$717.g_data_stream_newline_type_get_type$MH,"g_data_stream_newline_type_get_type");
+        return RuntimeHelper.requireNonNull(constants$668.g_data_stream_newline_type_get_type$MH,"g_data_stream_newline_type_get_type");
     }
-    public static long g_data_stream_newline_type_get_type () {
+    /**
+     * {@snippet :
+     * GType g_data_stream_newline_type_get_type();
+     * }
+     */
+    public static long g_data_stream_newline_type_get_type() {
         var mh$ = g_data_stream_newline_type_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9036,9 +10114,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_attribute_type_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$717.g_file_attribute_type_get_type$MH,"g_file_attribute_type_get_type");
+        return RuntimeHelper.requireNonNull(constants$668.g_file_attribute_type_get_type$MH,"g_file_attribute_type_get_type");
     }
-    public static long g_file_attribute_type_get_type () {
+    /**
+     * {@snippet :
+     * GType g_file_attribute_type_get_type();
+     * }
+     */
+    public static long g_file_attribute_type_get_type() {
         var mh$ = g_file_attribute_type_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9047,9 +10130,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_attribute_info_flags_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$717.g_file_attribute_info_flags_get_type$MH,"g_file_attribute_info_flags_get_type");
+        return RuntimeHelper.requireNonNull(constants$668.g_file_attribute_info_flags_get_type$MH,"g_file_attribute_info_flags_get_type");
     }
-    public static long g_file_attribute_info_flags_get_type () {
+    /**
+     * {@snippet :
+     * GType g_file_attribute_info_flags_get_type();
+     * }
+     */
+    public static long g_file_attribute_info_flags_get_type() {
         var mh$ = g_file_attribute_info_flags_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9058,9 +10146,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_attribute_status_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$717.g_file_attribute_status_get_type$MH,"g_file_attribute_status_get_type");
+        return RuntimeHelper.requireNonNull(constants$669.g_file_attribute_status_get_type$MH,"g_file_attribute_status_get_type");
     }
-    public static long g_file_attribute_status_get_type () {
+    /**
+     * {@snippet :
+     * GType g_file_attribute_status_get_type();
+     * }
+     */
+    public static long g_file_attribute_status_get_type() {
         var mh$ = g_file_attribute_status_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9069,9 +10162,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_query_info_flags_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$717.g_file_query_info_flags_get_type$MH,"g_file_query_info_flags_get_type");
+        return RuntimeHelper.requireNonNull(constants$669.g_file_query_info_flags_get_type$MH,"g_file_query_info_flags_get_type");
     }
-    public static long g_file_query_info_flags_get_type () {
+    /**
+     * {@snippet :
+     * GType g_file_query_info_flags_get_type();
+     * }
+     */
+    public static long g_file_query_info_flags_get_type() {
         var mh$ = g_file_query_info_flags_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9080,9 +10178,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_create_flags_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$718.g_file_create_flags_get_type$MH,"g_file_create_flags_get_type");
+        return RuntimeHelper.requireNonNull(constants$669.g_file_create_flags_get_type$MH,"g_file_create_flags_get_type");
     }
-    public static long g_file_create_flags_get_type () {
+    /**
+     * {@snippet :
+     * GType g_file_create_flags_get_type();
+     * }
+     */
+    public static long g_file_create_flags_get_type() {
         var mh$ = g_file_create_flags_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9091,9 +10194,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_measure_flags_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$718.g_file_measure_flags_get_type$MH,"g_file_measure_flags_get_type");
+        return RuntimeHelper.requireNonNull(constants$669.g_file_measure_flags_get_type$MH,"g_file_measure_flags_get_type");
     }
-    public static long g_file_measure_flags_get_type () {
+    /**
+     * {@snippet :
+     * GType g_file_measure_flags_get_type();
+     * }
+     */
+    public static long g_file_measure_flags_get_type() {
         var mh$ = g_file_measure_flags_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9102,9 +10210,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_mount_mount_flags_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$718.g_mount_mount_flags_get_type$MH,"g_mount_mount_flags_get_type");
+        return RuntimeHelper.requireNonNull(constants$669.g_mount_mount_flags_get_type$MH,"g_mount_mount_flags_get_type");
     }
-    public static long g_mount_mount_flags_get_type () {
+    /**
+     * {@snippet :
+     * GType g_mount_mount_flags_get_type();
+     * }
+     */
+    public static long g_mount_mount_flags_get_type() {
         var mh$ = g_mount_mount_flags_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9113,9 +10226,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_mount_unmount_flags_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$718.g_mount_unmount_flags_get_type$MH,"g_mount_unmount_flags_get_type");
+        return RuntimeHelper.requireNonNull(constants$669.g_mount_unmount_flags_get_type$MH,"g_mount_unmount_flags_get_type");
     }
-    public static long g_mount_unmount_flags_get_type () {
+    /**
+     * {@snippet :
+     * GType g_mount_unmount_flags_get_type();
+     * }
+     */
+    public static long g_mount_unmount_flags_get_type() {
         var mh$ = g_mount_unmount_flags_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9124,9 +10242,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_drive_start_flags_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$718.g_drive_start_flags_get_type$MH,"g_drive_start_flags_get_type");
+        return RuntimeHelper.requireNonNull(constants$670.g_drive_start_flags_get_type$MH,"g_drive_start_flags_get_type");
     }
-    public static long g_drive_start_flags_get_type () {
+    /**
+     * {@snippet :
+     * GType g_drive_start_flags_get_type();
+     * }
+     */
+    public static long g_drive_start_flags_get_type() {
         var mh$ = g_drive_start_flags_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9135,9 +10258,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_drive_start_stop_type_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$718.g_drive_start_stop_type_get_type$MH,"g_drive_start_stop_type_get_type");
+        return RuntimeHelper.requireNonNull(constants$670.g_drive_start_stop_type_get_type$MH,"g_drive_start_stop_type_get_type");
     }
-    public static long g_drive_start_stop_type_get_type () {
+    /**
+     * {@snippet :
+     * GType g_drive_start_stop_type_get_type();
+     * }
+     */
+    public static long g_drive_start_stop_type_get_type() {
         var mh$ = g_drive_start_stop_type_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9146,9 +10274,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_copy_flags_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$719.g_file_copy_flags_get_type$MH,"g_file_copy_flags_get_type");
+        return RuntimeHelper.requireNonNull(constants$670.g_file_copy_flags_get_type$MH,"g_file_copy_flags_get_type");
     }
-    public static long g_file_copy_flags_get_type () {
+    /**
+     * {@snippet :
+     * GType g_file_copy_flags_get_type();
+     * }
+     */
+    public static long g_file_copy_flags_get_type() {
         var mh$ = g_file_copy_flags_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9157,9 +10290,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_monitor_flags_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$719.g_file_monitor_flags_get_type$MH,"g_file_monitor_flags_get_type");
+        return RuntimeHelper.requireNonNull(constants$670.g_file_monitor_flags_get_type$MH,"g_file_monitor_flags_get_type");
     }
-    public static long g_file_monitor_flags_get_type () {
+    /**
+     * {@snippet :
+     * GType g_file_monitor_flags_get_type();
+     * }
+     */
+    public static long g_file_monitor_flags_get_type() {
         var mh$ = g_file_monitor_flags_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9168,9 +10306,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_type_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$719.g_file_type_get_type$MH,"g_file_type_get_type");
+        return RuntimeHelper.requireNonNull(constants$670.g_file_type_get_type$MH,"g_file_type_get_type");
     }
-    public static long g_file_type_get_type () {
+    /**
+     * {@snippet :
+     * GType g_file_type_get_type();
+     * }
+     */
+    public static long g_file_type_get_type() {
         var mh$ = g_file_type_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9179,9 +10322,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_filesystem_preview_type_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$719.g_filesystem_preview_type_get_type$MH,"g_filesystem_preview_type_get_type");
+        return RuntimeHelper.requireNonNull(constants$670.g_filesystem_preview_type_get_type$MH,"g_filesystem_preview_type_get_type");
     }
-    public static long g_filesystem_preview_type_get_type () {
+    /**
+     * {@snippet :
+     * GType g_filesystem_preview_type_get_type();
+     * }
+     */
+    public static long g_filesystem_preview_type_get_type() {
         var mh$ = g_filesystem_preview_type_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9190,9 +10338,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_file_monitor_event_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$719.g_file_monitor_event_get_type$MH,"g_file_monitor_event_get_type");
+        return RuntimeHelper.requireNonNull(constants$671.g_file_monitor_event_get_type$MH,"g_file_monitor_event_get_type");
     }
-    public static long g_file_monitor_event_get_type () {
+    /**
+     * {@snippet :
+     * GType g_file_monitor_event_get_type();
+     * }
+     */
+    public static long g_file_monitor_event_get_type() {
         var mh$ = g_file_monitor_event_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9201,9 +10354,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_io_error_enum_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$719.g_io_error_enum_get_type$MH,"g_io_error_enum_get_type");
+        return RuntimeHelper.requireNonNull(constants$671.g_io_error_enum_get_type$MH,"g_io_error_enum_get_type");
     }
-    public static long g_io_error_enum_get_type () {
+    /**
+     * {@snippet :
+     * GType g_io_error_enum_get_type();
+     * }
+     */
+    public static long g_io_error_enum_get_type() {
         var mh$ = g_io_error_enum_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9212,9 +10370,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_ask_password_flags_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$720.g_ask_password_flags_get_type$MH,"g_ask_password_flags_get_type");
+        return RuntimeHelper.requireNonNull(constants$671.g_ask_password_flags_get_type$MH,"g_ask_password_flags_get_type");
     }
-    public static long g_ask_password_flags_get_type () {
+    /**
+     * {@snippet :
+     * GType g_ask_password_flags_get_type();
+     * }
+     */
+    public static long g_ask_password_flags_get_type() {
         var mh$ = g_ask_password_flags_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9223,9 +10386,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_password_save_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$720.g_password_save_get_type$MH,"g_password_save_get_type");
+        return RuntimeHelper.requireNonNull(constants$671.g_password_save_get_type$MH,"g_password_save_get_type");
     }
-    public static long g_password_save_get_type () {
+    /**
+     * {@snippet :
+     * GType g_password_save_get_type();
+     * }
+     */
+    public static long g_password_save_get_type() {
         var mh$ = g_password_save_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9234,9 +10402,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_mount_operation_result_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$720.g_mount_operation_result_get_type$MH,"g_mount_operation_result_get_type");
+        return RuntimeHelper.requireNonNull(constants$671.g_mount_operation_result_get_type$MH,"g_mount_operation_result_get_type");
     }
-    public static long g_mount_operation_result_get_type () {
+    /**
+     * {@snippet :
+     * GType g_mount_operation_result_get_type();
+     * }
+     */
+    public static long g_mount_operation_result_get_type() {
         var mh$ = g_mount_operation_result_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9245,9 +10418,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_output_stream_splice_flags_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$720.g_output_stream_splice_flags_get_type$MH,"g_output_stream_splice_flags_get_type");
+        return RuntimeHelper.requireNonNull(constants$671.g_output_stream_splice_flags_get_type$MH,"g_output_stream_splice_flags_get_type");
     }
-    public static long g_output_stream_splice_flags_get_type () {
+    /**
+     * {@snippet :
+     * GType g_output_stream_splice_flags_get_type();
+     * }
+     */
+    public static long g_output_stream_splice_flags_get_type() {
         var mh$ = g_output_stream_splice_flags_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9256,9 +10434,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_io_stream_splice_flags_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$720.g_io_stream_splice_flags_get_type$MH,"g_io_stream_splice_flags_get_type");
+        return RuntimeHelper.requireNonNull(constants$672.g_io_stream_splice_flags_get_type$MH,"g_io_stream_splice_flags_get_type");
     }
-    public static long g_io_stream_splice_flags_get_type () {
+    /**
+     * {@snippet :
+     * GType g_io_stream_splice_flags_get_type();
+     * }
+     */
+    public static long g_io_stream_splice_flags_get_type() {
         var mh$ = g_io_stream_splice_flags_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9267,9 +10450,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_emblem_origin_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$720.g_emblem_origin_get_type$MH,"g_emblem_origin_get_type");
+        return RuntimeHelper.requireNonNull(constants$672.g_emblem_origin_get_type$MH,"g_emblem_origin_get_type");
     }
-    public static long g_emblem_origin_get_type () {
+    /**
+     * {@snippet :
+     * GType g_emblem_origin_get_type();
+     * }
+     */
+    public static long g_emblem_origin_get_type() {
         var mh$ = g_emblem_origin_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9278,9 +10466,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_resolver_error_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$721.g_resolver_error_get_type$MH,"g_resolver_error_get_type");
+        return RuntimeHelper.requireNonNull(constants$672.g_resolver_error_get_type$MH,"g_resolver_error_get_type");
     }
-    public static long g_resolver_error_get_type () {
+    /**
+     * {@snippet :
+     * GType g_resolver_error_get_type();
+     * }
+     */
+    public static long g_resolver_error_get_type() {
         var mh$ = g_resolver_error_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9289,9 +10482,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_resolver_record_type_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$721.g_resolver_record_type_get_type$MH,"g_resolver_record_type_get_type");
+        return RuntimeHelper.requireNonNull(constants$672.g_resolver_record_type_get_type$MH,"g_resolver_record_type_get_type");
     }
-    public static long g_resolver_record_type_get_type () {
+    /**
+     * {@snippet :
+     * GType g_resolver_record_type_get_type();
+     * }
+     */
+    public static long g_resolver_record_type_get_type() {
         var mh$ = g_resolver_record_type_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9300,9 +10498,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_resource_error_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$721.g_resource_error_get_type$MH,"g_resource_error_get_type");
+        return RuntimeHelper.requireNonNull(constants$672.g_resource_error_get_type$MH,"g_resource_error_get_type");
     }
-    public static long g_resource_error_get_type () {
+    /**
+     * {@snippet :
+     * GType g_resource_error_get_type();
+     * }
+     */
+    public static long g_resource_error_get_type() {
         var mh$ = g_resource_error_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9311,9 +10514,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_resource_flags_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$721.g_resource_flags_get_type$MH,"g_resource_flags_get_type");
+        return RuntimeHelper.requireNonNull(constants$672.g_resource_flags_get_type$MH,"g_resource_flags_get_type");
     }
-    public static long g_resource_flags_get_type () {
+    /**
+     * {@snippet :
+     * GType g_resource_flags_get_type();
+     * }
+     */
+    public static long g_resource_flags_get_type() {
         var mh$ = g_resource_flags_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9322,9 +10530,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_resource_lookup_flags_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$721.g_resource_lookup_flags_get_type$MH,"g_resource_lookup_flags_get_type");
+        return RuntimeHelper.requireNonNull(constants$673.g_resource_lookup_flags_get_type$MH,"g_resource_lookup_flags_get_type");
     }
-    public static long g_resource_lookup_flags_get_type () {
+    /**
+     * {@snippet :
+     * GType g_resource_lookup_flags_get_type();
+     * }
+     */
+    public static long g_resource_lookup_flags_get_type() {
         var mh$ = g_resource_lookup_flags_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9333,9 +10546,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_socket_family_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$721.g_socket_family_get_type$MH,"g_socket_family_get_type");
+        return RuntimeHelper.requireNonNull(constants$673.g_socket_family_get_type$MH,"g_socket_family_get_type");
     }
-    public static long g_socket_family_get_type () {
+    /**
+     * {@snippet :
+     * GType g_socket_family_get_type();
+     * }
+     */
+    public static long g_socket_family_get_type() {
         var mh$ = g_socket_family_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9344,9 +10562,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_socket_type_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$722.g_socket_type_get_type$MH,"g_socket_type_get_type");
+        return RuntimeHelper.requireNonNull(constants$673.g_socket_type_get_type$MH,"g_socket_type_get_type");
     }
-    public static long g_socket_type_get_type () {
+    /**
+     * {@snippet :
+     * GType g_socket_type_get_type();
+     * }
+     */
+    public static long g_socket_type_get_type() {
         var mh$ = g_socket_type_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9355,9 +10578,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_socket_msg_flags_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$722.g_socket_msg_flags_get_type$MH,"g_socket_msg_flags_get_type");
+        return RuntimeHelper.requireNonNull(constants$673.g_socket_msg_flags_get_type$MH,"g_socket_msg_flags_get_type");
     }
-    public static long g_socket_msg_flags_get_type () {
+    /**
+     * {@snippet :
+     * GType g_socket_msg_flags_get_type();
+     * }
+     */
+    public static long g_socket_msg_flags_get_type() {
         var mh$ = g_socket_msg_flags_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9366,9 +10594,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_socket_protocol_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$722.g_socket_protocol_get_type$MH,"g_socket_protocol_get_type");
+        return RuntimeHelper.requireNonNull(constants$673.g_socket_protocol_get_type$MH,"g_socket_protocol_get_type");
     }
-    public static long g_socket_protocol_get_type () {
+    /**
+     * {@snippet :
+     * GType g_socket_protocol_get_type();
+     * }
+     */
+    public static long g_socket_protocol_get_type() {
         var mh$ = g_socket_protocol_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9377,9 +10610,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_zlib_compressor_format_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$722.g_zlib_compressor_format_get_type$MH,"g_zlib_compressor_format_get_type");
+        return RuntimeHelper.requireNonNull(constants$673.g_zlib_compressor_format_get_type$MH,"g_zlib_compressor_format_get_type");
     }
-    public static long g_zlib_compressor_format_get_type () {
+    /**
+     * {@snippet :
+     * GType g_zlib_compressor_format_get_type();
+     * }
+     */
+    public static long g_zlib_compressor_format_get_type() {
         var mh$ = g_zlib_compressor_format_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9388,9 +10626,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_unix_socket_address_type_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$722.g_unix_socket_address_type_get_type$MH,"g_unix_socket_address_type_get_type");
+        return RuntimeHelper.requireNonNull(constants$674.g_unix_socket_address_type_get_type$MH,"g_unix_socket_address_type_get_type");
     }
-    public static long g_unix_socket_address_type_get_type () {
+    /**
+     * {@snippet :
+     * GType g_unix_socket_address_type_get_type();
+     * }
+     */
+    public static long g_unix_socket_address_type_get_type() {
         var mh$ = g_unix_socket_address_type_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9399,9 +10642,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_bus_type_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$722.g_bus_type_get_type$MH,"g_bus_type_get_type");
+        return RuntimeHelper.requireNonNull(constants$674.g_bus_type_get_type$MH,"g_bus_type_get_type");
     }
-    public static long g_bus_type_get_type () {
+    /**
+     * {@snippet :
+     * GType g_bus_type_get_type();
+     * }
+     */
+    public static long g_bus_type_get_type() {
         var mh$ = g_bus_type_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9410,9 +10658,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_bus_name_owner_flags_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$723.g_bus_name_owner_flags_get_type$MH,"g_bus_name_owner_flags_get_type");
+        return RuntimeHelper.requireNonNull(constants$674.g_bus_name_owner_flags_get_type$MH,"g_bus_name_owner_flags_get_type");
     }
-    public static long g_bus_name_owner_flags_get_type () {
+    /**
+     * {@snippet :
+     * GType g_bus_name_owner_flags_get_type();
+     * }
+     */
+    public static long g_bus_name_owner_flags_get_type() {
         var mh$ = g_bus_name_owner_flags_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9421,9 +10674,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_bus_name_watcher_flags_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$723.g_bus_name_watcher_flags_get_type$MH,"g_bus_name_watcher_flags_get_type");
+        return RuntimeHelper.requireNonNull(constants$674.g_bus_name_watcher_flags_get_type$MH,"g_bus_name_watcher_flags_get_type");
     }
-    public static long g_bus_name_watcher_flags_get_type () {
+    /**
+     * {@snippet :
+     * GType g_bus_name_watcher_flags_get_type();
+     * }
+     */
+    public static long g_bus_name_watcher_flags_get_type() {
         var mh$ = g_bus_name_watcher_flags_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9432,9 +10690,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_proxy_flags_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$723.g_dbus_proxy_flags_get_type$MH,"g_dbus_proxy_flags_get_type");
+        return RuntimeHelper.requireNonNull(constants$674.g_dbus_proxy_flags_get_type$MH,"g_dbus_proxy_flags_get_type");
     }
-    public static long g_dbus_proxy_flags_get_type () {
+    /**
+     * {@snippet :
+     * GType g_dbus_proxy_flags_get_type();
+     * }
+     */
+    public static long g_dbus_proxy_flags_get_type() {
         var mh$ = g_dbus_proxy_flags_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9443,9 +10706,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_error_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$723.g_dbus_error_get_type$MH,"g_dbus_error_get_type");
+        return RuntimeHelper.requireNonNull(constants$674.g_dbus_error_get_type$MH,"g_dbus_error_get_type");
     }
-    public static long g_dbus_error_get_type () {
+    /**
+     * {@snippet :
+     * GType g_dbus_error_get_type();
+     * }
+     */
+    public static long g_dbus_error_get_type() {
         var mh$ = g_dbus_error_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9454,9 +10722,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_connection_flags_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$723.g_dbus_connection_flags_get_type$MH,"g_dbus_connection_flags_get_type");
+        return RuntimeHelper.requireNonNull(constants$675.g_dbus_connection_flags_get_type$MH,"g_dbus_connection_flags_get_type");
     }
-    public static long g_dbus_connection_flags_get_type () {
+    /**
+     * {@snippet :
+     * GType g_dbus_connection_flags_get_type();
+     * }
+     */
+    public static long g_dbus_connection_flags_get_type() {
         var mh$ = g_dbus_connection_flags_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9465,9 +10738,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_capability_flags_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$723.g_dbus_capability_flags_get_type$MH,"g_dbus_capability_flags_get_type");
+        return RuntimeHelper.requireNonNull(constants$675.g_dbus_capability_flags_get_type$MH,"g_dbus_capability_flags_get_type");
     }
-    public static long g_dbus_capability_flags_get_type () {
+    /**
+     * {@snippet :
+     * GType g_dbus_capability_flags_get_type();
+     * }
+     */
+    public static long g_dbus_capability_flags_get_type() {
         var mh$ = g_dbus_capability_flags_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9476,9 +10754,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_call_flags_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$724.g_dbus_call_flags_get_type$MH,"g_dbus_call_flags_get_type");
+        return RuntimeHelper.requireNonNull(constants$675.g_dbus_call_flags_get_type$MH,"g_dbus_call_flags_get_type");
     }
-    public static long g_dbus_call_flags_get_type () {
+    /**
+     * {@snippet :
+     * GType g_dbus_call_flags_get_type();
+     * }
+     */
+    public static long g_dbus_call_flags_get_type() {
         var mh$ = g_dbus_call_flags_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9487,9 +10770,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_message_type_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$724.g_dbus_message_type_get_type$MH,"g_dbus_message_type_get_type");
+        return RuntimeHelper.requireNonNull(constants$675.g_dbus_message_type_get_type$MH,"g_dbus_message_type_get_type");
     }
-    public static long g_dbus_message_type_get_type () {
+    /**
+     * {@snippet :
+     * GType g_dbus_message_type_get_type();
+     * }
+     */
+    public static long g_dbus_message_type_get_type() {
         var mh$ = g_dbus_message_type_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9498,9 +10786,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_message_flags_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$724.g_dbus_message_flags_get_type$MH,"g_dbus_message_flags_get_type");
+        return RuntimeHelper.requireNonNull(constants$675.g_dbus_message_flags_get_type$MH,"g_dbus_message_flags_get_type");
     }
-    public static long g_dbus_message_flags_get_type () {
+    /**
+     * {@snippet :
+     * GType g_dbus_message_flags_get_type();
+     * }
+     */
+    public static long g_dbus_message_flags_get_type() {
         var mh$ = g_dbus_message_flags_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9509,9 +10802,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_message_header_field_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$724.g_dbus_message_header_field_get_type$MH,"g_dbus_message_header_field_get_type");
+        return RuntimeHelper.requireNonNull(constants$675.g_dbus_message_header_field_get_type$MH,"g_dbus_message_header_field_get_type");
     }
-    public static long g_dbus_message_header_field_get_type () {
+    /**
+     * {@snippet :
+     * GType g_dbus_message_header_field_get_type();
+     * }
+     */
+    public static long g_dbus_message_header_field_get_type() {
         var mh$ = g_dbus_message_header_field_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9520,9 +10818,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_property_info_flags_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$724.g_dbus_property_info_flags_get_type$MH,"g_dbus_property_info_flags_get_type");
+        return RuntimeHelper.requireNonNull(constants$676.g_dbus_property_info_flags_get_type$MH,"g_dbus_property_info_flags_get_type");
     }
-    public static long g_dbus_property_info_flags_get_type () {
+    /**
+     * {@snippet :
+     * GType g_dbus_property_info_flags_get_type();
+     * }
+     */
+    public static long g_dbus_property_info_flags_get_type() {
         var mh$ = g_dbus_property_info_flags_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9531,9 +10834,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_subtree_flags_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$724.g_dbus_subtree_flags_get_type$MH,"g_dbus_subtree_flags_get_type");
+        return RuntimeHelper.requireNonNull(constants$676.g_dbus_subtree_flags_get_type$MH,"g_dbus_subtree_flags_get_type");
     }
-    public static long g_dbus_subtree_flags_get_type () {
+    /**
+     * {@snippet :
+     * GType g_dbus_subtree_flags_get_type();
+     * }
+     */
+    public static long g_dbus_subtree_flags_get_type() {
         var mh$ = g_dbus_subtree_flags_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9542,9 +10850,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_server_flags_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$725.g_dbus_server_flags_get_type$MH,"g_dbus_server_flags_get_type");
+        return RuntimeHelper.requireNonNull(constants$676.g_dbus_server_flags_get_type$MH,"g_dbus_server_flags_get_type");
     }
-    public static long g_dbus_server_flags_get_type () {
+    /**
+     * {@snippet :
+     * GType g_dbus_server_flags_get_type();
+     * }
+     */
+    public static long g_dbus_server_flags_get_type() {
         var mh$ = g_dbus_server_flags_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9553,9 +10866,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_signal_flags_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$725.g_dbus_signal_flags_get_type$MH,"g_dbus_signal_flags_get_type");
+        return RuntimeHelper.requireNonNull(constants$676.g_dbus_signal_flags_get_type$MH,"g_dbus_signal_flags_get_type");
     }
-    public static long g_dbus_signal_flags_get_type () {
+    /**
+     * {@snippet :
+     * GType g_dbus_signal_flags_get_type();
+     * }
+     */
+    public static long g_dbus_signal_flags_get_type() {
         var mh$ = g_dbus_signal_flags_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9564,9 +10882,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_send_message_flags_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$725.g_dbus_send_message_flags_get_type$MH,"g_dbus_send_message_flags_get_type");
+        return RuntimeHelper.requireNonNull(constants$676.g_dbus_send_message_flags_get_type$MH,"g_dbus_send_message_flags_get_type");
     }
-    public static long g_dbus_send_message_flags_get_type () {
+    /**
+     * {@snippet :
+     * GType g_dbus_send_message_flags_get_type();
+     * }
+     */
+    public static long g_dbus_send_message_flags_get_type() {
         var mh$ = g_dbus_send_message_flags_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9575,9 +10898,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_credentials_type_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$725.g_credentials_type_get_type$MH,"g_credentials_type_get_type");
+        return RuntimeHelper.requireNonNull(constants$676.g_credentials_type_get_type$MH,"g_credentials_type_get_type");
     }
-    public static long g_credentials_type_get_type () {
+    /**
+     * {@snippet :
+     * GType g_credentials_type_get_type();
+     * }
+     */
+    public static long g_credentials_type_get_type() {
         var mh$ = g_credentials_type_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9586,9 +10914,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_message_byte_order_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$725.g_dbus_message_byte_order_get_type$MH,"g_dbus_message_byte_order_get_type");
+        return RuntimeHelper.requireNonNull(constants$677.g_dbus_message_byte_order_get_type$MH,"g_dbus_message_byte_order_get_type");
     }
-    public static long g_dbus_message_byte_order_get_type () {
+    /**
+     * {@snippet :
+     * GType g_dbus_message_byte_order_get_type();
+     * }
+     */
+    public static long g_dbus_message_byte_order_get_type() {
         var mh$ = g_dbus_message_byte_order_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9597,9 +10930,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_application_flags_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$725.g_application_flags_get_type$MH,"g_application_flags_get_type");
+        return RuntimeHelper.requireNonNull(constants$677.g_application_flags_get_type$MH,"g_application_flags_get_type");
     }
-    public static long g_application_flags_get_type () {
+    /**
+     * {@snippet :
+     * GType g_application_flags_get_type();
+     * }
+     */
+    public static long g_application_flags_get_type() {
         var mh$ = g_application_flags_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9608,9 +10946,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_tls_error_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$726.g_tls_error_get_type$MH,"g_tls_error_get_type");
+        return RuntimeHelper.requireNonNull(constants$677.g_tls_error_get_type$MH,"g_tls_error_get_type");
     }
-    public static long g_tls_error_get_type () {
+    /**
+     * {@snippet :
+     * GType g_tls_error_get_type();
+     * }
+     */
+    public static long g_tls_error_get_type() {
         var mh$ = g_tls_error_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9619,9 +10962,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_tls_certificate_flags_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$726.g_tls_certificate_flags_get_type$MH,"g_tls_certificate_flags_get_type");
+        return RuntimeHelper.requireNonNull(constants$677.g_tls_certificate_flags_get_type$MH,"g_tls_certificate_flags_get_type");
     }
-    public static long g_tls_certificate_flags_get_type () {
+    /**
+     * {@snippet :
+     * GType g_tls_certificate_flags_get_type();
+     * }
+     */
+    public static long g_tls_certificate_flags_get_type() {
         var mh$ = g_tls_certificate_flags_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9630,9 +10978,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_tls_authentication_mode_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$726.g_tls_authentication_mode_get_type$MH,"g_tls_authentication_mode_get_type");
+        return RuntimeHelper.requireNonNull(constants$677.g_tls_authentication_mode_get_type$MH,"g_tls_authentication_mode_get_type");
     }
-    public static long g_tls_authentication_mode_get_type () {
+    /**
+     * {@snippet :
+     * GType g_tls_authentication_mode_get_type();
+     * }
+     */
+    public static long g_tls_authentication_mode_get_type() {
         var mh$ = g_tls_authentication_mode_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9641,9 +10994,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_tls_channel_binding_type_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$726.g_tls_channel_binding_type_get_type$MH,"g_tls_channel_binding_type_get_type");
+        return RuntimeHelper.requireNonNull(constants$677.g_tls_channel_binding_type_get_type$MH,"g_tls_channel_binding_type_get_type");
     }
-    public static long g_tls_channel_binding_type_get_type () {
+    /**
+     * {@snippet :
+     * GType g_tls_channel_binding_type_get_type();
+     * }
+     */
+    public static long g_tls_channel_binding_type_get_type() {
         var mh$ = g_tls_channel_binding_type_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9652,9 +11010,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_tls_channel_binding_error_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$726.g_tls_channel_binding_error_get_type$MH,"g_tls_channel_binding_error_get_type");
+        return RuntimeHelper.requireNonNull(constants$678.g_tls_channel_binding_error_get_type$MH,"g_tls_channel_binding_error_get_type");
     }
-    public static long g_tls_channel_binding_error_get_type () {
+    /**
+     * {@snippet :
+     * GType g_tls_channel_binding_error_get_type();
+     * }
+     */
+    public static long g_tls_channel_binding_error_get_type() {
         var mh$ = g_tls_channel_binding_error_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9663,9 +11026,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_tls_rehandshake_mode_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$726.g_tls_rehandshake_mode_get_type$MH,"g_tls_rehandshake_mode_get_type");
+        return RuntimeHelper.requireNonNull(constants$678.g_tls_rehandshake_mode_get_type$MH,"g_tls_rehandshake_mode_get_type");
     }
-    public static long g_tls_rehandshake_mode_get_type () {
+    /**
+     * {@snippet :
+     * GType g_tls_rehandshake_mode_get_type();
+     * }
+     */
+    public static long g_tls_rehandshake_mode_get_type() {
         var mh$ = g_tls_rehandshake_mode_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9674,9 +11042,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_tls_password_flags_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$727.g_tls_password_flags_get_type$MH,"g_tls_password_flags_get_type");
+        return RuntimeHelper.requireNonNull(constants$678.g_tls_password_flags_get_type$MH,"g_tls_password_flags_get_type");
     }
-    public static long g_tls_password_flags_get_type () {
+    /**
+     * {@snippet :
+     * GType g_tls_password_flags_get_type();
+     * }
+     */
+    public static long g_tls_password_flags_get_type() {
         var mh$ = g_tls_password_flags_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9685,9 +11058,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_tls_interaction_result_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$727.g_tls_interaction_result_get_type$MH,"g_tls_interaction_result_get_type");
+        return RuntimeHelper.requireNonNull(constants$678.g_tls_interaction_result_get_type$MH,"g_tls_interaction_result_get_type");
     }
-    public static long g_tls_interaction_result_get_type () {
+    /**
+     * {@snippet :
+     * GType g_tls_interaction_result_get_type();
+     * }
+     */
+    public static long g_tls_interaction_result_get_type() {
         var mh$ = g_tls_interaction_result_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9696,9 +11074,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_interface_skeleton_flags_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$727.g_dbus_interface_skeleton_flags_get_type$MH,"g_dbus_interface_skeleton_flags_get_type");
+        return RuntimeHelper.requireNonNull(constants$678.g_dbus_interface_skeleton_flags_get_type$MH,"g_dbus_interface_skeleton_flags_get_type");
     }
-    public static long g_dbus_interface_skeleton_flags_get_type () {
+    /**
+     * {@snippet :
+     * GType g_dbus_interface_skeleton_flags_get_type();
+     * }
+     */
+    public static long g_dbus_interface_skeleton_flags_get_type() {
         var mh$ = g_dbus_interface_skeleton_flags_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9707,9 +11090,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_dbus_object_manager_client_flags_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$727.g_dbus_object_manager_client_flags_get_type$MH,"g_dbus_object_manager_client_flags_get_type");
+        return RuntimeHelper.requireNonNull(constants$678.g_dbus_object_manager_client_flags_get_type$MH,"g_dbus_object_manager_client_flags_get_type");
     }
-    public static long g_dbus_object_manager_client_flags_get_type () {
+    /**
+     * {@snippet :
+     * GType g_dbus_object_manager_client_flags_get_type();
+     * }
+     */
+    public static long g_dbus_object_manager_client_flags_get_type() {
         var mh$ = g_dbus_object_manager_client_flags_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9718,9 +11106,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_tls_database_verify_flags_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$727.g_tls_database_verify_flags_get_type$MH,"g_tls_database_verify_flags_get_type");
+        return RuntimeHelper.requireNonNull(constants$679.g_tls_database_verify_flags_get_type$MH,"g_tls_database_verify_flags_get_type");
     }
-    public static long g_tls_database_verify_flags_get_type () {
+    /**
+     * {@snippet :
+     * GType g_tls_database_verify_flags_get_type();
+     * }
+     */
+    public static long g_tls_database_verify_flags_get_type() {
         var mh$ = g_tls_database_verify_flags_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9729,9 +11122,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_tls_database_lookup_flags_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$727.g_tls_database_lookup_flags_get_type$MH,"g_tls_database_lookup_flags_get_type");
+        return RuntimeHelper.requireNonNull(constants$679.g_tls_database_lookup_flags_get_type$MH,"g_tls_database_lookup_flags_get_type");
     }
-    public static long g_tls_database_lookup_flags_get_type () {
+    /**
+     * {@snippet :
+     * GType g_tls_database_lookup_flags_get_type();
+     * }
+     */
+    public static long g_tls_database_lookup_flags_get_type() {
         var mh$ = g_tls_database_lookup_flags_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9740,9 +11138,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_tls_certificate_request_flags_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$728.g_tls_certificate_request_flags_get_type$MH,"g_tls_certificate_request_flags_get_type");
+        return RuntimeHelper.requireNonNull(constants$679.g_tls_certificate_request_flags_get_type$MH,"g_tls_certificate_request_flags_get_type");
     }
-    public static long g_tls_certificate_request_flags_get_type () {
+    /**
+     * {@snippet :
+     * GType g_tls_certificate_request_flags_get_type();
+     * }
+     */
+    public static long g_tls_certificate_request_flags_get_type() {
         var mh$ = g_tls_certificate_request_flags_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9751,9 +11154,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_tls_protocol_version_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$728.g_tls_protocol_version_get_type$MH,"g_tls_protocol_version_get_type");
+        return RuntimeHelper.requireNonNull(constants$679.g_tls_protocol_version_get_type$MH,"g_tls_protocol_version_get_type");
     }
-    public static long g_tls_protocol_version_get_type () {
+    /**
+     * {@snippet :
+     * GType g_tls_protocol_version_get_type();
+     * }
+     */
+    public static long g_tls_protocol_version_get_type() {
         var mh$ = g_tls_protocol_version_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9762,9 +11170,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_io_module_scope_flags_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$728.g_io_module_scope_flags_get_type$MH,"g_io_module_scope_flags_get_type");
+        return RuntimeHelper.requireNonNull(constants$679.g_io_module_scope_flags_get_type$MH,"g_io_module_scope_flags_get_type");
     }
-    public static long g_io_module_scope_flags_get_type () {
+    /**
+     * {@snippet :
+     * GType g_io_module_scope_flags_get_type();
+     * }
+     */
+    public static long g_io_module_scope_flags_get_type() {
         var mh$ = g_io_module_scope_flags_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9773,9 +11186,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_socket_client_event_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$728.g_socket_client_event_get_type$MH,"g_socket_client_event_get_type");
+        return RuntimeHelper.requireNonNull(constants$679.g_socket_client_event_get_type$MH,"g_socket_client_event_get_type");
     }
-    public static long g_socket_client_event_get_type () {
+    /**
+     * {@snippet :
+     * GType g_socket_client_event_get_type();
+     * }
+     */
+    public static long g_socket_client_event_get_type() {
         var mh$ = g_socket_client_event_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9784,9 +11202,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_socket_listener_event_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$728.g_socket_listener_event_get_type$MH,"g_socket_listener_event_get_type");
+        return RuntimeHelper.requireNonNull(constants$680.g_socket_listener_event_get_type$MH,"g_socket_listener_event_get_type");
     }
-    public static long g_socket_listener_event_get_type () {
+    /**
+     * {@snippet :
+     * GType g_socket_listener_event_get_type();
+     * }
+     */
+    public static long g_socket_listener_event_get_type() {
         var mh$ = g_socket_listener_event_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9795,9 +11218,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_test_dbus_flags_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$728.g_test_dbus_flags_get_type$MH,"g_test_dbus_flags_get_type");
+        return RuntimeHelper.requireNonNull(constants$680.g_test_dbus_flags_get_type$MH,"g_test_dbus_flags_get_type");
     }
-    public static long g_test_dbus_flags_get_type () {
+    /**
+     * {@snippet :
+     * GType g_test_dbus_flags_get_type();
+     * }
+     */
+    public static long g_test_dbus_flags_get_type() {
         var mh$ = g_test_dbus_flags_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9806,9 +11234,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_subprocess_flags_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$729.g_subprocess_flags_get_type$MH,"g_subprocess_flags_get_type");
+        return RuntimeHelper.requireNonNull(constants$680.g_subprocess_flags_get_type$MH,"g_subprocess_flags_get_type");
     }
-    public static long g_subprocess_flags_get_type () {
+    /**
+     * {@snippet :
+     * GType g_subprocess_flags_get_type();
+     * }
+     */
+    public static long g_subprocess_flags_get_type() {
         var mh$ = g_subprocess_flags_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9817,9 +11250,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_notification_priority_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$729.g_notification_priority_get_type$MH,"g_notification_priority_get_type");
+        return RuntimeHelper.requireNonNull(constants$680.g_notification_priority_get_type$MH,"g_notification_priority_get_type");
     }
-    public static long g_notification_priority_get_type () {
+    /**
+     * {@snippet :
+     * GType g_notification_priority_get_type();
+     * }
+     */
+    public static long g_notification_priority_get_type() {
         var mh$ = g_notification_priority_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9828,9 +11266,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_network_connectivity_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$729.g_network_connectivity_get_type$MH,"g_network_connectivity_get_type");
+        return RuntimeHelper.requireNonNull(constants$680.g_network_connectivity_get_type$MH,"g_network_connectivity_get_type");
     }
-    public static long g_network_connectivity_get_type () {
+    /**
+     * {@snippet :
+     * GType g_network_connectivity_get_type();
+     * }
+     */
+    public static long g_network_connectivity_get_type() {
         var mh$ = g_network_connectivity_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9839,9 +11282,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_pollable_return_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$729.g_pollable_return_get_type$MH,"g_pollable_return_get_type");
+        return RuntimeHelper.requireNonNull(constants$680.g_pollable_return_get_type$MH,"g_pollable_return_get_type");
     }
-    public static long g_pollable_return_get_type () {
+    /**
+     * {@snippet :
+     * GType g_pollable_return_get_type();
+     * }
+     */
+    public static long g_pollable_return_get_type() {
         var mh$ = g_pollable_return_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9850,9 +11298,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_memory_monitor_warning_level_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$729.g_memory_monitor_warning_level_get_type$MH,"g_memory_monitor_warning_level_get_type");
+        return RuntimeHelper.requireNonNull(constants$681.g_memory_monitor_warning_level_get_type$MH,"g_memory_monitor_warning_level_get_type");
     }
-    public static long g_memory_monitor_warning_level_get_type () {
+    /**
+     * {@snippet :
+     * GType g_memory_monitor_warning_level_get_type();
+     * }
+     */
+    public static long g_memory_monitor_warning_level_get_type() {
         var mh$ = g_memory_monitor_warning_level_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9861,9 +11314,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_resolver_name_lookup_flags_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$729.g_resolver_name_lookup_flags_get_type$MH,"g_resolver_name_lookup_flags_get_type");
+        return RuntimeHelper.requireNonNull(constants$681.g_resolver_name_lookup_flags_get_type$MH,"g_resolver_name_lookup_flags_get_type");
     }
-    public static long g_resolver_name_lookup_flags_get_type () {
+    /**
+     * {@snippet :
+     * GType g_resolver_name_lookup_flags_get_type();
+     * }
+     */
+    public static long g_resolver_name_lookup_flags_get_type() {
         var mh$ = g_resolver_name_lookup_flags_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9872,9 +11330,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_settings_bind_flags_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$730.g_settings_bind_flags_get_type$MH,"g_settings_bind_flags_get_type");
+        return RuntimeHelper.requireNonNull(constants$681.g_settings_bind_flags_get_type$MH,"g_settings_bind_flags_get_type");
     }
-    public static long g_settings_bind_flags_get_type () {
+    /**
+     * {@snippet :
+     * GType g_settings_bind_flags_get_type();
+     * }
+     */
+    public static long g_settings_bind_flags_get_type() {
         var mh$ = g_settings_bind_flags_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -9882,19 +11345,39 @@ import static java.lang.foreign.ValueLayout.*;
             throw new AssertionError("should not reach here", ex$);
         }
     }
+    /**
+     * {@snippet :
+     * enum .G_MODULE_BIND_LAZY = 1;
+     * }
+     */
     public static int G_MODULE_BIND_LAZY() {
         return (int)1L;
     }
+    /**
+     * {@snippet :
+     * enum .G_MODULE_BIND_LOCAL = 2;
+     * }
+     */
     public static int G_MODULE_BIND_LOCAL() {
         return (int)2L;
     }
+    /**
+     * {@snippet :
+     * enum .G_MODULE_BIND_MASK = 3;
+     * }
+     */
     public static int G_MODULE_BIND_MASK() {
         return (int)3L;
     }
     public static MethodHandle g_module_error_quark$MH() {
-        return RuntimeHelper.requireNonNull(constants$730.g_module_error_quark$MH,"g_module_error_quark");
+        return RuntimeHelper.requireNonNull(constants$682.g_module_error_quark$MH,"g_module_error_quark");
     }
-    public static int g_module_error_quark () {
+    /**
+     * {@snippet :
+     * GQuark g_module_error_quark();
+     * }
+     */
+    public static int g_module_error_quark() {
         var mh$ = g_module_error_quark$MH();
         try {
             return (int)mh$.invokeExact();
@@ -9902,16 +11385,31 @@ import static java.lang.foreign.ValueLayout.*;
             throw new AssertionError("should not reach here", ex$);
         }
     }
+    /**
+     * {@snippet :
+     * enum .G_MODULE_ERROR_FAILED = 0;
+     * }
+     */
     public static int G_MODULE_ERROR_FAILED() {
         return (int)0L;
     }
+    /**
+     * {@snippet :
+     * enum .G_MODULE_ERROR_CHECK_FAILED = 1;
+     * }
+     */
     public static int G_MODULE_ERROR_CHECK_FAILED() {
         return (int)1L;
     }
     public static MethodHandle g_module_supported$MH() {
-        return RuntimeHelper.requireNonNull(constants$731.g_module_supported$MH,"g_module_supported");
+        return RuntimeHelper.requireNonNull(constants$682.g_module_supported$MH,"g_module_supported");
     }
-    public static int g_module_supported () {
+    /**
+     * {@snippet :
+     * gboolean g_module_supported();
+     * }
+     */
+    public static int g_module_supported() {
         var mh$ = g_module_supported$MH();
         try {
             return (int)mh$.invokeExact();
@@ -9920,31 +11418,46 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_module_open$MH() {
-        return RuntimeHelper.requireNonNull(constants$731.g_module_open$MH,"g_module_open");
+        return RuntimeHelper.requireNonNull(constants$682.g_module_open$MH,"g_module_open");
     }
-    public static MemoryAddress g_module_open ( Addressable file_name,  int flags) {
+    /**
+     * {@snippet :
+     * GModule* g_module_open(const gchar* file_name, GModuleFlags flags);
+     * }
+     */
+    public static MemorySegment g_module_open(MemorySegment file_name, int flags) {
         var mh$ = g_module_open$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(file_name, flags);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(file_name, flags);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_module_open_full$MH() {
-        return RuntimeHelper.requireNonNull(constants$731.g_module_open_full$MH,"g_module_open_full");
+        return RuntimeHelper.requireNonNull(constants$682.g_module_open_full$MH,"g_module_open_full");
     }
-    public static MemoryAddress g_module_open_full ( Addressable file_name,  int flags,  Addressable error) {
+    /**
+     * {@snippet :
+     * GModule* g_module_open_full(const gchar* file_name, GModuleFlags flags, GError** error);
+     * }
+     */
+    public static MemorySegment g_module_open_full(MemorySegment file_name, int flags, MemorySegment error) {
         var mh$ = g_module_open_full$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(file_name, flags, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(file_name, flags, error);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_module_close$MH() {
-        return RuntimeHelper.requireNonNull(constants$731.g_module_close$MH,"g_module_close");
+        return RuntimeHelper.requireNonNull(constants$682.g_module_close$MH,"g_module_close");
     }
-    public static int g_module_close ( Addressable module) {
+    /**
+     * {@snippet :
+     * gboolean g_module_close(GModule* module);
+     * }
+     */
+    public static int g_module_close(MemorySegment module) {
         var mh$ = g_module_close$MH();
         try {
             return (int)mh$.invokeExact(module);
@@ -9953,9 +11466,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_module_make_resident$MH() {
-        return RuntimeHelper.requireNonNull(constants$731.g_module_make_resident$MH,"g_module_make_resident");
+        return RuntimeHelper.requireNonNull(constants$683.g_module_make_resident$MH,"g_module_make_resident");
     }
-    public static void g_module_make_resident ( Addressable module) {
+    /**
+     * {@snippet :
+     * void g_module_make_resident(GModule* module);
+     * }
+     */
+    public static void g_module_make_resident(MemorySegment module) {
         var mh$ = g_module_make_resident$MH();
         try {
             mh$.invokeExact(module);
@@ -9964,20 +11482,30 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_module_error$MH() {
-        return RuntimeHelper.requireNonNull(constants$731.g_module_error$MH,"g_module_error");
+        return RuntimeHelper.requireNonNull(constants$683.g_module_error$MH,"g_module_error");
     }
-    public static MemoryAddress g_module_error () {
+    /**
+     * {@snippet :
+     * const gchar* g_module_error();
+     * }
+     */
+    public static MemorySegment g_module_error() {
         var mh$ = g_module_error$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact();
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_module_symbol$MH() {
-        return RuntimeHelper.requireNonNull(constants$732.g_module_symbol$MH,"g_module_symbol");
+        return RuntimeHelper.requireNonNull(constants$683.g_module_symbol$MH,"g_module_symbol");
     }
-    public static int g_module_symbol ( Addressable module,  Addressable symbol_name,  Addressable symbol) {
+    /**
+     * {@snippet :
+     * gboolean g_module_symbol(GModule* module, const gchar* symbol_name, gpointer* symbol);
+     * }
+     */
+    public static int g_module_symbol(MemorySegment module, MemorySegment symbol_name, MemorySegment symbol) {
         var mh$ = g_module_symbol$MH();
         try {
             return (int)mh$.invokeExact(module, symbol_name, symbol);
@@ -9986,42 +11514,62 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_module_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$732.g_module_name$MH,"g_module_name");
+        return RuntimeHelper.requireNonNull(constants$683.g_module_name$MH,"g_module_name");
     }
-    public static MemoryAddress g_module_name ( Addressable module) {
+    /**
+     * {@snippet :
+     * const gchar* g_module_name(GModule* module);
+     * }
+     */
+    public static MemorySegment g_module_name(MemorySegment module) {
         var mh$ = g_module_name$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(module);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(module);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_module_build_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$732.g_module_build_path$MH,"g_module_build_path");
+        return RuntimeHelper.requireNonNull(constants$683.g_module_build_path$MH,"g_module_build_path");
     }
-    public static MemoryAddress g_module_build_path ( Addressable directory,  Addressable module_name) {
+    /**
+     * {@snippet :
+     * gchar* g_module_build_path(const gchar* directory, const gchar* module_name);
+     * }
+     */
+    public static MemorySegment g_module_build_path(MemorySegment directory, MemorySegment module_name) {
         var mh$ = g_module_build_path$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(directory, module_name);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(directory, module_name);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_io_module_scope_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$732.g_io_module_scope_new$MH,"g_io_module_scope_new");
+        return RuntimeHelper.requireNonNull(constants$683.g_io_module_scope_new$MH,"g_io_module_scope_new");
     }
-    public static MemoryAddress g_io_module_scope_new ( int flags) {
+    /**
+     * {@snippet :
+     * GIOModuleScope* g_io_module_scope_new(GIOModuleScopeFlags flags);
+     * }
+     */
+    public static MemorySegment g_io_module_scope_new(int flags) {
         var mh$ = g_io_module_scope_new$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(flags);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(flags);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_io_module_scope_free$MH() {
-        return RuntimeHelper.requireNonNull(constants$732.g_io_module_scope_free$MH,"g_io_module_scope_free");
+        return RuntimeHelper.requireNonNull(constants$684.g_io_module_scope_free$MH,"g_io_module_scope_free");
     }
-    public static void g_io_module_scope_free ( Addressable scope) {
+    /**
+     * {@snippet :
+     * void g_io_module_scope_free(GIOModuleScope* scope);
+     * }
+     */
+    public static void g_io_module_scope_free(MemorySegment scope) {
         var mh$ = g_io_module_scope_free$MH();
         try {
             mh$.invokeExact(scope);
@@ -10030,9 +11578,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_io_module_scope_block$MH() {
-        return RuntimeHelper.requireNonNull(constants$732.g_io_module_scope_block$MH,"g_io_module_scope_block");
+        return RuntimeHelper.requireNonNull(constants$684.g_io_module_scope_block$MH,"g_io_module_scope_block");
     }
-    public static void g_io_module_scope_block ( Addressable scope,  Addressable basename) {
+    /**
+     * {@snippet :
+     * void g_io_module_scope_block(GIOModuleScope* scope, const gchar* basename);
+     * }
+     */
+    public static void g_io_module_scope_block(MemorySegment scope, MemorySegment basename) {
         var mh$ = g_io_module_scope_block$MH();
         try {
             mh$.invokeExact(scope, basename);
@@ -10041,9 +11594,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_io_module_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$733.g_io_module_get_type$MH,"g_io_module_get_type");
+        return RuntimeHelper.requireNonNull(constants$684.g_io_module_get_type$MH,"g_io_module_get_type");
     }
-    public static long g_io_module_get_type () {
+    /**
+     * {@snippet :
+     * GType g_io_module_get_type();
+     * }
+     */
+    public static long g_io_module_get_type() {
         var mh$ = g_io_module_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -10052,20 +11610,30 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_io_module_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$733.g_io_module_new$MH,"g_io_module_new");
+        return RuntimeHelper.requireNonNull(constants$684.g_io_module_new$MH,"g_io_module_new");
     }
-    public static MemoryAddress g_io_module_new ( Addressable filename) {
+    /**
+     * {@snippet :
+     * GIOModule* g_io_module_new(const gchar* filename);
+     * }
+     */
+    public static MemorySegment g_io_module_new(MemorySegment filename) {
         var mh$ = g_io_module_new$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(filename);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(filename);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_io_modules_scan_all_in_directory$MH() {
-        return RuntimeHelper.requireNonNull(constants$733.g_io_modules_scan_all_in_directory$MH,"g_io_modules_scan_all_in_directory");
+        return RuntimeHelper.requireNonNull(constants$684.g_io_modules_scan_all_in_directory$MH,"g_io_modules_scan_all_in_directory");
     }
-    public static void g_io_modules_scan_all_in_directory ( Addressable dirname) {
+    /**
+     * {@snippet :
+     * void g_io_modules_scan_all_in_directory(char* dirname);
+     * }
+     */
+    public static void g_io_modules_scan_all_in_directory(MemorySegment dirname) {
         var mh$ = g_io_modules_scan_all_in_directory$MH();
         try {
             mh$.invokeExact(dirname);
@@ -10074,20 +11642,30 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_io_modules_load_all_in_directory$MH() {
-        return RuntimeHelper.requireNonNull(constants$733.g_io_modules_load_all_in_directory$MH,"g_io_modules_load_all_in_directory");
+        return RuntimeHelper.requireNonNull(constants$684.g_io_modules_load_all_in_directory$MH,"g_io_modules_load_all_in_directory");
     }
-    public static MemoryAddress g_io_modules_load_all_in_directory ( Addressable dirname) {
+    /**
+     * {@snippet :
+     * GList* g_io_modules_load_all_in_directory(const gchar* dirname);
+     * }
+     */
+    public static MemorySegment g_io_modules_load_all_in_directory(MemorySegment dirname) {
         var mh$ = g_io_modules_load_all_in_directory$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(dirname);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(dirname);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_io_modules_scan_all_in_directory_with_scope$MH() {
-        return RuntimeHelper.requireNonNull(constants$733.g_io_modules_scan_all_in_directory_with_scope$MH,"g_io_modules_scan_all_in_directory_with_scope");
+        return RuntimeHelper.requireNonNull(constants$685.g_io_modules_scan_all_in_directory_with_scope$MH,"g_io_modules_scan_all_in_directory_with_scope");
     }
-    public static void g_io_modules_scan_all_in_directory_with_scope ( Addressable dirname,  Addressable scope) {
+    /**
+     * {@snippet :
+     * void g_io_modules_scan_all_in_directory_with_scope(const gchar* dirname, GIOModuleScope* scope);
+     * }
+     */
+    public static void g_io_modules_scan_all_in_directory_with_scope(MemorySegment dirname, MemorySegment scope) {
         var mh$ = g_io_modules_scan_all_in_directory_with_scope$MH();
         try {
             mh$.invokeExact(dirname, scope);
@@ -10096,42 +11674,62 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_io_modules_load_all_in_directory_with_scope$MH() {
-        return RuntimeHelper.requireNonNull(constants$733.g_io_modules_load_all_in_directory_with_scope$MH,"g_io_modules_load_all_in_directory_with_scope");
+        return RuntimeHelper.requireNonNull(constants$685.g_io_modules_load_all_in_directory_with_scope$MH,"g_io_modules_load_all_in_directory_with_scope");
     }
-    public static MemoryAddress g_io_modules_load_all_in_directory_with_scope ( Addressable dirname,  Addressable scope) {
+    /**
+     * {@snippet :
+     * GList* g_io_modules_load_all_in_directory_with_scope(const gchar* dirname, GIOModuleScope* scope);
+     * }
+     */
+    public static MemorySegment g_io_modules_load_all_in_directory_with_scope(MemorySegment dirname, MemorySegment scope) {
         var mh$ = g_io_modules_load_all_in_directory_with_scope$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(dirname, scope);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(dirname, scope);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_io_extension_point_register$MH() {
-        return RuntimeHelper.requireNonNull(constants$734.g_io_extension_point_register$MH,"g_io_extension_point_register");
+        return RuntimeHelper.requireNonNull(constants$685.g_io_extension_point_register$MH,"g_io_extension_point_register");
     }
-    public static MemoryAddress g_io_extension_point_register ( Addressable name) {
+    /**
+     * {@snippet :
+     * GIOExtensionPoint* g_io_extension_point_register(char* name);
+     * }
+     */
+    public static MemorySegment g_io_extension_point_register(MemorySegment name) {
         var mh$ = g_io_extension_point_register$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(name);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(name);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_io_extension_point_lookup$MH() {
-        return RuntimeHelper.requireNonNull(constants$734.g_io_extension_point_lookup$MH,"g_io_extension_point_lookup");
+        return RuntimeHelper.requireNonNull(constants$685.g_io_extension_point_lookup$MH,"g_io_extension_point_lookup");
     }
-    public static MemoryAddress g_io_extension_point_lookup ( Addressable name) {
+    /**
+     * {@snippet :
+     * GIOExtensionPoint* g_io_extension_point_lookup(char* name);
+     * }
+     */
+    public static MemorySegment g_io_extension_point_lookup(MemorySegment name) {
         var mh$ = g_io_extension_point_lookup$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(name);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(name);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_io_extension_point_set_required_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$734.g_io_extension_point_set_required_type$MH,"g_io_extension_point_set_required_type");
+        return RuntimeHelper.requireNonNull(constants$685.g_io_extension_point_set_required_type$MH,"g_io_extension_point_set_required_type");
     }
-    public static void g_io_extension_point_set_required_type ( Addressable extension_point,  long type) {
+    /**
+     * {@snippet :
+     * void g_io_extension_point_set_required_type(GIOExtensionPoint* extension_point, GType type);
+     * }
+     */
+    public static void g_io_extension_point_set_required_type(MemorySegment extension_point, long type) {
         var mh$ = g_io_extension_point_set_required_type$MH();
         try {
             mh$.invokeExact(extension_point, type);
@@ -10140,9 +11738,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_io_extension_point_get_required_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$734.g_io_extension_point_get_required_type$MH,"g_io_extension_point_get_required_type");
+        return RuntimeHelper.requireNonNull(constants$685.g_io_extension_point_get_required_type$MH,"g_io_extension_point_get_required_type");
     }
-    public static long g_io_extension_point_get_required_type ( Addressable extension_point) {
+    /**
+     * {@snippet :
+     * GType g_io_extension_point_get_required_type(GIOExtensionPoint* extension_point);
+     * }
+     */
+    public static long g_io_extension_point_get_required_type(MemorySegment extension_point) {
         var mh$ = g_io_extension_point_get_required_type$MH();
         try {
             return (long)mh$.invokeExact(extension_point);
@@ -10151,42 +11754,62 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_io_extension_point_get_extensions$MH() {
-        return RuntimeHelper.requireNonNull(constants$734.g_io_extension_point_get_extensions$MH,"g_io_extension_point_get_extensions");
+        return RuntimeHelper.requireNonNull(constants$686.g_io_extension_point_get_extensions$MH,"g_io_extension_point_get_extensions");
     }
-    public static MemoryAddress g_io_extension_point_get_extensions ( Addressable extension_point) {
+    /**
+     * {@snippet :
+     * GList* g_io_extension_point_get_extensions(GIOExtensionPoint* extension_point);
+     * }
+     */
+    public static MemorySegment g_io_extension_point_get_extensions(MemorySegment extension_point) {
         var mh$ = g_io_extension_point_get_extensions$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(extension_point);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(extension_point);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_io_extension_point_get_extension_by_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$734.g_io_extension_point_get_extension_by_name$MH,"g_io_extension_point_get_extension_by_name");
+        return RuntimeHelper.requireNonNull(constants$686.g_io_extension_point_get_extension_by_name$MH,"g_io_extension_point_get_extension_by_name");
     }
-    public static MemoryAddress g_io_extension_point_get_extension_by_name ( Addressable extension_point,  Addressable name) {
+    /**
+     * {@snippet :
+     * GIOExtension* g_io_extension_point_get_extension_by_name(GIOExtensionPoint* extension_point, char* name);
+     * }
+     */
+    public static MemorySegment g_io_extension_point_get_extension_by_name(MemorySegment extension_point, MemorySegment name) {
         var mh$ = g_io_extension_point_get_extension_by_name$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(extension_point, name);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(extension_point, name);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_io_extension_point_implement$MH() {
-        return RuntimeHelper.requireNonNull(constants$735.g_io_extension_point_implement$MH,"g_io_extension_point_implement");
+        return RuntimeHelper.requireNonNull(constants$686.g_io_extension_point_implement$MH,"g_io_extension_point_implement");
     }
-    public static MemoryAddress g_io_extension_point_implement ( Addressable extension_point_name,  long type,  Addressable extension_name,  int priority) {
+    /**
+     * {@snippet :
+     * GIOExtension* g_io_extension_point_implement(char* extension_point_name, GType type, char* extension_name, gint priority);
+     * }
+     */
+    public static MemorySegment g_io_extension_point_implement(MemorySegment extension_point_name, long type, MemorySegment extension_name, int priority) {
         var mh$ = g_io_extension_point_implement$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(extension_point_name, type, extension_name, priority);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(extension_point_name, type, extension_name, priority);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_io_extension_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$735.g_io_extension_get_type$MH,"g_io_extension_get_type");
+        return RuntimeHelper.requireNonNull(constants$686.g_io_extension_get_type$MH,"g_io_extension_get_type");
     }
-    public static long g_io_extension_get_type ( Addressable extension) {
+    /**
+     * {@snippet :
+     * GType g_io_extension_get_type(GIOExtension* extension);
+     * }
+     */
+    public static long g_io_extension_get_type(MemorySegment extension) {
         var mh$ = g_io_extension_get_type$MH();
         try {
             return (long)mh$.invokeExact(extension);
@@ -10195,20 +11818,30 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_io_extension_get_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$735.g_io_extension_get_name$MH,"g_io_extension_get_name");
+        return RuntimeHelper.requireNonNull(constants$686.g_io_extension_get_name$MH,"g_io_extension_get_name");
     }
-    public static MemoryAddress g_io_extension_get_name ( Addressable extension) {
+    /**
+     * {@snippet :
+     * char* g_io_extension_get_name(GIOExtension* extension);
+     * }
+     */
+    public static MemorySegment g_io_extension_get_name(MemorySegment extension) {
         var mh$ = g_io_extension_get_name$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(extension);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(extension);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_io_extension_get_priority$MH() {
-        return RuntimeHelper.requireNonNull(constants$735.g_io_extension_get_priority$MH,"g_io_extension_get_priority");
+        return RuntimeHelper.requireNonNull(constants$686.g_io_extension_get_priority$MH,"g_io_extension_get_priority");
     }
-    public static int g_io_extension_get_priority ( Addressable extension) {
+    /**
+     * {@snippet :
+     * gint g_io_extension_get_priority(GIOExtension* extension);
+     * }
+     */
+    public static int g_io_extension_get_priority(MemorySegment extension) {
         var mh$ = g_io_extension_get_priority$MH();
         try {
             return (int)mh$.invokeExact(extension);
@@ -10217,20 +11850,30 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_io_extension_ref_class$MH() {
-        return RuntimeHelper.requireNonNull(constants$735.g_io_extension_ref_class$MH,"g_io_extension_ref_class");
+        return RuntimeHelper.requireNonNull(constants$687.g_io_extension_ref_class$MH,"g_io_extension_ref_class");
     }
-    public static MemoryAddress g_io_extension_ref_class ( Addressable extension) {
+    /**
+     * {@snippet :
+     * GTypeClass* g_io_extension_ref_class(GIOExtension* extension);
+     * }
+     */
+    public static MemorySegment g_io_extension_ref_class(MemorySegment extension) {
         var mh$ = g_io_extension_ref_class$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(extension);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(extension);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_io_module_load$MH() {
-        return RuntimeHelper.requireNonNull(constants$735.g_io_module_load$MH,"g_io_module_load");
+        return RuntimeHelper.requireNonNull(constants$687.g_io_module_load$MH,"g_io_module_load");
     }
-    public static void g_io_module_load ( Addressable module) {
+    /**
+     * {@snippet :
+     * void g_io_module_load(GIOModule* module);
+     * }
+     */
+    public static void g_io_module_load(MemorySegment module) {
         var mh$ = g_io_module_load$MH();
         try {
             mh$.invokeExact(module);
@@ -10239,9 +11882,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_io_module_unload$MH() {
-        return RuntimeHelper.requireNonNull(constants$736.g_io_module_unload$MH,"g_io_module_unload");
+        return RuntimeHelper.requireNonNull(constants$687.g_io_module_unload$MH,"g_io_module_unload");
     }
-    public static void g_io_module_unload ( Addressable module) {
+    /**
+     * {@snippet :
+     * void g_io_module_unload(GIOModule* module);
+     * }
+     */
+    public static void g_io_module_unload(MemorySegment module) {
         var mh$ = g_io_module_unload$MH();
         try {
             mh$.invokeExact(module);
@@ -10250,20 +11898,30 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_io_module_query$MH() {
-        return RuntimeHelper.requireNonNull(constants$736.g_io_module_query$MH,"g_io_module_query");
+        return RuntimeHelper.requireNonNull(constants$687.g_io_module_query$MH,"g_io_module_query");
     }
-    public static MemoryAddress g_io_module_query () {
+    /**
+     * {@snippet :
+     * char** g_io_module_query();
+     * }
+     */
+    public static MemorySegment g_io_module_query() {
         var mh$ = g_io_module_query$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact();
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_io_scheduler_push_job$MH() {
-        return RuntimeHelper.requireNonNull(constants$736.g_io_scheduler_push_job$MH,"g_io_scheduler_push_job");
+        return RuntimeHelper.requireNonNull(constants$687.g_io_scheduler_push_job$MH,"g_io_scheduler_push_job");
     }
-    public static void g_io_scheduler_push_job ( Addressable job_func,  Addressable user_data,  Addressable notify,  int io_priority,  Addressable cancellable) {
+    /**
+     * {@snippet :
+     * void g_io_scheduler_push_job(GIOSchedulerJobFunc job_func, gpointer user_data, GDestroyNotify notify, gint io_priority, GCancellable* cancellable);
+     * }
+     */
+    public static void g_io_scheduler_push_job(MemorySegment job_func, MemorySegment user_data, MemorySegment notify, int io_priority, MemorySegment cancellable) {
         var mh$ = g_io_scheduler_push_job$MH();
         try {
             mh$.invokeExact(job_func, user_data, notify, io_priority, cancellable);
@@ -10272,9 +11930,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_io_scheduler_cancel_all_jobs$MH() {
-        return RuntimeHelper.requireNonNull(constants$736.g_io_scheduler_cancel_all_jobs$MH,"g_io_scheduler_cancel_all_jobs");
+        return RuntimeHelper.requireNonNull(constants$687.g_io_scheduler_cancel_all_jobs$MH,"g_io_scheduler_cancel_all_jobs");
     }
-    public static void g_io_scheduler_cancel_all_jobs () {
+    /**
+     * {@snippet :
+     * void g_io_scheduler_cancel_all_jobs();
+     * }
+     */
+    public static void g_io_scheduler_cancel_all_jobs() {
         var mh$ = g_io_scheduler_cancel_all_jobs$MH();
         try {
             mh$.invokeExact();
@@ -10283,9 +11946,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_io_scheduler_job_send_to_mainloop$MH() {
-        return RuntimeHelper.requireNonNull(constants$736.g_io_scheduler_job_send_to_mainloop$MH,"g_io_scheduler_job_send_to_mainloop");
+        return RuntimeHelper.requireNonNull(constants$688.g_io_scheduler_job_send_to_mainloop$MH,"g_io_scheduler_job_send_to_mainloop");
     }
-    public static int g_io_scheduler_job_send_to_mainloop ( Addressable job,  Addressable func,  Addressable user_data,  Addressable notify) {
+    /**
+     * {@snippet :
+     * gboolean g_io_scheduler_job_send_to_mainloop(GIOSchedulerJob* job, GSourceFunc func, gpointer user_data, GDestroyNotify notify);
+     * }
+     */
+    public static int g_io_scheduler_job_send_to_mainloop(MemorySegment job, MemorySegment func, MemorySegment user_data, MemorySegment notify) {
         var mh$ = g_io_scheduler_job_send_to_mainloop$MH();
         try {
             return (int)mh$.invokeExact(job, func, user_data, notify);
@@ -10294,9 +11962,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_io_scheduler_job_send_to_mainloop_async$MH() {
-        return RuntimeHelper.requireNonNull(constants$736.g_io_scheduler_job_send_to_mainloop_async$MH,"g_io_scheduler_job_send_to_mainloop_async");
+        return RuntimeHelper.requireNonNull(constants$688.g_io_scheduler_job_send_to_mainloop_async$MH,"g_io_scheduler_job_send_to_mainloop_async");
     }
-    public static void g_io_scheduler_job_send_to_mainloop_async ( Addressable job,  Addressable func,  Addressable user_data,  Addressable notify) {
+    /**
+     * {@snippet :
+     * void g_io_scheduler_job_send_to_mainloop_async(GIOSchedulerJob* job, GSourceFunc func, gpointer user_data, GDestroyNotify notify);
+     * }
+     */
+    public static void g_io_scheduler_job_send_to_mainloop_async(MemorySegment job, MemorySegment func, MemorySegment user_data, MemorySegment notify) {
         var mh$ = g_io_scheduler_job_send_to_mainloop_async$MH();
         try {
             mh$.invokeExact(job, func, user_data, notify);
@@ -10305,9 +11978,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_list_model_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$737.g_list_model_get_type$MH,"g_list_model_get_type");
+        return RuntimeHelper.requireNonNull(constants$688.g_list_model_get_type$MH,"g_list_model_get_type");
     }
-    public static long g_list_model_get_type () {
+    /**
+     * {@snippet :
+     * GType g_list_model_get_type();
+     * }
+     */
+    public static long g_list_model_get_type() {
         var mh$ = g_list_model_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -10315,102 +11993,39 @@ import static java.lang.foreign.ValueLayout.*;
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static OfAddress GListModel_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GListModel_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GListModel_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GListModel_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GListModel$MH() {
-        return RuntimeHelper.requireNonNull(constants$737.glib_autoptr_clear_GListModel$MH,"glib_autoptr_clear_GListModel");
-    }
-    public static void glib_autoptr_clear_GListModel ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GListModel$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GListModel$MH() {
-        return RuntimeHelper.requireNonNull(constants$737.glib_autoptr_cleanup_GListModel$MH,"glib_autoptr_cleanup_GListModel");
-    }
-    public static void glib_autoptr_cleanup_GListModel ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GListModel$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GListModel$MH() {
-        return RuntimeHelper.requireNonNull(constants$737.glib_listautoptr_cleanup_GListModel$MH,"glib_listautoptr_cleanup_GListModel");
-    }
-    public static void glib_listautoptr_cleanup_GListModel ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GListModel$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GListModel$MH() {
-        return RuntimeHelper.requireNonNull(constants$737.glib_slistautoptr_cleanup_GListModel$MH,"glib_slistautoptr_cleanup_GListModel");
-    }
-    public static void glib_slistautoptr_cleanup_GListModel ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GListModel$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GListModel$MH() {
-        return RuntimeHelper.requireNonNull(constants$737.glib_queueautoptr_cleanup_GListModel$MH,"glib_queueautoptr_cleanup_GListModel");
-    }
-    public static void glib_queueautoptr_cleanup_GListModel ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GListModel$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle G_LIST_MODEL$MH() {
-        return RuntimeHelper.requireNonNull(constants$738.G_LIST_MODEL$MH,"G_LIST_MODEL");
-    }
-    public static MemoryAddress G_LIST_MODEL ( Addressable ptr) {
-        var mh$ = G_LIST_MODEL$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle G_IS_LIST_MODEL$MH() {
-        return RuntimeHelper.requireNonNull(constants$738.G_IS_LIST_MODEL$MH,"G_IS_LIST_MODEL");
-    }
-    public static int G_IS_LIST_MODEL ( Addressable ptr) {
-        var mh$ = G_IS_LIST_MODEL$MH();
-        try {
-            return (int)mh$.invokeExact(ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle G_LIST_MODEL_GET_IFACE$MH() {
-        return RuntimeHelper.requireNonNull(constants$738.G_LIST_MODEL_GET_IFACE$MH,"G_LIST_MODEL_GET_IFACE");
-    }
-    public static MemoryAddress G_LIST_MODEL_GET_IFACE ( Addressable ptr) {
-        var mh$ = G_LIST_MODEL_GET_IFACE$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
+    /**
+     * {@snippet :
+     * typedef struct _GListModel* GListModel_autoptr;
+     * }
+     */
+    public static final OfAddress GListModel_autoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GListModel_listautoptr;
+     * }
+     */
+    public static final OfAddress GListModel_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GListModel_slistautoptr;
+     * }
+     */
+    public static final OfAddress GListModel_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GListModel_queueautoptr;
+     * }
+     */
+    public static final OfAddress GListModel_queueautoptr = Constants$root.C_POINTER$LAYOUT;
     public static MethodHandle g_list_model_get_item_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$738.g_list_model_get_item_type$MH,"g_list_model_get_item_type");
+        return RuntimeHelper.requireNonNull(constants$688.g_list_model_get_item_type$MH,"g_list_model_get_item_type");
     }
-    public static long g_list_model_get_item_type ( Addressable list) {
+    /**
+     * {@snippet :
+     * GType g_list_model_get_item_type(GListModel* list);
+     * }
+     */
+    public static long g_list_model_get_item_type(MemorySegment list) {
         var mh$ = g_list_model_get_item_type$MH();
         try {
             return (long)mh$.invokeExact(list);
@@ -10419,9 +12034,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_list_model_get_n_items$MH() {
-        return RuntimeHelper.requireNonNull(constants$738.g_list_model_get_n_items$MH,"g_list_model_get_n_items");
+        return RuntimeHelper.requireNonNull(constants$688.g_list_model_get_n_items$MH,"g_list_model_get_n_items");
     }
-    public static int g_list_model_get_n_items ( Addressable list) {
+    /**
+     * {@snippet :
+     * guint g_list_model_get_n_items(GListModel* list);
+     * }
+     */
+    public static int g_list_model_get_n_items(MemorySegment list) {
         var mh$ = g_list_model_get_n_items$MH();
         try {
             return (int)mh$.invokeExact(list);
@@ -10430,31 +12050,46 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_list_model_get_item$MH() {
-        return RuntimeHelper.requireNonNull(constants$738.g_list_model_get_item$MH,"g_list_model_get_item");
+        return RuntimeHelper.requireNonNull(constants$688.g_list_model_get_item$MH,"g_list_model_get_item");
     }
-    public static MemoryAddress g_list_model_get_item ( Addressable list,  int position) {
+    /**
+     * {@snippet :
+     * gpointer g_list_model_get_item(GListModel* list, guint position);
+     * }
+     */
+    public static MemorySegment g_list_model_get_item(MemorySegment list, int position) {
         var mh$ = g_list_model_get_item$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(list, position);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(list, position);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_list_model_get_object$MH() {
-        return RuntimeHelper.requireNonNull(constants$739.g_list_model_get_object$MH,"g_list_model_get_object");
+        return RuntimeHelper.requireNonNull(constants$689.g_list_model_get_object$MH,"g_list_model_get_object");
     }
-    public static MemoryAddress g_list_model_get_object ( Addressable list,  int position) {
+    /**
+     * {@snippet :
+     * GObject* g_list_model_get_object(GListModel* list, guint position);
+     * }
+     */
+    public static MemorySegment g_list_model_get_object(MemorySegment list, int position) {
         var mh$ = g_list_model_get_object$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(list, position);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(list, position);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_list_model_items_changed$MH() {
-        return RuntimeHelper.requireNonNull(constants$739.g_list_model_items_changed$MH,"g_list_model_items_changed");
+        return RuntimeHelper.requireNonNull(constants$689.g_list_model_items_changed$MH,"g_list_model_items_changed");
     }
-    public static void g_list_model_items_changed ( Addressable list,  int position,  int removed,  int added) {
+    /**
+     * {@snippet :
+     * void g_list_model_items_changed(GListModel* list, guint position, guint removed, guint added);
+     * }
+     */
+    public static void g_list_model_items_changed(MemorySegment list, int position, int removed, int added) {
         var mh$ = g_list_model_items_changed$MH();
         try {
             mh$.invokeExact(list, position, removed, added);
@@ -10463,9 +12098,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_list_store_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$739.g_list_store_get_type$MH,"g_list_store_get_type");
+        return RuntimeHelper.requireNonNull(constants$689.g_list_store_get_type$MH,"g_list_store_get_type");
     }
-    public static long g_list_store_get_type () {
+    /**
+     * {@snippet :
+     * GType g_list_store_get_type();
+     * }
+     */
+    public static long g_list_store_get_type() {
         var mh$ = g_list_store_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -10473,161 +12113,79 @@ import static java.lang.foreign.ValueLayout.*;
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static OfAddress GListStore_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GListStore_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GListStore_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GListStore_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GListStore$MH() {
-        return RuntimeHelper.requireNonNull(constants$739.glib_autoptr_clear_GListStore$MH,"glib_autoptr_clear_GListStore");
-    }
-    public static void glib_autoptr_clear_GListStore ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GListStore$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GListStore$MH() {
-        return RuntimeHelper.requireNonNull(constants$739.glib_autoptr_cleanup_GListStore$MH,"glib_autoptr_cleanup_GListStore");
-    }
-    public static void glib_autoptr_cleanup_GListStore ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GListStore$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GListStore$MH() {
-        return RuntimeHelper.requireNonNull(constants$739.glib_listautoptr_cleanup_GListStore$MH,"glib_listautoptr_cleanup_GListStore");
-    }
-    public static void glib_listautoptr_cleanup_GListStore ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GListStore$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GListStore$MH() {
-        return RuntimeHelper.requireNonNull(constants$740.glib_slistautoptr_cleanup_GListStore$MH,"glib_slistautoptr_cleanup_GListStore");
-    }
-    public static void glib_slistautoptr_cleanup_GListStore ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GListStore$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GListStore$MH() {
-        return RuntimeHelper.requireNonNull(constants$740.glib_queueautoptr_cleanup_GListStore$MH,"glib_queueautoptr_cleanup_GListStore");
-    }
-    public static void glib_queueautoptr_cleanup_GListStore ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GListStore$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress GListStoreClass_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GListStoreClass_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GListStoreClass_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress GListStoreClass_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_GListStoreClass$MH() {
-        return RuntimeHelper.requireNonNull(constants$740.glib_autoptr_clear_GListStoreClass$MH,"glib_autoptr_clear_GListStoreClass");
-    }
-    public static void glib_autoptr_clear_GListStoreClass ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_GListStoreClass$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_GListStoreClass$MH() {
-        return RuntimeHelper.requireNonNull(constants$740.glib_autoptr_cleanup_GListStoreClass$MH,"glib_autoptr_cleanup_GListStoreClass");
-    }
-    public static void glib_autoptr_cleanup_GListStoreClass ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_GListStoreClass$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_GListStoreClass$MH() {
-        return RuntimeHelper.requireNonNull(constants$740.glib_listautoptr_cleanup_GListStoreClass$MH,"glib_listautoptr_cleanup_GListStoreClass");
-    }
-    public static void glib_listautoptr_cleanup_GListStoreClass ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_GListStoreClass$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_GListStoreClass$MH() {
-        return RuntimeHelper.requireNonNull(constants$740.glib_slistautoptr_cleanup_GListStoreClass$MH,"glib_slistautoptr_cleanup_GListStoreClass");
-    }
-    public static void glib_slistautoptr_cleanup_GListStoreClass ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_GListStoreClass$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_GListStoreClass$MH() {
-        return RuntimeHelper.requireNonNull(constants$741.glib_queueautoptr_cleanup_GListStoreClass$MH,"glib_queueautoptr_cleanup_GListStoreClass");
-    }
-    public static void glib_queueautoptr_cleanup_GListStoreClass ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_GListStoreClass$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle G_LIST_STORE$MH() {
-        return RuntimeHelper.requireNonNull(constants$741.G_LIST_STORE$MH,"G_LIST_STORE");
-    }
-    public static MemoryAddress G_LIST_STORE ( Addressable ptr) {
-        var mh$ = G_LIST_STORE$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle G_IS_LIST_STORE$MH() {
-        return RuntimeHelper.requireNonNull(constants$741.G_IS_LIST_STORE$MH,"G_IS_LIST_STORE");
-    }
-    public static int G_IS_LIST_STORE ( Addressable ptr) {
-        var mh$ = G_IS_LIST_STORE$MH();
-        try {
-            return (int)mh$.invokeExact(ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
+    /**
+     * {@snippet :
+     * typedef struct _GListStore* GListStore_autoptr;
+     * }
+     */
+    public static final OfAddress GListStore_autoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GListStore_listautoptr;
+     * }
+     */
+    public static final OfAddress GListStore_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GListStore_slistautoptr;
+     * }
+     */
+    public static final OfAddress GListStore_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GListStore_queueautoptr;
+     * }
+     */
+    public static final OfAddress GListStore_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct * GListStoreClass_autoptr;
+     * }
+     */
+    public static final OfAddress GListStoreClass_autoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GListStoreClass_listautoptr;
+     * }
+     */
+    public static final OfAddress GListStoreClass_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GListStoreClass_slistautoptr;
+     * }
+     */
+    public static final OfAddress GListStoreClass_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GListStoreClass_queueautoptr;
+     * }
+     */
+    public static final OfAddress GListStoreClass_queueautoptr = Constants$root.C_POINTER$LAYOUT;
     public static MethodHandle g_list_store_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$741.g_list_store_new$MH,"g_list_store_new");
+        return RuntimeHelper.requireNonNull(constants$689.g_list_store_new$MH,"g_list_store_new");
     }
-    public static MemoryAddress g_list_store_new ( long item_type) {
+    /**
+     * {@snippet :
+     * GListStore* g_list_store_new(GType item_type);
+     * }
+     */
+    public static MemorySegment g_list_store_new(long item_type) {
         var mh$ = g_list_store_new$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(item_type);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(item_type);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle g_list_store_insert$MH() {
-        return RuntimeHelper.requireNonNull(constants$741.g_list_store_insert$MH,"g_list_store_insert");
+        return RuntimeHelper.requireNonNull(constants$689.g_list_store_insert$MH,"g_list_store_insert");
     }
-    public static void g_list_store_insert ( Addressable store,  int position,  Addressable item) {
+    /**
+     * {@snippet :
+     * void g_list_store_insert(GListStore* store, guint position, gpointer item);
+     * }
+     */
+    public static void g_list_store_insert(MemorySegment store, int position, MemorySegment item) {
         var mh$ = g_list_store_insert$MH();
         try {
             mh$.invokeExact(store, position, item);
@@ -10636,9 +12194,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_list_store_insert_sorted$MH() {
-        return RuntimeHelper.requireNonNull(constants$741.g_list_store_insert_sorted$MH,"g_list_store_insert_sorted");
+        return RuntimeHelper.requireNonNull(constants$689.g_list_store_insert_sorted$MH,"g_list_store_insert_sorted");
     }
-    public static int g_list_store_insert_sorted ( Addressable store,  Addressable item,  Addressable compare_func,  Addressable user_data) {
+    /**
+     * {@snippet :
+     * guint g_list_store_insert_sorted(GListStore* store, gpointer item, GCompareDataFunc compare_func, gpointer user_data);
+     * }
+     */
+    public static int g_list_store_insert_sorted(MemorySegment store, MemorySegment item, MemorySegment compare_func, MemorySegment user_data) {
         var mh$ = g_list_store_insert_sorted$MH();
         try {
             return (int)mh$.invokeExact(store, item, compare_func, user_data);
@@ -10647,9 +12210,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_list_store_sort$MH() {
-        return RuntimeHelper.requireNonNull(constants$742.g_list_store_sort$MH,"g_list_store_sort");
+        return RuntimeHelper.requireNonNull(constants$690.g_list_store_sort$MH,"g_list_store_sort");
     }
-    public static void g_list_store_sort ( Addressable store,  Addressable compare_func,  Addressable user_data) {
+    /**
+     * {@snippet :
+     * void g_list_store_sort(GListStore* store, GCompareDataFunc compare_func, gpointer user_data);
+     * }
+     */
+    public static void g_list_store_sort(MemorySegment store, MemorySegment compare_func, MemorySegment user_data) {
         var mh$ = g_list_store_sort$MH();
         try {
             mh$.invokeExact(store, compare_func, user_data);
@@ -10658,9 +12226,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_list_store_append$MH() {
-        return RuntimeHelper.requireNonNull(constants$742.g_list_store_append$MH,"g_list_store_append");
+        return RuntimeHelper.requireNonNull(constants$690.g_list_store_append$MH,"g_list_store_append");
     }
-    public static void g_list_store_append ( Addressable store,  Addressable item) {
+    /**
+     * {@snippet :
+     * void g_list_store_append(GListStore* store, gpointer item);
+     * }
+     */
+    public static void g_list_store_append(MemorySegment store, MemorySegment item) {
         var mh$ = g_list_store_append$MH();
         try {
             mh$.invokeExact(store, item);
@@ -10669,9 +12242,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_list_store_remove$MH() {
-        return RuntimeHelper.requireNonNull(constants$742.g_list_store_remove$MH,"g_list_store_remove");
+        return RuntimeHelper.requireNonNull(constants$690.g_list_store_remove$MH,"g_list_store_remove");
     }
-    public static void g_list_store_remove ( Addressable store,  int position) {
+    /**
+     * {@snippet :
+     * void g_list_store_remove(GListStore* store, guint position);
+     * }
+     */
+    public static void g_list_store_remove(MemorySegment store, int position) {
         var mh$ = g_list_store_remove$MH();
         try {
             mh$.invokeExact(store, position);
@@ -10680,9 +12258,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_list_store_remove_all$MH() {
-        return RuntimeHelper.requireNonNull(constants$742.g_list_store_remove_all$MH,"g_list_store_remove_all");
+        return RuntimeHelper.requireNonNull(constants$690.g_list_store_remove_all$MH,"g_list_store_remove_all");
     }
-    public static void g_list_store_remove_all ( Addressable store) {
+    /**
+     * {@snippet :
+     * void g_list_store_remove_all(GListStore* store);
+     * }
+     */
+    public static void g_list_store_remove_all(MemorySegment store) {
         var mh$ = g_list_store_remove_all$MH();
         try {
             mh$.invokeExact(store);
@@ -10691,9 +12274,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_list_store_splice$MH() {
-        return RuntimeHelper.requireNonNull(constants$742.g_list_store_splice$MH,"g_list_store_splice");
+        return RuntimeHelper.requireNonNull(constants$690.g_list_store_splice$MH,"g_list_store_splice");
     }
-    public static void g_list_store_splice ( Addressable store,  int position,  int n_removals,  Addressable additions,  int n_additions) {
+    /**
+     * {@snippet :
+     * void g_list_store_splice(GListStore* store, guint position, guint n_removals, gpointer* additions, guint n_additions);
+     * }
+     */
+    public static void g_list_store_splice(MemorySegment store, int position, int n_removals, MemorySegment additions, int n_additions) {
         var mh$ = g_list_store_splice$MH();
         try {
             mh$.invokeExact(store, position, n_removals, additions, n_additions);
@@ -10702,9 +12290,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_list_store_find$MH() {
-        return RuntimeHelper.requireNonNull(constants$742.g_list_store_find$MH,"g_list_store_find");
+        return RuntimeHelper.requireNonNull(constants$690.g_list_store_find$MH,"g_list_store_find");
     }
-    public static int g_list_store_find ( Addressable store,  Addressable item,  Addressable position) {
+    /**
+     * {@snippet :
+     * gboolean g_list_store_find(GListStore* store, gpointer item, guint* position);
+     * }
+     */
+    public static int g_list_store_find(MemorySegment store, MemorySegment item, MemorySegment position) {
         var mh$ = g_list_store_find$MH();
         try {
             return (int)mh$.invokeExact(store, item, position);
@@ -10713,9 +12306,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_list_store_find_with_equal_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$743.g_list_store_find_with_equal_func$MH,"g_list_store_find_with_equal_func");
+        return RuntimeHelper.requireNonNull(constants$691.g_list_store_find_with_equal_func$MH,"g_list_store_find_with_equal_func");
     }
-    public static int g_list_store_find_with_equal_func ( Addressable store,  Addressable item,  Addressable equal_func,  Addressable position) {
+    /**
+     * {@snippet :
+     * gboolean g_list_store_find_with_equal_func(GListStore* store, gpointer item, GEqualFunc equal_func, guint* position);
+     * }
+     */
+    public static int g_list_store_find_with_equal_func(MemorySegment store, MemorySegment item, MemorySegment equal_func, MemorySegment position) {
         var mh$ = g_list_store_find_with_equal_func$MH();
         try {
             return (int)mh$.invokeExact(store, item, equal_func, position);
@@ -10723,10 +12321,31 @@ import static java.lang.foreign.ValueLayout.*;
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle g_loadable_icon_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$743.g_loadable_icon_get_type$MH,"g_loadable_icon_get_type");
+    public static MethodHandle g_list_store_find_with_equal_func_full$MH() {
+        return RuntimeHelper.requireNonNull(constants$691.g_list_store_find_with_equal_func_full$MH,"g_list_store_find_with_equal_func_full");
     }
-    public static long g_loadable_icon_get_type () {
+    /**
+     * {@snippet :
+     * gboolean g_list_store_find_with_equal_func_full(GListStore* store, gpointer item, GEqualFuncFull equal_func, gpointer user_data, guint* position);
+     * }
+     */
+    public static int g_list_store_find_with_equal_func_full(MemorySegment store, MemorySegment item, MemorySegment equal_func, MemorySegment user_data, MemorySegment position) {
+        var mh$ = g_list_store_find_with_equal_func_full$MH();
+        try {
+            return (int)mh$.invokeExact(store, item, equal_func, user_data, position);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_loadable_icon_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$691.g_loadable_icon_get_type$MH,"g_loadable_icon_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType g_loadable_icon_get_type();
+     * }
+     */
+    public static long g_loadable_icon_get_type() {
         var mh$ = g_loadable_icon_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -10735,12 +12354,3297 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle g_loadable_icon_load$MH() {
-        return RuntimeHelper.requireNonNull(constants$743.g_loadable_icon_load$MH,"g_loadable_icon_load");
+        return RuntimeHelper.requireNonNull(constants$691.g_loadable_icon_load$MH,"g_loadable_icon_load");
     }
-    public static MemoryAddress g_loadable_icon_load ( Addressable icon,  int size,  Addressable type,  Addressable cancellable,  Addressable error) {
+    /**
+     * {@snippet :
+     * GInputStream* g_loadable_icon_load(GLoadableIcon* icon, int size, char** type, GCancellable* cancellable, GError** error);
+     * }
+     */
+    public static MemorySegment g_loadable_icon_load(MemorySegment icon, int size, MemorySegment type, MemorySegment cancellable, MemorySegment error) {
         var mh$ = g_loadable_icon_load$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(icon, size, type, cancellable, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(icon, size, type, cancellable, error);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_loadable_icon_load_async$MH() {
+        return RuntimeHelper.requireNonNull(constants$691.g_loadable_icon_load_async$MH,"g_loadable_icon_load_async");
+    }
+    /**
+     * {@snippet :
+     * void g_loadable_icon_load_async(GLoadableIcon* icon, int size, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
+     * }
+     */
+    public static void g_loadable_icon_load_async(MemorySegment icon, int size, MemorySegment cancellable, MemorySegment callback, MemorySegment user_data) {
+        var mh$ = g_loadable_icon_load_async$MH();
+        try {
+            mh$.invokeExact(icon, size, cancellable, callback, user_data);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_loadable_icon_load_finish$MH() {
+        return RuntimeHelper.requireNonNull(constants$691.g_loadable_icon_load_finish$MH,"g_loadable_icon_load_finish");
+    }
+    /**
+     * {@snippet :
+     * GInputStream* g_loadable_icon_load_finish(GLoadableIcon* icon, GAsyncResult* res, char** type, GError** error);
+     * }
+     */
+    public static MemorySegment g_loadable_icon_load_finish(MemorySegment icon, MemorySegment res, MemorySegment type, MemorySegment error) {
+        var mh$ = g_loadable_icon_load_finish$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(icon, res, type, error);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_memory_input_stream_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$692.g_memory_input_stream_get_type$MH,"g_memory_input_stream_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType g_memory_input_stream_get_type();
+     * }
+     */
+    public static long g_memory_input_stream_get_type() {
+        var mh$ = g_memory_input_stream_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_memory_input_stream_new$MH() {
+        return RuntimeHelper.requireNonNull(constants$692.g_memory_input_stream_new$MH,"g_memory_input_stream_new");
+    }
+    /**
+     * {@snippet :
+     * GInputStream* g_memory_input_stream_new();
+     * }
+     */
+    public static MemorySegment g_memory_input_stream_new() {
+        var mh$ = g_memory_input_stream_new$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_memory_input_stream_new_from_data$MH() {
+        return RuntimeHelper.requireNonNull(constants$692.g_memory_input_stream_new_from_data$MH,"g_memory_input_stream_new_from_data");
+    }
+    /**
+     * {@snippet :
+     * GInputStream* g_memory_input_stream_new_from_data(void* data, gssize len, GDestroyNotify destroy);
+     * }
+     */
+    public static MemorySegment g_memory_input_stream_new_from_data(MemorySegment data, long len, MemorySegment destroy) {
+        var mh$ = g_memory_input_stream_new_from_data$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(data, len, destroy);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_memory_input_stream_new_from_bytes$MH() {
+        return RuntimeHelper.requireNonNull(constants$692.g_memory_input_stream_new_from_bytes$MH,"g_memory_input_stream_new_from_bytes");
+    }
+    /**
+     * {@snippet :
+     * GInputStream* g_memory_input_stream_new_from_bytes(GBytes* bytes);
+     * }
+     */
+    public static MemorySegment g_memory_input_stream_new_from_bytes(MemorySegment bytes) {
+        var mh$ = g_memory_input_stream_new_from_bytes$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(bytes);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_memory_input_stream_add_data$MH() {
+        return RuntimeHelper.requireNonNull(constants$692.g_memory_input_stream_add_data$MH,"g_memory_input_stream_add_data");
+    }
+    /**
+     * {@snippet :
+     * void g_memory_input_stream_add_data(GMemoryInputStream* stream, void* data, gssize len, GDestroyNotify destroy);
+     * }
+     */
+    public static void g_memory_input_stream_add_data(MemorySegment stream, MemorySegment data, long len, MemorySegment destroy) {
+        var mh$ = g_memory_input_stream_add_data$MH();
+        try {
+            mh$.invokeExact(stream, data, len, destroy);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_memory_input_stream_add_bytes$MH() {
+        return RuntimeHelper.requireNonNull(constants$692.g_memory_input_stream_add_bytes$MH,"g_memory_input_stream_add_bytes");
+    }
+    /**
+     * {@snippet :
+     * void g_memory_input_stream_add_bytes(GMemoryInputStream* stream, GBytes* bytes);
+     * }
+     */
+    public static void g_memory_input_stream_add_bytes(MemorySegment stream, MemorySegment bytes) {
+        var mh$ = g_memory_input_stream_add_bytes$MH();
+        try {
+            mh$.invokeExact(stream, bytes);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_memory_monitor_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$693.g_memory_monitor_get_type$MH,"g_memory_monitor_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType g_memory_monitor_get_type();
+     * }
+     */
+    public static long g_memory_monitor_get_type() {
+        var mh$ = g_memory_monitor_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    /**
+     * {@snippet :
+     * typedef struct _GMemoryMonitor* GMemoryMonitor_autoptr;
+     * }
+     */
+    public static final OfAddress GMemoryMonitor_autoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GMemoryMonitor_listautoptr;
+     * }
+     */
+    public static final OfAddress GMemoryMonitor_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GMemoryMonitor_slistautoptr;
+     * }
+     */
+    public static final OfAddress GMemoryMonitor_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GMemoryMonitor_queueautoptr;
+     * }
+     */
+    public static final OfAddress GMemoryMonitor_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static MethodHandle g_memory_monitor_dup_default$MH() {
+        return RuntimeHelper.requireNonNull(constants$693.g_memory_monitor_dup_default$MH,"g_memory_monitor_dup_default");
+    }
+    /**
+     * {@snippet :
+     * GMemoryMonitor* g_memory_monitor_dup_default();
+     * }
+     */
+    public static MemorySegment g_memory_monitor_dup_default() {
+        var mh$ = g_memory_monitor_dup_default$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_memory_output_stream_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$693.g_memory_output_stream_get_type$MH,"g_memory_output_stream_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType g_memory_output_stream_get_type();
+     * }
+     */
+    public static long g_memory_output_stream_get_type() {
+        var mh$ = g_memory_output_stream_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_memory_output_stream_new$MH() {
+        return RuntimeHelper.requireNonNull(constants$693.g_memory_output_stream_new$MH,"g_memory_output_stream_new");
+    }
+    /**
+     * {@snippet :
+     * GOutputStream* g_memory_output_stream_new(gpointer data, gsize size, GReallocFunc realloc_function, GDestroyNotify destroy_function);
+     * }
+     */
+    public static MemorySegment g_memory_output_stream_new(MemorySegment data, long size, MemorySegment realloc_function, MemorySegment destroy_function) {
+        var mh$ = g_memory_output_stream_new$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(data, size, realloc_function, destroy_function);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_memory_output_stream_new_resizable$MH() {
+        return RuntimeHelper.requireNonNull(constants$694.g_memory_output_stream_new_resizable$MH,"g_memory_output_stream_new_resizable");
+    }
+    /**
+     * {@snippet :
+     * GOutputStream* g_memory_output_stream_new_resizable();
+     * }
+     */
+    public static MemorySegment g_memory_output_stream_new_resizable() {
+        var mh$ = g_memory_output_stream_new_resizable$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_memory_output_stream_get_data$MH() {
+        return RuntimeHelper.requireNonNull(constants$694.g_memory_output_stream_get_data$MH,"g_memory_output_stream_get_data");
+    }
+    /**
+     * {@snippet :
+     * gpointer g_memory_output_stream_get_data(GMemoryOutputStream* ostream);
+     * }
+     */
+    public static MemorySegment g_memory_output_stream_get_data(MemorySegment ostream) {
+        var mh$ = g_memory_output_stream_get_data$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(ostream);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_memory_output_stream_get_size$MH() {
+        return RuntimeHelper.requireNonNull(constants$694.g_memory_output_stream_get_size$MH,"g_memory_output_stream_get_size");
+    }
+    /**
+     * {@snippet :
+     * gsize g_memory_output_stream_get_size(GMemoryOutputStream* ostream);
+     * }
+     */
+    public static long g_memory_output_stream_get_size(MemorySegment ostream) {
+        var mh$ = g_memory_output_stream_get_size$MH();
+        try {
+            return (long)mh$.invokeExact(ostream);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_memory_output_stream_get_data_size$MH() {
+        return RuntimeHelper.requireNonNull(constants$694.g_memory_output_stream_get_data_size$MH,"g_memory_output_stream_get_data_size");
+    }
+    /**
+     * {@snippet :
+     * gsize g_memory_output_stream_get_data_size(GMemoryOutputStream* ostream);
+     * }
+     */
+    public static long g_memory_output_stream_get_data_size(MemorySegment ostream) {
+        var mh$ = g_memory_output_stream_get_data_size$MH();
+        try {
+            return (long)mh$.invokeExact(ostream);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_memory_output_stream_steal_data$MH() {
+        return RuntimeHelper.requireNonNull(constants$694.g_memory_output_stream_steal_data$MH,"g_memory_output_stream_steal_data");
+    }
+    /**
+     * {@snippet :
+     * gpointer g_memory_output_stream_steal_data(GMemoryOutputStream* ostream);
+     * }
+     */
+    public static MemorySegment g_memory_output_stream_steal_data(MemorySegment ostream) {
+        var mh$ = g_memory_output_stream_steal_data$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(ostream);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_memory_output_stream_steal_as_bytes$MH() {
+        return RuntimeHelper.requireNonNull(constants$694.g_memory_output_stream_steal_as_bytes$MH,"g_memory_output_stream_steal_as_bytes");
+    }
+    /**
+     * {@snippet :
+     * GBytes* g_memory_output_stream_steal_as_bytes(GMemoryOutputStream* ostream);
+     * }
+     */
+    public static MemorySegment g_memory_output_stream_steal_as_bytes(MemorySegment ostream) {
+        var mh$ = g_memory_output_stream_steal_as_bytes$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(ostream);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_menu_model_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$695.g_menu_model_get_type$MH,"g_menu_model_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType g_menu_model_get_type();
+     * }
+     */
+    public static long g_menu_model_get_type() {
+        var mh$ = g_menu_model_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_menu_model_is_mutable$MH() {
+        return RuntimeHelper.requireNonNull(constants$695.g_menu_model_is_mutable$MH,"g_menu_model_is_mutable");
+    }
+    /**
+     * {@snippet :
+     * gboolean g_menu_model_is_mutable(GMenuModel* model);
+     * }
+     */
+    public static int g_menu_model_is_mutable(MemorySegment model) {
+        var mh$ = g_menu_model_is_mutable$MH();
+        try {
+            return (int)mh$.invokeExact(model);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_menu_model_get_n_items$MH() {
+        return RuntimeHelper.requireNonNull(constants$695.g_menu_model_get_n_items$MH,"g_menu_model_get_n_items");
+    }
+    /**
+     * {@snippet :
+     * gint g_menu_model_get_n_items(GMenuModel* model);
+     * }
+     */
+    public static int g_menu_model_get_n_items(MemorySegment model) {
+        var mh$ = g_menu_model_get_n_items$MH();
+        try {
+            return (int)mh$.invokeExact(model);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_menu_model_iterate_item_attributes$MH() {
+        return RuntimeHelper.requireNonNull(constants$695.g_menu_model_iterate_item_attributes$MH,"g_menu_model_iterate_item_attributes");
+    }
+    /**
+     * {@snippet :
+     * GMenuAttributeIter* g_menu_model_iterate_item_attributes(GMenuModel* model, gint item_index);
+     * }
+     */
+    public static MemorySegment g_menu_model_iterate_item_attributes(MemorySegment model, int item_index) {
+        var mh$ = g_menu_model_iterate_item_attributes$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(model, item_index);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_menu_model_get_item_attribute_value$MH() {
+        return RuntimeHelper.requireNonNull(constants$695.g_menu_model_get_item_attribute_value$MH,"g_menu_model_get_item_attribute_value");
+    }
+    /**
+     * {@snippet :
+     * GVariant* g_menu_model_get_item_attribute_value(GMenuModel* model, gint item_index, const gchar* attribute, const GVariantType* expected_type);
+     * }
+     */
+    public static MemorySegment g_menu_model_get_item_attribute_value(MemorySegment model, int item_index, MemorySegment attribute, MemorySegment expected_type) {
+        var mh$ = g_menu_model_get_item_attribute_value$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(model, item_index, attribute, expected_type);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_menu_model_get_item_attribute$MH() {
+        return RuntimeHelper.requireNonNull(constants$695.g_menu_model_get_item_attribute$MH,"g_menu_model_get_item_attribute");
+    }
+    /**
+     * {@snippet :
+     * gboolean g_menu_model_get_item_attribute(GMenuModel* model, gint item_index, const gchar* attribute, const gchar* format_string,...);
+     * }
+     */
+    public static int g_menu_model_get_item_attribute(MemorySegment model, int item_index, MemorySegment attribute, MemorySegment format_string, Object... x4) {
+        var mh$ = g_menu_model_get_item_attribute$MH();
+        try {
+            return (int)mh$.invokeExact(model, item_index, attribute, format_string, x4);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_menu_model_iterate_item_links$MH() {
+        return RuntimeHelper.requireNonNull(constants$696.g_menu_model_iterate_item_links$MH,"g_menu_model_iterate_item_links");
+    }
+    /**
+     * {@snippet :
+     * GMenuLinkIter* g_menu_model_iterate_item_links(GMenuModel* model, gint item_index);
+     * }
+     */
+    public static MemorySegment g_menu_model_iterate_item_links(MemorySegment model, int item_index) {
+        var mh$ = g_menu_model_iterate_item_links$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(model, item_index);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_menu_model_get_item_link$MH() {
+        return RuntimeHelper.requireNonNull(constants$696.g_menu_model_get_item_link$MH,"g_menu_model_get_item_link");
+    }
+    /**
+     * {@snippet :
+     * GMenuModel* g_menu_model_get_item_link(GMenuModel* model, gint item_index, const gchar* link);
+     * }
+     */
+    public static MemorySegment g_menu_model_get_item_link(MemorySegment model, int item_index, MemorySegment link) {
+        var mh$ = g_menu_model_get_item_link$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(model, item_index, link);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_menu_model_items_changed$MH() {
+        return RuntimeHelper.requireNonNull(constants$696.g_menu_model_items_changed$MH,"g_menu_model_items_changed");
+    }
+    /**
+     * {@snippet :
+     * void g_menu_model_items_changed(GMenuModel* model, gint position, gint removed, gint added);
+     * }
+     */
+    public static void g_menu_model_items_changed(MemorySegment model, int position, int removed, int added) {
+        var mh$ = g_menu_model_items_changed$MH();
+        try {
+            mh$.invokeExact(model, position, removed, added);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_menu_attribute_iter_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$696.g_menu_attribute_iter_get_type$MH,"g_menu_attribute_iter_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType g_menu_attribute_iter_get_type();
+     * }
+     */
+    public static long g_menu_attribute_iter_get_type() {
+        var mh$ = g_menu_attribute_iter_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_menu_attribute_iter_get_next$MH() {
+        return RuntimeHelper.requireNonNull(constants$696.g_menu_attribute_iter_get_next$MH,"g_menu_attribute_iter_get_next");
+    }
+    /**
+     * {@snippet :
+     * gboolean g_menu_attribute_iter_get_next(GMenuAttributeIter* iter, const gchar** out_name, GVariant** value);
+     * }
+     */
+    public static int g_menu_attribute_iter_get_next(MemorySegment iter, MemorySegment out_name, MemorySegment value) {
+        var mh$ = g_menu_attribute_iter_get_next$MH();
+        try {
+            return (int)mh$.invokeExact(iter, out_name, value);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_menu_attribute_iter_next$MH() {
+        return RuntimeHelper.requireNonNull(constants$696.g_menu_attribute_iter_next$MH,"g_menu_attribute_iter_next");
+    }
+    /**
+     * {@snippet :
+     * gboolean g_menu_attribute_iter_next(GMenuAttributeIter* iter);
+     * }
+     */
+    public static int g_menu_attribute_iter_next(MemorySegment iter) {
+        var mh$ = g_menu_attribute_iter_next$MH();
+        try {
+            return (int)mh$.invokeExact(iter);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_menu_attribute_iter_get_name$MH() {
+        return RuntimeHelper.requireNonNull(constants$697.g_menu_attribute_iter_get_name$MH,"g_menu_attribute_iter_get_name");
+    }
+    /**
+     * {@snippet :
+     * const gchar* g_menu_attribute_iter_get_name(GMenuAttributeIter* iter);
+     * }
+     */
+    public static MemorySegment g_menu_attribute_iter_get_name(MemorySegment iter) {
+        var mh$ = g_menu_attribute_iter_get_name$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(iter);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_menu_attribute_iter_get_value$MH() {
+        return RuntimeHelper.requireNonNull(constants$697.g_menu_attribute_iter_get_value$MH,"g_menu_attribute_iter_get_value");
+    }
+    /**
+     * {@snippet :
+     * GVariant* g_menu_attribute_iter_get_value(GMenuAttributeIter* iter);
+     * }
+     */
+    public static MemorySegment g_menu_attribute_iter_get_value(MemorySegment iter) {
+        var mh$ = g_menu_attribute_iter_get_value$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(iter);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_menu_link_iter_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$697.g_menu_link_iter_get_type$MH,"g_menu_link_iter_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType g_menu_link_iter_get_type();
+     * }
+     */
+    public static long g_menu_link_iter_get_type() {
+        var mh$ = g_menu_link_iter_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_menu_link_iter_get_next$MH() {
+        return RuntimeHelper.requireNonNull(constants$697.g_menu_link_iter_get_next$MH,"g_menu_link_iter_get_next");
+    }
+    /**
+     * {@snippet :
+     * gboolean g_menu_link_iter_get_next(GMenuLinkIter* iter, const gchar** out_link, GMenuModel** value);
+     * }
+     */
+    public static int g_menu_link_iter_get_next(MemorySegment iter, MemorySegment out_link, MemorySegment value) {
+        var mh$ = g_menu_link_iter_get_next$MH();
+        try {
+            return (int)mh$.invokeExact(iter, out_link, value);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_menu_link_iter_next$MH() {
+        return RuntimeHelper.requireNonNull(constants$697.g_menu_link_iter_next$MH,"g_menu_link_iter_next");
+    }
+    /**
+     * {@snippet :
+     * gboolean g_menu_link_iter_next(GMenuLinkIter* iter);
+     * }
+     */
+    public static int g_menu_link_iter_next(MemorySegment iter) {
+        var mh$ = g_menu_link_iter_next$MH();
+        try {
+            return (int)mh$.invokeExact(iter);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_menu_link_iter_get_name$MH() {
+        return RuntimeHelper.requireNonNull(constants$697.g_menu_link_iter_get_name$MH,"g_menu_link_iter_get_name");
+    }
+    /**
+     * {@snippet :
+     * const gchar* g_menu_link_iter_get_name(GMenuLinkIter* iter);
+     * }
+     */
+    public static MemorySegment g_menu_link_iter_get_name(MemorySegment iter) {
+        var mh$ = g_menu_link_iter_get_name$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(iter);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_menu_link_iter_get_value$MH() {
+        return RuntimeHelper.requireNonNull(constants$698.g_menu_link_iter_get_value$MH,"g_menu_link_iter_get_value");
+    }
+    /**
+     * {@snippet :
+     * GMenuModel* g_menu_link_iter_get_value(GMenuLinkIter* iter);
+     * }
+     */
+    public static MemorySegment g_menu_link_iter_get_value(MemorySegment iter) {
+        var mh$ = g_menu_link_iter_get_value$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(iter);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_menu_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$698.g_menu_get_type$MH,"g_menu_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType g_menu_get_type();
+     * }
+     */
+    public static long g_menu_get_type() {
+        var mh$ = g_menu_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_menu_new$MH() {
+        return RuntimeHelper.requireNonNull(constants$698.g_menu_new$MH,"g_menu_new");
+    }
+    /**
+     * {@snippet :
+     * GMenu* g_menu_new();
+     * }
+     */
+    public static MemorySegment g_menu_new() {
+        var mh$ = g_menu_new$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_menu_freeze$MH() {
+        return RuntimeHelper.requireNonNull(constants$698.g_menu_freeze$MH,"g_menu_freeze");
+    }
+    /**
+     * {@snippet :
+     * void g_menu_freeze(GMenu* menu);
+     * }
+     */
+    public static void g_menu_freeze(MemorySegment menu) {
+        var mh$ = g_menu_freeze$MH();
+        try {
+            mh$.invokeExact(menu);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_menu_insert_item$MH() {
+        return RuntimeHelper.requireNonNull(constants$698.g_menu_insert_item$MH,"g_menu_insert_item");
+    }
+    /**
+     * {@snippet :
+     * void g_menu_insert_item(GMenu* menu, gint position, GMenuItem* item);
+     * }
+     */
+    public static void g_menu_insert_item(MemorySegment menu, int position, MemorySegment item) {
+        var mh$ = g_menu_insert_item$MH();
+        try {
+            mh$.invokeExact(menu, position, item);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_menu_prepend_item$MH() {
+        return RuntimeHelper.requireNonNull(constants$698.g_menu_prepend_item$MH,"g_menu_prepend_item");
+    }
+    /**
+     * {@snippet :
+     * void g_menu_prepend_item(GMenu* menu, GMenuItem* item);
+     * }
+     */
+    public static void g_menu_prepend_item(MemorySegment menu, MemorySegment item) {
+        var mh$ = g_menu_prepend_item$MH();
+        try {
+            mh$.invokeExact(menu, item);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_menu_append_item$MH() {
+        return RuntimeHelper.requireNonNull(constants$699.g_menu_append_item$MH,"g_menu_append_item");
+    }
+    /**
+     * {@snippet :
+     * void g_menu_append_item(GMenu* menu, GMenuItem* item);
+     * }
+     */
+    public static void g_menu_append_item(MemorySegment menu, MemorySegment item) {
+        var mh$ = g_menu_append_item$MH();
+        try {
+            mh$.invokeExact(menu, item);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_menu_remove$MH() {
+        return RuntimeHelper.requireNonNull(constants$699.g_menu_remove$MH,"g_menu_remove");
+    }
+    /**
+     * {@snippet :
+     * void g_menu_remove(GMenu* menu, gint position);
+     * }
+     */
+    public static void g_menu_remove(MemorySegment menu, int position) {
+        var mh$ = g_menu_remove$MH();
+        try {
+            mh$.invokeExact(menu, position);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_menu_remove_all$MH() {
+        return RuntimeHelper.requireNonNull(constants$699.g_menu_remove_all$MH,"g_menu_remove_all");
+    }
+    /**
+     * {@snippet :
+     * void g_menu_remove_all(GMenu* menu);
+     * }
+     */
+    public static void g_menu_remove_all(MemorySegment menu) {
+        var mh$ = g_menu_remove_all$MH();
+        try {
+            mh$.invokeExact(menu);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_menu_insert$MH() {
+        return RuntimeHelper.requireNonNull(constants$699.g_menu_insert$MH,"g_menu_insert");
+    }
+    /**
+     * {@snippet :
+     * void g_menu_insert(GMenu* menu, gint position, const gchar* label, const gchar* detailed_action);
+     * }
+     */
+    public static void g_menu_insert(MemorySegment menu, int position, MemorySegment label, MemorySegment detailed_action) {
+        var mh$ = g_menu_insert$MH();
+        try {
+            mh$.invokeExact(menu, position, label, detailed_action);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_menu_prepend$MH() {
+        return RuntimeHelper.requireNonNull(constants$699.g_menu_prepend$MH,"g_menu_prepend");
+    }
+    /**
+     * {@snippet :
+     * void g_menu_prepend(GMenu* menu, const gchar* label, const gchar* detailed_action);
+     * }
+     */
+    public static void g_menu_prepend(MemorySegment menu, MemorySegment label, MemorySegment detailed_action) {
+        var mh$ = g_menu_prepend$MH();
+        try {
+            mh$.invokeExact(menu, label, detailed_action);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_menu_append$MH() {
+        return RuntimeHelper.requireNonNull(constants$699.g_menu_append$MH,"g_menu_append");
+    }
+    /**
+     * {@snippet :
+     * void g_menu_append(GMenu* menu, const gchar* label, const gchar* detailed_action);
+     * }
+     */
+    public static void g_menu_append(MemorySegment menu, MemorySegment label, MemorySegment detailed_action) {
+        var mh$ = g_menu_append$MH();
+        try {
+            mh$.invokeExact(menu, label, detailed_action);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_menu_insert_section$MH() {
+        return RuntimeHelper.requireNonNull(constants$700.g_menu_insert_section$MH,"g_menu_insert_section");
+    }
+    /**
+     * {@snippet :
+     * void g_menu_insert_section(GMenu* menu, gint position, const gchar* label, GMenuModel* section);
+     * }
+     */
+    public static void g_menu_insert_section(MemorySegment menu, int position, MemorySegment label, MemorySegment section) {
+        var mh$ = g_menu_insert_section$MH();
+        try {
+            mh$.invokeExact(menu, position, label, section);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_menu_prepend_section$MH() {
+        return RuntimeHelper.requireNonNull(constants$700.g_menu_prepend_section$MH,"g_menu_prepend_section");
+    }
+    /**
+     * {@snippet :
+     * void g_menu_prepend_section(GMenu* menu, const gchar* label, GMenuModel* section);
+     * }
+     */
+    public static void g_menu_prepend_section(MemorySegment menu, MemorySegment label, MemorySegment section) {
+        var mh$ = g_menu_prepend_section$MH();
+        try {
+            mh$.invokeExact(menu, label, section);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_menu_append_section$MH() {
+        return RuntimeHelper.requireNonNull(constants$700.g_menu_append_section$MH,"g_menu_append_section");
+    }
+    /**
+     * {@snippet :
+     * void g_menu_append_section(GMenu* menu, const gchar* label, GMenuModel* section);
+     * }
+     */
+    public static void g_menu_append_section(MemorySegment menu, MemorySegment label, MemorySegment section) {
+        var mh$ = g_menu_append_section$MH();
+        try {
+            mh$.invokeExact(menu, label, section);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_menu_insert_submenu$MH() {
+        return RuntimeHelper.requireNonNull(constants$700.g_menu_insert_submenu$MH,"g_menu_insert_submenu");
+    }
+    /**
+     * {@snippet :
+     * void g_menu_insert_submenu(GMenu* menu, gint position, const gchar* label, GMenuModel* submenu);
+     * }
+     */
+    public static void g_menu_insert_submenu(MemorySegment menu, int position, MemorySegment label, MemorySegment submenu) {
+        var mh$ = g_menu_insert_submenu$MH();
+        try {
+            mh$.invokeExact(menu, position, label, submenu);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_menu_prepend_submenu$MH() {
+        return RuntimeHelper.requireNonNull(constants$700.g_menu_prepend_submenu$MH,"g_menu_prepend_submenu");
+    }
+    /**
+     * {@snippet :
+     * void g_menu_prepend_submenu(GMenu* menu, const gchar* label, GMenuModel* submenu);
+     * }
+     */
+    public static void g_menu_prepend_submenu(MemorySegment menu, MemorySegment label, MemorySegment submenu) {
+        var mh$ = g_menu_prepend_submenu$MH();
+        try {
+            mh$.invokeExact(menu, label, submenu);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_menu_append_submenu$MH() {
+        return RuntimeHelper.requireNonNull(constants$700.g_menu_append_submenu$MH,"g_menu_append_submenu");
+    }
+    /**
+     * {@snippet :
+     * void g_menu_append_submenu(GMenu* menu, const gchar* label, GMenuModel* submenu);
+     * }
+     */
+    public static void g_menu_append_submenu(MemorySegment menu, MemorySegment label, MemorySegment submenu) {
+        var mh$ = g_menu_append_submenu$MH();
+        try {
+            mh$.invokeExact(menu, label, submenu);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_menu_item_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$701.g_menu_item_get_type$MH,"g_menu_item_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType g_menu_item_get_type();
+     * }
+     */
+    public static long g_menu_item_get_type() {
+        var mh$ = g_menu_item_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_menu_item_new$MH() {
+        return RuntimeHelper.requireNonNull(constants$701.g_menu_item_new$MH,"g_menu_item_new");
+    }
+    /**
+     * {@snippet :
+     * GMenuItem* g_menu_item_new(const gchar* label, const gchar* detailed_action);
+     * }
+     */
+    public static MemorySegment g_menu_item_new(MemorySegment label, MemorySegment detailed_action) {
+        var mh$ = g_menu_item_new$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(label, detailed_action);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_menu_item_new_from_model$MH() {
+        return RuntimeHelper.requireNonNull(constants$701.g_menu_item_new_from_model$MH,"g_menu_item_new_from_model");
+    }
+    /**
+     * {@snippet :
+     * GMenuItem* g_menu_item_new_from_model(GMenuModel* model, gint item_index);
+     * }
+     */
+    public static MemorySegment g_menu_item_new_from_model(MemorySegment model, int item_index) {
+        var mh$ = g_menu_item_new_from_model$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(model, item_index);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_menu_item_new_submenu$MH() {
+        return RuntimeHelper.requireNonNull(constants$701.g_menu_item_new_submenu$MH,"g_menu_item_new_submenu");
+    }
+    /**
+     * {@snippet :
+     * GMenuItem* g_menu_item_new_submenu(const gchar* label, GMenuModel* submenu);
+     * }
+     */
+    public static MemorySegment g_menu_item_new_submenu(MemorySegment label, MemorySegment submenu) {
+        var mh$ = g_menu_item_new_submenu$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(label, submenu);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_menu_item_new_section$MH() {
+        return RuntimeHelper.requireNonNull(constants$701.g_menu_item_new_section$MH,"g_menu_item_new_section");
+    }
+    /**
+     * {@snippet :
+     * GMenuItem* g_menu_item_new_section(const gchar* label, GMenuModel* section);
+     * }
+     */
+    public static MemorySegment g_menu_item_new_section(MemorySegment label, MemorySegment section) {
+        var mh$ = g_menu_item_new_section$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(label, section);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_menu_item_get_attribute_value$MH() {
+        return RuntimeHelper.requireNonNull(constants$701.g_menu_item_get_attribute_value$MH,"g_menu_item_get_attribute_value");
+    }
+    /**
+     * {@snippet :
+     * GVariant* g_menu_item_get_attribute_value(GMenuItem* menu_item, const gchar* attribute, const GVariantType* expected_type);
+     * }
+     */
+    public static MemorySegment g_menu_item_get_attribute_value(MemorySegment menu_item, MemorySegment attribute, MemorySegment expected_type) {
+        var mh$ = g_menu_item_get_attribute_value$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(menu_item, attribute, expected_type);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_menu_item_get_attribute$MH() {
+        return RuntimeHelper.requireNonNull(constants$702.g_menu_item_get_attribute$MH,"g_menu_item_get_attribute");
+    }
+    /**
+     * {@snippet :
+     * gboolean g_menu_item_get_attribute(GMenuItem* menu_item, const gchar* attribute, const gchar* format_string,...);
+     * }
+     */
+    public static int g_menu_item_get_attribute(MemorySegment menu_item, MemorySegment attribute, MemorySegment format_string, Object... x3) {
+        var mh$ = g_menu_item_get_attribute$MH();
+        try {
+            return (int)mh$.invokeExact(menu_item, attribute, format_string, x3);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_menu_item_get_link$MH() {
+        return RuntimeHelper.requireNonNull(constants$702.g_menu_item_get_link$MH,"g_menu_item_get_link");
+    }
+    /**
+     * {@snippet :
+     * GMenuModel* g_menu_item_get_link(GMenuItem* menu_item, const gchar* link);
+     * }
+     */
+    public static MemorySegment g_menu_item_get_link(MemorySegment menu_item, MemorySegment link) {
+        var mh$ = g_menu_item_get_link$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(menu_item, link);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_menu_item_set_attribute_value$MH() {
+        return RuntimeHelper.requireNonNull(constants$702.g_menu_item_set_attribute_value$MH,"g_menu_item_set_attribute_value");
+    }
+    /**
+     * {@snippet :
+     * void g_menu_item_set_attribute_value(GMenuItem* menu_item, const gchar* attribute, GVariant* value);
+     * }
+     */
+    public static void g_menu_item_set_attribute_value(MemorySegment menu_item, MemorySegment attribute, MemorySegment value) {
+        var mh$ = g_menu_item_set_attribute_value$MH();
+        try {
+            mh$.invokeExact(menu_item, attribute, value);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_menu_item_set_attribute$MH() {
+        return RuntimeHelper.requireNonNull(constants$702.g_menu_item_set_attribute$MH,"g_menu_item_set_attribute");
+    }
+    /**
+     * {@snippet :
+     * void g_menu_item_set_attribute(GMenuItem* menu_item, const gchar* attribute, const gchar* format_string,...);
+     * }
+     */
+    public static void g_menu_item_set_attribute(MemorySegment menu_item, MemorySegment attribute, MemorySegment format_string, Object... x3) {
+        var mh$ = g_menu_item_set_attribute$MH();
+        try {
+            mh$.invokeExact(menu_item, attribute, format_string, x3);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_menu_item_set_link$MH() {
+        return RuntimeHelper.requireNonNull(constants$702.g_menu_item_set_link$MH,"g_menu_item_set_link");
+    }
+    /**
+     * {@snippet :
+     * void g_menu_item_set_link(GMenuItem* menu_item, const gchar* link, GMenuModel* model);
+     * }
+     */
+    public static void g_menu_item_set_link(MemorySegment menu_item, MemorySegment link, MemorySegment model) {
+        var mh$ = g_menu_item_set_link$MH();
+        try {
+            mh$.invokeExact(menu_item, link, model);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_menu_item_set_label$MH() {
+        return RuntimeHelper.requireNonNull(constants$702.g_menu_item_set_label$MH,"g_menu_item_set_label");
+    }
+    /**
+     * {@snippet :
+     * void g_menu_item_set_label(GMenuItem* menu_item, const gchar* label);
+     * }
+     */
+    public static void g_menu_item_set_label(MemorySegment menu_item, MemorySegment label) {
+        var mh$ = g_menu_item_set_label$MH();
+        try {
+            mh$.invokeExact(menu_item, label);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_menu_item_set_submenu$MH() {
+        return RuntimeHelper.requireNonNull(constants$703.g_menu_item_set_submenu$MH,"g_menu_item_set_submenu");
+    }
+    /**
+     * {@snippet :
+     * void g_menu_item_set_submenu(GMenuItem* menu_item, GMenuModel* submenu);
+     * }
+     */
+    public static void g_menu_item_set_submenu(MemorySegment menu_item, MemorySegment submenu) {
+        var mh$ = g_menu_item_set_submenu$MH();
+        try {
+            mh$.invokeExact(menu_item, submenu);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_menu_item_set_section$MH() {
+        return RuntimeHelper.requireNonNull(constants$703.g_menu_item_set_section$MH,"g_menu_item_set_section");
+    }
+    /**
+     * {@snippet :
+     * void g_menu_item_set_section(GMenuItem* menu_item, GMenuModel* section);
+     * }
+     */
+    public static void g_menu_item_set_section(MemorySegment menu_item, MemorySegment section) {
+        var mh$ = g_menu_item_set_section$MH();
+        try {
+            mh$.invokeExact(menu_item, section);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_menu_item_set_action_and_target_value$MH() {
+        return RuntimeHelper.requireNonNull(constants$703.g_menu_item_set_action_and_target_value$MH,"g_menu_item_set_action_and_target_value");
+    }
+    /**
+     * {@snippet :
+     * void g_menu_item_set_action_and_target_value(GMenuItem* menu_item, const gchar* action, GVariant* target_value);
+     * }
+     */
+    public static void g_menu_item_set_action_and_target_value(MemorySegment menu_item, MemorySegment action, MemorySegment target_value) {
+        var mh$ = g_menu_item_set_action_and_target_value$MH();
+        try {
+            mh$.invokeExact(menu_item, action, target_value);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_menu_item_set_action_and_target$MH() {
+        return RuntimeHelper.requireNonNull(constants$703.g_menu_item_set_action_and_target$MH,"g_menu_item_set_action_and_target");
+    }
+    /**
+     * {@snippet :
+     * void g_menu_item_set_action_and_target(GMenuItem* menu_item, const gchar* action, const gchar* format_string,...);
+     * }
+     */
+    public static void g_menu_item_set_action_and_target(MemorySegment menu_item, MemorySegment action, MemorySegment format_string, Object... x3) {
+        var mh$ = g_menu_item_set_action_and_target$MH();
+        try {
+            mh$.invokeExact(menu_item, action, format_string, x3);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_menu_item_set_detailed_action$MH() {
+        return RuntimeHelper.requireNonNull(constants$703.g_menu_item_set_detailed_action$MH,"g_menu_item_set_detailed_action");
+    }
+    /**
+     * {@snippet :
+     * void g_menu_item_set_detailed_action(GMenuItem* menu_item, const gchar* detailed_action);
+     * }
+     */
+    public static void g_menu_item_set_detailed_action(MemorySegment menu_item, MemorySegment detailed_action) {
+        var mh$ = g_menu_item_set_detailed_action$MH();
+        try {
+            mh$.invokeExact(menu_item, detailed_action);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_menu_item_set_icon$MH() {
+        return RuntimeHelper.requireNonNull(constants$703.g_menu_item_set_icon$MH,"g_menu_item_set_icon");
+    }
+    /**
+     * {@snippet :
+     * void g_menu_item_set_icon(GMenuItem* menu_item, GIcon* icon);
+     * }
+     */
+    public static void g_menu_item_set_icon(MemorySegment menu_item, MemorySegment icon) {
+        var mh$ = g_menu_item_set_icon$MH();
+        try {
+            mh$.invokeExact(menu_item, icon);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_dbus_connection_export_menu_model$MH() {
+        return RuntimeHelper.requireNonNull(constants$704.g_dbus_connection_export_menu_model$MH,"g_dbus_connection_export_menu_model");
+    }
+    /**
+     * {@snippet :
+     * guint g_dbus_connection_export_menu_model(GDBusConnection* connection, const gchar* object_path, GMenuModel* menu, GError** error);
+     * }
+     */
+    public static int g_dbus_connection_export_menu_model(MemorySegment connection, MemorySegment object_path, MemorySegment menu, MemorySegment error) {
+        var mh$ = g_dbus_connection_export_menu_model$MH();
+        try {
+            return (int)mh$.invokeExact(connection, object_path, menu, error);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_dbus_connection_unexport_menu_model$MH() {
+        return RuntimeHelper.requireNonNull(constants$704.g_dbus_connection_unexport_menu_model$MH,"g_dbus_connection_unexport_menu_model");
+    }
+    /**
+     * {@snippet :
+     * void g_dbus_connection_unexport_menu_model(GDBusConnection* connection, guint export_id);
+     * }
+     */
+    public static void g_dbus_connection_unexport_menu_model(MemorySegment connection, int export_id) {
+        var mh$ = g_dbus_connection_unexport_menu_model$MH();
+        try {
+            mh$.invokeExact(connection, export_id);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_mount_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$704.g_mount_get_type$MH,"g_mount_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType g_mount_get_type();
+     * }
+     */
+    public static long g_mount_get_type() {
+        var mh$ = g_mount_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_mount_get_root$MH() {
+        return RuntimeHelper.requireNonNull(constants$704.g_mount_get_root$MH,"g_mount_get_root");
+    }
+    /**
+     * {@snippet :
+     * GFile* g_mount_get_root(GMount* mount);
+     * }
+     */
+    public static MemorySegment g_mount_get_root(MemorySegment mount) {
+        var mh$ = g_mount_get_root$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(mount);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_mount_get_default_location$MH() {
+        return RuntimeHelper.requireNonNull(constants$704.g_mount_get_default_location$MH,"g_mount_get_default_location");
+    }
+    /**
+     * {@snippet :
+     * GFile* g_mount_get_default_location(GMount* mount);
+     * }
+     */
+    public static MemorySegment g_mount_get_default_location(MemorySegment mount) {
+        var mh$ = g_mount_get_default_location$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(mount);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_mount_get_name$MH() {
+        return RuntimeHelper.requireNonNull(constants$704.g_mount_get_name$MH,"g_mount_get_name");
+    }
+    /**
+     * {@snippet :
+     * char* g_mount_get_name(GMount* mount);
+     * }
+     */
+    public static MemorySegment g_mount_get_name(MemorySegment mount) {
+        var mh$ = g_mount_get_name$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(mount);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_mount_get_icon$MH() {
+        return RuntimeHelper.requireNonNull(constants$705.g_mount_get_icon$MH,"g_mount_get_icon");
+    }
+    /**
+     * {@snippet :
+     * GIcon* g_mount_get_icon(GMount* mount);
+     * }
+     */
+    public static MemorySegment g_mount_get_icon(MemorySegment mount) {
+        var mh$ = g_mount_get_icon$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(mount);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_mount_get_symbolic_icon$MH() {
+        return RuntimeHelper.requireNonNull(constants$705.g_mount_get_symbolic_icon$MH,"g_mount_get_symbolic_icon");
+    }
+    /**
+     * {@snippet :
+     * GIcon* g_mount_get_symbolic_icon(GMount* mount);
+     * }
+     */
+    public static MemorySegment g_mount_get_symbolic_icon(MemorySegment mount) {
+        var mh$ = g_mount_get_symbolic_icon$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(mount);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_mount_get_uuid$MH() {
+        return RuntimeHelper.requireNonNull(constants$705.g_mount_get_uuid$MH,"g_mount_get_uuid");
+    }
+    /**
+     * {@snippet :
+     * char* g_mount_get_uuid(GMount* mount);
+     * }
+     */
+    public static MemorySegment g_mount_get_uuid(MemorySegment mount) {
+        var mh$ = g_mount_get_uuid$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(mount);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_mount_get_volume$MH() {
+        return RuntimeHelper.requireNonNull(constants$705.g_mount_get_volume$MH,"g_mount_get_volume");
+    }
+    /**
+     * {@snippet :
+     * GVolume* g_mount_get_volume(GMount* mount);
+     * }
+     */
+    public static MemorySegment g_mount_get_volume(MemorySegment mount) {
+        var mh$ = g_mount_get_volume$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(mount);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_mount_get_drive$MH() {
+        return RuntimeHelper.requireNonNull(constants$705.g_mount_get_drive$MH,"g_mount_get_drive");
+    }
+    /**
+     * {@snippet :
+     * GDrive* g_mount_get_drive(GMount* mount);
+     * }
+     */
+    public static MemorySegment g_mount_get_drive(MemorySegment mount) {
+        var mh$ = g_mount_get_drive$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(mount);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_mount_can_unmount$MH() {
+        return RuntimeHelper.requireNonNull(constants$705.g_mount_can_unmount$MH,"g_mount_can_unmount");
+    }
+    /**
+     * {@snippet :
+     * gboolean g_mount_can_unmount(GMount* mount);
+     * }
+     */
+    public static int g_mount_can_unmount(MemorySegment mount) {
+        var mh$ = g_mount_can_unmount$MH();
+        try {
+            return (int)mh$.invokeExact(mount);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_mount_can_eject$MH() {
+        return RuntimeHelper.requireNonNull(constants$706.g_mount_can_eject$MH,"g_mount_can_eject");
+    }
+    /**
+     * {@snippet :
+     * gboolean g_mount_can_eject(GMount* mount);
+     * }
+     */
+    public static int g_mount_can_eject(MemorySegment mount) {
+        var mh$ = g_mount_can_eject$MH();
+        try {
+            return (int)mh$.invokeExact(mount);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_mount_unmount$MH() {
+        return RuntimeHelper.requireNonNull(constants$706.g_mount_unmount$MH,"g_mount_unmount");
+    }
+    /**
+     * {@snippet :
+     * void g_mount_unmount(GMount* mount, GMountUnmountFlags flags, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
+     * }
+     */
+    public static void g_mount_unmount(MemorySegment mount, int flags, MemorySegment cancellable, MemorySegment callback, MemorySegment user_data) {
+        var mh$ = g_mount_unmount$MH();
+        try {
+            mh$.invokeExact(mount, flags, cancellable, callback, user_data);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_mount_unmount_finish$MH() {
+        return RuntimeHelper.requireNonNull(constants$706.g_mount_unmount_finish$MH,"g_mount_unmount_finish");
+    }
+    /**
+     * {@snippet :
+     * gboolean g_mount_unmount_finish(GMount* mount, GAsyncResult* result, GError** error);
+     * }
+     */
+    public static int g_mount_unmount_finish(MemorySegment mount, MemorySegment result, MemorySegment error) {
+        var mh$ = g_mount_unmount_finish$MH();
+        try {
+            return (int)mh$.invokeExact(mount, result, error);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_mount_eject$MH() {
+        return RuntimeHelper.requireNonNull(constants$706.g_mount_eject$MH,"g_mount_eject");
+    }
+    /**
+     * {@snippet :
+     * void g_mount_eject(GMount* mount, GMountUnmountFlags flags, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
+     * }
+     */
+    public static void g_mount_eject(MemorySegment mount, int flags, MemorySegment cancellable, MemorySegment callback, MemorySegment user_data) {
+        var mh$ = g_mount_eject$MH();
+        try {
+            mh$.invokeExact(mount, flags, cancellable, callback, user_data);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_mount_eject_finish$MH() {
+        return RuntimeHelper.requireNonNull(constants$706.g_mount_eject_finish$MH,"g_mount_eject_finish");
+    }
+    /**
+     * {@snippet :
+     * gboolean g_mount_eject_finish(GMount* mount, GAsyncResult* result, GError** error);
+     * }
+     */
+    public static int g_mount_eject_finish(MemorySegment mount, MemorySegment result, MemorySegment error) {
+        var mh$ = g_mount_eject_finish$MH();
+        try {
+            return (int)mh$.invokeExact(mount, result, error);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_mount_remount$MH() {
+        return RuntimeHelper.requireNonNull(constants$706.g_mount_remount$MH,"g_mount_remount");
+    }
+    /**
+     * {@snippet :
+     * void g_mount_remount(GMount* mount, GMountMountFlags flags, GMountOperation* mount_operation, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
+     * }
+     */
+    public static void g_mount_remount(MemorySegment mount, int flags, MemorySegment mount_operation, MemorySegment cancellable, MemorySegment callback, MemorySegment user_data) {
+        var mh$ = g_mount_remount$MH();
+        try {
+            mh$.invokeExact(mount, flags, mount_operation, cancellable, callback, user_data);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_mount_remount_finish$MH() {
+        return RuntimeHelper.requireNonNull(constants$707.g_mount_remount_finish$MH,"g_mount_remount_finish");
+    }
+    /**
+     * {@snippet :
+     * gboolean g_mount_remount_finish(GMount* mount, GAsyncResult* result, GError** error);
+     * }
+     */
+    public static int g_mount_remount_finish(MemorySegment mount, MemorySegment result, MemorySegment error) {
+        var mh$ = g_mount_remount_finish$MH();
+        try {
+            return (int)mh$.invokeExact(mount, result, error);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_mount_guess_content_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$707.g_mount_guess_content_type$MH,"g_mount_guess_content_type");
+    }
+    /**
+     * {@snippet :
+     * void g_mount_guess_content_type(GMount* mount, gboolean force_rescan, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
+     * }
+     */
+    public static void g_mount_guess_content_type(MemorySegment mount, int force_rescan, MemorySegment cancellable, MemorySegment callback, MemorySegment user_data) {
+        var mh$ = g_mount_guess_content_type$MH();
+        try {
+            mh$.invokeExact(mount, force_rescan, cancellable, callback, user_data);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_mount_guess_content_type_finish$MH() {
+        return RuntimeHelper.requireNonNull(constants$707.g_mount_guess_content_type_finish$MH,"g_mount_guess_content_type_finish");
+    }
+    /**
+     * {@snippet :
+     * gchar** g_mount_guess_content_type_finish(GMount* mount, GAsyncResult* result, GError** error);
+     * }
+     */
+    public static MemorySegment g_mount_guess_content_type_finish(MemorySegment mount, MemorySegment result, MemorySegment error) {
+        var mh$ = g_mount_guess_content_type_finish$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(mount, result, error);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_mount_guess_content_type_sync$MH() {
+        return RuntimeHelper.requireNonNull(constants$707.g_mount_guess_content_type_sync$MH,"g_mount_guess_content_type_sync");
+    }
+    /**
+     * {@snippet :
+     * gchar** g_mount_guess_content_type_sync(GMount* mount, gboolean force_rescan, GCancellable* cancellable, GError** error);
+     * }
+     */
+    public static MemorySegment g_mount_guess_content_type_sync(MemorySegment mount, int force_rescan, MemorySegment cancellable, MemorySegment error) {
+        var mh$ = g_mount_guess_content_type_sync$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(mount, force_rescan, cancellable, error);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_mount_is_shadowed$MH() {
+        return RuntimeHelper.requireNonNull(constants$707.g_mount_is_shadowed$MH,"g_mount_is_shadowed");
+    }
+    /**
+     * {@snippet :
+     * gboolean g_mount_is_shadowed(GMount* mount);
+     * }
+     */
+    public static int g_mount_is_shadowed(MemorySegment mount) {
+        var mh$ = g_mount_is_shadowed$MH();
+        try {
+            return (int)mh$.invokeExact(mount);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_mount_shadow$MH() {
+        return RuntimeHelper.requireNonNull(constants$707.g_mount_shadow$MH,"g_mount_shadow");
+    }
+    /**
+     * {@snippet :
+     * void g_mount_shadow(GMount* mount);
+     * }
+     */
+    public static void g_mount_shadow(MemorySegment mount) {
+        var mh$ = g_mount_shadow$MH();
+        try {
+            mh$.invokeExact(mount);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_mount_unshadow$MH() {
+        return RuntimeHelper.requireNonNull(constants$708.g_mount_unshadow$MH,"g_mount_unshadow");
+    }
+    /**
+     * {@snippet :
+     * void g_mount_unshadow(GMount* mount);
+     * }
+     */
+    public static void g_mount_unshadow(MemorySegment mount) {
+        var mh$ = g_mount_unshadow$MH();
+        try {
+            mh$.invokeExact(mount);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_mount_unmount_with_operation$MH() {
+        return RuntimeHelper.requireNonNull(constants$708.g_mount_unmount_with_operation$MH,"g_mount_unmount_with_operation");
+    }
+    /**
+     * {@snippet :
+     * void g_mount_unmount_with_operation(GMount* mount, GMountUnmountFlags flags, GMountOperation* mount_operation, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
+     * }
+     */
+    public static void g_mount_unmount_with_operation(MemorySegment mount, int flags, MemorySegment mount_operation, MemorySegment cancellable, MemorySegment callback, MemorySegment user_data) {
+        var mh$ = g_mount_unmount_with_operation$MH();
+        try {
+            mh$.invokeExact(mount, flags, mount_operation, cancellable, callback, user_data);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_mount_unmount_with_operation_finish$MH() {
+        return RuntimeHelper.requireNonNull(constants$708.g_mount_unmount_with_operation_finish$MH,"g_mount_unmount_with_operation_finish");
+    }
+    /**
+     * {@snippet :
+     * gboolean g_mount_unmount_with_operation_finish(GMount* mount, GAsyncResult* result, GError** error);
+     * }
+     */
+    public static int g_mount_unmount_with_operation_finish(MemorySegment mount, MemorySegment result, MemorySegment error) {
+        var mh$ = g_mount_unmount_with_operation_finish$MH();
+        try {
+            return (int)mh$.invokeExact(mount, result, error);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_mount_eject_with_operation$MH() {
+        return RuntimeHelper.requireNonNull(constants$708.g_mount_eject_with_operation$MH,"g_mount_eject_with_operation");
+    }
+    /**
+     * {@snippet :
+     * void g_mount_eject_with_operation(GMount* mount, GMountUnmountFlags flags, GMountOperation* mount_operation, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
+     * }
+     */
+    public static void g_mount_eject_with_operation(MemorySegment mount, int flags, MemorySegment mount_operation, MemorySegment cancellable, MemorySegment callback, MemorySegment user_data) {
+        var mh$ = g_mount_eject_with_operation$MH();
+        try {
+            mh$.invokeExact(mount, flags, mount_operation, cancellable, callback, user_data);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_mount_eject_with_operation_finish$MH() {
+        return RuntimeHelper.requireNonNull(constants$708.g_mount_eject_with_operation_finish$MH,"g_mount_eject_with_operation_finish");
+    }
+    /**
+     * {@snippet :
+     * gboolean g_mount_eject_with_operation_finish(GMount* mount, GAsyncResult* result, GError** error);
+     * }
+     */
+    public static int g_mount_eject_with_operation_finish(MemorySegment mount, MemorySegment result, MemorySegment error) {
+        var mh$ = g_mount_eject_with_operation_finish$MH();
+        try {
+            return (int)mh$.invokeExact(mount, result, error);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_mount_get_sort_key$MH() {
+        return RuntimeHelper.requireNonNull(constants$708.g_mount_get_sort_key$MH,"g_mount_get_sort_key");
+    }
+    /**
+     * {@snippet :
+     * const gchar* g_mount_get_sort_key(GMount* mount);
+     * }
+     */
+    public static MemorySegment g_mount_get_sort_key(MemorySegment mount) {
+        var mh$ = g_mount_get_sort_key$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(mount);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_mount_operation_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$709.g_mount_operation_get_type$MH,"g_mount_operation_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType g_mount_operation_get_type();
+     * }
+     */
+    public static long g_mount_operation_get_type() {
+        var mh$ = g_mount_operation_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_mount_operation_new$MH() {
+        return RuntimeHelper.requireNonNull(constants$709.g_mount_operation_new$MH,"g_mount_operation_new");
+    }
+    /**
+     * {@snippet :
+     * GMountOperation* g_mount_operation_new();
+     * }
+     */
+    public static MemorySegment g_mount_operation_new() {
+        var mh$ = g_mount_operation_new$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_mount_operation_get_username$MH() {
+        return RuntimeHelper.requireNonNull(constants$709.g_mount_operation_get_username$MH,"g_mount_operation_get_username");
+    }
+    /**
+     * {@snippet :
+     * char* g_mount_operation_get_username(GMountOperation* op);
+     * }
+     */
+    public static MemorySegment g_mount_operation_get_username(MemorySegment op) {
+        var mh$ = g_mount_operation_get_username$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(op);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_mount_operation_set_username$MH() {
+        return RuntimeHelper.requireNonNull(constants$709.g_mount_operation_set_username$MH,"g_mount_operation_set_username");
+    }
+    /**
+     * {@snippet :
+     * void g_mount_operation_set_username(GMountOperation* op, char* username);
+     * }
+     */
+    public static void g_mount_operation_set_username(MemorySegment op, MemorySegment username) {
+        var mh$ = g_mount_operation_set_username$MH();
+        try {
+            mh$.invokeExact(op, username);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_mount_operation_get_password$MH() {
+        return RuntimeHelper.requireNonNull(constants$709.g_mount_operation_get_password$MH,"g_mount_operation_get_password");
+    }
+    /**
+     * {@snippet :
+     * char* g_mount_operation_get_password(GMountOperation* op);
+     * }
+     */
+    public static MemorySegment g_mount_operation_get_password(MemorySegment op) {
+        var mh$ = g_mount_operation_get_password$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(op);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_mount_operation_set_password$MH() {
+        return RuntimeHelper.requireNonNull(constants$709.g_mount_operation_set_password$MH,"g_mount_operation_set_password");
+    }
+    /**
+     * {@snippet :
+     * void g_mount_operation_set_password(GMountOperation* op, char* password);
+     * }
+     */
+    public static void g_mount_operation_set_password(MemorySegment op, MemorySegment password) {
+        var mh$ = g_mount_operation_set_password$MH();
+        try {
+            mh$.invokeExact(op, password);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_mount_operation_get_anonymous$MH() {
+        return RuntimeHelper.requireNonNull(constants$710.g_mount_operation_get_anonymous$MH,"g_mount_operation_get_anonymous");
+    }
+    /**
+     * {@snippet :
+     * gboolean g_mount_operation_get_anonymous(GMountOperation* op);
+     * }
+     */
+    public static int g_mount_operation_get_anonymous(MemorySegment op) {
+        var mh$ = g_mount_operation_get_anonymous$MH();
+        try {
+            return (int)mh$.invokeExact(op);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_mount_operation_set_anonymous$MH() {
+        return RuntimeHelper.requireNonNull(constants$710.g_mount_operation_set_anonymous$MH,"g_mount_operation_set_anonymous");
+    }
+    /**
+     * {@snippet :
+     * void g_mount_operation_set_anonymous(GMountOperation* op, gboolean anonymous);
+     * }
+     */
+    public static void g_mount_operation_set_anonymous(MemorySegment op, int anonymous) {
+        var mh$ = g_mount_operation_set_anonymous$MH();
+        try {
+            mh$.invokeExact(op, anonymous);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_mount_operation_get_domain$MH() {
+        return RuntimeHelper.requireNonNull(constants$710.g_mount_operation_get_domain$MH,"g_mount_operation_get_domain");
+    }
+    /**
+     * {@snippet :
+     * char* g_mount_operation_get_domain(GMountOperation* op);
+     * }
+     */
+    public static MemorySegment g_mount_operation_get_domain(MemorySegment op) {
+        var mh$ = g_mount_operation_get_domain$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(op);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_mount_operation_set_domain$MH() {
+        return RuntimeHelper.requireNonNull(constants$710.g_mount_operation_set_domain$MH,"g_mount_operation_set_domain");
+    }
+    /**
+     * {@snippet :
+     * void g_mount_operation_set_domain(GMountOperation* op, char* domain);
+     * }
+     */
+    public static void g_mount_operation_set_domain(MemorySegment op, MemorySegment domain) {
+        var mh$ = g_mount_operation_set_domain$MH();
+        try {
+            mh$.invokeExact(op, domain);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_mount_operation_get_password_save$MH() {
+        return RuntimeHelper.requireNonNull(constants$710.g_mount_operation_get_password_save$MH,"g_mount_operation_get_password_save");
+    }
+    /**
+     * {@snippet :
+     * GPasswordSave g_mount_operation_get_password_save(GMountOperation* op);
+     * }
+     */
+    public static int g_mount_operation_get_password_save(MemorySegment op) {
+        var mh$ = g_mount_operation_get_password_save$MH();
+        try {
+            return (int)mh$.invokeExact(op);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_mount_operation_set_password_save$MH() {
+        return RuntimeHelper.requireNonNull(constants$710.g_mount_operation_set_password_save$MH,"g_mount_operation_set_password_save");
+    }
+    /**
+     * {@snippet :
+     * void g_mount_operation_set_password_save(GMountOperation* op, GPasswordSave save);
+     * }
+     */
+    public static void g_mount_operation_set_password_save(MemorySegment op, int save) {
+        var mh$ = g_mount_operation_set_password_save$MH();
+        try {
+            mh$.invokeExact(op, save);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_mount_operation_get_choice$MH() {
+        return RuntimeHelper.requireNonNull(constants$711.g_mount_operation_get_choice$MH,"g_mount_operation_get_choice");
+    }
+    /**
+     * {@snippet :
+     * int g_mount_operation_get_choice(GMountOperation* op);
+     * }
+     */
+    public static int g_mount_operation_get_choice(MemorySegment op) {
+        var mh$ = g_mount_operation_get_choice$MH();
+        try {
+            return (int)mh$.invokeExact(op);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_mount_operation_set_choice$MH() {
+        return RuntimeHelper.requireNonNull(constants$711.g_mount_operation_set_choice$MH,"g_mount_operation_set_choice");
+    }
+    /**
+     * {@snippet :
+     * void g_mount_operation_set_choice(GMountOperation* op, int choice);
+     * }
+     */
+    public static void g_mount_operation_set_choice(MemorySegment op, int choice) {
+        var mh$ = g_mount_operation_set_choice$MH();
+        try {
+            mh$.invokeExact(op, choice);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_mount_operation_reply$MH() {
+        return RuntimeHelper.requireNonNull(constants$711.g_mount_operation_reply$MH,"g_mount_operation_reply");
+    }
+    /**
+     * {@snippet :
+     * void g_mount_operation_reply(GMountOperation* op, GMountOperationResult result);
+     * }
+     */
+    public static void g_mount_operation_reply(MemorySegment op, int result) {
+        var mh$ = g_mount_operation_reply$MH();
+        try {
+            mh$.invokeExact(op, result);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_mount_operation_get_is_tcrypt_hidden_volume$MH() {
+        return RuntimeHelper.requireNonNull(constants$711.g_mount_operation_get_is_tcrypt_hidden_volume$MH,"g_mount_operation_get_is_tcrypt_hidden_volume");
+    }
+    /**
+     * {@snippet :
+     * gboolean g_mount_operation_get_is_tcrypt_hidden_volume(GMountOperation* op);
+     * }
+     */
+    public static int g_mount_operation_get_is_tcrypt_hidden_volume(MemorySegment op) {
+        var mh$ = g_mount_operation_get_is_tcrypt_hidden_volume$MH();
+        try {
+            return (int)mh$.invokeExact(op);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_mount_operation_set_is_tcrypt_hidden_volume$MH() {
+        return RuntimeHelper.requireNonNull(constants$711.g_mount_operation_set_is_tcrypt_hidden_volume$MH,"g_mount_operation_set_is_tcrypt_hidden_volume");
+    }
+    /**
+     * {@snippet :
+     * void g_mount_operation_set_is_tcrypt_hidden_volume(GMountOperation* op, gboolean hidden_volume);
+     * }
+     */
+    public static void g_mount_operation_set_is_tcrypt_hidden_volume(MemorySegment op, int hidden_volume) {
+        var mh$ = g_mount_operation_set_is_tcrypt_hidden_volume$MH();
+        try {
+            mh$.invokeExact(op, hidden_volume);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_mount_operation_get_is_tcrypt_system_volume$MH() {
+        return RuntimeHelper.requireNonNull(constants$711.g_mount_operation_get_is_tcrypt_system_volume$MH,"g_mount_operation_get_is_tcrypt_system_volume");
+    }
+    /**
+     * {@snippet :
+     * gboolean g_mount_operation_get_is_tcrypt_system_volume(GMountOperation* op);
+     * }
+     */
+    public static int g_mount_operation_get_is_tcrypt_system_volume(MemorySegment op) {
+        var mh$ = g_mount_operation_get_is_tcrypt_system_volume$MH();
+        try {
+            return (int)mh$.invokeExact(op);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_mount_operation_set_is_tcrypt_system_volume$MH() {
+        return RuntimeHelper.requireNonNull(constants$712.g_mount_operation_set_is_tcrypt_system_volume$MH,"g_mount_operation_set_is_tcrypt_system_volume");
+    }
+    /**
+     * {@snippet :
+     * void g_mount_operation_set_is_tcrypt_system_volume(GMountOperation* op, gboolean system_volume);
+     * }
+     */
+    public static void g_mount_operation_set_is_tcrypt_system_volume(MemorySegment op, int system_volume) {
+        var mh$ = g_mount_operation_set_is_tcrypt_system_volume$MH();
+        try {
+            mh$.invokeExact(op, system_volume);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_mount_operation_get_pim$MH() {
+        return RuntimeHelper.requireNonNull(constants$712.g_mount_operation_get_pim$MH,"g_mount_operation_get_pim");
+    }
+    /**
+     * {@snippet :
+     * guint g_mount_operation_get_pim(GMountOperation* op);
+     * }
+     */
+    public static int g_mount_operation_get_pim(MemorySegment op) {
+        var mh$ = g_mount_operation_get_pim$MH();
+        try {
+            return (int)mh$.invokeExact(op);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_mount_operation_set_pim$MH() {
+        return RuntimeHelper.requireNonNull(constants$712.g_mount_operation_set_pim$MH,"g_mount_operation_set_pim");
+    }
+    /**
+     * {@snippet :
+     * void g_mount_operation_set_pim(GMountOperation* op, guint pim);
+     * }
+     */
+    public static void g_mount_operation_set_pim(MemorySegment op, int pim) {
+        var mh$ = g_mount_operation_set_pim$MH();
+        try {
+            mh$.invokeExact(op, pim);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_native_socket_address_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$712.g_native_socket_address_get_type$MH,"g_native_socket_address_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType g_native_socket_address_get_type();
+     * }
+     */
+    public static long g_native_socket_address_get_type() {
+        var mh$ = g_native_socket_address_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_native_socket_address_new$MH() {
+        return RuntimeHelper.requireNonNull(constants$712.g_native_socket_address_new$MH,"g_native_socket_address_new");
+    }
+    /**
+     * {@snippet :
+     * GSocketAddress* g_native_socket_address_new(gpointer native, gsize len);
+     * }
+     */
+    public static MemorySegment g_native_socket_address_new(MemorySegment native_, long len) {
+        var mh$ = g_native_socket_address_new$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(native_, len);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_volume_monitor_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$712.g_volume_monitor_get_type$MH,"g_volume_monitor_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType g_volume_monitor_get_type();
+     * }
+     */
+    public static long g_volume_monitor_get_type() {
+        var mh$ = g_volume_monitor_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_volume_monitor_get$MH() {
+        return RuntimeHelper.requireNonNull(constants$713.g_volume_monitor_get$MH,"g_volume_monitor_get");
+    }
+    /**
+     * {@snippet :
+     * GVolumeMonitor* g_volume_monitor_get();
+     * }
+     */
+    public static MemorySegment g_volume_monitor_get() {
+        var mh$ = g_volume_monitor_get$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_volume_monitor_get_connected_drives$MH() {
+        return RuntimeHelper.requireNonNull(constants$713.g_volume_monitor_get_connected_drives$MH,"g_volume_monitor_get_connected_drives");
+    }
+    /**
+     * {@snippet :
+     * GList* g_volume_monitor_get_connected_drives(GVolumeMonitor* volume_monitor);
+     * }
+     */
+    public static MemorySegment g_volume_monitor_get_connected_drives(MemorySegment volume_monitor) {
+        var mh$ = g_volume_monitor_get_connected_drives$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(volume_monitor);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_volume_monitor_get_volumes$MH() {
+        return RuntimeHelper.requireNonNull(constants$713.g_volume_monitor_get_volumes$MH,"g_volume_monitor_get_volumes");
+    }
+    /**
+     * {@snippet :
+     * GList* g_volume_monitor_get_volumes(GVolumeMonitor* volume_monitor);
+     * }
+     */
+    public static MemorySegment g_volume_monitor_get_volumes(MemorySegment volume_monitor) {
+        var mh$ = g_volume_monitor_get_volumes$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(volume_monitor);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_volume_monitor_get_mounts$MH() {
+        return RuntimeHelper.requireNonNull(constants$713.g_volume_monitor_get_mounts$MH,"g_volume_monitor_get_mounts");
+    }
+    /**
+     * {@snippet :
+     * GList* g_volume_monitor_get_mounts(GVolumeMonitor* volume_monitor);
+     * }
+     */
+    public static MemorySegment g_volume_monitor_get_mounts(MemorySegment volume_monitor) {
+        var mh$ = g_volume_monitor_get_mounts$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(volume_monitor);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_volume_monitor_get_volume_for_uuid$MH() {
+        return RuntimeHelper.requireNonNull(constants$713.g_volume_monitor_get_volume_for_uuid$MH,"g_volume_monitor_get_volume_for_uuid");
+    }
+    /**
+     * {@snippet :
+     * GVolume* g_volume_monitor_get_volume_for_uuid(GVolumeMonitor* volume_monitor, char* uuid);
+     * }
+     */
+    public static MemorySegment g_volume_monitor_get_volume_for_uuid(MemorySegment volume_monitor, MemorySegment uuid) {
+        var mh$ = g_volume_monitor_get_volume_for_uuid$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(volume_monitor, uuid);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_volume_monitor_get_mount_for_uuid$MH() {
+        return RuntimeHelper.requireNonNull(constants$713.g_volume_monitor_get_mount_for_uuid$MH,"g_volume_monitor_get_mount_for_uuid");
+    }
+    /**
+     * {@snippet :
+     * GMount* g_volume_monitor_get_mount_for_uuid(GVolumeMonitor* volume_monitor, char* uuid);
+     * }
+     */
+    public static MemorySegment g_volume_monitor_get_mount_for_uuid(MemorySegment volume_monitor, MemorySegment uuid) {
+        var mh$ = g_volume_monitor_get_mount_for_uuid$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(volume_monitor, uuid);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_volume_monitor_adopt_orphan_mount$MH() {
+        return RuntimeHelper.requireNonNull(constants$714.g_volume_monitor_adopt_orphan_mount$MH,"g_volume_monitor_adopt_orphan_mount");
+    }
+    /**
+     * {@snippet :
+     * GVolume* g_volume_monitor_adopt_orphan_mount(GMount* mount);
+     * }
+     */
+    public static MemorySegment g_volume_monitor_adopt_orphan_mount(MemorySegment mount) {
+        var mh$ = g_volume_monitor_adopt_orphan_mount$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(mount);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_native_volume_monitor_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$714.g_native_volume_monitor_get_type$MH,"g_native_volume_monitor_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType g_native_volume_monitor_get_type();
+     * }
+     */
+    public static long g_native_volume_monitor_get_type() {
+        var mh$ = g_native_volume_monitor_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_network_address_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$714.g_network_address_get_type$MH,"g_network_address_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType g_network_address_get_type();
+     * }
+     */
+    public static long g_network_address_get_type() {
+        var mh$ = g_network_address_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_network_address_new$MH() {
+        return RuntimeHelper.requireNonNull(constants$714.g_network_address_new$MH,"g_network_address_new");
+    }
+    /**
+     * {@snippet :
+     * GSocketConnectable* g_network_address_new(const gchar* hostname, guint16 port);
+     * }
+     */
+    public static MemorySegment g_network_address_new(MemorySegment hostname, short port) {
+        var mh$ = g_network_address_new$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(hostname, port);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_network_address_new_loopback$MH() {
+        return RuntimeHelper.requireNonNull(constants$714.g_network_address_new_loopback$MH,"g_network_address_new_loopback");
+    }
+    /**
+     * {@snippet :
+     * GSocketConnectable* g_network_address_new_loopback(guint16 port);
+     * }
+     */
+    public static MemorySegment g_network_address_new_loopback(short port) {
+        var mh$ = g_network_address_new_loopback$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(port);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_network_address_parse$MH() {
+        return RuntimeHelper.requireNonNull(constants$714.g_network_address_parse$MH,"g_network_address_parse");
+    }
+    /**
+     * {@snippet :
+     * GSocketConnectable* g_network_address_parse(const gchar* host_and_port, guint16 default_port, GError** error);
+     * }
+     */
+    public static MemorySegment g_network_address_parse(MemorySegment host_and_port, short default_port, MemorySegment error) {
+        var mh$ = g_network_address_parse$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(host_and_port, default_port, error);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_network_address_parse_uri$MH() {
+        return RuntimeHelper.requireNonNull(constants$715.g_network_address_parse_uri$MH,"g_network_address_parse_uri");
+    }
+    /**
+     * {@snippet :
+     * GSocketConnectable* g_network_address_parse_uri(const gchar* uri, guint16 default_port, GError** error);
+     * }
+     */
+    public static MemorySegment g_network_address_parse_uri(MemorySegment uri, short default_port, MemorySegment error) {
+        var mh$ = g_network_address_parse_uri$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(uri, default_port, error);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_network_address_get_hostname$MH() {
+        return RuntimeHelper.requireNonNull(constants$715.g_network_address_get_hostname$MH,"g_network_address_get_hostname");
+    }
+    /**
+     * {@snippet :
+     * const gchar* g_network_address_get_hostname(GNetworkAddress* addr);
+     * }
+     */
+    public static MemorySegment g_network_address_get_hostname(MemorySegment addr) {
+        var mh$ = g_network_address_get_hostname$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(addr);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_network_address_get_port$MH() {
+        return RuntimeHelper.requireNonNull(constants$715.g_network_address_get_port$MH,"g_network_address_get_port");
+    }
+    /**
+     * {@snippet :
+     * guint16 g_network_address_get_port(GNetworkAddress* addr);
+     * }
+     */
+    public static short g_network_address_get_port(MemorySegment addr) {
+        var mh$ = g_network_address_get_port$MH();
+        try {
+            return (short)mh$.invokeExact(addr);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_network_address_get_scheme$MH() {
+        return RuntimeHelper.requireNonNull(constants$715.g_network_address_get_scheme$MH,"g_network_address_get_scheme");
+    }
+    /**
+     * {@snippet :
+     * const gchar* g_network_address_get_scheme(GNetworkAddress* addr);
+     * }
+     */
+    public static MemorySegment g_network_address_get_scheme(MemorySegment addr) {
+        var mh$ = g_network_address_get_scheme$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(addr);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_network_monitor_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$715.g_network_monitor_get_type$MH,"g_network_monitor_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType g_network_monitor_get_type();
+     * }
+     */
+    public static long g_network_monitor_get_type() {
+        var mh$ = g_network_monitor_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_network_monitor_get_default$MH() {
+        return RuntimeHelper.requireNonNull(constants$715.g_network_monitor_get_default$MH,"g_network_monitor_get_default");
+    }
+    /**
+     * {@snippet :
+     * GNetworkMonitor* g_network_monitor_get_default();
+     * }
+     */
+    public static MemorySegment g_network_monitor_get_default() {
+        var mh$ = g_network_monitor_get_default$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_network_monitor_get_network_available$MH() {
+        return RuntimeHelper.requireNonNull(constants$716.g_network_monitor_get_network_available$MH,"g_network_monitor_get_network_available");
+    }
+    /**
+     * {@snippet :
+     * gboolean g_network_monitor_get_network_available(GNetworkMonitor* monitor);
+     * }
+     */
+    public static int g_network_monitor_get_network_available(MemorySegment monitor) {
+        var mh$ = g_network_monitor_get_network_available$MH();
+        try {
+            return (int)mh$.invokeExact(monitor);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_network_monitor_get_network_metered$MH() {
+        return RuntimeHelper.requireNonNull(constants$716.g_network_monitor_get_network_metered$MH,"g_network_monitor_get_network_metered");
+    }
+    /**
+     * {@snippet :
+     * gboolean g_network_monitor_get_network_metered(GNetworkMonitor* monitor);
+     * }
+     */
+    public static int g_network_monitor_get_network_metered(MemorySegment monitor) {
+        var mh$ = g_network_monitor_get_network_metered$MH();
+        try {
+            return (int)mh$.invokeExact(monitor);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_network_monitor_get_connectivity$MH() {
+        return RuntimeHelper.requireNonNull(constants$716.g_network_monitor_get_connectivity$MH,"g_network_monitor_get_connectivity");
+    }
+    /**
+     * {@snippet :
+     * GNetworkConnectivity g_network_monitor_get_connectivity(GNetworkMonitor* monitor);
+     * }
+     */
+    public static int g_network_monitor_get_connectivity(MemorySegment monitor) {
+        var mh$ = g_network_monitor_get_connectivity$MH();
+        try {
+            return (int)mh$.invokeExact(monitor);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_network_monitor_can_reach$MH() {
+        return RuntimeHelper.requireNonNull(constants$716.g_network_monitor_can_reach$MH,"g_network_monitor_can_reach");
+    }
+    /**
+     * {@snippet :
+     * gboolean g_network_monitor_can_reach(GNetworkMonitor* monitor, GSocketConnectable* connectable, GCancellable* cancellable, GError** error);
+     * }
+     */
+    public static int g_network_monitor_can_reach(MemorySegment monitor, MemorySegment connectable, MemorySegment cancellable, MemorySegment error) {
+        var mh$ = g_network_monitor_can_reach$MH();
+        try {
+            return (int)mh$.invokeExact(monitor, connectable, cancellable, error);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_network_monitor_can_reach_async$MH() {
+        return RuntimeHelper.requireNonNull(constants$716.g_network_monitor_can_reach_async$MH,"g_network_monitor_can_reach_async");
+    }
+    /**
+     * {@snippet :
+     * void g_network_monitor_can_reach_async(GNetworkMonitor* monitor, GSocketConnectable* connectable, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
+     * }
+     */
+    public static void g_network_monitor_can_reach_async(MemorySegment monitor, MemorySegment connectable, MemorySegment cancellable, MemorySegment callback, MemorySegment user_data) {
+        var mh$ = g_network_monitor_can_reach_async$MH();
+        try {
+            mh$.invokeExact(monitor, connectable, cancellable, callback, user_data);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_network_monitor_can_reach_finish$MH() {
+        return RuntimeHelper.requireNonNull(constants$716.g_network_monitor_can_reach_finish$MH,"g_network_monitor_can_reach_finish");
+    }
+    /**
+     * {@snippet :
+     * gboolean g_network_monitor_can_reach_finish(GNetworkMonitor* monitor, GAsyncResult* result, GError** error);
+     * }
+     */
+    public static int g_network_monitor_can_reach_finish(MemorySegment monitor, MemorySegment result, MemorySegment error) {
+        var mh$ = g_network_monitor_can_reach_finish$MH();
+        try {
+            return (int)mh$.invokeExact(monitor, result, error);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_network_service_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$717.g_network_service_get_type$MH,"g_network_service_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType g_network_service_get_type();
+     * }
+     */
+    public static long g_network_service_get_type() {
+        var mh$ = g_network_service_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_network_service_new$MH() {
+        return RuntimeHelper.requireNonNull(constants$717.g_network_service_new$MH,"g_network_service_new");
+    }
+    /**
+     * {@snippet :
+     * GSocketConnectable* g_network_service_new(const gchar* service, const gchar* protocol, const gchar* domain);
+     * }
+     */
+    public static MemorySegment g_network_service_new(MemorySegment service, MemorySegment protocol, MemorySegment domain) {
+        var mh$ = g_network_service_new$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(service, protocol, domain);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_network_service_get_service$MH() {
+        return RuntimeHelper.requireNonNull(constants$717.g_network_service_get_service$MH,"g_network_service_get_service");
+    }
+    /**
+     * {@snippet :
+     * const gchar* g_network_service_get_service(GNetworkService* srv);
+     * }
+     */
+    public static MemorySegment g_network_service_get_service(MemorySegment srv) {
+        var mh$ = g_network_service_get_service$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(srv);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_network_service_get_protocol$MH() {
+        return RuntimeHelper.requireNonNull(constants$717.g_network_service_get_protocol$MH,"g_network_service_get_protocol");
+    }
+    /**
+     * {@snippet :
+     * const gchar* g_network_service_get_protocol(GNetworkService* srv);
+     * }
+     */
+    public static MemorySegment g_network_service_get_protocol(MemorySegment srv) {
+        var mh$ = g_network_service_get_protocol$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(srv);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_network_service_get_domain$MH() {
+        return RuntimeHelper.requireNonNull(constants$717.g_network_service_get_domain$MH,"g_network_service_get_domain");
+    }
+    /**
+     * {@snippet :
+     * const gchar* g_network_service_get_domain(GNetworkService* srv);
+     * }
+     */
+    public static MemorySegment g_network_service_get_domain(MemorySegment srv) {
+        var mh$ = g_network_service_get_domain$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(srv);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_network_service_get_scheme$MH() {
+        return RuntimeHelper.requireNonNull(constants$717.g_network_service_get_scheme$MH,"g_network_service_get_scheme");
+    }
+    /**
+     * {@snippet :
+     * const gchar* g_network_service_get_scheme(GNetworkService* srv);
+     * }
+     */
+    public static MemorySegment g_network_service_get_scheme(MemorySegment srv) {
+        var mh$ = g_network_service_get_scheme$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(srv);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_network_service_set_scheme$MH() {
+        return RuntimeHelper.requireNonNull(constants$718.g_network_service_set_scheme$MH,"g_network_service_set_scheme");
+    }
+    /**
+     * {@snippet :
+     * void g_network_service_set_scheme(GNetworkService* srv, const gchar* scheme);
+     * }
+     */
+    public static void g_network_service_set_scheme(MemorySegment srv, MemorySegment scheme) {
+        var mh$ = g_network_service_set_scheme$MH();
+        try {
+            mh$.invokeExact(srv, scheme);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_notification_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$718.g_notification_get_type$MH,"g_notification_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType g_notification_get_type();
+     * }
+     */
+    public static long g_notification_get_type() {
+        var mh$ = g_notification_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_notification_new$MH() {
+        return RuntimeHelper.requireNonNull(constants$718.g_notification_new$MH,"g_notification_new");
+    }
+    /**
+     * {@snippet :
+     * GNotification* g_notification_new(const gchar* title);
+     * }
+     */
+    public static MemorySegment g_notification_new(MemorySegment title) {
+        var mh$ = g_notification_new$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(title);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_notification_set_title$MH() {
+        return RuntimeHelper.requireNonNull(constants$718.g_notification_set_title$MH,"g_notification_set_title");
+    }
+    /**
+     * {@snippet :
+     * void g_notification_set_title(GNotification* notification, const gchar* title);
+     * }
+     */
+    public static void g_notification_set_title(MemorySegment notification, MemorySegment title) {
+        var mh$ = g_notification_set_title$MH();
+        try {
+            mh$.invokeExact(notification, title);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_notification_set_body$MH() {
+        return RuntimeHelper.requireNonNull(constants$718.g_notification_set_body$MH,"g_notification_set_body");
+    }
+    /**
+     * {@snippet :
+     * void g_notification_set_body(GNotification* notification, const gchar* body);
+     * }
+     */
+    public static void g_notification_set_body(MemorySegment notification, MemorySegment body) {
+        var mh$ = g_notification_set_body$MH();
+        try {
+            mh$.invokeExact(notification, body);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_notification_set_icon$MH() {
+        return RuntimeHelper.requireNonNull(constants$718.g_notification_set_icon$MH,"g_notification_set_icon");
+    }
+    /**
+     * {@snippet :
+     * void g_notification_set_icon(GNotification* notification, GIcon* icon);
+     * }
+     */
+    public static void g_notification_set_icon(MemorySegment notification, MemorySegment icon) {
+        var mh$ = g_notification_set_icon$MH();
+        try {
+            mh$.invokeExact(notification, icon);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_notification_set_urgent$MH() {
+        return RuntimeHelper.requireNonNull(constants$719.g_notification_set_urgent$MH,"g_notification_set_urgent");
+    }
+    /**
+     * {@snippet :
+     * void g_notification_set_urgent(GNotification* notification, gboolean urgent);
+     * }
+     */
+    public static void g_notification_set_urgent(MemorySegment notification, int urgent) {
+        var mh$ = g_notification_set_urgent$MH();
+        try {
+            mh$.invokeExact(notification, urgent);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_notification_set_priority$MH() {
+        return RuntimeHelper.requireNonNull(constants$719.g_notification_set_priority$MH,"g_notification_set_priority");
+    }
+    /**
+     * {@snippet :
+     * void g_notification_set_priority(GNotification* notification, GNotificationPriority priority);
+     * }
+     */
+    public static void g_notification_set_priority(MemorySegment notification, int priority) {
+        var mh$ = g_notification_set_priority$MH();
+        try {
+            mh$.invokeExact(notification, priority);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_notification_set_category$MH() {
+        return RuntimeHelper.requireNonNull(constants$719.g_notification_set_category$MH,"g_notification_set_category");
+    }
+    /**
+     * {@snippet :
+     * void g_notification_set_category(GNotification* notification, const gchar* category);
+     * }
+     */
+    public static void g_notification_set_category(MemorySegment notification, MemorySegment category) {
+        var mh$ = g_notification_set_category$MH();
+        try {
+            mh$.invokeExact(notification, category);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_notification_add_button$MH() {
+        return RuntimeHelper.requireNonNull(constants$719.g_notification_add_button$MH,"g_notification_add_button");
+    }
+    /**
+     * {@snippet :
+     * void g_notification_add_button(GNotification* notification, const gchar* label, const gchar* detailed_action);
+     * }
+     */
+    public static void g_notification_add_button(MemorySegment notification, MemorySegment label, MemorySegment detailed_action) {
+        var mh$ = g_notification_add_button$MH();
+        try {
+            mh$.invokeExact(notification, label, detailed_action);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_notification_add_button_with_target$MH() {
+        return RuntimeHelper.requireNonNull(constants$719.g_notification_add_button_with_target$MH,"g_notification_add_button_with_target");
+    }
+    /**
+     * {@snippet :
+     * void g_notification_add_button_with_target(GNotification* notification, const gchar* label, const gchar* action, const gchar* target_format,...);
+     * }
+     */
+    public static void g_notification_add_button_with_target(MemorySegment notification, MemorySegment label, MemorySegment action, MemorySegment target_format, Object... x4) {
+        var mh$ = g_notification_add_button_with_target$MH();
+        try {
+            mh$.invokeExact(notification, label, action, target_format, x4);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_notification_add_button_with_target_value$MH() {
+        return RuntimeHelper.requireNonNull(constants$719.g_notification_add_button_with_target_value$MH,"g_notification_add_button_with_target_value");
+    }
+    /**
+     * {@snippet :
+     * void g_notification_add_button_with_target_value(GNotification* notification, const gchar* label, const gchar* action, GVariant* target);
+     * }
+     */
+    public static void g_notification_add_button_with_target_value(MemorySegment notification, MemorySegment label, MemorySegment action, MemorySegment target) {
+        var mh$ = g_notification_add_button_with_target_value$MH();
+        try {
+            mh$.invokeExact(notification, label, action, target);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_notification_set_default_action$MH() {
+        return RuntimeHelper.requireNonNull(constants$720.g_notification_set_default_action$MH,"g_notification_set_default_action");
+    }
+    /**
+     * {@snippet :
+     * void g_notification_set_default_action(GNotification* notification, const gchar* detailed_action);
+     * }
+     */
+    public static void g_notification_set_default_action(MemorySegment notification, MemorySegment detailed_action) {
+        var mh$ = g_notification_set_default_action$MH();
+        try {
+            mh$.invokeExact(notification, detailed_action);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_notification_set_default_action_and_target$MH() {
+        return RuntimeHelper.requireNonNull(constants$720.g_notification_set_default_action_and_target$MH,"g_notification_set_default_action_and_target");
+    }
+    /**
+     * {@snippet :
+     * void g_notification_set_default_action_and_target(GNotification* notification, const gchar* action, const gchar* target_format,...);
+     * }
+     */
+    public static void g_notification_set_default_action_and_target(MemorySegment notification, MemorySegment action, MemorySegment target_format, Object... x3) {
+        var mh$ = g_notification_set_default_action_and_target$MH();
+        try {
+            mh$.invokeExact(notification, action, target_format, x3);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_notification_set_default_action_and_target_value$MH() {
+        return RuntimeHelper.requireNonNull(constants$720.g_notification_set_default_action_and_target_value$MH,"g_notification_set_default_action_and_target_value");
+    }
+    /**
+     * {@snippet :
+     * void g_notification_set_default_action_and_target_value(GNotification* notification, const gchar* action, GVariant* target);
+     * }
+     */
+    public static void g_notification_set_default_action_and_target_value(MemorySegment notification, MemorySegment action, MemorySegment target) {
+        var mh$ = g_notification_set_default_action_and_target_value$MH();
+        try {
+            mh$.invokeExact(notification, action, target);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_permission_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$720.g_permission_get_type$MH,"g_permission_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType g_permission_get_type();
+     * }
+     */
+    public static long g_permission_get_type() {
+        var mh$ = g_permission_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_permission_acquire$MH() {
+        return RuntimeHelper.requireNonNull(constants$720.g_permission_acquire$MH,"g_permission_acquire");
+    }
+    /**
+     * {@snippet :
+     * gboolean g_permission_acquire(GPermission* permission, GCancellable* cancellable, GError** error);
+     * }
+     */
+    public static int g_permission_acquire(MemorySegment permission, MemorySegment cancellable, MemorySegment error) {
+        var mh$ = g_permission_acquire$MH();
+        try {
+            return (int)mh$.invokeExact(permission, cancellable, error);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_permission_acquire_async$MH() {
+        return RuntimeHelper.requireNonNull(constants$720.g_permission_acquire_async$MH,"g_permission_acquire_async");
+    }
+    /**
+     * {@snippet :
+     * void g_permission_acquire_async(GPermission* permission, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
+     * }
+     */
+    public static void g_permission_acquire_async(MemorySegment permission, MemorySegment cancellable, MemorySegment callback, MemorySegment user_data) {
+        var mh$ = g_permission_acquire_async$MH();
+        try {
+            mh$.invokeExact(permission, cancellable, callback, user_data);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_permission_acquire_finish$MH() {
+        return RuntimeHelper.requireNonNull(constants$721.g_permission_acquire_finish$MH,"g_permission_acquire_finish");
+    }
+    /**
+     * {@snippet :
+     * gboolean g_permission_acquire_finish(GPermission* permission, GAsyncResult* result, GError** error);
+     * }
+     */
+    public static int g_permission_acquire_finish(MemorySegment permission, MemorySegment result, MemorySegment error) {
+        var mh$ = g_permission_acquire_finish$MH();
+        try {
+            return (int)mh$.invokeExact(permission, result, error);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_permission_release$MH() {
+        return RuntimeHelper.requireNonNull(constants$721.g_permission_release$MH,"g_permission_release");
+    }
+    /**
+     * {@snippet :
+     * gboolean g_permission_release(GPermission* permission, GCancellable* cancellable, GError** error);
+     * }
+     */
+    public static int g_permission_release(MemorySegment permission, MemorySegment cancellable, MemorySegment error) {
+        var mh$ = g_permission_release$MH();
+        try {
+            return (int)mh$.invokeExact(permission, cancellable, error);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_permission_release_async$MH() {
+        return RuntimeHelper.requireNonNull(constants$721.g_permission_release_async$MH,"g_permission_release_async");
+    }
+    /**
+     * {@snippet :
+     * void g_permission_release_async(GPermission* permission, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
+     * }
+     */
+    public static void g_permission_release_async(MemorySegment permission, MemorySegment cancellable, MemorySegment callback, MemorySegment user_data) {
+        var mh$ = g_permission_release_async$MH();
+        try {
+            mh$.invokeExact(permission, cancellable, callback, user_data);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_permission_release_finish$MH() {
+        return RuntimeHelper.requireNonNull(constants$721.g_permission_release_finish$MH,"g_permission_release_finish");
+    }
+    /**
+     * {@snippet :
+     * gboolean g_permission_release_finish(GPermission* permission, GAsyncResult* result, GError** error);
+     * }
+     */
+    public static int g_permission_release_finish(MemorySegment permission, MemorySegment result, MemorySegment error) {
+        var mh$ = g_permission_release_finish$MH();
+        try {
+            return (int)mh$.invokeExact(permission, result, error);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_permission_get_allowed$MH() {
+        return RuntimeHelper.requireNonNull(constants$721.g_permission_get_allowed$MH,"g_permission_get_allowed");
+    }
+    /**
+     * {@snippet :
+     * gboolean g_permission_get_allowed(GPermission* permission);
+     * }
+     */
+    public static int g_permission_get_allowed(MemorySegment permission) {
+        var mh$ = g_permission_get_allowed$MH();
+        try {
+            return (int)mh$.invokeExact(permission);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_permission_get_can_acquire$MH() {
+        return RuntimeHelper.requireNonNull(constants$721.g_permission_get_can_acquire$MH,"g_permission_get_can_acquire");
+    }
+    /**
+     * {@snippet :
+     * gboolean g_permission_get_can_acquire(GPermission* permission);
+     * }
+     */
+    public static int g_permission_get_can_acquire(MemorySegment permission) {
+        var mh$ = g_permission_get_can_acquire$MH();
+        try {
+            return (int)mh$.invokeExact(permission);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_permission_get_can_release$MH() {
+        return RuntimeHelper.requireNonNull(constants$722.g_permission_get_can_release$MH,"g_permission_get_can_release");
+    }
+    /**
+     * {@snippet :
+     * gboolean g_permission_get_can_release(GPermission* permission);
+     * }
+     */
+    public static int g_permission_get_can_release(MemorySegment permission) {
+        var mh$ = g_permission_get_can_release$MH();
+        try {
+            return (int)mh$.invokeExact(permission);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_permission_impl_update$MH() {
+        return RuntimeHelper.requireNonNull(constants$722.g_permission_impl_update$MH,"g_permission_impl_update");
+    }
+    /**
+     * {@snippet :
+     * void g_permission_impl_update(GPermission* permission, gboolean allowed, gboolean can_acquire, gboolean can_release);
+     * }
+     */
+    public static void g_permission_impl_update(MemorySegment permission, int allowed, int can_acquire, int can_release) {
+        var mh$ = g_permission_impl_update$MH();
+        try {
+            mh$.invokeExact(permission, allowed, can_acquire, can_release);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_pollable_input_stream_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$722.g_pollable_input_stream_get_type$MH,"g_pollable_input_stream_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType g_pollable_input_stream_get_type();
+     * }
+     */
+    public static long g_pollable_input_stream_get_type() {
+        var mh$ = g_pollable_input_stream_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_pollable_input_stream_can_poll$MH() {
+        return RuntimeHelper.requireNonNull(constants$722.g_pollable_input_stream_can_poll$MH,"g_pollable_input_stream_can_poll");
+    }
+    /**
+     * {@snippet :
+     * gboolean g_pollable_input_stream_can_poll(GPollableInputStream* stream);
+     * }
+     */
+    public static int g_pollable_input_stream_can_poll(MemorySegment stream) {
+        var mh$ = g_pollable_input_stream_can_poll$MH();
+        try {
+            return (int)mh$.invokeExact(stream);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_pollable_input_stream_is_readable$MH() {
+        return RuntimeHelper.requireNonNull(constants$722.g_pollable_input_stream_is_readable$MH,"g_pollable_input_stream_is_readable");
+    }
+    /**
+     * {@snippet :
+     * gboolean g_pollable_input_stream_is_readable(GPollableInputStream* stream);
+     * }
+     */
+    public static int g_pollable_input_stream_is_readable(MemorySegment stream) {
+        var mh$ = g_pollable_input_stream_is_readable$MH();
+        try {
+            return (int)mh$.invokeExact(stream);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_pollable_input_stream_create_source$MH() {
+        return RuntimeHelper.requireNonNull(constants$722.g_pollable_input_stream_create_source$MH,"g_pollable_input_stream_create_source");
+    }
+    /**
+     * {@snippet :
+     * GSource* g_pollable_input_stream_create_source(GPollableInputStream* stream, GCancellable* cancellable);
+     * }
+     */
+    public static MemorySegment g_pollable_input_stream_create_source(MemorySegment stream, MemorySegment cancellable) {
+        var mh$ = g_pollable_input_stream_create_source$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(stream, cancellable);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_pollable_input_stream_read_nonblocking$MH() {
+        return RuntimeHelper.requireNonNull(constants$723.g_pollable_input_stream_read_nonblocking$MH,"g_pollable_input_stream_read_nonblocking");
+    }
+    /**
+     * {@snippet :
+     * gssize g_pollable_input_stream_read_nonblocking(GPollableInputStream* stream, void* buffer, gsize count, GCancellable* cancellable, GError** error);
+     * }
+     */
+    public static long g_pollable_input_stream_read_nonblocking(MemorySegment stream, MemorySegment buffer, long count, MemorySegment cancellable, MemorySegment error) {
+        var mh$ = g_pollable_input_stream_read_nonblocking$MH();
+        try {
+            return (long)mh$.invokeExact(stream, buffer, count, cancellable, error);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_pollable_output_stream_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$723.g_pollable_output_stream_get_type$MH,"g_pollable_output_stream_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType g_pollable_output_stream_get_type();
+     * }
+     */
+    public static long g_pollable_output_stream_get_type() {
+        var mh$ = g_pollable_output_stream_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_pollable_output_stream_can_poll$MH() {
+        return RuntimeHelper.requireNonNull(constants$723.g_pollable_output_stream_can_poll$MH,"g_pollable_output_stream_can_poll");
+    }
+    /**
+     * {@snippet :
+     * gboolean g_pollable_output_stream_can_poll(GPollableOutputStream* stream);
+     * }
+     */
+    public static int g_pollable_output_stream_can_poll(MemorySegment stream) {
+        var mh$ = g_pollable_output_stream_can_poll$MH();
+        try {
+            return (int)mh$.invokeExact(stream);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_pollable_output_stream_is_writable$MH() {
+        return RuntimeHelper.requireNonNull(constants$723.g_pollable_output_stream_is_writable$MH,"g_pollable_output_stream_is_writable");
+    }
+    /**
+     * {@snippet :
+     * gboolean g_pollable_output_stream_is_writable(GPollableOutputStream* stream);
+     * }
+     */
+    public static int g_pollable_output_stream_is_writable(MemorySegment stream) {
+        var mh$ = g_pollable_output_stream_is_writable$MH();
+        try {
+            return (int)mh$.invokeExact(stream);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_pollable_output_stream_create_source$MH() {
+        return RuntimeHelper.requireNonNull(constants$723.g_pollable_output_stream_create_source$MH,"g_pollable_output_stream_create_source");
+    }
+    /**
+     * {@snippet :
+     * GSource* g_pollable_output_stream_create_source(GPollableOutputStream* stream, GCancellable* cancellable);
+     * }
+     */
+    public static MemorySegment g_pollable_output_stream_create_source(MemorySegment stream, MemorySegment cancellable) {
+        var mh$ = g_pollable_output_stream_create_source$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(stream, cancellable);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_pollable_output_stream_write_nonblocking$MH() {
+        return RuntimeHelper.requireNonNull(constants$723.g_pollable_output_stream_write_nonblocking$MH,"g_pollable_output_stream_write_nonblocking");
+    }
+    /**
+     * {@snippet :
+     * gssize g_pollable_output_stream_write_nonblocking(GPollableOutputStream* stream, void* buffer, gsize count, GCancellable* cancellable, GError** error);
+     * }
+     */
+    public static long g_pollable_output_stream_write_nonblocking(MemorySegment stream, MemorySegment buffer, long count, MemorySegment cancellable, MemorySegment error) {
+        var mh$ = g_pollable_output_stream_write_nonblocking$MH();
+        try {
+            return (long)mh$.invokeExact(stream, buffer, count, cancellable, error);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_pollable_output_stream_writev_nonblocking$MH() {
+        return RuntimeHelper.requireNonNull(constants$724.g_pollable_output_stream_writev_nonblocking$MH,"g_pollable_output_stream_writev_nonblocking");
+    }
+    /**
+     * {@snippet :
+     * GPollableReturn g_pollable_output_stream_writev_nonblocking(GPollableOutputStream* stream, const GOutputVector* vectors, gsize n_vectors, gsize* bytes_written, GCancellable* cancellable, GError** error);
+     * }
+     */
+    public static int g_pollable_output_stream_writev_nonblocking(MemorySegment stream, MemorySegment vectors, long n_vectors, MemorySegment bytes_written, MemorySegment cancellable, MemorySegment error) {
+        var mh$ = g_pollable_output_stream_writev_nonblocking$MH();
+        try {
+            return (int)mh$.invokeExact(stream, vectors, n_vectors, bytes_written, cancellable, error);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_pollable_source_new$MH() {
+        return RuntimeHelper.requireNonNull(constants$724.g_pollable_source_new$MH,"g_pollable_source_new");
+    }
+    /**
+     * {@snippet :
+     * GSource* g_pollable_source_new(GObject* pollable_stream);
+     * }
+     */
+    public static MemorySegment g_pollable_source_new(MemorySegment pollable_stream) {
+        var mh$ = g_pollable_source_new$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(pollable_stream);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_pollable_source_new_full$MH() {
+        return RuntimeHelper.requireNonNull(constants$724.g_pollable_source_new_full$MH,"g_pollable_source_new_full");
+    }
+    /**
+     * {@snippet :
+     * GSource* g_pollable_source_new_full(gpointer pollable_stream, GSource* child_source, GCancellable* cancellable);
+     * }
+     */
+    public static MemorySegment g_pollable_source_new_full(MemorySegment pollable_stream, MemorySegment child_source, MemorySegment cancellable) {
+        var mh$ = g_pollable_source_new_full$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(pollable_stream, child_source, cancellable);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_pollable_stream_read$MH() {
+        return RuntimeHelper.requireNonNull(constants$724.g_pollable_stream_read$MH,"g_pollable_stream_read");
+    }
+    /**
+     * {@snippet :
+     * gssize g_pollable_stream_read(GInputStream* stream, void* buffer, gsize count, gboolean blocking, GCancellable* cancellable, GError** error);
+     * }
+     */
+    public static long g_pollable_stream_read(MemorySegment stream, MemorySegment buffer, long count, int blocking, MemorySegment cancellable, MemorySegment error) {
+        var mh$ = g_pollable_stream_read$MH();
+        try {
+            return (long)mh$.invokeExact(stream, buffer, count, blocking, cancellable, error);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_pollable_stream_write$MH() {
+        return RuntimeHelper.requireNonNull(constants$724.g_pollable_stream_write$MH,"g_pollable_stream_write");
+    }
+    /**
+     * {@snippet :
+     * gssize g_pollable_stream_write(GOutputStream* stream, void* buffer, gsize count, gboolean blocking, GCancellable* cancellable, GError** error);
+     * }
+     */
+    public static long g_pollable_stream_write(MemorySegment stream, MemorySegment buffer, long count, int blocking, MemorySegment cancellable, MemorySegment error) {
+        var mh$ = g_pollable_stream_write$MH();
+        try {
+            return (long)mh$.invokeExact(stream, buffer, count, blocking, cancellable, error);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_pollable_stream_write_all$MH() {
+        return RuntimeHelper.requireNonNull(constants$724.g_pollable_stream_write_all$MH,"g_pollable_stream_write_all");
+    }
+    /**
+     * {@snippet :
+     * gboolean g_pollable_stream_write_all(GOutputStream* stream, void* buffer, gsize count, gboolean blocking, gsize* bytes_written, GCancellable* cancellable, GError** error);
+     * }
+     */
+    public static int g_pollable_stream_write_all(MemorySegment stream, MemorySegment buffer, long count, int blocking, MemorySegment bytes_written, MemorySegment cancellable, MemorySegment error) {
+        var mh$ = g_pollable_stream_write_all$MH();
+        try {
+            return (int)mh$.invokeExact(stream, buffer, count, blocking, bytes_written, cancellable, error);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_power_profile_monitor_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$725.g_power_profile_monitor_get_type$MH,"g_power_profile_monitor_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType g_power_profile_monitor_get_type();
+     * }
+     */
+    public static long g_power_profile_monitor_get_type() {
+        var mh$ = g_power_profile_monitor_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    /**
+     * {@snippet :
+     * typedef struct _GPowerProfileMonitor* GPowerProfileMonitor_autoptr;
+     * }
+     */
+    public static final OfAddress GPowerProfileMonitor_autoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GPowerProfileMonitor_listautoptr;
+     * }
+     */
+    public static final OfAddress GPowerProfileMonitor_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GPowerProfileMonitor_slistautoptr;
+     * }
+     */
+    public static final OfAddress GPowerProfileMonitor_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GPowerProfileMonitor_queueautoptr;
+     * }
+     */
+    public static final OfAddress GPowerProfileMonitor_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static MethodHandle g_power_profile_monitor_dup_default$MH() {
+        return RuntimeHelper.requireNonNull(constants$725.g_power_profile_monitor_dup_default$MH,"g_power_profile_monitor_dup_default");
+    }
+    /**
+     * {@snippet :
+     * GPowerProfileMonitor* g_power_profile_monitor_dup_default();
+     * }
+     */
+    public static MemorySegment g_power_profile_monitor_dup_default() {
+        var mh$ = g_power_profile_monitor_dup_default$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_power_profile_monitor_get_power_saver_enabled$MH() {
+        return RuntimeHelper.requireNonNull(constants$725.g_power_profile_monitor_get_power_saver_enabled$MH,"g_power_profile_monitor_get_power_saver_enabled");
+    }
+    /**
+     * {@snippet :
+     * gboolean g_power_profile_monitor_get_power_saver_enabled(GPowerProfileMonitor* monitor);
+     * }
+     */
+    public static int g_power_profile_monitor_get_power_saver_enabled(MemorySegment monitor) {
+        var mh$ = g_power_profile_monitor_get_power_saver_enabled$MH();
+        try {
+            return (int)mh$.invokeExact(monitor);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle g_property_action_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$725.g_property_action_get_type$MH,"g_property_action_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType g_property_action_get_type();
+     * }
+     */
+    public static long g_property_action_get_type() {
+        var mh$ = g_property_action_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

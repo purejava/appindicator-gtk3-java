@@ -7,45 +7,66 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$627 {
+final class constants$627 {
 
-    static final FunctionDescriptor g_dbus_method_invocation_return_gerror$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_method_invocation_return_gerror$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_method_invocation_return_gerror",
-        constants$627.g_dbus_method_invocation_return_gerror$FUNC
-    );
-    static final FunctionDescriptor g_dbus_method_invocation_take_error$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_method_invocation_take_error$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_method_invocation_take_error",
-        constants$627.g_dbus_method_invocation_take_error$FUNC
-    );
-    static final FunctionDescriptor g_dbus_method_invocation_return_dbus_error$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$627() {}
+    static final FunctionDescriptor g_file_move_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_method_invocation_return_dbus_error$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_method_invocation_return_dbus_error",
-        constants$627.g_dbus_method_invocation_return_dbus_error$FUNC
+    static final MethodHandle g_file_move_finish$MH = RuntimeHelper.downcallHandle(
+        "g_file_move_finish",
+        constants$627.g_file_move_finish$FUNC
     );
-    static final FunctionDescriptor GBusAcquiredCallback$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_file_make_directory$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GBusAcquiredCallback$MH = RuntimeHelper.downcallHandle(
-        constants$627.GBusAcquiredCallback$FUNC
+    static final MethodHandle g_file_make_directory$MH = RuntimeHelper.downcallHandle(
+        "g_file_make_directory",
+        constants$627.g_file_make_directory$FUNC
     );
-    static final FunctionDescriptor GBusNameAcquiredCallback$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_file_make_directory_async$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_file_make_directory_async$MH = RuntimeHelper.downcallHandle(
+        "g_file_make_directory_async",
+        constants$627.g_file_make_directory_async$FUNC
+    );
+    static final FunctionDescriptor g_file_make_directory_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_file_make_directory_finish$MH = RuntimeHelper.downcallHandle(
+        "g_file_make_directory_finish",
+        constants$627.g_file_make_directory_finish$FUNC
+    );
+    static final FunctionDescriptor g_file_make_directory_with_parents$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_file_make_directory_with_parents$MH = RuntimeHelper.downcallHandle(
+        "g_file_make_directory_with_parents",
+        constants$627.g_file_make_directory_with_parents$FUNC
+    );
+    static final FunctionDescriptor g_file_make_symbolic_link$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_file_make_symbolic_link$MH = RuntimeHelper.downcallHandle(
+        "g_file_make_symbolic_link",
+        constants$627.g_file_make_symbolic_link$FUNC
     );
 }
 

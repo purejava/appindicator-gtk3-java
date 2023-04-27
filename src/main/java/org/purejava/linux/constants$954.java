@@ -7,49 +7,60 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$954 {
+final class constants$954 {
 
-    static final FunctionDescriptor glib_autoptr_cleanup_GSettingsBackend$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$954() {}
+    static final FunctionDescriptor pango_tab_array_free$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GSettingsBackend$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GSettingsBackend",
-        constants$954.glib_autoptr_cleanup_GSettingsBackend$FUNC
+    static final MethodHandle pango_tab_array_free$MH = RuntimeHelper.downcallHandle(
+        "pango_tab_array_free",
+        constants$954.pango_tab_array_free$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GSettingsBackend$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_tab_array_get_size$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GSettingsBackend$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GSettingsBackend",
-        constants$954.glib_listautoptr_cleanup_GSettingsBackend$FUNC
+    static final MethodHandle pango_tab_array_get_size$MH = RuntimeHelper.downcallHandle(
+        "pango_tab_array_get_size",
+        constants$954.pango_tab_array_get_size$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GSettingsBackend$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_tab_array_resize$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle pango_tab_array_resize$MH = RuntimeHelper.downcallHandle(
+        "pango_tab_array_resize",
+        constants$954.pango_tab_array_resize$FUNC
+    );
+    static final FunctionDescriptor pango_tab_array_set_tab$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle pango_tab_array_set_tab$MH = RuntimeHelper.downcallHandle(
+        "pango_tab_array_set_tab",
+        constants$954.pango_tab_array_set_tab$FUNC
+    );
+    static final FunctionDescriptor pango_tab_array_get_tab$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GSettingsBackend$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GSettingsBackend",
-        constants$954.glib_slistautoptr_cleanup_GSettingsBackend$FUNC
+    static final MethodHandle pango_tab_array_get_tab$MH = RuntimeHelper.downcallHandle(
+        "pango_tab_array_get_tab",
+        constants$954.pango_tab_array_get_tab$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GSettingsBackend$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_tab_array_get_tabs$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GSettingsBackend$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GSettingsBackend",
-        constants$954.glib_queueautoptr_cleanup_GSettingsBackend$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_clear_GSettingsSchema$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_autoptr_clear_GSettingsSchema$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GSettingsSchema",
-        constants$954.glib_autoptr_clear_GSettingsSchema$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_cleanup_GSettingsSchema$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_autoptr_cleanup_GSettingsSchema$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GSettingsSchema",
-        constants$954.glib_autoptr_cleanup_GSettingsSchema$FUNC
+    static final MethodHandle pango_tab_array_get_tabs$MH = RuntimeHelper.downcallHandle(
+        "pango_tab_array_get_tabs",
+        constants$954.pango_tab_array_get_tabs$FUNC
     );
 }
 

@@ -7,69 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$331 {
+final class constants$331 {
 
-    static final FunctionDescriptor g_tree_height$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$331() {}
+    static final FunctionDescriptor g_tree_node_last$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_tree_height$MH = RuntimeHelper.downcallHandle(
-        "g_tree_height",
-        constants$331.g_tree_height$FUNC
+    static final MethodHandle g_tree_node_last$MH = RuntimeHelper.downcallHandle(
+        "g_tree_node_last",
+        constants$331.g_tree_node_last$FUNC
     );
-    static final FunctionDescriptor g_tree_nnodes$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_tree_node_previous$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_tree_nnodes$MH = RuntimeHelper.downcallHandle(
-        "g_tree_nnodes",
-        constants$331.g_tree_nnodes$FUNC
+    static final MethodHandle g_tree_node_previous$MH = RuntimeHelper.downcallHandle(
+        "g_tree_node_previous",
+        constants$331.g_tree_node_previous$FUNC
     );
-    static final FunctionDescriptor g_uri_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_tree_node_next$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_uri_ref$MH = RuntimeHelper.downcallHandle(
-        "g_uri_ref",
-        constants$331.g_uri_ref$FUNC
+    static final MethodHandle g_tree_node_next$MH = RuntimeHelper.downcallHandle(
+        "g_tree_node_next",
+        constants$331.g_tree_node_next$FUNC
     );
-    static final FunctionDescriptor g_uri_unref$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_tree_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_uri_unref$MH = RuntimeHelper.downcallHandle(
-        "g_uri_unref",
-        constants$331.g_uri_unref$FUNC
+    static final MethodHandle g_tree_ref$MH = RuntimeHelper.downcallHandle(
+        "g_tree_ref",
+        constants$331.g_tree_ref$FUNC
     );
-    static final FunctionDescriptor g_uri_split$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_tree_unref$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_uri_split$MH = RuntimeHelper.downcallHandle(
-        "g_uri_split",
-        constants$331.g_uri_split$FUNC
+    static final MethodHandle g_tree_unref$MH = RuntimeHelper.downcallHandle(
+        "g_tree_unref",
+        constants$331.g_tree_unref$FUNC
     );
-    static final FunctionDescriptor g_uri_split_with_user$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_tree_destroy$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_uri_split_with_user$MH = RuntimeHelper.downcallHandle(
-        "g_uri_split_with_user",
-        constants$331.g_uri_split_with_user$FUNC
+    static final MethodHandle g_tree_destroy$MH = RuntimeHelper.downcallHandle(
+        "g_tree_destroy",
+        constants$331.g_tree_destroy$FUNC
     );
 }
 

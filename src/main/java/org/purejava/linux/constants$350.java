@@ -7,50 +7,58 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$350 {
+final class constants$350 {
 
-    static final FunctionDescriptor sched_setscheduler$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$350() {}
+    static final FunctionDescriptor g_relation_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_relation_new$MH = RuntimeHelper.downcallHandle(
+        "g_relation_new",
+        constants$350.g_relation_new$FUNC
+    );
+    static final FunctionDescriptor g_relation_destroy$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle sched_setscheduler$MH = RuntimeHelper.downcallHandle(
-        "sched_setscheduler",
-        constants$350.sched_setscheduler$FUNC
+    static final MethodHandle g_relation_destroy$MH = RuntimeHelper.downcallHandle(
+        "g_relation_destroy",
+        constants$350.g_relation_destroy$FUNC
     );
-    static final FunctionDescriptor sched_getscheduler$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle sched_getscheduler$MH = RuntimeHelper.downcallHandle(
-        "sched_getscheduler",
-        constants$350.sched_getscheduler$FUNC
-    );
-    static final FunctionDescriptor sched_yield$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle sched_yield$MH = RuntimeHelper.downcallHandle(
-        "sched_yield",
-        constants$350.sched_yield$FUNC
-    );
-    static final FunctionDescriptor sched_get_priority_max$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle sched_get_priority_max$MH = RuntimeHelper.downcallHandle(
-        "sched_get_priority_max",
-        constants$350.sched_get_priority_max$FUNC
-    );
-    static final FunctionDescriptor sched_get_priority_min$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle sched_get_priority_min$MH = RuntimeHelper.downcallHandle(
-        "sched_get_priority_min",
-        constants$350.sched_get_priority_min$FUNC
-    );
-    static final FunctionDescriptor sched_rr_get_interval$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_relation_index$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle sched_rr_get_interval$MH = RuntimeHelper.downcallHandle(
-        "sched_rr_get_interval",
-        constants$350.sched_rr_get_interval$FUNC
+    static final MethodHandle g_relation_index$MH = RuntimeHelper.downcallHandle(
+        "g_relation_index",
+        constants$350.g_relation_index$FUNC
+    );
+    static final FunctionDescriptor g_relation_insert$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_relation_insert$MH = RuntimeHelper.downcallHandleVariadic(
+        "g_relation_insert",
+        constants$350.g_relation_insert$FUNC
+    );
+    static final FunctionDescriptor g_relation_delete$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_relation_delete$MH = RuntimeHelper.downcallHandle(
+        "g_relation_delete",
+        constants$350.g_relation_delete$FUNC
+    );
+    static final FunctionDescriptor g_relation_select$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_relation_select$MH = RuntimeHelper.downcallHandle(
+        "g_relation_select",
+        constants$350.g_relation_select$FUNC
     );
 }
 

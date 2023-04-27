@@ -7,47 +7,73 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$751 {
+final class constants$751 {
 
-    static final FunctionDescriptor g_menu_link_iter_get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$751() {}
+    static final FunctionDescriptor GSettingsGetMapping$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_menu_link_iter_get_name$MH = RuntimeHelper.downcallHandle(
-        "g_menu_link_iter_get_name",
-        constants$751.g_menu_link_iter_get_name$FUNC
-    );
-    static final FunctionDescriptor g_menu_link_iter_get_value$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor GSettingsGetMapping_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_menu_link_iter_get_value$MH = RuntimeHelper.downcallHandle(
-        "g_menu_link_iter_get_value",
-        constants$751.g_menu_link_iter_get_value$FUNC
-    );
-    static final FunctionDescriptor g_menu_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_menu_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_menu_get_type",
-        constants$751.g_menu_get_type$FUNC
-    );
-    static final FunctionDescriptor g_menu_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_menu_new$MH = RuntimeHelper.downcallHandle(
-        "g_menu_new",
-        constants$751.g_menu_new$FUNC
-    );
-    static final FunctionDescriptor g_menu_freeze$FUNC = FunctionDescriptor.ofVoid(
+    static final MethodHandle GSettingsGetMapping_UP$MH = RuntimeHelper.upcallHandle(GSettingsGetMapping.class, "apply", constants$751.GSettingsGetMapping_UP$FUNC);
+    static final FunctionDescriptor GSettingsGetMapping_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_menu_freeze$MH = RuntimeHelper.downcallHandle(
-        "g_menu_freeze",
-        constants$751.g_menu_freeze$FUNC
+    static final MethodHandle GSettingsGetMapping_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$751.GSettingsGetMapping_DOWN$FUNC
     );
-    static final FunctionDescriptor g_menu_insert_item$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_settings_bind$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_settings_bind$MH = RuntimeHelper.downcallHandle(
+        "g_settings_bind",
+        constants$751.g_settings_bind$FUNC
+    );
+    static final FunctionDescriptor g_settings_bind_with_mapping$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_menu_insert_item$MH = RuntimeHelper.downcallHandle(
-        "g_menu_insert_item",
-        constants$751.g_menu_insert_item$FUNC
+    static final MethodHandle g_settings_bind_with_mapping$MH = RuntimeHelper.downcallHandle(
+        "g_settings_bind_with_mapping",
+        constants$751.g_settings_bind_with_mapping$FUNC
+    );
+    static final FunctionDescriptor g_settings_bind_writable$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_settings_bind_writable$MH = RuntimeHelper.downcallHandle(
+        "g_settings_bind_writable",
+        constants$751.g_settings_bind_writable$FUNC
+    );
+    static final FunctionDescriptor g_settings_unbind$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_settings_unbind$MH = RuntimeHelper.downcallHandle(
+        "g_settings_unbind",
+        constants$751.g_settings_unbind$FUNC
     );
 }
 

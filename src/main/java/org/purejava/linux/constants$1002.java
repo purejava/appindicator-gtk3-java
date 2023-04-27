@@ -7,55 +7,66 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1002 {
+final class constants$1002 {
 
-    static final FunctionDescriptor hb_set_is_subset$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1002() {}
+    static final FunctionDescriptor cairo_new_path$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_set_is_subset$MH = RuntimeHelper.downcallHandle(
-        "hb_set_is_subset",
-        constants$1002.hb_set_is_subset$FUNC
+    static final MethodHandle cairo_new_path$MH = RuntimeHelper.downcallHandle(
+        "cairo_new_path",
+        constants$1002.cairo_new_path$FUNC
     );
-    static final FunctionDescriptor hb_set_set$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor cairo_move_to$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle cairo_move_to$MH = RuntimeHelper.downcallHandle(
+        "cairo_move_to",
+        constants$1002.cairo_move_to$FUNC
+    );
+    static final FunctionDescriptor cairo_new_sub_path$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_set_set$MH = RuntimeHelper.downcallHandle(
-        "hb_set_set",
-        constants$1002.hb_set_set$FUNC
+    static final MethodHandle cairo_new_sub_path$MH = RuntimeHelper.downcallHandle(
+        "cairo_new_sub_path",
+        constants$1002.cairo_new_sub_path$FUNC
     );
-    static final FunctionDescriptor hb_set_union$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor cairo_line_to$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
     );
-    static final MethodHandle hb_set_union$MH = RuntimeHelper.downcallHandle(
-        "hb_set_union",
-        constants$1002.hb_set_union$FUNC
+    static final MethodHandle cairo_line_to$MH = RuntimeHelper.downcallHandle(
+        "cairo_line_to",
+        constants$1002.cairo_line_to$FUNC
     );
-    static final FunctionDescriptor hb_set_intersect$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor cairo_curve_to$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
     );
-    static final MethodHandle hb_set_intersect$MH = RuntimeHelper.downcallHandle(
-        "hb_set_intersect",
-        constants$1002.hb_set_intersect$FUNC
+    static final MethodHandle cairo_curve_to$MH = RuntimeHelper.downcallHandle(
+        "cairo_curve_to",
+        constants$1002.cairo_curve_to$FUNC
     );
-    static final FunctionDescriptor hb_set_subtract$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor cairo_arc$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
     );
-    static final MethodHandle hb_set_subtract$MH = RuntimeHelper.downcallHandle(
-        "hb_set_subtract",
-        constants$1002.hb_set_subtract$FUNC
-    );
-    static final FunctionDescriptor hb_set_symmetric_difference$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_set_symmetric_difference$MH = RuntimeHelper.downcallHandle(
-        "hb_set_symmetric_difference",
-        constants$1002.hb_set_symmetric_difference$FUNC
+    static final MethodHandle cairo_arc$MH = RuntimeHelper.downcallHandle(
+        "cairo_arc",
+        constants$1002.cairo_arc$FUNC
     );
 }
 

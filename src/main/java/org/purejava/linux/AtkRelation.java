@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class AtkRelation extends _AtkRelation {
+/**
+ * {@snippet :
+ * typedef struct _AtkRelation AtkRelation;
+ * }
+ */
+public final class AtkRelation extends _AtkRelation {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private AtkRelation() {}
 }
 
 

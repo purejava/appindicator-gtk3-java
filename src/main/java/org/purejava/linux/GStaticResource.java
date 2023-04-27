@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GStaticResource extends _GStaticResource {
+/**
+ * {@snippet :
+ * typedef struct _GStaticResource GStaticResource;
+ * }
+ */
+public final class GStaticResource extends _GStaticResource {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GStaticResource() {}
 }
 
 

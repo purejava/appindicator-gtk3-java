@@ -7,52 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1942 {
+final class constants$1942 {
 
-    static final FunctionDescriptor gtk_print_settings_get_quality$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1942() {}
+    static final FunctionDescriptor gtk_image_menu_item_set_accel_group$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_print_settings_get_quality$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_get_quality",
-        constants$1942.gtk_print_settings_get_quality$FUNC
+    static final MethodHandle gtk_image_menu_item_set_accel_group$MH = RuntimeHelper.downcallHandle(
+        "gtk_image_menu_item_set_accel_group",
+        constants$1942.gtk_image_menu_item_set_accel_group$FUNC
     );
-    static final FunctionDescriptor gtk_print_settings_set_quality$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor gtk_numerable_icon_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_numerable_icon_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_numerable_icon_get_type",
+        constants$1942.gtk_numerable_icon_get_type$FUNC
     );
-    static final MethodHandle gtk_print_settings_set_quality$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_set_quality",
-        constants$1942.gtk_print_settings_set_quality$FUNC
-    );
-    static final FunctionDescriptor gtk_print_settings_get_n_copies$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_numerable_icon_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_print_settings_get_n_copies$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_get_n_copies",
-        constants$1942.gtk_print_settings_get_n_copies$FUNC
+    static final MethodHandle gtk_numerable_icon_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_numerable_icon_new",
+        constants$1942.gtk_numerable_icon_new$FUNC
     );
-    static final FunctionDescriptor gtk_print_settings_set_n_copies$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_numerable_icon_new_with_style_context$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_print_settings_set_n_copies$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_set_n_copies",
-        constants$1942.gtk_print_settings_set_n_copies$FUNC
-    );
-    static final FunctionDescriptor gtk_print_settings_get_number_up$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_print_settings_get_number_up$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_get_number_up",
-        constants$1942.gtk_print_settings_get_number_up$FUNC
+    static final MethodHandle gtk_numerable_icon_new_with_style_context$MH = RuntimeHelper.downcallHandle(
+        "gtk_numerable_icon_new_with_style_context",
+        constants$1942.gtk_numerable_icon_new_with_style_context$FUNC
     );
-    static final FunctionDescriptor gtk_print_settings_set_number_up$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_numerable_icon_get_style_context$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_numerable_icon_get_style_context$MH = RuntimeHelper.downcallHandle(
+        "gtk_numerable_icon_get_style_context",
+        constants$1942.gtk_numerable_icon_get_style_context$FUNC
+    );
+    static final FunctionDescriptor gtk_numerable_icon_set_style_context$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_print_settings_set_number_up$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_set_number_up",
-        constants$1942.gtk_print_settings_set_number_up$FUNC
+    static final MethodHandle gtk_numerable_icon_set_style_context$MH = RuntimeHelper.downcallHandle(
+        "gtk_numerable_icon_set_style_context",
+        constants$1942.gtk_numerable_icon_set_style_context$FUNC
     );
 }
 

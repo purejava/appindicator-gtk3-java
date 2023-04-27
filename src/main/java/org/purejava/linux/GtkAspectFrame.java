@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkAspectFrame extends _GtkAspectFrame {
+/**
+ * {@snippet :
+ * typedef struct _GtkAspectFrame GtkAspectFrame;
+ * }
+ */
+public final class GtkAspectFrame extends _GtkAspectFrame {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkAspectFrame() {}
 }
 
 

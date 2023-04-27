@@ -7,9 +7,24 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _PangoFontMapClass {
+ *     GObjectClass parent_class;
+ *     PangoFont* (*load_font)(PangoFontMap*,PangoContext*,const PangoFontDescription*);
+ *     void (*list_families)(PangoFontMap*,PangoFontFamily***,int*);
+ *     PangoFontset* (*load_fontset)(PangoFontMap*,PangoContext*,const PangoFontDescription*,PangoLanguage*);
+ *     char* shape_engine_type;
+ *     guint (*get_serial)(PangoFontMap*);
+ *     void (*changed)(PangoFontMap*);
+ *     PangoFontFamily* (*get_family)(PangoFontMap*,char*);
+ *     PangoFontFace* (*get_face)(PangoFontMap*,PangoFont*);
+ * };
+ * }
+ */
 public class _PangoFontMapClass {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
                 Constants$root.C_LONG_LONG$LAYOUT.withName("g_type")
@@ -24,7 +39,10 @@ public class _PangoFontMapClass {
             Constants$root.C_POINTER$LAYOUT.withName("notify"),
             Constants$root.C_POINTER$LAYOUT.withName("constructed"),
             Constants$root.C_LONG_LONG$LAYOUT.withName("flags"),
-            MemoryLayout.sequenceLayout(6, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
+            Constants$root.C_LONG_LONG$LAYOUT.withName("n_construct_properties"),
+            Constants$root.C_POINTER$LAYOUT.withName("pspecs"),
+            Constants$root.C_LONG_LONG$LAYOUT.withName("n_pspecs"),
+            MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
         ).withName("parent_class"),
         Constants$root.C_POINTER$LAYOUT.withName("load_font"),
         Constants$root.C_POINTER$LAYOUT.withName("list_families"),
@@ -46,20 +64,36 @@ public class _PangoFontMapClass {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle load_font$MH = RuntimeHelper.downcallHandle(
-        _PangoFontMapClass.load_font$FUNC
+    static final FunctionDescriptor load_font_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle load_font_UP$MH = RuntimeHelper.upcallHandle(load_font.class, "apply", _PangoFontMapClass.load_font_UP$FUNC);
+    static final FunctionDescriptor load_font_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle load_font_DOWN$MH = RuntimeHelper.downcallHandle(
+        _PangoFontMapClass.load_font_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * PangoFont* (*load_font)(PangoFontMap*,PangoContext*,const PangoFontDescription*);
+     * }
+     */
     public interface load_font {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2);
-        static MemorySegment allocate(load_font fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(load_font.class, fi, _PangoFontMapClass.load_font$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment vfs, java.lang.foreign.MemorySegment identifier, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(load_font fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_PangoFontMapClass.load_font_UP$MH, fi, _PangoFontMapClass.load_font$FUNC, scope);
         }
-        static load_font ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2) -> {
+        static load_font ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _vfs, java.lang.foreign.MemorySegment _identifier, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_PangoFontMapClass.load_font$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2);
+                    return (java.lang.foreign.MemorySegment)_PangoFontMapClass.load_font_DOWN$MH.invokeExact(symbol, _vfs, _identifier, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -71,40 +105,68 @@ public class _PangoFontMapClass {
     public static VarHandle load_font$VH() {
         return _PangoFontMapClass.load_font$VH;
     }
-    public static MemoryAddress load_font$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_PangoFontMapClass.load_font$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * PangoFont* (*load_font)(PangoFontMap*,PangoContext*,const PangoFontDescription*);
+     * }
+     */
+    public static MemorySegment load_font$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_PangoFontMapClass.load_font$VH.get(seg);
     }
-    public static void load_font$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * PangoFont* (*load_font)(PangoFontMap*,PangoContext*,const PangoFontDescription*);
+     * }
+     */
+    public static void load_font$set(MemorySegment seg, MemorySegment x) {
         _PangoFontMapClass.load_font$VH.set(seg, x);
     }
-    public static MemoryAddress load_font$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_PangoFontMapClass.load_font$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment load_font$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_PangoFontMapClass.load_font$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void load_font$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void load_font$set(MemorySegment seg, long index, MemorySegment x) {
         _PangoFontMapClass.load_font$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static load_font load_font (MemorySegment segment, MemorySession session) {
-        return load_font.ofAddress(load_font$get(segment), session);
+    public static load_font load_font(MemorySegment segment, SegmentScope scope) {
+        return load_font.ofAddress(load_font$get(segment), scope);
     }
     static final FunctionDescriptor list_families$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle list_families$MH = RuntimeHelper.downcallHandle(
-        _PangoFontMapClass.list_families$FUNC
+    static final FunctionDescriptor list_families_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle list_families_UP$MH = RuntimeHelper.upcallHandle(list_families.class, "apply", _PangoFontMapClass.list_families_UP$FUNC);
+    static final FunctionDescriptor list_families_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle list_families_DOWN$MH = RuntimeHelper.downcallHandle(
+        _PangoFontMapClass.list_families_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*list_families)(PangoFontMap*,PangoFontFamily***,int*);
+     * }
+     */
     public interface list_families {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2);
-        static MemorySegment allocate(list_families fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(list_families.class, fi, _PangoFontMapClass.list_families$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(list_families fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_PangoFontMapClass.list_families_UP$MH, fi, _PangoFontMapClass.list_families$FUNC, scope);
         }
-        static list_families ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2) -> {
+        static list_families ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _key, java.lang.foreign.MemorySegment _value, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    _PangoFontMapClass.list_families$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2);
+                    _PangoFontMapClass.list_families_DOWN$MH.invokeExact(symbol, _key, _value, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -116,20 +178,32 @@ public class _PangoFontMapClass {
     public static VarHandle list_families$VH() {
         return _PangoFontMapClass.list_families$VH;
     }
-    public static MemoryAddress list_families$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_PangoFontMapClass.list_families$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*list_families)(PangoFontMap*,PangoFontFamily***,int*);
+     * }
+     */
+    public static MemorySegment list_families$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_PangoFontMapClass.list_families$VH.get(seg);
     }
-    public static void list_families$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*list_families)(PangoFontMap*,PangoFontFamily***,int*);
+     * }
+     */
+    public static void list_families$set(MemorySegment seg, MemorySegment x) {
         _PangoFontMapClass.list_families$VH.set(seg, x);
     }
-    public static MemoryAddress list_families$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_PangoFontMapClass.list_families$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment list_families$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_PangoFontMapClass.list_families$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void list_families$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void list_families$set(MemorySegment seg, long index, MemorySegment x) {
         _PangoFontMapClass.list_families$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static list_families list_families (MemorySegment segment, MemorySession session) {
-        return list_families.ofAddress(list_families$get(segment), session);
+    public static list_families list_families(MemorySegment segment, SegmentScope scope) {
+        return list_families.ofAddress(list_families$get(segment), scope);
     }
     static final FunctionDescriptor load_fontset$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
@@ -137,20 +211,38 @@ public class _PangoFontMapClass {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle load_fontset$MH = RuntimeHelper.downcallHandle(
-        _PangoFontMapClass.load_fontset$FUNC
+    static final FunctionDescriptor load_fontset_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle load_fontset_UP$MH = RuntimeHelper.upcallHandle(load_fontset.class, "apply", _PangoFontMapClass.load_fontset_UP$FUNC);
+    static final FunctionDescriptor load_fontset_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle load_fontset_DOWN$MH = RuntimeHelper.downcallHandle(
+        _PangoFontMapClass.load_fontset_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * PangoFontset* (*load_fontset)(PangoFontMap*,PangoContext*,const PangoFontDescription*,PangoLanguage*);
+     * }
+     */
     public interface load_fontset {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2, java.lang.foreign.MemoryAddress _x3);
-        static MemorySegment allocate(load_fontset fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(load_fontset.class, fi, _PangoFontMapClass.load_fontset$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment pattern, java.lang.foreign.MemorySegment callback_data, java.lang.foreign.MemorySegment target, java.lang.foreign.MemorySegment extents);
+        static MemorySegment allocate(load_fontset fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_PangoFontMapClass.load_fontset_UP$MH, fi, _PangoFontMapClass.load_fontset$FUNC, scope);
         }
-        static load_fontset ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2, java.lang.foreign.MemoryAddress __x3) -> {
+        static load_fontset ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _pattern, java.lang.foreign.MemorySegment _callback_data, java.lang.foreign.MemorySegment _target, java.lang.foreign.MemorySegment _extents) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_PangoFontMapClass.load_fontset$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2, (java.lang.foreign.Addressable)__x3);
+                    return (java.lang.foreign.MemorySegment)_PangoFontMapClass.load_fontset_DOWN$MH.invokeExact(symbol, _pattern, _callback_data, _target, _extents);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -162,54 +254,90 @@ public class _PangoFontMapClass {
     public static VarHandle load_fontset$VH() {
         return _PangoFontMapClass.load_fontset$VH;
     }
-    public static MemoryAddress load_fontset$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_PangoFontMapClass.load_fontset$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * PangoFontset* (*load_fontset)(PangoFontMap*,PangoContext*,const PangoFontDescription*,PangoLanguage*);
+     * }
+     */
+    public static MemorySegment load_fontset$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_PangoFontMapClass.load_fontset$VH.get(seg);
     }
-    public static void load_fontset$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * PangoFontset* (*load_fontset)(PangoFontMap*,PangoContext*,const PangoFontDescription*,PangoLanguage*);
+     * }
+     */
+    public static void load_fontset$set(MemorySegment seg, MemorySegment x) {
         _PangoFontMapClass.load_fontset$VH.set(seg, x);
     }
-    public static MemoryAddress load_fontset$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_PangoFontMapClass.load_fontset$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment load_fontset$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_PangoFontMapClass.load_fontset$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void load_fontset$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void load_fontset$set(MemorySegment seg, long index, MemorySegment x) {
         _PangoFontMapClass.load_fontset$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static load_fontset load_fontset (MemorySegment segment, MemorySession session) {
-        return load_fontset.ofAddress(load_fontset$get(segment), session);
+    public static load_fontset load_fontset(MemorySegment segment, SegmentScope scope) {
+        return load_fontset.ofAddress(load_fontset$get(segment), scope);
     }
     static final VarHandle shape_engine_type$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("shape_engine_type"));
     public static VarHandle shape_engine_type$VH() {
         return _PangoFontMapClass.shape_engine_type$VH;
     }
-    public static MemoryAddress shape_engine_type$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_PangoFontMapClass.shape_engine_type$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * char* shape_engine_type;
+     * }
+     */
+    public static MemorySegment shape_engine_type$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_PangoFontMapClass.shape_engine_type$VH.get(seg);
     }
-    public static void shape_engine_type$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * char* shape_engine_type;
+     * }
+     */
+    public static void shape_engine_type$set(MemorySegment seg, MemorySegment x) {
         _PangoFontMapClass.shape_engine_type$VH.set(seg, x);
     }
-    public static MemoryAddress shape_engine_type$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_PangoFontMapClass.shape_engine_type$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment shape_engine_type$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_PangoFontMapClass.shape_engine_type$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void shape_engine_type$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void shape_engine_type$set(MemorySegment seg, long index, MemorySegment x) {
         _PangoFontMapClass.shape_engine_type$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final FunctionDescriptor get_serial$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_serial$MH = RuntimeHelper.downcallHandle(
-        _PangoFontMapClass.get_serial$FUNC
+    static final FunctionDescriptor get_serial_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_serial_UP$MH = RuntimeHelper.upcallHandle(get_serial.class, "apply", _PangoFontMapClass.get_serial_UP$FUNC);
+    static final FunctionDescriptor get_serial_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_serial_DOWN$MH = RuntimeHelper.downcallHandle(
+        _PangoFontMapClass.get_serial_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * guint (*get_serial)(PangoFontMap*);
+     * }
+     */
     public interface get_serial {
 
-        int apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(get_serial fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_serial.class, fi, _PangoFontMapClass.get_serial$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0);
+        static MemorySegment allocate(get_serial fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_PangoFontMapClass.get_serial_UP$MH, fi, _PangoFontMapClass.get_serial$FUNC, scope);
         }
-        static get_serial ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static get_serial ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0) -> {
                 try {
-                    return (int)_PangoFontMapClass.get_serial$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (int)_PangoFontMapClass.get_serial_DOWN$MH.invokeExact(symbol, __x0);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -221,38 +349,62 @@ public class _PangoFontMapClass {
     public static VarHandle get_serial$VH() {
         return _PangoFontMapClass.get_serial$VH;
     }
-    public static MemoryAddress get_serial$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_PangoFontMapClass.get_serial$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * guint (*get_serial)(PangoFontMap*);
+     * }
+     */
+    public static MemorySegment get_serial$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_PangoFontMapClass.get_serial$VH.get(seg);
     }
-    public static void get_serial$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * guint (*get_serial)(PangoFontMap*);
+     * }
+     */
+    public static void get_serial$set(MemorySegment seg, MemorySegment x) {
         _PangoFontMapClass.get_serial$VH.set(seg, x);
     }
-    public static MemoryAddress get_serial$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_PangoFontMapClass.get_serial$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_serial$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_PangoFontMapClass.get_serial$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_serial$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_serial$set(MemorySegment seg, long index, MemorySegment x) {
         _PangoFontMapClass.get_serial$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_serial get_serial (MemorySegment segment, MemorySession session) {
-        return get_serial.ofAddress(get_serial$get(segment), session);
+    public static get_serial get_serial(MemorySegment segment, SegmentScope scope) {
+        return get_serial.ofAddress(get_serial$get(segment), scope);
     }
     static final FunctionDescriptor changed$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle changed$MH = RuntimeHelper.downcallHandle(
-        _PangoFontMapClass.changed$FUNC
+    static final FunctionDescriptor changed_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle changed_UP$MH = RuntimeHelper.upcallHandle(changed.class, "apply", _PangoFontMapClass.changed_UP$FUNC);
+    static final FunctionDescriptor changed_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle changed_DOWN$MH = RuntimeHelper.downcallHandle(
+        _PangoFontMapClass.changed_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*changed)(PangoFontMap*);
+     * }
+     */
     public interface changed {
 
-        void apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(changed fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(changed.class, fi, _PangoFontMapClass.changed$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment display);
+        static MemorySegment allocate(changed fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_PangoFontMapClass.changed_UP$MH, fi, _PangoFontMapClass.changed$FUNC, scope);
         }
-        static changed ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static changed ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _PangoFontMapClass.changed$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    _PangoFontMapClass.changed_DOWN$MH.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -264,39 +416,65 @@ public class _PangoFontMapClass {
     public static VarHandle changed$VH() {
         return _PangoFontMapClass.changed$VH;
     }
-    public static MemoryAddress changed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_PangoFontMapClass.changed$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*changed)(PangoFontMap*);
+     * }
+     */
+    public static MemorySegment changed$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_PangoFontMapClass.changed$VH.get(seg);
     }
-    public static void changed$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*changed)(PangoFontMap*);
+     * }
+     */
+    public static void changed$set(MemorySegment seg, MemorySegment x) {
         _PangoFontMapClass.changed$VH.set(seg, x);
     }
-    public static MemoryAddress changed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_PangoFontMapClass.changed$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment changed$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_PangoFontMapClass.changed$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void changed$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void changed$set(MemorySegment seg, long index, MemorySegment x) {
         _PangoFontMapClass.changed$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static changed changed (MemorySegment segment, MemorySession session) {
-        return changed.ofAddress(changed$get(segment), session);
+    public static changed changed(MemorySegment segment, SegmentScope scope) {
+        return changed.ofAddress(changed$get(segment), scope);
     }
     static final FunctionDescriptor get_family$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_family$MH = RuntimeHelper.downcallHandle(
-        _PangoFontMapClass.get_family$FUNC
+    static final FunctionDescriptor get_family_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_family_UP$MH = RuntimeHelper.upcallHandle(get_family.class, "apply", _PangoFontMapClass.get_family_UP$FUNC);
+    static final FunctionDescriptor get_family_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_family_DOWN$MH = RuntimeHelper.downcallHandle(
+        _PangoFontMapClass.get_family_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * PangoFontFamily* (*get_family)(PangoFontMap*,char*);
+     * }
+     */
     public interface get_family {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(get_family fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_family.class, fi, _PangoFontMapClass.get_family$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment func_data);
+        static MemorySegment allocate(get_family fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_PangoFontMapClass.get_family_UP$MH, fi, _PangoFontMapClass.get_family$FUNC, scope);
         }
-        static get_family ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static get_family ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _path, java.lang.foreign.MemorySegment _func_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_PangoFontMapClass.get_family$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    return (java.lang.foreign.MemorySegment)_PangoFontMapClass.get_family_DOWN$MH.invokeExact(symbol, _path, _func_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -308,39 +486,65 @@ public class _PangoFontMapClass {
     public static VarHandle get_family$VH() {
         return _PangoFontMapClass.get_family$VH;
     }
-    public static MemoryAddress get_family$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_PangoFontMapClass.get_family$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * PangoFontFamily* (*get_family)(PangoFontMap*,char*);
+     * }
+     */
+    public static MemorySegment get_family$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_PangoFontMapClass.get_family$VH.get(seg);
     }
-    public static void get_family$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * PangoFontFamily* (*get_family)(PangoFontMap*,char*);
+     * }
+     */
+    public static void get_family$set(MemorySegment seg, MemorySegment x) {
         _PangoFontMapClass.get_family$VH.set(seg, x);
     }
-    public static MemoryAddress get_family$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_PangoFontMapClass.get_family$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_family$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_PangoFontMapClass.get_family$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_family$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_family$set(MemorySegment seg, long index, MemorySegment x) {
         _PangoFontMapClass.get_family$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_family get_family (MemorySegment segment, MemorySession session) {
-        return get_family.ofAddress(get_family$get(segment), session);
+    public static get_family get_family(MemorySegment segment, SegmentScope scope) {
+        return get_family.ofAddress(get_family$get(segment), scope);
     }
     static final FunctionDescriptor get_face$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_face$MH = RuntimeHelper.downcallHandle(
-        _PangoFontMapClass.get_face$FUNC
+    static final FunctionDescriptor get_face_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_face_UP$MH = RuntimeHelper.upcallHandle(get_face.class, "apply", _PangoFontMapClass.get_face_UP$FUNC);
+    static final FunctionDescriptor get_face_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_face_DOWN$MH = RuntimeHelper.downcallHandle(
+        _PangoFontMapClass.get_face_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * PangoFontFace* (*get_face)(PangoFontMap*,PangoFont*);
+     * }
+     */
     public interface get_face {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(get_face fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_face.class, fi, _PangoFontMapClass.get_face$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment func_data);
+        static MemorySegment allocate(get_face fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_PangoFontMapClass.get_face_UP$MH, fi, _PangoFontMapClass.get_face$FUNC, scope);
         }
-        static get_face ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static get_face ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _path, java.lang.foreign.MemorySegment _func_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_PangoFontMapClass.get_face$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    return (java.lang.foreign.MemorySegment)_PangoFontMapClass.get_face_DOWN$MH.invokeExact(symbol, _path, _func_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -352,27 +556,39 @@ public class _PangoFontMapClass {
     public static VarHandle get_face$VH() {
         return _PangoFontMapClass.get_face$VH;
     }
-    public static MemoryAddress get_face$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_PangoFontMapClass.get_face$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * PangoFontFace* (*get_face)(PangoFontMap*,PangoFont*);
+     * }
+     */
+    public static MemorySegment get_face$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_PangoFontMapClass.get_face$VH.get(seg);
     }
-    public static void get_face$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * PangoFontFace* (*get_face)(PangoFontMap*,PangoFont*);
+     * }
+     */
+    public static void get_face$set(MemorySegment seg, MemorySegment x) {
         _PangoFontMapClass.get_face$VH.set(seg, x);
     }
-    public static MemoryAddress get_face$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_PangoFontMapClass.get_face$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_face$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_PangoFontMapClass.get_face$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_face$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_face$set(MemorySegment seg, long index, MemorySegment x) {
         _PangoFontMapClass.get_face$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_face get_face (MemorySegment segment, MemorySession session) {
-        return get_face.ofAddress(get_face$get(segment), session);
+    public static get_face get_face(MemorySegment segment, SegmentScope scope) {
+        return get_face.ofAddress(get_face$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

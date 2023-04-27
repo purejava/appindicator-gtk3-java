@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GStaticPrivate extends _GStaticPrivate {
+/**
+ * {@snippet :
+ * typedef struct _GStaticPrivate GStaticPrivate;
+ * }
+ */
+public final class GStaticPrivate extends _GStaticPrivate {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GStaticPrivate() {}
 }
 
 

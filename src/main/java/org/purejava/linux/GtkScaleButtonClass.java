@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkScaleButtonClass extends _GtkScaleButtonClass {
+/**
+ * {@snippet :
+ * typedef struct _GtkScaleButtonClass GtkScaleButtonClass;
+ * }
+ */
+public final class GtkScaleButtonClass extends _GtkScaleButtonClass {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkScaleButtonClass() {}
 }
 
 

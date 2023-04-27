@@ -7,53 +7,73 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$619 {
+final class constants$619 {
 
-    static final FunctionDescriptor g_dbus_message_get_serial$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_message_get_serial$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_get_serial",
-        constants$619.g_dbus_message_get_serial$FUNC
-    );
-    static final FunctionDescriptor g_dbus_message_set_serial$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_dbus_message_set_serial$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_set_serial",
-        constants$619.g_dbus_message_set_serial$FUNC
-    );
-    static final FunctionDescriptor g_dbus_message_get_header$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_dbus_message_get_header$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_get_header",
-        constants$619.g_dbus_message_get_header$FUNC
-    );
-    static final FunctionDescriptor g_dbus_message_set_header$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$619() {}
+    static final FunctionDescriptor g_file_read_async$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_message_set_header$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_set_header",
-        constants$619.g_dbus_message_set_header$FUNC
+    static final MethodHandle g_file_read_async$MH = RuntimeHelper.downcallHandle(
+        "g_file_read_async",
+        constants$619.g_file_read_async$FUNC
     );
-    static final FunctionDescriptor g_dbus_message_get_header_fields$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_file_read_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_message_get_header_fields$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_get_header_fields",
-        constants$619.g_dbus_message_get_header_fields$FUNC
+    static final MethodHandle g_file_read_finish$MH = RuntimeHelper.downcallHandle(
+        "g_file_read_finish",
+        constants$619.g_file_read_finish$FUNC
     );
-    static final FunctionDescriptor g_dbus_message_get_body$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_file_append_to$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_message_get_body$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_get_body",
-        constants$619.g_dbus_message_get_body$FUNC
+    static final MethodHandle g_file_append_to$MH = RuntimeHelper.downcallHandle(
+        "g_file_append_to",
+        constants$619.g_file_append_to$FUNC
+    );
+    static final FunctionDescriptor g_file_create$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_file_create$MH = RuntimeHelper.downcallHandle(
+        "g_file_create",
+        constants$619.g_file_create$FUNC
+    );
+    static final FunctionDescriptor g_file_replace$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_file_replace$MH = RuntimeHelper.downcallHandle(
+        "g_file_replace",
+        constants$619.g_file_replace$FUNC
+    );
+    static final FunctionDescriptor g_file_append_to_async$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_file_append_to_async$MH = RuntimeHelper.downcallHandle(
+        "g_file_append_to_async",
+        constants$619.g_file_append_to_async$FUNC
     );
 }
 

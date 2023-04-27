@@ -7,8 +7,33 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$99 {
+final class constants$99 {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$99() {}
+    static final FunctionDescriptor g_bookmark_file_has_item$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_bookmark_file_has_item$MH = RuntimeHelper.downcallHandle(
+        "g_bookmark_file_has_item",
+        constants$99.g_bookmark_file_has_item$FUNC
+    );
+    static final FunctionDescriptor g_bookmark_file_get_size$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_bookmark_file_get_size$MH = RuntimeHelper.downcallHandle(
+        "g_bookmark_file_get_size",
+        constants$99.g_bookmark_file_get_size$FUNC
+    );
+    static final FunctionDescriptor g_bookmark_file_get_uris$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_bookmark_file_get_uris$MH = RuntimeHelper.downcallHandle(
+        "g_bookmark_file_get_uris",
+        constants$99.g_bookmark_file_get_uris$FUNC
+    );
     static final FunctionDescriptor g_bookmark_file_remove_group$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
@@ -37,32 +62,6 @@ class constants$99 {
     static final MethodHandle g_bookmark_file_remove_item$MH = RuntimeHelper.downcallHandle(
         "g_bookmark_file_remove_item",
         constants$99.g_bookmark_file_remove_item$FUNC
-    );
-    static final FunctionDescriptor g_bookmark_file_move_item$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_bookmark_file_move_item$MH = RuntimeHelper.downcallHandle(
-        "g_bookmark_file_move_item",
-        constants$99.g_bookmark_file_move_item$FUNC
-    );
-    static final FunctionDescriptor g_bytes_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_bytes_new$MH = RuntimeHelper.downcallHandle(
-        "g_bytes_new",
-        constants$99.g_bytes_new$FUNC
-    );
-    static final FunctionDescriptor g_bytes_new_take$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_bytes_new_take$MH = RuntimeHelper.downcallHandle(
-        "g_bytes_new_take",
-        constants$99.g_bytes_new_take$FUNC
     );
 }
 

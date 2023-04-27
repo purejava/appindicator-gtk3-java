@@ -7,52 +7,50 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1060 {
+final class constants$1060 {
 
-    static final FunctionDescriptor pango_font_description_get_gravity$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1060() {}
+    static final FunctionDescriptor gdk_device_get_axes$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_font_description_get_gravity$MH = RuntimeHelper.downcallHandle(
-        "pango_font_description_get_gravity",
-        constants$1060.pango_font_description_get_gravity$FUNC
+    static final MethodHandle gdk_device_get_axes$MH = RuntimeHelper.downcallHandle(
+        "gdk_device_get_axes",
+        constants$1060.gdk_device_get_axes$FUNC
     );
-    static final FunctionDescriptor pango_font_description_set_variations_static$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gdk_drag_context_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gdk_drag_context_get_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_drag_context_get_type",
+        constants$1060.gdk_drag_context_get_type$FUNC
+    );
+    static final FunctionDescriptor gdk_drag_context_set_device$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_font_description_set_variations_static$MH = RuntimeHelper.downcallHandle(
-        "pango_font_description_set_variations_static",
-        constants$1060.pango_font_description_set_variations_static$FUNC
+    static final MethodHandle gdk_drag_context_set_device$MH = RuntimeHelper.downcallHandle(
+        "gdk_drag_context_set_device",
+        constants$1060.gdk_drag_context_set_device$FUNC
     );
-    static final FunctionDescriptor pango_font_description_set_variations$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gdk_drag_context_get_device$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_font_description_set_variations$MH = RuntimeHelper.downcallHandle(
-        "pango_font_description_set_variations",
-        constants$1060.pango_font_description_set_variations$FUNC
+    static final MethodHandle gdk_drag_context_get_device$MH = RuntimeHelper.downcallHandle(
+        "gdk_drag_context_get_device",
+        constants$1060.gdk_drag_context_get_device$FUNC
     );
-    static final FunctionDescriptor pango_font_description_get_variations$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gdk_drag_context_list_targets$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_font_description_get_variations$MH = RuntimeHelper.downcallHandle(
-        "pango_font_description_get_variations",
-        constants$1060.pango_font_description_get_variations$FUNC
+    static final MethodHandle gdk_drag_context_list_targets$MH = RuntimeHelper.downcallHandle(
+        "gdk_drag_context_list_targets",
+        constants$1060.gdk_drag_context_list_targets$FUNC
     );
-    static final FunctionDescriptor pango_font_description_get_set_fields$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gdk_drag_context_get_actions$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_font_description_get_set_fields$MH = RuntimeHelper.downcallHandle(
-        "pango_font_description_get_set_fields",
-        constants$1060.pango_font_description_get_set_fields$FUNC
-    );
-    static final FunctionDescriptor pango_font_description_unset_fields$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_font_description_unset_fields$MH = RuntimeHelper.downcallHandle(
-        "pango_font_description_unset_fields",
-        constants$1060.pango_font_description_unset_fields$FUNC
+    static final MethodHandle gdk_drag_context_get_actions$MH = RuntimeHelper.downcallHandle(
+        "gdk_drag_context_get_actions",
+        constants$1060.gdk_drag_context_get_actions$FUNC
     );
 }
 

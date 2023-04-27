@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkTextIter extends _GtkTextIter {
+/**
+ * {@snippet :
+ * typedef struct _GtkTextIter GtkTextIter;
+ * }
+ */
+public final class GtkTextIter extends _GtkTextIter {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkTextIter() {}
 }
 
 

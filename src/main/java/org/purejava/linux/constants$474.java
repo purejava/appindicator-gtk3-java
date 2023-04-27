@@ -7,60 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$474 {
+final class constants$474 {
 
-    static final FunctionDescriptor g_object_set_valist$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$474() {}
+    static final FunctionDescriptor g_action_activate$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_action_activate$MH = RuntimeHelper.downcallHandle(
+        "g_action_activate",
+        constants$474.g_action_activate$FUNC
+    );
+    static final FunctionDescriptor g_action_name_is_valid$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_action_name_is_valid$MH = RuntimeHelper.downcallHandle(
+        "g_action_name_is_valid",
+        constants$474.g_action_name_is_valid$FUNC
+    );
+    static final FunctionDescriptor g_action_parse_detailed_name$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_object_set_valist$MH = RuntimeHelper.downcallHandle(
-        "g_object_set_valist",
-        constants$474.g_object_set_valist$FUNC
+    static final MethodHandle g_action_parse_detailed_name$MH = RuntimeHelper.downcallHandle(
+        "g_action_parse_detailed_name",
+        constants$474.g_action_parse_detailed_name$FUNC
     );
-    static final FunctionDescriptor g_object_getv$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_action_print_detailed_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_object_getv$MH = RuntimeHelper.downcallHandle(
-        "g_object_getv",
-        constants$474.g_object_getv$FUNC
+    static final MethodHandle g_action_print_detailed_name$MH = RuntimeHelper.downcallHandle(
+        "g_action_print_detailed_name",
+        constants$474.g_action_print_detailed_name$FUNC
     );
-    static final FunctionDescriptor g_object_get_valist$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_action_group_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_action_group_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_action_group_get_type",
+        constants$474.g_action_group_get_type$FUNC
     );
-    static final MethodHandle g_object_get_valist$MH = RuntimeHelper.downcallHandle(
-        "g_object_get_valist",
-        constants$474.g_object_get_valist$FUNC
-    );
-    static final FunctionDescriptor g_object_set_property$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_action_group_has_action$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_object_set_property$MH = RuntimeHelper.downcallHandle(
-        "g_object_set_property",
-        constants$474.g_object_set_property$FUNC
-    );
-    static final FunctionDescriptor g_object_get_property$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_object_get_property$MH = RuntimeHelper.downcallHandle(
-        "g_object_get_property",
-        constants$474.g_object_get_property$FUNC
-    );
-    static final FunctionDescriptor g_object_freeze_notify$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_object_freeze_notify$MH = RuntimeHelper.downcallHandle(
-        "g_object_freeze_notify",
-        constants$474.g_object_freeze_notify$FUNC
+    static final MethodHandle g_action_group_has_action$MH = RuntimeHelper.downcallHandle(
+        "g_action_group_has_action",
+        constants$474.g_action_group_has_action$FUNC
     );
 }
 

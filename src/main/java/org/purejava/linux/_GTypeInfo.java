@@ -7,9 +7,25 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GTypeInfo {
+ *     guint16 class_size;
+ *     GBaseInitFunc base_init;
+ *     GBaseFinalizeFunc base_finalize;
+ *     GClassInitFunc class_init;
+ *     GClassFinalizeFunc class_finalize;
+ *     gconstpointer class_data;
+ *     guint16 instance_size;
+ *     guint16 n_preallocs;
+ *     GInstanceInitFunc instance_init;
+ *     const GTypeValueTable* value_table;
+ * };
+ * }
+ */
 public class _GTypeInfo {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_SHORT$LAYOUT.withName("class_size"),
         MemoryLayout.paddingLayout(48),
         Constants$root.C_POINTER$LAYOUT.withName("base_init"),
@@ -30,10 +46,22 @@ public class _GTypeInfo {
     public static VarHandle class_size$VH() {
         return _GTypeInfo.class_size$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * guint16 class_size;
+     * }
+     */
     public static short class_size$get(MemorySegment seg) {
         return (short)_GTypeInfo.class_size$VH.get(seg);
     }
-    public static void class_size$set( MemorySegment seg, short x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * guint16 class_size;
+     * }
+     */
+    public static void class_size$set(MemorySegment seg, short x) {
         _GTypeInfo.class_size$VH.set(seg, x);
     }
     public static short class_size$get(MemorySegment seg, long index) {
@@ -46,102 +74,174 @@ public class _GTypeInfo {
     public static VarHandle base_init$VH() {
         return _GTypeInfo.base_init$VH;
     }
-    public static MemoryAddress base_init$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GTypeInfo.base_init$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GBaseInitFunc base_init;
+     * }
+     */
+    public static MemorySegment base_init$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GTypeInfo.base_init$VH.get(seg);
     }
-    public static void base_init$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GBaseInitFunc base_init;
+     * }
+     */
+    public static void base_init$set(MemorySegment seg, MemorySegment x) {
         _GTypeInfo.base_init$VH.set(seg, x);
     }
-    public static MemoryAddress base_init$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GTypeInfo.base_init$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment base_init$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GTypeInfo.base_init$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void base_init$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void base_init$set(MemorySegment seg, long index, MemorySegment x) {
         _GTypeInfo.base_init$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static GBaseInitFunc base_init (MemorySegment segment, MemorySession session) {
-        return GBaseInitFunc.ofAddress(base_init$get(segment), session);
+    public static GBaseInitFunc base_init(MemorySegment segment, SegmentScope scope) {
+        return GBaseInitFunc.ofAddress(base_init$get(segment), scope);
     }
     static final VarHandle base_finalize$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("base_finalize"));
     public static VarHandle base_finalize$VH() {
         return _GTypeInfo.base_finalize$VH;
     }
-    public static MemoryAddress base_finalize$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GTypeInfo.base_finalize$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GBaseFinalizeFunc base_finalize;
+     * }
+     */
+    public static MemorySegment base_finalize$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GTypeInfo.base_finalize$VH.get(seg);
     }
-    public static void base_finalize$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GBaseFinalizeFunc base_finalize;
+     * }
+     */
+    public static void base_finalize$set(MemorySegment seg, MemorySegment x) {
         _GTypeInfo.base_finalize$VH.set(seg, x);
     }
-    public static MemoryAddress base_finalize$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GTypeInfo.base_finalize$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment base_finalize$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GTypeInfo.base_finalize$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void base_finalize$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void base_finalize$set(MemorySegment seg, long index, MemorySegment x) {
         _GTypeInfo.base_finalize$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static GBaseFinalizeFunc base_finalize (MemorySegment segment, MemorySession session) {
-        return GBaseFinalizeFunc.ofAddress(base_finalize$get(segment), session);
+    public static GBaseFinalizeFunc base_finalize(MemorySegment segment, SegmentScope scope) {
+        return GBaseFinalizeFunc.ofAddress(base_finalize$get(segment), scope);
     }
     static final VarHandle class_init$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("class_init"));
     public static VarHandle class_init$VH() {
         return _GTypeInfo.class_init$VH;
     }
-    public static MemoryAddress class_init$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GTypeInfo.class_init$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GClassInitFunc class_init;
+     * }
+     */
+    public static MemorySegment class_init$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GTypeInfo.class_init$VH.get(seg);
     }
-    public static void class_init$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GClassInitFunc class_init;
+     * }
+     */
+    public static void class_init$set(MemorySegment seg, MemorySegment x) {
         _GTypeInfo.class_init$VH.set(seg, x);
     }
-    public static MemoryAddress class_init$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GTypeInfo.class_init$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment class_init$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GTypeInfo.class_init$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void class_init$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void class_init$set(MemorySegment seg, long index, MemorySegment x) {
         _GTypeInfo.class_init$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static GClassInitFunc class_init (MemorySegment segment, MemorySession session) {
-        return GClassInitFunc.ofAddress(class_init$get(segment), session);
+    public static GClassInitFunc class_init(MemorySegment segment, SegmentScope scope) {
+        return GClassInitFunc.ofAddress(class_init$get(segment), scope);
     }
     static final VarHandle class_finalize$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("class_finalize"));
     public static VarHandle class_finalize$VH() {
         return _GTypeInfo.class_finalize$VH;
     }
-    public static MemoryAddress class_finalize$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GTypeInfo.class_finalize$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GClassFinalizeFunc class_finalize;
+     * }
+     */
+    public static MemorySegment class_finalize$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GTypeInfo.class_finalize$VH.get(seg);
     }
-    public static void class_finalize$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GClassFinalizeFunc class_finalize;
+     * }
+     */
+    public static void class_finalize$set(MemorySegment seg, MemorySegment x) {
         _GTypeInfo.class_finalize$VH.set(seg, x);
     }
-    public static MemoryAddress class_finalize$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GTypeInfo.class_finalize$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment class_finalize$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GTypeInfo.class_finalize$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void class_finalize$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void class_finalize$set(MemorySegment seg, long index, MemorySegment x) {
         _GTypeInfo.class_finalize$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static GClassFinalizeFunc class_finalize (MemorySegment segment, MemorySession session) {
-        return GClassFinalizeFunc.ofAddress(class_finalize$get(segment), session);
+    public static GClassFinalizeFunc class_finalize(MemorySegment segment, SegmentScope scope) {
+        return GClassFinalizeFunc.ofAddress(class_finalize$get(segment), scope);
     }
     static final VarHandle class_data$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("class_data"));
     public static VarHandle class_data$VH() {
         return _GTypeInfo.class_data$VH;
     }
-    public static MemoryAddress class_data$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GTypeInfo.class_data$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gconstpointer class_data;
+     * }
+     */
+    public static MemorySegment class_data$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GTypeInfo.class_data$VH.get(seg);
     }
-    public static void class_data$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gconstpointer class_data;
+     * }
+     */
+    public static void class_data$set(MemorySegment seg, MemorySegment x) {
         _GTypeInfo.class_data$VH.set(seg, x);
     }
-    public static MemoryAddress class_data$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GTypeInfo.class_data$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment class_data$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GTypeInfo.class_data$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void class_data$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void class_data$set(MemorySegment seg, long index, MemorySegment x) {
         _GTypeInfo.class_data$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle instance_size$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("instance_size"));
     public static VarHandle instance_size$VH() {
         return _GTypeInfo.instance_size$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * guint16 instance_size;
+     * }
+     */
     public static short instance_size$get(MemorySegment seg) {
         return (short)_GTypeInfo.instance_size$VH.get(seg);
     }
-    public static void instance_size$set( MemorySegment seg, short x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * guint16 instance_size;
+     * }
+     */
+    public static void instance_size$set(MemorySegment seg, short x) {
         _GTypeInfo.instance_size$VH.set(seg, x);
     }
     public static short instance_size$get(MemorySegment seg, long index) {
@@ -154,10 +254,22 @@ public class _GTypeInfo {
     public static VarHandle n_preallocs$VH() {
         return _GTypeInfo.n_preallocs$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * guint16 n_preallocs;
+     * }
+     */
     public static short n_preallocs$get(MemorySegment seg) {
         return (short)_GTypeInfo.n_preallocs$VH.get(seg);
     }
-    public static void n_preallocs$set( MemorySegment seg, short x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * guint16 n_preallocs;
+     * }
+     */
+    public static void n_preallocs$set(MemorySegment seg, short x) {
         _GTypeInfo.n_preallocs$VH.set(seg, x);
     }
     public static short n_preallocs$get(MemorySegment seg, long index) {
@@ -170,43 +282,67 @@ public class _GTypeInfo {
     public static VarHandle instance_init$VH() {
         return _GTypeInfo.instance_init$VH;
     }
-    public static MemoryAddress instance_init$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GTypeInfo.instance_init$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GInstanceInitFunc instance_init;
+     * }
+     */
+    public static MemorySegment instance_init$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GTypeInfo.instance_init$VH.get(seg);
     }
-    public static void instance_init$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GInstanceInitFunc instance_init;
+     * }
+     */
+    public static void instance_init$set(MemorySegment seg, MemorySegment x) {
         _GTypeInfo.instance_init$VH.set(seg, x);
     }
-    public static MemoryAddress instance_init$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GTypeInfo.instance_init$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment instance_init$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GTypeInfo.instance_init$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void instance_init$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void instance_init$set(MemorySegment seg, long index, MemorySegment x) {
         _GTypeInfo.instance_init$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static GInstanceInitFunc instance_init (MemorySegment segment, MemorySession session) {
-        return GInstanceInitFunc.ofAddress(instance_init$get(segment), session);
+    public static GInstanceInitFunc instance_init(MemorySegment segment, SegmentScope scope) {
+        return GInstanceInitFunc.ofAddress(instance_init$get(segment), scope);
     }
     static final VarHandle value_table$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("value_table"));
     public static VarHandle value_table$VH() {
         return _GTypeInfo.value_table$VH;
     }
-    public static MemoryAddress value_table$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GTypeInfo.value_table$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * const GTypeValueTable* value_table;
+     * }
+     */
+    public static MemorySegment value_table$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GTypeInfo.value_table$VH.get(seg);
     }
-    public static void value_table$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * const GTypeValueTable* value_table;
+     * }
+     */
+    public static void value_table$set(MemorySegment seg, MemorySegment x) {
         _GTypeInfo.value_table$VH.set(seg, x);
     }
-    public static MemoryAddress value_table$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GTypeInfo.value_table$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment value_table$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GTypeInfo.value_table$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void value_table$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void value_table$set(MemorySegment seg, long index, MemorySegment x) {
         _GTypeInfo.value_table$VH.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

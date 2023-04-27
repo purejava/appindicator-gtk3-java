@@ -7,51 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$808 {
+final class constants$808 {
 
-    static final FunctionDescriptor g_simple_action_group_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_simple_action_group_new$MH = RuntimeHelper.downcallHandle(
-        "g_simple_action_group_new",
-        constants$808.g_simple_action_group_new$FUNC
-    );
-    static final FunctionDescriptor g_simple_action_group_lookup$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$808() {}
+    static final FunctionDescriptor g_tls_connection_get_peer_certificate$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_simple_action_group_lookup$MH = RuntimeHelper.downcallHandle(
-        "g_simple_action_group_lookup",
-        constants$808.g_simple_action_group_lookup$FUNC
+    static final MethodHandle g_tls_connection_get_peer_certificate$MH = RuntimeHelper.downcallHandle(
+        "g_tls_connection_get_peer_certificate",
+        constants$808.g_tls_connection_get_peer_certificate$FUNC
     );
-    static final FunctionDescriptor g_simple_action_group_insert$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_tls_connection_get_peer_certificate_errors$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_simple_action_group_insert$MH = RuntimeHelper.downcallHandle(
-        "g_simple_action_group_insert",
-        constants$808.g_simple_action_group_insert$FUNC
+    static final MethodHandle g_tls_connection_get_peer_certificate_errors$MH = RuntimeHelper.downcallHandle(
+        "g_tls_connection_get_peer_certificate_errors",
+        constants$808.g_tls_connection_get_peer_certificate_errors$FUNC
     );
-    static final FunctionDescriptor g_simple_action_group_remove$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_tls_connection_set_require_close_notify$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_tls_connection_set_require_close_notify$MH = RuntimeHelper.downcallHandle(
+        "g_tls_connection_set_require_close_notify",
+        constants$808.g_tls_connection_set_require_close_notify$FUNC
+    );
+    static final FunctionDescriptor g_tls_connection_get_require_close_notify$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_simple_action_group_remove$MH = RuntimeHelper.downcallHandle(
-        "g_simple_action_group_remove",
-        constants$808.g_simple_action_group_remove$FUNC
+    static final MethodHandle g_tls_connection_get_require_close_notify$MH = RuntimeHelper.downcallHandle(
+        "g_tls_connection_get_require_close_notify",
+        constants$808.g_tls_connection_get_require_close_notify$FUNC
     );
-    static final FunctionDescriptor g_simple_action_group_add_entries$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_tls_connection_set_rehandshake_mode$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_tls_connection_set_rehandshake_mode$MH = RuntimeHelper.downcallHandle(
+        "g_tls_connection_set_rehandshake_mode",
+        constants$808.g_tls_connection_set_rehandshake_mode$FUNC
+    );
+    static final FunctionDescriptor g_tls_connection_get_rehandshake_mode$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_simple_action_group_add_entries$MH = RuntimeHelper.downcallHandle(
-        "g_simple_action_group_add_entries",
-        constants$808.g_simple_action_group_add_entries$FUNC
-    );
-    static final FunctionDescriptor g_simple_async_result_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_simple_async_result_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_simple_async_result_get_type",
-        constants$808.g_simple_async_result_get_type$FUNC
+    static final MethodHandle g_tls_connection_get_rehandshake_mode$MH = RuntimeHelper.downcallHandle(
+        "g_tls_connection_get_rehandshake_mode",
+        constants$808.g_tls_connection_get_rehandshake_mode$FUNC
     );
 }
 

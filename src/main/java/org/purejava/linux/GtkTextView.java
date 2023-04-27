@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkTextView extends _GtkTextView {
+/**
+ * {@snippet :
+ * typedef struct _GtkTextView GtkTextView;
+ * }
+ */
+public final class GtkTextView extends _GtkTextView {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkTextView() {}
 }
 
 

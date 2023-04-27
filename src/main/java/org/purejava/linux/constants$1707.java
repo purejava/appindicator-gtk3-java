@@ -7,55 +7,48 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1707 {
+final class constants$1707 {
 
-    static final FunctionDescriptor gtk_calendar_set_detail_func$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1707() {}
+    static final FunctionDescriptor gtk_model_button_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_model_button_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_model_button_new",
+        constants$1707.gtk_model_button_new$FUNC
+    );
+    static final FunctionDescriptor GtkModuleInitFunc$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_calendar_set_detail_func$MH = RuntimeHelper.downcallHandle(
-        "gtk_calendar_set_detail_func",
-        constants$1707.gtk_calendar_set_detail_func$FUNC
-    );
-    static final FunctionDescriptor gtk_calendar_set_detail_width_chars$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor GtkModuleInitFunc_UP$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_calendar_set_detail_width_chars$MH = RuntimeHelper.downcallHandle(
-        "gtk_calendar_set_detail_width_chars",
-        constants$1707.gtk_calendar_set_detail_width_chars$FUNC
-    );
-    static final FunctionDescriptor gtk_calendar_set_detail_height_rows$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_calendar_set_detail_height_rows$MH = RuntimeHelper.downcallHandle(
-        "gtk_calendar_set_detail_height_rows",
-        constants$1707.gtk_calendar_set_detail_height_rows$FUNC
-    );
-    static final FunctionDescriptor gtk_calendar_get_detail_width_chars$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_calendar_get_detail_width_chars$MH = RuntimeHelper.downcallHandle(
-        "gtk_calendar_get_detail_width_chars",
-        constants$1707.gtk_calendar_get_detail_width_chars$FUNC
-    );
-    static final FunctionDescriptor gtk_calendar_get_detail_height_rows$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final MethodHandle GtkModuleInitFunc_UP$MH = RuntimeHelper.upcallHandle(GtkModuleInitFunc.class, "apply", constants$1707.GtkModuleInitFunc_UP$FUNC);
+    static final FunctionDescriptor GtkModuleInitFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_calendar_get_detail_height_rows$MH = RuntimeHelper.downcallHandle(
-        "gtk_calendar_get_detail_height_rows",
-        constants$1707.gtk_calendar_get_detail_height_rows$FUNC
+    static final MethodHandle GtkModuleInitFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$1707.GtkModuleInitFunc_DOWN$FUNC
     );
-    static final FunctionDescriptor gtk_calendar_get_day_is_marked$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor GtkModuleDisplayInitFunc$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_calendar_get_day_is_marked$MH = RuntimeHelper.downcallHandle(
-        "gtk_calendar_get_day_is_marked",
-        constants$1707.gtk_calendar_get_day_is_marked$FUNC
+    static final FunctionDescriptor GtkModuleDisplayInitFunc_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GtkModuleDisplayInitFunc_UP$MH = RuntimeHelper.upcallHandle(GtkModuleDisplayInitFunc.class, "apply", constants$1707.GtkModuleDisplayInitFunc_UP$FUNC);
+    static final FunctionDescriptor GtkModuleDisplayInitFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GtkModuleDisplayInitFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$1707.GtkModuleDisplayInitFunc_DOWN$FUNC
+    );
+    static final FunctionDescriptor gtk_mount_operation_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_mount_operation_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_mount_operation_get_type",
+        constants$1707.gtk_mount_operation_get_type$FUNC
     );
 }
 

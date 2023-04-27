@@ -7,8 +7,38 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$124 {
+final class constants$124 {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$124() {}
+    static final FunctionDescriptor g_listenv$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle g_listenv$MH = RuntimeHelper.downcallHandle(
+        "g_listenv",
+        constants$124.g_listenv$FUNC
+    );
+    static final FunctionDescriptor g_get_environ$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle g_get_environ$MH = RuntimeHelper.downcallHandle(
+        "g_get_environ",
+        constants$124.g_get_environ$FUNC
+    );
+    static final FunctionDescriptor g_environ_getenv$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_environ_getenv$MH = RuntimeHelper.downcallHandle(
+        "g_environ_getenv",
+        constants$124.g_environ_getenv$FUNC
+    );
+    static final FunctionDescriptor g_environ_setenv$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_environ_setenv$MH = RuntimeHelper.downcallHandle(
+        "g_environ_setenv",
+        constants$124.g_environ_setenv$FUNC
+    );
     static final FunctionDescriptor g_environ_unsetenv$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
@@ -21,41 +51,6 @@ class constants$124 {
     static final MethodHandle g_file_error_quark$MH = RuntimeHelper.downcallHandle(
         "g_file_error_quark",
         constants$124.g_file_error_quark$FUNC
-    );
-    static final FunctionDescriptor g_file_error_from_errno$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_file_error_from_errno$MH = RuntimeHelper.downcallHandle(
-        "g_file_error_from_errno",
-        constants$124.g_file_error_from_errno$FUNC
-    );
-    static final FunctionDescriptor g_file_test$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_file_test$MH = RuntimeHelper.downcallHandle(
-        "g_file_test",
-        constants$124.g_file_test$FUNC
-    );
-    static final FunctionDescriptor g_file_get_contents$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_get_contents$MH = RuntimeHelper.downcallHandle(
-        "g_file_get_contents",
-        constants$124.g_file_get_contents$FUNC
-    );
-    static final FunctionDescriptor g_file_set_contents$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_set_contents$MH = RuntimeHelper.downcallHandle(
-        "g_file_set_contents",
-        constants$124.g_file_set_contents$FUNC
     );
 }
 

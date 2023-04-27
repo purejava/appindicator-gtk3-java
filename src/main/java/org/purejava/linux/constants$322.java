@@ -7,39 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$322 {
+final class constants$322 {
 
-    static final FunctionDescriptor g_thread_pool_get_max_unused_threads$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle g_thread_pool_get_max_unused_threads$MH = RuntimeHelper.downcallHandle(
-        "g_thread_pool_get_max_unused_threads",
-        constants$322.g_thread_pool_get_max_unused_threads$FUNC
-    );
-    static final FunctionDescriptor g_thread_pool_get_num_unused_threads$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle g_thread_pool_get_num_unused_threads$MH = RuntimeHelper.downcallHandle(
-        "g_thread_pool_get_num_unused_threads",
-        constants$322.g_thread_pool_get_num_unused_threads$FUNC
-    );
-    static final FunctionDescriptor g_thread_pool_stop_unused_threads$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle g_thread_pool_stop_unused_threads$MH = RuntimeHelper.downcallHandle(
-        "g_thread_pool_stop_unused_threads",
-        constants$322.g_thread_pool_stop_unused_threads$FUNC
-    );
-    static final FunctionDescriptor g_thread_pool_set_max_idle_time$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$322() {}
+    static final FunctionDescriptor g_test_log_type_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_thread_pool_set_max_idle_time$MH = RuntimeHelper.downcallHandle(
-        "g_thread_pool_set_max_idle_time",
-        constants$322.g_thread_pool_set_max_idle_time$FUNC
+    static final MethodHandle g_test_log_type_name$MH = RuntimeHelper.downcallHandle(
+        "g_test_log_type_name",
+        constants$322.g_test_log_type_name$FUNC
     );
-    static final FunctionDescriptor g_thread_pool_get_max_idle_time$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle g_thread_pool_get_max_idle_time$MH = RuntimeHelper.downcallHandle(
-        "g_thread_pool_get_max_idle_time",
-        constants$322.g_thread_pool_get_max_idle_time$FUNC
+    static final FunctionDescriptor g_test_log_buffer_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle g_test_log_buffer_new$MH = RuntimeHelper.downcallHandle(
+        "g_test_log_buffer_new",
+        constants$322.g_test_log_buffer_new$FUNC
     );
-    static final FunctionDescriptor g_timer_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_timer_new$MH = RuntimeHelper.downcallHandle(
-        "g_timer_new",
-        constants$322.g_timer_new$FUNC
+    static final FunctionDescriptor g_test_log_buffer_free$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_test_log_buffer_free$MH = RuntimeHelper.downcallHandle(
+        "g_test_log_buffer_free",
+        constants$322.g_test_log_buffer_free$FUNC
+    );
+    static final FunctionDescriptor g_test_log_buffer_push$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_test_log_buffer_push$MH = RuntimeHelper.downcallHandle(
+        "g_test_log_buffer_push",
+        constants$322.g_test_log_buffer_push$FUNC
+    );
+    static final FunctionDescriptor g_test_log_buffer_pop$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_test_log_buffer_pop$MH = RuntimeHelper.downcallHandle(
+        "g_test_log_buffer_pop",
+        constants$322.g_test_log_buffer_pop$FUNC
+    );
+    static final FunctionDescriptor g_test_log_msg_free$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_test_log_msg_free$MH = RuntimeHelper.downcallHandle(
+        "g_test_log_msg_free",
+        constants$322.g_test_log_msg_free$FUNC
     );
 }
 

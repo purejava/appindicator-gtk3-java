@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GdkDrawingContextClass {
+/**
+ * {@snippet :
+ * typedef struct _GdkDrawingContextClass GdkDrawingContextClass;
+ * }
+ */
+public final class GdkDrawingContextClass {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GdkDrawingContextClass() {}
 }
 
 

@@ -7,48 +7,39 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1167 {
+final class constants$1167 {
 
-    static final FunctionDescriptor cairo_tag_end$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1167() {}
+    static final FunctionDescriptor gdk_window_hints_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gdk_window_hints_get_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_hints_get_type",
+        constants$1167.gdk_window_hints_get_type$FUNC
     );
-    static final MethodHandle cairo_tag_end$MH = RuntimeHelper.downcallHandle(
-        "cairo_tag_end",
-        constants$1167.cairo_tag_end$FUNC
+    static final FunctionDescriptor gdk_wm_decoration_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gdk_wm_decoration_get_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_wm_decoration_get_type",
+        constants$1167.gdk_wm_decoration_get_type$FUNC
     );
-    static final FunctionDescriptor cairo_glyph_allocate$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor gdk_wm_function_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gdk_wm_function_get_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_wm_function_get_type",
+        constants$1167.gdk_wm_function_get_type$FUNC
     );
-    static final MethodHandle cairo_glyph_allocate$MH = RuntimeHelper.downcallHandle(
-        "cairo_glyph_allocate",
-        constants$1167.cairo_glyph_allocate$FUNC
+    static final FunctionDescriptor gdk_gravity_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gdk_gravity_get_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_gravity_get_type",
+        constants$1167.gdk_gravity_get_type$FUNC
     );
-    static final FunctionDescriptor cairo_glyph_free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gdk_anchor_hints_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gdk_anchor_hints_get_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_anchor_hints_get_type",
+        constants$1167.gdk_anchor_hints_get_type$FUNC
     );
-    static final MethodHandle cairo_glyph_free$MH = RuntimeHelper.downcallHandle(
-        "cairo_glyph_free",
-        constants$1167.cairo_glyph_free$FUNC
-    );
-    static final FunctionDescriptor cairo_text_cluster_allocate$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle cairo_text_cluster_allocate$MH = RuntimeHelper.downcallHandle(
-        "cairo_text_cluster_allocate",
-        constants$1167.cairo_text_cluster_allocate$FUNC
-    );
-    static final FunctionDescriptor cairo_text_cluster_free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_text_cluster_free$MH = RuntimeHelper.downcallHandle(
-        "cairo_text_cluster_free",
-        constants$1167.cairo_text_cluster_free$FUNC
-    );
-    static final FunctionDescriptor cairo_font_options_create$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle cairo_font_options_create$MH = RuntimeHelper.downcallHandle(
-        "cairo_font_options_create",
-        constants$1167.cairo_font_options_create$FUNC
+    static final FunctionDescriptor gdk_window_edge_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gdk_window_edge_get_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_edge_get_type",
+        constants$1167.gdk_window_edge_get_type$FUNC
     );
 }
 

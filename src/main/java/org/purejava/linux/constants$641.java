@@ -7,71 +7,49 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$641 {
+final class constants$641 {
 
-    static final FunctionDescriptor g_dbus_proxy_call_with_unix_fd_list$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$641() {}
+    static final FunctionDescriptor g_file_icon_get_file$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_file_icon_get_file$MH = RuntimeHelper.downcallHandle(
+        "g_file_icon_get_file",
+        constants$641.g_file_icon_get_file$FUNC
+    );
+    static final FunctionDescriptor g_file_info_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_file_info_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_file_info_get_type",
+        constants$641.g_file_info_get_type$FUNC
+    );
+    static final FunctionDescriptor g_file_info_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle g_file_info_new$MH = RuntimeHelper.downcallHandle(
+        "g_file_info_new",
+        constants$641.g_file_info_new$FUNC
+    );
+    static final FunctionDescriptor g_file_info_dup$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_file_info_dup$MH = RuntimeHelper.downcallHandle(
+        "g_file_info_dup",
+        constants$641.g_file_info_dup$FUNC
+    );
+    static final FunctionDescriptor g_file_info_copy_into$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_proxy_call_with_unix_fd_list$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_proxy_call_with_unix_fd_list",
-        constants$641.g_dbus_proxy_call_with_unix_fd_list$FUNC
+    static final MethodHandle g_file_info_copy_into$MH = RuntimeHelper.downcallHandle(
+        "g_file_info_copy_into",
+        constants$641.g_file_info_copy_into$FUNC
     );
-    static final FunctionDescriptor g_dbus_proxy_call_with_unix_fd_list_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_file_info_has_attribute$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_proxy_call_with_unix_fd_list_finish$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_proxy_call_with_unix_fd_list_finish",
-        constants$641.g_dbus_proxy_call_with_unix_fd_list_finish$FUNC
-    );
-    static final FunctionDescriptor g_dbus_proxy_call_with_unix_fd_list_sync$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_proxy_call_with_unix_fd_list_sync$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_proxy_call_with_unix_fd_list_sync",
-        constants$641.g_dbus_proxy_call_with_unix_fd_list_sync$FUNC
-    );
-    static final FunctionDescriptor g_dbus_server_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_dbus_server_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_server_get_type",
-        constants$641.g_dbus_server_get_type$FUNC
-    );
-    static final FunctionDescriptor g_dbus_server_new_sync$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_server_new_sync$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_server_new_sync",
-        constants$641.g_dbus_server_new_sync$FUNC
-    );
-    static final FunctionDescriptor g_dbus_server_get_client_address$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_server_get_client_address$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_server_get_client_address",
-        constants$641.g_dbus_server_get_client_address$FUNC
+    static final MethodHandle g_file_info_has_attribute$MH = RuntimeHelper.downcallHandle(
+        "g_file_info_has_attribute",
+        constants$641.g_file_info_has_attribute$FUNC
     );
 }
 

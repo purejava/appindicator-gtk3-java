@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * int (*GtkAccelGroupActivate)(struct _GtkAccelGroup* accel_group,struct _GObject* acceleratable,unsigned int keyval,enum  modifier);
+ * }
+ */
 public interface GtkAccelGroupActivate {
 
-    int apply(java.lang.foreign.MemoryAddress accel_group, java.lang.foreign.MemoryAddress acceleratable, int keyval, int modifier);
-    static MemorySegment allocate(GtkAccelGroupActivate fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GtkAccelGroupActivate.class, fi, constants$1365.GtkAccelGroupActivate$FUNC, session);
+    int apply(java.lang.foreign.MemorySegment accel_group, java.lang.foreign.MemorySegment acceleratable, int keyval, int modifier);
+    static MemorySegment allocate(GtkAccelGroupActivate fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$1189.GtkAccelGroupActivate_UP$MH, fi, constants$1189.GtkAccelGroupActivate$FUNC, scope);
     }
-    static GtkAccelGroupActivate ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _accel_group, java.lang.foreign.MemoryAddress _acceleratable, int _keyval, int _modifier) -> {
+    static GtkAccelGroupActivate ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _accel_group, java.lang.foreign.MemorySegment _acceleratable, int _keyval, int _modifier) -> {
             try {
-                return (int)constants$1366.GtkAccelGroupActivate$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_accel_group, (java.lang.foreign.Addressable)_acceleratable, _keyval, _modifier);
+                return (int)constants$1189.GtkAccelGroupActivate_DOWN$MH.invokeExact(symbol, _accel_group, _acceleratable, _keyval, _modifier);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

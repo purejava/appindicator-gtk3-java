@@ -7,49 +7,59 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$981 {
+final class constants$981 {
 
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GTlsFileDatabase$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$981() {}
+    static final FunctionDescriptor printf$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GTlsFileDatabase$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GTlsFileDatabase",
-        constants$981.glib_slistautoptr_cleanup_GTlsFileDatabase$FUNC
+    static final MethodHandle printf$MH = RuntimeHelper.downcallHandleVariadic(
+        "printf",
+        constants$981.printf$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GTlsFileDatabase$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor sprintf$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GTlsFileDatabase$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GTlsFileDatabase",
-        constants$981.glib_queueautoptr_cleanup_GTlsFileDatabase$FUNC
+    static final MethodHandle sprintf$MH = RuntimeHelper.downcallHandleVariadic(
+        "sprintf",
+        constants$981.sprintf$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GTlsInteraction$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor vfprintf$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GTlsInteraction$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GTlsInteraction",
-        constants$981.glib_autoptr_clear_GTlsInteraction$FUNC
+    static final MethodHandle vfprintf$MH = RuntimeHelper.downcallHandle(
+        "vfprintf",
+        constants$981.vfprintf$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GTlsInteraction$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor vprintf$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GTlsInteraction$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GTlsInteraction",
-        constants$981.glib_autoptr_cleanup_GTlsInteraction$FUNC
+    static final MethodHandle vprintf$MH = RuntimeHelper.downcallHandle(
+        "vprintf",
+        constants$981.vprintf$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GTlsInteraction$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor vsprintf$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GTlsInteraction$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GTlsInteraction",
-        constants$981.glib_listautoptr_cleanup_GTlsInteraction$FUNC
+    static final MethodHandle vsprintf$MH = RuntimeHelper.downcallHandle(
+        "vsprintf",
+        constants$981.vsprintf$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GTlsInteraction$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor snprintf$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GTlsInteraction$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GTlsInteraction",
-        constants$981.glib_slistautoptr_cleanup_GTlsInteraction$FUNC
+    static final MethodHandle snprintf$MH = RuntimeHelper.downcallHandleVariadic(
+        "snprintf",
+        constants$981.snprintf$FUNC
     );
 }
 

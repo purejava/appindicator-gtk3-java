@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkAccelLabelClass extends _GtkAccelLabelClass {
+/**
+ * {@snippet :
+ * typedef struct _GtkAccelLabelClass GtkAccelLabelClass;
+ * }
+ */
+public final class GtkAccelLabelClass extends _GtkAccelLabelClass {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkAccelLabelClass() {}
 }
 
 

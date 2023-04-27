@@ -7,49 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1775 {
+final class constants$1775 {
 
-    static final FunctionDescriptor GTK_NATIVE_DIALOG_CLASS$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1775() {}
+    static final FunctionDescriptor gtk_recent_info_has_group$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GTK_NATIVE_DIALOG_CLASS$MH = RuntimeHelper.downcallHandle(
-        "GTK_NATIVE_DIALOG_CLASS",
-        constants$1775.GTK_NATIVE_DIALOG_CLASS$FUNC
+    static final MethodHandle gtk_recent_info_has_group$MH = RuntimeHelper.downcallHandle(
+        "gtk_recent_info_has_group",
+        constants$1775.gtk_recent_info_has_group$FUNC
     );
-    static final FunctionDescriptor GTK_IS_NATIVE_DIALOG$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_recent_info_get_icon$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_recent_info_get_icon$MH = RuntimeHelper.downcallHandle(
+        "gtk_recent_info_get_icon",
+        constants$1775.gtk_recent_info_get_icon$FUNC
+    );
+    static final FunctionDescriptor gtk_recent_info_get_gicon$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GTK_IS_NATIVE_DIALOG$MH = RuntimeHelper.downcallHandle(
-        "GTK_IS_NATIVE_DIALOG",
-        constants$1775.GTK_IS_NATIVE_DIALOG$FUNC
+    static final MethodHandle gtk_recent_info_get_gicon$MH = RuntimeHelper.downcallHandle(
+        "gtk_recent_info_get_gicon",
+        constants$1775.gtk_recent_info_get_gicon$FUNC
     );
-    static final FunctionDescriptor GTK_IS_NATIVE_DIALOG_CLASS$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_recent_info_get_short_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GTK_IS_NATIVE_DIALOG_CLASS$MH = RuntimeHelper.downcallHandle(
-        "GTK_IS_NATIVE_DIALOG_CLASS",
-        constants$1775.GTK_IS_NATIVE_DIALOG_CLASS$FUNC
+    static final MethodHandle gtk_recent_info_get_short_name$MH = RuntimeHelper.downcallHandle(
+        "gtk_recent_info_get_short_name",
+        constants$1775.gtk_recent_info_get_short_name$FUNC
     );
-    static final FunctionDescriptor GTK_NATIVE_DIALOG_GET_CLASS$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_recent_info_get_uri_display$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GTK_NATIVE_DIALOG_GET_CLASS$MH = RuntimeHelper.downcallHandle(
-        "GTK_NATIVE_DIALOG_GET_CLASS",
-        constants$1775.GTK_NATIVE_DIALOG_GET_CLASS$FUNC
+    static final MethodHandle gtk_recent_info_get_uri_display$MH = RuntimeHelper.downcallHandle(
+        "gtk_recent_info_get_uri_display",
+        constants$1775.gtk_recent_info_get_uri_display$FUNC
     );
-    static final FunctionDescriptor gtk_native_dialog_show$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_recent_info_get_age$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_native_dialog_show$MH = RuntimeHelper.downcallHandle(
-        "gtk_native_dialog_show",
-        constants$1775.gtk_native_dialog_show$FUNC
-    );
-    static final FunctionDescriptor gtk_native_dialog_hide$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_native_dialog_hide$MH = RuntimeHelper.downcallHandle(
-        "gtk_native_dialog_hide",
-        constants$1775.gtk_native_dialog_hide$FUNC
+    static final MethodHandle gtk_recent_info_get_age$MH = RuntimeHelper.downcallHandle(
+        "gtk_recent_info_get_age",
+        constants$1775.gtk_recent_info_get_age$FUNC
     );
 }
 

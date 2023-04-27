@@ -7,9 +7,30 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GtkRcStyle {
+ *     GObject parent_instance;
+ *     gchar* name;
+ *     gchar* bg_pixmap_name[5];
+ *     PangoFontDescription* font_desc;
+ *     GtkRcFlags color_flags[5];
+ *     GdkColor fg[5];
+ *     GdkColor bg[5];
+ *     GdkColor text[5];
+ *     GdkColor base[5];
+ *     gint xthickness;
+ *     gint ythickness;
+ *     GArray* rc_properties;
+ *     GSList* rc_style_lists;
+ *     GSList* icon_factories;
+ *      *     guint engine_specified;
+ * };
+ * }
+ */
 public class _GtkRcStyle {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
                 Constants$root.C_POINTER$LAYOUT.withName("g_class")
@@ -56,10 +77,7 @@ public class _GtkRcStyle {
         Constants$root.C_POINTER$LAYOUT.withName("rc_properties"),
         Constants$root.C_POINTER$LAYOUT.withName("rc_style_lists"),
         Constants$root.C_POINTER$LAYOUT.withName("icon_factories"),
-        MemoryLayout.structLayout(
-            MemoryLayout.paddingLayout(1).withName("engine_specified"),
-            MemoryLayout.paddingLayout(63)
-        )
+        MemoryLayout.paddingLayout(64)
     ).withName("_GtkRcStyle");
     public static MemoryLayout $LAYOUT() {
         return _GtkRcStyle.$struct$LAYOUT;
@@ -71,16 +89,28 @@ public class _GtkRcStyle {
     public static VarHandle name$VH() {
         return _GtkRcStyle.name$VH;
     }
-    public static MemoryAddress name$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkRcStyle.name$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gchar* name;
+     * }
+     */
+    public static MemorySegment name$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkRcStyle.name$VH.get(seg);
     }
-    public static void name$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gchar* name;
+     * }
+     */
+    public static void name$set(MemorySegment seg, MemorySegment x) {
         _GtkRcStyle.name$VH.set(seg, x);
     }
-    public static MemoryAddress name$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkRcStyle.name$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment name$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkRcStyle.name$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void name$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void name$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkRcStyle.name$VH.set(seg.asSlice(index*sizeof()), x);
     }
     public static MemorySegment bg_pixmap_name$slice(MemorySegment seg) {
@@ -90,16 +120,28 @@ public class _GtkRcStyle {
     public static VarHandle font_desc$VH() {
         return _GtkRcStyle.font_desc$VH;
     }
-    public static MemoryAddress font_desc$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkRcStyle.font_desc$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * PangoFontDescription* font_desc;
+     * }
+     */
+    public static MemorySegment font_desc$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkRcStyle.font_desc$VH.get(seg);
     }
-    public static void font_desc$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * PangoFontDescription* font_desc;
+     * }
+     */
+    public static void font_desc$set(MemorySegment seg, MemorySegment x) {
         _GtkRcStyle.font_desc$VH.set(seg, x);
     }
-    public static MemoryAddress font_desc$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkRcStyle.font_desc$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment font_desc$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkRcStyle.font_desc$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void font_desc$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void font_desc$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkRcStyle.font_desc$VH.set(seg.asSlice(index*sizeof()), x);
     }
     public static MemorySegment color_flags$slice(MemorySegment seg) {
@@ -121,10 +163,22 @@ public class _GtkRcStyle {
     public static VarHandle xthickness$VH() {
         return _GtkRcStyle.xthickness$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gint xthickness;
+     * }
+     */
     public static int xthickness$get(MemorySegment seg) {
         return (int)_GtkRcStyle.xthickness$VH.get(seg);
     }
-    public static void xthickness$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gint xthickness;
+     * }
+     */
+    public static void xthickness$set(MemorySegment seg, int x) {
         _GtkRcStyle.xthickness$VH.set(seg, x);
     }
     public static int xthickness$get(MemorySegment seg, long index) {
@@ -137,10 +191,22 @@ public class _GtkRcStyle {
     public static VarHandle ythickness$VH() {
         return _GtkRcStyle.ythickness$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gint ythickness;
+     * }
+     */
     public static int ythickness$get(MemorySegment seg) {
         return (int)_GtkRcStyle.ythickness$VH.get(seg);
     }
-    public static void ythickness$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gint ythickness;
+     * }
+     */
+    public static void ythickness$set(MemorySegment seg, int x) {
         _GtkRcStyle.ythickness$VH.set(seg, x);
     }
     public static int ythickness$get(MemorySegment seg, long index) {
@@ -153,56 +219,92 @@ public class _GtkRcStyle {
     public static VarHandle rc_properties$VH() {
         return _GtkRcStyle.rc_properties$VH;
     }
-    public static MemoryAddress rc_properties$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkRcStyle.rc_properties$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GArray* rc_properties;
+     * }
+     */
+    public static MemorySegment rc_properties$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkRcStyle.rc_properties$VH.get(seg);
     }
-    public static void rc_properties$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GArray* rc_properties;
+     * }
+     */
+    public static void rc_properties$set(MemorySegment seg, MemorySegment x) {
         _GtkRcStyle.rc_properties$VH.set(seg, x);
     }
-    public static MemoryAddress rc_properties$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkRcStyle.rc_properties$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment rc_properties$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkRcStyle.rc_properties$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void rc_properties$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void rc_properties$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkRcStyle.rc_properties$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle rc_style_lists$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("rc_style_lists"));
     public static VarHandle rc_style_lists$VH() {
         return _GtkRcStyle.rc_style_lists$VH;
     }
-    public static MemoryAddress rc_style_lists$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkRcStyle.rc_style_lists$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GSList* rc_style_lists;
+     * }
+     */
+    public static MemorySegment rc_style_lists$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkRcStyle.rc_style_lists$VH.get(seg);
     }
-    public static void rc_style_lists$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GSList* rc_style_lists;
+     * }
+     */
+    public static void rc_style_lists$set(MemorySegment seg, MemorySegment x) {
         _GtkRcStyle.rc_style_lists$VH.set(seg, x);
     }
-    public static MemoryAddress rc_style_lists$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkRcStyle.rc_style_lists$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment rc_style_lists$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkRcStyle.rc_style_lists$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void rc_style_lists$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void rc_style_lists$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkRcStyle.rc_style_lists$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle icon_factories$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("icon_factories"));
     public static VarHandle icon_factories$VH() {
         return _GtkRcStyle.icon_factories$VH;
     }
-    public static MemoryAddress icon_factories$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkRcStyle.icon_factories$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GSList* icon_factories;
+     * }
+     */
+    public static MemorySegment icon_factories$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkRcStyle.icon_factories$VH.get(seg);
     }
-    public static void icon_factories$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GSList* icon_factories;
+     * }
+     */
+    public static void icon_factories$set(MemorySegment seg, MemorySegment x) {
         _GtkRcStyle.icon_factories$VH.set(seg, x);
     }
-    public static MemoryAddress icon_factories$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkRcStyle.icon_factories$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment icon_factories$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkRcStyle.icon_factories$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void icon_factories$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void icon_factories$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkRcStyle.icon_factories$VH.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

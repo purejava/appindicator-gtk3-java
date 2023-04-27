@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class AtkStreamableContent {
+/**
+ * {@snippet :
+ * typedef struct _AtkStreamableContent AtkStreamableContent;
+ * }
+ */
+public final class AtkStreamableContent {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private AtkStreamableContent() {}
 }
 
 

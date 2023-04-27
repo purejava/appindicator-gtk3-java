@@ -7,49 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1088 {
+final class constants$1088 {
 
-    static final FunctionDescriptor glib_queueautoptr_cleanup_PangoAttrList$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1088() {}
+    static final FunctionDescriptor gdk_window_get_clip_region$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_PangoAttrList$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_PangoAttrList",
-        constants$1088.glib_queueautoptr_cleanup_PangoAttrList$FUNC
+    static final MethodHandle gdk_window_get_clip_region$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_get_clip_region",
+        constants$1088.gdk_window_get_clip_region$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_PangoAttrIterator$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gdk_window_get_visible_region$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_PangoAttrIterator$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_PangoAttrIterator",
-        constants$1088.glib_autoptr_clear_PangoAttrIterator$FUNC
+    static final MethodHandle gdk_window_get_visible_region$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_get_visible_region",
+        constants$1088.gdk_window_get_visible_region$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_PangoAttrIterator$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gdk_window_begin_paint_rect$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_PangoAttrIterator$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_PangoAttrIterator",
-        constants$1088.glib_autoptr_cleanup_PangoAttrIterator$FUNC
+    static final MethodHandle gdk_window_begin_paint_rect$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_begin_paint_rect",
+        constants$1088.gdk_window_begin_paint_rect$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_PangoAttrIterator$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gdk_window_mark_paint_from_clip$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_PangoAttrIterator$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_PangoAttrIterator",
-        constants$1088.glib_listautoptr_cleanup_PangoAttrIterator$FUNC
+    static final MethodHandle gdk_window_mark_paint_from_clip$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_mark_paint_from_clip",
+        constants$1088.gdk_window_mark_paint_from_clip$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_PangoAttrIterator$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gdk_window_begin_paint_region$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_PangoAttrIterator$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_PangoAttrIterator",
-        constants$1088.glib_slistautoptr_cleanup_PangoAttrIterator$FUNC
+    static final MethodHandle gdk_window_begin_paint_region$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_begin_paint_region",
+        constants$1088.gdk_window_begin_paint_region$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_PangoAttrIterator$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gdk_window_end_paint$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_PangoAttrIterator$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_PangoAttrIterator",
-        constants$1088.glib_queueautoptr_cleanup_PangoAttrIterator$FUNC
+    static final MethodHandle gdk_window_end_paint$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_end_paint",
+        constants$1088.gdk_window_end_paint$FUNC
     );
 }
 

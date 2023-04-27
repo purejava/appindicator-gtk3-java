@@ -7,50 +7,16 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$2006 {
+final class constants$2006 {
 
-    static final FunctionDescriptor gtk_shortcut_label_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_shortcut_label_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_shortcut_label_new",
-        constants$2006.gtk_shortcut_label_new$FUNC
-    );
-    static final FunctionDescriptor gtk_shortcut_label_get_accelerator$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_shortcut_label_get_accelerator$MH = RuntimeHelper.downcallHandle(
-        "gtk_shortcut_label_get_accelerator",
-        constants$2006.gtk_shortcut_label_get_accelerator$FUNC
-    );
-    static final FunctionDescriptor gtk_shortcut_label_set_accelerator$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_shortcut_label_set_accelerator$MH = RuntimeHelper.downcallHandle(
-        "gtk_shortcut_label_set_accelerator",
-        constants$2006.gtk_shortcut_label_set_accelerator$FUNC
-    );
-    static final FunctionDescriptor gtk_shortcut_label_get_disabled_text$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_shortcut_label_get_disabled_text$MH = RuntimeHelper.downcallHandle(
-        "gtk_shortcut_label_get_disabled_text",
-        constants$2006.gtk_shortcut_label_get_disabled_text$FUNC
-    );
-    static final FunctionDescriptor gtk_shortcut_label_set_disabled_text$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_shortcut_label_set_disabled_text$MH = RuntimeHelper.downcallHandle(
-        "gtk_shortcut_label_set_disabled_text",
-        constants$2006.gtk_shortcut_label_set_disabled_text$FUNC
-    );
-    static final FunctionDescriptor gtk_shortcuts_group_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_shortcuts_group_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_shortcuts_group_get_type",
-        constants$2006.gtk_shortcuts_group_get_type$FUNC
-    );
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$2006() {}
+    static final MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_IS_MEDIA_CHECK_AUTOMATIC$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("mountable::is-media-check-automatic");
+    static final MemorySegment G_FILE_ATTRIBUTE_TIME_MODIFIED$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("time::modified");
+    static final MemorySegment G_FILE_ATTRIBUTE_TIME_MODIFIED_USEC$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("time::modified-usec");
+    static final MemorySegment G_FILE_ATTRIBUTE_TIME_MODIFIED_NSEC$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("time::modified-nsec");
+    static final MemorySegment G_FILE_ATTRIBUTE_TIME_ACCESS$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("time::access");
+    static final MemorySegment G_FILE_ATTRIBUTE_TIME_ACCESS_USEC$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("time::access-usec");
 }
 
 

@@ -7,52 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1756 {
+final class constants$1756 {
 
-    static final FunctionDescriptor gtk_expander_set_use_markup$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1756() {}
+    static final FunctionDescriptor gtk_print_operation_set_has_selection$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_expander_set_use_markup$MH = RuntimeHelper.downcallHandle(
-        "gtk_expander_set_use_markup",
-        constants$1756.gtk_expander_set_use_markup$FUNC
+    static final MethodHandle gtk_print_operation_set_has_selection$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_operation_set_has_selection",
+        constants$1756.gtk_print_operation_set_has_selection$FUNC
     );
-    static final FunctionDescriptor gtk_expander_get_use_markup$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_print_operation_get_has_selection$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_expander_get_use_markup$MH = RuntimeHelper.downcallHandle(
-        "gtk_expander_get_use_markup",
-        constants$1756.gtk_expander_get_use_markup$FUNC
+    static final MethodHandle gtk_print_operation_get_has_selection$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_operation_get_has_selection",
+        constants$1756.gtk_print_operation_get_has_selection$FUNC
     );
-    static final FunctionDescriptor gtk_expander_set_label_widget$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_expander_set_label_widget$MH = RuntimeHelper.downcallHandle(
-        "gtk_expander_set_label_widget",
-        constants$1756.gtk_expander_set_label_widget$FUNC
-    );
-    static final FunctionDescriptor gtk_expander_get_label_widget$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_expander_get_label_widget$MH = RuntimeHelper.downcallHandle(
-        "gtk_expander_get_label_widget",
-        constants$1756.gtk_expander_get_label_widget$FUNC
-    );
-    static final FunctionDescriptor gtk_expander_set_label_fill$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_print_operation_set_embed_page_setup$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_expander_set_label_fill$MH = RuntimeHelper.downcallHandle(
-        "gtk_expander_set_label_fill",
-        constants$1756.gtk_expander_set_label_fill$FUNC
+    static final MethodHandle gtk_print_operation_set_embed_page_setup$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_operation_set_embed_page_setup",
+        constants$1756.gtk_print_operation_set_embed_page_setup$FUNC
     );
-    static final FunctionDescriptor gtk_expander_get_label_fill$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_print_operation_get_embed_page_setup$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_expander_get_label_fill$MH = RuntimeHelper.downcallHandle(
-        "gtk_expander_get_label_fill",
-        constants$1756.gtk_expander_get_label_fill$FUNC
+    static final MethodHandle gtk_print_operation_get_embed_page_setup$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_operation_get_embed_page_setup",
+        constants$1756.gtk_print_operation_get_embed_page_setup$FUNC
+    );
+    static final FunctionDescriptor gtk_print_operation_get_n_pages_to_print$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_print_operation_get_n_pages_to_print$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_operation_get_n_pages_to_print",
+        constants$1756.gtk_print_operation_get_n_pages_to_print$FUNC
+    );
+    static final FunctionDescriptor gtk_print_run_page_setup_dialog$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_print_run_page_setup_dialog$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_run_page_setup_dialog",
+        constants$1756.gtk_print_run_page_setup_dialog$FUNC
     );
 }
 

@@ -7,49 +7,46 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$950 {
+final class constants$950 {
 
-    static final FunctionDescriptor glib_listautoptr_cleanup_GProxyResolver$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$950() {}
+    static final FunctionDescriptor pango_script_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle pango_script_get_type$MH = RuntimeHelper.downcallHandle(
+        "pango_script_get_type",
+        constants$950.pango_script_get_type$FUNC
+    );
+    static final FunctionDescriptor pango_tab_align_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle pango_tab_align_get_type$MH = RuntimeHelper.downcallHandle(
+        "pango_tab_align_get_type",
+        constants$950.pango_tab_align_get_type$FUNC
+    );
+    static final FunctionDescriptor pango_fontset_simple_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle pango_fontset_simple_get_type$MH = RuntimeHelper.downcallHandle(
+        "pango_fontset_simple_get_type",
+        constants$950.pango_fontset_simple_get_type$FUNC
+    );
+    static final FunctionDescriptor pango_fontset_simple_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GProxyResolver$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GProxyResolver",
-        constants$950.glib_listautoptr_cleanup_GProxyResolver$FUNC
+    static final MethodHandle pango_fontset_simple_new$MH = RuntimeHelper.downcallHandle(
+        "pango_fontset_simple_new",
+        constants$950.pango_fontset_simple_new$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GProxyResolver$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_fontset_simple_append$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GProxyResolver$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GProxyResolver",
-        constants$950.glib_slistautoptr_cleanup_GProxyResolver$FUNC
+    static final MethodHandle pango_fontset_simple_append$MH = RuntimeHelper.downcallHandle(
+        "pango_fontset_simple_append",
+        constants$950.pango_fontset_simple_append$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GProxyResolver$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_fontset_simple_size$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GProxyResolver$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GProxyResolver",
-        constants$950.glib_queueautoptr_cleanup_GProxyResolver$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_clear_GRemoteActionGroup$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_autoptr_clear_GRemoteActionGroup$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GRemoteActionGroup",
-        constants$950.glib_autoptr_clear_GRemoteActionGroup$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_cleanup_GRemoteActionGroup$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_autoptr_cleanup_GRemoteActionGroup$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GRemoteActionGroup",
-        constants$950.glib_autoptr_cleanup_GRemoteActionGroup$FUNC
-    );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GRemoteActionGroup$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_listautoptr_cleanup_GRemoteActionGroup$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GRemoteActionGroup",
-        constants$950.glib_listautoptr_cleanup_GRemoteActionGroup$FUNC
+    static final MethodHandle pango_fontset_simple_size$MH = RuntimeHelper.downcallHandle(
+        "pango_fontset_simple_size",
+        constants$950.pango_fontset_simple_size$FUNC
     );
 }
 

@@ -7,9 +7,17 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct {
+ *     int num_bytes;
+ *     int num_glyphs;
+ * };
+ * }
+ */
 public class cairo_text_cluster_t {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_INT$LAYOUT.withName("num_bytes"),
         Constants$root.C_INT$LAYOUT.withName("num_glyphs")
     );
@@ -20,10 +28,22 @@ public class cairo_text_cluster_t {
     public static VarHandle num_bytes$VH() {
         return cairo_text_cluster_t.num_bytes$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * int num_bytes;
+     * }
+     */
     public static int num_bytes$get(MemorySegment seg) {
         return (int)cairo_text_cluster_t.num_bytes$VH.get(seg);
     }
-    public static void num_bytes$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * int num_bytes;
+     * }
+     */
+    public static void num_bytes$set(MemorySegment seg, int x) {
         cairo_text_cluster_t.num_bytes$VH.set(seg, x);
     }
     public static int num_bytes$get(MemorySegment seg, long index) {
@@ -36,10 +56,22 @@ public class cairo_text_cluster_t {
     public static VarHandle num_glyphs$VH() {
         return cairo_text_cluster_t.num_glyphs$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * int num_glyphs;
+     * }
+     */
     public static int num_glyphs$get(MemorySegment seg) {
         return (int)cairo_text_cluster_t.num_glyphs$VH.get(seg);
     }
-    public static void num_glyphs$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * int num_glyphs;
+     * }
+     */
+    public static void num_glyphs$set(MemorySegment seg, int x) {
         cairo_text_cluster_t.num_glyphs$VH.set(seg, x);
     }
     public static int num_glyphs$get(MemorySegment seg, long index) {
@@ -50,10 +82,10 @@ public class cairo_text_cluster_t {
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

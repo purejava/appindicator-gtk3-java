@@ -7,45 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1857 {
+final class constants$1857 {
 
-    static final FunctionDescriptor gtk_im_context_simple_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_im_context_simple_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_im_context_simple_get_type",
-        constants$1857.gtk_im_context_simple_get_type$FUNC
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1857() {}
+    static final FunctionDescriptor gtk_tool_item_group_get_n_items$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor gtk_im_context_simple_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_im_context_simple_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_im_context_simple_new",
-        constants$1857.gtk_im_context_simple_new$FUNC
+    static final MethodHandle gtk_tool_item_group_get_n_items$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_item_group_get_n_items",
+        constants$1857.gtk_tool_item_group_get_n_items$FUNC
     );
-    static final FunctionDescriptor gtk_im_context_simple_add_table$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_tool_item_group_get_nth_item$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_tool_item_group_get_nth_item$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_item_group_get_nth_item",
+        constants$1857.gtk_tool_item_group_get_nth_item$FUNC
+    );
+    static final FunctionDescriptor gtk_tool_item_group_get_drop_item$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_im_context_simple_add_table$MH = RuntimeHelper.downcallHandle(
-        "gtk_im_context_simple_add_table",
-        constants$1857.gtk_im_context_simple_add_table$FUNC
+    static final MethodHandle gtk_tool_item_group_get_drop_item$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_item_group_get_drop_item",
+        constants$1857.gtk_tool_item_group_get_drop_item$FUNC
     );
-    static final FunctionDescriptor gtk_im_context_simple_add_compose_file$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_tool_palette_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_tool_palette_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_palette_get_type",
+        constants$1857.gtk_tool_palette_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_tool_palette_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_tool_palette_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_palette_new",
+        constants$1857.gtk_tool_palette_new$FUNC
+    );
+    static final FunctionDescriptor gtk_tool_palette_set_group_position$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_im_context_simple_add_compose_file$MH = RuntimeHelper.downcallHandle(
-        "gtk_im_context_simple_add_compose_file",
-        constants$1857.gtk_im_context_simple_add_compose_file$FUNC
-    );
-    static final FunctionDescriptor gtk_im_multicontext_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_im_multicontext_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_im_multicontext_get_type",
-        constants$1857.gtk_im_multicontext_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_im_multicontext_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_im_multicontext_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_im_multicontext_new",
-        constants$1857.gtk_im_multicontext_new$FUNC
+    static final MethodHandle gtk_tool_palette_set_group_position$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_palette_set_group_position",
+        constants$1857.gtk_tool_palette_set_group_position$FUNC
     );
 }
 

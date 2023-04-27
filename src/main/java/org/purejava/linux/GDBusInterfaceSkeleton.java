@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GDBusInterfaceSkeleton extends _GDBusInterfaceSkeleton {
+/**
+ * {@snippet :
+ * typedef struct _GDBusInterfaceSkeleton GDBusInterfaceSkeleton;
+ * }
+ */
+public final class GDBusInterfaceSkeleton extends _GDBusInterfaceSkeleton {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GDBusInterfaceSkeleton() {}
 }
 
 

@@ -7,63 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1259 {
+final class constants$1259 {
 
-    static final FunctionDescriptor gdk_window_set_keep_below$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1259() {}
+    static final FunctionDescriptor gtk_widget_set_state_flags$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_widget_set_state_flags$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_set_state_flags",
+        constants$1259.gtk_widget_set_state_flags$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_unset_state_flags$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gdk_window_set_keep_below$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_keep_below",
-        constants$1259.gdk_window_set_keep_below$FUNC
+    static final MethodHandle gtk_widget_unset_state_flags$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_unset_state_flags",
+        constants$1259.gtk_widget_unset_state_flags$FUNC
     );
-    static final FunctionDescriptor gdk_window_set_opacity$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle gdk_window_set_opacity$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_opacity",
-        constants$1259.gdk_window_set_opacity$FUNC
-    );
-    static final FunctionDescriptor gdk_window_register_dnd$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_widget_get_state_flags$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_window_register_dnd$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_register_dnd",
-        constants$1259.gdk_window_register_dnd$FUNC
+    static final MethodHandle gtk_widget_get_state_flags$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_state_flags",
+        constants$1259.gtk_widget_get_state_flags$FUNC
     );
-    static final FunctionDescriptor gdk_window_get_drag_protocol$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_widget_set_sensitive$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_widget_set_sensitive$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_set_sensitive",
+        constants$1259.gtk_widget_set_sensitive$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_get_sensitive$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_window_get_drag_protocol$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_drag_protocol",
-        constants$1259.gdk_window_get_drag_protocol$FUNC
+    static final MethodHandle gtk_widget_get_sensitive$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_sensitive",
+        constants$1259.gtk_widget_get_sensitive$FUNC
     );
-    static final FunctionDescriptor gdk_window_begin_resize_drag$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor gtk_widget_is_sensitive$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_window_begin_resize_drag$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_begin_resize_drag",
-        constants$1259.gdk_window_begin_resize_drag$FUNC
-    );
-    static final FunctionDescriptor gdk_window_begin_resize_drag_for_device$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_window_begin_resize_drag_for_device$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_begin_resize_drag_for_device",
-        constants$1259.gdk_window_begin_resize_drag_for_device$FUNC
+    static final MethodHandle gtk_widget_is_sensitive$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_is_sensitive",
+        constants$1259.gtk_widget_is_sensitive$FUNC
     );
 }
 

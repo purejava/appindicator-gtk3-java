@@ -7,9 +7,28 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GtkTableChild {
+ *     GtkWidget* widget;
+ *     guint16 left_attach;
+ *     guint16 right_attach;
+ *     guint16 top_attach;
+ *     guint16 bottom_attach;
+ *     guint16 xpadding;
+ *     guint16 ypadding;
+ *      *     guint xexpand;
+ *     guint yexpand;
+ *     guint xshrink;
+ *     guint yshrink;
+ *     guint xfill;
+ *     guint yfill;
+ * };
+ * }
+ */
 public class _GtkTableChild {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_POINTER$LAYOUT.withName("widget"),
         Constants$root.C_SHORT$LAYOUT.withName("left_attach"),
         Constants$root.C_SHORT$LAYOUT.withName("right_attach"),
@@ -17,15 +36,7 @@ public class _GtkTableChild {
         Constants$root.C_SHORT$LAYOUT.withName("bottom_attach"),
         Constants$root.C_SHORT$LAYOUT.withName("xpadding"),
         Constants$root.C_SHORT$LAYOUT.withName("ypadding"),
-        MemoryLayout.structLayout(
-            MemoryLayout.paddingLayout(1).withName("xexpand"),
-            MemoryLayout.paddingLayout(1).withName("yexpand"),
-            MemoryLayout.paddingLayout(1).withName("xshrink"),
-            MemoryLayout.paddingLayout(1).withName("yshrink"),
-            MemoryLayout.paddingLayout(1).withName("xfill"),
-            MemoryLayout.paddingLayout(1).withName("yfill"),
-            MemoryLayout.paddingLayout(26)
-        )
+        MemoryLayout.paddingLayout(32)
     ).withName("_GtkTableChild");
     public static MemoryLayout $LAYOUT() {
         return _GtkTableChild.$struct$LAYOUT;
@@ -34,26 +45,50 @@ public class _GtkTableChild {
     public static VarHandle widget$VH() {
         return _GtkTableChild.widget$VH;
     }
-    public static MemoryAddress widget$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkTableChild.widget$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GtkWidget* widget;
+     * }
+     */
+    public static MemorySegment widget$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkTableChild.widget$VH.get(seg);
     }
-    public static void widget$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GtkWidget* widget;
+     * }
+     */
+    public static void widget$set(MemorySegment seg, MemorySegment x) {
         _GtkTableChild.widget$VH.set(seg, x);
     }
-    public static MemoryAddress widget$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkTableChild.widget$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment widget$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkTableChild.widget$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void widget$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void widget$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkTableChild.widget$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle left_attach$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("left_attach"));
     public static VarHandle left_attach$VH() {
         return _GtkTableChild.left_attach$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * guint16 left_attach;
+     * }
+     */
     public static short left_attach$get(MemorySegment seg) {
         return (short)_GtkTableChild.left_attach$VH.get(seg);
     }
-    public static void left_attach$set( MemorySegment seg, short x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * guint16 left_attach;
+     * }
+     */
+    public static void left_attach$set(MemorySegment seg, short x) {
         _GtkTableChild.left_attach$VH.set(seg, x);
     }
     public static short left_attach$get(MemorySegment seg, long index) {
@@ -66,10 +101,22 @@ public class _GtkTableChild {
     public static VarHandle right_attach$VH() {
         return _GtkTableChild.right_attach$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * guint16 right_attach;
+     * }
+     */
     public static short right_attach$get(MemorySegment seg) {
         return (short)_GtkTableChild.right_attach$VH.get(seg);
     }
-    public static void right_attach$set( MemorySegment seg, short x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * guint16 right_attach;
+     * }
+     */
+    public static void right_attach$set(MemorySegment seg, short x) {
         _GtkTableChild.right_attach$VH.set(seg, x);
     }
     public static short right_attach$get(MemorySegment seg, long index) {
@@ -82,10 +129,22 @@ public class _GtkTableChild {
     public static VarHandle top_attach$VH() {
         return _GtkTableChild.top_attach$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * guint16 top_attach;
+     * }
+     */
     public static short top_attach$get(MemorySegment seg) {
         return (short)_GtkTableChild.top_attach$VH.get(seg);
     }
-    public static void top_attach$set( MemorySegment seg, short x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * guint16 top_attach;
+     * }
+     */
+    public static void top_attach$set(MemorySegment seg, short x) {
         _GtkTableChild.top_attach$VH.set(seg, x);
     }
     public static short top_attach$get(MemorySegment seg, long index) {
@@ -98,10 +157,22 @@ public class _GtkTableChild {
     public static VarHandle bottom_attach$VH() {
         return _GtkTableChild.bottom_attach$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * guint16 bottom_attach;
+     * }
+     */
     public static short bottom_attach$get(MemorySegment seg) {
         return (short)_GtkTableChild.bottom_attach$VH.get(seg);
     }
-    public static void bottom_attach$set( MemorySegment seg, short x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * guint16 bottom_attach;
+     * }
+     */
+    public static void bottom_attach$set(MemorySegment seg, short x) {
         _GtkTableChild.bottom_attach$VH.set(seg, x);
     }
     public static short bottom_attach$get(MemorySegment seg, long index) {
@@ -114,10 +185,22 @@ public class _GtkTableChild {
     public static VarHandle xpadding$VH() {
         return _GtkTableChild.xpadding$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * guint16 xpadding;
+     * }
+     */
     public static short xpadding$get(MemorySegment seg) {
         return (short)_GtkTableChild.xpadding$VH.get(seg);
     }
-    public static void xpadding$set( MemorySegment seg, short x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * guint16 xpadding;
+     * }
+     */
+    public static void xpadding$set(MemorySegment seg, short x) {
         _GtkTableChild.xpadding$VH.set(seg, x);
     }
     public static short xpadding$get(MemorySegment seg, long index) {
@@ -130,10 +213,22 @@ public class _GtkTableChild {
     public static VarHandle ypadding$VH() {
         return _GtkTableChild.ypadding$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * guint16 ypadding;
+     * }
+     */
     public static short ypadding$get(MemorySegment seg) {
         return (short)_GtkTableChild.ypadding$VH.get(seg);
     }
-    public static void ypadding$set( MemorySegment seg, short x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * guint16 ypadding;
+     * }
+     */
+    public static void ypadding$set(MemorySegment seg, short x) {
         _GtkTableChild.ypadding$VH.set(seg, x);
     }
     public static short ypadding$get(MemorySegment seg, long index) {
@@ -144,10 +239,10 @@ public class _GtkTableChild {
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

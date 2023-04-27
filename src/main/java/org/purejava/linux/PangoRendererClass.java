@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class PangoRendererClass extends _PangoRendererClass {
+/**
+ * {@snippet :
+ * typedef struct _PangoRendererClass PangoRendererClass;
+ * }
+ */
+public final class PangoRendererClass extends _PangoRendererClass {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private PangoRendererClass() {}
 }
 
 

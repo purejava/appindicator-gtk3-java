@@ -7,66 +7,57 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1239 {
+final class constants$1239 {
 
-    static final FunctionDescriptor gdk_window_show_unraised$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1239() {}
+    static final FunctionDescriptor atk_table_get_n_rows$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_window_show_unraised$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_show_unraised",
-        constants$1239.gdk_window_show_unraised$FUNC
+    static final MethodHandle atk_table_get_n_rows$MH = RuntimeHelper.downcallHandle(
+        "atk_table_get_n_rows",
+        constants$1239.atk_table_get_n_rows$FUNC
     );
-    static final FunctionDescriptor gdk_window_move$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor atk_table_get_column_extent_at$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gdk_window_move$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_move",
-        constants$1239.gdk_window_move$FUNC
+    static final MethodHandle atk_table_get_column_extent_at$MH = RuntimeHelper.downcallHandle(
+        "atk_table_get_column_extent_at",
+        constants$1239.atk_table_get_column_extent_at$FUNC
     );
-    static final FunctionDescriptor gdk_window_resize$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor atk_table_get_row_extent_at$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gdk_window_resize$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_resize",
-        constants$1239.gdk_window_resize$FUNC
+    static final MethodHandle atk_table_get_row_extent_at$MH = RuntimeHelper.downcallHandle(
+        "atk_table_get_row_extent_at",
+        constants$1239.atk_table_get_row_extent_at$FUNC
     );
-    static final FunctionDescriptor gdk_window_move_resize$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor atk_table_get_caption$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle atk_table_get_caption$MH = RuntimeHelper.downcallHandle(
+        "atk_table_get_caption",
+        constants$1239.atk_table_get_caption$FUNC
+    );
+    static final FunctionDescriptor atk_table_get_column_description$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gdk_window_move_resize$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_move_resize",
-        constants$1239.gdk_window_move_resize$FUNC
+    static final MethodHandle atk_table_get_column_description$MH = RuntimeHelper.downcallHandle(
+        "atk_table_get_column_description",
+        constants$1239.atk_table_get_column_description$FUNC
     );
-    static final FunctionDescriptor gdk_window_move_to_rect$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor atk_table_get_column_header$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gdk_window_move_to_rect$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_move_to_rect",
-        constants$1239.gdk_window_move_to_rect$FUNC
-    );
-    static final FunctionDescriptor gdk_window_reparent$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_window_reparent$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_reparent",
-        constants$1239.gdk_window_reparent$FUNC
+    static final MethodHandle atk_table_get_column_header$MH = RuntimeHelper.downcallHandle(
+        "atk_table_get_column_header",
+        constants$1239.atk_table_get_column_header$FUNC
     );
 }
 

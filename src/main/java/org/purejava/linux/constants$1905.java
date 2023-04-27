@@ -7,51 +7,57 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1905 {
+final class constants$1905 {
 
-    static final FunctionDescriptor gtk_mount_operation_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_mount_operation_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_mount_operation_new",
-        constants$1905.gtk_mount_operation_new$FUNC
-    );
-    static final FunctionDescriptor gtk_mount_operation_is_showing$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_mount_operation_is_showing$MH = RuntimeHelper.downcallHandle(
-        "gtk_mount_operation_is_showing",
-        constants$1905.gtk_mount_operation_is_showing$FUNC
-    );
-    static final FunctionDescriptor gtk_mount_operation_set_parent$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1905() {}
+    static final FunctionDescriptor gtk_widget_path_iter_has_region$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_mount_operation_set_parent$MH = RuntimeHelper.downcallHandle(
-        "gtk_mount_operation_set_parent",
-        constants$1905.gtk_mount_operation_set_parent$FUNC
+    static final MethodHandle gtk_widget_path_iter_has_region$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_path_iter_has_region",
+        constants$1905.gtk_widget_path_iter_has_region$FUNC
     );
-    static final FunctionDescriptor gtk_mount_operation_get_parent$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_mount_operation_get_parent$MH = RuntimeHelper.downcallHandle(
-        "gtk_mount_operation_get_parent",
-        constants$1905.gtk_mount_operation_get_parent$FUNC
-    );
-    static final FunctionDescriptor gtk_mount_operation_set_screen$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_widget_path_iter_has_qregion$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_mount_operation_set_screen$MH = RuntimeHelper.downcallHandle(
-        "gtk_mount_operation_set_screen",
-        constants$1905.gtk_mount_operation_set_screen$FUNC
+    static final MethodHandle gtk_widget_path_iter_has_qregion$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_path_iter_has_qregion",
+        constants$1905.gtk_widget_path_iter_has_qregion$FUNC
     );
-    static final FunctionDescriptor gtk_mount_operation_get_screen$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_widget_path_get_object_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_mount_operation_get_screen$MH = RuntimeHelper.downcallHandle(
-        "gtk_mount_operation_get_screen",
-        constants$1905.gtk_mount_operation_get_screen$FUNC
+    static final MethodHandle gtk_widget_path_get_object_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_path_get_object_type",
+        constants$1905.gtk_widget_path_get_object_type$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_path_is_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle gtk_widget_path_is_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_path_is_type",
+        constants$1905.gtk_widget_path_is_type$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_path_has_parent$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle gtk_widget_path_has_parent$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_path_has_parent",
+        constants$1905.gtk_widget_path_has_parent$FUNC
+    );
+    static final FunctionDescriptor gtk_window_group_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_window_group_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_group_get_type",
+        constants$1905.gtk_window_group_get_type$FUNC
     );
 }
 

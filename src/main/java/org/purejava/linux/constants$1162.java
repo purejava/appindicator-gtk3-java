@@ -7,73 +7,39 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1162 {
+final class constants$1162 {
 
-    static final FunctionDescriptor cairo_arc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1162() {}
+    static final FunctionDescriptor gdk_filter_return_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gdk_filter_return_get_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_filter_return_get_type",
+        constants$1162.gdk_filter_return_get_type$FUNC
     );
-    static final MethodHandle cairo_arc$MH = RuntimeHelper.downcallHandle(
-        "cairo_arc",
-        constants$1162.cairo_arc$FUNC
+    static final FunctionDescriptor gdk_event_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gdk_event_type_get_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_event_type_get_type",
+        constants$1162.gdk_event_type_get_type$FUNC
     );
-    static final FunctionDescriptor cairo_arc_negative$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final FunctionDescriptor gdk_visibility_state_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gdk_visibility_state_get_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_visibility_state_get_type",
+        constants$1162.gdk_visibility_state_get_type$FUNC
     );
-    static final MethodHandle cairo_arc_negative$MH = RuntimeHelper.downcallHandle(
-        "cairo_arc_negative",
-        constants$1162.cairo_arc_negative$FUNC
+    static final FunctionDescriptor gdk_touchpad_gesture_phase_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gdk_touchpad_gesture_phase_get_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_touchpad_gesture_phase_get_type",
+        constants$1162.gdk_touchpad_gesture_phase_get_type$FUNC
     );
-    static final FunctionDescriptor cairo_rel_move_to$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final FunctionDescriptor gdk_scroll_direction_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gdk_scroll_direction_get_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_scroll_direction_get_type",
+        constants$1162.gdk_scroll_direction_get_type$FUNC
     );
-    static final MethodHandle cairo_rel_move_to$MH = RuntimeHelper.downcallHandle(
-        "cairo_rel_move_to",
-        constants$1162.cairo_rel_move_to$FUNC
-    );
-    static final FunctionDescriptor cairo_rel_line_to$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle cairo_rel_line_to$MH = RuntimeHelper.downcallHandle(
-        "cairo_rel_line_to",
-        constants$1162.cairo_rel_line_to$FUNC
-    );
-    static final FunctionDescriptor cairo_rel_curve_to$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle cairo_rel_curve_to$MH = RuntimeHelper.downcallHandle(
-        "cairo_rel_curve_to",
-        constants$1162.cairo_rel_curve_to$FUNC
-    );
-    static final FunctionDescriptor cairo_rectangle$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle cairo_rectangle$MH = RuntimeHelper.downcallHandle(
-        "cairo_rectangle",
-        constants$1162.cairo_rectangle$FUNC
+    static final FunctionDescriptor gdk_notify_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gdk_notify_type_get_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_notify_type_get_type",
+        constants$1162.gdk_notify_type_get_type$FUNC
     );
 }
 

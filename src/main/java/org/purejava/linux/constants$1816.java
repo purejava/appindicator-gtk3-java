@@ -7,46 +7,57 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1816 {
+final class constants$1816 {
 
-    static final FunctionDescriptor gtk_icon_size_register_alias$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1816() {}
+    static final FunctionDescriptor gtk_spin_button_set_adjustment$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_spin_button_set_adjustment$MH = RuntimeHelper.downcallHandle(
+        "gtk_spin_button_set_adjustment",
+        constants$1816.gtk_spin_button_set_adjustment$FUNC
+    );
+    static final FunctionDescriptor gtk_spin_button_get_adjustment$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_spin_button_get_adjustment$MH = RuntimeHelper.downcallHandle(
+        "gtk_spin_button_get_adjustment",
+        constants$1816.gtk_spin_button_get_adjustment$FUNC
+    );
+    static final FunctionDescriptor gtk_spin_button_set_digits$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_icon_size_register_alias$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_size_register_alias",
-        constants$1816.gtk_icon_size_register_alias$FUNC
+    static final MethodHandle gtk_spin_button_set_digits$MH = RuntimeHelper.downcallHandle(
+        "gtk_spin_button_set_digits",
+        constants$1816.gtk_spin_button_set_digits$FUNC
     );
-    static final FunctionDescriptor gtk_icon_size_from_name$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_spin_button_get_digits$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_icon_size_from_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_size_from_name",
-        constants$1816.gtk_icon_size_from_name$FUNC
+    static final MethodHandle gtk_spin_button_get_digits$MH = RuntimeHelper.downcallHandle(
+        "gtk_spin_button_get_digits",
+        constants$1816.gtk_spin_button_get_digits$FUNC
     );
-    static final FunctionDescriptor gtk_icon_size_get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor gtk_spin_button_set_increments$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
     );
-    static final MethodHandle gtk_icon_size_get_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_size_get_name",
-        constants$1816.gtk_icon_size_get_name$FUNC
+    static final MethodHandle gtk_spin_button_set_increments$MH = RuntimeHelper.downcallHandle(
+        "gtk_spin_button_set_increments",
+        constants$1816.gtk_spin_button_set_increments$FUNC
     );
-    static final FunctionDescriptor gtk_icon_set_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_icon_set_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_set_get_type",
-        constants$1816.gtk_icon_set_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_set_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_icon_set_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_set_new",
-        constants$1816.gtk_icon_set_new$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_set_new_from_pixbuf$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_spin_button_get_increments$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_icon_set_new_from_pixbuf$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_set_new_from_pixbuf",
-        constants$1816.gtk_icon_set_new_from_pixbuf$FUNC
+    static final MethodHandle gtk_spin_button_get_increments$MH = RuntimeHelper.downcallHandle(
+        "gtk_spin_button_get_increments",
+        constants$1816.gtk_spin_button_get_increments$FUNC
     );
 }
 

@@ -7,70 +7,39 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$671 {
+final class constants$671 {
 
-    static final FunctionDescriptor g_file_replace_readwrite$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$671() {}
+    static final FunctionDescriptor g_file_monitor_event_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_file_monitor_event_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_file_monitor_event_get_type",
+        constants$671.g_file_monitor_event_get_type$FUNC
     );
-    static final MethodHandle g_file_replace_readwrite$MH = RuntimeHelper.downcallHandle(
-        "g_file_replace_readwrite",
-        constants$671.g_file_replace_readwrite$FUNC
+    static final FunctionDescriptor g_io_error_enum_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_io_error_enum_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_io_error_enum_get_type",
+        constants$671.g_io_error_enum_get_type$FUNC
     );
-    static final FunctionDescriptor g_file_replace_readwrite_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_ask_password_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_ask_password_flags_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_ask_password_flags_get_type",
+        constants$671.g_ask_password_flags_get_type$FUNC
     );
-    static final MethodHandle g_file_replace_readwrite_async$MH = RuntimeHelper.downcallHandle(
-        "g_file_replace_readwrite_async",
-        constants$671.g_file_replace_readwrite_async$FUNC
+    static final FunctionDescriptor g_password_save_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_password_save_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_password_save_get_type",
+        constants$671.g_password_save_get_type$FUNC
     );
-    static final FunctionDescriptor g_file_replace_readwrite_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_mount_operation_result_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_mount_operation_result_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_mount_operation_result_get_type",
+        constants$671.g_mount_operation_result_get_type$FUNC
     );
-    static final MethodHandle g_file_replace_readwrite_finish$MH = RuntimeHelper.downcallHandle(
-        "g_file_replace_readwrite_finish",
-        constants$671.g_file_replace_readwrite_finish$FUNC
-    );
-    static final FunctionDescriptor g_file_query_exists$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_query_exists$MH = RuntimeHelper.downcallHandle(
-        "g_file_query_exists",
-        constants$671.g_file_query_exists$FUNC
-    );
-    static final FunctionDescriptor g_file_query_file_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_query_file_type$MH = RuntimeHelper.downcallHandle(
-        "g_file_query_file_type",
-        constants$671.g_file_query_file_type$FUNC
-    );
-    static final FunctionDescriptor g_file_query_info$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_query_info$MH = RuntimeHelper.downcallHandle(
-        "g_file_query_info",
-        constants$671.g_file_query_info$FUNC
+    static final FunctionDescriptor g_output_stream_splice_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_output_stream_splice_flags_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_output_stream_splice_flags_get_type",
+        constants$671.g_output_stream_splice_flags_get_type$FUNC
     );
 }
 

@@ -7,9 +7,21 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _PangoMatrix {
+ *     double xx;
+ *     double xy;
+ *     double yx;
+ *     double yy;
+ *     double x0;
+ *     double y0;
+ * };
+ * }
+ */
 public class _PangoMatrix {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_DOUBLE$LAYOUT.withName("xx"),
         Constants$root.C_DOUBLE$LAYOUT.withName("xy"),
         Constants$root.C_DOUBLE$LAYOUT.withName("yx"),
@@ -24,10 +36,22 @@ public class _PangoMatrix {
     public static VarHandle xx$VH() {
         return _PangoMatrix.xx$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * double xx;
+     * }
+     */
     public static double xx$get(MemorySegment seg) {
         return (double)_PangoMatrix.xx$VH.get(seg);
     }
-    public static void xx$set( MemorySegment seg, double x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * double xx;
+     * }
+     */
+    public static void xx$set(MemorySegment seg, double x) {
         _PangoMatrix.xx$VH.set(seg, x);
     }
     public static double xx$get(MemorySegment seg, long index) {
@@ -40,10 +64,22 @@ public class _PangoMatrix {
     public static VarHandle xy$VH() {
         return _PangoMatrix.xy$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * double xy;
+     * }
+     */
     public static double xy$get(MemorySegment seg) {
         return (double)_PangoMatrix.xy$VH.get(seg);
     }
-    public static void xy$set( MemorySegment seg, double x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * double xy;
+     * }
+     */
+    public static void xy$set(MemorySegment seg, double x) {
         _PangoMatrix.xy$VH.set(seg, x);
     }
     public static double xy$get(MemorySegment seg, long index) {
@@ -56,10 +92,22 @@ public class _PangoMatrix {
     public static VarHandle yx$VH() {
         return _PangoMatrix.yx$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * double yx;
+     * }
+     */
     public static double yx$get(MemorySegment seg) {
         return (double)_PangoMatrix.yx$VH.get(seg);
     }
-    public static void yx$set( MemorySegment seg, double x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * double yx;
+     * }
+     */
+    public static void yx$set(MemorySegment seg, double x) {
         _PangoMatrix.yx$VH.set(seg, x);
     }
     public static double yx$get(MemorySegment seg, long index) {
@@ -72,10 +120,22 @@ public class _PangoMatrix {
     public static VarHandle yy$VH() {
         return _PangoMatrix.yy$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * double yy;
+     * }
+     */
     public static double yy$get(MemorySegment seg) {
         return (double)_PangoMatrix.yy$VH.get(seg);
     }
-    public static void yy$set( MemorySegment seg, double x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * double yy;
+     * }
+     */
+    public static void yy$set(MemorySegment seg, double x) {
         _PangoMatrix.yy$VH.set(seg, x);
     }
     public static double yy$get(MemorySegment seg, long index) {
@@ -88,10 +148,22 @@ public class _PangoMatrix {
     public static VarHandle x0$VH() {
         return _PangoMatrix.x0$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * double x0;
+     * }
+     */
     public static double x0$get(MemorySegment seg) {
         return (double)_PangoMatrix.x0$VH.get(seg);
     }
-    public static void x0$set( MemorySegment seg, double x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * double x0;
+     * }
+     */
+    public static void x0$set(MemorySegment seg, double x) {
         _PangoMatrix.x0$VH.set(seg, x);
     }
     public static double x0$get(MemorySegment seg, long index) {
@@ -104,10 +176,22 @@ public class _PangoMatrix {
     public static VarHandle y0$VH() {
         return _PangoMatrix.y0$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * double y0;
+     * }
+     */
     public static double y0$get(MemorySegment seg) {
         return (double)_PangoMatrix.y0$VH.get(seg);
     }
-    public static void y0$set( MemorySegment seg, double x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * double y0;
+     * }
+     */
+    public static void y0$set(MemorySegment seg, double x) {
         _PangoMatrix.y0$VH.set(seg, x);
     }
     public static double y0$get(MemorySegment seg, long index) {
@@ -118,10 +202,10 @@ public class _PangoMatrix {
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

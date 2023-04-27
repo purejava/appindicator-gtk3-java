@@ -7,53 +7,59 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1737 {
+final class constants$1737 {
 
-    static final FunctionDescriptor gtk_color_button_new_with_color$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1737() {}
+    static final FunctionDescriptor gtk_print_context_get_pango_fontmap$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_color_button_new_with_color$MH = RuntimeHelper.downcallHandle(
-        "gtk_color_button_new_with_color",
-        constants$1737.gtk_color_button_new_with_color$FUNC
+    static final MethodHandle gtk_print_context_get_pango_fontmap$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_context_get_pango_fontmap",
+        constants$1737.gtk_print_context_get_pango_fontmap$FUNC
     );
-    static final FunctionDescriptor gtk_color_button_set_color$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_print_context_create_pango_context$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_print_context_create_pango_context$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_context_create_pango_context",
+        constants$1737.gtk_print_context_create_pango_context$FUNC
+    );
+    static final FunctionDescriptor gtk_print_context_create_pango_layout$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_print_context_create_pango_layout$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_context_create_pango_layout",
+        constants$1737.gtk_print_context_create_pango_layout$FUNC
+    );
+    static final FunctionDescriptor gtk_print_context_set_cairo_context$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle gtk_print_context_set_cairo_context$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_context_set_cairo_context",
+        constants$1737.gtk_print_context_set_cairo_context$FUNC
+    );
+    static final FunctionDescriptor GtkPrintSettingsFunc$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_color_button_set_color$MH = RuntimeHelper.downcallHandle(
-        "gtk_color_button_set_color",
-        constants$1737.gtk_color_button_set_color$FUNC
-    );
-    static final FunctionDescriptor gtk_color_button_get_color$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor GtkPrintSettingsFunc_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_color_button_get_color$MH = RuntimeHelper.downcallHandle(
-        "gtk_color_button_get_color",
-        constants$1737.gtk_color_button_get_color$FUNC
-    );
-    static final FunctionDescriptor gtk_color_button_set_alpha$FUNC = FunctionDescriptor.ofVoid(
+    static final MethodHandle GtkPrintSettingsFunc_UP$MH = RuntimeHelper.upcallHandle(GtkPrintSettingsFunc.class, "apply", constants$1737.GtkPrintSettingsFunc_UP$FUNC);
+    static final FunctionDescriptor GtkPrintSettingsFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_SHORT$LAYOUT
-    );
-    static final MethodHandle gtk_color_button_set_alpha$MH = RuntimeHelper.downcallHandle(
-        "gtk_color_button_set_alpha",
-        constants$1737.gtk_color_button_set_alpha$FUNC
-    );
-    static final FunctionDescriptor gtk_color_button_get_alpha$FUNC = FunctionDescriptor.of(Constants$root.C_SHORT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_color_button_get_alpha$MH = RuntimeHelper.downcallHandle(
-        "gtk_color_button_get_alpha",
-        constants$1737.gtk_color_button_get_alpha$FUNC
-    );
-    static final FunctionDescriptor gtk_color_button_set_use_alpha$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_color_button_set_use_alpha$MH = RuntimeHelper.downcallHandle(
-        "gtk_color_button_set_use_alpha",
-        constants$1737.gtk_color_button_set_use_alpha$FUNC
+    static final MethodHandle GtkPrintSettingsFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$1737.GtkPrintSettingsFunc_DOWN$FUNC
     );
 }
 

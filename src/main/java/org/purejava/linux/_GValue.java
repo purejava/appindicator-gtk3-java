@@ -7,9 +7,17 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GValue {
+ *     GType g_type;
+ *     union  data[2];
+ * };
+ * }
+ */
 public class _GValue {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_LONG_LONG$LAYOUT.withName("g_type"),
         MemoryLayout.sequenceLayout(2, MemoryLayout.unionLayout(
             Constants$root.C_INT$LAYOUT.withName("v_int"),
@@ -30,10 +38,22 @@ public class _GValue {
     public static VarHandle g_type$VH() {
         return _GValue.g_type$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GType g_type;
+     * }
+     */
     public static long g_type$get(MemorySegment seg) {
         return (long)_GValue.g_type$VH.get(seg);
     }
-    public static void g_type$set( MemorySegment seg, long x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GType g_type;
+     * }
+     */
+    public static void g_type$set(MemorySegment seg, long x) {
         _GValue.g_type$VH.set(seg, x);
     }
     public static long g_type$get(MemorySegment seg, long index) {
@@ -47,10 +67,10 @@ public class _GValue {
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

@@ -7,50 +7,58 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$275 {
+final class constants$275 {
 
-    static final FunctionDescriptor g_regex_get_pattern$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$275() {}
+    static final FunctionDescriptor g_queue_reverse$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_regex_get_pattern$MH = RuntimeHelper.downcallHandle(
-        "g_regex_get_pattern",
-        constants$275.g_regex_get_pattern$FUNC
+    static final MethodHandle g_queue_reverse$MH = RuntimeHelper.downcallHandle(
+        "g_queue_reverse",
+        constants$275.g_queue_reverse$FUNC
     );
-    static final FunctionDescriptor g_regex_get_max_backref$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_queue_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_regex_get_max_backref$MH = RuntimeHelper.downcallHandle(
-        "g_regex_get_max_backref",
-        constants$275.g_regex_get_max_backref$FUNC
+    static final MethodHandle g_queue_copy$MH = RuntimeHelper.downcallHandle(
+        "g_queue_copy",
+        constants$275.g_queue_copy$FUNC
     );
-    static final FunctionDescriptor g_regex_get_capture_count$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_regex_get_capture_count$MH = RuntimeHelper.downcallHandle(
-        "g_regex_get_capture_count",
-        constants$275.g_regex_get_capture_count$FUNC
-    );
-    static final FunctionDescriptor g_regex_get_has_cr_or_lf$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_regex_get_has_cr_or_lf$MH = RuntimeHelper.downcallHandle(
-        "g_regex_get_has_cr_or_lf",
-        constants$275.g_regex_get_has_cr_or_lf$FUNC
-    );
-    static final FunctionDescriptor g_regex_get_max_lookbehind$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_regex_get_max_lookbehind$MH = RuntimeHelper.downcallHandle(
-        "g_regex_get_max_lookbehind",
-        constants$275.g_regex_get_max_lookbehind$FUNC
-    );
-    static final FunctionDescriptor g_regex_get_string_number$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_queue_foreach$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_regex_get_string_number$MH = RuntimeHelper.downcallHandle(
-        "g_regex_get_string_number",
-        constants$275.g_regex_get_string_number$FUNC
+    static final MethodHandle g_queue_foreach$MH = RuntimeHelper.downcallHandle(
+        "g_queue_foreach",
+        constants$275.g_queue_foreach$FUNC
+    );
+    static final FunctionDescriptor g_queue_find$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_queue_find$MH = RuntimeHelper.downcallHandle(
+        "g_queue_find",
+        constants$275.g_queue_find$FUNC
+    );
+    static final FunctionDescriptor g_queue_find_custom$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_queue_find_custom$MH = RuntimeHelper.downcallHandle(
+        "g_queue_find_custom",
+        constants$275.g_queue_find_custom$FUNC
+    );
+    static final FunctionDescriptor g_queue_sort$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_queue_sort$MH = RuntimeHelper.downcallHandle(
+        "g_queue_sort",
+        constants$275.g_queue_sort$FUNC
     );
 }
 

@@ -7,54 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$233 {
+final class constants$233 {
 
-    static final FunctionDescriptor g_variant_dup_objv$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$233() {}
+    static final FunctionDescriptor g_variant_type_is_basic$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_variant_dup_objv$MH = RuntimeHelper.downcallHandle(
-        "g_variant_dup_objv",
-        constants$233.g_variant_dup_objv$FUNC
+    static final MethodHandle g_variant_type_is_basic$MH = RuntimeHelper.downcallHandle(
+        "g_variant_type_is_basic",
+        constants$233.g_variant_type_is_basic$FUNC
     );
-    static final FunctionDescriptor g_variant_get_bytestring$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_variant_type_is_maybe$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_variant_get_bytestring$MH = RuntimeHelper.downcallHandle(
-        "g_variant_get_bytestring",
-        constants$233.g_variant_get_bytestring$FUNC
+    static final MethodHandle g_variant_type_is_maybe$MH = RuntimeHelper.downcallHandle(
+        "g_variant_type_is_maybe",
+        constants$233.g_variant_type_is_maybe$FUNC
     );
-    static final FunctionDescriptor g_variant_dup_bytestring$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_variant_type_is_array$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_variant_dup_bytestring$MH = RuntimeHelper.downcallHandle(
-        "g_variant_dup_bytestring",
-        constants$233.g_variant_dup_bytestring$FUNC
+    static final MethodHandle g_variant_type_is_array$MH = RuntimeHelper.downcallHandle(
+        "g_variant_type_is_array",
+        constants$233.g_variant_type_is_array$FUNC
     );
-    static final FunctionDescriptor g_variant_get_bytestring_array$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_variant_type_is_tuple$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_variant_get_bytestring_array$MH = RuntimeHelper.downcallHandle(
-        "g_variant_get_bytestring_array",
-        constants$233.g_variant_get_bytestring_array$FUNC
+    static final MethodHandle g_variant_type_is_tuple$MH = RuntimeHelper.downcallHandle(
+        "g_variant_type_is_tuple",
+        constants$233.g_variant_type_is_tuple$FUNC
     );
-    static final FunctionDescriptor g_variant_dup_bytestring_array$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_variant_type_is_dict_entry$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_variant_dup_bytestring_array$MH = RuntimeHelper.downcallHandle(
-        "g_variant_dup_bytestring_array",
-        constants$233.g_variant_dup_bytestring_array$FUNC
+    static final MethodHandle g_variant_type_is_dict_entry$MH = RuntimeHelper.downcallHandle(
+        "g_variant_type_is_dict_entry",
+        constants$233.g_variant_type_is_dict_entry$FUNC
     );
-    static final FunctionDescriptor g_variant_new_maybe$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_variant_type_is_variant$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_variant_new_maybe$MH = RuntimeHelper.downcallHandle(
-        "g_variant_new_maybe",
-        constants$233.g_variant_new_maybe$FUNC
+    static final MethodHandle g_variant_type_is_variant$MH = RuntimeHelper.downcallHandle(
+        "g_variant_type_is_variant",
+        constants$233.g_variant_type_is_variant$FUNC
     );
 }
 

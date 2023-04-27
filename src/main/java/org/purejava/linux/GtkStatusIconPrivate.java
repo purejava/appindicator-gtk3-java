@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkStatusIconPrivate {
+/**
+ * {@snippet :
+ * typedef struct _GtkStatusIconPrivate GtkStatusIconPrivate;
+ * }
+ */
+public final class GtkStatusIconPrivate {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkStatusIconPrivate() {}
 }
 
 

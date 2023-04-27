@@ -7,55 +7,58 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1428 {
+final class constants$1428 {
 
-    static final FunctionDescriptor gtk_widget_unrealize$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_unrealize$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_unrealize",
-        constants$1428.gtk_widget_unrealize$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_draw$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1428() {}
+    static final FunctionDescriptor gtk_editable_insert_text$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_draw$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_draw",
-        constants$1428.gtk_widget_draw$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_queue_draw$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_queue_draw$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_queue_draw",
-        constants$1428.gtk_widget_queue_draw$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_queue_draw_area$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_editable_insert_text$MH = RuntimeHelper.downcallHandle(
+        "gtk_editable_insert_text",
+        constants$1428.gtk_editable_insert_text$FUNC
+    );
+    static final FunctionDescriptor gtk_editable_delete_text$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_widget_queue_draw_area$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_queue_draw_area",
-        constants$1428.gtk_widget_queue_draw_area$FUNC
+    static final MethodHandle gtk_editable_delete_text$MH = RuntimeHelper.downcallHandle(
+        "gtk_editable_delete_text",
+        constants$1428.gtk_editable_delete_text$FUNC
     );
-    static final FunctionDescriptor gtk_widget_queue_draw_region$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_editable_get_chars$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_editable_get_chars$MH = RuntimeHelper.downcallHandle(
+        "gtk_editable_get_chars",
+        constants$1428.gtk_editable_get_chars$FUNC
+    );
+    static final FunctionDescriptor gtk_editable_cut_clipboard$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_widget_queue_draw_region$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_queue_draw_region",
-        constants$1428.gtk_widget_queue_draw_region$FUNC
+    static final MethodHandle gtk_editable_cut_clipboard$MH = RuntimeHelper.downcallHandle(
+        "gtk_editable_cut_clipboard",
+        constants$1428.gtk_editable_cut_clipboard$FUNC
     );
-    static final FunctionDescriptor gtk_widget_queue_resize$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_editable_copy_clipboard$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_widget_queue_resize$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_queue_resize",
-        constants$1428.gtk_widget_queue_resize$FUNC
+    static final MethodHandle gtk_editable_copy_clipboard$MH = RuntimeHelper.downcallHandle(
+        "gtk_editable_copy_clipboard",
+        constants$1428.gtk_editable_copy_clipboard$FUNC
+    );
+    static final FunctionDescriptor gtk_editable_paste_clipboard$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_editable_paste_clipboard$MH = RuntimeHelper.downcallHandle(
+        "gtk_editable_paste_clipboard",
+        constants$1428.gtk_editable_paste_clipboard$FUNC
     );
 }
 

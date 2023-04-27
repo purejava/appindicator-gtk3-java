@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class PangoAttrFontFeatures extends _PangoAttrFontFeatures {
+/**
+ * {@snippet :
+ * typedef struct _PangoAttrFontFeatures PangoAttrFontFeatures;
+ * }
+ */
+public final class PangoAttrFontFeatures extends _PangoAttrFontFeatures {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private PangoAttrFontFeatures() {}
 }
 
 

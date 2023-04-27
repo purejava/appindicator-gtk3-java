@@ -7,51 +7,48 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$612 {
+final class constants$612 {
 
-    static final FunctionDescriptor g_dbus_node_info_generate_xml$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$612() {}
+    static final FunctionDescriptor g_emblem_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_emblem_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_emblem_get_type",
+        constants$612.g_emblem_get_type$FUNC
+    );
+    static final FunctionDescriptor g_emblem_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_emblem_new$MH = RuntimeHelper.downcallHandle(
+        "g_emblem_new",
+        constants$612.g_emblem_new$FUNC
+    );
+    static final FunctionDescriptor g_emblem_new_with_origin$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_emblem_new_with_origin$MH = RuntimeHelper.downcallHandle(
+        "g_emblem_new_with_origin",
+        constants$612.g_emblem_new_with_origin$FUNC
+    );
+    static final FunctionDescriptor g_emblem_get_icon$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_node_info_generate_xml$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_node_info_generate_xml",
-        constants$612.g_dbus_node_info_generate_xml$FUNC
+    static final MethodHandle g_emblem_get_icon$MH = RuntimeHelper.downcallHandle(
+        "g_emblem_get_icon",
+        constants$612.g_emblem_get_icon$FUNC
     );
-    static final FunctionDescriptor g_dbus_node_info_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_emblem_get_origin$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_node_info_ref$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_node_info_ref",
-        constants$612.g_dbus_node_info_ref$FUNC
+    static final MethodHandle g_emblem_get_origin$MH = RuntimeHelper.downcallHandle(
+        "g_emblem_get_origin",
+        constants$612.g_emblem_get_origin$FUNC
     );
-    static final FunctionDescriptor g_dbus_interface_info_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_interface_info_ref$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_interface_info_ref",
-        constants$612.g_dbus_interface_info_ref$FUNC
-    );
-    static final FunctionDescriptor g_dbus_method_info_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_method_info_ref$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_method_info_ref",
-        constants$612.g_dbus_method_info_ref$FUNC
-    );
-    static final FunctionDescriptor g_dbus_signal_info_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_signal_info_ref$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_signal_info_ref",
-        constants$612.g_dbus_signal_info_ref$FUNC
-    );
-    static final FunctionDescriptor g_dbus_property_info_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_property_info_ref$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_property_info_ref",
-        constants$612.g_dbus_property_info_ref$FUNC
+    static final FunctionDescriptor g_emblemed_icon_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_emblemed_icon_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_emblemed_icon_get_type",
+        constants$612.g_emblemed_icon_get_type$FUNC
     );
 }
 

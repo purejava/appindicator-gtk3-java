@@ -7,8 +7,26 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$83 {
+final class constants$83 {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$83() {}
+    static final FunctionDescriptor g_time_zone_get_abbreviation$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_time_zone_get_abbreviation$MH = RuntimeHelper.downcallHandle(
+        "g_time_zone_get_abbreviation",
+        constants$83.g_time_zone_get_abbreviation$FUNC
+    );
+    static final FunctionDescriptor g_time_zone_get_offset$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_time_zone_get_offset$MH = RuntimeHelper.downcallHandle(
+        "g_time_zone_get_offset",
+        constants$83.g_time_zone_get_offset$FUNC
+    );
     static final FunctionDescriptor g_time_zone_is_dst$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
@@ -37,18 +55,6 @@ class constants$83 {
     static final MethodHandle g_date_time_ref$MH = RuntimeHelper.downcallHandle(
         "g_date_time_ref",
         constants$83.g_date_time_ref$FUNC
-    );
-    static final FunctionDescriptor g_date_time_new_now$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_date_time_new_now$MH = RuntimeHelper.downcallHandle(
-        "g_date_time_new_now",
-        constants$83.g_date_time_new_now$FUNC
-    );
-    static final FunctionDescriptor g_date_time_new_now_local$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_date_time_new_now_local$MH = RuntimeHelper.downcallHandle(
-        "g_date_time_new_now_local",
-        constants$83.g_date_time_new_now_local$FUNC
     );
 }
 

@@ -7,52 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1499 {
+final class constants$1499 {
 
-    static final FunctionDescriptor gtk_window_get_application$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1499() {}
+    static final FunctionDescriptor gtk_assistant_commit$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_window_get_application$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_get_application",
-        constants$1499.gtk_window_get_application$FUNC
+    static final MethodHandle gtk_assistant_commit$MH = RuntimeHelper.downcallHandle(
+        "gtk_assistant_commit",
+        constants$1499.gtk_assistant_commit$FUNC
     );
-    static final FunctionDescriptor gtk_window_set_application$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_assistant_set_page_has_padding$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_window_set_application$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_set_application",
-        constants$1499.gtk_window_set_application$FUNC
-    );
-    static final FunctionDescriptor gtk_window_set_has_resize_grip$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_window_set_has_resize_grip$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_set_has_resize_grip",
-        constants$1499.gtk_window_set_has_resize_grip$FUNC
+    static final MethodHandle gtk_assistant_set_page_has_padding$MH = RuntimeHelper.downcallHandle(
+        "gtk_assistant_set_page_has_padding",
+        constants$1499.gtk_assistant_set_page_has_padding$FUNC
     );
-    static final FunctionDescriptor gtk_window_get_has_resize_grip$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_window_get_has_resize_grip$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_get_has_resize_grip",
-        constants$1499.gtk_window_get_has_resize_grip$FUNC
-    );
-    static final FunctionDescriptor gtk_window_resize_grip_is_visible$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_window_resize_grip_is_visible$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_resize_grip_is_visible",
-        constants$1499.gtk_window_resize_grip_is_visible$FUNC
-    );
-    static final FunctionDescriptor gtk_window_get_resize_grip_area$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_assistant_get_page_has_padding$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_window_get_resize_grip_area$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_get_resize_grip_area",
-        constants$1499.gtk_window_get_resize_grip_area$FUNC
+    static final MethodHandle gtk_assistant_get_page_has_padding$MH = RuntimeHelper.downcallHandle(
+        "gtk_assistant_get_page_has_padding",
+        constants$1499.gtk_assistant_get_page_has_padding$FUNC
+    );
+    static final FunctionDescriptor gtk_button_box_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_button_box_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_button_box_get_type",
+        constants$1499.gtk_button_box_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_button_box_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_button_box_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_button_box_new",
+        constants$1499.gtk_button_box_new$FUNC
+    );
+    static final FunctionDescriptor gtk_button_box_get_layout$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_button_box_get_layout$MH = RuntimeHelper.downcallHandle(
+        "gtk_button_box_get_layout",
+        constants$1499.gtk_button_box_get_layout$FUNC
     );
 }
 

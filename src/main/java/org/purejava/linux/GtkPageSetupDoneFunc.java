@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * void (*GtkPageSetupDoneFunc)(struct _GtkPageSetup* page_setup,void* data);
+ * }
+ */
 public interface GtkPageSetupDoneFunc {
 
-    void apply(java.lang.foreign.MemoryAddress page_setup, java.lang.foreign.MemoryAddress data);
-    static MemorySegment allocate(GtkPageSetupDoneFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GtkPageSetupDoneFunc.class, fi, constants$1954.GtkPageSetupDoneFunc$FUNC, session);
+    void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+    static MemorySegment allocate(GtkPageSetupDoneFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$1757.GtkPageSetupDoneFunc_UP$MH, fi, constants$1757.GtkPageSetupDoneFunc$FUNC, scope);
     }
-    static GtkPageSetupDoneFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _page_setup, java.lang.foreign.MemoryAddress _data) -> {
+    static GtkPageSetupDoneFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
             try {
-                constants$1954.GtkPageSetupDoneFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_page_setup, (java.lang.foreign.Addressable)_data);
+                constants$1757.GtkPageSetupDoneFunc_DOWN$MH.invokeExact(symbol, _tag, _data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

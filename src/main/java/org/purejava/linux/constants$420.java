@@ -7,50 +7,78 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$420 {
+final class constants$420 {
 
-    static final FunctionDescriptor g_type_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_type_name$MH = RuntimeHelper.downcallHandle(
-        "g_type_name",
-        constants$420.g_type_name$FUNC
-    );
-    static final FunctionDescriptor g_type_qname$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_type_qname$MH = RuntimeHelper.downcallHandle(
-        "g_type_qname",
-        constants$420.g_type_qname$FUNC
-    );
-    static final FunctionDescriptor g_type_from_name$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$420() {}
+    static final FunctionDescriptor g_signal_handler_find$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_type_from_name$MH = RuntimeHelper.downcallHandle(
-        "g_type_from_name",
-        constants$420.g_type_from_name$FUNC
+    static final MethodHandle g_signal_handler_find$MH = RuntimeHelper.downcallHandle(
+        "g_signal_handler_find",
+        constants$420.g_signal_handler_find$FUNC
     );
-    static final FunctionDescriptor g_type_parent$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final FunctionDescriptor g_signal_handlers_block_matched$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_type_parent$MH = RuntimeHelper.downcallHandle(
-        "g_type_parent",
-        constants$420.g_type_parent$FUNC
+    static final MethodHandle g_signal_handlers_block_matched$MH = RuntimeHelper.downcallHandle(
+        "g_signal_handlers_block_matched",
+        constants$420.g_signal_handlers_block_matched$FUNC
     );
-    static final FunctionDescriptor g_type_depth$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final FunctionDescriptor g_signal_handlers_unblock_matched$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_type_depth$MH = RuntimeHelper.downcallHandle(
-        "g_type_depth",
-        constants$420.g_type_depth$FUNC
+    static final MethodHandle g_signal_handlers_unblock_matched$MH = RuntimeHelper.downcallHandle(
+        "g_signal_handlers_unblock_matched",
+        constants$420.g_signal_handlers_unblock_matched$FUNC
     );
-    static final FunctionDescriptor g_type_next_base$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+    static final FunctionDescriptor g_signal_handlers_disconnect_matched$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_signal_handlers_disconnect_matched$MH = RuntimeHelper.downcallHandle(
+        "g_signal_handlers_disconnect_matched",
+        constants$420.g_signal_handlers_disconnect_matched$FUNC
+    );
+    static final FunctionDescriptor g_clear_signal_handler$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_clear_signal_handler$MH = RuntimeHelper.downcallHandle(
+        "g_clear_signal_handler",
+        constants$420.g_clear_signal_handler$FUNC
+    );
+    static final FunctionDescriptor g_signal_override_class_closure$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_type_next_base$MH = RuntimeHelper.downcallHandle(
-        "g_type_next_base",
-        constants$420.g_type_next_base$FUNC
+    static final MethodHandle g_signal_override_class_closure$MH = RuntimeHelper.downcallHandle(
+        "g_signal_override_class_closure",
+        constants$420.g_signal_override_class_closure$FUNC
     );
 }
 

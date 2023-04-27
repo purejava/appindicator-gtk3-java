@@ -7,49 +7,61 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$986 {
+final class constants$986 {
 
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GVolumeMonitor$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$986() {}
+    static final FunctionDescriptor __getdelim$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GVolumeMonitor$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GVolumeMonitor",
-        constants$986.glib_slistautoptr_cleanup_GVolumeMonitor$FUNC
+    static final MethodHandle __getdelim$MH = RuntimeHelper.downcallHandle(
+        "__getdelim",
+        constants$986.__getdelim$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GVolumeMonitor$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor getdelim$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GVolumeMonitor$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GVolumeMonitor",
-        constants$986.glib_queueautoptr_cleanup_GVolumeMonitor$FUNC
+    static final MethodHandle getdelim$MH = RuntimeHelper.downcallHandle(
+        "getdelim",
+        constants$986.getdelim$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GZlibCompressor$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor getline$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GZlibCompressor$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GZlibCompressor",
-        constants$986.glib_autoptr_clear_GZlibCompressor$FUNC
+    static final MethodHandle getline$MH = RuntimeHelper.downcallHandle(
+        "getline",
+        constants$986.getline$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GZlibCompressor$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor fputs$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GZlibCompressor$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GZlibCompressor",
-        constants$986.glib_autoptr_cleanup_GZlibCompressor$FUNC
+    static final MethodHandle fputs$MH = RuntimeHelper.downcallHandle(
+        "fputs",
+        constants$986.fputs$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GZlibCompressor$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor puts$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GZlibCompressor$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GZlibCompressor",
-        constants$986.glib_listautoptr_cleanup_GZlibCompressor$FUNC
+    static final MethodHandle puts$MH = RuntimeHelper.downcallHandle(
+        "puts",
+        constants$986.puts$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GZlibCompressor$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor ungetc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GZlibCompressor$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GZlibCompressor",
-        constants$986.glib_slistautoptr_cleanup_GZlibCompressor$FUNC
+    static final MethodHandle ungetc$MH = RuntimeHelper.downcallHandle(
+        "ungetc",
+        constants$986.ungetc$FUNC
     );
 }
 

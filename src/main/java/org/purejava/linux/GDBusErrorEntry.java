@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GDBusErrorEntry extends _GDBusErrorEntry {
+/**
+ * {@snippet :
+ * typedef struct _GDBusErrorEntry GDBusErrorEntry;
+ * }
+ */
+public final class GDBusErrorEntry extends _GDBusErrorEntry {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GDBusErrorEntry() {}
 }
 
 

@@ -7,47 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1113 {
+final class constants$1113 {
 
-    static final FunctionDescriptor glib_autoptr_cleanup_PangoTabArray$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1113() {}
+    static final FunctionDescriptor gdk_display_list_devices$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_PangoTabArray$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_PangoTabArray",
-        constants$1113.glib_autoptr_cleanup_PangoTabArray$FUNC
+    static final MethodHandle gdk_display_list_devices$MH = RuntimeHelper.downcallHandle(
+        "gdk_display_list_devices",
+        constants$1113.gdk_display_list_devices$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_PangoTabArray$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gdk_display_get_event$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_PangoTabArray$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_PangoTabArray",
-        constants$1113.glib_listautoptr_cleanup_PangoTabArray$FUNC
+    static final MethodHandle gdk_display_get_event$MH = RuntimeHelper.downcallHandle(
+        "gdk_display_get_event",
+        constants$1113.gdk_display_get_event$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_PangoTabArray$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gdk_display_peek_event$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_PangoTabArray$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_PangoTabArray",
-        constants$1113.glib_slistautoptr_cleanup_PangoTabArray$FUNC
+    static final MethodHandle gdk_display_peek_event$MH = RuntimeHelper.downcallHandle(
+        "gdk_display_peek_event",
+        constants$1113.gdk_display_peek_event$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_PangoTabArray$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gdk_display_put_event$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_PangoTabArray$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_PangoTabArray",
-        constants$1113.glib_queueautoptr_cleanup_PangoTabArray$FUNC
+    static final MethodHandle gdk_display_put_event$MH = RuntimeHelper.downcallHandle(
+        "gdk_display_put_event",
+        constants$1113.gdk_display_put_event$FUNC
     );
-    static final FunctionDescriptor pango_layout_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_layout_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_get_type",
-        constants$1113.pango_layout_get_type$FUNC
-    );
-    static final FunctionDescriptor pango_layout_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gdk_display_has_pending$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_layout_new$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_new",
-        constants$1113.pango_layout_new$FUNC
+    static final MethodHandle gdk_display_has_pending$MH = RuntimeHelper.downcallHandle(
+        "gdk_display_has_pending",
+        constants$1113.gdk_display_has_pending$FUNC
+    );
+    static final FunctionDescriptor gdk_display_set_double_click_time$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gdk_display_set_double_click_time$MH = RuntimeHelper.downcallHandle(
+        "gdk_display_set_double_click_time",
+        constants$1113.gdk_display_set_double_click_time$FUNC
     );
 }
 

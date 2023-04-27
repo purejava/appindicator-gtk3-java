@@ -7,49 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$978 {
+final class constants$978 {
 
-    static final FunctionDescriptor glib_autoptr_clear_GTlsClientConnection$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$978() {}
+    static final FunctionDescriptor renameat$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GTlsClientConnection$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GTlsClientConnection",
-        constants$978.glib_autoptr_clear_GTlsClientConnection$FUNC
+    static final MethodHandle renameat$MH = RuntimeHelper.downcallHandle(
+        "renameat",
+        constants$978.renameat$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GTlsClientConnection$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor fclose$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GTlsClientConnection$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GTlsClientConnection",
-        constants$978.glib_autoptr_cleanup_GTlsClientConnection$FUNC
+    static final MethodHandle fclose$MH = RuntimeHelper.downcallHandle(
+        "fclose",
+        constants$978.fclose$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GTlsClientConnection$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor tmpfile$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle tmpfile$MH = RuntimeHelper.downcallHandle(
+        "tmpfile",
+        constants$978.tmpfile$FUNC
+    );
+    static final FunctionDescriptor tmpnam$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GTlsClientConnection$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GTlsClientConnection",
-        constants$978.glib_listautoptr_cleanup_GTlsClientConnection$FUNC
+    static final MethodHandle tmpnam$MH = RuntimeHelper.downcallHandle(
+        "tmpnam",
+        constants$978.tmpnam$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GTlsClientConnection$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor tmpnam_r$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GTlsClientConnection$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GTlsClientConnection",
-        constants$978.glib_slistautoptr_cleanup_GTlsClientConnection$FUNC
+    static final MethodHandle tmpnam_r$MH = RuntimeHelper.downcallHandle(
+        "tmpnam_r",
+        constants$978.tmpnam_r$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GTlsClientConnection$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor tempnam$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GTlsClientConnection$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GTlsClientConnection",
-        constants$978.glib_queueautoptr_cleanup_GTlsClientConnection$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_clear_GTlsConnection$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_autoptr_clear_GTlsConnection$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GTlsConnection",
-        constants$978.glib_autoptr_clear_GTlsConnection$FUNC
+    static final MethodHandle tempnam$MH = RuntimeHelper.downcallHandle(
+        "tempnam",
+        constants$978.tempnam$FUNC
     );
 }
 

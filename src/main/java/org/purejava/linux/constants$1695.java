@@ -7,56 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1695 {
+final class constants$1695 {
 
-    static final FunctionDescriptor gtk_builder_get_object$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1695() {}
+    static final FunctionDescriptor gtk_size_group_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_size_group_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_size_group_get_type",
+        constants$1695.gtk_size_group_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_size_group_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_size_group_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_size_group_new",
+        constants$1695.gtk_size_group_new$FUNC
+    );
+    static final FunctionDescriptor gtk_size_group_set_mode$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_size_group_set_mode$MH = RuntimeHelper.downcallHandle(
+        "gtk_size_group_set_mode",
+        constants$1695.gtk_size_group_set_mode$FUNC
+    );
+    static final FunctionDescriptor gtk_size_group_get_mode$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_builder_get_object$MH = RuntimeHelper.downcallHandle(
-        "gtk_builder_get_object",
-        constants$1695.gtk_builder_get_object$FUNC
+    static final MethodHandle gtk_size_group_get_mode$MH = RuntimeHelper.downcallHandle(
+        "gtk_size_group_get_mode",
+        constants$1695.gtk_size_group_get_mode$FUNC
     );
-    static final FunctionDescriptor gtk_builder_get_objects$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_size_group_set_ignore_hidden$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_size_group_set_ignore_hidden$MH = RuntimeHelper.downcallHandle(
+        "gtk_size_group_set_ignore_hidden",
+        constants$1695.gtk_size_group_set_ignore_hidden$FUNC
+    );
+    static final FunctionDescriptor gtk_size_group_get_ignore_hidden$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_builder_get_objects$MH = RuntimeHelper.downcallHandle(
-        "gtk_builder_get_objects",
-        constants$1695.gtk_builder_get_objects$FUNC
-    );
-    static final FunctionDescriptor gtk_builder_expose_object$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_builder_expose_object$MH = RuntimeHelper.downcallHandle(
-        "gtk_builder_expose_object",
-        constants$1695.gtk_builder_expose_object$FUNC
-    );
-    static final FunctionDescriptor gtk_builder_connect_signals$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_builder_connect_signals$MH = RuntimeHelper.downcallHandle(
-        "gtk_builder_connect_signals",
-        constants$1695.gtk_builder_connect_signals$FUNC
-    );
-    static final FunctionDescriptor gtk_builder_connect_signals_full$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_builder_connect_signals_full$MH = RuntimeHelper.downcallHandle(
-        "gtk_builder_connect_signals_full",
-        constants$1695.gtk_builder_connect_signals_full$FUNC
-    );
-    static final FunctionDescriptor gtk_builder_set_translation_domain$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_builder_set_translation_domain$MH = RuntimeHelper.downcallHandle(
-        "gtk_builder_set_translation_domain",
-        constants$1695.gtk_builder_set_translation_domain$FUNC
+    static final MethodHandle gtk_size_group_get_ignore_hidden$MH = RuntimeHelper.downcallHandle(
+        "gtk_size_group_get_ignore_hidden",
+        constants$1695.gtk_size_group_get_ignore_hidden$FUNC
     );
 }
 

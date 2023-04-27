@@ -7,48 +7,48 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1717 {
+final class constants$1717 {
 
-    static final FunctionDescriptor gtk_cell_renderer_toggle_set_active$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1717() {}
+    static final FunctionDescriptor gtk_offscreen_window_get_surface$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_offscreen_window_get_surface$MH = RuntimeHelper.downcallHandle(
+        "gtk_offscreen_window_get_surface",
+        constants$1717.gtk_offscreen_window_get_surface$FUNC
+    );
+    static final FunctionDescriptor gtk_offscreen_window_get_pixbuf$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_offscreen_window_get_pixbuf$MH = RuntimeHelper.downcallHandle(
+        "gtk_offscreen_window_get_pixbuf",
+        constants$1717.gtk_offscreen_window_get_pixbuf$FUNC
+    );
+    static final FunctionDescriptor gtk_orientable_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_orientable_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_orientable_get_type",
+        constants$1717.gtk_orientable_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_orientable_set_orientation$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_cell_renderer_toggle_set_active$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_renderer_toggle_set_active",
-        constants$1717.gtk_cell_renderer_toggle_set_active$FUNC
+    static final MethodHandle gtk_orientable_set_orientation$MH = RuntimeHelper.downcallHandle(
+        "gtk_orientable_set_orientation",
+        constants$1717.gtk_orientable_set_orientation$FUNC
     );
-    static final FunctionDescriptor gtk_cell_renderer_toggle_get_activatable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_orientable_get_orientation$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_cell_renderer_toggle_get_activatable$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_renderer_toggle_get_activatable",
-        constants$1717.gtk_cell_renderer_toggle_get_activatable$FUNC
+    static final MethodHandle gtk_orientable_get_orientation$MH = RuntimeHelper.downcallHandle(
+        "gtk_orientable_get_orientation",
+        constants$1717.gtk_orientable_get_orientation$FUNC
     );
-    static final FunctionDescriptor gtk_cell_renderer_toggle_set_activatable$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_cell_renderer_toggle_set_activatable$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_renderer_toggle_set_activatable",
-        constants$1717.gtk_cell_renderer_toggle_set_activatable$FUNC
-    );
-    static final FunctionDescriptor gtk_cell_view_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_cell_view_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_view_get_type",
-        constants$1717.gtk_cell_view_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_cell_view_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_cell_view_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_view_new",
-        constants$1717.gtk_cell_view_new$FUNC
-    );
-    static final FunctionDescriptor gtk_cell_view_new_with_context$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_cell_view_new_with_context$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_view_new_with_context",
-        constants$1717.gtk_cell_view_new_with_context$FUNC
+    static final FunctionDescriptor gtk_overlay_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_overlay_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_overlay_get_type",
+        constants$1717.gtk_overlay_get_type$FUNC
     );
 }
 

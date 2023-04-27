@@ -7,49 +7,71 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$220 {
+final class constants$220 {
 
-    static final FunctionDescriptor g_variant_type_free$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$220() {}
+    static final FunctionDescriptor g_key_file_load_from_data$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_variant_type_free$MH = RuntimeHelper.downcallHandle(
-        "g_variant_type_free",
-        constants$220.g_variant_type_free$FUNC
+    static final MethodHandle g_key_file_load_from_data$MH = RuntimeHelper.downcallHandle(
+        "g_key_file_load_from_data",
+        constants$220.g_key_file_load_from_data$FUNC
     );
-    static final FunctionDescriptor g_variant_type_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_key_file_load_from_bytes$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_variant_type_copy$MH = RuntimeHelper.downcallHandle(
-        "g_variant_type_copy",
-        constants$220.g_variant_type_copy$FUNC
+    static final MethodHandle g_key_file_load_from_bytes$MH = RuntimeHelper.downcallHandle(
+        "g_key_file_load_from_bytes",
+        constants$220.g_key_file_load_from_bytes$FUNC
     );
-    static final FunctionDescriptor g_variant_type_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_key_file_load_from_dirs$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_variant_type_new$MH = RuntimeHelper.downcallHandle(
-        "g_variant_type_new",
-        constants$220.g_variant_type_new$FUNC
+    static final MethodHandle g_key_file_load_from_dirs$MH = RuntimeHelper.downcallHandle(
+        "g_key_file_load_from_dirs",
+        constants$220.g_key_file_load_from_dirs$FUNC
     );
-    static final FunctionDescriptor g_variant_type_get_string_length$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+    static final FunctionDescriptor g_key_file_load_from_data_dirs$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_variant_type_get_string_length$MH = RuntimeHelper.downcallHandle(
-        "g_variant_type_get_string_length",
-        constants$220.g_variant_type_get_string_length$FUNC
+    static final MethodHandle g_key_file_load_from_data_dirs$MH = RuntimeHelper.downcallHandle(
+        "g_key_file_load_from_data_dirs",
+        constants$220.g_key_file_load_from_data_dirs$FUNC
     );
-    static final FunctionDescriptor g_variant_type_peek_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_key_file_to_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_variant_type_peek_string$MH = RuntimeHelper.downcallHandle(
-        "g_variant_type_peek_string",
-        constants$220.g_variant_type_peek_string$FUNC
+    static final MethodHandle g_key_file_to_data$MH = RuntimeHelper.downcallHandle(
+        "g_key_file_to_data",
+        constants$220.g_key_file_to_data$FUNC
     );
-    static final FunctionDescriptor g_variant_type_dup_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_key_file_save_to_file$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_variant_type_dup_string$MH = RuntimeHelper.downcallHandle(
-        "g_variant_type_dup_string",
-        constants$220.g_variant_type_dup_string$FUNC
+    static final MethodHandle g_key_file_save_to_file$MH = RuntimeHelper.downcallHandle(
+        "g_key_file_save_to_file",
+        constants$220.g_key_file_save_to_file$FUNC
     );
 }
 

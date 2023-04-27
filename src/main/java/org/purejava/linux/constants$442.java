@@ -7,38 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$442 {
+final class constants$442 {
 
-    static final FunctionDescriptor GCallback$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle GCallback$MH = RuntimeHelper.downcallHandle(
-        constants$442.GCallback$FUNC
-    );
-    static final FunctionDescriptor GClosureNotify$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$442() {}
+    static final FunctionDescriptor g_value_take_object$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GClosureNotify$MH = RuntimeHelper.downcallHandle(
-        constants$442.GClosureNotify$FUNC
+    static final MethodHandle g_value_take_object$MH = RuntimeHelper.downcallHandle(
+        "g_value_take_object",
+        constants$442.g_value_take_object$FUNC
     );
-    static final FunctionDescriptor GClosureMarshal$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_value_set_object_take_ownership$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GClosureMarshal$MH = RuntimeHelper.downcallHandle(
-        constants$442.GClosureMarshal$FUNC
+    static final MethodHandle g_value_set_object_take_ownership$MH = RuntimeHelper.downcallHandle(
+        "g_value_set_object_take_ownership",
+        constants$442.g_value_set_object_take_ownership$FUNC
     );
-    static final FunctionDescriptor GVaClosureMarshal$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_object_compat_control$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_object_compat_control$MH = RuntimeHelper.downcallHandle(
+        "g_object_compat_control",
+        constants$442.g_object_compat_control$FUNC
+    );
+    static final FunctionDescriptor g_clear_object$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_clear_object$MH = RuntimeHelper.downcallHandle(
+        "g_clear_object",
+        constants$442.g_clear_object$FUNC
+    );
+    static final FunctionDescriptor g_weak_ref_init$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_weak_ref_init$MH = RuntimeHelper.downcallHandle(
+        "g_weak_ref_init",
+        constants$442.g_weak_ref_init$FUNC
+    );
+    static final FunctionDescriptor g_weak_ref_clear$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_weak_ref_clear$MH = RuntimeHelper.downcallHandle(
+        "g_weak_ref_clear",
+        constants$442.g_weak_ref_clear$FUNC
     );
 }
 

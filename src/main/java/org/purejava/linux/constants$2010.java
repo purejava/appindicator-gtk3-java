@@ -7,53 +7,16 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$2010 {
+final class constants$2010 {
 
-    static final FunctionDescriptor gtk_stack_set_vhomogeneous$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_stack_set_vhomogeneous$MH = RuntimeHelper.downcallHandle(
-        "gtk_stack_set_vhomogeneous",
-        constants$2010.gtk_stack_set_vhomogeneous$FUNC
-    );
-    static final FunctionDescriptor gtk_stack_get_vhomogeneous$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_stack_get_vhomogeneous$MH = RuntimeHelper.downcallHandle(
-        "gtk_stack_get_vhomogeneous",
-        constants$2010.gtk_stack_get_vhomogeneous$FUNC
-    );
-    static final FunctionDescriptor gtk_stack_set_transition_duration$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_stack_set_transition_duration$MH = RuntimeHelper.downcallHandle(
-        "gtk_stack_set_transition_duration",
-        constants$2010.gtk_stack_set_transition_duration$FUNC
-    );
-    static final FunctionDescriptor gtk_stack_get_transition_duration$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_stack_get_transition_duration$MH = RuntimeHelper.downcallHandle(
-        "gtk_stack_get_transition_duration",
-        constants$2010.gtk_stack_get_transition_duration$FUNC
-    );
-    static final FunctionDescriptor gtk_stack_set_transition_type$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_stack_set_transition_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_stack_set_transition_type",
-        constants$2010.gtk_stack_set_transition_type$FUNC
-    );
-    static final FunctionDescriptor gtk_stack_get_transition_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_stack_get_transition_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_stack_get_transition_type",
-        constants$2010.gtk_stack_get_transition_type$FUNC
-    );
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$2010() {}
+    static final MemorySegment G_FILE_ATTRIBUTE_DOS_IS_SYSTEM$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("dos::is-system");
+    static final MemorySegment G_FILE_ATTRIBUTE_DOS_IS_MOUNTPOINT$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("dos::is-mountpoint");
+    static final MemorySegment G_FILE_ATTRIBUTE_DOS_REPARSE_POINT_TAG$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("dos::reparse-point-tag");
+    static final MemorySegment G_FILE_ATTRIBUTE_OWNER_USER$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("owner::user");
+    static final MemorySegment G_FILE_ATTRIBUTE_OWNER_USER_REAL$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("owner::user-real");
+    static final MemorySegment G_FILE_ATTRIBUTE_OWNER_GROUP$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("owner::group");
 }
 
 

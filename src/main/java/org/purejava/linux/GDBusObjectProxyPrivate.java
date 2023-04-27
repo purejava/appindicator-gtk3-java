@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GDBusObjectProxyPrivate {
+/**
+ * {@snippet :
+ * typedef struct _GDBusObjectProxyPrivate GDBusObjectProxyPrivate;
+ * }
+ */
+public final class GDBusObjectProxyPrivate {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GDBusObjectProxyPrivate() {}
 }
 
 

@@ -7,9 +7,18 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GConverterIface {
+ *     GTypeInterface g_iface;
+ *     GConverterResult (*convert)(GConverter*,void*,gsize,void*,gsize,GConverterFlags,gsize*,gsize*,GError**);
+ *     void (*reset)(GConverter*);
+ * };
+ * }
+ */
 public class _GConverterIface {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             Constants$root.C_LONG_LONG$LAYOUT.withName("g_type"),
             Constants$root.C_LONG_LONG$LAYOUT.withName("g_instance_type")
@@ -34,20 +43,48 @@ public class _GConverterIface {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle convert$MH = RuntimeHelper.downcallHandle(
-        _GConverterIface.convert$FUNC
+    static final FunctionDescriptor convert_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle convert_UP$MH = RuntimeHelper.upcallHandle(convert.class, "apply", _GConverterIface.convert_UP$FUNC);
+    static final FunctionDescriptor convert_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle convert_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GConverterIface.convert_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * GConverterResult (*convert)(GConverter*,void*,gsize,void*,gsize,GConverterFlags,gsize*,gsize*,GError**);
+     * }
+     */
     public interface convert {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, long _x2, java.lang.foreign.MemoryAddress _x3, long _x4, int _x5, java.lang.foreign.MemoryAddress _x6, java.lang.foreign.MemoryAddress _x7, java.lang.foreign.MemoryAddress _x8);
-        static MemorySegment allocate(convert fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(convert.class, fi, _GConverterIface.convert$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, long _x2, java.lang.foreign.MemorySegment _x3, long _x4, int _x5, java.lang.foreign.MemorySegment _x6, java.lang.foreign.MemorySegment _x7, java.lang.foreign.MemorySegment _x8);
+        static MemorySegment allocate(convert fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GConverterIface.convert_UP$MH, fi, _GConverterIface.convert$FUNC, scope);
         }
-        static convert ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, long __x2, java.lang.foreign.MemoryAddress __x3, long __x4, int __x5, java.lang.foreign.MemoryAddress __x6, java.lang.foreign.MemoryAddress __x7, java.lang.foreign.MemoryAddress __x8) -> {
+        static convert ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, long __x2, java.lang.foreign.MemorySegment __x3, long __x4, int __x5, java.lang.foreign.MemorySegment __x6, java.lang.foreign.MemorySegment __x7, java.lang.foreign.MemorySegment __x8) -> {
                 try {
-                    return (int)_GConverterIface.convert$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, __x2, (java.lang.foreign.Addressable)__x3, __x4, __x5, (java.lang.foreign.Addressable)__x6, (java.lang.foreign.Addressable)__x7, (java.lang.foreign.Addressable)__x8);
+                    return (int)_GConverterIface.convert_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5, __x6, __x7, __x8);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -59,38 +96,62 @@ public class _GConverterIface {
     public static VarHandle convert$VH() {
         return _GConverterIface.convert$VH;
     }
-    public static MemoryAddress convert$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GConverterIface.convert$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GConverterResult (*convert)(GConverter*,void*,gsize,void*,gsize,GConverterFlags,gsize*,gsize*,GError**);
+     * }
+     */
+    public static MemorySegment convert$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GConverterIface.convert$VH.get(seg);
     }
-    public static void convert$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GConverterResult (*convert)(GConverter*,void*,gsize,void*,gsize,GConverterFlags,gsize*,gsize*,GError**);
+     * }
+     */
+    public static void convert$set(MemorySegment seg, MemorySegment x) {
         _GConverterIface.convert$VH.set(seg, x);
     }
-    public static MemoryAddress convert$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GConverterIface.convert$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment convert$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GConverterIface.convert$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void convert$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void convert$set(MemorySegment seg, long index, MemorySegment x) {
         _GConverterIface.convert$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static convert convert (MemorySegment segment, MemorySession session) {
-        return convert.ofAddress(convert$get(segment), session);
+    public static convert convert(MemorySegment segment, SegmentScope scope) {
+        return convert.ofAddress(convert$get(segment), scope);
     }
     static final FunctionDescriptor reset$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle reset$MH = RuntimeHelper.downcallHandle(
-        _GConverterIface.reset$FUNC
+    static final FunctionDescriptor reset_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle reset_UP$MH = RuntimeHelper.upcallHandle(reset.class, "apply", _GConverterIface.reset_UP$FUNC);
+    static final FunctionDescriptor reset_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle reset_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GConverterIface.reset_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*reset)(GConverter*);
+     * }
+     */
     public interface reset {
 
-        void apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(reset fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(reset.class, fi, _GConverterIface.reset$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment display);
+        static MemorySegment allocate(reset fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GConverterIface.reset_UP$MH, fi, _GConverterIface.reset$FUNC, scope);
         }
-        static reset ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static reset ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GConverterIface.reset$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    _GConverterIface.reset_DOWN$MH.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -102,27 +163,39 @@ public class _GConverterIface {
     public static VarHandle reset$VH() {
         return _GConverterIface.reset$VH;
     }
-    public static MemoryAddress reset$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GConverterIface.reset$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*reset)(GConverter*);
+     * }
+     */
+    public static MemorySegment reset$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GConverterIface.reset$VH.get(seg);
     }
-    public static void reset$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*reset)(GConverter*);
+     * }
+     */
+    public static void reset$set(MemorySegment seg, MemorySegment x) {
         _GConverterIface.reset$VH.set(seg, x);
     }
-    public static MemoryAddress reset$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GConverterIface.reset$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment reset$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GConverterIface.reset$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void reset$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void reset$set(MemorySegment seg, long index, MemorySegment x) {
         _GConverterIface.reset$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static reset reset (MemorySegment segment, MemorySession session) {
-        return reset.ofAddress(reset$get(segment), session);
+    public static reset reset(MemorySegment segment, SegmentScope scope) {
+        return reset.ofAddress(reset$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

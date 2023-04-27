@@ -7,57 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$204 {
+final class constants$204 {
 
-    static final FunctionDescriptor g_io_channel_set_encoding$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$204() {}
+    static final FunctionDescriptor g_strfreev$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_strfreev$MH = RuntimeHelper.downcallHandle(
+        "g_strfreev",
+        constants$204.g_strfreev$FUNC
+    );
+    static final FunctionDescriptor g_strdupv$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_strdupv$MH = RuntimeHelper.downcallHandle(
+        "g_strdupv",
+        constants$204.g_strdupv$FUNC
+    );
+    static final FunctionDescriptor g_strv_length$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_strv_length$MH = RuntimeHelper.downcallHandle(
+        "g_strv_length",
+        constants$204.g_strv_length$FUNC
+    );
+    static final FunctionDescriptor g_stpcpy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_stpcpy$MH = RuntimeHelper.downcallHandle(
+        "g_stpcpy",
+        constants$204.g_stpcpy$FUNC
+    );
+    static final FunctionDescriptor g_str_to_ascii$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_str_to_ascii$MH = RuntimeHelper.downcallHandle(
+        "g_str_to_ascii",
+        constants$204.g_str_to_ascii$FUNC
+    );
+    static final FunctionDescriptor g_str_tokenize_and_fold$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_io_channel_set_encoding$MH = RuntimeHelper.downcallHandle(
-        "g_io_channel_set_encoding",
-        constants$204.g_io_channel_set_encoding$FUNC
-    );
-    static final FunctionDescriptor g_io_channel_get_encoding$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_io_channel_get_encoding$MH = RuntimeHelper.downcallHandle(
-        "g_io_channel_get_encoding",
-        constants$204.g_io_channel_get_encoding$FUNC
-    );
-    static final FunctionDescriptor g_io_channel_set_close_on_unref$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_io_channel_set_close_on_unref$MH = RuntimeHelper.downcallHandle(
-        "g_io_channel_set_close_on_unref",
-        constants$204.g_io_channel_set_close_on_unref$FUNC
-    );
-    static final FunctionDescriptor g_io_channel_get_close_on_unref$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_io_channel_get_close_on_unref$MH = RuntimeHelper.downcallHandle(
-        "g_io_channel_get_close_on_unref",
-        constants$204.g_io_channel_get_close_on_unref$FUNC
-    );
-    static final FunctionDescriptor g_io_channel_flush$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_io_channel_flush$MH = RuntimeHelper.downcallHandle(
-        "g_io_channel_flush",
-        constants$204.g_io_channel_flush$FUNC
-    );
-    static final FunctionDescriptor g_io_channel_read_line$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_io_channel_read_line$MH = RuntimeHelper.downcallHandle(
-        "g_io_channel_read_line",
-        constants$204.g_io_channel_read_line$FUNC
+    static final MethodHandle g_str_tokenize_and_fold$MH = RuntimeHelper.downcallHandle(
+        "g_str_tokenize_and_fold",
+        constants$204.g_str_tokenize_and_fold$FUNC
     );
 }
 

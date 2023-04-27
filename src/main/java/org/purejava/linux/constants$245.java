@@ -7,53 +7,58 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$245 {
+final class constants$245 {
 
-    static final FunctionDescriptor g_printf_string_upper_bound$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$245() {}
+    static final FunctionDescriptor g_variant_dup_bytestring$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_printf_string_upper_bound$MH = RuntimeHelper.downcallHandle(
-        "g_printf_string_upper_bound",
-        constants$245.g_printf_string_upper_bound$FUNC
+    static final MethodHandle g_variant_dup_bytestring$MH = RuntimeHelper.downcallHandle(
+        "g_variant_dup_bytestring",
+        constants$245.g_variant_dup_bytestring$FUNC
     );
-    static final FunctionDescriptor GLogFunc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_variant_get_bytestring_array$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GLogFunc$MH = RuntimeHelper.downcallHandle(
-        constants$245.GLogFunc$FUNC
+    static final MethodHandle g_variant_get_bytestring_array$MH = RuntimeHelper.downcallHandle(
+        "g_variant_get_bytestring_array",
+        constants$245.g_variant_get_bytestring_array$FUNC
     );
-    static final FunctionDescriptor g_log_set_handler$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_log_set_handler$MH = RuntimeHelper.downcallHandle(
-        "g_log_set_handler",
-        constants$245.g_log_set_handler$FUNC
-    );
-    static final FunctionDescriptor g_log_set_handler_full$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_variant_dup_bytestring_array$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_log_set_handler_full$MH = RuntimeHelper.downcallHandle(
-        "g_log_set_handler_full",
-        constants$245.g_log_set_handler_full$FUNC
+    static final MethodHandle g_variant_dup_bytestring_array$MH = RuntimeHelper.downcallHandle(
+        "g_variant_dup_bytestring_array",
+        constants$245.g_variant_dup_bytestring_array$FUNC
     );
-    static final FunctionDescriptor g_log_remove_handler$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_variant_new_maybe$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_log_remove_handler$MH = RuntimeHelper.downcallHandle(
-        "g_log_remove_handler",
-        constants$245.g_log_remove_handler$FUNC
+    static final MethodHandle g_variant_new_maybe$MH = RuntimeHelper.downcallHandle(
+        "g_variant_new_maybe",
+        constants$245.g_variant_new_maybe$FUNC
+    );
+    static final FunctionDescriptor g_variant_new_array$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle g_variant_new_array$MH = RuntimeHelper.downcallHandle(
+        "g_variant_new_array",
+        constants$245.g_variant_new_array$FUNC
+    );
+    static final FunctionDescriptor g_variant_new_tuple$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle g_variant_new_tuple$MH = RuntimeHelper.downcallHandle(
+        "g_variant_new_tuple",
+        constants$245.g_variant_new_tuple$FUNC
     );
 }
 

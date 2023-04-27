@@ -7,51 +7,43 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1066 {
+final class constants$1066 {
 
-    static final FunctionDescriptor pango_font_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_font_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_font_get_type",
-        constants$1066.pango_font_get_type$FUNC
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1066() {}
+    static final FunctionDescriptor gdk_event_sequence_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gdk_event_sequence_get_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_event_sequence_get_type",
+        constants$1066.gdk_event_sequence_get_type$FUNC
     );
-    static final FunctionDescriptor pango_font_describe$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gdk_events_pending$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
+    static final MethodHandle gdk_events_pending$MH = RuntimeHelper.downcallHandle(
+        "gdk_events_pending",
+        constants$1066.gdk_events_pending$FUNC
+    );
+    static final FunctionDescriptor gdk_event_get$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gdk_event_get$MH = RuntimeHelper.downcallHandle(
+        "gdk_event_get",
+        constants$1066.gdk_event_get$FUNC
+    );
+    static final FunctionDescriptor gdk_event_peek$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gdk_event_peek$MH = RuntimeHelper.downcallHandle(
+        "gdk_event_peek",
+        constants$1066.gdk_event_peek$FUNC
+    );
+    static final FunctionDescriptor gdk_event_put$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_font_describe$MH = RuntimeHelper.downcallHandle(
-        "pango_font_describe",
-        constants$1066.pango_font_describe$FUNC
+    static final MethodHandle gdk_event_put$MH = RuntimeHelper.downcallHandle(
+        "gdk_event_put",
+        constants$1066.gdk_event_put$FUNC
     );
-    static final FunctionDescriptor pango_font_describe_with_absolute_size$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_font_describe_with_absolute_size$MH = RuntimeHelper.downcallHandle(
-        "pango_font_describe_with_absolute_size",
-        constants$1066.pango_font_describe_with_absolute_size$FUNC
-    );
-    static final FunctionDescriptor pango_font_get_coverage$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_font_get_coverage$MH = RuntimeHelper.downcallHandle(
-        "pango_font_get_coverage",
-        constants$1066.pango_font_get_coverage$FUNC
-    );
-    static final FunctionDescriptor pango_font_find_shaper$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gdk_event_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle pango_font_find_shaper$MH = RuntimeHelper.downcallHandle(
-        "pango_font_find_shaper",
-        constants$1066.pango_font_find_shaper$FUNC
-    );
-    static final FunctionDescriptor pango_font_get_metrics$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_font_get_metrics$MH = RuntimeHelper.downcallHandle(
-        "pango_font_get_metrics",
-        constants$1066.pango_font_get_metrics$FUNC
+    static final MethodHandle gdk_event_new$MH = RuntimeHelper.downcallHandle(
+        "gdk_event_new",
+        constants$1066.gdk_event_new$FUNC
     );
 }
 

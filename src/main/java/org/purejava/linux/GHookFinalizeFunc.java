@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * void (*GHookFinalizeFunc)(struct _GHookList* hook_list,struct _GHook* hook);
+ * }
+ */
 public interface GHookFinalizeFunc {
 
-    void apply(java.lang.foreign.MemoryAddress hook_list, java.lang.foreign.MemoryAddress hook);
-    static MemorySegment allocate(GHookFinalizeFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GHookFinalizeFunc.class, fi, constants$154.GHookFinalizeFunc$FUNC, session);
+    void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+    static MemorySegment allocate(GHookFinalizeFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$156.GHookFinalizeFunc_UP$MH, fi, constants$156.GHookFinalizeFunc$FUNC, scope);
     }
-    static GHookFinalizeFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _hook_list, java.lang.foreign.MemoryAddress _hook) -> {
+    static GHookFinalizeFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
             try {
-                constants$154.GHookFinalizeFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_hook_list, (java.lang.foreign.Addressable)_hook);
+                constants$156.GHookFinalizeFunc_DOWN$MH.invokeExact(symbol, _tag, _data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

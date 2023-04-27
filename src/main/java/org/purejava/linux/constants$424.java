@@ -7,30 +7,39 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$424 {
+final class constants$424 {
 
-    static final FunctionDescriptor GBaseInitFunc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$424() {}
+    static final FunctionDescriptor g_error_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_error_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_error_get_type",
+        constants$424.g_error_get_type$FUNC
     );
-    static final MethodHandle GBaseInitFunc$MH = RuntimeHelper.downcallHandle(
-        constants$424.GBaseInitFunc$FUNC
+    static final FunctionDescriptor g_date_time_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_date_time_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_date_time_get_type",
+        constants$424.g_date_time_get_type$FUNC
     );
-    static final FunctionDescriptor GBaseFinalizeFunc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_time_zone_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_time_zone_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_time_zone_get_type",
+        constants$424.g_time_zone_get_type$FUNC
     );
-    static final MethodHandle GBaseFinalizeFunc$MH = RuntimeHelper.downcallHandle(
-        constants$424.GBaseFinalizeFunc$FUNC
+    static final FunctionDescriptor g_io_channel_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_io_channel_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_io_channel_get_type",
+        constants$424.g_io_channel_get_type$FUNC
     );
-    static final FunctionDescriptor GClassInitFunc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_io_condition_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_io_condition_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_io_condition_get_type",
+        constants$424.g_io_condition_get_type$FUNC
     );
-    static final MethodHandle GClassInitFunc$MH = RuntimeHelper.downcallHandle(
-        constants$424.GClassInitFunc$FUNC
-    );
-    static final FunctionDescriptor GClassFinalizeFunc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_variant_builder_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_variant_builder_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_variant_builder_get_type",
+        constants$424.g_variant_builder_get_type$FUNC
     );
 }
 

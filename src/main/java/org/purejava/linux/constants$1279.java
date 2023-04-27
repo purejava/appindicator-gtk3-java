@@ -7,49 +7,60 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1279 {
+final class constants$1279 {
 
-    static final FunctionDescriptor gdk_screen_get_width$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1279() {}
+    static final FunctionDescriptor gtk_widget_class_install_style_property_parser$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_screen_get_width$MH = RuntimeHelper.downcallHandle(
-        "gdk_screen_get_width",
-        constants$1279.gdk_screen_get_width$FUNC
+    static final MethodHandle gtk_widget_class_install_style_property_parser$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_class_install_style_property_parser",
+        constants$1279.gtk_widget_class_install_style_property_parser$FUNC
     );
-    static final FunctionDescriptor gdk_screen_get_height$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_widget_class_find_style_property$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_screen_get_height$MH = RuntimeHelper.downcallHandle(
-        "gdk_screen_get_height",
-        constants$1279.gdk_screen_get_height$FUNC
+    static final MethodHandle gtk_widget_class_find_style_property$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_class_find_style_property",
+        constants$1279.gtk_widget_class_find_style_property$FUNC
     );
-    static final FunctionDescriptor gdk_screen_get_width_mm$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_widget_class_list_style_properties$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_screen_get_width_mm$MH = RuntimeHelper.downcallHandle(
-        "gdk_screen_get_width_mm",
-        constants$1279.gdk_screen_get_width_mm$FUNC
+    static final MethodHandle gtk_widget_class_list_style_properties$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_class_list_style_properties",
+        constants$1279.gtk_widget_class_list_style_properties$FUNC
     );
-    static final FunctionDescriptor gdk_screen_get_height_mm$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_widget_style_get_property$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_screen_get_height_mm$MH = RuntimeHelper.downcallHandle(
-        "gdk_screen_get_height_mm",
-        constants$1279.gdk_screen_get_height_mm$FUNC
+    static final MethodHandle gtk_widget_style_get_property$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_style_get_property",
+        constants$1279.gtk_widget_style_get_property$FUNC
     );
-    static final FunctionDescriptor gdk_screen_list_visuals$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_widget_style_get_valist$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_screen_list_visuals$MH = RuntimeHelper.downcallHandle(
-        "gdk_screen_list_visuals",
-        constants$1279.gdk_screen_list_visuals$FUNC
+    static final MethodHandle gtk_widget_style_get_valist$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_style_get_valist",
+        constants$1279.gtk_widget_style_get_valist$FUNC
     );
-    static final FunctionDescriptor gdk_screen_get_toplevel_windows$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_widget_style_get$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_screen_get_toplevel_windows$MH = RuntimeHelper.downcallHandle(
-        "gdk_screen_get_toplevel_windows",
-        constants$1279.gdk_screen_get_toplevel_windows$FUNC
+    static final MethodHandle gtk_widget_style_get$MH = RuntimeHelper.downcallHandleVariadic(
+        "gtk_widget_style_get",
+        constants$1279.gtk_widget_style_get$FUNC
     );
 }
 

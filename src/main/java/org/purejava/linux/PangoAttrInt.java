@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class PangoAttrInt extends _PangoAttrInt {
+/**
+ * {@snippet :
+ * typedef struct _PangoAttrInt PangoAttrInt;
+ * }
+ */
+public final class PangoAttrInt extends _PangoAttrInt {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private PangoAttrInt() {}
 }
 
 

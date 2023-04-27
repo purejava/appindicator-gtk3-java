@@ -7,50 +7,39 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$423 {
+final class constants$423 {
 
-    static final FunctionDescriptor g_type_interfaces$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$423() {}
+    static final FunctionDescriptor g_byte_array_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_byte_array_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_byte_array_get_type",
+        constants$423.g_byte_array_get_type$FUNC
     );
-    static final MethodHandle g_type_interfaces$MH = RuntimeHelper.downcallHandle(
-        "g_type_interfaces",
-        constants$423.g_type_interfaces$FUNC
+    static final FunctionDescriptor g_ptr_array_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_ptr_array_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_ptr_array_get_type",
+        constants$423.g_ptr_array_get_type$FUNC
     );
-    static final FunctionDescriptor g_type_set_qdata$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_bytes_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_bytes_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_bytes_get_type",
+        constants$423.g_bytes_get_type$FUNC
     );
-    static final MethodHandle g_type_set_qdata$MH = RuntimeHelper.downcallHandle(
-        "g_type_set_qdata",
-        constants$423.g_type_set_qdata$FUNC
+    static final FunctionDescriptor g_variant_type_get_gtype$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_variant_type_get_gtype$MH = RuntimeHelper.downcallHandle(
+        "g_variant_type_get_gtype",
+        constants$423.g_variant_type_get_gtype$FUNC
     );
-    static final FunctionDescriptor g_type_get_qdata$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor g_regex_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_regex_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_regex_get_type",
+        constants$423.g_regex_get_type$FUNC
     );
-    static final MethodHandle g_type_get_qdata$MH = RuntimeHelper.downcallHandle(
-        "g_type_get_qdata",
-        constants$423.g_type_get_qdata$FUNC
-    );
-    static final FunctionDescriptor g_type_query$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_type_query$MH = RuntimeHelper.downcallHandle(
-        "g_type_query",
-        constants$423.g_type_query$FUNC
-    );
-    static final FunctionDescriptor g_type_get_instance_count$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_type_get_instance_count$MH = RuntimeHelper.downcallHandle(
-        "g_type_get_instance_count",
-        constants$423.g_type_get_instance_count$FUNC
-    );
-    static final FunctionDescriptor GBaseInitFunc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_match_info_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_match_info_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_match_info_get_type",
+        constants$423.g_match_info_get_type$FUNC
     );
 }
 

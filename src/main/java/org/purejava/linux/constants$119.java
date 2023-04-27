@@ -7,8 +7,41 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$119 {
+final class constants$119 {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$119() {}
+    static final FunctionDescriptor g_date_get_sunday_weeks_in_year$FUNC = FunctionDescriptor.of(Constants$root.C_CHAR$LAYOUT,
+        Constants$root.C_SHORT$LAYOUT
+    );
+    static final MethodHandle g_date_get_sunday_weeks_in_year$MH = RuntimeHelper.downcallHandle(
+        "g_date_get_sunday_weeks_in_year",
+        constants$119.g_date_get_sunday_weeks_in_year$FUNC
+    );
+    static final FunctionDescriptor g_date_days_between$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_date_days_between$MH = RuntimeHelper.downcallHandle(
+        "g_date_days_between",
+        constants$119.g_date_days_between$FUNC
+    );
+    static final FunctionDescriptor g_date_compare$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_date_compare$MH = RuntimeHelper.downcallHandle(
+        "g_date_compare",
+        constants$119.g_date_compare$FUNC
+    );
+    static final FunctionDescriptor g_date_to_struct_tm$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_date_to_struct_tm$MH = RuntimeHelper.downcallHandle(
+        "g_date_to_struct_tm",
+        constants$119.g_date_to_struct_tm$FUNC
+    );
     static final FunctionDescriptor g_date_clamp$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
@@ -25,37 +58,6 @@ class constants$119 {
     static final MethodHandle g_date_order$MH = RuntimeHelper.downcallHandle(
         "g_date_order",
         constants$119.g_date_order$FUNC
-    );
-    static final FunctionDescriptor g_date_strftime$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_date_strftime$MH = RuntimeHelper.downcallHandle(
-        "g_date_strftime",
-        constants$119.g_date_strftime$FUNC
-    );
-    static final FunctionDescriptor opendir$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle opendir$MH = RuntimeHelper.downcallHandle(
-        "opendir",
-        constants$119.opendir$FUNC
-    );
-    static final FunctionDescriptor fdopendir$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle fdopendir$MH = RuntimeHelper.downcallHandle(
-        "fdopendir",
-        constants$119.fdopendir$FUNC
-    );
-    static final FunctionDescriptor closedir$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle closedir$MH = RuntimeHelper.downcallHandle(
-        "closedir",
-        constants$119.closedir$FUNC
     );
 }
 

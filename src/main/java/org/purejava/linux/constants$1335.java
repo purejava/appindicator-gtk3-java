@@ -7,64 +7,59 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1335 {
+final class constants$1335 {
 
-    static final FunctionDescriptor gdk_keymap_get_for_display$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_keymap_get_for_display$MH = RuntimeHelper.downcallHandle(
-        "gdk_keymap_get_for_display",
-        constants$1335.gdk_keymap_get_for_display$FUNC
-    );
-    static final FunctionDescriptor gdk_keymap_lookup_key$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1335() {}
+    static final FunctionDescriptor gtk_menu_set_screen$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_keymap_lookup_key$MH = RuntimeHelper.downcallHandle(
-        "gdk_keymap_lookup_key",
-        constants$1335.gdk_keymap_lookup_key$FUNC
+    static final MethodHandle gtk_menu_set_screen$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_set_screen",
+        constants$1335.gtk_menu_set_screen$FUNC
     );
-    static final FunctionDescriptor gdk_keymap_translate_keyboard_state$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_menu_attach$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_menu_attach$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_attach",
+        constants$1335.gtk_menu_attach$FUNC
+    );
+    static final FunctionDescriptor gtk_menu_set_monitor$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_menu_set_monitor$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_set_monitor",
+        constants$1335.gtk_menu_set_monitor$FUNC
+    );
+    static final FunctionDescriptor gtk_menu_get_monitor$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_menu_get_monitor$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_get_monitor",
+        constants$1335.gtk_menu_get_monitor$FUNC
+    );
+    static final FunctionDescriptor gtk_menu_place_on_monitor$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_keymap_translate_keyboard_state$MH = RuntimeHelper.downcallHandle(
-        "gdk_keymap_translate_keyboard_state",
-        constants$1335.gdk_keymap_translate_keyboard_state$FUNC
+    static final MethodHandle gtk_menu_place_on_monitor$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_place_on_monitor",
+        constants$1335.gtk_menu_place_on_monitor$FUNC
     );
-    static final FunctionDescriptor gdk_keymap_get_entries_for_keyval$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_menu_get_for_attach_widget$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_keymap_get_entries_for_keyval$MH = RuntimeHelper.downcallHandle(
-        "gdk_keymap_get_entries_for_keyval",
-        constants$1335.gdk_keymap_get_entries_for_keyval$FUNC
-    );
-    static final FunctionDescriptor gdk_keymap_get_entries_for_keycode$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_keymap_get_entries_for_keycode$MH = RuntimeHelper.downcallHandle(
-        "gdk_keymap_get_entries_for_keycode",
-        constants$1335.gdk_keymap_get_entries_for_keycode$FUNC
-    );
-    static final FunctionDescriptor gdk_keymap_get_direction$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_keymap_get_direction$MH = RuntimeHelper.downcallHandle(
-        "gdk_keymap_get_direction",
-        constants$1335.gdk_keymap_get_direction$FUNC
+    static final MethodHandle gtk_menu_get_for_attach_widget$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_get_for_attach_widget",
+        constants$1335.gtk_menu_get_for_attach_widget$FUNC
     );
 }
 

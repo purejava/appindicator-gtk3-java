@@ -7,9 +7,40 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * union _GdkEvent {
+ *     GdkEventType type;
+ *     GdkEventAny any;
+ *     GdkEventExpose expose;
+ *     GdkEventVisibility visibility;
+ *     GdkEventMotion motion;
+ *     GdkEventButton button;
+ *     GdkEventTouch touch;
+ *     GdkEventScroll scroll;
+ *     GdkEventKey key;
+ *     GdkEventCrossing crossing;
+ *     GdkEventFocus focus_change;
+ *     GdkEventConfigure configure;
+ *     GdkEventProperty property;
+ *     GdkEventSelection selection;
+ *     GdkEventOwnerChange owner_change;
+ *     GdkEventProximity proximity;
+ *     GdkEventDND dnd;
+ *     GdkEventWindowState window_state;
+ *     GdkEventSetting setting;
+ *     GdkEventGrabBroken grab_broken;
+ *     GdkEventTouchpadSwipe touchpad_swipe;
+ *     GdkEventTouchpadPinch touchpad_pinch;
+ *     GdkEventPadButton pad_button;
+ *     GdkEventPadAxis pad_axis;
+ *     GdkEventPadGroupMode pad_group_mode;
+ * };
+ * }
+ */
 public class _GdkEvent {
 
-    static final  GroupLayout $union$LAYOUT = MemoryLayout.unionLayout(
+    static final UnionLayout $union$LAYOUT = MemoryLayout.unionLayout(
         Constants$root.C_INT$LAYOUT.withName("type"),
         MemoryLayout.structLayout(
             Constants$root.C_INT$LAYOUT.withName("type"),
@@ -111,10 +142,7 @@ public class _GdkEvent {
             Constants$root.C_DOUBLE$LAYOUT.withName("y_root"),
             Constants$root.C_DOUBLE$LAYOUT.withName("delta_x"),
             Constants$root.C_DOUBLE$LAYOUT.withName("delta_y"),
-            MemoryLayout.structLayout(
-                MemoryLayout.paddingLayout(1).withName("is_stop"),
-                MemoryLayout.paddingLayout(63)
-            )
+            MemoryLayout.paddingLayout(64)
         ).withName("scroll"),
         MemoryLayout.structLayout(
             Constants$root.C_INT$LAYOUT.withName("type"),
@@ -130,10 +158,7 @@ public class _GdkEvent {
             Constants$root.C_POINTER$LAYOUT.withName("string"),
             Constants$root.C_SHORT$LAYOUT.withName("hardware_keycode"),
             Constants$root.C_CHAR$LAYOUT.withName("group"),
-            MemoryLayout.structLayout(
-                MemoryLayout.paddingLayout(1).withName("is_modifier"),
-                MemoryLayout.paddingLayout(39)
-            )
+            MemoryLayout.paddingLayout(40)
         ).withName("key"),
         MemoryLayout.structLayout(
             Constants$root.C_INT$LAYOUT.withName("type"),
@@ -341,10 +366,22 @@ public class _GdkEvent {
     public static VarHandle type$VH() {
         return _GdkEvent.type$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GdkEventType type;
+     * }
+     */
     public static int type$get(MemorySegment seg) {
         return (int)_GdkEvent.type$VH.get(seg);
     }
-    public static void type$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GdkEventType type;
+     * }
+     */
+    public static void type$set(MemorySegment seg, int x) {
         _GdkEvent.type$VH.set(seg, x);
     }
     public static int type$get(MemorySegment seg, long index) {
@@ -427,10 +464,10 @@ public class _GdkEvent {
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

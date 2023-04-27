@@ -7,9 +7,17 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _PangoAttrFontFeatures {
+ *     PangoAttribute attr;
+ *     gchar* features;
+ * };
+ * }
+ */
 public class _PangoAttrFontFeatures {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             Constants$root.C_POINTER$LAYOUT.withName("klass"),
             Constants$root.C_INT$LAYOUT.withName("start_index"),
@@ -27,24 +35,36 @@ public class _PangoAttrFontFeatures {
     public static VarHandle features$VH() {
         return _PangoAttrFontFeatures.features$VH;
     }
-    public static MemoryAddress features$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_PangoAttrFontFeatures.features$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gchar* features;
+     * }
+     */
+    public static MemorySegment features$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_PangoAttrFontFeatures.features$VH.get(seg);
     }
-    public static void features$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gchar* features;
+     * }
+     */
+    public static void features$set(MemorySegment seg, MemorySegment x) {
         _PangoAttrFontFeatures.features$VH.set(seg, x);
     }
-    public static MemoryAddress features$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_PangoAttrFontFeatures.features$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment features$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_PangoAttrFontFeatures.features$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void features$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void features$set(MemorySegment seg, long index, MemorySegment x) {
         _PangoAttrFontFeatures.features$VH.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

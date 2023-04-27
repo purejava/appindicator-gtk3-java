@@ -7,9 +7,17 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GOnce {
+ *     volatile GOnceStatus status;
+ *     volatile gpointer retval;
+ * };
+ * }
+ */
 public class _GOnce {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_INT$LAYOUT.withName("status"),
         MemoryLayout.paddingLayout(32),
         Constants$root.C_POINTER$LAYOUT.withName("retval")
@@ -21,10 +29,22 @@ public class _GOnce {
     public static VarHandle status$VH() {
         return _GOnce.status$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * volatile GOnceStatus status;
+     * }
+     */
     public static int status$get(MemorySegment seg) {
         return (int)_GOnce.status$VH.get(seg);
     }
-    public static void status$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * volatile GOnceStatus status;
+     * }
+     */
+    public static void status$set(MemorySegment seg, int x) {
         _GOnce.status$VH.set(seg, x);
     }
     public static int status$get(MemorySegment seg, long index) {
@@ -37,24 +57,36 @@ public class _GOnce {
     public static VarHandle retval$VH() {
         return _GOnce.retval$VH;
     }
-    public static MemoryAddress retval$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GOnce.retval$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * volatile gpointer retval;
+     * }
+     */
+    public static MemorySegment retval$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GOnce.retval$VH.get(seg);
     }
-    public static void retval$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * volatile gpointer retval;
+     * }
+     */
+    public static void retval$set(MemorySegment seg, MemorySegment x) {
         _GOnce.retval$VH.set(seg, x);
     }
-    public static MemoryAddress retval$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GOnce.retval$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment retval$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GOnce.retval$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void retval$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void retval$set(MemorySegment seg, long index, MemorySegment x) {
         _GOnce.retval$VH.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

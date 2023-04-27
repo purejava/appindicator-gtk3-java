@@ -7,49 +7,57 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$939 {
+final class constants$939 {
 
-    static final FunctionDescriptor glib_autoptr_cleanup_GNativeVolumeMonitor$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$939() {}
+    static final FunctionDescriptor pango_context_load_font$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GNativeVolumeMonitor$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GNativeVolumeMonitor",
-        constants$939.glib_autoptr_cleanup_GNativeVolumeMonitor$FUNC
+    static final MethodHandle pango_context_load_font$MH = RuntimeHelper.downcallHandle(
+        "pango_context_load_font",
+        constants$939.pango_context_load_font$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GNativeVolumeMonitor$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_context_load_fontset$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GNativeVolumeMonitor$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GNativeVolumeMonitor",
-        constants$939.glib_listautoptr_cleanup_GNativeVolumeMonitor$FUNC
+    static final MethodHandle pango_context_load_fontset$MH = RuntimeHelper.downcallHandle(
+        "pango_context_load_fontset",
+        constants$939.pango_context_load_fontset$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GNativeVolumeMonitor$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_context_get_metrics$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GNativeVolumeMonitor$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GNativeVolumeMonitor",
-        constants$939.glib_slistautoptr_cleanup_GNativeVolumeMonitor$FUNC
+    static final MethodHandle pango_context_get_metrics$MH = RuntimeHelper.downcallHandle(
+        "pango_context_get_metrics",
+        constants$939.pango_context_get_metrics$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GNativeVolumeMonitor$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_context_set_font_description$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GNativeVolumeMonitor$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GNativeVolumeMonitor",
-        constants$939.glib_queueautoptr_cleanup_GNativeVolumeMonitor$FUNC
+    static final MethodHandle pango_context_set_font_description$MH = RuntimeHelper.downcallHandle(
+        "pango_context_set_font_description",
+        constants$939.pango_context_set_font_description$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GNetworkAddress$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_context_get_font_description$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GNetworkAddress$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GNetworkAddress",
-        constants$939.glib_autoptr_clear_GNetworkAddress$FUNC
+    static final MethodHandle pango_context_get_font_description$MH = RuntimeHelper.downcallHandle(
+        "pango_context_get_font_description",
+        constants$939.pango_context_get_font_description$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GNetworkAddress$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_context_get_language$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GNetworkAddress$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GNetworkAddress",
-        constants$939.glib_autoptr_cleanup_GNetworkAddress$FUNC
+    static final MethodHandle pango_context_get_language$MH = RuntimeHelper.downcallHandle(
+        "pango_context_get_language",
+        constants$939.pango_context_get_language$FUNC
     );
 }
 

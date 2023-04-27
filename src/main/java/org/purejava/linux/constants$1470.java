@@ -7,53 +7,61 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1470 {
+final class constants$1470 {
 
-    static final FunctionDescriptor gtk_application_get_active_window$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_application_get_active_window$MH = RuntimeHelper.downcallHandle(
-        "gtk_application_get_active_window",
-        constants$1470.gtk_application_get_active_window$FUNC
-    );
-    static final FunctionDescriptor gtk_application_list_action_descriptions$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_application_list_action_descriptions$MH = RuntimeHelper.downcallHandle(
-        "gtk_application_list_action_descriptions",
-        constants$1470.gtk_application_list_action_descriptions$FUNC
-    );
-    static final FunctionDescriptor gtk_application_get_accels_for_action$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1470() {}
+    static final FunctionDescriptor gtk_tree_view_scroll_to_cell$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_application_get_accels_for_action$MH = RuntimeHelper.downcallHandle(
-        "gtk_application_get_accels_for_action",
-        constants$1470.gtk_application_get_accels_for_action$FUNC
-    );
-    static final FunctionDescriptor gtk_application_get_actions_for_accel$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_FLOAT$LAYOUT,
+        Constants$root.C_FLOAT$LAYOUT
     );
-    static final MethodHandle gtk_application_get_actions_for_accel$MH = RuntimeHelper.downcallHandle(
-        "gtk_application_get_actions_for_accel",
-        constants$1470.gtk_application_get_actions_for_accel$FUNC
+    static final MethodHandle gtk_tree_view_scroll_to_cell$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_scroll_to_cell",
+        constants$1470.gtk_tree_view_scroll_to_cell$FUNC
     );
-    static final FunctionDescriptor gtk_application_set_accels_for_action$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_tree_view_row_activated$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_application_set_accels_for_action$MH = RuntimeHelper.downcallHandle(
-        "gtk_application_set_accels_for_action",
-        constants$1470.gtk_application_set_accels_for_action$FUNC
+    static final MethodHandle gtk_tree_view_row_activated$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_row_activated",
+        constants$1470.gtk_tree_view_row_activated$FUNC
     );
-    static final FunctionDescriptor gtk_application_prefers_app_menu$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_tree_view_expand_all$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_application_prefers_app_menu$MH = RuntimeHelper.downcallHandle(
-        "gtk_application_prefers_app_menu",
-        constants$1470.gtk_application_prefers_app_menu$FUNC
+    static final MethodHandle gtk_tree_view_expand_all$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_expand_all",
+        constants$1470.gtk_tree_view_expand_all$FUNC
+    );
+    static final FunctionDescriptor gtk_tree_view_collapse_all$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_tree_view_collapse_all$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_collapse_all",
+        constants$1470.gtk_tree_view_collapse_all$FUNC
+    );
+    static final FunctionDescriptor gtk_tree_view_expand_to_path$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_tree_view_expand_to_path$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_expand_to_path",
+        constants$1470.gtk_tree_view_expand_to_path$FUNC
+    );
+    static final FunctionDescriptor gtk_tree_view_expand_row$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_tree_view_expand_row$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_expand_row",
+        constants$1470.gtk_tree_view_expand_row$FUNC
     );
 }
 

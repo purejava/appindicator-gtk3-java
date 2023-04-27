@@ -7,59 +7,72 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1132 {
+final class constants$1132 {
 
-    static final FunctionDescriptor glib_listautoptr_cleanup_PangoLayoutIter$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_listautoptr_cleanup_PangoLayoutIter$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_PangoLayoutIter",
-        constants$1132.glib_listautoptr_cleanup_PangoLayoutIter$FUNC
-    );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_PangoLayoutIter$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_slistautoptr_cleanup_PangoLayoutIter$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_PangoLayoutIter",
-        constants$1132.glib_slistautoptr_cleanup_PangoLayoutIter$FUNC
-    );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_PangoLayoutIter$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_queueautoptr_cleanup_PangoLayoutIter$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_PangoLayoutIter",
-        constants$1132.glib_queueautoptr_cleanup_PangoLayoutIter$FUNC
-    );
-    static final FunctionDescriptor pango_markup_parser_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_markup_parser_new$MH = RuntimeHelper.downcallHandle(
-        "pango_markup_parser_new",
-        constants$1132.pango_markup_parser_new$FUNC
-    );
-    static final FunctionDescriptor pango_markup_parser_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1132() {}
+    static final FunctionDescriptor gdk_pixbuf_new_from_file$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_markup_parser_finish$MH = RuntimeHelper.downcallHandle(
-        "pango_markup_parser_finish",
-        constants$1132.pango_markup_parser_finish$FUNC
+    static final MethodHandle gdk_pixbuf_new_from_file$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_new_from_file",
+        constants$1132.gdk_pixbuf_new_from_file$FUNC
     );
-    static final FunctionDescriptor pango_parse_markup$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gdk_pixbuf_new_from_file_at_size$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_pixbuf_new_from_file_at_size$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_new_from_file_at_size",
+        constants$1132.gdk_pixbuf_new_from_file_at_size$FUNC
+    );
+    static final FunctionDescriptor gdk_pixbuf_new_from_file_at_scale$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_pixbuf_new_from_file_at_scale$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_new_from_file_at_scale",
+        constants$1132.gdk_pixbuf_new_from_file_at_scale$FUNC
+    );
+    static final FunctionDescriptor gdk_pixbuf_new_from_resource$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_parse_markup$MH = RuntimeHelper.downcallHandle(
-        "pango_parse_markup",
-        constants$1132.pango_parse_markup$FUNC
+    static final MethodHandle gdk_pixbuf_new_from_resource$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_new_from_resource",
+        constants$1132.gdk_pixbuf_new_from_resource$FUNC
+    );
+    static final FunctionDescriptor gdk_pixbuf_new_from_resource_at_scale$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_pixbuf_new_from_resource_at_scale$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_new_from_resource_at_scale",
+        constants$1132.gdk_pixbuf_new_from_resource_at_scale$FUNC
+    );
+    static final FunctionDescriptor gdk_pixbuf_new_from_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_pixbuf_new_from_data$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_new_from_data",
+        constants$1132.gdk_pixbuf_new_from_data$FUNC
     );
 }
 

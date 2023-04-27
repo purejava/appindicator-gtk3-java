@@ -7,52 +7,63 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1522 {
+final class constants$1522 {
 
-    static final FunctionDescriptor gtk_menu_set_monitor$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1522() {}
+    static final FunctionDescriptor gtk_cell_layout_reorder$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_menu_set_monitor$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_set_monitor",
-        constants$1522.gtk_menu_set_monitor$FUNC
+    static final MethodHandle gtk_cell_layout_reorder$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_layout_reorder",
+        constants$1522.gtk_cell_layout_reorder$FUNC
     );
-    static final FunctionDescriptor gtk_menu_get_monitor$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_cell_layout_get_area$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_menu_get_monitor$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_get_monitor",
-        constants$1522.gtk_menu_get_monitor$FUNC
+    static final MethodHandle gtk_cell_layout_get_area$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_layout_get_area",
+        constants$1522.gtk_cell_layout_get_area$FUNC
     );
-    static final FunctionDescriptor gtk_menu_place_on_monitor$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor _gtk_cell_layout_buildable_custom_tag_start$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_menu_place_on_monitor$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_place_on_monitor",
-        constants$1522.gtk_menu_place_on_monitor$FUNC
+    static final MethodHandle _gtk_cell_layout_buildable_custom_tag_start$MH = RuntimeHelper.downcallHandle(
+        "_gtk_cell_layout_buildable_custom_tag_start",
+        constants$1522._gtk_cell_layout_buildable_custom_tag_start$FUNC
     );
-    static final FunctionDescriptor gtk_menu_get_for_attach_widget$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_menu_get_for_attach_widget$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_get_for_attach_widget",
-        constants$1522.gtk_menu_get_for_attach_widget$FUNC
-    );
-    static final FunctionDescriptor gtk_menu_set_reserve_toggle_size$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor _gtk_cell_layout_buildable_custom_tag_end$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_menu_set_reserve_toggle_size$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_set_reserve_toggle_size",
-        constants$1522.gtk_menu_set_reserve_toggle_size$FUNC
-    );
-    static final FunctionDescriptor gtk_menu_get_reserve_toggle_size$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_menu_get_reserve_toggle_size$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_get_reserve_toggle_size",
-        constants$1522.gtk_menu_get_reserve_toggle_size$FUNC
+    static final MethodHandle _gtk_cell_layout_buildable_custom_tag_end$MH = RuntimeHelper.downcallHandle(
+        "_gtk_cell_layout_buildable_custom_tag_end",
+        constants$1522._gtk_cell_layout_buildable_custom_tag_end$FUNC
+    );
+    static final FunctionDescriptor _gtk_cell_layout_buildable_add_child$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle _gtk_cell_layout_buildable_add_child$MH = RuntimeHelper.downcallHandle(
+        "_gtk_cell_layout_buildable_add_child",
+        constants$1522._gtk_cell_layout_buildable_add_child$FUNC
+    );
+    static final FunctionDescriptor gtk_cell_renderer_text_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_cell_renderer_text_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_renderer_text_get_type",
+        constants$1522.gtk_cell_renderer_text_get_type$FUNC
     );
 }
 

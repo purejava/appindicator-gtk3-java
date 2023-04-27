@@ -7,9 +7,20 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct {
+ *     double ascent;
+ *     double descent;
+ *     double height;
+ *     double max_x_advance;
+ *     double max_y_advance;
+ * };
+ * }
+ */
 public class cairo_font_extents_t {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_DOUBLE$LAYOUT.withName("ascent"),
         Constants$root.C_DOUBLE$LAYOUT.withName("descent"),
         Constants$root.C_DOUBLE$LAYOUT.withName("height"),
@@ -23,10 +34,22 @@ public class cairo_font_extents_t {
     public static VarHandle ascent$VH() {
         return cairo_font_extents_t.ascent$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * double ascent;
+     * }
+     */
     public static double ascent$get(MemorySegment seg) {
         return (double)cairo_font_extents_t.ascent$VH.get(seg);
     }
-    public static void ascent$set( MemorySegment seg, double x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * double ascent;
+     * }
+     */
+    public static void ascent$set(MemorySegment seg, double x) {
         cairo_font_extents_t.ascent$VH.set(seg, x);
     }
     public static double ascent$get(MemorySegment seg, long index) {
@@ -39,10 +62,22 @@ public class cairo_font_extents_t {
     public static VarHandle descent$VH() {
         return cairo_font_extents_t.descent$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * double descent;
+     * }
+     */
     public static double descent$get(MemorySegment seg) {
         return (double)cairo_font_extents_t.descent$VH.get(seg);
     }
-    public static void descent$set( MemorySegment seg, double x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * double descent;
+     * }
+     */
+    public static void descent$set(MemorySegment seg, double x) {
         cairo_font_extents_t.descent$VH.set(seg, x);
     }
     public static double descent$get(MemorySegment seg, long index) {
@@ -55,10 +90,22 @@ public class cairo_font_extents_t {
     public static VarHandle height$VH() {
         return cairo_font_extents_t.height$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * double height;
+     * }
+     */
     public static double height$get(MemorySegment seg) {
         return (double)cairo_font_extents_t.height$VH.get(seg);
     }
-    public static void height$set( MemorySegment seg, double x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * double height;
+     * }
+     */
+    public static void height$set(MemorySegment seg, double x) {
         cairo_font_extents_t.height$VH.set(seg, x);
     }
     public static double height$get(MemorySegment seg, long index) {
@@ -71,10 +118,22 @@ public class cairo_font_extents_t {
     public static VarHandle max_x_advance$VH() {
         return cairo_font_extents_t.max_x_advance$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * double max_x_advance;
+     * }
+     */
     public static double max_x_advance$get(MemorySegment seg) {
         return (double)cairo_font_extents_t.max_x_advance$VH.get(seg);
     }
-    public static void max_x_advance$set( MemorySegment seg, double x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * double max_x_advance;
+     * }
+     */
+    public static void max_x_advance$set(MemorySegment seg, double x) {
         cairo_font_extents_t.max_x_advance$VH.set(seg, x);
     }
     public static double max_x_advance$get(MemorySegment seg, long index) {
@@ -87,10 +146,22 @@ public class cairo_font_extents_t {
     public static VarHandle max_y_advance$VH() {
         return cairo_font_extents_t.max_y_advance$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * double max_y_advance;
+     * }
+     */
     public static double max_y_advance$get(MemorySegment seg) {
         return (double)cairo_font_extents_t.max_y_advance$VH.get(seg);
     }
-    public static void max_y_advance$set( MemorySegment seg, double x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * double max_y_advance;
+     * }
+     */
+    public static void max_y_advance$set(MemorySegment seg, double x) {
         cairo_font_extents_t.max_y_advance$VH.set(seg, x);
     }
     public static double max_y_advance$get(MemorySegment seg, long index) {
@@ -101,10 +172,10 @@ public class cairo_font_extents_t {
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

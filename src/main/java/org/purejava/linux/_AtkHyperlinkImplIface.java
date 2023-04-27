@@ -7,9 +7,17 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _AtkHyperlinkImplIface {
+ *     GTypeInterface parent;
+ *     AtkHyperlink* (*get_hyperlink)(AtkHyperlinkImpl*);
+ * };
+ * }
+ */
 public class _AtkHyperlinkImplIface {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             Constants$root.C_LONG_LONG$LAYOUT.withName("g_type"),
             Constants$root.C_LONG_LONG$LAYOUT.withName("g_instance_type")
@@ -25,20 +33,32 @@ public class _AtkHyperlinkImplIface {
     static final FunctionDescriptor get_hyperlink$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_hyperlink$MH = RuntimeHelper.downcallHandle(
-        _AtkHyperlinkImplIface.get_hyperlink$FUNC
+    static final FunctionDescriptor get_hyperlink_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_hyperlink_UP$MH = RuntimeHelper.upcallHandle(get_hyperlink.class, "apply", _AtkHyperlinkImplIface.get_hyperlink_UP$FUNC);
+    static final FunctionDescriptor get_hyperlink_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_hyperlink_DOWN$MH = RuntimeHelper.downcallHandle(
+        _AtkHyperlinkImplIface.get_hyperlink_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * AtkHyperlink* (*get_hyperlink)(AtkHyperlinkImpl*);
+     * }
+     */
     public interface get_hyperlink {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(get_hyperlink fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_hyperlink.class, fi, _AtkHyperlinkImplIface.get_hyperlink$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(get_hyperlink fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_AtkHyperlinkImplIface.get_hyperlink_UP$MH, fi, _AtkHyperlinkImplIface.get_hyperlink$FUNC, scope);
         }
-        static get_hyperlink ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static get_hyperlink ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_AtkHyperlinkImplIface.get_hyperlink$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (java.lang.foreign.MemorySegment)_AtkHyperlinkImplIface.get_hyperlink_DOWN$MH.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -50,27 +70,39 @@ public class _AtkHyperlinkImplIface {
     public static VarHandle get_hyperlink$VH() {
         return _AtkHyperlinkImplIface.get_hyperlink$VH;
     }
-    public static MemoryAddress get_hyperlink$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AtkHyperlinkImplIface.get_hyperlink$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * AtkHyperlink* (*get_hyperlink)(AtkHyperlinkImpl*);
+     * }
+     */
+    public static MemorySegment get_hyperlink$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AtkHyperlinkImplIface.get_hyperlink$VH.get(seg);
     }
-    public static void get_hyperlink$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * AtkHyperlink* (*get_hyperlink)(AtkHyperlinkImpl*);
+     * }
+     */
+    public static void get_hyperlink$set(MemorySegment seg, MemorySegment x) {
         _AtkHyperlinkImplIface.get_hyperlink$VH.set(seg, x);
     }
-    public static MemoryAddress get_hyperlink$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AtkHyperlinkImplIface.get_hyperlink$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_hyperlink$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AtkHyperlinkImplIface.get_hyperlink$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_hyperlink$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_hyperlink$set(MemorySegment seg, long index, MemorySegment x) {
         _AtkHyperlinkImplIface.get_hyperlink$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_hyperlink get_hyperlink (MemorySegment segment, MemorySession session) {
-        return get_hyperlink.ofAddress(get_hyperlink$get(segment), session);
+    public static get_hyperlink get_hyperlink(MemorySegment segment, SegmentScope scope) {
+        return get_hyperlink.ofAddress(get_hyperlink$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

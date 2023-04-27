@@ -7,49 +7,59 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$982 {
+final class constants$982 {
 
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GTlsInteraction$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$982() {}
+    static final FunctionDescriptor vsnprintf$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GTlsInteraction$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GTlsInteraction",
-        constants$982.glib_queueautoptr_cleanup_GTlsInteraction$FUNC
+    static final MethodHandle vsnprintf$MH = RuntimeHelper.downcallHandle(
+        "vsnprintf",
+        constants$982.vsnprintf$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GTlsPassword$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor vdprintf$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GTlsPassword$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GTlsPassword",
-        constants$982.glib_autoptr_clear_GTlsPassword$FUNC
+    static final MethodHandle vdprintf$MH = RuntimeHelper.downcallHandle(
+        "vdprintf",
+        constants$982.vdprintf$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GTlsPassword$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor dprintf$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GTlsPassword$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GTlsPassword",
-        constants$982.glib_autoptr_cleanup_GTlsPassword$FUNC
+    static final MethodHandle dprintf$MH = RuntimeHelper.downcallHandleVariadic(
+        "dprintf",
+        constants$982.dprintf$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GTlsPassword$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor fscanf$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GTlsPassword$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GTlsPassword",
-        constants$982.glib_listautoptr_cleanup_GTlsPassword$FUNC
+    static final MethodHandle fscanf$MH = RuntimeHelper.downcallHandleVariadic(
+        "fscanf",
+        constants$982.fscanf$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GTlsPassword$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor scanf$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GTlsPassword$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GTlsPassword",
-        constants$982.glib_slistautoptr_cleanup_GTlsPassword$FUNC
+    static final MethodHandle scanf$MH = RuntimeHelper.downcallHandleVariadic(
+        "scanf",
+        constants$982.scanf$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GTlsPassword$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor sscanf$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GTlsPassword$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GTlsPassword",
-        constants$982.glib_queueautoptr_cleanup_GTlsPassword$FUNC
+    static final MethodHandle sscanf$MH = RuntimeHelper.downcallHandleVariadic(
+        "sscanf",
+        constants$982.sscanf$FUNC
     );
 }
 

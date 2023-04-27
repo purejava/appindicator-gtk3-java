@@ -7,58 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1099 {
+final class constants$1099 {
 
-    static final FunctionDescriptor pango_glyph_string_set_size$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1099() {}
+    static final FunctionDescriptor gdk_window_fullscreen_on_monitor$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle pango_glyph_string_set_size$MH = RuntimeHelper.downcallHandle(
-        "pango_glyph_string_set_size",
-        constants$1099.pango_glyph_string_set_size$FUNC
+    static final MethodHandle gdk_window_fullscreen_on_monitor$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_fullscreen_on_monitor",
+        constants$1099.gdk_window_fullscreen_on_monitor$FUNC
     );
-    static final FunctionDescriptor pango_glyph_string_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gdk_window_set_fullscreen_mode$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gdk_window_set_fullscreen_mode$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_set_fullscreen_mode",
+        constants$1099.gdk_window_set_fullscreen_mode$FUNC
+    );
+    static final FunctionDescriptor gdk_window_get_fullscreen_mode$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_glyph_string_copy$MH = RuntimeHelper.downcallHandle(
-        "pango_glyph_string_copy",
-        constants$1099.pango_glyph_string_copy$FUNC
+    static final MethodHandle gdk_window_get_fullscreen_mode$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_get_fullscreen_mode",
+        constants$1099.gdk_window_get_fullscreen_mode$FUNC
     );
-    static final FunctionDescriptor pango_glyph_string_free$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gdk_window_unfullscreen$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_glyph_string_free$MH = RuntimeHelper.downcallHandle(
-        "pango_glyph_string_free",
-        constants$1099.pango_glyph_string_free$FUNC
+    static final MethodHandle gdk_window_unfullscreen$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_unfullscreen",
+        constants$1099.gdk_window_unfullscreen$FUNC
     );
-    static final FunctionDescriptor pango_glyph_string_extents$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gdk_window_set_keep_above$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle pango_glyph_string_extents$MH = RuntimeHelper.downcallHandle(
-        "pango_glyph_string_extents",
-        constants$1099.pango_glyph_string_extents$FUNC
+    static final MethodHandle gdk_window_set_keep_above$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_set_keep_above",
+        constants$1099.gdk_window_set_keep_above$FUNC
     );
-    static final FunctionDescriptor pango_glyph_string_get_width$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_glyph_string_get_width$MH = RuntimeHelper.downcallHandle(
-        "pango_glyph_string_get_width",
-        constants$1099.pango_glyph_string_get_width$FUNC
-    );
-    static final FunctionDescriptor pango_glyph_string_extents_range$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gdk_window_set_keep_below$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle pango_glyph_string_extents_range$MH = RuntimeHelper.downcallHandle(
-        "pango_glyph_string_extents_range",
-        constants$1099.pango_glyph_string_extents_range$FUNC
+    static final MethodHandle gdk_window_set_keep_below$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_set_keep_below",
+        constants$1099.gdk_window_set_keep_below$FUNC
     );
 }
 

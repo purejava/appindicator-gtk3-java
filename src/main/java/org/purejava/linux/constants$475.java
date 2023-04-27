@@ -7,51 +7,56 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$475 {
+final class constants$475 {
 
-    static final FunctionDescriptor g_object_notify$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$475() {}
+    static final FunctionDescriptor g_action_group_list_actions$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_action_group_list_actions$MH = RuntimeHelper.downcallHandle(
+        "g_action_group_list_actions",
+        constants$475.g_action_group_list_actions$FUNC
+    );
+    static final FunctionDescriptor g_action_group_get_action_parameter_type$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_object_notify$MH = RuntimeHelper.downcallHandle(
-        "g_object_notify",
-        constants$475.g_object_notify$FUNC
+    static final MethodHandle g_action_group_get_action_parameter_type$MH = RuntimeHelper.downcallHandle(
+        "g_action_group_get_action_parameter_type",
+        constants$475.g_action_group_get_action_parameter_type$FUNC
     );
-    static final FunctionDescriptor g_object_notify_by_pspec$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_action_group_get_action_state_type$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_object_notify_by_pspec$MH = RuntimeHelper.downcallHandle(
-        "g_object_notify_by_pspec",
-        constants$475.g_object_notify_by_pspec$FUNC
+    static final MethodHandle g_action_group_get_action_state_type$MH = RuntimeHelper.downcallHandle(
+        "g_action_group_get_action_state_type",
+        constants$475.g_action_group_get_action_state_type$FUNC
     );
-    static final FunctionDescriptor g_object_thaw_notify$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_action_group_get_action_state_hint$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_object_thaw_notify$MH = RuntimeHelper.downcallHandle(
-        "g_object_thaw_notify",
-        constants$475.g_object_thaw_notify$FUNC
+    static final MethodHandle g_action_group_get_action_state_hint$MH = RuntimeHelper.downcallHandle(
+        "g_action_group_get_action_state_hint",
+        constants$475.g_action_group_get_action_state_hint$FUNC
     );
-    static final FunctionDescriptor g_object_is_floating$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_action_group_get_action_enabled$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_object_is_floating$MH = RuntimeHelper.downcallHandle(
-        "g_object_is_floating",
-        constants$475.g_object_is_floating$FUNC
+    static final MethodHandle g_action_group_get_action_enabled$MH = RuntimeHelper.downcallHandle(
+        "g_action_group_get_action_enabled",
+        constants$475.g_action_group_get_action_enabled$FUNC
     );
-    static final FunctionDescriptor g_object_ref_sink$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_action_group_get_action_state$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_object_ref_sink$MH = RuntimeHelper.downcallHandle(
-        "g_object_ref_sink",
-        constants$475.g_object_ref_sink$FUNC
-    );
-    static final FunctionDescriptor g_object_take_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_object_take_ref$MH = RuntimeHelper.downcallHandle(
-        "g_object_take_ref",
-        constants$475.g_object_take_ref$FUNC
+    static final MethodHandle g_action_group_get_action_state$MH = RuntimeHelper.downcallHandle(
+        "g_action_group_get_action_state",
+        constants$475.g_action_group_get_action_state$FUNC
     );
 }
 

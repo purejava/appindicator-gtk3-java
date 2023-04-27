@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * void (*GScannerMsgFunc)(struct _GScanner* scanner,char* message,int error);
+ * }
+ */
 public interface GScannerMsgFunc {
 
-    void apply(java.lang.foreign.MemoryAddress scanner, java.lang.foreign.MemoryAddress message, int error);
-    static MemorySegment allocate(GScannerMsgFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GScannerMsgFunc.class, fi, constants$281.GScannerMsgFunc$FUNC, session);
+    void apply(java.lang.foreign.MemorySegment screen, java.lang.foreign.MemorySegment colors, int n_colors);
+    static MemorySegment allocate(GScannerMsgFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$295.GScannerMsgFunc_UP$MH, fi, constants$295.GScannerMsgFunc$FUNC, scope);
     }
-    static GScannerMsgFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _scanner, java.lang.foreign.MemoryAddress _message, int _error) -> {
+    static GScannerMsgFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _screen, java.lang.foreign.MemorySegment _colors, int _n_colors) -> {
             try {
-                constants$281.GScannerMsgFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_scanner, (java.lang.foreign.Addressable)_message, _error);
+                constants$295.GScannerMsgFunc_DOWN$MH.invokeExact(symbol, _screen, _colors, _n_colors);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

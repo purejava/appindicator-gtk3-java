@@ -7,55 +7,56 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$164 {
+final class constants$164 {
 
-    static final FunctionDescriptor g_slist_last$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$164() {}
+    static final FunctionDescriptor g_slist_delete_link$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_slist_last$MH = RuntimeHelper.downcallHandle(
-        "g_slist_last",
-        constants$164.g_slist_last$FUNC
+    static final MethodHandle g_slist_delete_link$MH = RuntimeHelper.downcallHandle(
+        "g_slist_delete_link",
+        constants$164.g_slist_delete_link$FUNC
     );
-    static final FunctionDescriptor g_slist_length$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_slist_reverse$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_slist_length$MH = RuntimeHelper.downcallHandle(
-        "g_slist_length",
-        constants$164.g_slist_length$FUNC
+    static final MethodHandle g_slist_reverse$MH = RuntimeHelper.downcallHandle(
+        "g_slist_reverse",
+        constants$164.g_slist_reverse$FUNC
     );
-    static final FunctionDescriptor g_slist_foreach$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_slist_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_slist_copy$MH = RuntimeHelper.downcallHandle(
+        "g_slist_copy",
+        constants$164.g_slist_copy$FUNC
+    );
+    static final FunctionDescriptor g_slist_copy_deep$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_slist_foreach$MH = RuntimeHelper.downcallHandle(
-        "g_slist_foreach",
-        constants$164.g_slist_foreach$FUNC
+    static final MethodHandle g_slist_copy_deep$MH = RuntimeHelper.downcallHandle(
+        "g_slist_copy_deep",
+        constants$164.g_slist_copy_deep$FUNC
     );
-    static final FunctionDescriptor g_slist_sort$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_slist_sort$MH = RuntimeHelper.downcallHandle(
-        "g_slist_sort",
-        constants$164.g_slist_sort$FUNC
-    );
-    static final FunctionDescriptor g_slist_sort_with_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_slist_sort_with_data$MH = RuntimeHelper.downcallHandle(
-        "g_slist_sort_with_data",
-        constants$164.g_slist_sort_with_data$FUNC
-    );
-    static final FunctionDescriptor g_slist_nth_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_slist_nth$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_slist_nth_data$MH = RuntimeHelper.downcallHandle(
-        "g_slist_nth_data",
-        constants$164.g_slist_nth_data$FUNC
+    static final MethodHandle g_slist_nth$MH = RuntimeHelper.downcallHandle(
+        "g_slist_nth",
+        constants$164.g_slist_nth$FUNC
+    );
+    static final FunctionDescriptor g_slist_find$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_slist_find$MH = RuntimeHelper.downcallHandle(
+        "g_slist_find",
+        constants$164.g_slist_find$FUNC
     );
 }
 

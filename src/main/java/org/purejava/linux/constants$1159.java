@@ -7,59 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1159 {
+final class constants$1159 {
 
-    static final FunctionDescriptor cairo_set_line_join$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1159() {}
+    static final FunctionDescriptor gdk_device_pad_get_group_n_modes$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle cairo_set_line_join$MH = RuntimeHelper.downcallHandle(
-        "cairo_set_line_join",
-        constants$1159.cairo_set_line_join$FUNC
+    static final MethodHandle gdk_device_pad_get_group_n_modes$MH = RuntimeHelper.downcallHandle(
+        "gdk_device_pad_get_group_n_modes",
+        constants$1159.gdk_device_pad_get_group_n_modes$FUNC
     );
-    static final FunctionDescriptor cairo_set_dash$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gdk_device_pad_get_n_features$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gdk_device_pad_get_n_features$MH = RuntimeHelper.downcallHandle(
+        "gdk_device_pad_get_n_features",
+        constants$1159.gdk_device_pad_get_n_features$FUNC
+    );
+    static final FunctionDescriptor gdk_device_pad_get_feature_group$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle cairo_set_dash$MH = RuntimeHelper.downcallHandle(
-        "cairo_set_dash",
-        constants$1159.cairo_set_dash$FUNC
+    static final MethodHandle gdk_device_pad_get_feature_group$MH = RuntimeHelper.downcallHandle(
+        "gdk_device_pad_get_feature_group",
+        constants$1159.gdk_device_pad_get_feature_group$FUNC
     );
-    static final FunctionDescriptor cairo_set_miter_limit$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final FunctionDescriptor gdk_display_manager_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gdk_display_manager_get_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_display_manager_get_type",
+        constants$1159.gdk_display_manager_get_type$FUNC
     );
-    static final MethodHandle cairo_set_miter_limit$MH = RuntimeHelper.downcallHandle(
-        "cairo_set_miter_limit",
-        constants$1159.cairo_set_miter_limit$FUNC
+    static final FunctionDescriptor gdk_display_manager_get$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gdk_display_manager_get$MH = RuntimeHelper.downcallHandle(
+        "gdk_display_manager_get",
+        constants$1159.gdk_display_manager_get$FUNC
     );
-    static final FunctionDescriptor cairo_translate$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final FunctionDescriptor gdk_display_manager_get_default_display$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_translate$MH = RuntimeHelper.downcallHandle(
-        "cairo_translate",
-        constants$1159.cairo_translate$FUNC
-    );
-    static final FunctionDescriptor cairo_scale$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle cairo_scale$MH = RuntimeHelper.downcallHandle(
-        "cairo_scale",
-        constants$1159.cairo_scale$FUNC
-    );
-    static final FunctionDescriptor cairo_rotate$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle cairo_rotate$MH = RuntimeHelper.downcallHandle(
-        "cairo_rotate",
-        constants$1159.cairo_rotate$FUNC
+    static final MethodHandle gdk_display_manager_get_default_display$MH = RuntimeHelper.downcallHandle(
+        "gdk_display_manager_get_default_display",
+        constants$1159.gdk_display_manager_get_default_display$FUNC
     );
 }
 

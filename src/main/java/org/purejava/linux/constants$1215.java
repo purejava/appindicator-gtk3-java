@@ -7,63 +7,58 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1215 {
+final class constants$1215 {
 
-    static final FunctionDescriptor gdk_device_get_axis_use$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1215() {}
+    static final FunctionDescriptor atk_text_range_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle atk_text_range_get_type$MH = RuntimeHelper.downcallHandle(
+        "atk_text_range_get_type",
+        constants$1215.atk_text_range_get_type$FUNC
     );
-    static final MethodHandle gdk_device_get_axis_use$MH = RuntimeHelper.downcallHandle(
-        "gdk_device_get_axis_use",
-        constants$1215.gdk_device_get_axis_use$FUNC
+    static final FunctionDescriptor atk_text_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle atk_text_get_type$MH = RuntimeHelper.downcallHandle(
+        "atk_text_get_type",
+        constants$1215.atk_text_get_type$FUNC
     );
-    static final FunctionDescriptor gdk_device_set_axis_use$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor atk_text_get_text$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gdk_device_set_axis_use$MH = RuntimeHelper.downcallHandle(
-        "gdk_device_set_axis_use",
-        constants$1215.gdk_device_set_axis_use$FUNC
+    static final MethodHandle atk_text_get_text$MH = RuntimeHelper.downcallHandle(
+        "atk_text_get_text",
+        constants$1215.atk_text_get_text$FUNC
     );
-    static final FunctionDescriptor gdk_device_get_state$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor atk_text_get_character_at_offset$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle atk_text_get_character_at_offset$MH = RuntimeHelper.downcallHandle(
+        "atk_text_get_character_at_offset",
+        constants$1215.atk_text_get_character_at_offset$FUNC
+    );
+    static final FunctionDescriptor atk_text_get_text_after_offset$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_device_get_state$MH = RuntimeHelper.downcallHandle(
-        "gdk_device_get_state",
-        constants$1215.gdk_device_get_state$FUNC
+    static final MethodHandle atk_text_get_text_after_offset$MH = RuntimeHelper.downcallHandle(
+        "atk_text_get_text_after_offset",
+        constants$1215.atk_text_get_text_after_offset$FUNC
     );
-    static final FunctionDescriptor gdk_device_get_position$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor atk_text_get_text_at_offset$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_device_get_position$MH = RuntimeHelper.downcallHandle(
-        "gdk_device_get_position",
-        constants$1215.gdk_device_get_position$FUNC
-    );
-    static final FunctionDescriptor gdk_device_get_window_at_position$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_device_get_window_at_position$MH = RuntimeHelper.downcallHandle(
-        "gdk_device_get_window_at_position",
-        constants$1215.gdk_device_get_window_at_position$FUNC
-    );
-    static final FunctionDescriptor gdk_device_get_position_double$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_device_get_position_double$MH = RuntimeHelper.downcallHandle(
-        "gdk_device_get_position_double",
-        constants$1215.gdk_device_get_position_double$FUNC
+    static final MethodHandle atk_text_get_text_at_offset$MH = RuntimeHelper.downcallHandle(
+        "atk_text_get_text_at_offset",
+        constants$1215.atk_text_get_text_at_offset$FUNC
     );
 }
 

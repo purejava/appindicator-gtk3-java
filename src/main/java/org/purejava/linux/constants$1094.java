@@ -7,45 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1094 {
+final class constants$1094 {
 
-    static final FunctionDescriptor glib_listautoptr_cleanup_PangoFontMap$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1094() {}
+    static final FunctionDescriptor gdk_window_get_parent$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_PangoFontMap$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_PangoFontMap",
-        constants$1094.glib_listautoptr_cleanup_PangoFontMap$FUNC
+    static final MethodHandle gdk_window_get_parent$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_get_parent",
+        constants$1094.gdk_window_get_parent$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_PangoFontMap$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gdk_window_get_toplevel$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_PangoFontMap$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_PangoFontMap",
-        constants$1094.glib_slistautoptr_cleanup_PangoFontMap$FUNC
+    static final MethodHandle gdk_window_get_toplevel$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_get_toplevel",
+        constants$1094.gdk_window_get_toplevel$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_PangoFontMap$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gdk_window_get_effective_parent$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_PangoFontMap$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_PangoFontMap",
-        constants$1094.glib_queueautoptr_cleanup_PangoFontMap$FUNC
+    static final MethodHandle gdk_window_get_effective_parent$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_get_effective_parent",
+        constants$1094.gdk_window_get_effective_parent$FUNC
     );
-    static final FunctionDescriptor pango_context_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_context_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_context_get_type",
-        constants$1094.pango_context_get_type$FUNC
-    );
-    static final FunctionDescriptor pango_context_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle pango_context_new$MH = RuntimeHelper.downcallHandle(
-        "pango_context_new",
-        constants$1094.pango_context_new$FUNC
-    );
-    static final FunctionDescriptor pango_context_changed$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gdk_window_get_effective_toplevel$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_context_changed$MH = RuntimeHelper.downcallHandle(
-        "pango_context_changed",
-        constants$1094.pango_context_changed$FUNC
+    static final MethodHandle gdk_window_get_effective_toplevel$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_get_effective_toplevel",
+        constants$1094.gdk_window_get_effective_toplevel$FUNC
+    );
+    static final FunctionDescriptor gdk_window_get_children$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_window_get_children$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_get_children",
+        constants$1094.gdk_window_get_children$FUNC
+    );
+    static final FunctionDescriptor gdk_window_peek_children$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_window_peek_children$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_peek_children",
+        constants$1094.gdk_window_peek_children$FUNC
     );
 }
 

@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkMessageDialog extends _GtkMessageDialog {
+/**
+ * {@snippet :
+ * typedef struct _GtkMessageDialog GtkMessageDialog;
+ * }
+ */
+public final class GtkMessageDialog extends _GtkMessageDialog {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkMessageDialog() {}
 }
 
 

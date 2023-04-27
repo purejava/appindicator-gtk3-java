@@ -7,53 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$807 {
+final class constants$807 {
 
-    static final FunctionDescriptor g_simple_action_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$807() {}
+    static final FunctionDescriptor g_tls_connection_set_database$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_simple_action_new$MH = RuntimeHelper.downcallHandle(
-        "g_simple_action_new",
-        constants$807.g_simple_action_new$FUNC
+    static final MethodHandle g_tls_connection_set_database$MH = RuntimeHelper.downcallHandle(
+        "g_tls_connection_set_database",
+        constants$807.g_tls_connection_set_database$FUNC
     );
-    static final FunctionDescriptor g_simple_action_new_stateful$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_tls_connection_get_database$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_tls_connection_get_database$MH = RuntimeHelper.downcallHandle(
+        "g_tls_connection_get_database",
+        constants$807.g_tls_connection_get_database$FUNC
+    );
+    static final FunctionDescriptor g_tls_connection_set_certificate$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_simple_action_new_stateful$MH = RuntimeHelper.downcallHandle(
-        "g_simple_action_new_stateful",
-        constants$807.g_simple_action_new_stateful$FUNC
+    static final MethodHandle g_tls_connection_set_certificate$MH = RuntimeHelper.downcallHandle(
+        "g_tls_connection_set_certificate",
+        constants$807.g_tls_connection_set_certificate$FUNC
     );
-    static final FunctionDescriptor g_simple_action_set_enabled$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor g_tls_connection_get_certificate$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_simple_action_set_enabled$MH = RuntimeHelper.downcallHandle(
-        "g_simple_action_set_enabled",
-        constants$807.g_simple_action_set_enabled$FUNC
+    static final MethodHandle g_tls_connection_get_certificate$MH = RuntimeHelper.downcallHandle(
+        "g_tls_connection_get_certificate",
+        constants$807.g_tls_connection_get_certificate$FUNC
     );
-    static final FunctionDescriptor g_simple_action_set_state$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_tls_connection_set_interaction$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_simple_action_set_state$MH = RuntimeHelper.downcallHandle(
-        "g_simple_action_set_state",
-        constants$807.g_simple_action_set_state$FUNC
+    static final MethodHandle g_tls_connection_set_interaction$MH = RuntimeHelper.downcallHandle(
+        "g_tls_connection_set_interaction",
+        constants$807.g_tls_connection_set_interaction$FUNC
     );
-    static final FunctionDescriptor g_simple_action_set_state_hint$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_tls_connection_get_interaction$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_simple_action_set_state_hint$MH = RuntimeHelper.downcallHandle(
-        "g_simple_action_set_state_hint",
-        constants$807.g_simple_action_set_state_hint$FUNC
-    );
-    static final FunctionDescriptor g_simple_action_group_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_simple_action_group_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_simple_action_group_get_type",
-        constants$807.g_simple_action_group_get_type$FUNC
+    static final MethodHandle g_tls_connection_get_interaction$MH = RuntimeHelper.downcallHandle(
+        "g_tls_connection_get_interaction",
+        constants$807.g_tls_connection_get_interaction$FUNC
     );
 }
 

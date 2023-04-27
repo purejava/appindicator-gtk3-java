@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GSettings extends _GSettings {
+/**
+ * {@snippet :
+ * typedef struct _GSettings GSettings;
+ * }
+ */
+public final class GSettings extends _GSettings {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GSettings() {}
 }
 
 

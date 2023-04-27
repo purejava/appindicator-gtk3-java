@@ -7,33 +7,59 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1729 {
+final class constants$1729 {
 
-    static final FunctionDescriptor GtkClipboardRichTextReceivedFunc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GtkClipboardRichTextReceivedFunc$MH = RuntimeHelper.downcallHandle(
-        constants$1729.GtkClipboardRichTextReceivedFunc$FUNC
-    );
-    static final FunctionDescriptor GtkClipboardImageReceivedFunc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1729() {}
+    static final FunctionDescriptor gtk_paned_add2$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GtkClipboardImageReceivedFunc$MH = RuntimeHelper.downcallHandle(
-        constants$1729.GtkClipboardImageReceivedFunc$FUNC
+    static final MethodHandle gtk_paned_add2$MH = RuntimeHelper.downcallHandle(
+        "gtk_paned_add2",
+        constants$1729.gtk_paned_add2$FUNC
     );
-    static final FunctionDescriptor GtkClipboardURIReceivedFunc$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_paned_pack1$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_paned_pack1$MH = RuntimeHelper.downcallHandle(
+        "gtk_paned_pack1",
+        constants$1729.gtk_paned_pack1$FUNC
+    );
+    static final FunctionDescriptor gtk_paned_pack2$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_paned_pack2$MH = RuntimeHelper.downcallHandle(
+        "gtk_paned_pack2",
+        constants$1729.gtk_paned_pack2$FUNC
+    );
+    static final FunctionDescriptor gtk_paned_get_position$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GtkClipboardURIReceivedFunc$MH = RuntimeHelper.downcallHandle(
-        constants$1729.GtkClipboardURIReceivedFunc$FUNC
+    static final MethodHandle gtk_paned_get_position$MH = RuntimeHelper.downcallHandle(
+        "gtk_paned_get_position",
+        constants$1729.gtk_paned_get_position$FUNC
+    );
+    static final FunctionDescriptor gtk_paned_set_position$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_paned_set_position$MH = RuntimeHelper.downcallHandle(
+        "gtk_paned_set_position",
+        constants$1729.gtk_paned_set_position$FUNC
+    );
+    static final FunctionDescriptor gtk_paned_get_child1$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_paned_get_child1$MH = RuntimeHelper.downcallHandle(
+        "gtk_paned_get_child1",
+        constants$1729.gtk_paned_get_child1$FUNC
     );
 }
 

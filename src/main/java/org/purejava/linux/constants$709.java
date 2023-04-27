@@ -7,57 +7,49 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$709 {
+final class constants$709 {
 
-    static final FunctionDescriptor g_file_output_stream_query_info$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$709() {}
+    static final FunctionDescriptor g_mount_operation_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_mount_operation_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_mount_operation_get_type",
+        constants$709.g_mount_operation_get_type$FUNC
+    );
+    static final FunctionDescriptor g_mount_operation_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle g_mount_operation_new$MH = RuntimeHelper.downcallHandle(
+        "g_mount_operation_new",
+        constants$709.g_mount_operation_new$FUNC
+    );
+    static final FunctionDescriptor g_mount_operation_get_username$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_mount_operation_get_username$MH = RuntimeHelper.downcallHandle(
+        "g_mount_operation_get_username",
+        constants$709.g_mount_operation_get_username$FUNC
+    );
+    static final FunctionDescriptor g_mount_operation_set_username$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_file_output_stream_query_info$MH = RuntimeHelper.downcallHandle(
-        "g_file_output_stream_query_info",
-        constants$709.g_file_output_stream_query_info$FUNC
+    static final MethodHandle g_mount_operation_set_username$MH = RuntimeHelper.downcallHandle(
+        "g_mount_operation_set_username",
+        constants$709.g_mount_operation_set_username$FUNC
     );
-    static final FunctionDescriptor g_file_output_stream_query_info_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_mount_operation_get_password$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_mount_operation_get_password$MH = RuntimeHelper.downcallHandle(
+        "g_mount_operation_get_password",
+        constants$709.g_mount_operation_get_password$FUNC
+    );
+    static final FunctionDescriptor g_mount_operation_set_password$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_file_output_stream_query_info_async$MH = RuntimeHelper.downcallHandle(
-        "g_file_output_stream_query_info_async",
-        constants$709.g_file_output_stream_query_info_async$FUNC
-    );
-    static final FunctionDescriptor g_file_output_stream_query_info_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_output_stream_query_info_finish$MH = RuntimeHelper.downcallHandle(
-        "g_file_output_stream_query_info_finish",
-        constants$709.g_file_output_stream_query_info_finish$FUNC
-    );
-    static final FunctionDescriptor g_file_output_stream_get_etag$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_output_stream_get_etag$MH = RuntimeHelper.downcallHandle(
-        "g_file_output_stream_get_etag",
-        constants$709.g_file_output_stream_get_etag$FUNC
-    );
-    static final FunctionDescriptor g_inet_address_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_inet_address_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_inet_address_get_type",
-        constants$709.g_inet_address_get_type$FUNC
-    );
-    static final FunctionDescriptor g_inet_address_new_from_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_inet_address_new_from_string$MH = RuntimeHelper.downcallHandle(
-        "g_inet_address_new_from_string",
-        constants$709.g_inet_address_new_from_string$FUNC
+    static final MethodHandle g_mount_operation_set_password$MH = RuntimeHelper.downcallHandle(
+        "g_mount_operation_set_password",
+        constants$709.g_mount_operation_set_password$FUNC
     );
 }
 

@@ -7,55 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1423 {
+final class constants$1423 {
 
-    static final FunctionDescriptor atk_value_get_maximum_value$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1423() {}
+    static final FunctionDescriptor gtk_targets_include_text$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_targets_include_text$MH = RuntimeHelper.downcallHandle(
+        "gtk_targets_include_text",
+        constants$1423.gtk_targets_include_text$FUNC
+    );
+    static final FunctionDescriptor gtk_targets_include_rich_text$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_value_get_maximum_value$MH = RuntimeHelper.downcallHandle(
-        "atk_value_get_maximum_value",
-        constants$1423.atk_value_get_maximum_value$FUNC
+    static final MethodHandle gtk_targets_include_rich_text$MH = RuntimeHelper.downcallHandle(
+        "gtk_targets_include_rich_text",
+        constants$1423.gtk_targets_include_rich_text$FUNC
     );
-    static final FunctionDescriptor atk_value_get_minimum_value$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_targets_include_image$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_targets_include_image$MH = RuntimeHelper.downcallHandle(
+        "gtk_targets_include_image",
+        constants$1423.gtk_targets_include_image$FUNC
+    );
+    static final FunctionDescriptor gtk_targets_include_uri$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_targets_include_uri$MH = RuntimeHelper.downcallHandle(
+        "gtk_targets_include_uri",
+        constants$1423.gtk_targets_include_uri$FUNC
+    );
+    static final FunctionDescriptor gtk_selection_data_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_selection_data_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_selection_data_get_type",
+        constants$1423.gtk_selection_data_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_selection_data_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_value_get_minimum_value$MH = RuntimeHelper.downcallHandle(
-        "atk_value_get_minimum_value",
-        constants$1423.atk_value_get_minimum_value$FUNC
-    );
-    static final FunctionDescriptor atk_value_set_current_value$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_value_set_current_value$MH = RuntimeHelper.downcallHandle(
-        "atk_value_set_current_value",
-        constants$1423.atk_value_set_current_value$FUNC
-    );
-    static final FunctionDescriptor atk_value_get_minimum_increment$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_value_get_minimum_increment$MH = RuntimeHelper.downcallHandle(
-        "atk_value_get_minimum_increment",
-        constants$1423.atk_value_get_minimum_increment$FUNC
-    );
-    static final FunctionDescriptor atk_value_get_value_and_text$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_value_get_value_and_text$MH = RuntimeHelper.downcallHandle(
-        "atk_value_get_value_and_text",
-        constants$1423.atk_value_get_value_and_text$FUNC
-    );
-    static final FunctionDescriptor atk_value_get_range$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_value_get_range$MH = RuntimeHelper.downcallHandle(
-        "atk_value_get_range",
-        constants$1423.atk_value_get_range$FUNC
+    static final MethodHandle gtk_selection_data_copy$MH = RuntimeHelper.downcallHandle(
+        "gtk_selection_data_copy",
+        constants$1423.gtk_selection_data_copy$FUNC
     );
 }
 

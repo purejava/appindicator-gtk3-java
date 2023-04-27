@@ -7,14 +7,33 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$92 {
+final class constants$92 {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$92() {}
+    static final FunctionDescriptor g_bookmark_file_error_quark$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
+    static final MethodHandle g_bookmark_file_error_quark$MH = RuntimeHelper.downcallHandle(
+        "g_bookmark_file_error_quark",
+        constants$92.g_bookmark_file_error_quark$FUNC
+    );
+    static final FunctionDescriptor g_bookmark_file_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle g_bookmark_file_new$MH = RuntimeHelper.downcallHandle(
+        "g_bookmark_file_new",
+        constants$92.g_bookmark_file_new$FUNC
+    );
     static final FunctionDescriptor g_bookmark_file_free$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
     static final MethodHandle g_bookmark_file_free$MH = RuntimeHelper.downcallHandle(
         "g_bookmark_file_free",
         constants$92.g_bookmark_file_free$FUNC
+    );
+    static final FunctionDescriptor g_bookmark_file_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_bookmark_file_copy$MH = RuntimeHelper.downcallHandle(
+        "g_bookmark_file_copy",
+        constants$92.g_bookmark_file_copy$FUNC
     );
     static final FunctionDescriptor g_bookmark_file_load_from_file$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
@@ -34,34 +53,6 @@ class constants$92 {
     static final MethodHandle g_bookmark_file_load_from_data$MH = RuntimeHelper.downcallHandle(
         "g_bookmark_file_load_from_data",
         constants$92.g_bookmark_file_load_from_data$FUNC
-    );
-    static final FunctionDescriptor g_bookmark_file_load_from_data_dirs$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_bookmark_file_load_from_data_dirs$MH = RuntimeHelper.downcallHandle(
-        "g_bookmark_file_load_from_data_dirs",
-        constants$92.g_bookmark_file_load_from_data_dirs$FUNC
-    );
-    static final FunctionDescriptor g_bookmark_file_to_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_bookmark_file_to_data$MH = RuntimeHelper.downcallHandle(
-        "g_bookmark_file_to_data",
-        constants$92.g_bookmark_file_to_data$FUNC
-    );
-    static final FunctionDescriptor g_bookmark_file_to_file$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_bookmark_file_to_file$MH = RuntimeHelper.downcallHandle(
-        "g_bookmark_file_to_file",
-        constants$92.g_bookmark_file_to_file$FUNC
     );
 }
 

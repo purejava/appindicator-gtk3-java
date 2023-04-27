@@ -7,49 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$915 {
+final class constants$915 {
 
-    static final FunctionDescriptor glib_listautoptr_cleanup_GFile$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$915() {}
+    static final FunctionDescriptor pango_font_face_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle pango_font_face_get_type$MH = RuntimeHelper.downcallHandle(
+        "pango_font_face_get_type",
+        constants$915.pango_font_face_get_type$FUNC
+    );
+    static final FunctionDescriptor pango_font_face_describe$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GFile$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GFile",
-        constants$915.glib_listautoptr_cleanup_GFile$FUNC
+    static final MethodHandle pango_font_face_describe$MH = RuntimeHelper.downcallHandle(
+        "pango_font_face_describe",
+        constants$915.pango_font_face_describe$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GFile$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_font_face_get_face_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GFile$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GFile",
-        constants$915.glib_slistautoptr_cleanup_GFile$FUNC
+    static final MethodHandle pango_font_face_get_face_name$MH = RuntimeHelper.downcallHandle(
+        "pango_font_face_get_face_name",
+        constants$915.pango_font_face_get_face_name$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GFile$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_font_face_list_sizes$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GFile$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GFile",
-        constants$915.glib_queueautoptr_cleanup_GFile$FUNC
+    static final MethodHandle pango_font_face_list_sizes$MH = RuntimeHelper.downcallHandle(
+        "pango_font_face_list_sizes",
+        constants$915.pango_font_face_list_sizes$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GFileAttributeInfoList$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_font_face_is_synthesized$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GFileAttributeInfoList$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GFileAttributeInfoList",
-        constants$915.glib_autoptr_clear_GFileAttributeInfoList$FUNC
+    static final MethodHandle pango_font_face_is_synthesized$MH = RuntimeHelper.downcallHandle(
+        "pango_font_face_is_synthesized",
+        constants$915.pango_font_face_is_synthesized$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GFileAttributeInfoList$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_font_face_get_family$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GFileAttributeInfoList$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GFileAttributeInfoList",
-        constants$915.glib_autoptr_cleanup_GFileAttributeInfoList$FUNC
-    );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GFileAttributeInfoList$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_listautoptr_cleanup_GFileAttributeInfoList$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GFileAttributeInfoList",
-        constants$915.glib_listautoptr_cleanup_GFileAttributeInfoList$FUNC
+    static final MethodHandle pango_font_face_get_family$MH = RuntimeHelper.downcallHandle(
+        "pango_font_face_get_family",
+        constants$915.pango_font_face_get_family$FUNC
     );
 }
 

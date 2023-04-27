@@ -7,59 +7,62 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1667 {
+final class constants$1667 {
 
-    static final FunctionDescriptor gtk_tree_view_convert_bin_window_to_widget_coords$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_convert_bin_window_to_widget_coords$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_convert_bin_window_to_widget_coords",
-        constants$1667.gtk_tree_view_convert_bin_window_to_widget_coords$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_convert_tree_to_bin_window_coords$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1667() {}
+    static final FunctionDescriptor gtk_layout_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_tree_view_convert_tree_to_bin_window_coords$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_convert_tree_to_bin_window_coords",
-        constants$1667.gtk_tree_view_convert_tree_to_bin_window_coords$FUNC
+    static final MethodHandle gtk_layout_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_layout_new",
+        constants$1667.gtk_layout_new$FUNC
     );
-    static final FunctionDescriptor gtk_tree_view_convert_bin_window_to_tree_coords$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_layout_get_bin_window$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_tree_view_convert_bin_window_to_tree_coords$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_convert_bin_window_to_tree_coords",
-        constants$1667.gtk_tree_view_convert_bin_window_to_tree_coords$FUNC
+    static final MethodHandle gtk_layout_get_bin_window$MH = RuntimeHelper.downcallHandle(
+        "gtk_layout_get_bin_window",
+        constants$1667.gtk_layout_get_bin_window$FUNC
     );
-    static final FunctionDescriptor GtkTreeDestroyCountFunc$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_layout_put$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_layout_put$MH = RuntimeHelper.downcallHandle(
+        "gtk_layout_put",
+        constants$1667.gtk_layout_put$FUNC
+    );
+    static final FunctionDescriptor gtk_layout_move$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_layout_move$MH = RuntimeHelper.downcallHandle(
+        "gtk_layout_move",
+        constants$1667.gtk_layout_move$FUNC
+    );
+    static final FunctionDescriptor gtk_layout_set_size$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_layout_set_size$MH = RuntimeHelper.downcallHandle(
+        "gtk_layout_set_size",
+        constants$1667.gtk_layout_set_size$FUNC
+    );
+    static final FunctionDescriptor gtk_layout_get_size$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GtkTreeDestroyCountFunc$MH = RuntimeHelper.downcallHandle(
-        constants$1667.GtkTreeDestroyCountFunc$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_set_destroy_count_func$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_set_destroy_count_func$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_set_destroy_count_func",
-        constants$1667.gtk_tree_view_set_destroy_count_func$FUNC
+    static final MethodHandle gtk_layout_get_size$MH = RuntimeHelper.downcallHandle(
+        "gtk_layout_get_size",
+        constants$1667.gtk_layout_get_size$FUNC
     );
 }
 

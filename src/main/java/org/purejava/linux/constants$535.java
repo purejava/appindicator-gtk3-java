@@ -7,60 +7,46 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$535 {
+final class constants$535 {
 
-    static final FunctionDescriptor g_application_set_action_group$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$535() {}
+    static final FunctionDescriptor getusershell$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle getusershell$MH = RuntimeHelper.downcallHandle(
+        "getusershell",
+        constants$535.getusershell$FUNC
     );
-    static final MethodHandle g_application_set_action_group$MH = RuntimeHelper.downcallHandle(
-        "g_application_set_action_group",
-        constants$535.g_application_set_action_group$FUNC
+    static final FunctionDescriptor endusershell$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle endusershell$MH = RuntimeHelper.downcallHandle(
+        "endusershell",
+        constants$535.endusershell$FUNC
     );
-    static final FunctionDescriptor g_application_add_main_option_entries$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor setusershell$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle setusershell$MH = RuntimeHelper.downcallHandle(
+        "setusershell",
+        constants$535.setusershell$FUNC
     );
-    static final MethodHandle g_application_add_main_option_entries$MH = RuntimeHelper.downcallHandle(
-        "g_application_add_main_option_entries",
-        constants$535.g_application_add_main_option_entries$FUNC
-    );
-    static final FunctionDescriptor g_application_add_main_option$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_CHAR$LAYOUT,
+    static final FunctionDescriptor daemon$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle daemon$MH = RuntimeHelper.downcallHandle(
+        "daemon",
+        constants$535.daemon$FUNC
+    );
+    static final FunctionDescriptor chroot$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_application_add_main_option$MH = RuntimeHelper.downcallHandle(
-        "g_application_add_main_option",
-        constants$535.g_application_add_main_option$FUNC
+    static final MethodHandle chroot$MH = RuntimeHelper.downcallHandle(
+        "chroot",
+        constants$535.chroot$FUNC
     );
-    static final FunctionDescriptor g_application_add_option_group$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor getpass$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_application_add_option_group$MH = RuntimeHelper.downcallHandle(
-        "g_application_add_option_group",
-        constants$535.g_application_add_option_group$FUNC
-    );
-    static final FunctionDescriptor g_application_set_option_context_parameter_string$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_application_set_option_context_parameter_string$MH = RuntimeHelper.downcallHandle(
-        "g_application_set_option_context_parameter_string",
-        constants$535.g_application_set_option_context_parameter_string$FUNC
-    );
-    static final FunctionDescriptor g_application_set_option_context_summary$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_application_set_option_context_summary$MH = RuntimeHelper.downcallHandle(
-        "g_application_set_option_context_summary",
-        constants$535.g_application_set_option_context_summary$FUNC
+    static final MethodHandle getpass$MH = RuntimeHelper.downcallHandle(
+        "getpass",
+        constants$535.getpass$FUNC
     );
 }
 

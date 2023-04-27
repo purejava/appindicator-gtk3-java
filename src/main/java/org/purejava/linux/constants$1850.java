@@ -7,53 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1850 {
+final class constants$1850 {
 
-    static final FunctionDescriptor gtk_icon_view_get_column_spacing$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1850() {}
+    static final FunctionDescriptor gtk_text_view_get_indent$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_icon_view_get_column_spacing$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_get_column_spacing",
-        constants$1850.gtk_icon_view_get_column_spacing$FUNC
+    static final MethodHandle gtk_text_view_get_indent$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_view_get_indent",
+        constants$1850.gtk_text_view_get_indent$FUNC
     );
-    static final FunctionDescriptor gtk_icon_view_set_margin$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_text_view_set_tabs$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_text_view_set_tabs$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_view_set_tabs",
+        constants$1850.gtk_text_view_set_tabs$FUNC
+    );
+    static final FunctionDescriptor gtk_text_view_get_tabs$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_text_view_get_tabs$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_view_get_tabs",
+        constants$1850.gtk_text_view_get_tabs$FUNC
+    );
+    static final FunctionDescriptor gtk_text_view_get_default_attributes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_text_view_get_default_attributes$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_view_get_default_attributes",
+        constants$1850.gtk_text_view_get_default_attributes$FUNC
+    );
+    static final FunctionDescriptor gtk_text_view_set_input_purpose$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_icon_view_set_margin$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_set_margin",
-        constants$1850.gtk_icon_view_set_margin$FUNC
+    static final MethodHandle gtk_text_view_set_input_purpose$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_view_set_input_purpose",
+        constants$1850.gtk_text_view_set_input_purpose$FUNC
     );
-    static final FunctionDescriptor gtk_icon_view_get_margin$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_text_view_get_input_purpose$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_icon_view_get_margin$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_get_margin",
-        constants$1850.gtk_icon_view_get_margin$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_view_set_item_padding$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_icon_view_set_item_padding$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_set_item_padding",
-        constants$1850.gtk_icon_view_set_item_padding$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_view_get_item_padding$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_view_get_item_padding$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_get_item_padding",
-        constants$1850.gtk_icon_view_get_item_padding$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_view_get_path_at_pos$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_icon_view_get_path_at_pos$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_get_path_at_pos",
-        constants$1850.gtk_icon_view_get_path_at_pos$FUNC
+    static final MethodHandle gtk_text_view_get_input_purpose$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_view_get_input_purpose",
+        constants$1850.gtk_text_view_get_input_purpose$FUNC
     );
 }
 

@@ -7,72 +7,39 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$669 {
+final class constants$669 {
 
-    static final FunctionDescriptor g_file_append_to_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$669() {}
+    static final FunctionDescriptor g_file_attribute_status_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_file_attribute_status_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_file_attribute_status_get_type",
+        constants$669.g_file_attribute_status_get_type$FUNC
     );
-    static final MethodHandle g_file_append_to_async$MH = RuntimeHelper.downcallHandle(
-        "g_file_append_to_async",
-        constants$669.g_file_append_to_async$FUNC
+    static final FunctionDescriptor g_file_query_info_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_file_query_info_flags_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_file_query_info_flags_get_type",
+        constants$669.g_file_query_info_flags_get_type$FUNC
     );
-    static final FunctionDescriptor g_file_append_to_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_file_create_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_file_create_flags_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_file_create_flags_get_type",
+        constants$669.g_file_create_flags_get_type$FUNC
     );
-    static final MethodHandle g_file_append_to_finish$MH = RuntimeHelper.downcallHandle(
-        "g_file_append_to_finish",
-        constants$669.g_file_append_to_finish$FUNC
+    static final FunctionDescriptor g_file_measure_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_file_measure_flags_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_file_measure_flags_get_type",
+        constants$669.g_file_measure_flags_get_type$FUNC
     );
-    static final FunctionDescriptor g_file_create_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_mount_mount_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_mount_mount_flags_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_mount_mount_flags_get_type",
+        constants$669.g_mount_mount_flags_get_type$FUNC
     );
-    static final MethodHandle g_file_create_async$MH = RuntimeHelper.downcallHandle(
-        "g_file_create_async",
-        constants$669.g_file_create_async$FUNC
-    );
-    static final FunctionDescriptor g_file_create_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_create_finish$MH = RuntimeHelper.downcallHandle(
-        "g_file_create_finish",
-        constants$669.g_file_create_finish$FUNC
-    );
-    static final FunctionDescriptor g_file_replace_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_replace_async$MH = RuntimeHelper.downcallHandle(
-        "g_file_replace_async",
-        constants$669.g_file_replace_async$FUNC
-    );
-    static final FunctionDescriptor g_file_replace_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_replace_finish$MH = RuntimeHelper.downcallHandle(
-        "g_file_replace_finish",
-        constants$669.g_file_replace_finish$FUNC
+    static final FunctionDescriptor g_mount_unmount_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_mount_unmount_flags_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_mount_unmount_flags_get_type",
+        constants$669.g_mount_unmount_flags_get_type$FUNC
     );
 }
 

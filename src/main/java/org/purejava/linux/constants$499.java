@@ -7,31 +7,73 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$499 {
+final class constants$499 {
 
-    static final FunctionDescriptor GTypePluginUnuse$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GTypePluginUnuse$MH = RuntimeHelper.downcallHandle(
-        constants$499.GTypePluginUnuse$FUNC
-    );
-    static final FunctionDescriptor GTypePluginCompleteTypeInfo$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$499() {}
+    static final FunctionDescriptor g_input_stream_skip$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GTypePluginCompleteTypeInfo$MH = RuntimeHelper.downcallHandle(
-        constants$499.GTypePluginCompleteTypeInfo$FUNC
+    static final MethodHandle g_input_stream_skip$MH = RuntimeHelper.downcallHandle(
+        "g_input_stream_skip",
+        constants$499.g_input_stream_skip$FUNC
     );
-    static final FunctionDescriptor GTypePluginCompleteInterfaceInfo$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_input_stream_close$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GTypePluginCompleteInterfaceInfo$MH = RuntimeHelper.downcallHandle(
-        constants$499.GTypePluginCompleteInterfaceInfo$FUNC
+    static final MethodHandle g_input_stream_close$MH = RuntimeHelper.downcallHandle(
+        "g_input_stream_close",
+        constants$499.g_input_stream_close$FUNC
+    );
+    static final FunctionDescriptor g_input_stream_read_async$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_input_stream_read_async$MH = RuntimeHelper.downcallHandle(
+        "g_input_stream_read_async",
+        constants$499.g_input_stream_read_async$FUNC
+    );
+    static final FunctionDescriptor g_input_stream_read_finish$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_input_stream_read_finish$MH = RuntimeHelper.downcallHandle(
+        "g_input_stream_read_finish",
+        constants$499.g_input_stream_read_finish$FUNC
+    );
+    static final FunctionDescriptor g_input_stream_read_all_async$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_input_stream_read_all_async$MH = RuntimeHelper.downcallHandle(
+        "g_input_stream_read_all_async",
+        constants$499.g_input_stream_read_all_async$FUNC
+    );
+    static final FunctionDescriptor g_input_stream_read_all_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_input_stream_read_all_finish$MH = RuntimeHelper.downcallHandle(
+        "g_input_stream_read_all_finish",
+        constants$499.g_input_stream_read_all_finish$FUNC
     );
 }
 

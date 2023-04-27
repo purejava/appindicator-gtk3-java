@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * void* (*GThreadFunc)(void* data);
+ * }
+ */
 public interface GThreadFunc {
 
-    java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress data);
-    static MemorySegment allocate(GThreadFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GThreadFunc.class, fi, constants$59.GThreadFunc$FUNC, session);
+    java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
+    static MemorySegment allocate(GThreadFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$61.GThreadFunc_UP$MH, fi, constants$61.GThreadFunc$FUNC, scope);
     }
-    static GThreadFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _data) -> {
+    static GThreadFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)constants$60.GThreadFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_data);
+                return (java.lang.foreign.MemorySegment)constants$61.GThreadFunc_DOWN$MH.invokeExact(symbol, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

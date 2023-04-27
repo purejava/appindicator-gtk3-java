@@ -7,53 +7,45 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1482 {
+final class constants$1482 {
 
-    static final FunctionDescriptor gtk_window_add_accel_group$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1482() {}
+    static final FunctionDescriptor gtk_combo_box_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_combo_box_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_combo_box_get_type",
+        constants$1482.gtk_combo_box_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_combo_box_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_combo_box_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_combo_box_new",
+        constants$1482.gtk_combo_box_new$FUNC
+    );
+    static final FunctionDescriptor gtk_combo_box_new_with_area$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_window_add_accel_group$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_add_accel_group",
-        constants$1482.gtk_window_add_accel_group$FUNC
+    static final MethodHandle gtk_combo_box_new_with_area$MH = RuntimeHelper.downcallHandle(
+        "gtk_combo_box_new_with_area",
+        constants$1482.gtk_combo_box_new_with_area$FUNC
     );
-    static final FunctionDescriptor gtk_window_remove_accel_group$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_combo_box_new_with_area_and_entry$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_window_remove_accel_group$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_remove_accel_group",
-        constants$1482.gtk_window_remove_accel_group$FUNC
+    static final MethodHandle gtk_combo_box_new_with_area_and_entry$MH = RuntimeHelper.downcallHandle(
+        "gtk_combo_box_new_with_area_and_entry",
+        constants$1482.gtk_combo_box_new_with_area_and_entry$FUNC
     );
-    static final FunctionDescriptor gtk_window_set_position$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor gtk_combo_box_new_with_entry$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_combo_box_new_with_entry$MH = RuntimeHelper.downcallHandle(
+        "gtk_combo_box_new_with_entry",
+        constants$1482.gtk_combo_box_new_with_entry$FUNC
     );
-    static final MethodHandle gtk_window_set_position$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_set_position",
-        constants$1482.gtk_window_set_position$FUNC
-    );
-    static final FunctionDescriptor gtk_window_activate_focus$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_combo_box_new_with_model$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_window_activate_focus$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_activate_focus",
-        constants$1482.gtk_window_activate_focus$FUNC
-    );
-    static final FunctionDescriptor gtk_window_set_focus$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_window_set_focus$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_set_focus",
-        constants$1482.gtk_window_set_focus$FUNC
-    );
-    static final FunctionDescriptor gtk_window_get_focus$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_window_get_focus$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_get_focus",
-        constants$1482.gtk_window_get_focus$FUNC
+    static final MethodHandle gtk_combo_box_new_with_model$MH = RuntimeHelper.downcallHandle(
+        "gtk_combo_box_new_with_model",
+        constants$1482.gtk_combo_box_new_with_model$FUNC
     );
 }
 

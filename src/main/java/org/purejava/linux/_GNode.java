@@ -7,9 +7,20 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GNode {
+ *     gpointer data;
+ *     GNode* next;
+ *     GNode* prev;
+ *     GNode* parent;
+ *     GNode* children;
+ * };
+ * }
+ */
 public class _GNode {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_POINTER$LAYOUT.withName("data"),
         Constants$root.C_POINTER$LAYOUT.withName("next"),
         Constants$root.C_POINTER$LAYOUT.withName("prev"),
@@ -23,88 +34,148 @@ public class _GNode {
     public static VarHandle data$VH() {
         return _GNode.data$VH;
     }
-    public static MemoryAddress data$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GNode.data$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gpointer data;
+     * }
+     */
+    public static MemorySegment data$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GNode.data$VH.get(seg);
     }
-    public static void data$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gpointer data;
+     * }
+     */
+    public static void data$set(MemorySegment seg, MemorySegment x) {
         _GNode.data$VH.set(seg, x);
     }
-    public static MemoryAddress data$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GNode.data$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment data$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GNode.data$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void data$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void data$set(MemorySegment seg, long index, MemorySegment x) {
         _GNode.data$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle next$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("next"));
     public static VarHandle next$VH() {
         return _GNode.next$VH;
     }
-    public static MemoryAddress next$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GNode.next$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GNode* next;
+     * }
+     */
+    public static MemorySegment next$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GNode.next$VH.get(seg);
     }
-    public static void next$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GNode* next;
+     * }
+     */
+    public static void next$set(MemorySegment seg, MemorySegment x) {
         _GNode.next$VH.set(seg, x);
     }
-    public static MemoryAddress next$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GNode.next$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment next$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GNode.next$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void next$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void next$set(MemorySegment seg, long index, MemorySegment x) {
         _GNode.next$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle prev$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("prev"));
     public static VarHandle prev$VH() {
         return _GNode.prev$VH;
     }
-    public static MemoryAddress prev$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GNode.prev$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GNode* prev;
+     * }
+     */
+    public static MemorySegment prev$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GNode.prev$VH.get(seg);
     }
-    public static void prev$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GNode* prev;
+     * }
+     */
+    public static void prev$set(MemorySegment seg, MemorySegment x) {
         _GNode.prev$VH.set(seg, x);
     }
-    public static MemoryAddress prev$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GNode.prev$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment prev$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GNode.prev$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void prev$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void prev$set(MemorySegment seg, long index, MemorySegment x) {
         _GNode.prev$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle parent$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("parent"));
     public static VarHandle parent$VH() {
         return _GNode.parent$VH;
     }
-    public static MemoryAddress parent$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GNode.parent$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GNode* parent;
+     * }
+     */
+    public static MemorySegment parent$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GNode.parent$VH.get(seg);
     }
-    public static void parent$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GNode* parent;
+     * }
+     */
+    public static void parent$set(MemorySegment seg, MemorySegment x) {
         _GNode.parent$VH.set(seg, x);
     }
-    public static MemoryAddress parent$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GNode.parent$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment parent$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GNode.parent$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void parent$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void parent$set(MemorySegment seg, long index, MemorySegment x) {
         _GNode.parent$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle children$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("children"));
     public static VarHandle children$VH() {
         return _GNode.children$VH;
     }
-    public static MemoryAddress children$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GNode.children$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GNode* children;
+     * }
+     */
+    public static MemorySegment children$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GNode.children$VH.get(seg);
     }
-    public static void children$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GNode* children;
+     * }
+     */
+    public static void children$set(MemorySegment seg, MemorySegment x) {
         _GNode.children$VH.set(seg, x);
     }
-    public static MemoryAddress children$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GNode.children$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment children$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GNode.children$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void children$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void children$set(MemorySegment seg, long index, MemorySegment x) {
         _GNode.children$VH.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

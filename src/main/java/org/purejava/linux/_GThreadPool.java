@@ -7,9 +7,18 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GThreadPool {
+ *     GFunc func;
+ *     gpointer user_data;
+ *     gboolean exclusive;
+ * };
+ * }
+ */
 public class _GThreadPool {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_POINTER$LAYOUT.withName("func"),
         Constants$root.C_POINTER$LAYOUT.withName("user_data"),
         Constants$root.C_INT$LAYOUT.withName("exclusive"),
@@ -22,45 +31,81 @@ public class _GThreadPool {
     public static VarHandle func$VH() {
         return _GThreadPool.func$VH;
     }
-    public static MemoryAddress func$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GThreadPool.func$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GFunc func;
+     * }
+     */
+    public static MemorySegment func$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GThreadPool.func$VH.get(seg);
     }
-    public static void func$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GFunc func;
+     * }
+     */
+    public static void func$set(MemorySegment seg, MemorySegment x) {
         _GThreadPool.func$VH.set(seg, x);
     }
-    public static MemoryAddress func$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GThreadPool.func$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment func$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GThreadPool.func$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void func$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void func$set(MemorySegment seg, long index, MemorySegment x) {
         _GThreadPool.func$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static GFunc func (MemorySegment segment, MemorySession session) {
-        return GFunc.ofAddress(func$get(segment), session);
+    public static GFunc func(MemorySegment segment, SegmentScope scope) {
+        return GFunc.ofAddress(func$get(segment), scope);
     }
     static final VarHandle user_data$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("user_data"));
     public static VarHandle user_data$VH() {
         return _GThreadPool.user_data$VH;
     }
-    public static MemoryAddress user_data$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GThreadPool.user_data$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gpointer user_data;
+     * }
+     */
+    public static MemorySegment user_data$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GThreadPool.user_data$VH.get(seg);
     }
-    public static void user_data$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gpointer user_data;
+     * }
+     */
+    public static void user_data$set(MemorySegment seg, MemorySegment x) {
         _GThreadPool.user_data$VH.set(seg, x);
     }
-    public static MemoryAddress user_data$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GThreadPool.user_data$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment user_data$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GThreadPool.user_data$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void user_data$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void user_data$set(MemorySegment seg, long index, MemorySegment x) {
         _GThreadPool.user_data$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle exclusive$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("exclusive"));
     public static VarHandle exclusive$VH() {
         return _GThreadPool.exclusive$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean exclusive;
+     * }
+     */
     public static int exclusive$get(MemorySegment seg) {
         return (int)_GThreadPool.exclusive$VH.get(seg);
     }
-    public static void exclusive$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean exclusive;
+     * }
+     */
+    public static void exclusive$set(MemorySegment seg, int x) {
         _GThreadPool.exclusive$VH.set(seg, x);
     }
     public static int exclusive$get(MemorySegment seg, long index) {
@@ -71,10 +116,10 @@ public class _GThreadPool {
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

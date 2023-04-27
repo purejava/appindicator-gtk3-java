@@ -7,52 +7,71 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1048 {
+final class constants$1048 {
 
-    static final FunctionDescriptor pango_coverage_to_bytes$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1048() {}
+    static final FunctionDescriptor cairo_mesh_pattern_get_corner_color_rgba$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_coverage_to_bytes$MH = RuntimeHelper.downcallHandle(
-        "pango_coverage_to_bytes",
-        constants$1048.pango_coverage_to_bytes$FUNC
-    );
-    static final FunctionDescriptor pango_coverage_from_bytes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_coverage_from_bytes$MH = RuntimeHelper.downcallHandle(
-        "pango_coverage_from_bytes",
-        constants$1048.pango_coverage_from_bytes$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_clear_PangoCoverage$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_PangoCoverage$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_PangoCoverage",
-        constants$1048.glib_autoptr_clear_PangoCoverage$FUNC
+    static final MethodHandle cairo_mesh_pattern_get_corner_color_rgba$MH = RuntimeHelper.downcallHandle(
+        "cairo_mesh_pattern_get_corner_color_rgba",
+        constants$1048.cairo_mesh_pattern_get_corner_color_rgba$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_PangoCoverage$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor cairo_mesh_pattern_get_control_point$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_PangoCoverage$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_PangoCoverage",
-        constants$1048.glib_autoptr_cleanup_PangoCoverage$FUNC
+    static final MethodHandle cairo_mesh_pattern_get_control_point$MH = RuntimeHelper.downcallHandle(
+        "cairo_mesh_pattern_get_control_point",
+        constants$1048.cairo_mesh_pattern_get_control_point$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_PangoCoverage$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor cairo_matrix_init$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle cairo_matrix_init$MH = RuntimeHelper.downcallHandle(
+        "cairo_matrix_init",
+        constants$1048.cairo_matrix_init$FUNC
+    );
+    static final FunctionDescriptor cairo_matrix_init_identity$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_PangoCoverage$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_PangoCoverage",
-        constants$1048.glib_listautoptr_cleanup_PangoCoverage$FUNC
+    static final MethodHandle cairo_matrix_init_identity$MH = RuntimeHelper.downcallHandle(
+        "cairo_matrix_init_identity",
+        constants$1048.cairo_matrix_init_identity$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_PangoCoverage$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor cairo_matrix_init_translate$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_PangoCoverage$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_PangoCoverage",
-        constants$1048.glib_slistautoptr_cleanup_PangoCoverage$FUNC
+    static final MethodHandle cairo_matrix_init_translate$MH = RuntimeHelper.downcallHandle(
+        "cairo_matrix_init_translate",
+        constants$1048.cairo_matrix_init_translate$FUNC
+    );
+    static final FunctionDescriptor cairo_matrix_init_scale$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle cairo_matrix_init_scale$MH = RuntimeHelper.downcallHandle(
+        "cairo_matrix_init_scale",
+        constants$1048.cairo_matrix_init_scale$FUNC
     );
 }
 

@@ -7,56 +7,16 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$2013 {
+final class constants$2013 {
 
-    static final FunctionDescriptor gtk_spin_button_set_adjustment$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_spin_button_set_adjustment$MH = RuntimeHelper.downcallHandle(
-        "gtk_spin_button_set_adjustment",
-        constants$2013.gtk_spin_button_set_adjustment$FUNC
-    );
-    static final FunctionDescriptor gtk_spin_button_get_adjustment$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_spin_button_get_adjustment$MH = RuntimeHelper.downcallHandle(
-        "gtk_spin_button_get_adjustment",
-        constants$2013.gtk_spin_button_get_adjustment$FUNC
-    );
-    static final FunctionDescriptor gtk_spin_button_set_digits$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_spin_button_set_digits$MH = RuntimeHelper.downcallHandle(
-        "gtk_spin_button_set_digits",
-        constants$2013.gtk_spin_button_set_digits$FUNC
-    );
-    static final FunctionDescriptor gtk_spin_button_get_digits$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_spin_button_get_digits$MH = RuntimeHelper.downcallHandle(
-        "gtk_spin_button_get_digits",
-        constants$2013.gtk_spin_button_get_digits$FUNC
-    );
-    static final FunctionDescriptor gtk_spin_button_set_increments$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle gtk_spin_button_set_increments$MH = RuntimeHelper.downcallHandle(
-        "gtk_spin_button_set_increments",
-        constants$2013.gtk_spin_button_set_increments$FUNC
-    );
-    static final FunctionDescriptor gtk_spin_button_get_increments$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_spin_button_get_increments$MH = RuntimeHelper.downcallHandle(
-        "gtk_spin_button_get_increments",
-        constants$2013.gtk_spin_button_get_increments$FUNC
-    );
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$2013() {}
+    static final MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_PATH_XXLARGE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("thumbnail::path-xxlarge");
+    static final MemorySegment G_FILE_ATTRIBUTE_THUMBNAILING_FAILED_XXLARGE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("thumbnail::failed-xxlarge");
+    static final MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_XXLARGE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("thumbnail::is-valid-xxlarge");
+    static final MemorySegment G_FILE_ATTRIBUTE_PREVIEW_ICON$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("preview::icon");
+    static final MemorySegment G_FILE_ATTRIBUTE_FILESYSTEM_SIZE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("filesystem::size");
+    static final MemorySegment G_FILE_ATTRIBUTE_FILESYSTEM_FREE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("filesystem::free");
 }
 
 

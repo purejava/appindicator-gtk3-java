@@ -7,36 +7,56 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1224 {
+final class constants$1224 {
 
-    static final FunctionDescriptor gdk_device_tool_get_hardware_id$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1224() {}
+    static final FunctionDescriptor atk_hypertext_get_link_index$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle atk_hypertext_get_link_index$MH = RuntimeHelper.downcallHandle(
+        "atk_hypertext_get_link_index",
+        constants$1224.atk_hypertext_get_link_index$FUNC
+    );
+    static final FunctionDescriptor atk_image_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle atk_image_get_type$MH = RuntimeHelper.downcallHandle(
+        "atk_image_get_type",
+        constants$1224.atk_image_get_type$FUNC
+    );
+    static final FunctionDescriptor atk_image_get_image_description$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_device_tool_get_hardware_id$MH = RuntimeHelper.downcallHandle(
-        "gdk_device_tool_get_hardware_id",
-        constants$1224.gdk_device_tool_get_hardware_id$FUNC
+    static final MethodHandle atk_image_get_image_description$MH = RuntimeHelper.downcallHandle(
+        "atk_image_get_image_description",
+        constants$1224.atk_image_get_image_description$FUNC
     );
-    static final FunctionDescriptor gdk_device_tool_get_tool_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_device_tool_get_tool_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_device_tool_get_tool_type",
-        constants$1224.gdk_device_tool_get_tool_type$FUNC
-    );
-    static final FunctionDescriptor GdkEventFunc$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor atk_image_get_image_size$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GdkEventFunc$MH = RuntimeHelper.downcallHandle(
-        constants$1224.GdkEventFunc$FUNC
+    static final MethodHandle atk_image_get_image_size$MH = RuntimeHelper.downcallHandle(
+        "atk_image_get_image_size",
+        constants$1224.atk_image_get_image_size$FUNC
     );
-    static final FunctionDescriptor GdkFilterFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor atk_image_set_image_description$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GdkFilterFunc$MH = RuntimeHelper.downcallHandle(
-        constants$1224.GdkFilterFunc$FUNC
+    static final MethodHandle atk_image_set_image_description$MH = RuntimeHelper.downcallHandle(
+        "atk_image_set_image_description",
+        constants$1224.atk_image_set_image_description$FUNC
+    );
+    static final FunctionDescriptor atk_image_get_image_position$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle atk_image_get_image_position$MH = RuntimeHelper.downcallHandle(
+        "atk_image_get_image_position",
+        constants$1224.atk_image_get_image_position$FUNC
     );
 }
 

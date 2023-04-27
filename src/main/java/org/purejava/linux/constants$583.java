@@ -7,52 +7,68 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$583 {
+final class constants$583 {
 
-    static final FunctionDescriptor ftruncate$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$583() {}
+    static final FunctionDescriptor g_bus_own_name_on_connection_with_closures$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle ftruncate$MH = RuntimeHelper.downcallHandle(
-        "ftruncate",
-        constants$583.ftruncate$FUNC
-    );
-    static final FunctionDescriptor brk$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle brk$MH = RuntimeHelper.downcallHandle(
-        "brk",
-        constants$583.brk$FUNC
+    static final MethodHandle g_bus_own_name_on_connection_with_closures$MH = RuntimeHelper.downcallHandle(
+        "g_bus_own_name_on_connection_with_closures",
+        constants$583.g_bus_own_name_on_connection_with_closures$FUNC
     );
-    static final FunctionDescriptor sbrk$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle sbrk$MH = RuntimeHelper.downcallHandle(
-        "sbrk",
-        constants$583.sbrk$FUNC
-    );
-    static final FunctionDescriptor syscall$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle syscall$MH = RuntimeHelper.downcallHandleVariadic(
-        "syscall",
-        constants$583.syscall$FUNC
-    );
-    static final FunctionDescriptor lockf$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle lockf$MH = RuntimeHelper.downcallHandle(
-        "lockf",
-        constants$583.lockf$FUNC
-    );
-    static final FunctionDescriptor fdatasync$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_bus_unown_name$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle fdatasync$MH = RuntimeHelper.downcallHandle(
-        "fdatasync",
-        constants$583.fdatasync$FUNC
+    static final MethodHandle g_bus_unown_name$MH = RuntimeHelper.downcallHandle(
+        "g_bus_unown_name",
+        constants$583.g_bus_unown_name$FUNC
+    );
+    static final FunctionDescriptor GBusNameAppearedCallback$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final FunctionDescriptor GBusNameAppearedCallback_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GBusNameAppearedCallback_UP$MH = RuntimeHelper.upcallHandle(GBusNameAppearedCallback.class, "apply", constants$583.GBusNameAppearedCallback_UP$FUNC);
+    static final FunctionDescriptor GBusNameAppearedCallback_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GBusNameAppearedCallback_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$583.GBusNameAppearedCallback_DOWN$FUNC
+    );
+    static final FunctionDescriptor GBusNameVanishedCallback$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final FunctionDescriptor GBusNameVanishedCallback_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GBusNameVanishedCallback_UP$MH = RuntimeHelper.upcallHandle(GBusNameVanishedCallback.class, "apply", constants$583.GBusNameVanishedCallback_UP$FUNC);
+    static final FunctionDescriptor GBusNameVanishedCallback_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GBusNameVanishedCallback_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$583.GBusNameVanishedCallback_DOWN$FUNC
     );
 }
 

@@ -7,59 +7,57 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$246 {
+final class constants$246 {
 
-    static final FunctionDescriptor g_log_default_handler$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_log_default_handler$MH = RuntimeHelper.downcallHandle(
-        "g_log_default_handler",
-        constants$246.g_log_default_handler$FUNC
-    );
-    static final FunctionDescriptor g_log_set_default_handler$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$246() {}
+    static final FunctionDescriptor g_variant_new_dict_entry$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_log_set_default_handler$MH = RuntimeHelper.downcallHandle(
-        "g_log_set_default_handler",
-        constants$246.g_log_set_default_handler$FUNC
+    static final MethodHandle g_variant_new_dict_entry$MH = RuntimeHelper.downcallHandle(
+        "g_variant_new_dict_entry",
+        constants$246.g_variant_new_dict_entry$FUNC
     );
-    static final FunctionDescriptor g_log$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_variant_get_maybe$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_log$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_log",
-        constants$246.g_log$FUNC
+    static final MethodHandle g_variant_get_maybe$MH = RuntimeHelper.downcallHandle(
+        "g_variant_get_maybe",
+        constants$246.g_variant_get_maybe$FUNC
     );
-    static final FunctionDescriptor g_logv$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_variant_n_children$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_variant_n_children$MH = RuntimeHelper.downcallHandle(
+        "g_variant_n_children",
+        constants$246.g_variant_n_children$FUNC
+    );
+    static final FunctionDescriptor g_variant_get_child$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_variant_get_child$MH = RuntimeHelper.downcallHandleVariadic(
+        "g_variant_get_child",
+        constants$246.g_variant_get_child$FUNC
+    );
+    static final FunctionDescriptor g_variant_get_child_value$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle g_variant_get_child_value$MH = RuntimeHelper.downcallHandle(
+        "g_variant_get_child_value",
+        constants$246.g_variant_get_child_value$FUNC
+    );
+    static final FunctionDescriptor g_variant_lookup$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_logv$MH = RuntimeHelper.downcallHandle(
-        "g_logv",
-        constants$246.g_logv$FUNC
-    );
-    static final FunctionDescriptor g_log_set_fatal_mask$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_log_set_fatal_mask$MH = RuntimeHelper.downcallHandle(
-        "g_log_set_fatal_mask",
-        constants$246.g_log_set_fatal_mask$FUNC
-    );
-    static final FunctionDescriptor g_log_set_always_fatal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_log_set_always_fatal$MH = RuntimeHelper.downcallHandle(
-        "g_log_set_always_fatal",
-        constants$246.g_log_set_always_fatal$FUNC
+    static final MethodHandle g_variant_lookup$MH = RuntimeHelper.downcallHandleVariadic(
+        "g_variant_lookup",
+        constants$246.g_variant_lookup$FUNC
     );
 }
 

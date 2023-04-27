@@ -7,58 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$444 {
+final class constants$444 {
 
-    static final FunctionDescriptor g_closure_unref$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$444() {}
+    static final FunctionDescriptor g_binding_get_flags$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_closure_unref$MH = RuntimeHelper.downcallHandle(
-        "g_closure_unref",
-        constants$444.g_closure_unref$FUNC
+    static final MethodHandle g_binding_get_flags$MH = RuntimeHelper.downcallHandle(
+        "g_binding_get_flags",
+        constants$444.g_binding_get_flags$FUNC
     );
-    static final FunctionDescriptor g_closure_new_simple$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_binding_get_source$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_closure_new_simple$MH = RuntimeHelper.downcallHandle(
-        "g_closure_new_simple",
-        constants$444.g_closure_new_simple$FUNC
+    static final MethodHandle g_binding_get_source$MH = RuntimeHelper.downcallHandle(
+        "g_binding_get_source",
+        constants$444.g_binding_get_source$FUNC
     );
-    static final FunctionDescriptor g_closure_add_finalize_notifier$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_binding_dup_source$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_closure_add_finalize_notifier$MH = RuntimeHelper.downcallHandle(
-        "g_closure_add_finalize_notifier",
-        constants$444.g_closure_add_finalize_notifier$FUNC
+    static final MethodHandle g_binding_dup_source$MH = RuntimeHelper.downcallHandle(
+        "g_binding_dup_source",
+        constants$444.g_binding_dup_source$FUNC
     );
-    static final FunctionDescriptor g_closure_remove_finalize_notifier$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_binding_get_target$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_closure_remove_finalize_notifier$MH = RuntimeHelper.downcallHandle(
-        "g_closure_remove_finalize_notifier",
-        constants$444.g_closure_remove_finalize_notifier$FUNC
+    static final MethodHandle g_binding_get_target$MH = RuntimeHelper.downcallHandle(
+        "g_binding_get_target",
+        constants$444.g_binding_get_target$FUNC
     );
-    static final FunctionDescriptor g_closure_add_invalidate_notifier$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_binding_dup_target$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_closure_add_invalidate_notifier$MH = RuntimeHelper.downcallHandle(
-        "g_closure_add_invalidate_notifier",
-        constants$444.g_closure_add_invalidate_notifier$FUNC
+    static final MethodHandle g_binding_dup_target$MH = RuntimeHelper.downcallHandle(
+        "g_binding_dup_target",
+        constants$444.g_binding_dup_target$FUNC
     );
-    static final FunctionDescriptor g_closure_remove_invalidate_notifier$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_binding_get_source_property$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_closure_remove_invalidate_notifier$MH = RuntimeHelper.downcallHandle(
-        "g_closure_remove_invalidate_notifier",
-        constants$444.g_closure_remove_invalidate_notifier$FUNC
+    static final MethodHandle g_binding_get_source_property$MH = RuntimeHelper.downcallHandle(
+        "g_binding_get_source_property",
+        constants$444.g_binding_get_source_property$FUNC
     );
 }
 

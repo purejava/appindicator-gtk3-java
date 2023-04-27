@@ -7,52 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$616 {
+final class constants$616 {
 
-    static final FunctionDescriptor g_dbus_message_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_dbus_message_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_get_type",
-        constants$616.g_dbus_message_get_type$FUNC
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$616() {}
+    static final FunctionDescriptor g_file_hash$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor g_dbus_message_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_dbus_message_new$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_new",
-        constants$616.g_dbus_message_new$FUNC
+    static final MethodHandle g_file_hash$MH = RuntimeHelper.downcallHandle(
+        "g_file_hash",
+        constants$616.g_file_hash$FUNC
     );
-    static final FunctionDescriptor g_dbus_message_new_signal$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_file_equal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_message_new_signal$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_new_signal",
-        constants$616.g_dbus_message_new_signal$FUNC
+    static final MethodHandle g_file_equal$MH = RuntimeHelper.downcallHandle(
+        "g_file_equal",
+        constants$616.g_file_equal$FUNC
     );
-    static final FunctionDescriptor g_dbus_message_new_method_call$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_file_get_basename$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_message_new_method_call$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_new_method_call",
-        constants$616.g_dbus_message_new_method_call$FUNC
+    static final MethodHandle g_file_get_basename$MH = RuntimeHelper.downcallHandle(
+        "g_file_get_basename",
+        constants$616.g_file_get_basename$FUNC
     );
-    static final FunctionDescriptor g_dbus_message_new_method_reply$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_file_get_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_message_new_method_reply$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_new_method_reply",
-        constants$616.g_dbus_message_new_method_reply$FUNC
+    static final MethodHandle g_file_get_path$MH = RuntimeHelper.downcallHandle(
+        "g_file_get_path",
+        constants$616.g_file_get_path$FUNC
     );
-    static final FunctionDescriptor g_dbus_message_new_method_error$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_file_peek_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_message_new_method_error$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_dbus_message_new_method_error",
-        constants$616.g_dbus_message_new_method_error$FUNC
+    static final MethodHandle g_file_peek_path$MH = RuntimeHelper.downcallHandle(
+        "g_file_peek_path",
+        constants$616.g_file_peek_path$FUNC
+    );
+    static final FunctionDescriptor g_file_get_uri$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_file_get_uri$MH = RuntimeHelper.downcallHandle(
+        "g_file_get_uri",
+        constants$616.g_file_get_uri$FUNC
     );
 }
 

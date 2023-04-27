@@ -7,51 +7,59 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$461 {
+final class constants$461 {
 
-    static final FunctionDescriptor g_signal_accumulator_true_handled$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$461() {}
+    static final FunctionDescriptor g_value_array_prepend$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_value_array_prepend$MH = RuntimeHelper.downcallHandle(
+        "g_value_array_prepend",
+        constants$461.g_value_array_prepend$FUNC
+    );
+    static final FunctionDescriptor g_value_array_append$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_value_array_append$MH = RuntimeHelper.downcallHandle(
+        "g_value_array_append",
+        constants$461.g_value_array_append$FUNC
+    );
+    static final FunctionDescriptor g_value_array_insert$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_value_array_insert$MH = RuntimeHelper.downcallHandle(
+        "g_value_array_insert",
+        constants$461.g_value_array_insert$FUNC
+    );
+    static final FunctionDescriptor g_value_array_remove$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_value_array_remove$MH = RuntimeHelper.downcallHandle(
+        "g_value_array_remove",
+        constants$461.g_value_array_remove$FUNC
+    );
+    static final FunctionDescriptor g_value_array_sort$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_value_array_sort$MH = RuntimeHelper.downcallHandle(
+        "g_value_array_sort",
+        constants$461.g_value_array_sort$FUNC
+    );
+    static final FunctionDescriptor g_value_array_sort_with_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_signal_accumulator_true_handled$MH = RuntimeHelper.downcallHandle(
-        "g_signal_accumulator_true_handled",
-        constants$461.g_signal_accumulator_true_handled$FUNC
-    );
-    static final FunctionDescriptor g_signal_accumulator_first_wins$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_signal_accumulator_first_wins$MH = RuntimeHelper.downcallHandle(
-        "g_signal_accumulator_first_wins",
-        constants$461.g_signal_accumulator_first_wins$FUNC
-    );
-    static final FunctionDescriptor g_signal_handlers_destroy$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_signal_handlers_destroy$MH = RuntimeHelper.downcallHandle(
-        "g_signal_handlers_destroy",
-        constants$461.g_signal_handlers_destroy$FUNC
-    );
-    static final FunctionDescriptor _g_signals_destroy$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle _g_signals_destroy$MH = RuntimeHelper.downcallHandle(
-        "_g_signals_destroy",
-        constants$461._g_signals_destroy$FUNC
-    );
-    static final FunctionDescriptor g_date_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_date_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_date_get_type",
-        constants$461.g_date_get_type$FUNC
-    );
-    static final FunctionDescriptor g_strv_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_strv_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_strv_get_type",
-        constants$461.g_strv_get_type$FUNC
+    static final MethodHandle g_value_array_sort_with_data$MH = RuntimeHelper.downcallHandle(
+        "g_value_array_sort_with_data",
+        constants$461.g_value_array_sort_with_data$FUNC
     );
 }
 

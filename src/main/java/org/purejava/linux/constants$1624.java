@@ -7,60 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1624 {
+final class constants$1624 {
 
-    static final FunctionDescriptor gtk_list_store_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_list_store_new$MH = RuntimeHelper.downcallHandleVariadic(
-        "gtk_list_store_new",
-        constants$1624.gtk_list_store_new$FUNC
-    );
-    static final FunctionDescriptor gtk_list_store_newv$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1624() {}
+    static final FunctionDescriptor gtk_icon_source_get_icon_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_list_store_newv$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_store_newv",
-        constants$1624.gtk_list_store_newv$FUNC
+    static final MethodHandle gtk_icon_source_get_icon_name$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_source_get_icon_name",
+        constants$1624.gtk_icon_source_get_icon_name$FUNC
     );
-    static final FunctionDescriptor gtk_list_store_set_column_types$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_icon_source_get_pixbuf$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_list_store_set_column_types$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_store_set_column_types",
-        constants$1624.gtk_list_store_set_column_types$FUNC
+    static final MethodHandle gtk_icon_source_get_pixbuf$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_source_get_pixbuf",
+        constants$1624.gtk_icon_source_get_pixbuf$FUNC
     );
-    static final FunctionDescriptor gtk_list_store_set_value$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_list_store_set_value$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_store_set_value",
-        constants$1624.gtk_list_store_set_value$FUNC
-    );
-    static final FunctionDescriptor gtk_list_store_set$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_list_store_set$MH = RuntimeHelper.downcallHandleVariadic(
-        "gtk_list_store_set",
-        constants$1624.gtk_list_store_set$FUNC
-    );
-    static final FunctionDescriptor gtk_list_store_set_valuesv$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_icon_source_set_direction_wildcarded$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_list_store_set_valuesv$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_store_set_valuesv",
-        constants$1624.gtk_list_store_set_valuesv$FUNC
+    static final MethodHandle gtk_icon_source_set_direction_wildcarded$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_source_set_direction_wildcarded",
+        constants$1624.gtk_icon_source_set_direction_wildcarded$FUNC
+    );
+    static final FunctionDescriptor gtk_icon_source_set_state_wildcarded$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_icon_source_set_state_wildcarded$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_source_set_state_wildcarded",
+        constants$1624.gtk_icon_source_set_state_wildcarded$FUNC
+    );
+    static final FunctionDescriptor gtk_icon_source_set_size_wildcarded$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_icon_source_set_size_wildcarded$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_source_set_size_wildcarded",
+        constants$1624.gtk_icon_source_set_size_wildcarded$FUNC
+    );
+    static final FunctionDescriptor gtk_icon_source_get_size_wildcarded$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_icon_source_get_size_wildcarded$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_source_get_size_wildcarded",
+        constants$1624.gtk_icon_source_get_size_wildcarded$FUNC
     );
 }
 

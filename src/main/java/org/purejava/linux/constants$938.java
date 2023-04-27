@@ -7,49 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$938 {
+final class constants$938 {
 
-    static final FunctionDescriptor glib_autoptr_clear_GMountOperation$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$938() {}
+    static final FunctionDescriptor pango_context_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle pango_context_new$MH = RuntimeHelper.downcallHandle(
+        "pango_context_new",
+        constants$938.pango_context_new$FUNC
+    );
+    static final FunctionDescriptor pango_context_changed$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GMountOperation$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GMountOperation",
-        constants$938.glib_autoptr_clear_GMountOperation$FUNC
+    static final MethodHandle pango_context_changed$MH = RuntimeHelper.downcallHandle(
+        "pango_context_changed",
+        constants$938.pango_context_changed$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GMountOperation$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_context_set_font_map$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GMountOperation$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GMountOperation",
-        constants$938.glib_autoptr_cleanup_GMountOperation$FUNC
+    static final MethodHandle pango_context_set_font_map$MH = RuntimeHelper.downcallHandle(
+        "pango_context_set_font_map",
+        constants$938.pango_context_set_font_map$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GMountOperation$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_context_get_font_map$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GMountOperation$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GMountOperation",
-        constants$938.glib_listautoptr_cleanup_GMountOperation$FUNC
+    static final MethodHandle pango_context_get_font_map$MH = RuntimeHelper.downcallHandle(
+        "pango_context_get_font_map",
+        constants$938.pango_context_get_font_map$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GMountOperation$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_context_get_serial$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GMountOperation$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GMountOperation",
-        constants$938.glib_slistautoptr_cleanup_GMountOperation$FUNC
+    static final MethodHandle pango_context_get_serial$MH = RuntimeHelper.downcallHandle(
+        "pango_context_get_serial",
+        constants$938.pango_context_get_serial$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GMountOperation$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_context_list_families$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GMountOperation$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GMountOperation",
-        constants$938.glib_queueautoptr_cleanup_GMountOperation$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_clear_GNativeVolumeMonitor$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_autoptr_clear_GNativeVolumeMonitor$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GNativeVolumeMonitor",
-        constants$938.glib_autoptr_clear_GNativeVolumeMonitor$FUNC
+    static final MethodHandle pango_context_list_families$MH = RuntimeHelper.downcallHandle(
+        "pango_context_list_families",
+        constants$938.pango_context_list_families$FUNC
     );
 }
 

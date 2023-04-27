@@ -7,9 +7,18 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _PangoColor {
+ *     guint16 red;
+ *     guint16 green;
+ *     guint16 blue;
+ * };
+ * }
+ */
 public class _PangoColor {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_SHORT$LAYOUT.withName("red"),
         Constants$root.C_SHORT$LAYOUT.withName("green"),
         Constants$root.C_SHORT$LAYOUT.withName("blue")
@@ -21,10 +30,22 @@ public class _PangoColor {
     public static VarHandle red$VH() {
         return _PangoColor.red$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * guint16 red;
+     * }
+     */
     public static short red$get(MemorySegment seg) {
         return (short)_PangoColor.red$VH.get(seg);
     }
-    public static void red$set( MemorySegment seg, short x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * guint16 red;
+     * }
+     */
+    public static void red$set(MemorySegment seg, short x) {
         _PangoColor.red$VH.set(seg, x);
     }
     public static short red$get(MemorySegment seg, long index) {
@@ -37,10 +58,22 @@ public class _PangoColor {
     public static VarHandle green$VH() {
         return _PangoColor.green$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * guint16 green;
+     * }
+     */
     public static short green$get(MemorySegment seg) {
         return (short)_PangoColor.green$VH.get(seg);
     }
-    public static void green$set( MemorySegment seg, short x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * guint16 green;
+     * }
+     */
+    public static void green$set(MemorySegment seg, short x) {
         _PangoColor.green$VH.set(seg, x);
     }
     public static short green$get(MemorySegment seg, long index) {
@@ -53,10 +86,22 @@ public class _PangoColor {
     public static VarHandle blue$VH() {
         return _PangoColor.blue$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * guint16 blue;
+     * }
+     */
     public static short blue$get(MemorySegment seg) {
         return (short)_PangoColor.blue$VH.get(seg);
     }
-    public static void blue$set( MemorySegment seg, short x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * guint16 blue;
+     * }
+     */
+    public static void blue$set(MemorySegment seg, short x) {
         _PangoColor.blue$VH.set(seg, x);
     }
     public static short blue$get(MemorySegment seg, long index) {
@@ -67,10 +112,10 @@ public class _PangoColor {
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

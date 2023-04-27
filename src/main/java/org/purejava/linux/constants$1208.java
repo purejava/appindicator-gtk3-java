@@ -7,57 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1208 {
+final class constants$1208 {
 
-    static final FunctionDescriptor cairo_matrix_init_scale$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1208() {}
+    static final FunctionDescriptor atk_remove_focus_tracker$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle cairo_matrix_init_scale$MH = RuntimeHelper.downcallHandle(
-        "cairo_matrix_init_scale",
-        constants$1208.cairo_matrix_init_scale$FUNC
+    static final MethodHandle atk_remove_focus_tracker$MH = RuntimeHelper.downcallHandle(
+        "atk_remove_focus_tracker",
+        constants$1208.atk_remove_focus_tracker$FUNC
     );
-    static final FunctionDescriptor cairo_matrix_init_rotate$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle cairo_matrix_init_rotate$MH = RuntimeHelper.downcallHandle(
-        "cairo_matrix_init_rotate",
-        constants$1208.cairo_matrix_init_rotate$FUNC
-    );
-    static final FunctionDescriptor cairo_matrix_translate$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle cairo_matrix_translate$MH = RuntimeHelper.downcallHandle(
-        "cairo_matrix_translate",
-        constants$1208.cairo_matrix_translate$FUNC
-    );
-    static final FunctionDescriptor cairo_matrix_scale$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle cairo_matrix_scale$MH = RuntimeHelper.downcallHandle(
-        "cairo_matrix_scale",
-        constants$1208.cairo_matrix_scale$FUNC
-    );
-    static final FunctionDescriptor cairo_matrix_rotate$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle cairo_matrix_rotate$MH = RuntimeHelper.downcallHandle(
-        "cairo_matrix_rotate",
-        constants$1208.cairo_matrix_rotate$FUNC
-    );
-    static final FunctionDescriptor cairo_matrix_invert$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor atk_focus_tracker_init$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_matrix_invert$MH = RuntimeHelper.downcallHandle(
-        "cairo_matrix_invert",
-        constants$1208.cairo_matrix_invert$FUNC
+    static final MethodHandle atk_focus_tracker_init$MH = RuntimeHelper.downcallHandle(
+        "atk_focus_tracker_init",
+        constants$1208.atk_focus_tracker_init$FUNC
+    );
+    static final FunctionDescriptor atk_focus_tracker_notify$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle atk_focus_tracker_notify$MH = RuntimeHelper.downcallHandle(
+        "atk_focus_tracker_notify",
+        constants$1208.atk_focus_tracker_notify$FUNC
+    );
+    static final FunctionDescriptor atk_add_global_event_listener$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle atk_add_global_event_listener$MH = RuntimeHelper.downcallHandle(
+        "atk_add_global_event_listener",
+        constants$1208.atk_add_global_event_listener$FUNC
+    );
+    static final FunctionDescriptor atk_remove_global_event_listener$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle atk_remove_global_event_listener$MH = RuntimeHelper.downcallHandle(
+        "atk_remove_global_event_listener",
+        constants$1208.atk_remove_global_event_listener$FUNC
+    );
+    static final FunctionDescriptor atk_add_key_event_listener$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle atk_add_key_event_listener$MH = RuntimeHelper.downcallHandle(
+        "atk_add_key_event_listener",
+        constants$1208.atk_add_key_event_listener$FUNC
     );
 }
 

@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GDtlsConnectionInterface extends _GDtlsConnectionInterface {
+/**
+ * {@snippet :
+ * typedef struct _GDtlsConnectionInterface GDtlsConnectionInterface;
+ * }
+ */
+public final class GDtlsConnectionInterface extends _GDtlsConnectionInterface {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GDtlsConnectionInterface() {}
 }
 
 

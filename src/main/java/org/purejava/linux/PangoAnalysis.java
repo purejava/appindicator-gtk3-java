@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class PangoAnalysis extends _PangoAnalysis {
+/**
+ * {@snippet :
+ * typedef struct _PangoAnalysis PangoAnalysis;
+ * }
+ */
+public final class PangoAnalysis extends _PangoAnalysis {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private PangoAnalysis() {}
 }
 
 

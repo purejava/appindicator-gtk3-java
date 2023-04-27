@@ -7,49 +7,60 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1774 {
+final class constants$1774 {
 
-    static final FunctionDescriptor glib_autoptr_clear_GtkNativeDialogClass$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1774() {}
+    static final FunctionDescriptor gtk_recent_info_get_application_info$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GtkNativeDialogClass$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GtkNativeDialogClass",
-        constants$1774.glib_autoptr_clear_GtkNativeDialogClass$FUNC
+    static final MethodHandle gtk_recent_info_get_application_info$MH = RuntimeHelper.downcallHandle(
+        "gtk_recent_info_get_application_info",
+        constants$1774.gtk_recent_info_get_application_info$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GtkNativeDialogClass$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_recent_info_create_app_info$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GtkNativeDialogClass$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GtkNativeDialogClass",
-        constants$1774.glib_autoptr_cleanup_GtkNativeDialogClass$FUNC
+    static final MethodHandle gtk_recent_info_create_app_info$MH = RuntimeHelper.downcallHandle(
+        "gtk_recent_info_create_app_info",
+        constants$1774.gtk_recent_info_create_app_info$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GtkNativeDialogClass$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_recent_info_get_applications$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GtkNativeDialogClass$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GtkNativeDialogClass",
-        constants$1774.glib_listautoptr_cleanup_GtkNativeDialogClass$FUNC
+    static final MethodHandle gtk_recent_info_get_applications$MH = RuntimeHelper.downcallHandle(
+        "gtk_recent_info_get_applications",
+        constants$1774.gtk_recent_info_get_applications$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GtkNativeDialogClass$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_recent_info_last_application$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GtkNativeDialogClass$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GtkNativeDialogClass",
-        constants$1774.glib_slistautoptr_cleanup_GtkNativeDialogClass$FUNC
+    static final MethodHandle gtk_recent_info_last_application$MH = RuntimeHelper.downcallHandle(
+        "gtk_recent_info_last_application",
+        constants$1774.gtk_recent_info_last_application$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GtkNativeDialogClass$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_recent_info_has_application$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GtkNativeDialogClass$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GtkNativeDialogClass",
-        constants$1774.glib_queueautoptr_cleanup_GtkNativeDialogClass$FUNC
+    static final MethodHandle gtk_recent_info_has_application$MH = RuntimeHelper.downcallHandle(
+        "gtk_recent_info_has_application",
+        constants$1774.gtk_recent_info_has_application$FUNC
     );
-    static final FunctionDescriptor GTK_NATIVE_DIALOG$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_recent_info_get_groups$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GTK_NATIVE_DIALOG$MH = RuntimeHelper.downcallHandle(
-        "GTK_NATIVE_DIALOG",
-        constants$1774.GTK_NATIVE_DIALOG$FUNC
+    static final MethodHandle gtk_recent_info_get_groups$MH = RuntimeHelper.downcallHandle(
+        "gtk_recent_info_get_groups",
+        constants$1774.gtk_recent_info_get_groups$FUNC
     );
 }
 

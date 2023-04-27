@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * int (*GSocketSourceFunc)(struct _GSocket* socket,enum  condition,void* data);
+ * }
+ */
 public interface GSocketSourceFunc {
 
-    int apply(java.lang.foreign.MemoryAddress socket, int condition, java.lang.foreign.MemoryAddress user_data);
-    static MemorySegment allocate(GSocketSourceFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GSocketSourceFunc.class, fi, constants$517.GSocketSourceFunc$FUNC, session);
+    int apply(java.lang.foreign.MemorySegment datagram_based, int condition, java.lang.foreign.MemorySegment data);
+    static MemorySegment allocate(GSocketSourceFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$471.GSocketSourceFunc_UP$MH, fi, constants$471.GSocketSourceFunc$FUNC, scope);
     }
-    static GSocketSourceFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _socket, int _condition, java.lang.foreign.MemoryAddress _user_data) -> {
+    static GSocketSourceFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _datagram_based, int _condition, java.lang.foreign.MemorySegment _data) -> {
             try {
-                return (int)constants$517.GSocketSourceFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_socket, _condition, (java.lang.foreign.Addressable)_user_data);
+                return (int)constants$471.GSocketSourceFunc_DOWN$MH.invokeExact(symbol, _datagram_based, _condition, _data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * void (*GSourceDisposeFunc)(struct _GSource* source);
+ * }
+ */
 public interface GSourceDisposeFunc {
 
-    void apply(java.lang.foreign.MemoryAddress source);
-    static MemorySegment allocate(GSourceDisposeFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GSourceDisposeFunc.class, fi, constants$165.GSourceDisposeFunc$FUNC, session);
+    void apply(java.lang.foreign.MemorySegment display);
+    static MemorySegment allocate(GSourceDisposeFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$167.GSourceDisposeFunc_UP$MH, fi, constants$167.GSourceDisposeFunc$FUNC, scope);
     }
-    static GSourceDisposeFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _source) -> {
+    static GSourceDisposeFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _display) -> {
             try {
-                constants$166.GSourceDisposeFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_source);
+                constants$167.GSourceDisposeFunc_DOWN$MH.invokeExact(symbol, _display);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

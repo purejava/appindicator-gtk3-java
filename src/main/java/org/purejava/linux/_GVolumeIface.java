@@ -7,9 +7,37 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GVolumeIface {
+ *     GTypeInterface g_iface;
+ *     void (*changed)(GVolume*);
+ *     void (*removed)(GVolume*);
+ *     char* (*get_name)(GVolume*);
+ *     GIcon* (*get_icon)(GVolume*);
+ *     char* (*get_uuid)(GVolume*);
+ *     GDrive* (*get_drive)(GVolume*);
+ *     GMount* (*get_mount)(GVolume*);
+ *     gboolean (*can_mount)(GVolume*);
+ *     gboolean (*can_eject)(GVolume*);
+ *     void (*mount_fn)(GVolume*,GMountMountFlags,GMountOperation*,GCancellable*,GAsyncReadyCallback,gpointer);
+ *     gboolean (*mount_finish)(GVolume*,GAsyncResult*,GError**);
+ *     void (*eject)(GVolume*,GMountUnmountFlags,GCancellable*,GAsyncReadyCallback,gpointer);
+ *     gboolean (*eject_finish)(GVolume*,GAsyncResult*,GError**);
+ *     char* (*get_identifier)(GVolume*,char*);
+ *     char** (*enumerate_identifiers)(GVolume*);
+ *     gboolean (*should_automount)(GVolume*);
+ *     GFile* (*get_activation_root)(GVolume*);
+ *     void (*eject_with_operation)(GVolume*,GMountUnmountFlags,GMountOperation*,GCancellable*,GAsyncReadyCallback,gpointer);
+ *     gboolean (*eject_with_operation_finish)(GVolume*,GAsyncResult*,GError**);
+ *     const gchar* (*get_sort_key)(GVolume*);
+ *     GIcon* (*get_symbolic_icon)(GVolume*);
+ * };
+ * }
+ */
 public class _GVolumeIface {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             Constants$root.C_LONG_LONG$LAYOUT.withName("g_type"),
             Constants$root.C_LONG_LONG$LAYOUT.withName("g_instance_type")
@@ -45,20 +73,32 @@ public class _GVolumeIface {
     static final FunctionDescriptor changed$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle changed$MH = RuntimeHelper.downcallHandle(
-        _GVolumeIface.changed$FUNC
+    static final FunctionDescriptor changed_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle changed_UP$MH = RuntimeHelper.upcallHandle(changed.class, "apply", _GVolumeIface.changed_UP$FUNC);
+    static final FunctionDescriptor changed_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle changed_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GVolumeIface.changed_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*changed)(GVolume*);
+     * }
+     */
     public interface changed {
 
-        void apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(changed fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(changed.class, fi, _GVolumeIface.changed$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment display);
+        static MemorySegment allocate(changed fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GVolumeIface.changed_UP$MH, fi, _GVolumeIface.changed$FUNC, scope);
         }
-        static changed ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static changed ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GVolumeIface.changed$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    _GVolumeIface.changed_DOWN$MH.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -70,38 +110,62 @@ public class _GVolumeIface {
     public static VarHandle changed$VH() {
         return _GVolumeIface.changed$VH;
     }
-    public static MemoryAddress changed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeIface.changed$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*changed)(GVolume*);
+     * }
+     */
+    public static MemorySegment changed$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GVolumeIface.changed$VH.get(seg);
     }
-    public static void changed$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*changed)(GVolume*);
+     * }
+     */
+    public static void changed$set(MemorySegment seg, MemorySegment x) {
         _GVolumeIface.changed$VH.set(seg, x);
     }
-    public static MemoryAddress changed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeIface.changed$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment changed$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GVolumeIface.changed$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void changed$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void changed$set(MemorySegment seg, long index, MemorySegment x) {
         _GVolumeIface.changed$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static changed changed (MemorySegment segment, MemorySession session) {
-        return changed.ofAddress(changed$get(segment), session);
+    public static changed changed(MemorySegment segment, SegmentScope scope) {
+        return changed.ofAddress(changed$get(segment), scope);
     }
     static final FunctionDescriptor removed$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle removed$MH = RuntimeHelper.downcallHandle(
-        _GVolumeIface.removed$FUNC
+    static final FunctionDescriptor removed_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle removed_UP$MH = RuntimeHelper.upcallHandle(removed.class, "apply", _GVolumeIface.removed_UP$FUNC);
+    static final FunctionDescriptor removed_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle removed_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GVolumeIface.removed_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*removed)(GVolume*);
+     * }
+     */
     public interface removed {
 
-        void apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(removed fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(removed.class, fi, _GVolumeIface.removed$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment display);
+        static MemorySegment allocate(removed fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GVolumeIface.removed_UP$MH, fi, _GVolumeIface.removed$FUNC, scope);
         }
-        static removed ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static removed ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GVolumeIface.removed$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    _GVolumeIface.removed_DOWN$MH.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -113,38 +177,62 @@ public class _GVolumeIface {
     public static VarHandle removed$VH() {
         return _GVolumeIface.removed$VH;
     }
-    public static MemoryAddress removed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeIface.removed$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*removed)(GVolume*);
+     * }
+     */
+    public static MemorySegment removed$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GVolumeIface.removed$VH.get(seg);
     }
-    public static void removed$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*removed)(GVolume*);
+     * }
+     */
+    public static void removed$set(MemorySegment seg, MemorySegment x) {
         _GVolumeIface.removed$VH.set(seg, x);
     }
-    public static MemoryAddress removed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeIface.removed$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment removed$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GVolumeIface.removed$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void removed$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void removed$set(MemorySegment seg, long index, MemorySegment x) {
         _GVolumeIface.removed$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static removed removed (MemorySegment segment, MemorySession session) {
-        return removed.ofAddress(removed$get(segment), session);
+    public static removed removed(MemorySegment segment, SegmentScope scope) {
+        return removed.ofAddress(removed$get(segment), scope);
     }
     static final FunctionDescriptor get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_name$MH = RuntimeHelper.downcallHandle(
-        _GVolumeIface.get_name$FUNC
+    static final FunctionDescriptor get_name_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_name_UP$MH = RuntimeHelper.upcallHandle(get_name.class, "apply", _GVolumeIface.get_name_UP$FUNC);
+    static final FunctionDescriptor get_name_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_name_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GVolumeIface.get_name_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * char* (*get_name)(GVolume*);
+     * }
+     */
     public interface get_name {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(get_name fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_name.class, fi, _GVolumeIface.get_name$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(get_name fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GVolumeIface.get_name_UP$MH, fi, _GVolumeIface.get_name$FUNC, scope);
         }
-        static get_name ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static get_name ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GVolumeIface.get_name$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (java.lang.foreign.MemorySegment)_GVolumeIface.get_name_DOWN$MH.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -156,38 +244,62 @@ public class _GVolumeIface {
     public static VarHandle get_name$VH() {
         return _GVolumeIface.get_name$VH;
     }
-    public static MemoryAddress get_name$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeIface.get_name$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * char* (*get_name)(GVolume*);
+     * }
+     */
+    public static MemorySegment get_name$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GVolumeIface.get_name$VH.get(seg);
     }
-    public static void get_name$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * char* (*get_name)(GVolume*);
+     * }
+     */
+    public static void get_name$set(MemorySegment seg, MemorySegment x) {
         _GVolumeIface.get_name$VH.set(seg, x);
     }
-    public static MemoryAddress get_name$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeIface.get_name$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_name$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GVolumeIface.get_name$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_name$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_name$set(MemorySegment seg, long index, MemorySegment x) {
         _GVolumeIface.get_name$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_name get_name (MemorySegment segment, MemorySession session) {
-        return get_name.ofAddress(get_name$get(segment), session);
+    public static get_name get_name(MemorySegment segment, SegmentScope scope) {
+        return get_name.ofAddress(get_name$get(segment), scope);
     }
     static final FunctionDescriptor get_icon$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_icon$MH = RuntimeHelper.downcallHandle(
-        _GVolumeIface.get_icon$FUNC
+    static final FunctionDescriptor get_icon_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_icon_UP$MH = RuntimeHelper.upcallHandle(get_icon.class, "apply", _GVolumeIface.get_icon_UP$FUNC);
+    static final FunctionDescriptor get_icon_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_icon_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GVolumeIface.get_icon_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * GIcon* (*get_icon)(GVolume*);
+     * }
+     */
     public interface get_icon {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(get_icon fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_icon.class, fi, _GVolumeIface.get_icon$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(get_icon fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GVolumeIface.get_icon_UP$MH, fi, _GVolumeIface.get_icon$FUNC, scope);
         }
-        static get_icon ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static get_icon ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GVolumeIface.get_icon$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (java.lang.foreign.MemorySegment)_GVolumeIface.get_icon_DOWN$MH.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -199,38 +311,62 @@ public class _GVolumeIface {
     public static VarHandle get_icon$VH() {
         return _GVolumeIface.get_icon$VH;
     }
-    public static MemoryAddress get_icon$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeIface.get_icon$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GIcon* (*get_icon)(GVolume*);
+     * }
+     */
+    public static MemorySegment get_icon$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GVolumeIface.get_icon$VH.get(seg);
     }
-    public static void get_icon$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GIcon* (*get_icon)(GVolume*);
+     * }
+     */
+    public static void get_icon$set(MemorySegment seg, MemorySegment x) {
         _GVolumeIface.get_icon$VH.set(seg, x);
     }
-    public static MemoryAddress get_icon$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeIface.get_icon$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_icon$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GVolumeIface.get_icon$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_icon$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_icon$set(MemorySegment seg, long index, MemorySegment x) {
         _GVolumeIface.get_icon$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_icon get_icon (MemorySegment segment, MemorySession session) {
-        return get_icon.ofAddress(get_icon$get(segment), session);
+    public static get_icon get_icon(MemorySegment segment, SegmentScope scope) {
+        return get_icon.ofAddress(get_icon$get(segment), scope);
     }
     static final FunctionDescriptor get_uuid$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_uuid$MH = RuntimeHelper.downcallHandle(
-        _GVolumeIface.get_uuid$FUNC
+    static final FunctionDescriptor get_uuid_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_uuid_UP$MH = RuntimeHelper.upcallHandle(get_uuid.class, "apply", _GVolumeIface.get_uuid_UP$FUNC);
+    static final FunctionDescriptor get_uuid_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_uuid_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GVolumeIface.get_uuid_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * char* (*get_uuid)(GVolume*);
+     * }
+     */
     public interface get_uuid {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(get_uuid fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_uuid.class, fi, _GVolumeIface.get_uuid$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(get_uuid fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GVolumeIface.get_uuid_UP$MH, fi, _GVolumeIface.get_uuid$FUNC, scope);
         }
-        static get_uuid ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static get_uuid ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GVolumeIface.get_uuid$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (java.lang.foreign.MemorySegment)_GVolumeIface.get_uuid_DOWN$MH.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -242,38 +378,62 @@ public class _GVolumeIface {
     public static VarHandle get_uuid$VH() {
         return _GVolumeIface.get_uuid$VH;
     }
-    public static MemoryAddress get_uuid$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeIface.get_uuid$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * char* (*get_uuid)(GVolume*);
+     * }
+     */
+    public static MemorySegment get_uuid$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GVolumeIface.get_uuid$VH.get(seg);
     }
-    public static void get_uuid$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * char* (*get_uuid)(GVolume*);
+     * }
+     */
+    public static void get_uuid$set(MemorySegment seg, MemorySegment x) {
         _GVolumeIface.get_uuid$VH.set(seg, x);
     }
-    public static MemoryAddress get_uuid$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeIface.get_uuid$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_uuid$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GVolumeIface.get_uuid$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_uuid$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_uuid$set(MemorySegment seg, long index, MemorySegment x) {
         _GVolumeIface.get_uuid$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_uuid get_uuid (MemorySegment segment, MemorySession session) {
-        return get_uuid.ofAddress(get_uuid$get(segment), session);
+    public static get_uuid get_uuid(MemorySegment segment, SegmentScope scope) {
+        return get_uuid.ofAddress(get_uuid$get(segment), scope);
     }
     static final FunctionDescriptor get_drive$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_drive$MH = RuntimeHelper.downcallHandle(
-        _GVolumeIface.get_drive$FUNC
+    static final FunctionDescriptor get_drive_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_drive_UP$MH = RuntimeHelper.upcallHandle(get_drive.class, "apply", _GVolumeIface.get_drive_UP$FUNC);
+    static final FunctionDescriptor get_drive_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_drive_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GVolumeIface.get_drive_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * GDrive* (*get_drive)(GVolume*);
+     * }
+     */
     public interface get_drive {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(get_drive fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_drive.class, fi, _GVolumeIface.get_drive$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(get_drive fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GVolumeIface.get_drive_UP$MH, fi, _GVolumeIface.get_drive$FUNC, scope);
         }
-        static get_drive ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static get_drive ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GVolumeIface.get_drive$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (java.lang.foreign.MemorySegment)_GVolumeIface.get_drive_DOWN$MH.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -285,38 +445,62 @@ public class _GVolumeIface {
     public static VarHandle get_drive$VH() {
         return _GVolumeIface.get_drive$VH;
     }
-    public static MemoryAddress get_drive$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeIface.get_drive$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GDrive* (*get_drive)(GVolume*);
+     * }
+     */
+    public static MemorySegment get_drive$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GVolumeIface.get_drive$VH.get(seg);
     }
-    public static void get_drive$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GDrive* (*get_drive)(GVolume*);
+     * }
+     */
+    public static void get_drive$set(MemorySegment seg, MemorySegment x) {
         _GVolumeIface.get_drive$VH.set(seg, x);
     }
-    public static MemoryAddress get_drive$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeIface.get_drive$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_drive$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GVolumeIface.get_drive$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_drive$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_drive$set(MemorySegment seg, long index, MemorySegment x) {
         _GVolumeIface.get_drive$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_drive get_drive (MemorySegment segment, MemorySession session) {
-        return get_drive.ofAddress(get_drive$get(segment), session);
+    public static get_drive get_drive(MemorySegment segment, SegmentScope scope) {
+        return get_drive.ofAddress(get_drive$get(segment), scope);
     }
     static final FunctionDescriptor get_mount$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_mount$MH = RuntimeHelper.downcallHandle(
-        _GVolumeIface.get_mount$FUNC
+    static final FunctionDescriptor get_mount_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_mount_UP$MH = RuntimeHelper.upcallHandle(get_mount.class, "apply", _GVolumeIface.get_mount_UP$FUNC);
+    static final FunctionDescriptor get_mount_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_mount_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GVolumeIface.get_mount_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * GMount* (*get_mount)(GVolume*);
+     * }
+     */
     public interface get_mount {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(get_mount fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_mount.class, fi, _GVolumeIface.get_mount$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(get_mount fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GVolumeIface.get_mount_UP$MH, fi, _GVolumeIface.get_mount$FUNC, scope);
         }
-        static get_mount ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static get_mount ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GVolumeIface.get_mount$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (java.lang.foreign.MemorySegment)_GVolumeIface.get_mount_DOWN$MH.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -328,38 +512,62 @@ public class _GVolumeIface {
     public static VarHandle get_mount$VH() {
         return _GVolumeIface.get_mount$VH;
     }
-    public static MemoryAddress get_mount$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeIface.get_mount$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GMount* (*get_mount)(GVolume*);
+     * }
+     */
+    public static MemorySegment get_mount$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GVolumeIface.get_mount$VH.get(seg);
     }
-    public static void get_mount$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GMount* (*get_mount)(GVolume*);
+     * }
+     */
+    public static void get_mount$set(MemorySegment seg, MemorySegment x) {
         _GVolumeIface.get_mount$VH.set(seg, x);
     }
-    public static MemoryAddress get_mount$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeIface.get_mount$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_mount$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GVolumeIface.get_mount$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_mount$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_mount$set(MemorySegment seg, long index, MemorySegment x) {
         _GVolumeIface.get_mount$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_mount get_mount (MemorySegment segment, MemorySession session) {
-        return get_mount.ofAddress(get_mount$get(segment), session);
+    public static get_mount get_mount(MemorySegment segment, SegmentScope scope) {
+        return get_mount.ofAddress(get_mount$get(segment), scope);
     }
     static final FunctionDescriptor can_mount$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle can_mount$MH = RuntimeHelper.downcallHandle(
-        _GVolumeIface.can_mount$FUNC
+    static final FunctionDescriptor can_mount_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle can_mount_UP$MH = RuntimeHelper.upcallHandle(can_mount.class, "apply", _GVolumeIface.can_mount_UP$FUNC);
+    static final FunctionDescriptor can_mount_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle can_mount_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GVolumeIface.can_mount_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*can_mount)(GVolume*);
+     * }
+     */
     public interface can_mount {
 
-        int apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(can_mount fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(can_mount.class, fi, _GVolumeIface.can_mount$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0);
+        static MemorySegment allocate(can_mount fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GVolumeIface.can_mount_UP$MH, fi, _GVolumeIface.can_mount$FUNC, scope);
         }
-        static can_mount ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static can_mount ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0) -> {
                 try {
-                    return (int)_GVolumeIface.can_mount$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (int)_GVolumeIface.can_mount_DOWN$MH.invokeExact(symbol, __x0);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -371,38 +579,62 @@ public class _GVolumeIface {
     public static VarHandle can_mount$VH() {
         return _GVolumeIface.can_mount$VH;
     }
-    public static MemoryAddress can_mount$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeIface.can_mount$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*can_mount)(GVolume*);
+     * }
+     */
+    public static MemorySegment can_mount$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GVolumeIface.can_mount$VH.get(seg);
     }
-    public static void can_mount$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*can_mount)(GVolume*);
+     * }
+     */
+    public static void can_mount$set(MemorySegment seg, MemorySegment x) {
         _GVolumeIface.can_mount$VH.set(seg, x);
     }
-    public static MemoryAddress can_mount$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeIface.can_mount$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment can_mount$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GVolumeIface.can_mount$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void can_mount$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void can_mount$set(MemorySegment seg, long index, MemorySegment x) {
         _GVolumeIface.can_mount$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static can_mount can_mount (MemorySegment segment, MemorySession session) {
-        return can_mount.ofAddress(can_mount$get(segment), session);
+    public static can_mount can_mount(MemorySegment segment, SegmentScope scope) {
+        return can_mount.ofAddress(can_mount$get(segment), scope);
     }
     static final FunctionDescriptor can_eject$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle can_eject$MH = RuntimeHelper.downcallHandle(
-        _GVolumeIface.can_eject$FUNC
+    static final FunctionDescriptor can_eject_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle can_eject_UP$MH = RuntimeHelper.upcallHandle(can_eject.class, "apply", _GVolumeIface.can_eject_UP$FUNC);
+    static final FunctionDescriptor can_eject_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle can_eject_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GVolumeIface.can_eject_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*can_eject)(GVolume*);
+     * }
+     */
     public interface can_eject {
 
-        int apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(can_eject fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(can_eject.class, fi, _GVolumeIface.can_eject$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0);
+        static MemorySegment allocate(can_eject fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GVolumeIface.can_eject_UP$MH, fi, _GVolumeIface.can_eject$FUNC, scope);
         }
-        static can_eject ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static can_eject ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0) -> {
                 try {
-                    return (int)_GVolumeIface.can_eject$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (int)_GVolumeIface.can_eject_DOWN$MH.invokeExact(symbol, __x0);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -414,20 +646,32 @@ public class _GVolumeIface {
     public static VarHandle can_eject$VH() {
         return _GVolumeIface.can_eject$VH;
     }
-    public static MemoryAddress can_eject$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeIface.can_eject$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*can_eject)(GVolume*);
+     * }
+     */
+    public static MemorySegment can_eject$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GVolumeIface.can_eject$VH.get(seg);
     }
-    public static void can_eject$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*can_eject)(GVolume*);
+     * }
+     */
+    public static void can_eject$set(MemorySegment seg, MemorySegment x) {
         _GVolumeIface.can_eject$VH.set(seg, x);
     }
-    public static MemoryAddress can_eject$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeIface.can_eject$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment can_eject$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GVolumeIface.can_eject$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void can_eject$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void can_eject$set(MemorySegment seg, long index, MemorySegment x) {
         _GVolumeIface.can_eject$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static can_eject can_eject (MemorySegment segment, MemorySession session) {
-        return can_eject.ofAddress(can_eject$get(segment), session);
+    public static can_eject can_eject(MemorySegment segment, SegmentScope scope) {
+        return can_eject.ofAddress(can_eject$get(segment), scope);
     }
     static final FunctionDescriptor mount_fn$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
@@ -437,20 +681,42 @@ public class _GVolumeIface {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle mount_fn$MH = RuntimeHelper.downcallHandle(
-        _GVolumeIface.mount_fn$FUNC
+    static final FunctionDescriptor mount_fn_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle mount_fn_UP$MH = RuntimeHelper.upcallHandle(mount_fn.class, "apply", _GVolumeIface.mount_fn_UP$FUNC);
+    static final FunctionDescriptor mount_fn_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle mount_fn_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GVolumeIface.mount_fn_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*mount_fn)(GVolume*,GMountMountFlags,GMountOperation*,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
     public interface mount_fn {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, int _x1, java.lang.foreign.MemoryAddress _x2, java.lang.foreign.MemoryAddress _x3, java.lang.foreign.MemoryAddress _x4, java.lang.foreign.MemoryAddress _x5);
-        static MemorySegment allocate(mount_fn fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(mount_fn.class, fi, _GVolumeIface.mount_fn$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, int _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4, java.lang.foreign.MemorySegment _x5);
+        static MemorySegment allocate(mount_fn fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GVolumeIface.mount_fn_UP$MH, fi, _GVolumeIface.mount_fn$FUNC, scope);
         }
-        static mount_fn ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, int __x1, java.lang.foreign.MemoryAddress __x2, java.lang.foreign.MemoryAddress __x3, java.lang.foreign.MemoryAddress __x4, java.lang.foreign.MemoryAddress __x5) -> {
+        static mount_fn ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, int __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4, java.lang.foreign.MemorySegment __x5) -> {
                 try {
-                    _GVolumeIface.mount_fn$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, __x1, (java.lang.foreign.Addressable)__x2, (java.lang.foreign.Addressable)__x3, (java.lang.foreign.Addressable)__x4, (java.lang.foreign.Addressable)__x5);
+                    _GVolumeIface.mount_fn_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -462,40 +728,68 @@ public class _GVolumeIface {
     public static VarHandle mount_fn$VH() {
         return _GVolumeIface.mount_fn$VH;
     }
-    public static MemoryAddress mount_fn$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeIface.mount_fn$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*mount_fn)(GVolume*,GMountMountFlags,GMountOperation*,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
+    public static MemorySegment mount_fn$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GVolumeIface.mount_fn$VH.get(seg);
     }
-    public static void mount_fn$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*mount_fn)(GVolume*,GMountMountFlags,GMountOperation*,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
+    public static void mount_fn$set(MemorySegment seg, MemorySegment x) {
         _GVolumeIface.mount_fn$VH.set(seg, x);
     }
-    public static MemoryAddress mount_fn$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeIface.mount_fn$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment mount_fn$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GVolumeIface.mount_fn$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void mount_fn$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void mount_fn$set(MemorySegment seg, long index, MemorySegment x) {
         _GVolumeIface.mount_fn$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static mount_fn mount_fn (MemorySegment segment, MemorySession session) {
-        return mount_fn.ofAddress(mount_fn$get(segment), session);
+    public static mount_fn mount_fn(MemorySegment segment, SegmentScope scope) {
+        return mount_fn.ofAddress(mount_fn$get(segment), scope);
     }
     static final FunctionDescriptor mount_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle mount_finish$MH = RuntimeHelper.downcallHandle(
-        _GVolumeIface.mount_finish$FUNC
+    static final FunctionDescriptor mount_finish_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle mount_finish_UP$MH = RuntimeHelper.upcallHandle(mount_finish.class, "apply", _GVolumeIface.mount_finish_UP$FUNC);
+    static final FunctionDescriptor mount_finish_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle mount_finish_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GVolumeIface.mount_finish_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*mount_finish)(GVolume*,GAsyncResult*,GError**);
+     * }
+     */
     public interface mount_finish {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2);
-        static MemorySegment allocate(mount_finish fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(mount_finish.class, fi, _GVolumeIface.mount_finish$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2);
+        static MemorySegment allocate(mount_finish fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GVolumeIface.mount_finish_UP$MH, fi, _GVolumeIface.mount_finish$FUNC, scope);
         }
-        static mount_finish ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2) -> {
+        static mount_finish ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2) -> {
                 try {
-                    return (int)_GVolumeIface.mount_finish$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2);
+                    return (int)_GVolumeIface.mount_finish_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -507,20 +801,32 @@ public class _GVolumeIface {
     public static VarHandle mount_finish$VH() {
         return _GVolumeIface.mount_finish$VH;
     }
-    public static MemoryAddress mount_finish$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeIface.mount_finish$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*mount_finish)(GVolume*,GAsyncResult*,GError**);
+     * }
+     */
+    public static MemorySegment mount_finish$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GVolumeIface.mount_finish$VH.get(seg);
     }
-    public static void mount_finish$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*mount_finish)(GVolume*,GAsyncResult*,GError**);
+     * }
+     */
+    public static void mount_finish$set(MemorySegment seg, MemorySegment x) {
         _GVolumeIface.mount_finish$VH.set(seg, x);
     }
-    public static MemoryAddress mount_finish$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeIface.mount_finish$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment mount_finish$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GVolumeIface.mount_finish$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void mount_finish$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void mount_finish$set(MemorySegment seg, long index, MemorySegment x) {
         _GVolumeIface.mount_finish$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static mount_finish mount_finish (MemorySegment segment, MemorySession session) {
-        return mount_finish.ofAddress(mount_finish$get(segment), session);
+    public static mount_finish mount_finish(MemorySegment segment, SegmentScope scope) {
+        return mount_finish.ofAddress(mount_finish$get(segment), scope);
     }
     static final FunctionDescriptor eject$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
@@ -529,20 +835,40 @@ public class _GVolumeIface {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle eject$MH = RuntimeHelper.downcallHandle(
-        _GVolumeIface.eject$FUNC
+    static final FunctionDescriptor eject_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle eject_UP$MH = RuntimeHelper.upcallHandle(eject.class, "apply", _GVolumeIface.eject_UP$FUNC);
+    static final FunctionDescriptor eject_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle eject_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GVolumeIface.eject_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*eject)(GVolume*,GMountUnmountFlags,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
     public interface eject {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, int _x1, java.lang.foreign.MemoryAddress _x2, java.lang.foreign.MemoryAddress _x3, java.lang.foreign.MemoryAddress _x4);
-        static MemorySegment allocate(eject fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(eject.class, fi, _GVolumeIface.eject$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, int _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4);
+        static MemorySegment allocate(eject fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GVolumeIface.eject_UP$MH, fi, _GVolumeIface.eject$FUNC, scope);
         }
-        static eject ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, int __x1, java.lang.foreign.MemoryAddress __x2, java.lang.foreign.MemoryAddress __x3, java.lang.foreign.MemoryAddress __x4) -> {
+        static eject ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, int __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4) -> {
                 try {
-                    _GVolumeIface.eject$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, __x1, (java.lang.foreign.Addressable)__x2, (java.lang.foreign.Addressable)__x3, (java.lang.foreign.Addressable)__x4);
+                    _GVolumeIface.eject_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -554,40 +880,68 @@ public class _GVolumeIface {
     public static VarHandle eject$VH() {
         return _GVolumeIface.eject$VH;
     }
-    public static MemoryAddress eject$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeIface.eject$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*eject)(GVolume*,GMountUnmountFlags,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
+    public static MemorySegment eject$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GVolumeIface.eject$VH.get(seg);
     }
-    public static void eject$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*eject)(GVolume*,GMountUnmountFlags,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
+    public static void eject$set(MemorySegment seg, MemorySegment x) {
         _GVolumeIface.eject$VH.set(seg, x);
     }
-    public static MemoryAddress eject$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeIface.eject$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment eject$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GVolumeIface.eject$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void eject$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void eject$set(MemorySegment seg, long index, MemorySegment x) {
         _GVolumeIface.eject$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static eject eject (MemorySegment segment, MemorySession session) {
-        return eject.ofAddress(eject$get(segment), session);
+    public static eject eject(MemorySegment segment, SegmentScope scope) {
+        return eject.ofAddress(eject$get(segment), scope);
     }
     static final FunctionDescriptor eject_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle eject_finish$MH = RuntimeHelper.downcallHandle(
-        _GVolumeIface.eject_finish$FUNC
+    static final FunctionDescriptor eject_finish_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle eject_finish_UP$MH = RuntimeHelper.upcallHandle(eject_finish.class, "apply", _GVolumeIface.eject_finish_UP$FUNC);
+    static final FunctionDescriptor eject_finish_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle eject_finish_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GVolumeIface.eject_finish_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*eject_finish)(GVolume*,GAsyncResult*,GError**);
+     * }
+     */
     public interface eject_finish {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2);
-        static MemorySegment allocate(eject_finish fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(eject_finish.class, fi, _GVolumeIface.eject_finish$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2);
+        static MemorySegment allocate(eject_finish fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GVolumeIface.eject_finish_UP$MH, fi, _GVolumeIface.eject_finish$FUNC, scope);
         }
-        static eject_finish ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2) -> {
+        static eject_finish ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2) -> {
                 try {
-                    return (int)_GVolumeIface.eject_finish$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2);
+                    return (int)_GVolumeIface.eject_finish_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -599,39 +953,65 @@ public class _GVolumeIface {
     public static VarHandle eject_finish$VH() {
         return _GVolumeIface.eject_finish$VH;
     }
-    public static MemoryAddress eject_finish$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeIface.eject_finish$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*eject_finish)(GVolume*,GAsyncResult*,GError**);
+     * }
+     */
+    public static MemorySegment eject_finish$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GVolumeIface.eject_finish$VH.get(seg);
     }
-    public static void eject_finish$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*eject_finish)(GVolume*,GAsyncResult*,GError**);
+     * }
+     */
+    public static void eject_finish$set(MemorySegment seg, MemorySegment x) {
         _GVolumeIface.eject_finish$VH.set(seg, x);
     }
-    public static MemoryAddress eject_finish$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeIface.eject_finish$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment eject_finish$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GVolumeIface.eject_finish$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void eject_finish$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void eject_finish$set(MemorySegment seg, long index, MemorySegment x) {
         _GVolumeIface.eject_finish$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static eject_finish eject_finish (MemorySegment segment, MemorySession session) {
-        return eject_finish.ofAddress(eject_finish$get(segment), session);
+    public static eject_finish eject_finish(MemorySegment segment, SegmentScope scope) {
+        return eject_finish.ofAddress(eject_finish$get(segment), scope);
     }
     static final FunctionDescriptor get_identifier$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_identifier$MH = RuntimeHelper.downcallHandle(
-        _GVolumeIface.get_identifier$FUNC
+    static final FunctionDescriptor get_identifier_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_identifier_UP$MH = RuntimeHelper.upcallHandle(get_identifier.class, "apply", _GVolumeIface.get_identifier_UP$FUNC);
+    static final FunctionDescriptor get_identifier_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_identifier_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GVolumeIface.get_identifier_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * char* (*get_identifier)(GVolume*,char*);
+     * }
+     */
     public interface get_identifier {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(get_identifier fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_identifier.class, fi, _GVolumeIface.get_identifier$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment func_data);
+        static MemorySegment allocate(get_identifier fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GVolumeIface.get_identifier_UP$MH, fi, _GVolumeIface.get_identifier$FUNC, scope);
         }
-        static get_identifier ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static get_identifier ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _path, java.lang.foreign.MemorySegment _func_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GVolumeIface.get_identifier$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    return (java.lang.foreign.MemorySegment)_GVolumeIface.get_identifier_DOWN$MH.invokeExact(symbol, _path, _func_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -643,38 +1023,62 @@ public class _GVolumeIface {
     public static VarHandle get_identifier$VH() {
         return _GVolumeIface.get_identifier$VH;
     }
-    public static MemoryAddress get_identifier$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeIface.get_identifier$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * char* (*get_identifier)(GVolume*,char*);
+     * }
+     */
+    public static MemorySegment get_identifier$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GVolumeIface.get_identifier$VH.get(seg);
     }
-    public static void get_identifier$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * char* (*get_identifier)(GVolume*,char*);
+     * }
+     */
+    public static void get_identifier$set(MemorySegment seg, MemorySegment x) {
         _GVolumeIface.get_identifier$VH.set(seg, x);
     }
-    public static MemoryAddress get_identifier$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeIface.get_identifier$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_identifier$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GVolumeIface.get_identifier$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_identifier$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_identifier$set(MemorySegment seg, long index, MemorySegment x) {
         _GVolumeIface.get_identifier$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_identifier get_identifier (MemorySegment segment, MemorySession session) {
-        return get_identifier.ofAddress(get_identifier$get(segment), session);
+    public static get_identifier get_identifier(MemorySegment segment, SegmentScope scope) {
+        return get_identifier.ofAddress(get_identifier$get(segment), scope);
     }
     static final FunctionDescriptor enumerate_identifiers$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle enumerate_identifiers$MH = RuntimeHelper.downcallHandle(
-        _GVolumeIface.enumerate_identifiers$FUNC
+    static final FunctionDescriptor enumerate_identifiers_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle enumerate_identifiers_UP$MH = RuntimeHelper.upcallHandle(enumerate_identifiers.class, "apply", _GVolumeIface.enumerate_identifiers_UP$FUNC);
+    static final FunctionDescriptor enumerate_identifiers_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle enumerate_identifiers_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GVolumeIface.enumerate_identifiers_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * char** (*enumerate_identifiers)(GVolume*);
+     * }
+     */
     public interface enumerate_identifiers {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(enumerate_identifiers fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(enumerate_identifiers.class, fi, _GVolumeIface.enumerate_identifiers$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(enumerate_identifiers fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GVolumeIface.enumerate_identifiers_UP$MH, fi, _GVolumeIface.enumerate_identifiers$FUNC, scope);
         }
-        static enumerate_identifiers ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static enumerate_identifiers ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GVolumeIface.enumerate_identifiers$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (java.lang.foreign.MemorySegment)_GVolumeIface.enumerate_identifiers_DOWN$MH.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -686,38 +1090,62 @@ public class _GVolumeIface {
     public static VarHandle enumerate_identifiers$VH() {
         return _GVolumeIface.enumerate_identifiers$VH;
     }
-    public static MemoryAddress enumerate_identifiers$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeIface.enumerate_identifiers$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * char** (*enumerate_identifiers)(GVolume*);
+     * }
+     */
+    public static MemorySegment enumerate_identifiers$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GVolumeIface.enumerate_identifiers$VH.get(seg);
     }
-    public static void enumerate_identifiers$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * char** (*enumerate_identifiers)(GVolume*);
+     * }
+     */
+    public static void enumerate_identifiers$set(MemorySegment seg, MemorySegment x) {
         _GVolumeIface.enumerate_identifiers$VH.set(seg, x);
     }
-    public static MemoryAddress enumerate_identifiers$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeIface.enumerate_identifiers$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment enumerate_identifiers$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GVolumeIface.enumerate_identifiers$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void enumerate_identifiers$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void enumerate_identifiers$set(MemorySegment seg, long index, MemorySegment x) {
         _GVolumeIface.enumerate_identifiers$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static enumerate_identifiers enumerate_identifiers (MemorySegment segment, MemorySession session) {
-        return enumerate_identifiers.ofAddress(enumerate_identifiers$get(segment), session);
+    public static enumerate_identifiers enumerate_identifiers(MemorySegment segment, SegmentScope scope) {
+        return enumerate_identifiers.ofAddress(enumerate_identifiers$get(segment), scope);
     }
     static final FunctionDescriptor should_automount$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle should_automount$MH = RuntimeHelper.downcallHandle(
-        _GVolumeIface.should_automount$FUNC
+    static final FunctionDescriptor should_automount_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle should_automount_UP$MH = RuntimeHelper.upcallHandle(should_automount.class, "apply", _GVolumeIface.should_automount_UP$FUNC);
+    static final FunctionDescriptor should_automount_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle should_automount_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GVolumeIface.should_automount_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*should_automount)(GVolume*);
+     * }
+     */
     public interface should_automount {
 
-        int apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(should_automount fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(should_automount.class, fi, _GVolumeIface.should_automount$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0);
+        static MemorySegment allocate(should_automount fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GVolumeIface.should_automount_UP$MH, fi, _GVolumeIface.should_automount$FUNC, scope);
         }
-        static should_automount ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static should_automount ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0) -> {
                 try {
-                    return (int)_GVolumeIface.should_automount$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (int)_GVolumeIface.should_automount_DOWN$MH.invokeExact(symbol, __x0);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -729,38 +1157,62 @@ public class _GVolumeIface {
     public static VarHandle should_automount$VH() {
         return _GVolumeIface.should_automount$VH;
     }
-    public static MemoryAddress should_automount$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeIface.should_automount$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*should_automount)(GVolume*);
+     * }
+     */
+    public static MemorySegment should_automount$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GVolumeIface.should_automount$VH.get(seg);
     }
-    public static void should_automount$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*should_automount)(GVolume*);
+     * }
+     */
+    public static void should_automount$set(MemorySegment seg, MemorySegment x) {
         _GVolumeIface.should_automount$VH.set(seg, x);
     }
-    public static MemoryAddress should_automount$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeIface.should_automount$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment should_automount$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GVolumeIface.should_automount$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void should_automount$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void should_automount$set(MemorySegment seg, long index, MemorySegment x) {
         _GVolumeIface.should_automount$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static should_automount should_automount (MemorySegment segment, MemorySession session) {
-        return should_automount.ofAddress(should_automount$get(segment), session);
+    public static should_automount should_automount(MemorySegment segment, SegmentScope scope) {
+        return should_automount.ofAddress(should_automount$get(segment), scope);
     }
     static final FunctionDescriptor get_activation_root$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_activation_root$MH = RuntimeHelper.downcallHandle(
-        _GVolumeIface.get_activation_root$FUNC
+    static final FunctionDescriptor get_activation_root_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_activation_root_UP$MH = RuntimeHelper.upcallHandle(get_activation_root.class, "apply", _GVolumeIface.get_activation_root_UP$FUNC);
+    static final FunctionDescriptor get_activation_root_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_activation_root_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GVolumeIface.get_activation_root_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * GFile* (*get_activation_root)(GVolume*);
+     * }
+     */
     public interface get_activation_root {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(get_activation_root fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_activation_root.class, fi, _GVolumeIface.get_activation_root$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(get_activation_root fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GVolumeIface.get_activation_root_UP$MH, fi, _GVolumeIface.get_activation_root$FUNC, scope);
         }
-        static get_activation_root ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static get_activation_root ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GVolumeIface.get_activation_root$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (java.lang.foreign.MemorySegment)_GVolumeIface.get_activation_root_DOWN$MH.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -772,20 +1224,32 @@ public class _GVolumeIface {
     public static VarHandle get_activation_root$VH() {
         return _GVolumeIface.get_activation_root$VH;
     }
-    public static MemoryAddress get_activation_root$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeIface.get_activation_root$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GFile* (*get_activation_root)(GVolume*);
+     * }
+     */
+    public static MemorySegment get_activation_root$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GVolumeIface.get_activation_root$VH.get(seg);
     }
-    public static void get_activation_root$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GFile* (*get_activation_root)(GVolume*);
+     * }
+     */
+    public static void get_activation_root$set(MemorySegment seg, MemorySegment x) {
         _GVolumeIface.get_activation_root$VH.set(seg, x);
     }
-    public static MemoryAddress get_activation_root$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeIface.get_activation_root$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_activation_root$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GVolumeIface.get_activation_root$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_activation_root$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_activation_root$set(MemorySegment seg, long index, MemorySegment x) {
         _GVolumeIface.get_activation_root$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_activation_root get_activation_root (MemorySegment segment, MemorySession session) {
-        return get_activation_root.ofAddress(get_activation_root$get(segment), session);
+    public static get_activation_root get_activation_root(MemorySegment segment, SegmentScope scope) {
+        return get_activation_root.ofAddress(get_activation_root$get(segment), scope);
     }
     static final FunctionDescriptor eject_with_operation$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
@@ -795,20 +1259,42 @@ public class _GVolumeIface {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle eject_with_operation$MH = RuntimeHelper.downcallHandle(
-        _GVolumeIface.eject_with_operation$FUNC
+    static final FunctionDescriptor eject_with_operation_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle eject_with_operation_UP$MH = RuntimeHelper.upcallHandle(eject_with_operation.class, "apply", _GVolumeIface.eject_with_operation_UP$FUNC);
+    static final FunctionDescriptor eject_with_operation_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle eject_with_operation_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GVolumeIface.eject_with_operation_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*eject_with_operation)(GVolume*,GMountUnmountFlags,GMountOperation*,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
     public interface eject_with_operation {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, int _x1, java.lang.foreign.MemoryAddress _x2, java.lang.foreign.MemoryAddress _x3, java.lang.foreign.MemoryAddress _x4, java.lang.foreign.MemoryAddress _x5);
-        static MemorySegment allocate(eject_with_operation fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(eject_with_operation.class, fi, _GVolumeIface.eject_with_operation$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, int _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4, java.lang.foreign.MemorySegment _x5);
+        static MemorySegment allocate(eject_with_operation fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GVolumeIface.eject_with_operation_UP$MH, fi, _GVolumeIface.eject_with_operation$FUNC, scope);
         }
-        static eject_with_operation ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, int __x1, java.lang.foreign.MemoryAddress __x2, java.lang.foreign.MemoryAddress __x3, java.lang.foreign.MemoryAddress __x4, java.lang.foreign.MemoryAddress __x5) -> {
+        static eject_with_operation ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, int __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4, java.lang.foreign.MemorySegment __x5) -> {
                 try {
-                    _GVolumeIface.eject_with_operation$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, __x1, (java.lang.foreign.Addressable)__x2, (java.lang.foreign.Addressable)__x3, (java.lang.foreign.Addressable)__x4, (java.lang.foreign.Addressable)__x5);
+                    _GVolumeIface.eject_with_operation_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -820,40 +1306,68 @@ public class _GVolumeIface {
     public static VarHandle eject_with_operation$VH() {
         return _GVolumeIface.eject_with_operation$VH;
     }
-    public static MemoryAddress eject_with_operation$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeIface.eject_with_operation$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*eject_with_operation)(GVolume*,GMountUnmountFlags,GMountOperation*,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
+    public static MemorySegment eject_with_operation$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GVolumeIface.eject_with_operation$VH.get(seg);
     }
-    public static void eject_with_operation$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*eject_with_operation)(GVolume*,GMountUnmountFlags,GMountOperation*,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
+    public static void eject_with_operation$set(MemorySegment seg, MemorySegment x) {
         _GVolumeIface.eject_with_operation$VH.set(seg, x);
     }
-    public static MemoryAddress eject_with_operation$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeIface.eject_with_operation$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment eject_with_operation$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GVolumeIface.eject_with_operation$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void eject_with_operation$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void eject_with_operation$set(MemorySegment seg, long index, MemorySegment x) {
         _GVolumeIface.eject_with_operation$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static eject_with_operation eject_with_operation (MemorySegment segment, MemorySession session) {
-        return eject_with_operation.ofAddress(eject_with_operation$get(segment), session);
+    public static eject_with_operation eject_with_operation(MemorySegment segment, SegmentScope scope) {
+        return eject_with_operation.ofAddress(eject_with_operation$get(segment), scope);
     }
     static final FunctionDescriptor eject_with_operation_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle eject_with_operation_finish$MH = RuntimeHelper.downcallHandle(
-        _GVolumeIface.eject_with_operation_finish$FUNC
+    static final FunctionDescriptor eject_with_operation_finish_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle eject_with_operation_finish_UP$MH = RuntimeHelper.upcallHandle(eject_with_operation_finish.class, "apply", _GVolumeIface.eject_with_operation_finish_UP$FUNC);
+    static final FunctionDescriptor eject_with_operation_finish_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle eject_with_operation_finish_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GVolumeIface.eject_with_operation_finish_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*eject_with_operation_finish)(GVolume*,GAsyncResult*,GError**);
+     * }
+     */
     public interface eject_with_operation_finish {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2);
-        static MemorySegment allocate(eject_with_operation_finish fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(eject_with_operation_finish.class, fi, _GVolumeIface.eject_with_operation_finish$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2);
+        static MemorySegment allocate(eject_with_operation_finish fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GVolumeIface.eject_with_operation_finish_UP$MH, fi, _GVolumeIface.eject_with_operation_finish$FUNC, scope);
         }
-        static eject_with_operation_finish ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2) -> {
+        static eject_with_operation_finish ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2) -> {
                 try {
-                    return (int)_GVolumeIface.eject_with_operation_finish$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2);
+                    return (int)_GVolumeIface.eject_with_operation_finish_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -865,38 +1379,62 @@ public class _GVolumeIface {
     public static VarHandle eject_with_operation_finish$VH() {
         return _GVolumeIface.eject_with_operation_finish$VH;
     }
-    public static MemoryAddress eject_with_operation_finish$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeIface.eject_with_operation_finish$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*eject_with_operation_finish)(GVolume*,GAsyncResult*,GError**);
+     * }
+     */
+    public static MemorySegment eject_with_operation_finish$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GVolumeIface.eject_with_operation_finish$VH.get(seg);
     }
-    public static void eject_with_operation_finish$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*eject_with_operation_finish)(GVolume*,GAsyncResult*,GError**);
+     * }
+     */
+    public static void eject_with_operation_finish$set(MemorySegment seg, MemorySegment x) {
         _GVolumeIface.eject_with_operation_finish$VH.set(seg, x);
     }
-    public static MemoryAddress eject_with_operation_finish$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeIface.eject_with_operation_finish$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment eject_with_operation_finish$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GVolumeIface.eject_with_operation_finish$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void eject_with_operation_finish$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void eject_with_operation_finish$set(MemorySegment seg, long index, MemorySegment x) {
         _GVolumeIface.eject_with_operation_finish$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static eject_with_operation_finish eject_with_operation_finish (MemorySegment segment, MemorySession session) {
-        return eject_with_operation_finish.ofAddress(eject_with_operation_finish$get(segment), session);
+    public static eject_with_operation_finish eject_with_operation_finish(MemorySegment segment, SegmentScope scope) {
+        return eject_with_operation_finish.ofAddress(eject_with_operation_finish$get(segment), scope);
     }
     static final FunctionDescriptor get_sort_key$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_sort_key$MH = RuntimeHelper.downcallHandle(
-        _GVolumeIface.get_sort_key$FUNC
+    static final FunctionDescriptor get_sort_key_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_sort_key_UP$MH = RuntimeHelper.upcallHandle(get_sort_key.class, "apply", _GVolumeIface.get_sort_key_UP$FUNC);
+    static final FunctionDescriptor get_sort_key_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_sort_key_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GVolumeIface.get_sort_key_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * const gchar* (*get_sort_key)(GVolume*);
+     * }
+     */
     public interface get_sort_key {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(get_sort_key fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_sort_key.class, fi, _GVolumeIface.get_sort_key$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(get_sort_key fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GVolumeIface.get_sort_key_UP$MH, fi, _GVolumeIface.get_sort_key$FUNC, scope);
         }
-        static get_sort_key ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static get_sort_key ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GVolumeIface.get_sort_key$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (java.lang.foreign.MemorySegment)_GVolumeIface.get_sort_key_DOWN$MH.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -908,38 +1446,62 @@ public class _GVolumeIface {
     public static VarHandle get_sort_key$VH() {
         return _GVolumeIface.get_sort_key$VH;
     }
-    public static MemoryAddress get_sort_key$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeIface.get_sort_key$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * const gchar* (*get_sort_key)(GVolume*);
+     * }
+     */
+    public static MemorySegment get_sort_key$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GVolumeIface.get_sort_key$VH.get(seg);
     }
-    public static void get_sort_key$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * const gchar* (*get_sort_key)(GVolume*);
+     * }
+     */
+    public static void get_sort_key$set(MemorySegment seg, MemorySegment x) {
         _GVolumeIface.get_sort_key$VH.set(seg, x);
     }
-    public static MemoryAddress get_sort_key$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeIface.get_sort_key$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_sort_key$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GVolumeIface.get_sort_key$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_sort_key$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_sort_key$set(MemorySegment seg, long index, MemorySegment x) {
         _GVolumeIface.get_sort_key$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_sort_key get_sort_key (MemorySegment segment, MemorySession session) {
-        return get_sort_key.ofAddress(get_sort_key$get(segment), session);
+    public static get_sort_key get_sort_key(MemorySegment segment, SegmentScope scope) {
+        return get_sort_key.ofAddress(get_sort_key$get(segment), scope);
     }
     static final FunctionDescriptor get_symbolic_icon$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_symbolic_icon$MH = RuntimeHelper.downcallHandle(
-        _GVolumeIface.get_symbolic_icon$FUNC
+    static final FunctionDescriptor get_symbolic_icon_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_symbolic_icon_UP$MH = RuntimeHelper.upcallHandle(get_symbolic_icon.class, "apply", _GVolumeIface.get_symbolic_icon_UP$FUNC);
+    static final FunctionDescriptor get_symbolic_icon_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_symbolic_icon_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GVolumeIface.get_symbolic_icon_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * GIcon* (*get_symbolic_icon)(GVolume*);
+     * }
+     */
     public interface get_symbolic_icon {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(get_symbolic_icon fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_symbolic_icon.class, fi, _GVolumeIface.get_symbolic_icon$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(get_symbolic_icon fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GVolumeIface.get_symbolic_icon_UP$MH, fi, _GVolumeIface.get_symbolic_icon$FUNC, scope);
         }
-        static get_symbolic_icon ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static get_symbolic_icon ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GVolumeIface.get_symbolic_icon$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (java.lang.foreign.MemorySegment)_GVolumeIface.get_symbolic_icon_DOWN$MH.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -951,27 +1513,39 @@ public class _GVolumeIface {
     public static VarHandle get_symbolic_icon$VH() {
         return _GVolumeIface.get_symbolic_icon$VH;
     }
-    public static MemoryAddress get_symbolic_icon$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeIface.get_symbolic_icon$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GIcon* (*get_symbolic_icon)(GVolume*);
+     * }
+     */
+    public static MemorySegment get_symbolic_icon$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GVolumeIface.get_symbolic_icon$VH.get(seg);
     }
-    public static void get_symbolic_icon$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GIcon* (*get_symbolic_icon)(GVolume*);
+     * }
+     */
+    public static void get_symbolic_icon$set(MemorySegment seg, MemorySegment x) {
         _GVolumeIface.get_symbolic_icon$VH.set(seg, x);
     }
-    public static MemoryAddress get_symbolic_icon$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GVolumeIface.get_symbolic_icon$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_symbolic_icon$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GVolumeIface.get_symbolic_icon$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_symbolic_icon$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_symbolic_icon$set(MemorySegment seg, long index, MemorySegment x) {
         _GVolumeIface.get_symbolic_icon$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_symbolic_icon get_symbolic_icon (MemorySegment segment, MemorySession session) {
-        return get_symbolic_icon.ofAddress(get_symbolic_icon$get(segment), session);
+    public static get_symbolic_icon get_symbolic_icon(MemorySegment segment, SegmentScope scope) {
+        return get_symbolic_icon.ofAddress(get_symbolic_icon$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

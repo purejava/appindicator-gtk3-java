@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkBinClass extends _GtkBinClass {
+/**
+ * {@snippet :
+ * typedef struct _GtkBinClass GtkBinClass;
+ * }
+ */
+public final class GtkBinClass extends _GtkBinClass {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkBinClass() {}
 }
 
 

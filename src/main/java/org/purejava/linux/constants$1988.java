@@ -7,54 +7,16 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1988 {
+final class constants$1988 {
 
-    static final FunctionDescriptor gtk_revealer_set_transition_type$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_revealer_set_transition_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_revealer_set_transition_type",
-        constants$1988.gtk_revealer_set_transition_type$FUNC
-    );
-    static final FunctionDescriptor gtk_revealer_get_transition_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_revealer_get_transition_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_revealer_get_transition_type",
-        constants$1988.gtk_revealer_get_transition_type$FUNC
-    );
-    static final FunctionDescriptor gtk_scale_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_scale_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_scale_get_type",
-        constants$1988.gtk_scale_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_scale_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_scale_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_scale_new",
-        constants$1988.gtk_scale_new$FUNC
-    );
-    static final FunctionDescriptor gtk_scale_new_with_range$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle gtk_scale_new_with_range$MH = RuntimeHelper.downcallHandle(
-        "gtk_scale_new_with_range",
-        constants$1988.gtk_scale_new_with_range$FUNC
-    );
-    static final FunctionDescriptor gtk_scale_set_digits$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_scale_set_digits$MH = RuntimeHelper.downcallHandle(
-        "gtk_scale_set_digits",
-        constants$1988.gtk_scale_set_digits$FUNC
-    );
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1988() {}
+    static final MemorySegment G_GINTPTR_FORMAT$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("li");
+    static final MemorySegment G_GUINTPTR_FORMAT$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("lu");
+    static final MemorySegment G_MODULE_SUFFIX$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("so");
+    static final MemorySegment G_PID_FORMAT$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("i");
+    static final MemorySegment G_DIR_SEPARATOR_S$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("/");
+    static final MemorySegment G_SEARCHPATH_SEPARATOR_S$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String(":");
 }
 
 

@@ -7,58 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$319 {
+final class constants$319 {
 
-    static final FunctionDescriptor GTestLogFatalFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$319() {}
+    static final FunctionDescriptor g_test_rand_double$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT);
+    static final MethodHandle g_test_rand_double$MH = RuntimeHelper.downcallHandle(
+        "g_test_rand_double",
+        constants$319.g_test_rand_double$FUNC
+    );
+    static final FunctionDescriptor g_test_rand_double_range$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle g_test_rand_double_range$MH = RuntimeHelper.downcallHandle(
+        "g_test_rand_double_range",
+        constants$319.g_test_rand_double_range$FUNC
+    );
+    static final FunctionDescriptor g_test_create_case$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GTestLogFatalFunc$MH = RuntimeHelper.downcallHandle(
-        constants$319.GTestLogFatalFunc$FUNC
+    static final MethodHandle g_test_create_case$MH = RuntimeHelper.downcallHandle(
+        "g_test_create_case",
+        constants$319.g_test_create_case$FUNC
     );
-    static final FunctionDescriptor g_test_log_set_fatal_handler$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_test_create_suite$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_test_create_suite$MH = RuntimeHelper.downcallHandle(
+        "g_test_create_suite",
+        constants$319.g_test_create_suite$FUNC
+    );
+    static final FunctionDescriptor g_test_get_root$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle g_test_get_root$MH = RuntimeHelper.downcallHandle(
+        "g_test_get_root",
+        constants$319.g_test_get_root$FUNC
+    );
+    static final FunctionDescriptor g_test_suite_add$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_test_log_set_fatal_handler$MH = RuntimeHelper.downcallHandle(
-        "g_test_log_set_fatal_handler",
-        constants$319.g_test_log_set_fatal_handler$FUNC
-    );
-    static final FunctionDescriptor g_test_expect_message$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_test_expect_message$MH = RuntimeHelper.downcallHandle(
-        "g_test_expect_message",
-        constants$319.g_test_expect_message$FUNC
-    );
-    static final FunctionDescriptor g_test_assert_expected_messages_internal$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_test_assert_expected_messages_internal$MH = RuntimeHelper.downcallHandle(
-        "g_test_assert_expected_messages_internal",
-        constants$319.g_test_assert_expected_messages_internal$FUNC
-    );
-    static final FunctionDescriptor g_test_build_filename$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_test_build_filename$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_test_build_filename",
-        constants$319.g_test_build_filename$FUNC
-    );
-    static final FunctionDescriptor g_test_get_dir$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_test_get_dir$MH = RuntimeHelper.downcallHandle(
-        "g_test_get_dir",
-        constants$319.g_test_get_dir$FUNC
+    static final MethodHandle g_test_suite_add$MH = RuntimeHelper.downcallHandle(
+        "g_test_suite_add",
+        constants$319.g_test_suite_add$FUNC
     );
 }
 

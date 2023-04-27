@@ -7,67 +7,16 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$2024 {
+final class constants$2024 {
 
-    static final FunctionDescriptor gtk_text_buffer_set_text$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_set_text$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_set_text",
-        constants$2024.gtk_text_buffer_set_text$FUNC
-    );
-    static final FunctionDescriptor gtk_text_buffer_insert$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_insert$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_insert",
-        constants$2024.gtk_text_buffer_insert$FUNC
-    );
-    static final FunctionDescriptor gtk_text_buffer_insert_at_cursor$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_insert_at_cursor$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_insert_at_cursor",
-        constants$2024.gtk_text_buffer_insert_at_cursor$FUNC
-    );
-    static final FunctionDescriptor gtk_text_buffer_insert_interactive$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_insert_interactive$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_insert_interactive",
-        constants$2024.gtk_text_buffer_insert_interactive$FUNC
-    );
-    static final FunctionDescriptor gtk_text_buffer_insert_interactive_at_cursor$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_insert_interactive_at_cursor$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_insert_interactive_at_cursor",
-        constants$2024.gtk_text_buffer_insert_interactive_at_cursor$FUNC
-    );
-    static final FunctionDescriptor gtk_text_buffer_insert_range$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_insert_range$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_insert_range",
-        constants$2024.gtk_text_buffer_insert_range$FUNC
-    );
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$2024() {}
+    static final MemorySegment GDK_SELECTION_SECONDARY$ADDR = MemorySegment.ofAddress(2L);
+    static final MemorySegment GDK_SELECTION_CLIPBOARD$ADDR = MemorySegment.ofAddress(69L);
+    static final MemorySegment GDK_TARGET_BITMAP$ADDR = MemorySegment.ofAddress(5L);
+    static final MemorySegment GDK_TARGET_COLORMAP$ADDR = MemorySegment.ofAddress(7L);
+    static final MemorySegment GDK_TARGET_DRAWABLE$ADDR = MemorySegment.ofAddress(17L);
+    static final MemorySegment GDK_TARGET_PIXMAP$ADDR = MemorySegment.ofAddress(20L);
 }
 
 

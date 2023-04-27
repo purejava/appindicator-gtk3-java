@@ -7,9 +7,38 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GtkIMContextClass {
+ *     GObjectClass parent_class;
+ *     void (*preedit_start)(GtkIMContext*);
+ *     void (*preedit_end)(GtkIMContext*);
+ *     void (*preedit_changed)(GtkIMContext*);
+ *     void (*commit)(GtkIMContext*,const gchar*);
+ *     gboolean (*retrieve_surrounding)(GtkIMContext*);
+ *     gboolean (*delete_surrounding)(GtkIMContext*,gint,gint);
+ *     void (*set_client_window)(GtkIMContext*,GdkWindow*);
+ *     void (*get_preedit_string)(GtkIMContext*,gchar**,PangoAttrList**,gint*);
+ *     gboolean (*filter_keypress)(GtkIMContext*,GdkEventKey*);
+ *     void (*focus_in)(GtkIMContext*);
+ *     void (*focus_out)(GtkIMContext*);
+ *     void (*reset)(GtkIMContext*);
+ *     void (*set_cursor_location)(GtkIMContext*,GdkRectangle*);
+ *     void (*set_use_preedit)(GtkIMContext*,gboolean);
+ *     void (*set_surrounding)(GtkIMContext*,const gchar*,gint,gint);
+ *     gboolean (*get_surrounding)(GtkIMContext*,gchar**,gint*);
+ *     void (*_gtk_reserved1)();
+ *     void (*_gtk_reserved2)();
+ *     void (*_gtk_reserved3)();
+ *     void (*_gtk_reserved4)();
+ *     void (*_gtk_reserved5)();
+ *     void (*_gtk_reserved6)();
+ * };
+ * }
+ */
 public class _GtkIMContextClass {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
                 Constants$root.C_LONG_LONG$LAYOUT.withName("g_type")
@@ -24,7 +53,10 @@ public class _GtkIMContextClass {
             Constants$root.C_POINTER$LAYOUT.withName("notify"),
             Constants$root.C_POINTER$LAYOUT.withName("constructed"),
             Constants$root.C_LONG_LONG$LAYOUT.withName("flags"),
-            MemoryLayout.sequenceLayout(6, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
+            Constants$root.C_LONG_LONG$LAYOUT.withName("n_construct_properties"),
+            Constants$root.C_POINTER$LAYOUT.withName("pspecs"),
+            Constants$root.C_LONG_LONG$LAYOUT.withName("n_pspecs"),
+            MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
         ).withName("parent_class"),
         Constants$root.C_POINTER$LAYOUT.withName("preedit_start"),
         Constants$root.C_POINTER$LAYOUT.withName("preedit_end"),
@@ -58,20 +90,32 @@ public class _GtkIMContextClass {
     static final FunctionDescriptor preedit_start$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle preedit_start$MH = RuntimeHelper.downcallHandle(
-        _GtkIMContextClass.preedit_start$FUNC
+    static final FunctionDescriptor preedit_start_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle preedit_start_UP$MH = RuntimeHelper.upcallHandle(preedit_start.class, "apply", _GtkIMContextClass.preedit_start_UP$FUNC);
+    static final FunctionDescriptor preedit_start_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle preedit_start_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkIMContextClass.preedit_start_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*preedit_start)(GtkIMContext*);
+     * }
+     */
     public interface preedit_start {
 
-        void apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(preedit_start fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(preedit_start.class, fi, _GtkIMContextClass.preedit_start$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment display);
+        static MemorySegment allocate(preedit_start fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkIMContextClass.preedit_start_UP$MH, fi, _GtkIMContextClass.preedit_start$FUNC, scope);
         }
-        static preedit_start ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static preedit_start ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GtkIMContextClass.preedit_start$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    _GtkIMContextClass.preedit_start_DOWN$MH.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -83,38 +127,62 @@ public class _GtkIMContextClass {
     public static VarHandle preedit_start$VH() {
         return _GtkIMContextClass.preedit_start$VH;
     }
-    public static MemoryAddress preedit_start$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkIMContextClass.preedit_start$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*preedit_start)(GtkIMContext*);
+     * }
+     */
+    public static MemorySegment preedit_start$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkIMContextClass.preedit_start$VH.get(seg);
     }
-    public static void preedit_start$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*preedit_start)(GtkIMContext*);
+     * }
+     */
+    public static void preedit_start$set(MemorySegment seg, MemorySegment x) {
         _GtkIMContextClass.preedit_start$VH.set(seg, x);
     }
-    public static MemoryAddress preedit_start$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkIMContextClass.preedit_start$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment preedit_start$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkIMContextClass.preedit_start$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void preedit_start$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void preedit_start$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkIMContextClass.preedit_start$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static preedit_start preedit_start (MemorySegment segment, MemorySession session) {
-        return preedit_start.ofAddress(preedit_start$get(segment), session);
+    public static preedit_start preedit_start(MemorySegment segment, SegmentScope scope) {
+        return preedit_start.ofAddress(preedit_start$get(segment), scope);
     }
     static final FunctionDescriptor preedit_end$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle preedit_end$MH = RuntimeHelper.downcallHandle(
-        _GtkIMContextClass.preedit_end$FUNC
+    static final FunctionDescriptor preedit_end_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle preedit_end_UP$MH = RuntimeHelper.upcallHandle(preedit_end.class, "apply", _GtkIMContextClass.preedit_end_UP$FUNC);
+    static final FunctionDescriptor preedit_end_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle preedit_end_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkIMContextClass.preedit_end_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*preedit_end)(GtkIMContext*);
+     * }
+     */
     public interface preedit_end {
 
-        void apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(preedit_end fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(preedit_end.class, fi, _GtkIMContextClass.preedit_end$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment display);
+        static MemorySegment allocate(preedit_end fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkIMContextClass.preedit_end_UP$MH, fi, _GtkIMContextClass.preedit_end$FUNC, scope);
         }
-        static preedit_end ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static preedit_end ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GtkIMContextClass.preedit_end$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    _GtkIMContextClass.preedit_end_DOWN$MH.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -126,38 +194,62 @@ public class _GtkIMContextClass {
     public static VarHandle preedit_end$VH() {
         return _GtkIMContextClass.preedit_end$VH;
     }
-    public static MemoryAddress preedit_end$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkIMContextClass.preedit_end$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*preedit_end)(GtkIMContext*);
+     * }
+     */
+    public static MemorySegment preedit_end$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkIMContextClass.preedit_end$VH.get(seg);
     }
-    public static void preedit_end$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*preedit_end)(GtkIMContext*);
+     * }
+     */
+    public static void preedit_end$set(MemorySegment seg, MemorySegment x) {
         _GtkIMContextClass.preedit_end$VH.set(seg, x);
     }
-    public static MemoryAddress preedit_end$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkIMContextClass.preedit_end$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment preedit_end$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkIMContextClass.preedit_end$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void preedit_end$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void preedit_end$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkIMContextClass.preedit_end$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static preedit_end preedit_end (MemorySegment segment, MemorySession session) {
-        return preedit_end.ofAddress(preedit_end$get(segment), session);
+    public static preedit_end preedit_end(MemorySegment segment, SegmentScope scope) {
+        return preedit_end.ofAddress(preedit_end$get(segment), scope);
     }
     static final FunctionDescriptor preedit_changed$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle preedit_changed$MH = RuntimeHelper.downcallHandle(
-        _GtkIMContextClass.preedit_changed$FUNC
+    static final FunctionDescriptor preedit_changed_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle preedit_changed_UP$MH = RuntimeHelper.upcallHandle(preedit_changed.class, "apply", _GtkIMContextClass.preedit_changed_UP$FUNC);
+    static final FunctionDescriptor preedit_changed_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle preedit_changed_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkIMContextClass.preedit_changed_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*preedit_changed)(GtkIMContext*);
+     * }
+     */
     public interface preedit_changed {
 
-        void apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(preedit_changed fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(preedit_changed.class, fi, _GtkIMContextClass.preedit_changed$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment display);
+        static MemorySegment allocate(preedit_changed fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkIMContextClass.preedit_changed_UP$MH, fi, _GtkIMContextClass.preedit_changed$FUNC, scope);
         }
-        static preedit_changed ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static preedit_changed ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GtkIMContextClass.preedit_changed$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    _GtkIMContextClass.preedit_changed_DOWN$MH.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -169,39 +261,65 @@ public class _GtkIMContextClass {
     public static VarHandle preedit_changed$VH() {
         return _GtkIMContextClass.preedit_changed$VH;
     }
-    public static MemoryAddress preedit_changed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkIMContextClass.preedit_changed$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*preedit_changed)(GtkIMContext*);
+     * }
+     */
+    public static MemorySegment preedit_changed$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkIMContextClass.preedit_changed$VH.get(seg);
     }
-    public static void preedit_changed$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*preedit_changed)(GtkIMContext*);
+     * }
+     */
+    public static void preedit_changed$set(MemorySegment seg, MemorySegment x) {
         _GtkIMContextClass.preedit_changed$VH.set(seg, x);
     }
-    public static MemoryAddress preedit_changed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkIMContextClass.preedit_changed$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment preedit_changed$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkIMContextClass.preedit_changed$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void preedit_changed$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void preedit_changed$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkIMContextClass.preedit_changed$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static preedit_changed preedit_changed (MemorySegment segment, MemorySession session) {
-        return preedit_changed.ofAddress(preedit_changed$get(segment), session);
+    public static preedit_changed preedit_changed(MemorySegment segment, SegmentScope scope) {
+        return preedit_changed.ofAddress(preedit_changed$get(segment), scope);
     }
     static final FunctionDescriptor commit$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle commit$MH = RuntimeHelper.downcallHandle(
-        _GtkIMContextClass.commit$FUNC
+    static final FunctionDescriptor commit_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle commit_UP$MH = RuntimeHelper.upcallHandle(commit.class, "apply", _GtkIMContextClass.commit_UP$FUNC);
+    static final FunctionDescriptor commit_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle commit_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkIMContextClass.commit_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*commit)(GtkIMContext*,const gchar*);
+     * }
+     */
     public interface commit {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(commit fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(commit.class, fi, _GtkIMContextClass.commit$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+        static MemorySegment allocate(commit fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkIMContextClass.commit_UP$MH, fi, _GtkIMContextClass.commit$FUNC, scope);
         }
-        static commit ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static commit ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GtkIMContextClass.commit$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    _GtkIMContextClass.commit_DOWN$MH.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -213,38 +331,62 @@ public class _GtkIMContextClass {
     public static VarHandle commit$VH() {
         return _GtkIMContextClass.commit$VH;
     }
-    public static MemoryAddress commit$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkIMContextClass.commit$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*commit)(GtkIMContext*,const gchar*);
+     * }
+     */
+    public static MemorySegment commit$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkIMContextClass.commit$VH.get(seg);
     }
-    public static void commit$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*commit)(GtkIMContext*,const gchar*);
+     * }
+     */
+    public static void commit$set(MemorySegment seg, MemorySegment x) {
         _GtkIMContextClass.commit$VH.set(seg, x);
     }
-    public static MemoryAddress commit$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkIMContextClass.commit$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment commit$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkIMContextClass.commit$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void commit$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void commit$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkIMContextClass.commit$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static commit commit (MemorySegment segment, MemorySession session) {
-        return commit.ofAddress(commit$get(segment), session);
+    public static commit commit(MemorySegment segment, SegmentScope scope) {
+        return commit.ofAddress(commit$get(segment), scope);
     }
     static final FunctionDescriptor retrieve_surrounding$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle retrieve_surrounding$MH = RuntimeHelper.downcallHandle(
-        _GtkIMContextClass.retrieve_surrounding$FUNC
+    static final FunctionDescriptor retrieve_surrounding_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle retrieve_surrounding_UP$MH = RuntimeHelper.upcallHandle(retrieve_surrounding.class, "apply", _GtkIMContextClass.retrieve_surrounding_UP$FUNC);
+    static final FunctionDescriptor retrieve_surrounding_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle retrieve_surrounding_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkIMContextClass.retrieve_surrounding_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*retrieve_surrounding)(GtkIMContext*);
+     * }
+     */
     public interface retrieve_surrounding {
 
-        int apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(retrieve_surrounding fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(retrieve_surrounding.class, fi, _GtkIMContextClass.retrieve_surrounding$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0);
+        static MemorySegment allocate(retrieve_surrounding fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkIMContextClass.retrieve_surrounding_UP$MH, fi, _GtkIMContextClass.retrieve_surrounding$FUNC, scope);
         }
-        static retrieve_surrounding ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static retrieve_surrounding ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0) -> {
                 try {
-                    return (int)_GtkIMContextClass.retrieve_surrounding$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (int)_GtkIMContextClass.retrieve_surrounding_DOWN$MH.invokeExact(symbol, __x0);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -256,40 +398,68 @@ public class _GtkIMContextClass {
     public static VarHandle retrieve_surrounding$VH() {
         return _GtkIMContextClass.retrieve_surrounding$VH;
     }
-    public static MemoryAddress retrieve_surrounding$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkIMContextClass.retrieve_surrounding$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*retrieve_surrounding)(GtkIMContext*);
+     * }
+     */
+    public static MemorySegment retrieve_surrounding$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkIMContextClass.retrieve_surrounding$VH.get(seg);
     }
-    public static void retrieve_surrounding$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*retrieve_surrounding)(GtkIMContext*);
+     * }
+     */
+    public static void retrieve_surrounding$set(MemorySegment seg, MemorySegment x) {
         _GtkIMContextClass.retrieve_surrounding$VH.set(seg, x);
     }
-    public static MemoryAddress retrieve_surrounding$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkIMContextClass.retrieve_surrounding$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment retrieve_surrounding$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkIMContextClass.retrieve_surrounding$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void retrieve_surrounding$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void retrieve_surrounding$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkIMContextClass.retrieve_surrounding$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static retrieve_surrounding retrieve_surrounding (MemorySegment segment, MemorySession session) {
-        return retrieve_surrounding.ofAddress(retrieve_surrounding$get(segment), session);
+    public static retrieve_surrounding retrieve_surrounding(MemorySegment segment, SegmentScope scope) {
+        return retrieve_surrounding.ofAddress(retrieve_surrounding$get(segment), scope);
     }
     static final FunctionDescriptor delete_surrounding$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle delete_surrounding$MH = RuntimeHelper.downcallHandle(
-        _GtkIMContextClass.delete_surrounding$FUNC
+    static final FunctionDescriptor delete_surrounding_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle delete_surrounding_UP$MH = RuntimeHelper.upcallHandle(delete_surrounding.class, "apply", _GtkIMContextClass.delete_surrounding_UP$FUNC);
+    static final FunctionDescriptor delete_surrounding_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle delete_surrounding_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkIMContextClass.delete_surrounding_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*delete_surrounding)(GtkIMContext*,gint,gint);
+     * }
+     */
     public interface delete_surrounding {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, int _x1, int _x2);
-        static MemorySegment allocate(delete_surrounding fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(delete_surrounding.class, fi, _GtkIMContextClass.delete_surrounding$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, int _x1, int _x2);
+        static MemorySegment allocate(delete_surrounding fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkIMContextClass.delete_surrounding_UP$MH, fi, _GtkIMContextClass.delete_surrounding$FUNC, scope);
         }
-        static delete_surrounding ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, int __x1, int __x2) -> {
+        static delete_surrounding ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, int __x1, int __x2) -> {
                 try {
-                    return (int)_GtkIMContextClass.delete_surrounding$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, __x1, __x2);
+                    return (int)_GtkIMContextClass.delete_surrounding_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -301,39 +471,65 @@ public class _GtkIMContextClass {
     public static VarHandle delete_surrounding$VH() {
         return _GtkIMContextClass.delete_surrounding$VH;
     }
-    public static MemoryAddress delete_surrounding$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkIMContextClass.delete_surrounding$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*delete_surrounding)(GtkIMContext*,gint,gint);
+     * }
+     */
+    public static MemorySegment delete_surrounding$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkIMContextClass.delete_surrounding$VH.get(seg);
     }
-    public static void delete_surrounding$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*delete_surrounding)(GtkIMContext*,gint,gint);
+     * }
+     */
+    public static void delete_surrounding$set(MemorySegment seg, MemorySegment x) {
         _GtkIMContextClass.delete_surrounding$VH.set(seg, x);
     }
-    public static MemoryAddress delete_surrounding$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkIMContextClass.delete_surrounding$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment delete_surrounding$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkIMContextClass.delete_surrounding$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void delete_surrounding$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void delete_surrounding$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkIMContextClass.delete_surrounding$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static delete_surrounding delete_surrounding (MemorySegment segment, MemorySession session) {
-        return delete_surrounding.ofAddress(delete_surrounding$get(segment), session);
+    public static delete_surrounding delete_surrounding(MemorySegment segment, SegmentScope scope) {
+        return delete_surrounding.ofAddress(delete_surrounding$get(segment), scope);
     }
     static final FunctionDescriptor set_client_window$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle set_client_window$MH = RuntimeHelper.downcallHandle(
-        _GtkIMContextClass.set_client_window$FUNC
+    static final FunctionDescriptor set_client_window_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle set_client_window_UP$MH = RuntimeHelper.upcallHandle(set_client_window.class, "apply", _GtkIMContextClass.set_client_window_UP$FUNC);
+    static final FunctionDescriptor set_client_window_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle set_client_window_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkIMContextClass.set_client_window_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*set_client_window)(GtkIMContext*,GdkWindow*);
+     * }
+     */
     public interface set_client_window {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(set_client_window fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(set_client_window.class, fi, _GtkIMContextClass.set_client_window$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+        static MemorySegment allocate(set_client_window fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkIMContextClass.set_client_window_UP$MH, fi, _GtkIMContextClass.set_client_window$FUNC, scope);
         }
-        static set_client_window ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static set_client_window ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GtkIMContextClass.set_client_window$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    _GtkIMContextClass.set_client_window_DOWN$MH.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -345,20 +541,32 @@ public class _GtkIMContextClass {
     public static VarHandle set_client_window$VH() {
         return _GtkIMContextClass.set_client_window$VH;
     }
-    public static MemoryAddress set_client_window$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkIMContextClass.set_client_window$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*set_client_window)(GtkIMContext*,GdkWindow*);
+     * }
+     */
+    public static MemorySegment set_client_window$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkIMContextClass.set_client_window$VH.get(seg);
     }
-    public static void set_client_window$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*set_client_window)(GtkIMContext*,GdkWindow*);
+     * }
+     */
+    public static void set_client_window$set(MemorySegment seg, MemorySegment x) {
         _GtkIMContextClass.set_client_window$VH.set(seg, x);
     }
-    public static MemoryAddress set_client_window$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkIMContextClass.set_client_window$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment set_client_window$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkIMContextClass.set_client_window$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void set_client_window$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void set_client_window$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkIMContextClass.set_client_window$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static set_client_window set_client_window (MemorySegment segment, MemorySession session) {
-        return set_client_window.ofAddress(set_client_window$get(segment), session);
+    public static set_client_window set_client_window(MemorySegment segment, SegmentScope scope) {
+        return set_client_window.ofAddress(set_client_window$get(segment), scope);
     }
     static final FunctionDescriptor get_preedit_string$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
@@ -366,20 +574,38 @@ public class _GtkIMContextClass {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_preedit_string$MH = RuntimeHelper.downcallHandle(
-        _GtkIMContextClass.get_preedit_string$FUNC
+    static final FunctionDescriptor get_preedit_string_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_preedit_string_UP$MH = RuntimeHelper.upcallHandle(get_preedit_string.class, "apply", _GtkIMContextClass.get_preedit_string_UP$FUNC);
+    static final FunctionDescriptor get_preedit_string_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_preedit_string_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkIMContextClass.get_preedit_string_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*get_preedit_string)(GtkIMContext*,gchar**,PangoAttrList**,gint*);
+     * }
+     */
     public interface get_preedit_string {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2, java.lang.foreign.MemoryAddress _x3);
-        static MemorySegment allocate(get_preedit_string fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_preedit_string.class, fi, _GtkIMContextClass.get_preedit_string$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment model, java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment data);
+        static MemorySegment allocate(get_preedit_string fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkIMContextClass.get_preedit_string_UP$MH, fi, _GtkIMContextClass.get_preedit_string$FUNC, scope);
         }
-        static get_preedit_string ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2, java.lang.foreign.MemoryAddress __x3) -> {
+        static get_preedit_string ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _model, java.lang.foreign.MemorySegment _path, java.lang.foreign.MemorySegment _iter, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GtkIMContextClass.get_preedit_string$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2, (java.lang.foreign.Addressable)__x3);
+                    _GtkIMContextClass.get_preedit_string_DOWN$MH.invokeExact(symbol, _model, _path, _iter, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -391,39 +617,65 @@ public class _GtkIMContextClass {
     public static VarHandle get_preedit_string$VH() {
         return _GtkIMContextClass.get_preedit_string$VH;
     }
-    public static MemoryAddress get_preedit_string$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkIMContextClass.get_preedit_string$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*get_preedit_string)(GtkIMContext*,gchar**,PangoAttrList**,gint*);
+     * }
+     */
+    public static MemorySegment get_preedit_string$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkIMContextClass.get_preedit_string$VH.get(seg);
     }
-    public static void get_preedit_string$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*get_preedit_string)(GtkIMContext*,gchar**,PangoAttrList**,gint*);
+     * }
+     */
+    public static void get_preedit_string$set(MemorySegment seg, MemorySegment x) {
         _GtkIMContextClass.get_preedit_string$VH.set(seg, x);
     }
-    public static MemoryAddress get_preedit_string$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkIMContextClass.get_preedit_string$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_preedit_string$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkIMContextClass.get_preedit_string$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_preedit_string$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_preedit_string$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkIMContextClass.get_preedit_string$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_preedit_string get_preedit_string (MemorySegment segment, MemorySession session) {
-        return get_preedit_string.ofAddress(get_preedit_string$get(segment), session);
+    public static get_preedit_string get_preedit_string(MemorySegment segment, SegmentScope scope) {
+        return get_preedit_string.ofAddress(get_preedit_string$get(segment), scope);
     }
     static final FunctionDescriptor filter_keypress$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle filter_keypress$MH = RuntimeHelper.downcallHandle(
-        _GtkIMContextClass.filter_keypress$FUNC
+    static final FunctionDescriptor filter_keypress_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle filter_keypress_UP$MH = RuntimeHelper.upcallHandle(filter_keypress.class, "apply", _GtkIMContextClass.filter_keypress_UP$FUNC);
+    static final FunctionDescriptor filter_keypress_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle filter_keypress_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkIMContextClass.filter_keypress_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*filter_keypress)(GtkIMContext*,GdkEventKey*);
+     * }
+     */
     public interface filter_keypress {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(filter_keypress fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(filter_keypress.class, fi, _GtkIMContextClass.filter_keypress$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1);
+        static MemorySegment allocate(filter_keypress fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkIMContextClass.filter_keypress_UP$MH, fi, _GtkIMContextClass.filter_keypress$FUNC, scope);
         }
-        static filter_keypress ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static filter_keypress ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1) -> {
                 try {
-                    return (int)_GtkIMContextClass.filter_keypress$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    return (int)_GtkIMContextClass.filter_keypress_DOWN$MH.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -435,38 +687,62 @@ public class _GtkIMContextClass {
     public static VarHandle filter_keypress$VH() {
         return _GtkIMContextClass.filter_keypress$VH;
     }
-    public static MemoryAddress filter_keypress$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkIMContextClass.filter_keypress$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*filter_keypress)(GtkIMContext*,GdkEventKey*);
+     * }
+     */
+    public static MemorySegment filter_keypress$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkIMContextClass.filter_keypress$VH.get(seg);
     }
-    public static void filter_keypress$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*filter_keypress)(GtkIMContext*,GdkEventKey*);
+     * }
+     */
+    public static void filter_keypress$set(MemorySegment seg, MemorySegment x) {
         _GtkIMContextClass.filter_keypress$VH.set(seg, x);
     }
-    public static MemoryAddress filter_keypress$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkIMContextClass.filter_keypress$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment filter_keypress$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkIMContextClass.filter_keypress$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void filter_keypress$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void filter_keypress$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkIMContextClass.filter_keypress$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static filter_keypress filter_keypress (MemorySegment segment, MemorySession session) {
-        return filter_keypress.ofAddress(filter_keypress$get(segment), session);
+    public static filter_keypress filter_keypress(MemorySegment segment, SegmentScope scope) {
+        return filter_keypress.ofAddress(filter_keypress$get(segment), scope);
     }
     static final FunctionDescriptor focus_in$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle focus_in$MH = RuntimeHelper.downcallHandle(
-        _GtkIMContextClass.focus_in$FUNC
+    static final FunctionDescriptor focus_in_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle focus_in_UP$MH = RuntimeHelper.upcallHandle(focus_in.class, "apply", _GtkIMContextClass.focus_in_UP$FUNC);
+    static final FunctionDescriptor focus_in_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle focus_in_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkIMContextClass.focus_in_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*focus_in)(GtkIMContext*);
+     * }
+     */
     public interface focus_in {
 
-        void apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(focus_in fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(focus_in.class, fi, _GtkIMContextClass.focus_in$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment display);
+        static MemorySegment allocate(focus_in fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkIMContextClass.focus_in_UP$MH, fi, _GtkIMContextClass.focus_in$FUNC, scope);
         }
-        static focus_in ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static focus_in ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GtkIMContextClass.focus_in$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    _GtkIMContextClass.focus_in_DOWN$MH.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -478,38 +754,62 @@ public class _GtkIMContextClass {
     public static VarHandle focus_in$VH() {
         return _GtkIMContextClass.focus_in$VH;
     }
-    public static MemoryAddress focus_in$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkIMContextClass.focus_in$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*focus_in)(GtkIMContext*);
+     * }
+     */
+    public static MemorySegment focus_in$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkIMContextClass.focus_in$VH.get(seg);
     }
-    public static void focus_in$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*focus_in)(GtkIMContext*);
+     * }
+     */
+    public static void focus_in$set(MemorySegment seg, MemorySegment x) {
         _GtkIMContextClass.focus_in$VH.set(seg, x);
     }
-    public static MemoryAddress focus_in$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkIMContextClass.focus_in$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment focus_in$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkIMContextClass.focus_in$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void focus_in$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void focus_in$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkIMContextClass.focus_in$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static focus_in focus_in (MemorySegment segment, MemorySession session) {
-        return focus_in.ofAddress(focus_in$get(segment), session);
+    public static focus_in focus_in(MemorySegment segment, SegmentScope scope) {
+        return focus_in.ofAddress(focus_in$get(segment), scope);
     }
     static final FunctionDescriptor focus_out$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle focus_out$MH = RuntimeHelper.downcallHandle(
-        _GtkIMContextClass.focus_out$FUNC
+    static final FunctionDescriptor focus_out_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle focus_out_UP$MH = RuntimeHelper.upcallHandle(focus_out.class, "apply", _GtkIMContextClass.focus_out_UP$FUNC);
+    static final FunctionDescriptor focus_out_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle focus_out_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkIMContextClass.focus_out_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*focus_out)(GtkIMContext*);
+     * }
+     */
     public interface focus_out {
 
-        void apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(focus_out fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(focus_out.class, fi, _GtkIMContextClass.focus_out$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment display);
+        static MemorySegment allocate(focus_out fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkIMContextClass.focus_out_UP$MH, fi, _GtkIMContextClass.focus_out$FUNC, scope);
         }
-        static focus_out ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static focus_out ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GtkIMContextClass.focus_out$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    _GtkIMContextClass.focus_out_DOWN$MH.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -521,38 +821,62 @@ public class _GtkIMContextClass {
     public static VarHandle focus_out$VH() {
         return _GtkIMContextClass.focus_out$VH;
     }
-    public static MemoryAddress focus_out$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkIMContextClass.focus_out$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*focus_out)(GtkIMContext*);
+     * }
+     */
+    public static MemorySegment focus_out$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkIMContextClass.focus_out$VH.get(seg);
     }
-    public static void focus_out$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*focus_out)(GtkIMContext*);
+     * }
+     */
+    public static void focus_out$set(MemorySegment seg, MemorySegment x) {
         _GtkIMContextClass.focus_out$VH.set(seg, x);
     }
-    public static MemoryAddress focus_out$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkIMContextClass.focus_out$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment focus_out$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkIMContextClass.focus_out$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void focus_out$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void focus_out$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkIMContextClass.focus_out$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static focus_out focus_out (MemorySegment segment, MemorySession session) {
-        return focus_out.ofAddress(focus_out$get(segment), session);
+    public static focus_out focus_out(MemorySegment segment, SegmentScope scope) {
+        return focus_out.ofAddress(focus_out$get(segment), scope);
     }
     static final FunctionDescriptor reset$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle reset$MH = RuntimeHelper.downcallHandle(
-        _GtkIMContextClass.reset$FUNC
+    static final FunctionDescriptor reset_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle reset_UP$MH = RuntimeHelper.upcallHandle(reset.class, "apply", _GtkIMContextClass.reset_UP$FUNC);
+    static final FunctionDescriptor reset_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle reset_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkIMContextClass.reset_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*reset)(GtkIMContext*);
+     * }
+     */
     public interface reset {
 
-        void apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(reset fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(reset.class, fi, _GtkIMContextClass.reset$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment display);
+        static MemorySegment allocate(reset fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkIMContextClass.reset_UP$MH, fi, _GtkIMContextClass.reset$FUNC, scope);
         }
-        static reset ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static reset ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GtkIMContextClass.reset$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    _GtkIMContextClass.reset_DOWN$MH.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -564,39 +888,65 @@ public class _GtkIMContextClass {
     public static VarHandle reset$VH() {
         return _GtkIMContextClass.reset$VH;
     }
-    public static MemoryAddress reset$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkIMContextClass.reset$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*reset)(GtkIMContext*);
+     * }
+     */
+    public static MemorySegment reset$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkIMContextClass.reset$VH.get(seg);
     }
-    public static void reset$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*reset)(GtkIMContext*);
+     * }
+     */
+    public static void reset$set(MemorySegment seg, MemorySegment x) {
         _GtkIMContextClass.reset$VH.set(seg, x);
     }
-    public static MemoryAddress reset$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkIMContextClass.reset$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment reset$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkIMContextClass.reset$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void reset$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void reset$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkIMContextClass.reset$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static reset reset (MemorySegment segment, MemorySession session) {
-        return reset.ofAddress(reset$get(segment), session);
+    public static reset reset(MemorySegment segment, SegmentScope scope) {
+        return reset.ofAddress(reset$get(segment), scope);
     }
     static final FunctionDescriptor set_cursor_location$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle set_cursor_location$MH = RuntimeHelper.downcallHandle(
-        _GtkIMContextClass.set_cursor_location$FUNC
+    static final FunctionDescriptor set_cursor_location_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle set_cursor_location_UP$MH = RuntimeHelper.upcallHandle(set_cursor_location.class, "apply", _GtkIMContextClass.set_cursor_location_UP$FUNC);
+    static final FunctionDescriptor set_cursor_location_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle set_cursor_location_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkIMContextClass.set_cursor_location_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*set_cursor_location)(GtkIMContext*,GdkRectangle*);
+     * }
+     */
     public interface set_cursor_location {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(set_cursor_location fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(set_cursor_location.class, fi, _GtkIMContextClass.set_cursor_location$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+        static MemorySegment allocate(set_cursor_location fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkIMContextClass.set_cursor_location_UP$MH, fi, _GtkIMContextClass.set_cursor_location$FUNC, scope);
         }
-        static set_cursor_location ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static set_cursor_location ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GtkIMContextClass.set_cursor_location$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    _GtkIMContextClass.set_cursor_location_DOWN$MH.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -608,39 +958,65 @@ public class _GtkIMContextClass {
     public static VarHandle set_cursor_location$VH() {
         return _GtkIMContextClass.set_cursor_location$VH;
     }
-    public static MemoryAddress set_cursor_location$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkIMContextClass.set_cursor_location$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*set_cursor_location)(GtkIMContext*,GdkRectangle*);
+     * }
+     */
+    public static MemorySegment set_cursor_location$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkIMContextClass.set_cursor_location$VH.get(seg);
     }
-    public static void set_cursor_location$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*set_cursor_location)(GtkIMContext*,GdkRectangle*);
+     * }
+     */
+    public static void set_cursor_location$set(MemorySegment seg, MemorySegment x) {
         _GtkIMContextClass.set_cursor_location$VH.set(seg, x);
     }
-    public static MemoryAddress set_cursor_location$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkIMContextClass.set_cursor_location$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment set_cursor_location$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkIMContextClass.set_cursor_location$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void set_cursor_location$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void set_cursor_location$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkIMContextClass.set_cursor_location$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static set_cursor_location set_cursor_location (MemorySegment segment, MemorySession session) {
-        return set_cursor_location.ofAddress(set_cursor_location$get(segment), session);
+    public static set_cursor_location set_cursor_location(MemorySegment segment, SegmentScope scope) {
+        return set_cursor_location.ofAddress(set_cursor_location$get(segment), scope);
     }
     static final FunctionDescriptor set_use_preedit$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle set_use_preedit$MH = RuntimeHelper.downcallHandle(
-        _GtkIMContextClass.set_use_preedit$FUNC
+    static final FunctionDescriptor set_use_preedit_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle set_use_preedit_UP$MH = RuntimeHelper.upcallHandle(set_use_preedit.class, "apply", _GtkIMContextClass.set_use_preedit_UP$FUNC);
+    static final FunctionDescriptor set_use_preedit_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle set_use_preedit_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkIMContextClass.set_use_preedit_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*set_use_preedit)(GtkIMContext*,gboolean);
+     * }
+     */
     public interface set_use_preedit {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, int _x1);
-        static MemorySegment allocate(set_use_preedit fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(set_use_preedit.class, fi, _GtkIMContextClass.set_use_preedit$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, int _x1);
+        static MemorySegment allocate(set_use_preedit fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkIMContextClass.set_use_preedit_UP$MH, fi, _GtkIMContextClass.set_use_preedit$FUNC, scope);
         }
-        static set_use_preedit ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, int __x1) -> {
+        static set_use_preedit ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, int __x1) -> {
                 try {
-                    _GtkIMContextClass.set_use_preedit$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, __x1);
+                    _GtkIMContextClass.set_use_preedit_DOWN$MH.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -652,20 +1028,32 @@ public class _GtkIMContextClass {
     public static VarHandle set_use_preedit$VH() {
         return _GtkIMContextClass.set_use_preedit$VH;
     }
-    public static MemoryAddress set_use_preedit$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkIMContextClass.set_use_preedit$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*set_use_preedit)(GtkIMContext*,gboolean);
+     * }
+     */
+    public static MemorySegment set_use_preedit$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkIMContextClass.set_use_preedit$VH.get(seg);
     }
-    public static void set_use_preedit$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*set_use_preedit)(GtkIMContext*,gboolean);
+     * }
+     */
+    public static void set_use_preedit$set(MemorySegment seg, MemorySegment x) {
         _GtkIMContextClass.set_use_preedit$VH.set(seg, x);
     }
-    public static MemoryAddress set_use_preedit$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkIMContextClass.set_use_preedit$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment set_use_preedit$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkIMContextClass.set_use_preedit$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void set_use_preedit$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void set_use_preedit$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkIMContextClass.set_use_preedit$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static set_use_preedit set_use_preedit (MemorySegment segment, MemorySession session) {
-        return set_use_preedit.ofAddress(set_use_preedit$get(segment), session);
+    public static set_use_preedit set_use_preedit(MemorySegment segment, SegmentScope scope) {
+        return set_use_preedit.ofAddress(set_use_preedit$get(segment), scope);
     }
     static final FunctionDescriptor set_surrounding$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
@@ -673,20 +1061,38 @@ public class _GtkIMContextClass {
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle set_surrounding$MH = RuntimeHelper.downcallHandle(
-        _GtkIMContextClass.set_surrounding$FUNC
+    static final FunctionDescriptor set_surrounding_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle set_surrounding_UP$MH = RuntimeHelper.upcallHandle(set_surrounding.class, "apply", _GtkIMContextClass.set_surrounding_UP$FUNC);
+    static final FunctionDescriptor set_surrounding_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle set_surrounding_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkIMContextClass.set_surrounding_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*set_surrounding)(GtkIMContext*,const gchar*,gint,gint);
+     * }
+     */
     public interface set_surrounding {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, int _x2, int _x3);
-        static MemorySegment allocate(set_surrounding fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(set_surrounding.class, fi, _GtkIMContextClass.set_surrounding$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2, int _x3);
+        static MemorySegment allocate(set_surrounding fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkIMContextClass.set_surrounding_UP$MH, fi, _GtkIMContextClass.set_surrounding$FUNC, scope);
         }
-        static set_surrounding ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, int __x2, int __x3) -> {
+        static set_surrounding ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2, int __x3) -> {
                 try {
-                    _GtkIMContextClass.set_surrounding$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, __x2, __x3);
+                    _GtkIMContextClass.set_surrounding_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -698,40 +1104,68 @@ public class _GtkIMContextClass {
     public static VarHandle set_surrounding$VH() {
         return _GtkIMContextClass.set_surrounding$VH;
     }
-    public static MemoryAddress set_surrounding$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkIMContextClass.set_surrounding$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*set_surrounding)(GtkIMContext*,const gchar*,gint,gint);
+     * }
+     */
+    public static MemorySegment set_surrounding$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkIMContextClass.set_surrounding$VH.get(seg);
     }
-    public static void set_surrounding$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*set_surrounding)(GtkIMContext*,const gchar*,gint,gint);
+     * }
+     */
+    public static void set_surrounding$set(MemorySegment seg, MemorySegment x) {
         _GtkIMContextClass.set_surrounding$VH.set(seg, x);
     }
-    public static MemoryAddress set_surrounding$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkIMContextClass.set_surrounding$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment set_surrounding$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkIMContextClass.set_surrounding$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void set_surrounding$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void set_surrounding$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkIMContextClass.set_surrounding$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static set_surrounding set_surrounding (MemorySegment segment, MemorySession session) {
-        return set_surrounding.ofAddress(set_surrounding$get(segment), session);
+    public static set_surrounding set_surrounding(MemorySegment segment, SegmentScope scope) {
+        return set_surrounding.ofAddress(set_surrounding$get(segment), scope);
     }
     static final FunctionDescriptor get_surrounding$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_surrounding$MH = RuntimeHelper.downcallHandle(
-        _GtkIMContextClass.get_surrounding$FUNC
+    static final FunctionDescriptor get_surrounding_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_surrounding_UP$MH = RuntimeHelper.upcallHandle(get_surrounding.class, "apply", _GtkIMContextClass.get_surrounding_UP$FUNC);
+    static final FunctionDescriptor get_surrounding_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_surrounding_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkIMContextClass.get_surrounding_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*get_surrounding)(GtkIMContext*,gchar**,gint*);
+     * }
+     */
     public interface get_surrounding {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2);
-        static MemorySegment allocate(get_surrounding fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_surrounding.class, fi, _GtkIMContextClass.get_surrounding$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2);
+        static MemorySegment allocate(get_surrounding fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkIMContextClass.get_surrounding_UP$MH, fi, _GtkIMContextClass.get_surrounding$FUNC, scope);
         }
-        static get_surrounding ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2) -> {
+        static get_surrounding ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2) -> {
                 try {
-                    return (int)_GtkIMContextClass.get_surrounding$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2);
+                    return (int)_GtkIMContextClass.get_surrounding_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -743,36 +1177,56 @@ public class _GtkIMContextClass {
     public static VarHandle get_surrounding$VH() {
         return _GtkIMContextClass.get_surrounding$VH;
     }
-    public static MemoryAddress get_surrounding$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkIMContextClass.get_surrounding$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*get_surrounding)(GtkIMContext*,gchar**,gint*);
+     * }
+     */
+    public static MemorySegment get_surrounding$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkIMContextClass.get_surrounding$VH.get(seg);
     }
-    public static void get_surrounding$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*get_surrounding)(GtkIMContext*,gchar**,gint*);
+     * }
+     */
+    public static void get_surrounding$set(MemorySegment seg, MemorySegment x) {
         _GtkIMContextClass.get_surrounding$VH.set(seg, x);
     }
-    public static MemoryAddress get_surrounding$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkIMContextClass.get_surrounding$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_surrounding$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkIMContextClass.get_surrounding$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_surrounding$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_surrounding$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkIMContextClass.get_surrounding$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_surrounding get_surrounding (MemorySegment segment, MemorySession session) {
-        return get_surrounding.ofAddress(get_surrounding$get(segment), session);
+    public static get_surrounding get_surrounding(MemorySegment segment, SegmentScope scope) {
+        return get_surrounding.ofAddress(get_surrounding$get(segment), scope);
     }
     static final FunctionDescriptor _gtk_reserved1$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved1$MH = RuntimeHelper.downcallHandle(
-        _GtkIMContextClass._gtk_reserved1$FUNC
+    static final FunctionDescriptor _gtk_reserved1_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved1_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved1.class, "apply", _GtkIMContextClass._gtk_reserved1_UP$FUNC);
+    static final FunctionDescriptor _gtk_reserved1_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved1_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkIMContextClass._gtk_reserved1_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_gtk_reserved1)();
+     * }
+     */
     public interface _gtk_reserved1 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved1 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_gtk_reserved1.class, fi, _GtkIMContextClass._gtk_reserved1$FUNC, session);
+        static MemorySegment allocate(_gtk_reserved1 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkIMContextClass._gtk_reserved1_UP$MH, fi, _GtkIMContextClass._gtk_reserved1$FUNC, scope);
         }
-        static _gtk_reserved1 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _gtk_reserved1 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkIMContextClass._gtk_reserved1$MH.invokeExact((Addressable)symbol);
+                    _GtkIMContextClass._gtk_reserved1_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -784,36 +1238,56 @@ public class _GtkIMContextClass {
     public static VarHandle _gtk_reserved1$VH() {
         return _GtkIMContextClass._gtk_reserved1$VH;
     }
-    public static MemoryAddress _gtk_reserved1$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkIMContextClass._gtk_reserved1$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_gtk_reserved1)();
+     * }
+     */
+    public static MemorySegment _gtk_reserved1$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkIMContextClass._gtk_reserved1$VH.get(seg);
     }
-    public static void _gtk_reserved1$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_gtk_reserved1)();
+     * }
+     */
+    public static void _gtk_reserved1$set(MemorySegment seg, MemorySegment x) {
         _GtkIMContextClass._gtk_reserved1$VH.set(seg, x);
     }
-    public static MemoryAddress _gtk_reserved1$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkIMContextClass._gtk_reserved1$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _gtk_reserved1$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkIMContextClass._gtk_reserved1$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _gtk_reserved1$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _gtk_reserved1$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkIMContextClass._gtk_reserved1$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved1 _gtk_reserved1 (MemorySegment segment, MemorySession session) {
-        return _gtk_reserved1.ofAddress(_gtk_reserved1$get(segment), session);
+    public static _gtk_reserved1 _gtk_reserved1(MemorySegment segment, SegmentScope scope) {
+        return _gtk_reserved1.ofAddress(_gtk_reserved1$get(segment), scope);
     }
     static final FunctionDescriptor _gtk_reserved2$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved2$MH = RuntimeHelper.downcallHandle(
-        _GtkIMContextClass._gtk_reserved2$FUNC
+    static final FunctionDescriptor _gtk_reserved2_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved2_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved2.class, "apply", _GtkIMContextClass._gtk_reserved2_UP$FUNC);
+    static final FunctionDescriptor _gtk_reserved2_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved2_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkIMContextClass._gtk_reserved2_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_gtk_reserved2)();
+     * }
+     */
     public interface _gtk_reserved2 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved2 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_gtk_reserved2.class, fi, _GtkIMContextClass._gtk_reserved2$FUNC, session);
+        static MemorySegment allocate(_gtk_reserved2 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkIMContextClass._gtk_reserved2_UP$MH, fi, _GtkIMContextClass._gtk_reserved2$FUNC, scope);
         }
-        static _gtk_reserved2 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _gtk_reserved2 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkIMContextClass._gtk_reserved2$MH.invokeExact((Addressable)symbol);
+                    _GtkIMContextClass._gtk_reserved2_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -825,36 +1299,56 @@ public class _GtkIMContextClass {
     public static VarHandle _gtk_reserved2$VH() {
         return _GtkIMContextClass._gtk_reserved2$VH;
     }
-    public static MemoryAddress _gtk_reserved2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkIMContextClass._gtk_reserved2$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_gtk_reserved2)();
+     * }
+     */
+    public static MemorySegment _gtk_reserved2$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkIMContextClass._gtk_reserved2$VH.get(seg);
     }
-    public static void _gtk_reserved2$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_gtk_reserved2)();
+     * }
+     */
+    public static void _gtk_reserved2$set(MemorySegment seg, MemorySegment x) {
         _GtkIMContextClass._gtk_reserved2$VH.set(seg, x);
     }
-    public static MemoryAddress _gtk_reserved2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkIMContextClass._gtk_reserved2$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _gtk_reserved2$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkIMContextClass._gtk_reserved2$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _gtk_reserved2$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _gtk_reserved2$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkIMContextClass._gtk_reserved2$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved2 _gtk_reserved2 (MemorySegment segment, MemorySession session) {
-        return _gtk_reserved2.ofAddress(_gtk_reserved2$get(segment), session);
+    public static _gtk_reserved2 _gtk_reserved2(MemorySegment segment, SegmentScope scope) {
+        return _gtk_reserved2.ofAddress(_gtk_reserved2$get(segment), scope);
     }
     static final FunctionDescriptor _gtk_reserved3$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved3$MH = RuntimeHelper.downcallHandle(
-        _GtkIMContextClass._gtk_reserved3$FUNC
+    static final FunctionDescriptor _gtk_reserved3_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved3_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved3.class, "apply", _GtkIMContextClass._gtk_reserved3_UP$FUNC);
+    static final FunctionDescriptor _gtk_reserved3_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved3_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkIMContextClass._gtk_reserved3_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_gtk_reserved3)();
+     * }
+     */
     public interface _gtk_reserved3 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved3 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_gtk_reserved3.class, fi, _GtkIMContextClass._gtk_reserved3$FUNC, session);
+        static MemorySegment allocate(_gtk_reserved3 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkIMContextClass._gtk_reserved3_UP$MH, fi, _GtkIMContextClass._gtk_reserved3$FUNC, scope);
         }
-        static _gtk_reserved3 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _gtk_reserved3 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkIMContextClass._gtk_reserved3$MH.invokeExact((Addressable)symbol);
+                    _GtkIMContextClass._gtk_reserved3_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -866,36 +1360,56 @@ public class _GtkIMContextClass {
     public static VarHandle _gtk_reserved3$VH() {
         return _GtkIMContextClass._gtk_reserved3$VH;
     }
-    public static MemoryAddress _gtk_reserved3$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkIMContextClass._gtk_reserved3$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_gtk_reserved3)();
+     * }
+     */
+    public static MemorySegment _gtk_reserved3$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkIMContextClass._gtk_reserved3$VH.get(seg);
     }
-    public static void _gtk_reserved3$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_gtk_reserved3)();
+     * }
+     */
+    public static void _gtk_reserved3$set(MemorySegment seg, MemorySegment x) {
         _GtkIMContextClass._gtk_reserved3$VH.set(seg, x);
     }
-    public static MemoryAddress _gtk_reserved3$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkIMContextClass._gtk_reserved3$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _gtk_reserved3$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkIMContextClass._gtk_reserved3$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _gtk_reserved3$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _gtk_reserved3$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkIMContextClass._gtk_reserved3$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved3 _gtk_reserved3 (MemorySegment segment, MemorySession session) {
-        return _gtk_reserved3.ofAddress(_gtk_reserved3$get(segment), session);
+    public static _gtk_reserved3 _gtk_reserved3(MemorySegment segment, SegmentScope scope) {
+        return _gtk_reserved3.ofAddress(_gtk_reserved3$get(segment), scope);
     }
     static final FunctionDescriptor _gtk_reserved4$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved4$MH = RuntimeHelper.downcallHandle(
-        _GtkIMContextClass._gtk_reserved4$FUNC
+    static final FunctionDescriptor _gtk_reserved4_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved4_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved4.class, "apply", _GtkIMContextClass._gtk_reserved4_UP$FUNC);
+    static final FunctionDescriptor _gtk_reserved4_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved4_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkIMContextClass._gtk_reserved4_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_gtk_reserved4)();
+     * }
+     */
     public interface _gtk_reserved4 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved4 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_gtk_reserved4.class, fi, _GtkIMContextClass._gtk_reserved4$FUNC, session);
+        static MemorySegment allocate(_gtk_reserved4 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkIMContextClass._gtk_reserved4_UP$MH, fi, _GtkIMContextClass._gtk_reserved4$FUNC, scope);
         }
-        static _gtk_reserved4 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _gtk_reserved4 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkIMContextClass._gtk_reserved4$MH.invokeExact((Addressable)symbol);
+                    _GtkIMContextClass._gtk_reserved4_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -907,36 +1421,56 @@ public class _GtkIMContextClass {
     public static VarHandle _gtk_reserved4$VH() {
         return _GtkIMContextClass._gtk_reserved4$VH;
     }
-    public static MemoryAddress _gtk_reserved4$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkIMContextClass._gtk_reserved4$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_gtk_reserved4)();
+     * }
+     */
+    public static MemorySegment _gtk_reserved4$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkIMContextClass._gtk_reserved4$VH.get(seg);
     }
-    public static void _gtk_reserved4$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_gtk_reserved4)();
+     * }
+     */
+    public static void _gtk_reserved4$set(MemorySegment seg, MemorySegment x) {
         _GtkIMContextClass._gtk_reserved4$VH.set(seg, x);
     }
-    public static MemoryAddress _gtk_reserved4$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkIMContextClass._gtk_reserved4$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _gtk_reserved4$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkIMContextClass._gtk_reserved4$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _gtk_reserved4$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _gtk_reserved4$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkIMContextClass._gtk_reserved4$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved4 _gtk_reserved4 (MemorySegment segment, MemorySession session) {
-        return _gtk_reserved4.ofAddress(_gtk_reserved4$get(segment), session);
+    public static _gtk_reserved4 _gtk_reserved4(MemorySegment segment, SegmentScope scope) {
+        return _gtk_reserved4.ofAddress(_gtk_reserved4$get(segment), scope);
     }
     static final FunctionDescriptor _gtk_reserved5$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved5$MH = RuntimeHelper.downcallHandle(
-        _GtkIMContextClass._gtk_reserved5$FUNC
+    static final FunctionDescriptor _gtk_reserved5_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved5_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved5.class, "apply", _GtkIMContextClass._gtk_reserved5_UP$FUNC);
+    static final FunctionDescriptor _gtk_reserved5_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved5_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkIMContextClass._gtk_reserved5_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_gtk_reserved5)();
+     * }
+     */
     public interface _gtk_reserved5 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved5 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_gtk_reserved5.class, fi, _GtkIMContextClass._gtk_reserved5$FUNC, session);
+        static MemorySegment allocate(_gtk_reserved5 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkIMContextClass._gtk_reserved5_UP$MH, fi, _GtkIMContextClass._gtk_reserved5$FUNC, scope);
         }
-        static _gtk_reserved5 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _gtk_reserved5 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkIMContextClass._gtk_reserved5$MH.invokeExact((Addressable)symbol);
+                    _GtkIMContextClass._gtk_reserved5_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -948,36 +1482,56 @@ public class _GtkIMContextClass {
     public static VarHandle _gtk_reserved5$VH() {
         return _GtkIMContextClass._gtk_reserved5$VH;
     }
-    public static MemoryAddress _gtk_reserved5$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkIMContextClass._gtk_reserved5$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_gtk_reserved5)();
+     * }
+     */
+    public static MemorySegment _gtk_reserved5$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkIMContextClass._gtk_reserved5$VH.get(seg);
     }
-    public static void _gtk_reserved5$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_gtk_reserved5)();
+     * }
+     */
+    public static void _gtk_reserved5$set(MemorySegment seg, MemorySegment x) {
         _GtkIMContextClass._gtk_reserved5$VH.set(seg, x);
     }
-    public static MemoryAddress _gtk_reserved5$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkIMContextClass._gtk_reserved5$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _gtk_reserved5$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkIMContextClass._gtk_reserved5$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _gtk_reserved5$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _gtk_reserved5$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkIMContextClass._gtk_reserved5$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved5 _gtk_reserved5 (MemorySegment segment, MemorySession session) {
-        return _gtk_reserved5.ofAddress(_gtk_reserved5$get(segment), session);
+    public static _gtk_reserved5 _gtk_reserved5(MemorySegment segment, SegmentScope scope) {
+        return _gtk_reserved5.ofAddress(_gtk_reserved5$get(segment), scope);
     }
     static final FunctionDescriptor _gtk_reserved6$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved6$MH = RuntimeHelper.downcallHandle(
-        _GtkIMContextClass._gtk_reserved6$FUNC
+    static final FunctionDescriptor _gtk_reserved6_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved6_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved6.class, "apply", _GtkIMContextClass._gtk_reserved6_UP$FUNC);
+    static final FunctionDescriptor _gtk_reserved6_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved6_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkIMContextClass._gtk_reserved6_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_gtk_reserved6)();
+     * }
+     */
     public interface _gtk_reserved6 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved6 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_gtk_reserved6.class, fi, _GtkIMContextClass._gtk_reserved6$FUNC, session);
+        static MemorySegment allocate(_gtk_reserved6 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkIMContextClass._gtk_reserved6_UP$MH, fi, _GtkIMContextClass._gtk_reserved6$FUNC, scope);
         }
-        static _gtk_reserved6 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _gtk_reserved6 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkIMContextClass._gtk_reserved6$MH.invokeExact((Addressable)symbol);
+                    _GtkIMContextClass._gtk_reserved6_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -989,27 +1543,39 @@ public class _GtkIMContextClass {
     public static VarHandle _gtk_reserved6$VH() {
         return _GtkIMContextClass._gtk_reserved6$VH;
     }
-    public static MemoryAddress _gtk_reserved6$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkIMContextClass._gtk_reserved6$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_gtk_reserved6)();
+     * }
+     */
+    public static MemorySegment _gtk_reserved6$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkIMContextClass._gtk_reserved6$VH.get(seg);
     }
-    public static void _gtk_reserved6$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_gtk_reserved6)();
+     * }
+     */
+    public static void _gtk_reserved6$set(MemorySegment seg, MemorySegment x) {
         _GtkIMContextClass._gtk_reserved6$VH.set(seg, x);
     }
-    public static MemoryAddress _gtk_reserved6$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkIMContextClass._gtk_reserved6$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _gtk_reserved6$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkIMContextClass._gtk_reserved6$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _gtk_reserved6$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _gtk_reserved6$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkIMContextClass._gtk_reserved6$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved6 _gtk_reserved6 (MemorySegment segment, MemorySession session) {
-        return _gtk_reserved6.ofAddress(_gtk_reserved6$get(segment), session);
+    public static _gtk_reserved6 _gtk_reserved6(MemorySegment segment, SegmentScope scope) {
+        return _gtk_reserved6.ofAddress(_gtk_reserved6$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

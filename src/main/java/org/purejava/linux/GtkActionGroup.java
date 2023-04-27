@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkActionGroup extends _GtkActionGroup {
+/**
+ * {@snippet :
+ * typedef struct _GtkActionGroup GtkActionGroup;
+ * }
+ */
+public final class GtkActionGroup extends _GtkActionGroup {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkActionGroup() {}
 }
 
 

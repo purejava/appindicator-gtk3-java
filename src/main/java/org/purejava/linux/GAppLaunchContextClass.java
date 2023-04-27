@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GAppLaunchContextClass extends _GAppLaunchContextClass {
+/**
+ * {@snippet :
+ * typedef struct _GAppLaunchContextClass GAppLaunchContextClass;
+ * }
+ */
+public final class GAppLaunchContextClass extends _GAppLaunchContextClass {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GAppLaunchContextClass() {}
 }
 
 

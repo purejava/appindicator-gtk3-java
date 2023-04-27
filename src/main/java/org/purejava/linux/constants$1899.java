@@ -7,52 +7,43 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1899 {
+final class constants$1899 {
 
-    static final FunctionDescriptor gtk_tool_button_set_label$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1899() {}
+    static final FunctionDescriptor gtk_volume_button_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_volume_button_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_volume_button_get_type",
+        constants$1899.gtk_volume_button_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_volume_button_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_volume_button_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_volume_button_new",
+        constants$1899.gtk_volume_button_new$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_path_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_widget_path_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_path_get_type",
+        constants$1899.gtk_widget_path_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_path_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_widget_path_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_path_new",
+        constants$1899.gtk_widget_path_new$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_path_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_tool_button_set_label$MH = RuntimeHelper.downcallHandle(
-        "gtk_tool_button_set_label",
-        constants$1899.gtk_tool_button_set_label$FUNC
+    static final MethodHandle gtk_widget_path_copy$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_path_copy",
+        constants$1899.gtk_widget_path_copy$FUNC
     );
-    static final FunctionDescriptor gtk_tool_button_get_label$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_widget_path_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_tool_button_get_label$MH = RuntimeHelper.downcallHandle(
-        "gtk_tool_button_get_label",
-        constants$1899.gtk_tool_button_get_label$FUNC
-    );
-    static final FunctionDescriptor gtk_tool_button_set_use_underline$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_tool_button_set_use_underline$MH = RuntimeHelper.downcallHandle(
-        "gtk_tool_button_set_use_underline",
-        constants$1899.gtk_tool_button_set_use_underline$FUNC
-    );
-    static final FunctionDescriptor gtk_tool_button_get_use_underline$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tool_button_get_use_underline$MH = RuntimeHelper.downcallHandle(
-        "gtk_tool_button_get_use_underline",
-        constants$1899.gtk_tool_button_get_use_underline$FUNC
-    );
-    static final FunctionDescriptor gtk_tool_button_set_stock_id$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tool_button_set_stock_id$MH = RuntimeHelper.downcallHandle(
-        "gtk_tool_button_set_stock_id",
-        constants$1899.gtk_tool_button_set_stock_id$FUNC
-    );
-    static final FunctionDescriptor gtk_tool_button_get_stock_id$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tool_button_get_stock_id$MH = RuntimeHelper.downcallHandle(
-        "gtk_tool_button_get_stock_id",
-        constants$1899.gtk_tool_button_get_stock_id$FUNC
+    static final MethodHandle gtk_widget_path_ref$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_path_ref",
+        constants$1899.gtk_widget_path_ref$FUNC
     );
 }
 

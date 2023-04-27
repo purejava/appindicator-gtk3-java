@@ -7,61 +7,57 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$790 {
+final class constants$790 {
 
-    static final FunctionDescriptor g_resource_enumerate_children$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$790() {}
+    static final FunctionDescriptor g_subprocess_launcher_set_stdout_file_path$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_subprocess_launcher_set_stdout_file_path$MH = RuntimeHelper.downcallHandle(
+        "g_subprocess_launcher_set_stdout_file_path",
+        constants$790.g_subprocess_launcher_set_stdout_file_path$FUNC
+    );
+    static final FunctionDescriptor g_subprocess_launcher_take_stdout_fd$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_subprocess_launcher_take_stdout_fd$MH = RuntimeHelper.downcallHandle(
+        "g_subprocess_launcher_take_stdout_fd",
+        constants$790.g_subprocess_launcher_take_stdout_fd$FUNC
+    );
+    static final FunctionDescriptor g_subprocess_launcher_set_stderr_file_path$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_subprocess_launcher_set_stderr_file_path$MH = RuntimeHelper.downcallHandle(
+        "g_subprocess_launcher_set_stderr_file_path",
+        constants$790.g_subprocess_launcher_set_stderr_file_path$FUNC
+    );
+    static final FunctionDescriptor g_subprocess_launcher_take_stderr_fd$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_subprocess_launcher_take_stderr_fd$MH = RuntimeHelper.downcallHandle(
+        "g_subprocess_launcher_take_stderr_fd",
+        constants$790.g_subprocess_launcher_take_stderr_fd$FUNC
+    );
+    static final FunctionDescriptor g_subprocess_launcher_take_fd$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_subprocess_launcher_take_fd$MH = RuntimeHelper.downcallHandle(
+        "g_subprocess_launcher_take_fd",
+        constants$790.g_subprocess_launcher_take_fd$FUNC
+    );
+    static final FunctionDescriptor g_subprocess_launcher_close$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_resource_enumerate_children$MH = RuntimeHelper.downcallHandle(
-        "g_resource_enumerate_children",
-        constants$790.g_resource_enumerate_children$FUNC
-    );
-    static final FunctionDescriptor g_resource_get_info$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_resource_get_info$MH = RuntimeHelper.downcallHandle(
-        "g_resource_get_info",
-        constants$790.g_resource_get_info$FUNC
-    );
-    static final FunctionDescriptor g_resources_register$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_resources_register$MH = RuntimeHelper.downcallHandle(
-        "g_resources_register",
-        constants$790.g_resources_register$FUNC
-    );
-    static final FunctionDescriptor g_resources_unregister$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_resources_unregister$MH = RuntimeHelper.downcallHandle(
-        "g_resources_unregister",
-        constants$790.g_resources_unregister$FUNC
-    );
-    static final FunctionDescriptor g_resources_open_stream$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_resources_open_stream$MH = RuntimeHelper.downcallHandle(
-        "g_resources_open_stream",
-        constants$790.g_resources_open_stream$FUNC
-    );
-    static final FunctionDescriptor g_resources_lookup_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_resources_lookup_data$MH = RuntimeHelper.downcallHandle(
-        "g_resources_lookup_data",
-        constants$790.g_resources_lookup_data$FUNC
+    static final MethodHandle g_subprocess_launcher_close$MH = RuntimeHelper.downcallHandle(
+        "g_subprocess_launcher_close",
+        constants$790.g_subprocess_launcher_close$FUNC
     );
 }
 

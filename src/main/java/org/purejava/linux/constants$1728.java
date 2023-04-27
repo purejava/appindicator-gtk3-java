@@ -7,38 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1728 {
+final class constants$1728 {
 
-    static final FunctionDescriptor gtk_check_menu_item_set_draw_as_radio$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1728() {}
+    static final FunctionDescriptor gtk_page_setup_to_key_file$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_page_setup_to_key_file$MH = RuntimeHelper.downcallHandle(
+        "gtk_page_setup_to_key_file",
+        constants$1728.gtk_page_setup_to_key_file$FUNC
+    );
+    static final FunctionDescriptor gtk_page_setup_to_gvariant$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_page_setup_to_gvariant$MH = RuntimeHelper.downcallHandle(
+        "gtk_page_setup_to_gvariant",
+        constants$1728.gtk_page_setup_to_gvariant$FUNC
+    );
+    static final FunctionDescriptor gtk_page_setup_new_from_gvariant$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_page_setup_new_from_gvariant$MH = RuntimeHelper.downcallHandle(
+        "gtk_page_setup_new_from_gvariant",
+        constants$1728.gtk_page_setup_new_from_gvariant$FUNC
+    );
+    static final FunctionDescriptor gtk_paned_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_paned_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_paned_get_type",
+        constants$1728.gtk_paned_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_paned_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_check_menu_item_set_draw_as_radio$MH = RuntimeHelper.downcallHandle(
-        "gtk_check_menu_item_set_draw_as_radio",
-        constants$1728.gtk_check_menu_item_set_draw_as_radio$FUNC
+    static final MethodHandle gtk_paned_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_paned_new",
+        constants$1728.gtk_paned_new$FUNC
     );
-    static final FunctionDescriptor gtk_check_menu_item_get_draw_as_radio$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_check_menu_item_get_draw_as_radio$MH = RuntimeHelper.downcallHandle(
-        "gtk_check_menu_item_get_draw_as_radio",
-        constants$1728.gtk_check_menu_item_get_draw_as_radio$FUNC
-    );
-    static final FunctionDescriptor GtkClipboardReceivedFunc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_paned_add1$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GtkClipboardReceivedFunc$MH = RuntimeHelper.downcallHandle(
-        constants$1728.GtkClipboardReceivedFunc$FUNC
-    );
-    static final FunctionDescriptor GtkClipboardTextReceivedFunc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GtkClipboardTextReceivedFunc$MH = RuntimeHelper.downcallHandle(
-        constants$1728.GtkClipboardTextReceivedFunc$FUNC
+    static final MethodHandle gtk_paned_add1$MH = RuntimeHelper.downcallHandle(
+        "gtk_paned_add1",
+        constants$1728.gtk_paned_add1$FUNC
     );
 }
 

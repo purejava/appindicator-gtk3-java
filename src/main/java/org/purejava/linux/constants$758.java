@@ -7,49 +7,63 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$758 {
+final class constants$758 {
 
-    static final FunctionDescriptor g_mount_get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$758() {}
+    static final FunctionDescriptor g_simple_async_result_is_valid$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_mount_get_name$MH = RuntimeHelper.downcallHandle(
-        "g_mount_get_name",
-        constants$758.g_mount_get_name$FUNC
+    static final MethodHandle g_simple_async_result_is_valid$MH = RuntimeHelper.downcallHandle(
+        "g_simple_async_result_is_valid",
+        constants$758.g_simple_async_result_is_valid$FUNC
     );
-    static final FunctionDescriptor g_mount_get_icon$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_simple_async_report_error_in_idle$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_mount_get_icon$MH = RuntimeHelper.downcallHandle(
-        "g_mount_get_icon",
-        constants$758.g_mount_get_icon$FUNC
+    static final MethodHandle g_simple_async_report_error_in_idle$MH = RuntimeHelper.downcallHandleVariadic(
+        "g_simple_async_report_error_in_idle",
+        constants$758.g_simple_async_report_error_in_idle$FUNC
     );
-    static final FunctionDescriptor g_mount_get_symbolic_icon$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_simple_async_report_gerror_in_idle$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_mount_get_symbolic_icon$MH = RuntimeHelper.downcallHandle(
-        "g_mount_get_symbolic_icon",
-        constants$758.g_mount_get_symbolic_icon$FUNC
+    static final MethodHandle g_simple_async_report_gerror_in_idle$MH = RuntimeHelper.downcallHandle(
+        "g_simple_async_report_gerror_in_idle",
+        constants$758.g_simple_async_report_gerror_in_idle$FUNC
     );
-    static final FunctionDescriptor g_mount_get_uuid$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_simple_async_report_take_gerror_in_idle$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_mount_get_uuid$MH = RuntimeHelper.downcallHandle(
-        "g_mount_get_uuid",
-        constants$758.g_mount_get_uuid$FUNC
+    static final MethodHandle g_simple_async_report_take_gerror_in_idle$MH = RuntimeHelper.downcallHandle(
+        "g_simple_async_report_take_gerror_in_idle",
+        constants$758.g_simple_async_report_take_gerror_in_idle$FUNC
     );
-    static final FunctionDescriptor g_mount_get_volume$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_simple_io_stream_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_simple_io_stream_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_simple_io_stream_get_type",
+        constants$758.g_simple_io_stream_get_type$FUNC
+    );
+    static final FunctionDescriptor g_simple_io_stream_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_mount_get_volume$MH = RuntimeHelper.downcallHandle(
-        "g_mount_get_volume",
-        constants$758.g_mount_get_volume$FUNC
-    );
-    static final FunctionDescriptor g_mount_get_drive$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_mount_get_drive$MH = RuntimeHelper.downcallHandle(
-        "g_mount_get_drive",
-        constants$758.g_mount_get_drive$FUNC
+    static final MethodHandle g_simple_io_stream_new$MH = RuntimeHelper.downcallHandle(
+        "g_simple_io_stream_new",
+        constants$758.g_simple_io_stream_new$FUNC
     );
 }
 

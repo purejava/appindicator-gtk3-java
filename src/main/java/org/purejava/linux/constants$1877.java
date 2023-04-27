@@ -7,47 +7,43 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1877 {
+final class constants$1877 {
 
-    static final FunctionDescriptor glib_autoptr_clear_GtkListBoxRow$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1877() {}
+    static final FunctionDescriptor gtk_tree_store_move_after$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GtkListBoxRow$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GtkListBoxRow",
-        constants$1877.glib_autoptr_clear_GtkListBoxRow$FUNC
+    static final MethodHandle gtk_tree_store_move_after$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_store_move_after",
+        constants$1877.gtk_tree_store_move_after$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GtkListBoxRow$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gtk_rc_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_rc_flags_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_rc_flags_get_type",
+        constants$1877.gtk_rc_flags_get_type$FUNC
     );
-    static final MethodHandle glib_autoptr_cleanup_GtkListBoxRow$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GtkListBoxRow",
-        constants$1877.glib_autoptr_cleanup_GtkListBoxRow$FUNC
+    static final FunctionDescriptor gtk_rc_token_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_rc_token_type_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_rc_token_type_get_type",
+        constants$1877.gtk_rc_token_type_get_type$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GtkListBoxRow$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gtk_path_priority_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_path_priority_type_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_path_priority_type_get_type",
+        constants$1877.gtk_path_priority_type_get_type$FUNC
     );
-    static final MethodHandle glib_listautoptr_cleanup_GtkListBoxRow$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GtkListBoxRow",
-        constants$1877.glib_listautoptr_cleanup_GtkListBoxRow$FUNC
+    static final FunctionDescriptor gtk_path_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_path_type_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_path_type_get_type",
+        constants$1877.gtk_path_type_get_type$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GtkListBoxRow$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_slistautoptr_cleanup_GtkListBoxRow$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GtkListBoxRow",
-        constants$1877.glib_slistautoptr_cleanup_GtkListBoxRow$FUNC
-    );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GtkListBoxRow$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_queueautoptr_cleanup_GtkListBoxRow$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GtkListBoxRow",
-        constants$1877.glib_queueautoptr_cleanup_GtkListBoxRow$FUNC
-    );
-    static final FunctionDescriptor gtk_lock_button_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_lock_button_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_lock_button_get_type",
-        constants$1877.gtk_lock_button_get_type$FUNC
+    static final FunctionDescriptor gtk_expander_style_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_expander_style_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_expander_style_get_type",
+        constants$1877.gtk_expander_style_get_type$FUNC
     );
 }
 

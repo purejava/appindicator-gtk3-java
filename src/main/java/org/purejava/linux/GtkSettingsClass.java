@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkSettingsClass extends _GtkSettingsClass {
+/**
+ * {@snippet :
+ * typedef struct _GtkSettingsClass GtkSettingsClass;
+ * }
+ */
+public final class GtkSettingsClass extends _GtkSettingsClass {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkSettingsClass() {}
 }
 
 

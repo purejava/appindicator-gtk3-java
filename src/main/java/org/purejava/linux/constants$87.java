@@ -7,8 +7,31 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$87 {
+final class constants$87 {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$87() {}
+    static final FunctionDescriptor g_date_time_add_seconds$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle g_date_time_add_seconds$MH = RuntimeHelper.downcallHandle(
+        "g_date_time_add_seconds",
+        constants$87.g_date_time_add_seconds$FUNC
+    );
+    static final FunctionDescriptor g_date_time_add_full$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle g_date_time_add_full$MH = RuntimeHelper.downcallHandle(
+        "g_date_time_add_full",
+        constants$87.g_date_time_add_full$FUNC
+    );
     static final FunctionDescriptor g_date_time_compare$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
@@ -39,23 +62,6 @@ class constants$87 {
     static final MethodHandle g_date_time_equal$MH = RuntimeHelper.downcallHandle(
         "g_date_time_equal",
         constants$87.g_date_time_equal$FUNC
-    );
-    static final FunctionDescriptor g_date_time_get_ymd$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_date_time_get_ymd$MH = RuntimeHelper.downcallHandle(
-        "g_date_time_get_ymd",
-        constants$87.g_date_time_get_ymd$FUNC
-    );
-    static final FunctionDescriptor g_date_time_get_year$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_date_time_get_year$MH = RuntimeHelper.downcallHandle(
-        "g_date_time_get_year",
-        constants$87.g_date_time_get_year$FUNC
     );
 }
 

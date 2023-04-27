@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GVariant* (*GSettingsBindSetMapping)(struct _GValue* value,struct _GVariantType* expected_type,void* user_data);
+ * }
+ */
 public interface GSettingsBindSetMapping {
 
-    java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress value, java.lang.foreign.MemoryAddress expected_type, java.lang.foreign.MemoryAddress user_data);
-    static MemorySegment allocate(GSettingsBindSetMapping fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GSettingsBindSetMapping.class, fi, constants$804.GSettingsBindSetMapping$FUNC, session);
+    java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment vfs, java.lang.foreign.MemorySegment identifier, java.lang.foreign.MemorySegment user_data);
+    static MemorySegment allocate(GSettingsBindSetMapping fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$750.GSettingsBindSetMapping_UP$MH, fi, constants$750.GSettingsBindSetMapping$FUNC, scope);
     }
-    static GSettingsBindSetMapping ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _value, java.lang.foreign.MemoryAddress _expected_type, java.lang.foreign.MemoryAddress _user_data) -> {
+    static GSettingsBindSetMapping ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _vfs, java.lang.foreign.MemorySegment _identifier, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)constants$805.GSettingsBindSetMapping$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_value, (java.lang.foreign.Addressable)_expected_type, (java.lang.foreign.Addressable)_user_data);
+                return (java.lang.foreign.MemorySegment)constants$750.GSettingsBindSetMapping_DOWN$MH.invokeExact(symbol, _vfs, _identifier, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

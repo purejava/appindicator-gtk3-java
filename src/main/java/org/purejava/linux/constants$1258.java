@@ -7,52 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1258 {
+final class constants$1258 {
 
-    static final FunctionDescriptor gdk_window_fullscreen$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1258() {}
+    static final FunctionDescriptor gtk_widget_has_grab$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_window_fullscreen$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_fullscreen",
-        constants$1258.gdk_window_fullscreen$FUNC
+    static final MethodHandle gtk_widget_has_grab$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_has_grab",
+        constants$1258.gtk_widget_has_grab$FUNC
     );
-    static final FunctionDescriptor gdk_window_fullscreen_on_monitor$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_widget_device_is_shadowed$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_device_is_shadowed$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_device_is_shadowed",
+        constants$1258.gtk_widget_device_is_shadowed$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_set_name$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_set_name$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_set_name",
+        constants$1258.gtk_widget_set_name$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_get_name$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_name",
+        constants$1258.gtk_widget_get_name$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_set_state$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gdk_window_fullscreen_on_monitor$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_fullscreen_on_monitor",
-        constants$1258.gdk_window_fullscreen_on_monitor$FUNC
+    static final MethodHandle gtk_widget_set_state$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_set_state",
+        constants$1258.gtk_widget_set_state$FUNC
     );
-    static final FunctionDescriptor gdk_window_set_fullscreen_mode$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_window_set_fullscreen_mode$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_fullscreen_mode",
-        constants$1258.gdk_window_set_fullscreen_mode$FUNC
-    );
-    static final FunctionDescriptor gdk_window_get_fullscreen_mode$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_widget_get_state$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_window_get_fullscreen_mode$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_fullscreen_mode",
-        constants$1258.gdk_window_get_fullscreen_mode$FUNC
-    );
-    static final FunctionDescriptor gdk_window_unfullscreen$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_unfullscreen$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_unfullscreen",
-        constants$1258.gdk_window_unfullscreen$FUNC
-    );
-    static final FunctionDescriptor gdk_window_set_keep_above$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_window_set_keep_above$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_keep_above",
-        constants$1258.gdk_window_set_keep_above$FUNC
+    static final MethodHandle gtk_widget_get_state$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_state",
+        constants$1258.gtk_widget_get_state$FUNC
     );
 }
 

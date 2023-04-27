@@ -7,47 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1323 {
+final class constants$1323 {
 
-    static final FunctionDescriptor gdk_display_manager_get$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gdk_display_manager_get$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_manager_get",
-        constants$1323.gdk_display_manager_get$FUNC
-    );
-    static final FunctionDescriptor gdk_display_manager_get_default_display$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1323() {}
+    static final FunctionDescriptor gtk_about_dialog_get_license$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_display_manager_get_default_display$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_manager_get_default_display",
-        constants$1323.gdk_display_manager_get_default_display$FUNC
+    static final MethodHandle gtk_about_dialog_get_license$MH = RuntimeHelper.downcallHandle(
+        "gtk_about_dialog_get_license",
+        constants$1323.gtk_about_dialog_get_license$FUNC
     );
-    static final FunctionDescriptor gdk_display_manager_set_default_display$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_about_dialog_set_license$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_display_manager_set_default_display$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_manager_set_default_display",
-        constants$1323.gdk_display_manager_set_default_display$FUNC
+    static final MethodHandle gtk_about_dialog_set_license$MH = RuntimeHelper.downcallHandle(
+        "gtk_about_dialog_set_license",
+        constants$1323.gtk_about_dialog_set_license$FUNC
     );
-    static final FunctionDescriptor gdk_display_manager_list_displays$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_display_manager_list_displays$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_manager_list_displays",
-        constants$1323.gdk_display_manager_list_displays$FUNC
-    );
-    static final FunctionDescriptor gdk_display_manager_open_display$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_about_dialog_set_license_type$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_about_dialog_set_license_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_about_dialog_set_license_type",
+        constants$1323.gtk_about_dialog_set_license_type$FUNC
+    );
+    static final FunctionDescriptor gtk_about_dialog_get_license_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_display_manager_open_display$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_manager_open_display",
-        constants$1323.gdk_display_manager_open_display$FUNC
+    static final MethodHandle gtk_about_dialog_get_license_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_about_dialog_get_license_type",
+        constants$1323.gtk_about_dialog_get_license_type$FUNC
     );
-    static final FunctionDescriptor gdk_cursor_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_cursor_type_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_cursor_type_get_type",
-        constants$1323.gdk_cursor_type_get_type$FUNC
+    static final FunctionDescriptor gtk_about_dialog_get_wrap_license$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_about_dialog_get_wrap_license$MH = RuntimeHelper.downcallHandle(
+        "gtk_about_dialog_get_wrap_license",
+        constants$1323.gtk_about_dialog_get_wrap_license$FUNC
+    );
+    static final FunctionDescriptor gtk_about_dialog_set_wrap_license$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_about_dialog_set_wrap_license$MH = RuntimeHelper.downcallHandle(
+        "gtk_about_dialog_set_wrap_license",
+        constants$1323.gtk_about_dialog_set_wrap_license$FUNC
     );
 }
 

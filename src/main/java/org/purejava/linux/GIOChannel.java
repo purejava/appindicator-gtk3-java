@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GIOChannel extends _GIOChannel {
+/**
+ * {@snippet :
+ * typedef struct _GIOChannel GIOChannel;
+ * }
+ */
+public final class GIOChannel extends _GIOChannel {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GIOChannel() {}
 }
 
 

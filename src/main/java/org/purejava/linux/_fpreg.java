@@ -7,9 +7,17 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _fpreg {
+ *     unsigned short significand[4];
+ *     unsigned short exponent;
+ * };
+ * }
+ */
 public class _fpreg {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.sequenceLayout(4, Constants$root.C_SHORT$LAYOUT).withName("significand"),
         Constants$root.C_SHORT$LAYOUT.withName("exponent")
     ).withName("_fpreg");
@@ -23,10 +31,22 @@ public class _fpreg {
     public static VarHandle exponent$VH() {
         return _fpreg.exponent$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * unsigned short exponent;
+     * }
+     */
     public static short exponent$get(MemorySegment seg) {
         return (short)_fpreg.exponent$VH.get(seg);
     }
-    public static void exponent$set( MemorySegment seg, short x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * unsigned short exponent;
+     * }
+     */
+    public static void exponent$set(MemorySegment seg, short x) {
         _fpreg.exponent$VH.set(seg, x);
     }
     public static short exponent$get(MemorySegment seg, long index) {
@@ -37,10 +57,10 @@ public class _fpreg {
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

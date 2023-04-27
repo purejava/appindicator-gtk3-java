@@ -7,68 +7,44 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1207 {
+final class constants$1207 {
 
-    static final FunctionDescriptor cairo_mesh_pattern_get_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1207() {}
+    static final FunctionDescriptor AtkEventListenerInit$FUNC = FunctionDescriptor.ofVoid();
+    static final FunctionDescriptor AtkEventListenerInit_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle AtkEventListenerInit_UP$MH = RuntimeHelper.upcallHandle(AtkEventListenerInit.class, "apply", constants$1207.AtkEventListenerInit_UP$FUNC);
+    static final FunctionDescriptor AtkEventListenerInit_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle AtkEventListenerInit_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$1207.AtkEventListenerInit_DOWN$FUNC
     );
-    static final MethodHandle cairo_mesh_pattern_get_path$MH = RuntimeHelper.downcallHandle(
-        "cairo_mesh_pattern_get_path",
-        constants$1207.cairo_mesh_pattern_get_path$FUNC
-    );
-    static final FunctionDescriptor cairo_mesh_pattern_get_corner_color_rgba$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor AtkKeySnoopFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_mesh_pattern_get_corner_color_rgba$MH = RuntimeHelper.downcallHandle(
-        "cairo_mesh_pattern_get_corner_color_rgba",
-        constants$1207.cairo_mesh_pattern_get_corner_color_rgba$FUNC
-    );
-    static final FunctionDescriptor cairo_mesh_pattern_get_control_point$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor AtkKeySnoopFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_mesh_pattern_get_control_point$MH = RuntimeHelper.downcallHandle(
-        "cairo_mesh_pattern_get_control_point",
-        constants$1207.cairo_mesh_pattern_get_control_point$FUNC
-    );
-    static final FunctionDescriptor cairo_matrix_init$FUNC = FunctionDescriptor.ofVoid(
+    static final MethodHandle AtkKeySnoopFunc_UP$MH = RuntimeHelper.upcallHandle(AtkKeySnoopFunc.class, "apply", constants$1207.AtkKeySnoopFunc_UP$FUNC);
+    static final FunctionDescriptor AtkKeySnoopFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle cairo_matrix_init$MH = RuntimeHelper.downcallHandle(
-        "cairo_matrix_init",
-        constants$1207.cairo_matrix_init$FUNC
-    );
-    static final FunctionDescriptor cairo_matrix_init_identity$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_matrix_init_identity$MH = RuntimeHelper.downcallHandle(
-        "cairo_matrix_init_identity",
-        constants$1207.cairo_matrix_init_identity$FUNC
+    static final MethodHandle AtkKeySnoopFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$1207.AtkKeySnoopFunc_DOWN$FUNC
     );
-    static final FunctionDescriptor cairo_matrix_init_translate$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final FunctionDescriptor atk_util_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle atk_util_get_type$MH = RuntimeHelper.downcallHandle(
+        "atk_util_get_type",
+        constants$1207.atk_util_get_type$FUNC
     );
-    static final MethodHandle cairo_matrix_init_translate$MH = RuntimeHelper.downcallHandle(
-        "cairo_matrix_init_translate",
-        constants$1207.cairo_matrix_init_translate$FUNC
+    static final FunctionDescriptor atk_add_focus_tracker$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle atk_add_focus_tracker$MH = RuntimeHelper.downcallHandle(
+        "atk_add_focus_tracker",
+        constants$1207.atk_add_focus_tracker$FUNC
     );
 }
 

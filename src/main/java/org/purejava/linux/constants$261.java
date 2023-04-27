@@ -7,57 +7,62 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$261 {
+final class constants$261 {
 
-    static final FunctionDescriptor g_queue_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$261() {}
+    static final FunctionDescriptor g_log_get_debug_enabled$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
+    static final MethodHandle g_log_get_debug_enabled$MH = RuntimeHelper.downcallHandle(
+        "g_log_get_debug_enabled",
+        constants$261.g_log_get_debug_enabled$FUNC
     );
-    static final MethodHandle g_queue_copy$MH = RuntimeHelper.downcallHandle(
-        "g_queue_copy",
-        constants$261.g_queue_copy$FUNC
+    static final FunctionDescriptor g_log_set_debug_enabled$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_INT$LAYOUT
     );
-    static final FunctionDescriptor g_queue_foreach$FUNC = FunctionDescriptor.ofVoid(
+    static final MethodHandle g_log_set_debug_enabled$MH = RuntimeHelper.downcallHandle(
+        "g_log_set_debug_enabled",
+        constants$261.g_log_set_debug_enabled$FUNC
+    );
+    static final FunctionDescriptor _g_log_fallback_handler$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_queue_foreach$MH = RuntimeHelper.downcallHandle(
-        "g_queue_foreach",
-        constants$261.g_queue_foreach$FUNC
-    );
-    static final FunctionDescriptor g_queue_find$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_queue_find$MH = RuntimeHelper.downcallHandle(
-        "g_queue_find",
-        constants$261.g_queue_find$FUNC
-    );
-    static final FunctionDescriptor g_queue_find_custom$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_queue_find_custom$MH = RuntimeHelper.downcallHandle(
-        "g_queue_find_custom",
-        constants$261.g_queue_find_custom$FUNC
+    static final MethodHandle _g_log_fallback_handler$MH = RuntimeHelper.downcallHandle(
+        "_g_log_fallback_handler",
+        constants$261._g_log_fallback_handler$FUNC
     );
-    static final FunctionDescriptor g_queue_sort$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_return_if_fail_warning$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_queue_sort$MH = RuntimeHelper.downcallHandle(
-        "g_queue_sort",
-        constants$261.g_queue_sort$FUNC
+    static final MethodHandle g_return_if_fail_warning$MH = RuntimeHelper.downcallHandle(
+        "g_return_if_fail_warning",
+        constants$261.g_return_if_fail_warning$FUNC
     );
-    static final FunctionDescriptor g_queue_push_head$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_warn_message$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_queue_push_head$MH = RuntimeHelper.downcallHandle(
-        "g_queue_push_head",
-        constants$261.g_queue_push_head$FUNC
+    static final MethodHandle g_warn_message$MH = RuntimeHelper.downcallHandle(
+        "g_warn_message",
+        constants$261.g_warn_message$FUNC
+    );
+    static final FunctionDescriptor g_assert_warning$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_assert_warning$MH = RuntimeHelper.downcallHandle(
+        "g_assert_warning",
+        constants$261.g_assert_warning$FUNC
     );
 }
 

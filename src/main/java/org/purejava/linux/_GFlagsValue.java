@@ -7,9 +7,18 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GFlagsValue {
+ *     guint value;
+ *     const gchar* value_name;
+ *     const gchar* value_nick;
+ * };
+ * }
+ */
 public class _GFlagsValue {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_INT$LAYOUT.withName("value"),
         MemoryLayout.paddingLayout(32),
         Constants$root.C_POINTER$LAYOUT.withName("value_name"),
@@ -22,10 +31,22 @@ public class _GFlagsValue {
     public static VarHandle value$VH() {
         return _GFlagsValue.value$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * guint value;
+     * }
+     */
     public static int value$get(MemorySegment seg) {
         return (int)_GFlagsValue.value$VH.get(seg);
     }
-    public static void value$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * guint value;
+     * }
+     */
+    public static void value$set(MemorySegment seg, int x) {
         _GFlagsValue.value$VH.set(seg, x);
     }
     public static int value$get(MemorySegment seg, long index) {
@@ -38,40 +59,64 @@ public class _GFlagsValue {
     public static VarHandle value_name$VH() {
         return _GFlagsValue.value_name$VH;
     }
-    public static MemoryAddress value_name$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GFlagsValue.value_name$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * const gchar* value_name;
+     * }
+     */
+    public static MemorySegment value_name$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GFlagsValue.value_name$VH.get(seg);
     }
-    public static void value_name$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * const gchar* value_name;
+     * }
+     */
+    public static void value_name$set(MemorySegment seg, MemorySegment x) {
         _GFlagsValue.value_name$VH.set(seg, x);
     }
-    public static MemoryAddress value_name$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GFlagsValue.value_name$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment value_name$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GFlagsValue.value_name$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void value_name$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void value_name$set(MemorySegment seg, long index, MemorySegment x) {
         _GFlagsValue.value_name$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle value_nick$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("value_nick"));
     public static VarHandle value_nick$VH() {
         return _GFlagsValue.value_nick$VH;
     }
-    public static MemoryAddress value_nick$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GFlagsValue.value_nick$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * const gchar* value_nick;
+     * }
+     */
+    public static MemorySegment value_nick$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GFlagsValue.value_nick$VH.get(seg);
     }
-    public static void value_nick$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * const gchar* value_nick;
+     * }
+     */
+    public static void value_nick$set(MemorySegment seg, MemorySegment x) {
         _GFlagsValue.value_nick$VH.set(seg, x);
     }
-    public static MemoryAddress value_nick$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GFlagsValue.value_nick$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment value_nick$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GFlagsValue.value_nick$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void value_nick$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void value_nick$set(MemorySegment seg, long index, MemorySegment x) {
         _GFlagsValue.value_nick$VH.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

@@ -7,53 +7,60 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1039 {
+final class constants$1039 {
 
-    static final FunctionDescriptor hb_font_get_glyph_func_t$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1039() {}
+    static final FunctionDescriptor cairo_raster_source_snapshot_func_t$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_font_get_glyph_func_t$MH = RuntimeHelper.downcallHandle(
-        constants$1039.hb_font_get_glyph_func_t$FUNC
-    );
-    static final FunctionDescriptor hb_font_funcs_set_glyph_func$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor cairo_raster_source_snapshot_func_t_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_font_funcs_set_glyph_func$MH = RuntimeHelper.downcallHandle(
-        "hb_font_funcs_set_glyph_func",
-        constants$1039.hb_font_funcs_set_glyph_func$FUNC
-    );
-    static final FunctionDescriptor hb_set_invert$FUNC = FunctionDescriptor.ofVoid(
+    static final MethodHandle cairo_raster_source_snapshot_func_t_UP$MH = RuntimeHelper.upcallHandle(cairo_raster_source_snapshot_func_t.class, "apply", constants$1039.cairo_raster_source_snapshot_func_t_UP$FUNC);
+    static final FunctionDescriptor cairo_raster_source_snapshot_func_t_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_set_invert$MH = RuntimeHelper.downcallHandle(
-        "hb_set_invert",
-        constants$1039.hb_set_invert$FUNC
+    static final MethodHandle cairo_raster_source_snapshot_func_t_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$1039.cairo_raster_source_snapshot_func_t_DOWN$FUNC
     );
-    static final FunctionDescriptor hb_unicode_eastasian_width_func_t$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_unicode_eastasian_width_func_t$MH = RuntimeHelper.downcallHandle(
-        constants$1039.hb_unicode_eastasian_width_func_t$FUNC
-    );
-    static final FunctionDescriptor hb_unicode_funcs_set_eastasian_width_func$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor cairo_raster_source_copy_func_t$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_unicode_funcs_set_eastasian_width_func$MH = RuntimeHelper.downcallHandle(
-        "hb_unicode_funcs_set_eastasian_width_func",
-        constants$1039.hb_unicode_funcs_set_eastasian_width_func$FUNC
+    static final FunctionDescriptor cairo_raster_source_copy_func_t_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cairo_raster_source_copy_func_t_UP$MH = RuntimeHelper.upcallHandle(cairo_raster_source_copy_func_t.class, "apply", constants$1039.cairo_raster_source_copy_func_t_UP$FUNC);
+    static final FunctionDescriptor cairo_raster_source_copy_func_t_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cairo_raster_source_copy_func_t_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$1039.cairo_raster_source_copy_func_t_DOWN$FUNC
+    );
+    static final FunctionDescriptor cairo_raster_source_finish_func_t$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final FunctionDescriptor cairo_raster_source_finish_func_t_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cairo_raster_source_finish_func_t_UP$MH = RuntimeHelper.upcallHandle(cairo_raster_source_finish_func_t.class, "apply", constants$1039.cairo_raster_source_finish_func_t_UP$FUNC);
+    static final FunctionDescriptor cairo_raster_source_finish_func_t_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cairo_raster_source_finish_func_t_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$1039.cairo_raster_source_finish_func_t_DOWN$FUNC
     );
 }
 

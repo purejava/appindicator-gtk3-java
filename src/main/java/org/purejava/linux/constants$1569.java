@@ -7,48 +7,49 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1569 {
+final class constants$1569 {
 
-    static final FunctionDescriptor gtk_tree_sortable_set_sort_func$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_sortable_set_sort_func$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_sortable_set_sort_func",
-        constants$1569.gtk_tree_sortable_set_sort_func$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_sortable_set_default_sort_func$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1569() {}
+    static final FunctionDescriptor gtk_file_filter_filter$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_tree_sortable_set_default_sort_func$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_sortable_set_default_sort_func",
-        constants$1569.gtk_tree_sortable_set_default_sort_func$FUNC
+    static final MethodHandle gtk_file_filter_filter$MH = RuntimeHelper.downcallHandle(
+        "gtk_file_filter_filter",
+        constants$1569.gtk_file_filter_filter$FUNC
     );
-    static final FunctionDescriptor gtk_tree_sortable_has_default_sort_func$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_file_filter_to_gvariant$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_tree_sortable_has_default_sort_func$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_sortable_has_default_sort_func",
-        constants$1569.gtk_tree_sortable_has_default_sort_func$FUNC
+    static final MethodHandle gtk_file_filter_to_gvariant$MH = RuntimeHelper.downcallHandle(
+        "gtk_file_filter_to_gvariant",
+        constants$1569.gtk_file_filter_to_gvariant$FUNC
     );
-    static final FunctionDescriptor GtkCellCallback$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_file_filter_new_from_gvariant$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GtkCellCallback$MH = RuntimeHelper.downcallHandle(
-        constants$1569.GtkCellCallback$FUNC
+    static final MethodHandle gtk_file_filter_new_from_gvariant$MH = RuntimeHelper.downcallHandle(
+        "gtk_file_filter_new_from_gvariant",
+        constants$1569.gtk_file_filter_new_from_gvariant$FUNC
     );
-    static final FunctionDescriptor GtkCellAllocCallback$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_file_chooser_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_file_chooser_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_file_chooser_get_type",
+        constants$1569.gtk_file_chooser_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_file_chooser_error_quark$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
+    static final MethodHandle gtk_file_chooser_error_quark$MH = RuntimeHelper.downcallHandle(
+        "gtk_file_chooser_error_quark",
+        constants$1569.gtk_file_chooser_error_quark$FUNC
+    );
+    static final FunctionDescriptor gtk_file_chooser_set_action$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_file_chooser_set_action$MH = RuntimeHelper.downcallHandle(
+        "gtk_file_chooser_set_action",
+        constants$1569.gtk_file_chooser_set_action$FUNC
     );
 }
 

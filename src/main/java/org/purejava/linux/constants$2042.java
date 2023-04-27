@@ -7,61 +7,16 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$2042 {
+final class constants$2042 {
 
-    static final FunctionDescriptor gtk_text_view_im_context_filter_keypress$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_view_im_context_filter_keypress$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_im_context_filter_keypress",
-        constants$2042.gtk_text_view_im_context_filter_keypress$FUNC
-    );
-    static final FunctionDescriptor gtk_text_view_reset_im_context$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_view_reset_im_context$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_reset_im_context",
-        constants$2042.gtk_text_view_reset_im_context$FUNC
-    );
-    static final FunctionDescriptor gtk_text_view_add_child_at_anchor$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_view_add_child_at_anchor$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_add_child_at_anchor",
-        constants$2042.gtk_text_view_add_child_at_anchor$FUNC
-    );
-    static final FunctionDescriptor gtk_text_view_add_child_in_window$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_text_view_add_child_in_window$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_add_child_in_window",
-        constants$2042.gtk_text_view_add_child_in_window$FUNC
-    );
-    static final FunctionDescriptor gtk_text_view_move_child$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_text_view_move_child$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_move_child",
-        constants$2042.gtk_text_view_move_child$FUNC
-    );
-    static final FunctionDescriptor gtk_text_view_set_wrap_mode$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_text_view_set_wrap_mode$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_set_wrap_mode",
-        constants$2042.gtk_text_view_set_wrap_mode$FUNC
-    );
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$2042() {}
+    static final MemorySegment GTK_STYLE_CLASS_WIDE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("wide");
+    static final MemorySegment GTK_STYLE_REGION_ROW$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("row");
+    static final MemorySegment GTK_STYLE_REGION_COLUMN$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("column");
+    static final MemorySegment GTK_STYLE_REGION_COLUMN_HEADER$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("column-header");
+    static final MemorySegment GTK_STYLE_REGION_TAB$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("tab");
+    static final MemorySegment GTK_LEVEL_BAR_OFFSET_LOW$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("low");
 }
 
 

@@ -7,26 +7,57 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$7 {
+final class constants$7 {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$7() {}
+    static final FunctionDescriptor GEqualFuncFull$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final FunctionDescriptor GEqualFuncFull_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GEqualFuncFull_UP$MH = RuntimeHelper.upcallHandle(GEqualFuncFull.class, "apply", constants$7.GEqualFuncFull_UP$FUNC);
+    static final FunctionDescriptor GEqualFuncFull_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GEqualFuncFull_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$7.GEqualFuncFull_DOWN$FUNC
+    );
     static final FunctionDescriptor GDestroyNotify$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GDestroyNotify$MH = RuntimeHelper.downcallHandle(
-        constants$7.GDestroyNotify$FUNC
+    static final FunctionDescriptor GDestroyNotify_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GDestroyNotify_UP$MH = RuntimeHelper.upcallHandle(GDestroyNotify.class, "apply", constants$7.GDestroyNotify_UP$FUNC);
+    static final FunctionDescriptor GDestroyNotify_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GDestroyNotify_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$7.GDestroyNotify_DOWN$FUNC
     );
     static final FunctionDescriptor GFunc$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GFunc$MH = RuntimeHelper.downcallHandle(
-        constants$7.GFunc$FUNC
-    );
-    static final FunctionDescriptor GHashFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor GFunc_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GHashFunc$MH = RuntimeHelper.downcallHandle(
-        constants$7.GHashFunc$FUNC
+    static final MethodHandle GFunc_UP$MH = RuntimeHelper.upcallHandle(GFunc.class, "apply", constants$7.GFunc_UP$FUNC);
+    static final FunctionDescriptor GFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$7.GFunc_DOWN$FUNC
     );
 }
 

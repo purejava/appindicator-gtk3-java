@@ -7,54 +7,58 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1240 {
+final class constants$1240 {
 
-    static final FunctionDescriptor gdk_window_raise$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_raise$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_raise",
-        constants$1240.gdk_window_raise$FUNC
-    );
-    static final FunctionDescriptor gdk_window_lower$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_lower$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_lower",
-        constants$1240.gdk_window_lower$FUNC
-    );
-    static final FunctionDescriptor gdk_window_restack$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1240() {}
+    static final FunctionDescriptor atk_table_get_row_description$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gdk_window_restack$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_restack",
-        constants$1240.gdk_window_restack$FUNC
+    static final MethodHandle atk_table_get_row_description$MH = RuntimeHelper.downcallHandle(
+        "atk_table_get_row_description",
+        constants$1240.atk_table_get_row_description$FUNC
     );
-    static final FunctionDescriptor gdk_window_focus$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor atk_table_get_row_header$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gdk_window_focus$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_focus",
-        constants$1240.gdk_window_focus$FUNC
+    static final MethodHandle atk_table_get_row_header$MH = RuntimeHelper.downcallHandle(
+        "atk_table_get_row_header",
+        constants$1240.atk_table_get_row_header$FUNC
     );
-    static final FunctionDescriptor gdk_window_set_user_data$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor atk_table_get_summary$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle atk_table_get_summary$MH = RuntimeHelper.downcallHandle(
+        "atk_table_get_summary",
+        constants$1240.atk_table_get_summary$FUNC
+    );
+    static final FunctionDescriptor atk_table_set_caption$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_window_set_user_data$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_user_data",
-        constants$1240.gdk_window_set_user_data$FUNC
+    static final MethodHandle atk_table_set_caption$MH = RuntimeHelper.downcallHandle(
+        "atk_table_set_caption",
+        constants$1240.atk_table_set_caption$FUNC
     );
-    static final FunctionDescriptor gdk_window_set_override_redirect$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor atk_table_set_column_description$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_window_set_override_redirect$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_override_redirect",
-        constants$1240.gdk_window_set_override_redirect$FUNC
+    static final MethodHandle atk_table_set_column_description$MH = RuntimeHelper.downcallHandle(
+        "atk_table_set_column_description",
+        constants$1240.atk_table_set_column_description$FUNC
+    );
+    static final FunctionDescriptor atk_table_set_column_header$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle atk_table_set_column_header$MH = RuntimeHelper.downcallHandle(
+        "atk_table_set_column_header",
+        constants$1240.atk_table_set_column_header$FUNC
     );
 }
 

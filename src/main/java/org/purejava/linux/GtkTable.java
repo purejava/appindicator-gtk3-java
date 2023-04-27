@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkTable extends _GtkTable {
+/**
+ * {@snippet :
+ * typedef struct _GtkTable GtkTable;
+ * }
+ */
+public final class GtkTable extends _GtkTable {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkTable() {}
 }
 
 

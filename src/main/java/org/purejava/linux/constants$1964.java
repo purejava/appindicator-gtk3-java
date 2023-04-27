@@ -7,54 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1964 {
+final class constants$1964 {
 
-    static final FunctionDescriptor gtk_range_get_min_slider_size$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1964() {}
+    static final FunctionDescriptor gtk_style_has_context$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_range_get_min_slider_size$MH = RuntimeHelper.downcallHandle(
-        "gtk_range_get_min_slider_size",
-        constants$1964.gtk_range_get_min_slider_size$FUNC
+    static final MethodHandle gtk_style_has_context$MH = RuntimeHelper.downcallHandle(
+        "gtk_style_has_context",
+        constants$1964.gtk_style_has_context$FUNC
     );
-    static final FunctionDescriptor gtk_range_get_range_rect$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_widget_style_attach$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_style_attach$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_style_attach",
+        constants$1964.gtk_widget_style_attach$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_has_rc_style$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_widget_has_rc_style$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_has_rc_style",
+        constants$1964.gtk_widget_has_rc_style$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_set_style$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_range_get_range_rect$MH = RuntimeHelper.downcallHandle(
-        "gtk_range_get_range_rect",
-        constants$1964.gtk_range_get_range_rect$FUNC
+    static final MethodHandle gtk_widget_set_style$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_set_style",
+        constants$1964.gtk_widget_set_style$FUNC
     );
-    static final FunctionDescriptor gtk_range_get_slider_range$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_widget_ensure_style$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_range_get_slider_range$MH = RuntimeHelper.downcallHandle(
-        "gtk_range_get_slider_range",
-        constants$1964.gtk_range_get_slider_range$FUNC
+    static final MethodHandle gtk_widget_ensure_style$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_ensure_style",
+        constants$1964.gtk_widget_ensure_style$FUNC
     );
-    static final FunctionDescriptor gtk_range_set_lower_stepper_sensitivity$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_range_set_lower_stepper_sensitivity$MH = RuntimeHelper.downcallHandle(
-        "gtk_range_set_lower_stepper_sensitivity",
-        constants$1964.gtk_range_set_lower_stepper_sensitivity$FUNC
-    );
-    static final FunctionDescriptor gtk_range_get_lower_stepper_sensitivity$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_widget_get_style$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_range_get_lower_stepper_sensitivity$MH = RuntimeHelper.downcallHandle(
-        "gtk_range_get_lower_stepper_sensitivity",
-        constants$1964.gtk_range_get_lower_stepper_sensitivity$FUNC
-    );
-    static final FunctionDescriptor gtk_range_set_upper_stepper_sensitivity$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_range_set_upper_stepper_sensitivity$MH = RuntimeHelper.downcallHandle(
-        "gtk_range_set_upper_stepper_sensitivity",
-        constants$1964.gtk_range_set_upper_stepper_sensitivity$FUNC
+    static final MethodHandle gtk_widget_get_style$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_style",
+        constants$1964.gtk_widget_get_style$FUNC
     );
 }
 

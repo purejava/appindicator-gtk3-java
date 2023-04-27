@@ -7,55 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$811 {
+final class constants$811 {
 
-    static final FunctionDescriptor g_simple_async_result_set_handle_cancellation$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$811() {}
+    static final FunctionDescriptor g_tls_client_connection_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_tls_client_connection_new$MH = RuntimeHelper.downcallHandle(
+        "g_tls_client_connection_new",
+        constants$811.g_tls_client_connection_new$FUNC
+    );
+    static final FunctionDescriptor g_tls_client_connection_get_validation_flags$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_tls_client_connection_get_validation_flags$MH = RuntimeHelper.downcallHandle(
+        "g_tls_client_connection_get_validation_flags",
+        constants$811.g_tls_client_connection_get_validation_flags$FUNC
+    );
+    static final FunctionDescriptor g_tls_client_connection_set_validation_flags$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_simple_async_result_set_handle_cancellation$MH = RuntimeHelper.downcallHandle(
-        "g_simple_async_result_set_handle_cancellation",
-        constants$811.g_simple_async_result_set_handle_cancellation$FUNC
+    static final MethodHandle g_tls_client_connection_set_validation_flags$MH = RuntimeHelper.downcallHandle(
+        "g_tls_client_connection_set_validation_flags",
+        constants$811.g_tls_client_connection_set_validation_flags$FUNC
     );
-    static final FunctionDescriptor g_simple_async_result_complete$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_tls_client_connection_get_server_identity$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_simple_async_result_complete$MH = RuntimeHelper.downcallHandle(
-        "g_simple_async_result_complete",
-        constants$811.g_simple_async_result_complete$FUNC
+    static final MethodHandle g_tls_client_connection_get_server_identity$MH = RuntimeHelper.downcallHandle(
+        "g_tls_client_connection_get_server_identity",
+        constants$811.g_tls_client_connection_get_server_identity$FUNC
     );
-    static final FunctionDescriptor g_simple_async_result_complete_in_idle$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_simple_async_result_complete_in_idle$MH = RuntimeHelper.downcallHandle(
-        "g_simple_async_result_complete_in_idle",
-        constants$811.g_simple_async_result_complete_in_idle$FUNC
-    );
-    static final FunctionDescriptor g_simple_async_result_run_in_thread$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_simple_async_result_run_in_thread$MH = RuntimeHelper.downcallHandle(
-        "g_simple_async_result_run_in_thread",
-        constants$811.g_simple_async_result_run_in_thread$FUNC
-    );
-    static final FunctionDescriptor g_simple_async_result_set_from_error$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_tls_client_connection_set_server_identity$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_simple_async_result_set_from_error$MH = RuntimeHelper.downcallHandle(
-        "g_simple_async_result_set_from_error",
-        constants$811.g_simple_async_result_set_from_error$FUNC
+    static final MethodHandle g_tls_client_connection_set_server_identity$MH = RuntimeHelper.downcallHandle(
+        "g_tls_client_connection_set_server_identity",
+        constants$811.g_tls_client_connection_set_server_identity$FUNC
     );
-    static final FunctionDescriptor g_simple_async_result_take_error$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_tls_client_connection_get_use_ssl3$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_simple_async_result_take_error$MH = RuntimeHelper.downcallHandle(
-        "g_simple_async_result_take_error",
-        constants$811.g_simple_async_result_take_error$FUNC
+    static final MethodHandle g_tls_client_connection_get_use_ssl3$MH = RuntimeHelper.downcallHandle(
+        "g_tls_client_connection_get_use_ssl3",
+        constants$811.g_tls_client_connection_get_use_ssl3$FUNC
     );
 }
 

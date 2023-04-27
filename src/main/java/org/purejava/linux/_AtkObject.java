@@ -7,9 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _AtkObject {
+ *     GObject parent;
+ *     gchar* description;
+ *     gchar* name;
+ *     AtkObject* accessible_parent;
+ *     AtkRole role;
+ *     AtkRelationSet* relation_set;
+ *     AtkLayer layer;
+ * };
+ * }
+ */
 public class _AtkObject {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
                 Constants$root.C_POINTER$LAYOUT.withName("g_class")
@@ -37,58 +50,106 @@ public class _AtkObject {
     public static VarHandle description$VH() {
         return _AtkObject.description$VH;
     }
-    public static MemoryAddress description$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AtkObject.description$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gchar* description;
+     * }
+     */
+    public static MemorySegment description$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AtkObject.description$VH.get(seg);
     }
-    public static void description$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gchar* description;
+     * }
+     */
+    public static void description$set(MemorySegment seg, MemorySegment x) {
         _AtkObject.description$VH.set(seg, x);
     }
-    public static MemoryAddress description$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AtkObject.description$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment description$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AtkObject.description$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void description$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void description$set(MemorySegment seg, long index, MemorySegment x) {
         _AtkObject.description$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle name$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("name"));
     public static VarHandle name$VH() {
         return _AtkObject.name$VH;
     }
-    public static MemoryAddress name$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AtkObject.name$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gchar* name;
+     * }
+     */
+    public static MemorySegment name$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AtkObject.name$VH.get(seg);
     }
-    public static void name$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gchar* name;
+     * }
+     */
+    public static void name$set(MemorySegment seg, MemorySegment x) {
         _AtkObject.name$VH.set(seg, x);
     }
-    public static MemoryAddress name$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AtkObject.name$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment name$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AtkObject.name$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void name$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void name$set(MemorySegment seg, long index, MemorySegment x) {
         _AtkObject.name$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle accessible_parent$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("accessible_parent"));
     public static VarHandle accessible_parent$VH() {
         return _AtkObject.accessible_parent$VH;
     }
-    public static MemoryAddress accessible_parent$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AtkObject.accessible_parent$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * AtkObject* accessible_parent;
+     * }
+     */
+    public static MemorySegment accessible_parent$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AtkObject.accessible_parent$VH.get(seg);
     }
-    public static void accessible_parent$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * AtkObject* accessible_parent;
+     * }
+     */
+    public static void accessible_parent$set(MemorySegment seg, MemorySegment x) {
         _AtkObject.accessible_parent$VH.set(seg, x);
     }
-    public static MemoryAddress accessible_parent$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AtkObject.accessible_parent$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment accessible_parent$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AtkObject.accessible_parent$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void accessible_parent$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void accessible_parent$set(MemorySegment seg, long index, MemorySegment x) {
         _AtkObject.accessible_parent$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle role$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("role"));
     public static VarHandle role$VH() {
         return _AtkObject.role$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * AtkRole role;
+     * }
+     */
     public static int role$get(MemorySegment seg) {
         return (int)_AtkObject.role$VH.get(seg);
     }
-    public static void role$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * AtkRole role;
+     * }
+     */
+    public static void role$set(MemorySegment seg, int x) {
         _AtkObject.role$VH.set(seg, x);
     }
     public static int role$get(MemorySegment seg, long index) {
@@ -101,26 +162,50 @@ public class _AtkObject {
     public static VarHandle relation_set$VH() {
         return _AtkObject.relation_set$VH;
     }
-    public static MemoryAddress relation_set$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AtkObject.relation_set$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * AtkRelationSet* relation_set;
+     * }
+     */
+    public static MemorySegment relation_set$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AtkObject.relation_set$VH.get(seg);
     }
-    public static void relation_set$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * AtkRelationSet* relation_set;
+     * }
+     */
+    public static void relation_set$set(MemorySegment seg, MemorySegment x) {
         _AtkObject.relation_set$VH.set(seg, x);
     }
-    public static MemoryAddress relation_set$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AtkObject.relation_set$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment relation_set$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AtkObject.relation_set$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void relation_set$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void relation_set$set(MemorySegment seg, long index, MemorySegment x) {
         _AtkObject.relation_set$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle layer$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("layer"));
     public static VarHandle layer$VH() {
         return _AtkObject.layer$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * AtkLayer layer;
+     * }
+     */
     public static int layer$get(MemorySegment seg) {
         return (int)_AtkObject.layer$VH.get(seg);
     }
-    public static void layer$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * AtkLayer layer;
+     * }
+     */
+    public static void layer$set(MemorySegment seg, int x) {
         _AtkObject.layer$VH.set(seg, x);
     }
     public static int layer$get(MemorySegment seg, long index) {
@@ -131,10 +216,10 @@ public class _AtkObject {
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

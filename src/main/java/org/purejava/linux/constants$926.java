@@ -7,49 +7,49 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$926 {
+final class constants$926 {
 
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GInetAddressMask$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$926() {}
+    static final FunctionDescriptor pango_attr_allow_breaks_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GInetAddressMask$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GInetAddressMask",
-        constants$926.glib_slistautoptr_cleanup_GInetAddressMask$FUNC
+    static final MethodHandle pango_attr_allow_breaks_new$MH = RuntimeHelper.downcallHandle(
+        "pango_attr_allow_breaks_new",
+        constants$926.pango_attr_allow_breaks_new$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GInetAddressMask$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor pango_attr_word_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle pango_attr_word_new$MH = RuntimeHelper.downcallHandle(
+        "pango_attr_word_new",
+        constants$926.pango_attr_word_new$FUNC
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GInetAddressMask$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GInetAddressMask",
-        constants$926.glib_queueautoptr_cleanup_GInetAddressMask$FUNC
+    static final FunctionDescriptor pango_attr_sentence_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle pango_attr_sentence_new$MH = RuntimeHelper.downcallHandle(
+        "pango_attr_sentence_new",
+        constants$926.pango_attr_sentence_new$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GInetSocketAddress$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor pango_attr_insert_hyphens_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GInetSocketAddress$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GInetSocketAddress",
-        constants$926.glib_autoptr_clear_GInetSocketAddress$FUNC
+    static final MethodHandle pango_attr_insert_hyphens_new$MH = RuntimeHelper.downcallHandle(
+        "pango_attr_insert_hyphens_new",
+        constants$926.pango_attr_insert_hyphens_new$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GInetSocketAddress$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor pango_attr_overline_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GInetSocketAddress$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GInetSocketAddress",
-        constants$926.glib_autoptr_cleanup_GInetSocketAddress$FUNC
+    static final MethodHandle pango_attr_overline_new$MH = RuntimeHelper.downcallHandle(
+        "pango_attr_overline_new",
+        constants$926.pango_attr_overline_new$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GInetSocketAddress$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor pango_attr_overline_color_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_SHORT$LAYOUT,
+        Constants$root.C_SHORT$LAYOUT,
+        Constants$root.C_SHORT$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GInetSocketAddress$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GInetSocketAddress",
-        constants$926.glib_listautoptr_cleanup_GInetSocketAddress$FUNC
-    );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GInetSocketAddress$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_slistautoptr_cleanup_GInetSocketAddress$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GInetSocketAddress",
-        constants$926.glib_slistautoptr_cleanup_GInetSocketAddress$FUNC
+    static final MethodHandle pango_attr_overline_color_new$MH = RuntimeHelper.downcallHandle(
+        "pango_attr_overline_color_new",
+        constants$926.pango_attr_overline_color_new$FUNC
     );
 }
 

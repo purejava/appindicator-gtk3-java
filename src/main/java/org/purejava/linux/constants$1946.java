@@ -7,52 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1946 {
+final class constants$1946 {
 
-    static final FunctionDescriptor gtk_print_settings_set_default_source$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1946() {}
+    static final FunctionDescriptor gtk_radio_action_get_group$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_radio_action_get_group$MH = RuntimeHelper.downcallHandle(
+        "gtk_radio_action_get_group",
+        constants$1946.gtk_radio_action_get_group$FUNC
+    );
+    static final FunctionDescriptor gtk_radio_action_set_group$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_print_settings_set_default_source$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_set_default_source",
-        constants$1946.gtk_print_settings_set_default_source$FUNC
+    static final MethodHandle gtk_radio_action_set_group$MH = RuntimeHelper.downcallHandle(
+        "gtk_radio_action_set_group",
+        constants$1946.gtk_radio_action_set_group$FUNC
     );
-    static final FunctionDescriptor gtk_print_settings_get_media_type$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_print_settings_get_media_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_get_media_type",
-        constants$1946.gtk_print_settings_get_media_type$FUNC
-    );
-    static final FunctionDescriptor gtk_print_settings_set_media_type$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_radio_action_join_group$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_print_settings_set_media_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_set_media_type",
-        constants$1946.gtk_print_settings_set_media_type$FUNC
+    static final MethodHandle gtk_radio_action_join_group$MH = RuntimeHelper.downcallHandle(
+        "gtk_radio_action_join_group",
+        constants$1946.gtk_radio_action_join_group$FUNC
     );
-    static final FunctionDescriptor gtk_print_settings_get_dither$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_radio_action_get_current_value$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_print_settings_get_dither$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_get_dither",
-        constants$1946.gtk_print_settings_get_dither$FUNC
+    static final MethodHandle gtk_radio_action_get_current_value$MH = RuntimeHelper.downcallHandle(
+        "gtk_radio_action_get_current_value",
+        constants$1946.gtk_radio_action_get_current_value$FUNC
     );
-    static final FunctionDescriptor gtk_print_settings_set_dither$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_radio_action_set_current_value$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_radio_action_set_current_value$MH = RuntimeHelper.downcallHandle(
+        "gtk_radio_action_set_current_value",
+        constants$1946.gtk_radio_action_set_current_value$FUNC
+    );
+    static final FunctionDescriptor _gtk_rc_parse_widget_class_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_print_settings_set_dither$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_set_dither",
-        constants$1946.gtk_print_settings_set_dither$FUNC
-    );
-    static final FunctionDescriptor gtk_print_settings_get_finishings$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_print_settings_get_finishings$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_get_finishings",
-        constants$1946.gtk_print_settings_get_finishings$FUNC
+    static final MethodHandle _gtk_rc_parse_widget_class_path$MH = RuntimeHelper.downcallHandle(
+        "_gtk_rc_parse_widget_class_path",
+        constants$1946._gtk_rc_parse_widget_class_path$FUNC
     );
 }
 

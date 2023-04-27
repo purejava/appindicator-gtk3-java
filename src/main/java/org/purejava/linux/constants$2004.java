@@ -7,61 +7,16 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$2004 {
+final class constants$2004 {
 
-    static final FunctionDescriptor gtk_settings_install_property_parser$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_settings_install_property_parser$MH = RuntimeHelper.downcallHandle(
-        "gtk_settings_install_property_parser",
-        constants$2004.gtk_settings_install_property_parser$FUNC
-    );
-    static final FunctionDescriptor gtk_rc_property_parse_color$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_rc_property_parse_color$MH = RuntimeHelper.downcallHandle(
-        "gtk_rc_property_parse_color",
-        constants$2004.gtk_rc_property_parse_color$FUNC
-    );
-    static final FunctionDescriptor gtk_rc_property_parse_enum$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_rc_property_parse_enum$MH = RuntimeHelper.downcallHandle(
-        "gtk_rc_property_parse_enum",
-        constants$2004.gtk_rc_property_parse_enum$FUNC
-    );
-    static final FunctionDescriptor gtk_rc_property_parse_flags$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_rc_property_parse_flags$MH = RuntimeHelper.downcallHandle(
-        "gtk_rc_property_parse_flags",
-        constants$2004.gtk_rc_property_parse_flags$FUNC
-    );
-    static final FunctionDescriptor gtk_rc_property_parse_requisition$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_rc_property_parse_requisition$MH = RuntimeHelper.downcallHandle(
-        "gtk_rc_property_parse_requisition",
-        constants$2004.gtk_rc_property_parse_requisition$FUNC
-    );
-    static final FunctionDescriptor gtk_rc_property_parse_border$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_rc_property_parse_border$MH = RuntimeHelper.downcallHandle(
-        "gtk_rc_property_parse_border",
-        constants$2004.gtk_rc_property_parse_border$FUNC
-    );
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$2004() {}
+    static final MemorySegment G_FILE_ATTRIBUTE_ACCESS_CAN_RENAME$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("access::can-rename");
+    static final MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_CAN_MOUNT$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("mountable::can-mount");
+    static final MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_CAN_UNMOUNT$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("mountable::can-unmount");
+    static final MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_CAN_EJECT$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("mountable::can-eject");
+    static final MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_UNIX_DEVICE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("mountable::unix-device");
+    static final MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_UNIX_DEVICE_FILE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("mountable::unix-device-file");
 }
 
 

@@ -7,63 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1293 {
+final class constants$1293 {
 
-    static final FunctionDescriptor gdk_pixbuf_savev$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1293() {}
+    static final FunctionDescriptor gtk_container_set_focus_chain$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_pixbuf_savev$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_savev",
-        constants$1293.gdk_pixbuf_savev$FUNC
+    static final MethodHandle gtk_container_set_focus_chain$MH = RuntimeHelper.downcallHandle(
+        "gtk_container_set_focus_chain",
+        constants$1293.gtk_container_set_focus_chain$FUNC
     );
-    static final FunctionDescriptor GdkPixbufSaveFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
+    static final FunctionDescriptor gtk_container_get_focus_chain$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GdkPixbufSaveFunc$MH = RuntimeHelper.downcallHandle(
-        constants$1293.GdkPixbufSaveFunc$FUNC
+    static final MethodHandle gtk_container_get_focus_chain$MH = RuntimeHelper.downcallHandle(
+        "gtk_container_get_focus_chain",
+        constants$1293.gtk_container_get_focus_chain$FUNC
     );
-    static final FunctionDescriptor gdk_pixbuf_save_to_callback$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_container_unset_focus_chain$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_container_unset_focus_chain$MH = RuntimeHelper.downcallHandle(
+        "gtk_container_unset_focus_chain",
+        constants$1293.gtk_container_unset_focus_chain$FUNC
+    );
+    static final FunctionDescriptor gtk_container_set_reallocate_redraws$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_container_set_reallocate_redraws$MH = RuntimeHelper.downcallHandle(
+        "gtk_container_set_reallocate_redraws",
+        constants$1293.gtk_container_set_reallocate_redraws$FUNC
+    );
+    static final FunctionDescriptor gtk_container_set_focus_child$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_pixbuf_save_to_callback$MH = RuntimeHelper.downcallHandleVariadic(
-        "gdk_pixbuf_save_to_callback",
-        constants$1293.gdk_pixbuf_save_to_callback$FUNC
+    static final MethodHandle gtk_container_set_focus_child$MH = RuntimeHelper.downcallHandle(
+        "gtk_container_set_focus_child",
+        constants$1293.gtk_container_set_focus_child$FUNC
     );
-    static final FunctionDescriptor gdk_pixbuf_save_to_callbackv$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_container_get_focus_child$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_pixbuf_save_to_callbackv$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_save_to_callbackv",
-        constants$1293.gdk_pixbuf_save_to_callbackv$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_save_to_buffer$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_save_to_buffer$MH = RuntimeHelper.downcallHandleVariadic(
-        "gdk_pixbuf_save_to_buffer",
-        constants$1293.gdk_pixbuf_save_to_buffer$FUNC
+    static final MethodHandle gtk_container_get_focus_child$MH = RuntimeHelper.downcallHandle(
+        "gtk_container_get_focus_child",
+        constants$1293.gtk_container_get_focus_child$FUNC
     );
 }
 

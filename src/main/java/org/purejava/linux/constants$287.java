@@ -7,55 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$287 {
+final class constants$287 {
 
-    static final FunctionDescriptor g_sequence_get_iter_at_pos$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$287() {}
+    static final FunctionDescriptor g_atomic_ref_count_compare$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_sequence_get_iter_at_pos$MH = RuntimeHelper.downcallHandle(
-        "g_sequence_get_iter_at_pos",
-        constants$287.g_sequence_get_iter_at_pos$FUNC
+    static final MethodHandle g_atomic_ref_count_compare$MH = RuntimeHelper.downcallHandle(
+        "g_atomic_ref_count_compare",
+        constants$287.g_atomic_ref_count_compare$FUNC
     );
-    static final FunctionDescriptor g_sequence_append$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_ref_string_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_sequence_append$MH = RuntimeHelper.downcallHandle(
-        "g_sequence_append",
-        constants$287.g_sequence_append$FUNC
+    static final MethodHandle g_ref_string_new$MH = RuntimeHelper.downcallHandle(
+        "g_ref_string_new",
+        constants$287.g_ref_string_new$FUNC
     );
-    static final FunctionDescriptor g_sequence_prepend$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_ref_string_new_len$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle g_ref_string_new_len$MH = RuntimeHelper.downcallHandle(
+        "g_ref_string_new_len",
+        constants$287.g_ref_string_new_len$FUNC
+    );
+    static final FunctionDescriptor g_ref_string_new_intern$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_sequence_prepend$MH = RuntimeHelper.downcallHandle(
-        "g_sequence_prepend",
-        constants$287.g_sequence_prepend$FUNC
+    static final MethodHandle g_ref_string_new_intern$MH = RuntimeHelper.downcallHandle(
+        "g_ref_string_new_intern",
+        constants$287.g_ref_string_new_intern$FUNC
     );
-    static final FunctionDescriptor g_sequence_insert_before$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_ref_string_acquire$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_sequence_insert_before$MH = RuntimeHelper.downcallHandle(
-        "g_sequence_insert_before",
-        constants$287.g_sequence_insert_before$FUNC
+    static final MethodHandle g_ref_string_acquire$MH = RuntimeHelper.downcallHandle(
+        "g_ref_string_acquire",
+        constants$287.g_ref_string_acquire$FUNC
     );
-    static final FunctionDescriptor g_sequence_move$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_ref_string_release$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_sequence_move$MH = RuntimeHelper.downcallHandle(
-        "g_sequence_move",
-        constants$287.g_sequence_move$FUNC
-    );
-    static final FunctionDescriptor g_sequence_swap$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_sequence_swap$MH = RuntimeHelper.downcallHandle(
-        "g_sequence_swap",
-        constants$287.g_sequence_swap$FUNC
+    static final MethodHandle g_ref_string_release$MH = RuntimeHelper.downcallHandle(
+        "g_ref_string_release",
+        constants$287.g_ref_string_release$FUNC
     );
 }
 

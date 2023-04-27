@@ -7,49 +7,63 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$334 {
+final class constants$334 {
 
-    static final FunctionDescriptor g_uri_get_userinfo$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$334() {}
+    static final FunctionDescriptor g_tree_foreach$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_uri_get_userinfo$MH = RuntimeHelper.downcallHandle(
-        "g_uri_get_userinfo",
-        constants$334.g_uri_get_userinfo$FUNC
+    static final MethodHandle g_tree_foreach$MH = RuntimeHelper.downcallHandle(
+        "g_tree_foreach",
+        constants$334.g_tree_foreach$FUNC
     );
-    static final FunctionDescriptor g_uri_get_user$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_tree_foreach_node$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_uri_get_user$MH = RuntimeHelper.downcallHandle(
-        "g_uri_get_user",
-        constants$334.g_uri_get_user$FUNC
+    static final MethodHandle g_tree_foreach_node$MH = RuntimeHelper.downcallHandle(
+        "g_tree_foreach_node",
+        constants$334.g_tree_foreach_node$FUNC
     );
-    static final FunctionDescriptor g_uri_get_password$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_tree_traverse$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_uri_get_password$MH = RuntimeHelper.downcallHandle(
-        "g_uri_get_password",
-        constants$334.g_uri_get_password$FUNC
+    static final MethodHandle g_tree_traverse$MH = RuntimeHelper.downcallHandle(
+        "g_tree_traverse",
+        constants$334.g_tree_traverse$FUNC
     );
-    static final FunctionDescriptor g_uri_get_auth_params$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_tree_search_node$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_uri_get_auth_params$MH = RuntimeHelper.downcallHandle(
-        "g_uri_get_auth_params",
-        constants$334.g_uri_get_auth_params$FUNC
+    static final MethodHandle g_tree_search_node$MH = RuntimeHelper.downcallHandle(
+        "g_tree_search_node",
+        constants$334.g_tree_search_node$FUNC
     );
-    static final FunctionDescriptor g_uri_get_host$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_tree_search$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_uri_get_host$MH = RuntimeHelper.downcallHandle(
-        "g_uri_get_host",
-        constants$334.g_uri_get_host$FUNC
+    static final MethodHandle g_tree_search$MH = RuntimeHelper.downcallHandle(
+        "g_tree_search",
+        constants$334.g_tree_search$FUNC
     );
-    static final FunctionDescriptor g_uri_get_port$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_tree_lower_bound$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_uri_get_port$MH = RuntimeHelper.downcallHandle(
-        "g_uri_get_port",
-        constants$334.g_uri_get_port$FUNC
+    static final MethodHandle g_tree_lower_bound$MH = RuntimeHelper.downcallHandle(
+        "g_tree_lower_bound",
+        constants$334.g_tree_lower_bound$FUNC
     );
 }
 

@@ -7,51 +7,50 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1076 {
+final class constants$1076 {
 
-    static final FunctionDescriptor pango_attr_variant_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_attr_variant_new$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_variant_new",
-        constants$1076.pango_attr_variant_new$FUNC
-    );
-    static final FunctionDescriptor pango_attr_stretch_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_attr_stretch_new$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_stretch_new",
-        constants$1076.pango_attr_stretch_new$FUNC
-    );
-    static final FunctionDescriptor pango_attr_font_desc_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1076() {}
+    static final FunctionDescriptor gdk_frame_timings_get_predicted_presentation_time$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_attr_font_desc_new$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_font_desc_new",
-        constants$1076.pango_attr_font_desc_new$FUNC
+    static final MethodHandle gdk_frame_timings_get_predicted_presentation_time$MH = RuntimeHelper.downcallHandle(
+        "gdk_frame_timings_get_predicted_presentation_time",
+        constants$1076.gdk_frame_timings_get_predicted_presentation_time$FUNC
     );
-    static final FunctionDescriptor pango_attr_underline_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gdk_frame_clock_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gdk_frame_clock_get_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_frame_clock_get_type",
+        constants$1076.gdk_frame_clock_get_type$FUNC
+    );
+    static final FunctionDescriptor gdk_frame_clock_get_frame_time$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_frame_clock_get_frame_time$MH = RuntimeHelper.downcallHandle(
+        "gdk_frame_clock_get_frame_time",
+        constants$1076.gdk_frame_clock_get_frame_time$FUNC
+    );
+    static final FunctionDescriptor gdk_frame_clock_request_phase$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle pango_attr_underline_new$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_underline_new",
-        constants$1076.pango_attr_underline_new$FUNC
+    static final MethodHandle gdk_frame_clock_request_phase$MH = RuntimeHelper.downcallHandle(
+        "gdk_frame_clock_request_phase",
+        constants$1076.gdk_frame_clock_request_phase$FUNC
     );
-    static final FunctionDescriptor pango_attr_underline_color_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_SHORT$LAYOUT,
-        Constants$root.C_SHORT$LAYOUT,
-        Constants$root.C_SHORT$LAYOUT
+    static final FunctionDescriptor gdk_frame_clock_begin_updating$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_attr_underline_color_new$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_underline_color_new",
-        constants$1076.pango_attr_underline_color_new$FUNC
+    static final MethodHandle gdk_frame_clock_begin_updating$MH = RuntimeHelper.downcallHandle(
+        "gdk_frame_clock_begin_updating",
+        constants$1076.gdk_frame_clock_begin_updating$FUNC
     );
-    static final FunctionDescriptor pango_attr_strikethrough_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor gdk_frame_clock_end_updating$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_attr_strikethrough_new$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_strikethrough_new",
-        constants$1076.pango_attr_strikethrough_new$FUNC
+    static final MethodHandle gdk_frame_clock_end_updating$MH = RuntimeHelper.downcallHandle(
+        "gdk_frame_clock_end_updating",
+        constants$1076.gdk_frame_clock_end_updating$FUNC
     );
 }
 

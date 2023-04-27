@@ -7,51 +7,64 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1182 {
+final class constants$1182 {
 
-    static final FunctionDescriptor cairo_get_current_point$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1182() {}
+    static final FunctionDescriptor gdk_text_property_to_utf8_list_for_display$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_get_current_point$MH = RuntimeHelper.downcallHandle(
-        "cairo_get_current_point",
-        constants$1182.cairo_get_current_point$FUNC
+    static final MethodHandle gdk_text_property_to_utf8_list_for_display$MH = RuntimeHelper.downcallHandle(
+        "gdk_text_property_to_utf8_list_for_display",
+        constants$1182.gdk_text_property_to_utf8_list_for_display$FUNC
     );
-    static final FunctionDescriptor cairo_get_fill_rule$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gdk_utf8_to_string_target$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_get_fill_rule$MH = RuntimeHelper.downcallHandle(
-        "cairo_get_fill_rule",
-        constants$1182.cairo_get_fill_rule$FUNC
+    static final MethodHandle gdk_utf8_to_string_target$MH = RuntimeHelper.downcallHandle(
+        "gdk_utf8_to_string_target",
+        constants$1182.gdk_utf8_to_string_target$FUNC
     );
-    static final FunctionDescriptor cairo_get_line_width$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
+    static final FunctionDescriptor gdk_selection_owner_set$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gdk_selection_owner_set$MH = RuntimeHelper.downcallHandle(
+        "gdk_selection_owner_set",
+        constants$1182.gdk_selection_owner_set$FUNC
+    );
+    static final FunctionDescriptor gdk_selection_owner_get$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_get_line_width$MH = RuntimeHelper.downcallHandle(
-        "cairo_get_line_width",
-        constants$1182.cairo_get_line_width$FUNC
+    static final MethodHandle gdk_selection_owner_get$MH = RuntimeHelper.downcallHandle(
+        "gdk_selection_owner_get",
+        constants$1182.gdk_selection_owner_get$FUNC
     );
-    static final FunctionDescriptor cairo_get_line_cap$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gdk_selection_owner_set_for_display$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gdk_selection_owner_set_for_display$MH = RuntimeHelper.downcallHandle(
+        "gdk_selection_owner_set_for_display",
+        constants$1182.gdk_selection_owner_set_for_display$FUNC
+    );
+    static final FunctionDescriptor gdk_selection_owner_get_for_display$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_get_line_cap$MH = RuntimeHelper.downcallHandle(
-        "cairo_get_line_cap",
-        constants$1182.cairo_get_line_cap$FUNC
-    );
-    static final FunctionDescriptor cairo_get_line_join$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_get_line_join$MH = RuntimeHelper.downcallHandle(
-        "cairo_get_line_join",
-        constants$1182.cairo_get_line_join$FUNC
-    );
-    static final FunctionDescriptor cairo_get_miter_limit$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_get_miter_limit$MH = RuntimeHelper.downcallHandle(
-        "cairo_get_miter_limit",
-        constants$1182.cairo_get_miter_limit$FUNC
+    static final MethodHandle gdk_selection_owner_get_for_display$MH = RuntimeHelper.downcallHandle(
+        "gdk_selection_owner_get_for_display",
+        constants$1182.gdk_selection_owner_get_for_display$FUNC
     );
 }
 

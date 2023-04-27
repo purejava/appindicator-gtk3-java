@@ -7,58 +7,57 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1464 {
+final class constants$1464 {
 
-    static final FunctionDescriptor gtk_widget_init_template$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_init_template$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_init_template",
-        constants$1464.gtk_widget_init_template$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_get_template_child$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_get_template_child$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_template_child",
-        constants$1464.gtk_widget_get_template_child$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_class_set_template$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_class_set_template$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_class_set_template",
-        constants$1464.gtk_widget_class_set_template$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_class_set_template_from_resource$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_class_set_template_from_resource$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_class_set_template_from_resource",
-        constants$1464.gtk_widget_class_set_template_from_resource$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_class_bind_template_callback_full$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1464() {}
+    static final FunctionDescriptor GtkTreeViewRowSeparatorFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_widget_class_bind_template_callback_full$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_class_bind_template_callback_full",
-        constants$1464.gtk_widget_class_bind_template_callback_full$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_class_set_connect_func$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor GtkTreeViewRowSeparatorFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_widget_class_set_connect_func$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_class_set_connect_func",
-        constants$1464.gtk_widget_class_set_connect_func$FUNC
+    static final MethodHandle GtkTreeViewRowSeparatorFunc_UP$MH = RuntimeHelper.upcallHandle(GtkTreeViewRowSeparatorFunc.class, "apply", constants$1464.GtkTreeViewRowSeparatorFunc_UP$FUNC);
+    static final FunctionDescriptor GtkTreeViewRowSeparatorFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GtkTreeViewRowSeparatorFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$1464.GtkTreeViewRowSeparatorFunc_DOWN$FUNC
+    );
+    static final FunctionDescriptor GtkTreeViewSearchPositionFunc$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final FunctionDescriptor GtkTreeViewSearchPositionFunc_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GtkTreeViewSearchPositionFunc_UP$MH = RuntimeHelper.upcallHandle(GtkTreeViewSearchPositionFunc.class, "apply", constants$1464.GtkTreeViewSearchPositionFunc_UP$FUNC);
+    static final FunctionDescriptor GtkTreeViewSearchPositionFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GtkTreeViewSearchPositionFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$1464.GtkTreeViewSearchPositionFunc_DOWN$FUNC
+    );
+    static final FunctionDescriptor gtk_tree_view_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_tree_view_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_get_type",
+        constants$1464.gtk_tree_view_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_tree_view_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_tree_view_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_new",
+        constants$1464.gtk_tree_view_new$FUNC
     );
 }
 

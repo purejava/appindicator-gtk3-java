@@ -7,53 +7,59 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1646 {
+final class constants$1646 {
 
-    static final FunctionDescriptor gtk_entry_text_index_to_layout_index$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1646() {}
+    static final FunctionDescriptor gtk_icon_info_get_builtin_pixbuf$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_entry_text_index_to_layout_index$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_text_index_to_layout_index",
-        constants$1646.gtk_entry_text_index_to_layout_index$FUNC
+    static final MethodHandle gtk_icon_info_get_builtin_pixbuf$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_info_get_builtin_pixbuf",
+        constants$1646.gtk_icon_info_get_builtin_pixbuf$FUNC
     );
-    static final FunctionDescriptor gtk_entry_set_cursor_hadjustment$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_icon_info_is_symbolic$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_icon_info_is_symbolic$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_info_is_symbolic",
+        constants$1646.gtk_icon_info_is_symbolic$FUNC
+    );
+    static final FunctionDescriptor gtk_icon_info_load_icon$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_entry_set_cursor_hadjustment$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_set_cursor_hadjustment",
-        constants$1646.gtk_entry_set_cursor_hadjustment$FUNC
+    static final MethodHandle gtk_icon_info_load_icon$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_info_load_icon",
+        constants$1646.gtk_icon_info_load_icon$FUNC
     );
-    static final FunctionDescriptor gtk_entry_get_cursor_hadjustment$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_icon_info_load_surface$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_entry_get_cursor_hadjustment$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_get_cursor_hadjustment",
-        constants$1646.gtk_entry_get_cursor_hadjustment$FUNC
+    static final MethodHandle gtk_icon_info_load_surface$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_info_load_surface",
+        constants$1646.gtk_icon_info_load_surface$FUNC
     );
-    static final FunctionDescriptor gtk_entry_set_progress_fraction$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_icon_info_load_icon_async$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle gtk_entry_set_progress_fraction$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_set_progress_fraction",
-        constants$1646.gtk_entry_set_progress_fraction$FUNC
-    );
-    static final FunctionDescriptor gtk_entry_get_progress_fraction$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_entry_get_progress_fraction$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_get_progress_fraction",
-        constants$1646.gtk_entry_get_progress_fraction$FUNC
+    static final MethodHandle gtk_icon_info_load_icon_async$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_info_load_icon_async",
+        constants$1646.gtk_icon_info_load_icon_async$FUNC
     );
-    static final FunctionDescriptor gtk_entry_set_progress_pulse_step$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_icon_info_load_icon_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_entry_set_progress_pulse_step$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_set_progress_pulse_step",
-        constants$1646.gtk_entry_set_progress_pulse_step$FUNC
+    static final MethodHandle gtk_icon_info_load_icon_finish$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_info_load_icon_finish",
+        constants$1646.gtk_icon_info_load_icon_finish$FUNC
     );
 }
 

@@ -7,8 +7,29 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$10 {
+final class constants$10 {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$10() {}
+    static final FunctionDescriptor memccpy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle memccpy$MH = RuntimeHelper.downcallHandle(
+        "memccpy",
+        constants$10.memccpy$FUNC
+    );
+    static final FunctionDescriptor memset$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle memset$MH = RuntimeHelper.downcallHandle(
+        "memset",
+        constants$10.memset$FUNC
+    );
     static final FunctionDescriptor memcmp$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
@@ -43,23 +64,6 @@ class constants$10 {
     static final MethodHandle strcpy$MH = RuntimeHelper.downcallHandle(
         "strcpy",
         constants$10.strcpy$FUNC
-    );
-    static final FunctionDescriptor strncpy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle strncpy$MH = RuntimeHelper.downcallHandle(
-        "strncpy",
-        constants$10.strncpy$FUNC
-    );
-    static final FunctionDescriptor strcat$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle strcat$MH = RuntimeHelper.downcallHandle(
-        "strcat",
-        constants$10.strcat$FUNC
     );
 }
 

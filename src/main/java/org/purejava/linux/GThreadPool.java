@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GThreadPool extends _GThreadPool {
+/**
+ * {@snippet :
+ * typedef struct _GThreadPool GThreadPool;
+ * }
+ */
+public final class GThreadPool extends _GThreadPool {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GThreadPool() {}
 }
 
 

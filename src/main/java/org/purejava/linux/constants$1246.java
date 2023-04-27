@@ -7,53 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1246 {
+final class constants$1246 {
 
-    static final FunctionDescriptor gdk_window_get_type_hint$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1246() {}
+    static final FunctionDescriptor atk_value_set_value$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle atk_value_set_value$MH = RuntimeHelper.downcallHandle(
+        "atk_value_set_value",
+        constants$1246.atk_value_set_value$FUNC
+    );
+    static final FunctionDescriptor atk_value_type_get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle atk_value_type_get_name$MH = RuntimeHelper.downcallHandle(
+        "atk_value_type_get_name",
+        constants$1246.atk_value_type_get_name$FUNC
+    );
+    static final FunctionDescriptor atk_value_type_get_localized_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle atk_value_type_get_localized_name$MH = RuntimeHelper.downcallHandle(
+        "atk_value_type_get_localized_name",
+        constants$1246.atk_value_type_get_localized_name$FUNC
+    );
+    static final FunctionDescriptor atk_window_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle atk_window_get_type$MH = RuntimeHelper.downcallHandle(
+        "atk_window_get_type",
+        constants$1246.atk_window_get_type$FUNC
+    );
+    static final FunctionDescriptor GtkCallback$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_window_get_type_hint$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_type_hint",
-        constants$1246.gdk_window_get_type_hint$FUNC
-    );
-    static final FunctionDescriptor gdk_window_get_modal_hint$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor GtkCallback_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_window_get_modal_hint$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_modal_hint",
-        constants$1246.gdk_window_get_modal_hint$FUNC
-    );
-    static final FunctionDescriptor gdk_window_set_modal_hint$FUNC = FunctionDescriptor.ofVoid(
+    static final MethodHandle GtkCallback_UP$MH = RuntimeHelper.upcallHandle(GtkCallback.class, "apply", constants$1246.GtkCallback_UP$FUNC);
+    static final FunctionDescriptor GtkCallback_DOWN$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_window_set_modal_hint$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_modal_hint",
-        constants$1246.gdk_window_set_modal_hint$FUNC
-    );
-    static final FunctionDescriptor gdk_window_set_skip_taskbar_hint$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_window_set_skip_taskbar_hint$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_skip_taskbar_hint",
-        constants$1246.gdk_window_set_skip_taskbar_hint$FUNC
-    );
-    static final FunctionDescriptor gdk_window_set_skip_pager_hint$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_window_set_skip_pager_hint$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_skip_pager_hint",
-        constants$1246.gdk_window_set_skip_pager_hint$FUNC
-    );
-    static final FunctionDescriptor gdk_window_set_urgency_hint$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_window_set_urgency_hint$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_urgency_hint",
-        constants$1246.gdk_window_set_urgency_hint$FUNC
+    static final MethodHandle GtkCallback_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$1246.GtkCallback_DOWN$FUNC
     );
 }
 

@@ -7,62 +7,63 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$841 {
+final class constants$841 {
 
-    static final FunctionDescriptor g_subprocess_get_exit_status$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_subprocess_get_exit_status$MH = RuntimeHelper.downcallHandle(
-        "g_subprocess_get_exit_status",
-        constants$841.g_subprocess_get_exit_status$FUNC
-    );
-    static final FunctionDescriptor g_subprocess_get_if_signaled$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_subprocess_get_if_signaled$MH = RuntimeHelper.downcallHandle(
-        "g_subprocess_get_if_signaled",
-        constants$841.g_subprocess_get_if_signaled$FUNC
-    );
-    static final FunctionDescriptor g_subprocess_get_term_sig$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_subprocess_get_term_sig$MH = RuntimeHelper.downcallHandle(
-        "g_subprocess_get_term_sig",
-        constants$841.g_subprocess_get_term_sig$FUNC
-    );
-    static final FunctionDescriptor g_subprocess_communicate$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$841() {}
+    static final FunctionDescriptor hb_unicode_funcs_set_script_func$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_subprocess_communicate$MH = RuntimeHelper.downcallHandle(
-        "g_subprocess_communicate",
-        constants$841.g_subprocess_communicate$FUNC
+    static final MethodHandle hb_unicode_funcs_set_script_func$MH = RuntimeHelper.downcallHandle(
+        "hb_unicode_funcs_set_script_func",
+        constants$841.hb_unicode_funcs_set_script_func$FUNC
     );
-    static final FunctionDescriptor g_subprocess_communicate_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor hb_unicode_funcs_set_compose_func$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_subprocess_communicate_async$MH = RuntimeHelper.downcallHandle(
-        "g_subprocess_communicate_async",
-        constants$841.g_subprocess_communicate_async$FUNC
+    static final MethodHandle hb_unicode_funcs_set_compose_func$MH = RuntimeHelper.downcallHandle(
+        "hb_unicode_funcs_set_compose_func",
+        constants$841.hb_unicode_funcs_set_compose_func$FUNC
     );
-    static final FunctionDescriptor g_subprocess_communicate_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor hb_unicode_funcs_set_decompose_func$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_subprocess_communicate_finish$MH = RuntimeHelper.downcallHandle(
-        "g_subprocess_communicate_finish",
-        constants$841.g_subprocess_communicate_finish$FUNC
+    static final MethodHandle hb_unicode_funcs_set_decompose_func$MH = RuntimeHelper.downcallHandle(
+        "hb_unicode_funcs_set_decompose_func",
+        constants$841.hb_unicode_funcs_set_decompose_func$FUNC
+    );
+    static final FunctionDescriptor hb_unicode_combining_class$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle hb_unicode_combining_class$MH = RuntimeHelper.downcallHandle(
+        "hb_unicode_combining_class",
+        constants$841.hb_unicode_combining_class$FUNC
+    );
+    static final FunctionDescriptor hb_unicode_general_category$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle hb_unicode_general_category$MH = RuntimeHelper.downcallHandle(
+        "hb_unicode_general_category",
+        constants$841.hb_unicode_general_category$FUNC
+    );
+    static final FunctionDescriptor hb_unicode_mirroring$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle hb_unicode_mirroring$MH = RuntimeHelper.downcallHandle(
+        "hb_unicode_mirroring",
+        constants$841.hb_unicode_mirroring$FUNC
     );
 }
 

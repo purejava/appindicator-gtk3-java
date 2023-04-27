@@ -7,55 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1443 {
+final class constants$1443 {
 
-    static final FunctionDescriptor gtk_widget_get_allocated_baseline$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1443() {}
+    static final FunctionDescriptor gtk_entry_completion_set_inline_completion$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_entry_completion_set_inline_completion$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_completion_set_inline_completion",
+        constants$1443.gtk_entry_completion_set_inline_completion$FUNC
+    );
+    static final FunctionDescriptor gtk_entry_completion_get_inline_completion$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_widget_get_allocated_baseline$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_allocated_baseline",
-        constants$1443.gtk_widget_get_allocated_baseline$FUNC
+    static final MethodHandle gtk_entry_completion_get_inline_completion$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_completion_get_inline_completion",
+        constants$1443.gtk_entry_completion_get_inline_completion$FUNC
     );
-    static final FunctionDescriptor gtk_widget_get_allocated_size$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_entry_completion_set_inline_selection$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_entry_completion_set_inline_selection$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_completion_set_inline_selection",
+        constants$1443.gtk_entry_completion_set_inline_selection$FUNC
+    );
+    static final FunctionDescriptor gtk_entry_completion_get_inline_selection$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_widget_get_allocated_size$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_allocated_size",
-        constants$1443.gtk_widget_get_allocated_size$FUNC
+    static final MethodHandle gtk_entry_completion_get_inline_selection$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_completion_get_inline_selection",
+        constants$1443.gtk_entry_completion_get_inline_selection$FUNC
     );
-    static final FunctionDescriptor gtk_widget_get_allocation$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_entry_completion_set_popup_completion$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_entry_completion_set_popup_completion$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_completion_set_popup_completion",
+        constants$1443.gtk_entry_completion_set_popup_completion$FUNC
+    );
+    static final FunctionDescriptor gtk_entry_completion_get_popup_completion$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_widget_get_allocation$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_allocation",
-        constants$1443.gtk_widget_get_allocation$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_set_allocation$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_set_allocation$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_allocation",
-        constants$1443.gtk_widget_set_allocation$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_set_clip$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_set_clip$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_clip",
-        constants$1443.gtk_widget_set_clip$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_get_clip$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_get_clip$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_clip",
-        constants$1443.gtk_widget_get_clip$FUNC
+    static final MethodHandle gtk_entry_completion_get_popup_completion$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_completion_get_popup_completion",
+        constants$1443.gtk_entry_completion_get_popup_completion$FUNC
     );
 }
 

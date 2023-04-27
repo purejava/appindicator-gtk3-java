@@ -7,83 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$491 {
+final class constants$491 {
 
-    static final FunctionDescriptor g_param_spec_uint$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$491() {}
+    static final FunctionDescriptor g_application_activate$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_application_activate$MH = RuntimeHelper.downcallHandle(
+        "g_application_activate",
+        constants$491.g_application_activate$FUNC
+    );
+    static final FunctionDescriptor g_application_open$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_param_spec_uint$MH = RuntimeHelper.downcallHandle(
-        "g_param_spec_uint",
-        constants$491.g_param_spec_uint$FUNC
+    static final MethodHandle g_application_open$MH = RuntimeHelper.downcallHandle(
+        "g_application_open",
+        constants$491.g_application_open$FUNC
     );
-    static final FunctionDescriptor g_param_spec_long$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_param_spec_long$MH = RuntimeHelper.downcallHandle(
-        "g_param_spec_long",
-        constants$491.g_param_spec_long$FUNC
-    );
-    static final FunctionDescriptor g_param_spec_ulong$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_param_spec_ulong$MH = RuntimeHelper.downcallHandle(
-        "g_param_spec_ulong",
-        constants$491.g_param_spec_ulong$FUNC
-    );
-    static final FunctionDescriptor g_param_spec_int64$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_param_spec_int64$MH = RuntimeHelper.downcallHandle(
-        "g_param_spec_int64",
-        constants$491.g_param_spec_int64$FUNC
-    );
-    static final FunctionDescriptor g_param_spec_uint64$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_param_spec_uint64$MH = RuntimeHelper.downcallHandle(
-        "g_param_spec_uint64",
-        constants$491.g_param_spec_uint64$FUNC
-    );
-    static final FunctionDescriptor g_param_spec_unichar$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_application_run$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_param_spec_unichar$MH = RuntimeHelper.downcallHandle(
-        "g_param_spec_unichar",
-        constants$491.g_param_spec_unichar$FUNC
+    static final MethodHandle g_application_run$MH = RuntimeHelper.downcallHandle(
+        "g_application_run",
+        constants$491.g_application_run$FUNC
+    );
+    static final FunctionDescriptor g_application_quit$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_application_quit$MH = RuntimeHelper.downcallHandle(
+        "g_application_quit",
+        constants$491.g_application_quit$FUNC
+    );
+    static final FunctionDescriptor g_application_get_default$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle g_application_get_default$MH = RuntimeHelper.downcallHandle(
+        "g_application_get_default",
+        constants$491.g_application_get_default$FUNC
+    );
+    static final FunctionDescriptor g_application_set_default$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_application_set_default$MH = RuntimeHelper.downcallHandle(
+        "g_application_set_default",
+        constants$491.g_application_set_default$FUNC
     );
 }
 

@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GClosure extends _GClosure {
+/**
+ * {@snippet :
+ * typedef struct _GClosure GClosure;
+ * }
+ */
+public final class GClosure extends _GClosure {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GClosure() {}
 }
 
 

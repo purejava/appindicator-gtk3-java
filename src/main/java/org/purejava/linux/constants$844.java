@@ -7,55 +7,57 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$844 {
+final class constants$844 {
 
-    static final FunctionDescriptor g_subprocess_launcher_set_flags$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$844() {}
+    static final FunctionDescriptor hb_set_is_empty$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle hb_set_is_empty$MH = RuntimeHelper.downcallHandle(
+        "hb_set_is_empty",
+        constants$844.hb_set_is_empty$FUNC
+    );
+    static final FunctionDescriptor hb_set_invert$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle hb_set_invert$MH = RuntimeHelper.downcallHandle(
+        "hb_set_invert",
+        constants$844.hb_set_invert$FUNC
+    );
+    static final FunctionDescriptor hb_set_has$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_subprocess_launcher_set_flags$MH = RuntimeHelper.downcallHandle(
-        "g_subprocess_launcher_set_flags",
-        constants$844.g_subprocess_launcher_set_flags$FUNC
+    static final MethodHandle hb_set_has$MH = RuntimeHelper.downcallHandle(
+        "hb_set_has",
+        constants$844.hb_set_has$FUNC
     );
-    static final FunctionDescriptor g_subprocess_launcher_set_stdin_file_path$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_subprocess_launcher_set_stdin_file_path$MH = RuntimeHelper.downcallHandle(
-        "g_subprocess_launcher_set_stdin_file_path",
-        constants$844.g_subprocess_launcher_set_stdin_file_path$FUNC
-    );
-    static final FunctionDescriptor g_subprocess_launcher_take_stdin_fd$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor hb_set_add$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_subprocess_launcher_take_stdin_fd$MH = RuntimeHelper.downcallHandle(
-        "g_subprocess_launcher_take_stdin_fd",
-        constants$844.g_subprocess_launcher_take_stdin_fd$FUNC
+    static final MethodHandle hb_set_add$MH = RuntimeHelper.downcallHandle(
+        "hb_set_add",
+        constants$844.hb_set_add$FUNC
     );
-    static final FunctionDescriptor g_subprocess_launcher_set_stdout_file_path$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor hb_set_add_range$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_subprocess_launcher_set_stdout_file_path$MH = RuntimeHelper.downcallHandle(
-        "g_subprocess_launcher_set_stdout_file_path",
-        constants$844.g_subprocess_launcher_set_stdout_file_path$FUNC
+    static final MethodHandle hb_set_add_range$MH = RuntimeHelper.downcallHandle(
+        "hb_set_add_range",
+        constants$844.hb_set_add_range$FUNC
     );
-    static final FunctionDescriptor g_subprocess_launcher_take_stdout_fd$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor hb_set_add_sorted_array$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_subprocess_launcher_take_stdout_fd$MH = RuntimeHelper.downcallHandle(
-        "g_subprocess_launcher_take_stdout_fd",
-        constants$844.g_subprocess_launcher_take_stdout_fd$FUNC
-    );
-    static final FunctionDescriptor g_subprocess_launcher_set_stderr_file_path$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_subprocess_launcher_set_stderr_file_path$MH = RuntimeHelper.downcallHandle(
-        "g_subprocess_launcher_set_stderr_file_path",
-        constants$844.g_subprocess_launcher_set_stderr_file_path$FUNC
+    static final MethodHandle hb_set_add_sorted_array$MH = RuntimeHelper.downcallHandle(
+        "hb_set_add_sorted_array",
+        constants$844.hb_set_add_sorted_array$FUNC
     );
 }
 

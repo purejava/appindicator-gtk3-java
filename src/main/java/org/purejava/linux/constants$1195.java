@@ -7,56 +7,69 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1195 {
+final class constants$1195 {
 
-    static final FunctionDescriptor cairo_surface_show_page$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1195() {}
+    static final FunctionDescriptor GtkRcPropertyParser$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_surface_show_page$MH = RuntimeHelper.downcallHandle(
-        "cairo_surface_show_page",
-        constants$1195.cairo_surface_show_page$FUNC
-    );
-    static final FunctionDescriptor cairo_surface_has_show_text_glyphs$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor GtkRcPropertyParser_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_surface_has_show_text_glyphs$MH = RuntimeHelper.downcallHandle(
-        "cairo_surface_has_show_text_glyphs",
-        constants$1195.cairo_surface_has_show_text_glyphs$FUNC
+    static final MethodHandle GtkRcPropertyParser_UP$MH = RuntimeHelper.upcallHandle(GtkRcPropertyParser.class, "apply", constants$1195.GtkRcPropertyParser_UP$FUNC);
+    static final FunctionDescriptor GtkRcPropertyParser_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor cairo_image_surface_create$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle GtkRcPropertyParser_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$1195.GtkRcPropertyParser_DOWN$FUNC
     );
-    static final MethodHandle cairo_image_surface_create$MH = RuntimeHelper.downcallHandle(
-        "cairo_image_surface_create",
-        constants$1195.cairo_image_surface_create$FUNC
-    );
-    static final FunctionDescriptor cairo_format_stride_for_width$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle cairo_format_stride_for_width$MH = RuntimeHelper.downcallHandle(
-        "cairo_format_stride_for_width",
-        constants$1195.cairo_format_stride_for_width$FUNC
-    );
-    static final FunctionDescriptor cairo_image_surface_create_for_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor GtkBuilderConnectFunc$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle cairo_image_surface_create_for_data$MH = RuntimeHelper.downcallHandle(
-        "cairo_image_surface_create_for_data",
-        constants$1195.cairo_image_surface_create_for_data$FUNC
-    );
-    static final FunctionDescriptor cairo_image_surface_get_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_image_surface_get_data$MH = RuntimeHelper.downcallHandle(
-        "cairo_image_surface_get_data",
-        constants$1195.cairo_image_surface_get_data$FUNC
+    static final FunctionDescriptor GtkBuilderConnectFunc_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GtkBuilderConnectFunc_UP$MH = RuntimeHelper.upcallHandle(GtkBuilderConnectFunc.class, "apply", constants$1195.GtkBuilderConnectFunc_UP$FUNC);
+    static final FunctionDescriptor GtkBuilderConnectFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GtkBuilderConnectFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$1195.GtkBuilderConnectFunc_DOWN$FUNC
+    );
+    static final FunctionDescriptor atk_get_major_version$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
+    static final MethodHandle atk_get_major_version$MH = RuntimeHelper.downcallHandle(
+        "atk_get_major_version",
+        constants$1195.atk_get_major_version$FUNC
+    );
+    static final FunctionDescriptor atk_get_minor_version$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
+    static final MethodHandle atk_get_minor_version$MH = RuntimeHelper.downcallHandle(
+        "atk_get_minor_version",
+        constants$1195.atk_get_minor_version$FUNC
     );
 }
 

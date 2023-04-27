@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * char* (*GtkTranslateFunc)(char* path,void* func_data);
+ * }
+ */
 public interface GtkTranslateFunc {
 
-    java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress path, java.lang.foreign.MemoryAddress func_data);
-    static MemorySegment allocate(GtkTranslateFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GtkTranslateFunc.class, fi, constants$2113.GtkTranslateFunc$FUNC, session);
+    java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment func_data);
+    static MemorySegment allocate(GtkTranslateFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$1916.GtkTranslateFunc_UP$MH, fi, constants$1916.GtkTranslateFunc$FUNC, scope);
     }
-    static GtkTranslateFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _path, java.lang.foreign.MemoryAddress _func_data) -> {
+    static GtkTranslateFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _path, java.lang.foreign.MemorySegment _func_data) -> {
             try {
-                return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)constants$2113.GtkTranslateFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_path, (java.lang.foreign.Addressable)_func_data);
+                return (java.lang.foreign.MemorySegment)constants$1916.GtkTranslateFunc_DOWN$MH.invokeExact(symbol, _path, _func_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

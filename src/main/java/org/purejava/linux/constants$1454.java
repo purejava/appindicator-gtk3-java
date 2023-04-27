@@ -7,60 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1454 {
+final class constants$1454 {
 
-    static final FunctionDescriptor gtk_widget_is_ancestor$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1454() {}
+    static final FunctionDescriptor gtk_entry_get_width_chars$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_entry_get_width_chars$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_get_width_chars",
+        constants$1454.gtk_entry_get_width_chars$FUNC
+    );
+    static final FunctionDescriptor gtk_entry_set_max_width_chars$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_entry_set_max_width_chars$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_set_max_width_chars",
+        constants$1454.gtk_entry_set_max_width_chars$FUNC
+    );
+    static final FunctionDescriptor gtk_entry_get_max_width_chars$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_entry_get_max_width_chars$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_get_max_width_chars",
+        constants$1454.gtk_entry_get_max_width_chars$FUNC
+    );
+    static final FunctionDescriptor gtk_entry_set_text$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_widget_is_ancestor$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_is_ancestor",
-        constants$1454.gtk_widget_is_ancestor$FUNC
+    static final MethodHandle gtk_entry_set_text$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_set_text",
+        constants$1454.gtk_entry_set_text$FUNC
     );
-    static final FunctionDescriptor gtk_widget_translate_coordinates$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_entry_get_text$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_widget_translate_coordinates$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_translate_coordinates",
-        constants$1454.gtk_widget_translate_coordinates$FUNC
+    static final MethodHandle gtk_entry_get_text$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_get_text",
+        constants$1454.gtk_entry_get_text$FUNC
     );
-    static final FunctionDescriptor gtk_widget_hide_on_delete$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_entry_get_layout$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_widget_hide_on_delete$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_hide_on_delete",
-        constants$1454.gtk_widget_hide_on_delete$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_override_color$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_override_color$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_override_color",
-        constants$1454.gtk_widget_override_color$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_override_background_color$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_override_background_color$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_override_background_color",
-        constants$1454.gtk_widget_override_background_color$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_override_font$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_override_font$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_override_font",
-        constants$1454.gtk_widget_override_font$FUNC
+    static final MethodHandle gtk_entry_get_layout$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_get_layout",
+        constants$1454.gtk_entry_get_layout$FUNC
     );
 }
 

@@ -7,66 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1204 {
+final class constants$1204 {
 
-    static final FunctionDescriptor cairo_mesh_pattern_line_to$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle cairo_mesh_pattern_line_to$MH = RuntimeHelper.downcallHandle(
-        "cairo_mesh_pattern_line_to",
-        constants$1204.cairo_mesh_pattern_line_to$FUNC
-    );
-    static final FunctionDescriptor cairo_mesh_pattern_move_to$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle cairo_mesh_pattern_move_to$MH = RuntimeHelper.downcallHandle(
-        "cairo_mesh_pattern_move_to",
-        constants$1204.cairo_mesh_pattern_move_to$FUNC
-    );
-    static final FunctionDescriptor cairo_mesh_pattern_set_control_point$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle cairo_mesh_pattern_set_control_point$MH = RuntimeHelper.downcallHandle(
-        "cairo_mesh_pattern_set_control_point",
-        constants$1204.cairo_mesh_pattern_set_control_point$FUNC
-    );
-    static final FunctionDescriptor cairo_mesh_pattern_set_corner_color_rgb$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle cairo_mesh_pattern_set_corner_color_rgb$MH = RuntimeHelper.downcallHandle(
-        "cairo_mesh_pattern_set_corner_color_rgb",
-        constants$1204.cairo_mesh_pattern_set_corner_color_rgb$FUNC
-    );
-    static final FunctionDescriptor cairo_mesh_pattern_set_corner_color_rgba$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle cairo_mesh_pattern_set_corner_color_rgba$MH = RuntimeHelper.downcallHandle(
-        "cairo_mesh_pattern_set_corner_color_rgba",
-        constants$1204.cairo_mesh_pattern_set_corner_color_rgba$FUNC
-    );
-    static final FunctionDescriptor cairo_pattern_set_matrix$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1204() {}
+    static final FunctionDescriptor atk_role_for_name$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_pattern_set_matrix$MH = RuntimeHelper.downcallHandle(
-        "cairo_pattern_set_matrix",
-        constants$1204.cairo_pattern_set_matrix$FUNC
+    static final MethodHandle atk_role_for_name$MH = RuntimeHelper.downcallHandle(
+        "atk_role_for_name",
+        constants$1204.atk_role_for_name$FUNC
+    );
+    static final FunctionDescriptor atk_object_add_relationship$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle atk_object_add_relationship$MH = RuntimeHelper.downcallHandle(
+        "atk_object_add_relationship",
+        constants$1204.atk_object_add_relationship$FUNC
+    );
+    static final FunctionDescriptor atk_object_remove_relationship$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle atk_object_remove_relationship$MH = RuntimeHelper.downcallHandle(
+        "atk_object_remove_relationship",
+        constants$1204.atk_object_remove_relationship$FUNC
+    );
+    static final FunctionDescriptor atk_role_get_localized_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle atk_role_get_localized_name$MH = RuntimeHelper.downcallHandle(
+        "atk_role_get_localized_name",
+        constants$1204.atk_role_get_localized_name$FUNC
+    );
+    static final FunctionDescriptor atk_role_register$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle atk_role_register$MH = RuntimeHelper.downcallHandle(
+        "atk_role_register",
+        constants$1204.atk_role_register$FUNC
+    );
+    static final FunctionDescriptor atk_object_get_object_locale$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle atk_object_get_object_locale$MH = RuntimeHelper.downcallHandle(
+        "atk_object_get_object_locale",
+        constants$1204.atk_object_get_object_locale$FUNC
     );
 }
 

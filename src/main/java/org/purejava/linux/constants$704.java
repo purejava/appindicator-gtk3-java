@@ -7,51 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$704 {
+final class constants$704 {
 
-    static final FunctionDescriptor g_io_error_quark$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle g_io_error_quark$MH = RuntimeHelper.downcallHandle(
-        "g_io_error_quark",
-        constants$704.g_io_error_quark$FUNC
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$704() {}
+    static final FunctionDescriptor g_dbus_connection_export_menu_model$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor g_io_error_from_errno$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final MethodHandle g_dbus_connection_export_menu_model$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_connection_export_menu_model",
+        constants$704.g_dbus_connection_export_menu_model$FUNC
+    );
+    static final FunctionDescriptor g_dbus_connection_unexport_menu_model$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_io_error_from_errno$MH = RuntimeHelper.downcallHandle(
-        "g_io_error_from_errno",
-        constants$704.g_io_error_from_errno$FUNC
+    static final MethodHandle g_dbus_connection_unexport_menu_model$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_connection_unexport_menu_model",
+        constants$704.g_dbus_connection_unexport_menu_model$FUNC
     );
-    static final FunctionDescriptor g_io_stream_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_io_stream_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_io_stream_get_type",
-        constants$704.g_io_stream_get_type$FUNC
+    static final FunctionDescriptor g_mount_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_mount_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_mount_get_type",
+        constants$704.g_mount_get_type$FUNC
     );
-    static final FunctionDescriptor g_io_stream_get_input_stream$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_mount_get_root$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_io_stream_get_input_stream$MH = RuntimeHelper.downcallHandle(
-        "g_io_stream_get_input_stream",
-        constants$704.g_io_stream_get_input_stream$FUNC
+    static final MethodHandle g_mount_get_root$MH = RuntimeHelper.downcallHandle(
+        "g_mount_get_root",
+        constants$704.g_mount_get_root$FUNC
     );
-    static final FunctionDescriptor g_io_stream_get_output_stream$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_mount_get_default_location$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_io_stream_get_output_stream$MH = RuntimeHelper.downcallHandle(
-        "g_io_stream_get_output_stream",
-        constants$704.g_io_stream_get_output_stream$FUNC
+    static final MethodHandle g_mount_get_default_location$MH = RuntimeHelper.downcallHandle(
+        "g_mount_get_default_location",
+        constants$704.g_mount_get_default_location$FUNC
     );
-    static final FunctionDescriptor g_io_stream_splice_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_mount_get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_io_stream_splice_async$MH = RuntimeHelper.downcallHandle(
-        "g_io_stream_splice_async",
-        constants$704.g_io_stream_splice_async$FUNC
+    static final MethodHandle g_mount_get_name$MH = RuntimeHelper.downcallHandle(
+        "g_mount_get_name",
+        constants$704.g_mount_get_name$FUNC
     );
 }
 

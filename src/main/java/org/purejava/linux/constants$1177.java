@@ -7,55 +7,46 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1177 {
+final class constants$1177 {
 
-    static final FunctionDescriptor cairo_scaled_font_get_font_matrix$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1177() {}
+    static final FunctionDescriptor gdk_error_trap_push$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle gdk_error_trap_push$MH = RuntimeHelper.downcallHandle(
+        "gdk_error_trap_push",
+        constants$1177.gdk_error_trap_push$FUNC
     );
-    static final MethodHandle cairo_scaled_font_get_font_matrix$MH = RuntimeHelper.downcallHandle(
-        "cairo_scaled_font_get_font_matrix",
-        constants$1177.cairo_scaled_font_get_font_matrix$FUNC
+    static final FunctionDescriptor gdk_error_trap_pop$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
+    static final MethodHandle gdk_error_trap_pop$MH = RuntimeHelper.downcallHandle(
+        "gdk_error_trap_pop",
+        constants$1177.gdk_error_trap_pop$FUNC
     );
-    static final FunctionDescriptor cairo_scaled_font_get_ctm$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gdk_error_trap_pop_ignored$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle gdk_error_trap_pop_ignored$MH = RuntimeHelper.downcallHandle(
+        "gdk_error_trap_pop_ignored",
+        constants$1177.gdk_error_trap_pop_ignored$FUNC
     );
-    static final MethodHandle cairo_scaled_font_get_ctm$MH = RuntimeHelper.downcallHandle(
-        "cairo_scaled_font_get_ctm",
-        constants$1177.cairo_scaled_font_get_ctm$FUNC
+    static final FunctionDescriptor gdk_get_display_arg_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gdk_get_display_arg_name$MH = RuntimeHelper.downcallHandle(
+        "gdk_get_display_arg_name",
+        constants$1177.gdk_get_display_arg_name$FUNC
     );
-    static final FunctionDescriptor cairo_scaled_font_get_scale_matrix$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gdk_get_display$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gdk_get_display$MH = RuntimeHelper.downcallHandle(
+        "gdk_get_display",
+        constants$1177.gdk_get_display$FUNC
     );
-    static final MethodHandle cairo_scaled_font_get_scale_matrix$MH = RuntimeHelper.downcallHandle(
-        "cairo_scaled_font_get_scale_matrix",
-        constants$1177.cairo_scaled_font_get_scale_matrix$FUNC
-    );
-    static final FunctionDescriptor cairo_scaled_font_get_font_options$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_scaled_font_get_font_options$MH = RuntimeHelper.downcallHandle(
-        "cairo_scaled_font_get_font_options",
-        constants$1177.cairo_scaled_font_get_font_options$FUNC
-    );
-    static final FunctionDescriptor cairo_toy_font_face_create$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gdk_pointer_grab$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle cairo_toy_font_face_create$MH = RuntimeHelper.downcallHandle(
-        "cairo_toy_font_face_create",
-        constants$1177.cairo_toy_font_face_create$FUNC
-    );
-    static final FunctionDescriptor cairo_toy_font_face_get_family$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_toy_font_face_get_family$MH = RuntimeHelper.downcallHandle(
-        "cairo_toy_font_face_get_family",
-        constants$1177.cairo_toy_font_face_get_family$FUNC
+    static final MethodHandle gdk_pointer_grab$MH = RuntimeHelper.downcallHandle(
+        "gdk_pointer_grab",
+        constants$1177.gdk_pointer_grab$FUNC
     );
 }
 

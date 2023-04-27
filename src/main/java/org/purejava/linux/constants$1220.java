@@ -7,49 +7,64 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1220 {
+final class constants$1220 {
 
-    static final FunctionDescriptor gdk_drag_context_get_actions$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1220() {}
+    static final FunctionDescriptor atk_editable_text_set_run_attributes$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle atk_editable_text_set_run_attributes$MH = RuntimeHelper.downcallHandle(
+        "atk_editable_text_set_run_attributes",
+        constants$1220.atk_editable_text_set_run_attributes$FUNC
+    );
+    static final FunctionDescriptor atk_editable_text_set_text_contents$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_drag_context_get_actions$MH = RuntimeHelper.downcallHandle(
-        "gdk_drag_context_get_actions",
-        constants$1220.gdk_drag_context_get_actions$FUNC
+    static final MethodHandle atk_editable_text_set_text_contents$MH = RuntimeHelper.downcallHandle(
+        "atk_editable_text_set_text_contents",
+        constants$1220.atk_editable_text_set_text_contents$FUNC
     );
-    static final FunctionDescriptor gdk_drag_context_get_suggested_action$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor atk_editable_text_insert_text$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_drag_context_get_suggested_action$MH = RuntimeHelper.downcallHandle(
-        "gdk_drag_context_get_suggested_action",
-        constants$1220.gdk_drag_context_get_suggested_action$FUNC
+    static final MethodHandle atk_editable_text_insert_text$MH = RuntimeHelper.downcallHandle(
+        "atk_editable_text_insert_text",
+        constants$1220.atk_editable_text_insert_text$FUNC
     );
-    static final FunctionDescriptor gdk_drag_context_get_selected_action$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor atk_editable_text_copy_text$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gdk_drag_context_get_selected_action$MH = RuntimeHelper.downcallHandle(
-        "gdk_drag_context_get_selected_action",
-        constants$1220.gdk_drag_context_get_selected_action$FUNC
+    static final MethodHandle atk_editable_text_copy_text$MH = RuntimeHelper.downcallHandle(
+        "atk_editable_text_copy_text",
+        constants$1220.atk_editable_text_copy_text$FUNC
     );
-    static final FunctionDescriptor gdk_drag_context_get_source_window$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor atk_editable_text_cut_text$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gdk_drag_context_get_source_window$MH = RuntimeHelper.downcallHandle(
-        "gdk_drag_context_get_source_window",
-        constants$1220.gdk_drag_context_get_source_window$FUNC
+    static final MethodHandle atk_editable_text_cut_text$MH = RuntimeHelper.downcallHandle(
+        "atk_editable_text_cut_text",
+        constants$1220.atk_editable_text_cut_text$FUNC
     );
-    static final FunctionDescriptor gdk_drag_context_get_dest_window$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor atk_editable_text_delete_text$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gdk_drag_context_get_dest_window$MH = RuntimeHelper.downcallHandle(
-        "gdk_drag_context_get_dest_window",
-        constants$1220.gdk_drag_context_get_dest_window$FUNC
-    );
-    static final FunctionDescriptor gdk_drag_context_get_protocol$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_drag_context_get_protocol$MH = RuntimeHelper.downcallHandle(
-        "gdk_drag_context_get_protocol",
-        constants$1220.gdk_drag_context_get_protocol$FUNC
+    static final MethodHandle atk_editable_text_delete_text$MH = RuntimeHelper.downcallHandle(
+        "atk_editable_text_delete_text",
+        constants$1220.atk_editable_text_delete_text$FUNC
     );
 }
 

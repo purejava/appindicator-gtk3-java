@@ -7,59 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$355 {
+final class constants$355 {
 
-    static final FunctionDescriptor pthread_attr_getstacksize$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pthread_attr_getstacksize$MH = RuntimeHelper.downcallHandle(
-        "pthread_attr_getstacksize",
-        constants$355.pthread_attr_getstacksize$FUNC
-    );
-    static final FunctionDescriptor pthread_attr_setstacksize$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle pthread_attr_setstacksize$MH = RuntimeHelper.downcallHandle(
-        "pthread_attr_setstacksize",
-        constants$355.pthread_attr_setstacksize$FUNC
-    );
-    static final FunctionDescriptor pthread_attr_getstack$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pthread_attr_getstack$MH = RuntimeHelper.downcallHandle(
-        "pthread_attr_getstack",
-        constants$355.pthread_attr_getstack$FUNC
-    );
-    static final FunctionDescriptor pthread_attr_setstack$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle pthread_attr_setstack$MH = RuntimeHelper.downcallHandle(
-        "pthread_attr_setstack",
-        constants$355.pthread_attr_setstack$FUNC
-    );
-    static final FunctionDescriptor pthread_setschedparam$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$355() {}
+    static final FunctionDescriptor sched_rr_get_interval$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pthread_setschedparam$MH = RuntimeHelper.downcallHandle(
-        "pthread_setschedparam",
-        constants$355.pthread_setschedparam$FUNC
+    static final MethodHandle sched_rr_get_interval$MH = RuntimeHelper.downcallHandle(
+        "sched_rr_get_interval",
+        constants$355.sched_rr_get_interval$FUNC
     );
-    static final FunctionDescriptor pthread_getschedparam$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
+    static final FunctionDescriptor pthread_create$__start_routine$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final FunctionDescriptor pthread_create$__start_routine_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle pthread_create$__start_routine_UP$MH = RuntimeHelper.upcallHandle(pthread_create$__start_routine.class, "apply", constants$355.pthread_create$__start_routine_UP$FUNC);
+    static final FunctionDescriptor pthread_create$__start_routine_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle pthread_create$__start_routine_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$355.pthread_create$__start_routine_DOWN$FUNC
+    );
+    static final FunctionDescriptor pthread_create$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pthread_getschedparam$MH = RuntimeHelper.downcallHandle(
-        "pthread_getschedparam",
-        constants$355.pthread_getschedparam$FUNC
+    static final MethodHandle pthread_create$MH = RuntimeHelper.downcallHandle(
+        "pthread_create",
+        constants$355.pthread_create$FUNC
+    );
+    static final FunctionDescriptor pthread_exit$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle pthread_exit$MH = RuntimeHelper.downcallHandle(
+        "pthread_exit",
+        constants$355.pthread_exit$FUNC
+    );
+    static final FunctionDescriptor pthread_join$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle pthread_join$MH = RuntimeHelper.downcallHandle(
+        "pthread_join",
+        constants$355.pthread_join$FUNC
     );
 }
 

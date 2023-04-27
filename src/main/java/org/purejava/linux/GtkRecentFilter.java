@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkRecentFilter {
+/**
+ * {@snippet :
+ * typedef struct _GtkRecentFilter GtkRecentFilter;
+ * }
+ */
+public final class GtkRecentFilter {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkRecentFilter() {}
 }
 
 

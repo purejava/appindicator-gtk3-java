@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * void (*AtkEventListener)(struct _AtkObject* obj);
+ * }
+ */
 public interface AtkEventListener {
 
-    void apply(java.lang.foreign.MemoryAddress obj);
-    static MemorySegment allocate(AtkEventListener fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(AtkEventListener.class, fi, constants$1382.AtkEventListener$FUNC, session);
+    void apply(java.lang.foreign.MemorySegment display);
+    static MemorySegment allocate(AtkEventListener fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$1206.AtkEventListener_UP$MH, fi, constants$1206.AtkEventListener$FUNC, scope);
     }
-    static AtkEventListener ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _obj) -> {
+    static AtkEventListener ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _display) -> {
             try {
-                constants$1383.AtkEventListener$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_obj);
+                constants$1206.AtkEventListener_DOWN$MH.invokeExact(symbol, _display);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

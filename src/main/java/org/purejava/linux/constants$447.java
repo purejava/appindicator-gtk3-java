@@ -7,82 +7,57 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$447 {
+final class constants$447 {
 
-    static final FunctionDescriptor g_cclosure_marshal_VOID__CHARv$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$447() {}
+    static final FunctionDescriptor g_enum_get_value$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_cclosure_marshal_VOID__CHARv$MH = RuntimeHelper.downcallHandle(
-        "g_cclosure_marshal_VOID__CHARv",
-        constants$447.g_cclosure_marshal_VOID__CHARv$FUNC
+    static final MethodHandle g_enum_get_value$MH = RuntimeHelper.downcallHandle(
+        "g_enum_get_value",
+        constants$447.g_enum_get_value$FUNC
     );
-    static final FunctionDescriptor g_cclosure_marshal_VOID__UCHAR$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_enum_get_value_by_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_cclosure_marshal_VOID__UCHAR$MH = RuntimeHelper.downcallHandle(
-        "g_cclosure_marshal_VOID__UCHAR",
-        constants$447.g_cclosure_marshal_VOID__UCHAR$FUNC
+    static final MethodHandle g_enum_get_value_by_name$MH = RuntimeHelper.downcallHandle(
+        "g_enum_get_value_by_name",
+        constants$447.g_enum_get_value_by_name$FUNC
     );
-    static final FunctionDescriptor g_cclosure_marshal_VOID__UCHARv$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_cclosure_marshal_VOID__UCHARv$MH = RuntimeHelper.downcallHandle(
-        "g_cclosure_marshal_VOID__UCHARv",
-        constants$447.g_cclosure_marshal_VOID__UCHARv$FUNC
-    );
-    static final FunctionDescriptor g_cclosure_marshal_VOID__INT$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_enum_get_value_by_nick$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_cclosure_marshal_VOID__INT$MH = RuntimeHelper.downcallHandle(
-        "g_cclosure_marshal_VOID__INT",
-        constants$447.g_cclosure_marshal_VOID__INT$FUNC
+    static final MethodHandle g_enum_get_value_by_nick$MH = RuntimeHelper.downcallHandle(
+        "g_enum_get_value_by_nick",
+        constants$447.g_enum_get_value_by_nick$FUNC
     );
-    static final FunctionDescriptor g_cclosure_marshal_VOID__INTv$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_flags_get_first_value$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_cclosure_marshal_VOID__INTv$MH = RuntimeHelper.downcallHandle(
-        "g_cclosure_marshal_VOID__INTv",
-        constants$447.g_cclosure_marshal_VOID__INTv$FUNC
+    static final MethodHandle g_flags_get_first_value$MH = RuntimeHelper.downcallHandle(
+        "g_flags_get_first_value",
+        constants$447.g_flags_get_first_value$FUNC
     );
-    static final FunctionDescriptor g_cclosure_marshal_VOID__UINT$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_flags_get_value_by_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_cclosure_marshal_VOID__UINT$MH = RuntimeHelper.downcallHandle(
-        "g_cclosure_marshal_VOID__UINT",
-        constants$447.g_cclosure_marshal_VOID__UINT$FUNC
+    static final MethodHandle g_flags_get_value_by_name$MH = RuntimeHelper.downcallHandle(
+        "g_flags_get_value_by_name",
+        constants$447.g_flags_get_value_by_name$FUNC
+    );
+    static final FunctionDescriptor g_flags_get_value_by_nick$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_flags_get_value_by_nick$MH = RuntimeHelper.downcallHandle(
+        "g_flags_get_value_by_nick",
+        constants$447.g_flags_get_value_by_nick$FUNC
     );
 }
 

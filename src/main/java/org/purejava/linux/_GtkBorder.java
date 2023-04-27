@@ -7,9 +7,19 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GtkBorder {
+ *     gint16 left;
+ *     gint16 right;
+ *     gint16 top;
+ *     gint16 bottom;
+ * };
+ * }
+ */
 public class _GtkBorder {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_SHORT$LAYOUT.withName("left"),
         Constants$root.C_SHORT$LAYOUT.withName("right"),
         Constants$root.C_SHORT$LAYOUT.withName("top"),
@@ -22,10 +32,22 @@ public class _GtkBorder {
     public static VarHandle left$VH() {
         return _GtkBorder.left$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gint16 left;
+     * }
+     */
     public static short left$get(MemorySegment seg) {
         return (short)_GtkBorder.left$VH.get(seg);
     }
-    public static void left$set( MemorySegment seg, short x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gint16 left;
+     * }
+     */
+    public static void left$set(MemorySegment seg, short x) {
         _GtkBorder.left$VH.set(seg, x);
     }
     public static short left$get(MemorySegment seg, long index) {
@@ -38,10 +60,22 @@ public class _GtkBorder {
     public static VarHandle right$VH() {
         return _GtkBorder.right$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gint16 right;
+     * }
+     */
     public static short right$get(MemorySegment seg) {
         return (short)_GtkBorder.right$VH.get(seg);
     }
-    public static void right$set( MemorySegment seg, short x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gint16 right;
+     * }
+     */
+    public static void right$set(MemorySegment seg, short x) {
         _GtkBorder.right$VH.set(seg, x);
     }
     public static short right$get(MemorySegment seg, long index) {
@@ -54,10 +88,22 @@ public class _GtkBorder {
     public static VarHandle top$VH() {
         return _GtkBorder.top$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gint16 top;
+     * }
+     */
     public static short top$get(MemorySegment seg) {
         return (short)_GtkBorder.top$VH.get(seg);
     }
-    public static void top$set( MemorySegment seg, short x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gint16 top;
+     * }
+     */
+    public static void top$set(MemorySegment seg, short x) {
         _GtkBorder.top$VH.set(seg, x);
     }
     public static short top$get(MemorySegment seg, long index) {
@@ -70,10 +116,22 @@ public class _GtkBorder {
     public static VarHandle bottom$VH() {
         return _GtkBorder.bottom$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gint16 bottom;
+     * }
+     */
     public static short bottom$get(MemorySegment seg) {
         return (short)_GtkBorder.bottom$VH.get(seg);
     }
-    public static void bottom$set( MemorySegment seg, short x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gint16 bottom;
+     * }
+     */
+    public static void bottom$set(MemorySegment seg, short x) {
         _GtkBorder.bottom$VH.set(seg, x);
     }
     public static short bottom$get(MemorySegment seg, long index) {
@@ -84,10 +142,10 @@ public class _GtkBorder {
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

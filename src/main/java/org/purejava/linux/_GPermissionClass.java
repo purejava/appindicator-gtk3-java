@@ -7,9 +7,23 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GPermissionClass {
+ *     GObjectClass parent_class;
+ *     gboolean (*acquire)(GPermission*,GCancellable*,GError**);
+ *     void (*acquire_async)(GPermission*,GCancellable*,GAsyncReadyCallback,gpointer);
+ *     gboolean (*acquire_finish)(GPermission*,GAsyncResult*,GError**);
+ *     gboolean (*release)(GPermission*,GCancellable*,GError**);
+ *     void (*release_async)(GPermission*,GCancellable*,GAsyncReadyCallback,gpointer);
+ *     gboolean (*release_finish)(GPermission*,GAsyncResult*,GError**);
+ *     gpointer reserved[16];
+ * };
+ * }
+ */
 public class _GPermissionClass {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
                 Constants$root.C_LONG_LONG$LAYOUT.withName("g_type")
@@ -24,7 +38,10 @@ public class _GPermissionClass {
             Constants$root.C_POINTER$LAYOUT.withName("notify"),
             Constants$root.C_POINTER$LAYOUT.withName("constructed"),
             Constants$root.C_LONG_LONG$LAYOUT.withName("flags"),
-            MemoryLayout.sequenceLayout(6, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
+            Constants$root.C_LONG_LONG$LAYOUT.withName("n_construct_properties"),
+            Constants$root.C_POINTER$LAYOUT.withName("pspecs"),
+            Constants$root.C_LONG_LONG$LAYOUT.withName("n_pspecs"),
+            MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
         ).withName("parent_class"),
         Constants$root.C_POINTER$LAYOUT.withName("acquire"),
         Constants$root.C_POINTER$LAYOUT.withName("acquire_async"),
@@ -45,20 +62,36 @@ public class _GPermissionClass {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle acquire$MH = RuntimeHelper.downcallHandle(
-        _GPermissionClass.acquire$FUNC
+    static final FunctionDescriptor acquire_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle acquire_UP$MH = RuntimeHelper.upcallHandle(acquire.class, "apply", _GPermissionClass.acquire_UP$FUNC);
+    static final FunctionDescriptor acquire_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle acquire_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GPermissionClass.acquire_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*acquire)(GPermission*,GCancellable*,GError**);
+     * }
+     */
     public interface acquire {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2);
-        static MemorySegment allocate(acquire fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(acquire.class, fi, _GPermissionClass.acquire$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2);
+        static MemorySegment allocate(acquire fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GPermissionClass.acquire_UP$MH, fi, _GPermissionClass.acquire$FUNC, scope);
         }
-        static acquire ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2) -> {
+        static acquire ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2) -> {
                 try {
-                    return (int)_GPermissionClass.acquire$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2);
+                    return (int)_GPermissionClass.acquire_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -70,20 +103,32 @@ public class _GPermissionClass {
     public static VarHandle acquire$VH() {
         return _GPermissionClass.acquire$VH;
     }
-    public static MemoryAddress acquire$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GPermissionClass.acquire$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*acquire)(GPermission*,GCancellable*,GError**);
+     * }
+     */
+    public static MemorySegment acquire$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GPermissionClass.acquire$VH.get(seg);
     }
-    public static void acquire$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*acquire)(GPermission*,GCancellable*,GError**);
+     * }
+     */
+    public static void acquire$set(MemorySegment seg, MemorySegment x) {
         _GPermissionClass.acquire$VH.set(seg, x);
     }
-    public static MemoryAddress acquire$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GPermissionClass.acquire$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment acquire$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GPermissionClass.acquire$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void acquire$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void acquire$set(MemorySegment seg, long index, MemorySegment x) {
         _GPermissionClass.acquire$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static acquire acquire (MemorySegment segment, MemorySession session) {
-        return acquire.ofAddress(acquire$get(segment), session);
+    public static acquire acquire(MemorySegment segment, SegmentScope scope) {
+        return acquire.ofAddress(acquire$get(segment), scope);
     }
     static final FunctionDescriptor acquire_async$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
@@ -91,20 +136,38 @@ public class _GPermissionClass {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle acquire_async$MH = RuntimeHelper.downcallHandle(
-        _GPermissionClass.acquire_async$FUNC
+    static final FunctionDescriptor acquire_async_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle acquire_async_UP$MH = RuntimeHelper.upcallHandle(acquire_async.class, "apply", _GPermissionClass.acquire_async_UP$FUNC);
+    static final FunctionDescriptor acquire_async_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle acquire_async_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GPermissionClass.acquire_async_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*acquire_async)(GPermission*,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
     public interface acquire_async {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2, java.lang.foreign.MemoryAddress _x3);
-        static MemorySegment allocate(acquire_async fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(acquire_async.class, fi, _GPermissionClass.acquire_async$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3);
+        static MemorySegment allocate(acquire_async fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GPermissionClass.acquire_async_UP$MH, fi, _GPermissionClass.acquire_async$FUNC, scope);
         }
-        static acquire_async ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2, java.lang.foreign.MemoryAddress __x3) -> {
+        static acquire_async ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3) -> {
                 try {
-                    _GPermissionClass.acquire_async$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2, (java.lang.foreign.Addressable)__x3);
+                    _GPermissionClass.acquire_async_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -116,40 +179,68 @@ public class _GPermissionClass {
     public static VarHandle acquire_async$VH() {
         return _GPermissionClass.acquire_async$VH;
     }
-    public static MemoryAddress acquire_async$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GPermissionClass.acquire_async$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*acquire_async)(GPermission*,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
+    public static MemorySegment acquire_async$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GPermissionClass.acquire_async$VH.get(seg);
     }
-    public static void acquire_async$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*acquire_async)(GPermission*,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
+    public static void acquire_async$set(MemorySegment seg, MemorySegment x) {
         _GPermissionClass.acquire_async$VH.set(seg, x);
     }
-    public static MemoryAddress acquire_async$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GPermissionClass.acquire_async$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment acquire_async$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GPermissionClass.acquire_async$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void acquire_async$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void acquire_async$set(MemorySegment seg, long index, MemorySegment x) {
         _GPermissionClass.acquire_async$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static acquire_async acquire_async (MemorySegment segment, MemorySession session) {
-        return acquire_async.ofAddress(acquire_async$get(segment), session);
+    public static acquire_async acquire_async(MemorySegment segment, SegmentScope scope) {
+        return acquire_async.ofAddress(acquire_async$get(segment), scope);
     }
     static final FunctionDescriptor acquire_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle acquire_finish$MH = RuntimeHelper.downcallHandle(
-        _GPermissionClass.acquire_finish$FUNC
+    static final FunctionDescriptor acquire_finish_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle acquire_finish_UP$MH = RuntimeHelper.upcallHandle(acquire_finish.class, "apply", _GPermissionClass.acquire_finish_UP$FUNC);
+    static final FunctionDescriptor acquire_finish_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle acquire_finish_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GPermissionClass.acquire_finish_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*acquire_finish)(GPermission*,GAsyncResult*,GError**);
+     * }
+     */
     public interface acquire_finish {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2);
-        static MemorySegment allocate(acquire_finish fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(acquire_finish.class, fi, _GPermissionClass.acquire_finish$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2);
+        static MemorySegment allocate(acquire_finish fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GPermissionClass.acquire_finish_UP$MH, fi, _GPermissionClass.acquire_finish$FUNC, scope);
         }
-        static acquire_finish ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2) -> {
+        static acquire_finish ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2) -> {
                 try {
-                    return (int)_GPermissionClass.acquire_finish$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2);
+                    return (int)_GPermissionClass.acquire_finish_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -161,40 +252,68 @@ public class _GPermissionClass {
     public static VarHandle acquire_finish$VH() {
         return _GPermissionClass.acquire_finish$VH;
     }
-    public static MemoryAddress acquire_finish$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GPermissionClass.acquire_finish$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*acquire_finish)(GPermission*,GAsyncResult*,GError**);
+     * }
+     */
+    public static MemorySegment acquire_finish$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GPermissionClass.acquire_finish$VH.get(seg);
     }
-    public static void acquire_finish$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*acquire_finish)(GPermission*,GAsyncResult*,GError**);
+     * }
+     */
+    public static void acquire_finish$set(MemorySegment seg, MemorySegment x) {
         _GPermissionClass.acquire_finish$VH.set(seg, x);
     }
-    public static MemoryAddress acquire_finish$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GPermissionClass.acquire_finish$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment acquire_finish$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GPermissionClass.acquire_finish$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void acquire_finish$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void acquire_finish$set(MemorySegment seg, long index, MemorySegment x) {
         _GPermissionClass.acquire_finish$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static acquire_finish acquire_finish (MemorySegment segment, MemorySession session) {
-        return acquire_finish.ofAddress(acquire_finish$get(segment), session);
+    public static acquire_finish acquire_finish(MemorySegment segment, SegmentScope scope) {
+        return acquire_finish.ofAddress(acquire_finish$get(segment), scope);
     }
     static final FunctionDescriptor release$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle release$MH = RuntimeHelper.downcallHandle(
-        _GPermissionClass.release$FUNC
+    static final FunctionDescriptor release_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle release_UP$MH = RuntimeHelper.upcallHandle(release.class, "apply", _GPermissionClass.release_UP$FUNC);
+    static final FunctionDescriptor release_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle release_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GPermissionClass.release_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*release)(GPermission*,GCancellable*,GError**);
+     * }
+     */
     public interface release {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2);
-        static MemorySegment allocate(release fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(release.class, fi, _GPermissionClass.release$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2);
+        static MemorySegment allocate(release fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GPermissionClass.release_UP$MH, fi, _GPermissionClass.release$FUNC, scope);
         }
-        static release ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2) -> {
+        static release ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2) -> {
                 try {
-                    return (int)_GPermissionClass.release$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2);
+                    return (int)_GPermissionClass.release_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -206,20 +325,32 @@ public class _GPermissionClass {
     public static VarHandle release$VH() {
         return _GPermissionClass.release$VH;
     }
-    public static MemoryAddress release$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GPermissionClass.release$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*release)(GPermission*,GCancellable*,GError**);
+     * }
+     */
+    public static MemorySegment release$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GPermissionClass.release$VH.get(seg);
     }
-    public static void release$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*release)(GPermission*,GCancellable*,GError**);
+     * }
+     */
+    public static void release$set(MemorySegment seg, MemorySegment x) {
         _GPermissionClass.release$VH.set(seg, x);
     }
-    public static MemoryAddress release$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GPermissionClass.release$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment release$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GPermissionClass.release$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void release$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void release$set(MemorySegment seg, long index, MemorySegment x) {
         _GPermissionClass.release$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static release release (MemorySegment segment, MemorySession session) {
-        return release.ofAddress(release$get(segment), session);
+    public static release release(MemorySegment segment, SegmentScope scope) {
+        return release.ofAddress(release$get(segment), scope);
     }
     static final FunctionDescriptor release_async$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
@@ -227,20 +358,38 @@ public class _GPermissionClass {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle release_async$MH = RuntimeHelper.downcallHandle(
-        _GPermissionClass.release_async$FUNC
+    static final FunctionDescriptor release_async_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle release_async_UP$MH = RuntimeHelper.upcallHandle(release_async.class, "apply", _GPermissionClass.release_async_UP$FUNC);
+    static final FunctionDescriptor release_async_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle release_async_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GPermissionClass.release_async_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*release_async)(GPermission*,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
     public interface release_async {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2, java.lang.foreign.MemoryAddress _x3);
-        static MemorySegment allocate(release_async fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(release_async.class, fi, _GPermissionClass.release_async$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3);
+        static MemorySegment allocate(release_async fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GPermissionClass.release_async_UP$MH, fi, _GPermissionClass.release_async$FUNC, scope);
         }
-        static release_async ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2, java.lang.foreign.MemoryAddress __x3) -> {
+        static release_async ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3) -> {
                 try {
-                    _GPermissionClass.release_async$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2, (java.lang.foreign.Addressable)__x3);
+                    _GPermissionClass.release_async_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -252,40 +401,68 @@ public class _GPermissionClass {
     public static VarHandle release_async$VH() {
         return _GPermissionClass.release_async$VH;
     }
-    public static MemoryAddress release_async$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GPermissionClass.release_async$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*release_async)(GPermission*,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
+    public static MemorySegment release_async$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GPermissionClass.release_async$VH.get(seg);
     }
-    public static void release_async$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*release_async)(GPermission*,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
+    public static void release_async$set(MemorySegment seg, MemorySegment x) {
         _GPermissionClass.release_async$VH.set(seg, x);
     }
-    public static MemoryAddress release_async$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GPermissionClass.release_async$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment release_async$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GPermissionClass.release_async$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void release_async$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void release_async$set(MemorySegment seg, long index, MemorySegment x) {
         _GPermissionClass.release_async$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static release_async release_async (MemorySegment segment, MemorySession session) {
-        return release_async.ofAddress(release_async$get(segment), session);
+    public static release_async release_async(MemorySegment segment, SegmentScope scope) {
+        return release_async.ofAddress(release_async$get(segment), scope);
     }
     static final FunctionDescriptor release_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle release_finish$MH = RuntimeHelper.downcallHandle(
-        _GPermissionClass.release_finish$FUNC
+    static final FunctionDescriptor release_finish_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle release_finish_UP$MH = RuntimeHelper.upcallHandle(release_finish.class, "apply", _GPermissionClass.release_finish_UP$FUNC);
+    static final FunctionDescriptor release_finish_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle release_finish_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GPermissionClass.release_finish_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*release_finish)(GPermission*,GAsyncResult*,GError**);
+     * }
+     */
     public interface release_finish {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2);
-        static MemorySegment allocate(release_finish fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(release_finish.class, fi, _GPermissionClass.release_finish$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2);
+        static MemorySegment allocate(release_finish fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GPermissionClass.release_finish_UP$MH, fi, _GPermissionClass.release_finish$FUNC, scope);
         }
-        static release_finish ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2) -> {
+        static release_finish ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2) -> {
                 try {
-                    return (int)_GPermissionClass.release_finish$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2);
+                    return (int)_GPermissionClass.release_finish_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -297,30 +474,42 @@ public class _GPermissionClass {
     public static VarHandle release_finish$VH() {
         return _GPermissionClass.release_finish$VH;
     }
-    public static MemoryAddress release_finish$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GPermissionClass.release_finish$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*release_finish)(GPermission*,GAsyncResult*,GError**);
+     * }
+     */
+    public static MemorySegment release_finish$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GPermissionClass.release_finish$VH.get(seg);
     }
-    public static void release_finish$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*release_finish)(GPermission*,GAsyncResult*,GError**);
+     * }
+     */
+    public static void release_finish$set(MemorySegment seg, MemorySegment x) {
         _GPermissionClass.release_finish$VH.set(seg, x);
     }
-    public static MemoryAddress release_finish$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GPermissionClass.release_finish$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment release_finish$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GPermissionClass.release_finish$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void release_finish$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void release_finish$set(MemorySegment seg, long index, MemorySegment x) {
         _GPermissionClass.release_finish$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static release_finish release_finish (MemorySegment segment, MemorySession session) {
-        return release_finish.ofAddress(release_finish$get(segment), session);
+    public static release_finish release_finish(MemorySegment segment, SegmentScope scope) {
+        return release_finish.ofAddress(release_finish$get(segment), scope);
     }
     public static MemorySegment reserved$slice(MemorySegment seg) {
         return seg.asSlice(184, 128);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

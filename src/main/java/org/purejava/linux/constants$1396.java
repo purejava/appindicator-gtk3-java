@@ -7,58 +7,62 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1396 {
+final class constants$1396 {
 
-    static final FunctionDescriptor atk_editable_text_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle atk_editable_text_get_type$MH = RuntimeHelper.downcallHandle(
-        "atk_editable_text_get_type",
-        constants$1396.atk_editable_text_get_type$FUNC
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1396() {}
+    static final FunctionDescriptor gtk_tree_view_column_set_sort_order$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final FunctionDescriptor atk_editable_text_set_run_attributes$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final MethodHandle gtk_tree_view_column_set_sort_order$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_column_set_sort_order",
+        constants$1396.gtk_tree_view_column_set_sort_order$FUNC
+    );
+    static final FunctionDescriptor gtk_tree_view_column_get_sort_order$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_tree_view_column_get_sort_order$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_column_get_sort_order",
+        constants$1396.gtk_tree_view_column_get_sort_order$FUNC
+    );
+    static final FunctionDescriptor gtk_tree_view_column_cell_set_cell_data$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle atk_editable_text_set_run_attributes$MH = RuntimeHelper.downcallHandle(
-        "atk_editable_text_set_run_attributes",
-        constants$1396.atk_editable_text_set_run_attributes$FUNC
+    static final MethodHandle gtk_tree_view_column_cell_set_cell_data$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_column_cell_set_cell_data",
+        constants$1396.gtk_tree_view_column_cell_set_cell_data$FUNC
     );
-    static final FunctionDescriptor atk_editable_text_set_text_contents$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_tree_view_column_cell_get_size$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_editable_text_set_text_contents$MH = RuntimeHelper.downcallHandle(
-        "atk_editable_text_set_text_contents",
-        constants$1396.atk_editable_text_set_text_contents$FUNC
+    static final MethodHandle gtk_tree_view_column_cell_get_size$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_column_cell_get_size",
+        constants$1396.gtk_tree_view_column_cell_get_size$FUNC
     );
-    static final FunctionDescriptor atk_editable_text_insert_text$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_tree_view_column_cell_is_visible$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_editable_text_insert_text$MH = RuntimeHelper.downcallHandle(
-        "atk_editable_text_insert_text",
-        constants$1396.atk_editable_text_insert_text$FUNC
+    static final MethodHandle gtk_tree_view_column_cell_is_visible$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_column_cell_is_visible",
+        constants$1396.gtk_tree_view_column_cell_is_visible$FUNC
     );
-    static final FunctionDescriptor atk_editable_text_copy_text$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_tree_view_column_focus_cell$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_editable_text_copy_text$MH = RuntimeHelper.downcallHandle(
-        "atk_editable_text_copy_text",
-        constants$1396.atk_editable_text_copy_text$FUNC
-    );
-    static final FunctionDescriptor atk_editable_text_cut_text$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle atk_editable_text_cut_text$MH = RuntimeHelper.downcallHandle(
-        "atk_editable_text_cut_text",
-        constants$1396.atk_editable_text_cut_text$FUNC
+    static final MethodHandle gtk_tree_view_column_focus_cell$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_column_focus_cell",
+        constants$1396.gtk_tree_view_column_focus_cell$FUNC
     );
 }
 

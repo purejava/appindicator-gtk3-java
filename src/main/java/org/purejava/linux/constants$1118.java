@@ -7,52 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1118 {
+final class constants$1118 {
 
-    static final FunctionDescriptor pango_layout_set_justify$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1118() {}
+    static final FunctionDescriptor gdk_display_get_monitor$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle pango_layout_set_justify$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_set_justify",
-        constants$1118.pango_layout_set_justify$FUNC
+    static final MethodHandle gdk_display_get_monitor$MH = RuntimeHelper.downcallHandle(
+        "gdk_display_get_monitor",
+        constants$1118.gdk_display_get_monitor$FUNC
     );
-    static final FunctionDescriptor pango_layout_get_justify$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gdk_display_get_primary_monitor$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_layout_get_justify$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_get_justify",
-        constants$1118.pango_layout_get_justify$FUNC
+    static final MethodHandle gdk_display_get_primary_monitor$MH = RuntimeHelper.downcallHandle(
+        "gdk_display_get_primary_monitor",
+        constants$1118.gdk_display_get_primary_monitor$FUNC
     );
-    static final FunctionDescriptor pango_layout_set_justify_last_line$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gdk_display_get_monitor_at_point$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle pango_layout_set_justify_last_line$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_set_justify_last_line",
-        constants$1118.pango_layout_set_justify_last_line$FUNC
+    static final MethodHandle gdk_display_get_monitor_at_point$MH = RuntimeHelper.downcallHandle(
+        "gdk_display_get_monitor_at_point",
+        constants$1118.gdk_display_get_monitor_at_point$FUNC
     );
-    static final FunctionDescriptor pango_layout_get_justify_last_line$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_layout_get_justify_last_line$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_get_justify_last_line",
-        constants$1118.pango_layout_get_justify_last_line$FUNC
-    );
-    static final FunctionDescriptor pango_layout_set_auto_dir$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gdk_display_get_monitor_at_window$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_layout_set_auto_dir$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_set_auto_dir",
-        constants$1118.pango_layout_set_auto_dir$FUNC
-    );
-    static final FunctionDescriptor pango_layout_get_auto_dir$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_layout_get_auto_dir$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_get_auto_dir",
-        constants$1118.pango_layout_get_auto_dir$FUNC
+    static final MethodHandle gdk_display_get_monitor_at_window$MH = RuntimeHelper.downcallHandle(
+        "gdk_display_get_monitor_at_window",
+        constants$1118.gdk_display_get_monitor_at_window$FUNC
+    );
+    static final FunctionDescriptor gdk_screen_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gdk_screen_get_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_screen_get_type",
+        constants$1118.gdk_screen_get_type$FUNC
+    );
+    static final FunctionDescriptor gdk_screen_get_system_visual$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_screen_get_system_visual$MH = RuntimeHelper.downcallHandle(
+        "gdk_screen_get_system_visual",
+        constants$1118.gdk_screen_get_system_visual$FUNC
     );
 }
 

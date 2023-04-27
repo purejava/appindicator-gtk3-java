@@ -7,52 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$482 {
+final class constants$482 {
 
-    static final FunctionDescriptor g_set_object$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$482() {}
+    static final FunctionDescriptor g_app_info_remove_supports_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_set_object$MH = RuntimeHelper.downcallHandle(
-        "g_set_object",
-        constants$482.g_set_object$FUNC
+    static final MethodHandle g_app_info_remove_supports_type$MH = RuntimeHelper.downcallHandle(
+        "g_app_info_remove_supports_type",
+        constants$482.g_app_info_remove_supports_type$FUNC
     );
-    static final FunctionDescriptor g_assert_finalize_object$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_app_info_get_supported_types$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_assert_finalize_object$MH = RuntimeHelper.downcallHandle(
-        "g_assert_finalize_object",
-        constants$482.g_assert_finalize_object$FUNC
+    static final MethodHandle g_app_info_get_supported_types$MH = RuntimeHelper.downcallHandle(
+        "g_app_info_get_supported_types",
+        constants$482.g_app_info_get_supported_types$FUNC
     );
-    static final FunctionDescriptor g_clear_weak_pointer$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_app_info_can_delete$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_clear_weak_pointer$MH = RuntimeHelper.downcallHandle(
-        "g_clear_weak_pointer",
-        constants$482.g_clear_weak_pointer$FUNC
+    static final MethodHandle g_app_info_can_delete$MH = RuntimeHelper.downcallHandle(
+        "g_app_info_can_delete",
+        constants$482.g_app_info_can_delete$FUNC
     );
-    static final FunctionDescriptor g_set_weak_pointer$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_app_info_delete$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_app_info_delete$MH = RuntimeHelper.downcallHandle(
+        "g_app_info_delete",
+        constants$482.g_app_info_delete$FUNC
+    );
+    static final FunctionDescriptor g_app_info_set_as_last_used_for_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_set_weak_pointer$MH = RuntimeHelper.downcallHandle(
-        "g_set_weak_pointer",
-        constants$482.g_set_weak_pointer$FUNC
+    static final MethodHandle g_app_info_set_as_last_used_for_type$MH = RuntimeHelper.downcallHandle(
+        "g_app_info_set_as_last_used_for_type",
+        constants$482.g_app_info_set_as_last_used_for_type$FUNC
     );
-    static final FunctionDescriptor g_weak_ref_init$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_weak_ref_init$MH = RuntimeHelper.downcallHandle(
-        "g_weak_ref_init",
-        constants$482.g_weak_ref_init$FUNC
-    );
-    static final FunctionDescriptor g_weak_ref_clear$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_weak_ref_clear$MH = RuntimeHelper.downcallHandle(
-        "g_weak_ref_clear",
-        constants$482.g_weak_ref_clear$FUNC
+    static final FunctionDescriptor g_app_info_get_all$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle g_app_info_get_all$MH = RuntimeHelper.downcallHandle(
+        "g_app_info_get_all",
+        constants$482.g_app_info_get_all$FUNC
     );
 }
 

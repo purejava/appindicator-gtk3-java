@@ -7,51 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1943 {
+final class constants$1943 {
 
-    static final FunctionDescriptor gtk_print_settings_get_number_up_layout$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1943() {}
+    static final FunctionDescriptor gtk_numerable_icon_get_count$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_print_settings_get_number_up_layout$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_get_number_up_layout",
-        constants$1943.gtk_print_settings_get_number_up_layout$FUNC
+    static final MethodHandle gtk_numerable_icon_get_count$MH = RuntimeHelper.downcallHandle(
+        "gtk_numerable_icon_get_count",
+        constants$1943.gtk_numerable_icon_get_count$FUNC
     );
-    static final FunctionDescriptor gtk_print_settings_set_number_up_layout$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_numerable_icon_set_count$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_print_settings_set_number_up_layout$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_set_number_up_layout",
-        constants$1943.gtk_print_settings_set_number_up_layout$FUNC
+    static final MethodHandle gtk_numerable_icon_set_count$MH = RuntimeHelper.downcallHandle(
+        "gtk_numerable_icon_set_count",
+        constants$1943.gtk_numerable_icon_set_count$FUNC
     );
-    static final FunctionDescriptor gtk_print_settings_get_resolution$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_numerable_icon_get_label$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_print_settings_get_resolution$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_get_resolution",
-        constants$1943.gtk_print_settings_get_resolution$FUNC
+    static final MethodHandle gtk_numerable_icon_get_label$MH = RuntimeHelper.downcallHandle(
+        "gtk_numerable_icon_get_label",
+        constants$1943.gtk_numerable_icon_get_label$FUNC
     );
-    static final FunctionDescriptor gtk_print_settings_set_resolution$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_numerable_icon_set_label$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_print_settings_set_resolution$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_set_resolution",
-        constants$1943.gtk_print_settings_set_resolution$FUNC
-    );
-    static final FunctionDescriptor gtk_print_settings_get_resolution_x$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_print_settings_get_resolution_x$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_get_resolution_x",
-        constants$1943.gtk_print_settings_get_resolution_x$FUNC
+    static final MethodHandle gtk_numerable_icon_set_label$MH = RuntimeHelper.downcallHandle(
+        "gtk_numerable_icon_set_label",
+        constants$1943.gtk_numerable_icon_set_label$FUNC
     );
-    static final FunctionDescriptor gtk_print_settings_get_resolution_y$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_numerable_icon_set_background_gicon$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_print_settings_get_resolution_y$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_get_resolution_y",
-        constants$1943.gtk_print_settings_get_resolution_y$FUNC
+    static final MethodHandle gtk_numerable_icon_set_background_gicon$MH = RuntimeHelper.downcallHandle(
+        "gtk_numerable_icon_set_background_gicon",
+        constants$1943.gtk_numerable_icon_set_background_gicon$FUNC
+    );
+    static final FunctionDescriptor gtk_numerable_icon_get_background_gicon$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_numerable_icon_get_background_gicon$MH = RuntimeHelper.downcallHandle(
+        "gtk_numerable_icon_get_background_gicon",
+        constants$1943.gtk_numerable_icon_get_background_gicon$FUNC
     );
 }
 

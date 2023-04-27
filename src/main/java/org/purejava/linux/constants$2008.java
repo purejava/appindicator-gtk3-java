@@ -7,58 +7,16 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$2008 {
+final class constants$2008 {
 
-    static final FunctionDescriptor gtk_stack_add_named$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_stack_add_named$MH = RuntimeHelper.downcallHandle(
-        "gtk_stack_add_named",
-        constants$2008.gtk_stack_add_named$FUNC
-    );
-    static final FunctionDescriptor gtk_stack_add_titled$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_stack_add_titled$MH = RuntimeHelper.downcallHandle(
-        "gtk_stack_add_titled",
-        constants$2008.gtk_stack_add_titled$FUNC
-    );
-    static final FunctionDescriptor gtk_stack_get_child_by_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_stack_get_child_by_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_stack_get_child_by_name",
-        constants$2008.gtk_stack_get_child_by_name$FUNC
-    );
-    static final FunctionDescriptor gtk_stack_set_visible_child$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_stack_set_visible_child$MH = RuntimeHelper.downcallHandle(
-        "gtk_stack_set_visible_child",
-        constants$2008.gtk_stack_set_visible_child$FUNC
-    );
-    static final FunctionDescriptor gtk_stack_get_visible_child$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_stack_get_visible_child$MH = RuntimeHelper.downcallHandle(
-        "gtk_stack_get_visible_child",
-        constants$2008.gtk_stack_get_visible_child$FUNC
-    );
-    static final FunctionDescriptor gtk_stack_set_visible_child_name$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_stack_set_visible_child_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_stack_set_visible_child_name",
-        constants$2008.gtk_stack_set_visible_child_name$FUNC
-    );
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$2008() {}
+    static final MemorySegment G_FILE_ATTRIBUTE_TIME_CREATED_NSEC$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("time::created-nsec");
+    static final MemorySegment G_FILE_ATTRIBUTE_UNIX_DEVICE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("unix::device");
+    static final MemorySegment G_FILE_ATTRIBUTE_UNIX_INODE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("unix::inode");
+    static final MemorySegment G_FILE_ATTRIBUTE_UNIX_MODE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("unix::mode");
+    static final MemorySegment G_FILE_ATTRIBUTE_UNIX_NLINK$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("unix::nlink");
+    static final MemorySegment G_FILE_ATTRIBUTE_UNIX_UID$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("unix::uid");
 }
 
 

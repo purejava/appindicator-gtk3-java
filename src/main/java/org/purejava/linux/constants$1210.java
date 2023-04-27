@@ -7,51 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1210 {
+final class constants$1210 {
 
-    static final FunctionDescriptor cairo_region_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1210() {}
+    static final FunctionDescriptor AtkFocusHandler$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle cairo_region_copy$MH = RuntimeHelper.downcallHandle(
-        "cairo_region_copy",
-        constants$1210.cairo_region_copy$FUNC
+    static final FunctionDescriptor AtkFocusHandler_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final FunctionDescriptor cairo_region_reference$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle AtkFocusHandler_UP$MH = RuntimeHelper.upcallHandle(AtkFocusHandler.class, "apply", constants$1210.AtkFocusHandler_UP$FUNC);
+    static final FunctionDescriptor AtkFocusHandler_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle cairo_region_reference$MH = RuntimeHelper.downcallHandle(
-        "cairo_region_reference",
-        constants$1210.cairo_region_reference$FUNC
+    static final MethodHandle AtkFocusHandler_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$1210.AtkFocusHandler_DOWN$FUNC
     );
-    static final FunctionDescriptor cairo_region_destroy$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor atk_rectangle_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle atk_rectangle_get_type$MH = RuntimeHelper.downcallHandle(
+        "atk_rectangle_get_type",
+        constants$1210.atk_rectangle_get_type$FUNC
     );
-    static final MethodHandle cairo_region_destroy$MH = RuntimeHelper.downcallHandle(
-        "cairo_region_destroy",
-        constants$1210.cairo_region_destroy$FUNC
+    static final FunctionDescriptor atk_component_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle atk_component_get_type$MH = RuntimeHelper.downcallHandle(
+        "atk_component_get_type",
+        constants$1210.atk_component_get_type$FUNC
     );
-    static final FunctionDescriptor cairo_region_equal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor atk_component_add_focus_handler$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_region_equal$MH = RuntimeHelper.downcallHandle(
-        "cairo_region_equal",
-        constants$1210.cairo_region_equal$FUNC
+    static final MethodHandle atk_component_add_focus_handler$MH = RuntimeHelper.downcallHandle(
+        "atk_component_add_focus_handler",
+        constants$1210.atk_component_add_focus_handler$FUNC
     );
-    static final FunctionDescriptor cairo_region_status$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_region_status$MH = RuntimeHelper.downcallHandle(
-        "cairo_region_status",
-        constants$1210.cairo_region_status$FUNC
-    );
-    static final FunctionDescriptor cairo_region_get_extents$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor atk_component_contains$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle cairo_region_get_extents$MH = RuntimeHelper.downcallHandle(
-        "cairo_region_get_extents",
-        constants$1210.cairo_region_get_extents$FUNC
+    static final MethodHandle atk_component_contains$MH = RuntimeHelper.downcallHandle(
+        "atk_component_contains",
+        constants$1210.atk_component_contains$FUNC
     );
 }
 

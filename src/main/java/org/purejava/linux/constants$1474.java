@@ -7,53 +7,61 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1474 {
+final class constants$1474 {
 
-    static final FunctionDescriptor gtk_container_get_focus_chain$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1474() {}
+    static final FunctionDescriptor gtk_tree_view_unset_rows_drag_dest$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_tree_view_unset_rows_drag_dest$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_unset_rows_drag_dest",
+        constants$1474.gtk_tree_view_unset_rows_drag_dest$FUNC
+    );
+    static final FunctionDescriptor gtk_tree_view_set_drag_dest_row$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_container_get_focus_chain$MH = RuntimeHelper.downcallHandle(
-        "gtk_container_get_focus_chain",
-        constants$1474.gtk_container_get_focus_chain$FUNC
-    );
-    static final FunctionDescriptor gtk_container_unset_focus_chain$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_container_unset_focus_chain$MH = RuntimeHelper.downcallHandle(
-        "gtk_container_unset_focus_chain",
-        constants$1474.gtk_container_unset_focus_chain$FUNC
-    );
-    static final FunctionDescriptor gtk_container_set_reallocate_redraws$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_container_set_reallocate_redraws$MH = RuntimeHelper.downcallHandle(
-        "gtk_container_set_reallocate_redraws",
-        constants$1474.gtk_container_set_reallocate_redraws$FUNC
+    static final MethodHandle gtk_tree_view_set_drag_dest_row$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_set_drag_dest_row",
+        constants$1474.gtk_tree_view_set_drag_dest_row$FUNC
     );
-    static final FunctionDescriptor gtk_container_set_focus_child$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_tree_view_get_drag_dest_row$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_container_set_focus_child$MH = RuntimeHelper.downcallHandle(
-        "gtk_container_set_focus_child",
-        constants$1474.gtk_container_set_focus_child$FUNC
+    static final MethodHandle gtk_tree_view_get_drag_dest_row$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_get_drag_dest_row",
+        constants$1474.gtk_tree_view_get_drag_dest_row$FUNC
     );
-    static final FunctionDescriptor gtk_container_get_focus_child$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_container_get_focus_child$MH = RuntimeHelper.downcallHandle(
-        "gtk_container_get_focus_child",
-        constants$1474.gtk_container_get_focus_child$FUNC
-    );
-    static final FunctionDescriptor gtk_container_set_focus_vadjustment$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_tree_view_get_dest_row_at_pos$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_container_set_focus_vadjustment$MH = RuntimeHelper.downcallHandle(
-        "gtk_container_set_focus_vadjustment",
-        constants$1474.gtk_container_set_focus_vadjustment$FUNC
+    static final MethodHandle gtk_tree_view_get_dest_row_at_pos$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_get_dest_row_at_pos",
+        constants$1474.gtk_tree_view_get_dest_row_at_pos$FUNC
+    );
+    static final FunctionDescriptor gtk_tree_view_create_row_drag_icon$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_tree_view_create_row_drag_icon$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_create_row_drag_icon",
+        constants$1474.gtk_tree_view_create_row_drag_icon$FUNC
+    );
+    static final FunctionDescriptor gtk_tree_view_set_enable_search$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_tree_view_set_enable_search$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_set_enable_search",
+        constants$1474.gtk_tree_view_set_enable_search$FUNC
     );
 }
 

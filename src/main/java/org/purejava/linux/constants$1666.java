@@ -7,65 +7,46 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1666 {
+final class constants$1666 {
 
-    static final FunctionDescriptor gtk_tree_view_set_search_entry$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1666() {}
+    static final FunctionDescriptor gtk_invisible_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_invisible_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_invisible_get_type",
+        constants$1666.gtk_invisible_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_invisible_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_invisible_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_invisible_new",
+        constants$1666.gtk_invisible_new$FUNC
+    );
+    static final FunctionDescriptor gtk_invisible_new_for_screen$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_invisible_new_for_screen$MH = RuntimeHelper.downcallHandle(
+        "gtk_invisible_new_for_screen",
+        constants$1666.gtk_invisible_new_for_screen$FUNC
+    );
+    static final FunctionDescriptor gtk_invisible_set_screen$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_tree_view_set_search_entry$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_set_search_entry",
-        constants$1666.gtk_tree_view_set_search_entry$FUNC
+    static final MethodHandle gtk_invisible_set_screen$MH = RuntimeHelper.downcallHandle(
+        "gtk_invisible_set_screen",
+        constants$1666.gtk_invisible_set_screen$FUNC
     );
-    static final FunctionDescriptor gtk_tree_view_get_search_position_func$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_invisible_get_screen$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_tree_view_get_search_position_func$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_search_position_func",
-        constants$1666.gtk_tree_view_get_search_position_func$FUNC
+    static final MethodHandle gtk_invisible_get_screen$MH = RuntimeHelper.downcallHandle(
+        "gtk_invisible_get_screen",
+        constants$1666.gtk_invisible_get_screen$FUNC
     );
-    static final FunctionDescriptor gtk_tree_view_set_search_position_func$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_set_search_position_func$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_set_search_position_func",
-        constants$1666.gtk_tree_view_set_search_position_func$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_convert_widget_to_tree_coords$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_convert_widget_to_tree_coords$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_convert_widget_to_tree_coords",
-        constants$1666.gtk_tree_view_convert_widget_to_tree_coords$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_convert_tree_to_widget_coords$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_convert_tree_to_widget_coords$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_convert_tree_to_widget_coords",
-        constants$1666.gtk_tree_view_convert_tree_to_widget_coords$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_convert_widget_to_bin_window_coords$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_convert_widget_to_bin_window_coords$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_convert_widget_to_bin_window_coords",
-        constants$1666.gtk_tree_view_convert_widget_to_bin_window_coords$FUNC
+    static final FunctionDescriptor gtk_layout_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_layout_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_layout_get_type",
+        constants$1666.gtk_layout_get_type$FUNC
     );
 }
 

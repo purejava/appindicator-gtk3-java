@@ -7,48 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1791 {
+final class constants$1791 {
 
-    static final FunctionDescriptor GtkFontFilterFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1791() {}
+    static final FunctionDescriptor gtk_revealer_set_transition_type$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_revealer_set_transition_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_revealer_set_transition_type",
+        constants$1791.gtk_revealer_set_transition_type$FUNC
+    );
+    static final FunctionDescriptor gtk_revealer_get_transition_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_revealer_get_transition_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_revealer_get_transition_type",
+        constants$1791.gtk_revealer_get_transition_type$FUNC
+    );
+    static final FunctionDescriptor gtk_scale_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_scale_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_scale_get_type",
+        constants$1791.gtk_scale_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_scale_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_scale_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_scale_new",
+        constants$1791.gtk_scale_new$FUNC
+    );
+    static final FunctionDescriptor gtk_scale_new_with_range$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle gtk_scale_new_with_range$MH = RuntimeHelper.downcallHandle(
+        "gtk_scale_new_with_range",
+        constants$1791.gtk_scale_new_with_range$FUNC
+    );
+    static final FunctionDescriptor gtk_scale_set_digits$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle GtkFontFilterFunc$MH = RuntimeHelper.downcallHandle(
-        constants$1791.GtkFontFilterFunc$FUNC
-    );
-    static final FunctionDescriptor gtk_font_chooser_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_font_chooser_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_font_chooser_get_type",
-        constants$1791.gtk_font_chooser_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_font_chooser_get_font_family$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_font_chooser_get_font_family$MH = RuntimeHelper.downcallHandle(
-        "gtk_font_chooser_get_font_family",
-        constants$1791.gtk_font_chooser_get_font_family$FUNC
-    );
-    static final FunctionDescriptor gtk_font_chooser_get_font_face$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_font_chooser_get_font_face$MH = RuntimeHelper.downcallHandle(
-        "gtk_font_chooser_get_font_face",
-        constants$1791.gtk_font_chooser_get_font_face$FUNC
-    );
-    static final FunctionDescriptor gtk_font_chooser_get_font_size$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_font_chooser_get_font_size$MH = RuntimeHelper.downcallHandle(
-        "gtk_font_chooser_get_font_size",
-        constants$1791.gtk_font_chooser_get_font_size$FUNC
-    );
-    static final FunctionDescriptor gtk_font_chooser_get_font_desc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_font_chooser_get_font_desc$MH = RuntimeHelper.downcallHandle(
-        "gtk_font_chooser_get_font_desc",
-        constants$1791.gtk_font_chooser_get_font_desc$FUNC
+    static final MethodHandle gtk_scale_set_digits$MH = RuntimeHelper.downcallHandle(
+        "gtk_scale_set_digits",
+        constants$1791.gtk_scale_set_digits$FUNC
     );
 }
 

@@ -7,9 +7,18 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GQueue {
+ *     GList* head;
+ *     GList* tail;
+ *     guint length;
+ * };
+ * }
+ */
 public class _GQueue {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_POINTER$LAYOUT.withName("head"),
         Constants$root.C_POINTER$LAYOUT.withName("tail"),
         Constants$root.C_INT$LAYOUT.withName("length"),
@@ -22,42 +31,78 @@ public class _GQueue {
     public static VarHandle head$VH() {
         return _GQueue.head$VH;
     }
-    public static MemoryAddress head$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GQueue.head$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GList* head;
+     * }
+     */
+    public static MemorySegment head$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GQueue.head$VH.get(seg);
     }
-    public static void head$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GList* head;
+     * }
+     */
+    public static void head$set(MemorySegment seg, MemorySegment x) {
         _GQueue.head$VH.set(seg, x);
     }
-    public static MemoryAddress head$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GQueue.head$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment head$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GQueue.head$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void head$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void head$set(MemorySegment seg, long index, MemorySegment x) {
         _GQueue.head$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle tail$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("tail"));
     public static VarHandle tail$VH() {
         return _GQueue.tail$VH;
     }
-    public static MemoryAddress tail$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GQueue.tail$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GList* tail;
+     * }
+     */
+    public static MemorySegment tail$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GQueue.tail$VH.get(seg);
     }
-    public static void tail$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GList* tail;
+     * }
+     */
+    public static void tail$set(MemorySegment seg, MemorySegment x) {
         _GQueue.tail$VH.set(seg, x);
     }
-    public static MemoryAddress tail$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GQueue.tail$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment tail$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GQueue.tail$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void tail$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void tail$set(MemorySegment seg, long index, MemorySegment x) {
         _GQueue.tail$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle length$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("length"));
     public static VarHandle length$VH() {
         return _GQueue.length$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * guint length;
+     * }
+     */
     public static int length$get(MemorySegment seg) {
         return (int)_GQueue.length$VH.get(seg);
     }
-    public static void length$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * guint length;
+     * }
+     */
+    public static void length$set(MemorySegment seg, int x) {
         _GQueue.length$VH.set(seg, x);
     }
     public static int length$get(MemorySegment seg, long index) {
@@ -68,10 +113,10 @@ public class _GQueue {
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

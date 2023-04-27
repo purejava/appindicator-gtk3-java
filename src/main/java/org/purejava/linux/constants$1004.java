@@ -7,48 +7,60 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1004 {
+final class constants$1004 {
 
-    static final FunctionDescriptor hb_set_previous_range$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1004() {}
+    static final FunctionDescriptor cairo_path_extents$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_set_previous_range$MH = RuntimeHelper.downcallHandle(
-        "hb_set_previous_range",
-        constants$1004.hb_set_previous_range$FUNC
+    static final MethodHandle cairo_path_extents$MH = RuntimeHelper.downcallHandle(
+        "cairo_path_extents",
+        constants$1004.cairo_path_extents$FUNC
     );
-    static final FunctionDescriptor hb_face_count$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor cairo_paint$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_face_count$MH = RuntimeHelper.downcallHandle(
-        "hb_face_count",
-        constants$1004.hb_face_count$FUNC
+    static final MethodHandle cairo_paint$MH = RuntimeHelper.downcallHandle(
+        "cairo_paint",
+        constants$1004.cairo_paint$FUNC
     );
-    static final FunctionDescriptor hb_face_create$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor cairo_paint_with_alpha$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_DOUBLE$LAYOUT
     );
-    static final MethodHandle hb_face_create$MH = RuntimeHelper.downcallHandle(
-        "hb_face_create",
-        constants$1004.hb_face_create$FUNC
+    static final MethodHandle cairo_paint_with_alpha$MH = RuntimeHelper.downcallHandle(
+        "cairo_paint_with_alpha",
+        constants$1004.cairo_paint_with_alpha$FUNC
     );
-    static final FunctionDescriptor hb_reference_table_func_t$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_reference_table_func_t$MH = RuntimeHelper.downcallHandle(
-        constants$1004.hb_reference_table_func_t$FUNC
-    );
-    static final FunctionDescriptor hb_face_create_for_tables$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor cairo_mask$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_face_create_for_tables$MH = RuntimeHelper.downcallHandle(
-        "hb_face_create_for_tables",
-        constants$1004.hb_face_create_for_tables$FUNC
+    static final MethodHandle cairo_mask$MH = RuntimeHelper.downcallHandle(
+        "cairo_mask",
+        constants$1004.cairo_mask$FUNC
+    );
+    static final FunctionDescriptor cairo_mask_surface$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle cairo_mask_surface$MH = RuntimeHelper.downcallHandle(
+        "cairo_mask_surface",
+        constants$1004.cairo_mask_surface$FUNC
+    );
+    static final FunctionDescriptor cairo_stroke$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cairo_stroke$MH = RuntimeHelper.downcallHandle(
+        "cairo_stroke",
+        constants$1004.cairo_stroke$FUNC
     );
 }
 

@@ -7,49 +7,70 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$733 {
+final class constants$733 {
 
-    static final FunctionDescriptor g_io_module_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_io_module_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_io_module_get_type",
-        constants$733.g_io_module_get_type$FUNC
-    );
-    static final FunctionDescriptor g_io_module_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_io_module_new$MH = RuntimeHelper.downcallHandle(
-        "g_io_module_new",
-        constants$733.g_io_module_new$FUNC
-    );
-    static final FunctionDescriptor g_io_modules_scan_all_in_directory$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_io_modules_scan_all_in_directory$MH = RuntimeHelper.downcallHandle(
-        "g_io_modules_scan_all_in_directory",
-        constants$733.g_io_modules_scan_all_in_directory$FUNC
-    );
-    static final FunctionDescriptor g_io_modules_load_all_in_directory$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_io_modules_load_all_in_directory$MH = RuntimeHelper.downcallHandle(
-        "g_io_modules_load_all_in_directory",
-        constants$733.g_io_modules_load_all_in_directory$FUNC
-    );
-    static final FunctionDescriptor g_io_modules_scan_all_in_directory_with_scope$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$733() {}
+    static final FunctionDescriptor g_resolver_lookup_service_async$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_io_modules_scan_all_in_directory_with_scope$MH = RuntimeHelper.downcallHandle(
-        "g_io_modules_scan_all_in_directory_with_scope",
-        constants$733.g_io_modules_scan_all_in_directory_with_scope$FUNC
+    static final MethodHandle g_resolver_lookup_service_async$MH = RuntimeHelper.downcallHandle(
+        "g_resolver_lookup_service_async",
+        constants$733.g_resolver_lookup_service_async$FUNC
     );
-    static final FunctionDescriptor g_io_modules_load_all_in_directory_with_scope$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_resolver_lookup_service_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_io_modules_load_all_in_directory_with_scope$MH = RuntimeHelper.downcallHandle(
-        "g_io_modules_load_all_in_directory_with_scope",
-        constants$733.g_io_modules_load_all_in_directory_with_scope$FUNC
+    static final MethodHandle g_resolver_lookup_service_finish$MH = RuntimeHelper.downcallHandle(
+        "g_resolver_lookup_service_finish",
+        constants$733.g_resolver_lookup_service_finish$FUNC
+    );
+    static final FunctionDescriptor g_resolver_lookup_records$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_resolver_lookup_records$MH = RuntimeHelper.downcallHandle(
+        "g_resolver_lookup_records",
+        constants$733.g_resolver_lookup_records$FUNC
+    );
+    static final FunctionDescriptor g_resolver_lookup_records_async$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_resolver_lookup_records_async$MH = RuntimeHelper.downcallHandle(
+        "g_resolver_lookup_records_async",
+        constants$733.g_resolver_lookup_records_async$FUNC
+    );
+    static final FunctionDescriptor g_resolver_lookup_records_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_resolver_lookup_records_finish$MH = RuntimeHelper.downcallHandle(
+        "g_resolver_lookup_records_finish",
+        constants$733.g_resolver_lookup_records_finish$FUNC
+    );
+    static final FunctionDescriptor g_resolver_free_targets$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_resolver_free_targets$MH = RuntimeHelper.downcallHandle(
+        "g_resolver_free_targets",
+        constants$733.g_resolver_free_targets$FUNC
     );
 }
 

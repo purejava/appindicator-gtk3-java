@@ -7,9 +7,24 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _AtkDocumentIface {
+ *     GTypeInterface parent;
+ *     const gchar* (*get_document_type)(AtkDocument*);
+ *     gpointer (*get_document)(AtkDocument*);
+ *     const gchar* (*get_document_locale)(AtkDocument*);
+ *     AtkAttributeSet* (*get_document_attributes)(AtkDocument*);
+ *     const gchar* (*get_document_attribute_value)(AtkDocument*,const gchar*);
+ *     gboolean (*set_document_attribute)(AtkDocument*,const gchar*,const gchar*);
+ *     gint (*get_current_page_number)(AtkDocument*);
+ *     gint (*get_page_count)(AtkDocument*);
+ * };
+ * }
+ */
 public class _AtkDocumentIface {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             Constants$root.C_LONG_LONG$LAYOUT.withName("g_type"),
             Constants$root.C_LONG_LONG$LAYOUT.withName("g_instance_type")
@@ -32,20 +47,32 @@ public class _AtkDocumentIface {
     static final FunctionDescriptor get_document_type$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_document_type$MH = RuntimeHelper.downcallHandle(
-        _AtkDocumentIface.get_document_type$FUNC
+    static final FunctionDescriptor get_document_type_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_document_type_UP$MH = RuntimeHelper.upcallHandle(get_document_type.class, "apply", _AtkDocumentIface.get_document_type_UP$FUNC);
+    static final FunctionDescriptor get_document_type_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_document_type_DOWN$MH = RuntimeHelper.downcallHandle(
+        _AtkDocumentIface.get_document_type_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * const gchar* (*get_document_type)(AtkDocument*);
+     * }
+     */
     public interface get_document_type {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(get_document_type fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_document_type.class, fi, _AtkDocumentIface.get_document_type$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(get_document_type fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_AtkDocumentIface.get_document_type_UP$MH, fi, _AtkDocumentIface.get_document_type$FUNC, scope);
         }
-        static get_document_type ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static get_document_type ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_AtkDocumentIface.get_document_type$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (java.lang.foreign.MemorySegment)_AtkDocumentIface.get_document_type_DOWN$MH.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -57,38 +84,62 @@ public class _AtkDocumentIface {
     public static VarHandle get_document_type$VH() {
         return _AtkDocumentIface.get_document_type$VH;
     }
-    public static MemoryAddress get_document_type$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AtkDocumentIface.get_document_type$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * const gchar* (*get_document_type)(AtkDocument*);
+     * }
+     */
+    public static MemorySegment get_document_type$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AtkDocumentIface.get_document_type$VH.get(seg);
     }
-    public static void get_document_type$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * const gchar* (*get_document_type)(AtkDocument*);
+     * }
+     */
+    public static void get_document_type$set(MemorySegment seg, MemorySegment x) {
         _AtkDocumentIface.get_document_type$VH.set(seg, x);
     }
-    public static MemoryAddress get_document_type$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AtkDocumentIface.get_document_type$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_document_type$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AtkDocumentIface.get_document_type$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_document_type$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_document_type$set(MemorySegment seg, long index, MemorySegment x) {
         _AtkDocumentIface.get_document_type$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_document_type get_document_type (MemorySegment segment, MemorySession session) {
-        return get_document_type.ofAddress(get_document_type$get(segment), session);
+    public static get_document_type get_document_type(MemorySegment segment, SegmentScope scope) {
+        return get_document_type.ofAddress(get_document_type$get(segment), scope);
     }
     static final FunctionDescriptor get_document$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_document$MH = RuntimeHelper.downcallHandle(
-        _AtkDocumentIface.get_document$FUNC
+    static final FunctionDescriptor get_document_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_document_UP$MH = RuntimeHelper.upcallHandle(get_document.class, "apply", _AtkDocumentIface.get_document_UP$FUNC);
+    static final FunctionDescriptor get_document_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_document_DOWN$MH = RuntimeHelper.downcallHandle(
+        _AtkDocumentIface.get_document_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gpointer (*get_document)(AtkDocument*);
+     * }
+     */
     public interface get_document {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(get_document fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_document.class, fi, _AtkDocumentIface.get_document$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment _x0);
+        static MemorySegment allocate(get_document fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_AtkDocumentIface.get_document_UP$MH, fi, _AtkDocumentIface.get_document$FUNC, scope);
         }
-        static get_document ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static get_document ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_AtkDocumentIface.get_document$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (java.lang.foreign.MemorySegment)_AtkDocumentIface.get_document_DOWN$MH.invokeExact(symbol, __x0);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -100,38 +151,62 @@ public class _AtkDocumentIface {
     public static VarHandle get_document$VH() {
         return _AtkDocumentIface.get_document$VH;
     }
-    public static MemoryAddress get_document$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AtkDocumentIface.get_document$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gpointer (*get_document)(AtkDocument*);
+     * }
+     */
+    public static MemorySegment get_document$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AtkDocumentIface.get_document$VH.get(seg);
     }
-    public static void get_document$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gpointer (*get_document)(AtkDocument*);
+     * }
+     */
+    public static void get_document$set(MemorySegment seg, MemorySegment x) {
         _AtkDocumentIface.get_document$VH.set(seg, x);
     }
-    public static MemoryAddress get_document$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AtkDocumentIface.get_document$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_document$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AtkDocumentIface.get_document$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_document$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_document$set(MemorySegment seg, long index, MemorySegment x) {
         _AtkDocumentIface.get_document$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_document get_document (MemorySegment segment, MemorySession session) {
-        return get_document.ofAddress(get_document$get(segment), session);
+    public static get_document get_document(MemorySegment segment, SegmentScope scope) {
+        return get_document.ofAddress(get_document$get(segment), scope);
     }
     static final FunctionDescriptor get_document_locale$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_document_locale$MH = RuntimeHelper.downcallHandle(
-        _AtkDocumentIface.get_document_locale$FUNC
+    static final FunctionDescriptor get_document_locale_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_document_locale_UP$MH = RuntimeHelper.upcallHandle(get_document_locale.class, "apply", _AtkDocumentIface.get_document_locale_UP$FUNC);
+    static final FunctionDescriptor get_document_locale_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_document_locale_DOWN$MH = RuntimeHelper.downcallHandle(
+        _AtkDocumentIface.get_document_locale_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * const gchar* (*get_document_locale)(AtkDocument*);
+     * }
+     */
     public interface get_document_locale {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(get_document_locale fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_document_locale.class, fi, _AtkDocumentIface.get_document_locale$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(get_document_locale fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_AtkDocumentIface.get_document_locale_UP$MH, fi, _AtkDocumentIface.get_document_locale$FUNC, scope);
         }
-        static get_document_locale ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static get_document_locale ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_AtkDocumentIface.get_document_locale$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (java.lang.foreign.MemorySegment)_AtkDocumentIface.get_document_locale_DOWN$MH.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -143,38 +218,62 @@ public class _AtkDocumentIface {
     public static VarHandle get_document_locale$VH() {
         return _AtkDocumentIface.get_document_locale$VH;
     }
-    public static MemoryAddress get_document_locale$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AtkDocumentIface.get_document_locale$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * const gchar* (*get_document_locale)(AtkDocument*);
+     * }
+     */
+    public static MemorySegment get_document_locale$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AtkDocumentIface.get_document_locale$VH.get(seg);
     }
-    public static void get_document_locale$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * const gchar* (*get_document_locale)(AtkDocument*);
+     * }
+     */
+    public static void get_document_locale$set(MemorySegment seg, MemorySegment x) {
         _AtkDocumentIface.get_document_locale$VH.set(seg, x);
     }
-    public static MemoryAddress get_document_locale$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AtkDocumentIface.get_document_locale$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_document_locale$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AtkDocumentIface.get_document_locale$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_document_locale$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_document_locale$set(MemorySegment seg, long index, MemorySegment x) {
         _AtkDocumentIface.get_document_locale$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_document_locale get_document_locale (MemorySegment segment, MemorySession session) {
-        return get_document_locale.ofAddress(get_document_locale$get(segment), session);
+    public static get_document_locale get_document_locale(MemorySegment segment, SegmentScope scope) {
+        return get_document_locale.ofAddress(get_document_locale$get(segment), scope);
     }
     static final FunctionDescriptor get_document_attributes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_document_attributes$MH = RuntimeHelper.downcallHandle(
-        _AtkDocumentIface.get_document_attributes$FUNC
+    static final FunctionDescriptor get_document_attributes_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_document_attributes_UP$MH = RuntimeHelper.upcallHandle(get_document_attributes.class, "apply", _AtkDocumentIface.get_document_attributes_UP$FUNC);
+    static final FunctionDescriptor get_document_attributes_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_document_attributes_DOWN$MH = RuntimeHelper.downcallHandle(
+        _AtkDocumentIface.get_document_attributes_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * AtkAttributeSet* (*get_document_attributes)(AtkDocument*);
+     * }
+     */
     public interface get_document_attributes {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(get_document_attributes fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_document_attributes.class, fi, _AtkDocumentIface.get_document_attributes$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(get_document_attributes fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_AtkDocumentIface.get_document_attributes_UP$MH, fi, _AtkDocumentIface.get_document_attributes$FUNC, scope);
         }
-        static get_document_attributes ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static get_document_attributes ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_AtkDocumentIface.get_document_attributes$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (java.lang.foreign.MemorySegment)_AtkDocumentIface.get_document_attributes_DOWN$MH.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -186,39 +285,65 @@ public class _AtkDocumentIface {
     public static VarHandle get_document_attributes$VH() {
         return _AtkDocumentIface.get_document_attributes$VH;
     }
-    public static MemoryAddress get_document_attributes$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AtkDocumentIface.get_document_attributes$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * AtkAttributeSet* (*get_document_attributes)(AtkDocument*);
+     * }
+     */
+    public static MemorySegment get_document_attributes$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AtkDocumentIface.get_document_attributes$VH.get(seg);
     }
-    public static void get_document_attributes$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * AtkAttributeSet* (*get_document_attributes)(AtkDocument*);
+     * }
+     */
+    public static void get_document_attributes$set(MemorySegment seg, MemorySegment x) {
         _AtkDocumentIface.get_document_attributes$VH.set(seg, x);
     }
-    public static MemoryAddress get_document_attributes$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AtkDocumentIface.get_document_attributes$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_document_attributes$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AtkDocumentIface.get_document_attributes$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_document_attributes$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_document_attributes$set(MemorySegment seg, long index, MemorySegment x) {
         _AtkDocumentIface.get_document_attributes$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_document_attributes get_document_attributes (MemorySegment segment, MemorySession session) {
-        return get_document_attributes.ofAddress(get_document_attributes$get(segment), session);
+    public static get_document_attributes get_document_attributes(MemorySegment segment, SegmentScope scope) {
+        return get_document_attributes.ofAddress(get_document_attributes$get(segment), scope);
     }
     static final FunctionDescriptor get_document_attribute_value$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_document_attribute_value$MH = RuntimeHelper.downcallHandle(
-        _AtkDocumentIface.get_document_attribute_value$FUNC
+    static final FunctionDescriptor get_document_attribute_value_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_document_attribute_value_UP$MH = RuntimeHelper.upcallHandle(get_document_attribute_value.class, "apply", _AtkDocumentIface.get_document_attribute_value_UP$FUNC);
+    static final FunctionDescriptor get_document_attribute_value_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_document_attribute_value_DOWN$MH = RuntimeHelper.downcallHandle(
+        _AtkDocumentIface.get_document_attribute_value_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * const gchar* (*get_document_attribute_value)(AtkDocument*,const gchar*);
+     * }
+     */
     public interface get_document_attribute_value {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(get_document_attribute_value fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_document_attribute_value.class, fi, _AtkDocumentIface.get_document_attribute_value$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment func_data);
+        static MemorySegment allocate(get_document_attribute_value fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_AtkDocumentIface.get_document_attribute_value_UP$MH, fi, _AtkDocumentIface.get_document_attribute_value$FUNC, scope);
         }
-        static get_document_attribute_value ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static get_document_attribute_value ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _path, java.lang.foreign.MemorySegment _func_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_AtkDocumentIface.get_document_attribute_value$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    return (java.lang.foreign.MemorySegment)_AtkDocumentIface.get_document_attribute_value_DOWN$MH.invokeExact(symbol, _path, _func_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -230,40 +355,68 @@ public class _AtkDocumentIface {
     public static VarHandle get_document_attribute_value$VH() {
         return _AtkDocumentIface.get_document_attribute_value$VH;
     }
-    public static MemoryAddress get_document_attribute_value$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AtkDocumentIface.get_document_attribute_value$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * const gchar* (*get_document_attribute_value)(AtkDocument*,const gchar*);
+     * }
+     */
+    public static MemorySegment get_document_attribute_value$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AtkDocumentIface.get_document_attribute_value$VH.get(seg);
     }
-    public static void get_document_attribute_value$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * const gchar* (*get_document_attribute_value)(AtkDocument*,const gchar*);
+     * }
+     */
+    public static void get_document_attribute_value$set(MemorySegment seg, MemorySegment x) {
         _AtkDocumentIface.get_document_attribute_value$VH.set(seg, x);
     }
-    public static MemoryAddress get_document_attribute_value$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AtkDocumentIface.get_document_attribute_value$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_document_attribute_value$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AtkDocumentIface.get_document_attribute_value$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_document_attribute_value$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_document_attribute_value$set(MemorySegment seg, long index, MemorySegment x) {
         _AtkDocumentIface.get_document_attribute_value$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_document_attribute_value get_document_attribute_value (MemorySegment segment, MemorySession session) {
-        return get_document_attribute_value.ofAddress(get_document_attribute_value$get(segment), session);
+    public static get_document_attribute_value get_document_attribute_value(MemorySegment segment, SegmentScope scope) {
+        return get_document_attribute_value.ofAddress(get_document_attribute_value$get(segment), scope);
     }
     static final FunctionDescriptor set_document_attribute$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle set_document_attribute$MH = RuntimeHelper.downcallHandle(
-        _AtkDocumentIface.set_document_attribute$FUNC
+    static final FunctionDescriptor set_document_attribute_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle set_document_attribute_UP$MH = RuntimeHelper.upcallHandle(set_document_attribute.class, "apply", _AtkDocumentIface.set_document_attribute_UP$FUNC);
+    static final FunctionDescriptor set_document_attribute_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle set_document_attribute_DOWN$MH = RuntimeHelper.downcallHandle(
+        _AtkDocumentIface.set_document_attribute_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*set_document_attribute)(AtkDocument*,const gchar*,const gchar*);
+     * }
+     */
     public interface set_document_attribute {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2);
-        static MemorySegment allocate(set_document_attribute fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(set_document_attribute.class, fi, _AtkDocumentIface.set_document_attribute$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2);
+        static MemorySegment allocate(set_document_attribute fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_AtkDocumentIface.set_document_attribute_UP$MH, fi, _AtkDocumentIface.set_document_attribute$FUNC, scope);
         }
-        static set_document_attribute ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2) -> {
+        static set_document_attribute ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2) -> {
                 try {
-                    return (int)_AtkDocumentIface.set_document_attribute$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2);
+                    return (int)_AtkDocumentIface.set_document_attribute_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -275,38 +428,62 @@ public class _AtkDocumentIface {
     public static VarHandle set_document_attribute$VH() {
         return _AtkDocumentIface.set_document_attribute$VH;
     }
-    public static MemoryAddress set_document_attribute$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AtkDocumentIface.set_document_attribute$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*set_document_attribute)(AtkDocument*,const gchar*,const gchar*);
+     * }
+     */
+    public static MemorySegment set_document_attribute$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AtkDocumentIface.set_document_attribute$VH.get(seg);
     }
-    public static void set_document_attribute$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*set_document_attribute)(AtkDocument*,const gchar*,const gchar*);
+     * }
+     */
+    public static void set_document_attribute$set(MemorySegment seg, MemorySegment x) {
         _AtkDocumentIface.set_document_attribute$VH.set(seg, x);
     }
-    public static MemoryAddress set_document_attribute$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AtkDocumentIface.set_document_attribute$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment set_document_attribute$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AtkDocumentIface.set_document_attribute$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void set_document_attribute$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void set_document_attribute$set(MemorySegment seg, long index, MemorySegment x) {
         _AtkDocumentIface.set_document_attribute$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static set_document_attribute set_document_attribute (MemorySegment segment, MemorySession session) {
-        return set_document_attribute.ofAddress(set_document_attribute$get(segment), session);
+    public static set_document_attribute set_document_attribute(MemorySegment segment, SegmentScope scope) {
+        return set_document_attribute.ofAddress(set_document_attribute$get(segment), scope);
     }
     static final FunctionDescriptor get_current_page_number$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_current_page_number$MH = RuntimeHelper.downcallHandle(
-        _AtkDocumentIface.get_current_page_number$FUNC
+    static final FunctionDescriptor get_current_page_number_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_current_page_number_UP$MH = RuntimeHelper.upcallHandle(get_current_page_number.class, "apply", _AtkDocumentIface.get_current_page_number_UP$FUNC);
+    static final FunctionDescriptor get_current_page_number_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_current_page_number_DOWN$MH = RuntimeHelper.downcallHandle(
+        _AtkDocumentIface.get_current_page_number_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gint (*get_current_page_number)(AtkDocument*);
+     * }
+     */
     public interface get_current_page_number {
 
-        int apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(get_current_page_number fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_current_page_number.class, fi, _AtkDocumentIface.get_current_page_number$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0);
+        static MemorySegment allocate(get_current_page_number fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_AtkDocumentIface.get_current_page_number_UP$MH, fi, _AtkDocumentIface.get_current_page_number$FUNC, scope);
         }
-        static get_current_page_number ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static get_current_page_number ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0) -> {
                 try {
-                    return (int)_AtkDocumentIface.get_current_page_number$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (int)_AtkDocumentIface.get_current_page_number_DOWN$MH.invokeExact(symbol, __x0);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -318,38 +495,62 @@ public class _AtkDocumentIface {
     public static VarHandle get_current_page_number$VH() {
         return _AtkDocumentIface.get_current_page_number$VH;
     }
-    public static MemoryAddress get_current_page_number$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AtkDocumentIface.get_current_page_number$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gint (*get_current_page_number)(AtkDocument*);
+     * }
+     */
+    public static MemorySegment get_current_page_number$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AtkDocumentIface.get_current_page_number$VH.get(seg);
     }
-    public static void get_current_page_number$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gint (*get_current_page_number)(AtkDocument*);
+     * }
+     */
+    public static void get_current_page_number$set(MemorySegment seg, MemorySegment x) {
         _AtkDocumentIface.get_current_page_number$VH.set(seg, x);
     }
-    public static MemoryAddress get_current_page_number$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AtkDocumentIface.get_current_page_number$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_current_page_number$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AtkDocumentIface.get_current_page_number$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_current_page_number$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_current_page_number$set(MemorySegment seg, long index, MemorySegment x) {
         _AtkDocumentIface.get_current_page_number$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_current_page_number get_current_page_number (MemorySegment segment, MemorySession session) {
-        return get_current_page_number.ofAddress(get_current_page_number$get(segment), session);
+    public static get_current_page_number get_current_page_number(MemorySegment segment, SegmentScope scope) {
+        return get_current_page_number.ofAddress(get_current_page_number$get(segment), scope);
     }
     static final FunctionDescriptor get_page_count$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_page_count$MH = RuntimeHelper.downcallHandle(
-        _AtkDocumentIface.get_page_count$FUNC
+    static final FunctionDescriptor get_page_count_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_page_count_UP$MH = RuntimeHelper.upcallHandle(get_page_count.class, "apply", _AtkDocumentIface.get_page_count_UP$FUNC);
+    static final FunctionDescriptor get_page_count_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_page_count_DOWN$MH = RuntimeHelper.downcallHandle(
+        _AtkDocumentIface.get_page_count_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gint (*get_page_count)(AtkDocument*);
+     * }
+     */
     public interface get_page_count {
 
-        int apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(get_page_count fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_page_count.class, fi, _AtkDocumentIface.get_page_count$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0);
+        static MemorySegment allocate(get_page_count fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_AtkDocumentIface.get_page_count_UP$MH, fi, _AtkDocumentIface.get_page_count$FUNC, scope);
         }
-        static get_page_count ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static get_page_count ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0) -> {
                 try {
-                    return (int)_AtkDocumentIface.get_page_count$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (int)_AtkDocumentIface.get_page_count_DOWN$MH.invokeExact(symbol, __x0);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -361,27 +562,39 @@ public class _AtkDocumentIface {
     public static VarHandle get_page_count$VH() {
         return _AtkDocumentIface.get_page_count$VH;
     }
-    public static MemoryAddress get_page_count$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AtkDocumentIface.get_page_count$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gint (*get_page_count)(AtkDocument*);
+     * }
+     */
+    public static MemorySegment get_page_count$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AtkDocumentIface.get_page_count$VH.get(seg);
     }
-    public static void get_page_count$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gint (*get_page_count)(AtkDocument*);
+     * }
+     */
+    public static void get_page_count$set(MemorySegment seg, MemorySegment x) {
         _AtkDocumentIface.get_page_count$VH.set(seg, x);
     }
-    public static MemoryAddress get_page_count$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AtkDocumentIface.get_page_count$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_page_count$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AtkDocumentIface.get_page_count$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_page_count$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_page_count$set(MemorySegment seg, long index, MemorySegment x) {
         _AtkDocumentIface.get_page_count$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_page_count get_page_count (MemorySegment segment, MemorySession session) {
-        return get_page_count.ofAddress(get_page_count$get(segment), session);
+    public static get_page_count get_page_count(MemorySegment segment, SegmentScope scope) {
+        return get_page_count.ofAddress(get_page_count$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

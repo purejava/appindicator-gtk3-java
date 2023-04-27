@@ -7,63 +7,56 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$33 {
+final class constants$33 {
 
-    static final FunctionDescriptor GErrorClearFunc$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$33() {}
+    static final FunctionDescriptor g_atomic_pointer_add$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle g_atomic_pointer_add$MH = RuntimeHelper.downcallHandle(
+        "g_atomic_pointer_add",
+        constants$33.g_atomic_pointer_add$FUNC
+    );
+    static final FunctionDescriptor g_atomic_pointer_and$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle g_atomic_pointer_and$MH = RuntimeHelper.downcallHandle(
+        "g_atomic_pointer_and",
+        constants$33.g_atomic_pointer_and$FUNC
+    );
+    static final FunctionDescriptor g_atomic_pointer_or$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle g_atomic_pointer_or$MH = RuntimeHelper.downcallHandle(
+        "g_atomic_pointer_or",
+        constants$33.g_atomic_pointer_or$FUNC
+    );
+    static final FunctionDescriptor g_atomic_pointer_xor$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle g_atomic_pointer_xor$MH = RuntimeHelper.downcallHandle(
+        "g_atomic_pointer_xor",
+        constants$33.g_atomic_pointer_xor$FUNC
+    );
+    static final FunctionDescriptor g_atomic_int_exchange_and_add$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_atomic_int_exchange_and_add$MH = RuntimeHelper.downcallHandle(
+        "g_atomic_int_exchange_and_add",
+        constants$33.g_atomic_int_exchange_and_add$FUNC
+    );
+    static final FunctionDescriptor g_quark_try_string$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GErrorClearFunc$MH = RuntimeHelper.downcallHandle(
-        constants$33.GErrorClearFunc$FUNC
-    );
-    static final FunctionDescriptor g_error_domain_register_static$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_error_domain_register_static$MH = RuntimeHelper.downcallHandle(
-        "g_error_domain_register_static",
-        constants$33.g_error_domain_register_static$FUNC
-    );
-    static final FunctionDescriptor g_error_domain_register$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_error_domain_register$MH = RuntimeHelper.downcallHandle(
-        "g_error_domain_register",
-        constants$33.g_error_domain_register$FUNC
-    );
-    static final FunctionDescriptor g_error_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_error_new$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_error_new",
-        constants$33.g_error_new$FUNC
-    );
-    static final FunctionDescriptor g_error_new_literal$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_error_new_literal$MH = RuntimeHelper.downcallHandle(
-        "g_error_new_literal",
-        constants$33.g_error_new_literal$FUNC
-    );
-    static final FunctionDescriptor g_error_new_valist$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_error_new_valist$MH = RuntimeHelper.downcallHandle(
-        "g_error_new_valist",
-        constants$33.g_error_new_valist$FUNC
+    static final MethodHandle g_quark_try_string$MH = RuntimeHelper.downcallHandle(
+        "g_quark_try_string",
+        constants$33.g_quark_try_string$FUNC
     );
 }
 

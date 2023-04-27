@@ -7,49 +7,67 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$625 {
+final class constants$625 {
 
-    static final FunctionDescriptor g_dbus_method_invocation_get_method_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$625() {}
+    static final FunctionDescriptor g_file_set_display_name_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_method_invocation_get_method_name$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_method_invocation_get_method_name",
-        constants$625.g_dbus_method_invocation_get_method_name$FUNC
+    static final MethodHandle g_file_set_display_name_finish$MH = RuntimeHelper.downcallHandle(
+        "g_file_set_display_name_finish",
+        constants$625.g_file_set_display_name_finish$FUNC
     );
-    static final FunctionDescriptor g_dbus_method_invocation_get_method_info$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_file_delete$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_method_invocation_get_method_info$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_method_invocation_get_method_info",
-        constants$625.g_dbus_method_invocation_get_method_info$FUNC
+    static final MethodHandle g_file_delete$MH = RuntimeHelper.downcallHandle(
+        "g_file_delete",
+        constants$625.g_file_delete$FUNC
     );
-    static final FunctionDescriptor g_dbus_method_invocation_get_property_info$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_file_delete_async$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_method_invocation_get_property_info$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_method_invocation_get_property_info",
-        constants$625.g_dbus_method_invocation_get_property_info$FUNC
+    static final MethodHandle g_file_delete_async$MH = RuntimeHelper.downcallHandle(
+        "g_file_delete_async",
+        constants$625.g_file_delete_async$FUNC
     );
-    static final FunctionDescriptor g_dbus_method_invocation_get_connection$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_file_delete_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_method_invocation_get_connection$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_method_invocation_get_connection",
-        constants$625.g_dbus_method_invocation_get_connection$FUNC
+    static final MethodHandle g_file_delete_finish$MH = RuntimeHelper.downcallHandle(
+        "g_file_delete_finish",
+        constants$625.g_file_delete_finish$FUNC
     );
-    static final FunctionDescriptor g_dbus_method_invocation_get_message$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_file_trash$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_method_invocation_get_message$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_method_invocation_get_message",
-        constants$625.g_dbus_method_invocation_get_message$FUNC
+    static final MethodHandle g_file_trash$MH = RuntimeHelper.downcallHandle(
+        "g_file_trash",
+        constants$625.g_file_trash$FUNC
     );
-    static final FunctionDescriptor g_dbus_method_invocation_get_parameters$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_file_trash_async$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_method_invocation_get_parameters$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_method_invocation_get_parameters",
-        constants$625.g_dbus_method_invocation_get_parameters$FUNC
+    static final MethodHandle g_file_trash_async$MH = RuntimeHelper.downcallHandle(
+        "g_file_trash_async",
+        constants$625.g_file_trash_async$FUNC
     );
 }
 

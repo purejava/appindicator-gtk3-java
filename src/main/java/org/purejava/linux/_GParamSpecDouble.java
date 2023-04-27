@@ -7,9 +7,20 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GParamSpecDouble {
+ *     GParamSpec parent_instance;
+ *     gdouble minimum;
+ *     gdouble maximum;
+ *     gdouble default_value;
+ *     gdouble epsilon;
+ * };
+ * }
+ */
 public class _GParamSpecDouble {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
                 Constants$root.C_POINTER$LAYOUT.withName("g_class")
@@ -40,10 +51,22 @@ public class _GParamSpecDouble {
     public static VarHandle minimum$VH() {
         return _GParamSpecDouble.minimum$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gdouble minimum;
+     * }
+     */
     public static double minimum$get(MemorySegment seg) {
         return (double)_GParamSpecDouble.minimum$VH.get(seg);
     }
-    public static void minimum$set( MemorySegment seg, double x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gdouble minimum;
+     * }
+     */
+    public static void minimum$set(MemorySegment seg, double x) {
         _GParamSpecDouble.minimum$VH.set(seg, x);
     }
     public static double minimum$get(MemorySegment seg, long index) {
@@ -56,10 +79,22 @@ public class _GParamSpecDouble {
     public static VarHandle maximum$VH() {
         return _GParamSpecDouble.maximum$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gdouble maximum;
+     * }
+     */
     public static double maximum$get(MemorySegment seg) {
         return (double)_GParamSpecDouble.maximum$VH.get(seg);
     }
-    public static void maximum$set( MemorySegment seg, double x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gdouble maximum;
+     * }
+     */
+    public static void maximum$set(MemorySegment seg, double x) {
         _GParamSpecDouble.maximum$VH.set(seg, x);
     }
     public static double maximum$get(MemorySegment seg, long index) {
@@ -72,10 +107,22 @@ public class _GParamSpecDouble {
     public static VarHandle default_value$VH() {
         return _GParamSpecDouble.default_value$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gdouble default_value;
+     * }
+     */
     public static double default_value$get(MemorySegment seg) {
         return (double)_GParamSpecDouble.default_value$VH.get(seg);
     }
-    public static void default_value$set( MemorySegment seg, double x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gdouble default_value;
+     * }
+     */
+    public static void default_value$set(MemorySegment seg, double x) {
         _GParamSpecDouble.default_value$VH.set(seg, x);
     }
     public static double default_value$get(MemorySegment seg, long index) {
@@ -88,10 +135,22 @@ public class _GParamSpecDouble {
     public static VarHandle epsilon$VH() {
         return _GParamSpecDouble.epsilon$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gdouble epsilon;
+     * }
+     */
     public static double epsilon$get(MemorySegment seg) {
         return (double)_GParamSpecDouble.epsilon$VH.get(seg);
     }
-    public static void epsilon$set( MemorySegment seg, double x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gdouble epsilon;
+     * }
+     */
+    public static void epsilon$set(MemorySegment seg, double x) {
         _GParamSpecDouble.epsilon$VH.set(seg, x);
     }
     public static double epsilon$get(MemorySegment seg, long index) {
@@ -102,10 +161,10 @@ public class _GParamSpecDouble {
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

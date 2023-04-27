@@ -7,50 +7,60 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1040 {
+final class constants$1040 {
 
-    static final FunctionDescriptor hb_unicode_eastasian_width$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1040() {}
+    static final FunctionDescriptor cairo_pattern_create_raster_source$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle hb_unicode_eastasian_width$MH = RuntimeHelper.downcallHandle(
-        "hb_unicode_eastasian_width",
-        constants$1040.hb_unicode_eastasian_width$FUNC
+    static final MethodHandle cairo_pattern_create_raster_source$MH = RuntimeHelper.downcallHandle(
+        "cairo_pattern_create_raster_source",
+        constants$1040.cairo_pattern_create_raster_source$FUNC
     );
-    static final FunctionDescriptor hb_unicode_decompose_compatibility_func_t$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor cairo_raster_source_pattern_set_callback_data$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_unicode_decompose_compatibility_func_t$MH = RuntimeHelper.downcallHandle(
-        constants$1040.hb_unicode_decompose_compatibility_func_t$FUNC
+    static final MethodHandle cairo_raster_source_pattern_set_callback_data$MH = RuntimeHelper.downcallHandle(
+        "cairo_raster_source_pattern_set_callback_data",
+        constants$1040.cairo_raster_source_pattern_set_callback_data$FUNC
     );
-    static final FunctionDescriptor hb_unicode_funcs_set_decompose_compatibility_func$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor cairo_raster_source_pattern_get_callback_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cairo_raster_source_pattern_get_callback_data$MH = RuntimeHelper.downcallHandle(
+        "cairo_raster_source_pattern_get_callback_data",
+        constants$1040.cairo_raster_source_pattern_get_callback_data$FUNC
+    );
+    static final FunctionDescriptor cairo_raster_source_pattern_set_acquire$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_unicode_funcs_set_decompose_compatibility_func$MH = RuntimeHelper.downcallHandle(
-        "hb_unicode_funcs_set_decompose_compatibility_func",
-        constants$1040.hb_unicode_funcs_set_decompose_compatibility_func$FUNC
+    static final MethodHandle cairo_raster_source_pattern_set_acquire$MH = RuntimeHelper.downcallHandle(
+        "cairo_raster_source_pattern_set_acquire",
+        constants$1040.cairo_raster_source_pattern_set_acquire$FUNC
     );
-    static final FunctionDescriptor hb_unicode_decompose_compatibility$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor cairo_raster_source_pattern_get_acquire$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_unicode_decompose_compatibility$MH = RuntimeHelper.downcallHandle(
-        "hb_unicode_decompose_compatibility",
-        constants$1040.hb_unicode_decompose_compatibility$FUNC
+    static final MethodHandle cairo_raster_source_pattern_get_acquire$MH = RuntimeHelper.downcallHandle(
+        "cairo_raster_source_pattern_get_acquire",
+        constants$1040.cairo_raster_source_pattern_get_acquire$FUNC
     );
-    static final FunctionDescriptor hb_font_get_glyph_v_kerning_func_t$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor cairo_raster_source_pattern_set_snapshot$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cairo_raster_source_pattern_set_snapshot$MH = RuntimeHelper.downcallHandle(
+        "cairo_raster_source_pattern_set_snapshot",
+        constants$1040.cairo_raster_source_pattern_set_snapshot$FUNC
     );
 }
 

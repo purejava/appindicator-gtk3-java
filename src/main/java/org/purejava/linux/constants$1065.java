@@ -7,49 +7,56 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1065 {
+final class constants$1065 {
 
-    static final FunctionDescriptor pango_font_face_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_font_face_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_font_face_get_type",
-        constants$1065.pango_font_face_get_type$FUNC
-    );
-    static final FunctionDescriptor pango_font_face_describe$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1065() {}
+    static final FunctionDescriptor gdk_device_tool_get_tool_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_font_face_describe$MH = RuntimeHelper.downcallHandle(
-        "pango_font_face_describe",
-        constants$1065.pango_font_face_describe$FUNC
+    static final MethodHandle gdk_device_tool_get_tool_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_device_tool_get_tool_type",
+        constants$1065.gdk_device_tool_get_tool_type$FUNC
     );
-    static final FunctionDescriptor pango_font_face_get_face_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor GdkEventFunc$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_font_face_get_face_name$MH = RuntimeHelper.downcallHandle(
-        "pango_font_face_get_face_name",
-        constants$1065.pango_font_face_get_face_name$FUNC
+    static final FunctionDescriptor GdkEventFunc_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor pango_font_face_list_sizes$FUNC = FunctionDescriptor.ofVoid(
+    static final MethodHandle GdkEventFunc_UP$MH = RuntimeHelper.upcallHandle(GdkEventFunc.class, "apply", constants$1065.GdkEventFunc_UP$FUNC);
+    static final FunctionDescriptor GdkEventFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GdkEventFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$1065.GdkEventFunc_DOWN$FUNC
+    );
+    static final FunctionDescriptor GdkFilterFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_font_face_list_sizes$MH = RuntimeHelper.downcallHandle(
-        "pango_font_face_list_sizes",
-        constants$1065.pango_font_face_list_sizes$FUNC
-    );
-    static final FunctionDescriptor pango_font_face_is_synthesized$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor GdkFilterFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_font_face_is_synthesized$MH = RuntimeHelper.downcallHandle(
-        "pango_font_face_is_synthesized",
-        constants$1065.pango_font_face_is_synthesized$FUNC
-    );
-    static final FunctionDescriptor pango_font_face_get_family$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final MethodHandle GdkFilterFunc_UP$MH = RuntimeHelper.upcallHandle(GdkFilterFunc.class, "apply", constants$1065.GdkFilterFunc_UP$FUNC);
+    static final FunctionDescriptor GdkFilterFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_font_face_get_family$MH = RuntimeHelper.downcallHandle(
-        "pango_font_face_get_family",
-        constants$1065.pango_font_face_get_family$FUNC
+    static final MethodHandle GdkFilterFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$1065.GdkFilterFunc_DOWN$FUNC
+    );
+    static final FunctionDescriptor gdk_event_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gdk_event_get_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_event_get_type",
+        constants$1065.gdk_event_get_type$FUNC
     );
 }
 

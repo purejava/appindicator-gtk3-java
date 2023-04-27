@@ -7,9 +7,18 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct {
+ *     unsigned long index;
+ *     double x;
+ *     double y;
+ * };
+ * }
+ */
 public class cairo_glyph_t {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_LONG_LONG$LAYOUT.withName("index"),
         Constants$root.C_DOUBLE$LAYOUT.withName("x"),
         Constants$root.C_DOUBLE$LAYOUT.withName("y")
@@ -21,10 +30,22 @@ public class cairo_glyph_t {
     public static VarHandle index$VH() {
         return cairo_glyph_t.index$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * unsigned long index;
+     * }
+     */
     public static long index$get(MemorySegment seg) {
         return (long)cairo_glyph_t.index$VH.get(seg);
     }
-    public static void index$set( MemorySegment seg, long x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * unsigned long index;
+     * }
+     */
+    public static void index$set(MemorySegment seg, long x) {
         cairo_glyph_t.index$VH.set(seg, x);
     }
     public static long index$get(MemorySegment seg, long index) {
@@ -37,10 +58,22 @@ public class cairo_glyph_t {
     public static VarHandle x$VH() {
         return cairo_glyph_t.x$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * double x;
+     * }
+     */
     public static double x$get(MemorySegment seg) {
         return (double)cairo_glyph_t.x$VH.get(seg);
     }
-    public static void x$set( MemorySegment seg, double x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * double x;
+     * }
+     */
+    public static void x$set(MemorySegment seg, double x) {
         cairo_glyph_t.x$VH.set(seg, x);
     }
     public static double x$get(MemorySegment seg, long index) {
@@ -53,10 +86,22 @@ public class cairo_glyph_t {
     public static VarHandle y$VH() {
         return cairo_glyph_t.y$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * double y;
+     * }
+     */
     public static double y$get(MemorySegment seg) {
         return (double)cairo_glyph_t.y$VH.get(seg);
     }
-    public static void y$set( MemorySegment seg, double x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * double y;
+     * }
+     */
+    public static void y$set(MemorySegment seg, double x) {
         cairo_glyph_t.y$VH.set(seg, x);
     }
     public static double y$get(MemorySegment seg, long index) {
@@ -67,10 +112,10 @@ public class cairo_glyph_t {
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

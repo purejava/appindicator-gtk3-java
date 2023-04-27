@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GNativeSocketAddress extends _GNativeSocketAddress {
+/**
+ * {@snippet :
+ * typedef struct _GNativeSocketAddress GNativeSocketAddress;
+ * }
+ */
+public final class GNativeSocketAddress extends _GNativeSocketAddress {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GNativeSocketAddress() {}
 }
 
 

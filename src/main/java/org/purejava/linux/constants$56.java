@@ -7,56 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$56 {
+final class constants$56 {
 
-    static final FunctionDescriptor __compar_fn_t$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle __compar_fn_t$MH = RuntimeHelper.downcallHandle(
-        constants$56.__compar_fn_t$FUNC
-    );
-    static final FunctionDescriptor bsearch$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$56() {}
+    static final FunctionDescriptor setenv$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle bsearch$MH = RuntimeHelper.downcallHandle(
-        "bsearch",
-        constants$56.bsearch$FUNC
-    );
-    static final FunctionDescriptor qsort$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle qsort$MH = RuntimeHelper.downcallHandle(
-        "qsort",
-        constants$56.qsort$FUNC
-    );
-    static final FunctionDescriptor abs$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle abs$MH = RuntimeHelper.downcallHandle(
-        "abs",
-        constants$56.abs$FUNC
+    static final MethodHandle setenv$MH = RuntimeHelper.downcallHandle(
+        "setenv",
+        constants$56.setenv$FUNC
     );
-    static final FunctionDescriptor labs$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final FunctionDescriptor unsetenv$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle labs$MH = RuntimeHelper.downcallHandle(
-        "labs",
-        constants$56.labs$FUNC
+    static final MethodHandle unsetenv$MH = RuntimeHelper.downcallHandle(
+        "unsetenv",
+        constants$56.unsetenv$FUNC
     );
-    static final FunctionDescriptor llabs$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final FunctionDescriptor clearenv$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
+    static final MethodHandle clearenv$MH = RuntimeHelper.downcallHandle(
+        "clearenv",
+        constants$56.clearenv$FUNC
     );
-    static final MethodHandle llabs$MH = RuntimeHelper.downcallHandle(
-        "llabs",
-        constants$56.llabs$FUNC
+    static final FunctionDescriptor mktemp$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle mktemp$MH = RuntimeHelper.downcallHandle(
+        "mktemp",
+        constants$56.mktemp$FUNC
+    );
+    static final FunctionDescriptor mkstemp$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle mkstemp$MH = RuntimeHelper.downcallHandle(
+        "mkstemp",
+        constants$56.mkstemp$FUNC
+    );
+    static final FunctionDescriptor mkstemps$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle mkstemps$MH = RuntimeHelper.downcallHandle(
+        "mkstemps",
+        constants$56.mkstemps$FUNC
     );
 }
 

@@ -7,50 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$713 {
+final class constants$713 {
 
-    static final FunctionDescriptor g_inet_address_mask_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_inet_address_mask_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_inet_address_mask_get_type",
-        constants$713.g_inet_address_mask_get_type$FUNC
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$713() {}
+    static final FunctionDescriptor g_volume_monitor_get$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle g_volume_monitor_get$MH = RuntimeHelper.downcallHandle(
+        "g_volume_monitor_get",
+        constants$713.g_volume_monitor_get$FUNC
     );
-    static final FunctionDescriptor g_inet_address_mask_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_volume_monitor_get_connected_drives$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_volume_monitor_get_connected_drives$MH = RuntimeHelper.downcallHandle(
+        "g_volume_monitor_get_connected_drives",
+        constants$713.g_volume_monitor_get_connected_drives$FUNC
+    );
+    static final FunctionDescriptor g_volume_monitor_get_volumes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_volume_monitor_get_volumes$MH = RuntimeHelper.downcallHandle(
+        "g_volume_monitor_get_volumes",
+        constants$713.g_volume_monitor_get_volumes$FUNC
+    );
+    static final FunctionDescriptor g_volume_monitor_get_mounts$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_volume_monitor_get_mounts$MH = RuntimeHelper.downcallHandle(
+        "g_volume_monitor_get_mounts",
+        constants$713.g_volume_monitor_get_mounts$FUNC
+    );
+    static final FunctionDescriptor g_volume_monitor_get_volume_for_uuid$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_inet_address_mask_new$MH = RuntimeHelper.downcallHandle(
-        "g_inet_address_mask_new",
-        constants$713.g_inet_address_mask_new$FUNC
+    static final MethodHandle g_volume_monitor_get_volume_for_uuid$MH = RuntimeHelper.downcallHandle(
+        "g_volume_monitor_get_volume_for_uuid",
+        constants$713.g_volume_monitor_get_volume_for_uuid$FUNC
     );
-    static final FunctionDescriptor g_inet_address_mask_new_from_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_volume_monitor_get_mount_for_uuid$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_inet_address_mask_new_from_string$MH = RuntimeHelper.downcallHandle(
-        "g_inet_address_mask_new_from_string",
-        constants$713.g_inet_address_mask_new_from_string$FUNC
-    );
-    static final FunctionDescriptor g_inet_address_mask_to_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_inet_address_mask_to_string$MH = RuntimeHelper.downcallHandle(
-        "g_inet_address_mask_to_string",
-        constants$713.g_inet_address_mask_to_string$FUNC
-    );
-    static final FunctionDescriptor g_inet_address_mask_get_family$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_inet_address_mask_get_family$MH = RuntimeHelper.downcallHandle(
-        "g_inet_address_mask_get_family",
-        constants$713.g_inet_address_mask_get_family$FUNC
-    );
-    static final FunctionDescriptor g_inet_address_mask_get_address$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_inet_address_mask_get_address$MH = RuntimeHelper.downcallHandle(
-        "g_inet_address_mask_get_address",
-        constants$713.g_inet_address_mask_get_address$FUNC
+    static final MethodHandle g_volume_monitor_get_mount_for_uuid$MH = RuntimeHelper.downcallHandle(
+        "g_volume_monitor_get_mount_for_uuid",
+        constants$713.g_volume_monitor_get_mount_for_uuid$FUNC
     );
 }
 

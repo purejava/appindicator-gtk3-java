@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * int (*GtkFlowBoxFilterFunc)(struct _GtkFlowBoxChild* child,void* user_data);
+ * }
+ */
 public interface GtkFlowBoxFilterFunc {
 
-    int apply(java.lang.foreign.MemoryAddress child, java.lang.foreign.MemoryAddress user_data);
-    static MemorySegment allocate(GtkFlowBoxFilterFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GtkFlowBoxFilterFunc.class, fi, constants$1787.GtkFlowBoxFilterFunc$FUNC, session);
+    int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
+    static MemorySegment allocate(GtkFlowBoxFilterFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$1591.GtkFlowBoxFilterFunc_UP$MH, fi, constants$1591.GtkFlowBoxFilterFunc$FUNC, scope);
     }
-    static GtkFlowBoxFilterFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _child, java.lang.foreign.MemoryAddress _user_data) -> {
+    static GtkFlowBoxFilterFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _filter_info, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                return (int)constants$1787.GtkFlowBoxFilterFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_child, (java.lang.foreign.Addressable)_user_data);
+                return (int)constants$1591.GtkFlowBoxFilterFunc_DOWN$MH.invokeExact(symbol, _filter_info, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

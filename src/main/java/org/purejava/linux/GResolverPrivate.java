@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GResolverPrivate {
+/**
+ * {@snippet :
+ * typedef struct _GResolverPrivate GResolverPrivate;
+ * }
+ */
+public final class GResolverPrivate {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GResolverPrivate() {}
 }
 
 

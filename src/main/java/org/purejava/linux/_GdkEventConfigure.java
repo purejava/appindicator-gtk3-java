@@ -7,9 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GdkEventConfigure {
+ *     GdkEventType type;
+ *     GdkWindow* window;
+ *     gint8 send_event;
+ *     gint x;
+ *     gint y;
+ *     gint width;
+ *     gint height;
+ * };
+ * }
+ */
 public class _GdkEventConfigure {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_INT$LAYOUT.withName("type"),
         MemoryLayout.paddingLayout(32),
         Constants$root.C_POINTER$LAYOUT.withName("window"),
@@ -28,10 +41,22 @@ public class _GdkEventConfigure {
     public static VarHandle type$VH() {
         return _GdkEventConfigure.type$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GdkEventType type;
+     * }
+     */
     public static int type$get(MemorySegment seg) {
         return (int)_GdkEventConfigure.type$VH.get(seg);
     }
-    public static void type$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GdkEventType type;
+     * }
+     */
+    public static void type$set(MemorySegment seg, int x) {
         _GdkEventConfigure.type$VH.set(seg, x);
     }
     public static int type$get(MemorySegment seg, long index) {
@@ -44,26 +69,50 @@ public class _GdkEventConfigure {
     public static VarHandle window$VH() {
         return _GdkEventConfigure.window$VH;
     }
-    public static MemoryAddress window$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GdkEventConfigure.window$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GdkWindow* window;
+     * }
+     */
+    public static MemorySegment window$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GdkEventConfigure.window$VH.get(seg);
     }
-    public static void window$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GdkWindow* window;
+     * }
+     */
+    public static void window$set(MemorySegment seg, MemorySegment x) {
         _GdkEventConfigure.window$VH.set(seg, x);
     }
-    public static MemoryAddress window$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GdkEventConfigure.window$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment window$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GdkEventConfigure.window$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void window$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void window$set(MemorySegment seg, long index, MemorySegment x) {
         _GdkEventConfigure.window$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle send_event$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("send_event"));
     public static VarHandle send_event$VH() {
         return _GdkEventConfigure.send_event$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gint8 send_event;
+     * }
+     */
     public static byte send_event$get(MemorySegment seg) {
         return (byte)_GdkEventConfigure.send_event$VH.get(seg);
     }
-    public static void send_event$set( MemorySegment seg, byte x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gint8 send_event;
+     * }
+     */
+    public static void send_event$set(MemorySegment seg, byte x) {
         _GdkEventConfigure.send_event$VH.set(seg, x);
     }
     public static byte send_event$get(MemorySegment seg, long index) {
@@ -76,10 +125,22 @@ public class _GdkEventConfigure {
     public static VarHandle x$VH() {
         return _GdkEventConfigure.x$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gint x;
+     * }
+     */
     public static int x$get(MemorySegment seg) {
         return (int)_GdkEventConfigure.x$VH.get(seg);
     }
-    public static void x$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gint x;
+     * }
+     */
+    public static void x$set(MemorySegment seg, int x) {
         _GdkEventConfigure.x$VH.set(seg, x);
     }
     public static int x$get(MemorySegment seg, long index) {
@@ -92,10 +153,22 @@ public class _GdkEventConfigure {
     public static VarHandle y$VH() {
         return _GdkEventConfigure.y$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gint y;
+     * }
+     */
     public static int y$get(MemorySegment seg) {
         return (int)_GdkEventConfigure.y$VH.get(seg);
     }
-    public static void y$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gint y;
+     * }
+     */
+    public static void y$set(MemorySegment seg, int x) {
         _GdkEventConfigure.y$VH.set(seg, x);
     }
     public static int y$get(MemorySegment seg, long index) {
@@ -108,10 +181,22 @@ public class _GdkEventConfigure {
     public static VarHandle width$VH() {
         return _GdkEventConfigure.width$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gint width;
+     * }
+     */
     public static int width$get(MemorySegment seg) {
         return (int)_GdkEventConfigure.width$VH.get(seg);
     }
-    public static void width$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gint width;
+     * }
+     */
+    public static void width$set(MemorySegment seg, int x) {
         _GdkEventConfigure.width$VH.set(seg, x);
     }
     public static int width$get(MemorySegment seg, long index) {
@@ -124,10 +209,22 @@ public class _GdkEventConfigure {
     public static VarHandle height$VH() {
         return _GdkEventConfigure.height$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gint height;
+     * }
+     */
     public static int height$get(MemorySegment seg) {
         return (int)_GdkEventConfigure.height$VH.get(seg);
     }
-    public static void height$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gint height;
+     * }
+     */
+    public static void height$set(MemorySegment seg, int x) {
         _GdkEventConfigure.height$VH.set(seg, x);
     }
     public static int height$get(MemorySegment seg, long index) {
@@ -138,10 +235,10 @@ public class _GdkEventConfigure {
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

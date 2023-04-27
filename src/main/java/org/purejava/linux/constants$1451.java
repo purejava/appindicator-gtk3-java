@@ -7,51 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1451 {
+final class constants$1451 {
 
-    static final FunctionDescriptor gtk_widget_get_valign$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1451() {}
+    static final FunctionDescriptor gtk_entry_get_text_area$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_widget_get_valign$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_valign",
-        constants$1451.gtk_widget_get_valign$FUNC
+    static final MethodHandle gtk_entry_get_text_area$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_get_text_area",
+        constants$1451.gtk_entry_get_text_area$FUNC
     );
-    static final FunctionDescriptor gtk_widget_get_valign_with_baseline$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_get_valign_with_baseline$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_valign_with_baseline",
-        constants$1451.gtk_widget_get_valign_with_baseline$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_set_valign$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_entry_set_visibility$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_widget_set_valign$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_valign",
-        constants$1451.gtk_widget_set_valign$FUNC
+    static final MethodHandle gtk_entry_set_visibility$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_set_visibility",
+        constants$1451.gtk_entry_set_visibility$FUNC
     );
-    static final FunctionDescriptor gtk_widget_get_margin_left$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_entry_get_visibility$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_widget_get_margin_left$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_margin_left",
-        constants$1451.gtk_widget_get_margin_left$FUNC
+    static final MethodHandle gtk_entry_get_visibility$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_get_visibility",
+        constants$1451.gtk_entry_get_visibility$FUNC
     );
-    static final FunctionDescriptor gtk_widget_set_margin_left$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_entry_set_invisible_char$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_widget_set_margin_left$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_margin_left",
-        constants$1451.gtk_widget_set_margin_left$FUNC
+    static final MethodHandle gtk_entry_set_invisible_char$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_set_invisible_char",
+        constants$1451.gtk_entry_set_invisible_char$FUNC
     );
-    static final FunctionDescriptor gtk_widget_get_margin_right$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_entry_get_invisible_char$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_widget_get_margin_right$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_margin_right",
-        constants$1451.gtk_widget_get_margin_right$FUNC
+    static final MethodHandle gtk_entry_get_invisible_char$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_get_invisible_char",
+        constants$1451.gtk_entry_get_invisible_char$FUNC
+    );
+    static final FunctionDescriptor gtk_entry_unset_invisible_char$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_entry_unset_invisible_char$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_unset_invisible_char",
+        constants$1451.gtk_entry_unset_invisible_char$FUNC
     );
 }
 

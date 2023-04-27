@@ -7,57 +7,65 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1639 {
+final class constants$1639 {
 
-    static final FunctionDescriptor gtk_image_get_pixbuf$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1639() {}
+    static final FunctionDescriptor gtk_style_context_get_margin$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_image_get_pixbuf$MH = RuntimeHelper.downcallHandle(
-        "gtk_image_get_pixbuf",
-        constants$1639.gtk_image_get_pixbuf$FUNC
+    static final MethodHandle gtk_style_context_get_margin$MH = RuntimeHelper.downcallHandle(
+        "gtk_style_context_get_margin",
+        constants$1639.gtk_style_context_get_margin$FUNC
     );
-    static final FunctionDescriptor gtk_image_get_stock$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_style_context_invalidate$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_image_get_stock$MH = RuntimeHelper.downcallHandle(
-        "gtk_image_get_stock",
-        constants$1639.gtk_image_get_stock$FUNC
+    static final MethodHandle gtk_style_context_invalidate$MH = RuntimeHelper.downcallHandle(
+        "gtk_style_context_invalidate",
+        constants$1639.gtk_style_context_invalidate$FUNC
     );
-    static final FunctionDescriptor gtk_image_get_icon_set$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_style_context_reset_widgets$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_image_get_icon_set$MH = RuntimeHelper.downcallHandle(
-        "gtk_image_get_icon_set",
-        constants$1639.gtk_image_get_icon_set$FUNC
+    static final MethodHandle gtk_style_context_reset_widgets$MH = RuntimeHelper.downcallHandle(
+        "gtk_style_context_reset_widgets",
+        constants$1639.gtk_style_context_reset_widgets$FUNC
     );
-    static final FunctionDescriptor gtk_image_get_animation$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_image_get_animation$MH = RuntimeHelper.downcallHandle(
-        "gtk_image_get_animation",
-        constants$1639.gtk_image_get_animation$FUNC
-    );
-    static final FunctionDescriptor gtk_image_get_icon_name$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_style_context_set_background$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_image_get_icon_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_image_get_icon_name",
-        constants$1639.gtk_image_get_icon_name$FUNC
+    static final MethodHandle gtk_style_context_set_background$MH = RuntimeHelper.downcallHandle(
+        "gtk_style_context_set_background",
+        constants$1639.gtk_style_context_set_background$FUNC
     );
-    static final FunctionDescriptor gtk_image_get_gicon$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_render_insertion_cursor$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_image_get_gicon$MH = RuntimeHelper.downcallHandle(
-        "gtk_image_get_gicon",
-        constants$1639.gtk_image_get_gicon$FUNC
+    static final MethodHandle gtk_render_insertion_cursor$MH = RuntimeHelper.downcallHandle(
+        "gtk_render_insertion_cursor",
+        constants$1639.gtk_render_insertion_cursor$FUNC
+    );
+    static final FunctionDescriptor gtk_draw_insertion_cursor$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_draw_insertion_cursor$MH = RuntimeHelper.downcallHandle(
+        "gtk_draw_insertion_cursor",
+        constants$1639.gtk_draw_insertion_cursor$FUNC
     );
 }
 

@@ -7,49 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1278 {
+final class constants$1278 {
 
-    static final FunctionDescriptor gdk_screen_get_system_visual$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1278() {}
+    static final FunctionDescriptor gtk_widget_render_icon_pixbuf$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_widget_render_icon_pixbuf$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_render_icon_pixbuf",
+        constants$1278.gtk_widget_render_icon_pixbuf$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_set_composite_name$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_screen_get_system_visual$MH = RuntimeHelper.downcallHandle(
-        "gdk_screen_get_system_visual",
-        constants$1278.gdk_screen_get_system_visual$FUNC
+    static final MethodHandle gtk_widget_set_composite_name$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_set_composite_name",
+        constants$1278.gtk_widget_set_composite_name$FUNC
     );
-    static final FunctionDescriptor gdk_screen_get_rgba_visual$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_widget_get_composite_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_screen_get_rgba_visual$MH = RuntimeHelper.downcallHandle(
-        "gdk_screen_get_rgba_visual",
-        constants$1278.gdk_screen_get_rgba_visual$FUNC
+    static final MethodHandle gtk_widget_get_composite_name$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_composite_name",
+        constants$1278.gtk_widget_get_composite_name$FUNC
     );
-    static final FunctionDescriptor gdk_screen_is_composited$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_widget_push_composite_child$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle gtk_widget_push_composite_child$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_push_composite_child",
+        constants$1278.gtk_widget_push_composite_child$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_pop_composite_child$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle gtk_widget_pop_composite_child$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_pop_composite_child",
+        constants$1278.gtk_widget_pop_composite_child$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_class_install_style_property$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_screen_is_composited$MH = RuntimeHelper.downcallHandle(
-        "gdk_screen_is_composited",
-        constants$1278.gdk_screen_is_composited$FUNC
-    );
-    static final FunctionDescriptor gdk_screen_get_root_window$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_screen_get_root_window$MH = RuntimeHelper.downcallHandle(
-        "gdk_screen_get_root_window",
-        constants$1278.gdk_screen_get_root_window$FUNC
-    );
-    static final FunctionDescriptor gdk_screen_get_display$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_screen_get_display$MH = RuntimeHelper.downcallHandle(
-        "gdk_screen_get_display",
-        constants$1278.gdk_screen_get_display$FUNC
-    );
-    static final FunctionDescriptor gdk_screen_get_number$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_screen_get_number$MH = RuntimeHelper.downcallHandle(
-        "gdk_screen_get_number",
-        constants$1278.gdk_screen_get_number$FUNC
+    static final MethodHandle gtk_widget_class_install_style_property$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_class_install_style_property",
+        constants$1278.gtk_widget_class_install_style_property$FUNC
     );
 }
 

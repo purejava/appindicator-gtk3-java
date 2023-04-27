@@ -7,49 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1257 {
+final class constants$1257 {
 
-    static final FunctionDescriptor gdk_window_iconify$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1257() {}
+    static final FunctionDescriptor gtk_widget_set_can_default$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_widget_set_can_default$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_set_can_default",
+        constants$1257.gtk_widget_set_can_default$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_get_can_default$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_window_iconify$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_iconify",
-        constants$1257.gdk_window_iconify$FUNC
+    static final MethodHandle gtk_widget_get_can_default$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_can_default",
+        constants$1257.gtk_widget_get_can_default$FUNC
     );
-    static final FunctionDescriptor gdk_window_deiconify$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_widget_has_default$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_window_deiconify$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_deiconify",
-        constants$1257.gdk_window_deiconify$FUNC
+    static final MethodHandle gtk_widget_has_default$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_has_default",
+        constants$1257.gtk_widget_has_default$FUNC
     );
-    static final FunctionDescriptor gdk_window_stick$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_widget_grab_default$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_window_stick$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_stick",
-        constants$1257.gdk_window_stick$FUNC
+    static final MethodHandle gtk_widget_grab_default$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_grab_default",
+        constants$1257.gtk_widget_grab_default$FUNC
     );
-    static final FunctionDescriptor gdk_window_unstick$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_widget_set_receives_default$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_widget_set_receives_default$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_set_receives_default",
+        constants$1257.gtk_widget_set_receives_default$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_get_receives_default$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_window_unstick$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_unstick",
-        constants$1257.gdk_window_unstick$FUNC
-    );
-    static final FunctionDescriptor gdk_window_maximize$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_maximize$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_maximize",
-        constants$1257.gdk_window_maximize$FUNC
-    );
-    static final FunctionDescriptor gdk_window_unmaximize$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_unmaximize$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_unmaximize",
-        constants$1257.gdk_window_unmaximize$FUNC
+    static final MethodHandle gtk_widget_get_receives_default$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_receives_default",
+        constants$1257.gtk_widget_get_receives_default$FUNC
     );
 }
 

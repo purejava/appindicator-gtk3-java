@@ -7,49 +7,59 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1811 {
+final class constants$1811 {
 
-    static final FunctionDescriptor gtk_grid_set_row_baseline_position$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1811() {}
+    static final FunctionDescriptor gtk_stack_add_named$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_grid_set_row_baseline_position$MH = RuntimeHelper.downcallHandle(
-        "gtk_grid_set_row_baseline_position",
-        constants$1811.gtk_grid_set_row_baseline_position$FUNC
-    );
-    static final FunctionDescriptor gtk_grid_get_row_baseline_position$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_grid_get_row_baseline_position$MH = RuntimeHelper.downcallHandle(
-        "gtk_grid_get_row_baseline_position",
-        constants$1811.gtk_grid_get_row_baseline_position$FUNC
-    );
-    static final FunctionDescriptor gtk_grid_set_baseline_row$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_grid_set_baseline_row$MH = RuntimeHelper.downcallHandle(
-        "gtk_grid_set_baseline_row",
-        constants$1811.gtk_grid_set_baseline_row$FUNC
-    );
-    static final FunctionDescriptor gtk_grid_get_baseline_row$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_grid_get_baseline_row$MH = RuntimeHelper.downcallHandle(
-        "gtk_grid_get_baseline_row",
-        constants$1811.gtk_grid_get_baseline_row$FUNC
+    static final MethodHandle gtk_stack_add_named$MH = RuntimeHelper.downcallHandle(
+        "gtk_stack_add_named",
+        constants$1811.gtk_stack_add_named$FUNC
     );
-    static final FunctionDescriptor gtk_header_bar_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_header_bar_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_header_bar_get_type",
-        constants$1811.gtk_header_bar_get_type$FUNC
+    static final FunctionDescriptor gtk_stack_add_titled$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor gtk_header_bar_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_header_bar_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_header_bar_new",
-        constants$1811.gtk_header_bar_new$FUNC
+    static final MethodHandle gtk_stack_add_titled$MH = RuntimeHelper.downcallHandle(
+        "gtk_stack_add_titled",
+        constants$1811.gtk_stack_add_titled$FUNC
+    );
+    static final FunctionDescriptor gtk_stack_get_child_by_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_stack_get_child_by_name$MH = RuntimeHelper.downcallHandle(
+        "gtk_stack_get_child_by_name",
+        constants$1811.gtk_stack_get_child_by_name$FUNC
+    );
+    static final FunctionDescriptor gtk_stack_set_visible_child$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_stack_set_visible_child$MH = RuntimeHelper.downcallHandle(
+        "gtk_stack_set_visible_child",
+        constants$1811.gtk_stack_set_visible_child$FUNC
+    );
+    static final FunctionDescriptor gtk_stack_get_visible_child$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_stack_get_visible_child$MH = RuntimeHelper.downcallHandle(
+        "gtk_stack_get_visible_child",
+        constants$1811.gtk_stack_get_visible_child$FUNC
+    );
+    static final FunctionDescriptor gtk_stack_set_visible_child_name$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_stack_set_visible_child_name$MH = RuntimeHelper.downcallHandle(
+        "gtk_stack_set_visible_child_name",
+        constants$1811.gtk_stack_set_visible_child_name$FUNC
     );
 }
 

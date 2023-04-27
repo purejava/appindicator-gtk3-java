@@ -7,9 +7,20 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct dirent {
+ *     __ino_t d_ino;
+ *     __off_t d_off;
+ *     unsigned short d_reclen;
+ *     unsigned char d_type;
+ *     char d_name[256];
+ * };
+ * }
+ */
 public class dirent {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_LONG_LONG$LAYOUT.withName("d_ino"),
         Constants$root.C_LONG_LONG$LAYOUT.withName("d_off"),
         Constants$root.C_SHORT$LAYOUT.withName("d_reclen"),
@@ -24,10 +35,22 @@ public class dirent {
     public static VarHandle d_ino$VH() {
         return dirent.d_ino$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * __ino_t d_ino;
+     * }
+     */
     public static long d_ino$get(MemorySegment seg) {
         return (long)dirent.d_ino$VH.get(seg);
     }
-    public static void d_ino$set( MemorySegment seg, long x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * __ino_t d_ino;
+     * }
+     */
+    public static void d_ino$set(MemorySegment seg, long x) {
         dirent.d_ino$VH.set(seg, x);
     }
     public static long d_ino$get(MemorySegment seg, long index) {
@@ -40,10 +63,22 @@ public class dirent {
     public static VarHandle d_off$VH() {
         return dirent.d_off$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * __off_t d_off;
+     * }
+     */
     public static long d_off$get(MemorySegment seg) {
         return (long)dirent.d_off$VH.get(seg);
     }
-    public static void d_off$set( MemorySegment seg, long x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * __off_t d_off;
+     * }
+     */
+    public static void d_off$set(MemorySegment seg, long x) {
         dirent.d_off$VH.set(seg, x);
     }
     public static long d_off$get(MemorySegment seg, long index) {
@@ -56,10 +91,22 @@ public class dirent {
     public static VarHandle d_reclen$VH() {
         return dirent.d_reclen$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * unsigned short d_reclen;
+     * }
+     */
     public static short d_reclen$get(MemorySegment seg) {
         return (short)dirent.d_reclen$VH.get(seg);
     }
-    public static void d_reclen$set( MemorySegment seg, short x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * unsigned short d_reclen;
+     * }
+     */
+    public static void d_reclen$set(MemorySegment seg, short x) {
         dirent.d_reclen$VH.set(seg, x);
     }
     public static short d_reclen$get(MemorySegment seg, long index) {
@@ -72,10 +119,22 @@ public class dirent {
     public static VarHandle d_type$VH() {
         return dirent.d_type$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * unsigned char d_type;
+     * }
+     */
     public static byte d_type$get(MemorySegment seg) {
         return (byte)dirent.d_type$VH.get(seg);
     }
-    public static void d_type$set( MemorySegment seg, byte x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * unsigned char d_type;
+     * }
+     */
+    public static void d_type$set(MemorySegment seg, byte x) {
         dirent.d_type$VH.set(seg, x);
     }
     public static byte d_type$get(MemorySegment seg, long index) {
@@ -89,10 +148,10 @@ public class dirent {
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

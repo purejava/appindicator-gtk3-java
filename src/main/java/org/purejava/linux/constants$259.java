@@ -7,53 +7,58 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$259 {
+final class constants$259 {
 
-    static final FunctionDescriptor g_pattern_match_simple$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$259() {}
+    static final FunctionDescriptor g_log_structured$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_pattern_match_simple$MH = RuntimeHelper.downcallHandle(
-        "g_pattern_match_simple",
-        constants$259.g_pattern_match_simple$FUNC
-    );
-    static final FunctionDescriptor g_spaced_primes_closest$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_spaced_primes_closest$MH = RuntimeHelper.downcallHandle(
-        "g_spaced_primes_closest",
-        constants$259.g_spaced_primes_closest$FUNC
+    static final MethodHandle g_log_structured$MH = RuntimeHelper.downcallHandleVariadic(
+        "g_log_structured",
+        constants$259.g_log_structured$FUNC
     );
-    static final FunctionDescriptor g_qsort_with_data$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_log_structured_array$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle g_log_structured_array$MH = RuntimeHelper.downcallHandle(
+        "g_log_structured_array",
+        constants$259.g_log_structured_array$FUNC
+    );
+    static final FunctionDescriptor g_log_variant$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_log_variant$MH = RuntimeHelper.downcallHandle(
+        "g_log_variant",
+        constants$259.g_log_variant$FUNC
+    );
+    static final FunctionDescriptor g_log_set_writer_func$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_qsort_with_data$MH = RuntimeHelper.downcallHandle(
-        "g_qsort_with_data",
-        constants$259.g_qsort_with_data$FUNC
+    static final MethodHandle g_log_set_writer_func$MH = RuntimeHelper.downcallHandle(
+        "g_log_set_writer_func",
+        constants$259.g_log_set_writer_func$FUNC
     );
-    static final FunctionDescriptor g_queue_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_queue_new$MH = RuntimeHelper.downcallHandle(
-        "g_queue_new",
-        constants$259.g_queue_new$FUNC
+    static final FunctionDescriptor g_log_writer_supports_color$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final FunctionDescriptor g_queue_free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle g_log_writer_supports_color$MH = RuntimeHelper.downcallHandle(
+        "g_log_writer_supports_color",
+        constants$259.g_log_writer_supports_color$FUNC
     );
-    static final MethodHandle g_queue_free$MH = RuntimeHelper.downcallHandle(
-        "g_queue_free",
-        constants$259.g_queue_free$FUNC
+    static final FunctionDescriptor g_log_writer_is_journald$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final FunctionDescriptor g_queue_free_full$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_queue_free_full$MH = RuntimeHelper.downcallHandle(
-        "g_queue_free_full",
-        constants$259.g_queue_free_full$FUNC
+    static final MethodHandle g_log_writer_is_journald$MH = RuntimeHelper.downcallHandle(
+        "g_log_writer_is_journald",
+        constants$259.g_log_writer_is_journald$FUNC
     );
 }
 

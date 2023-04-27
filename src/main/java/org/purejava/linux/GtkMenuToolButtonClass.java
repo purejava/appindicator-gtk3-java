@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkMenuToolButtonClass extends _GtkMenuToolButtonClass {
+/**
+ * {@snippet :
+ * typedef struct _GtkMenuToolButtonClass GtkMenuToolButtonClass;
+ * }
+ */
+public final class GtkMenuToolButtonClass extends _GtkMenuToolButtonClass {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkMenuToolButtonClass() {}
 }
 
 

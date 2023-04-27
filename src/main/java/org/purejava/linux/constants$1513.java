@@ -7,55 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1513 {
+final class constants$1513 {
 
-    static final FunctionDescriptor gtk_misc_get_alignment$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1513() {}
+    static final FunctionDescriptor gtk_button_set_image$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_misc_get_alignment$MH = RuntimeHelper.downcallHandle(
-        "gtk_misc_get_alignment",
-        constants$1513.gtk_misc_get_alignment$FUNC
+    static final MethodHandle gtk_button_set_image$MH = RuntimeHelper.downcallHandle(
+        "gtk_button_set_image",
+        constants$1513.gtk_button_set_image$FUNC
     );
-    static final FunctionDescriptor gtk_misc_set_padding$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_button_get_image$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_button_get_image$MH = RuntimeHelper.downcallHandle(
+        "gtk_button_get_image",
+        constants$1513.gtk_button_get_image$FUNC
+    );
+    static final FunctionDescriptor gtk_button_set_image_position$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_misc_set_padding$MH = RuntimeHelper.downcallHandle(
-        "gtk_misc_set_padding",
-        constants$1513.gtk_misc_set_padding$FUNC
+    static final MethodHandle gtk_button_set_image_position$MH = RuntimeHelper.downcallHandle(
+        "gtk_button_set_image_position",
+        constants$1513.gtk_button_set_image_position$FUNC
     );
-    static final FunctionDescriptor gtk_misc_get_padding$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_button_get_image_position$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_misc_get_padding$MH = RuntimeHelper.downcallHandle(
-        "gtk_misc_get_padding",
-        constants$1513.gtk_misc_get_padding$FUNC
+    static final MethodHandle gtk_button_get_image_position$MH = RuntimeHelper.downcallHandle(
+        "gtk_button_get_image_position",
+        constants$1513.gtk_button_get_image_position$FUNC
     );
-    static final FunctionDescriptor _gtk_misc_get_padding_and_border$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_button_set_always_show_image$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_button_set_always_show_image$MH = RuntimeHelper.downcallHandle(
+        "gtk_button_set_always_show_image",
+        constants$1513.gtk_button_set_always_show_image$FUNC
+    );
+    static final FunctionDescriptor gtk_button_get_always_show_image$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle _gtk_misc_get_padding_and_border$MH = RuntimeHelper.downcallHandle(
-        "_gtk_misc_get_padding_and_border",
-        constants$1513._gtk_misc_get_padding_and_border$FUNC
-    );
-    static final FunctionDescriptor gtk_menu_shell_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_menu_shell_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_shell_get_type",
-        constants$1513.gtk_menu_shell_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_menu_shell_append$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_menu_shell_append$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_shell_append",
-        constants$1513.gtk_menu_shell_append$FUNC
+    static final MethodHandle gtk_button_get_always_show_image$MH = RuntimeHelper.downcallHandle(
+        "gtk_button_get_always_show_image",
+        constants$1513.gtk_button_get_always_show_image$FUNC
     );
 }
 

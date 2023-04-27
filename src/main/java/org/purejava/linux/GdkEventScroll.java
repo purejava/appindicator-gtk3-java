@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GdkEventScroll extends _GdkEventScroll {
+/**
+ * {@snippet :
+ * typedef struct _GdkEventScroll GdkEventScroll;
+ * }
+ */
+public final class GdkEventScroll extends _GdkEventScroll {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GdkEventScroll() {}
 }
 
 

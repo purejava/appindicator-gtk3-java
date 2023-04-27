@@ -7,55 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$353 {
+final class constants$353 {
 
-    static final FunctionDescriptor pthread_attr_getguardsize$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pthread_attr_getguardsize$MH = RuntimeHelper.downcallHandle(
-        "pthread_attr_getguardsize",
-        constants$353.pthread_attr_getguardsize$FUNC
-    );
-    static final FunctionDescriptor pthread_attr_setguardsize$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle pthread_attr_setguardsize$MH = RuntimeHelper.downcallHandle(
-        "pthread_attr_setguardsize",
-        constants$353.pthread_attr_setguardsize$FUNC
-    );
-    static final FunctionDescriptor pthread_attr_getschedparam$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pthread_attr_getschedparam$MH = RuntimeHelper.downcallHandle(
-        "pthread_attr_getschedparam",
-        constants$353.pthread_attr_getschedparam$FUNC
-    );
-    static final FunctionDescriptor pthread_attr_setschedparam$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pthread_attr_setschedparam$MH = RuntimeHelper.downcallHandle(
-        "pthread_attr_setschedparam",
-        constants$353.pthread_attr_setschedparam$FUNC
-    );
-    static final FunctionDescriptor pthread_attr_getschedpolicy$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pthread_attr_getschedpolicy$MH = RuntimeHelper.downcallHandle(
-        "pthread_attr_getschedpolicy",
-        constants$353.pthread_attr_getschedpolicy$FUNC
-    );
-    static final FunctionDescriptor pthread_attr_setschedpolicy$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$353() {}
+    static final FunctionDescriptor g_thread_set_priority$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle pthread_attr_setschedpolicy$MH = RuntimeHelper.downcallHandle(
-        "pthread_attr_setschedpolicy",
-        constants$353.pthread_attr_setschedpolicy$FUNC
+    static final MethodHandle g_thread_set_priority$MH = RuntimeHelper.downcallHandle(
+        "g_thread_set_priority",
+        constants$353.g_thread_set_priority$FUNC
+    );
+    static final FunctionDescriptor g_thread_foreach$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_thread_foreach$MH = RuntimeHelper.downcallHandle(
+        "g_thread_foreach",
+        constants$353.g_thread_foreach$FUNC
+    );
+    static final FunctionDescriptor __sched_cpucount$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle __sched_cpucount$MH = RuntimeHelper.downcallHandle(
+        "__sched_cpucount",
+        constants$353.__sched_cpucount$FUNC
+    );
+    static final FunctionDescriptor __sched_cpualloc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle __sched_cpualloc$MH = RuntimeHelper.downcallHandle(
+        "__sched_cpualloc",
+        constants$353.__sched_cpualloc$FUNC
+    );
+    static final FunctionDescriptor __sched_cpufree$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle __sched_cpufree$MH = RuntimeHelper.downcallHandle(
+        "__sched_cpufree",
+        constants$353.__sched_cpufree$FUNC
+    );
+    static final FunctionDescriptor sched_setparam$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle sched_setparam$MH = RuntimeHelper.downcallHandle(
+        "sched_setparam",
+        constants$353.sched_setparam$FUNC
     );
 }
 

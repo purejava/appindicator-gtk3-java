@@ -7,64 +7,16 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$2026 {
+final class constants$2026 {
 
-    static final FunctionDescriptor gtk_text_buffer_backspace$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_backspace$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_backspace",
-        constants$2026.gtk_text_buffer_backspace$FUNC
-    );
-    static final FunctionDescriptor gtk_text_buffer_get_text$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_get_text$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_get_text",
-        constants$2026.gtk_text_buffer_get_text$FUNC
-    );
-    static final FunctionDescriptor gtk_text_buffer_get_slice$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_get_slice$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_get_slice",
-        constants$2026.gtk_text_buffer_get_slice$FUNC
-    );
-    static final FunctionDescriptor gtk_text_buffer_insert_pixbuf$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_insert_pixbuf$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_insert_pixbuf",
-        constants$2026.gtk_text_buffer_insert_pixbuf$FUNC
-    );
-    static final FunctionDescriptor gtk_text_buffer_insert_child_anchor$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_insert_child_anchor$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_insert_child_anchor",
-        constants$2026.gtk_text_buffer_insert_child_anchor$FUNC
-    );
-    static final FunctionDescriptor gtk_text_buffer_create_child_anchor$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_create_child_anchor$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_create_child_anchor",
-        constants$2026.gtk_text_buffer_create_child_anchor$FUNC
-    );
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$2026() {}
+    static final MemorySegment GDK_SELECTION_TYPE_PIXMAP$ADDR = MemorySegment.ofAddress(20L);
+    static final MemorySegment GDK_SELECTION_TYPE_WINDOW$ADDR = MemorySegment.ofAddress(33L);
+    static final MemorySegment GDK_SELECTION_TYPE_STRING$ADDR = MemorySegment.ofAddress(31L);
+    static final MemorySegment GTK_STYLE_PROPERTY_BACKGROUND_COLOR$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("background-color");
+    static final MemorySegment GTK_STYLE_PROPERTY_COLOR$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("color");
+    static final MemorySegment GTK_STYLE_PROPERTY_FONT$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("font");
 }
 
 

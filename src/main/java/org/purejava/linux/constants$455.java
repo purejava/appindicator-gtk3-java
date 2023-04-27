@@ -7,82 +7,66 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$455 {
+final class constants$455 {
 
-    static final FunctionDescriptor g_signal_new_valist$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$455() {}
+    static final FunctionDescriptor g_signal_group_block$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_signal_new_valist$MH = RuntimeHelper.downcallHandle(
-        "g_signal_new_valist",
-        constants$455.g_signal_new_valist$FUNC
+    static final MethodHandle g_signal_group_block$MH = RuntimeHelper.downcallHandle(
+        "g_signal_group_block",
+        constants$455.g_signal_group_block$FUNC
     );
-    static final FunctionDescriptor g_signal_new$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_signal_group_unblock$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_signal_group_unblock$MH = RuntimeHelper.downcallHandle(
+        "g_signal_group_unblock",
+        constants$455.g_signal_group_unblock$FUNC
+    );
+    static final FunctionDescriptor g_signal_group_connect_closure$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_signal_new$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_signal_new",
-        constants$455.g_signal_new$FUNC
+    static final MethodHandle g_signal_group_connect_closure$MH = RuntimeHelper.downcallHandle(
+        "g_signal_group_connect_closure",
+        constants$455.g_signal_group_connect_closure$FUNC
     );
-    static final FunctionDescriptor g_signal_new_class_handler$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_signal_group_connect_object$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_signal_new_class_handler$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_signal_new_class_handler",
-        constants$455.g_signal_new_class_handler$FUNC
+    static final MethodHandle g_signal_group_connect_object$MH = RuntimeHelper.downcallHandle(
+        "g_signal_group_connect_object",
+        constants$455.g_signal_group_connect_object$FUNC
     );
-    static final FunctionDescriptor g_signal_set_va_marshaller$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_signal_set_va_marshaller$MH = RuntimeHelper.downcallHandle(
-        "g_signal_set_va_marshaller",
-        constants$455.g_signal_set_va_marshaller$FUNC
-    );
-    static final FunctionDescriptor g_signal_emitv$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_signal_group_connect_data$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_signal_emitv$MH = RuntimeHelper.downcallHandle(
-        "g_signal_emitv",
-        constants$455.g_signal_emitv$FUNC
-    );
-    static final FunctionDescriptor g_signal_emit_valist$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_signal_group_connect_data$MH = RuntimeHelper.downcallHandle(
+        "g_signal_group_connect_data",
+        constants$455.g_signal_group_connect_data$FUNC
+    );
+    static final FunctionDescriptor g_signal_group_connect$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_signal_emit_valist$MH = RuntimeHelper.downcallHandle(
-        "g_signal_emit_valist",
-        constants$455.g_signal_emit_valist$FUNC
+    static final MethodHandle g_signal_group_connect$MH = RuntimeHelper.downcallHandle(
+        "g_signal_group_connect",
+        constants$455.g_signal_group_connect$FUNC
     );
 }
 

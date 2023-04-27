@@ -7,51 +7,60 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1097 {
+final class constants$1097 {
 
-    static final FunctionDescriptor pango_context_get_base_dir$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1097() {}
+    static final FunctionDescriptor gdk_window_get_decorations$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_context_get_base_dir$MH = RuntimeHelper.downcallHandle(
-        "pango_context_get_base_dir",
-        constants$1097.pango_context_get_base_dir$FUNC
+    static final MethodHandle gdk_window_get_decorations$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_get_decorations",
+        constants$1097.gdk_window_get_decorations$FUNC
     );
-    static final FunctionDescriptor pango_context_set_base_gravity$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gdk_window_set_functions$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle pango_context_set_base_gravity$MH = RuntimeHelper.downcallHandle(
-        "pango_context_set_base_gravity",
-        constants$1097.pango_context_set_base_gravity$FUNC
+    static final MethodHandle gdk_window_set_functions$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_set_functions",
+        constants$1097.gdk_window_set_functions$FUNC
     );
-    static final FunctionDescriptor pango_context_get_base_gravity$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_context_get_base_gravity$MH = RuntimeHelper.downcallHandle(
-        "pango_context_get_base_gravity",
-        constants$1097.pango_context_get_base_gravity$FUNC
-    );
-    static final FunctionDescriptor pango_context_get_gravity$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_context_get_gravity$MH = RuntimeHelper.downcallHandle(
-        "pango_context_get_gravity",
-        constants$1097.pango_context_get_gravity$FUNC
-    );
-    static final FunctionDescriptor pango_context_set_gravity_hint$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gdk_window_create_similar_surface$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle pango_context_set_gravity_hint$MH = RuntimeHelper.downcallHandle(
-        "pango_context_set_gravity_hint",
-        constants$1097.pango_context_set_gravity_hint$FUNC
+    static final MethodHandle gdk_window_create_similar_surface$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_create_similar_surface",
+        constants$1097.gdk_window_create_similar_surface$FUNC
     );
-    static final FunctionDescriptor pango_context_get_gravity_hint$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gdk_window_create_similar_image_surface$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gdk_window_create_similar_image_surface$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_create_similar_image_surface",
+        constants$1097.gdk_window_create_similar_image_surface$FUNC
+    );
+    static final FunctionDescriptor gdk_window_beep$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_context_get_gravity_hint$MH = RuntimeHelper.downcallHandle(
-        "pango_context_get_gravity_hint",
-        constants$1097.pango_context_get_gravity_hint$FUNC
+    static final MethodHandle gdk_window_beep$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_beep",
+        constants$1097.gdk_window_beep$FUNC
+    );
+    static final FunctionDescriptor gdk_window_iconify$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_window_iconify$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_iconify",
+        constants$1097.gdk_window_iconify$FUNC
     );
 }
 

@@ -7,61 +7,59 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1938 {
+final class constants$1938 {
 
-    static final FunctionDescriptor gtk_print_settings_set_double$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1938() {}
+    static final FunctionDescriptor gtk_hsv_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_hsv_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_hsv_new",
+        constants$1938.gtk_hsv_new$FUNC
     );
-    static final MethodHandle gtk_print_settings_set_double$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_set_double",
-        constants$1938.gtk_print_settings_set_double$FUNC
-    );
-    static final FunctionDescriptor gtk_print_settings_get_length$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_print_settings_get_length$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_get_length",
-        constants$1938.gtk_print_settings_get_length$FUNC
-    );
-    static final FunctionDescriptor gtk_print_settings_set_length$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_hsv_set_color$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
     );
-    static final MethodHandle gtk_print_settings_set_length$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_set_length",
-        constants$1938.gtk_print_settings_set_length$FUNC
+    static final MethodHandle gtk_hsv_set_color$MH = RuntimeHelper.downcallHandle(
+        "gtk_hsv_set_color",
+        constants$1938.gtk_hsv_set_color$FUNC
     );
-    static final FunctionDescriptor gtk_print_settings_get_int$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_hsv_get_color$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_print_settings_get_int$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_get_int",
-        constants$1938.gtk_print_settings_get_int$FUNC
+    static final MethodHandle gtk_hsv_get_color$MH = RuntimeHelper.downcallHandle(
+        "gtk_hsv_get_color",
+        constants$1938.gtk_hsv_get_color$FUNC
     );
-    static final FunctionDescriptor gtk_print_settings_get_int_with_default$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_hsv_set_metrics$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_print_settings_get_int_with_default$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_get_int_with_default",
-        constants$1938.gtk_print_settings_get_int_with_default$FUNC
+    static final MethodHandle gtk_hsv_set_metrics$MH = RuntimeHelper.downcallHandle(
+        "gtk_hsv_set_metrics",
+        constants$1938.gtk_hsv_set_metrics$FUNC
     );
-    static final FunctionDescriptor gtk_print_settings_set_int$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_hsv_get_metrics$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_print_settings_set_int$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_set_int",
-        constants$1938.gtk_print_settings_set_int$FUNC
+    static final MethodHandle gtk_hsv_get_metrics$MH = RuntimeHelper.downcallHandle(
+        "gtk_hsv_get_metrics",
+        constants$1938.gtk_hsv_get_metrics$FUNC
+    );
+    static final FunctionDescriptor gtk_hsv_is_adjusting$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_hsv_is_adjusting$MH = RuntimeHelper.downcallHandle(
+        "gtk_hsv_is_adjusting",
+        constants$1938.gtk_hsv_is_adjusting$FUNC
     );
 }
 

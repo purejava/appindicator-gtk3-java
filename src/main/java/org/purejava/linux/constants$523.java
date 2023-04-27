@@ -7,64 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$523 {
+final class constants$523 {
 
-    static final FunctionDescriptor g_action_group_action_added$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$523() {}
+    static final FunctionDescriptor getcwd$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle getcwd$MH = RuntimeHelper.downcallHandle(
+        "getcwd",
+        constants$523.getcwd$FUNC
+    );
+    static final FunctionDescriptor getwd$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_action_group_action_added$MH = RuntimeHelper.downcallHandle(
-        "g_action_group_action_added",
-        constants$523.g_action_group_action_added$FUNC
+    static final MethodHandle getwd$MH = RuntimeHelper.downcallHandle(
+        "getwd",
+        constants$523.getwd$FUNC
     );
-    static final FunctionDescriptor g_action_group_action_removed$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_action_group_action_removed$MH = RuntimeHelper.downcallHandle(
-        "g_action_group_action_removed",
-        constants$523.g_action_group_action_removed$FUNC
-    );
-    static final FunctionDescriptor g_action_group_action_enabled_changed$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor dup$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_action_group_action_enabled_changed$MH = RuntimeHelper.downcallHandle(
-        "g_action_group_action_enabled_changed",
-        constants$523.g_action_group_action_enabled_changed$FUNC
+    static final MethodHandle dup$MH = RuntimeHelper.downcallHandle(
+        "dup",
+        constants$523.dup$FUNC
     );
-    static final FunctionDescriptor g_action_group_action_state_changed$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor dup2$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle dup2$MH = RuntimeHelper.downcallHandle(
+        "dup2",
+        constants$523.dup2$FUNC
+    );
+    static final OfAddress __environ$LAYOUT = Constants$root.C_POINTER$LAYOUT;
+    static final VarHandle __environ$VH = constants$523.__environ$LAYOUT.varHandle();
+    static final MemorySegment __environ$SEGMENT = RuntimeHelper.lookupGlobalVariable("__environ", constants$523.__environ$LAYOUT);
+    static final FunctionDescriptor execve$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_action_group_action_state_changed$MH = RuntimeHelper.downcallHandle(
-        "g_action_group_action_state_changed",
-        constants$523.g_action_group_action_state_changed$FUNC
-    );
-    static final FunctionDescriptor g_action_group_query_action$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_action_group_query_action$MH = RuntimeHelper.downcallHandle(
-        "g_action_group_query_action",
-        constants$523.g_action_group_query_action$FUNC
-    );
-    static final FunctionDescriptor g_dbus_connection_export_action_group$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_connection_export_action_group$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_export_action_group",
-        constants$523.g_dbus_connection_export_action_group$FUNC
+    static final MethodHandle execve$MH = RuntimeHelper.downcallHandle(
+        "execve",
+        constants$523.execve$FUNC
     );
 }
 

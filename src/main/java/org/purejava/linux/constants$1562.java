@@ -7,58 +7,49 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1562 {
+final class constants$1562 {
 
-    static final FunctionDescriptor gtk_tree_model_row_has_child_toggled$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_model_row_has_child_toggled$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_model_row_has_child_toggled",
-        constants$1562.gtk_tree_model_row_has_child_toggled$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_model_row_deleted$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1562() {}
+    static final FunctionDescriptor gtk_event_controller_key_forward$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_tree_model_row_deleted$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_model_row_deleted",
-        constants$1562.gtk_tree_model_row_deleted$FUNC
+    static final MethodHandle gtk_event_controller_key_forward$MH = RuntimeHelper.downcallHandle(
+        "gtk_event_controller_key_forward",
+        constants$1562.gtk_event_controller_key_forward$FUNC
     );
-    static final FunctionDescriptor gtk_tree_model_rows_reordered$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_event_controller_key_get_group$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_tree_model_rows_reordered$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_model_rows_reordered",
-        constants$1562.gtk_tree_model_rows_reordered$FUNC
+    static final MethodHandle gtk_event_controller_key_get_group$MH = RuntimeHelper.downcallHandle(
+        "gtk_event_controller_key_get_group",
+        constants$1562.gtk_event_controller_key_get_group$FUNC
     );
-    static final FunctionDescriptor gtk_tree_model_rows_reordered_with_length$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_event_controller_motion_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_event_controller_motion_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_event_controller_motion_get_type",
+        constants$1562.gtk_event_controller_motion_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_event_controller_motion_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_event_controller_motion_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_event_controller_motion_new",
+        constants$1562.gtk_event_controller_motion_new$FUNC
+    );
+    static final FunctionDescriptor gtk_event_controller_scroll_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_event_controller_scroll_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_event_controller_scroll_get_type",
+        constants$1562.gtk_event_controller_scroll_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_event_controller_scroll_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_tree_model_rows_reordered_with_length$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_model_rows_reordered_with_length",
-        constants$1562.gtk_tree_model_rows_reordered_with_length$FUNC
-    );
-    static final FunctionDescriptor gtk_cell_editable_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_cell_editable_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_editable_get_type",
-        constants$1562.gtk_cell_editable_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_cell_editable_start_editing$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_cell_editable_start_editing$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_editable_start_editing",
-        constants$1562.gtk_cell_editable_start_editing$FUNC
+    static final MethodHandle gtk_event_controller_scroll_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_event_controller_scroll_new",
+        constants$1562.gtk_event_controller_scroll_new$FUNC
     );
 }
 

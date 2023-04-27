@@ -7,40 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1630 {
+final class constants$1630 {
 
-    static final FunctionDescriptor gtk_tree_model_filter_clear_cache$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1630() {}
+    static final FunctionDescriptor gtk_style_context_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_style_context_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_style_context_new",
+        constants$1630.gtk_style_context_new$FUNC
     );
-    static final MethodHandle gtk_tree_model_filter_clear_cache$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_model_filter_clear_cache",
-        constants$1630.gtk_tree_model_filter_clear_cache$FUNC
-    );
-    static final FunctionDescriptor GtkEntryCompletionMatchFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_style_context_add_provider_for_screen$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_style_context_add_provider_for_screen$MH = RuntimeHelper.downcallHandle(
+        "gtk_style_context_add_provider_for_screen",
+        constants$1630.gtk_style_context_add_provider_for_screen$FUNC
+    );
+    static final FunctionDescriptor gtk_style_context_remove_provider_for_screen$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GtkEntryCompletionMatchFunc$MH = RuntimeHelper.downcallHandle(
-        constants$1630.GtkEntryCompletionMatchFunc$FUNC
+    static final MethodHandle gtk_style_context_remove_provider_for_screen$MH = RuntimeHelper.downcallHandle(
+        "gtk_style_context_remove_provider_for_screen",
+        constants$1630.gtk_style_context_remove_provider_for_screen$FUNC
     );
-    static final FunctionDescriptor gtk_entry_completion_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_entry_completion_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_completion_get_type",
-        constants$1630.gtk_entry_completion_get_type$FUNC
+    static final FunctionDescriptor gtk_style_context_add_provider$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final FunctionDescriptor gtk_entry_completion_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_entry_completion_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_completion_new",
-        constants$1630.gtk_entry_completion_new$FUNC
+    static final MethodHandle gtk_style_context_add_provider$MH = RuntimeHelper.downcallHandle(
+        "gtk_style_context_add_provider",
+        constants$1630.gtk_style_context_add_provider$FUNC
     );
-    static final FunctionDescriptor gtk_entry_completion_new_with_area$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_style_context_remove_provider$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_entry_completion_new_with_area$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_completion_new_with_area",
-        constants$1630.gtk_entry_completion_new_with_area$FUNC
+    static final MethodHandle gtk_style_context_remove_provider$MH = RuntimeHelper.downcallHandle(
+        "gtk_style_context_remove_provider",
+        constants$1630.gtk_style_context_remove_provider$FUNC
+    );
+    static final FunctionDescriptor gtk_style_context_save$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_style_context_save$MH = RuntimeHelper.downcallHandle(
+        "gtk_style_context_save",
+        constants$1630.gtk_style_context_save$FUNC
     );
 }
 

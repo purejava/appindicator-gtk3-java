@@ -7,53 +7,58 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$571 {
+final class constants$571 {
 
-    static final FunctionDescriptor nice$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$571() {}
+    static final FunctionDescriptor g_dbus_message_new_method_error_valist$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle nice$MH = RuntimeHelper.downcallHandle(
-        "nice",
-        constants$571.nice$FUNC
+    static final MethodHandle g_dbus_message_new_method_error_valist$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_message_new_method_error_valist",
+        constants$571.g_dbus_message_new_method_error_valist$FUNC
     );
-    static final FunctionDescriptor _exit$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor g_dbus_message_new_method_error_literal$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle _exit$MH = RuntimeHelper.downcallHandle(
-        "_exit",
-        constants$571._exit$FUNC
+    static final MethodHandle g_dbus_message_new_method_error_literal$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_message_new_method_error_literal",
+        constants$571.g_dbus_message_new_method_error_literal$FUNC
     );
-    static final FunctionDescriptor pathconf$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+    static final FunctionDescriptor g_dbus_message_print$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle pathconf$MH = RuntimeHelper.downcallHandle(
-        "pathconf",
-        constants$571.pathconf$FUNC
+    static final MethodHandle g_dbus_message_print$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_message_print",
+        constants$571.g_dbus_message_print$FUNC
     );
-    static final FunctionDescriptor fpathconf$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor g_dbus_message_get_locked$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle fpathconf$MH = RuntimeHelper.downcallHandle(
-        "fpathconf",
-        constants$571.fpathconf$FUNC
+    static final MethodHandle g_dbus_message_get_locked$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_message_get_locked",
+        constants$571.g_dbus_message_get_locked$FUNC
     );
-    static final FunctionDescriptor sysconf$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor g_dbus_message_lock$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle sysconf$MH = RuntimeHelper.downcallHandle(
-        "sysconf",
-        constants$571.sysconf$FUNC
+    static final MethodHandle g_dbus_message_lock$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_message_lock",
+        constants$571.g_dbus_message_lock$FUNC
     );
-    static final FunctionDescriptor confstr$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_dbus_message_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle confstr$MH = RuntimeHelper.downcallHandle(
-        "confstr",
-        constants$571.confstr$FUNC
+    static final MethodHandle g_dbus_message_copy$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_message_copy",
+        constants$571.g_dbus_message_copy$FUNC
     );
 }
 

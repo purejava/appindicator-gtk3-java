@@ -7,52 +7,74 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$505 {
+final class constants$505 {
 
-    static final FunctionDescriptor g_value_set_ulong$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$505() {}
+    static final FunctionDescriptor g_output_stream_writev_all$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_value_set_ulong$MH = RuntimeHelper.downcallHandle(
-        "g_value_set_ulong",
-        constants$505.g_value_set_ulong$FUNC
-    );
-    static final FunctionDescriptor g_value_get_ulong$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_value_get_ulong$MH = RuntimeHelper.downcallHandle(
-        "g_value_get_ulong",
-        constants$505.g_value_get_ulong$FUNC
+    static final MethodHandle g_output_stream_writev_all$MH = RuntimeHelper.downcallHandle(
+        "g_output_stream_writev_all",
+        constants$505.g_output_stream_writev_all$FUNC
     );
-    static final FunctionDescriptor g_value_set_int64$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_output_stream_printf$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_value_set_int64$MH = RuntimeHelper.downcallHandle(
-        "g_value_set_int64",
-        constants$505.g_value_set_int64$FUNC
-    );
-    static final FunctionDescriptor g_value_get_int64$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_value_get_int64$MH = RuntimeHelper.downcallHandle(
-        "g_value_get_int64",
-        constants$505.g_value_get_int64$FUNC
+    static final MethodHandle g_output_stream_printf$MH = RuntimeHelper.downcallHandleVariadic(
+        "g_output_stream_printf",
+        constants$505.g_output_stream_printf$FUNC
     );
-    static final FunctionDescriptor g_value_set_uint64$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_output_stream_vprintf$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_value_set_uint64$MH = RuntimeHelper.downcallHandle(
-        "g_value_set_uint64",
-        constants$505.g_value_set_uint64$FUNC
-    );
-    static final FunctionDescriptor g_value_get_uint64$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_value_get_uint64$MH = RuntimeHelper.downcallHandle(
-        "g_value_get_uint64",
-        constants$505.g_value_get_uint64$FUNC
+    static final MethodHandle g_output_stream_vprintf$MH = RuntimeHelper.downcallHandle(
+        "g_output_stream_vprintf",
+        constants$505.g_output_stream_vprintf$FUNC
+    );
+    static final FunctionDescriptor g_output_stream_write_bytes$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_output_stream_write_bytes$MH = RuntimeHelper.downcallHandle(
+        "g_output_stream_write_bytes",
+        constants$505.g_output_stream_write_bytes$FUNC
+    );
+    static final FunctionDescriptor g_output_stream_splice$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_output_stream_splice$MH = RuntimeHelper.downcallHandle(
+        "g_output_stream_splice",
+        constants$505.g_output_stream_splice$FUNC
+    );
+    static final FunctionDescriptor g_output_stream_flush$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_output_stream_flush$MH = RuntimeHelper.downcallHandle(
+        "g_output_stream_flush",
+        constants$505.g_output_stream_flush$FUNC
     );
 }
 

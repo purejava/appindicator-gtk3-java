@@ -7,55 +7,56 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$456 {
+final class constants$456 {
 
-    static final FunctionDescriptor g_signal_emit$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$456() {}
+    static final FunctionDescriptor g_signal_group_connect_after$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_signal_emit$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_signal_emit",
-        constants$456.g_signal_emit$FUNC
-    );
-    static final FunctionDescriptor g_signal_emit_by_name$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_signal_emit_by_name$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_signal_emit_by_name",
-        constants$456.g_signal_emit_by_name$FUNC
+    static final MethodHandle g_signal_group_connect_after$MH = RuntimeHelper.downcallHandle(
+        "g_signal_group_connect_after",
+        constants$456.g_signal_group_connect_after$FUNC
     );
-    static final FunctionDescriptor g_signal_lookup$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_signal_group_connect_swapped$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_signal_lookup$MH = RuntimeHelper.downcallHandle(
-        "g_signal_lookup",
-        constants$456.g_signal_lookup$FUNC
-    );
-    static final FunctionDescriptor g_signal_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_signal_name$MH = RuntimeHelper.downcallHandle(
-        "g_signal_name",
-        constants$456.g_signal_name$FUNC
-    );
-    static final FunctionDescriptor g_signal_query$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_signal_query$MH = RuntimeHelper.downcallHandle(
-        "g_signal_query",
-        constants$456.g_signal_query$FUNC
+    static final MethodHandle g_signal_group_connect_swapped$MH = RuntimeHelper.downcallHandle(
+        "g_signal_group_connect_swapped",
+        constants$456.g_signal_group_connect_swapped$FUNC
     );
-    static final FunctionDescriptor g_signal_list_ids$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
+    static final FunctionDescriptor g_source_set_closure$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_signal_list_ids$MH = RuntimeHelper.downcallHandle(
-        "g_signal_list_ids",
-        constants$456.g_signal_list_ids$FUNC
+    static final MethodHandle g_source_set_closure$MH = RuntimeHelper.downcallHandle(
+        "g_source_set_closure",
+        constants$456.g_source_set_closure$FUNC
+    );
+    static final FunctionDescriptor g_source_set_dummy_callback$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_source_set_dummy_callback$MH = RuntimeHelper.downcallHandle(
+        "g_source_set_dummy_callback",
+        constants$456.g_source_set_dummy_callback$FUNC
+    );
+    static final FunctionDescriptor g_type_module_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_type_module_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_type_module_get_type",
+        constants$456.g_type_module_get_type$FUNC
+    );
+    static final FunctionDescriptor g_type_module_use$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_type_module_use$MH = RuntimeHelper.downcallHandle(
+        "g_type_module_use",
+        constants$456.g_type_module_use$FUNC
     );
 }
 

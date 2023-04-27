@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * int (*GHRFunc)(void* key,void* value,void* user_data);
+ * }
+ */
 public interface GHRFunc {
 
-    int apply(java.lang.foreign.MemoryAddress key, java.lang.foreign.MemoryAddress value, java.lang.foreign.MemoryAddress user_data);
-    static MemorySegment allocate(GHRFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GHRFunc.class, fi, constants$143.GHRFunc$FUNC, session);
+    int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
+    static MemorySegment allocate(GHRFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$144.GHRFunc_UP$MH, fi, constants$144.GHRFunc$FUNC, scope);
     }
-    static GHRFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _key, java.lang.foreign.MemoryAddress _value, java.lang.foreign.MemoryAddress _user_data) -> {
+    static GHRFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _a, java.lang.foreign.MemorySegment _b, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                return (int)constants$144.GHRFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_key, (java.lang.foreign.Addressable)_value, (java.lang.foreign.Addressable)_user_data);
+                return (int)constants$144.GHRFunc_DOWN$MH.invokeExact(symbol, _a, _b, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

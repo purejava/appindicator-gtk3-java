@@ -7,53 +7,56 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1347 {
+final class constants$1347 {
 
-    static final FunctionDescriptor gdk_test_render_sync$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1347() {}
+    static final FunctionDescriptor gtk_accel_map_lookup_entry$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_test_render_sync$MH = RuntimeHelper.downcallHandle(
-        "gdk_test_render_sync",
-        constants$1347.gdk_test_render_sync$FUNC
+    static final MethodHandle gtk_accel_map_lookup_entry$MH = RuntimeHelper.downcallHandle(
+        "gtk_accel_map_lookup_entry",
+        constants$1347.gtk_accel_map_lookup_entry$FUNC
     );
-    static final FunctionDescriptor gdk_test_simulate_key$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_accel_map_change_entry$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gdk_test_simulate_key$MH = RuntimeHelper.downcallHandle(
-        "gdk_test_simulate_key",
-        constants$1347.gdk_test_simulate_key$FUNC
+    static final MethodHandle gtk_accel_map_change_entry$MH = RuntimeHelper.downcallHandle(
+        "gtk_accel_map_change_entry",
+        constants$1347.gtk_accel_map_change_entry$FUNC
     );
-    static final FunctionDescriptor gdk_test_simulate_button$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_accel_map_load$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_accel_map_load$MH = RuntimeHelper.downcallHandle(
+        "gtk_accel_map_load",
+        constants$1347.gtk_accel_map_load$FUNC
+    );
+    static final FunctionDescriptor gtk_accel_map_save$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_accel_map_save$MH = RuntimeHelper.downcallHandle(
+        "gtk_accel_map_save",
+        constants$1347.gtk_accel_map_save$FUNC
+    );
+    static final FunctionDescriptor gtk_accel_map_foreach$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_accel_map_foreach$MH = RuntimeHelper.downcallHandle(
+        "gtk_accel_map_foreach",
+        constants$1347.gtk_accel_map_foreach$FUNC
+    );
+    static final FunctionDescriptor gtk_accel_map_load_fd$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gdk_test_simulate_button$MH = RuntimeHelper.downcallHandle(
-        "gdk_test_simulate_button",
-        constants$1347.gdk_test_simulate_button$FUNC
-    );
-    static final FunctionDescriptor gdk_threads_init$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle gdk_threads_init$MH = RuntimeHelper.downcallHandle(
-        "gdk_threads_init",
-        constants$1347.gdk_threads_init$FUNC
-    );
-    static final FunctionDescriptor gdk_threads_enter$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle gdk_threads_enter$MH = RuntimeHelper.downcallHandle(
-        "gdk_threads_enter",
-        constants$1347.gdk_threads_enter$FUNC
-    );
-    static final FunctionDescriptor gdk_threads_leave$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle gdk_threads_leave$MH = RuntimeHelper.downcallHandle(
-        "gdk_threads_leave",
-        constants$1347.gdk_threads_leave$FUNC
+    static final MethodHandle gtk_accel_map_load_fd$MH = RuntimeHelper.downcallHandle(
+        "gtk_accel_map_load_fd",
+        constants$1347.gtk_accel_map_load_fd$FUNC
     );
 }
 

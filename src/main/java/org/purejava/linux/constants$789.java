@@ -7,57 +7,57 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$789 {
+final class constants$789 {
 
-    static final FunctionDescriptor g_resource_new_from_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$789() {}
+    static final FunctionDescriptor g_subprocess_launcher_unsetenv$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_resource_new_from_data$MH = RuntimeHelper.downcallHandle(
-        "g_resource_new_from_data",
-        constants$789.g_resource_new_from_data$FUNC
+    static final MethodHandle g_subprocess_launcher_unsetenv$MH = RuntimeHelper.downcallHandle(
+        "g_subprocess_launcher_unsetenv",
+        constants$789.g_subprocess_launcher_unsetenv$FUNC
     );
-    static final FunctionDescriptor g_resource_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_resource_ref$MH = RuntimeHelper.downcallHandle(
-        "g_resource_ref",
-        constants$789.g_resource_ref$FUNC
-    );
-    static final FunctionDescriptor g_resource_unref$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_resource_unref$MH = RuntimeHelper.downcallHandle(
-        "g_resource_unref",
-        constants$789.g_resource_unref$FUNC
-    );
-    static final FunctionDescriptor g_resource_load$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_subprocess_launcher_getenv$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_resource_load$MH = RuntimeHelper.downcallHandle(
-        "g_resource_load",
-        constants$789.g_resource_load$FUNC
+    static final MethodHandle g_subprocess_launcher_getenv$MH = RuntimeHelper.downcallHandle(
+        "g_subprocess_launcher_getenv",
+        constants$789.g_subprocess_launcher_getenv$FUNC
     );
-    static final FunctionDescriptor g_resource_open_stream$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_subprocess_launcher_set_cwd$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_resource_open_stream$MH = RuntimeHelper.downcallHandle(
-        "g_resource_open_stream",
-        constants$789.g_resource_open_stream$FUNC
+    static final MethodHandle g_subprocess_launcher_set_cwd$MH = RuntimeHelper.downcallHandle(
+        "g_subprocess_launcher_set_cwd",
+        constants$789.g_subprocess_launcher_set_cwd$FUNC
     );
-    static final FunctionDescriptor g_resource_lookup_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_subprocess_launcher_set_flags$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_subprocess_launcher_set_flags$MH = RuntimeHelper.downcallHandle(
+        "g_subprocess_launcher_set_flags",
+        constants$789.g_subprocess_launcher_set_flags$FUNC
+    );
+    static final FunctionDescriptor g_subprocess_launcher_set_stdin_file_path$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_resource_lookup_data$MH = RuntimeHelper.downcallHandle(
-        "g_resource_lookup_data",
-        constants$789.g_resource_lookup_data$FUNC
+    static final MethodHandle g_subprocess_launcher_set_stdin_file_path$MH = RuntimeHelper.downcallHandle(
+        "g_subprocess_launcher_set_stdin_file_path",
+        constants$789.g_subprocess_launcher_set_stdin_file_path$FUNC
+    );
+    static final FunctionDescriptor g_subprocess_launcher_take_stdin_fd$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_subprocess_launcher_take_stdin_fd$MH = RuntimeHelper.downcallHandle(
+        "g_subprocess_launcher_take_stdin_fd",
+        constants$789.g_subprocess_launcher_take_stdin_fd$FUNC
     );
 }
 

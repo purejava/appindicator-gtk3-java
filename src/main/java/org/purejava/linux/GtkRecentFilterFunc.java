@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * int (*GtkRecentFilterFunc)(struct _GtkRecentFilterInfo* filter_info,void* user_data);
+ * }
+ */
 public interface GtkRecentFilterFunc {
 
-    int apply(java.lang.foreign.MemoryAddress filter_info, java.lang.foreign.MemoryAddress user_data);
-    static MemorySegment allocate(GtkRecentFilterFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GtkRecentFilterFunc.class, fi, constants$1973.GtkRecentFilterFunc$FUNC, session);
+    int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
+    static MemorySegment allocate(GtkRecentFilterFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$1776.GtkRecentFilterFunc_UP$MH, fi, constants$1776.GtkRecentFilterFunc$FUNC, scope);
     }
-    static GtkRecentFilterFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _filter_info, java.lang.foreign.MemoryAddress _user_data) -> {
+    static GtkRecentFilterFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _filter_info, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                return (int)constants$1973.GtkRecentFilterFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_filter_info, (java.lang.foreign.Addressable)_user_data);
+                return (int)constants$1776.GtkRecentFilterFunc_DOWN$MH.invokeExact(symbol, _filter_info, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

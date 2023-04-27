@@ -7,9 +7,19 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _PangoRectangle {
+ *     int x;
+ *     int y;
+ *     int width;
+ *     int height;
+ * };
+ * }
+ */
 public class _PangoRectangle {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_INT$LAYOUT.withName("x"),
         Constants$root.C_INT$LAYOUT.withName("y"),
         Constants$root.C_INT$LAYOUT.withName("width"),
@@ -22,10 +32,22 @@ public class _PangoRectangle {
     public static VarHandle x$VH() {
         return _PangoRectangle.x$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * int x;
+     * }
+     */
     public static int x$get(MemorySegment seg) {
         return (int)_PangoRectangle.x$VH.get(seg);
     }
-    public static void x$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * int x;
+     * }
+     */
+    public static void x$set(MemorySegment seg, int x) {
         _PangoRectangle.x$VH.set(seg, x);
     }
     public static int x$get(MemorySegment seg, long index) {
@@ -38,10 +60,22 @@ public class _PangoRectangle {
     public static VarHandle y$VH() {
         return _PangoRectangle.y$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * int y;
+     * }
+     */
     public static int y$get(MemorySegment seg) {
         return (int)_PangoRectangle.y$VH.get(seg);
     }
-    public static void y$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * int y;
+     * }
+     */
+    public static void y$set(MemorySegment seg, int x) {
         _PangoRectangle.y$VH.set(seg, x);
     }
     public static int y$get(MemorySegment seg, long index) {
@@ -54,10 +88,22 @@ public class _PangoRectangle {
     public static VarHandle width$VH() {
         return _PangoRectangle.width$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * int width;
+     * }
+     */
     public static int width$get(MemorySegment seg) {
         return (int)_PangoRectangle.width$VH.get(seg);
     }
-    public static void width$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * int width;
+     * }
+     */
+    public static void width$set(MemorySegment seg, int x) {
         _PangoRectangle.width$VH.set(seg, x);
     }
     public static int width$get(MemorySegment seg, long index) {
@@ -70,10 +116,22 @@ public class _PangoRectangle {
     public static VarHandle height$VH() {
         return _PangoRectangle.height$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * int height;
+     * }
+     */
     public static int height$get(MemorySegment seg) {
         return (int)_PangoRectangle.height$VH.get(seg);
     }
-    public static void height$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * int height;
+     * }
+     */
+    public static void height$set(MemorySegment seg, int x) {
         _PangoRectangle.height$VH.set(seg, x);
     }
     public static int height$get(MemorySegment seg, long index) {
@@ -84,10 +142,10 @@ public class _PangoRectangle {
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

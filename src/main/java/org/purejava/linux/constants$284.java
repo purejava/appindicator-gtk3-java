@@ -7,63 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$284 {
+final class constants$284 {
 
-    static final FunctionDescriptor g_scanner_scope_lookup_symbol$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$284() {}
+    static final FunctionDescriptor g_rc_box_acquire$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_scanner_scope_lookup_symbol$MH = RuntimeHelper.downcallHandle(
-        "g_scanner_scope_lookup_symbol",
-        constants$284.g_scanner_scope_lookup_symbol$FUNC
+    static final MethodHandle g_rc_box_acquire$MH = RuntimeHelper.downcallHandle(
+        "g_rc_box_acquire",
+        constants$284.g_rc_box_acquire$FUNC
     );
-    static final FunctionDescriptor g_scanner_scope_foreach_symbol$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_rc_box_release$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_scanner_scope_foreach_symbol$MH = RuntimeHelper.downcallHandle(
-        "g_scanner_scope_foreach_symbol",
-        constants$284.g_scanner_scope_foreach_symbol$FUNC
+    static final MethodHandle g_rc_box_release$MH = RuntimeHelper.downcallHandle(
+        "g_rc_box_release",
+        constants$284.g_rc_box_release$FUNC
     );
-    static final FunctionDescriptor g_scanner_lookup_symbol$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_rc_box_release_full$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_scanner_lookup_symbol$MH = RuntimeHelper.downcallHandle(
-        "g_scanner_lookup_symbol",
-        constants$284.g_scanner_lookup_symbol$FUNC
+    static final MethodHandle g_rc_box_release_full$MH = RuntimeHelper.downcallHandle(
+        "g_rc_box_release_full",
+        constants$284.g_rc_box_release_full$FUNC
     );
-    static final FunctionDescriptor g_scanner_unexp_token$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_scanner_unexp_token$MH = RuntimeHelper.downcallHandle(
-        "g_scanner_unexp_token",
-        constants$284.g_scanner_unexp_token$FUNC
-    );
-    static final FunctionDescriptor g_scanner_error$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_rc_box_get_size$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_scanner_error$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_scanner_error",
-        constants$284.g_scanner_error$FUNC
+    static final MethodHandle g_rc_box_get_size$MH = RuntimeHelper.downcallHandle(
+        "g_rc_box_get_size",
+        constants$284.g_rc_box_get_size$FUNC
     );
-    static final FunctionDescriptor g_scanner_warn$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_atomic_rc_box_alloc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
     );
-    static final MethodHandle g_scanner_warn$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_scanner_warn",
-        constants$284.g_scanner_warn$FUNC
+    static final MethodHandle g_atomic_rc_box_alloc$MH = RuntimeHelper.downcallHandle(
+        "g_atomic_rc_box_alloc",
+        constants$284.g_atomic_rc_box_alloc$FUNC
+    );
+    static final FunctionDescriptor g_atomic_rc_box_alloc0$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle g_atomic_rc_box_alloc0$MH = RuntimeHelper.downcallHandle(
+        "g_atomic_rc_box_alloc0",
+        constants$284.g_atomic_rc_box_alloc0$FUNC
     );
 }
 

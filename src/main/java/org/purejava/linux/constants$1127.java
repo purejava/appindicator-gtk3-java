@@ -7,48 +7,46 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1127 {
+final class constants$1127 {
 
-    static final FunctionDescriptor pango_layout_iter_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_layout_iter_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_iter_get_type",
-        constants$1127.pango_layout_iter_get_type$FUNC
-    );
-    static final FunctionDescriptor pango_layout_get_iter$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1127() {}
+    static final FunctionDescriptor gdk_rgba_hash$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_layout_get_iter$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_get_iter",
-        constants$1127.pango_layout_get_iter$FUNC
+    static final MethodHandle gdk_rgba_hash$MH = RuntimeHelper.downcallHandle(
+        "gdk_rgba_hash",
+        constants$1127.gdk_rgba_hash$FUNC
     );
-    static final FunctionDescriptor pango_layout_iter_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gdk_rgba_equal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_layout_iter_copy$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_iter_copy",
-        constants$1127.pango_layout_iter_copy$FUNC
+    static final MethodHandle gdk_rgba_equal$MH = RuntimeHelper.downcallHandle(
+        "gdk_rgba_equal",
+        constants$1127.gdk_rgba_equal$FUNC
     );
-    static final FunctionDescriptor pango_layout_iter_free$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gdk_rgba_parse$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_layout_iter_free$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_iter_free",
-        constants$1127.pango_layout_iter_free$FUNC
+    static final MethodHandle gdk_rgba_parse$MH = RuntimeHelper.downcallHandle(
+        "gdk_rgba_parse",
+        constants$1127.gdk_rgba_parse$FUNC
     );
-    static final FunctionDescriptor pango_layout_iter_get_index$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gdk_rgba_to_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_layout_iter_get_index$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_iter_get_index",
-        constants$1127.pango_layout_iter_get_index$FUNC
+    static final MethodHandle gdk_rgba_to_string$MH = RuntimeHelper.downcallHandle(
+        "gdk_rgba_to_string",
+        constants$1127.gdk_rgba_to_string$FUNC
     );
-    static final FunctionDescriptor pango_layout_iter_get_run$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_layout_iter_get_run$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_iter_get_run",
-        constants$1127.pango_layout_iter_get_run$FUNC
-    );
+    static final OfInt gdk_pixbuf_major_version$LAYOUT = Constants$root.C_INT$LAYOUT;
+    static final VarHandle gdk_pixbuf_major_version$VH = constants$1127.gdk_pixbuf_major_version$LAYOUT.varHandle();
+    static final MemorySegment gdk_pixbuf_major_version$SEGMENT = RuntimeHelper.lookupGlobalVariable("gdk_pixbuf_major_version", constants$1127.gdk_pixbuf_major_version$LAYOUT);
+    static final OfInt gdk_pixbuf_minor_version$LAYOUT = Constants$root.C_INT$LAYOUT;
+    static final VarHandle gdk_pixbuf_minor_version$VH = constants$1127.gdk_pixbuf_minor_version$LAYOUT.varHandle();
+    static final MemorySegment gdk_pixbuf_minor_version$SEGMENT = RuntimeHelper.lookupGlobalVariable("gdk_pixbuf_minor_version", constants$1127.gdk_pixbuf_minor_version$LAYOUT);
 }
 
 

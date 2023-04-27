@@ -7,53 +7,69 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$594 {
+final class constants$594 {
 
-    static final FunctionDescriptor g_dbus_address_get_stream_sync$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$594() {}
+    static final FunctionDescriptor g_dbus_proxy_get_cached_property$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_dbus_proxy_get_cached_property$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_proxy_get_cached_property",
+        constants$594.g_dbus_proxy_get_cached_property$FUNC
+    );
+    static final FunctionDescriptor g_dbus_proxy_set_cached_property$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_address_get_stream_sync$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_address_get_stream_sync",
-        constants$594.g_dbus_address_get_stream_sync$FUNC
+    static final MethodHandle g_dbus_proxy_set_cached_property$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_proxy_set_cached_property",
+        constants$594.g_dbus_proxy_set_cached_property$FUNC
     );
-    static final FunctionDescriptor g_dbus_address_get_for_bus_sync$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_dbus_proxy_get_cached_property_names$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_dbus_proxy_get_cached_property_names$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_proxy_get_cached_property_names",
+        constants$594.g_dbus_proxy_get_cached_property_names$FUNC
+    );
+    static final FunctionDescriptor g_dbus_proxy_call$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_dbus_proxy_call$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_proxy_call",
+        constants$594.g_dbus_proxy_call$FUNC
+    );
+    static final FunctionDescriptor g_dbus_proxy_call_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_dbus_proxy_call_finish$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_proxy_call_finish",
+        constants$594.g_dbus_proxy_call_finish$FUNC
+    );
+    static final FunctionDescriptor g_dbus_proxy_call_sync$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_address_get_for_bus_sync$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_address_get_for_bus_sync",
-        constants$594.g_dbus_address_get_for_bus_sync$FUNC
-    );
-    static final FunctionDescriptor g_dbus_auth_observer_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_dbus_auth_observer_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_auth_observer_get_type",
-        constants$594.g_dbus_auth_observer_get_type$FUNC
-    );
-    static final FunctionDescriptor g_dbus_auth_observer_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_dbus_auth_observer_new$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_auth_observer_new",
-        constants$594.g_dbus_auth_observer_new$FUNC
-    );
-    static final FunctionDescriptor g_dbus_auth_observer_authorize_authenticated_peer$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_auth_observer_authorize_authenticated_peer$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_auth_observer_authorize_authenticated_peer",
-        constants$594.g_dbus_auth_observer_authorize_authenticated_peer$FUNC
-    );
-    static final FunctionDescriptor g_dbus_auth_observer_allow_mechanism$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_auth_observer_allow_mechanism$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_auth_observer_allow_mechanism",
-        constants$594.g_dbus_auth_observer_allow_mechanism$FUNC
+    static final MethodHandle g_dbus_proxy_call_sync$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_proxy_call_sync",
+        constants$594.g_dbus_proxy_call_sync$FUNC
     );
 }
 

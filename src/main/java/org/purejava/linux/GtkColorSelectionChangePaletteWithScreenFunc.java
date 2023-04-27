@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * void (*GtkColorSelectionChangePaletteWithScreenFunc)(struct _GdkScreen* screen,struct _GdkColor* colors,int n_colors);
+ * }
+ */
 public interface GtkColorSelectionChangePaletteWithScreenFunc {
 
-    void apply(java.lang.foreign.MemoryAddress screen, java.lang.foreign.MemoryAddress colors, int n_colors);
-    static MemorySegment allocate(GtkColorSelectionChangePaletteWithScreenFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GtkColorSelectionChangePaletteWithScreenFunc.class, fi, constants$2120.GtkColorSelectionChangePaletteWithScreenFunc$FUNC, session);
+    void apply(java.lang.foreign.MemorySegment screen, java.lang.foreign.MemorySegment colors, int n_colors);
+    static MemorySegment allocate(GtkColorSelectionChangePaletteWithScreenFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$1923.GtkColorSelectionChangePaletteWithScreenFunc_UP$MH, fi, constants$1923.GtkColorSelectionChangePaletteWithScreenFunc$FUNC, scope);
     }
-    static GtkColorSelectionChangePaletteWithScreenFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _screen, java.lang.foreign.MemoryAddress _colors, int _n_colors) -> {
+    static GtkColorSelectionChangePaletteWithScreenFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _screen, java.lang.foreign.MemorySegment _colors, int _n_colors) -> {
             try {
-                constants$2120.GtkColorSelectionChangePaletteWithScreenFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_screen, (java.lang.foreign.Addressable)_colors, _n_colors);
+                constants$1923.GtkColorSelectionChangePaletteWithScreenFunc_DOWN$MH.invokeExact(symbol, _screen, _colors, _n_colors);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

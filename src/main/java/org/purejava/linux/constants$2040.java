@@ -7,55 +7,16 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$2040 {
+final class constants$2040 {
 
-    static final FunctionDescriptor gtk_text_view_get_hadjustment$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_view_get_hadjustment$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_get_hadjustment",
-        constants$2040.gtk_text_view_get_hadjustment$FUNC
-    );
-    static final FunctionDescriptor gtk_text_view_get_vadjustment$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_view_get_vadjustment$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_get_vadjustment",
-        constants$2040.gtk_text_view_get_vadjustment$FUNC
-    );
-    static final FunctionDescriptor gtk_text_view_get_window$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_text_view_get_window$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_get_window",
-        constants$2040.gtk_text_view_get_window$FUNC
-    );
-    static final FunctionDescriptor gtk_text_view_get_window_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_view_get_window_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_get_window_type",
-        constants$2040.gtk_text_view_get_window_type$FUNC
-    );
-    static final FunctionDescriptor gtk_text_view_set_border_window_size$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_text_view_set_border_window_size$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_set_border_window_size",
-        constants$2040.gtk_text_view_set_border_window_size$FUNC
-    );
-    static final FunctionDescriptor gtk_text_view_get_border_window_size$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_text_view_get_border_window_size$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_get_border_window_size",
-        constants$2040.gtk_text_view_get_border_window_size$FUNC
-    );
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$2040() {}
+    static final MemorySegment GTK_STYLE_CLASS_NEEDS_ATTENTION$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("needs-attention");
+    static final MemorySegment GTK_STYLE_CLASS_SUGGESTED_ACTION$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("suggested-action");
+    static final MemorySegment GTK_STYLE_CLASS_DESTRUCTIVE_ACTION$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("destructive-action");
+    static final MemorySegment GTK_STYLE_CLASS_POPOVER$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("popover");
+    static final MemorySegment GTK_STYLE_CLASS_POPUP$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("popup");
+    static final MemorySegment GTK_STYLE_CLASS_MESSAGE_DIALOG$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("message-dialog");
 }
 
 

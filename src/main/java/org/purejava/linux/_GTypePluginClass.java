@@ -7,9 +7,20 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GTypePluginClass {
+ *     GTypeInterface base_iface;
+ *     GTypePluginUse use_plugin;
+ *     GTypePluginUnuse unuse_plugin;
+ *     GTypePluginCompleteTypeInfo complete_type_info;
+ *     GTypePluginCompleteInterfaceInfo complete_interface_info;
+ * };
+ * }
+ */
 public class _GTypePluginClass {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             Constants$root.C_LONG_LONG$LAYOUT.withName("g_type"),
             Constants$root.C_LONG_LONG$LAYOUT.withName("g_instance_type")
@@ -29,84 +40,132 @@ public class _GTypePluginClass {
     public static VarHandle use_plugin$VH() {
         return _GTypePluginClass.use_plugin$VH;
     }
-    public static MemoryAddress use_plugin$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GTypePluginClass.use_plugin$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GTypePluginUse use_plugin;
+     * }
+     */
+    public static MemorySegment use_plugin$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GTypePluginClass.use_plugin$VH.get(seg);
     }
-    public static void use_plugin$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GTypePluginUse use_plugin;
+     * }
+     */
+    public static void use_plugin$set(MemorySegment seg, MemorySegment x) {
         _GTypePluginClass.use_plugin$VH.set(seg, x);
     }
-    public static MemoryAddress use_plugin$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GTypePluginClass.use_plugin$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment use_plugin$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GTypePluginClass.use_plugin$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void use_plugin$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void use_plugin$set(MemorySegment seg, long index, MemorySegment x) {
         _GTypePluginClass.use_plugin$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static GTypePluginUse use_plugin (MemorySegment segment, MemorySession session) {
-        return GTypePluginUse.ofAddress(use_plugin$get(segment), session);
+    public static GTypePluginUse use_plugin(MemorySegment segment, SegmentScope scope) {
+        return GTypePluginUse.ofAddress(use_plugin$get(segment), scope);
     }
     static final VarHandle unuse_plugin$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("unuse_plugin"));
     public static VarHandle unuse_plugin$VH() {
         return _GTypePluginClass.unuse_plugin$VH;
     }
-    public static MemoryAddress unuse_plugin$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GTypePluginClass.unuse_plugin$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GTypePluginUnuse unuse_plugin;
+     * }
+     */
+    public static MemorySegment unuse_plugin$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GTypePluginClass.unuse_plugin$VH.get(seg);
     }
-    public static void unuse_plugin$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GTypePluginUnuse unuse_plugin;
+     * }
+     */
+    public static void unuse_plugin$set(MemorySegment seg, MemorySegment x) {
         _GTypePluginClass.unuse_plugin$VH.set(seg, x);
     }
-    public static MemoryAddress unuse_plugin$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GTypePluginClass.unuse_plugin$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment unuse_plugin$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GTypePluginClass.unuse_plugin$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void unuse_plugin$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void unuse_plugin$set(MemorySegment seg, long index, MemorySegment x) {
         _GTypePluginClass.unuse_plugin$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static GTypePluginUnuse unuse_plugin (MemorySegment segment, MemorySession session) {
-        return GTypePluginUnuse.ofAddress(unuse_plugin$get(segment), session);
+    public static GTypePluginUnuse unuse_plugin(MemorySegment segment, SegmentScope scope) {
+        return GTypePluginUnuse.ofAddress(unuse_plugin$get(segment), scope);
     }
     static final VarHandle complete_type_info$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("complete_type_info"));
     public static VarHandle complete_type_info$VH() {
         return _GTypePluginClass.complete_type_info$VH;
     }
-    public static MemoryAddress complete_type_info$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GTypePluginClass.complete_type_info$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GTypePluginCompleteTypeInfo complete_type_info;
+     * }
+     */
+    public static MemorySegment complete_type_info$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GTypePluginClass.complete_type_info$VH.get(seg);
     }
-    public static void complete_type_info$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GTypePluginCompleteTypeInfo complete_type_info;
+     * }
+     */
+    public static void complete_type_info$set(MemorySegment seg, MemorySegment x) {
         _GTypePluginClass.complete_type_info$VH.set(seg, x);
     }
-    public static MemoryAddress complete_type_info$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GTypePluginClass.complete_type_info$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment complete_type_info$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GTypePluginClass.complete_type_info$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void complete_type_info$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void complete_type_info$set(MemorySegment seg, long index, MemorySegment x) {
         _GTypePluginClass.complete_type_info$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static GTypePluginCompleteTypeInfo complete_type_info (MemorySegment segment, MemorySession session) {
-        return GTypePluginCompleteTypeInfo.ofAddress(complete_type_info$get(segment), session);
+    public static GTypePluginCompleteTypeInfo complete_type_info(MemorySegment segment, SegmentScope scope) {
+        return GTypePluginCompleteTypeInfo.ofAddress(complete_type_info$get(segment), scope);
     }
     static final VarHandle complete_interface_info$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("complete_interface_info"));
     public static VarHandle complete_interface_info$VH() {
         return _GTypePluginClass.complete_interface_info$VH;
     }
-    public static MemoryAddress complete_interface_info$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GTypePluginClass.complete_interface_info$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GTypePluginCompleteInterfaceInfo complete_interface_info;
+     * }
+     */
+    public static MemorySegment complete_interface_info$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GTypePluginClass.complete_interface_info$VH.get(seg);
     }
-    public static void complete_interface_info$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GTypePluginCompleteInterfaceInfo complete_interface_info;
+     * }
+     */
+    public static void complete_interface_info$set(MemorySegment seg, MemorySegment x) {
         _GTypePluginClass.complete_interface_info$VH.set(seg, x);
     }
-    public static MemoryAddress complete_interface_info$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GTypePluginClass.complete_interface_info$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment complete_interface_info$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GTypePluginClass.complete_interface_info$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void complete_interface_info$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void complete_interface_info$set(MemorySegment seg, long index, MemorySegment x) {
         _GTypePluginClass.complete_interface_info$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static GTypePluginCompleteInterfaceInfo complete_interface_info (MemorySegment segment, MemorySession session) {
-        return GTypePluginCompleteInterfaceInfo.ofAddress(complete_interface_info$get(segment), session);
+    public static GTypePluginCompleteInterfaceInfo complete_interface_info(MemorySegment segment, SegmentScope scope) {
+        return GTypePluginCompleteInterfaceInfo.ofAddress(complete_interface_info$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

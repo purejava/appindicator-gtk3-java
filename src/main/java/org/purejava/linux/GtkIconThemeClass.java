@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkIconThemeClass extends _GtkIconThemeClass {
+/**
+ * {@snippet :
+ * typedef struct _GtkIconThemeClass GtkIconThemeClass;
+ * }
+ */
+public final class GtkIconThemeClass extends _GtkIconThemeClass {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkIconThemeClass() {}
 }
 
 

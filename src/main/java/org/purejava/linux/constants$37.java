@@ -7,41 +7,61 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$37 {
+final class constants$37 {
 
-    static final FunctionDescriptor g_set_application_name$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$37() {}
+    static final FunctionDescriptor g_error_matches$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_error_matches$MH = RuntimeHelper.downcallHandle(
+        "g_error_matches",
+        constants$37.g_error_matches$FUNC
+    );
+    static final FunctionDescriptor g_set_error$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_set_application_name$MH = RuntimeHelper.downcallHandle(
-        "g_set_application_name",
-        constants$37.g_set_application_name$FUNC
+    static final MethodHandle g_set_error$MH = RuntimeHelper.downcallHandleVariadic(
+        "g_set_error",
+        constants$37.g_set_error$FUNC
     );
-    static final FunctionDescriptor g_get_os_info$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_set_error_literal$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_get_os_info$MH = RuntimeHelper.downcallHandle(
-        "g_get_os_info",
-        constants$37.g_get_os_info$FUNC
+    static final MethodHandle g_set_error_literal$MH = RuntimeHelper.downcallHandle(
+        "g_set_error_literal",
+        constants$37.g_set_error_literal$FUNC
     );
-    static final FunctionDescriptor g_reload_user_special_dirs_cache$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle g_reload_user_special_dirs_cache$MH = RuntimeHelper.downcallHandle(
-        "g_reload_user_special_dirs_cache",
-        constants$37.g_reload_user_special_dirs_cache$FUNC
+    static final FunctionDescriptor g_propagate_error$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor g_get_user_data_dir$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_get_user_data_dir$MH = RuntimeHelper.downcallHandle(
-        "g_get_user_data_dir",
-        constants$37.g_get_user_data_dir$FUNC
+    static final MethodHandle g_propagate_error$MH = RuntimeHelper.downcallHandle(
+        "g_propagate_error",
+        constants$37.g_propagate_error$FUNC
     );
-    static final FunctionDescriptor g_get_user_config_dir$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_get_user_config_dir$MH = RuntimeHelper.downcallHandle(
-        "g_get_user_config_dir",
-        constants$37.g_get_user_config_dir$FUNC
+    static final FunctionDescriptor g_clear_error$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor g_get_user_cache_dir$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_get_user_cache_dir$MH = RuntimeHelper.downcallHandle(
-        "g_get_user_cache_dir",
-        constants$37.g_get_user_cache_dir$FUNC
+    static final MethodHandle g_clear_error$MH = RuntimeHelper.downcallHandle(
+        "g_clear_error",
+        constants$37.g_clear_error$FUNC
+    );
+    static final FunctionDescriptor g_prefix_error$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_prefix_error$MH = RuntimeHelper.downcallHandleVariadic(
+        "g_prefix_error",
+        constants$37.g_prefix_error$FUNC
     );
 }
 

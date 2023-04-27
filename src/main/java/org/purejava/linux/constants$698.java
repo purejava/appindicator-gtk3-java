@@ -7,50 +7,50 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$698 {
+final class constants$698 {
 
-    static final FunctionDescriptor g_file_info_get_creation_date_time$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$698() {}
+    static final FunctionDescriptor g_menu_link_iter_get_value$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_file_info_get_creation_date_time$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_get_creation_date_time",
-        constants$698.g_file_info_get_creation_date_time$FUNC
+    static final MethodHandle g_menu_link_iter_get_value$MH = RuntimeHelper.downcallHandle(
+        "g_menu_link_iter_get_value",
+        constants$698.g_menu_link_iter_get_value$FUNC
     );
-    static final FunctionDescriptor g_file_info_get_symlink_target$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_menu_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_menu_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_menu_get_type",
+        constants$698.g_menu_get_type$FUNC
+    );
+    static final FunctionDescriptor g_menu_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle g_menu_new$MH = RuntimeHelper.downcallHandle(
+        "g_menu_new",
+        constants$698.g_menu_new$FUNC
+    );
+    static final FunctionDescriptor g_menu_freeze$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_file_info_get_symlink_target$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_get_symlink_target",
-        constants$698.g_file_info_get_symlink_target$FUNC
+    static final MethodHandle g_menu_freeze$MH = RuntimeHelper.downcallHandle(
+        "g_menu_freeze",
+        constants$698.g_menu_freeze$FUNC
     );
-    static final FunctionDescriptor g_file_info_get_etag$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_menu_insert_item$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_file_info_get_etag$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_get_etag",
-        constants$698.g_file_info_get_etag$FUNC
+    static final MethodHandle g_menu_insert_item$MH = RuntimeHelper.downcallHandle(
+        "g_menu_insert_item",
+        constants$698.g_menu_insert_item$FUNC
     );
-    static final FunctionDescriptor g_file_info_get_sort_order$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_info_get_sort_order$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_get_sort_order",
-        constants$698.g_file_info_get_sort_order$FUNC
-    );
-    static final FunctionDescriptor g_file_info_set_attribute_mask$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_menu_prepend_item$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_file_info_set_attribute_mask$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_set_attribute_mask",
-        constants$698.g_file_info_set_attribute_mask$FUNC
-    );
-    static final FunctionDescriptor g_file_info_unset_attribute_mask$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_info_unset_attribute_mask$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_unset_attribute_mask",
-        constants$698.g_file_info_unset_attribute_mask$FUNC
+    static final MethodHandle g_menu_prepend_item$MH = RuntimeHelper.downcallHandle(
+        "g_menu_prepend_item",
+        constants$698.g_menu_prepend_item$FUNC
     );
 }
 

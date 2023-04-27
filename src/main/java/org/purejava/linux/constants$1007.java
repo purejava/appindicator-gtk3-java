@@ -7,55 +7,58 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1007 {
+final class constants$1007 {
 
-    static final FunctionDescriptor hb_face_get_upem$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1007() {}
+    static final FunctionDescriptor cairo_clip_preserve$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_face_get_upem$MH = RuntimeHelper.downcallHandle(
-        "hb_face_get_upem",
-        constants$1007.hb_face_get_upem$FUNC
+    static final MethodHandle cairo_clip_preserve$MH = RuntimeHelper.downcallHandle(
+        "cairo_clip_preserve",
+        constants$1007.cairo_clip_preserve$FUNC
     );
-    static final FunctionDescriptor hb_face_set_glyph_count$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor cairo_clip_extents$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle hb_face_set_glyph_count$MH = RuntimeHelper.downcallHandle(
-        "hb_face_set_glyph_count",
-        constants$1007.hb_face_set_glyph_count$FUNC
-    );
-    static final FunctionDescriptor hb_face_get_glyph_count$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_face_get_glyph_count$MH = RuntimeHelper.downcallHandle(
-        "hb_face_get_glyph_count",
-        constants$1007.hb_face_get_glyph_count$FUNC
-    );
-    static final FunctionDescriptor hb_face_get_table_tags$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_face_get_table_tags$MH = RuntimeHelper.downcallHandle(
-        "hb_face_get_table_tags",
-        constants$1007.hb_face_get_table_tags$FUNC
+    static final MethodHandle cairo_clip_extents$MH = RuntimeHelper.downcallHandle(
+        "cairo_clip_extents",
+        constants$1007.cairo_clip_extents$FUNC
     );
-    static final FunctionDescriptor hb_face_collect_unicodes$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor cairo_copy_clip_rectangle_list$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cairo_copy_clip_rectangle_list$MH = RuntimeHelper.downcallHandle(
+        "cairo_copy_clip_rectangle_list",
+        constants$1007.cairo_copy_clip_rectangle_list$FUNC
+    );
+    static final FunctionDescriptor cairo_rectangle_list_destroy$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cairo_rectangle_list_destroy$MH = RuntimeHelper.downcallHandle(
+        "cairo_rectangle_list_destroy",
+        constants$1007.cairo_rectangle_list_destroy$FUNC
+    );
+    static final FunctionDescriptor cairo_tag_begin$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_face_collect_unicodes$MH = RuntimeHelper.downcallHandle(
-        "hb_face_collect_unicodes",
-        constants$1007.hb_face_collect_unicodes$FUNC
+    static final MethodHandle cairo_tag_begin$MH = RuntimeHelper.downcallHandle(
+        "cairo_tag_begin",
+        constants$1007.cairo_tag_begin$FUNC
     );
-    static final FunctionDescriptor hb_face_collect_variation_selectors$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor cairo_tag_end$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_face_collect_variation_selectors$MH = RuntimeHelper.downcallHandle(
-        "hb_face_collect_variation_selectors",
-        constants$1007.hb_face_collect_variation_selectors$FUNC
+    static final MethodHandle cairo_tag_end$MH = RuntimeHelper.downcallHandle(
+        "cairo_tag_end",
+        constants$1007.cairo_tag_end$FUNC
     );
 }
 

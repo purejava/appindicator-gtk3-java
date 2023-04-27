@@ -7,49 +7,63 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1131 {
+final class constants$1131 {
 
-    static final FunctionDescriptor glib_autoptr_cleanup_PangoLayout$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1131() {}
+    static final FunctionDescriptor gdk_pixbuf_read_pixels$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_PangoLayout$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_PangoLayout",
-        constants$1131.glib_autoptr_cleanup_PangoLayout$FUNC
+    static final MethodHandle gdk_pixbuf_read_pixels$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_read_pixels",
+        constants$1131.gdk_pixbuf_read_pixels$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_PangoLayout$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gdk_pixbuf_read_pixel_bytes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_PangoLayout$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_PangoLayout",
-        constants$1131.glib_listautoptr_cleanup_PangoLayout$FUNC
+    static final MethodHandle gdk_pixbuf_read_pixel_bytes$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_read_pixel_bytes",
+        constants$1131.gdk_pixbuf_read_pixel_bytes$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_PangoLayout$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gdk_pixbuf_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gdk_pixbuf_new$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_new",
+        constants$1131.gdk_pixbuf_new$FUNC
+    );
+    static final FunctionDescriptor gdk_pixbuf_calculate_rowstride$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gdk_pixbuf_calculate_rowstride$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_calculate_rowstride",
+        constants$1131.gdk_pixbuf_calculate_rowstride$FUNC
+    );
+    static final FunctionDescriptor gdk_pixbuf_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_PangoLayout$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_PangoLayout",
-        constants$1131.glib_slistautoptr_cleanup_PangoLayout$FUNC
+    static final MethodHandle gdk_pixbuf_copy$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_copy",
+        constants$1131.gdk_pixbuf_copy$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_PangoLayout$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gdk_pixbuf_new_subpixbuf$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_PangoLayout$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_PangoLayout",
-        constants$1131.glib_queueautoptr_cleanup_PangoLayout$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_clear_PangoLayoutIter$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_autoptr_clear_PangoLayoutIter$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_PangoLayoutIter",
-        constants$1131.glib_autoptr_clear_PangoLayoutIter$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_cleanup_PangoLayoutIter$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_autoptr_cleanup_PangoLayoutIter$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_PangoLayoutIter",
-        constants$1131.glib_autoptr_cleanup_PangoLayoutIter$FUNC
+    static final MethodHandle gdk_pixbuf_new_subpixbuf$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_new_subpixbuf",
+        constants$1131.gdk_pixbuf_new_subpixbuf$FUNC
     );
 }
 

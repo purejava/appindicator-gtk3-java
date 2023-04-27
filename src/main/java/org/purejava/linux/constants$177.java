@@ -7,56 +7,56 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$177 {
+final class constants$177 {
 
-    static final FunctionDescriptor g_source_set_callback_indirect$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_source_set_callback_indirect$MH = RuntimeHelper.downcallHandle(
-        "g_source_set_callback_indirect",
-        constants$177.g_source_set_callback_indirect$FUNC
-    );
-    static final FunctionDescriptor g_source_add_poll$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$177() {}
+    static final FunctionDescriptor g_source_set_static_name$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_source_add_poll$MH = RuntimeHelper.downcallHandle(
-        "g_source_add_poll",
-        constants$177.g_source_add_poll$FUNC
+    static final MethodHandle g_source_set_static_name$MH = RuntimeHelper.downcallHandle(
+        "g_source_set_static_name",
+        constants$177.g_source_set_static_name$FUNC
     );
-    static final FunctionDescriptor g_source_remove_poll$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_source_get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_source_remove_poll$MH = RuntimeHelper.downcallHandle(
-        "g_source_remove_poll",
-        constants$177.g_source_remove_poll$FUNC
+    static final MethodHandle g_source_get_name$MH = RuntimeHelper.downcallHandle(
+        "g_source_get_name",
+        constants$177.g_source_get_name$FUNC
     );
-    static final FunctionDescriptor g_source_add_child_source$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_source_set_name_by_id$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_source_add_child_source$MH = RuntimeHelper.downcallHandle(
-        "g_source_add_child_source",
-        constants$177.g_source_add_child_source$FUNC
+    static final MethodHandle g_source_set_name_by_id$MH = RuntimeHelper.downcallHandle(
+        "g_source_set_name_by_id",
+        constants$177.g_source_set_name_by_id$FUNC
     );
-    static final FunctionDescriptor g_source_remove_child_source$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_source_set_ready_time$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle g_source_set_ready_time$MH = RuntimeHelper.downcallHandle(
+        "g_source_set_ready_time",
+        constants$177.g_source_set_ready_time$FUNC
+    );
+    static final FunctionDescriptor g_source_get_ready_time$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_source_remove_child_source$MH = RuntimeHelper.downcallHandle(
-        "g_source_remove_child_source",
-        constants$177.g_source_remove_child_source$FUNC
+    static final MethodHandle g_source_get_ready_time$MH = RuntimeHelper.downcallHandle(
+        "g_source_get_ready_time",
+        constants$177.g_source_get_ready_time$FUNC
     );
-    static final FunctionDescriptor g_source_get_current_time$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_source_add_unix_fd$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_source_get_current_time$MH = RuntimeHelper.downcallHandle(
-        "g_source_get_current_time",
-        constants$177.g_source_get_current_time$FUNC
+    static final MethodHandle g_source_add_unix_fd$MH = RuntimeHelper.downcallHandle(
+        "g_source_add_unix_fd",
+        constants$177.g_source_add_unix_fd$FUNC
     );
 }
 

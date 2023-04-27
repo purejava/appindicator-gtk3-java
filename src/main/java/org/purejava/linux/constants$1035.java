@@ -7,69 +7,59 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1035 {
+final class constants$1035 {
 
-    static final FunctionDescriptor hb_buffer_add_utf16$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1035() {}
+    static final FunctionDescriptor cairo_surface_set_device_offset$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle cairo_surface_set_device_offset$MH = RuntimeHelper.downcallHandle(
+        "cairo_surface_set_device_offset",
+        constants$1035.cairo_surface_set_device_offset$FUNC
+    );
+    static final FunctionDescriptor cairo_surface_get_device_offset$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_buffer_add_utf16$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_add_utf16",
-        constants$1035.hb_buffer_add_utf16$FUNC
+    static final MethodHandle cairo_surface_get_device_offset$MH = RuntimeHelper.downcallHandle(
+        "cairo_surface_get_device_offset",
+        constants$1035.cairo_surface_get_device_offset$FUNC
     );
-    static final FunctionDescriptor hb_buffer_add_utf32$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor cairo_surface_set_fallback_resolution$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle cairo_surface_set_fallback_resolution$MH = RuntimeHelper.downcallHandle(
+        "cairo_surface_set_fallback_resolution",
+        constants$1035.cairo_surface_set_fallback_resolution$FUNC
+    );
+    static final FunctionDescriptor cairo_surface_get_fallback_resolution$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_buffer_add_utf32$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_add_utf32",
-        constants$1035.hb_buffer_add_utf32$FUNC
+    static final MethodHandle cairo_surface_get_fallback_resolution$MH = RuntimeHelper.downcallHandle(
+        "cairo_surface_get_fallback_resolution",
+        constants$1035.cairo_surface_get_fallback_resolution$FUNC
     );
-    static final FunctionDescriptor hb_buffer_add_latin1$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor cairo_surface_copy_page$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_buffer_add_latin1$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_add_latin1",
-        constants$1035.hb_buffer_add_latin1$FUNC
+    static final MethodHandle cairo_surface_copy_page$MH = RuntimeHelper.downcallHandle(
+        "cairo_surface_copy_page",
+        constants$1035.cairo_surface_copy_page$FUNC
     );
-    static final FunctionDescriptor hb_buffer_add_codepoints$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor cairo_surface_show_page$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_buffer_add_codepoints$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_add_codepoints",
-        constants$1035.hb_buffer_add_codepoints$FUNC
-    );
-    static final FunctionDescriptor hb_buffer_append$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle hb_buffer_append$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_append",
-        constants$1035.hb_buffer_append$FUNC
-    );
-    static final FunctionDescriptor hb_buffer_set_length$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle hb_buffer_set_length$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_set_length",
-        constants$1035.hb_buffer_set_length$FUNC
+    static final MethodHandle cairo_surface_show_page$MH = RuntimeHelper.downcallHandle(
+        "cairo_surface_show_page",
+        constants$1035.cairo_surface_show_page$FUNC
     );
 }
 

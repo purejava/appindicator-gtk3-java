@@ -7,52 +7,48 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1806 {
+final class constants$1806 {
 
-    static final FunctionDescriptor gtk_gl_area_get_has_depth_buffer$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1806() {}
+    static final FunctionDescriptor gtk_separator_tool_item_get_draw$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_gl_area_get_has_depth_buffer$MH = RuntimeHelper.downcallHandle(
-        "gtk_gl_area_get_has_depth_buffer",
-        constants$1806.gtk_gl_area_get_has_depth_buffer$FUNC
+    static final MethodHandle gtk_separator_tool_item_get_draw$MH = RuntimeHelper.downcallHandle(
+        "gtk_separator_tool_item_get_draw",
+        constants$1806.gtk_separator_tool_item_get_draw$FUNC
     );
-    static final FunctionDescriptor gtk_gl_area_set_has_depth_buffer$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_separator_tool_item_set_draw$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_gl_area_set_has_depth_buffer$MH = RuntimeHelper.downcallHandle(
-        "gtk_gl_area_set_has_depth_buffer",
-        constants$1806.gtk_gl_area_set_has_depth_buffer$FUNC
+    static final MethodHandle gtk_separator_tool_item_set_draw$MH = RuntimeHelper.downcallHandle(
+        "gtk_separator_tool_item_set_draw",
+        constants$1806.gtk_separator_tool_item_set_draw$FUNC
     );
-    static final FunctionDescriptor gtk_gl_area_get_has_stencil_buffer$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_settings_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_settings_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_settings_get_type",
+        constants$1806.gtk_settings_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_settings_get_default$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_settings_get_default$MH = RuntimeHelper.downcallHandle(
+        "gtk_settings_get_default",
+        constants$1806.gtk_settings_get_default$FUNC
+    );
+    static final FunctionDescriptor gtk_settings_get_for_screen$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_gl_area_get_has_stencil_buffer$MH = RuntimeHelper.downcallHandle(
-        "gtk_gl_area_get_has_stencil_buffer",
-        constants$1806.gtk_gl_area_get_has_stencil_buffer$FUNC
+    static final MethodHandle gtk_settings_get_for_screen$MH = RuntimeHelper.downcallHandle(
+        "gtk_settings_get_for_screen",
+        constants$1806.gtk_settings_get_for_screen$FUNC
     );
-    static final FunctionDescriptor gtk_gl_area_set_has_stencil_buffer$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_gl_area_set_has_stencil_buffer$MH = RuntimeHelper.downcallHandle(
-        "gtk_gl_area_set_has_stencil_buffer",
-        constants$1806.gtk_gl_area_set_has_stencil_buffer$FUNC
-    );
-    static final FunctionDescriptor gtk_gl_area_get_auto_render$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_settings_install_property$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_gl_area_get_auto_render$MH = RuntimeHelper.downcallHandle(
-        "gtk_gl_area_get_auto_render",
-        constants$1806.gtk_gl_area_get_auto_render$FUNC
-    );
-    static final FunctionDescriptor gtk_gl_area_set_auto_render$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_gl_area_set_auto_render$MH = RuntimeHelper.downcallHandle(
-        "gtk_gl_area_set_auto_render",
-        constants$1806.gtk_gl_area_set_auto_render$FUNC
+    static final MethodHandle gtk_settings_install_property$MH = RuntimeHelper.downcallHandle(
+        "gtk_settings_install_property",
+        constants$1806.gtk_settings_install_property$FUNC
     );
 }
 

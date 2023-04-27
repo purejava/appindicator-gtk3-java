@@ -7,46 +7,57 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1568 {
+final class constants$1568 {
 
-    static final FunctionDescriptor GtkTreeIterCompareFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1568() {}
+    static final FunctionDescriptor gtk_file_filter_get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_file_filter_get_name$MH = RuntimeHelper.downcallHandle(
+        "gtk_file_filter_get_name",
+        constants$1568.gtk_file_filter_get_name$FUNC
+    );
+    static final FunctionDescriptor gtk_file_filter_add_mime_type$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GtkTreeIterCompareFunc$MH = RuntimeHelper.downcallHandle(
-        constants$1568.GtkTreeIterCompareFunc$FUNC
+    static final MethodHandle gtk_file_filter_add_mime_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_file_filter_add_mime_type",
+        constants$1568.gtk_file_filter_add_mime_type$FUNC
     );
-    static final FunctionDescriptor gtk_tree_sortable_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_tree_sortable_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_sortable_get_type",
-        constants$1568.gtk_tree_sortable_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_sortable_sort_column_changed$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_sortable_sort_column_changed$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_sortable_sort_column_changed",
-        constants$1568.gtk_tree_sortable_sort_column_changed$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_sortable_get_sort_column_id$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_file_filter_add_pattern$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_tree_sortable_get_sort_column_id$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_sortable_get_sort_column_id",
-        constants$1568.gtk_tree_sortable_get_sort_column_id$FUNC
+    static final MethodHandle gtk_file_filter_add_pattern$MH = RuntimeHelper.downcallHandle(
+        "gtk_file_filter_add_pattern",
+        constants$1568.gtk_file_filter_add_pattern$FUNC
     );
-    static final FunctionDescriptor gtk_tree_sortable_set_sort_column_id$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_file_filter_add_pixbuf_formats$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_file_filter_add_pixbuf_formats$MH = RuntimeHelper.downcallHandle(
+        "gtk_file_filter_add_pixbuf_formats",
+        constants$1568.gtk_file_filter_add_pixbuf_formats$FUNC
+    );
+    static final FunctionDescriptor gtk_file_filter_add_custom$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_tree_sortable_set_sort_column_id$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_sortable_set_sort_column_id",
-        constants$1568.gtk_tree_sortable_set_sort_column_id$FUNC
+    static final MethodHandle gtk_file_filter_add_custom$MH = RuntimeHelper.downcallHandle(
+        "gtk_file_filter_add_custom",
+        constants$1568.gtk_file_filter_add_custom$FUNC
+    );
+    static final FunctionDescriptor gtk_file_filter_get_needed$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_file_filter_get_needed$MH = RuntimeHelper.downcallHandle(
+        "gtk_file_filter_get_needed",
+        constants$1568.gtk_file_filter_get_needed$FUNC
     );
 }
 

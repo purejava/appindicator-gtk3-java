@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GdkPixbufLoaderClass extends _GdkPixbufLoaderClass {
+/**
+ * {@snippet :
+ * typedef struct _GdkPixbufLoaderClass GdkPixbufLoaderClass;
+ * }
+ */
+public final class GdkPixbufLoaderClass extends _GdkPixbufLoaderClass {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GdkPixbufLoaderClass() {}
 }
 
 

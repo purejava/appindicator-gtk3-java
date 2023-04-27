@@ -7,50 +7,39 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1196 {
+final class constants$1196 {
 
-    static final FunctionDescriptor cairo_image_surface_get_format$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1196() {}
+    static final FunctionDescriptor atk_get_micro_version$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
+    static final MethodHandle atk_get_micro_version$MH = RuntimeHelper.downcallHandle(
+        "atk_get_micro_version",
+        constants$1196.atk_get_micro_version$FUNC
     );
-    static final MethodHandle cairo_image_surface_get_format$MH = RuntimeHelper.downcallHandle(
-        "cairo_image_surface_get_format",
-        constants$1196.cairo_image_surface_get_format$FUNC
+    static final FunctionDescriptor atk_get_binary_age$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
+    static final MethodHandle atk_get_binary_age$MH = RuntimeHelper.downcallHandle(
+        "atk_get_binary_age",
+        constants$1196.atk_get_binary_age$FUNC
     );
-    static final FunctionDescriptor cairo_image_surface_get_width$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor atk_get_interface_age$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
+    static final MethodHandle atk_get_interface_age$MH = RuntimeHelper.downcallHandle(
+        "atk_get_interface_age",
+        constants$1196.atk_get_interface_age$FUNC
     );
-    static final MethodHandle cairo_image_surface_get_width$MH = RuntimeHelper.downcallHandle(
-        "cairo_image_surface_get_width",
-        constants$1196.cairo_image_surface_get_width$FUNC
+    static final FunctionDescriptor atk_scroll_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle atk_scroll_type_get_type$MH = RuntimeHelper.downcallHandle(
+        "atk_scroll_type_get_type",
+        constants$1196.atk_scroll_type_get_type$FUNC
     );
-    static final FunctionDescriptor cairo_image_surface_get_height$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor atk_hyperlink_state_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle atk_hyperlink_state_flags_get_type$MH = RuntimeHelper.downcallHandle(
+        "atk_hyperlink_state_flags_get_type",
+        constants$1196.atk_hyperlink_state_flags_get_type$FUNC
     );
-    static final MethodHandle cairo_image_surface_get_height$MH = RuntimeHelper.downcallHandle(
-        "cairo_image_surface_get_height",
-        constants$1196.cairo_image_surface_get_height$FUNC
-    );
-    static final FunctionDescriptor cairo_image_surface_get_stride$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_image_surface_get_stride$MH = RuntimeHelper.downcallHandle(
-        "cairo_image_surface_get_stride",
-        constants$1196.cairo_image_surface_get_stride$FUNC
-    );
-    static final FunctionDescriptor cairo_image_surface_create_from_png$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_image_surface_create_from_png$MH = RuntimeHelper.downcallHandle(
-        "cairo_image_surface_create_from_png",
-        constants$1196.cairo_image_surface_create_from_png$FUNC
-    );
-    static final FunctionDescriptor cairo_image_surface_create_from_png_stream$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_image_surface_create_from_png_stream$MH = RuntimeHelper.downcallHandle(
-        "cairo_image_surface_create_from_png_stream",
-        constants$1196.cairo_image_surface_create_from_png_stream$FUNC
+    static final FunctionDescriptor atk_role_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle atk_role_get_type$MH = RuntimeHelper.downcallHandle(
+        "atk_role_get_type",
+        constants$1196.atk_role_get_type$FUNC
     );
 }
 

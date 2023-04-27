@@ -7,57 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$528 {
+final class constants$528 {
 
-    static final FunctionDescriptor g_app_info_set_as_default_for_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$528() {}
+    static final FunctionDescriptor getegid$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
+    static final MethodHandle getegid$MH = RuntimeHelper.downcallHandle(
+        "getegid",
+        constants$528.getegid$FUNC
+    );
+    static final FunctionDescriptor getgroups$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_app_info_set_as_default_for_type$MH = RuntimeHelper.downcallHandle(
-        "g_app_info_set_as_default_for_type",
-        constants$528.g_app_info_set_as_default_for_type$FUNC
+    static final MethodHandle getgroups$MH = RuntimeHelper.downcallHandle(
+        "getgroups",
+        constants$528.getgroups$FUNC
     );
-    static final FunctionDescriptor g_app_info_set_as_default_for_extension$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor setuid$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_app_info_set_as_default_for_extension$MH = RuntimeHelper.downcallHandle(
-        "g_app_info_set_as_default_for_extension",
-        constants$528.g_app_info_set_as_default_for_extension$FUNC
+    static final MethodHandle setuid$MH = RuntimeHelper.downcallHandle(
+        "setuid",
+        constants$528.setuid$FUNC
     );
-    static final FunctionDescriptor g_app_info_add_supports_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor setreuid$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_app_info_add_supports_type$MH = RuntimeHelper.downcallHandle(
-        "g_app_info_add_supports_type",
-        constants$528.g_app_info_add_supports_type$FUNC
+    static final MethodHandle setreuid$MH = RuntimeHelper.downcallHandle(
+        "setreuid",
+        constants$528.setreuid$FUNC
     );
-    static final FunctionDescriptor g_app_info_can_remove_supports_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor seteuid$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_app_info_can_remove_supports_type$MH = RuntimeHelper.downcallHandle(
-        "g_app_info_can_remove_supports_type",
-        constants$528.g_app_info_can_remove_supports_type$FUNC
+    static final MethodHandle seteuid$MH = RuntimeHelper.downcallHandle(
+        "seteuid",
+        constants$528.seteuid$FUNC
     );
-    static final FunctionDescriptor g_app_info_remove_supports_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor setgid$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_app_info_remove_supports_type$MH = RuntimeHelper.downcallHandle(
-        "g_app_info_remove_supports_type",
-        constants$528.g_app_info_remove_supports_type$FUNC
-    );
-    static final FunctionDescriptor g_app_info_get_supported_types$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_app_info_get_supported_types$MH = RuntimeHelper.downcallHandle(
-        "g_app_info_get_supported_types",
-        constants$528.g_app_info_get_supported_types$FUNC
+    static final MethodHandle setgid$MH = RuntimeHelper.downcallHandle(
+        "setgid",
+        constants$528.setgid$FUNC
     );
 }
 

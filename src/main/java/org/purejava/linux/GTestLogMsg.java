@@ -7,9 +7,20 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct {
+ *     GTestLogType log_type;
+ *     guint n_strings;
+ *     gchar** strings;
+ *     guint n_nums;
+ *     long double* nums;
+ * };
+ * }
+ */
 public class GTestLogMsg {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_INT$LAYOUT.withName("log_type"),
         Constants$root.C_INT$LAYOUT.withName("n_strings"),
         Constants$root.C_POINTER$LAYOUT.withName("strings"),
@@ -24,10 +35,22 @@ public class GTestLogMsg {
     public static VarHandle log_type$VH() {
         return GTestLogMsg.log_type$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GTestLogType log_type;
+     * }
+     */
     public static int log_type$get(MemorySegment seg) {
         return (int)GTestLogMsg.log_type$VH.get(seg);
     }
-    public static void log_type$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GTestLogType log_type;
+     * }
+     */
+    public static void log_type$set(MemorySegment seg, int x) {
         GTestLogMsg.log_type$VH.set(seg, x);
     }
     public static int log_type$get(MemorySegment seg, long index) {
@@ -40,10 +63,22 @@ public class GTestLogMsg {
     public static VarHandle n_strings$VH() {
         return GTestLogMsg.n_strings$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * guint n_strings;
+     * }
+     */
     public static int n_strings$get(MemorySegment seg) {
         return (int)GTestLogMsg.n_strings$VH.get(seg);
     }
-    public static void n_strings$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * guint n_strings;
+     * }
+     */
+    public static void n_strings$set(MemorySegment seg, int x) {
         GTestLogMsg.n_strings$VH.set(seg, x);
     }
     public static int n_strings$get(MemorySegment seg, long index) {
@@ -56,26 +91,50 @@ public class GTestLogMsg {
     public static VarHandle strings$VH() {
         return GTestLogMsg.strings$VH;
     }
-    public static MemoryAddress strings$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)GTestLogMsg.strings$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gchar** strings;
+     * }
+     */
+    public static MemorySegment strings$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)GTestLogMsg.strings$VH.get(seg);
     }
-    public static void strings$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gchar** strings;
+     * }
+     */
+    public static void strings$set(MemorySegment seg, MemorySegment x) {
         GTestLogMsg.strings$VH.set(seg, x);
     }
-    public static MemoryAddress strings$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)GTestLogMsg.strings$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment strings$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)GTestLogMsg.strings$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void strings$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void strings$set(MemorySegment seg, long index, MemorySegment x) {
         GTestLogMsg.strings$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle n_nums$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("n_nums"));
     public static VarHandle n_nums$VH() {
         return GTestLogMsg.n_nums$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * guint n_nums;
+     * }
+     */
     public static int n_nums$get(MemorySegment seg) {
         return (int)GTestLogMsg.n_nums$VH.get(seg);
     }
-    public static void n_nums$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * guint n_nums;
+     * }
+     */
+    public static void n_nums$set(MemorySegment seg, int x) {
         GTestLogMsg.n_nums$VH.set(seg, x);
     }
     public static int n_nums$get(MemorySegment seg, long index) {
@@ -88,24 +147,36 @@ public class GTestLogMsg {
     public static VarHandle nums$VH() {
         return GTestLogMsg.nums$VH;
     }
-    public static MemoryAddress nums$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)GTestLogMsg.nums$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * long double* nums;
+     * }
+     */
+    public static MemorySegment nums$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)GTestLogMsg.nums$VH.get(seg);
     }
-    public static void nums$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * long double* nums;
+     * }
+     */
+    public static void nums$set(MemorySegment seg, MemorySegment x) {
         GTestLogMsg.nums$VH.set(seg, x);
     }
-    public static MemoryAddress nums$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)GTestLogMsg.nums$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment nums$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)GTestLogMsg.nums$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void nums$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void nums$set(MemorySegment seg, long index, MemorySegment x) {
         GTestLogMsg.nums$VH.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

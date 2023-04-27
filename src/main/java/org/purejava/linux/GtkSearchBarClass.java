@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkSearchBarClass extends _GtkSearchBarClass {
+/**
+ * {@snippet :
+ * typedef struct _GtkSearchBarClass GtkSearchBarClass;
+ * }
+ */
+public final class GtkSearchBarClass extends _GtkSearchBarClass {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkSearchBarClass() {}
 }
 
 

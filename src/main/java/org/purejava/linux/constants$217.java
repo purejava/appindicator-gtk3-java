@@ -7,57 +7,68 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$217 {
+final class constants$217 {
 
-    static final FunctionDescriptor g_markup_parse_context_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_markup_parse_context_new$MH = RuntimeHelper.downcallHandle(
-        "g_markup_parse_context_new",
-        constants$217.g_markup_parse_context_new$FUNC
-    );
-    static final FunctionDescriptor g_markup_parse_context_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_markup_parse_context_ref$MH = RuntimeHelper.downcallHandle(
-        "g_markup_parse_context_ref",
-        constants$217.g_markup_parse_context_ref$FUNC
-    );
-    static final FunctionDescriptor g_markup_parse_context_unref$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_markup_parse_context_unref$MH = RuntimeHelper.downcallHandle(
-        "g_markup_parse_context_unref",
-        constants$217.g_markup_parse_context_unref$FUNC
-    );
-    static final FunctionDescriptor g_markup_parse_context_free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_markup_parse_context_free$MH = RuntimeHelper.downcallHandle(
-        "g_markup_parse_context_free",
-        constants$217.g_markup_parse_context_free$FUNC
-    );
-    static final FunctionDescriptor g_markup_parse_context_parse$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$217() {}
+    static final FunctionDescriptor g_io_channel_read_chars$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_markup_parse_context_parse$MH = RuntimeHelper.downcallHandle(
-        "g_markup_parse_context_parse",
-        constants$217.g_markup_parse_context_parse$FUNC
+    static final MethodHandle g_io_channel_read_chars$MH = RuntimeHelper.downcallHandle(
+        "g_io_channel_read_chars",
+        constants$217.g_io_channel_read_chars$FUNC
     );
-    static final FunctionDescriptor g_markup_parse_context_push$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_io_channel_read_unichar$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_markup_parse_context_push$MH = RuntimeHelper.downcallHandle(
-        "g_markup_parse_context_push",
-        constants$217.g_markup_parse_context_push$FUNC
+    static final MethodHandle g_io_channel_read_unichar$MH = RuntimeHelper.downcallHandle(
+        "g_io_channel_read_unichar",
+        constants$217.g_io_channel_read_unichar$FUNC
+    );
+    static final FunctionDescriptor g_io_channel_write_chars$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_io_channel_write_chars$MH = RuntimeHelper.downcallHandle(
+        "g_io_channel_write_chars",
+        constants$217.g_io_channel_write_chars$FUNC
+    );
+    static final FunctionDescriptor g_io_channel_write_unichar$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_io_channel_write_unichar$MH = RuntimeHelper.downcallHandle(
+        "g_io_channel_write_unichar",
+        constants$217.g_io_channel_write_unichar$FUNC
+    );
+    static final FunctionDescriptor g_io_channel_seek_position$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_io_channel_seek_position$MH = RuntimeHelper.downcallHandle(
+        "g_io_channel_seek_position",
+        constants$217.g_io_channel_seek_position$FUNC
+    );
+    static final FunctionDescriptor g_io_channel_new_file$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_io_channel_new_file$MH = RuntimeHelper.downcallHandle(
+        "g_io_channel_new_file",
+        constants$217.g_io_channel_new_file$FUNC
     );
 }
 

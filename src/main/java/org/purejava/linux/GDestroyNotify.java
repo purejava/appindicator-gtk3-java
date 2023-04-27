@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * void (*GDestroyNotify)(void* data);
+ * }
+ */
 public interface GDestroyNotify {
 
-    void apply(java.lang.foreign.MemoryAddress data);
-    static MemorySegment allocate(GDestroyNotify fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GDestroyNotify.class, fi, constants$7.GDestroyNotify$FUNC, session);
+    void apply(java.lang.foreign.MemorySegment display);
+    static MemorySegment allocate(GDestroyNotify fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$7.GDestroyNotify_UP$MH, fi, constants$7.GDestroyNotify$FUNC, scope);
     }
-    static GDestroyNotify ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _data) -> {
+    static GDestroyNotify ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _display) -> {
             try {
-                constants$7.GDestroyNotify$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_data);
+                constants$7.GDestroyNotify_DOWN$MH.invokeExact(symbol, _display);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

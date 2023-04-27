@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class AtkDocumentIface extends _AtkDocumentIface {
+/**
+ * {@snippet :
+ * typedef struct _AtkDocumentIface AtkDocumentIface;
+ * }
+ */
+public final class AtkDocumentIface extends _AtkDocumentIface {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private AtkDocumentIface() {}
 }
 
 

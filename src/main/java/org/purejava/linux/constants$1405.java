@@ -7,46 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1405 {
+final class constants$1405 {
 
-    static final FunctionDescriptor atk_plug_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle atk_plug_new$MH = RuntimeHelper.downcallHandle(
-        "atk_plug_new",
-        constants$1405.atk_plug_new$FUNC
-    );
-    static final FunctionDescriptor atk_plug_set_child$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1405() {}
+    static final FunctionDescriptor gtk_text_iter_starts_word$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_plug_set_child$MH = RuntimeHelper.downcallHandle(
-        "atk_plug_set_child",
-        constants$1405.atk_plug_set_child$FUNC
+    static final MethodHandle gtk_text_iter_starts_word$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_starts_word",
+        constants$1405.gtk_text_iter_starts_word$FUNC
     );
-    static final FunctionDescriptor atk_plug_get_id$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_text_iter_ends_word$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_plug_get_id$MH = RuntimeHelper.downcallHandle(
-        "atk_plug_get_id",
-        constants$1405.atk_plug_get_id$FUNC
+    static final MethodHandle gtk_text_iter_ends_word$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_ends_word",
+        constants$1405.gtk_text_iter_ends_word$FUNC
     );
-    static final FunctionDescriptor atk_range_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle atk_range_get_type$MH = RuntimeHelper.downcallHandle(
-        "atk_range_get_type",
-        constants$1405.atk_range_get_type$FUNC
-    );
-    static final FunctionDescriptor atk_range_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_text_iter_inside_word$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_range_copy$MH = RuntimeHelper.downcallHandle(
-        "atk_range_copy",
-        constants$1405.atk_range_copy$FUNC
+    static final MethodHandle gtk_text_iter_inside_word$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_inside_word",
+        constants$1405.gtk_text_iter_inside_word$FUNC
     );
-    static final FunctionDescriptor atk_range_free$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_text_iter_starts_sentence$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_range_free$MH = RuntimeHelper.downcallHandle(
-        "atk_range_free",
-        constants$1405.atk_range_free$FUNC
+    static final MethodHandle gtk_text_iter_starts_sentence$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_starts_sentence",
+        constants$1405.gtk_text_iter_starts_sentence$FUNC
+    );
+    static final FunctionDescriptor gtk_text_iter_ends_sentence$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_text_iter_ends_sentence$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_ends_sentence",
+        constants$1405.gtk_text_iter_ends_sentence$FUNC
+    );
+    static final FunctionDescriptor gtk_text_iter_inside_sentence$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_text_iter_inside_sentence$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_inside_sentence",
+        constants$1405.gtk_text_iter_inside_sentence$FUNC
     );
 }
 

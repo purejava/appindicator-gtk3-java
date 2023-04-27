@@ -7,53 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1765 {
+final class constants$1765 {
 
-    static final FunctionDescriptor gtk_file_chooser_unselect_uri$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1765() {}
+    static final FunctionDescriptor gtk_radio_tool_button_get_group$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_radio_tool_button_get_group$MH = RuntimeHelper.downcallHandle(
+        "gtk_radio_tool_button_get_group",
+        constants$1765.gtk_radio_tool_button_get_group$FUNC
+    );
+    static final FunctionDescriptor gtk_radio_tool_button_set_group$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_file_chooser_unselect_uri$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_unselect_uri",
-        constants$1765.gtk_file_chooser_unselect_uri$FUNC
+    static final MethodHandle gtk_radio_tool_button_set_group$MH = RuntimeHelper.downcallHandle(
+        "gtk_radio_tool_button_set_group",
+        constants$1765.gtk_radio_tool_button_set_group$FUNC
     );
-    static final FunctionDescriptor gtk_file_chooser_get_uris$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gtk_range_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_range_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_range_get_type",
+        constants$1765.gtk_range_get_type$FUNC
     );
-    static final MethodHandle gtk_file_chooser_get_uris$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_get_uris",
-        constants$1765.gtk_file_chooser_get_uris$FUNC
-    );
-    static final FunctionDescriptor gtk_file_chooser_set_current_folder_uri$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_range_set_adjustment$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_file_chooser_set_current_folder_uri$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_set_current_folder_uri",
-        constants$1765.gtk_file_chooser_set_current_folder_uri$FUNC
+    static final MethodHandle gtk_range_set_adjustment$MH = RuntimeHelper.downcallHandle(
+        "gtk_range_set_adjustment",
+        constants$1765.gtk_range_set_adjustment$FUNC
     );
-    static final FunctionDescriptor gtk_file_chooser_get_current_folder_uri$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_range_get_adjustment$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_file_chooser_get_current_folder_uri$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_get_current_folder_uri",
-        constants$1765.gtk_file_chooser_get_current_folder_uri$FUNC
+    static final MethodHandle gtk_range_get_adjustment$MH = RuntimeHelper.downcallHandle(
+        "gtk_range_get_adjustment",
+        constants$1765.gtk_range_get_adjustment$FUNC
     );
-    static final FunctionDescriptor gtk_file_chooser_get_file$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_file_chooser_get_file$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_get_file",
-        constants$1765.gtk_file_chooser_get_file$FUNC
-    );
-    static final FunctionDescriptor gtk_file_chooser_set_file$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_range_set_inverted$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_file_chooser_set_file$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_set_file",
-        constants$1765.gtk_file_chooser_set_file$FUNC
+    static final MethodHandle gtk_range_set_inverted$MH = RuntimeHelper.downcallHandle(
+        "gtk_range_set_inverted",
+        constants$1765.gtk_range_set_inverted$FUNC
     );
 }
 

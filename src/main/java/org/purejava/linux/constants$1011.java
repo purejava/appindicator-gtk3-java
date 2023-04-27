@@ -7,47 +7,57 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1011 {
+final class constants$1011 {
 
-    static final FunctionDescriptor hb_font_get_nominal_glyph_func_t$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1011() {}
+    static final FunctionDescriptor cairo_font_options_get_hint_metrics$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cairo_font_options_get_hint_metrics$MH = RuntimeHelper.downcallHandle(
+        "cairo_font_options_get_hint_metrics",
+        constants$1011.cairo_font_options_get_hint_metrics$FUNC
+    );
+    static final FunctionDescriptor cairo_font_options_get_variations$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cairo_font_options_get_variations$MH = RuntimeHelper.downcallHandle(
+        "cairo_font_options_get_variations",
+        constants$1011.cairo_font_options_get_variations$FUNC
+    );
+    static final FunctionDescriptor cairo_font_options_set_variations$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_font_get_nominal_glyph_func_t$MH = RuntimeHelper.downcallHandle(
-        constants$1011.hb_font_get_nominal_glyph_func_t$FUNC
+    static final MethodHandle cairo_font_options_set_variations$MH = RuntimeHelper.downcallHandle(
+        "cairo_font_options_set_variations",
+        constants$1011.cairo_font_options_set_variations$FUNC
     );
-    static final FunctionDescriptor hb_font_get_variation_glyph_func_t$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor cairo_select_font_face$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle cairo_select_font_face$MH = RuntimeHelper.downcallHandle(
+        "cairo_select_font_face",
+        constants$1011.cairo_select_font_face$FUNC
+    );
+    static final FunctionDescriptor cairo_set_font_size$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle cairo_set_font_size$MH = RuntimeHelper.downcallHandle(
+        "cairo_set_font_size",
+        constants$1011.cairo_set_font_size$FUNC
+    );
+    static final FunctionDescriptor cairo_set_font_matrix$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_font_get_variation_glyph_func_t$MH = RuntimeHelper.downcallHandle(
-        constants$1011.hb_font_get_variation_glyph_func_t$FUNC
-    );
-    static final FunctionDescriptor hb_font_get_nominal_glyphs_func_t$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_font_get_nominal_glyphs_func_t$MH = RuntimeHelper.downcallHandle(
-        constants$1011.hb_font_get_nominal_glyphs_func_t$FUNC
-    );
-    static final FunctionDescriptor hb_font_get_glyph_advance_func_t$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle cairo_set_font_matrix$MH = RuntimeHelper.downcallHandle(
+        "cairo_set_font_matrix",
+        constants$1011.cairo_set_font_matrix$FUNC
     );
 }
 

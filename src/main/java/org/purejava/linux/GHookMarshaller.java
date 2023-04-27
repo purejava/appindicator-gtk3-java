@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * void (*GHookMarshaller)(struct _GHook* hook,void* marshal_data);
+ * }
+ */
 public interface GHookMarshaller {
 
-    void apply(java.lang.foreign.MemoryAddress hook, java.lang.foreign.MemoryAddress marshal_data);
-    static MemorySegment allocate(GHookMarshaller fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GHookMarshaller.class, fi, constants$153.GHookMarshaller$FUNC, session);
+    void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+    static MemorySegment allocate(GHookMarshaller fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$154.GHookMarshaller_UP$MH, fi, constants$154.GHookMarshaller$FUNC, scope);
     }
-    static GHookMarshaller ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _hook, java.lang.foreign.MemoryAddress _marshal_data) -> {
+    static GHookMarshaller ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
             try {
-                constants$153.GHookMarshaller$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_hook, (java.lang.foreign.Addressable)_marshal_data);
+                constants$155.GHookMarshaller_DOWN$MH.invokeExact(symbol, _tag, _data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

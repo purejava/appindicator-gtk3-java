@@ -7,49 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$958 {
+final class constants$958 {
 
-    static final FunctionDescriptor glib_autoptr_clear_GSimpleActionGroup$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$958() {}
+    static final FunctionDescriptor pango_layout_set_font_description$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GSimpleActionGroup$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GSimpleActionGroup",
-        constants$958.glib_autoptr_clear_GSimpleActionGroup$FUNC
+    static final MethodHandle pango_layout_set_font_description$MH = RuntimeHelper.downcallHandle(
+        "pango_layout_set_font_description",
+        constants$958.pango_layout_set_font_description$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GSimpleActionGroup$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_layout_get_font_description$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GSimpleActionGroup$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GSimpleActionGroup",
-        constants$958.glib_autoptr_cleanup_GSimpleActionGroup$FUNC
+    static final MethodHandle pango_layout_get_font_description$MH = RuntimeHelper.downcallHandle(
+        "pango_layout_get_font_description",
+        constants$958.pango_layout_get_font_description$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GSimpleActionGroup$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_layout_set_width$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle pango_layout_set_width$MH = RuntimeHelper.downcallHandle(
+        "pango_layout_set_width",
+        constants$958.pango_layout_set_width$FUNC
+    );
+    static final FunctionDescriptor pango_layout_get_width$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GSimpleActionGroup$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GSimpleActionGroup",
-        constants$958.glib_listautoptr_cleanup_GSimpleActionGroup$FUNC
+    static final MethodHandle pango_layout_get_width$MH = RuntimeHelper.downcallHandle(
+        "pango_layout_get_width",
+        constants$958.pango_layout_get_width$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GSimpleActionGroup$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_layout_set_height$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle pango_layout_set_height$MH = RuntimeHelper.downcallHandle(
+        "pango_layout_set_height",
+        constants$958.pango_layout_set_height$FUNC
+    );
+    static final FunctionDescriptor pango_layout_get_height$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GSimpleActionGroup$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GSimpleActionGroup",
-        constants$958.glib_slistautoptr_cleanup_GSimpleActionGroup$FUNC
-    );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GSimpleActionGroup$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_queueautoptr_cleanup_GSimpleActionGroup$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GSimpleActionGroup",
-        constants$958.glib_queueautoptr_cleanup_GSimpleActionGroup$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_clear_GSimpleAction$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_autoptr_clear_GSimpleAction$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GSimpleAction",
-        constants$958.glib_autoptr_clear_GSimpleAction$FUNC
+    static final MethodHandle pango_layout_get_height$MH = RuntimeHelper.downcallHandle(
+        "pango_layout_get_height",
+        constants$958.pango_layout_get_height$FUNC
     );
 }
 

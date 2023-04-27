@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GMemoryMonitorInterface extends _GMemoryMonitorInterface {
+/**
+ * {@snippet :
+ * typedef struct _GMemoryMonitorInterface GMemoryMonitorInterface;
+ * }
+ */
+public final class GMemoryMonitorInterface extends _GMemoryMonitorInterface {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GMemoryMonitorInterface() {}
 }
 
 

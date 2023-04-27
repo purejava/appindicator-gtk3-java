@@ -7,79 +7,56 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$492 {
+final class constants$492 {
 
-    static final FunctionDescriptor g_param_spec_enum$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$492() {}
+    static final FunctionDescriptor g_application_mark_busy$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_param_spec_enum$MH = RuntimeHelper.downcallHandle(
-        "g_param_spec_enum",
-        constants$492.g_param_spec_enum$FUNC
+    static final MethodHandle g_application_mark_busy$MH = RuntimeHelper.downcallHandle(
+        "g_application_mark_busy",
+        constants$492.g_application_mark_busy$FUNC
     );
-    static final FunctionDescriptor g_param_spec_flags$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor g_application_unmark_busy$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_param_spec_flags$MH = RuntimeHelper.downcallHandle(
-        "g_param_spec_flags",
-        constants$492.g_param_spec_flags$FUNC
+    static final MethodHandle g_application_unmark_busy$MH = RuntimeHelper.downcallHandle(
+        "g_application_unmark_busy",
+        constants$492.g_application_unmark_busy$FUNC
     );
-    static final FunctionDescriptor g_param_spec_float$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor g_application_get_is_busy$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_param_spec_float$MH = RuntimeHelper.downcallHandle(
-        "g_param_spec_float",
-        constants$492.g_param_spec_float$FUNC
+    static final MethodHandle g_application_get_is_busy$MH = RuntimeHelper.downcallHandle(
+        "g_application_get_is_busy",
+        constants$492.g_application_get_is_busy$FUNC
     );
-    static final FunctionDescriptor g_param_spec_double$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_application_send_notification$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_param_spec_double$MH = RuntimeHelper.downcallHandle(
-        "g_param_spec_double",
-        constants$492.g_param_spec_double$FUNC
+    static final MethodHandle g_application_send_notification$MH = RuntimeHelper.downcallHandle(
+        "g_application_send_notification",
+        constants$492.g_application_send_notification$FUNC
     );
-    static final FunctionDescriptor g_param_spec_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_application_withdraw_notification$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_param_spec_string$MH = RuntimeHelper.downcallHandle(
-        "g_param_spec_string",
-        constants$492.g_param_spec_string$FUNC
+    static final MethodHandle g_application_withdraw_notification$MH = RuntimeHelper.downcallHandle(
+        "g_application_withdraw_notification",
+        constants$492.g_application_withdraw_notification$FUNC
     );
-    static final FunctionDescriptor g_param_spec_param$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_application_bind_busy_property$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_param_spec_param$MH = RuntimeHelper.downcallHandle(
-        "g_param_spec_param",
-        constants$492.g_param_spec_param$FUNC
+    static final MethodHandle g_application_bind_busy_property$MH = RuntimeHelper.downcallHandle(
+        "g_application_bind_busy_property",
+        constants$492.g_application_bind_busy_property$FUNC
     );
 }
 

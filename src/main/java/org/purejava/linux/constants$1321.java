@@ -7,51 +7,49 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1321 {
+final class constants$1321 {
 
-    static final FunctionDescriptor gdk_cursor_get_display$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1321() {}
+    static final FunctionDescriptor gtk_dialog_get_header_bar$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_cursor_get_display$MH = RuntimeHelper.downcallHandle(
-        "gdk_cursor_get_display",
-        constants$1321.gdk_cursor_get_display$FUNC
+    static final MethodHandle gtk_dialog_get_header_bar$MH = RuntimeHelper.downcallHandle(
+        "gtk_dialog_get_header_bar",
+        constants$1321.gtk_dialog_get_header_bar$FUNC
     );
-    static final FunctionDescriptor gdk_cursor_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gtk_about_dialog_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_about_dialog_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_about_dialog_get_type",
+        constants$1321.gtk_about_dialog_get_type$FUNC
     );
-    static final MethodHandle gdk_cursor_ref$MH = RuntimeHelper.downcallHandle(
-        "gdk_cursor_ref",
-        constants$1321.gdk_cursor_ref$FUNC
+    static final FunctionDescriptor gtk_about_dialog_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_about_dialog_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_about_dialog_new",
+        constants$1321.gtk_about_dialog_new$FUNC
     );
-    static final FunctionDescriptor gdk_cursor_unref$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_cursor_unref$MH = RuntimeHelper.downcallHandle(
-        "gdk_cursor_unref",
-        constants$1321.gdk_cursor_unref$FUNC
-    );
-    static final FunctionDescriptor gdk_cursor_get_image$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_cursor_get_image$MH = RuntimeHelper.downcallHandle(
-        "gdk_cursor_get_image",
-        constants$1321.gdk_cursor_get_image$FUNC
-    );
-    static final FunctionDescriptor gdk_cursor_get_surface$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_show_about_dialog$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_cursor_get_surface$MH = RuntimeHelper.downcallHandle(
-        "gdk_cursor_get_surface",
-        constants$1321.gdk_cursor_get_surface$FUNC
+    static final MethodHandle gtk_show_about_dialog$MH = RuntimeHelper.downcallHandleVariadic(
+        "gtk_show_about_dialog",
+        constants$1321.gtk_show_about_dialog$FUNC
     );
-    static final FunctionDescriptor gdk_cursor_get_cursor_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_about_dialog_get_program_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_cursor_get_cursor_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_cursor_get_cursor_type",
-        constants$1321.gdk_cursor_get_cursor_type$FUNC
+    static final MethodHandle gtk_about_dialog_get_program_name$MH = RuntimeHelper.downcallHandle(
+        "gtk_about_dialog_get_program_name",
+        constants$1321.gtk_about_dialog_get_program_name$FUNC
+    );
+    static final FunctionDescriptor gtk_about_dialog_set_program_name$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_about_dialog_set_program_name$MH = RuntimeHelper.downcallHandle(
+        "gtk_about_dialog_set_program_name",
+        constants$1321.gtk_about_dialog_set_program_name$FUNC
     );
 }
 

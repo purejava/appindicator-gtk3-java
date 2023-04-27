@@ -7,59 +7,45 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$568 {
+final class constants$568 {
 
-    static final FunctionDescriptor chown$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle chown$MH = RuntimeHelper.downcallHandle(
-        "chown",
-        constants$568.chown$FUNC
-    );
-    static final FunctionDescriptor fchown$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle fchown$MH = RuntimeHelper.downcallHandle(
-        "fchown",
-        constants$568.fchown$FUNC
-    );
-    static final FunctionDescriptor lchown$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle lchown$MH = RuntimeHelper.downcallHandle(
-        "lchown",
-        constants$568.lchown$FUNC
-    );
-    static final FunctionDescriptor fchownat$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle fchownat$MH = RuntimeHelper.downcallHandle(
-        "fchownat",
-        constants$568.fchownat$FUNC
-    );
-    static final FunctionDescriptor chdir$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$568() {}
+    static final FunctionDescriptor g_dbus_property_info_unref$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle chdir$MH = RuntimeHelper.downcallHandle(
-        "chdir",
-        constants$568.chdir$FUNC
+    static final MethodHandle g_dbus_property_info_unref$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_property_info_unref",
+        constants$568.g_dbus_property_info_unref$FUNC
     );
-    static final FunctionDescriptor fchdir$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor g_dbus_arg_info_unref$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle fchdir$MH = RuntimeHelper.downcallHandle(
-        "fchdir",
-        constants$568.fchdir$FUNC
+    static final MethodHandle g_dbus_arg_info_unref$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_arg_info_unref",
+        constants$568.g_dbus_arg_info_unref$FUNC
+    );
+    static final FunctionDescriptor g_dbus_annotation_info_unref$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_dbus_annotation_info_unref$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_annotation_info_unref",
+        constants$568.g_dbus_annotation_info_unref$FUNC
+    );
+    static final FunctionDescriptor g_dbus_node_info_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_dbus_node_info_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_node_info_get_type",
+        constants$568.g_dbus_node_info_get_type$FUNC
+    );
+    static final FunctionDescriptor g_dbus_interface_info_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_dbus_interface_info_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_interface_info_get_type",
+        constants$568.g_dbus_interface_info_get_type$FUNC
+    );
+    static final FunctionDescriptor g_dbus_method_info_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_dbus_method_info_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_method_info_get_type",
+        constants$568.g_dbus_method_info_get_type$FUNC
     );
 }
 

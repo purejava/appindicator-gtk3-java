@@ -7,48 +7,58 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$433 {
+final class constants$433 {
 
-    static final FunctionDescriptor g_type_check_value$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$433() {}
+    static final FunctionDescriptor g_object_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_object_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_object_get_type",
+        constants$433.g_object_get_type$FUNC
     );
-    static final MethodHandle g_type_check_value$MH = RuntimeHelper.downcallHandle(
-        "g_type_check_value",
-        constants$433.g_type_check_value$FUNC
-    );
-    static final FunctionDescriptor g_type_check_value_holds$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_type_check_value_holds$MH = RuntimeHelper.downcallHandle(
-        "g_type_check_value_holds",
-        constants$433.g_type_check_value_holds$FUNC
-    );
-    static final FunctionDescriptor g_type_test_flags$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_object_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_type_test_flags$MH = RuntimeHelper.downcallHandle(
-        "g_type_test_flags",
-        constants$433.g_type_test_flags$FUNC
-    );
-    static final FunctionDescriptor g_type_name_from_instance$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_type_name_from_instance$MH = RuntimeHelper.downcallHandle(
-        "g_type_name_from_instance",
-        constants$433.g_type_name_from_instance$FUNC
+    static final MethodHandle g_object_new$MH = RuntimeHelper.downcallHandleVariadic(
+        "g_object_new",
+        constants$433.g_object_new$FUNC
     );
-    static final FunctionDescriptor g_type_name_from_class$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_type_name_from_class$MH = RuntimeHelper.downcallHandle(
-        "g_type_name_from_class",
-        constants$433.g_type_name_from_class$FUNC
-    );
-    static final FunctionDescriptor GValueTransform$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_object_new_with_properties$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_object_new_with_properties$MH = RuntimeHelper.downcallHandle(
+        "g_object_new_with_properties",
+        constants$433.g_object_new_with_properties$FUNC
+    );
+    static final FunctionDescriptor g_object_newv$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_object_newv$MH = RuntimeHelper.downcallHandle(
+        "g_object_newv",
+        constants$433.g_object_newv$FUNC
+    );
+    static final FunctionDescriptor g_object_new_valist$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_object_new_valist$MH = RuntimeHelper.downcallHandle(
+        "g_object_new_valist",
+        constants$433.g_object_new_valist$FUNC
+    );
+    static final FunctionDescriptor g_object_set$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_object_set$MH = RuntimeHelper.downcallHandleVariadic(
+        "g_object_set",
+        constants$433.g_object_set$FUNC
     );
 }
 

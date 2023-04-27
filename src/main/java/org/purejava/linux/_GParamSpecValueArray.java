@@ -7,9 +7,18 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GParamSpecValueArray {
+ *     GParamSpec parent_instance;
+ *     GParamSpec* element_spec;
+ *     guint fixed_n_elements;
+ * };
+ * }
+ */
 public class _GParamSpecValueArray {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
                 Constants$root.C_POINTER$LAYOUT.withName("g_class")
@@ -39,26 +48,50 @@ public class _GParamSpecValueArray {
     public static VarHandle element_spec$VH() {
         return _GParamSpecValueArray.element_spec$VH;
     }
-    public static MemoryAddress element_spec$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GParamSpecValueArray.element_spec$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GParamSpec* element_spec;
+     * }
+     */
+    public static MemorySegment element_spec$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GParamSpecValueArray.element_spec$VH.get(seg);
     }
-    public static void element_spec$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GParamSpec* element_spec;
+     * }
+     */
+    public static void element_spec$set(MemorySegment seg, MemorySegment x) {
         _GParamSpecValueArray.element_spec$VH.set(seg, x);
     }
-    public static MemoryAddress element_spec$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GParamSpecValueArray.element_spec$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment element_spec$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GParamSpecValueArray.element_spec$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void element_spec$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void element_spec$set(MemorySegment seg, long index, MemorySegment x) {
         _GParamSpecValueArray.element_spec$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle fixed_n_elements$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("fixed_n_elements"));
     public static VarHandle fixed_n_elements$VH() {
         return _GParamSpecValueArray.fixed_n_elements$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * guint fixed_n_elements;
+     * }
+     */
     public static int fixed_n_elements$get(MemorySegment seg) {
         return (int)_GParamSpecValueArray.fixed_n_elements$VH.get(seg);
     }
-    public static void fixed_n_elements$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * guint fixed_n_elements;
+     * }
+     */
+    public static void fixed_n_elements$set(MemorySegment seg, int x) {
         _GParamSpecValueArray.fixed_n_elements$VH.set(seg, x);
     }
     public static int fixed_n_elements$get(MemorySegment seg, long index) {
@@ -69,10 +102,10 @@ public class _GParamSpecValueArray {
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

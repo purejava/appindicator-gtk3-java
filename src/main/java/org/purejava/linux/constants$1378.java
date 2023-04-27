@@ -7,51 +7,61 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1378 {
+final class constants$1378 {
 
-    static final FunctionDescriptor atk_object_get_mdi_zorder$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_object_get_mdi_zorder$MH = RuntimeHelper.downcallHandle(
-        "atk_object_get_mdi_zorder",
-        constants$1378.atk_object_get_mdi_zorder$FUNC
-    );
-    static final FunctionDescriptor atk_object_get_attributes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_object_get_attributes$MH = RuntimeHelper.downcallHandle(
-        "atk_object_get_attributes",
-        constants$1378.atk_object_get_attributes$FUNC
-    );
-    static final FunctionDescriptor atk_object_ref_state_set$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_object_ref_state_set$MH = RuntimeHelper.downcallHandle(
-        "atk_object_ref_state_set",
-        constants$1378.atk_object_ref_state_set$FUNC
-    );
-    static final FunctionDescriptor atk_object_get_index_in_parent$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_object_get_index_in_parent$MH = RuntimeHelper.downcallHandle(
-        "atk_object_get_index_in_parent",
-        constants$1378.atk_object_get_index_in_parent$FUNC
-    );
-    static final FunctionDescriptor atk_object_set_name$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1378() {}
+    static final FunctionDescriptor GtkTreeIterCompareFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_object_set_name$MH = RuntimeHelper.downcallHandle(
-        "atk_object_set_name",
-        constants$1378.atk_object_set_name$FUNC
-    );
-    static final FunctionDescriptor atk_object_set_description$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor GtkTreeIterCompareFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_object_set_description$MH = RuntimeHelper.downcallHandle(
-        "atk_object_set_description",
-        constants$1378.atk_object_set_description$FUNC
+    static final MethodHandle GtkTreeIterCompareFunc_UP$MH = RuntimeHelper.upcallHandle(GtkTreeIterCompareFunc.class, "apply", constants$1378.GtkTreeIterCompareFunc_UP$FUNC);
+    static final FunctionDescriptor GtkTreeIterCompareFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GtkTreeIterCompareFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$1378.GtkTreeIterCompareFunc_DOWN$FUNC
+    );
+    static final FunctionDescriptor gtk_tree_sortable_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_tree_sortable_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_sortable_get_type",
+        constants$1378.gtk_tree_sortable_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_tree_sortable_sort_column_changed$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_tree_sortable_sort_column_changed$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_sortable_sort_column_changed",
+        constants$1378.gtk_tree_sortable_sort_column_changed$FUNC
+    );
+    static final FunctionDescriptor gtk_tree_sortable_get_sort_column_id$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_tree_sortable_get_sort_column_id$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_sortable_get_sort_column_id",
+        constants$1378.gtk_tree_sortable_get_sort_column_id$FUNC
+    );
+    static final FunctionDescriptor gtk_tree_sortable_set_sort_column_id$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_tree_sortable_set_sort_column_id$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_sortable_set_sort_column_id",
+        constants$1378.gtk_tree_sortable_set_sort_column_id$FUNC
     );
 }
 

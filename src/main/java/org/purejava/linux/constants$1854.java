@@ -7,61 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1854 {
+final class constants$1854 {
 
-    static final FunctionDescriptor gtk_icon_view_scroll_to_path$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
-    );
-    static final MethodHandle gtk_icon_view_scroll_to_path$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_scroll_to_path",
-        constants$1854.gtk_icon_view_scroll_to_path$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_view_enable_model_drag_source$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_icon_view_enable_model_drag_source$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_enable_model_drag_source",
-        constants$1854.gtk_icon_view_enable_model_drag_source$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_view_enable_model_drag_dest$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_icon_view_enable_model_drag_dest$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_enable_model_drag_dest",
-        constants$1854.gtk_icon_view_enable_model_drag_dest$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_view_unset_model_drag_source$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1854() {}
+    static final FunctionDescriptor gtk_toolbar_get_relief_style$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_icon_view_unset_model_drag_source$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_unset_model_drag_source",
-        constants$1854.gtk_icon_view_unset_model_drag_source$FUNC
+    static final MethodHandle gtk_toolbar_get_relief_style$MH = RuntimeHelper.downcallHandle(
+        "gtk_toolbar_get_relief_style",
+        constants$1854.gtk_toolbar_get_relief_style$FUNC
     );
-    static final FunctionDescriptor gtk_icon_view_unset_model_drag_dest$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gtk_toolbar_get_drop_index$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_icon_view_unset_model_drag_dest$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_unset_model_drag_dest",
-        constants$1854.gtk_icon_view_unset_model_drag_dest$FUNC
+    static final MethodHandle gtk_toolbar_get_drop_index$MH = RuntimeHelper.downcallHandle(
+        "gtk_toolbar_get_drop_index",
+        constants$1854.gtk_toolbar_get_drop_index$FUNC
     );
-    static final FunctionDescriptor gtk_icon_view_set_reorderable$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_toolbar_set_drop_highlight_item$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_icon_view_set_reorderable$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_set_reorderable",
-        constants$1854.gtk_icon_view_set_reorderable$FUNC
+    static final MethodHandle gtk_toolbar_set_drop_highlight_item$MH = RuntimeHelper.downcallHandle(
+        "gtk_toolbar_set_drop_highlight_item",
+        constants$1854.gtk_toolbar_set_drop_highlight_item$FUNC
+    );
+    static final FunctionDescriptor gtk_tool_item_group_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_tool_item_group_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_item_group_get_type",
+        constants$1854.gtk_tool_item_group_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_tool_item_group_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_tool_item_group_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_item_group_new",
+        constants$1854.gtk_tool_item_group_new$FUNC
+    );
+    static final FunctionDescriptor gtk_tool_item_group_set_label$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_tool_item_group_set_label$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_item_group_set_label",
+        constants$1854.gtk_tool_item_group_set_label$FUNC
     );
 }
 

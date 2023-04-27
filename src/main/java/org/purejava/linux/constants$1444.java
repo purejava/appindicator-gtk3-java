@@ -7,56 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1444 {
+final class constants$1444 {
 
-    static final FunctionDescriptor gtk_widget_get_requisition$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_get_requisition$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_requisition",
-        constants$1444.gtk_widget_get_requisition$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_child_focus$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1444() {}
+    static final FunctionDescriptor gtk_entry_completion_set_popup_set_width$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_widget_child_focus$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_child_focus",
-        constants$1444.gtk_widget_child_focus$FUNC
+    static final MethodHandle gtk_entry_completion_set_popup_set_width$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_completion_set_popup_set_width",
+        constants$1444.gtk_entry_completion_set_popup_set_width$FUNC
     );
-    static final FunctionDescriptor gtk_widget_keynav_failed$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_entry_completion_get_popup_set_width$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_entry_completion_get_popup_set_width$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_completion_get_popup_set_width",
+        constants$1444.gtk_entry_completion_get_popup_set_width$FUNC
+    );
+    static final FunctionDescriptor gtk_entry_completion_set_popup_single_match$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_widget_keynav_failed$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_keynav_failed",
-        constants$1444.gtk_widget_keynav_failed$FUNC
+    static final MethodHandle gtk_entry_completion_set_popup_single_match$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_completion_set_popup_single_match",
+        constants$1444.gtk_entry_completion_set_popup_single_match$FUNC
     );
-    static final FunctionDescriptor gtk_widget_error_bell$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_entry_completion_get_popup_single_match$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_widget_error_bell$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_error_bell",
-        constants$1444.gtk_widget_error_bell$FUNC
+    static final MethodHandle gtk_entry_completion_get_popup_single_match$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_completion_get_popup_single_match",
+        constants$1444.gtk_entry_completion_get_popup_single_match$FUNC
     );
-    static final FunctionDescriptor gtk_widget_set_size_request$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_entry_completion_get_completion_prefix$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_entry_completion_get_completion_prefix$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_completion_get_completion_prefix",
+        constants$1444.gtk_entry_completion_get_completion_prefix$FUNC
+    );
+    static final FunctionDescriptor gtk_entry_completion_set_text_column$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_widget_set_size_request$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_size_request",
-        constants$1444.gtk_widget_set_size_request$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_get_size_request$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_get_size_request$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_size_request",
-        constants$1444.gtk_widget_get_size_request$FUNC
+    static final MethodHandle gtk_entry_completion_set_text_column$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_completion_set_text_column",
+        constants$1444.gtk_entry_completion_set_text_column$FUNC
     );
 }
 

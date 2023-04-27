@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkFrameClass extends _GtkFrameClass {
+/**
+ * {@snippet :
+ * typedef struct _GtkFrameClass GtkFrameClass;
+ * }
+ */
+public final class GtkFrameClass extends _GtkFrameClass {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkFrameClass() {}
 }
 
 

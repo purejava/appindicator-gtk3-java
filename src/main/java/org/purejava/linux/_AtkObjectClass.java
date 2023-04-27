@@ -7,9 +7,43 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _AtkObjectClass {
+ *     GObjectClass parent;
+ *     const gchar* (*get_name)(AtkObject*);
+ *     const gchar* (*get_description)(AtkObject*);
+ *     AtkObject* (*get_parent)(AtkObject*);
+ *     gint (*get_n_children)(AtkObject*);
+ *     AtkObject* (*ref_child)(AtkObject*,gint);
+ *     gint (*get_index_in_parent)(AtkObject*);
+ *     AtkRelationSet* (*ref_relation_set)(AtkObject*);
+ *     AtkRole (*get_role)(AtkObject*);
+ *     AtkLayer (*get_layer)(AtkObject*);
+ *     gint (*get_mdi_zorder)(AtkObject*);
+ *     AtkStateSet* (*ref_state_set)(AtkObject*);
+ *     void (*set_name)(AtkObject*,const gchar*);
+ *     void (*set_description)(AtkObject*,const gchar*);
+ *     void (*set_parent)(AtkObject*,AtkObject*);
+ *     void (*set_role)(AtkObject*,AtkRole);
+ *     guint (*connect_property_change_handler)(AtkObject*,AtkPropertyChangeHandler*);
+ *     void (*remove_property_change_handler)(AtkObject*,guint);
+ *     void (*initialize)(AtkObject*,gpointer);
+ *     void (*children_changed)(AtkObject*,guint,gpointer);
+ *     void (*focus_event)(AtkObject*,gboolean);
+ *     void (*property_change)(AtkObject*,AtkPropertyValues*);
+ *     void (*state_change)(AtkObject*,const gchar*,gboolean);
+ *     void (*visible_data_changed)(AtkObject*);
+ *     void (*active_descendant_changed)(AtkObject*,gpointer*);
+ *     AtkAttributeSet* (*get_attributes)(AtkObject*);
+ *     const gchar* (*get_object_locale)(AtkObject*);
+ *     AtkFunction pad1;
+ * };
+ * }
+ */
 public class _AtkObjectClass {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
                 Constants$root.C_LONG_LONG$LAYOUT.withName("g_type")
@@ -24,7 +58,10 @@ public class _AtkObjectClass {
             Constants$root.C_POINTER$LAYOUT.withName("notify"),
             Constants$root.C_POINTER$LAYOUT.withName("constructed"),
             Constants$root.C_LONG_LONG$LAYOUT.withName("flags"),
-            MemoryLayout.sequenceLayout(6, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
+            Constants$root.C_LONG_LONG$LAYOUT.withName("n_construct_properties"),
+            Constants$root.C_POINTER$LAYOUT.withName("pspecs"),
+            Constants$root.C_LONG_LONG$LAYOUT.withName("n_pspecs"),
+            MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
         ).withName("parent"),
         Constants$root.C_POINTER$LAYOUT.withName("get_name"),
         Constants$root.C_POINTER$LAYOUT.withName("get_description"),
@@ -63,20 +100,32 @@ public class _AtkObjectClass {
     static final FunctionDescriptor get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_name$MH = RuntimeHelper.downcallHandle(
-        _AtkObjectClass.get_name$FUNC
+    static final FunctionDescriptor get_name_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_name_UP$MH = RuntimeHelper.upcallHandle(get_name.class, "apply", _AtkObjectClass.get_name_UP$FUNC);
+    static final FunctionDescriptor get_name_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_name_DOWN$MH = RuntimeHelper.downcallHandle(
+        _AtkObjectClass.get_name_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * const gchar* (*get_name)(AtkObject*);
+     * }
+     */
     public interface get_name {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(get_name fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_name.class, fi, _AtkObjectClass.get_name$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(get_name fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_AtkObjectClass.get_name_UP$MH, fi, _AtkObjectClass.get_name$FUNC, scope);
         }
-        static get_name ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static get_name ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_AtkObjectClass.get_name$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (java.lang.foreign.MemorySegment)_AtkObjectClass.get_name_DOWN$MH.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -88,38 +137,62 @@ public class _AtkObjectClass {
     public static VarHandle get_name$VH() {
         return _AtkObjectClass.get_name$VH;
     }
-    public static MemoryAddress get_name$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AtkObjectClass.get_name$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * const gchar* (*get_name)(AtkObject*);
+     * }
+     */
+    public static MemorySegment get_name$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AtkObjectClass.get_name$VH.get(seg);
     }
-    public static void get_name$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * const gchar* (*get_name)(AtkObject*);
+     * }
+     */
+    public static void get_name$set(MemorySegment seg, MemorySegment x) {
         _AtkObjectClass.get_name$VH.set(seg, x);
     }
-    public static MemoryAddress get_name$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AtkObjectClass.get_name$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_name$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AtkObjectClass.get_name$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_name$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_name$set(MemorySegment seg, long index, MemorySegment x) {
         _AtkObjectClass.get_name$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_name get_name (MemorySegment segment, MemorySession session) {
-        return get_name.ofAddress(get_name$get(segment), session);
+    public static get_name get_name(MemorySegment segment, SegmentScope scope) {
+        return get_name.ofAddress(get_name$get(segment), scope);
     }
     static final FunctionDescriptor get_description$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_description$MH = RuntimeHelper.downcallHandle(
-        _AtkObjectClass.get_description$FUNC
+    static final FunctionDescriptor get_description_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_description_UP$MH = RuntimeHelper.upcallHandle(get_description.class, "apply", _AtkObjectClass.get_description_UP$FUNC);
+    static final FunctionDescriptor get_description_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_description_DOWN$MH = RuntimeHelper.downcallHandle(
+        _AtkObjectClass.get_description_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * const gchar* (*get_description)(AtkObject*);
+     * }
+     */
     public interface get_description {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(get_description fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_description.class, fi, _AtkObjectClass.get_description$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(get_description fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_AtkObjectClass.get_description_UP$MH, fi, _AtkObjectClass.get_description$FUNC, scope);
         }
-        static get_description ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static get_description ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_AtkObjectClass.get_description$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (java.lang.foreign.MemorySegment)_AtkObjectClass.get_description_DOWN$MH.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -131,38 +204,62 @@ public class _AtkObjectClass {
     public static VarHandle get_description$VH() {
         return _AtkObjectClass.get_description$VH;
     }
-    public static MemoryAddress get_description$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AtkObjectClass.get_description$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * const gchar* (*get_description)(AtkObject*);
+     * }
+     */
+    public static MemorySegment get_description$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AtkObjectClass.get_description$VH.get(seg);
     }
-    public static void get_description$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * const gchar* (*get_description)(AtkObject*);
+     * }
+     */
+    public static void get_description$set(MemorySegment seg, MemorySegment x) {
         _AtkObjectClass.get_description$VH.set(seg, x);
     }
-    public static MemoryAddress get_description$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AtkObjectClass.get_description$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_description$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AtkObjectClass.get_description$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_description$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_description$set(MemorySegment seg, long index, MemorySegment x) {
         _AtkObjectClass.get_description$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_description get_description (MemorySegment segment, MemorySession session) {
-        return get_description.ofAddress(get_description$get(segment), session);
+    public static get_description get_description(MemorySegment segment, SegmentScope scope) {
+        return get_description.ofAddress(get_description$get(segment), scope);
     }
     static final FunctionDescriptor get_parent$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_parent$MH = RuntimeHelper.downcallHandle(
-        _AtkObjectClass.get_parent$FUNC
+    static final FunctionDescriptor get_parent_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_parent_UP$MH = RuntimeHelper.upcallHandle(get_parent.class, "apply", _AtkObjectClass.get_parent_UP$FUNC);
+    static final FunctionDescriptor get_parent_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_parent_DOWN$MH = RuntimeHelper.downcallHandle(
+        _AtkObjectClass.get_parent_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * AtkObject* (*get_parent)(AtkObject*);
+     * }
+     */
     public interface get_parent {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(get_parent fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_parent.class, fi, _AtkObjectClass.get_parent$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(get_parent fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_AtkObjectClass.get_parent_UP$MH, fi, _AtkObjectClass.get_parent$FUNC, scope);
         }
-        static get_parent ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static get_parent ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_AtkObjectClass.get_parent$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (java.lang.foreign.MemorySegment)_AtkObjectClass.get_parent_DOWN$MH.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -174,38 +271,62 @@ public class _AtkObjectClass {
     public static VarHandle get_parent$VH() {
         return _AtkObjectClass.get_parent$VH;
     }
-    public static MemoryAddress get_parent$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AtkObjectClass.get_parent$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * AtkObject* (*get_parent)(AtkObject*);
+     * }
+     */
+    public static MemorySegment get_parent$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AtkObjectClass.get_parent$VH.get(seg);
     }
-    public static void get_parent$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * AtkObject* (*get_parent)(AtkObject*);
+     * }
+     */
+    public static void get_parent$set(MemorySegment seg, MemorySegment x) {
         _AtkObjectClass.get_parent$VH.set(seg, x);
     }
-    public static MemoryAddress get_parent$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AtkObjectClass.get_parent$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_parent$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AtkObjectClass.get_parent$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_parent$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_parent$set(MemorySegment seg, long index, MemorySegment x) {
         _AtkObjectClass.get_parent$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_parent get_parent (MemorySegment segment, MemorySession session) {
-        return get_parent.ofAddress(get_parent$get(segment), session);
+    public static get_parent get_parent(MemorySegment segment, SegmentScope scope) {
+        return get_parent.ofAddress(get_parent$get(segment), scope);
     }
     static final FunctionDescriptor get_n_children$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_n_children$MH = RuntimeHelper.downcallHandle(
-        _AtkObjectClass.get_n_children$FUNC
+    static final FunctionDescriptor get_n_children_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_n_children_UP$MH = RuntimeHelper.upcallHandle(get_n_children.class, "apply", _AtkObjectClass.get_n_children_UP$FUNC);
+    static final FunctionDescriptor get_n_children_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_n_children_DOWN$MH = RuntimeHelper.downcallHandle(
+        _AtkObjectClass.get_n_children_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gint (*get_n_children)(AtkObject*);
+     * }
+     */
     public interface get_n_children {
 
-        int apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(get_n_children fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_n_children.class, fi, _AtkObjectClass.get_n_children$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0);
+        static MemorySegment allocate(get_n_children fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_AtkObjectClass.get_n_children_UP$MH, fi, _AtkObjectClass.get_n_children$FUNC, scope);
         }
-        static get_n_children ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static get_n_children ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0) -> {
                 try {
-                    return (int)_AtkObjectClass.get_n_children$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (int)_AtkObjectClass.get_n_children_DOWN$MH.invokeExact(symbol, __x0);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -217,39 +338,65 @@ public class _AtkObjectClass {
     public static VarHandle get_n_children$VH() {
         return _AtkObjectClass.get_n_children$VH;
     }
-    public static MemoryAddress get_n_children$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AtkObjectClass.get_n_children$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gint (*get_n_children)(AtkObject*);
+     * }
+     */
+    public static MemorySegment get_n_children$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AtkObjectClass.get_n_children$VH.get(seg);
     }
-    public static void get_n_children$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gint (*get_n_children)(AtkObject*);
+     * }
+     */
+    public static void get_n_children$set(MemorySegment seg, MemorySegment x) {
         _AtkObjectClass.get_n_children$VH.set(seg, x);
     }
-    public static MemoryAddress get_n_children$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AtkObjectClass.get_n_children$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_n_children$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AtkObjectClass.get_n_children$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_n_children$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_n_children$set(MemorySegment seg, long index, MemorySegment x) {
         _AtkObjectClass.get_n_children$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_n_children get_n_children (MemorySegment segment, MemorySession session) {
-        return get_n_children.ofAddress(get_n_children$get(segment), session);
+    public static get_n_children get_n_children(MemorySegment segment, SegmentScope scope) {
+        return get_n_children.ofAddress(get_n_children$get(segment), scope);
     }
     static final FunctionDescriptor ref_child$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle ref_child$MH = RuntimeHelper.downcallHandle(
-        _AtkObjectClass.ref_child$FUNC
+    static final FunctionDescriptor ref_child_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle ref_child_UP$MH = RuntimeHelper.upcallHandle(ref_child.class, "apply", _AtkObjectClass.ref_child_UP$FUNC);
+    static final FunctionDescriptor ref_child_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle ref_child_DOWN$MH = RuntimeHelper.downcallHandle(
+        _AtkObjectClass.ref_child_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * AtkObject* (*ref_child)(AtkObject*,gint);
+     * }
+     */
     public interface ref_child {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0, int _x1);
-        static MemorySegment allocate(ref_child fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(ref_child.class, fi, _AtkObjectClass.ref_child$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment _x0, int _x1);
+        static MemorySegment allocate(ref_child fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_AtkObjectClass.ref_child_UP$MH, fi, _AtkObjectClass.ref_child$FUNC, scope);
         }
-        static ref_child ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, int __x1) -> {
+        static ref_child ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, int __x1) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_AtkObjectClass.ref_child$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, __x1);
+                    return (java.lang.foreign.MemorySegment)_AtkObjectClass.ref_child_DOWN$MH.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -261,38 +408,62 @@ public class _AtkObjectClass {
     public static VarHandle ref_child$VH() {
         return _AtkObjectClass.ref_child$VH;
     }
-    public static MemoryAddress ref_child$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AtkObjectClass.ref_child$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * AtkObject* (*ref_child)(AtkObject*,gint);
+     * }
+     */
+    public static MemorySegment ref_child$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AtkObjectClass.ref_child$VH.get(seg);
     }
-    public static void ref_child$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * AtkObject* (*ref_child)(AtkObject*,gint);
+     * }
+     */
+    public static void ref_child$set(MemorySegment seg, MemorySegment x) {
         _AtkObjectClass.ref_child$VH.set(seg, x);
     }
-    public static MemoryAddress ref_child$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AtkObjectClass.ref_child$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment ref_child$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AtkObjectClass.ref_child$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void ref_child$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void ref_child$set(MemorySegment seg, long index, MemorySegment x) {
         _AtkObjectClass.ref_child$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static ref_child ref_child (MemorySegment segment, MemorySession session) {
-        return ref_child.ofAddress(ref_child$get(segment), session);
+    public static ref_child ref_child(MemorySegment segment, SegmentScope scope) {
+        return ref_child.ofAddress(ref_child$get(segment), scope);
     }
     static final FunctionDescriptor get_index_in_parent$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_index_in_parent$MH = RuntimeHelper.downcallHandle(
-        _AtkObjectClass.get_index_in_parent$FUNC
+    static final FunctionDescriptor get_index_in_parent_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_index_in_parent_UP$MH = RuntimeHelper.upcallHandle(get_index_in_parent.class, "apply", _AtkObjectClass.get_index_in_parent_UP$FUNC);
+    static final FunctionDescriptor get_index_in_parent_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_index_in_parent_DOWN$MH = RuntimeHelper.downcallHandle(
+        _AtkObjectClass.get_index_in_parent_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gint (*get_index_in_parent)(AtkObject*);
+     * }
+     */
     public interface get_index_in_parent {
 
-        int apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(get_index_in_parent fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_index_in_parent.class, fi, _AtkObjectClass.get_index_in_parent$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0);
+        static MemorySegment allocate(get_index_in_parent fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_AtkObjectClass.get_index_in_parent_UP$MH, fi, _AtkObjectClass.get_index_in_parent$FUNC, scope);
         }
-        static get_index_in_parent ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static get_index_in_parent ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0) -> {
                 try {
-                    return (int)_AtkObjectClass.get_index_in_parent$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (int)_AtkObjectClass.get_index_in_parent_DOWN$MH.invokeExact(symbol, __x0);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -304,38 +475,62 @@ public class _AtkObjectClass {
     public static VarHandle get_index_in_parent$VH() {
         return _AtkObjectClass.get_index_in_parent$VH;
     }
-    public static MemoryAddress get_index_in_parent$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AtkObjectClass.get_index_in_parent$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gint (*get_index_in_parent)(AtkObject*);
+     * }
+     */
+    public static MemorySegment get_index_in_parent$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AtkObjectClass.get_index_in_parent$VH.get(seg);
     }
-    public static void get_index_in_parent$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gint (*get_index_in_parent)(AtkObject*);
+     * }
+     */
+    public static void get_index_in_parent$set(MemorySegment seg, MemorySegment x) {
         _AtkObjectClass.get_index_in_parent$VH.set(seg, x);
     }
-    public static MemoryAddress get_index_in_parent$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AtkObjectClass.get_index_in_parent$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_index_in_parent$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AtkObjectClass.get_index_in_parent$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_index_in_parent$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_index_in_parent$set(MemorySegment seg, long index, MemorySegment x) {
         _AtkObjectClass.get_index_in_parent$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_index_in_parent get_index_in_parent (MemorySegment segment, MemorySession session) {
-        return get_index_in_parent.ofAddress(get_index_in_parent$get(segment), session);
+    public static get_index_in_parent get_index_in_parent(MemorySegment segment, SegmentScope scope) {
+        return get_index_in_parent.ofAddress(get_index_in_parent$get(segment), scope);
     }
     static final FunctionDescriptor ref_relation_set$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle ref_relation_set$MH = RuntimeHelper.downcallHandle(
-        _AtkObjectClass.ref_relation_set$FUNC
+    static final FunctionDescriptor ref_relation_set_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle ref_relation_set_UP$MH = RuntimeHelper.upcallHandle(ref_relation_set.class, "apply", _AtkObjectClass.ref_relation_set_UP$FUNC);
+    static final FunctionDescriptor ref_relation_set_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle ref_relation_set_DOWN$MH = RuntimeHelper.downcallHandle(
+        _AtkObjectClass.ref_relation_set_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * AtkRelationSet* (*ref_relation_set)(AtkObject*);
+     * }
+     */
     public interface ref_relation_set {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(ref_relation_set fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(ref_relation_set.class, fi, _AtkObjectClass.ref_relation_set$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(ref_relation_set fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_AtkObjectClass.ref_relation_set_UP$MH, fi, _AtkObjectClass.ref_relation_set$FUNC, scope);
         }
-        static ref_relation_set ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static ref_relation_set ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_AtkObjectClass.ref_relation_set$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (java.lang.foreign.MemorySegment)_AtkObjectClass.ref_relation_set_DOWN$MH.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -347,38 +542,62 @@ public class _AtkObjectClass {
     public static VarHandle ref_relation_set$VH() {
         return _AtkObjectClass.ref_relation_set$VH;
     }
-    public static MemoryAddress ref_relation_set$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AtkObjectClass.ref_relation_set$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * AtkRelationSet* (*ref_relation_set)(AtkObject*);
+     * }
+     */
+    public static MemorySegment ref_relation_set$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AtkObjectClass.ref_relation_set$VH.get(seg);
     }
-    public static void ref_relation_set$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * AtkRelationSet* (*ref_relation_set)(AtkObject*);
+     * }
+     */
+    public static void ref_relation_set$set(MemorySegment seg, MemorySegment x) {
         _AtkObjectClass.ref_relation_set$VH.set(seg, x);
     }
-    public static MemoryAddress ref_relation_set$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AtkObjectClass.ref_relation_set$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment ref_relation_set$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AtkObjectClass.ref_relation_set$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void ref_relation_set$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void ref_relation_set$set(MemorySegment seg, long index, MemorySegment x) {
         _AtkObjectClass.ref_relation_set$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static ref_relation_set ref_relation_set (MemorySegment segment, MemorySession session) {
-        return ref_relation_set.ofAddress(ref_relation_set$get(segment), session);
+    public static ref_relation_set ref_relation_set(MemorySegment segment, SegmentScope scope) {
+        return ref_relation_set.ofAddress(ref_relation_set$get(segment), scope);
     }
     static final FunctionDescriptor get_role$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_role$MH = RuntimeHelper.downcallHandle(
-        _AtkObjectClass.get_role$FUNC
+    static final FunctionDescriptor get_role_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_role_UP$MH = RuntimeHelper.upcallHandle(get_role.class, "apply", _AtkObjectClass.get_role_UP$FUNC);
+    static final FunctionDescriptor get_role_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_role_DOWN$MH = RuntimeHelper.downcallHandle(
+        _AtkObjectClass.get_role_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * AtkRole (*get_role)(AtkObject*);
+     * }
+     */
     public interface get_role {
 
-        int apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(get_role fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_role.class, fi, _AtkObjectClass.get_role$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0);
+        static MemorySegment allocate(get_role fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_AtkObjectClass.get_role_UP$MH, fi, _AtkObjectClass.get_role$FUNC, scope);
         }
-        static get_role ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static get_role ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0) -> {
                 try {
-                    return (int)_AtkObjectClass.get_role$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (int)_AtkObjectClass.get_role_DOWN$MH.invokeExact(symbol, __x0);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -390,38 +609,62 @@ public class _AtkObjectClass {
     public static VarHandle get_role$VH() {
         return _AtkObjectClass.get_role$VH;
     }
-    public static MemoryAddress get_role$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AtkObjectClass.get_role$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * AtkRole (*get_role)(AtkObject*);
+     * }
+     */
+    public static MemorySegment get_role$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AtkObjectClass.get_role$VH.get(seg);
     }
-    public static void get_role$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * AtkRole (*get_role)(AtkObject*);
+     * }
+     */
+    public static void get_role$set(MemorySegment seg, MemorySegment x) {
         _AtkObjectClass.get_role$VH.set(seg, x);
     }
-    public static MemoryAddress get_role$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AtkObjectClass.get_role$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_role$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AtkObjectClass.get_role$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_role$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_role$set(MemorySegment seg, long index, MemorySegment x) {
         _AtkObjectClass.get_role$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_role get_role (MemorySegment segment, MemorySession session) {
-        return get_role.ofAddress(get_role$get(segment), session);
+    public static get_role get_role(MemorySegment segment, SegmentScope scope) {
+        return get_role.ofAddress(get_role$get(segment), scope);
     }
     static final FunctionDescriptor get_layer$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_layer$MH = RuntimeHelper.downcallHandle(
-        _AtkObjectClass.get_layer$FUNC
+    static final FunctionDescriptor get_layer_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_layer_UP$MH = RuntimeHelper.upcallHandle(get_layer.class, "apply", _AtkObjectClass.get_layer_UP$FUNC);
+    static final FunctionDescriptor get_layer_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_layer_DOWN$MH = RuntimeHelper.downcallHandle(
+        _AtkObjectClass.get_layer_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * AtkLayer (*get_layer)(AtkObject*);
+     * }
+     */
     public interface get_layer {
 
-        int apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(get_layer fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_layer.class, fi, _AtkObjectClass.get_layer$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0);
+        static MemorySegment allocate(get_layer fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_AtkObjectClass.get_layer_UP$MH, fi, _AtkObjectClass.get_layer$FUNC, scope);
         }
-        static get_layer ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static get_layer ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0) -> {
                 try {
-                    return (int)_AtkObjectClass.get_layer$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (int)_AtkObjectClass.get_layer_DOWN$MH.invokeExact(symbol, __x0);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -433,38 +676,62 @@ public class _AtkObjectClass {
     public static VarHandle get_layer$VH() {
         return _AtkObjectClass.get_layer$VH;
     }
-    public static MemoryAddress get_layer$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AtkObjectClass.get_layer$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * AtkLayer (*get_layer)(AtkObject*);
+     * }
+     */
+    public static MemorySegment get_layer$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AtkObjectClass.get_layer$VH.get(seg);
     }
-    public static void get_layer$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * AtkLayer (*get_layer)(AtkObject*);
+     * }
+     */
+    public static void get_layer$set(MemorySegment seg, MemorySegment x) {
         _AtkObjectClass.get_layer$VH.set(seg, x);
     }
-    public static MemoryAddress get_layer$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AtkObjectClass.get_layer$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_layer$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AtkObjectClass.get_layer$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_layer$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_layer$set(MemorySegment seg, long index, MemorySegment x) {
         _AtkObjectClass.get_layer$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_layer get_layer (MemorySegment segment, MemorySession session) {
-        return get_layer.ofAddress(get_layer$get(segment), session);
+    public static get_layer get_layer(MemorySegment segment, SegmentScope scope) {
+        return get_layer.ofAddress(get_layer$get(segment), scope);
     }
     static final FunctionDescriptor get_mdi_zorder$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_mdi_zorder$MH = RuntimeHelper.downcallHandle(
-        _AtkObjectClass.get_mdi_zorder$FUNC
+    static final FunctionDescriptor get_mdi_zorder_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_mdi_zorder_UP$MH = RuntimeHelper.upcallHandle(get_mdi_zorder.class, "apply", _AtkObjectClass.get_mdi_zorder_UP$FUNC);
+    static final FunctionDescriptor get_mdi_zorder_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_mdi_zorder_DOWN$MH = RuntimeHelper.downcallHandle(
+        _AtkObjectClass.get_mdi_zorder_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gint (*get_mdi_zorder)(AtkObject*);
+     * }
+     */
     public interface get_mdi_zorder {
 
-        int apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(get_mdi_zorder fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_mdi_zorder.class, fi, _AtkObjectClass.get_mdi_zorder$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0);
+        static MemorySegment allocate(get_mdi_zorder fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_AtkObjectClass.get_mdi_zorder_UP$MH, fi, _AtkObjectClass.get_mdi_zorder$FUNC, scope);
         }
-        static get_mdi_zorder ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static get_mdi_zorder ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0) -> {
                 try {
-                    return (int)_AtkObjectClass.get_mdi_zorder$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (int)_AtkObjectClass.get_mdi_zorder_DOWN$MH.invokeExact(symbol, __x0);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -476,38 +743,62 @@ public class _AtkObjectClass {
     public static VarHandle get_mdi_zorder$VH() {
         return _AtkObjectClass.get_mdi_zorder$VH;
     }
-    public static MemoryAddress get_mdi_zorder$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AtkObjectClass.get_mdi_zorder$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gint (*get_mdi_zorder)(AtkObject*);
+     * }
+     */
+    public static MemorySegment get_mdi_zorder$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AtkObjectClass.get_mdi_zorder$VH.get(seg);
     }
-    public static void get_mdi_zorder$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gint (*get_mdi_zorder)(AtkObject*);
+     * }
+     */
+    public static void get_mdi_zorder$set(MemorySegment seg, MemorySegment x) {
         _AtkObjectClass.get_mdi_zorder$VH.set(seg, x);
     }
-    public static MemoryAddress get_mdi_zorder$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AtkObjectClass.get_mdi_zorder$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_mdi_zorder$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AtkObjectClass.get_mdi_zorder$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_mdi_zorder$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_mdi_zorder$set(MemorySegment seg, long index, MemorySegment x) {
         _AtkObjectClass.get_mdi_zorder$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_mdi_zorder get_mdi_zorder (MemorySegment segment, MemorySession session) {
-        return get_mdi_zorder.ofAddress(get_mdi_zorder$get(segment), session);
+    public static get_mdi_zorder get_mdi_zorder(MemorySegment segment, SegmentScope scope) {
+        return get_mdi_zorder.ofAddress(get_mdi_zorder$get(segment), scope);
     }
     static final FunctionDescriptor ref_state_set$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle ref_state_set$MH = RuntimeHelper.downcallHandle(
-        _AtkObjectClass.ref_state_set$FUNC
+    static final FunctionDescriptor ref_state_set_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle ref_state_set_UP$MH = RuntimeHelper.upcallHandle(ref_state_set.class, "apply", _AtkObjectClass.ref_state_set_UP$FUNC);
+    static final FunctionDescriptor ref_state_set_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle ref_state_set_DOWN$MH = RuntimeHelper.downcallHandle(
+        _AtkObjectClass.ref_state_set_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * AtkStateSet* (*ref_state_set)(AtkObject*);
+     * }
+     */
     public interface ref_state_set {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(ref_state_set fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(ref_state_set.class, fi, _AtkObjectClass.ref_state_set$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(ref_state_set fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_AtkObjectClass.ref_state_set_UP$MH, fi, _AtkObjectClass.ref_state_set$FUNC, scope);
         }
-        static ref_state_set ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static ref_state_set ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_AtkObjectClass.ref_state_set$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (java.lang.foreign.MemorySegment)_AtkObjectClass.ref_state_set_DOWN$MH.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -519,39 +810,65 @@ public class _AtkObjectClass {
     public static VarHandle ref_state_set$VH() {
         return _AtkObjectClass.ref_state_set$VH;
     }
-    public static MemoryAddress ref_state_set$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AtkObjectClass.ref_state_set$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * AtkStateSet* (*ref_state_set)(AtkObject*);
+     * }
+     */
+    public static MemorySegment ref_state_set$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AtkObjectClass.ref_state_set$VH.get(seg);
     }
-    public static void ref_state_set$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * AtkStateSet* (*ref_state_set)(AtkObject*);
+     * }
+     */
+    public static void ref_state_set$set(MemorySegment seg, MemorySegment x) {
         _AtkObjectClass.ref_state_set$VH.set(seg, x);
     }
-    public static MemoryAddress ref_state_set$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AtkObjectClass.ref_state_set$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment ref_state_set$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AtkObjectClass.ref_state_set$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void ref_state_set$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void ref_state_set$set(MemorySegment seg, long index, MemorySegment x) {
         _AtkObjectClass.ref_state_set$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static ref_state_set ref_state_set (MemorySegment segment, MemorySession session) {
-        return ref_state_set.ofAddress(ref_state_set$get(segment), session);
+    public static ref_state_set ref_state_set(MemorySegment segment, SegmentScope scope) {
+        return ref_state_set.ofAddress(ref_state_set$get(segment), scope);
     }
     static final FunctionDescriptor set_name$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle set_name$MH = RuntimeHelper.downcallHandle(
-        _AtkObjectClass.set_name$FUNC
+    static final FunctionDescriptor set_name_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle set_name_UP$MH = RuntimeHelper.upcallHandle(set_name.class, "apply", _AtkObjectClass.set_name_UP$FUNC);
+    static final FunctionDescriptor set_name_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle set_name_DOWN$MH = RuntimeHelper.downcallHandle(
+        _AtkObjectClass.set_name_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*set_name)(AtkObject*,const gchar*);
+     * }
+     */
     public interface set_name {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(set_name fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(set_name.class, fi, _AtkObjectClass.set_name$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+        static MemorySegment allocate(set_name fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_AtkObjectClass.set_name_UP$MH, fi, _AtkObjectClass.set_name$FUNC, scope);
         }
-        static set_name ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static set_name ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _AtkObjectClass.set_name$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    _AtkObjectClass.set_name_DOWN$MH.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -563,39 +880,65 @@ public class _AtkObjectClass {
     public static VarHandle set_name$VH() {
         return _AtkObjectClass.set_name$VH;
     }
-    public static MemoryAddress set_name$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AtkObjectClass.set_name$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*set_name)(AtkObject*,const gchar*);
+     * }
+     */
+    public static MemorySegment set_name$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AtkObjectClass.set_name$VH.get(seg);
     }
-    public static void set_name$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*set_name)(AtkObject*,const gchar*);
+     * }
+     */
+    public static void set_name$set(MemorySegment seg, MemorySegment x) {
         _AtkObjectClass.set_name$VH.set(seg, x);
     }
-    public static MemoryAddress set_name$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AtkObjectClass.set_name$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment set_name$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AtkObjectClass.set_name$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void set_name$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void set_name$set(MemorySegment seg, long index, MemorySegment x) {
         _AtkObjectClass.set_name$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static set_name set_name (MemorySegment segment, MemorySession session) {
-        return set_name.ofAddress(set_name$get(segment), session);
+    public static set_name set_name(MemorySegment segment, SegmentScope scope) {
+        return set_name.ofAddress(set_name$get(segment), scope);
     }
     static final FunctionDescriptor set_description$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle set_description$MH = RuntimeHelper.downcallHandle(
-        _AtkObjectClass.set_description$FUNC
+    static final FunctionDescriptor set_description_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle set_description_UP$MH = RuntimeHelper.upcallHandle(set_description.class, "apply", _AtkObjectClass.set_description_UP$FUNC);
+    static final FunctionDescriptor set_description_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle set_description_DOWN$MH = RuntimeHelper.downcallHandle(
+        _AtkObjectClass.set_description_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*set_description)(AtkObject*,const gchar*);
+     * }
+     */
     public interface set_description {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(set_description fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(set_description.class, fi, _AtkObjectClass.set_description$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+        static MemorySegment allocate(set_description fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_AtkObjectClass.set_description_UP$MH, fi, _AtkObjectClass.set_description$FUNC, scope);
         }
-        static set_description ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static set_description ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _AtkObjectClass.set_description$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    _AtkObjectClass.set_description_DOWN$MH.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -607,39 +950,65 @@ public class _AtkObjectClass {
     public static VarHandle set_description$VH() {
         return _AtkObjectClass.set_description$VH;
     }
-    public static MemoryAddress set_description$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AtkObjectClass.set_description$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*set_description)(AtkObject*,const gchar*);
+     * }
+     */
+    public static MemorySegment set_description$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AtkObjectClass.set_description$VH.get(seg);
     }
-    public static void set_description$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*set_description)(AtkObject*,const gchar*);
+     * }
+     */
+    public static void set_description$set(MemorySegment seg, MemorySegment x) {
         _AtkObjectClass.set_description$VH.set(seg, x);
     }
-    public static MemoryAddress set_description$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AtkObjectClass.set_description$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment set_description$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AtkObjectClass.set_description$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void set_description$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void set_description$set(MemorySegment seg, long index, MemorySegment x) {
         _AtkObjectClass.set_description$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static set_description set_description (MemorySegment segment, MemorySession session) {
-        return set_description.ofAddress(set_description$get(segment), session);
+    public static set_description set_description(MemorySegment segment, SegmentScope scope) {
+        return set_description.ofAddress(set_description$get(segment), scope);
     }
     static final FunctionDescriptor set_parent$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle set_parent$MH = RuntimeHelper.downcallHandle(
-        _AtkObjectClass.set_parent$FUNC
+    static final FunctionDescriptor set_parent_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle set_parent_UP$MH = RuntimeHelper.upcallHandle(set_parent.class, "apply", _AtkObjectClass.set_parent_UP$FUNC);
+    static final FunctionDescriptor set_parent_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle set_parent_DOWN$MH = RuntimeHelper.downcallHandle(
+        _AtkObjectClass.set_parent_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*set_parent)(AtkObject*,AtkObject*);
+     * }
+     */
     public interface set_parent {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(set_parent fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(set_parent.class, fi, _AtkObjectClass.set_parent$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+        static MemorySegment allocate(set_parent fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_AtkObjectClass.set_parent_UP$MH, fi, _AtkObjectClass.set_parent$FUNC, scope);
         }
-        static set_parent ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static set_parent ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _AtkObjectClass.set_parent$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    _AtkObjectClass.set_parent_DOWN$MH.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -651,39 +1020,65 @@ public class _AtkObjectClass {
     public static VarHandle set_parent$VH() {
         return _AtkObjectClass.set_parent$VH;
     }
-    public static MemoryAddress set_parent$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AtkObjectClass.set_parent$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*set_parent)(AtkObject*,AtkObject*);
+     * }
+     */
+    public static MemorySegment set_parent$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AtkObjectClass.set_parent$VH.get(seg);
     }
-    public static void set_parent$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*set_parent)(AtkObject*,AtkObject*);
+     * }
+     */
+    public static void set_parent$set(MemorySegment seg, MemorySegment x) {
         _AtkObjectClass.set_parent$VH.set(seg, x);
     }
-    public static MemoryAddress set_parent$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AtkObjectClass.set_parent$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment set_parent$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AtkObjectClass.set_parent$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void set_parent$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void set_parent$set(MemorySegment seg, long index, MemorySegment x) {
         _AtkObjectClass.set_parent$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static set_parent set_parent (MemorySegment segment, MemorySession session) {
-        return set_parent.ofAddress(set_parent$get(segment), session);
+    public static set_parent set_parent(MemorySegment segment, SegmentScope scope) {
+        return set_parent.ofAddress(set_parent$get(segment), scope);
     }
     static final FunctionDescriptor set_role$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle set_role$MH = RuntimeHelper.downcallHandle(
-        _AtkObjectClass.set_role$FUNC
+    static final FunctionDescriptor set_role_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle set_role_UP$MH = RuntimeHelper.upcallHandle(set_role.class, "apply", _AtkObjectClass.set_role_UP$FUNC);
+    static final FunctionDescriptor set_role_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle set_role_DOWN$MH = RuntimeHelper.downcallHandle(
+        _AtkObjectClass.set_role_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*set_role)(AtkObject*,AtkRole);
+     * }
+     */
     public interface set_role {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, int _x1);
-        static MemorySegment allocate(set_role fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(set_role.class, fi, _AtkObjectClass.set_role$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, int _x1);
+        static MemorySegment allocate(set_role fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_AtkObjectClass.set_role_UP$MH, fi, _AtkObjectClass.set_role$FUNC, scope);
         }
-        static set_role ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, int __x1) -> {
+        static set_role ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, int __x1) -> {
                 try {
-                    _AtkObjectClass.set_role$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, __x1);
+                    _AtkObjectClass.set_role_DOWN$MH.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -695,39 +1090,65 @@ public class _AtkObjectClass {
     public static VarHandle set_role$VH() {
         return _AtkObjectClass.set_role$VH;
     }
-    public static MemoryAddress set_role$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AtkObjectClass.set_role$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*set_role)(AtkObject*,AtkRole);
+     * }
+     */
+    public static MemorySegment set_role$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AtkObjectClass.set_role$VH.get(seg);
     }
-    public static void set_role$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*set_role)(AtkObject*,AtkRole);
+     * }
+     */
+    public static void set_role$set(MemorySegment seg, MemorySegment x) {
         _AtkObjectClass.set_role$VH.set(seg, x);
     }
-    public static MemoryAddress set_role$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AtkObjectClass.set_role$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment set_role$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AtkObjectClass.set_role$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void set_role$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void set_role$set(MemorySegment seg, long index, MemorySegment x) {
         _AtkObjectClass.set_role$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static set_role set_role (MemorySegment segment, MemorySession session) {
-        return set_role.ofAddress(set_role$get(segment), session);
+    public static set_role set_role(MemorySegment segment, SegmentScope scope) {
+        return set_role.ofAddress(set_role$get(segment), scope);
     }
     static final FunctionDescriptor connect_property_change_handler$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle connect_property_change_handler$MH = RuntimeHelper.downcallHandle(
-        _AtkObjectClass.connect_property_change_handler$FUNC
+    static final FunctionDescriptor connect_property_change_handler_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle connect_property_change_handler_UP$MH = RuntimeHelper.upcallHandle(connect_property_change_handler.class, "apply", _AtkObjectClass.connect_property_change_handler_UP$FUNC);
+    static final FunctionDescriptor connect_property_change_handler_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle connect_property_change_handler_DOWN$MH = RuntimeHelper.downcallHandle(
+        _AtkObjectClass.connect_property_change_handler_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * guint (*connect_property_change_handler)(AtkObject*,AtkPropertyChangeHandler*);
+     * }
+     */
     public interface connect_property_change_handler {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(connect_property_change_handler fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(connect_property_change_handler.class, fi, _AtkObjectClass.connect_property_change_handler$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1);
+        static MemorySegment allocate(connect_property_change_handler fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_AtkObjectClass.connect_property_change_handler_UP$MH, fi, _AtkObjectClass.connect_property_change_handler$FUNC, scope);
         }
-        static connect_property_change_handler ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static connect_property_change_handler ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1) -> {
                 try {
-                    return (int)_AtkObjectClass.connect_property_change_handler$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    return (int)_AtkObjectClass.connect_property_change_handler_DOWN$MH.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -739,39 +1160,65 @@ public class _AtkObjectClass {
     public static VarHandle connect_property_change_handler$VH() {
         return _AtkObjectClass.connect_property_change_handler$VH;
     }
-    public static MemoryAddress connect_property_change_handler$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AtkObjectClass.connect_property_change_handler$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * guint (*connect_property_change_handler)(AtkObject*,AtkPropertyChangeHandler*);
+     * }
+     */
+    public static MemorySegment connect_property_change_handler$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AtkObjectClass.connect_property_change_handler$VH.get(seg);
     }
-    public static void connect_property_change_handler$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * guint (*connect_property_change_handler)(AtkObject*,AtkPropertyChangeHandler*);
+     * }
+     */
+    public static void connect_property_change_handler$set(MemorySegment seg, MemorySegment x) {
         _AtkObjectClass.connect_property_change_handler$VH.set(seg, x);
     }
-    public static MemoryAddress connect_property_change_handler$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AtkObjectClass.connect_property_change_handler$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment connect_property_change_handler$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AtkObjectClass.connect_property_change_handler$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void connect_property_change_handler$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void connect_property_change_handler$set(MemorySegment seg, long index, MemorySegment x) {
         _AtkObjectClass.connect_property_change_handler$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static connect_property_change_handler connect_property_change_handler (MemorySegment segment, MemorySession session) {
-        return connect_property_change_handler.ofAddress(connect_property_change_handler$get(segment), session);
+    public static connect_property_change_handler connect_property_change_handler(MemorySegment segment, SegmentScope scope) {
+        return connect_property_change_handler.ofAddress(connect_property_change_handler$get(segment), scope);
     }
     static final FunctionDescriptor remove_property_change_handler$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle remove_property_change_handler$MH = RuntimeHelper.downcallHandle(
-        _AtkObjectClass.remove_property_change_handler$FUNC
+    static final FunctionDescriptor remove_property_change_handler_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle remove_property_change_handler_UP$MH = RuntimeHelper.upcallHandle(remove_property_change_handler.class, "apply", _AtkObjectClass.remove_property_change_handler_UP$FUNC);
+    static final FunctionDescriptor remove_property_change_handler_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle remove_property_change_handler_DOWN$MH = RuntimeHelper.downcallHandle(
+        _AtkObjectClass.remove_property_change_handler_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*remove_property_change_handler)(AtkObject*,guint);
+     * }
+     */
     public interface remove_property_change_handler {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, int _x1);
-        static MemorySegment allocate(remove_property_change_handler fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(remove_property_change_handler.class, fi, _AtkObjectClass.remove_property_change_handler$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, int _x1);
+        static MemorySegment allocate(remove_property_change_handler fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_AtkObjectClass.remove_property_change_handler_UP$MH, fi, _AtkObjectClass.remove_property_change_handler$FUNC, scope);
         }
-        static remove_property_change_handler ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, int __x1) -> {
+        static remove_property_change_handler ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, int __x1) -> {
                 try {
-                    _AtkObjectClass.remove_property_change_handler$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, __x1);
+                    _AtkObjectClass.remove_property_change_handler_DOWN$MH.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -783,39 +1230,65 @@ public class _AtkObjectClass {
     public static VarHandle remove_property_change_handler$VH() {
         return _AtkObjectClass.remove_property_change_handler$VH;
     }
-    public static MemoryAddress remove_property_change_handler$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AtkObjectClass.remove_property_change_handler$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*remove_property_change_handler)(AtkObject*,guint);
+     * }
+     */
+    public static MemorySegment remove_property_change_handler$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AtkObjectClass.remove_property_change_handler$VH.get(seg);
     }
-    public static void remove_property_change_handler$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*remove_property_change_handler)(AtkObject*,guint);
+     * }
+     */
+    public static void remove_property_change_handler$set(MemorySegment seg, MemorySegment x) {
         _AtkObjectClass.remove_property_change_handler$VH.set(seg, x);
     }
-    public static MemoryAddress remove_property_change_handler$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AtkObjectClass.remove_property_change_handler$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment remove_property_change_handler$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AtkObjectClass.remove_property_change_handler$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void remove_property_change_handler$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void remove_property_change_handler$set(MemorySegment seg, long index, MemorySegment x) {
         _AtkObjectClass.remove_property_change_handler$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static remove_property_change_handler remove_property_change_handler (MemorySegment segment, MemorySession session) {
-        return remove_property_change_handler.ofAddress(remove_property_change_handler$get(segment), session);
+    public static remove_property_change_handler remove_property_change_handler(MemorySegment segment, SegmentScope scope) {
+        return remove_property_change_handler.ofAddress(remove_property_change_handler$get(segment), scope);
     }
     static final FunctionDescriptor initialize$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle initialize$MH = RuntimeHelper.downcallHandle(
-        _AtkObjectClass.initialize$FUNC
+    static final FunctionDescriptor initialize_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle initialize_UP$MH = RuntimeHelper.upcallHandle(initialize.class, "apply", _AtkObjectClass.initialize_UP$FUNC);
+    static final FunctionDescriptor initialize_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle initialize_DOWN$MH = RuntimeHelper.downcallHandle(
+        _AtkObjectClass.initialize_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*initialize)(AtkObject*,gpointer);
+     * }
+     */
     public interface initialize {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(initialize fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(initialize.class, fi, _AtkObjectClass.initialize$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1);
+        static MemorySegment allocate(initialize fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_AtkObjectClass.initialize_UP$MH, fi, _AtkObjectClass.initialize$FUNC, scope);
         }
-        static initialize ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static initialize ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1) -> {
                 try {
-                    _AtkObjectClass.initialize$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    _AtkObjectClass.initialize_DOWN$MH.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -827,40 +1300,68 @@ public class _AtkObjectClass {
     public static VarHandle initialize$VH() {
         return _AtkObjectClass.initialize$VH;
     }
-    public static MemoryAddress initialize$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AtkObjectClass.initialize$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*initialize)(AtkObject*,gpointer);
+     * }
+     */
+    public static MemorySegment initialize$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AtkObjectClass.initialize$VH.get(seg);
     }
-    public static void initialize$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*initialize)(AtkObject*,gpointer);
+     * }
+     */
+    public static void initialize$set(MemorySegment seg, MemorySegment x) {
         _AtkObjectClass.initialize$VH.set(seg, x);
     }
-    public static MemoryAddress initialize$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AtkObjectClass.initialize$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment initialize$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AtkObjectClass.initialize$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void initialize$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void initialize$set(MemorySegment seg, long index, MemorySegment x) {
         _AtkObjectClass.initialize$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static initialize initialize (MemorySegment segment, MemorySession session) {
-        return initialize.ofAddress(initialize$get(segment), session);
+    public static initialize initialize(MemorySegment segment, SegmentScope scope) {
+        return initialize.ofAddress(initialize$get(segment), scope);
     }
     static final FunctionDescriptor children_changed$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle children_changed$MH = RuntimeHelper.downcallHandle(
-        _AtkObjectClass.children_changed$FUNC
+    static final FunctionDescriptor children_changed_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle children_changed_UP$MH = RuntimeHelper.upcallHandle(children_changed.class, "apply", _AtkObjectClass.children_changed_UP$FUNC);
+    static final FunctionDescriptor children_changed_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle children_changed_DOWN$MH = RuntimeHelper.downcallHandle(
+        _AtkObjectClass.children_changed_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*children_changed)(AtkObject*,guint,gpointer);
+     * }
+     */
     public interface children_changed {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, int _x1, java.lang.foreign.MemoryAddress _x2);
-        static MemorySegment allocate(children_changed fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(children_changed.class, fi, _AtkObjectClass.children_changed$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, int _x1, java.lang.foreign.MemorySegment _x2);
+        static MemorySegment allocate(children_changed fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_AtkObjectClass.children_changed_UP$MH, fi, _AtkObjectClass.children_changed$FUNC, scope);
         }
-        static children_changed ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, int __x1, java.lang.foreign.MemoryAddress __x2) -> {
+        static children_changed ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, int __x1, java.lang.foreign.MemorySegment __x2) -> {
                 try {
-                    _AtkObjectClass.children_changed$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, __x1, (java.lang.foreign.Addressable)__x2);
+                    _AtkObjectClass.children_changed_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -872,39 +1373,65 @@ public class _AtkObjectClass {
     public static VarHandle children_changed$VH() {
         return _AtkObjectClass.children_changed$VH;
     }
-    public static MemoryAddress children_changed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AtkObjectClass.children_changed$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*children_changed)(AtkObject*,guint,gpointer);
+     * }
+     */
+    public static MemorySegment children_changed$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AtkObjectClass.children_changed$VH.get(seg);
     }
-    public static void children_changed$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*children_changed)(AtkObject*,guint,gpointer);
+     * }
+     */
+    public static void children_changed$set(MemorySegment seg, MemorySegment x) {
         _AtkObjectClass.children_changed$VH.set(seg, x);
     }
-    public static MemoryAddress children_changed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AtkObjectClass.children_changed$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment children_changed$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AtkObjectClass.children_changed$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void children_changed$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void children_changed$set(MemorySegment seg, long index, MemorySegment x) {
         _AtkObjectClass.children_changed$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static children_changed children_changed (MemorySegment segment, MemorySession session) {
-        return children_changed.ofAddress(children_changed$get(segment), session);
+    public static children_changed children_changed(MemorySegment segment, SegmentScope scope) {
+        return children_changed.ofAddress(children_changed$get(segment), scope);
     }
     static final FunctionDescriptor focus_event$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle focus_event$MH = RuntimeHelper.downcallHandle(
-        _AtkObjectClass.focus_event$FUNC
+    static final FunctionDescriptor focus_event_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle focus_event_UP$MH = RuntimeHelper.upcallHandle(focus_event.class, "apply", _AtkObjectClass.focus_event_UP$FUNC);
+    static final FunctionDescriptor focus_event_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle focus_event_DOWN$MH = RuntimeHelper.downcallHandle(
+        _AtkObjectClass.focus_event_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*focus_event)(AtkObject*,gboolean);
+     * }
+     */
     public interface focus_event {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, int _x1);
-        static MemorySegment allocate(focus_event fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(focus_event.class, fi, _AtkObjectClass.focus_event$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, int _x1);
+        static MemorySegment allocate(focus_event fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_AtkObjectClass.focus_event_UP$MH, fi, _AtkObjectClass.focus_event$FUNC, scope);
         }
-        static focus_event ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, int __x1) -> {
+        static focus_event ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, int __x1) -> {
                 try {
-                    _AtkObjectClass.focus_event$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, __x1);
+                    _AtkObjectClass.focus_event_DOWN$MH.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -916,39 +1443,65 @@ public class _AtkObjectClass {
     public static VarHandle focus_event$VH() {
         return _AtkObjectClass.focus_event$VH;
     }
-    public static MemoryAddress focus_event$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AtkObjectClass.focus_event$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*focus_event)(AtkObject*,gboolean);
+     * }
+     */
+    public static MemorySegment focus_event$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AtkObjectClass.focus_event$VH.get(seg);
     }
-    public static void focus_event$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*focus_event)(AtkObject*,gboolean);
+     * }
+     */
+    public static void focus_event$set(MemorySegment seg, MemorySegment x) {
         _AtkObjectClass.focus_event$VH.set(seg, x);
     }
-    public static MemoryAddress focus_event$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AtkObjectClass.focus_event$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment focus_event$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AtkObjectClass.focus_event$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void focus_event$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void focus_event$set(MemorySegment seg, long index, MemorySegment x) {
         _AtkObjectClass.focus_event$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static focus_event focus_event (MemorySegment segment, MemorySession session) {
-        return focus_event.ofAddress(focus_event$get(segment), session);
+    public static focus_event focus_event(MemorySegment segment, SegmentScope scope) {
+        return focus_event.ofAddress(focus_event$get(segment), scope);
     }
     static final FunctionDescriptor property_change$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle property_change$MH = RuntimeHelper.downcallHandle(
-        _AtkObjectClass.property_change$FUNC
+    static final FunctionDescriptor property_change_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle property_change_UP$MH = RuntimeHelper.upcallHandle(property_change.class, "apply", _AtkObjectClass.property_change_UP$FUNC);
+    static final FunctionDescriptor property_change_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle property_change_DOWN$MH = RuntimeHelper.downcallHandle(
+        _AtkObjectClass.property_change_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*property_change)(AtkObject*,AtkPropertyValues*);
+     * }
+     */
     public interface property_change {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(property_change fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(property_change.class, fi, _AtkObjectClass.property_change$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+        static MemorySegment allocate(property_change fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_AtkObjectClass.property_change_UP$MH, fi, _AtkObjectClass.property_change$FUNC, scope);
         }
-        static property_change ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static property_change ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _AtkObjectClass.property_change$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    _AtkObjectClass.property_change_DOWN$MH.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -960,40 +1513,68 @@ public class _AtkObjectClass {
     public static VarHandle property_change$VH() {
         return _AtkObjectClass.property_change$VH;
     }
-    public static MemoryAddress property_change$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AtkObjectClass.property_change$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*property_change)(AtkObject*,AtkPropertyValues*);
+     * }
+     */
+    public static MemorySegment property_change$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AtkObjectClass.property_change$VH.get(seg);
     }
-    public static void property_change$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*property_change)(AtkObject*,AtkPropertyValues*);
+     * }
+     */
+    public static void property_change$set(MemorySegment seg, MemorySegment x) {
         _AtkObjectClass.property_change$VH.set(seg, x);
     }
-    public static MemoryAddress property_change$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AtkObjectClass.property_change$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment property_change$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AtkObjectClass.property_change$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void property_change$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void property_change$set(MemorySegment seg, long index, MemorySegment x) {
         _AtkObjectClass.property_change$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static property_change property_change (MemorySegment segment, MemorySession session) {
-        return property_change.ofAddress(property_change$get(segment), session);
+    public static property_change property_change(MemorySegment segment, SegmentScope scope) {
+        return property_change.ofAddress(property_change$get(segment), scope);
     }
     static final FunctionDescriptor state_change$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle state_change$MH = RuntimeHelper.downcallHandle(
-        _AtkObjectClass.state_change$FUNC
+    static final FunctionDescriptor state_change_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle state_change_UP$MH = RuntimeHelper.upcallHandle(state_change.class, "apply", _AtkObjectClass.state_change_UP$FUNC);
+    static final FunctionDescriptor state_change_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle state_change_DOWN$MH = RuntimeHelper.downcallHandle(
+        _AtkObjectClass.state_change_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*state_change)(AtkObject*,const gchar*,gboolean);
+     * }
+     */
     public interface state_change {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, int _x2);
-        static MemorySegment allocate(state_change fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(state_change.class, fi, _AtkObjectClass.state_change$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2);
+        static MemorySegment allocate(state_change fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_AtkObjectClass.state_change_UP$MH, fi, _AtkObjectClass.state_change$FUNC, scope);
         }
-        static state_change ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, int __x2) -> {
+        static state_change ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2) -> {
                 try {
-                    _AtkObjectClass.state_change$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, __x2);
+                    _AtkObjectClass.state_change_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1005,38 +1586,62 @@ public class _AtkObjectClass {
     public static VarHandle state_change$VH() {
         return _AtkObjectClass.state_change$VH;
     }
-    public static MemoryAddress state_change$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AtkObjectClass.state_change$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*state_change)(AtkObject*,const gchar*,gboolean);
+     * }
+     */
+    public static MemorySegment state_change$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AtkObjectClass.state_change$VH.get(seg);
     }
-    public static void state_change$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*state_change)(AtkObject*,const gchar*,gboolean);
+     * }
+     */
+    public static void state_change$set(MemorySegment seg, MemorySegment x) {
         _AtkObjectClass.state_change$VH.set(seg, x);
     }
-    public static MemoryAddress state_change$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AtkObjectClass.state_change$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment state_change$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AtkObjectClass.state_change$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void state_change$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void state_change$set(MemorySegment seg, long index, MemorySegment x) {
         _AtkObjectClass.state_change$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static state_change state_change (MemorySegment segment, MemorySession session) {
-        return state_change.ofAddress(state_change$get(segment), session);
+    public static state_change state_change(MemorySegment segment, SegmentScope scope) {
+        return state_change.ofAddress(state_change$get(segment), scope);
     }
     static final FunctionDescriptor visible_data_changed$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle visible_data_changed$MH = RuntimeHelper.downcallHandle(
-        _AtkObjectClass.visible_data_changed$FUNC
+    static final FunctionDescriptor visible_data_changed_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle visible_data_changed_UP$MH = RuntimeHelper.upcallHandle(visible_data_changed.class, "apply", _AtkObjectClass.visible_data_changed_UP$FUNC);
+    static final FunctionDescriptor visible_data_changed_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle visible_data_changed_DOWN$MH = RuntimeHelper.downcallHandle(
+        _AtkObjectClass.visible_data_changed_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*visible_data_changed)(AtkObject*);
+     * }
+     */
     public interface visible_data_changed {
 
-        void apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(visible_data_changed fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(visible_data_changed.class, fi, _AtkObjectClass.visible_data_changed$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment display);
+        static MemorySegment allocate(visible_data_changed fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_AtkObjectClass.visible_data_changed_UP$MH, fi, _AtkObjectClass.visible_data_changed$FUNC, scope);
         }
-        static visible_data_changed ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static visible_data_changed ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _AtkObjectClass.visible_data_changed$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    _AtkObjectClass.visible_data_changed_DOWN$MH.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1048,39 +1653,65 @@ public class _AtkObjectClass {
     public static VarHandle visible_data_changed$VH() {
         return _AtkObjectClass.visible_data_changed$VH;
     }
-    public static MemoryAddress visible_data_changed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AtkObjectClass.visible_data_changed$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*visible_data_changed)(AtkObject*);
+     * }
+     */
+    public static MemorySegment visible_data_changed$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AtkObjectClass.visible_data_changed$VH.get(seg);
     }
-    public static void visible_data_changed$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*visible_data_changed)(AtkObject*);
+     * }
+     */
+    public static void visible_data_changed$set(MemorySegment seg, MemorySegment x) {
         _AtkObjectClass.visible_data_changed$VH.set(seg, x);
     }
-    public static MemoryAddress visible_data_changed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AtkObjectClass.visible_data_changed$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment visible_data_changed$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AtkObjectClass.visible_data_changed$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void visible_data_changed$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void visible_data_changed$set(MemorySegment seg, long index, MemorySegment x) {
         _AtkObjectClass.visible_data_changed$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static visible_data_changed visible_data_changed (MemorySegment segment, MemorySession session) {
-        return visible_data_changed.ofAddress(visible_data_changed$get(segment), session);
+    public static visible_data_changed visible_data_changed(MemorySegment segment, SegmentScope scope) {
+        return visible_data_changed.ofAddress(visible_data_changed$get(segment), scope);
     }
     static final FunctionDescriptor active_descendant_changed$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle active_descendant_changed$MH = RuntimeHelper.downcallHandle(
-        _AtkObjectClass.active_descendant_changed$FUNC
+    static final FunctionDescriptor active_descendant_changed_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle active_descendant_changed_UP$MH = RuntimeHelper.upcallHandle(active_descendant_changed.class, "apply", _AtkObjectClass.active_descendant_changed_UP$FUNC);
+    static final FunctionDescriptor active_descendant_changed_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle active_descendant_changed_DOWN$MH = RuntimeHelper.downcallHandle(
+        _AtkObjectClass.active_descendant_changed_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*active_descendant_changed)(AtkObject*,gpointer*);
+     * }
+     */
     public interface active_descendant_changed {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(active_descendant_changed fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(active_descendant_changed.class, fi, _AtkObjectClass.active_descendant_changed$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+        static MemorySegment allocate(active_descendant_changed fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_AtkObjectClass.active_descendant_changed_UP$MH, fi, _AtkObjectClass.active_descendant_changed$FUNC, scope);
         }
-        static active_descendant_changed ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static active_descendant_changed ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _AtkObjectClass.active_descendant_changed$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    _AtkObjectClass.active_descendant_changed_DOWN$MH.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1092,38 +1723,62 @@ public class _AtkObjectClass {
     public static VarHandle active_descendant_changed$VH() {
         return _AtkObjectClass.active_descendant_changed$VH;
     }
-    public static MemoryAddress active_descendant_changed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AtkObjectClass.active_descendant_changed$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*active_descendant_changed)(AtkObject*,gpointer*);
+     * }
+     */
+    public static MemorySegment active_descendant_changed$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AtkObjectClass.active_descendant_changed$VH.get(seg);
     }
-    public static void active_descendant_changed$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*active_descendant_changed)(AtkObject*,gpointer*);
+     * }
+     */
+    public static void active_descendant_changed$set(MemorySegment seg, MemorySegment x) {
         _AtkObjectClass.active_descendant_changed$VH.set(seg, x);
     }
-    public static MemoryAddress active_descendant_changed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AtkObjectClass.active_descendant_changed$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment active_descendant_changed$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AtkObjectClass.active_descendant_changed$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void active_descendant_changed$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void active_descendant_changed$set(MemorySegment seg, long index, MemorySegment x) {
         _AtkObjectClass.active_descendant_changed$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static active_descendant_changed active_descendant_changed (MemorySegment segment, MemorySession session) {
-        return active_descendant_changed.ofAddress(active_descendant_changed$get(segment), session);
+    public static active_descendant_changed active_descendant_changed(MemorySegment segment, SegmentScope scope) {
+        return active_descendant_changed.ofAddress(active_descendant_changed$get(segment), scope);
     }
     static final FunctionDescriptor get_attributes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_attributes$MH = RuntimeHelper.downcallHandle(
-        _AtkObjectClass.get_attributes$FUNC
+    static final FunctionDescriptor get_attributes_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_attributes_UP$MH = RuntimeHelper.upcallHandle(get_attributes.class, "apply", _AtkObjectClass.get_attributes_UP$FUNC);
+    static final FunctionDescriptor get_attributes_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_attributes_DOWN$MH = RuntimeHelper.downcallHandle(
+        _AtkObjectClass.get_attributes_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * AtkAttributeSet* (*get_attributes)(AtkObject*);
+     * }
+     */
     public interface get_attributes {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(get_attributes fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_attributes.class, fi, _AtkObjectClass.get_attributes$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(get_attributes fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_AtkObjectClass.get_attributes_UP$MH, fi, _AtkObjectClass.get_attributes$FUNC, scope);
         }
-        static get_attributes ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static get_attributes ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_AtkObjectClass.get_attributes$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (java.lang.foreign.MemorySegment)_AtkObjectClass.get_attributes_DOWN$MH.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1135,38 +1790,62 @@ public class _AtkObjectClass {
     public static VarHandle get_attributes$VH() {
         return _AtkObjectClass.get_attributes$VH;
     }
-    public static MemoryAddress get_attributes$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AtkObjectClass.get_attributes$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * AtkAttributeSet* (*get_attributes)(AtkObject*);
+     * }
+     */
+    public static MemorySegment get_attributes$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AtkObjectClass.get_attributes$VH.get(seg);
     }
-    public static void get_attributes$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * AtkAttributeSet* (*get_attributes)(AtkObject*);
+     * }
+     */
+    public static void get_attributes$set(MemorySegment seg, MemorySegment x) {
         _AtkObjectClass.get_attributes$VH.set(seg, x);
     }
-    public static MemoryAddress get_attributes$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AtkObjectClass.get_attributes$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_attributes$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AtkObjectClass.get_attributes$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_attributes$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_attributes$set(MemorySegment seg, long index, MemorySegment x) {
         _AtkObjectClass.get_attributes$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_attributes get_attributes (MemorySegment segment, MemorySession session) {
-        return get_attributes.ofAddress(get_attributes$get(segment), session);
+    public static get_attributes get_attributes(MemorySegment segment, SegmentScope scope) {
+        return get_attributes.ofAddress(get_attributes$get(segment), scope);
     }
     static final FunctionDescriptor get_object_locale$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle get_object_locale$MH = RuntimeHelper.downcallHandle(
-        _AtkObjectClass.get_object_locale$FUNC
+    static final FunctionDescriptor get_object_locale_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle get_object_locale_UP$MH = RuntimeHelper.upcallHandle(get_object_locale.class, "apply", _AtkObjectClass.get_object_locale_UP$FUNC);
+    static final FunctionDescriptor get_object_locale_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle get_object_locale_DOWN$MH = RuntimeHelper.downcallHandle(
+        _AtkObjectClass.get_object_locale_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * const gchar* (*get_object_locale)(AtkObject*);
+     * }
+     */
     public interface get_object_locale {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(get_object_locale fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(get_object_locale.class, fi, _AtkObjectClass.get_object_locale$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(get_object_locale fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_AtkObjectClass.get_object_locale_UP$MH, fi, _AtkObjectClass.get_object_locale$FUNC, scope);
         }
-        static get_object_locale ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static get_object_locale ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_AtkObjectClass.get_object_locale$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (java.lang.foreign.MemorySegment)_AtkObjectClass.get_object_locale_DOWN$MH.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1178,46 +1857,70 @@ public class _AtkObjectClass {
     public static VarHandle get_object_locale$VH() {
         return _AtkObjectClass.get_object_locale$VH;
     }
-    public static MemoryAddress get_object_locale$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AtkObjectClass.get_object_locale$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * const gchar* (*get_object_locale)(AtkObject*);
+     * }
+     */
+    public static MemorySegment get_object_locale$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AtkObjectClass.get_object_locale$VH.get(seg);
     }
-    public static void get_object_locale$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * const gchar* (*get_object_locale)(AtkObject*);
+     * }
+     */
+    public static void get_object_locale$set(MemorySegment seg, MemorySegment x) {
         _AtkObjectClass.get_object_locale$VH.set(seg, x);
     }
-    public static MemoryAddress get_object_locale$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AtkObjectClass.get_object_locale$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment get_object_locale$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AtkObjectClass.get_object_locale$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void get_object_locale$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void get_object_locale$set(MemorySegment seg, long index, MemorySegment x) {
         _AtkObjectClass.get_object_locale$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_object_locale get_object_locale (MemorySegment segment, MemorySession session) {
-        return get_object_locale.ofAddress(get_object_locale$get(segment), session);
+    public static get_object_locale get_object_locale(MemorySegment segment, SegmentScope scope) {
+        return get_object_locale.ofAddress(get_object_locale$get(segment), scope);
     }
     static final VarHandle pad1$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("pad1"));
     public static VarHandle pad1$VH() {
         return _AtkObjectClass.pad1$VH;
     }
-    public static MemoryAddress pad1$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_AtkObjectClass.pad1$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * AtkFunction pad1;
+     * }
+     */
+    public static MemorySegment pad1$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_AtkObjectClass.pad1$VH.get(seg);
     }
-    public static void pad1$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * AtkFunction pad1;
+     * }
+     */
+    public static void pad1$set(MemorySegment seg, MemorySegment x) {
         _AtkObjectClass.pad1$VH.set(seg, x);
     }
-    public static MemoryAddress pad1$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_AtkObjectClass.pad1$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment pad1$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_AtkObjectClass.pad1$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void pad1$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void pad1$set(MemorySegment seg, long index, MemorySegment x) {
         _AtkObjectClass.pad1$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static AtkFunction pad1 (MemorySegment segment, MemorySession session) {
-        return AtkFunction.ofAddress(pad1$get(segment), session);
+    public static AtkFunction pad1(MemorySegment segment, SegmentScope scope) {
+        return AtkFunction.ofAddress(pad1$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

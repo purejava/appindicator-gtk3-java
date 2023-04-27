@@ -7,58 +7,56 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$688 {
+final class constants$688 {
 
-    static final FunctionDescriptor g_file_enumerator_next_files_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$688() {}
+    static final FunctionDescriptor g_io_scheduler_job_send_to_mainloop$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_enumerator_next_files_finish$MH = RuntimeHelper.downcallHandle(
-        "g_file_enumerator_next_files_finish",
-        constants$688.g_file_enumerator_next_files_finish$FUNC
-    );
-    static final FunctionDescriptor g_file_enumerator_close_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_file_enumerator_close_async$MH = RuntimeHelper.downcallHandle(
-        "g_file_enumerator_close_async",
-        constants$688.g_file_enumerator_close_async$FUNC
+    static final MethodHandle g_io_scheduler_job_send_to_mainloop$MH = RuntimeHelper.downcallHandle(
+        "g_io_scheduler_job_send_to_mainloop",
+        constants$688.g_io_scheduler_job_send_to_mainloop$FUNC
     );
-    static final FunctionDescriptor g_file_enumerator_close_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_io_scheduler_job_send_to_mainloop_async$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_file_enumerator_close_finish$MH = RuntimeHelper.downcallHandle(
-        "g_file_enumerator_close_finish",
-        constants$688.g_file_enumerator_close_finish$FUNC
+    static final MethodHandle g_io_scheduler_job_send_to_mainloop_async$MH = RuntimeHelper.downcallHandle(
+        "g_io_scheduler_job_send_to_mainloop_async",
+        constants$688.g_io_scheduler_job_send_to_mainloop_async$FUNC
     );
-    static final FunctionDescriptor g_file_enumerator_is_closed$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_list_model_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_list_model_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_list_model_get_type",
+        constants$688.g_list_model_get_type$FUNC
+    );
+    static final FunctionDescriptor g_list_model_get_item_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_file_enumerator_is_closed$MH = RuntimeHelper.downcallHandle(
-        "g_file_enumerator_is_closed",
-        constants$688.g_file_enumerator_is_closed$FUNC
+    static final MethodHandle g_list_model_get_item_type$MH = RuntimeHelper.downcallHandle(
+        "g_list_model_get_item_type",
+        constants$688.g_list_model_get_item_type$FUNC
     );
-    static final FunctionDescriptor g_file_enumerator_has_pending$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_list_model_get_n_items$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_file_enumerator_has_pending$MH = RuntimeHelper.downcallHandle(
-        "g_file_enumerator_has_pending",
-        constants$688.g_file_enumerator_has_pending$FUNC
+    static final MethodHandle g_list_model_get_n_items$MH = RuntimeHelper.downcallHandle(
+        "g_list_model_get_n_items",
+        constants$688.g_list_model_get_n_items$FUNC
     );
-    static final FunctionDescriptor g_file_enumerator_set_pending$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_list_model_get_item$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_file_enumerator_set_pending$MH = RuntimeHelper.downcallHandle(
-        "g_file_enumerator_set_pending",
-        constants$688.g_file_enumerator_set_pending$FUNC
+    static final MethodHandle g_list_model_get_item$MH = RuntimeHelper.downcallHandle(
+        "g_list_model_get_item",
+        constants$688.g_list_model_get_item$FUNC
     );
 }
 

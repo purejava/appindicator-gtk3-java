@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class AtkGObjectAccessible extends _AtkGObjectAccessible {
+/**
+ * {@snippet :
+ * typedef struct _AtkGObjectAccessible AtkGObjectAccessible;
+ * }
+ */
+public final class AtkGObjectAccessible extends _AtkGObjectAccessible {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private AtkGObjectAccessible() {}
 }
 
 

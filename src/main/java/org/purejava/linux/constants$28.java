@@ -7,53 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$28 {
+final class constants$28 {
 
-    static final FunctionDescriptor g_byte_array_sort$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$28() {}
+    static final FunctionDescriptor g_byte_array_steal$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_byte_array_sort$MH = RuntimeHelper.downcallHandle(
-        "g_byte_array_sort",
-        constants$28.g_byte_array_sort$FUNC
+    static final MethodHandle g_byte_array_steal$MH = RuntimeHelper.downcallHandle(
+        "g_byte_array_steal",
+        constants$28.g_byte_array_steal$FUNC
     );
-    static final FunctionDescriptor g_byte_array_sort_with_data$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_byte_array_sized_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_byte_array_sort_with_data$MH = RuntimeHelper.downcallHandle(
-        "g_byte_array_sort_with_data",
-        constants$28.g_byte_array_sort_with_data$FUNC
+    static final MethodHandle g_byte_array_sized_new$MH = RuntimeHelper.downcallHandle(
+        "g_byte_array_sized_new",
+        constants$28.g_byte_array_sized_new$FUNC
     );
-    static final FunctionDescriptor g_atomic_int_get$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_atomic_int_get$MH = RuntimeHelper.downcallHandle(
-        "g_atomic_int_get",
-        constants$28.g_atomic_int_get$FUNC
-    );
-    static final FunctionDescriptor g_atomic_int_set$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_byte_array_free$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_atomic_int_set$MH = RuntimeHelper.downcallHandle(
-        "g_atomic_int_set",
-        constants$28.g_atomic_int_set$FUNC
+    static final MethodHandle g_byte_array_free$MH = RuntimeHelper.downcallHandle(
+        "g_byte_array_free",
+        constants$28.g_byte_array_free$FUNC
     );
-    static final FunctionDescriptor g_atomic_int_inc$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_byte_array_free_to_bytes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_atomic_int_inc$MH = RuntimeHelper.downcallHandle(
-        "g_atomic_int_inc",
-        constants$28.g_atomic_int_inc$FUNC
+    static final MethodHandle g_byte_array_free_to_bytes$MH = RuntimeHelper.downcallHandle(
+        "g_byte_array_free_to_bytes",
+        constants$28.g_byte_array_free_to_bytes$FUNC
     );
-    static final FunctionDescriptor g_atomic_int_dec_and_test$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_byte_array_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_atomic_int_dec_and_test$MH = RuntimeHelper.downcallHandle(
-        "g_atomic_int_dec_and_test",
-        constants$28.g_atomic_int_dec_and_test$FUNC
+    static final MethodHandle g_byte_array_ref$MH = RuntimeHelper.downcallHandle(
+        "g_byte_array_ref",
+        constants$28.g_byte_array_ref$FUNC
+    );
+    static final FunctionDescriptor g_byte_array_unref$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_byte_array_unref$MH = RuntimeHelper.downcallHandle(
+        "g_byte_array_unref",
+        constants$28.g_byte_array_unref$FUNC
     );
 }
 

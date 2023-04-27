@@ -7,8 +7,50 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$142 {
+final class constants$142 {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$142() {}
+    static final FunctionDescriptor g_list_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_list_copy$MH = RuntimeHelper.downcallHandle(
+        "g_list_copy",
+        constants$142.g_list_copy$FUNC
+    );
+    static final FunctionDescriptor g_list_copy_deep$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_list_copy_deep$MH = RuntimeHelper.downcallHandle(
+        "g_list_copy_deep",
+        constants$142.g_list_copy_deep$FUNC
+    );
+    static final FunctionDescriptor g_list_nth$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_list_nth$MH = RuntimeHelper.downcallHandle(
+        "g_list_nth",
+        constants$142.g_list_nth$FUNC
+    );
+    static final FunctionDescriptor g_list_nth_prev$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_list_nth_prev$MH = RuntimeHelper.downcallHandle(
+        "g_list_nth_prev",
+        constants$142.g_list_nth_prev$FUNC
+    );
+    static final FunctionDescriptor g_list_find$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_list_find$MH = RuntimeHelper.downcallHandle(
+        "g_list_find",
+        constants$142.g_list_find$FUNC
+    );
     static final FunctionDescriptor g_list_find_custom$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
@@ -17,43 +59,6 @@ class constants$142 {
     static final MethodHandle g_list_find_custom$MH = RuntimeHelper.downcallHandle(
         "g_list_find_custom",
         constants$142.g_list_find_custom$FUNC
-    );
-    static final FunctionDescriptor g_list_position$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_list_position$MH = RuntimeHelper.downcallHandle(
-        "g_list_position",
-        constants$142.g_list_position$FUNC
-    );
-    static final FunctionDescriptor g_list_index$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_list_index$MH = RuntimeHelper.downcallHandle(
-        "g_list_index",
-        constants$142.g_list_index$FUNC
-    );
-    static final FunctionDescriptor g_list_last$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_list_last$MH = RuntimeHelper.downcallHandle(
-        "g_list_last",
-        constants$142.g_list_last$FUNC
-    );
-    static final FunctionDescriptor g_list_first$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_list_first$MH = RuntimeHelper.downcallHandle(
-        "g_list_first",
-        constants$142.g_list_first$FUNC
-    );
-    static final FunctionDescriptor g_list_length$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_list_length$MH = RuntimeHelper.downcallHandle(
-        "g_list_length",
-        constants$142.g_list_length$FUNC
     );
 }
 

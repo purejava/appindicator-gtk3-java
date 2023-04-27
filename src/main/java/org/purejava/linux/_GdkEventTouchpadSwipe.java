@@ -7,9 +7,28 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GdkEventTouchpadSwipe {
+ *     GdkEventType type;
+ *     GdkWindow* window;
+ *     gint8 send_event;
+ *     gint8 phase;
+ *     gint8 n_fingers;
+ *     guint32 time;
+ *     gdouble x;
+ *     gdouble y;
+ *     gdouble dx;
+ *     gdouble dy;
+ *     gdouble x_root;
+ *     gdouble y_root;
+ *     guint state;
+ * };
+ * }
+ */
 public class _GdkEventTouchpadSwipe {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_INT$LAYOUT.withName("type"),
         MemoryLayout.paddingLayout(32),
         Constants$root.C_POINTER$LAYOUT.withName("window"),
@@ -34,10 +53,22 @@ public class _GdkEventTouchpadSwipe {
     public static VarHandle type$VH() {
         return _GdkEventTouchpadSwipe.type$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GdkEventType type;
+     * }
+     */
     public static int type$get(MemorySegment seg) {
         return (int)_GdkEventTouchpadSwipe.type$VH.get(seg);
     }
-    public static void type$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GdkEventType type;
+     * }
+     */
+    public static void type$set(MemorySegment seg, int x) {
         _GdkEventTouchpadSwipe.type$VH.set(seg, x);
     }
     public static int type$get(MemorySegment seg, long index) {
@@ -50,26 +81,50 @@ public class _GdkEventTouchpadSwipe {
     public static VarHandle window$VH() {
         return _GdkEventTouchpadSwipe.window$VH;
     }
-    public static MemoryAddress window$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GdkEventTouchpadSwipe.window$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GdkWindow* window;
+     * }
+     */
+    public static MemorySegment window$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GdkEventTouchpadSwipe.window$VH.get(seg);
     }
-    public static void window$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GdkWindow* window;
+     * }
+     */
+    public static void window$set(MemorySegment seg, MemorySegment x) {
         _GdkEventTouchpadSwipe.window$VH.set(seg, x);
     }
-    public static MemoryAddress window$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GdkEventTouchpadSwipe.window$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment window$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GdkEventTouchpadSwipe.window$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void window$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void window$set(MemorySegment seg, long index, MemorySegment x) {
         _GdkEventTouchpadSwipe.window$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle send_event$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("send_event"));
     public static VarHandle send_event$VH() {
         return _GdkEventTouchpadSwipe.send_event$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gint8 send_event;
+     * }
+     */
     public static byte send_event$get(MemorySegment seg) {
         return (byte)_GdkEventTouchpadSwipe.send_event$VH.get(seg);
     }
-    public static void send_event$set( MemorySegment seg, byte x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gint8 send_event;
+     * }
+     */
+    public static void send_event$set(MemorySegment seg, byte x) {
         _GdkEventTouchpadSwipe.send_event$VH.set(seg, x);
     }
     public static byte send_event$get(MemorySegment seg, long index) {
@@ -82,10 +137,22 @@ public class _GdkEventTouchpadSwipe {
     public static VarHandle phase$VH() {
         return _GdkEventTouchpadSwipe.phase$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gint8 phase;
+     * }
+     */
     public static byte phase$get(MemorySegment seg) {
         return (byte)_GdkEventTouchpadSwipe.phase$VH.get(seg);
     }
-    public static void phase$set( MemorySegment seg, byte x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gint8 phase;
+     * }
+     */
+    public static void phase$set(MemorySegment seg, byte x) {
         _GdkEventTouchpadSwipe.phase$VH.set(seg, x);
     }
     public static byte phase$get(MemorySegment seg, long index) {
@@ -98,10 +165,22 @@ public class _GdkEventTouchpadSwipe {
     public static VarHandle n_fingers$VH() {
         return _GdkEventTouchpadSwipe.n_fingers$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gint8 n_fingers;
+     * }
+     */
     public static byte n_fingers$get(MemorySegment seg) {
         return (byte)_GdkEventTouchpadSwipe.n_fingers$VH.get(seg);
     }
-    public static void n_fingers$set( MemorySegment seg, byte x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gint8 n_fingers;
+     * }
+     */
+    public static void n_fingers$set(MemorySegment seg, byte x) {
         _GdkEventTouchpadSwipe.n_fingers$VH.set(seg, x);
     }
     public static byte n_fingers$get(MemorySegment seg, long index) {
@@ -114,10 +193,22 @@ public class _GdkEventTouchpadSwipe {
     public static VarHandle time$VH() {
         return _GdkEventTouchpadSwipe.time$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * guint32 time;
+     * }
+     */
     public static int time$get(MemorySegment seg) {
         return (int)_GdkEventTouchpadSwipe.time$VH.get(seg);
     }
-    public static void time$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * guint32 time;
+     * }
+     */
+    public static void time$set(MemorySegment seg, int x) {
         _GdkEventTouchpadSwipe.time$VH.set(seg, x);
     }
     public static int time$get(MemorySegment seg, long index) {
@@ -130,10 +221,22 @@ public class _GdkEventTouchpadSwipe {
     public static VarHandle x$VH() {
         return _GdkEventTouchpadSwipe.x$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gdouble x;
+     * }
+     */
     public static double x$get(MemorySegment seg) {
         return (double)_GdkEventTouchpadSwipe.x$VH.get(seg);
     }
-    public static void x$set( MemorySegment seg, double x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gdouble x;
+     * }
+     */
+    public static void x$set(MemorySegment seg, double x) {
         _GdkEventTouchpadSwipe.x$VH.set(seg, x);
     }
     public static double x$get(MemorySegment seg, long index) {
@@ -146,10 +249,22 @@ public class _GdkEventTouchpadSwipe {
     public static VarHandle y$VH() {
         return _GdkEventTouchpadSwipe.y$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gdouble y;
+     * }
+     */
     public static double y$get(MemorySegment seg) {
         return (double)_GdkEventTouchpadSwipe.y$VH.get(seg);
     }
-    public static void y$set( MemorySegment seg, double x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gdouble y;
+     * }
+     */
+    public static void y$set(MemorySegment seg, double x) {
         _GdkEventTouchpadSwipe.y$VH.set(seg, x);
     }
     public static double y$get(MemorySegment seg, long index) {
@@ -162,10 +277,22 @@ public class _GdkEventTouchpadSwipe {
     public static VarHandle dx$VH() {
         return _GdkEventTouchpadSwipe.dx$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gdouble dx;
+     * }
+     */
     public static double dx$get(MemorySegment seg) {
         return (double)_GdkEventTouchpadSwipe.dx$VH.get(seg);
     }
-    public static void dx$set( MemorySegment seg, double x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gdouble dx;
+     * }
+     */
+    public static void dx$set(MemorySegment seg, double x) {
         _GdkEventTouchpadSwipe.dx$VH.set(seg, x);
     }
     public static double dx$get(MemorySegment seg, long index) {
@@ -178,10 +305,22 @@ public class _GdkEventTouchpadSwipe {
     public static VarHandle dy$VH() {
         return _GdkEventTouchpadSwipe.dy$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gdouble dy;
+     * }
+     */
     public static double dy$get(MemorySegment seg) {
         return (double)_GdkEventTouchpadSwipe.dy$VH.get(seg);
     }
-    public static void dy$set( MemorySegment seg, double x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gdouble dy;
+     * }
+     */
+    public static void dy$set(MemorySegment seg, double x) {
         _GdkEventTouchpadSwipe.dy$VH.set(seg, x);
     }
     public static double dy$get(MemorySegment seg, long index) {
@@ -194,10 +333,22 @@ public class _GdkEventTouchpadSwipe {
     public static VarHandle x_root$VH() {
         return _GdkEventTouchpadSwipe.x_root$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gdouble x_root;
+     * }
+     */
     public static double x_root$get(MemorySegment seg) {
         return (double)_GdkEventTouchpadSwipe.x_root$VH.get(seg);
     }
-    public static void x_root$set( MemorySegment seg, double x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gdouble x_root;
+     * }
+     */
+    public static void x_root$set(MemorySegment seg, double x) {
         _GdkEventTouchpadSwipe.x_root$VH.set(seg, x);
     }
     public static double x_root$get(MemorySegment seg, long index) {
@@ -210,10 +361,22 @@ public class _GdkEventTouchpadSwipe {
     public static VarHandle y_root$VH() {
         return _GdkEventTouchpadSwipe.y_root$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gdouble y_root;
+     * }
+     */
     public static double y_root$get(MemorySegment seg) {
         return (double)_GdkEventTouchpadSwipe.y_root$VH.get(seg);
     }
-    public static void y_root$set( MemorySegment seg, double x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gdouble y_root;
+     * }
+     */
+    public static void y_root$set(MemorySegment seg, double x) {
         _GdkEventTouchpadSwipe.y_root$VH.set(seg, x);
     }
     public static double y_root$get(MemorySegment seg, long index) {
@@ -226,10 +389,22 @@ public class _GdkEventTouchpadSwipe {
     public static VarHandle state$VH() {
         return _GdkEventTouchpadSwipe.state$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * guint state;
+     * }
+     */
     public static int state$get(MemorySegment seg) {
         return (int)_GdkEventTouchpadSwipe.state$VH.get(seg);
     }
-    public static void state$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * guint state;
+     * }
+     */
+    public static void state$set(MemorySegment seg, int x) {
         _GdkEventTouchpadSwipe.state$VH.set(seg, x);
     }
     public static int state$get(MemorySegment seg, long index) {
@@ -240,10 +415,10 @@ public class _GdkEventTouchpadSwipe {
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

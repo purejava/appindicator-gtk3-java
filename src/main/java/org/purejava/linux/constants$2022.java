@@ -7,52 +7,16 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$2022 {
+final class constants$2022 {
 
-    static final FunctionDescriptor gtk_text_mark_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_text_mark_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_mark_new",
-        constants$2022.gtk_text_mark_new$FUNC
-    );
-    static final FunctionDescriptor gtk_text_mark_set_visible$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_text_mark_set_visible$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_mark_set_visible",
-        constants$2022.gtk_text_mark_set_visible$FUNC
-    );
-    static final FunctionDescriptor gtk_text_mark_get_visible$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_mark_get_visible$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_mark_get_visible",
-        constants$2022.gtk_text_mark_get_visible$FUNC
-    );
-    static final FunctionDescriptor gtk_text_mark_get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_mark_get_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_mark_get_name",
-        constants$2022.gtk_text_mark_get_name$FUNC
-    );
-    static final FunctionDescriptor gtk_text_mark_get_deleted$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_mark_get_deleted$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_mark_get_deleted",
-        constants$2022.gtk_text_mark_get_deleted$FUNC
-    );
-    static final FunctionDescriptor gtk_text_mark_get_buffer$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_mark_get_buffer$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_mark_get_buffer",
-        constants$2022.gtk_text_mark_get_buffer$FUNC
-    );
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$2022() {}
+    static final MemorySegment CAIRO_MIME_TYPE_URI$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("text/x-uri");
+    static final MemorySegment CAIRO_MIME_TYPE_UNIQUE_ID$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("application/x-cairo.uuid");
+    static final MemorySegment CAIRO_MIME_TYPE_JBIG2$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("application/x-cairo.jbig2");
+    static final MemorySegment CAIRO_MIME_TYPE_JBIG2_GLOBAL$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("application/x-cairo.jbig2-global");
+    static final MemorySegment CAIRO_MIME_TYPE_JBIG2_GLOBAL_ID$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("application/x-cairo.jbig2-global-id");
+    static final MemorySegment CAIRO_MIME_TYPE_CCITT_FAX$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("image/g3fax");
 }
 
 

@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * void (*GtkClipboardClearFunc)(struct _GtkClipboard* clipboard,void* user_data_or_owner);
+ * }
+ */
 public interface GtkClipboardClearFunc {
 
-    void apply(java.lang.foreign.MemoryAddress clipboard, java.lang.foreign.MemoryAddress user_data_or_owner);
-    static MemorySegment allocate(GtkClipboardClearFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GtkClipboardClearFunc.class, fi, constants$1730.GtkClipboardClearFunc$FUNC, session);
+    void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+    static MemorySegment allocate(GtkClipboardClearFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$1539.GtkClipboardClearFunc_UP$MH, fi, constants$1539.GtkClipboardClearFunc$FUNC, scope);
     }
-    static GtkClipboardClearFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _clipboard, java.lang.foreign.MemoryAddress _user_data_or_owner) -> {
+    static GtkClipboardClearFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
             try {
-                constants$1730.GtkClipboardClearFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_clipboard, (java.lang.foreign.Addressable)_user_data_or_owner);
+                constants$1540.GtkClipboardClearFunc_DOWN$MH.invokeExact(symbol, _tag, _data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

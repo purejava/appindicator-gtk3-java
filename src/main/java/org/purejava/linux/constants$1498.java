@@ -7,53 +7,57 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1498 {
+final class constants$1498 {
 
-    static final FunctionDescriptor gtk_window_set_default_geometry$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1498() {}
+    static final FunctionDescriptor gtk_assistant_get_page_side_image$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_assistant_get_page_side_image$MH = RuntimeHelper.downcallHandle(
+        "gtk_assistant_get_page_side_image",
+        constants$1498.gtk_assistant_get_page_side_image$FUNC
+    );
+    static final FunctionDescriptor gtk_assistant_set_page_complete$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_window_set_default_geometry$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_set_default_geometry",
-        constants$1498.gtk_window_set_default_geometry$FUNC
+    static final MethodHandle gtk_assistant_set_page_complete$MH = RuntimeHelper.downcallHandle(
+        "gtk_assistant_set_page_complete",
+        constants$1498.gtk_assistant_set_page_complete$FUNC
     );
-    static final FunctionDescriptor gtk_window_resize_to_geometry$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_assistant_get_page_complete$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_window_resize_to_geometry$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_resize_to_geometry",
-        constants$1498.gtk_window_resize_to_geometry$FUNC
-    );
-    static final FunctionDescriptor gtk_window_get_group$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_window_get_group$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_get_group",
-        constants$1498.gtk_window_get_group$FUNC
+    static final MethodHandle gtk_assistant_get_page_complete$MH = RuntimeHelper.downcallHandle(
+        "gtk_assistant_get_page_complete",
+        constants$1498.gtk_assistant_get_page_complete$FUNC
     );
-    static final FunctionDescriptor gtk_window_has_group$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_assistant_add_action_widget$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_window_has_group$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_has_group",
-        constants$1498.gtk_window_has_group$FUNC
+    static final MethodHandle gtk_assistant_add_action_widget$MH = RuntimeHelper.downcallHandle(
+        "gtk_assistant_add_action_widget",
+        constants$1498.gtk_assistant_add_action_widget$FUNC
     );
-    static final FunctionDescriptor gtk_window_reshow_with_initial_size$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_assistant_remove_action_widget$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_window_reshow_with_initial_size$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_reshow_with_initial_size",
-        constants$1498.gtk_window_reshow_with_initial_size$FUNC
+    static final MethodHandle gtk_assistant_remove_action_widget$MH = RuntimeHelper.downcallHandle(
+        "gtk_assistant_remove_action_widget",
+        constants$1498.gtk_assistant_remove_action_widget$FUNC
     );
-    static final FunctionDescriptor gtk_window_get_window_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_assistant_update_buttons_state$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_window_get_window_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_get_window_type",
-        constants$1498.gtk_window_get_window_type$FUNC
+    static final MethodHandle gtk_assistant_update_buttons_state$MH = RuntimeHelper.downcallHandle(
+        "gtk_assistant_update_buttons_state",
+        constants$1498.gtk_assistant_update_buttons_state$FUNC
     );
 }
 

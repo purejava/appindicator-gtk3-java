@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GTlsBackendInterface extends _GTlsBackendInterface {
+/**
+ * {@snippet :
+ * typedef struct _GTlsBackendInterface GTlsBackendInterface;
+ * }
+ */
+public final class GTlsBackendInterface extends _GTlsBackendInterface {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GTlsBackendInterface() {}
 }
 
 

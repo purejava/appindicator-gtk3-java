@@ -7,52 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1119 {
+final class constants$1119 {
 
-    static final FunctionDescriptor pango_layout_set_alignment$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_layout_set_alignment$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_set_alignment",
-        constants$1119.pango_layout_set_alignment$FUNC
-    );
-    static final FunctionDescriptor pango_layout_get_alignment$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1119() {}
+    static final FunctionDescriptor gdk_screen_get_rgba_visual$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_layout_get_alignment$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_get_alignment",
-        constants$1119.pango_layout_get_alignment$FUNC
+    static final MethodHandle gdk_screen_get_rgba_visual$MH = RuntimeHelper.downcallHandle(
+        "gdk_screen_get_rgba_visual",
+        constants$1119.gdk_screen_get_rgba_visual$FUNC
     );
-    static final FunctionDescriptor pango_layout_set_tabs$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gdk_screen_is_composited$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_layout_set_tabs$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_set_tabs",
-        constants$1119.pango_layout_set_tabs$FUNC
+    static final MethodHandle gdk_screen_is_composited$MH = RuntimeHelper.downcallHandle(
+        "gdk_screen_is_composited",
+        constants$1119.gdk_screen_is_composited$FUNC
     );
-    static final FunctionDescriptor pango_layout_get_tabs$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gdk_screen_get_root_window$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_layout_get_tabs$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_get_tabs",
-        constants$1119.pango_layout_get_tabs$FUNC
+    static final MethodHandle gdk_screen_get_root_window$MH = RuntimeHelper.downcallHandle(
+        "gdk_screen_get_root_window",
+        constants$1119.gdk_screen_get_root_window$FUNC
     );
-    static final FunctionDescriptor pango_layout_set_single_paragraph_mode$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_layout_set_single_paragraph_mode$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_set_single_paragraph_mode",
-        constants$1119.pango_layout_set_single_paragraph_mode$FUNC
-    );
-    static final FunctionDescriptor pango_layout_get_single_paragraph_mode$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gdk_screen_get_display$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_layout_get_single_paragraph_mode$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_get_single_paragraph_mode",
-        constants$1119.pango_layout_get_single_paragraph_mode$FUNC
+    static final MethodHandle gdk_screen_get_display$MH = RuntimeHelper.downcallHandle(
+        "gdk_screen_get_display",
+        constants$1119.gdk_screen_get_display$FUNC
+    );
+    static final FunctionDescriptor gdk_screen_get_number$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_screen_get_number$MH = RuntimeHelper.downcallHandle(
+        "gdk_screen_get_number",
+        constants$1119.gdk_screen_get_number$FUNC
+    );
+    static final FunctionDescriptor gdk_screen_get_width$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_screen_get_width$MH = RuntimeHelper.downcallHandle(
+        "gdk_screen_get_width",
+        constants$1119.gdk_screen_get_width$FUNC
     );
 }
 

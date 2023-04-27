@@ -7,39 +7,56 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$341 {
+final class constants$341 {
 
-    static final FunctionDescriptor g_list_pop_allocator$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle g_list_pop_allocator$MH = RuntimeHelper.downcallHandle(
-        "g_list_pop_allocator",
-        constants$341.g_list_pop_allocator$FUNC
-    );
-    static final FunctionDescriptor g_slist_push_allocator$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$341() {}
+    static final FunctionDescriptor g_uri_peek_scheme$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_slist_push_allocator$MH = RuntimeHelper.downcallHandle(
-        "g_slist_push_allocator",
-        constants$341.g_slist_push_allocator$FUNC
+    static final MethodHandle g_uri_peek_scheme$MH = RuntimeHelper.downcallHandle(
+        "g_uri_peek_scheme",
+        constants$341.g_uri_peek_scheme$FUNC
     );
-    static final FunctionDescriptor g_slist_pop_allocator$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle g_slist_pop_allocator$MH = RuntimeHelper.downcallHandle(
-        "g_slist_pop_allocator",
-        constants$341.g_slist_pop_allocator$FUNC
+    static final FunctionDescriptor g_uri_escape_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final FunctionDescriptor g_node_push_allocator$FUNC = FunctionDescriptor.ofVoid(
+    static final MethodHandle g_uri_escape_string$MH = RuntimeHelper.downcallHandle(
+        "g_uri_escape_string",
+        constants$341.g_uri_escape_string$FUNC
+    );
+    static final FunctionDescriptor g_uri_unescape_bytes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_node_push_allocator$MH = RuntimeHelper.downcallHandle(
-        "g_node_push_allocator",
-        constants$341.g_node_push_allocator$FUNC
+    static final MethodHandle g_uri_unescape_bytes$MH = RuntimeHelper.downcallHandle(
+        "g_uri_unescape_bytes",
+        constants$341.g_uri_unescape_bytes$FUNC
     );
-    static final FunctionDescriptor g_node_pop_allocator$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle g_node_pop_allocator$MH = RuntimeHelper.downcallHandle(
-        "g_node_pop_allocator",
-        constants$341.g_node_pop_allocator$FUNC
-    );
-    static final FunctionDescriptor GCacheNewFunc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_uri_escape_bytes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_uri_escape_bytes$MH = RuntimeHelper.downcallHandle(
+        "g_uri_escape_bytes",
+        constants$341.g_uri_escape_bytes$FUNC
+    );
+    static final FunctionDescriptor g_uuid_string_is_valid$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_uuid_string_is_valid$MH = RuntimeHelper.downcallHandle(
+        "g_uuid_string_is_valid",
+        constants$341.g_uuid_string_is_valid$FUNC
+    );
+    static final FunctionDescriptor g_uuid_string_random$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle g_uuid_string_random$MH = RuntimeHelper.downcallHandle(
+        "g_uuid_string_random",
+        constants$341.g_uuid_string_random$FUNC
     );
 }
 

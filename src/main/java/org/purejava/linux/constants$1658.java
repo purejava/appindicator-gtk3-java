@@ -7,62 +7,65 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1658 {
+final class constants$1658 {
 
-    static final FunctionDescriptor gtk_tree_view_remove_column$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1658() {}
+    static final FunctionDescriptor gtk_icon_view_unselect_all$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_icon_view_unselect_all$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_view_unselect_all",
+        constants$1658.gtk_icon_view_unselect_all$FUNC
+    );
+    static final FunctionDescriptor gtk_icon_view_item_activated$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_tree_view_remove_column$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_remove_column",
-        constants$1658.gtk_tree_view_remove_column$FUNC
+    static final MethodHandle gtk_icon_view_item_activated$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_view_item_activated",
+        constants$1658.gtk_icon_view_item_activated$FUNC
     );
-    static final FunctionDescriptor gtk_tree_view_insert_column$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_icon_view_set_cursor$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_tree_view_insert_column$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_insert_column",
-        constants$1658.gtk_tree_view_insert_column$FUNC
+    static final MethodHandle gtk_icon_view_set_cursor$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_view_set_cursor",
+        constants$1658.gtk_icon_view_set_cursor$FUNC
     );
-    static final FunctionDescriptor gtk_tree_view_insert_column_with_attributes$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_icon_view_get_cursor$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_icon_view_get_cursor$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_view_get_cursor",
+        constants$1658.gtk_icon_view_get_cursor$FUNC
+    );
+    static final FunctionDescriptor gtk_icon_view_scroll_to_path$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_FLOAT$LAYOUT,
+        Constants$root.C_FLOAT$LAYOUT
+    );
+    static final MethodHandle gtk_icon_view_scroll_to_path$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_view_scroll_to_path",
+        constants$1658.gtk_icon_view_scroll_to_path$FUNC
+    );
+    static final FunctionDescriptor gtk_icon_view_enable_model_drag_source$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_insert_column_with_attributes$MH = RuntimeHelper.downcallHandleVariadic(
-        "gtk_tree_view_insert_column_with_attributes",
-        constants$1658.gtk_tree_view_insert_column_with_attributes$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_insert_column_with_data_func$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_insert_column_with_data_func$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_insert_column_with_data_func",
-        constants$1658.gtk_tree_view_insert_column_with_data_func$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_get_n_columns$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_get_n_columns$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_n_columns",
-        constants$1658.gtk_tree_view_get_n_columns$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_get_column$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_tree_view_get_column$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_column",
-        constants$1658.gtk_tree_view_get_column$FUNC
+    static final MethodHandle gtk_icon_view_enable_model_drag_source$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_view_enable_model_drag_source",
+        constants$1658.gtk_icon_view_enable_model_drag_source$FUNC
     );
 }
 

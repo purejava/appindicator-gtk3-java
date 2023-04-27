@@ -7,44 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$572 {
+final class constants$572 {
 
-    static final FunctionDescriptor getpid$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle getpid$MH = RuntimeHelper.downcallHandle(
-        "getpid",
-        constants$572.getpid$FUNC
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$572() {}
+    static final FunctionDescriptor g_dbus_message_get_byte_order$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor getppid$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle getppid$MH = RuntimeHelper.downcallHandle(
-        "getppid",
-        constants$572.getppid$FUNC
+    static final MethodHandle g_dbus_message_get_byte_order$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_message_get_byte_order",
+        constants$572.g_dbus_message_get_byte_order$FUNC
     );
-    static final FunctionDescriptor getpgrp$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle getpgrp$MH = RuntimeHelper.downcallHandle(
-        "getpgrp",
-        constants$572.getpgrp$FUNC
-    );
-    static final FunctionDescriptor __getpgid$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_dbus_message_set_byte_order$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle __getpgid$MH = RuntimeHelper.downcallHandle(
-        "__getpgid",
-        constants$572.__getpgid$FUNC
+    static final MethodHandle g_dbus_message_set_byte_order$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_message_set_byte_order",
+        constants$572.g_dbus_message_set_byte_order$FUNC
     );
-    static final FunctionDescriptor getpgid$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_dbus_message_get_message_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_dbus_message_get_message_type$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_message_get_message_type",
+        constants$572.g_dbus_message_get_message_type$FUNC
+    );
+    static final FunctionDescriptor g_dbus_message_set_message_type$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle getpgid$MH = RuntimeHelper.downcallHandle(
-        "getpgid",
-        constants$572.getpgid$FUNC
+    static final MethodHandle g_dbus_message_set_message_type$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_message_set_message_type",
+        constants$572.g_dbus_message_set_message_type$FUNC
     );
-    static final FunctionDescriptor setpgid$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_dbus_message_get_flags$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_dbus_message_get_flags$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_message_get_flags",
+        constants$572.g_dbus_message_get_flags$FUNC
+    );
+    static final FunctionDescriptor g_dbus_message_set_flags$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle setpgid$MH = RuntimeHelper.downcallHandle(
-        "setpgid",
-        constants$572.setpgid$FUNC
+    static final MethodHandle g_dbus_message_set_flags$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_message_set_flags",
+        constants$572.g_dbus_message_set_flags$FUNC
     );
 }
 

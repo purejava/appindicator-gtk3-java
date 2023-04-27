@@ -7,57 +7,16 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$2041 {
+final class constants$2041 {
 
-    static final FunctionDescriptor gtk_text_view_forward_display_line$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_view_forward_display_line$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_forward_display_line",
-        constants$2041.gtk_text_view_forward_display_line$FUNC
-    );
-    static final FunctionDescriptor gtk_text_view_backward_display_line$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_view_backward_display_line$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_backward_display_line",
-        constants$2041.gtk_text_view_backward_display_line$FUNC
-    );
-    static final FunctionDescriptor gtk_text_view_forward_display_line_end$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_view_forward_display_line_end$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_forward_display_line_end",
-        constants$2041.gtk_text_view_forward_display_line_end$FUNC
-    );
-    static final FunctionDescriptor gtk_text_view_backward_display_line_start$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_view_backward_display_line_start$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_backward_display_line_start",
-        constants$2041.gtk_text_view_backward_display_line_start$FUNC
-    );
-    static final FunctionDescriptor gtk_text_view_starts_display_line$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_view_starts_display_line$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_starts_display_line",
-        constants$2041.gtk_text_view_starts_display_line$FUNC
-    );
-    static final FunctionDescriptor gtk_text_view_move_visually$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_text_view_move_visually$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_move_visually",
-        constants$2041.gtk_text_view_move_visually$FUNC
-    );
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$2041() {}
+    static final MemorySegment GTK_STYLE_CLASS_FLAT$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("flat");
+    static final MemorySegment GTK_STYLE_CLASS_READ_ONLY$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("read-only");
+    static final MemorySegment GTK_STYLE_CLASS_OVERSHOOT$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("overshoot");
+    static final MemorySegment GTK_STYLE_CLASS_UNDERSHOOT$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("undershoot");
+    static final MemorySegment GTK_STYLE_CLASS_PAPER$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("paper");
+    static final MemorySegment GTK_STYLE_CLASS_MONOSPACE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("monospace");
 }
 
 

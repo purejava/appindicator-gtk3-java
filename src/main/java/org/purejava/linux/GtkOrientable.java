@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkOrientable {
+/**
+ * {@snippet :
+ * typedef struct _GtkOrientable GtkOrientable;
+ * }
+ */
+public final class GtkOrientable {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkOrientable() {}
 }
 
 

@@ -7,52 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$534 {
+final class constants$534 {
 
-    static final FunctionDescriptor g_application_get_inactivity_timeout$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$534() {}
+    static final FunctionDescriptor getdomainname$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle getdomainname$MH = RuntimeHelper.downcallHandle(
+        "getdomainname",
+        constants$534.getdomainname$FUNC
+    );
+    static final FunctionDescriptor setdomainname$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle setdomainname$MH = RuntimeHelper.downcallHandle(
+        "setdomainname",
+        constants$534.setdomainname$FUNC
+    );
+    static final FunctionDescriptor vhangup$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
+    static final MethodHandle vhangup$MH = RuntimeHelper.downcallHandle(
+        "vhangup",
+        constants$534.vhangup$FUNC
+    );
+    static final FunctionDescriptor revoke$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_application_get_inactivity_timeout$MH = RuntimeHelper.downcallHandle(
-        "g_application_get_inactivity_timeout",
-        constants$534.g_application_get_inactivity_timeout$FUNC
+    static final MethodHandle revoke$MH = RuntimeHelper.downcallHandle(
+        "revoke",
+        constants$534.revoke$FUNC
     );
-    static final FunctionDescriptor g_application_set_inactivity_timeout$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor profil$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_application_set_inactivity_timeout$MH = RuntimeHelper.downcallHandle(
-        "g_application_set_inactivity_timeout",
-        constants$534.g_application_set_inactivity_timeout$FUNC
+    static final MethodHandle profil$MH = RuntimeHelper.downcallHandle(
+        "profil",
+        constants$534.profil$FUNC
     );
-    static final FunctionDescriptor g_application_get_flags$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor acct$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_application_get_flags$MH = RuntimeHelper.downcallHandle(
-        "g_application_get_flags",
-        constants$534.g_application_get_flags$FUNC
-    );
-    static final FunctionDescriptor g_application_set_flags$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_application_set_flags$MH = RuntimeHelper.downcallHandle(
-        "g_application_set_flags",
-        constants$534.g_application_set_flags$FUNC
-    );
-    static final FunctionDescriptor g_application_get_resource_base_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_application_get_resource_base_path$MH = RuntimeHelper.downcallHandle(
-        "g_application_get_resource_base_path",
-        constants$534.g_application_get_resource_base_path$FUNC
-    );
-    static final FunctionDescriptor g_application_set_resource_base_path$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_application_set_resource_base_path$MH = RuntimeHelper.downcallHandle(
-        "g_application_set_resource_base_path",
-        constants$534.g_application_set_resource_base_path$FUNC
+    static final MethodHandle acct$MH = RuntimeHelper.downcallHandle(
+        "acct",
+        constants$534.acct$FUNC
     );
 }
 

@@ -7,53 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1670 {
+final class constants$1670 {
 
-    static final FunctionDescriptor gtk_tree_view_set_grid_lines$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_set_grid_lines$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_set_grid_lines",
-        constants$1670.gtk_tree_view_set_grid_lines$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_get_enable_tree_lines$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1670() {}
+    static final FunctionDescriptor gtk_level_bar_get_min_value$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_tree_view_get_enable_tree_lines$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_enable_tree_lines",
-        constants$1670.gtk_tree_view_get_enable_tree_lines$FUNC
+    static final MethodHandle gtk_level_bar_get_min_value$MH = RuntimeHelper.downcallHandle(
+        "gtk_level_bar_get_min_value",
+        constants$1670.gtk_level_bar_get_min_value$FUNC
     );
-    static final FunctionDescriptor gtk_tree_view_set_enable_tree_lines$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_level_bar_set_max_value$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_DOUBLE$LAYOUT
     );
-    static final MethodHandle gtk_tree_view_set_enable_tree_lines$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_set_enable_tree_lines",
-        constants$1670.gtk_tree_view_set_enable_tree_lines$FUNC
+    static final MethodHandle gtk_level_bar_set_max_value$MH = RuntimeHelper.downcallHandle(
+        "gtk_level_bar_set_max_value",
+        constants$1670.gtk_level_bar_set_max_value$FUNC
     );
-    static final FunctionDescriptor gtk_tree_view_set_show_expanders$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_set_show_expanders$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_set_show_expanders",
-        constants$1670.gtk_tree_view_set_show_expanders$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_get_show_expanders$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_level_bar_get_max_value$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_tree_view_get_show_expanders$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_show_expanders",
-        constants$1670.gtk_tree_view_get_show_expanders$FUNC
+    static final MethodHandle gtk_level_bar_get_max_value$MH = RuntimeHelper.downcallHandle(
+        "gtk_level_bar_get_max_value",
+        constants$1670.gtk_level_bar_get_max_value$FUNC
     );
-    static final FunctionDescriptor gtk_tree_view_set_level_indentation$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_level_bar_set_inverted$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_tree_view_set_level_indentation$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_set_level_indentation",
-        constants$1670.gtk_tree_view_set_level_indentation$FUNC
+    static final MethodHandle gtk_level_bar_set_inverted$MH = RuntimeHelper.downcallHandle(
+        "gtk_level_bar_set_inverted",
+        constants$1670.gtk_level_bar_set_inverted$FUNC
+    );
+    static final FunctionDescriptor gtk_level_bar_get_inverted$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_level_bar_get_inverted$MH = RuntimeHelper.downcallHandle(
+        "gtk_level_bar_get_inverted",
+        constants$1670.gtk_level_bar_get_inverted$FUNC
+    );
+    static final FunctionDescriptor gtk_level_bar_add_offset_value$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle gtk_level_bar_add_offset_value$MH = RuntimeHelper.downcallHandle(
+        "gtk_level_bar_add_offset_value",
+        constants$1670.gtk_level_bar_add_offset_value$FUNC
     );
 }
 

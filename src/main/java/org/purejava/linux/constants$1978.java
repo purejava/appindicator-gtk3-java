@@ -7,52 +7,48 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1978 {
+final class constants$1978 {
 
-    static final FunctionDescriptor gtk_recent_chooser_get_limit$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_recent_chooser_get_limit$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_chooser_get_limit",
-        constants$1978.gtk_recent_chooser_get_limit$FUNC
-    );
-    static final FunctionDescriptor gtk_recent_chooser_set_local_only$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1978() {}
+    static final FunctionDescriptor gtk_vbox_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_recent_chooser_set_local_only$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_chooser_set_local_only",
-        constants$1978.gtk_recent_chooser_set_local_only$FUNC
+    static final MethodHandle gtk_vbox_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_vbox_new",
+        constants$1978.gtk_vbox_new$FUNC
     );
-    static final FunctionDescriptor gtk_recent_chooser_get_local_only$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_vpaned_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_vpaned_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_vpaned_get_type",
+        constants$1978.gtk_vpaned_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_vpaned_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_vpaned_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_vpaned_new",
+        constants$1978.gtk_vpaned_new$FUNC
+    );
+    static final FunctionDescriptor gtk_vscale_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_vscale_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_vscale_get_type",
+        constants$1978.gtk_vscale_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_vscale_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_recent_chooser_get_local_only$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_chooser_get_local_only",
-        constants$1978.gtk_recent_chooser_get_local_only$FUNC
+    static final MethodHandle gtk_vscale_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_vscale_new",
+        constants$1978.gtk_vscale_new$FUNC
     );
-    static final FunctionDescriptor gtk_recent_chooser_set_show_tips$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor gtk_vscale_new_with_range$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
     );
-    static final MethodHandle gtk_recent_chooser_set_show_tips$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_chooser_set_show_tips",
-        constants$1978.gtk_recent_chooser_set_show_tips$FUNC
-    );
-    static final FunctionDescriptor gtk_recent_chooser_get_show_tips$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_recent_chooser_get_show_tips$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_chooser_get_show_tips",
-        constants$1978.gtk_recent_chooser_get_show_tips$FUNC
-    );
-    static final FunctionDescriptor gtk_recent_chooser_set_show_icons$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_recent_chooser_set_show_icons$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_chooser_set_show_icons",
-        constants$1978.gtk_recent_chooser_set_show_icons$FUNC
+    static final MethodHandle gtk_vscale_new_with_range$MH = RuntimeHelper.downcallHandle(
+        "gtk_vscale_new_with_range",
+        constants$1978.gtk_vscale_new_with_range$FUNC
     );
 }
 

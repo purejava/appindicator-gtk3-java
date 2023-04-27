@@ -7,9 +7,19 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GUriParamsIter {
+ *     gint dummy0;
+ *     gpointer dummy1;
+ *     gpointer dummy2;
+ *     guint8 dummy3[256];
+ * };
+ * }
+ */
 public class _GUriParamsIter {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_INT$LAYOUT.withName("dummy0"),
         MemoryLayout.paddingLayout(32),
         Constants$root.C_POINTER$LAYOUT.withName("dummy1"),
@@ -23,10 +33,22 @@ public class _GUriParamsIter {
     public static VarHandle dummy0$VH() {
         return _GUriParamsIter.dummy0$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gint dummy0;
+     * }
+     */
     public static int dummy0$get(MemorySegment seg) {
         return (int)_GUriParamsIter.dummy0$VH.get(seg);
     }
-    public static void dummy0$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gint dummy0;
+     * }
+     */
+    public static void dummy0$set(MemorySegment seg, int x) {
         _GUriParamsIter.dummy0$VH.set(seg, x);
     }
     public static int dummy0$get(MemorySegment seg, long index) {
@@ -39,32 +61,56 @@ public class _GUriParamsIter {
     public static VarHandle dummy1$VH() {
         return _GUriParamsIter.dummy1$VH;
     }
-    public static MemoryAddress dummy1$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GUriParamsIter.dummy1$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gpointer dummy1;
+     * }
+     */
+    public static MemorySegment dummy1$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GUriParamsIter.dummy1$VH.get(seg);
     }
-    public static void dummy1$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gpointer dummy1;
+     * }
+     */
+    public static void dummy1$set(MemorySegment seg, MemorySegment x) {
         _GUriParamsIter.dummy1$VH.set(seg, x);
     }
-    public static MemoryAddress dummy1$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GUriParamsIter.dummy1$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment dummy1$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GUriParamsIter.dummy1$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void dummy1$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void dummy1$set(MemorySegment seg, long index, MemorySegment x) {
         _GUriParamsIter.dummy1$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle dummy2$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("dummy2"));
     public static VarHandle dummy2$VH() {
         return _GUriParamsIter.dummy2$VH;
     }
-    public static MemoryAddress dummy2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GUriParamsIter.dummy2$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gpointer dummy2;
+     * }
+     */
+    public static MemorySegment dummy2$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GUriParamsIter.dummy2$VH.get(seg);
     }
-    public static void dummy2$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gpointer dummy2;
+     * }
+     */
+    public static void dummy2$set(MemorySegment seg, MemorySegment x) {
         _GUriParamsIter.dummy2$VH.set(seg, x);
     }
-    public static MemoryAddress dummy2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GUriParamsIter.dummy2$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment dummy2$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GUriParamsIter.dummy2$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void dummy2$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void dummy2$set(MemorySegment seg, long index, MemorySegment x) {
         _GUriParamsIter.dummy2$VH.set(seg.asSlice(index*sizeof()), x);
     }
     public static MemorySegment dummy3$slice(MemorySegment seg) {
@@ -72,10 +118,10 @@ public class _GUriParamsIter {
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

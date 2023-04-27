@@ -7,9 +7,17 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GtkMountOperation {
+ *     GMountOperation parent_instance;
+ *     GtkMountOperationPrivate* priv;
+ * };
+ * }
+ */
 public class _GtkMountOperation {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
                 MemoryLayout.structLayout(
@@ -33,24 +41,36 @@ public class _GtkMountOperation {
     public static VarHandle priv$VH() {
         return _GtkMountOperation.priv$VH;
     }
-    public static MemoryAddress priv$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkMountOperation.priv$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GtkMountOperationPrivate* priv;
+     * }
+     */
+    public static MemorySegment priv$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkMountOperation.priv$VH.get(seg);
     }
-    public static void priv$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GtkMountOperationPrivate* priv;
+     * }
+     */
+    public static void priv$set(MemorySegment seg, MemorySegment x) {
         _GtkMountOperation.priv$VH.set(seg, x);
     }
-    public static MemoryAddress priv$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkMountOperation.priv$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment priv$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkMountOperation.priv$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void priv$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void priv$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkMountOperation.priv$VH.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

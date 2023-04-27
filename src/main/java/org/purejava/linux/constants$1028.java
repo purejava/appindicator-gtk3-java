@@ -7,54 +7,64 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1028 {
+final class constants$1028 {
 
-    static final FunctionDescriptor hb_font_set_var_coords_normalized$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1028() {}
+    static final FunctionDescriptor cairo_surface_unmap_image$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cairo_surface_unmap_image$MH = RuntimeHelper.downcallHandle(
+        "cairo_surface_unmap_image",
+        constants$1028.cairo_surface_unmap_image$FUNC
+    );
+    static final FunctionDescriptor cairo_surface_create_for_rectangle$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle cairo_surface_create_for_rectangle$MH = RuntimeHelper.downcallHandle(
+        "cairo_surface_create_for_rectangle",
+        constants$1028.cairo_surface_create_for_rectangle$FUNC
+    );
+    static final FunctionDescriptor cairo_surface_create_observer$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle hb_font_set_var_coords_normalized$MH = RuntimeHelper.downcallHandle(
-        "hb_font_set_var_coords_normalized",
-        constants$1028.hb_font_set_var_coords_normalized$FUNC
+    static final MethodHandle cairo_surface_create_observer$MH = RuntimeHelper.downcallHandle(
+        "cairo_surface_create_observer",
+        constants$1028.cairo_surface_create_observer$FUNC
     );
-    static final FunctionDescriptor hb_font_get_var_coords_normalized$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor cairo_surface_observer_callback_t$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_font_get_var_coords_normalized$MH = RuntimeHelper.downcallHandle(
-        "hb_font_get_var_coords_normalized",
-        constants$1028.hb_font_get_var_coords_normalized$FUNC
-    );
-    static final FunctionDescriptor hb_font_set_var_named_instance$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor cairo_surface_observer_callback_t_UP$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle hb_font_set_var_named_instance$MH = RuntimeHelper.downcallHandle(
-        "hb_font_set_var_named_instance",
-        constants$1028.hb_font_set_var_named_instance$FUNC
-    );
-    static final FunctionDescriptor hb_glyph_info_get_glyph_flags$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_glyph_info_get_glyph_flags$MH = RuntimeHelper.downcallHandle(
-        "hb_glyph_info_get_glyph_flags",
-        constants$1028.hb_glyph_info_get_glyph_flags$FUNC
-    );
-    static final FunctionDescriptor hb_segment_properties_equal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_segment_properties_equal$MH = RuntimeHelper.downcallHandle(
-        "hb_segment_properties_equal",
-        constants$1028.hb_segment_properties_equal$FUNC
-    );
-    static final FunctionDescriptor hb_segment_properties_hash$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final MethodHandle cairo_surface_observer_callback_t_UP$MH = RuntimeHelper.upcallHandle(cairo_surface_observer_callback_t.class, "apply", constants$1028.cairo_surface_observer_callback_t_UP$FUNC);
+    static final FunctionDescriptor cairo_surface_observer_callback_t_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_segment_properties_hash$MH = RuntimeHelper.downcallHandle(
-        "hb_segment_properties_hash",
-        constants$1028.hb_segment_properties_hash$FUNC
+    static final MethodHandle cairo_surface_observer_callback_t_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$1028.cairo_surface_observer_callback_t_DOWN$FUNC
+    );
+    static final FunctionDescriptor cairo_surface_observer_add_paint_callback$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cairo_surface_observer_add_paint_callback$MH = RuntimeHelper.downcallHandle(
+        "cairo_surface_observer_add_paint_callback",
+        constants$1028.cairo_surface_observer_add_paint_callback$FUNC
     );
 }
 

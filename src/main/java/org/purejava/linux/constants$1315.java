@@ -7,55 +7,60 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1315 {
+final class constants$1315 {
 
-    static final FunctionDescriptor pango_cairo_context_set_font_options$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1315() {}
+    static final FunctionDescriptor gtk_window_move$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle pango_cairo_context_set_font_options$MH = RuntimeHelper.downcallHandle(
-        "pango_cairo_context_set_font_options",
-        constants$1315.pango_cairo_context_set_font_options$FUNC
+    static final MethodHandle gtk_window_move$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_move",
+        constants$1315.gtk_window_move$FUNC
     );
-    static final FunctionDescriptor pango_cairo_context_get_font_options$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_cairo_context_get_font_options$MH = RuntimeHelper.downcallHandle(
-        "pango_cairo_context_get_font_options",
-        constants$1315.pango_cairo_context_get_font_options$FUNC
-    );
-    static final FunctionDescriptor pango_cairo_context_set_resolution$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle pango_cairo_context_set_resolution$MH = RuntimeHelper.downcallHandle(
-        "pango_cairo_context_set_resolution",
-        constants$1315.pango_cairo_context_set_resolution$FUNC
-    );
-    static final FunctionDescriptor pango_cairo_context_get_resolution$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_cairo_context_get_resolution$MH = RuntimeHelper.downcallHandle(
-        "pango_cairo_context_get_resolution",
-        constants$1315.pango_cairo_context_get_resolution$FUNC
-    );
-    static final FunctionDescriptor pango_cairo_context_set_shape_renderer$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_window_get_position$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_cairo_context_set_shape_renderer$MH = RuntimeHelper.downcallHandle(
-        "pango_cairo_context_set_shape_renderer",
-        constants$1315.pango_cairo_context_set_shape_renderer$FUNC
+    static final MethodHandle gtk_window_get_position$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_get_position",
+        constants$1315.gtk_window_get_position$FUNC
     );
-    static final FunctionDescriptor pango_cairo_context_get_shape_renderer$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_window_parse_geometry$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_cairo_context_get_shape_renderer$MH = RuntimeHelper.downcallHandle(
-        "pango_cairo_context_get_shape_renderer",
-        constants$1315.pango_cairo_context_get_shape_renderer$FUNC
+    static final MethodHandle gtk_window_parse_geometry$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_parse_geometry",
+        constants$1315.gtk_window_parse_geometry$FUNC
+    );
+    static final FunctionDescriptor gtk_window_set_default_geometry$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_window_set_default_geometry$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_set_default_geometry",
+        constants$1315.gtk_window_set_default_geometry$FUNC
+    );
+    static final FunctionDescriptor gtk_window_resize_to_geometry$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_window_resize_to_geometry$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_resize_to_geometry",
+        constants$1315.gtk_window_resize_to_geometry$FUNC
+    );
+    static final FunctionDescriptor gtk_window_get_group$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_window_get_group$MH = RuntimeHelper.downcallHandle(
+        "gtk_window_get_group",
+        constants$1315.gtk_window_get_group$FUNC
     );
 }
 

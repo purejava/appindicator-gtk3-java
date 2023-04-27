@@ -7,49 +7,63 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$645 {
+final class constants$645 {
 
-    static final FunctionDescriptor glib_autoptr_clear_GDebugController$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$645() {}
+    static final FunctionDescriptor g_file_info_set_attribute_string$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GDebugController$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GDebugController",
-        constants$645.glib_autoptr_clear_GDebugController$FUNC
+    static final MethodHandle g_file_info_set_attribute_string$MH = RuntimeHelper.downcallHandle(
+        "g_file_info_set_attribute_string",
+        constants$645.g_file_info_set_attribute_string$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GDebugController$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_file_info_set_attribute_byte_string$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GDebugController$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GDebugController",
-        constants$645.glib_autoptr_cleanup_GDebugController$FUNC
+    static final MethodHandle g_file_info_set_attribute_byte_string$MH = RuntimeHelper.downcallHandle(
+        "g_file_info_set_attribute_byte_string",
+        constants$645.g_file_info_set_attribute_byte_string$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GDebugController$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_file_info_set_attribute_boolean$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GDebugController$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GDebugController",
-        constants$645.glib_listautoptr_cleanup_GDebugController$FUNC
+    static final MethodHandle g_file_info_set_attribute_boolean$MH = RuntimeHelper.downcallHandle(
+        "g_file_info_set_attribute_boolean",
+        constants$645.g_file_info_set_attribute_boolean$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GDebugController$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_file_info_set_attribute_uint32$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GDebugController$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GDebugController",
-        constants$645.glib_slistautoptr_cleanup_GDebugController$FUNC
+    static final MethodHandle g_file_info_set_attribute_uint32$MH = RuntimeHelper.downcallHandle(
+        "g_file_info_set_attribute_uint32",
+        constants$645.g_file_info_set_attribute_uint32$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GDebugController$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_file_info_set_attribute_int32$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GDebugController$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GDebugController",
-        constants$645.glib_queueautoptr_cleanup_GDebugController$FUNC
+    static final MethodHandle g_file_info_set_attribute_int32$MH = RuntimeHelper.downcallHandle(
+        "g_file_info_set_attribute_int32",
+        constants$645.g_file_info_set_attribute_int32$FUNC
     );
-    static final FunctionDescriptor g_debug_controller$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_file_info_set_attribute_uint64$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
     );
-    static final MethodHandle g_debug_controller$MH = RuntimeHelper.downcallHandle(
-        "g_debug_controller",
-        constants$645.g_debug_controller$FUNC
+    static final MethodHandle g_file_info_set_attribute_uint64$MH = RuntimeHelper.downcallHandle(
+        "g_file_info_set_attribute_uint64",
+        constants$645.g_file_info_set_attribute_uint64$FUNC
     );
 }
 

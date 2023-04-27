@@ -7,49 +7,49 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$380 {
+final class constants$380 {
 
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GDateTime$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$380() {}
+    static final FunctionDescriptor g_type_init$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle g_type_init$MH = RuntimeHelper.downcallHandle(
+        "g_type_init",
+        constants$380.g_type_init$FUNC
+    );
+    static final FunctionDescriptor g_type_init_with_debug_flags$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_type_init_with_debug_flags$MH = RuntimeHelper.downcallHandle(
+        "g_type_init_with_debug_flags",
+        constants$380.g_type_init_with_debug_flags$FUNC
+    );
+    static final FunctionDescriptor g_type_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle g_type_name$MH = RuntimeHelper.downcallHandle(
+        "g_type_name",
+        constants$380.g_type_name$FUNC
+    );
+    static final FunctionDescriptor g_type_qname$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle g_type_qname$MH = RuntimeHelper.downcallHandle(
+        "g_type_qname",
+        constants$380.g_type_qname$FUNC
+    );
+    static final FunctionDescriptor g_type_from_name$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GDateTime$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GDateTime",
-        constants$380.glib_slistautoptr_cleanup_GDateTime$FUNC
+    static final MethodHandle g_type_from_name$MH = RuntimeHelper.downcallHandle(
+        "g_type_from_name",
+        constants$380.g_type_from_name$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GDateTime$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_type_parent$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GDateTime$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GDateTime",
-        constants$380.glib_queueautoptr_cleanup_GDateTime$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_clear_GDate$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_autoptr_clear_GDate$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GDate",
-        constants$380.glib_autoptr_clear_GDate$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_cleanup_GDate$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_autoptr_cleanup_GDate$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GDate",
-        constants$380.glib_autoptr_cleanup_GDate$FUNC
-    );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GDate$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_listautoptr_cleanup_GDate$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GDate",
-        constants$380.glib_listautoptr_cleanup_GDate$FUNC
-    );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GDate$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_slistautoptr_cleanup_GDate$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GDate",
-        constants$380.glib_slistautoptr_cleanup_GDate$FUNC
+    static final MethodHandle g_type_parent$MH = RuntimeHelper.downcallHandle(
+        "g_type_parent",
+        constants$380.g_type_parent$FUNC
     );
 }
 

@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * int (*GRegexEvalCallback)(struct _GMatchInfo* match_info,struct _GString* result,void* user_data);
+ * }
+ */
 public interface GRegexEvalCallback {
 
-    int apply(java.lang.foreign.MemoryAddress match_info, java.lang.foreign.MemoryAddress result, java.lang.foreign.MemoryAddress user_data);
-    static MemorySegment allocate(GRegexEvalCallback fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GRegexEvalCallback.class, fi, constants$274.GRegexEvalCallback$FUNC, session);
+    int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
+    static MemorySegment allocate(GRegexEvalCallback fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$288.GRegexEvalCallback_UP$MH, fi, constants$288.GRegexEvalCallback$FUNC, scope);
     }
-    static GRegexEvalCallback ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _match_info, java.lang.foreign.MemoryAddress _result, java.lang.foreign.MemoryAddress _user_data) -> {
+    static GRegexEvalCallback ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _a, java.lang.foreign.MemorySegment _b, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                return (int)constants$274.GRegexEvalCallback$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_match_info, (java.lang.foreign.Addressable)_result, (java.lang.foreign.Addressable)_user_data);
+                return (int)constants$288.GRegexEvalCallback_DOWN$MH.invokeExact(symbol, _a, _b, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

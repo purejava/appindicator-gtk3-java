@@ -7,51 +7,56 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1767 {
+final class constants$1767 {
 
-    static final FunctionDescriptor gtk_file_chooser_get_preview_widget$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1767() {}
+    static final FunctionDescriptor gtk_range_get_min_slider_size$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_file_chooser_get_preview_widget$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_get_preview_widget",
-        constants$1767.gtk_file_chooser_get_preview_widget$FUNC
+    static final MethodHandle gtk_range_get_min_slider_size$MH = RuntimeHelper.downcallHandle(
+        "gtk_range_get_min_slider_size",
+        constants$1767.gtk_range_get_min_slider_size$FUNC
     );
-    static final FunctionDescriptor gtk_file_chooser_set_preview_widget_active$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_range_get_range_rect$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_range_get_range_rect$MH = RuntimeHelper.downcallHandle(
+        "gtk_range_get_range_rect",
+        constants$1767.gtk_range_get_range_rect$FUNC
+    );
+    static final FunctionDescriptor gtk_range_get_slider_range$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_range_get_slider_range$MH = RuntimeHelper.downcallHandle(
+        "gtk_range_get_slider_range",
+        constants$1767.gtk_range_get_slider_range$FUNC
+    );
+    static final FunctionDescriptor gtk_range_set_lower_stepper_sensitivity$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_file_chooser_set_preview_widget_active$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_set_preview_widget_active",
-        constants$1767.gtk_file_chooser_set_preview_widget_active$FUNC
+    static final MethodHandle gtk_range_set_lower_stepper_sensitivity$MH = RuntimeHelper.downcallHandle(
+        "gtk_range_set_lower_stepper_sensitivity",
+        constants$1767.gtk_range_set_lower_stepper_sensitivity$FUNC
     );
-    static final FunctionDescriptor gtk_file_chooser_get_preview_widget_active$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_range_get_lower_stepper_sensitivity$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_file_chooser_get_preview_widget_active$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_get_preview_widget_active",
-        constants$1767.gtk_file_chooser_get_preview_widget_active$FUNC
+    static final MethodHandle gtk_range_get_lower_stepper_sensitivity$MH = RuntimeHelper.downcallHandle(
+        "gtk_range_get_lower_stepper_sensitivity",
+        constants$1767.gtk_range_get_lower_stepper_sensitivity$FUNC
     );
-    static final FunctionDescriptor gtk_file_chooser_set_use_preview_label$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_range_set_upper_stepper_sensitivity$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_file_chooser_set_use_preview_label$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_set_use_preview_label",
-        constants$1767.gtk_file_chooser_set_use_preview_label$FUNC
-    );
-    static final FunctionDescriptor gtk_file_chooser_get_use_preview_label$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_file_chooser_get_use_preview_label$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_get_use_preview_label",
-        constants$1767.gtk_file_chooser_get_use_preview_label$FUNC
-    );
-    static final FunctionDescriptor gtk_file_chooser_get_preview_filename$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_file_chooser_get_preview_filename$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_get_preview_filename",
-        constants$1767.gtk_file_chooser_get_preview_filename$FUNC
+    static final MethodHandle gtk_range_set_upper_stepper_sensitivity$MH = RuntimeHelper.downcallHandle(
+        "gtk_range_set_upper_stepper_sensitivity",
+        constants$1767.gtk_range_set_upper_stepper_sensitivity$FUNC
     );
 }
 

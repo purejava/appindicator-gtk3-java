@@ -7,50 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$339 {
+final class constants$339 {
 
-    static final FunctionDescriptor g_mem_chunk_destroy$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$339() {}
+    static final FunctionDescriptor g_uri_get_port$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_mem_chunk_destroy$MH = RuntimeHelper.downcallHandle(
-        "g_mem_chunk_destroy",
-        constants$339.g_mem_chunk_destroy$FUNC
+    static final MethodHandle g_uri_get_port$MH = RuntimeHelper.downcallHandle(
+        "g_uri_get_port",
+        constants$339.g_uri_get_port$FUNC
     );
-    static final FunctionDescriptor g_mem_chunk_alloc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_uri_get_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_mem_chunk_alloc$MH = RuntimeHelper.downcallHandle(
-        "g_mem_chunk_alloc",
-        constants$339.g_mem_chunk_alloc$FUNC
+    static final MethodHandle g_uri_get_path$MH = RuntimeHelper.downcallHandle(
+        "g_uri_get_path",
+        constants$339.g_uri_get_path$FUNC
     );
-    static final FunctionDescriptor g_mem_chunk_alloc0$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_uri_get_query$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_mem_chunk_alloc0$MH = RuntimeHelper.downcallHandle(
-        "g_mem_chunk_alloc0",
-        constants$339.g_mem_chunk_alloc0$FUNC
+    static final MethodHandle g_uri_get_query$MH = RuntimeHelper.downcallHandle(
+        "g_uri_get_query",
+        constants$339.g_uri_get_query$FUNC
     );
-    static final FunctionDescriptor g_mem_chunk_free$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_uri_get_fragment$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_uri_get_fragment$MH = RuntimeHelper.downcallHandle(
+        "g_uri_get_fragment",
+        constants$339.g_uri_get_fragment$FUNC
+    );
+    static final FunctionDescriptor g_uri_get_flags$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_uri_get_flags$MH = RuntimeHelper.downcallHandle(
+        "g_uri_get_flags",
+        constants$339.g_uri_get_flags$FUNC
+    );
+    static final FunctionDescriptor g_uri_parse_params$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_mem_chunk_free$MH = RuntimeHelper.downcallHandle(
-        "g_mem_chunk_free",
-        constants$339.g_mem_chunk_free$FUNC
-    );
-    static final FunctionDescriptor g_mem_chunk_clean$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_mem_chunk_clean$MH = RuntimeHelper.downcallHandle(
-        "g_mem_chunk_clean",
-        constants$339.g_mem_chunk_clean$FUNC
-    );
-    static final FunctionDescriptor g_mem_chunk_reset$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_mem_chunk_reset$MH = RuntimeHelper.downcallHandle(
-        "g_mem_chunk_reset",
-        constants$339.g_mem_chunk_reset$FUNC
+    static final MethodHandle g_uri_parse_params$MH = RuntimeHelper.downcallHandle(
+        "g_uri_parse_params",
+        constants$339.g_uri_parse_params$FUNC
     );
 }
 

@@ -7,61 +7,65 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1172 {
+final class constants$1172 {
 
-    static final FunctionDescriptor cairo_set_scaled_font$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1172() {}
+    static final FunctionDescriptor gdk_keymap_translate_keyboard_state$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_set_scaled_font$MH = RuntimeHelper.downcallHandle(
-        "cairo_set_scaled_font",
-        constants$1172.cairo_set_scaled_font$FUNC
+    static final MethodHandle gdk_keymap_translate_keyboard_state$MH = RuntimeHelper.downcallHandle(
+        "gdk_keymap_translate_keyboard_state",
+        constants$1172.gdk_keymap_translate_keyboard_state$FUNC
     );
-    static final FunctionDescriptor cairo_get_scaled_font$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_get_scaled_font$MH = RuntimeHelper.downcallHandle(
-        "cairo_get_scaled_font",
-        constants$1172.cairo_get_scaled_font$FUNC
-    );
-    static final FunctionDescriptor cairo_show_text$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_show_text$MH = RuntimeHelper.downcallHandle(
-        "cairo_show_text",
-        constants$1172.cairo_show_text$FUNC
-    );
-    static final FunctionDescriptor cairo_show_glyphs$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle cairo_show_glyphs$MH = RuntimeHelper.downcallHandle(
-        "cairo_show_glyphs",
-        constants$1172.cairo_show_glyphs$FUNC
-    );
-    static final FunctionDescriptor cairo_show_text_glyphs$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gdk_keymap_get_entries_for_keyval$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_keymap_get_entries_for_keyval$MH = RuntimeHelper.downcallHandle(
+        "gdk_keymap_get_entries_for_keyval",
+        constants$1172.gdk_keymap_get_entries_for_keyval$FUNC
+    );
+    static final FunctionDescriptor gdk_keymap_get_entries_for_keycode$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle cairo_show_text_glyphs$MH = RuntimeHelper.downcallHandle(
-        "cairo_show_text_glyphs",
-        constants$1172.cairo_show_text_glyphs$FUNC
-    );
-    static final FunctionDescriptor cairo_text_path$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_text_path$MH = RuntimeHelper.downcallHandle(
-        "cairo_text_path",
-        constants$1172.cairo_text_path$FUNC
+    static final MethodHandle gdk_keymap_get_entries_for_keycode$MH = RuntimeHelper.downcallHandle(
+        "gdk_keymap_get_entries_for_keycode",
+        constants$1172.gdk_keymap_get_entries_for_keycode$FUNC
+    );
+    static final FunctionDescriptor gdk_keymap_get_direction$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_keymap_get_direction$MH = RuntimeHelper.downcallHandle(
+        "gdk_keymap_get_direction",
+        constants$1172.gdk_keymap_get_direction$FUNC
+    );
+    static final FunctionDescriptor gdk_keymap_have_bidi_layouts$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_keymap_have_bidi_layouts$MH = RuntimeHelper.downcallHandle(
+        "gdk_keymap_have_bidi_layouts",
+        constants$1172.gdk_keymap_have_bidi_layouts$FUNC
+    );
+    static final FunctionDescriptor gdk_keymap_get_caps_lock_state$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_keymap_get_caps_lock_state$MH = RuntimeHelper.downcallHandle(
+        "gdk_keymap_get_caps_lock_state",
+        constants$1172.gdk_keymap_get_caps_lock_state$FUNC
     );
 }
 

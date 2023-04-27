@@ -7,61 +7,57 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$215 {
+final class constants$215 {
 
-    static final FunctionDescriptor g_key_file_remove_comment$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$215() {}
+    static final FunctionDescriptor g_io_channel_set_line_term$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_io_channel_set_line_term$MH = RuntimeHelper.downcallHandle(
+        "g_io_channel_set_line_term",
+        constants$215.g_io_channel_set_line_term$FUNC
+    );
+    static final FunctionDescriptor g_io_channel_get_line_term$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_io_channel_get_line_term$MH = RuntimeHelper.downcallHandle(
+        "g_io_channel_get_line_term",
+        constants$215.g_io_channel_get_line_term$FUNC
+    );
+    static final FunctionDescriptor g_io_channel_set_buffered$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_io_channel_set_buffered$MH = RuntimeHelper.downcallHandle(
+        "g_io_channel_set_buffered",
+        constants$215.g_io_channel_set_buffered$FUNC
+    );
+    static final FunctionDescriptor g_io_channel_get_buffered$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_io_channel_get_buffered$MH = RuntimeHelper.downcallHandle(
+        "g_io_channel_get_buffered",
+        constants$215.g_io_channel_get_buffered$FUNC
+    );
+    static final FunctionDescriptor g_io_channel_set_encoding$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_key_file_remove_comment$MH = RuntimeHelper.downcallHandle(
-        "g_key_file_remove_comment",
-        constants$215.g_key_file_remove_comment$FUNC
+    static final MethodHandle g_io_channel_set_encoding$MH = RuntimeHelper.downcallHandle(
+        "g_io_channel_set_encoding",
+        constants$215.g_io_channel_set_encoding$FUNC
     );
-    static final FunctionDescriptor g_key_file_remove_key$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_io_channel_get_encoding$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_key_file_remove_key$MH = RuntimeHelper.downcallHandle(
-        "g_key_file_remove_key",
-        constants$215.g_key_file_remove_key$FUNC
-    );
-    static final FunctionDescriptor g_key_file_remove_group$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_key_file_remove_group$MH = RuntimeHelper.downcallHandle(
-        "g_key_file_remove_group",
-        constants$215.g_key_file_remove_group$FUNC
-    );
-    static final FunctionDescriptor g_mapped_file_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_mapped_file_new$MH = RuntimeHelper.downcallHandle(
-        "g_mapped_file_new",
-        constants$215.g_mapped_file_new$FUNC
-    );
-    static final FunctionDescriptor g_mapped_file_new_from_fd$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_mapped_file_new_from_fd$MH = RuntimeHelper.downcallHandle(
-        "g_mapped_file_new_from_fd",
-        constants$215.g_mapped_file_new_from_fd$FUNC
-    );
-    static final FunctionDescriptor g_mapped_file_get_length$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_mapped_file_get_length$MH = RuntimeHelper.downcallHandle(
-        "g_mapped_file_get_length",
-        constants$215.g_mapped_file_get_length$FUNC
+    static final MethodHandle g_io_channel_get_encoding$MH = RuntimeHelper.downcallHandle(
+        "g_io_channel_get_encoding",
+        constants$215.g_io_channel_get_encoding$FUNC
     );
 }
 

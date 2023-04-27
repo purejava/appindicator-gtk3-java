@@ -7,30 +7,59 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$32 {
+final class constants$32 {
 
-    static final FunctionDescriptor g_intern_static_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$32() {}
+    static final FunctionDescriptor g_atomic_int_xor$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_atomic_int_xor$MH = RuntimeHelper.downcallHandle(
+        "g_atomic_int_xor",
+        constants$32.g_atomic_int_xor$FUNC
+    );
+    static final FunctionDescriptor g_atomic_pointer_get$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_intern_static_string$MH = RuntimeHelper.downcallHandle(
-        "g_intern_static_string",
-        constants$32.g_intern_static_string$FUNC
+    static final MethodHandle g_atomic_pointer_get$MH = RuntimeHelper.downcallHandle(
+        "g_atomic_pointer_get",
+        constants$32.g_atomic_pointer_get$FUNC
     );
-    static final FunctionDescriptor GErrorInitFunc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GErrorInitFunc$MH = RuntimeHelper.downcallHandle(
-        constants$32.GErrorInitFunc$FUNC
-    );
-    static final FunctionDescriptor GErrorCopyFunc$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_atomic_pointer_set$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GErrorCopyFunc$MH = RuntimeHelper.downcallHandle(
-        constants$32.GErrorCopyFunc$FUNC
+    static final MethodHandle g_atomic_pointer_set$MH = RuntimeHelper.downcallHandle(
+        "g_atomic_pointer_set",
+        constants$32.g_atomic_pointer_set$FUNC
     );
-    static final FunctionDescriptor GErrorClearFunc$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_atomic_pointer_compare_and_exchange$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_atomic_pointer_compare_and_exchange$MH = RuntimeHelper.downcallHandle(
+        "g_atomic_pointer_compare_and_exchange",
+        constants$32.g_atomic_pointer_compare_and_exchange$FUNC
+    );
+    static final FunctionDescriptor g_atomic_pointer_compare_and_exchange_full$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_atomic_pointer_compare_and_exchange_full$MH = RuntimeHelper.downcallHandle(
+        "g_atomic_pointer_compare_and_exchange_full",
+        constants$32.g_atomic_pointer_compare_and_exchange_full$FUNC
+    );
+    static final FunctionDescriptor g_atomic_pointer_exchange$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_atomic_pointer_exchange$MH = RuntimeHelper.downcallHandle(
+        "g_atomic_pointer_exchange",
+        constants$32.g_atomic_pointer_exchange$FUNC
     );
 }
 

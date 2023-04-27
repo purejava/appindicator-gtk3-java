@@ -7,9 +7,19 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GDBusObjectManagerClientClass {
+ *     GObjectClass parent_class;
+ *     void (*interface_proxy_signal)(GDBusObjectManagerClient*,GDBusObjectProxy*,GDBusProxy*,const gchar*,const gchar*,GVariant*);
+ *     void (*interface_proxy_properties_changed)(GDBusObjectManagerClient*,GDBusObjectProxy*,GDBusProxy*,GVariant*,const gchar**);
+ *     gpointer padding[8];
+ * };
+ * }
+ */
 public class _GDBusObjectManagerClientClass {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
                 Constants$root.C_LONG_LONG$LAYOUT.withName("g_type")
@@ -24,7 +34,10 @@ public class _GDBusObjectManagerClientClass {
             Constants$root.C_POINTER$LAYOUT.withName("notify"),
             Constants$root.C_POINTER$LAYOUT.withName("constructed"),
             Constants$root.C_LONG_LONG$LAYOUT.withName("flags"),
-            MemoryLayout.sequenceLayout(6, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
+            Constants$root.C_LONG_LONG$LAYOUT.withName("n_construct_properties"),
+            Constants$root.C_POINTER$LAYOUT.withName("pspecs"),
+            Constants$root.C_LONG_LONG$LAYOUT.withName("n_pspecs"),
+            MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
         ).withName("parent_class"),
         Constants$root.C_POINTER$LAYOUT.withName("interface_proxy_signal"),
         Constants$root.C_POINTER$LAYOUT.withName("interface_proxy_properties_changed"),
@@ -44,20 +57,42 @@ public class _GDBusObjectManagerClientClass {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle interface_proxy_signal$MH = RuntimeHelper.downcallHandle(
-        _GDBusObjectManagerClientClass.interface_proxy_signal$FUNC
+    static final FunctionDescriptor interface_proxy_signal_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle interface_proxy_signal_UP$MH = RuntimeHelper.upcallHandle(interface_proxy_signal.class, "apply", _GDBusObjectManagerClientClass.interface_proxy_signal_UP$FUNC);
+    static final FunctionDescriptor interface_proxy_signal_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle interface_proxy_signal_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GDBusObjectManagerClientClass.interface_proxy_signal_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*interface_proxy_signal)(GDBusObjectManagerClient*,GDBusObjectProxy*,GDBusProxy*,const gchar*,const gchar*,GVariant*);
+     * }
+     */
     public interface interface_proxy_signal {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2, java.lang.foreign.MemoryAddress _x3, java.lang.foreign.MemoryAddress _x4, java.lang.foreign.MemoryAddress _x5);
-        static MemorySegment allocate(interface_proxy_signal fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(interface_proxy_signal.class, fi, _GDBusObjectManagerClientClass.interface_proxy_signal$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4, java.lang.foreign.MemorySegment _x5);
+        static MemorySegment allocate(interface_proxy_signal fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GDBusObjectManagerClientClass.interface_proxy_signal_UP$MH, fi, _GDBusObjectManagerClientClass.interface_proxy_signal$FUNC, scope);
         }
-        static interface_proxy_signal ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2, java.lang.foreign.MemoryAddress __x3, java.lang.foreign.MemoryAddress __x4, java.lang.foreign.MemoryAddress __x5) -> {
+        static interface_proxy_signal ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4, java.lang.foreign.MemorySegment __x5) -> {
                 try {
-                    _GDBusObjectManagerClientClass.interface_proxy_signal$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2, (java.lang.foreign.Addressable)__x3, (java.lang.foreign.Addressable)__x4, (java.lang.foreign.Addressable)__x5);
+                    _GDBusObjectManagerClientClass.interface_proxy_signal_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -69,20 +104,32 @@ public class _GDBusObjectManagerClientClass {
     public static VarHandle interface_proxy_signal$VH() {
         return _GDBusObjectManagerClientClass.interface_proxy_signal$VH;
     }
-    public static MemoryAddress interface_proxy_signal$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GDBusObjectManagerClientClass.interface_proxy_signal$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*interface_proxy_signal)(GDBusObjectManagerClient*,GDBusObjectProxy*,GDBusProxy*,const gchar*,const gchar*,GVariant*);
+     * }
+     */
+    public static MemorySegment interface_proxy_signal$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GDBusObjectManagerClientClass.interface_proxy_signal$VH.get(seg);
     }
-    public static void interface_proxy_signal$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*interface_proxy_signal)(GDBusObjectManagerClient*,GDBusObjectProxy*,GDBusProxy*,const gchar*,const gchar*,GVariant*);
+     * }
+     */
+    public static void interface_proxy_signal$set(MemorySegment seg, MemorySegment x) {
         _GDBusObjectManagerClientClass.interface_proxy_signal$VH.set(seg, x);
     }
-    public static MemoryAddress interface_proxy_signal$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GDBusObjectManagerClientClass.interface_proxy_signal$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment interface_proxy_signal$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GDBusObjectManagerClientClass.interface_proxy_signal$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void interface_proxy_signal$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void interface_proxy_signal$set(MemorySegment seg, long index, MemorySegment x) {
         _GDBusObjectManagerClientClass.interface_proxy_signal$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static interface_proxy_signal interface_proxy_signal (MemorySegment segment, MemorySession session) {
-        return interface_proxy_signal.ofAddress(interface_proxy_signal$get(segment), session);
+    public static interface_proxy_signal interface_proxy_signal(MemorySegment segment, SegmentScope scope) {
+        return interface_proxy_signal.ofAddress(interface_proxy_signal$get(segment), scope);
     }
     static final FunctionDescriptor interface_proxy_properties_changed$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
@@ -91,20 +138,40 @@ public class _GDBusObjectManagerClientClass {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle interface_proxy_properties_changed$MH = RuntimeHelper.downcallHandle(
-        _GDBusObjectManagerClientClass.interface_proxy_properties_changed$FUNC
+    static final FunctionDescriptor interface_proxy_properties_changed_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle interface_proxy_properties_changed_UP$MH = RuntimeHelper.upcallHandle(interface_proxy_properties_changed.class, "apply", _GDBusObjectManagerClientClass.interface_proxy_properties_changed_UP$FUNC);
+    static final FunctionDescriptor interface_proxy_properties_changed_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle interface_proxy_properties_changed_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GDBusObjectManagerClientClass.interface_proxy_properties_changed_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*interface_proxy_properties_changed)(GDBusObjectManagerClient*,GDBusObjectProxy*,GDBusProxy*,GVariant*,const gchar**);
+     * }
+     */
     public interface interface_proxy_properties_changed {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2, java.lang.foreign.MemoryAddress _x3, java.lang.foreign.MemoryAddress _x4);
-        static MemorySegment allocate(interface_proxy_properties_changed fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(interface_proxy_properties_changed.class, fi, _GDBusObjectManagerClientClass.interface_proxy_properties_changed$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment cell_layout, java.lang.foreign.MemorySegment cell, java.lang.foreign.MemorySegment tree_model, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment data);
+        static MemorySegment allocate(interface_proxy_properties_changed fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GDBusObjectManagerClientClass.interface_proxy_properties_changed_UP$MH, fi, _GDBusObjectManagerClientClass.interface_proxy_properties_changed$FUNC, scope);
         }
-        static interface_proxy_properties_changed ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2, java.lang.foreign.MemoryAddress __x3, java.lang.foreign.MemoryAddress __x4) -> {
+        static interface_proxy_properties_changed ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _cell_layout, java.lang.foreign.MemorySegment _cell, java.lang.foreign.MemorySegment _tree_model, java.lang.foreign.MemorySegment _iter, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GDBusObjectManagerClientClass.interface_proxy_properties_changed$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2, (java.lang.foreign.Addressable)__x3, (java.lang.foreign.Addressable)__x4);
+                    _GDBusObjectManagerClientClass.interface_proxy_properties_changed_DOWN$MH.invokeExact(symbol, _cell_layout, _cell, _tree_model, _iter, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -116,30 +183,42 @@ public class _GDBusObjectManagerClientClass {
     public static VarHandle interface_proxy_properties_changed$VH() {
         return _GDBusObjectManagerClientClass.interface_proxy_properties_changed$VH;
     }
-    public static MemoryAddress interface_proxy_properties_changed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GDBusObjectManagerClientClass.interface_proxy_properties_changed$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*interface_proxy_properties_changed)(GDBusObjectManagerClient*,GDBusObjectProxy*,GDBusProxy*,GVariant*,const gchar**);
+     * }
+     */
+    public static MemorySegment interface_proxy_properties_changed$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GDBusObjectManagerClientClass.interface_proxy_properties_changed$VH.get(seg);
     }
-    public static void interface_proxy_properties_changed$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*interface_proxy_properties_changed)(GDBusObjectManagerClient*,GDBusObjectProxy*,GDBusProxy*,GVariant*,const gchar**);
+     * }
+     */
+    public static void interface_proxy_properties_changed$set(MemorySegment seg, MemorySegment x) {
         _GDBusObjectManagerClientClass.interface_proxy_properties_changed$VH.set(seg, x);
     }
-    public static MemoryAddress interface_proxy_properties_changed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GDBusObjectManagerClientClass.interface_proxy_properties_changed$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment interface_proxy_properties_changed$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GDBusObjectManagerClientClass.interface_proxy_properties_changed$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void interface_proxy_properties_changed$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void interface_proxy_properties_changed$set(MemorySegment seg, long index, MemorySegment x) {
         _GDBusObjectManagerClientClass.interface_proxy_properties_changed$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static interface_proxy_properties_changed interface_proxy_properties_changed (MemorySegment segment, MemorySession session) {
-        return interface_proxy_properties_changed.ofAddress(interface_proxy_properties_changed$get(segment), session);
+    public static interface_proxy_properties_changed interface_proxy_properties_changed(MemorySegment segment, SegmentScope scope) {
+        return interface_proxy_properties_changed.ofAddress(interface_proxy_properties_changed$get(segment), scope);
     }
     public static MemorySegment padding$slice(MemorySegment seg) {
         return seg.asSlice(152, 64);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

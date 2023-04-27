@@ -7,57 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1623 {
+final class constants$1623 {
 
-    static final FunctionDescriptor gtk_entry_buffer_get_max_length$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1623() {}
+    static final FunctionDescriptor gtk_icon_source_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_entry_buffer_get_max_length$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_buffer_get_max_length",
-        constants$1623.gtk_entry_buffer_get_max_length$FUNC
+    static final MethodHandle gtk_icon_source_copy$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_source_copy",
+        constants$1623.gtk_icon_source_copy$FUNC
     );
-    static final FunctionDescriptor gtk_entry_buffer_insert_text$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_icon_source_free$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_icon_source_free$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_source_free",
+        constants$1623.gtk_icon_source_free$FUNC
+    );
+    static final FunctionDescriptor gtk_icon_source_set_filename$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_icon_source_set_filename$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_source_set_filename",
+        constants$1623.gtk_icon_source_set_filename$FUNC
+    );
+    static final FunctionDescriptor gtk_icon_source_set_icon_name$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_entry_buffer_insert_text$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_buffer_insert_text",
-        constants$1623.gtk_entry_buffer_insert_text$FUNC
+    static final MethodHandle gtk_icon_source_set_icon_name$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_source_set_icon_name",
+        constants$1623.gtk_icon_source_set_icon_name$FUNC
     );
-    static final FunctionDescriptor gtk_entry_buffer_delete_text$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_icon_source_set_pixbuf$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_entry_buffer_delete_text$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_buffer_delete_text",
-        constants$1623.gtk_entry_buffer_delete_text$FUNC
+    static final MethodHandle gtk_icon_source_set_pixbuf$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_source_set_pixbuf",
+        constants$1623.gtk_icon_source_set_pixbuf$FUNC
     );
-    static final FunctionDescriptor gtk_entry_buffer_emit_inserted_text$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor gtk_icon_source_get_filename$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_entry_buffer_emit_inserted_text$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_buffer_emit_inserted_text",
-        constants$1623.gtk_entry_buffer_emit_inserted_text$FUNC
-    );
-    static final FunctionDescriptor gtk_entry_buffer_emit_deleted_text$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_entry_buffer_emit_deleted_text$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_buffer_emit_deleted_text",
-        constants$1623.gtk_entry_buffer_emit_deleted_text$FUNC
-    );
-    static final FunctionDescriptor gtk_list_store_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_list_store_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_store_get_type",
-        constants$1623.gtk_list_store_get_type$FUNC
+    static final MethodHandle gtk_icon_source_get_filename$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_source_get_filename",
+        constants$1623.gtk_icon_source_get_filename$FUNC
     );
 }
 

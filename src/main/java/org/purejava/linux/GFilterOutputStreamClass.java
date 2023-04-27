@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GFilterOutputStreamClass extends _GFilterOutputStreamClass {
+/**
+ * {@snippet :
+ * typedef struct _GFilterOutputStreamClass GFilterOutputStreamClass;
+ * }
+ */
+public final class GFilterOutputStreamClass extends _GFilterOutputStreamClass {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GFilterOutputStreamClass() {}
 }
 
 

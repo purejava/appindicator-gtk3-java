@@ -7,55 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1784 {
+final class constants$1784 {
 
-    static final FunctionDescriptor gtk_flow_box_get_max_children_per_line$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1784() {}
+    static final FunctionDescriptor gtk_recent_chooser_get_uris$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_flow_box_get_max_children_per_line$MH = RuntimeHelper.downcallHandle(
-        "gtk_flow_box_get_max_children_per_line",
-        constants$1784.gtk_flow_box_get_max_children_per_line$FUNC
+    static final MethodHandle gtk_recent_chooser_get_uris$MH = RuntimeHelper.downcallHandle(
+        "gtk_recent_chooser_get_uris",
+        constants$1784.gtk_recent_chooser_get_uris$FUNC
     );
-    static final FunctionDescriptor gtk_flow_box_set_activate_on_single_click$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_recent_chooser_add_filter$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_flow_box_set_activate_on_single_click$MH = RuntimeHelper.downcallHandle(
-        "gtk_flow_box_set_activate_on_single_click",
-        constants$1784.gtk_flow_box_set_activate_on_single_click$FUNC
-    );
-    static final FunctionDescriptor gtk_flow_box_get_activate_on_single_click$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_flow_box_get_activate_on_single_click$MH = RuntimeHelper.downcallHandle(
-        "gtk_flow_box_get_activate_on_single_click",
-        constants$1784.gtk_flow_box_get_activate_on_single_click$FUNC
+    static final MethodHandle gtk_recent_chooser_add_filter$MH = RuntimeHelper.downcallHandle(
+        "gtk_recent_chooser_add_filter",
+        constants$1784.gtk_recent_chooser_add_filter$FUNC
     );
-    static final FunctionDescriptor gtk_flow_box_insert$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_recent_chooser_remove_filter$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_recent_chooser_remove_filter$MH = RuntimeHelper.downcallHandle(
+        "gtk_recent_chooser_remove_filter",
+        constants$1784.gtk_recent_chooser_remove_filter$FUNC
+    );
+    static final FunctionDescriptor gtk_recent_chooser_list_filters$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_recent_chooser_list_filters$MH = RuntimeHelper.downcallHandle(
+        "gtk_recent_chooser_list_filters",
+        constants$1784.gtk_recent_chooser_list_filters$FUNC
+    );
+    static final FunctionDescriptor gtk_recent_chooser_set_filter$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_flow_box_insert$MH = RuntimeHelper.downcallHandle(
-        "gtk_flow_box_insert",
-        constants$1784.gtk_flow_box_insert$FUNC
+    static final MethodHandle gtk_recent_chooser_set_filter$MH = RuntimeHelper.downcallHandle(
+        "gtk_recent_chooser_set_filter",
+        constants$1784.gtk_recent_chooser_set_filter$FUNC
     );
-    static final FunctionDescriptor gtk_flow_box_get_child_at_index$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor gtk_recent_chooser_get_filter$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_flow_box_get_child_at_index$MH = RuntimeHelper.downcallHandle(
-        "gtk_flow_box_get_child_at_index",
-        constants$1784.gtk_flow_box_get_child_at_index$FUNC
-    );
-    static final FunctionDescriptor gtk_flow_box_get_child_at_pos$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_flow_box_get_child_at_pos$MH = RuntimeHelper.downcallHandle(
-        "gtk_flow_box_get_child_at_pos",
-        constants$1784.gtk_flow_box_get_child_at_pos$FUNC
+    static final MethodHandle gtk_recent_chooser_get_filter$MH = RuntimeHelper.downcallHandle(
+        "gtk_recent_chooser_get_filter",
+        constants$1784.gtk_recent_chooser_get_filter$FUNC
     );
 }
 

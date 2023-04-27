@@ -7,52 +7,62 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$434 {
+final class constants$434 {
 
-    static final FunctionDescriptor GValueTransform$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$434() {}
+    static final FunctionDescriptor g_object_get$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GValueTransform$MH = RuntimeHelper.downcallHandle(
-        constants$434.GValueTransform$FUNC
+    static final MethodHandle g_object_get$MH = RuntimeHelper.downcallHandleVariadic(
+        "g_object_get",
+        constants$434.g_object_get$FUNC
     );
-    static final FunctionDescriptor g_value_init$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_value_init$MH = RuntimeHelper.downcallHandle(
-        "g_value_init",
-        constants$434.g_value_init$FUNC
-    );
-    static final FunctionDescriptor g_value_copy$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_object_connect$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_value_copy$MH = RuntimeHelper.downcallHandle(
-        "g_value_copy",
-        constants$434.g_value_copy$FUNC
+    static final MethodHandle g_object_connect$MH = RuntimeHelper.downcallHandleVariadic(
+        "g_object_connect",
+        constants$434.g_object_connect$FUNC
     );
-    static final FunctionDescriptor g_value_reset$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_value_reset$MH = RuntimeHelper.downcallHandle(
-        "g_value_reset",
-        constants$434.g_value_reset$FUNC
-    );
-    static final FunctionDescriptor g_value_unset$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_value_unset$MH = RuntimeHelper.downcallHandle(
-        "g_value_unset",
-        constants$434.g_value_unset$FUNC
-    );
-    static final FunctionDescriptor g_value_set_instance$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_object_disconnect$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_value_set_instance$MH = RuntimeHelper.downcallHandle(
-        "g_value_set_instance",
-        constants$434.g_value_set_instance$FUNC
+    static final MethodHandle g_object_disconnect$MH = RuntimeHelper.downcallHandleVariadic(
+        "g_object_disconnect",
+        constants$434.g_object_disconnect$FUNC
+    );
+    static final FunctionDescriptor g_object_setv$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_object_setv$MH = RuntimeHelper.downcallHandle(
+        "g_object_setv",
+        constants$434.g_object_setv$FUNC
+    );
+    static final FunctionDescriptor g_object_set_valist$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_object_set_valist$MH = RuntimeHelper.downcallHandle(
+        "g_object_set_valist",
+        constants$434.g_object_set_valist$FUNC
+    );
+    static final FunctionDescriptor g_object_getv$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_object_getv$MH = RuntimeHelper.downcallHandle(
+        "g_object_getv",
+        constants$434.g_object_getv$FUNC
     );
 }
 

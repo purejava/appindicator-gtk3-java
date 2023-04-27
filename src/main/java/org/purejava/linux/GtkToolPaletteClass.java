@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkToolPaletteClass extends _GtkToolPaletteClass {
+/**
+ * {@snippet :
+ * typedef struct _GtkToolPaletteClass GtkToolPaletteClass;
+ * }
+ */
+public final class GtkToolPaletteClass extends _GtkToolPaletteClass {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkToolPaletteClass() {}
 }
 
 

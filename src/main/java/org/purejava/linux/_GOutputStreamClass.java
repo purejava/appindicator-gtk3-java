@@ -7,9 +7,36 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GOutputStreamClass {
+ *     GObjectClass parent_class;
+ *     gssize (*write_fn)(GOutputStream*,void*,gsize,GCancellable*,GError**);
+ *     gssize (*splice)(GOutputStream*,GInputStream*,GOutputStreamSpliceFlags,GCancellable*,GError**);
+ *     gboolean (*flush)(GOutputStream*,GCancellable*,GError**);
+ *     gboolean (*close_fn)(GOutputStream*,GCancellable*,GError**);
+ *     void (*write_async)(GOutputStream*,void*,gsize,int,GCancellable*,GAsyncReadyCallback,gpointer);
+ *     gssize (*write_finish)(GOutputStream*,GAsyncResult*,GError**);
+ *     void (*splice_async)(GOutputStream*,GInputStream*,GOutputStreamSpliceFlags,int,GCancellable*,GAsyncReadyCallback,gpointer);
+ *     gssize (*splice_finish)(GOutputStream*,GAsyncResult*,GError**);
+ *     void (*flush_async)(GOutputStream*,int,GCancellable*,GAsyncReadyCallback,gpointer);
+ *     gboolean (*flush_finish)(GOutputStream*,GAsyncResult*,GError**);
+ *     void (*close_async)(GOutputStream*,int,GCancellable*,GAsyncReadyCallback,gpointer);
+ *     gboolean (*close_finish)(GOutputStream*,GAsyncResult*,GError**);
+ *     gboolean (*writev_fn)(GOutputStream*,const GOutputVector*,gsize,gsize*,GCancellable*,GError**);
+ *     void (*writev_async)(GOutputStream*,const GOutputVector*,gsize,int,GCancellable*,GAsyncReadyCallback,gpointer);
+ *     gboolean (*writev_finish)(GOutputStream*,GAsyncResult*,gsize*,GError**);
+ *     void (*_g_reserved4)();
+ *     void (*_g_reserved5)();
+ *     void (*_g_reserved6)();
+ *     void (*_g_reserved7)();
+ *     void (*_g_reserved8)();
+ * };
+ * }
+ */
 public class _GOutputStreamClass {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
                 Constants$root.C_LONG_LONG$LAYOUT.withName("g_type")
@@ -24,7 +51,10 @@ public class _GOutputStreamClass {
             Constants$root.C_POINTER$LAYOUT.withName("notify"),
             Constants$root.C_POINTER$LAYOUT.withName("constructed"),
             Constants$root.C_LONG_LONG$LAYOUT.withName("flags"),
-            MemoryLayout.sequenceLayout(6, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
+            Constants$root.C_LONG_LONG$LAYOUT.withName("n_construct_properties"),
+            Constants$root.C_POINTER$LAYOUT.withName("pspecs"),
+            Constants$root.C_LONG_LONG$LAYOUT.withName("n_pspecs"),
+            MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
         ).withName("parent_class"),
         Constants$root.C_POINTER$LAYOUT.withName("write_fn"),
         Constants$root.C_POINTER$LAYOUT.withName("splice"),
@@ -60,20 +90,40 @@ public class _GOutputStreamClass {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle write_fn$MH = RuntimeHelper.downcallHandle(
-        _GOutputStreamClass.write_fn$FUNC
+    static final FunctionDescriptor write_fn_UP$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle write_fn_UP$MH = RuntimeHelper.upcallHandle(write_fn.class, "apply", _GOutputStreamClass.write_fn_UP$FUNC);
+    static final FunctionDescriptor write_fn_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle write_fn_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GOutputStreamClass.write_fn_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gssize (*write_fn)(GOutputStream*,void*,gsize,GCancellable*,GError**);
+     * }
+     */
     public interface write_fn {
 
-        long apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, long _x2, java.lang.foreign.MemoryAddress _x3, java.lang.foreign.MemoryAddress _x4);
-        static MemorySegment allocate(write_fn fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(write_fn.class, fi, _GOutputStreamClass.write_fn$FUNC, session);
+        long apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, long _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4);
+        static MemorySegment allocate(write_fn fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GOutputStreamClass.write_fn_UP$MH, fi, _GOutputStreamClass.write_fn$FUNC, scope);
         }
-        static write_fn ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, long __x2, java.lang.foreign.MemoryAddress __x3, java.lang.foreign.MemoryAddress __x4) -> {
+        static write_fn ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, long __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4) -> {
                 try {
-                    return (long)_GOutputStreamClass.write_fn$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, __x2, (java.lang.foreign.Addressable)__x3, (java.lang.foreign.Addressable)__x4);
+                    return (long)_GOutputStreamClass.write_fn_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -85,20 +135,32 @@ public class _GOutputStreamClass {
     public static VarHandle write_fn$VH() {
         return _GOutputStreamClass.write_fn$VH;
     }
-    public static MemoryAddress write_fn$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GOutputStreamClass.write_fn$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gssize (*write_fn)(GOutputStream*,void*,gsize,GCancellable*,GError**);
+     * }
+     */
+    public static MemorySegment write_fn$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GOutputStreamClass.write_fn$VH.get(seg);
     }
-    public static void write_fn$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gssize (*write_fn)(GOutputStream*,void*,gsize,GCancellable*,GError**);
+     * }
+     */
+    public static void write_fn$set(MemorySegment seg, MemorySegment x) {
         _GOutputStreamClass.write_fn$VH.set(seg, x);
     }
-    public static MemoryAddress write_fn$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GOutputStreamClass.write_fn$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment write_fn$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GOutputStreamClass.write_fn$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void write_fn$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void write_fn$set(MemorySegment seg, long index, MemorySegment x) {
         _GOutputStreamClass.write_fn$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static write_fn write_fn (MemorySegment segment, MemorySession session) {
-        return write_fn.ofAddress(write_fn$get(segment), session);
+    public static write_fn write_fn(MemorySegment segment, SegmentScope scope) {
+        return write_fn.ofAddress(write_fn$get(segment), scope);
     }
     static final FunctionDescriptor splice$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
@@ -107,20 +169,40 @@ public class _GOutputStreamClass {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle splice$MH = RuntimeHelper.downcallHandle(
-        _GOutputStreamClass.splice$FUNC
+    static final FunctionDescriptor splice_UP$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle splice_UP$MH = RuntimeHelper.upcallHandle(splice.class, "apply", _GOutputStreamClass.splice_UP$FUNC);
+    static final FunctionDescriptor splice_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle splice_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GOutputStreamClass.splice_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gssize (*splice)(GOutputStream*,GInputStream*,GOutputStreamSpliceFlags,GCancellable*,GError**);
+     * }
+     */
     public interface splice {
 
-        long apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, int _x2, java.lang.foreign.MemoryAddress _x3, java.lang.foreign.MemoryAddress _x4);
-        static MemorySegment allocate(splice fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(splice.class, fi, _GOutputStreamClass.splice$FUNC, session);
+        long apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4);
+        static MemorySegment allocate(splice fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GOutputStreamClass.splice_UP$MH, fi, _GOutputStreamClass.splice$FUNC, scope);
         }
-        static splice ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, int __x2, java.lang.foreign.MemoryAddress __x3, java.lang.foreign.MemoryAddress __x4) -> {
+        static splice ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4) -> {
                 try {
-                    return (long)_GOutputStreamClass.splice$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, __x2, (java.lang.foreign.Addressable)__x3, (java.lang.foreign.Addressable)__x4);
+                    return (long)_GOutputStreamClass.splice_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -132,40 +214,68 @@ public class _GOutputStreamClass {
     public static VarHandle splice$VH() {
         return _GOutputStreamClass.splice$VH;
     }
-    public static MemoryAddress splice$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GOutputStreamClass.splice$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gssize (*splice)(GOutputStream*,GInputStream*,GOutputStreamSpliceFlags,GCancellable*,GError**);
+     * }
+     */
+    public static MemorySegment splice$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GOutputStreamClass.splice$VH.get(seg);
     }
-    public static void splice$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gssize (*splice)(GOutputStream*,GInputStream*,GOutputStreamSpliceFlags,GCancellable*,GError**);
+     * }
+     */
+    public static void splice$set(MemorySegment seg, MemorySegment x) {
         _GOutputStreamClass.splice$VH.set(seg, x);
     }
-    public static MemoryAddress splice$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GOutputStreamClass.splice$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment splice$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GOutputStreamClass.splice$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void splice$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void splice$set(MemorySegment seg, long index, MemorySegment x) {
         _GOutputStreamClass.splice$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static splice splice (MemorySegment segment, MemorySession session) {
-        return splice.ofAddress(splice$get(segment), session);
+    public static splice splice(MemorySegment segment, SegmentScope scope) {
+        return splice.ofAddress(splice$get(segment), scope);
     }
     static final FunctionDescriptor flush$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle flush$MH = RuntimeHelper.downcallHandle(
-        _GOutputStreamClass.flush$FUNC
+    static final FunctionDescriptor flush_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle flush_UP$MH = RuntimeHelper.upcallHandle(flush.class, "apply", _GOutputStreamClass.flush_UP$FUNC);
+    static final FunctionDescriptor flush_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle flush_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GOutputStreamClass.flush_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*flush)(GOutputStream*,GCancellable*,GError**);
+     * }
+     */
     public interface flush {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2);
-        static MemorySegment allocate(flush fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(flush.class, fi, _GOutputStreamClass.flush$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2);
+        static MemorySegment allocate(flush fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GOutputStreamClass.flush_UP$MH, fi, _GOutputStreamClass.flush$FUNC, scope);
         }
-        static flush ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2) -> {
+        static flush ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2) -> {
                 try {
-                    return (int)_GOutputStreamClass.flush$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2);
+                    return (int)_GOutputStreamClass.flush_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -177,40 +287,68 @@ public class _GOutputStreamClass {
     public static VarHandle flush$VH() {
         return _GOutputStreamClass.flush$VH;
     }
-    public static MemoryAddress flush$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GOutputStreamClass.flush$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*flush)(GOutputStream*,GCancellable*,GError**);
+     * }
+     */
+    public static MemorySegment flush$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GOutputStreamClass.flush$VH.get(seg);
     }
-    public static void flush$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*flush)(GOutputStream*,GCancellable*,GError**);
+     * }
+     */
+    public static void flush$set(MemorySegment seg, MemorySegment x) {
         _GOutputStreamClass.flush$VH.set(seg, x);
     }
-    public static MemoryAddress flush$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GOutputStreamClass.flush$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment flush$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GOutputStreamClass.flush$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void flush$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void flush$set(MemorySegment seg, long index, MemorySegment x) {
         _GOutputStreamClass.flush$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static flush flush (MemorySegment segment, MemorySession session) {
-        return flush.ofAddress(flush$get(segment), session);
+    public static flush flush(MemorySegment segment, SegmentScope scope) {
+        return flush.ofAddress(flush$get(segment), scope);
     }
     static final FunctionDescriptor close_fn$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle close_fn$MH = RuntimeHelper.downcallHandle(
-        _GOutputStreamClass.close_fn$FUNC
+    static final FunctionDescriptor close_fn_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle close_fn_UP$MH = RuntimeHelper.upcallHandle(close_fn.class, "apply", _GOutputStreamClass.close_fn_UP$FUNC);
+    static final FunctionDescriptor close_fn_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle close_fn_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GOutputStreamClass.close_fn_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*close_fn)(GOutputStream*,GCancellable*,GError**);
+     * }
+     */
     public interface close_fn {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2);
-        static MemorySegment allocate(close_fn fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(close_fn.class, fi, _GOutputStreamClass.close_fn$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2);
+        static MemorySegment allocate(close_fn fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GOutputStreamClass.close_fn_UP$MH, fi, _GOutputStreamClass.close_fn$FUNC, scope);
         }
-        static close_fn ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2) -> {
+        static close_fn ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2) -> {
                 try {
-                    return (int)_GOutputStreamClass.close_fn$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2);
+                    return (int)_GOutputStreamClass.close_fn_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -222,20 +360,32 @@ public class _GOutputStreamClass {
     public static VarHandle close_fn$VH() {
         return _GOutputStreamClass.close_fn$VH;
     }
-    public static MemoryAddress close_fn$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GOutputStreamClass.close_fn$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*close_fn)(GOutputStream*,GCancellable*,GError**);
+     * }
+     */
+    public static MemorySegment close_fn$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GOutputStreamClass.close_fn$VH.get(seg);
     }
-    public static void close_fn$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*close_fn)(GOutputStream*,GCancellable*,GError**);
+     * }
+     */
+    public static void close_fn$set(MemorySegment seg, MemorySegment x) {
         _GOutputStreamClass.close_fn$VH.set(seg, x);
     }
-    public static MemoryAddress close_fn$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GOutputStreamClass.close_fn$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment close_fn$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GOutputStreamClass.close_fn$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void close_fn$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void close_fn$set(MemorySegment seg, long index, MemorySegment x) {
         _GOutputStreamClass.close_fn$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static close_fn close_fn (MemorySegment segment, MemorySession session) {
-        return close_fn.ofAddress(close_fn$get(segment), session);
+    public static close_fn close_fn(MemorySegment segment, SegmentScope scope) {
+        return close_fn.ofAddress(close_fn$get(segment), scope);
     }
     static final FunctionDescriptor write_async$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
@@ -246,20 +396,44 @@ public class _GOutputStreamClass {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle write_async$MH = RuntimeHelper.downcallHandle(
-        _GOutputStreamClass.write_async$FUNC
+    static final FunctionDescriptor write_async_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle write_async_UP$MH = RuntimeHelper.upcallHandle(write_async.class, "apply", _GOutputStreamClass.write_async_UP$FUNC);
+    static final FunctionDescriptor write_async_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle write_async_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GOutputStreamClass.write_async_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*write_async)(GOutputStream*,void*,gsize,int,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
     public interface write_async {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, long _x2, int _x3, java.lang.foreign.MemoryAddress _x4, java.lang.foreign.MemoryAddress _x5, java.lang.foreign.MemoryAddress _x6);
-        static MemorySegment allocate(write_async fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(write_async.class, fi, _GOutputStreamClass.write_async$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, long _x2, int _x3, java.lang.foreign.MemorySegment _x4, java.lang.foreign.MemorySegment _x5, java.lang.foreign.MemorySegment _x6);
+        static MemorySegment allocate(write_async fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GOutputStreamClass.write_async_UP$MH, fi, _GOutputStreamClass.write_async$FUNC, scope);
         }
-        static write_async ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, long __x2, int __x3, java.lang.foreign.MemoryAddress __x4, java.lang.foreign.MemoryAddress __x5, java.lang.foreign.MemoryAddress __x6) -> {
+        static write_async ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, long __x2, int __x3, java.lang.foreign.MemorySegment __x4, java.lang.foreign.MemorySegment __x5, java.lang.foreign.MemorySegment __x6) -> {
                 try {
-                    _GOutputStreamClass.write_async$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, __x2, __x3, (java.lang.foreign.Addressable)__x4, (java.lang.foreign.Addressable)__x5, (java.lang.foreign.Addressable)__x6);
+                    _GOutputStreamClass.write_async_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5, __x6);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -271,40 +445,68 @@ public class _GOutputStreamClass {
     public static VarHandle write_async$VH() {
         return _GOutputStreamClass.write_async$VH;
     }
-    public static MemoryAddress write_async$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GOutputStreamClass.write_async$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*write_async)(GOutputStream*,void*,gsize,int,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
+    public static MemorySegment write_async$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GOutputStreamClass.write_async$VH.get(seg);
     }
-    public static void write_async$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*write_async)(GOutputStream*,void*,gsize,int,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
+    public static void write_async$set(MemorySegment seg, MemorySegment x) {
         _GOutputStreamClass.write_async$VH.set(seg, x);
     }
-    public static MemoryAddress write_async$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GOutputStreamClass.write_async$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment write_async$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GOutputStreamClass.write_async$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void write_async$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void write_async$set(MemorySegment seg, long index, MemorySegment x) {
         _GOutputStreamClass.write_async$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static write_async write_async (MemorySegment segment, MemorySession session) {
-        return write_async.ofAddress(write_async$get(segment), session);
+    public static write_async write_async(MemorySegment segment, SegmentScope scope) {
+        return write_async.ofAddress(write_async$get(segment), scope);
     }
     static final FunctionDescriptor write_finish$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle write_finish$MH = RuntimeHelper.downcallHandle(
-        _GOutputStreamClass.write_finish$FUNC
+    static final FunctionDescriptor write_finish_UP$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle write_finish_UP$MH = RuntimeHelper.upcallHandle(write_finish.class, "apply", _GOutputStreamClass.write_finish_UP$FUNC);
+    static final FunctionDescriptor write_finish_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle write_finish_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GOutputStreamClass.write_finish_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gssize (*write_finish)(GOutputStream*,GAsyncResult*,GError**);
+     * }
+     */
     public interface write_finish {
 
-        long apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2);
-        static MemorySegment allocate(write_finish fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(write_finish.class, fi, _GOutputStreamClass.write_finish$FUNC, session);
+        long apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2);
+        static MemorySegment allocate(write_finish fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GOutputStreamClass.write_finish_UP$MH, fi, _GOutputStreamClass.write_finish$FUNC, scope);
         }
-        static write_finish ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2) -> {
+        static write_finish ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2) -> {
                 try {
-                    return (long)_GOutputStreamClass.write_finish$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2);
+                    return (long)_GOutputStreamClass.write_finish_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -316,20 +518,32 @@ public class _GOutputStreamClass {
     public static VarHandle write_finish$VH() {
         return _GOutputStreamClass.write_finish$VH;
     }
-    public static MemoryAddress write_finish$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GOutputStreamClass.write_finish$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gssize (*write_finish)(GOutputStream*,GAsyncResult*,GError**);
+     * }
+     */
+    public static MemorySegment write_finish$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GOutputStreamClass.write_finish$VH.get(seg);
     }
-    public static void write_finish$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gssize (*write_finish)(GOutputStream*,GAsyncResult*,GError**);
+     * }
+     */
+    public static void write_finish$set(MemorySegment seg, MemorySegment x) {
         _GOutputStreamClass.write_finish$VH.set(seg, x);
     }
-    public static MemoryAddress write_finish$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GOutputStreamClass.write_finish$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment write_finish$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GOutputStreamClass.write_finish$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void write_finish$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void write_finish$set(MemorySegment seg, long index, MemorySegment x) {
         _GOutputStreamClass.write_finish$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static write_finish write_finish (MemorySegment segment, MemorySession session) {
-        return write_finish.ofAddress(write_finish$get(segment), session);
+    public static write_finish write_finish(MemorySegment segment, SegmentScope scope) {
+        return write_finish.ofAddress(write_finish$get(segment), scope);
     }
     static final FunctionDescriptor splice_async$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
@@ -340,20 +554,44 @@ public class _GOutputStreamClass {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle splice_async$MH = RuntimeHelper.downcallHandle(
-        _GOutputStreamClass.splice_async$FUNC
+    static final FunctionDescriptor splice_async_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle splice_async_UP$MH = RuntimeHelper.upcallHandle(splice_async.class, "apply", _GOutputStreamClass.splice_async_UP$FUNC);
+    static final FunctionDescriptor splice_async_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle splice_async_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GOutputStreamClass.splice_async_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*splice_async)(GOutputStream*,GInputStream*,GOutputStreamSpliceFlags,int,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
     public interface splice_async {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, int _x2, int _x3, java.lang.foreign.MemoryAddress _x4, java.lang.foreign.MemoryAddress _x5, java.lang.foreign.MemoryAddress _x6);
-        static MemorySegment allocate(splice_async fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(splice_async.class, fi, _GOutputStreamClass.splice_async$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2, int _x3, java.lang.foreign.MemorySegment _x4, java.lang.foreign.MemorySegment _x5, java.lang.foreign.MemorySegment _x6);
+        static MemorySegment allocate(splice_async fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GOutputStreamClass.splice_async_UP$MH, fi, _GOutputStreamClass.splice_async$FUNC, scope);
         }
-        static splice_async ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, int __x2, int __x3, java.lang.foreign.MemoryAddress __x4, java.lang.foreign.MemoryAddress __x5, java.lang.foreign.MemoryAddress __x6) -> {
+        static splice_async ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2, int __x3, java.lang.foreign.MemorySegment __x4, java.lang.foreign.MemorySegment __x5, java.lang.foreign.MemorySegment __x6) -> {
                 try {
-                    _GOutputStreamClass.splice_async$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, __x2, __x3, (java.lang.foreign.Addressable)__x4, (java.lang.foreign.Addressable)__x5, (java.lang.foreign.Addressable)__x6);
+                    _GOutputStreamClass.splice_async_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5, __x6);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -365,40 +603,68 @@ public class _GOutputStreamClass {
     public static VarHandle splice_async$VH() {
         return _GOutputStreamClass.splice_async$VH;
     }
-    public static MemoryAddress splice_async$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GOutputStreamClass.splice_async$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*splice_async)(GOutputStream*,GInputStream*,GOutputStreamSpliceFlags,int,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
+    public static MemorySegment splice_async$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GOutputStreamClass.splice_async$VH.get(seg);
     }
-    public static void splice_async$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*splice_async)(GOutputStream*,GInputStream*,GOutputStreamSpliceFlags,int,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
+    public static void splice_async$set(MemorySegment seg, MemorySegment x) {
         _GOutputStreamClass.splice_async$VH.set(seg, x);
     }
-    public static MemoryAddress splice_async$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GOutputStreamClass.splice_async$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment splice_async$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GOutputStreamClass.splice_async$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void splice_async$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void splice_async$set(MemorySegment seg, long index, MemorySegment x) {
         _GOutputStreamClass.splice_async$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static splice_async splice_async (MemorySegment segment, MemorySession session) {
-        return splice_async.ofAddress(splice_async$get(segment), session);
+    public static splice_async splice_async(MemorySegment segment, SegmentScope scope) {
+        return splice_async.ofAddress(splice_async$get(segment), scope);
     }
     static final FunctionDescriptor splice_finish$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle splice_finish$MH = RuntimeHelper.downcallHandle(
-        _GOutputStreamClass.splice_finish$FUNC
+    static final FunctionDescriptor splice_finish_UP$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle splice_finish_UP$MH = RuntimeHelper.upcallHandle(splice_finish.class, "apply", _GOutputStreamClass.splice_finish_UP$FUNC);
+    static final FunctionDescriptor splice_finish_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle splice_finish_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GOutputStreamClass.splice_finish_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gssize (*splice_finish)(GOutputStream*,GAsyncResult*,GError**);
+     * }
+     */
     public interface splice_finish {
 
-        long apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2);
-        static MemorySegment allocate(splice_finish fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(splice_finish.class, fi, _GOutputStreamClass.splice_finish$FUNC, session);
+        long apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2);
+        static MemorySegment allocate(splice_finish fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GOutputStreamClass.splice_finish_UP$MH, fi, _GOutputStreamClass.splice_finish$FUNC, scope);
         }
-        static splice_finish ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2) -> {
+        static splice_finish ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2) -> {
                 try {
-                    return (long)_GOutputStreamClass.splice_finish$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2);
+                    return (long)_GOutputStreamClass.splice_finish_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -410,20 +676,32 @@ public class _GOutputStreamClass {
     public static VarHandle splice_finish$VH() {
         return _GOutputStreamClass.splice_finish$VH;
     }
-    public static MemoryAddress splice_finish$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GOutputStreamClass.splice_finish$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gssize (*splice_finish)(GOutputStream*,GAsyncResult*,GError**);
+     * }
+     */
+    public static MemorySegment splice_finish$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GOutputStreamClass.splice_finish$VH.get(seg);
     }
-    public static void splice_finish$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gssize (*splice_finish)(GOutputStream*,GAsyncResult*,GError**);
+     * }
+     */
+    public static void splice_finish$set(MemorySegment seg, MemorySegment x) {
         _GOutputStreamClass.splice_finish$VH.set(seg, x);
     }
-    public static MemoryAddress splice_finish$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GOutputStreamClass.splice_finish$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment splice_finish$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GOutputStreamClass.splice_finish$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void splice_finish$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void splice_finish$set(MemorySegment seg, long index, MemorySegment x) {
         _GOutputStreamClass.splice_finish$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static splice_finish splice_finish (MemorySegment segment, MemorySession session) {
-        return splice_finish.ofAddress(splice_finish$get(segment), session);
+    public static splice_finish splice_finish(MemorySegment segment, SegmentScope scope) {
+        return splice_finish.ofAddress(splice_finish$get(segment), scope);
     }
     static final FunctionDescriptor flush_async$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
@@ -432,20 +710,40 @@ public class _GOutputStreamClass {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle flush_async$MH = RuntimeHelper.downcallHandle(
-        _GOutputStreamClass.flush_async$FUNC
+    static final FunctionDescriptor flush_async_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle flush_async_UP$MH = RuntimeHelper.upcallHandle(flush_async.class, "apply", _GOutputStreamClass.flush_async_UP$FUNC);
+    static final FunctionDescriptor flush_async_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle flush_async_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GOutputStreamClass.flush_async_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*flush_async)(GOutputStream*,int,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
     public interface flush_async {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, int _x1, java.lang.foreign.MemoryAddress _x2, java.lang.foreign.MemoryAddress _x3, java.lang.foreign.MemoryAddress _x4);
-        static MemorySegment allocate(flush_async fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(flush_async.class, fi, _GOutputStreamClass.flush_async$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, int _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4);
+        static MemorySegment allocate(flush_async fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GOutputStreamClass.flush_async_UP$MH, fi, _GOutputStreamClass.flush_async$FUNC, scope);
         }
-        static flush_async ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, int __x1, java.lang.foreign.MemoryAddress __x2, java.lang.foreign.MemoryAddress __x3, java.lang.foreign.MemoryAddress __x4) -> {
+        static flush_async ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, int __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4) -> {
                 try {
-                    _GOutputStreamClass.flush_async$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, __x1, (java.lang.foreign.Addressable)__x2, (java.lang.foreign.Addressable)__x3, (java.lang.foreign.Addressable)__x4);
+                    _GOutputStreamClass.flush_async_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -457,40 +755,68 @@ public class _GOutputStreamClass {
     public static VarHandle flush_async$VH() {
         return _GOutputStreamClass.flush_async$VH;
     }
-    public static MemoryAddress flush_async$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GOutputStreamClass.flush_async$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*flush_async)(GOutputStream*,int,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
+    public static MemorySegment flush_async$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GOutputStreamClass.flush_async$VH.get(seg);
     }
-    public static void flush_async$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*flush_async)(GOutputStream*,int,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
+    public static void flush_async$set(MemorySegment seg, MemorySegment x) {
         _GOutputStreamClass.flush_async$VH.set(seg, x);
     }
-    public static MemoryAddress flush_async$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GOutputStreamClass.flush_async$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment flush_async$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GOutputStreamClass.flush_async$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void flush_async$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void flush_async$set(MemorySegment seg, long index, MemorySegment x) {
         _GOutputStreamClass.flush_async$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static flush_async flush_async (MemorySegment segment, MemorySession session) {
-        return flush_async.ofAddress(flush_async$get(segment), session);
+    public static flush_async flush_async(MemorySegment segment, SegmentScope scope) {
+        return flush_async.ofAddress(flush_async$get(segment), scope);
     }
     static final FunctionDescriptor flush_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle flush_finish$MH = RuntimeHelper.downcallHandle(
-        _GOutputStreamClass.flush_finish$FUNC
+    static final FunctionDescriptor flush_finish_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle flush_finish_UP$MH = RuntimeHelper.upcallHandle(flush_finish.class, "apply", _GOutputStreamClass.flush_finish_UP$FUNC);
+    static final FunctionDescriptor flush_finish_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle flush_finish_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GOutputStreamClass.flush_finish_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*flush_finish)(GOutputStream*,GAsyncResult*,GError**);
+     * }
+     */
     public interface flush_finish {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2);
-        static MemorySegment allocate(flush_finish fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(flush_finish.class, fi, _GOutputStreamClass.flush_finish$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2);
+        static MemorySegment allocate(flush_finish fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GOutputStreamClass.flush_finish_UP$MH, fi, _GOutputStreamClass.flush_finish$FUNC, scope);
         }
-        static flush_finish ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2) -> {
+        static flush_finish ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2) -> {
                 try {
-                    return (int)_GOutputStreamClass.flush_finish$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2);
+                    return (int)_GOutputStreamClass.flush_finish_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -502,20 +828,32 @@ public class _GOutputStreamClass {
     public static VarHandle flush_finish$VH() {
         return _GOutputStreamClass.flush_finish$VH;
     }
-    public static MemoryAddress flush_finish$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GOutputStreamClass.flush_finish$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*flush_finish)(GOutputStream*,GAsyncResult*,GError**);
+     * }
+     */
+    public static MemorySegment flush_finish$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GOutputStreamClass.flush_finish$VH.get(seg);
     }
-    public static void flush_finish$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*flush_finish)(GOutputStream*,GAsyncResult*,GError**);
+     * }
+     */
+    public static void flush_finish$set(MemorySegment seg, MemorySegment x) {
         _GOutputStreamClass.flush_finish$VH.set(seg, x);
     }
-    public static MemoryAddress flush_finish$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GOutputStreamClass.flush_finish$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment flush_finish$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GOutputStreamClass.flush_finish$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void flush_finish$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void flush_finish$set(MemorySegment seg, long index, MemorySegment x) {
         _GOutputStreamClass.flush_finish$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static flush_finish flush_finish (MemorySegment segment, MemorySession session) {
-        return flush_finish.ofAddress(flush_finish$get(segment), session);
+    public static flush_finish flush_finish(MemorySegment segment, SegmentScope scope) {
+        return flush_finish.ofAddress(flush_finish$get(segment), scope);
     }
     static final FunctionDescriptor close_async$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
@@ -524,20 +862,40 @@ public class _GOutputStreamClass {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle close_async$MH = RuntimeHelper.downcallHandle(
-        _GOutputStreamClass.close_async$FUNC
+    static final FunctionDescriptor close_async_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle close_async_UP$MH = RuntimeHelper.upcallHandle(close_async.class, "apply", _GOutputStreamClass.close_async_UP$FUNC);
+    static final FunctionDescriptor close_async_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle close_async_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GOutputStreamClass.close_async_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*close_async)(GOutputStream*,int,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
     public interface close_async {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, int _x1, java.lang.foreign.MemoryAddress _x2, java.lang.foreign.MemoryAddress _x3, java.lang.foreign.MemoryAddress _x4);
-        static MemorySegment allocate(close_async fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(close_async.class, fi, _GOutputStreamClass.close_async$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, int _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4);
+        static MemorySegment allocate(close_async fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GOutputStreamClass.close_async_UP$MH, fi, _GOutputStreamClass.close_async$FUNC, scope);
         }
-        static close_async ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, int __x1, java.lang.foreign.MemoryAddress __x2, java.lang.foreign.MemoryAddress __x3, java.lang.foreign.MemoryAddress __x4) -> {
+        static close_async ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, int __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4) -> {
                 try {
-                    _GOutputStreamClass.close_async$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, __x1, (java.lang.foreign.Addressable)__x2, (java.lang.foreign.Addressable)__x3, (java.lang.foreign.Addressable)__x4);
+                    _GOutputStreamClass.close_async_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -549,40 +907,68 @@ public class _GOutputStreamClass {
     public static VarHandle close_async$VH() {
         return _GOutputStreamClass.close_async$VH;
     }
-    public static MemoryAddress close_async$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GOutputStreamClass.close_async$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*close_async)(GOutputStream*,int,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
+    public static MemorySegment close_async$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GOutputStreamClass.close_async$VH.get(seg);
     }
-    public static void close_async$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*close_async)(GOutputStream*,int,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
+    public static void close_async$set(MemorySegment seg, MemorySegment x) {
         _GOutputStreamClass.close_async$VH.set(seg, x);
     }
-    public static MemoryAddress close_async$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GOutputStreamClass.close_async$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment close_async$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GOutputStreamClass.close_async$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void close_async$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void close_async$set(MemorySegment seg, long index, MemorySegment x) {
         _GOutputStreamClass.close_async$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static close_async close_async (MemorySegment segment, MemorySession session) {
-        return close_async.ofAddress(close_async$get(segment), session);
+    public static close_async close_async(MemorySegment segment, SegmentScope scope) {
+        return close_async.ofAddress(close_async$get(segment), scope);
     }
     static final FunctionDescriptor close_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle close_finish$MH = RuntimeHelper.downcallHandle(
-        _GOutputStreamClass.close_finish$FUNC
+    static final FunctionDescriptor close_finish_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle close_finish_UP$MH = RuntimeHelper.upcallHandle(close_finish.class, "apply", _GOutputStreamClass.close_finish_UP$FUNC);
+    static final FunctionDescriptor close_finish_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle close_finish_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GOutputStreamClass.close_finish_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*close_finish)(GOutputStream*,GAsyncResult*,GError**);
+     * }
+     */
     public interface close_finish {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2);
-        static MemorySegment allocate(close_finish fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(close_finish.class, fi, _GOutputStreamClass.close_finish$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2);
+        static MemorySegment allocate(close_finish fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GOutputStreamClass.close_finish_UP$MH, fi, _GOutputStreamClass.close_finish$FUNC, scope);
         }
-        static close_finish ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2) -> {
+        static close_finish ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2) -> {
                 try {
-                    return (int)_GOutputStreamClass.close_finish$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2);
+                    return (int)_GOutputStreamClass.close_finish_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -594,20 +980,32 @@ public class _GOutputStreamClass {
     public static VarHandle close_finish$VH() {
         return _GOutputStreamClass.close_finish$VH;
     }
-    public static MemoryAddress close_finish$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GOutputStreamClass.close_finish$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*close_finish)(GOutputStream*,GAsyncResult*,GError**);
+     * }
+     */
+    public static MemorySegment close_finish$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GOutputStreamClass.close_finish$VH.get(seg);
     }
-    public static void close_finish$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*close_finish)(GOutputStream*,GAsyncResult*,GError**);
+     * }
+     */
+    public static void close_finish$set(MemorySegment seg, MemorySegment x) {
         _GOutputStreamClass.close_finish$VH.set(seg, x);
     }
-    public static MemoryAddress close_finish$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GOutputStreamClass.close_finish$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment close_finish$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GOutputStreamClass.close_finish$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void close_finish$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void close_finish$set(MemorySegment seg, long index, MemorySegment x) {
         _GOutputStreamClass.close_finish$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static close_finish close_finish (MemorySegment segment, MemorySession session) {
-        return close_finish.ofAddress(close_finish$get(segment), session);
+    public static close_finish close_finish(MemorySegment segment, SegmentScope scope) {
+        return close_finish.ofAddress(close_finish$get(segment), scope);
     }
     static final FunctionDescriptor writev_fn$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
@@ -617,20 +1015,42 @@ public class _GOutputStreamClass {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle writev_fn$MH = RuntimeHelper.downcallHandle(
-        _GOutputStreamClass.writev_fn$FUNC
+    static final FunctionDescriptor writev_fn_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle writev_fn_UP$MH = RuntimeHelper.upcallHandle(writev_fn.class, "apply", _GOutputStreamClass.writev_fn_UP$FUNC);
+    static final FunctionDescriptor writev_fn_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle writev_fn_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GOutputStreamClass.writev_fn_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*writev_fn)(GOutputStream*,const GOutputVector*,gsize,gsize*,GCancellable*,GError**);
+     * }
+     */
     public interface writev_fn {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, long _x2, java.lang.foreign.MemoryAddress _x3, java.lang.foreign.MemoryAddress _x4, java.lang.foreign.MemoryAddress _x5);
-        static MemorySegment allocate(writev_fn fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(writev_fn.class, fi, _GOutputStreamClass.writev_fn$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, long _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4, java.lang.foreign.MemorySegment _x5);
+        static MemorySegment allocate(writev_fn fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GOutputStreamClass.writev_fn_UP$MH, fi, _GOutputStreamClass.writev_fn$FUNC, scope);
         }
-        static writev_fn ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, long __x2, java.lang.foreign.MemoryAddress __x3, java.lang.foreign.MemoryAddress __x4, java.lang.foreign.MemoryAddress __x5) -> {
+        static writev_fn ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, long __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4, java.lang.foreign.MemorySegment __x5) -> {
                 try {
-                    return (int)_GOutputStreamClass.writev_fn$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, __x2, (java.lang.foreign.Addressable)__x3, (java.lang.foreign.Addressable)__x4, (java.lang.foreign.Addressable)__x5);
+                    return (int)_GOutputStreamClass.writev_fn_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -642,20 +1062,32 @@ public class _GOutputStreamClass {
     public static VarHandle writev_fn$VH() {
         return _GOutputStreamClass.writev_fn$VH;
     }
-    public static MemoryAddress writev_fn$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GOutputStreamClass.writev_fn$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*writev_fn)(GOutputStream*,const GOutputVector*,gsize,gsize*,GCancellable*,GError**);
+     * }
+     */
+    public static MemorySegment writev_fn$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GOutputStreamClass.writev_fn$VH.get(seg);
     }
-    public static void writev_fn$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*writev_fn)(GOutputStream*,const GOutputVector*,gsize,gsize*,GCancellable*,GError**);
+     * }
+     */
+    public static void writev_fn$set(MemorySegment seg, MemorySegment x) {
         _GOutputStreamClass.writev_fn$VH.set(seg, x);
     }
-    public static MemoryAddress writev_fn$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GOutputStreamClass.writev_fn$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment writev_fn$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GOutputStreamClass.writev_fn$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void writev_fn$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void writev_fn$set(MemorySegment seg, long index, MemorySegment x) {
         _GOutputStreamClass.writev_fn$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static writev_fn writev_fn (MemorySegment segment, MemorySession session) {
-        return writev_fn.ofAddress(writev_fn$get(segment), session);
+    public static writev_fn writev_fn(MemorySegment segment, SegmentScope scope) {
+        return writev_fn.ofAddress(writev_fn$get(segment), scope);
     }
     static final FunctionDescriptor writev_async$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
@@ -666,20 +1098,44 @@ public class _GOutputStreamClass {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle writev_async$MH = RuntimeHelper.downcallHandle(
-        _GOutputStreamClass.writev_async$FUNC
+    static final FunctionDescriptor writev_async_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle writev_async_UP$MH = RuntimeHelper.upcallHandle(writev_async.class, "apply", _GOutputStreamClass.writev_async_UP$FUNC);
+    static final FunctionDescriptor writev_async_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle writev_async_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GOutputStreamClass.writev_async_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*writev_async)(GOutputStream*,const GOutputVector*,gsize,int,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
     public interface writev_async {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, long _x2, int _x3, java.lang.foreign.MemoryAddress _x4, java.lang.foreign.MemoryAddress _x5, java.lang.foreign.MemoryAddress _x6);
-        static MemorySegment allocate(writev_async fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(writev_async.class, fi, _GOutputStreamClass.writev_async$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, long _x2, int _x3, java.lang.foreign.MemorySegment _x4, java.lang.foreign.MemorySegment _x5, java.lang.foreign.MemorySegment _x6);
+        static MemorySegment allocate(writev_async fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GOutputStreamClass.writev_async_UP$MH, fi, _GOutputStreamClass.writev_async$FUNC, scope);
         }
-        static writev_async ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, long __x2, int __x3, java.lang.foreign.MemoryAddress __x4, java.lang.foreign.MemoryAddress __x5, java.lang.foreign.MemoryAddress __x6) -> {
+        static writev_async ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, long __x2, int __x3, java.lang.foreign.MemorySegment __x4, java.lang.foreign.MemorySegment __x5, java.lang.foreign.MemorySegment __x6) -> {
                 try {
-                    _GOutputStreamClass.writev_async$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, __x2, __x3, (java.lang.foreign.Addressable)__x4, (java.lang.foreign.Addressable)__x5, (java.lang.foreign.Addressable)__x6);
+                    _GOutputStreamClass.writev_async_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5, __x6);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -691,20 +1147,32 @@ public class _GOutputStreamClass {
     public static VarHandle writev_async$VH() {
         return _GOutputStreamClass.writev_async$VH;
     }
-    public static MemoryAddress writev_async$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GOutputStreamClass.writev_async$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*writev_async)(GOutputStream*,const GOutputVector*,gsize,int,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
+    public static MemorySegment writev_async$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GOutputStreamClass.writev_async$VH.get(seg);
     }
-    public static void writev_async$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*writev_async)(GOutputStream*,const GOutputVector*,gsize,int,GCancellable*,GAsyncReadyCallback,gpointer);
+     * }
+     */
+    public static void writev_async$set(MemorySegment seg, MemorySegment x) {
         _GOutputStreamClass.writev_async$VH.set(seg, x);
     }
-    public static MemoryAddress writev_async$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GOutputStreamClass.writev_async$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment writev_async$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GOutputStreamClass.writev_async$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void writev_async$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void writev_async$set(MemorySegment seg, long index, MemorySegment x) {
         _GOutputStreamClass.writev_async$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static writev_async writev_async (MemorySegment segment, MemorySession session) {
-        return writev_async.ofAddress(writev_async$get(segment), session);
+    public static writev_async writev_async(MemorySegment segment, SegmentScope scope) {
+        return writev_async.ofAddress(writev_async$get(segment), scope);
     }
     static final FunctionDescriptor writev_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
@@ -712,20 +1180,38 @@ public class _GOutputStreamClass {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle writev_finish$MH = RuntimeHelper.downcallHandle(
-        _GOutputStreamClass.writev_finish$FUNC
+    static final FunctionDescriptor writev_finish_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle writev_finish_UP$MH = RuntimeHelper.upcallHandle(writev_finish.class, "apply", _GOutputStreamClass.writev_finish_UP$FUNC);
+    static final FunctionDescriptor writev_finish_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle writev_finish_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GOutputStreamClass.writev_finish_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*writev_finish)(GOutputStream*,GAsyncResult*,gsize*,GError**);
+     * }
+     */
     public interface writev_finish {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2, java.lang.foreign.MemoryAddress _x3);
-        static MemorySegment allocate(writev_finish fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(writev_finish.class, fi, _GOutputStreamClass.writev_finish$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3);
+        static MemorySegment allocate(writev_finish fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GOutputStreamClass.writev_finish_UP$MH, fi, _GOutputStreamClass.writev_finish$FUNC, scope);
         }
-        static writev_finish ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2, java.lang.foreign.MemoryAddress __x3) -> {
+        static writev_finish ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3) -> {
                 try {
-                    return (int)_GOutputStreamClass.writev_finish$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2, (java.lang.foreign.Addressable)__x3);
+                    return (int)_GOutputStreamClass.writev_finish_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -737,36 +1223,56 @@ public class _GOutputStreamClass {
     public static VarHandle writev_finish$VH() {
         return _GOutputStreamClass.writev_finish$VH;
     }
-    public static MemoryAddress writev_finish$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GOutputStreamClass.writev_finish$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*writev_finish)(GOutputStream*,GAsyncResult*,gsize*,GError**);
+     * }
+     */
+    public static MemorySegment writev_finish$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GOutputStreamClass.writev_finish$VH.get(seg);
     }
-    public static void writev_finish$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*writev_finish)(GOutputStream*,GAsyncResult*,gsize*,GError**);
+     * }
+     */
+    public static void writev_finish$set(MemorySegment seg, MemorySegment x) {
         _GOutputStreamClass.writev_finish$VH.set(seg, x);
     }
-    public static MemoryAddress writev_finish$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GOutputStreamClass.writev_finish$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment writev_finish$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GOutputStreamClass.writev_finish$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void writev_finish$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void writev_finish$set(MemorySegment seg, long index, MemorySegment x) {
         _GOutputStreamClass.writev_finish$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static writev_finish writev_finish (MemorySegment segment, MemorySession session) {
-        return writev_finish.ofAddress(writev_finish$get(segment), session);
+    public static writev_finish writev_finish(MemorySegment segment, SegmentScope scope) {
+        return writev_finish.ofAddress(writev_finish$get(segment), scope);
     }
     static final FunctionDescriptor _g_reserved4$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _g_reserved4$MH = RuntimeHelper.downcallHandle(
-        _GOutputStreamClass._g_reserved4$FUNC
+    static final FunctionDescriptor _g_reserved4_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _g_reserved4_UP$MH = RuntimeHelper.upcallHandle(_g_reserved4.class, "apply", _GOutputStreamClass._g_reserved4_UP$FUNC);
+    static final FunctionDescriptor _g_reserved4_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _g_reserved4_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GOutputStreamClass._g_reserved4_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_g_reserved4)();
+     * }
+     */
     public interface _g_reserved4 {
 
         void apply();
-        static MemorySegment allocate(_g_reserved4 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_g_reserved4.class, fi, _GOutputStreamClass._g_reserved4$FUNC, session);
+        static MemorySegment allocate(_g_reserved4 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GOutputStreamClass._g_reserved4_UP$MH, fi, _GOutputStreamClass._g_reserved4$FUNC, scope);
         }
-        static _g_reserved4 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _g_reserved4 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GOutputStreamClass._g_reserved4$MH.invokeExact((Addressable)symbol);
+                    _GOutputStreamClass._g_reserved4_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -778,36 +1284,56 @@ public class _GOutputStreamClass {
     public static VarHandle _g_reserved4$VH() {
         return _GOutputStreamClass._g_reserved4$VH;
     }
-    public static MemoryAddress _g_reserved4$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GOutputStreamClass._g_reserved4$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_g_reserved4)();
+     * }
+     */
+    public static MemorySegment _g_reserved4$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GOutputStreamClass._g_reserved4$VH.get(seg);
     }
-    public static void _g_reserved4$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_g_reserved4)();
+     * }
+     */
+    public static void _g_reserved4$set(MemorySegment seg, MemorySegment x) {
         _GOutputStreamClass._g_reserved4$VH.set(seg, x);
     }
-    public static MemoryAddress _g_reserved4$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GOutputStreamClass._g_reserved4$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _g_reserved4$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GOutputStreamClass._g_reserved4$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _g_reserved4$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _g_reserved4$set(MemorySegment seg, long index, MemorySegment x) {
         _GOutputStreamClass._g_reserved4$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _g_reserved4 _g_reserved4 (MemorySegment segment, MemorySession session) {
-        return _g_reserved4.ofAddress(_g_reserved4$get(segment), session);
+    public static _g_reserved4 _g_reserved4(MemorySegment segment, SegmentScope scope) {
+        return _g_reserved4.ofAddress(_g_reserved4$get(segment), scope);
     }
     static final FunctionDescriptor _g_reserved5$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _g_reserved5$MH = RuntimeHelper.downcallHandle(
-        _GOutputStreamClass._g_reserved5$FUNC
+    static final FunctionDescriptor _g_reserved5_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _g_reserved5_UP$MH = RuntimeHelper.upcallHandle(_g_reserved5.class, "apply", _GOutputStreamClass._g_reserved5_UP$FUNC);
+    static final FunctionDescriptor _g_reserved5_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _g_reserved5_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GOutputStreamClass._g_reserved5_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_g_reserved5)();
+     * }
+     */
     public interface _g_reserved5 {
 
         void apply();
-        static MemorySegment allocate(_g_reserved5 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_g_reserved5.class, fi, _GOutputStreamClass._g_reserved5$FUNC, session);
+        static MemorySegment allocate(_g_reserved5 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GOutputStreamClass._g_reserved5_UP$MH, fi, _GOutputStreamClass._g_reserved5$FUNC, scope);
         }
-        static _g_reserved5 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _g_reserved5 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GOutputStreamClass._g_reserved5$MH.invokeExact((Addressable)symbol);
+                    _GOutputStreamClass._g_reserved5_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -819,36 +1345,56 @@ public class _GOutputStreamClass {
     public static VarHandle _g_reserved5$VH() {
         return _GOutputStreamClass._g_reserved5$VH;
     }
-    public static MemoryAddress _g_reserved5$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GOutputStreamClass._g_reserved5$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_g_reserved5)();
+     * }
+     */
+    public static MemorySegment _g_reserved5$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GOutputStreamClass._g_reserved5$VH.get(seg);
     }
-    public static void _g_reserved5$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_g_reserved5)();
+     * }
+     */
+    public static void _g_reserved5$set(MemorySegment seg, MemorySegment x) {
         _GOutputStreamClass._g_reserved5$VH.set(seg, x);
     }
-    public static MemoryAddress _g_reserved5$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GOutputStreamClass._g_reserved5$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _g_reserved5$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GOutputStreamClass._g_reserved5$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _g_reserved5$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _g_reserved5$set(MemorySegment seg, long index, MemorySegment x) {
         _GOutputStreamClass._g_reserved5$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _g_reserved5 _g_reserved5 (MemorySegment segment, MemorySession session) {
-        return _g_reserved5.ofAddress(_g_reserved5$get(segment), session);
+    public static _g_reserved5 _g_reserved5(MemorySegment segment, SegmentScope scope) {
+        return _g_reserved5.ofAddress(_g_reserved5$get(segment), scope);
     }
     static final FunctionDescriptor _g_reserved6$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _g_reserved6$MH = RuntimeHelper.downcallHandle(
-        _GOutputStreamClass._g_reserved6$FUNC
+    static final FunctionDescriptor _g_reserved6_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _g_reserved6_UP$MH = RuntimeHelper.upcallHandle(_g_reserved6.class, "apply", _GOutputStreamClass._g_reserved6_UP$FUNC);
+    static final FunctionDescriptor _g_reserved6_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _g_reserved6_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GOutputStreamClass._g_reserved6_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_g_reserved6)();
+     * }
+     */
     public interface _g_reserved6 {
 
         void apply();
-        static MemorySegment allocate(_g_reserved6 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_g_reserved6.class, fi, _GOutputStreamClass._g_reserved6$FUNC, session);
+        static MemorySegment allocate(_g_reserved6 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GOutputStreamClass._g_reserved6_UP$MH, fi, _GOutputStreamClass._g_reserved6$FUNC, scope);
         }
-        static _g_reserved6 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _g_reserved6 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GOutputStreamClass._g_reserved6$MH.invokeExact((Addressable)symbol);
+                    _GOutputStreamClass._g_reserved6_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -860,36 +1406,56 @@ public class _GOutputStreamClass {
     public static VarHandle _g_reserved6$VH() {
         return _GOutputStreamClass._g_reserved6$VH;
     }
-    public static MemoryAddress _g_reserved6$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GOutputStreamClass._g_reserved6$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_g_reserved6)();
+     * }
+     */
+    public static MemorySegment _g_reserved6$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GOutputStreamClass._g_reserved6$VH.get(seg);
     }
-    public static void _g_reserved6$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_g_reserved6)();
+     * }
+     */
+    public static void _g_reserved6$set(MemorySegment seg, MemorySegment x) {
         _GOutputStreamClass._g_reserved6$VH.set(seg, x);
     }
-    public static MemoryAddress _g_reserved6$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GOutputStreamClass._g_reserved6$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _g_reserved6$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GOutputStreamClass._g_reserved6$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _g_reserved6$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _g_reserved6$set(MemorySegment seg, long index, MemorySegment x) {
         _GOutputStreamClass._g_reserved6$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _g_reserved6 _g_reserved6 (MemorySegment segment, MemorySession session) {
-        return _g_reserved6.ofAddress(_g_reserved6$get(segment), session);
+    public static _g_reserved6 _g_reserved6(MemorySegment segment, SegmentScope scope) {
+        return _g_reserved6.ofAddress(_g_reserved6$get(segment), scope);
     }
     static final FunctionDescriptor _g_reserved7$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _g_reserved7$MH = RuntimeHelper.downcallHandle(
-        _GOutputStreamClass._g_reserved7$FUNC
+    static final FunctionDescriptor _g_reserved7_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _g_reserved7_UP$MH = RuntimeHelper.upcallHandle(_g_reserved7.class, "apply", _GOutputStreamClass._g_reserved7_UP$FUNC);
+    static final FunctionDescriptor _g_reserved7_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _g_reserved7_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GOutputStreamClass._g_reserved7_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_g_reserved7)();
+     * }
+     */
     public interface _g_reserved7 {
 
         void apply();
-        static MemorySegment allocate(_g_reserved7 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_g_reserved7.class, fi, _GOutputStreamClass._g_reserved7$FUNC, session);
+        static MemorySegment allocate(_g_reserved7 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GOutputStreamClass._g_reserved7_UP$MH, fi, _GOutputStreamClass._g_reserved7$FUNC, scope);
         }
-        static _g_reserved7 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _g_reserved7 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GOutputStreamClass._g_reserved7$MH.invokeExact((Addressable)symbol);
+                    _GOutputStreamClass._g_reserved7_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -901,36 +1467,56 @@ public class _GOutputStreamClass {
     public static VarHandle _g_reserved7$VH() {
         return _GOutputStreamClass._g_reserved7$VH;
     }
-    public static MemoryAddress _g_reserved7$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GOutputStreamClass._g_reserved7$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_g_reserved7)();
+     * }
+     */
+    public static MemorySegment _g_reserved7$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GOutputStreamClass._g_reserved7$VH.get(seg);
     }
-    public static void _g_reserved7$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_g_reserved7)();
+     * }
+     */
+    public static void _g_reserved7$set(MemorySegment seg, MemorySegment x) {
         _GOutputStreamClass._g_reserved7$VH.set(seg, x);
     }
-    public static MemoryAddress _g_reserved7$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GOutputStreamClass._g_reserved7$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _g_reserved7$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GOutputStreamClass._g_reserved7$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _g_reserved7$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _g_reserved7$set(MemorySegment seg, long index, MemorySegment x) {
         _GOutputStreamClass._g_reserved7$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _g_reserved7 _g_reserved7 (MemorySegment segment, MemorySession session) {
-        return _g_reserved7.ofAddress(_g_reserved7$get(segment), session);
+    public static _g_reserved7 _g_reserved7(MemorySegment segment, SegmentScope scope) {
+        return _g_reserved7.ofAddress(_g_reserved7$get(segment), scope);
     }
     static final FunctionDescriptor _g_reserved8$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _g_reserved8$MH = RuntimeHelper.downcallHandle(
-        _GOutputStreamClass._g_reserved8$FUNC
+    static final FunctionDescriptor _g_reserved8_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _g_reserved8_UP$MH = RuntimeHelper.upcallHandle(_g_reserved8.class, "apply", _GOutputStreamClass._g_reserved8_UP$FUNC);
+    static final FunctionDescriptor _g_reserved8_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _g_reserved8_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GOutputStreamClass._g_reserved8_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_g_reserved8)();
+     * }
+     */
     public interface _g_reserved8 {
 
         void apply();
-        static MemorySegment allocate(_g_reserved8 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_g_reserved8.class, fi, _GOutputStreamClass._g_reserved8$FUNC, session);
+        static MemorySegment allocate(_g_reserved8 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GOutputStreamClass._g_reserved8_UP$MH, fi, _GOutputStreamClass._g_reserved8$FUNC, scope);
         }
-        static _g_reserved8 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _g_reserved8 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GOutputStreamClass._g_reserved8$MH.invokeExact((Addressable)symbol);
+                    _GOutputStreamClass._g_reserved8_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -942,27 +1528,39 @@ public class _GOutputStreamClass {
     public static VarHandle _g_reserved8$VH() {
         return _GOutputStreamClass._g_reserved8$VH;
     }
-    public static MemoryAddress _g_reserved8$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GOutputStreamClass._g_reserved8$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_g_reserved8)();
+     * }
+     */
+    public static MemorySegment _g_reserved8$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GOutputStreamClass._g_reserved8$VH.get(seg);
     }
-    public static void _g_reserved8$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_g_reserved8)();
+     * }
+     */
+    public static void _g_reserved8$set(MemorySegment seg, MemorySegment x) {
         _GOutputStreamClass._g_reserved8$VH.set(seg, x);
     }
-    public static MemoryAddress _g_reserved8$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GOutputStreamClass._g_reserved8$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _g_reserved8$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GOutputStreamClass._g_reserved8$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _g_reserved8$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _g_reserved8$set(MemorySegment seg, long index, MemorySegment x) {
         _GOutputStreamClass._g_reserved8$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _g_reserved8 _g_reserved8 (MemorySegment segment, MemorySession session) {
-        return _g_reserved8.ofAddress(_g_reserved8$get(segment), session);
+    public static _g_reserved8 _g_reserved8(MemorySegment segment, SegmentScope scope) {
+        return _g_reserved8.ofAddress(_g_reserved8$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

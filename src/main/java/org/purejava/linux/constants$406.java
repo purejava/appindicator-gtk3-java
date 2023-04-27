@@ -7,49 +7,77 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$406 {
+final class constants$406 {
 
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GStrvBuilder$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$406() {}
+    static final FunctionDescriptor g_closure_invalidate$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GStrvBuilder$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GStrvBuilder",
-        constants$406.glib_slistautoptr_cleanup_GStrvBuilder$FUNC
+    static final MethodHandle g_closure_invalidate$MH = RuntimeHelper.downcallHandle(
+        "g_closure_invalidate",
+        constants$406.g_closure_invalidate$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GStrvBuilder$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_closure_invoke$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GStrvBuilder$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GStrvBuilder",
-        constants$406.glib_queueautoptr_cleanup_GStrvBuilder$FUNC
+    static final MethodHandle g_closure_invoke$MH = RuntimeHelper.downcallHandle(
+        "g_closure_invoke",
+        constants$406.g_closure_invoke$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GThread$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_cclosure_marshal_generic$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GThread$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GThread",
-        constants$406.glib_autoptr_clear_GThread$FUNC
+    static final MethodHandle g_cclosure_marshal_generic$MH = RuntimeHelper.downcallHandle(
+        "g_cclosure_marshal_generic",
+        constants$406.g_cclosure_marshal_generic$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GThread$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_cclosure_marshal_generic_va$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GThread$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GThread",
-        constants$406.glib_autoptr_cleanup_GThread$FUNC
+    static final MethodHandle g_cclosure_marshal_generic_va$MH = RuntimeHelper.downcallHandle(
+        "g_cclosure_marshal_generic_va",
+        constants$406.g_cclosure_marshal_generic_va$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GThread$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_cclosure_marshal_VOID__VOID$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GThread$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GThread",
-        constants$406.glib_listautoptr_cleanup_GThread$FUNC
+    static final MethodHandle g_cclosure_marshal_VOID__VOID$MH = RuntimeHelper.downcallHandle(
+        "g_cclosure_marshal_VOID__VOID",
+        constants$406.g_cclosure_marshal_VOID__VOID$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GThread$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_cclosure_marshal_VOID__VOIDv$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GThread$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GThread",
-        constants$406.glib_slistautoptr_cleanup_GThread$FUNC
+    static final MethodHandle g_cclosure_marshal_VOID__VOIDv$MH = RuntimeHelper.downcallHandle(
+        "g_cclosure_marshal_VOID__VOIDv",
+        constants$406.g_cclosure_marshal_VOID__VOIDv$FUNC
     );
 }
 

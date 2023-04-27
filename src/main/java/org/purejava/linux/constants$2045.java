@@ -7,53 +7,16 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$2045 {
+final class constants$2045 {
 
-    static final FunctionDescriptor gtk_text_view_get_pixels_inside_wrap$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_view_get_pixels_inside_wrap$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_get_pixels_inside_wrap",
-        constants$2045.gtk_text_view_get_pixels_inside_wrap$FUNC
-    );
-    static final FunctionDescriptor gtk_text_view_set_justification$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_text_view_set_justification$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_set_justification",
-        constants$2045.gtk_text_view_set_justification$FUNC
-    );
-    static final FunctionDescriptor gtk_text_view_get_justification$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_view_get_justification$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_get_justification",
-        constants$2045.gtk_text_view_get_justification$FUNC
-    );
-    static final FunctionDescriptor gtk_text_view_set_left_margin$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_text_view_set_left_margin$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_set_left_margin",
-        constants$2045.gtk_text_view_set_left_margin$FUNC
-    );
-    static final FunctionDescriptor gtk_text_view_get_left_margin$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_view_get_left_margin$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_get_left_margin",
-        constants$2045.gtk_text_view_get_left_margin$FUNC
-    );
-    static final FunctionDescriptor gtk_text_view_set_right_margin$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_text_view_set_right_margin$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_set_right_margin",
-        constants$2045.gtk_text_view_set_right_margin$FUNC
-    );
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$2045() {}
+    static final MemorySegment GTK_PRINT_SETTINGS_PAPER_WIDTH$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("paper-width");
+    static final MemorySegment GTK_PRINT_SETTINGS_PAPER_HEIGHT$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("paper-height");
+    static final MemorySegment GTK_PRINT_SETTINGS_N_COPIES$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("n-copies");
+    static final MemorySegment GTK_PRINT_SETTINGS_DEFAULT_SOURCE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("default-source");
+    static final MemorySegment GTK_PRINT_SETTINGS_QUALITY$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("quality");
+    static final MemorySegment GTK_PRINT_SETTINGS_RESOLUTION$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("resolution");
 }
 
 

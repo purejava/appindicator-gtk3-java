@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class fpos_t extends _G_fpos_t {
+/**
+ * {@snippet :
+ * typedef struct _G_fpos_t fpos_t;
+ * }
+ */
+public final class fpos_t extends _G_fpos_t {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private fpos_t() {}
 }
 
 

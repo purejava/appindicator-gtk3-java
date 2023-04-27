@@ -7,55 +7,58 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$654 {
+final class constants$654 {
 
-    static final FunctionDescriptor g_drive_eject_with_operation$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$654() {}
+    static final FunctionDescriptor g_file_attribute_matcher_enumerate_namespace$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_file_attribute_matcher_enumerate_namespace$MH = RuntimeHelper.downcallHandle(
+        "g_file_attribute_matcher_enumerate_namespace",
+        constants$654.g_file_attribute_matcher_enumerate_namespace$FUNC
+    );
+    static final FunctionDescriptor g_file_attribute_matcher_enumerate_next$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_file_attribute_matcher_enumerate_next$MH = RuntimeHelper.downcallHandle(
+        "g_file_attribute_matcher_enumerate_next",
+        constants$654.g_file_attribute_matcher_enumerate_next$FUNC
+    );
+    static final FunctionDescriptor g_file_attribute_matcher_to_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_file_attribute_matcher_to_string$MH = RuntimeHelper.downcallHandle(
+        "g_file_attribute_matcher_to_string",
+        constants$654.g_file_attribute_matcher_to_string$FUNC
+    );
+    static final FunctionDescriptor g_file_input_stream_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_file_input_stream_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_file_input_stream_get_type",
+        constants$654.g_file_input_stream_get_type$FUNC
+    );
+    static final FunctionDescriptor g_file_input_stream_query_info$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_file_input_stream_query_info$MH = RuntimeHelper.downcallHandle(
+        "g_file_input_stream_query_info",
+        constants$654.g_file_input_stream_query_info$FUNC
+    );
+    static final FunctionDescriptor g_file_input_stream_query_info_async$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_drive_eject_with_operation$MH = RuntimeHelper.downcallHandle(
-        "g_drive_eject_with_operation",
-        constants$654.g_drive_eject_with_operation$FUNC
-    );
-    static final FunctionDescriptor g_drive_eject_with_operation_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_drive_eject_with_operation_finish$MH = RuntimeHelper.downcallHandle(
-        "g_drive_eject_with_operation_finish",
-        constants$654.g_drive_eject_with_operation_finish$FUNC
-    );
-    static final FunctionDescriptor g_drive_get_sort_key$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_drive_get_sort_key$MH = RuntimeHelper.downcallHandle(
-        "g_drive_get_sort_key",
-        constants$654.g_drive_get_sort_key$FUNC
-    );
-    static final FunctionDescriptor g_dtls_connection_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_dtls_connection_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_dtls_connection_get_type",
-        constants$654.g_dtls_connection_get_type$FUNC
-    );
-    static final FunctionDescriptor g_dtls_connection_set_database$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dtls_connection_set_database$MH = RuntimeHelper.downcallHandle(
-        "g_dtls_connection_set_database",
-        constants$654.g_dtls_connection_set_database$FUNC
-    );
-    static final FunctionDescriptor g_dtls_connection_get_database$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dtls_connection_get_database$MH = RuntimeHelper.downcallHandle(
-        "g_dtls_connection_get_database",
-        constants$654.g_dtls_connection_get_database$FUNC
+    static final MethodHandle g_file_input_stream_query_info_async$MH = RuntimeHelper.downcallHandle(
+        "g_file_input_stream_query_info_async",
+        constants$654.g_file_input_stream_query_info_async$FUNC
     );
 }
 

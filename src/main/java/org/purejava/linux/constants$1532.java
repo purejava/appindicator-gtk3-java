@@ -7,50 +7,50 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1532 {
+final class constants$1532 {
 
-    static final FunctionDescriptor gtk_label_set_yalign$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1532() {}
+    static final FunctionDescriptor _gtk_check_button_get_props$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
-    );
-    static final MethodHandle gtk_label_set_yalign$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_set_yalign",
-        constants$1532.gtk_label_set_yalign$FUNC
-    );
-    static final FunctionDescriptor gtk_label_get_yalign$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_label_get_yalign$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_get_yalign",
-        constants$1532.gtk_label_get_yalign$FUNC
+    static final MethodHandle _gtk_check_button_get_props$MH = RuntimeHelper.downcallHandle(
+        "_gtk_check_button_get_props",
+        constants$1532._gtk_check_button_get_props$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GtkLabel$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_menu_item_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_menu_item_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_item_get_type",
+        constants$1532.gtk_menu_item_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_menu_item_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_menu_item_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_item_new",
+        constants$1532.gtk_menu_item_new$FUNC
+    );
+    static final FunctionDescriptor gtk_menu_item_new_with_label$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GtkLabel$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GtkLabel",
-        constants$1532.glib_autoptr_clear_GtkLabel$FUNC
+    static final MethodHandle gtk_menu_item_new_with_label$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_item_new_with_label",
+        constants$1532.gtk_menu_item_new_with_label$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GtkLabel$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_menu_item_new_with_mnemonic$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GtkLabel$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GtkLabel",
-        constants$1532.glib_autoptr_cleanup_GtkLabel$FUNC
+    static final MethodHandle gtk_menu_item_new_with_mnemonic$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_item_new_with_mnemonic",
+        constants$1532.gtk_menu_item_new_with_mnemonic$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GtkLabel$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_menu_item_set_submenu$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GtkLabel$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GtkLabel",
-        constants$1532.glib_listautoptr_cleanup_GtkLabel$FUNC
-    );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GtkLabel$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_slistautoptr_cleanup_GtkLabel$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GtkLabel",
-        constants$1532.glib_slistautoptr_cleanup_GtkLabel$FUNC
+    static final MethodHandle gtk_menu_item_set_submenu$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_item_set_submenu",
+        constants$1532.gtk_menu_item_set_submenu$FUNC
     );
 }
 

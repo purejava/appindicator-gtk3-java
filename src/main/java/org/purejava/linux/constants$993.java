@@ -7,49 +7,62 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$993 {
+final class constants$993 {
 
-    static final FunctionDescriptor hb_blob_make_immutable$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$993() {}
+    static final FunctionDescriptor pango_parse_style$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle hb_blob_make_immutable$MH = RuntimeHelper.downcallHandle(
-        "hb_blob_make_immutable",
-        constants$993.hb_blob_make_immutable$FUNC
+    static final MethodHandle pango_parse_style$MH = RuntimeHelper.downcallHandle(
+        "pango_parse_style",
+        constants$993.pango_parse_style$FUNC
     );
-    static final FunctionDescriptor hb_blob_is_immutable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor pango_parse_variant$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle hb_blob_is_immutable$MH = RuntimeHelper.downcallHandle(
-        "hb_blob_is_immutable",
-        constants$993.hb_blob_is_immutable$FUNC
+    static final MethodHandle pango_parse_variant$MH = RuntimeHelper.downcallHandle(
+        "pango_parse_variant",
+        constants$993.pango_parse_variant$FUNC
     );
-    static final FunctionDescriptor hb_blob_get_length$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor pango_parse_weight$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle hb_blob_get_length$MH = RuntimeHelper.downcallHandle(
-        "hb_blob_get_length",
-        constants$993.hb_blob_get_length$FUNC
+    static final MethodHandle pango_parse_weight$MH = RuntimeHelper.downcallHandle(
+        "pango_parse_weight",
+        constants$993.pango_parse_weight$FUNC
     );
-    static final FunctionDescriptor hb_blob_get_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor pango_parse_stretch$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle pango_parse_stretch$MH = RuntimeHelper.downcallHandle(
+        "pango_parse_stretch",
+        constants$993.pango_parse_stretch$FUNC
+    );
+    static final FunctionDescriptor pango_quantize_line_geometry$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_blob_get_data$MH = RuntimeHelper.downcallHandle(
-        "hb_blob_get_data",
-        constants$993.hb_blob_get_data$FUNC
+    static final MethodHandle pango_quantize_line_geometry$MH = RuntimeHelper.downcallHandle(
+        "pango_quantize_line_geometry",
+        constants$993.pango_quantize_line_geometry$FUNC
     );
-    static final FunctionDescriptor hb_blob_get_data_writable$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor pango_log2vis_get_embedding_levels$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_blob_get_data_writable$MH = RuntimeHelper.downcallHandle(
-        "hb_blob_get_data_writable",
-        constants$993.hb_blob_get_data_writable$FUNC
-    );
-    static final FunctionDescriptor hb_unicode_funcs_get_default$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle hb_unicode_funcs_get_default$MH = RuntimeHelper.downcallHandle(
-        "hb_unicode_funcs_get_default",
-        constants$993.hb_unicode_funcs_get_default$FUNC
+    static final MethodHandle pango_log2vis_get_embedding_levels$MH = RuntimeHelper.downcallHandle(
+        "pango_log2vis_get_embedding_levels",
+        constants$993.pango_log2vis_get_embedding_levels$FUNC
     );
 }
 

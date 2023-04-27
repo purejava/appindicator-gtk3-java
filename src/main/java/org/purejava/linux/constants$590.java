@@ -7,69 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$590 {
+final class constants$590 {
 
-    static final FunctionDescriptor g_data_input_stream_read_until_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$590() {}
+    static final FunctionDescriptor g_dbus_object_skeleton_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_dbus_object_skeleton_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_object_skeleton_get_type",
+        constants$590.g_dbus_object_skeleton_get_type$FUNC
+    );
+    static final FunctionDescriptor g_dbus_object_skeleton_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_dbus_object_skeleton_new$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_object_skeleton_new",
+        constants$590.g_dbus_object_skeleton_new$FUNC
+    );
+    static final FunctionDescriptor g_dbus_object_skeleton_flush$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_dbus_object_skeleton_flush$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_object_skeleton_flush",
+        constants$590.g_dbus_object_skeleton_flush$FUNC
+    );
+    static final FunctionDescriptor g_dbus_object_skeleton_add_interface$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_data_input_stream_read_until_async$MH = RuntimeHelper.downcallHandle(
-        "g_data_input_stream_read_until_async",
-        constants$590.g_data_input_stream_read_until_async$FUNC
+    static final MethodHandle g_dbus_object_skeleton_add_interface$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_object_skeleton_add_interface",
+        constants$590.g_dbus_object_skeleton_add_interface$FUNC
     );
-    static final FunctionDescriptor g_data_input_stream_read_until_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_dbus_object_skeleton_remove_interface$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_data_input_stream_read_until_finish$MH = RuntimeHelper.downcallHandle(
-        "g_data_input_stream_read_until_finish",
-        constants$590.g_data_input_stream_read_until_finish$FUNC
+    static final MethodHandle g_dbus_object_skeleton_remove_interface$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_object_skeleton_remove_interface",
+        constants$590.g_dbus_object_skeleton_remove_interface$FUNC
     );
-    static final FunctionDescriptor g_data_input_stream_read_upto$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_dbus_object_skeleton_remove_interface_by_name$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_data_input_stream_read_upto$MH = RuntimeHelper.downcallHandle(
-        "g_data_input_stream_read_upto",
-        constants$590.g_data_input_stream_read_upto$FUNC
-    );
-    static final FunctionDescriptor g_data_input_stream_read_upto_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_data_input_stream_read_upto_async$MH = RuntimeHelper.downcallHandle(
-        "g_data_input_stream_read_upto_async",
-        constants$590.g_data_input_stream_read_upto_async$FUNC
-    );
-    static final FunctionDescriptor g_data_input_stream_read_upto_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_data_input_stream_read_upto_finish$MH = RuntimeHelper.downcallHandle(
-        "g_data_input_stream_read_upto_finish",
-        constants$590.g_data_input_stream_read_upto_finish$FUNC
-    );
-    static final FunctionDescriptor g_data_output_stream_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_data_output_stream_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_data_output_stream_get_type",
-        constants$590.g_data_output_stream_get_type$FUNC
+    static final MethodHandle g_dbus_object_skeleton_remove_interface_by_name$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_object_skeleton_remove_interface_by_name",
+        constants$590.g_dbus_object_skeleton_remove_interface_by_name$FUNC
     );
 }
 

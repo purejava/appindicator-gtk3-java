@@ -7,64 +7,58 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1192 {
+final class constants$1192 {
 
-    static final FunctionDescriptor cairo_surface_write_to_png$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1192() {}
+    static final FunctionDescriptor gtk_accel_groups_activate$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_accel_groups_activate$MH = RuntimeHelper.downcallHandle(
+        "gtk_accel_groups_activate",
+        constants$1192.gtk_accel_groups_activate$FUNC
+    );
+    static final FunctionDescriptor gtk_accel_groups_from_object$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_surface_write_to_png$MH = RuntimeHelper.downcallHandle(
-        "cairo_surface_write_to_png",
-        constants$1192.cairo_surface_write_to_png$FUNC
+    static final MethodHandle gtk_accel_groups_from_object$MH = RuntimeHelper.downcallHandle(
+        "gtk_accel_groups_from_object",
+        constants$1192.gtk_accel_groups_from_object$FUNC
     );
-    static final FunctionDescriptor cairo_surface_write_to_png_stream$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_surface_write_to_png_stream$MH = RuntimeHelper.downcallHandle(
-        "cairo_surface_write_to_png_stream",
-        constants$1192.cairo_surface_write_to_png_stream$FUNC
-    );
-    static final FunctionDescriptor cairo_surface_get_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_surface_get_user_data$MH = RuntimeHelper.downcallHandle(
-        "cairo_surface_get_user_data",
-        constants$1192.cairo_surface_get_user_data$FUNC
-    );
-    static final FunctionDescriptor cairo_surface_set_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_accel_group_find$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_surface_set_user_data$MH = RuntimeHelper.downcallHandle(
-        "cairo_surface_set_user_data",
-        constants$1192.cairo_surface_set_user_data$FUNC
+    static final MethodHandle gtk_accel_group_find$MH = RuntimeHelper.downcallHandle(
+        "gtk_accel_group_find",
+        constants$1192.gtk_accel_group_find$FUNC
     );
-    static final FunctionDescriptor cairo_surface_get_mime_data$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_accel_group_from_accel_closure$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_accel_group_from_accel_closure$MH = RuntimeHelper.downcallHandle(
+        "gtk_accel_group_from_accel_closure",
+        constants$1192.gtk_accel_group_from_accel_closure$FUNC
+    );
+    static final FunctionDescriptor gtk_accelerator_valid$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_accelerator_valid$MH = RuntimeHelper.downcallHandle(
+        "gtk_accelerator_valid",
+        constants$1192.gtk_accelerator_valid$FUNC
+    );
+    static final FunctionDescriptor gtk_accelerator_parse$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_surface_get_mime_data$MH = RuntimeHelper.downcallHandle(
-        "cairo_surface_get_mime_data",
-        constants$1192.cairo_surface_get_mime_data$FUNC
-    );
-    static final FunctionDescriptor cairo_surface_set_mime_data$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_surface_set_mime_data$MH = RuntimeHelper.downcallHandle(
-        "cairo_surface_set_mime_data",
-        constants$1192.cairo_surface_set_mime_data$FUNC
+    static final MethodHandle gtk_accelerator_parse$MH = RuntimeHelper.downcallHandle(
+        "gtk_accelerator_parse",
+        constants$1192.gtk_accelerator_parse$FUNC
     );
 }
 

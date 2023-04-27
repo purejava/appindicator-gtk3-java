@@ -7,52 +7,48 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1820 {
+final class constants$1820 {
 
-    static final FunctionDescriptor gtk_icon_source_set_size_wildcarded$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_icon_source_set_size_wildcarded$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_source_set_size_wildcarded",
-        constants$1820.gtk_icon_source_set_size_wildcarded$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_source_get_size_wildcarded$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1820() {}
+    static final FunctionDescriptor gtk_spinner_start$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_icon_source_get_size_wildcarded$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_source_get_size_wildcarded",
-        constants$1820.gtk_icon_source_get_size_wildcarded$FUNC
+    static final MethodHandle gtk_spinner_start$MH = RuntimeHelper.downcallHandle(
+        "gtk_spinner_start",
+        constants$1820.gtk_spinner_start$FUNC
     );
-    static final FunctionDescriptor gtk_icon_source_get_state_wildcarded$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_spinner_stop$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_icon_source_get_state_wildcarded$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_source_get_state_wildcarded",
-        constants$1820.gtk_icon_source_get_state_wildcarded$FUNC
+    static final MethodHandle gtk_spinner_stop$MH = RuntimeHelper.downcallHandle(
+        "gtk_spinner_stop",
+        constants$1820.gtk_spinner_stop$FUNC
     );
-    static final FunctionDescriptor gtk_icon_source_get_direction_wildcarded$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_stack_switcher_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_stack_switcher_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_stack_switcher_get_type",
+        constants$1820.gtk_stack_switcher_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_stack_switcher_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_stack_switcher_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_stack_switcher_new",
+        constants$1820.gtk_stack_switcher_new$FUNC
+    );
+    static final FunctionDescriptor gtk_stack_switcher_set_stack$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_icon_source_get_direction_wildcarded$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_source_get_direction_wildcarded",
-        constants$1820.gtk_icon_source_get_direction_wildcarded$FUNC
+    static final MethodHandle gtk_stack_switcher_set_stack$MH = RuntimeHelper.downcallHandle(
+        "gtk_stack_switcher_set_stack",
+        constants$1820.gtk_stack_switcher_set_stack$FUNC
     );
-    static final FunctionDescriptor gtk_icon_source_set_direction$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor gtk_stack_switcher_get_stack$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_icon_source_set_direction$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_source_set_direction",
-        constants$1820.gtk_icon_source_set_direction$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_source_set_state$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_icon_source_set_state$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_source_set_state",
-        constants$1820.gtk_icon_source_set_state$FUNC
+    static final MethodHandle gtk_stack_switcher_get_stack$MH = RuntimeHelper.downcallHandle(
+        "gtk_stack_switcher_get_stack",
+        constants$1820.gtk_stack_switcher_get_stack$FUNC
     );
 }
 

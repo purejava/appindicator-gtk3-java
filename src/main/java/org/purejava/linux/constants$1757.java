@@ -7,52 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1757 {
+final class constants$1757 {
 
-    static final FunctionDescriptor gtk_expander_set_resize_toplevel$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1757() {}
+    static final FunctionDescriptor GtkPageSetupDoneFunc$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_expander_set_resize_toplevel$MH = RuntimeHelper.downcallHandle(
-        "gtk_expander_set_resize_toplevel",
-        constants$1757.gtk_expander_set_resize_toplevel$FUNC
-    );
-    static final FunctionDescriptor gtk_expander_get_resize_toplevel$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_expander_get_resize_toplevel$MH = RuntimeHelper.downcallHandle(
-        "gtk_expander_get_resize_toplevel",
-        constants$1757.gtk_expander_get_resize_toplevel$FUNC
+    static final FunctionDescriptor GtkPageSetupDoneFunc_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor gtk_fixed_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_fixed_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_fixed_get_type",
-        constants$1757.gtk_fixed_get_type$FUNC
+    static final MethodHandle GtkPageSetupDoneFunc_UP$MH = RuntimeHelper.upcallHandle(GtkPageSetupDoneFunc.class, "apply", constants$1757.GtkPageSetupDoneFunc_UP$FUNC);
+    static final FunctionDescriptor GtkPageSetupDoneFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor gtk_fixed_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_fixed_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_fixed_new",
-        constants$1757.gtk_fixed_new$FUNC
+    static final MethodHandle GtkPageSetupDoneFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$1757.GtkPageSetupDoneFunc_DOWN$FUNC
     );
-    static final FunctionDescriptor gtk_fixed_put$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_print_run_page_setup_dialog_async$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_fixed_put$MH = RuntimeHelper.downcallHandle(
-        "gtk_fixed_put",
-        constants$1757.gtk_fixed_put$FUNC
-    );
-    static final FunctionDescriptor gtk_fixed_move$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_fixed_move$MH = RuntimeHelper.downcallHandle(
-        "gtk_fixed_move",
-        constants$1757.gtk_fixed_move$FUNC
+    static final MethodHandle gtk_print_run_page_setup_dialog_async$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_run_page_setup_dialog_async",
+        constants$1757.gtk_print_run_page_setup_dialog_async$FUNC
+    );
+    static final FunctionDescriptor gtk_progress_bar_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_progress_bar_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_progress_bar_get_type",
+        constants$1757.gtk_progress_bar_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_progress_bar_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_progress_bar_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_progress_bar_new",
+        constants$1757.gtk_progress_bar_new$FUNC
+    );
+    static final FunctionDescriptor gtk_progress_bar_pulse$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_progress_bar_pulse$MH = RuntimeHelper.downcallHandle(
+        "gtk_progress_bar_pulse",
+        constants$1757.gtk_progress_bar_pulse$FUNC
     );
 }
 

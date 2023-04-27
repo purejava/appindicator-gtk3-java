@@ -7,9 +7,20 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GTypeModule {
+ *     GObject parent_instance;
+ *     guint use_count;
+ *     GSList* type_infos;
+ *     GSList* interface_infos;
+ *     gchar* name;
+ * };
+ * }
+ */
 public class _GTypeModule {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
                 Constants$root.C_POINTER$LAYOUT.withName("g_class")
@@ -34,10 +45,22 @@ public class _GTypeModule {
     public static VarHandle use_count$VH() {
         return _GTypeModule.use_count$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * guint use_count;
+     * }
+     */
     public static int use_count$get(MemorySegment seg) {
         return (int)_GTypeModule.use_count$VH.get(seg);
     }
-    public static void use_count$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * guint use_count;
+     * }
+     */
+    public static void use_count$set(MemorySegment seg, int x) {
         _GTypeModule.use_count$VH.set(seg, x);
     }
     public static int use_count$get(MemorySegment seg, long index) {
@@ -50,56 +73,92 @@ public class _GTypeModule {
     public static VarHandle type_infos$VH() {
         return _GTypeModule.type_infos$VH;
     }
-    public static MemoryAddress type_infos$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GTypeModule.type_infos$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GSList* type_infos;
+     * }
+     */
+    public static MemorySegment type_infos$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GTypeModule.type_infos$VH.get(seg);
     }
-    public static void type_infos$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GSList* type_infos;
+     * }
+     */
+    public static void type_infos$set(MemorySegment seg, MemorySegment x) {
         _GTypeModule.type_infos$VH.set(seg, x);
     }
-    public static MemoryAddress type_infos$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GTypeModule.type_infos$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment type_infos$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GTypeModule.type_infos$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void type_infos$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void type_infos$set(MemorySegment seg, long index, MemorySegment x) {
         _GTypeModule.type_infos$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle interface_infos$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("interface_infos"));
     public static VarHandle interface_infos$VH() {
         return _GTypeModule.interface_infos$VH;
     }
-    public static MemoryAddress interface_infos$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GTypeModule.interface_infos$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GSList* interface_infos;
+     * }
+     */
+    public static MemorySegment interface_infos$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GTypeModule.interface_infos$VH.get(seg);
     }
-    public static void interface_infos$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GSList* interface_infos;
+     * }
+     */
+    public static void interface_infos$set(MemorySegment seg, MemorySegment x) {
         _GTypeModule.interface_infos$VH.set(seg, x);
     }
-    public static MemoryAddress interface_infos$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GTypeModule.interface_infos$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment interface_infos$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GTypeModule.interface_infos$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void interface_infos$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void interface_infos$set(MemorySegment seg, long index, MemorySegment x) {
         _GTypeModule.interface_infos$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle name$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("name"));
     public static VarHandle name$VH() {
         return _GTypeModule.name$VH;
     }
-    public static MemoryAddress name$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GTypeModule.name$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gchar* name;
+     * }
+     */
+    public static MemorySegment name$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GTypeModule.name$VH.get(seg);
     }
-    public static void name$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gchar* name;
+     * }
+     */
+    public static void name$set(MemorySegment seg, MemorySegment x) {
         _GTypeModule.name$VH.set(seg, x);
     }
-    public static MemoryAddress name$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GTypeModule.name$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment name$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GTypeModule.name$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void name$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void name$set(MemorySegment seg, long index, MemorySegment x) {
         _GTypeModule.name$VH.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

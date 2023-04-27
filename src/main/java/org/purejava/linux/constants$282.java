@@ -7,64 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$282 {
+final class constants$282 {
 
-    static final FunctionDescriptor g_scanner_sync_file_offset$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$282() {}
+    static final FunctionDescriptor g_rand_int$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_scanner_sync_file_offset$MH = RuntimeHelper.downcallHandle(
-        "g_scanner_sync_file_offset",
-        constants$282.g_scanner_sync_file_offset$FUNC
+    static final MethodHandle g_rand_int$MH = RuntimeHelper.downcallHandle(
+        "g_rand_int",
+        constants$282.g_rand_int$FUNC
     );
-    static final FunctionDescriptor g_scanner_input_text$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_rand_int_range$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_scanner_input_text$MH = RuntimeHelper.downcallHandle(
-        "g_scanner_input_text",
-        constants$282.g_scanner_input_text$FUNC
+    static final MethodHandle g_rand_int_range$MH = RuntimeHelper.downcallHandle(
+        "g_rand_int_range",
+        constants$282.g_rand_int_range$FUNC
     );
-    static final FunctionDescriptor g_scanner_get_next_token$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_rand_double$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_scanner_get_next_token$MH = RuntimeHelper.downcallHandle(
-        "g_scanner_get_next_token",
-        constants$282.g_scanner_get_next_token$FUNC
+    static final MethodHandle g_rand_double$MH = RuntimeHelper.downcallHandle(
+        "g_rand_double",
+        constants$282.g_rand_double$FUNC
     );
-    static final FunctionDescriptor g_scanner_peek_next_token$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_rand_double_range$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
     );
-    static final MethodHandle g_scanner_peek_next_token$MH = RuntimeHelper.downcallHandle(
-        "g_scanner_peek_next_token",
-        constants$282.g_scanner_peek_next_token$FUNC
+    static final MethodHandle g_rand_double_range$MH = RuntimeHelper.downcallHandle(
+        "g_rand_double_range",
+        constants$282.g_rand_double_range$FUNC
     );
-    static final FunctionDescriptor g_scanner_cur_token$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_random_set_seed$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_scanner_cur_token$MH = RuntimeHelper.downcallHandle(
-        "g_scanner_cur_token",
-        constants$282.g_scanner_cur_token$FUNC
+    static final MethodHandle g_random_set_seed$MH = RuntimeHelper.downcallHandle(
+        "g_random_set_seed",
+        constants$282.g_random_set_seed$FUNC
     );
-    static final FunctionDescriptor g_scanner_cur_value$FUNC = FunctionDescriptor.of(MemoryLayout.unionLayout(
-        Constants$root.C_POINTER$LAYOUT.withName("v_symbol"),
-        Constants$root.C_POINTER$LAYOUT.withName("v_identifier"),
-        Constants$root.C_LONG_LONG$LAYOUT.withName("v_binary"),
-        Constants$root.C_LONG_LONG$LAYOUT.withName("v_octal"),
-        Constants$root.C_LONG_LONG$LAYOUT.withName("v_int"),
-        Constants$root.C_LONG_LONG$LAYOUT.withName("v_int64"),
-        Constants$root.C_DOUBLE$LAYOUT.withName("v_float"),
-        Constants$root.C_LONG_LONG$LAYOUT.withName("v_hex"),
-        Constants$root.C_POINTER$LAYOUT.withName("v_string"),
-        Constants$root.C_POINTER$LAYOUT.withName("v_comment"),
-        Constants$root.C_CHAR$LAYOUT.withName("v_char"),
-        Constants$root.C_INT$LAYOUT.withName("v_error")
-    ).withName("_GTokenValue"),
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_scanner_cur_value$MH = RuntimeHelper.downcallHandle(
-        "g_scanner_cur_value",
-        constants$282.g_scanner_cur_value$FUNC
+    static final FunctionDescriptor g_random_int$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
+    static final MethodHandle g_random_int$MH = RuntimeHelper.downcallHandle(
+        "g_random_int",
+        constants$282.g_random_int$FUNC
     );
 }
 

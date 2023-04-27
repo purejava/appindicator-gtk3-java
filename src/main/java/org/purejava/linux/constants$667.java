@@ -7,53 +7,50 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$667 {
+final class constants$667 {
 
-    static final FunctionDescriptor g_file_has_prefix$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$667() {}
+    static final FunctionDescriptor g_inet_socket_address_new_from_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_inet_socket_address_new_from_string$MH = RuntimeHelper.downcallHandle(
+        "g_inet_socket_address_new_from_string",
+        constants$667.g_inet_socket_address_new_from_string$FUNC
+    );
+    static final FunctionDescriptor g_inet_socket_address_get_address$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_file_has_prefix$MH = RuntimeHelper.downcallHandle(
-        "g_file_has_prefix",
-        constants$667.g_file_has_prefix$FUNC
+    static final MethodHandle g_inet_socket_address_get_address$MH = RuntimeHelper.downcallHandle(
+        "g_inet_socket_address_get_address",
+        constants$667.g_inet_socket_address_get_address$FUNC
     );
-    static final FunctionDescriptor g_file_get_relative_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_inet_socket_address_get_port$FUNC = FunctionDescriptor.of(Constants$root.C_SHORT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_file_get_relative_path$MH = RuntimeHelper.downcallHandle(
-        "g_file_get_relative_path",
-        constants$667.g_file_get_relative_path$FUNC
+    static final MethodHandle g_inet_socket_address_get_port$MH = RuntimeHelper.downcallHandle(
+        "g_inet_socket_address_get_port",
+        constants$667.g_inet_socket_address_get_port$FUNC
     );
-    static final FunctionDescriptor g_file_resolve_relative_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_inet_socket_address_get_flowinfo$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_file_resolve_relative_path$MH = RuntimeHelper.downcallHandle(
-        "g_file_resolve_relative_path",
-        constants$667.g_file_resolve_relative_path$FUNC
+    static final MethodHandle g_inet_socket_address_get_flowinfo$MH = RuntimeHelper.downcallHandle(
+        "g_inet_socket_address_get_flowinfo",
+        constants$667.g_inet_socket_address_get_flowinfo$FUNC
     );
-    static final FunctionDescriptor g_file_is_native$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_inet_socket_address_get_scope_id$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_file_is_native$MH = RuntimeHelper.downcallHandle(
-        "g_file_is_native",
-        constants$667.g_file_is_native$FUNC
+    static final MethodHandle g_inet_socket_address_get_scope_id$MH = RuntimeHelper.downcallHandle(
+        "g_inet_socket_address_get_scope_id",
+        constants$667.g_inet_socket_address_get_scope_id$FUNC
     );
-    static final FunctionDescriptor g_file_has_uri_scheme$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_has_uri_scheme$MH = RuntimeHelper.downcallHandle(
-        "g_file_has_uri_scheme",
-        constants$667.g_file_has_uri_scheme$FUNC
-    );
-    static final FunctionDescriptor g_file_get_uri_scheme$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_get_uri_scheme$MH = RuntimeHelper.downcallHandle(
-        "g_file_get_uri_scheme",
-        constants$667.g_file_get_uri_scheme$FUNC
+    static final FunctionDescriptor g_app_info_create_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_app_info_create_flags_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_app_info_create_flags_get_type",
+        constants$667.g_app_info_create_flags_get_type$FUNC
     );
 }
 

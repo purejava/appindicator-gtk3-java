@@ -7,45 +7,59 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1082 {
+final class constants$1082 {
 
-    static final FunctionDescriptor pango_attribute_as_font_desc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1082() {}
+    static final FunctionDescriptor gdk_window_set_accept_focus$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gdk_window_set_accept_focus$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_set_accept_focus",
+        constants$1082.gdk_window_set_accept_focus$FUNC
+    );
+    static final FunctionDescriptor gdk_window_get_focus_on_map$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_attribute_as_font_desc$MH = RuntimeHelper.downcallHandle(
-        "pango_attribute_as_font_desc",
-        constants$1082.pango_attribute_as_font_desc$FUNC
+    static final MethodHandle gdk_window_get_focus_on_map$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_get_focus_on_map",
+        constants$1082.gdk_window_get_focus_on_map$FUNC
     );
-    static final FunctionDescriptor pango_attribute_as_shape$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gdk_window_set_focus_on_map$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gdk_window_set_focus_on_map$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_set_focus_on_map",
+        constants$1082.gdk_window_set_focus_on_map$FUNC
+    );
+    static final FunctionDescriptor gdk_window_add_filter$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_attribute_as_shape$MH = RuntimeHelper.downcallHandle(
-        "pango_attribute_as_shape",
-        constants$1082.pango_attribute_as_shape$FUNC
+    static final MethodHandle gdk_window_add_filter$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_add_filter",
+        constants$1082.gdk_window_add_filter$FUNC
     );
-    static final FunctionDescriptor pango_attribute_as_font_features$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gdk_window_remove_filter$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_attribute_as_font_features$MH = RuntimeHelper.downcallHandle(
-        "pango_attribute_as_font_features",
-        constants$1082.pango_attribute_as_font_features$FUNC
+    static final MethodHandle gdk_window_remove_filter$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_remove_filter",
+        constants$1082.gdk_window_remove_filter$FUNC
     );
-    static final FunctionDescriptor pango_attr_list_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_attr_list_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_list_get_type",
-        constants$1082.pango_attr_list_get_type$FUNC
+    static final FunctionDescriptor gdk_window_scroll$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final FunctionDescriptor pango_attr_list_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle pango_attr_list_new$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_list_new",
-        constants$1082.pango_attr_list_new$FUNC
-    );
-    static final FunctionDescriptor pango_attr_list_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_attr_list_ref$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_list_ref",
-        constants$1082.pango_attr_list_ref$FUNC
+    static final MethodHandle gdk_window_scroll$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_scroll",
+        constants$1082.gdk_window_scroll$FUNC
     );
 }
 

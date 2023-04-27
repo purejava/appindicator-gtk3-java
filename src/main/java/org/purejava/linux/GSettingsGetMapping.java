@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * int (*GSettingsGetMapping)(struct _GVariant* value,void** result,void* user_data);
+ * }
+ */
 public interface GSettingsGetMapping {
 
-    int apply(java.lang.foreign.MemoryAddress value, java.lang.foreign.MemoryAddress result, java.lang.foreign.MemoryAddress user_data);
-    static MemorySegment allocate(GSettingsGetMapping fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GSettingsGetMapping.class, fi, constants$805.GSettingsGetMapping$FUNC, session);
+    int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
+    static MemorySegment allocate(GSettingsGetMapping fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$751.GSettingsGetMapping_UP$MH, fi, constants$751.GSettingsGetMapping$FUNC, scope);
     }
-    static GSettingsGetMapping ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _value, java.lang.foreign.MemoryAddress _result, java.lang.foreign.MemoryAddress _user_data) -> {
+    static GSettingsGetMapping ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _a, java.lang.foreign.MemorySegment _b, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                return (int)constants$805.GSettingsGetMapping$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_value, (java.lang.foreign.Addressable)_result, (java.lang.foreign.Addressable)_user_data);
+                return (int)constants$751.GSettingsGetMapping_DOWN$MH.invokeExact(symbol, _a, _b, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

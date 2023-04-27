@@ -7,62 +7,58 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1431 {
+final class constants$1431 {
 
-    static final FunctionDescriptor gtk_widget_get_preferred_size$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_get_preferred_size$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_preferred_size",
-        constants$1431.gtk_widget_get_preferred_size$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_get_child_requisition$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1431() {}
+    static final FunctionDescriptor gtk_im_context_set_cursor_location$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_widget_get_child_requisition$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_child_requisition",
-        constants$1431.gtk_widget_get_child_requisition$FUNC
+    static final MethodHandle gtk_im_context_set_cursor_location$MH = RuntimeHelper.downcallHandle(
+        "gtk_im_context_set_cursor_location",
+        constants$1431.gtk_im_context_set_cursor_location$FUNC
     );
-    static final FunctionDescriptor gtk_widget_add_accelerator$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_im_context_set_use_preedit$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_widget_add_accelerator$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_add_accelerator",
-        constants$1431.gtk_widget_add_accelerator$FUNC
+    static final MethodHandle gtk_im_context_set_use_preedit$MH = RuntimeHelper.downcallHandle(
+        "gtk_im_context_set_use_preedit",
+        constants$1431.gtk_im_context_set_use_preedit$FUNC
     );
-    static final FunctionDescriptor gtk_widget_remove_accelerator$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_im_context_set_surrounding$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_widget_remove_accelerator$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_remove_accelerator",
-        constants$1431.gtk_widget_remove_accelerator$FUNC
+    static final MethodHandle gtk_im_context_set_surrounding$MH = RuntimeHelper.downcallHandle(
+        "gtk_im_context_set_surrounding",
+        constants$1431.gtk_im_context_set_surrounding$FUNC
     );
-    static final FunctionDescriptor gtk_widget_set_accel_path$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_im_context_get_surrounding$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_widget_set_accel_path$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_accel_path",
-        constants$1431.gtk_widget_set_accel_path$FUNC
+    static final MethodHandle gtk_im_context_get_surrounding$MH = RuntimeHelper.downcallHandle(
+        "gtk_im_context_get_surrounding",
+        constants$1431.gtk_im_context_get_surrounding$FUNC
     );
-    static final FunctionDescriptor gtk_widget_list_accel_closures$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gtk_im_context_delete_surrounding$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_widget_list_accel_closures$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_list_accel_closures",
-        constants$1431.gtk_widget_list_accel_closures$FUNC
+    static final MethodHandle gtk_im_context_delete_surrounding$MH = RuntimeHelper.downcallHandle(
+        "gtk_im_context_delete_surrounding",
+        constants$1431.gtk_im_context_delete_surrounding$FUNC
+    );
+    static final FunctionDescriptor gtk_entry_buffer_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_entry_buffer_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_buffer_get_type",
+        constants$1431.gtk_entry_buffer_get_type$FUNC
     );
 }
 

@@ -7,48 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$567 {
+final class constants$567 {
 
-    static final FunctionDescriptor pipe$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$567() {}
+    static final FunctionDescriptor g_dbus_arg_info_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pipe$MH = RuntimeHelper.downcallHandle(
-        "pipe",
-        constants$567.pipe$FUNC
+    static final MethodHandle g_dbus_arg_info_ref$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_arg_info_ref",
+        constants$567.g_dbus_arg_info_ref$FUNC
     );
-    static final FunctionDescriptor alarm$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor g_dbus_annotation_info_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle alarm$MH = RuntimeHelper.downcallHandle(
-        "alarm",
-        constants$567.alarm$FUNC
+    static final MethodHandle g_dbus_annotation_info_ref$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_annotation_info_ref",
+        constants$567.g_dbus_annotation_info_ref$FUNC
     );
-    static final FunctionDescriptor sleep$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor g_dbus_node_info_unref$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle sleep$MH = RuntimeHelper.downcallHandle(
-        "sleep",
-        constants$567.sleep$FUNC
+    static final MethodHandle g_dbus_node_info_unref$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_node_info_unref",
+        constants$567.g_dbus_node_info_unref$FUNC
     );
-    static final FunctionDescriptor ualarm$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor g_dbus_interface_info_unref$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle ualarm$MH = RuntimeHelper.downcallHandle(
-        "ualarm",
-        constants$567.ualarm$FUNC
+    static final MethodHandle g_dbus_interface_info_unref$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_interface_info_unref",
+        constants$567.g_dbus_interface_info_unref$FUNC
     );
-    static final FunctionDescriptor usleep$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor g_dbus_method_info_unref$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle usleep$MH = RuntimeHelper.downcallHandle(
-        "usleep",
-        constants$567.usleep$FUNC
+    static final MethodHandle g_dbus_method_info_unref$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_method_info_unref",
+        constants$567.g_dbus_method_info_unref$FUNC
     );
-    static final FunctionDescriptor pause$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle pause$MH = RuntimeHelper.downcallHandle(
-        "pause",
-        constants$567.pause$FUNC
+    static final FunctionDescriptor g_dbus_signal_info_unref$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_dbus_signal_info_unref$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_signal_info_unref",
+        constants$567.g_dbus_signal_info_unref$FUNC
     );
 }
 

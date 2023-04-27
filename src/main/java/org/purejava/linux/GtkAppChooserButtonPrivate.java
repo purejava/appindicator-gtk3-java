@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkAppChooserButtonPrivate {
+/**
+ * {@snippet :
+ * typedef struct _GtkAppChooserButtonPrivate GtkAppChooserButtonPrivate;
+ * }
+ */
+public final class GtkAppChooserButtonPrivate {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkAppChooserButtonPrivate() {}
 }
 
 

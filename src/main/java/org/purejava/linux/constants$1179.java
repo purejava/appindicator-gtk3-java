@@ -7,45 +7,41 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1179 {
+final class constants$1179 {
 
-    static final FunctionDescriptor cairo_user_scaled_font_render_glyph_func_t$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1179() {}
+    static final FunctionDescriptor gdk_screen_width_mm$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
+    static final MethodHandle gdk_screen_width_mm$MH = RuntimeHelper.downcallHandle(
+        "gdk_screen_width_mm",
+        constants$1179.gdk_screen_width_mm$FUNC
     );
-    static final MethodHandle cairo_user_scaled_font_render_glyph_func_t$MH = RuntimeHelper.downcallHandle(
-        constants$1179.cairo_user_scaled_font_render_glyph_func_t$FUNC
+    static final FunctionDescriptor gdk_screen_height_mm$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
+    static final MethodHandle gdk_screen_height_mm$MH = RuntimeHelper.downcallHandle(
+        "gdk_screen_height_mm",
+        constants$1179.gdk_screen_height_mm$FUNC
     );
-    static final FunctionDescriptor cairo_user_scaled_font_text_to_glyphs_func_t$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gdk_set_double_click_time$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle cairo_user_scaled_font_text_to_glyphs_func_t$MH = RuntimeHelper.downcallHandle(
-        constants$1179.cairo_user_scaled_font_text_to_glyphs_func_t$FUNC
+    static final MethodHandle gdk_set_double_click_time$MH = RuntimeHelper.downcallHandle(
+        "gdk_set_double_click_time",
+        constants$1179.gdk_set_double_click_time$FUNC
     );
-    static final FunctionDescriptor cairo_user_scaled_font_unicode_to_glyph_func_t$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gdk_beep$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle gdk_beep$MH = RuntimeHelper.downcallHandle(
+        "gdk_beep",
+        constants$1179.gdk_beep$FUNC
     );
-    static final MethodHandle cairo_user_scaled_font_unicode_to_glyph_func_t$MH = RuntimeHelper.downcallHandle(
-        constants$1179.cairo_user_scaled_font_unicode_to_glyph_func_t$FUNC
+    static final FunctionDescriptor gdk_flush$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle gdk_flush$MH = RuntimeHelper.downcallHandle(
+        "gdk_flush",
+        constants$1179.gdk_flush$FUNC
     );
-    static final FunctionDescriptor cairo_user_font_face_set_init_func$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_user_font_face_set_init_func$MH = RuntimeHelper.downcallHandle(
-        "cairo_user_font_face_set_init_func",
-        constants$1179.cairo_user_font_face_set_init_func$FUNC
+    static final FunctionDescriptor gdk_disable_multidevice$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle gdk_disable_multidevice$MH = RuntimeHelper.downcallHandle(
+        "gdk_disable_multidevice",
+        constants$1179.gdk_disable_multidevice$FUNC
     );
 }
 

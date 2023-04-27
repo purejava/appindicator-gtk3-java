@@ -7,56 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1917 {
+final class constants$1917 {
 
-    static final FunctionDescriptor gtk_paper_size_new_from_ipp$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1917() {}
+    static final FunctionDescriptor gtk_stock_add_static$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle gtk_paper_size_new_from_ipp$MH = RuntimeHelper.downcallHandle(
-        "gtk_paper_size_new_from_ipp",
-        constants$1917.gtk_paper_size_new_from_ipp$FUNC
-    );
-    static final FunctionDescriptor gtk_paper_size_new_custom$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_paper_size_new_custom$MH = RuntimeHelper.downcallHandle(
-        "gtk_paper_size_new_custom",
-        constants$1917.gtk_paper_size_new_custom$FUNC
+    static final MethodHandle gtk_stock_add_static$MH = RuntimeHelper.downcallHandle(
+        "gtk_stock_add_static",
+        constants$1917.gtk_stock_add_static$FUNC
     );
-    static final FunctionDescriptor gtk_paper_size_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_paper_size_copy$MH = RuntimeHelper.downcallHandle(
-        "gtk_paper_size_copy",
-        constants$1917.gtk_paper_size_copy$FUNC
-    );
-    static final FunctionDescriptor gtk_paper_size_free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_paper_size_free$MH = RuntimeHelper.downcallHandle(
-        "gtk_paper_size_free",
-        constants$1917.gtk_paper_size_free$FUNC
-    );
-    static final FunctionDescriptor gtk_paper_size_is_equal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_stock_lookup$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_paper_size_is_equal$MH = RuntimeHelper.downcallHandle(
-        "gtk_paper_size_is_equal",
-        constants$1917.gtk_paper_size_is_equal$FUNC
+    static final MethodHandle gtk_stock_lookup$MH = RuntimeHelper.downcallHandle(
+        "gtk_stock_lookup",
+        constants$1917.gtk_stock_lookup$FUNC
     );
-    static final FunctionDescriptor gtk_paper_size_get_paper_sizes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor gtk_stock_list_ids$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_stock_list_ids$MH = RuntimeHelper.downcallHandle(
+        "gtk_stock_list_ids",
+        constants$1917.gtk_stock_list_ids$FUNC
     );
-    static final MethodHandle gtk_paper_size_get_paper_sizes$MH = RuntimeHelper.downcallHandle(
-        "gtk_paper_size_get_paper_sizes",
-        constants$1917.gtk_paper_size_get_paper_sizes$FUNC
+    static final FunctionDescriptor gtk_stock_item_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_stock_item_copy$MH = RuntimeHelper.downcallHandle(
+        "gtk_stock_item_copy",
+        constants$1917.gtk_stock_item_copy$FUNC
+    );
+    static final FunctionDescriptor gtk_stock_item_free$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_stock_item_free$MH = RuntimeHelper.downcallHandle(
+        "gtk_stock_item_free",
+        constants$1917.gtk_stock_item_free$FUNC
+    );
+    static final FunctionDescriptor gtk_stock_set_translate_func$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_stock_set_translate_func$MH = RuntimeHelper.downcallHandle(
+        "gtk_stock_set_translate_func",
+        constants$1917.gtk_stock_set_translate_func$FUNC
     );
 }
 

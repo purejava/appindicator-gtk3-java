@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GtkWidget* (*GtkFlowBoxCreateWidgetFunc)(void* item,void* user_data);
+ * }
+ */
 public interface GtkFlowBoxCreateWidgetFunc {
 
-    java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress item, java.lang.foreign.MemoryAddress user_data);
-    static MemorySegment allocate(GtkFlowBoxCreateWidgetFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GtkFlowBoxCreateWidgetFunc.class, fi, constants$1780.GtkFlowBoxCreateWidgetFunc$FUNC, session);
+    java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment func_data);
+    static MemorySegment allocate(GtkFlowBoxCreateWidgetFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$1585.GtkFlowBoxCreateWidgetFunc_UP$MH, fi, constants$1585.GtkFlowBoxCreateWidgetFunc$FUNC, scope);
     }
-    static GtkFlowBoxCreateWidgetFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _item, java.lang.foreign.MemoryAddress _user_data) -> {
+    static GtkFlowBoxCreateWidgetFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _path, java.lang.foreign.MemorySegment _func_data) -> {
             try {
-                return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)constants$1781.GtkFlowBoxCreateWidgetFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_item, (java.lang.foreign.Addressable)_user_data);
+                return (java.lang.foreign.MemorySegment)constants$1585.GtkFlowBoxCreateWidgetFunc_DOWN$MH.invokeExact(symbol, _path, _func_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

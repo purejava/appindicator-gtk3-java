@@ -7,53 +7,63 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1253 {
+final class constants$1253 {
 
-    static final FunctionDescriptor gdk_window_get_device_position_double$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1253() {}
+    static final FunctionDescriptor gtk_widget_add_accelerator$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_widget_add_accelerator$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_add_accelerator",
+        constants$1253.gtk_widget_add_accelerator$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_remove_accelerator$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_widget_remove_accelerator$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_remove_accelerator",
+        constants$1253.gtk_widget_remove_accelerator$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_set_accel_path$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_window_get_device_position_double$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_device_position_double",
-        constants$1253.gdk_window_get_device_position_double$FUNC
+    static final MethodHandle gtk_widget_set_accel_path$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_set_accel_path",
+        constants$1253.gtk_widget_set_accel_path$FUNC
     );
-    static final FunctionDescriptor gdk_window_get_parent$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_widget_list_accel_closures$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_window_get_parent$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_parent",
-        constants$1253.gdk_window_get_parent$FUNC
+    static final MethodHandle gtk_widget_list_accel_closures$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_list_accel_closures",
+        constants$1253.gtk_widget_list_accel_closures$FUNC
     );
-    static final FunctionDescriptor gdk_window_get_toplevel$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gtk_widget_can_activate_accel$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gdk_window_get_toplevel$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_toplevel",
-        constants$1253.gdk_window_get_toplevel$FUNC
+    static final MethodHandle gtk_widget_can_activate_accel$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_can_activate_accel",
+        constants$1253.gtk_widget_can_activate_accel$FUNC
     );
-    static final FunctionDescriptor gdk_window_get_effective_parent$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gtk_widget_mnemonic_activate$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gdk_window_get_effective_parent$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_effective_parent",
-        constants$1253.gdk_window_get_effective_parent$FUNC
-    );
-    static final FunctionDescriptor gdk_window_get_effective_toplevel$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_get_effective_toplevel$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_effective_toplevel",
-        constants$1253.gdk_window_get_effective_toplevel$FUNC
-    );
-    static final FunctionDescriptor gdk_window_get_children$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_get_children$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_children",
-        constants$1253.gdk_window_get_children$FUNC
+    static final MethodHandle gtk_widget_mnemonic_activate$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_mnemonic_activate",
+        constants$1253.gtk_widget_mnemonic_activate$FUNC
     );
 }
 

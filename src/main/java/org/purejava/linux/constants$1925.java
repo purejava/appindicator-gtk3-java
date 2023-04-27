@@ -7,50 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1925 {
+final class constants$1925 {
 
-    static final FunctionDescriptor gtk_page_setup_to_key_file$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1925() {}
+    static final FunctionDescriptor gtk_color_selection_set_current_alpha$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_SHORT$LAYOUT
+    );
+    static final MethodHandle gtk_color_selection_set_current_alpha$MH = RuntimeHelper.downcallHandle(
+        "gtk_color_selection_set_current_alpha",
+        constants$1925.gtk_color_selection_set_current_alpha$FUNC
+    );
+    static final FunctionDescriptor gtk_color_selection_get_current_alpha$FUNC = FunctionDescriptor.of(Constants$root.C_SHORT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_color_selection_get_current_alpha$MH = RuntimeHelper.downcallHandle(
+        "gtk_color_selection_get_current_alpha",
+        constants$1925.gtk_color_selection_get_current_alpha$FUNC
+    );
+    static final FunctionDescriptor gtk_color_selection_set_previous_alpha$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_SHORT$LAYOUT
+    );
+    static final MethodHandle gtk_color_selection_set_previous_alpha$MH = RuntimeHelper.downcallHandle(
+        "gtk_color_selection_set_previous_alpha",
+        constants$1925.gtk_color_selection_set_previous_alpha$FUNC
+    );
+    static final FunctionDescriptor gtk_color_selection_get_previous_alpha$FUNC = FunctionDescriptor.of(Constants$root.C_SHORT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_page_setup_to_key_file$MH = RuntimeHelper.downcallHandle(
-        "gtk_page_setup_to_key_file",
-        constants$1925.gtk_page_setup_to_key_file$FUNC
+    static final MethodHandle gtk_color_selection_get_previous_alpha$MH = RuntimeHelper.downcallHandle(
+        "gtk_color_selection_get_previous_alpha",
+        constants$1925.gtk_color_selection_get_previous_alpha$FUNC
     );
-    static final FunctionDescriptor gtk_page_setup_to_gvariant$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_page_setup_to_gvariant$MH = RuntimeHelper.downcallHandle(
-        "gtk_page_setup_to_gvariant",
-        constants$1925.gtk_page_setup_to_gvariant$FUNC
-    );
-    static final FunctionDescriptor gtk_page_setup_new_from_gvariant$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_page_setup_new_from_gvariant$MH = RuntimeHelper.downcallHandle(
-        "gtk_page_setup_new_from_gvariant",
-        constants$1925.gtk_page_setup_new_from_gvariant$FUNC
-    );
-    static final FunctionDescriptor gtk_paned_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_paned_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_paned_get_type",
-        constants$1925.gtk_paned_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_paned_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_paned_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_paned_new",
-        constants$1925.gtk_paned_new$FUNC
-    );
-    static final FunctionDescriptor gtk_paned_add1$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_color_selection_set_current_rgba$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_paned_add1$MH = RuntimeHelper.downcallHandle(
-        "gtk_paned_add1",
-        constants$1925.gtk_paned_add1$FUNC
+    static final MethodHandle gtk_color_selection_set_current_rgba$MH = RuntimeHelper.downcallHandle(
+        "gtk_color_selection_set_current_rgba",
+        constants$1925.gtk_color_selection_set_current_rgba$FUNC
+    );
+    static final FunctionDescriptor gtk_color_selection_get_current_rgba$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_color_selection_get_current_rgba$MH = RuntimeHelper.downcallHandle(
+        "gtk_color_selection_get_current_rgba",
+        constants$1925.gtk_color_selection_get_current_rgba$FUNC
     );
 }
 

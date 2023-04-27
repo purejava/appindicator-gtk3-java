@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkCellRendererTextPrivate {
+/**
+ * {@snippet :
+ * typedef struct _GtkCellRendererTextPrivate GtkCellRendererTextPrivate;
+ * }
+ */
+public final class GtkCellRendererTextPrivate {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkCellRendererTextPrivate() {}
 }
 
 

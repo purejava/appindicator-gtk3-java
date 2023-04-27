@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GInetAddressPrivate {
+/**
+ * {@snippet :
+ * typedef struct _GInetAddressPrivate GInetAddressPrivate;
+ * }
+ */
+public final class GInetAddressPrivate {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GInetAddressPrivate() {}
 }
 
 

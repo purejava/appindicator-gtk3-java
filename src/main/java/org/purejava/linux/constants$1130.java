@@ -7,55 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1130 {
+final class constants$1130 {
 
-    static final FunctionDescriptor pango_layout_iter_get_line_extents$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1130() {}
+    static final FunctionDescriptor gdk_pixbuf_get_pixels$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_pixbuf_get_pixels$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_get_pixels",
+        constants$1130.gdk_pixbuf_get_pixels$FUNC
+    );
+    static final FunctionDescriptor gdk_pixbuf_get_width$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_pixbuf_get_width$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_get_width",
+        constants$1130.gdk_pixbuf_get_width$FUNC
+    );
+    static final FunctionDescriptor gdk_pixbuf_get_height$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_pixbuf_get_height$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_get_height",
+        constants$1130.gdk_pixbuf_get_height$FUNC
+    );
+    static final FunctionDescriptor gdk_pixbuf_get_rowstride$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_pixbuf_get_rowstride$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_get_rowstride",
+        constants$1130.gdk_pixbuf_get_rowstride$FUNC
+    );
+    static final FunctionDescriptor gdk_pixbuf_get_byte_length$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_pixbuf_get_byte_length$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_get_byte_length",
+        constants$1130.gdk_pixbuf_get_byte_length$FUNC
+    );
+    static final FunctionDescriptor gdk_pixbuf_get_pixels_with_length$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_layout_iter_get_line_extents$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_iter_get_line_extents",
-        constants$1130.pango_layout_iter_get_line_extents$FUNC
-    );
-    static final FunctionDescriptor pango_layout_iter_get_line_yrange$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_layout_iter_get_line_yrange$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_iter_get_line_yrange",
-        constants$1130.pango_layout_iter_get_line_yrange$FUNC
-    );
-    static final FunctionDescriptor pango_layout_iter_get_layout_extents$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_layout_iter_get_layout_extents$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_iter_get_layout_extents",
-        constants$1130.pango_layout_iter_get_layout_extents$FUNC
-    );
-    static final FunctionDescriptor pango_layout_iter_get_baseline$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_layout_iter_get_baseline$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_iter_get_baseline",
-        constants$1130.pango_layout_iter_get_baseline$FUNC
-    );
-    static final FunctionDescriptor pango_layout_iter_get_run_baseline$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_layout_iter_get_run_baseline$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_iter_get_run_baseline",
-        constants$1130.pango_layout_iter_get_run_baseline$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_clear_PangoLayout$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_autoptr_clear_PangoLayout$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_PangoLayout",
-        constants$1130.glib_autoptr_clear_PangoLayout$FUNC
+    static final MethodHandle gdk_pixbuf_get_pixels_with_length$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_get_pixels_with_length",
+        constants$1130.gdk_pixbuf_get_pixels_with_length$FUNC
     );
 }
 

@@ -7,9 +7,23 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GdkEventOwnerChange {
+ *     GdkEventType type;
+ *     GdkWindow* window;
+ *     gint8 send_event;
+ *     GdkWindow* owner;
+ *     GdkOwnerChange reason;
+ *     GdkAtom selection;
+ *     guint32 time;
+ *     guint32 selection_time;
+ * };
+ * }
+ */
 public class _GdkEventOwnerChange {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_INT$LAYOUT.withName("type"),
         MemoryLayout.paddingLayout(32),
         Constants$root.C_POINTER$LAYOUT.withName("window"),
@@ -29,10 +43,22 @@ public class _GdkEventOwnerChange {
     public static VarHandle type$VH() {
         return _GdkEventOwnerChange.type$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GdkEventType type;
+     * }
+     */
     public static int type$get(MemorySegment seg) {
         return (int)_GdkEventOwnerChange.type$VH.get(seg);
     }
-    public static void type$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GdkEventType type;
+     * }
+     */
+    public static void type$set(MemorySegment seg, int x) {
         _GdkEventOwnerChange.type$VH.set(seg, x);
     }
     public static int type$get(MemorySegment seg, long index) {
@@ -45,26 +71,50 @@ public class _GdkEventOwnerChange {
     public static VarHandle window$VH() {
         return _GdkEventOwnerChange.window$VH;
     }
-    public static MemoryAddress window$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GdkEventOwnerChange.window$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GdkWindow* window;
+     * }
+     */
+    public static MemorySegment window$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GdkEventOwnerChange.window$VH.get(seg);
     }
-    public static void window$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GdkWindow* window;
+     * }
+     */
+    public static void window$set(MemorySegment seg, MemorySegment x) {
         _GdkEventOwnerChange.window$VH.set(seg, x);
     }
-    public static MemoryAddress window$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GdkEventOwnerChange.window$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment window$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GdkEventOwnerChange.window$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void window$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void window$set(MemorySegment seg, long index, MemorySegment x) {
         _GdkEventOwnerChange.window$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle send_event$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("send_event"));
     public static VarHandle send_event$VH() {
         return _GdkEventOwnerChange.send_event$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gint8 send_event;
+     * }
+     */
     public static byte send_event$get(MemorySegment seg) {
         return (byte)_GdkEventOwnerChange.send_event$VH.get(seg);
     }
-    public static void send_event$set( MemorySegment seg, byte x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gint8 send_event;
+     * }
+     */
+    public static void send_event$set(MemorySegment seg, byte x) {
         _GdkEventOwnerChange.send_event$VH.set(seg, x);
     }
     public static byte send_event$get(MemorySegment seg, long index) {
@@ -77,26 +127,50 @@ public class _GdkEventOwnerChange {
     public static VarHandle owner$VH() {
         return _GdkEventOwnerChange.owner$VH;
     }
-    public static MemoryAddress owner$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GdkEventOwnerChange.owner$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GdkWindow* owner;
+     * }
+     */
+    public static MemorySegment owner$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GdkEventOwnerChange.owner$VH.get(seg);
     }
-    public static void owner$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GdkWindow* owner;
+     * }
+     */
+    public static void owner$set(MemorySegment seg, MemorySegment x) {
         _GdkEventOwnerChange.owner$VH.set(seg, x);
     }
-    public static MemoryAddress owner$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GdkEventOwnerChange.owner$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment owner$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GdkEventOwnerChange.owner$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void owner$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void owner$set(MemorySegment seg, long index, MemorySegment x) {
         _GdkEventOwnerChange.owner$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle reason$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("reason"));
     public static VarHandle reason$VH() {
         return _GdkEventOwnerChange.reason$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GdkOwnerChange reason;
+     * }
+     */
     public static int reason$get(MemorySegment seg) {
         return (int)_GdkEventOwnerChange.reason$VH.get(seg);
     }
-    public static void reason$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GdkOwnerChange reason;
+     * }
+     */
+    public static void reason$set(MemorySegment seg, int x) {
         _GdkEventOwnerChange.reason$VH.set(seg, x);
     }
     public static int reason$get(MemorySegment seg, long index) {
@@ -109,26 +183,50 @@ public class _GdkEventOwnerChange {
     public static VarHandle selection$VH() {
         return _GdkEventOwnerChange.selection$VH;
     }
-    public static MemoryAddress selection$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GdkEventOwnerChange.selection$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GdkAtom selection;
+     * }
+     */
+    public static MemorySegment selection$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GdkEventOwnerChange.selection$VH.get(seg);
     }
-    public static void selection$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GdkAtom selection;
+     * }
+     */
+    public static void selection$set(MemorySegment seg, MemorySegment x) {
         _GdkEventOwnerChange.selection$VH.set(seg, x);
     }
-    public static MemoryAddress selection$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GdkEventOwnerChange.selection$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment selection$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GdkEventOwnerChange.selection$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void selection$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void selection$set(MemorySegment seg, long index, MemorySegment x) {
         _GdkEventOwnerChange.selection$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle time$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("time"));
     public static VarHandle time$VH() {
         return _GdkEventOwnerChange.time$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * guint32 time;
+     * }
+     */
     public static int time$get(MemorySegment seg) {
         return (int)_GdkEventOwnerChange.time$VH.get(seg);
     }
-    public static void time$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * guint32 time;
+     * }
+     */
+    public static void time$set(MemorySegment seg, int x) {
         _GdkEventOwnerChange.time$VH.set(seg, x);
     }
     public static int time$get(MemorySegment seg, long index) {
@@ -141,10 +239,22 @@ public class _GdkEventOwnerChange {
     public static VarHandle selection_time$VH() {
         return _GdkEventOwnerChange.selection_time$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * guint32 selection_time;
+     * }
+     */
     public static int selection_time$get(MemorySegment seg) {
         return (int)_GdkEventOwnerChange.selection_time$VH.get(seg);
     }
-    public static void selection_time$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * guint32 selection_time;
+     * }
+     */
+    public static void selection_time$set(MemorySegment seg, int x) {
         _GdkEventOwnerChange.selection_time$VH.set(seg, x);
     }
     public static int selection_time$get(MemorySegment seg, long index) {
@@ -155,10 +265,10 @@ public class _GdkEventOwnerChange {
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

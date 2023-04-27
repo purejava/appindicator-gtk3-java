@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkFlowBox extends _GtkFlowBox {
+/**
+ * {@snippet :
+ * typedef struct _GtkFlowBox GtkFlowBox;
+ * }
+ */
+public final class GtkFlowBox extends _GtkFlowBox {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkFlowBox() {}
 }
 
 

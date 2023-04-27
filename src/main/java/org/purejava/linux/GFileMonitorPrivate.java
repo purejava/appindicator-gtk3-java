@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GFileMonitorPrivate {
+/**
+ * {@snippet :
+ * typedef struct _GFileMonitorPrivate GFileMonitorPrivate;
+ * }
+ */
+public final class GFileMonitorPrivate {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GFileMonitorPrivate() {}
 }
 
 

@@ -7,53 +7,67 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$791 {
+final class constants$791 {
 
-    static final FunctionDescriptor g_resources_enumerate_children$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$791() {}
+    static final FunctionDescriptor g_subprocess_launcher_set_child_setup$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_subprocess_launcher_set_child_setup$MH = RuntimeHelper.downcallHandle(
+        "g_subprocess_launcher_set_child_setup",
+        constants$791.g_subprocess_launcher_set_child_setup$FUNC
+    );
+    static final FunctionDescriptor g_task_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_task_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_task_get_type",
+        constants$791.g_task_get_type$FUNC
+    );
+    static final FunctionDescriptor g_task_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_task_new$MH = RuntimeHelper.downcallHandle(
+        "g_task_new",
+        constants$791.g_task_new$FUNC
+    );
+    static final FunctionDescriptor g_task_report_error$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_task_report_error$MH = RuntimeHelper.downcallHandle(
+        "g_task_report_error",
+        constants$791.g_task_report_error$FUNC
+    );
+    static final FunctionDescriptor g_task_report_new_error$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_resources_enumerate_children$MH = RuntimeHelper.downcallHandle(
-        "g_resources_enumerate_children",
-        constants$791.g_resources_enumerate_children$FUNC
+    static final MethodHandle g_task_report_new_error$MH = RuntimeHelper.downcallHandleVariadic(
+        "g_task_report_new_error",
+        constants$791.g_task_report_new_error$FUNC
     );
-    static final FunctionDescriptor g_resources_get_info$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_task_set_task_data$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_resources_get_info$MH = RuntimeHelper.downcallHandle(
-        "g_resources_get_info",
-        constants$791.g_resources_get_info$FUNC
-    );
-    static final FunctionDescriptor g_static_resource_init$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_static_resource_init$MH = RuntimeHelper.downcallHandle(
-        "g_static_resource_init",
-        constants$791.g_static_resource_init$FUNC
-    );
-    static final FunctionDescriptor g_static_resource_fini$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_static_resource_fini$MH = RuntimeHelper.downcallHandle(
-        "g_static_resource_fini",
-        constants$791.g_static_resource_fini$FUNC
-    );
-    static final FunctionDescriptor g_static_resource_get_resource$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_static_resource_get_resource$MH = RuntimeHelper.downcallHandle(
-        "g_static_resource_get_resource",
-        constants$791.g_static_resource_get_resource$FUNC
-    );
-    static final FunctionDescriptor g_seekable_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_seekable_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_seekable_get_type",
-        constants$791.g_seekable_get_type$FUNC
+    static final MethodHandle g_task_set_task_data$MH = RuntimeHelper.downcallHandle(
+        "g_task_set_task_data",
+        constants$791.g_task_set_task_data$FUNC
     );
 }
 

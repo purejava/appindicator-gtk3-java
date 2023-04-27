@@ -7,58 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$190 {
+final class constants$190 {
 
-    static final FunctionDescriptor g_utf8_find_next_char$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$190() {}
+    static final FunctionDescriptor g_unichar_decompose$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_utf8_find_next_char$MH = RuntimeHelper.downcallHandle(
-        "g_utf8_find_next_char",
-        constants$190.g_utf8_find_next_char$FUNC
+    static final MethodHandle g_unichar_decompose$MH = RuntimeHelper.downcallHandle(
+        "g_unichar_decompose",
+        constants$190.g_unichar_decompose$FUNC
     );
-    static final FunctionDescriptor g_utf8_find_prev_char$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_unichar_fully_decompose$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle g_unichar_fully_decompose$MH = RuntimeHelper.downcallHandle(
+        "g_unichar_fully_decompose",
+        constants$190.g_unichar_fully_decompose$FUNC
+    );
+    static final FunctionDescriptor g_unicode_canonical_ordering$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle g_unicode_canonical_ordering$MH = RuntimeHelper.downcallHandle(
+        "g_unicode_canonical_ordering",
+        constants$190.g_unicode_canonical_ordering$FUNC
+    );
+    static final FunctionDescriptor g_unicode_canonical_decomposition$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_utf8_find_prev_char$MH = RuntimeHelper.downcallHandle(
-        "g_utf8_find_prev_char",
-        constants$190.g_utf8_find_prev_char$FUNC
+    static final MethodHandle g_unicode_canonical_decomposition$MH = RuntimeHelper.downcallHandle(
+        "g_unicode_canonical_decomposition",
+        constants$190.g_unicode_canonical_decomposition$FUNC
     );
-    static final FunctionDescriptor g_utf8_strlen$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final OfAddress g_utf8_skip$LAYOUT = Constants$root.C_POINTER$LAYOUT;
+    static final VarHandle g_utf8_skip$VH = constants$190.g_utf8_skip$LAYOUT.varHandle();
+    static final MemorySegment g_utf8_skip$SEGMENT = RuntimeHelper.lookupGlobalVariable("g_utf8_skip", constants$190.g_utf8_skip$LAYOUT);
+    static final FunctionDescriptor g_utf8_get_char$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_utf8_strlen$MH = RuntimeHelper.downcallHandle(
-        "g_utf8_strlen",
-        constants$190.g_utf8_strlen$FUNC
-    );
-    static final FunctionDescriptor g_utf8_substring$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_utf8_substring$MH = RuntimeHelper.downcallHandle(
-        "g_utf8_substring",
-        constants$190.g_utf8_substring$FUNC
-    );
-    static final FunctionDescriptor g_utf8_strncpy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_utf8_strncpy$MH = RuntimeHelper.downcallHandle(
-        "g_utf8_strncpy",
-        constants$190.g_utf8_strncpy$FUNC
-    );
-    static final FunctionDescriptor g_utf8_strchr$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_utf8_strchr$MH = RuntimeHelper.downcallHandle(
-        "g_utf8_strchr",
-        constants$190.g_utf8_strchr$FUNC
+    static final MethodHandle g_utf8_get_char$MH = RuntimeHelper.downcallHandle(
+        "g_utf8_get_char",
+        constants$190.g_utf8_get_char$FUNC
     );
 }
 

@@ -7,9 +7,39 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GtkTreeViewClass {
+ *     GtkContainerClass parent_class;
+ *     void (*row_activated)(GtkTreeView*,GtkTreePath*,GtkTreeViewColumn*);
+ *     gboolean (*test_expand_row)(GtkTreeView*,GtkTreeIter*,GtkTreePath*);
+ *     gboolean (*test_collapse_row)(GtkTreeView*,GtkTreeIter*,GtkTreePath*);
+ *     void (*row_expanded)(GtkTreeView*,GtkTreeIter*,GtkTreePath*);
+ *     void (*row_collapsed)(GtkTreeView*,GtkTreeIter*,GtkTreePath*);
+ *     void (*columns_changed)(GtkTreeView*);
+ *     void (*cursor_changed)(GtkTreeView*);
+ *     gboolean (*move_cursor)(GtkTreeView*,GtkMovementStep,gint);
+ *     gboolean (*select_all)(GtkTreeView*);
+ *     gboolean (*unselect_all)(GtkTreeView*);
+ *     gboolean (*select_cursor_row)(GtkTreeView*,gboolean);
+ *     gboolean (*toggle_cursor_row)(GtkTreeView*);
+ *     gboolean (*expand_collapse_cursor_row)(GtkTreeView*,gboolean,gboolean,gboolean);
+ *     gboolean (*select_cursor_parent)(GtkTreeView*);
+ *     gboolean (*start_interactive_search)(GtkTreeView*);
+ *     void (*_gtk_reserved1)();
+ *     void (*_gtk_reserved2)();
+ *     void (*_gtk_reserved3)();
+ *     void (*_gtk_reserved4)();
+ *     void (*_gtk_reserved5)();
+ *     void (*_gtk_reserved6)();
+ *     void (*_gtk_reserved7)();
+ *     void (*_gtk_reserved8)();
+ * };
+ * }
+ */
 public class _GtkTreeViewClass {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
                 MemoryLayout.structLayout(
@@ -26,7 +56,10 @@ public class _GtkTreeViewClass {
                     Constants$root.C_POINTER$LAYOUT.withName("notify"),
                     Constants$root.C_POINTER$LAYOUT.withName("constructed"),
                     Constants$root.C_LONG_LONG$LAYOUT.withName("flags"),
-                    MemoryLayout.sequenceLayout(6, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
+                    Constants$root.C_LONG_LONG$LAYOUT.withName("n_construct_properties"),
+                    Constants$root.C_POINTER$LAYOUT.withName("pspecs"),
+                    Constants$root.C_LONG_LONG$LAYOUT.withName("n_pspecs"),
+                    MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
                 ).withName("parent_class"),
                 Constants$root.C_INT$LAYOUT.withName("activate_signal"),
                 MemoryLayout.paddingLayout(32),
@@ -126,10 +159,7 @@ public class _GtkTreeViewClass {
             Constants$root.C_POINTER$LAYOUT.withName("set_child_property"),
             Constants$root.C_POINTER$LAYOUT.withName("get_child_property"),
             Constants$root.C_POINTER$LAYOUT.withName("get_path_for_child"),
-            MemoryLayout.structLayout(
-                MemoryLayout.paddingLayout(1).withName("_handle_border_width"),
-                MemoryLayout.paddingLayout(63)
-            ),
+            MemoryLayout.paddingLayout(64),
             Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved1"),
             Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved2"),
             Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved3"),
@@ -174,20 +204,36 @@ public class _GtkTreeViewClass {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle row_activated$MH = RuntimeHelper.downcallHandle(
-        _GtkTreeViewClass.row_activated$FUNC
+    static final FunctionDescriptor row_activated_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle row_activated_UP$MH = RuntimeHelper.upcallHandle(row_activated.class, "apply", _GtkTreeViewClass.row_activated_UP$FUNC);
+    static final FunctionDescriptor row_activated_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle row_activated_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkTreeViewClass.row_activated_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*row_activated)(GtkTreeView*,GtkTreePath*,GtkTreeViewColumn*);
+     * }
+     */
     public interface row_activated {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2);
-        static MemorySegment allocate(row_activated fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(row_activated.class, fi, _GtkTreeViewClass.row_activated$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(row_activated fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkTreeViewClass.row_activated_UP$MH, fi, _GtkTreeViewClass.row_activated$FUNC, scope);
         }
-        static row_activated ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2) -> {
+        static row_activated ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _key, java.lang.foreign.MemorySegment _value, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    _GtkTreeViewClass.row_activated$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2);
+                    _GtkTreeViewClass.row_activated_DOWN$MH.invokeExact(symbol, _key, _value, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -199,40 +245,68 @@ public class _GtkTreeViewClass {
     public static VarHandle row_activated$VH() {
         return _GtkTreeViewClass.row_activated$VH;
     }
-    public static MemoryAddress row_activated$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkTreeViewClass.row_activated$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*row_activated)(GtkTreeView*,GtkTreePath*,GtkTreeViewColumn*);
+     * }
+     */
+    public static MemorySegment row_activated$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkTreeViewClass.row_activated$VH.get(seg);
     }
-    public static void row_activated$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*row_activated)(GtkTreeView*,GtkTreePath*,GtkTreeViewColumn*);
+     * }
+     */
+    public static void row_activated$set(MemorySegment seg, MemorySegment x) {
         _GtkTreeViewClass.row_activated$VH.set(seg, x);
     }
-    public static MemoryAddress row_activated$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkTreeViewClass.row_activated$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment row_activated$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkTreeViewClass.row_activated$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void row_activated$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void row_activated$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkTreeViewClass.row_activated$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static row_activated row_activated (MemorySegment segment, MemorySession session) {
-        return row_activated.ofAddress(row_activated$get(segment), session);
+    public static row_activated row_activated(MemorySegment segment, SegmentScope scope) {
+        return row_activated.ofAddress(row_activated$get(segment), scope);
     }
     static final FunctionDescriptor test_expand_row$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle test_expand_row$MH = RuntimeHelper.downcallHandle(
-        _GtkTreeViewClass.test_expand_row$FUNC
+    static final FunctionDescriptor test_expand_row_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle test_expand_row_UP$MH = RuntimeHelper.upcallHandle(test_expand_row.class, "apply", _GtkTreeViewClass.test_expand_row_UP$FUNC);
+    static final FunctionDescriptor test_expand_row_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle test_expand_row_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkTreeViewClass.test_expand_row_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*test_expand_row)(GtkTreeView*,GtkTreeIter*,GtkTreePath*);
+     * }
+     */
     public interface test_expand_row {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2);
-        static MemorySegment allocate(test_expand_row fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(test_expand_row.class, fi, _GtkTreeViewClass.test_expand_row$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2);
+        static MemorySegment allocate(test_expand_row fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkTreeViewClass.test_expand_row_UP$MH, fi, _GtkTreeViewClass.test_expand_row$FUNC, scope);
         }
-        static test_expand_row ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2) -> {
+        static test_expand_row ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2) -> {
                 try {
-                    return (int)_GtkTreeViewClass.test_expand_row$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2);
+                    return (int)_GtkTreeViewClass.test_expand_row_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -244,40 +318,68 @@ public class _GtkTreeViewClass {
     public static VarHandle test_expand_row$VH() {
         return _GtkTreeViewClass.test_expand_row$VH;
     }
-    public static MemoryAddress test_expand_row$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkTreeViewClass.test_expand_row$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*test_expand_row)(GtkTreeView*,GtkTreeIter*,GtkTreePath*);
+     * }
+     */
+    public static MemorySegment test_expand_row$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkTreeViewClass.test_expand_row$VH.get(seg);
     }
-    public static void test_expand_row$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*test_expand_row)(GtkTreeView*,GtkTreeIter*,GtkTreePath*);
+     * }
+     */
+    public static void test_expand_row$set(MemorySegment seg, MemorySegment x) {
         _GtkTreeViewClass.test_expand_row$VH.set(seg, x);
     }
-    public static MemoryAddress test_expand_row$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkTreeViewClass.test_expand_row$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment test_expand_row$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkTreeViewClass.test_expand_row$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void test_expand_row$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void test_expand_row$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkTreeViewClass.test_expand_row$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static test_expand_row test_expand_row (MemorySegment segment, MemorySession session) {
-        return test_expand_row.ofAddress(test_expand_row$get(segment), session);
+    public static test_expand_row test_expand_row(MemorySegment segment, SegmentScope scope) {
+        return test_expand_row.ofAddress(test_expand_row$get(segment), scope);
     }
     static final FunctionDescriptor test_collapse_row$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle test_collapse_row$MH = RuntimeHelper.downcallHandle(
-        _GtkTreeViewClass.test_collapse_row$FUNC
+    static final FunctionDescriptor test_collapse_row_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle test_collapse_row_UP$MH = RuntimeHelper.upcallHandle(test_collapse_row.class, "apply", _GtkTreeViewClass.test_collapse_row_UP$FUNC);
+    static final FunctionDescriptor test_collapse_row_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle test_collapse_row_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkTreeViewClass.test_collapse_row_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*test_collapse_row)(GtkTreeView*,GtkTreeIter*,GtkTreePath*);
+     * }
+     */
     public interface test_collapse_row {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2);
-        static MemorySegment allocate(test_collapse_row fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(test_collapse_row.class, fi, _GtkTreeViewClass.test_collapse_row$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2);
+        static MemorySegment allocate(test_collapse_row fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkTreeViewClass.test_collapse_row_UP$MH, fi, _GtkTreeViewClass.test_collapse_row$FUNC, scope);
         }
-        static test_collapse_row ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2) -> {
+        static test_collapse_row ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2) -> {
                 try {
-                    return (int)_GtkTreeViewClass.test_collapse_row$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2);
+                    return (int)_GtkTreeViewClass.test_collapse_row_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -289,40 +391,68 @@ public class _GtkTreeViewClass {
     public static VarHandle test_collapse_row$VH() {
         return _GtkTreeViewClass.test_collapse_row$VH;
     }
-    public static MemoryAddress test_collapse_row$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkTreeViewClass.test_collapse_row$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*test_collapse_row)(GtkTreeView*,GtkTreeIter*,GtkTreePath*);
+     * }
+     */
+    public static MemorySegment test_collapse_row$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkTreeViewClass.test_collapse_row$VH.get(seg);
     }
-    public static void test_collapse_row$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*test_collapse_row)(GtkTreeView*,GtkTreeIter*,GtkTreePath*);
+     * }
+     */
+    public static void test_collapse_row$set(MemorySegment seg, MemorySegment x) {
         _GtkTreeViewClass.test_collapse_row$VH.set(seg, x);
     }
-    public static MemoryAddress test_collapse_row$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkTreeViewClass.test_collapse_row$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment test_collapse_row$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkTreeViewClass.test_collapse_row$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void test_collapse_row$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void test_collapse_row$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkTreeViewClass.test_collapse_row$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static test_collapse_row test_collapse_row (MemorySegment segment, MemorySession session) {
-        return test_collapse_row.ofAddress(test_collapse_row$get(segment), session);
+    public static test_collapse_row test_collapse_row(MemorySegment segment, SegmentScope scope) {
+        return test_collapse_row.ofAddress(test_collapse_row$get(segment), scope);
     }
     static final FunctionDescriptor row_expanded$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle row_expanded$MH = RuntimeHelper.downcallHandle(
-        _GtkTreeViewClass.row_expanded$FUNC
+    static final FunctionDescriptor row_expanded_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle row_expanded_UP$MH = RuntimeHelper.upcallHandle(row_expanded.class, "apply", _GtkTreeViewClass.row_expanded_UP$FUNC);
+    static final FunctionDescriptor row_expanded_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle row_expanded_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkTreeViewClass.row_expanded_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*row_expanded)(GtkTreeView*,GtkTreeIter*,GtkTreePath*);
+     * }
+     */
     public interface row_expanded {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2);
-        static MemorySegment allocate(row_expanded fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(row_expanded.class, fi, _GtkTreeViewClass.row_expanded$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(row_expanded fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkTreeViewClass.row_expanded_UP$MH, fi, _GtkTreeViewClass.row_expanded$FUNC, scope);
         }
-        static row_expanded ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2) -> {
+        static row_expanded ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _key, java.lang.foreign.MemorySegment _value, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    _GtkTreeViewClass.row_expanded$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2);
+                    _GtkTreeViewClass.row_expanded_DOWN$MH.invokeExact(symbol, _key, _value, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -334,40 +464,68 @@ public class _GtkTreeViewClass {
     public static VarHandle row_expanded$VH() {
         return _GtkTreeViewClass.row_expanded$VH;
     }
-    public static MemoryAddress row_expanded$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkTreeViewClass.row_expanded$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*row_expanded)(GtkTreeView*,GtkTreeIter*,GtkTreePath*);
+     * }
+     */
+    public static MemorySegment row_expanded$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkTreeViewClass.row_expanded$VH.get(seg);
     }
-    public static void row_expanded$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*row_expanded)(GtkTreeView*,GtkTreeIter*,GtkTreePath*);
+     * }
+     */
+    public static void row_expanded$set(MemorySegment seg, MemorySegment x) {
         _GtkTreeViewClass.row_expanded$VH.set(seg, x);
     }
-    public static MemoryAddress row_expanded$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkTreeViewClass.row_expanded$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment row_expanded$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkTreeViewClass.row_expanded$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void row_expanded$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void row_expanded$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkTreeViewClass.row_expanded$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static row_expanded row_expanded (MemorySegment segment, MemorySession session) {
-        return row_expanded.ofAddress(row_expanded$get(segment), session);
+    public static row_expanded row_expanded(MemorySegment segment, SegmentScope scope) {
+        return row_expanded.ofAddress(row_expanded$get(segment), scope);
     }
     static final FunctionDescriptor row_collapsed$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle row_collapsed$MH = RuntimeHelper.downcallHandle(
-        _GtkTreeViewClass.row_collapsed$FUNC
+    static final FunctionDescriptor row_collapsed_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle row_collapsed_UP$MH = RuntimeHelper.upcallHandle(row_collapsed.class, "apply", _GtkTreeViewClass.row_collapsed_UP$FUNC);
+    static final FunctionDescriptor row_collapsed_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle row_collapsed_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkTreeViewClass.row_collapsed_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*row_collapsed)(GtkTreeView*,GtkTreeIter*,GtkTreePath*);
+     * }
+     */
     public interface row_collapsed {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1, java.lang.foreign.MemoryAddress _x2);
-        static MemorySegment allocate(row_collapsed fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(row_collapsed.class, fi, _GtkTreeViewClass.row_collapsed$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(row_collapsed fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkTreeViewClass.row_collapsed_UP$MH, fi, _GtkTreeViewClass.row_collapsed$FUNC, scope);
         }
-        static row_collapsed ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1, java.lang.foreign.MemoryAddress __x2) -> {
+        static row_collapsed ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _key, java.lang.foreign.MemorySegment _value, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    _GtkTreeViewClass.row_collapsed$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1, (java.lang.foreign.Addressable)__x2);
+                    _GtkTreeViewClass.row_collapsed_DOWN$MH.invokeExact(symbol, _key, _value, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -379,38 +537,62 @@ public class _GtkTreeViewClass {
     public static VarHandle row_collapsed$VH() {
         return _GtkTreeViewClass.row_collapsed$VH;
     }
-    public static MemoryAddress row_collapsed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkTreeViewClass.row_collapsed$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*row_collapsed)(GtkTreeView*,GtkTreeIter*,GtkTreePath*);
+     * }
+     */
+    public static MemorySegment row_collapsed$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkTreeViewClass.row_collapsed$VH.get(seg);
     }
-    public static void row_collapsed$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*row_collapsed)(GtkTreeView*,GtkTreeIter*,GtkTreePath*);
+     * }
+     */
+    public static void row_collapsed$set(MemorySegment seg, MemorySegment x) {
         _GtkTreeViewClass.row_collapsed$VH.set(seg, x);
     }
-    public static MemoryAddress row_collapsed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkTreeViewClass.row_collapsed$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment row_collapsed$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkTreeViewClass.row_collapsed$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void row_collapsed$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void row_collapsed$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkTreeViewClass.row_collapsed$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static row_collapsed row_collapsed (MemorySegment segment, MemorySession session) {
-        return row_collapsed.ofAddress(row_collapsed$get(segment), session);
+    public static row_collapsed row_collapsed(MemorySegment segment, SegmentScope scope) {
+        return row_collapsed.ofAddress(row_collapsed$get(segment), scope);
     }
     static final FunctionDescriptor columns_changed$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle columns_changed$MH = RuntimeHelper.downcallHandle(
-        _GtkTreeViewClass.columns_changed$FUNC
+    static final FunctionDescriptor columns_changed_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle columns_changed_UP$MH = RuntimeHelper.upcallHandle(columns_changed.class, "apply", _GtkTreeViewClass.columns_changed_UP$FUNC);
+    static final FunctionDescriptor columns_changed_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle columns_changed_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkTreeViewClass.columns_changed_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*columns_changed)(GtkTreeView*);
+     * }
+     */
     public interface columns_changed {
 
-        void apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(columns_changed fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(columns_changed.class, fi, _GtkTreeViewClass.columns_changed$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment display);
+        static MemorySegment allocate(columns_changed fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkTreeViewClass.columns_changed_UP$MH, fi, _GtkTreeViewClass.columns_changed$FUNC, scope);
         }
-        static columns_changed ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static columns_changed ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GtkTreeViewClass.columns_changed$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    _GtkTreeViewClass.columns_changed_DOWN$MH.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -422,38 +604,62 @@ public class _GtkTreeViewClass {
     public static VarHandle columns_changed$VH() {
         return _GtkTreeViewClass.columns_changed$VH;
     }
-    public static MemoryAddress columns_changed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkTreeViewClass.columns_changed$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*columns_changed)(GtkTreeView*);
+     * }
+     */
+    public static MemorySegment columns_changed$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkTreeViewClass.columns_changed$VH.get(seg);
     }
-    public static void columns_changed$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*columns_changed)(GtkTreeView*);
+     * }
+     */
+    public static void columns_changed$set(MemorySegment seg, MemorySegment x) {
         _GtkTreeViewClass.columns_changed$VH.set(seg, x);
     }
-    public static MemoryAddress columns_changed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkTreeViewClass.columns_changed$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment columns_changed$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkTreeViewClass.columns_changed$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void columns_changed$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void columns_changed$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkTreeViewClass.columns_changed$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static columns_changed columns_changed (MemorySegment segment, MemorySession session) {
-        return columns_changed.ofAddress(columns_changed$get(segment), session);
+    public static columns_changed columns_changed(MemorySegment segment, SegmentScope scope) {
+        return columns_changed.ofAddress(columns_changed$get(segment), scope);
     }
     static final FunctionDescriptor cursor_changed$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cursor_changed$MH = RuntimeHelper.downcallHandle(
-        _GtkTreeViewClass.cursor_changed$FUNC
+    static final FunctionDescriptor cursor_changed_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle cursor_changed_UP$MH = RuntimeHelper.upcallHandle(cursor_changed.class, "apply", _GtkTreeViewClass.cursor_changed_UP$FUNC);
+    static final FunctionDescriptor cursor_changed_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cursor_changed_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkTreeViewClass.cursor_changed_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*cursor_changed)(GtkTreeView*);
+     * }
+     */
     public interface cursor_changed {
 
-        void apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(cursor_changed fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(cursor_changed.class, fi, _GtkTreeViewClass.cursor_changed$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment display);
+        static MemorySegment allocate(cursor_changed fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkTreeViewClass.cursor_changed_UP$MH, fi, _GtkTreeViewClass.cursor_changed$FUNC, scope);
         }
-        static cursor_changed ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static cursor_changed ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GtkTreeViewClass.cursor_changed$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    _GtkTreeViewClass.cursor_changed_DOWN$MH.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -465,40 +671,68 @@ public class _GtkTreeViewClass {
     public static VarHandle cursor_changed$VH() {
         return _GtkTreeViewClass.cursor_changed$VH;
     }
-    public static MemoryAddress cursor_changed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkTreeViewClass.cursor_changed$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*cursor_changed)(GtkTreeView*);
+     * }
+     */
+    public static MemorySegment cursor_changed$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkTreeViewClass.cursor_changed$VH.get(seg);
     }
-    public static void cursor_changed$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*cursor_changed)(GtkTreeView*);
+     * }
+     */
+    public static void cursor_changed$set(MemorySegment seg, MemorySegment x) {
         _GtkTreeViewClass.cursor_changed$VH.set(seg, x);
     }
-    public static MemoryAddress cursor_changed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkTreeViewClass.cursor_changed$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment cursor_changed$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkTreeViewClass.cursor_changed$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void cursor_changed$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void cursor_changed$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkTreeViewClass.cursor_changed$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static cursor_changed cursor_changed (MemorySegment segment, MemorySession session) {
-        return cursor_changed.ofAddress(cursor_changed$get(segment), session);
+    public static cursor_changed cursor_changed(MemorySegment segment, SegmentScope scope) {
+        return cursor_changed.ofAddress(cursor_changed$get(segment), scope);
     }
     static final FunctionDescriptor move_cursor$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle move_cursor$MH = RuntimeHelper.downcallHandle(
-        _GtkTreeViewClass.move_cursor$FUNC
+    static final FunctionDescriptor move_cursor_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle move_cursor_UP$MH = RuntimeHelper.upcallHandle(move_cursor.class, "apply", _GtkTreeViewClass.move_cursor_UP$FUNC);
+    static final FunctionDescriptor move_cursor_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle move_cursor_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkTreeViewClass.move_cursor_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*move_cursor)(GtkTreeView*,GtkMovementStep,gint);
+     * }
+     */
     public interface move_cursor {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, int _x1, int _x2);
-        static MemorySegment allocate(move_cursor fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(move_cursor.class, fi, _GtkTreeViewClass.move_cursor$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, int _x1, int _x2);
+        static MemorySegment allocate(move_cursor fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkTreeViewClass.move_cursor_UP$MH, fi, _GtkTreeViewClass.move_cursor$FUNC, scope);
         }
-        static move_cursor ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, int __x1, int __x2) -> {
+        static move_cursor ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, int __x1, int __x2) -> {
                 try {
-                    return (int)_GtkTreeViewClass.move_cursor$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, __x1, __x2);
+                    return (int)_GtkTreeViewClass.move_cursor_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -510,38 +744,62 @@ public class _GtkTreeViewClass {
     public static VarHandle move_cursor$VH() {
         return _GtkTreeViewClass.move_cursor$VH;
     }
-    public static MemoryAddress move_cursor$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkTreeViewClass.move_cursor$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*move_cursor)(GtkTreeView*,GtkMovementStep,gint);
+     * }
+     */
+    public static MemorySegment move_cursor$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkTreeViewClass.move_cursor$VH.get(seg);
     }
-    public static void move_cursor$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*move_cursor)(GtkTreeView*,GtkMovementStep,gint);
+     * }
+     */
+    public static void move_cursor$set(MemorySegment seg, MemorySegment x) {
         _GtkTreeViewClass.move_cursor$VH.set(seg, x);
     }
-    public static MemoryAddress move_cursor$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkTreeViewClass.move_cursor$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment move_cursor$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkTreeViewClass.move_cursor$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void move_cursor$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void move_cursor$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkTreeViewClass.move_cursor$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static move_cursor move_cursor (MemorySegment segment, MemorySession session) {
-        return move_cursor.ofAddress(move_cursor$get(segment), session);
+    public static move_cursor move_cursor(MemorySegment segment, SegmentScope scope) {
+        return move_cursor.ofAddress(move_cursor$get(segment), scope);
     }
     static final FunctionDescriptor select_all$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle select_all$MH = RuntimeHelper.downcallHandle(
-        _GtkTreeViewClass.select_all$FUNC
+    static final FunctionDescriptor select_all_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle select_all_UP$MH = RuntimeHelper.upcallHandle(select_all.class, "apply", _GtkTreeViewClass.select_all_UP$FUNC);
+    static final FunctionDescriptor select_all_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle select_all_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkTreeViewClass.select_all_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*select_all)(GtkTreeView*);
+     * }
+     */
     public interface select_all {
 
-        int apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(select_all fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(select_all.class, fi, _GtkTreeViewClass.select_all$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0);
+        static MemorySegment allocate(select_all fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkTreeViewClass.select_all_UP$MH, fi, _GtkTreeViewClass.select_all$FUNC, scope);
         }
-        static select_all ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static select_all ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0) -> {
                 try {
-                    return (int)_GtkTreeViewClass.select_all$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (int)_GtkTreeViewClass.select_all_DOWN$MH.invokeExact(symbol, __x0);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -553,38 +811,62 @@ public class _GtkTreeViewClass {
     public static VarHandle select_all$VH() {
         return _GtkTreeViewClass.select_all$VH;
     }
-    public static MemoryAddress select_all$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkTreeViewClass.select_all$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*select_all)(GtkTreeView*);
+     * }
+     */
+    public static MemorySegment select_all$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkTreeViewClass.select_all$VH.get(seg);
     }
-    public static void select_all$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*select_all)(GtkTreeView*);
+     * }
+     */
+    public static void select_all$set(MemorySegment seg, MemorySegment x) {
         _GtkTreeViewClass.select_all$VH.set(seg, x);
     }
-    public static MemoryAddress select_all$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkTreeViewClass.select_all$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment select_all$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkTreeViewClass.select_all$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void select_all$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void select_all$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkTreeViewClass.select_all$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static select_all select_all (MemorySegment segment, MemorySession session) {
-        return select_all.ofAddress(select_all$get(segment), session);
+    public static select_all select_all(MemorySegment segment, SegmentScope scope) {
+        return select_all.ofAddress(select_all$get(segment), scope);
     }
     static final FunctionDescriptor unselect_all$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle unselect_all$MH = RuntimeHelper.downcallHandle(
-        _GtkTreeViewClass.unselect_all$FUNC
+    static final FunctionDescriptor unselect_all_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle unselect_all_UP$MH = RuntimeHelper.upcallHandle(unselect_all.class, "apply", _GtkTreeViewClass.unselect_all_UP$FUNC);
+    static final FunctionDescriptor unselect_all_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle unselect_all_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkTreeViewClass.unselect_all_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*unselect_all)(GtkTreeView*);
+     * }
+     */
     public interface unselect_all {
 
-        int apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(unselect_all fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(unselect_all.class, fi, _GtkTreeViewClass.unselect_all$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0);
+        static MemorySegment allocate(unselect_all fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkTreeViewClass.unselect_all_UP$MH, fi, _GtkTreeViewClass.unselect_all$FUNC, scope);
         }
-        static unselect_all ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static unselect_all ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0) -> {
                 try {
-                    return (int)_GtkTreeViewClass.unselect_all$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (int)_GtkTreeViewClass.unselect_all_DOWN$MH.invokeExact(symbol, __x0);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -596,39 +878,65 @@ public class _GtkTreeViewClass {
     public static VarHandle unselect_all$VH() {
         return _GtkTreeViewClass.unselect_all$VH;
     }
-    public static MemoryAddress unselect_all$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkTreeViewClass.unselect_all$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*unselect_all)(GtkTreeView*);
+     * }
+     */
+    public static MemorySegment unselect_all$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkTreeViewClass.unselect_all$VH.get(seg);
     }
-    public static void unselect_all$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*unselect_all)(GtkTreeView*);
+     * }
+     */
+    public static void unselect_all$set(MemorySegment seg, MemorySegment x) {
         _GtkTreeViewClass.unselect_all$VH.set(seg, x);
     }
-    public static MemoryAddress unselect_all$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkTreeViewClass.unselect_all$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment unselect_all$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkTreeViewClass.unselect_all$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void unselect_all$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void unselect_all$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkTreeViewClass.unselect_all$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static unselect_all unselect_all (MemorySegment segment, MemorySession session) {
-        return unselect_all.ofAddress(unselect_all$get(segment), session);
+    public static unselect_all unselect_all(MemorySegment segment, SegmentScope scope) {
+        return unselect_all.ofAddress(unselect_all$get(segment), scope);
     }
     static final FunctionDescriptor select_cursor_row$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle select_cursor_row$MH = RuntimeHelper.downcallHandle(
-        _GtkTreeViewClass.select_cursor_row$FUNC
+    static final FunctionDescriptor select_cursor_row_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle select_cursor_row_UP$MH = RuntimeHelper.upcallHandle(select_cursor_row.class, "apply", _GtkTreeViewClass.select_cursor_row_UP$FUNC);
+    static final FunctionDescriptor select_cursor_row_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle select_cursor_row_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkTreeViewClass.select_cursor_row_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*select_cursor_row)(GtkTreeView*,gboolean);
+     * }
+     */
     public interface select_cursor_row {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, int _x1);
-        static MemorySegment allocate(select_cursor_row fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(select_cursor_row.class, fi, _GtkTreeViewClass.select_cursor_row$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, int _x1);
+        static MemorySegment allocate(select_cursor_row fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkTreeViewClass.select_cursor_row_UP$MH, fi, _GtkTreeViewClass.select_cursor_row$FUNC, scope);
         }
-        static select_cursor_row ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, int __x1) -> {
+        static select_cursor_row ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, int __x1) -> {
                 try {
-                    return (int)_GtkTreeViewClass.select_cursor_row$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, __x1);
+                    return (int)_GtkTreeViewClass.select_cursor_row_DOWN$MH.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -640,38 +948,62 @@ public class _GtkTreeViewClass {
     public static VarHandle select_cursor_row$VH() {
         return _GtkTreeViewClass.select_cursor_row$VH;
     }
-    public static MemoryAddress select_cursor_row$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkTreeViewClass.select_cursor_row$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*select_cursor_row)(GtkTreeView*,gboolean);
+     * }
+     */
+    public static MemorySegment select_cursor_row$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkTreeViewClass.select_cursor_row$VH.get(seg);
     }
-    public static void select_cursor_row$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*select_cursor_row)(GtkTreeView*,gboolean);
+     * }
+     */
+    public static void select_cursor_row$set(MemorySegment seg, MemorySegment x) {
         _GtkTreeViewClass.select_cursor_row$VH.set(seg, x);
     }
-    public static MemoryAddress select_cursor_row$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkTreeViewClass.select_cursor_row$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment select_cursor_row$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkTreeViewClass.select_cursor_row$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void select_cursor_row$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void select_cursor_row$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkTreeViewClass.select_cursor_row$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static select_cursor_row select_cursor_row (MemorySegment segment, MemorySession session) {
-        return select_cursor_row.ofAddress(select_cursor_row$get(segment), session);
+    public static select_cursor_row select_cursor_row(MemorySegment segment, SegmentScope scope) {
+        return select_cursor_row.ofAddress(select_cursor_row$get(segment), scope);
     }
     static final FunctionDescriptor toggle_cursor_row$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle toggle_cursor_row$MH = RuntimeHelper.downcallHandle(
-        _GtkTreeViewClass.toggle_cursor_row$FUNC
+    static final FunctionDescriptor toggle_cursor_row_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle toggle_cursor_row_UP$MH = RuntimeHelper.upcallHandle(toggle_cursor_row.class, "apply", _GtkTreeViewClass.toggle_cursor_row_UP$FUNC);
+    static final FunctionDescriptor toggle_cursor_row_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle toggle_cursor_row_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkTreeViewClass.toggle_cursor_row_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*toggle_cursor_row)(GtkTreeView*);
+     * }
+     */
     public interface toggle_cursor_row {
 
-        int apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(toggle_cursor_row fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(toggle_cursor_row.class, fi, _GtkTreeViewClass.toggle_cursor_row$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0);
+        static MemorySegment allocate(toggle_cursor_row fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkTreeViewClass.toggle_cursor_row_UP$MH, fi, _GtkTreeViewClass.toggle_cursor_row$FUNC, scope);
         }
-        static toggle_cursor_row ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static toggle_cursor_row ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0) -> {
                 try {
-                    return (int)_GtkTreeViewClass.toggle_cursor_row$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (int)_GtkTreeViewClass.toggle_cursor_row_DOWN$MH.invokeExact(symbol, __x0);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -683,20 +1015,32 @@ public class _GtkTreeViewClass {
     public static VarHandle toggle_cursor_row$VH() {
         return _GtkTreeViewClass.toggle_cursor_row$VH;
     }
-    public static MemoryAddress toggle_cursor_row$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkTreeViewClass.toggle_cursor_row$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*toggle_cursor_row)(GtkTreeView*);
+     * }
+     */
+    public static MemorySegment toggle_cursor_row$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkTreeViewClass.toggle_cursor_row$VH.get(seg);
     }
-    public static void toggle_cursor_row$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*toggle_cursor_row)(GtkTreeView*);
+     * }
+     */
+    public static void toggle_cursor_row$set(MemorySegment seg, MemorySegment x) {
         _GtkTreeViewClass.toggle_cursor_row$VH.set(seg, x);
     }
-    public static MemoryAddress toggle_cursor_row$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkTreeViewClass.toggle_cursor_row$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment toggle_cursor_row$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkTreeViewClass.toggle_cursor_row$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void toggle_cursor_row$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void toggle_cursor_row$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkTreeViewClass.toggle_cursor_row$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static toggle_cursor_row toggle_cursor_row (MemorySegment segment, MemorySession session) {
-        return toggle_cursor_row.ofAddress(toggle_cursor_row$get(segment), session);
+    public static toggle_cursor_row toggle_cursor_row(MemorySegment segment, SegmentScope scope) {
+        return toggle_cursor_row.ofAddress(toggle_cursor_row$get(segment), scope);
     }
     static final FunctionDescriptor expand_collapse_cursor_row$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
@@ -704,20 +1048,38 @@ public class _GtkTreeViewClass {
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle expand_collapse_cursor_row$MH = RuntimeHelper.downcallHandle(
-        _GtkTreeViewClass.expand_collapse_cursor_row$FUNC
+    static final FunctionDescriptor expand_collapse_cursor_row_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle expand_collapse_cursor_row_UP$MH = RuntimeHelper.upcallHandle(expand_collapse_cursor_row.class, "apply", _GtkTreeViewClass.expand_collapse_cursor_row_UP$FUNC);
+    static final FunctionDescriptor expand_collapse_cursor_row_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle expand_collapse_cursor_row_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkTreeViewClass.expand_collapse_cursor_row_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*expand_collapse_cursor_row)(GtkTreeView*,gboolean,gboolean,gboolean);
+     * }
+     */
     public interface expand_collapse_cursor_row {
 
-        int apply(java.lang.foreign.MemoryAddress _x0, int _x1, int _x2, int _x3);
-        static MemorySegment allocate(expand_collapse_cursor_row fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(expand_collapse_cursor_row.class, fi, _GtkTreeViewClass.expand_collapse_cursor_row$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0, int _x1, int _x2, int _x3);
+        static MemorySegment allocate(expand_collapse_cursor_row fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkTreeViewClass.expand_collapse_cursor_row_UP$MH, fi, _GtkTreeViewClass.expand_collapse_cursor_row$FUNC, scope);
         }
-        static expand_collapse_cursor_row ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, int __x1, int __x2, int __x3) -> {
+        static expand_collapse_cursor_row ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, int __x1, int __x2, int __x3) -> {
                 try {
-                    return (int)_GtkTreeViewClass.expand_collapse_cursor_row$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, __x1, __x2, __x3);
+                    return (int)_GtkTreeViewClass.expand_collapse_cursor_row_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -729,38 +1091,62 @@ public class _GtkTreeViewClass {
     public static VarHandle expand_collapse_cursor_row$VH() {
         return _GtkTreeViewClass.expand_collapse_cursor_row$VH;
     }
-    public static MemoryAddress expand_collapse_cursor_row$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkTreeViewClass.expand_collapse_cursor_row$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*expand_collapse_cursor_row)(GtkTreeView*,gboolean,gboolean,gboolean);
+     * }
+     */
+    public static MemorySegment expand_collapse_cursor_row$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkTreeViewClass.expand_collapse_cursor_row$VH.get(seg);
     }
-    public static void expand_collapse_cursor_row$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*expand_collapse_cursor_row)(GtkTreeView*,gboolean,gboolean,gboolean);
+     * }
+     */
+    public static void expand_collapse_cursor_row$set(MemorySegment seg, MemorySegment x) {
         _GtkTreeViewClass.expand_collapse_cursor_row$VH.set(seg, x);
     }
-    public static MemoryAddress expand_collapse_cursor_row$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkTreeViewClass.expand_collapse_cursor_row$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment expand_collapse_cursor_row$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkTreeViewClass.expand_collapse_cursor_row$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void expand_collapse_cursor_row$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void expand_collapse_cursor_row$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkTreeViewClass.expand_collapse_cursor_row$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static expand_collapse_cursor_row expand_collapse_cursor_row (MemorySegment segment, MemorySession session) {
-        return expand_collapse_cursor_row.ofAddress(expand_collapse_cursor_row$get(segment), session);
+    public static expand_collapse_cursor_row expand_collapse_cursor_row(MemorySegment segment, SegmentScope scope) {
+        return expand_collapse_cursor_row.ofAddress(expand_collapse_cursor_row$get(segment), scope);
     }
     static final FunctionDescriptor select_cursor_parent$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle select_cursor_parent$MH = RuntimeHelper.downcallHandle(
-        _GtkTreeViewClass.select_cursor_parent$FUNC
+    static final FunctionDescriptor select_cursor_parent_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle select_cursor_parent_UP$MH = RuntimeHelper.upcallHandle(select_cursor_parent.class, "apply", _GtkTreeViewClass.select_cursor_parent_UP$FUNC);
+    static final FunctionDescriptor select_cursor_parent_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle select_cursor_parent_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkTreeViewClass.select_cursor_parent_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*select_cursor_parent)(GtkTreeView*);
+     * }
+     */
     public interface select_cursor_parent {
 
-        int apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(select_cursor_parent fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(select_cursor_parent.class, fi, _GtkTreeViewClass.select_cursor_parent$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0);
+        static MemorySegment allocate(select_cursor_parent fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkTreeViewClass.select_cursor_parent_UP$MH, fi, _GtkTreeViewClass.select_cursor_parent$FUNC, scope);
         }
-        static select_cursor_parent ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static select_cursor_parent ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0) -> {
                 try {
-                    return (int)_GtkTreeViewClass.select_cursor_parent$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (int)_GtkTreeViewClass.select_cursor_parent_DOWN$MH.invokeExact(symbol, __x0);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -772,38 +1158,62 @@ public class _GtkTreeViewClass {
     public static VarHandle select_cursor_parent$VH() {
         return _GtkTreeViewClass.select_cursor_parent$VH;
     }
-    public static MemoryAddress select_cursor_parent$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkTreeViewClass.select_cursor_parent$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*select_cursor_parent)(GtkTreeView*);
+     * }
+     */
+    public static MemorySegment select_cursor_parent$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkTreeViewClass.select_cursor_parent$VH.get(seg);
     }
-    public static void select_cursor_parent$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*select_cursor_parent)(GtkTreeView*);
+     * }
+     */
+    public static void select_cursor_parent$set(MemorySegment seg, MemorySegment x) {
         _GtkTreeViewClass.select_cursor_parent$VH.set(seg, x);
     }
-    public static MemoryAddress select_cursor_parent$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkTreeViewClass.select_cursor_parent$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment select_cursor_parent$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkTreeViewClass.select_cursor_parent$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void select_cursor_parent$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void select_cursor_parent$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkTreeViewClass.select_cursor_parent$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static select_cursor_parent select_cursor_parent (MemorySegment segment, MemorySession session) {
-        return select_cursor_parent.ofAddress(select_cursor_parent$get(segment), session);
+    public static select_cursor_parent select_cursor_parent(MemorySegment segment, SegmentScope scope) {
+        return select_cursor_parent.ofAddress(select_cursor_parent$get(segment), scope);
     }
     static final FunctionDescriptor start_interactive_search$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle start_interactive_search$MH = RuntimeHelper.downcallHandle(
-        _GtkTreeViewClass.start_interactive_search$FUNC
+    static final FunctionDescriptor start_interactive_search_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle start_interactive_search_UP$MH = RuntimeHelper.upcallHandle(start_interactive_search.class, "apply", _GtkTreeViewClass.start_interactive_search_UP$FUNC);
+    static final FunctionDescriptor start_interactive_search_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle start_interactive_search_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkTreeViewClass.start_interactive_search_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gboolean (*start_interactive_search)(GtkTreeView*);
+     * }
+     */
     public interface start_interactive_search {
 
-        int apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(start_interactive_search fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(start_interactive_search.class, fi, _GtkTreeViewClass.start_interactive_search$FUNC, session);
+        int apply(java.lang.foreign.MemorySegment _x0);
+        static MemorySegment allocate(start_interactive_search fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkTreeViewClass.start_interactive_search_UP$MH, fi, _GtkTreeViewClass.start_interactive_search$FUNC, scope);
         }
-        static start_interactive_search ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static start_interactive_search ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0) -> {
                 try {
-                    return (int)_GtkTreeViewClass.start_interactive_search$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (int)_GtkTreeViewClass.start_interactive_search_DOWN$MH.invokeExact(symbol, __x0);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -815,36 +1225,56 @@ public class _GtkTreeViewClass {
     public static VarHandle start_interactive_search$VH() {
         return _GtkTreeViewClass.start_interactive_search$VH;
     }
-    public static MemoryAddress start_interactive_search$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkTreeViewClass.start_interactive_search$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean (*start_interactive_search)(GtkTreeView*);
+     * }
+     */
+    public static MemorySegment start_interactive_search$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkTreeViewClass.start_interactive_search$VH.get(seg);
     }
-    public static void start_interactive_search$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean (*start_interactive_search)(GtkTreeView*);
+     * }
+     */
+    public static void start_interactive_search$set(MemorySegment seg, MemorySegment x) {
         _GtkTreeViewClass.start_interactive_search$VH.set(seg, x);
     }
-    public static MemoryAddress start_interactive_search$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkTreeViewClass.start_interactive_search$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment start_interactive_search$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkTreeViewClass.start_interactive_search$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void start_interactive_search$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void start_interactive_search$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkTreeViewClass.start_interactive_search$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static start_interactive_search start_interactive_search (MemorySegment segment, MemorySession session) {
-        return start_interactive_search.ofAddress(start_interactive_search$get(segment), session);
+    public static start_interactive_search start_interactive_search(MemorySegment segment, SegmentScope scope) {
+        return start_interactive_search.ofAddress(start_interactive_search$get(segment), scope);
     }
     static final FunctionDescriptor _gtk_reserved1$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved1$MH = RuntimeHelper.downcallHandle(
-        _GtkTreeViewClass._gtk_reserved1$FUNC
+    static final FunctionDescriptor _gtk_reserved1_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved1_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved1.class, "apply", _GtkTreeViewClass._gtk_reserved1_UP$FUNC);
+    static final FunctionDescriptor _gtk_reserved1_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved1_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkTreeViewClass._gtk_reserved1_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_gtk_reserved1)();
+     * }
+     */
     public interface _gtk_reserved1 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved1 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_gtk_reserved1.class, fi, _GtkTreeViewClass._gtk_reserved1$FUNC, session);
+        static MemorySegment allocate(_gtk_reserved1 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkTreeViewClass._gtk_reserved1_UP$MH, fi, _GtkTreeViewClass._gtk_reserved1$FUNC, scope);
         }
-        static _gtk_reserved1 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _gtk_reserved1 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkTreeViewClass._gtk_reserved1$MH.invokeExact((Addressable)symbol);
+                    _GtkTreeViewClass._gtk_reserved1_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -856,36 +1286,56 @@ public class _GtkTreeViewClass {
     public static VarHandle _gtk_reserved1$VH() {
         return _GtkTreeViewClass._gtk_reserved1$VH;
     }
-    public static MemoryAddress _gtk_reserved1$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkTreeViewClass._gtk_reserved1$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_gtk_reserved1)();
+     * }
+     */
+    public static MemorySegment _gtk_reserved1$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkTreeViewClass._gtk_reserved1$VH.get(seg);
     }
-    public static void _gtk_reserved1$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_gtk_reserved1)();
+     * }
+     */
+    public static void _gtk_reserved1$set(MemorySegment seg, MemorySegment x) {
         _GtkTreeViewClass._gtk_reserved1$VH.set(seg, x);
     }
-    public static MemoryAddress _gtk_reserved1$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkTreeViewClass._gtk_reserved1$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _gtk_reserved1$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkTreeViewClass._gtk_reserved1$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _gtk_reserved1$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _gtk_reserved1$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkTreeViewClass._gtk_reserved1$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved1 _gtk_reserved1 (MemorySegment segment, MemorySession session) {
-        return _gtk_reserved1.ofAddress(_gtk_reserved1$get(segment), session);
+    public static _gtk_reserved1 _gtk_reserved1(MemorySegment segment, SegmentScope scope) {
+        return _gtk_reserved1.ofAddress(_gtk_reserved1$get(segment), scope);
     }
     static final FunctionDescriptor _gtk_reserved2$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved2$MH = RuntimeHelper.downcallHandle(
-        _GtkTreeViewClass._gtk_reserved2$FUNC
+    static final FunctionDescriptor _gtk_reserved2_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved2_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved2.class, "apply", _GtkTreeViewClass._gtk_reserved2_UP$FUNC);
+    static final FunctionDescriptor _gtk_reserved2_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved2_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkTreeViewClass._gtk_reserved2_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_gtk_reserved2)();
+     * }
+     */
     public interface _gtk_reserved2 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved2 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_gtk_reserved2.class, fi, _GtkTreeViewClass._gtk_reserved2$FUNC, session);
+        static MemorySegment allocate(_gtk_reserved2 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkTreeViewClass._gtk_reserved2_UP$MH, fi, _GtkTreeViewClass._gtk_reserved2$FUNC, scope);
         }
-        static _gtk_reserved2 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _gtk_reserved2 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkTreeViewClass._gtk_reserved2$MH.invokeExact((Addressable)symbol);
+                    _GtkTreeViewClass._gtk_reserved2_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -897,36 +1347,56 @@ public class _GtkTreeViewClass {
     public static VarHandle _gtk_reserved2$VH() {
         return _GtkTreeViewClass._gtk_reserved2$VH;
     }
-    public static MemoryAddress _gtk_reserved2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkTreeViewClass._gtk_reserved2$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_gtk_reserved2)();
+     * }
+     */
+    public static MemorySegment _gtk_reserved2$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkTreeViewClass._gtk_reserved2$VH.get(seg);
     }
-    public static void _gtk_reserved2$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_gtk_reserved2)();
+     * }
+     */
+    public static void _gtk_reserved2$set(MemorySegment seg, MemorySegment x) {
         _GtkTreeViewClass._gtk_reserved2$VH.set(seg, x);
     }
-    public static MemoryAddress _gtk_reserved2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkTreeViewClass._gtk_reserved2$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _gtk_reserved2$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkTreeViewClass._gtk_reserved2$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _gtk_reserved2$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _gtk_reserved2$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkTreeViewClass._gtk_reserved2$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved2 _gtk_reserved2 (MemorySegment segment, MemorySession session) {
-        return _gtk_reserved2.ofAddress(_gtk_reserved2$get(segment), session);
+    public static _gtk_reserved2 _gtk_reserved2(MemorySegment segment, SegmentScope scope) {
+        return _gtk_reserved2.ofAddress(_gtk_reserved2$get(segment), scope);
     }
     static final FunctionDescriptor _gtk_reserved3$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved3$MH = RuntimeHelper.downcallHandle(
-        _GtkTreeViewClass._gtk_reserved3$FUNC
+    static final FunctionDescriptor _gtk_reserved3_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved3_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved3.class, "apply", _GtkTreeViewClass._gtk_reserved3_UP$FUNC);
+    static final FunctionDescriptor _gtk_reserved3_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved3_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkTreeViewClass._gtk_reserved3_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_gtk_reserved3)();
+     * }
+     */
     public interface _gtk_reserved3 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved3 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_gtk_reserved3.class, fi, _GtkTreeViewClass._gtk_reserved3$FUNC, session);
+        static MemorySegment allocate(_gtk_reserved3 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkTreeViewClass._gtk_reserved3_UP$MH, fi, _GtkTreeViewClass._gtk_reserved3$FUNC, scope);
         }
-        static _gtk_reserved3 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _gtk_reserved3 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkTreeViewClass._gtk_reserved3$MH.invokeExact((Addressable)symbol);
+                    _GtkTreeViewClass._gtk_reserved3_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -938,36 +1408,56 @@ public class _GtkTreeViewClass {
     public static VarHandle _gtk_reserved3$VH() {
         return _GtkTreeViewClass._gtk_reserved3$VH;
     }
-    public static MemoryAddress _gtk_reserved3$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkTreeViewClass._gtk_reserved3$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_gtk_reserved3)();
+     * }
+     */
+    public static MemorySegment _gtk_reserved3$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkTreeViewClass._gtk_reserved3$VH.get(seg);
     }
-    public static void _gtk_reserved3$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_gtk_reserved3)();
+     * }
+     */
+    public static void _gtk_reserved3$set(MemorySegment seg, MemorySegment x) {
         _GtkTreeViewClass._gtk_reserved3$VH.set(seg, x);
     }
-    public static MemoryAddress _gtk_reserved3$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkTreeViewClass._gtk_reserved3$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _gtk_reserved3$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkTreeViewClass._gtk_reserved3$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _gtk_reserved3$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _gtk_reserved3$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkTreeViewClass._gtk_reserved3$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved3 _gtk_reserved3 (MemorySegment segment, MemorySession session) {
-        return _gtk_reserved3.ofAddress(_gtk_reserved3$get(segment), session);
+    public static _gtk_reserved3 _gtk_reserved3(MemorySegment segment, SegmentScope scope) {
+        return _gtk_reserved3.ofAddress(_gtk_reserved3$get(segment), scope);
     }
     static final FunctionDescriptor _gtk_reserved4$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved4$MH = RuntimeHelper.downcallHandle(
-        _GtkTreeViewClass._gtk_reserved4$FUNC
+    static final FunctionDescriptor _gtk_reserved4_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved4_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved4.class, "apply", _GtkTreeViewClass._gtk_reserved4_UP$FUNC);
+    static final FunctionDescriptor _gtk_reserved4_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved4_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkTreeViewClass._gtk_reserved4_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_gtk_reserved4)();
+     * }
+     */
     public interface _gtk_reserved4 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved4 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_gtk_reserved4.class, fi, _GtkTreeViewClass._gtk_reserved4$FUNC, session);
+        static MemorySegment allocate(_gtk_reserved4 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkTreeViewClass._gtk_reserved4_UP$MH, fi, _GtkTreeViewClass._gtk_reserved4$FUNC, scope);
         }
-        static _gtk_reserved4 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _gtk_reserved4 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkTreeViewClass._gtk_reserved4$MH.invokeExact((Addressable)symbol);
+                    _GtkTreeViewClass._gtk_reserved4_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -979,36 +1469,56 @@ public class _GtkTreeViewClass {
     public static VarHandle _gtk_reserved4$VH() {
         return _GtkTreeViewClass._gtk_reserved4$VH;
     }
-    public static MemoryAddress _gtk_reserved4$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkTreeViewClass._gtk_reserved4$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_gtk_reserved4)();
+     * }
+     */
+    public static MemorySegment _gtk_reserved4$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkTreeViewClass._gtk_reserved4$VH.get(seg);
     }
-    public static void _gtk_reserved4$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_gtk_reserved4)();
+     * }
+     */
+    public static void _gtk_reserved4$set(MemorySegment seg, MemorySegment x) {
         _GtkTreeViewClass._gtk_reserved4$VH.set(seg, x);
     }
-    public static MemoryAddress _gtk_reserved4$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkTreeViewClass._gtk_reserved4$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _gtk_reserved4$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkTreeViewClass._gtk_reserved4$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _gtk_reserved4$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _gtk_reserved4$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkTreeViewClass._gtk_reserved4$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved4 _gtk_reserved4 (MemorySegment segment, MemorySession session) {
-        return _gtk_reserved4.ofAddress(_gtk_reserved4$get(segment), session);
+    public static _gtk_reserved4 _gtk_reserved4(MemorySegment segment, SegmentScope scope) {
+        return _gtk_reserved4.ofAddress(_gtk_reserved4$get(segment), scope);
     }
     static final FunctionDescriptor _gtk_reserved5$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved5$MH = RuntimeHelper.downcallHandle(
-        _GtkTreeViewClass._gtk_reserved5$FUNC
+    static final FunctionDescriptor _gtk_reserved5_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved5_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved5.class, "apply", _GtkTreeViewClass._gtk_reserved5_UP$FUNC);
+    static final FunctionDescriptor _gtk_reserved5_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved5_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkTreeViewClass._gtk_reserved5_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_gtk_reserved5)();
+     * }
+     */
     public interface _gtk_reserved5 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved5 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_gtk_reserved5.class, fi, _GtkTreeViewClass._gtk_reserved5$FUNC, session);
+        static MemorySegment allocate(_gtk_reserved5 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkTreeViewClass._gtk_reserved5_UP$MH, fi, _GtkTreeViewClass._gtk_reserved5$FUNC, scope);
         }
-        static _gtk_reserved5 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _gtk_reserved5 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkTreeViewClass._gtk_reserved5$MH.invokeExact((Addressable)symbol);
+                    _GtkTreeViewClass._gtk_reserved5_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1020,36 +1530,56 @@ public class _GtkTreeViewClass {
     public static VarHandle _gtk_reserved5$VH() {
         return _GtkTreeViewClass._gtk_reserved5$VH;
     }
-    public static MemoryAddress _gtk_reserved5$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkTreeViewClass._gtk_reserved5$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_gtk_reserved5)();
+     * }
+     */
+    public static MemorySegment _gtk_reserved5$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkTreeViewClass._gtk_reserved5$VH.get(seg);
     }
-    public static void _gtk_reserved5$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_gtk_reserved5)();
+     * }
+     */
+    public static void _gtk_reserved5$set(MemorySegment seg, MemorySegment x) {
         _GtkTreeViewClass._gtk_reserved5$VH.set(seg, x);
     }
-    public static MemoryAddress _gtk_reserved5$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkTreeViewClass._gtk_reserved5$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _gtk_reserved5$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkTreeViewClass._gtk_reserved5$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _gtk_reserved5$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _gtk_reserved5$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkTreeViewClass._gtk_reserved5$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved5 _gtk_reserved5 (MemorySegment segment, MemorySession session) {
-        return _gtk_reserved5.ofAddress(_gtk_reserved5$get(segment), session);
+    public static _gtk_reserved5 _gtk_reserved5(MemorySegment segment, SegmentScope scope) {
+        return _gtk_reserved5.ofAddress(_gtk_reserved5$get(segment), scope);
     }
     static final FunctionDescriptor _gtk_reserved6$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved6$MH = RuntimeHelper.downcallHandle(
-        _GtkTreeViewClass._gtk_reserved6$FUNC
+    static final FunctionDescriptor _gtk_reserved6_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved6_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved6.class, "apply", _GtkTreeViewClass._gtk_reserved6_UP$FUNC);
+    static final FunctionDescriptor _gtk_reserved6_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved6_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkTreeViewClass._gtk_reserved6_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_gtk_reserved6)();
+     * }
+     */
     public interface _gtk_reserved6 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved6 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_gtk_reserved6.class, fi, _GtkTreeViewClass._gtk_reserved6$FUNC, session);
+        static MemorySegment allocate(_gtk_reserved6 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkTreeViewClass._gtk_reserved6_UP$MH, fi, _GtkTreeViewClass._gtk_reserved6$FUNC, scope);
         }
-        static _gtk_reserved6 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _gtk_reserved6 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkTreeViewClass._gtk_reserved6$MH.invokeExact((Addressable)symbol);
+                    _GtkTreeViewClass._gtk_reserved6_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1061,36 +1591,56 @@ public class _GtkTreeViewClass {
     public static VarHandle _gtk_reserved6$VH() {
         return _GtkTreeViewClass._gtk_reserved6$VH;
     }
-    public static MemoryAddress _gtk_reserved6$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkTreeViewClass._gtk_reserved6$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_gtk_reserved6)();
+     * }
+     */
+    public static MemorySegment _gtk_reserved6$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkTreeViewClass._gtk_reserved6$VH.get(seg);
     }
-    public static void _gtk_reserved6$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_gtk_reserved6)();
+     * }
+     */
+    public static void _gtk_reserved6$set(MemorySegment seg, MemorySegment x) {
         _GtkTreeViewClass._gtk_reserved6$VH.set(seg, x);
     }
-    public static MemoryAddress _gtk_reserved6$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkTreeViewClass._gtk_reserved6$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _gtk_reserved6$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkTreeViewClass._gtk_reserved6$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _gtk_reserved6$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _gtk_reserved6$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkTreeViewClass._gtk_reserved6$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved6 _gtk_reserved6 (MemorySegment segment, MemorySession session) {
-        return _gtk_reserved6.ofAddress(_gtk_reserved6$get(segment), session);
+    public static _gtk_reserved6 _gtk_reserved6(MemorySegment segment, SegmentScope scope) {
+        return _gtk_reserved6.ofAddress(_gtk_reserved6$get(segment), scope);
     }
     static final FunctionDescriptor _gtk_reserved7$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved7$MH = RuntimeHelper.downcallHandle(
-        _GtkTreeViewClass._gtk_reserved7$FUNC
+    static final FunctionDescriptor _gtk_reserved7_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved7_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved7.class, "apply", _GtkTreeViewClass._gtk_reserved7_UP$FUNC);
+    static final FunctionDescriptor _gtk_reserved7_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved7_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkTreeViewClass._gtk_reserved7_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_gtk_reserved7)();
+     * }
+     */
     public interface _gtk_reserved7 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved7 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_gtk_reserved7.class, fi, _GtkTreeViewClass._gtk_reserved7$FUNC, session);
+        static MemorySegment allocate(_gtk_reserved7 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkTreeViewClass._gtk_reserved7_UP$MH, fi, _GtkTreeViewClass._gtk_reserved7$FUNC, scope);
         }
-        static _gtk_reserved7 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _gtk_reserved7 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkTreeViewClass._gtk_reserved7$MH.invokeExact((Addressable)symbol);
+                    _GtkTreeViewClass._gtk_reserved7_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1102,36 +1652,56 @@ public class _GtkTreeViewClass {
     public static VarHandle _gtk_reserved7$VH() {
         return _GtkTreeViewClass._gtk_reserved7$VH;
     }
-    public static MemoryAddress _gtk_reserved7$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkTreeViewClass._gtk_reserved7$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_gtk_reserved7)();
+     * }
+     */
+    public static MemorySegment _gtk_reserved7$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkTreeViewClass._gtk_reserved7$VH.get(seg);
     }
-    public static void _gtk_reserved7$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_gtk_reserved7)();
+     * }
+     */
+    public static void _gtk_reserved7$set(MemorySegment seg, MemorySegment x) {
         _GtkTreeViewClass._gtk_reserved7$VH.set(seg, x);
     }
-    public static MemoryAddress _gtk_reserved7$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkTreeViewClass._gtk_reserved7$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _gtk_reserved7$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkTreeViewClass._gtk_reserved7$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _gtk_reserved7$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _gtk_reserved7$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkTreeViewClass._gtk_reserved7$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved7 _gtk_reserved7 (MemorySegment segment, MemorySession session) {
-        return _gtk_reserved7.ofAddress(_gtk_reserved7$get(segment), session);
+    public static _gtk_reserved7 _gtk_reserved7(MemorySegment segment, SegmentScope scope) {
+        return _gtk_reserved7.ofAddress(_gtk_reserved7$get(segment), scope);
     }
     static final FunctionDescriptor _gtk_reserved8$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved8$MH = RuntimeHelper.downcallHandle(
-        _GtkTreeViewClass._gtk_reserved8$FUNC
+    static final FunctionDescriptor _gtk_reserved8_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved8_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved8.class, "apply", _GtkTreeViewClass._gtk_reserved8_UP$FUNC);
+    static final FunctionDescriptor _gtk_reserved8_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle _gtk_reserved8_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkTreeViewClass._gtk_reserved8_DOWN$FUNC
     );
+    /**
+     * {@snippet :
+ * void (*_gtk_reserved8)();
+     * }
+     */
     public interface _gtk_reserved8 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved8 fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(_gtk_reserved8.class, fi, _GtkTreeViewClass._gtk_reserved8$FUNC, session);
+        static MemorySegment allocate(_gtk_reserved8 fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkTreeViewClass._gtk_reserved8_UP$MH, fi, _GtkTreeViewClass._gtk_reserved8$FUNC, scope);
         }
-        static _gtk_reserved8 ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
+        static _gtk_reserved8 ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
             return () -> {
                 try {
-                    _GtkTreeViewClass._gtk_reserved8$MH.invokeExact((Addressable)symbol);
+                    _GtkTreeViewClass._gtk_reserved8_DOWN$MH.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1143,27 +1713,39 @@ public class _GtkTreeViewClass {
     public static VarHandle _gtk_reserved8$VH() {
         return _GtkTreeViewClass._gtk_reserved8$VH;
     }
-    public static MemoryAddress _gtk_reserved8$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkTreeViewClass._gtk_reserved8$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*_gtk_reserved8)();
+     * }
+     */
+    public static MemorySegment _gtk_reserved8$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkTreeViewClass._gtk_reserved8$VH.get(seg);
     }
-    public static void _gtk_reserved8$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*_gtk_reserved8)();
+     * }
+     */
+    public static void _gtk_reserved8$set(MemorySegment seg, MemorySegment x) {
         _GtkTreeViewClass._gtk_reserved8$VH.set(seg, x);
     }
-    public static MemoryAddress _gtk_reserved8$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkTreeViewClass._gtk_reserved8$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment _gtk_reserved8$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkTreeViewClass._gtk_reserved8$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void _gtk_reserved8$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void _gtk_reserved8$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkTreeViewClass._gtk_reserved8$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved8 _gtk_reserved8 (MemorySegment segment, MemorySession session) {
-        return _gtk_reserved8.ofAddress(_gtk_reserved8$get(segment), session);
+    public static _gtk_reserved8 _gtk_reserved8(MemorySegment segment, SegmentScope scope) {
+        return _gtk_reserved8.ofAddress(_gtk_reserved8$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

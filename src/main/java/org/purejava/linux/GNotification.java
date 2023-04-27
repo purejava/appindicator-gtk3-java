@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GNotification {
+/**
+ * {@snippet :
+ * typedef struct _GNotification GNotification;
+ * }
+ */
+public final class GNotification {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GNotification() {}
 }
 
 

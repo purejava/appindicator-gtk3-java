@@ -7,51 +7,39 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1524 {
+final class constants$1524 {
 
-    static final FunctionDescriptor gtk_label_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1524() {}
+    static final FunctionDescriptor gtk_cell_renderer_pixbuf_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_cell_renderer_pixbuf_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_renderer_pixbuf_get_type",
+        constants$1524.gtk_cell_renderer_pixbuf_get_type$FUNC
     );
-    static final MethodHandle gtk_label_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_new",
-        constants$1524.gtk_label_new$FUNC
+    static final FunctionDescriptor gtk_cell_renderer_pixbuf_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_cell_renderer_pixbuf_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_renderer_pixbuf_new",
+        constants$1524.gtk_cell_renderer_pixbuf_new$FUNC
     );
-    static final FunctionDescriptor gtk_label_new_with_mnemonic$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gtk_cell_renderer_progress_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_cell_renderer_progress_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_renderer_progress_get_type",
+        constants$1524.gtk_cell_renderer_progress_get_type$FUNC
     );
-    static final MethodHandle gtk_label_new_with_mnemonic$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_new_with_mnemonic",
-        constants$1524.gtk_label_new_with_mnemonic$FUNC
+    static final FunctionDescriptor gtk_cell_renderer_progress_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_cell_renderer_progress_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_renderer_progress_new",
+        constants$1524.gtk_cell_renderer_progress_new$FUNC
     );
-    static final FunctionDescriptor gtk_label_set_text$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gtk_cell_renderer_spin_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_cell_renderer_spin_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_renderer_spin_get_type",
+        constants$1524.gtk_cell_renderer_spin_get_type$FUNC
     );
-    static final MethodHandle gtk_label_set_text$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_set_text",
-        constants$1524.gtk_label_set_text$FUNC
-    );
-    static final FunctionDescriptor gtk_label_get_text$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_label_get_text$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_get_text",
-        constants$1524.gtk_label_get_text$FUNC
-    );
-    static final FunctionDescriptor gtk_label_set_attributes$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_label_set_attributes$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_set_attributes",
-        constants$1524.gtk_label_set_attributes$FUNC
-    );
-    static final FunctionDescriptor gtk_label_get_attributes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_label_get_attributes$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_get_attributes",
-        constants$1524.gtk_label_get_attributes$FUNC
+    static final FunctionDescriptor gtk_cell_renderer_spin_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_cell_renderer_spin_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_renderer_spin_new",
+        constants$1524.gtk_cell_renderer_spin_new$FUNC
     );
 }
 

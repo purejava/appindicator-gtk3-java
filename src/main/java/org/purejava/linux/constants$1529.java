@@ -7,52 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1529 {
+final class constants$1529 {
 
-    static final FunctionDescriptor gtk_label_get_line_wrap$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_label_get_line_wrap$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_get_line_wrap",
-        constants$1529.gtk_label_get_line_wrap$FUNC
-    );
-    static final FunctionDescriptor gtk_label_set_line_wrap_mode$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1529() {}
+    static final FunctionDescriptor gtk_cell_view_set_fit_model$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_label_set_line_wrap_mode$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_set_line_wrap_mode",
-        constants$1529.gtk_label_set_line_wrap_mode$FUNC
+    static final MethodHandle gtk_cell_view_set_fit_model$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_view_set_fit_model",
+        constants$1529.gtk_cell_view_set_fit_model$FUNC
     );
-    static final FunctionDescriptor gtk_label_get_line_wrap_mode$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_cell_view_get_size_of_row$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_label_get_line_wrap_mode$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_get_line_wrap_mode",
-        constants$1529.gtk_label_get_line_wrap_mode$FUNC
+    static final MethodHandle gtk_cell_view_get_size_of_row$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_view_get_size_of_row",
+        constants$1529.gtk_cell_view_get_size_of_row$FUNC
     );
-    static final FunctionDescriptor gtk_label_set_selectable$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_cell_view_set_background_color$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_label_set_selectable$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_set_selectable",
-        constants$1529.gtk_label_set_selectable$FUNC
-    );
-    static final FunctionDescriptor gtk_label_get_selectable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_label_get_selectable$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_get_selectable",
-        constants$1529.gtk_label_get_selectable$FUNC
+    static final MethodHandle gtk_cell_view_set_background_color$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_view_set_background_color",
+        constants$1529.gtk_cell_view_set_background_color$FUNC
     );
-    static final FunctionDescriptor gtk_label_set_angle$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final FunctionDescriptor gtk_toggle_button_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_toggle_button_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_toggle_button_get_type",
+        constants$1529.gtk_toggle_button_get_type$FUNC
     );
-    static final MethodHandle gtk_label_set_angle$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_set_angle",
-        constants$1529.gtk_label_set_angle$FUNC
+    static final FunctionDescriptor gtk_toggle_button_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_toggle_button_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_toggle_button_new",
+        constants$1529.gtk_toggle_button_new$FUNC
+    );
+    static final FunctionDescriptor gtk_toggle_button_new_with_label$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_toggle_button_new_with_label$MH = RuntimeHelper.downcallHandle(
+        "gtk_toggle_button_new_with_label",
+        constants$1529.gtk_toggle_button_new_with_label$FUNC
     );
 }
 

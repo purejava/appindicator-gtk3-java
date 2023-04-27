@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class AtkSocketClass extends _AtkSocketClass {
+/**
+ * {@snippet :
+ * typedef struct _AtkSocketClass AtkSocketClass;
+ * }
+ */
+public final class AtkSocketClass extends _AtkSocketClass {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private AtkSocketClass() {}
 }
 
 

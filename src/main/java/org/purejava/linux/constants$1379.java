@@ -7,57 +7,67 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1379 {
+final class constants$1379 {
 
-    static final FunctionDescriptor atk_object_set_parent$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1379() {}
+    static final FunctionDescriptor gtk_tree_sortable_set_sort_func$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_object_set_parent$MH = RuntimeHelper.downcallHandle(
-        "atk_object_set_parent",
-        constants$1379.atk_object_set_parent$FUNC
+    static final MethodHandle gtk_tree_sortable_set_sort_func$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_sortable_set_sort_func",
+        constants$1379.gtk_tree_sortable_set_sort_func$FUNC
     );
-    static final FunctionDescriptor atk_object_set_role$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_tree_sortable_set_default_sort_func$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle atk_object_set_role$MH = RuntimeHelper.downcallHandle(
-        "atk_object_set_role",
-        constants$1379.atk_object_set_role$FUNC
-    );
-    static final FunctionDescriptor atk_object_connect_property_change_handler$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_object_connect_property_change_handler$MH = RuntimeHelper.downcallHandle(
-        "atk_object_connect_property_change_handler",
-        constants$1379.atk_object_connect_property_change_handler$FUNC
+    static final MethodHandle gtk_tree_sortable_set_default_sort_func$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_sortable_set_default_sort_func",
+        constants$1379.gtk_tree_sortable_set_default_sort_func$FUNC
     );
-    static final FunctionDescriptor atk_object_remove_property_change_handler$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor gtk_tree_sortable_has_default_sort_func$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_object_remove_property_change_handler$MH = RuntimeHelper.downcallHandle(
-        "atk_object_remove_property_change_handler",
-        constants$1379.atk_object_remove_property_change_handler$FUNC
+    static final MethodHandle gtk_tree_sortable_has_default_sort_func$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_sortable_has_default_sort_func",
+        constants$1379.gtk_tree_sortable_has_default_sort_func$FUNC
     );
-    static final FunctionDescriptor atk_object_notify_state_change$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle atk_object_notify_state_change$MH = RuntimeHelper.downcallHandle(
-        "atk_object_notify_state_change",
-        constants$1379.atk_object_notify_state_change$FUNC
-    );
-    static final FunctionDescriptor atk_object_initialize$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor GtkCellCallback$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_object_initialize$MH = RuntimeHelper.downcallHandle(
-        "atk_object_initialize",
-        constants$1379.atk_object_initialize$FUNC
+    static final FunctionDescriptor GtkCellCallback_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle GtkCellCallback_UP$MH = RuntimeHelper.upcallHandle(GtkCellCallback.class, "apply", constants$1379.GtkCellCallback_UP$FUNC);
+    static final FunctionDescriptor GtkCellCallback_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GtkCellCallback_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$1379.GtkCellCallback_DOWN$FUNC
+    );
+    static final FunctionDescriptor GtkCellAllocCallback$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final FunctionDescriptor GtkCellAllocCallback_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GtkCellAllocCallback_UP$MH = RuntimeHelper.upcallHandle(GtkCellAllocCallback.class, "apply", constants$1379.GtkCellAllocCallback_UP$FUNC);
 }
 
 

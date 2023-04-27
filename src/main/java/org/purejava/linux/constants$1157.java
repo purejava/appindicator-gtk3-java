@@ -7,58 +7,58 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1157 {
+final class constants$1157 {
 
-    static final FunctionDescriptor cairo_pop_group$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_pop_group$MH = RuntimeHelper.downcallHandle(
-        "cairo_pop_group",
-        constants$1157.cairo_pop_group$FUNC
-    );
-    static final FunctionDescriptor cairo_pop_group_to_source$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_pop_group_to_source$MH = RuntimeHelper.downcallHandle(
-        "cairo_pop_group_to_source",
-        constants$1157.cairo_pop_group_to_source$FUNC
-    );
-    static final FunctionDescriptor cairo_set_operator$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1157() {}
+    static final FunctionDescriptor gdk_cursor_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle cairo_set_operator$MH = RuntimeHelper.downcallHandle(
-        "cairo_set_operator",
-        constants$1157.cairo_set_operator$FUNC
+    static final MethodHandle gdk_cursor_new$MH = RuntimeHelper.downcallHandle(
+        "gdk_cursor_new",
+        constants$1157.gdk_cursor_new$FUNC
     );
-    static final FunctionDescriptor cairo_set_source$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gdk_cursor_new_from_pixbuf$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gdk_cursor_new_from_pixbuf$MH = RuntimeHelper.downcallHandle(
+        "gdk_cursor_new_from_pixbuf",
+        constants$1157.gdk_cursor_new_from_pixbuf$FUNC
+    );
+    static final FunctionDescriptor gdk_cursor_new_from_surface$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle gdk_cursor_new_from_surface$MH = RuntimeHelper.downcallHandle(
+        "gdk_cursor_new_from_surface",
+        constants$1157.gdk_cursor_new_from_surface$FUNC
+    );
+    static final FunctionDescriptor gdk_cursor_new_from_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_set_source$MH = RuntimeHelper.downcallHandle(
-        "cairo_set_source",
-        constants$1157.cairo_set_source$FUNC
+    static final MethodHandle gdk_cursor_new_from_name$MH = RuntimeHelper.downcallHandle(
+        "gdk_cursor_new_from_name",
+        constants$1157.gdk_cursor_new_from_name$FUNC
     );
-    static final FunctionDescriptor cairo_set_source_rgb$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final FunctionDescriptor gdk_cursor_get_display$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_set_source_rgb$MH = RuntimeHelper.downcallHandle(
-        "cairo_set_source_rgb",
-        constants$1157.cairo_set_source_rgb$FUNC
+    static final MethodHandle gdk_cursor_get_display$MH = RuntimeHelper.downcallHandle(
+        "gdk_cursor_get_display",
+        constants$1157.gdk_cursor_get_display$FUNC
     );
-    static final FunctionDescriptor cairo_set_source_rgba$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final FunctionDescriptor gdk_cursor_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_set_source_rgba$MH = RuntimeHelper.downcallHandle(
-        "cairo_set_source_rgba",
-        constants$1157.cairo_set_source_rgba$FUNC
+    static final MethodHandle gdk_cursor_ref$MH = RuntimeHelper.downcallHandle(
+        "gdk_cursor_ref",
+        constants$1157.gdk_cursor_ref$FUNC
     );
 }
 

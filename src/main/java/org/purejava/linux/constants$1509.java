@@ -7,52 +7,50 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1509 {
+final class constants$1509 {
 
-    static final FunctionDescriptor gtk_about_dialog_get_website$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_about_dialog_get_website$MH = RuntimeHelper.downcallHandle(
-        "gtk_about_dialog_get_website",
-        constants$1509.gtk_about_dialog_get_website$FUNC
-    );
-    static final FunctionDescriptor gtk_about_dialog_set_website$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1509() {}
+    static final FunctionDescriptor gtk_buildable_get_internal_child$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_about_dialog_set_website$MH = RuntimeHelper.downcallHandle(
-        "gtk_about_dialog_set_website",
-        constants$1509.gtk_about_dialog_set_website$FUNC
+    static final MethodHandle gtk_buildable_get_internal_child$MH = RuntimeHelper.downcallHandle(
+        "gtk_buildable_get_internal_child",
+        constants$1509.gtk_buildable_get_internal_child$FUNC
     );
-    static final FunctionDescriptor gtk_about_dialog_get_website_label$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_button_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_button_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_button_get_type",
+        constants$1509.gtk_button_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_button_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_button_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_button_new",
+        constants$1509.gtk_button_new$FUNC
+    );
+    static final FunctionDescriptor gtk_button_new_with_label$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_about_dialog_get_website_label$MH = RuntimeHelper.downcallHandle(
-        "gtk_about_dialog_get_website_label",
-        constants$1509.gtk_about_dialog_get_website_label$FUNC
+    static final MethodHandle gtk_button_new_with_label$MH = RuntimeHelper.downcallHandle(
+        "gtk_button_new_with_label",
+        constants$1509.gtk_button_new_with_label$FUNC
     );
-    static final FunctionDescriptor gtk_about_dialog_set_website_label$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_button_new_from_icon_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_button_new_from_icon_name$MH = RuntimeHelper.downcallHandle(
+        "gtk_button_new_from_icon_name",
+        constants$1509.gtk_button_new_from_icon_name$FUNC
+    );
+    static final FunctionDescriptor gtk_button_new_from_stock$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_about_dialog_set_website_label$MH = RuntimeHelper.downcallHandle(
-        "gtk_about_dialog_set_website_label",
-        constants$1509.gtk_about_dialog_set_website_label$FUNC
-    );
-    static final FunctionDescriptor gtk_about_dialog_get_authors$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_about_dialog_get_authors$MH = RuntimeHelper.downcallHandle(
-        "gtk_about_dialog_get_authors",
-        constants$1509.gtk_about_dialog_get_authors$FUNC
-    );
-    static final FunctionDescriptor gtk_about_dialog_set_authors$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_about_dialog_set_authors$MH = RuntimeHelper.downcallHandle(
-        "gtk_about_dialog_set_authors",
-        constants$1509.gtk_about_dialog_set_authors$FUNC
+    static final MethodHandle gtk_button_new_from_stock$MH = RuntimeHelper.downcallHandle(
+        "gtk_button_new_from_stock",
+        constants$1509.gtk_button_new_from_stock$FUNC
     );
 }
 

@@ -7,59 +7,56 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$24 {
+final class constants$24 {
 
-    static final FunctionDescriptor g_ptr_array_remove_range$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$24() {}
+    static final FunctionDescriptor g_ptr_array_unref$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_ptr_array_unref$MH = RuntimeHelper.downcallHandle(
+        "g_ptr_array_unref",
+        constants$24.g_ptr_array_unref$FUNC
+    );
+    static final FunctionDescriptor g_ptr_array_set_free_func$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_ptr_array_set_free_func$MH = RuntimeHelper.downcallHandle(
+        "g_ptr_array_set_free_func",
+        constants$24.g_ptr_array_set_free_func$FUNC
+    );
+    static final FunctionDescriptor g_ptr_array_set_size$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_ptr_array_remove_range$MH = RuntimeHelper.downcallHandle(
-        "g_ptr_array_remove_range",
-        constants$24.g_ptr_array_remove_range$FUNC
+    static final MethodHandle g_ptr_array_set_size$MH = RuntimeHelper.downcallHandle(
+        "g_ptr_array_set_size",
+        constants$24.g_ptr_array_set_size$FUNC
     );
-    static final FunctionDescriptor g_ptr_array_add$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_ptr_array_remove_index$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_ptr_array_add$MH = RuntimeHelper.downcallHandle(
-        "g_ptr_array_add",
-        constants$24.g_ptr_array_add$FUNC
+    static final MethodHandle g_ptr_array_remove_index$MH = RuntimeHelper.downcallHandle(
+        "g_ptr_array_remove_index",
+        constants$24.g_ptr_array_remove_index$FUNC
     );
-    static final FunctionDescriptor g_ptr_array_extend$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_ptr_array_remove_index_fast$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_ptr_array_remove_index_fast$MH = RuntimeHelper.downcallHandle(
+        "g_ptr_array_remove_index_fast",
+        constants$24.g_ptr_array_remove_index_fast$FUNC
+    );
+    static final FunctionDescriptor g_ptr_array_steal_index$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_ptr_array_extend$MH = RuntimeHelper.downcallHandle(
-        "g_ptr_array_extend",
-        constants$24.g_ptr_array_extend$FUNC
-    );
-    static final FunctionDescriptor g_ptr_array_extend_and_steal$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_ptr_array_extend_and_steal$MH = RuntimeHelper.downcallHandle(
-        "g_ptr_array_extend_and_steal",
-        constants$24.g_ptr_array_extend_and_steal$FUNC
-    );
-    static final FunctionDescriptor g_ptr_array_insert$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_ptr_array_insert$MH = RuntimeHelper.downcallHandle(
-        "g_ptr_array_insert",
-        constants$24.g_ptr_array_insert$FUNC
-    );
-    static final FunctionDescriptor g_ptr_array_sort$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_ptr_array_sort$MH = RuntimeHelper.downcallHandle(
-        "g_ptr_array_sort",
-        constants$24.g_ptr_array_sort$FUNC
+    static final MethodHandle g_ptr_array_steal_index$MH = RuntimeHelper.downcallHandle(
+        "g_ptr_array_steal_index",
+        constants$24.g_ptr_array_steal_index$FUNC
     );
 }
 

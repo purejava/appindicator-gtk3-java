@@ -7,50 +7,58 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1555 {
+final class constants$1555 {
 
-    static final FunctionDescriptor gtk_tree_path_up$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1555() {}
+    static final FunctionDescriptor gtk_get_debug_flags$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
+    static final MethodHandle gtk_get_debug_flags$MH = RuntimeHelper.downcallHandle(
+        "gtk_get_debug_flags",
+        constants$1555.gtk_get_debug_flags$FUNC
+    );
+    static final FunctionDescriptor gtk_set_debug_flags$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_set_debug_flags$MH = RuntimeHelper.downcallHandle(
+        "gtk_set_debug_flags",
+        constants$1555.gtk_set_debug_flags$FUNC
+    );
+    static final FunctionDescriptor gtk_drag_dest_set$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_drag_dest_set$MH = RuntimeHelper.downcallHandle(
+        "gtk_drag_dest_set",
+        constants$1555.gtk_drag_dest_set$FUNC
+    );
+    static final FunctionDescriptor gtk_drag_dest_set_proxy$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_drag_dest_set_proxy$MH = RuntimeHelper.downcallHandle(
+        "gtk_drag_dest_set_proxy",
+        constants$1555.gtk_drag_dest_set_proxy$FUNC
+    );
+    static final FunctionDescriptor gtk_drag_dest_unset$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_tree_path_up$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_path_up",
-        constants$1555.gtk_tree_path_up$FUNC
+    static final MethodHandle gtk_drag_dest_unset$MH = RuntimeHelper.downcallHandle(
+        "gtk_drag_dest_unset",
+        constants$1555.gtk_drag_dest_unset$FUNC
     );
-    static final FunctionDescriptor gtk_tree_path_down$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_path_down$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_path_down",
-        constants$1555.gtk_tree_path_down$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_path_is_ancestor$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_drag_dest_find_target$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_tree_path_is_ancestor$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_path_is_ancestor",
-        constants$1555.gtk_tree_path_is_ancestor$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_path_is_descendant$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_path_is_descendant$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_path_is_descendant",
-        constants$1555.gtk_tree_path_is_descendant$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_row_reference_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_tree_row_reference_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_row_reference_get_type",
-        constants$1555.gtk_tree_row_reference_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_row_reference_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_row_reference_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_row_reference_new",
-        constants$1555.gtk_tree_row_reference_new$FUNC
+    static final MethodHandle gtk_drag_dest_find_target$MH = RuntimeHelper.downcallHandle(
+        "gtk_drag_dest_find_target",
+        constants$1555.gtk_drag_dest_find_target$FUNC
     );
 }
 

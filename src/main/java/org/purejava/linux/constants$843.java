@@ -7,58 +7,56 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$843 {
+final class constants$843 {
 
-    static final FunctionDescriptor g_subprocess_launcher_spawnv$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$843() {}
+    static final FunctionDescriptor hb_set_destroy$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_subprocess_launcher_spawnv$MH = RuntimeHelper.downcallHandle(
-        "g_subprocess_launcher_spawnv",
-        constants$843.g_subprocess_launcher_spawnv$FUNC
+    static final MethodHandle hb_set_destroy$MH = RuntimeHelper.downcallHandle(
+        "hb_set_destroy",
+        constants$843.hb_set_destroy$FUNC
     );
-    static final FunctionDescriptor g_subprocess_launcher_set_environ$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor hb_set_set_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_subprocess_launcher_set_environ$MH = RuntimeHelper.downcallHandle(
-        "g_subprocess_launcher_set_environ",
-        constants$843.g_subprocess_launcher_set_environ$FUNC
-    );
-    static final FunctionDescriptor g_subprocess_launcher_setenv$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_subprocess_launcher_setenv$MH = RuntimeHelper.downcallHandle(
-        "g_subprocess_launcher_setenv",
-        constants$843.g_subprocess_launcher_setenv$FUNC
+    static final MethodHandle hb_set_set_user_data$MH = RuntimeHelper.downcallHandle(
+        "hb_set_set_user_data",
+        constants$843.hb_set_set_user_data$FUNC
     );
-    static final FunctionDescriptor g_subprocess_launcher_unsetenv$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor hb_set_get_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_subprocess_launcher_unsetenv$MH = RuntimeHelper.downcallHandle(
-        "g_subprocess_launcher_unsetenv",
-        constants$843.g_subprocess_launcher_unsetenv$FUNC
+    static final MethodHandle hb_set_get_user_data$MH = RuntimeHelper.downcallHandle(
+        "hb_set_get_user_data",
+        constants$843.hb_set_get_user_data$FUNC
     );
-    static final FunctionDescriptor g_subprocess_launcher_getenv$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor hb_set_allocation_successful$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_subprocess_launcher_getenv$MH = RuntimeHelper.downcallHandle(
-        "g_subprocess_launcher_getenv",
-        constants$843.g_subprocess_launcher_getenv$FUNC
+    static final MethodHandle hb_set_allocation_successful$MH = RuntimeHelper.downcallHandle(
+        "hb_set_allocation_successful",
+        constants$843.hb_set_allocation_successful$FUNC
     );
-    static final FunctionDescriptor g_subprocess_launcher_set_cwd$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor hb_set_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_subprocess_launcher_set_cwd$MH = RuntimeHelper.downcallHandle(
-        "g_subprocess_launcher_set_cwd",
-        constants$843.g_subprocess_launcher_set_cwd$FUNC
+    static final MethodHandle hb_set_copy$MH = RuntimeHelper.downcallHandle(
+        "hb_set_copy",
+        constants$843.hb_set_copy$FUNC
+    );
+    static final FunctionDescriptor hb_set_clear$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle hb_set_clear$MH = RuntimeHelper.downcallHandle(
+        "hb_set_clear",
+        constants$843.hb_set_clear$FUNC
     );
 }
 

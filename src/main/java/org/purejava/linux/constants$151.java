@@ -7,53 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$151 {
+final class constants$151 {
 
-    static final FunctionDescriptor g_hmac_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$151() {}
+    static final FunctionDescriptor g_str_hash$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_str_hash$MH = RuntimeHelper.downcallHandle(
+        "g_str_hash",
+        constants$151.g_str_hash$FUNC
+    );
+    static final FunctionDescriptor g_int_equal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_hmac_new$MH = RuntimeHelper.downcallHandle(
-        "g_hmac_new",
-        constants$151.g_hmac_new$FUNC
-    );
-    static final FunctionDescriptor g_hmac_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_hmac_copy$MH = RuntimeHelper.downcallHandle(
-        "g_hmac_copy",
-        constants$151.g_hmac_copy$FUNC
+    static final MethodHandle g_int_equal$MH = RuntimeHelper.downcallHandle(
+        "g_int_equal",
+        constants$151.g_int_equal$FUNC
     );
-    static final FunctionDescriptor g_hmac_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_int_hash$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_hmac_ref$MH = RuntimeHelper.downcallHandle(
-        "g_hmac_ref",
-        constants$151.g_hmac_ref$FUNC
+    static final MethodHandle g_int_hash$MH = RuntimeHelper.downcallHandle(
+        "g_int_hash",
+        constants$151.g_int_hash$FUNC
     );
-    static final FunctionDescriptor g_hmac_unref$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_hmac_unref$MH = RuntimeHelper.downcallHandle(
-        "g_hmac_unref",
-        constants$151.g_hmac_unref$FUNC
-    );
-    static final FunctionDescriptor g_hmac_update$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_int64_equal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_hmac_update$MH = RuntimeHelper.downcallHandle(
-        "g_hmac_update",
-        constants$151.g_hmac_update$FUNC
-    );
-    static final FunctionDescriptor g_hmac_get_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_hmac_get_string$MH = RuntimeHelper.downcallHandle(
-        "g_hmac_get_string",
-        constants$151.g_hmac_get_string$FUNC
+    static final MethodHandle g_int64_equal$MH = RuntimeHelper.downcallHandle(
+        "g_int64_equal",
+        constants$151.g_int64_equal$FUNC
+    );
+    static final FunctionDescriptor g_int64_hash$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_int64_hash$MH = RuntimeHelper.downcallHandle(
+        "g_int64_hash",
+        constants$151.g_int64_hash$FUNC
+    );
+    static final FunctionDescriptor g_double_equal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_double_equal$MH = RuntimeHelper.downcallHandle(
+        "g_double_equal",
+        constants$151.g_double_equal$FUNC
     );
 }
 

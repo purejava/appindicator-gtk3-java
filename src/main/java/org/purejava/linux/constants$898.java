@@ -7,49 +7,57 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$898 {
+final class constants$898 {
 
-    static final FunctionDescriptor glib_autoptr_clear_GDBusAuthObserver$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$898() {}
+    static final FunctionDescriptor pango_coverage_unref$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GDBusAuthObserver$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GDBusAuthObserver",
-        constants$898.glib_autoptr_clear_GDBusAuthObserver$FUNC
+    static final MethodHandle pango_coverage_unref$MH = RuntimeHelper.downcallHandle(
+        "pango_coverage_unref",
+        constants$898.pango_coverage_unref$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GDBusAuthObserver$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_coverage_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GDBusAuthObserver$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GDBusAuthObserver",
-        constants$898.glib_autoptr_cleanup_GDBusAuthObserver$FUNC
+    static final MethodHandle pango_coverage_copy$MH = RuntimeHelper.downcallHandle(
+        "pango_coverage_copy",
+        constants$898.pango_coverage_copy$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GDBusAuthObserver$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_coverage_get$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle pango_coverage_get$MH = RuntimeHelper.downcallHandle(
+        "pango_coverage_get",
+        constants$898.pango_coverage_get$FUNC
+    );
+    static final FunctionDescriptor pango_coverage_set$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle pango_coverage_set$MH = RuntimeHelper.downcallHandle(
+        "pango_coverage_set",
+        constants$898.pango_coverage_set$FUNC
+    );
+    static final FunctionDescriptor pango_coverage_max$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GDBusAuthObserver$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GDBusAuthObserver",
-        constants$898.glib_listautoptr_cleanup_GDBusAuthObserver$FUNC
+    static final MethodHandle pango_coverage_max$MH = RuntimeHelper.downcallHandle(
+        "pango_coverage_max",
+        constants$898.pango_coverage_max$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GDBusAuthObserver$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor pango_coverage_to_bytes$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GDBusAuthObserver$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GDBusAuthObserver",
-        constants$898.glib_slistautoptr_cleanup_GDBusAuthObserver$FUNC
-    );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GDBusAuthObserver$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_queueautoptr_cleanup_GDBusAuthObserver$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GDBusAuthObserver",
-        constants$898.glib_queueautoptr_cleanup_GDBusAuthObserver$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_clear_GDBusConnection$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_autoptr_clear_GDBusConnection$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GDBusConnection",
-        constants$898.glib_autoptr_clear_GDBusConnection$FUNC
+    static final MethodHandle pango_coverage_to_bytes$MH = RuntimeHelper.downcallHandle(
+        "pango_coverage_to_bytes",
+        constants$898.pango_coverage_to_bytes$FUNC
     );
 }
 

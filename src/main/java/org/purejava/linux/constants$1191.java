@@ -7,49 +7,62 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1191 {
+final class constants$1191 {
 
-    static final FunctionDescriptor cairo_surface_destroy$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1191() {}
+    static final FunctionDescriptor gtk_accel_group_connect_by_path$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_surface_destroy$MH = RuntimeHelper.downcallHandle(
-        "cairo_surface_destroy",
-        constants$1191.cairo_surface_destroy$FUNC
+    static final MethodHandle gtk_accel_group_connect_by_path$MH = RuntimeHelper.downcallHandle(
+        "gtk_accel_group_connect_by_path",
+        constants$1191.gtk_accel_group_connect_by_path$FUNC
     );
-    static final FunctionDescriptor cairo_surface_get_device$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_accel_group_disconnect$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_surface_get_device$MH = RuntimeHelper.downcallHandle(
-        "cairo_surface_get_device",
-        constants$1191.cairo_surface_get_device$FUNC
+    static final MethodHandle gtk_accel_group_disconnect$MH = RuntimeHelper.downcallHandle(
+        "gtk_accel_group_disconnect",
+        constants$1191.gtk_accel_group_disconnect$FUNC
     );
-    static final FunctionDescriptor cairo_surface_get_reference_count$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_accel_group_disconnect_key$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_accel_group_disconnect_key$MH = RuntimeHelper.downcallHandle(
+        "gtk_accel_group_disconnect_key",
+        constants$1191.gtk_accel_group_disconnect_key$FUNC
+    );
+    static final FunctionDescriptor gtk_accel_group_activate$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_accel_group_activate$MH = RuntimeHelper.downcallHandle(
+        "gtk_accel_group_activate",
+        constants$1191.gtk_accel_group_activate$FUNC
+    );
+    static final FunctionDescriptor _gtk_accel_group_attach$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_surface_get_reference_count$MH = RuntimeHelper.downcallHandle(
-        "cairo_surface_get_reference_count",
-        constants$1191.cairo_surface_get_reference_count$FUNC
+    static final MethodHandle _gtk_accel_group_attach$MH = RuntimeHelper.downcallHandle(
+        "_gtk_accel_group_attach",
+        constants$1191._gtk_accel_group_attach$FUNC
     );
-    static final FunctionDescriptor cairo_surface_status$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor _gtk_accel_group_detach$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_surface_status$MH = RuntimeHelper.downcallHandle(
-        "cairo_surface_status",
-        constants$1191.cairo_surface_status$FUNC
-    );
-    static final FunctionDescriptor cairo_surface_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_surface_get_type$MH = RuntimeHelper.downcallHandle(
-        "cairo_surface_get_type",
-        constants$1191.cairo_surface_get_type$FUNC
-    );
-    static final FunctionDescriptor cairo_surface_get_content$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_surface_get_content$MH = RuntimeHelper.downcallHandle(
-        "cairo_surface_get_content",
-        constants$1191.cairo_surface_get_content$FUNC
+    static final MethodHandle _gtk_accel_group_detach$MH = RuntimeHelper.downcallHandle(
+        "_gtk_accel_group_detach",
+        constants$1191._gtk_accel_group_detach$FUNC
     );
 }
 

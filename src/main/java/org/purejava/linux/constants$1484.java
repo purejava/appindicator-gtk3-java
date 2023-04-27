@@ -7,52 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1484 {
+final class constants$1484 {
 
-    static final FunctionDescriptor gtk_window_get_attached_to$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_window_get_attached_to$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_get_attached_to",
-        constants$1484.gtk_window_get_attached_to$FUNC
-    );
-    static final FunctionDescriptor gtk_window_set_opacity$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle gtk_window_set_opacity$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_set_opacity",
-        constants$1484.gtk_window_set_opacity$FUNC
-    );
-    static final FunctionDescriptor gtk_window_get_opacity$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_window_get_opacity$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_get_opacity",
-        constants$1484.gtk_window_get_opacity$FUNC
-    );
-    static final FunctionDescriptor gtk_window_set_type_hint$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1484() {}
+    static final FunctionDescriptor gtk_combo_box_set_column_span_column$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_window_set_type_hint$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_set_type_hint",
-        constants$1484.gtk_window_set_type_hint$FUNC
+    static final MethodHandle gtk_combo_box_set_column_span_column$MH = RuntimeHelper.downcallHandle(
+        "gtk_combo_box_set_column_span_column",
+        constants$1484.gtk_combo_box_set_column_span_column$FUNC
     );
-    static final FunctionDescriptor gtk_window_get_type_hint$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_combo_box_get_add_tearoffs$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_window_get_type_hint$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_get_type_hint",
-        constants$1484.gtk_window_get_type_hint$FUNC
+    static final MethodHandle gtk_combo_box_get_add_tearoffs$MH = RuntimeHelper.downcallHandle(
+        "gtk_combo_box_get_add_tearoffs",
+        constants$1484.gtk_combo_box_get_add_tearoffs$FUNC
     );
-    static final FunctionDescriptor gtk_window_set_skip_taskbar_hint$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_combo_box_set_add_tearoffs$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_window_set_skip_taskbar_hint$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_set_skip_taskbar_hint",
-        constants$1484.gtk_window_set_skip_taskbar_hint$FUNC
+    static final MethodHandle gtk_combo_box_set_add_tearoffs$MH = RuntimeHelper.downcallHandle(
+        "gtk_combo_box_set_add_tearoffs",
+        constants$1484.gtk_combo_box_set_add_tearoffs$FUNC
+    );
+    static final FunctionDescriptor gtk_combo_box_get_title$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_combo_box_get_title$MH = RuntimeHelper.downcallHandle(
+        "gtk_combo_box_get_title",
+        constants$1484.gtk_combo_box_get_title$FUNC
+    );
+    static final FunctionDescriptor gtk_combo_box_set_title$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_combo_box_set_title$MH = RuntimeHelper.downcallHandle(
+        "gtk_combo_box_set_title",
+        constants$1484.gtk_combo_box_set_title$FUNC
+    );
+    static final FunctionDescriptor gtk_combo_box_get_focus_on_click$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_combo_box_get_focus_on_click$MH = RuntimeHelper.downcallHandle(
+        "gtk_combo_box_get_focus_on_click",
+        constants$1484.gtk_combo_box_get_focus_on_click$FUNC
     );
 }
 

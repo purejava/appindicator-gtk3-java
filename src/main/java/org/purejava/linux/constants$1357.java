@@ -7,49 +7,59 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1357 {
+final class constants$1357 {
 
-    static final FunctionDescriptor glib_listautoptr_cleanup_GdkDisplayManager$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1357() {}
+    static final FunctionDescriptor gtk_box_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_box_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_box_get_type",
+        constants$1357.gtk_box_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_box_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_box_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_box_new",
+        constants$1357.gtk_box_new$FUNC
+    );
+    static final FunctionDescriptor gtk_box_pack_start$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_box_pack_start$MH = RuntimeHelper.downcallHandle(
+        "gtk_box_pack_start",
+        constants$1357.gtk_box_pack_start$FUNC
+    );
+    static final FunctionDescriptor gtk_box_pack_end$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_box_pack_end$MH = RuntimeHelper.downcallHandle(
+        "gtk_box_pack_end",
+        constants$1357.gtk_box_pack_end$FUNC
+    );
+    static final FunctionDescriptor gtk_box_set_homogeneous$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_box_set_homogeneous$MH = RuntimeHelper.downcallHandle(
+        "gtk_box_set_homogeneous",
+        constants$1357.gtk_box_set_homogeneous$FUNC
+    );
+    static final FunctionDescriptor gtk_box_get_homogeneous$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GdkDisplayManager$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GdkDisplayManager",
-        constants$1357.glib_listautoptr_cleanup_GdkDisplayManager$FUNC
-    );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GdkDisplayManager$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_slistautoptr_cleanup_GdkDisplayManager$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GdkDisplayManager",
-        constants$1357.glib_slistautoptr_cleanup_GdkDisplayManager$FUNC
-    );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GdkDisplayManager$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_queueautoptr_cleanup_GdkDisplayManager$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GdkDisplayManager",
-        constants$1357.glib_queueautoptr_cleanup_GdkDisplayManager$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_clear_GdkDragContext$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_autoptr_clear_GdkDragContext$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GdkDragContext",
-        constants$1357.glib_autoptr_clear_GdkDragContext$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_cleanup_GdkDragContext$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_autoptr_cleanup_GdkDragContext$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GdkDragContext",
-        constants$1357.glib_autoptr_cleanup_GdkDragContext$FUNC
-    );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GdkDragContext$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_listautoptr_cleanup_GdkDragContext$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GdkDragContext",
-        constants$1357.glib_listautoptr_cleanup_GdkDragContext$FUNC
+    static final MethodHandle gtk_box_get_homogeneous$MH = RuntimeHelper.downcallHandle(
+        "gtk_box_get_homogeneous",
+        constants$1357.gtk_box_get_homogeneous$FUNC
     );
 }
 

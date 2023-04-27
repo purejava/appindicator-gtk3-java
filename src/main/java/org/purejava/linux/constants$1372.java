@@ -7,47 +7,60 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1372 {
+final class constants$1372 {
 
-    static final FunctionDescriptor gtk_border_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_border_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_border_new",
-        constants$1372.gtk_border_new$FUNC
-    );
-    static final FunctionDescriptor gtk_border_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1372() {}
+    static final FunctionDescriptor gtk_tree_model_row_has_child_toggled$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_border_copy$MH = RuntimeHelper.downcallHandle(
-        "gtk_border_copy",
-        constants$1372.gtk_border_copy$FUNC
+    static final MethodHandle gtk_tree_model_row_has_child_toggled$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_model_row_has_child_toggled",
+        constants$1372.gtk_tree_model_row_has_child_toggled$FUNC
     );
-    static final FunctionDescriptor gtk_border_free$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_tree_model_row_deleted$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_border_free$MH = RuntimeHelper.downcallHandle(
-        "gtk_border_free",
-        constants$1372.gtk_border_free$FUNC
+    static final MethodHandle gtk_tree_model_row_deleted$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_model_row_deleted",
+        constants$1372.gtk_tree_model_row_deleted$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GtkBorder$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_tree_model_rows_reordered$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GtkBorder$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GtkBorder",
-        constants$1372.glib_autoptr_clear_GtkBorder$FUNC
+    static final MethodHandle gtk_tree_model_rows_reordered$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_model_rows_reordered",
+        constants$1372.gtk_tree_model_rows_reordered$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GtkBorder$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_tree_model_rows_reordered_with_length$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_tree_model_rows_reordered_with_length$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_model_rows_reordered_with_length",
+        constants$1372.gtk_tree_model_rows_reordered_with_length$FUNC
+    );
+    static final FunctionDescriptor gtk_cell_editable_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_cell_editable_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_editable_get_type",
+        constants$1372.gtk_cell_editable_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_cell_editable_start_editing$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GtkBorder$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GtkBorder",
-        constants$1372.glib_autoptr_cleanup_GtkBorder$FUNC
-    );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GtkBorder$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle glib_listautoptr_cleanup_GtkBorder$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GtkBorder",
-        constants$1372.glib_listautoptr_cleanup_GtkBorder$FUNC
+    static final MethodHandle gtk_cell_editable_start_editing$MH = RuntimeHelper.downcallHandle(
+        "gtk_cell_editable_start_editing",
+        constants$1372.gtk_cell_editable_start_editing$FUNC
     );
 }
 

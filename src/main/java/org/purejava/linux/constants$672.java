@@ -7,69 +7,39 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$672 {
+final class constants$672 {
 
-    static final FunctionDescriptor g_file_query_info_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$672() {}
+    static final FunctionDescriptor g_io_stream_splice_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_io_stream_splice_flags_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_io_stream_splice_flags_get_type",
+        constants$672.g_io_stream_splice_flags_get_type$FUNC
     );
-    static final MethodHandle g_file_query_info_async$MH = RuntimeHelper.downcallHandle(
-        "g_file_query_info_async",
-        constants$672.g_file_query_info_async$FUNC
+    static final FunctionDescriptor g_emblem_origin_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_emblem_origin_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_emblem_origin_get_type",
+        constants$672.g_emblem_origin_get_type$FUNC
     );
-    static final FunctionDescriptor g_file_query_info_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_resolver_error_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_resolver_error_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_resolver_error_get_type",
+        constants$672.g_resolver_error_get_type$FUNC
     );
-    static final MethodHandle g_file_query_info_finish$MH = RuntimeHelper.downcallHandle(
-        "g_file_query_info_finish",
-        constants$672.g_file_query_info_finish$FUNC
+    static final FunctionDescriptor g_resolver_record_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_resolver_record_type_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_resolver_record_type_get_type",
+        constants$672.g_resolver_record_type_get_type$FUNC
     );
-    static final FunctionDescriptor g_file_query_filesystem_info$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_resource_error_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_resource_error_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_resource_error_get_type",
+        constants$672.g_resource_error_get_type$FUNC
     );
-    static final MethodHandle g_file_query_filesystem_info$MH = RuntimeHelper.downcallHandle(
-        "g_file_query_filesystem_info",
-        constants$672.g_file_query_filesystem_info$FUNC
-    );
-    static final FunctionDescriptor g_file_query_filesystem_info_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_query_filesystem_info_async$MH = RuntimeHelper.downcallHandle(
-        "g_file_query_filesystem_info_async",
-        constants$672.g_file_query_filesystem_info_async$FUNC
-    );
-    static final FunctionDescriptor g_file_query_filesystem_info_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_query_filesystem_info_finish$MH = RuntimeHelper.downcallHandle(
-        "g_file_query_filesystem_info_finish",
-        constants$672.g_file_query_filesystem_info_finish$FUNC
-    );
-    static final FunctionDescriptor g_file_find_enclosing_mount$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_find_enclosing_mount$MH = RuntimeHelper.downcallHandle(
-        "g_file_find_enclosing_mount",
-        constants$672.g_file_find_enclosing_mount$FUNC
+    static final FunctionDescriptor g_resource_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_resource_flags_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_resource_flags_get_type",
+        constants$672.g_resource_flags_get_type$FUNC
     );
 }
 

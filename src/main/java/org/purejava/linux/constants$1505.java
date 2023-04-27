@@ -7,49 +7,61 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1505 {
+final class constants$1505 {
 
-    static final FunctionDescriptor gtk_dialog_get_content_area$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1505() {}
+    static final FunctionDescriptor gtk_builder_set_translation_domain$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_dialog_get_content_area$MH = RuntimeHelper.downcallHandle(
-        "gtk_dialog_get_content_area",
-        constants$1505.gtk_dialog_get_content_area$FUNC
+    static final MethodHandle gtk_builder_set_translation_domain$MH = RuntimeHelper.downcallHandle(
+        "gtk_builder_set_translation_domain",
+        constants$1505.gtk_builder_set_translation_domain$FUNC
     );
-    static final FunctionDescriptor gtk_dialog_get_header_bar$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_builder_get_translation_domain$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_dialog_get_header_bar$MH = RuntimeHelper.downcallHandle(
-        "gtk_dialog_get_header_bar",
-        constants$1505.gtk_dialog_get_header_bar$FUNC
+    static final MethodHandle gtk_builder_get_translation_domain$MH = RuntimeHelper.downcallHandle(
+        "gtk_builder_get_translation_domain",
+        constants$1505.gtk_builder_get_translation_domain$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GtkDialog$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_builder_get_type_from_name$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GtkDialog$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GtkDialog",
-        constants$1505.glib_autoptr_clear_GtkDialog$FUNC
+    static final MethodHandle gtk_builder_get_type_from_name$MH = RuntimeHelper.downcallHandle(
+        "gtk_builder_get_type_from_name",
+        constants$1505.gtk_builder_get_type_from_name$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GtkDialog$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_builder_value_from_string$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GtkDialog$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GtkDialog",
-        constants$1505.glib_autoptr_cleanup_GtkDialog$FUNC
+    static final MethodHandle gtk_builder_value_from_string$MH = RuntimeHelper.downcallHandle(
+        "gtk_builder_value_from_string",
+        constants$1505.gtk_builder_value_from_string$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GtkDialog$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_builder_value_from_string_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GtkDialog$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GtkDialog",
-        constants$1505.glib_listautoptr_cleanup_GtkDialog$FUNC
+    static final MethodHandle gtk_builder_value_from_string_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_builder_value_from_string_type",
+        constants$1505.gtk_builder_value_from_string_type$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GtkDialog$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_builder_new_from_file$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GtkDialog$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GtkDialog",
-        constants$1505.glib_slistautoptr_cleanup_GtkDialog$FUNC
+    static final MethodHandle gtk_builder_new_from_file$MH = RuntimeHelper.downcallHandle(
+        "gtk_builder_new_from_file",
+        constants$1505.gtk_builder_new_from_file$FUNC
     );
 }
 

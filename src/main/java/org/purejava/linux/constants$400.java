@@ -7,49 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$400 {
+final class constants$400 {
 
-    static final FunctionDescriptor glib_listautoptr_cleanup_GRegex$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$400() {}
+    static final FunctionDescriptor g_value_take_param$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GRegex$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GRegex",
-        constants$400.glib_listautoptr_cleanup_GRegex$FUNC
+    static final MethodHandle g_value_take_param$MH = RuntimeHelper.downcallHandle(
+        "g_value_take_param",
+        constants$400.g_value_take_param$FUNC
     );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GRegex$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_value_set_param_take_ownership$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GRegex$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GRegex",
-        constants$400.glib_slistautoptr_cleanup_GRegex$FUNC
+    static final MethodHandle g_value_set_param_take_ownership$MH = RuntimeHelper.downcallHandle(
+        "g_value_set_param_take_ownership",
+        constants$400.g_value_set_param_take_ownership$FUNC
     );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GRegex$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_param_spec_get_default_value$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GRegex$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GRegex",
-        constants$400.glib_queueautoptr_cleanup_GRegex$FUNC
+    static final MethodHandle g_param_spec_get_default_value$MH = RuntimeHelper.downcallHandle(
+        "g_param_spec_get_default_value",
+        constants$400.g_param_spec_get_default_value$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_clear_GMatchInfo$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_param_spec_get_name_quark$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GMatchInfo$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GMatchInfo",
-        constants$400.glib_autoptr_clear_GMatchInfo$FUNC
+    static final MethodHandle g_param_spec_get_name_quark$MH = RuntimeHelper.downcallHandle(
+        "g_param_spec_get_name_quark",
+        constants$400.g_param_spec_get_name_quark$FUNC
     );
-    static final FunctionDescriptor glib_autoptr_cleanup_GMatchInfo$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_param_type_register_static$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GMatchInfo$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GMatchInfo",
-        constants$400.glib_autoptr_cleanup_GMatchInfo$FUNC
+    static final MethodHandle g_param_type_register_static$MH = RuntimeHelper.downcallHandle(
+        "g_param_type_register_static",
+        constants$400.g_param_type_register_static$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GMatchInfo$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_param_spec_is_valid_name$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GMatchInfo$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GMatchInfo",
-        constants$400.glib_listautoptr_cleanup_GMatchInfo$FUNC
+    static final MethodHandle g_param_spec_is_valid_name$MH = RuntimeHelper.downcallHandle(
+        "g_param_spec_is_valid_name",
+        constants$400.g_param_spec_is_valid_name$FUNC
     );
 }
 

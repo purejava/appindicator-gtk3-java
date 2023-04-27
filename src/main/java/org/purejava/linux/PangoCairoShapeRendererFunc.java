@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * void (*PangoCairoShapeRendererFunc)(struct _cairo* cr,struct _PangoAttrShape* attr,int do_path,void* data);
+ * }
+ */
 public interface PangoCairoShapeRendererFunc {
 
-    void apply(java.lang.foreign.MemoryAddress cr, java.lang.foreign.MemoryAddress attr, int do_path, java.lang.foreign.MemoryAddress data);
-    static MemorySegment allocate(PangoCairoShapeRendererFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(PangoCairoShapeRendererFunc.class, fi, constants$1312.PangoCairoShapeRendererFunc$FUNC, session);
+    void apply(java.lang.foreign.MemorySegment clipboard, java.lang.foreign.MemorySegment atoms, int n_atoms, java.lang.foreign.MemorySegment data);
+    static MemorySegment allocate(PangoCairoShapeRendererFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$1149.PangoCairoShapeRendererFunc_UP$MH, fi, constants$1149.PangoCairoShapeRendererFunc$FUNC, scope);
     }
-    static PangoCairoShapeRendererFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _cr, java.lang.foreign.MemoryAddress _attr, int _do_path, java.lang.foreign.MemoryAddress _data) -> {
+    static PangoCairoShapeRendererFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _clipboard, java.lang.foreign.MemorySegment _atoms, int _n_atoms, java.lang.foreign.MemorySegment _data) -> {
             try {
-                constants$1312.PangoCairoShapeRendererFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_cr, (java.lang.foreign.Addressable)_attr, _do_path, (java.lang.foreign.Addressable)_data);
+                constants$1149.PangoCairoShapeRendererFunc_DOWN$MH.invokeExact(symbol, _clipboard, _atoms, _n_atoms, _data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

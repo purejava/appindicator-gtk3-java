@@ -7,51 +7,49 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$327 {
+final class constants$327 {
 
-    static final FunctionDescriptor g_tree_node_previous$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$327() {}
+    static final FunctionDescriptor g_timer_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle g_timer_new$MH = RuntimeHelper.downcallHandle(
+        "g_timer_new",
+        constants$327.g_timer_new$FUNC
+    );
+    static final FunctionDescriptor g_timer_destroy$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_tree_node_previous$MH = RuntimeHelper.downcallHandle(
-        "g_tree_node_previous",
-        constants$327.g_tree_node_previous$FUNC
+    static final MethodHandle g_timer_destroy$MH = RuntimeHelper.downcallHandle(
+        "g_timer_destroy",
+        constants$327.g_timer_destroy$FUNC
     );
-    static final FunctionDescriptor g_tree_node_next$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_timer_start$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_tree_node_next$MH = RuntimeHelper.downcallHandle(
-        "g_tree_node_next",
-        constants$327.g_tree_node_next$FUNC
+    static final MethodHandle g_timer_start$MH = RuntimeHelper.downcallHandle(
+        "g_timer_start",
+        constants$327.g_timer_start$FUNC
     );
-    static final FunctionDescriptor g_tree_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_timer_stop$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_tree_ref$MH = RuntimeHelper.downcallHandle(
-        "g_tree_ref",
-        constants$327.g_tree_ref$FUNC
+    static final MethodHandle g_timer_stop$MH = RuntimeHelper.downcallHandle(
+        "g_timer_stop",
+        constants$327.g_timer_stop$FUNC
     );
-    static final FunctionDescriptor g_tree_unref$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_timer_reset$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_tree_unref$MH = RuntimeHelper.downcallHandle(
-        "g_tree_unref",
-        constants$327.g_tree_unref$FUNC
+    static final MethodHandle g_timer_reset$MH = RuntimeHelper.downcallHandle(
+        "g_timer_reset",
+        constants$327.g_timer_reset$FUNC
     );
-    static final FunctionDescriptor g_tree_destroy$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_timer_continue$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_tree_destroy$MH = RuntimeHelper.downcallHandle(
-        "g_tree_destroy",
-        constants$327.g_tree_destroy$FUNC
-    );
-    static final FunctionDescriptor g_tree_insert_node$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_tree_insert_node$MH = RuntimeHelper.downcallHandle(
-        "g_tree_insert_node",
-        constants$327.g_tree_insert_node$FUNC
+    static final MethodHandle g_timer_continue$MH = RuntimeHelper.downcallHandle(
+        "g_timer_continue",
+        constants$327.g_timer_continue$FUNC
     );
 }
 

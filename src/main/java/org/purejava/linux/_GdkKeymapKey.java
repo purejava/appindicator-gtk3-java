@@ -7,9 +7,18 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GdkKeymapKey {
+ *     guint keycode;
+ *     gint group;
+ *     gint level;
+ * };
+ * }
+ */
 public class _GdkKeymapKey {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_INT$LAYOUT.withName("keycode"),
         Constants$root.C_INT$LAYOUT.withName("group"),
         Constants$root.C_INT$LAYOUT.withName("level")
@@ -21,10 +30,22 @@ public class _GdkKeymapKey {
     public static VarHandle keycode$VH() {
         return _GdkKeymapKey.keycode$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * guint keycode;
+     * }
+     */
     public static int keycode$get(MemorySegment seg) {
         return (int)_GdkKeymapKey.keycode$VH.get(seg);
     }
-    public static void keycode$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * guint keycode;
+     * }
+     */
+    public static void keycode$set(MemorySegment seg, int x) {
         _GdkKeymapKey.keycode$VH.set(seg, x);
     }
     public static int keycode$get(MemorySegment seg, long index) {
@@ -37,10 +58,22 @@ public class _GdkKeymapKey {
     public static VarHandle group$VH() {
         return _GdkKeymapKey.group$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gint group;
+     * }
+     */
     public static int group$get(MemorySegment seg) {
         return (int)_GdkKeymapKey.group$VH.get(seg);
     }
-    public static void group$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gint group;
+     * }
+     */
+    public static void group$set(MemorySegment seg, int x) {
         _GdkKeymapKey.group$VH.set(seg, x);
     }
     public static int group$get(MemorySegment seg, long index) {
@@ -53,10 +86,22 @@ public class _GdkKeymapKey {
     public static VarHandle level$VH() {
         return _GdkKeymapKey.level$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gint level;
+     * }
+     */
     public static int level$get(MemorySegment seg) {
         return (int)_GdkKeymapKey.level$VH.get(seg);
     }
-    public static void level$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gint level;
+     * }
+     */
+    public static void level$set(MemorySegment seg, int x) {
         _GdkKeymapKey.level$VH.set(seg, x);
     }
     public static int level$get(MemorySegment seg, long index) {
@@ -67,10 +112,10 @@ public class _GdkKeymapKey {
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

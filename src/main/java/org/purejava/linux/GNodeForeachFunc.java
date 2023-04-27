@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * void (*GNodeForeachFunc)(struct _GNode* node,void* data);
+ * }
+ */
 public interface GNodeForeachFunc {
 
-    void apply(java.lang.foreign.MemoryAddress node, java.lang.foreign.MemoryAddress data);
-    static MemorySegment allocate(GNodeForeachFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GNodeForeachFunc.class, fi, constants$133.GNodeForeachFunc$FUNC, session);
+    void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+    static MemorySegment allocate(GNodeForeachFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$134.GNodeForeachFunc_UP$MH, fi, constants$134.GNodeForeachFunc$FUNC, scope);
     }
-    static GNodeForeachFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _node, java.lang.foreign.MemoryAddress _data) -> {
+    static GNodeForeachFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
             try {
-                constants$133.GNodeForeachFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_node, (java.lang.foreign.Addressable)_data);
+                constants$134.GNodeForeachFunc_DOWN$MH.invokeExact(symbol, _tag, _data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

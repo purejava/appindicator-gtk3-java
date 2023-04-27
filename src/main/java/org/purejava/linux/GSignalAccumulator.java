@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * int (*GSignalAccumulator)(struct _GSignalInvocationHint* ihint,struct _GValue* return_accu,struct _GValue* handler_return,void* data);
+ * }
+ */
 public interface GSignalAccumulator {
 
-    int apply(java.lang.foreign.MemoryAddress ihint, java.lang.foreign.MemoryAddress return_accu, java.lang.foreign.MemoryAddress handler_return, java.lang.foreign.MemoryAddress data);
-    static MemorySegment allocate(GSignalAccumulator fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GSignalAccumulator.class, fi, constants$454.GSignalAccumulator$FUNC, session);
+    int apply(java.lang.foreign.MemorySegment completion, java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment user_data);
+    static MemorySegment allocate(GSignalAccumulator fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$415.GSignalAccumulator_UP$MH, fi, constants$415.GSignalAccumulator$FUNC, scope);
     }
-    static GSignalAccumulator ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _ihint, java.lang.foreign.MemoryAddress _return_accu, java.lang.foreign.MemoryAddress _handler_return, java.lang.foreign.MemoryAddress _data) -> {
+    static GSignalAccumulator ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _completion, java.lang.foreign.MemorySegment _key, java.lang.foreign.MemorySegment _iter, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                return (int)constants$454.GSignalAccumulator$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_ihint, (java.lang.foreign.Addressable)_return_accu, (java.lang.foreign.Addressable)_handler_return, (java.lang.foreign.Addressable)_data);
+                return (int)constants$415.GSignalAccumulator_DOWN$MH.invokeExact(symbol, _completion, _key, _iter, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

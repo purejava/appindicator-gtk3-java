@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GProxyInterface extends _GProxyInterface {
+/**
+ * {@snippet :
+ * typedef struct _GProxyInterface GProxyInterface;
+ * }
+ */
+public final class GProxyInterface extends _GProxyInterface {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GProxyInterface() {}
 }
 
 

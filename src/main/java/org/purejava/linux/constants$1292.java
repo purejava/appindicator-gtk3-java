@@ -7,70 +7,56 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1292 {
+final class constants$1292 {
 
-    static final FunctionDescriptor gdk_pixbuf_new_from_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_new_from_data$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_new_from_data",
-        constants$1292.gdk_pixbuf_new_from_data$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_new_from_bytes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_new_from_bytes$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_new_from_bytes",
-        constants$1292.gdk_pixbuf_new_from_bytes$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_new_from_xpm_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_new_from_xpm_data$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_new_from_xpm_data",
-        constants$1292.gdk_pixbuf_new_from_xpm_data$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_new_from_inline$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_new_from_inline$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_new_from_inline",
-        constants$1292.gdk_pixbuf_new_from_inline$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_fill$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1292() {}
+    static final FunctionDescriptor gtk_container_set_resize_mode$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gdk_pixbuf_fill$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_fill",
-        constants$1292.gdk_pixbuf_fill$FUNC
+    static final MethodHandle gtk_container_set_resize_mode$MH = RuntimeHelper.downcallHandle(
+        "gtk_container_set_resize_mode",
+        constants$1292.gtk_container_set_resize_mode$FUNC
     );
-    static final FunctionDescriptor gdk_pixbuf_save$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_container_get_resize_mode$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_container_get_resize_mode$MH = RuntimeHelper.downcallHandle(
+        "gtk_container_get_resize_mode",
+        constants$1292.gtk_container_get_resize_mode$FUNC
+    );
+    static final FunctionDescriptor gtk_container_check_resize$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_container_check_resize$MH = RuntimeHelper.downcallHandle(
+        "gtk_container_check_resize",
+        constants$1292.gtk_container_check_resize$FUNC
+    );
+    static final FunctionDescriptor gtk_container_foreach$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_pixbuf_save$MH = RuntimeHelper.downcallHandleVariadic(
-        "gdk_pixbuf_save",
-        constants$1292.gdk_pixbuf_save$FUNC
+    static final MethodHandle gtk_container_foreach$MH = RuntimeHelper.downcallHandle(
+        "gtk_container_foreach",
+        constants$1292.gtk_container_foreach$FUNC
+    );
+    static final FunctionDescriptor gtk_container_get_children$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_container_get_children$MH = RuntimeHelper.downcallHandle(
+        "gtk_container_get_children",
+        constants$1292.gtk_container_get_children$FUNC
+    );
+    static final FunctionDescriptor gtk_container_propagate_draw$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_container_propagate_draw$MH = RuntimeHelper.downcallHandle(
+        "gtk_container_propagate_draw",
+        constants$1292.gtk_container_propagate_draw$FUNC
     );
 }
 

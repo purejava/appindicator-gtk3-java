@@ -7,49 +7,90 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$414 {
+final class constants$414 {
 
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GVariant$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$414() {}
+    static final FunctionDescriptor GSignalCMarshaller$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GVariant$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GVariant",
-        constants$414.glib_queueautoptr_cleanup_GVariant$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_clear_GVariantBuilder$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor GSignalCMarshaller_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_clear_GVariantBuilder$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_clear_GVariantBuilder",
-        constants$414.glib_autoptr_clear_GVariantBuilder$FUNC
-    );
-    static final FunctionDescriptor glib_autoptr_cleanup_GVariantBuilder$FUNC = FunctionDescriptor.ofVoid(
+    static final MethodHandle GSignalCMarshaller_UP$MH = RuntimeHelper.upcallHandle(GSignalCMarshaller.class, "apply", constants$414.GSignalCMarshaller_UP$FUNC);
+    static final FunctionDescriptor GSignalCMarshaller_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_autoptr_cleanup_GVariantBuilder$MH = RuntimeHelper.downcallHandle(
-        "glib_autoptr_cleanup_GVariantBuilder",
-        constants$414.glib_autoptr_cleanup_GVariantBuilder$FUNC
+    static final MethodHandle GSignalCMarshaller_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$414.GSignalCMarshaller_DOWN$FUNC
     );
-    static final FunctionDescriptor glib_listautoptr_cleanup_GVariantBuilder$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor GSignalCVaMarshaller$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_listautoptr_cleanup_GVariantBuilder$MH = RuntimeHelper.downcallHandle(
-        "glib_listautoptr_cleanup_GVariantBuilder",
-        constants$414.glib_listautoptr_cleanup_GVariantBuilder$FUNC
-    );
-    static final FunctionDescriptor glib_slistautoptr_cleanup_GVariantBuilder$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor GSignalCVaMarshaller_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_slistautoptr_cleanup_GVariantBuilder$MH = RuntimeHelper.downcallHandle(
-        "glib_slistautoptr_cleanup_GVariantBuilder",
-        constants$414.glib_slistautoptr_cleanup_GVariantBuilder$FUNC
-    );
-    static final FunctionDescriptor glib_queueautoptr_cleanup_GVariantBuilder$FUNC = FunctionDescriptor.ofVoid(
+    static final MethodHandle GSignalCVaMarshaller_UP$MH = RuntimeHelper.upcallHandle(GSignalCVaMarshaller.class, "apply", constants$414.GSignalCVaMarshaller_UP$FUNC);
+    static final FunctionDescriptor GSignalCVaMarshaller_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle glib_queueautoptr_cleanup_GVariantBuilder$MH = RuntimeHelper.downcallHandle(
-        "glib_queueautoptr_cleanup_GVariantBuilder",
-        constants$414.glib_queueautoptr_cleanup_GVariantBuilder$FUNC
+    static final MethodHandle GSignalCVaMarshaller_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$414.GSignalCVaMarshaller_DOWN$FUNC
+    );
+    static final FunctionDescriptor GSignalEmissionHook$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final FunctionDescriptor GSignalEmissionHook_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GSignalEmissionHook_UP$MH = RuntimeHelper.upcallHandle(GSignalEmissionHook.class, "apply", constants$414.GSignalEmissionHook_UP$FUNC);
+    static final FunctionDescriptor GSignalEmissionHook_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GSignalEmissionHook_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$414.GSignalEmissionHook_DOWN$FUNC
     );
 }
 

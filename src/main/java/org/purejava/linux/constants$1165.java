@@ -7,63 +7,39 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1165 {
+final class constants$1165 {
 
-    static final FunctionDescriptor cairo_in_stroke$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1165() {}
+    static final FunctionDescriptor gdk_status_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gdk_status_get_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_status_get_type",
+        constants$1165.gdk_status_get_type$FUNC
     );
-    static final MethodHandle cairo_in_stroke$MH = RuntimeHelper.downcallHandle(
-        "cairo_in_stroke",
-        constants$1165.cairo_in_stroke$FUNC
+    static final FunctionDescriptor gdk_grab_status_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gdk_grab_status_get_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_grab_status_get_type",
+        constants$1165.gdk_grab_status_get_type$FUNC
     );
-    static final FunctionDescriptor cairo_in_fill$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final FunctionDescriptor gdk_grab_ownership_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gdk_grab_ownership_get_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_grab_ownership_get_type",
+        constants$1165.gdk_grab_ownership_get_type$FUNC
     );
-    static final MethodHandle cairo_in_fill$MH = RuntimeHelper.downcallHandle(
-        "cairo_in_fill",
-        constants$1165.cairo_in_fill$FUNC
+    static final FunctionDescriptor gdk_event_mask_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gdk_event_mask_get_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_event_mask_get_type",
+        constants$1165.gdk_event_mask_get_type$FUNC
     );
-    static final FunctionDescriptor cairo_in_clip$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final FunctionDescriptor gdk_gl_error_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gdk_gl_error_get_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_gl_error_get_type",
+        constants$1165.gdk_gl_error_get_type$FUNC
     );
-    static final MethodHandle cairo_in_clip$MH = RuntimeHelper.downcallHandle(
-        "cairo_in_clip",
-        constants$1165.cairo_in_clip$FUNC
-    );
-    static final FunctionDescriptor cairo_stroke_extents$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_stroke_extents$MH = RuntimeHelper.downcallHandle(
-        "cairo_stroke_extents",
-        constants$1165.cairo_stroke_extents$FUNC
-    );
-    static final FunctionDescriptor cairo_fill_extents$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_fill_extents$MH = RuntimeHelper.downcallHandle(
-        "cairo_fill_extents",
-        constants$1165.cairo_fill_extents$FUNC
-    );
-    static final FunctionDescriptor cairo_reset_clip$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_reset_clip$MH = RuntimeHelper.downcallHandle(
-        "cairo_reset_clip",
-        constants$1165.cairo_reset_clip$FUNC
+    static final FunctionDescriptor gdk_window_type_hint_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gdk_window_type_hint_get_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_type_hint_get_type",
+        constants$1165.gdk_window_type_hint_get_type$FUNC
     );
 }
 

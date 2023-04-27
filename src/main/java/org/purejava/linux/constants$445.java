@@ -7,65 +7,67 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$445 {
+final class constants$445 {
 
-    static final FunctionDescriptor g_closure_add_marshal_guards$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$445() {}
+    static final FunctionDescriptor g_binding_get_target_property$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_binding_get_target_property$MH = RuntimeHelper.downcallHandle(
+        "g_binding_get_target_property",
+        constants$445.g_binding_get_target_property$FUNC
+    );
+    static final FunctionDescriptor g_binding_unbind$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_binding_unbind$MH = RuntimeHelper.downcallHandle(
+        "g_binding_unbind",
+        constants$445.g_binding_unbind$FUNC
+    );
+    static final FunctionDescriptor g_object_bind_property$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_object_bind_property$MH = RuntimeHelper.downcallHandle(
+        "g_object_bind_property",
+        constants$445.g_object_bind_property$FUNC
+    );
+    static final FunctionDescriptor g_object_bind_property_full$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_closure_add_marshal_guards$MH = RuntimeHelper.downcallHandle(
-        "g_closure_add_marshal_guards",
-        constants$445.g_closure_add_marshal_guards$FUNC
+    static final MethodHandle g_object_bind_property_full$MH = RuntimeHelper.downcallHandle(
+        "g_object_bind_property_full",
+        constants$445.g_object_bind_property_full$FUNC
     );
-    static final FunctionDescriptor g_closure_set_marshal$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_closure_set_marshal$MH = RuntimeHelper.downcallHandle(
-        "g_closure_set_marshal",
-        constants$445.g_closure_set_marshal$FUNC
-    );
-    static final FunctionDescriptor g_closure_set_meta_marshal$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_object_bind_property_with_closures$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_closure_set_meta_marshal$MH = RuntimeHelper.downcallHandle(
-        "g_closure_set_meta_marshal",
-        constants$445.g_closure_set_meta_marshal$FUNC
-    );
-    static final FunctionDescriptor g_closure_invalidate$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_closure_invalidate$MH = RuntimeHelper.downcallHandle(
-        "g_closure_invalidate",
-        constants$445.g_closure_invalidate$FUNC
-    );
-    static final FunctionDescriptor g_closure_invoke$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_closure_invoke$MH = RuntimeHelper.downcallHandle(
-        "g_closure_invoke",
-        constants$445.g_closure_invoke$FUNC
+    static final MethodHandle g_object_bind_property_with_closures$MH = RuntimeHelper.downcallHandle(
+        "g_object_bind_property_with_closures",
+        constants$445.g_object_bind_property_with_closures$FUNC
     );
-    static final FunctionDescriptor g_cclosure_marshal_generic$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_cclosure_marshal_generic$MH = RuntimeHelper.downcallHandle(
-        "g_cclosure_marshal_generic",
-        constants$445.g_cclosure_marshal_generic$FUNC
+    static final FunctionDescriptor g_binding_group_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_binding_group_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_binding_group_get_type",
+        constants$445.g_binding_group_get_type$FUNC
     );
 }
 

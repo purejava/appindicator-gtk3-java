@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkInvisibleClass extends _GtkInvisibleClass {
+/**
+ * {@snippet :
+ * typedef struct _GtkInvisibleClass GtkInvisibleClass;
+ * }
+ */
+public final class GtkInvisibleClass extends _GtkInvisibleClass {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkInvisibleClass() {}
 }
 
 

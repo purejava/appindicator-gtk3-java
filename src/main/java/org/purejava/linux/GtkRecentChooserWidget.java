@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkRecentChooserWidget extends _GtkRecentChooserWidget {
+/**
+ * {@snippet :
+ * typedef struct _GtkRecentChooserWidget GtkRecentChooserWidget;
+ * }
+ */
+public final class GtkRecentChooserWidget extends _GtkRecentChooserWidget {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkRecentChooserWidget() {}
 }
 
 

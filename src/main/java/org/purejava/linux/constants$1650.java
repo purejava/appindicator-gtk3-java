@@ -7,58 +7,56 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1650 {
+final class constants$1650 {
 
-    static final FunctionDescriptor gtk_entry_set_icon_tooltip_text$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1650() {}
+    static final FunctionDescriptor gtk_tooltip_set_custom$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_entry_set_icon_tooltip_text$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_set_icon_tooltip_text",
-        constants$1650.gtk_entry_set_icon_tooltip_text$FUNC
+    static final MethodHandle gtk_tooltip_set_custom$MH = RuntimeHelper.downcallHandle(
+        "gtk_tooltip_set_custom",
+        constants$1650.gtk_tooltip_set_custom$FUNC
     );
-    static final FunctionDescriptor gtk_entry_get_icon_tooltip_text$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_tooltip_set_tip_area$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_entry_get_icon_tooltip_text$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_get_icon_tooltip_text",
-        constants$1650.gtk_entry_get_icon_tooltip_text$FUNC
-    );
-    static final FunctionDescriptor gtk_entry_set_icon_tooltip_markup$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_entry_set_icon_tooltip_markup$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_set_icon_tooltip_markup",
-        constants$1650.gtk_entry_set_icon_tooltip_markup$FUNC
+    static final MethodHandle gtk_tooltip_set_tip_area$MH = RuntimeHelper.downcallHandle(
+        "gtk_tooltip_set_tip_area",
+        constants$1650.gtk_tooltip_set_tip_area$FUNC
     );
-    static final FunctionDescriptor gtk_entry_get_icon_tooltip_markup$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_entry_get_icon_tooltip_markup$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_get_icon_tooltip_markup",
-        constants$1650.gtk_entry_get_icon_tooltip_markup$FUNC
-    );
-    static final FunctionDescriptor gtk_entry_set_icon_drag_source$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_entry_set_icon_drag_source$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_set_icon_drag_source",
-        constants$1650.gtk_entry_set_icon_drag_source$FUNC
-    );
-    static final FunctionDescriptor gtk_entry_get_current_icon_drag_source$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_tooltip_trigger_tooltip_query$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_entry_get_current_icon_drag_source$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_get_current_icon_drag_source",
-        constants$1650.gtk_entry_get_current_icon_drag_source$FUNC
+    static final MethodHandle gtk_tooltip_trigger_tooltip_query$MH = RuntimeHelper.downcallHandle(
+        "gtk_tooltip_trigger_tooltip_query",
+        constants$1650.gtk_tooltip_trigger_tooltip_query$FUNC
+    );
+    static final FunctionDescriptor GtkIconViewForeachFunc$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final FunctionDescriptor GtkIconViewForeachFunc_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GtkIconViewForeachFunc_UP$MH = RuntimeHelper.upcallHandle(GtkIconViewForeachFunc.class, "apply", constants$1650.GtkIconViewForeachFunc_UP$FUNC);
+    static final FunctionDescriptor GtkIconViewForeachFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GtkIconViewForeachFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$1650.GtkIconViewForeachFunc_DOWN$FUNC
+    );
+    static final FunctionDescriptor gtk_icon_view_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_icon_view_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_view_get_type",
+        constants$1650.gtk_icon_view_get_type$FUNC
     );
 }
 

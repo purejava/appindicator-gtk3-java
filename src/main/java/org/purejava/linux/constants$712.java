@@ -7,49 +7,50 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$712 {
+final class constants$712 {
 
-    static final FunctionDescriptor g_inet_address_get_is_multicast$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$712() {}
+    static final FunctionDescriptor g_mount_operation_set_is_tcrypt_system_volume$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_mount_operation_set_is_tcrypt_system_volume$MH = RuntimeHelper.downcallHandle(
+        "g_mount_operation_set_is_tcrypt_system_volume",
+        constants$712.g_mount_operation_set_is_tcrypt_system_volume$FUNC
+    );
+    static final FunctionDescriptor g_mount_operation_get_pim$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_inet_address_get_is_multicast$MH = RuntimeHelper.downcallHandle(
-        "g_inet_address_get_is_multicast",
-        constants$712.g_inet_address_get_is_multicast$FUNC
+    static final MethodHandle g_mount_operation_get_pim$MH = RuntimeHelper.downcallHandle(
+        "g_mount_operation_get_pim",
+        constants$712.g_mount_operation_get_pim$FUNC
     );
-    static final FunctionDescriptor g_inet_address_get_is_mc_global$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_mount_operation_set_pim$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_inet_address_get_is_mc_global$MH = RuntimeHelper.downcallHandle(
-        "g_inet_address_get_is_mc_global",
-        constants$712.g_inet_address_get_is_mc_global$FUNC
+    static final MethodHandle g_mount_operation_set_pim$MH = RuntimeHelper.downcallHandle(
+        "g_mount_operation_set_pim",
+        constants$712.g_mount_operation_set_pim$FUNC
     );
-    static final FunctionDescriptor g_inet_address_get_is_mc_link_local$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor g_native_socket_address_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_native_socket_address_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_native_socket_address_get_type",
+        constants$712.g_native_socket_address_get_type$FUNC
     );
-    static final MethodHandle g_inet_address_get_is_mc_link_local$MH = RuntimeHelper.downcallHandle(
-        "g_inet_address_get_is_mc_link_local",
-        constants$712.g_inet_address_get_is_mc_link_local$FUNC
+    static final FunctionDescriptor g_native_socket_address_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
     );
-    static final FunctionDescriptor g_inet_address_get_is_mc_node_local$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle g_native_socket_address_new$MH = RuntimeHelper.downcallHandle(
+        "g_native_socket_address_new",
+        constants$712.g_native_socket_address_new$FUNC
     );
-    static final MethodHandle g_inet_address_get_is_mc_node_local$MH = RuntimeHelper.downcallHandle(
-        "g_inet_address_get_is_mc_node_local",
-        constants$712.g_inet_address_get_is_mc_node_local$FUNC
-    );
-    static final FunctionDescriptor g_inet_address_get_is_mc_org_local$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_inet_address_get_is_mc_org_local$MH = RuntimeHelper.downcallHandle(
-        "g_inet_address_get_is_mc_org_local",
-        constants$712.g_inet_address_get_is_mc_org_local$FUNC
-    );
-    static final FunctionDescriptor g_inet_address_get_is_mc_site_local$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_inet_address_get_is_mc_site_local$MH = RuntimeHelper.downcallHandle(
-        "g_inet_address_get_is_mc_site_local",
-        constants$712.g_inet_address_get_is_mc_site_local$FUNC
+    static final FunctionDescriptor g_volume_monitor_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_volume_monitor_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_volume_monitor_get_type",
+        constants$712.g_volume_monitor_get_type$FUNC
     );
 }
 

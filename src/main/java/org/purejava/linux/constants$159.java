@@ -7,43 +7,60 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$159 {
+final class constants$159 {
 
-    static final FunctionDescriptor g_hostname_is_ascii_encoded$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_hostname_is_ascii_encoded$MH = RuntimeHelper.downcallHandle(
-        "g_hostname_is_ascii_encoded",
-        constants$159.g_hostname_is_ascii_encoded$FUNC
-    );
-    static final FunctionDescriptor g_hostname_is_ip_address$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_hostname_is_ip_address$MH = RuntimeHelper.downcallHandle(
-        "g_hostname_is_ip_address",
-        constants$159.g_hostname_is_ip_address$FUNC
-    );
-    static final FunctionDescriptor g_hostname_to_ascii$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_hostname_to_ascii$MH = RuntimeHelper.downcallHandle(
-        "g_hostname_to_ascii",
-        constants$159.g_hostname_to_ascii$FUNC
-    );
-    static final FunctionDescriptor g_hostname_to_unicode$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_hostname_to_unicode$MH = RuntimeHelper.downcallHandle(
-        "g_hostname_to_unicode",
-        constants$159.g_hostname_to_unicode$FUNC
-    );
-    static final FunctionDescriptor GPollFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$159() {}
+    static final FunctionDescriptor g_hook_find_func_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_hook_find_func_data$MH = RuntimeHelper.downcallHandle(
+        "g_hook_find_func_data",
+        constants$159.g_hook_find_func_data$FUNC
+    );
+    static final FunctionDescriptor g_hook_first_valid$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle GPollFunc$MH = RuntimeHelper.downcallHandle(
-        constants$159.GPollFunc$FUNC
+    static final MethodHandle g_hook_first_valid$MH = RuntimeHelper.downcallHandle(
+        "g_hook_first_valid",
+        constants$159.g_hook_first_valid$FUNC
+    );
+    static final FunctionDescriptor g_hook_next_valid$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_hook_next_valid$MH = RuntimeHelper.downcallHandle(
+        "g_hook_next_valid",
+        constants$159.g_hook_next_valid$FUNC
+    );
+    static final FunctionDescriptor g_hook_compare_ids$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_hook_compare_ids$MH = RuntimeHelper.downcallHandle(
+        "g_hook_compare_ids",
+        constants$159.g_hook_compare_ids$FUNC
+    );
+    static final FunctionDescriptor g_hook_list_invoke$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_hook_list_invoke$MH = RuntimeHelper.downcallHandle(
+        "g_hook_list_invoke",
+        constants$159.g_hook_list_invoke$FUNC
+    );
+    static final FunctionDescriptor g_hook_list_invoke_check$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_hook_list_invoke_check$MH = RuntimeHelper.downcallHandle(
+        "g_hook_list_invoke_check",
+        constants$159.g_hook_list_invoke_check$FUNC
     );
 }
 

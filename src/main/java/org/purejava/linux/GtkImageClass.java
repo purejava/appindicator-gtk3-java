@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkImageClass extends _GtkImageClass {
+/**
+ * {@snippet :
+ * typedef struct _GtkImageClass GtkImageClass;
+ * }
+ */
+public final class GtkImageClass extends _GtkImageClass {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkImageClass() {}
 }
 
 

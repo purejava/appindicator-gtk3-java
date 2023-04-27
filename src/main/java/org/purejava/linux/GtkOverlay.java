@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkOverlay extends _GtkOverlay {
+/**
+ * {@snippet :
+ * typedef struct _GtkOverlay GtkOverlay;
+ * }
+ */
+public final class GtkOverlay extends _GtkOverlay {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkOverlay() {}
 }
 
 

@@ -7,50 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1024 {
+final class constants$1024 {
 
-    static final FunctionDescriptor hb_font_glyph_from_string$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1024() {}
+    static final FunctionDescriptor cairo_get_dash$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_font_glyph_from_string$MH = RuntimeHelper.downcallHandle(
-        "hb_font_glyph_from_string",
-        constants$1024.hb_font_glyph_from_string$FUNC
+    static final MethodHandle cairo_get_dash$MH = RuntimeHelper.downcallHandle(
+        "cairo_get_dash",
+        constants$1024.cairo_get_dash$FUNC
     );
-    static final FunctionDescriptor hb_font_create$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor cairo_get_matrix$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_font_create$MH = RuntimeHelper.downcallHandle(
-        "hb_font_create",
-        constants$1024.hb_font_create$FUNC
+    static final MethodHandle cairo_get_matrix$MH = RuntimeHelper.downcallHandle(
+        "cairo_get_matrix",
+        constants$1024.cairo_get_matrix$FUNC
     );
-    static final FunctionDescriptor hb_font_create_sub_font$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor cairo_get_target$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_font_create_sub_font$MH = RuntimeHelper.downcallHandle(
-        "hb_font_create_sub_font",
-        constants$1024.hb_font_create_sub_font$FUNC
+    static final MethodHandle cairo_get_target$MH = RuntimeHelper.downcallHandle(
+        "cairo_get_target",
+        constants$1024.cairo_get_target$FUNC
     );
-    static final FunctionDescriptor hb_font_get_empty$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle hb_font_get_empty$MH = RuntimeHelper.downcallHandle(
-        "hb_font_get_empty",
-        constants$1024.hb_font_get_empty$FUNC
-    );
-    static final FunctionDescriptor hb_font_reference$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor cairo_get_group_target$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_font_reference$MH = RuntimeHelper.downcallHandle(
-        "hb_font_reference",
-        constants$1024.hb_font_reference$FUNC
+    static final MethodHandle cairo_get_group_target$MH = RuntimeHelper.downcallHandle(
+        "cairo_get_group_target",
+        constants$1024.cairo_get_group_target$FUNC
     );
-    static final FunctionDescriptor hb_font_destroy$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor cairo_copy_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_font_destroy$MH = RuntimeHelper.downcallHandle(
-        "hb_font_destroy",
-        constants$1024.hb_font_destroy$FUNC
+    static final MethodHandle cairo_copy_path$MH = RuntimeHelper.downcallHandle(
+        "cairo_copy_path",
+        constants$1024.cairo_copy_path$FUNC
+    );
+    static final FunctionDescriptor cairo_copy_path_flat$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle cairo_copy_path_flat$MH = RuntimeHelper.downcallHandle(
+        "cairo_copy_path_flat",
+        constants$1024.cairo_copy_path_flat$FUNC
     );
 }
 

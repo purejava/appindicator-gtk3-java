@@ -7,51 +7,51 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1983 {
+final class constants$1983 {
 
-    static final FunctionDescriptor gtk_recent_chooser_menu_get_show_numbers$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1983() {}
+    static final FunctionDescriptor app_indicator_get_attention_icon$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_recent_chooser_menu_get_show_numbers$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_chooser_menu_get_show_numbers",
-        constants$1983.gtk_recent_chooser_menu_get_show_numbers$FUNC
+    static final MethodHandle app_indicator_get_attention_icon$MH = RuntimeHelper.downcallHandle(
+        "app_indicator_get_attention_icon",
+        constants$1983.app_indicator_get_attention_icon$FUNC
     );
-    static final FunctionDescriptor gtk_recent_chooser_menu_set_show_numbers$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_recent_chooser_menu_set_show_numbers$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_chooser_menu_set_show_numbers",
-        constants$1983.gtk_recent_chooser_menu_set_show_numbers$FUNC
-    );
-    static final FunctionDescriptor gtk_recent_chooser_widget_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_recent_chooser_widget_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_chooser_widget_get_type",
-        constants$1983.gtk_recent_chooser_widget_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_recent_chooser_widget_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_recent_chooser_widget_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_chooser_widget_new",
-        constants$1983.gtk_recent_chooser_widget_new$FUNC
-    );
-    static final FunctionDescriptor gtk_recent_chooser_widget_new_for_manager$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor app_indicator_get_attention_icon_desc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_recent_chooser_widget_new_for_manager$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_chooser_widget_new_for_manager",
-        constants$1983.gtk_recent_chooser_widget_new_for_manager$FUNC
+    static final MethodHandle app_indicator_get_attention_icon_desc$MH = RuntimeHelper.downcallHandle(
+        "app_indicator_get_attention_icon_desc",
+        constants$1983.app_indicator_get_attention_icon_desc$FUNC
     );
-    static final FunctionDescriptor gtk_render_check$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final FunctionDescriptor app_indicator_get_title$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_render_check$MH = RuntimeHelper.downcallHandle(
-        "gtk_render_check",
-        constants$1983.gtk_render_check$FUNC
+    static final MethodHandle app_indicator_get_title$MH = RuntimeHelper.downcallHandle(
+        "app_indicator_get_title",
+        constants$1983.app_indicator_get_title$FUNC
+    );
+    static final FunctionDescriptor app_indicator_get_menu$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle app_indicator_get_menu$MH = RuntimeHelper.downcallHandle(
+        "app_indicator_get_menu",
+        constants$1983.app_indicator_get_menu$FUNC
+    );
+    static final FunctionDescriptor app_indicator_get_label$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle app_indicator_get_label$MH = RuntimeHelper.downcallHandle(
+        "app_indicator_get_label",
+        constants$1983.app_indicator_get_label$FUNC
+    );
+    static final FunctionDescriptor app_indicator_get_label_guide$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle app_indicator_get_label_guide$MH = RuntimeHelper.downcallHandle(
+        "app_indicator_get_label_guide",
+        constants$1983.app_indicator_get_label_guide$FUNC
     );
 }
 

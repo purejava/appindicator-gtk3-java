@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GValue extends _GValue {
+/**
+ * {@snippet :
+ * typedef struct _GValue GValue;
+ * }
+ */
+public final class GValue extends _GValue {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GValue() {}
 }
 
 

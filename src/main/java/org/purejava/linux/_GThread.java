@@ -7,9 +7,19 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GThread {
+ *     GThreadFunc func;
+ *     gpointer data;
+ *     gboolean joinable;
+ *     GThreadPriority priority;
+ * };
+ * }
+ */
 public class _GThread {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_POINTER$LAYOUT.withName("func"),
         Constants$root.C_POINTER$LAYOUT.withName("data"),
         Constants$root.C_INT$LAYOUT.withName("joinable"),
@@ -22,45 +32,81 @@ public class _GThread {
     public static VarHandle func$VH() {
         return _GThread.func$VH;
     }
-    public static MemoryAddress func$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GThread.func$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GThreadFunc func;
+     * }
+     */
+    public static MemorySegment func$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GThread.func$VH.get(seg);
     }
-    public static void func$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GThreadFunc func;
+     * }
+     */
+    public static void func$set(MemorySegment seg, MemorySegment x) {
         _GThread.func$VH.set(seg, x);
     }
-    public static MemoryAddress func$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GThread.func$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment func$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GThread.func$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void func$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void func$set(MemorySegment seg, long index, MemorySegment x) {
         _GThread.func$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static GThreadFunc func (MemorySegment segment, MemorySession session) {
-        return GThreadFunc.ofAddress(func$get(segment), session);
+    public static GThreadFunc func(MemorySegment segment, SegmentScope scope) {
+        return GThreadFunc.ofAddress(func$get(segment), scope);
     }
     static final VarHandle data$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("data"));
     public static VarHandle data$VH() {
         return _GThread.data$VH;
     }
-    public static MemoryAddress data$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GThread.data$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gpointer data;
+     * }
+     */
+    public static MemorySegment data$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GThread.data$VH.get(seg);
     }
-    public static void data$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gpointer data;
+     * }
+     */
+    public static void data$set(MemorySegment seg, MemorySegment x) {
         _GThread.data$VH.set(seg, x);
     }
-    public static MemoryAddress data$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GThread.data$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment data$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GThread.data$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void data$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void data$set(MemorySegment seg, long index, MemorySegment x) {
         _GThread.data$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle joinable$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("joinable"));
     public static VarHandle joinable$VH() {
         return _GThread.joinable$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gboolean joinable;
+     * }
+     */
     public static int joinable$get(MemorySegment seg) {
         return (int)_GThread.joinable$VH.get(seg);
     }
-    public static void joinable$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gboolean joinable;
+     * }
+     */
+    public static void joinable$set(MemorySegment seg, int x) {
         _GThread.joinable$VH.set(seg, x);
     }
     public static int joinable$get(MemorySegment seg, long index) {
@@ -73,10 +119,22 @@ public class _GThread {
     public static VarHandle priority$VH() {
         return _GThread.priority$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GThreadPriority priority;
+     * }
+     */
     public static int priority$get(MemorySegment seg) {
         return (int)_GThread.priority$VH.get(seg);
     }
-    public static void priority$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GThreadPriority priority;
+     * }
+     */
+    public static void priority$set(MemorySegment seg, int x) {
         _GThread.priority$VH.set(seg, x);
     }
     public static int priority$get(MemorySegment seg, long index) {
@@ -87,10 +145,10 @@ public class _GThread {
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

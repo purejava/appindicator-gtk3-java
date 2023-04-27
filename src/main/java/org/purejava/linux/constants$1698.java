@@ -7,59 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1698 {
+final class constants$1698 {
 
-    static final FunctionDescriptor gtk_builder_extend_with_template$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1698() {}
+    static final FunctionDescriptor gtk_tool_item_get_use_drag_window$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_builder_extend_with_template$MH = RuntimeHelper.downcallHandle(
-        "gtk_builder_extend_with_template",
-        constants$1698.gtk_builder_extend_with_template$FUNC
+    static final MethodHandle gtk_tool_item_get_use_drag_window$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_item_get_use_drag_window",
+        constants$1698.gtk_tool_item_get_use_drag_window$FUNC
     );
-    static final FunctionDescriptor gtk_buildable_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_buildable_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_buildable_get_type",
-        constants$1698.gtk_buildable_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_buildable_set_name$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_tool_item_set_visible_horizontal$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_tool_item_set_visible_horizontal$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_item_set_visible_horizontal",
+        constants$1698.gtk_tool_item_set_visible_horizontal$FUNC
+    );
+    static final FunctionDescriptor gtk_tool_item_get_visible_horizontal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_buildable_set_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_buildable_set_name",
-        constants$1698.gtk_buildable_set_name$FUNC
+    static final MethodHandle gtk_tool_item_get_visible_horizontal$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_item_get_visible_horizontal",
+        constants$1698.gtk_tool_item_get_visible_horizontal$FUNC
     );
-    static final FunctionDescriptor gtk_buildable_get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_tool_item_set_visible_vertical$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_tool_item_set_visible_vertical$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_item_set_visible_vertical",
+        constants$1698.gtk_tool_item_set_visible_vertical$FUNC
+    );
+    static final FunctionDescriptor gtk_tool_item_get_visible_vertical$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_buildable_get_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_buildable_get_name",
-        constants$1698.gtk_buildable_get_name$FUNC
+    static final MethodHandle gtk_tool_item_get_visible_vertical$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_item_get_visible_vertical",
+        constants$1698.gtk_tool_item_get_visible_vertical$FUNC
     );
-    static final FunctionDescriptor gtk_buildable_add_child$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_tool_item_get_is_important$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_buildable_add_child$MH = RuntimeHelper.downcallHandle(
-        "gtk_buildable_add_child",
-        constants$1698.gtk_buildable_add_child$FUNC
-    );
-    static final FunctionDescriptor gtk_buildable_set_buildable_property$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_buildable_set_buildable_property$MH = RuntimeHelper.downcallHandle(
-        "gtk_buildable_set_buildable_property",
-        constants$1698.gtk_buildable_set_buildable_property$FUNC
+    static final MethodHandle gtk_tool_item_get_is_important$MH = RuntimeHelper.downcallHandle(
+        "gtk_tool_item_get_is_important",
+        constants$1698.gtk_tool_item_get_is_important$FUNC
     );
 }
 

@@ -7,56 +7,47 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1445 {
+final class constants$1445 {
 
-    static final FunctionDescriptor gtk_widget_set_events$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_widget_set_events$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_events",
-        constants$1445.gtk_widget_set_events$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_add_events$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_widget_add_events$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_add_events",
-        constants$1445.gtk_widget_add_events$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_set_device_events$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_widget_set_device_events$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_device_events",
-        constants$1445.gtk_widget_set_device_events$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_add_device_events$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_widget_add_device_events$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_add_device_events",
-        constants$1445.gtk_widget_add_device_events$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_set_opacity$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle gtk_widget_set_opacity$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_opacity",
-        constants$1445.gtk_widget_set_opacity$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_get_opacity$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1445() {}
+    static final FunctionDescriptor gtk_entry_completion_get_text_column$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_widget_get_opacity$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_opacity",
-        constants$1445.gtk_widget_get_opacity$FUNC
+    static final MethodHandle gtk_entry_completion_get_text_column$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_completion_get_text_column",
+        constants$1445.gtk_entry_completion_get_text_column$FUNC
+    );
+    static final FunctionDescriptor gtk_image_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_image_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_image_get_type",
+        constants$1445.gtk_image_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_image_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_image_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_image_new",
+        constants$1445.gtk_image_new$FUNC
+    );
+    static final FunctionDescriptor gtk_image_new_from_file$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_image_new_from_file$MH = RuntimeHelper.downcallHandle(
+        "gtk_image_new_from_file",
+        constants$1445.gtk_image_new_from_file$FUNC
+    );
+    static final FunctionDescriptor gtk_image_new_from_resource$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_image_new_from_resource$MH = RuntimeHelper.downcallHandle(
+        "gtk_image_new_from_resource",
+        constants$1445.gtk_image_new_from_resource$FUNC
+    );
+    static final FunctionDescriptor gtk_image_new_from_pixbuf$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_image_new_from_pixbuf$MH = RuntimeHelper.downcallHandle(
+        "gtk_image_new_from_pixbuf",
+        constants$1445.gtk_image_new_from_pixbuf$FUNC
     );
 }
 

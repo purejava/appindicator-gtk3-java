@@ -7,52 +7,56 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$825 {
+final class constants$825 {
 
-    static final FunctionDescriptor g_socket_client_get_socket_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$825() {}
+    static final FunctionDescriptor g_vfs_get_supported_uri_schemes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_socket_client_get_socket_type$MH = RuntimeHelper.downcallHandle(
-        "g_socket_client_get_socket_type",
-        constants$825.g_socket_client_get_socket_type$FUNC
+    static final MethodHandle g_vfs_get_supported_uri_schemes$MH = RuntimeHelper.downcallHandle(
+        "g_vfs_get_supported_uri_schemes",
+        constants$825.g_vfs_get_supported_uri_schemes$FUNC
     );
-    static final FunctionDescriptor g_socket_client_set_socket_type$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_socket_client_set_socket_type$MH = RuntimeHelper.downcallHandle(
-        "g_socket_client_set_socket_type",
-        constants$825.g_socket_client_set_socket_type$FUNC
-    );
-    static final FunctionDescriptor g_socket_client_get_protocol$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_client_get_protocol$MH = RuntimeHelper.downcallHandle(
-        "g_socket_client_get_protocol",
-        constants$825.g_socket_client_get_protocol$FUNC
-    );
-    static final FunctionDescriptor g_socket_client_set_protocol$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_socket_client_set_protocol$MH = RuntimeHelper.downcallHandle(
-        "g_socket_client_set_protocol",
-        constants$825.g_socket_client_set_protocol$FUNC
-    );
-    static final FunctionDescriptor g_socket_client_get_local_address$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_client_get_local_address$MH = RuntimeHelper.downcallHandle(
-        "g_socket_client_get_local_address",
-        constants$825.g_socket_client_get_local_address$FUNC
-    );
-    static final FunctionDescriptor g_socket_client_set_local_address$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_vfs_parse_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_socket_client_set_local_address$MH = RuntimeHelper.downcallHandle(
-        "g_socket_client_set_local_address",
-        constants$825.g_socket_client_set_local_address$FUNC
+    static final MethodHandle g_vfs_parse_name$MH = RuntimeHelper.downcallHandle(
+        "g_vfs_parse_name",
+        constants$825.g_vfs_parse_name$FUNC
+    );
+    static final FunctionDescriptor g_vfs_get_default$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle g_vfs_get_default$MH = RuntimeHelper.downcallHandle(
+        "g_vfs_get_default",
+        constants$825.g_vfs_get_default$FUNC
+    );
+    static final FunctionDescriptor g_vfs_get_local$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle g_vfs_get_local$MH = RuntimeHelper.downcallHandle(
+        "g_vfs_get_local",
+        constants$825.g_vfs_get_local$FUNC
+    );
+    static final FunctionDescriptor g_vfs_register_uri_scheme$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_vfs_register_uri_scheme$MH = RuntimeHelper.downcallHandle(
+        "g_vfs_register_uri_scheme",
+        constants$825.g_vfs_register_uri_scheme$FUNC
+    );
+    static final FunctionDescriptor g_vfs_unregister_uri_scheme$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_vfs_unregister_uri_scheme$MH = RuntimeHelper.downcallHandle(
+        "g_vfs_unregister_uri_scheme",
+        constants$825.g_vfs_unregister_uri_scheme$FUNC
     );
 }
 

@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class cairo_path_t extends cairo_path {
+/**
+ * {@snippet :
+ * typedef struct cairo_path cairo_path_t;
+ * }
+ */
+public final class cairo_path_t extends cairo_path {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private cairo_path_t() {}
 }
 
 

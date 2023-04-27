@@ -7,66 +7,70 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$586 {
+final class constants$586 {
 
-    static final FunctionDescriptor g_datagram_based_receive_messages$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$586() {}
+    static final FunctionDescriptor g_dbus_object_manager_get_object$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_datagram_based_receive_messages$MH = RuntimeHelper.downcallHandle(
-        "g_datagram_based_receive_messages",
-        constants$586.g_datagram_based_receive_messages$FUNC
+    static final MethodHandle g_dbus_object_manager_get_object$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_object_manager_get_object",
+        constants$586.g_dbus_object_manager_get_object$FUNC
     );
-    static final FunctionDescriptor g_datagram_based_send_messages$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_dbus_object_manager_get_interface$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_datagram_based_send_messages$MH = RuntimeHelper.downcallHandle(
-        "g_datagram_based_send_messages",
-        constants$586.g_datagram_based_send_messages$FUNC
+    static final MethodHandle g_dbus_object_manager_get_interface$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_object_manager_get_interface",
+        constants$586.g_dbus_object_manager_get_interface$FUNC
     );
-    static final FunctionDescriptor g_datagram_based_create_source$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_dbus_object_manager_client_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_dbus_object_manager_client_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_object_manager_client_get_type",
+        constants$586.g_dbus_object_manager_client_get_type$FUNC
+    );
+    static final FunctionDescriptor g_dbus_object_manager_client_new$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_datagram_based_create_source$MH = RuntimeHelper.downcallHandle(
-        "g_datagram_based_create_source",
-        constants$586.g_datagram_based_create_source$FUNC
-    );
-    static final FunctionDescriptor g_datagram_based_condition_check$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_datagram_based_condition_check$MH = RuntimeHelper.downcallHandle(
-        "g_datagram_based_condition_check",
-        constants$586.g_datagram_based_condition_check$FUNC
-    );
-    static final FunctionDescriptor g_datagram_based_condition_wait$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_datagram_based_condition_wait$MH = RuntimeHelper.downcallHandle(
-        "g_datagram_based_condition_wait",
-        constants$586.g_datagram_based_condition_wait$FUNC
+    static final MethodHandle g_dbus_object_manager_client_new$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_object_manager_client_new",
+        constants$586.g_dbus_object_manager_client_new$FUNC
     );
-    static final FunctionDescriptor g_data_input_stream_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_data_input_stream_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_data_input_stream_get_type",
-        constants$586.g_data_input_stream_get_type$FUNC
+    static final FunctionDescriptor g_dbus_object_manager_client_new_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_dbus_object_manager_client_new_finish$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_object_manager_client_new_finish",
+        constants$586.g_dbus_object_manager_client_new_finish$FUNC
+    );
+    static final FunctionDescriptor g_dbus_object_manager_client_new_sync$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_dbus_object_manager_client_new_sync$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_object_manager_client_new_sync",
+        constants$586.g_dbus_object_manager_client_new_sync$FUNC
     );
 }
 

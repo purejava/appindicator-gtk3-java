@@ -7,4886 +7,49 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
- class app_indicator_h_11 extends app_indicator_h_10 {
+public class app_indicator_h_11 extends app_indicator_h_10 {
 
-    public static OfInt hb_position_t = Constants$root.C_INT$LAYOUT;
-    public static MethodHandle hb_tag_from_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$988.hb_tag_from_string$MH,"hb_tag_from_string");
-    }
-    public static int hb_tag_from_string ( Addressable str,  int len) {
-        var mh$ = hb_tag_from_string$MH();
-        try {
-            return (int)mh$.invokeExact(str, len);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_tag_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$988.hb_tag_to_string$MH,"hb_tag_to_string");
-    }
-    public static void hb_tag_to_string ( int tag,  Addressable buf) {
-        var mh$ = hb_tag_to_string$MH();
-        try {
-            mh$.invokeExact(tag, buf);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static int HB_DIRECTION_INVALID() {
-        return (int)0L;
-    }
-    public static int HB_DIRECTION_LTR() {
-        return (int)4L;
-    }
-    public static int HB_DIRECTION_RTL() {
-        return (int)5L;
-    }
-    public static int HB_DIRECTION_TTB() {
-        return (int)6L;
-    }
-    public static int HB_DIRECTION_BTT() {
-        return (int)7L;
-    }
-    public static MethodHandle hb_direction_from_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$988.hb_direction_from_string$MH,"hb_direction_from_string");
-    }
-    public static int hb_direction_from_string ( Addressable str,  int len) {
-        var mh$ = hb_direction_from_string$MH();
-        try {
-            return (int)mh$.invokeExact(str, len);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_direction_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$988.hb_direction_to_string$MH,"hb_direction_to_string");
-    }
-    public static MemoryAddress hb_direction_to_string ( int direction) {
-        var mh$ = hb_direction_to_string$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(direction);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress hb_language_t = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle hb_language_from_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$988.hb_language_from_string$MH,"hb_language_from_string");
-    }
-    public static MemoryAddress hb_language_from_string ( Addressable str,  int len) {
-        var mh$ = hb_language_from_string$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(str, len);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_language_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$988.hb_language_to_string$MH,"hb_language_to_string");
-    }
-    public static MemoryAddress hb_language_to_string ( Addressable language) {
-        var mh$ = hb_language_to_string$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(language);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_language_get_default$MH() {
-        return RuntimeHelper.requireNonNull(constants$989.hb_language_get_default$MH,"hb_language_get_default");
-    }
-    public static MemoryAddress hb_language_get_default () {
-        var mh$ = hb_language_get_default$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static int HB_SCRIPT_COMMON() {
-        return (int)1517910393L;
-    }
-    public static int HB_SCRIPT_INHERITED() {
-        return (int)1516858984L;
-    }
-    public static int HB_SCRIPT_UNKNOWN() {
-        return (int)1517976186L;
-    }
-    public static int HB_SCRIPT_ARABIC() {
-        return (int)1098015074L;
-    }
-    public static int HB_SCRIPT_ARMENIAN() {
-        return (int)1098018158L;
-    }
-    public static int HB_SCRIPT_BENGALI() {
-        return (int)1113943655L;
-    }
-    public static int HB_SCRIPT_CYRILLIC() {
-        return (int)1132032620L;
-    }
-    public static int HB_SCRIPT_DEVANAGARI() {
-        return (int)1147500129L;
-    }
-    public static int HB_SCRIPT_GEORGIAN() {
-        return (int)1197830002L;
-    }
-    public static int HB_SCRIPT_GREEK() {
-        return (int)1198679403L;
-    }
-    public static int HB_SCRIPT_GUJARATI() {
-        return (int)1198877298L;
-    }
-    public static int HB_SCRIPT_GURMUKHI() {
-        return (int)1198879349L;
-    }
-    public static int HB_SCRIPT_HANGUL() {
-        return (int)1214344807L;
-    }
-    public static int HB_SCRIPT_HAN() {
-        return (int)1214344809L;
-    }
-    public static int HB_SCRIPT_HEBREW() {
-        return (int)1214603890L;
-    }
-    public static int HB_SCRIPT_HIRAGANA() {
-        return (int)1214870113L;
-    }
-    public static int HB_SCRIPT_KANNADA() {
-        return (int)1265525857L;
-    }
-    public static int HB_SCRIPT_KATAKANA() {
-        return (int)1264676449L;
-    }
-    public static int HB_SCRIPT_LAO() {
-        return (int)1281453935L;
-    }
-    public static int HB_SCRIPT_LATIN() {
-        return (int)1281455214L;
-    }
-    public static int HB_SCRIPT_MALAYALAM() {
-        return (int)1298954605L;
-    }
-    public static int HB_SCRIPT_ORIYA() {
-        return (int)1332902241L;
-    }
-    public static int HB_SCRIPT_TAMIL() {
-        return (int)1415671148L;
-    }
-    public static int HB_SCRIPT_TELUGU() {
-        return (int)1415933045L;
-    }
-    public static int HB_SCRIPT_THAI() {
-        return (int)1416126825L;
-    }
-    public static int HB_SCRIPT_TIBETAN() {
-        return (int)1416192628L;
-    }
-    public static int HB_SCRIPT_BOPOMOFO() {
-        return (int)1114599535L;
-    }
-    public static int HB_SCRIPT_BRAILLE() {
-        return (int)1114792297L;
-    }
-    public static int HB_SCRIPT_CANADIAN_SYLLABICS() {
-        return (int)1130458739L;
-    }
-    public static int HB_SCRIPT_CHEROKEE() {
-        return (int)1130915186L;
-    }
-    public static int HB_SCRIPT_ETHIOPIC() {
-        return (int)1165256809L;
-    }
-    public static int HB_SCRIPT_KHMER() {
-        return (int)1265134962L;
-    }
-    public static int HB_SCRIPT_MONGOLIAN() {
-        return (int)1299148391L;
-    }
-    public static int HB_SCRIPT_MYANMAR() {
-        return (int)1299803506L;
-    }
-    public static int HB_SCRIPT_OGHAM() {
-        return (int)1332175213L;
-    }
-    public static int HB_SCRIPT_RUNIC() {
-        return (int)1383427698L;
-    }
-    public static int HB_SCRIPT_SINHALA() {
-        return (int)1399418472L;
-    }
-    public static int HB_SCRIPT_SYRIAC() {
-        return (int)1400468067L;
-    }
-    public static int HB_SCRIPT_THAANA() {
-        return (int)1416126817L;
-    }
-    public static int HB_SCRIPT_YI() {
-        return (int)1500080489L;
-    }
-    public static int HB_SCRIPT_DESERET() {
-        return (int)1148416628L;
-    }
-    public static int HB_SCRIPT_GOTHIC() {
-        return (int)1198486632L;
-    }
-    public static int HB_SCRIPT_OLD_ITALIC() {
-        return (int)1232363884L;
-    }
-    public static int HB_SCRIPT_BUHID() {
-        return (int)1114990692L;
-    }
-    public static int HB_SCRIPT_HANUNOO() {
-        return (int)1214344815L;
-    }
-    public static int HB_SCRIPT_TAGALOG() {
-        return (int)1416064103L;
-    }
-    public static int HB_SCRIPT_TAGBANWA() {
-        return (int)1415669602L;
-    }
-    public static int HB_SCRIPT_CYPRIOT() {
-        return (int)1131442804L;
-    }
-    public static int HB_SCRIPT_LIMBU() {
-        return (int)1281977698L;
-    }
-    public static int HB_SCRIPT_LINEAR_B() {
-        return (int)1281977954L;
-    }
-    public static int HB_SCRIPT_OSMANYA() {
-        return (int)1332964705L;
-    }
-    public static int HB_SCRIPT_SHAVIAN() {
-        return (int)1399349623L;
-    }
-    public static int HB_SCRIPT_TAI_LE() {
-        return (int)1415670885L;
-    }
-    public static int HB_SCRIPT_UGARITIC() {
-        return (int)1432838514L;
-    }
-    public static int HB_SCRIPT_BUGINESE() {
-        return (int)1114990441L;
-    }
-    public static int HB_SCRIPT_COPTIC() {
-        return (int)1131376756L;
-    }
-    public static int HB_SCRIPT_GLAGOLITIC() {
-        return (int)1198285159L;
-    }
-    public static int HB_SCRIPT_KHAROSHTHI() {
-        return (int)1265131890L;
-    }
-    public static int HB_SCRIPT_NEW_TAI_LUE() {
-        return (int)1415670901L;
-    }
-    public static int HB_SCRIPT_OLD_PERSIAN() {
-        return (int)1483761007L;
-    }
-    public static int HB_SCRIPT_SYLOTI_NAGRI() {
-        return (int)1400466543L;
-    }
-    public static int HB_SCRIPT_TIFINAGH() {
-        return (int)1415999079L;
-    }
-    public static int HB_SCRIPT_BALINESE() {
-        return (int)1113681001L;
-    }
-    public static int HB_SCRIPT_CUNEIFORM() {
-        return (int)1483961720L;
-    }
-    public static int HB_SCRIPT_NKO() {
-        return (int)1315663727L;
-    }
-    public static int HB_SCRIPT_PHAGS_PA() {
-        return (int)1349017959L;
-    }
-    public static int HB_SCRIPT_PHOENICIAN() {
-        return (int)1349021304L;
-    }
-    public static int HB_SCRIPT_CARIAN() {
-        return (int)1130459753L;
-    }
-    public static int HB_SCRIPT_CHAM() {
-        return (int)1130914157L;
-    }
-    public static int HB_SCRIPT_KAYAH_LI() {
-        return (int)1264675945L;
-    }
-    public static int HB_SCRIPT_LEPCHA() {
-        return (int)1281716323L;
-    }
-    public static int HB_SCRIPT_LYCIAN() {
-        return (int)1283023721L;
-    }
-    public static int HB_SCRIPT_LYDIAN() {
-        return (int)1283023977L;
-    }
-    public static int HB_SCRIPT_OL_CHIKI() {
-        return (int)1332503403L;
-    }
-    public static int HB_SCRIPT_REJANG() {
-        return (int)1382706791L;
-    }
-    public static int HB_SCRIPT_SAURASHTRA() {
-        return (int)1398895986L;
-    }
-    public static int HB_SCRIPT_SUNDANESE() {
-        return (int)1400204900L;
-    }
-    public static int HB_SCRIPT_VAI() {
-        return (int)1449224553L;
-    }
-    public static int HB_SCRIPT_AVESTAN() {
-        return (int)1098281844L;
-    }
-    public static int HB_SCRIPT_BAMUM() {
-        return (int)1113681269L;
-    }
-    public static int HB_SCRIPT_EGYPTIAN_HIEROGLYPHS() {
-        return (int)1164409200L;
-    }
-    public static int HB_SCRIPT_IMPERIAL_ARAMAIC() {
-        return (int)1098018153L;
-    }
-    public static int HB_SCRIPT_INSCRIPTIONAL_PAHLAVI() {
-        return (int)1349020777L;
-    }
-    public static int HB_SCRIPT_INSCRIPTIONAL_PARTHIAN() {
-        return (int)1349678185L;
-    }
-    public static int HB_SCRIPT_JAVANESE() {
-        return (int)1247901281L;
-    }
-    public static int HB_SCRIPT_KAITHI() {
-        return (int)1265920105L;
-    }
-    public static int HB_SCRIPT_LISU() {
-        return (int)1281979253L;
-    }
-    public static int HB_SCRIPT_MEETEI_MAYEK() {
-        return (int)1299473769L;
-    }
-    public static int HB_SCRIPT_OLD_SOUTH_ARABIAN() {
-        return (int)1398895202L;
-    }
-    public static int HB_SCRIPT_OLD_TURKIC() {
-        return (int)1332898664L;
-    }
-    public static int HB_SCRIPT_SAMARITAN() {
-        return (int)1398893938L;
-    }
-    public static int HB_SCRIPT_TAI_THAM() {
-        return (int)1281453665L;
-    }
-    public static int HB_SCRIPT_TAI_VIET() {
-        return (int)1415673460L;
-    }
-    public static int HB_SCRIPT_BATAK() {
-        return (int)1113683051L;
-    }
-    public static int HB_SCRIPT_BRAHMI() {
-        return (int)1114792296L;
-    }
-    public static int HB_SCRIPT_MANDAIC() {
-        return (int)1298230884L;
-    }
-    public static int HB_SCRIPT_CHAKMA() {
-        return (int)1130457965L;
-    }
-    public static int HB_SCRIPT_MEROITIC_CURSIVE() {
-        return (int)1298494051L;
-    }
-    public static int HB_SCRIPT_MEROITIC_HIEROGLYPHS() {
-        return (int)1298494063L;
-    }
-    public static int HB_SCRIPT_MIAO() {
-        return (int)1349284452L;
-    }
-    public static int HB_SCRIPT_SHARADA() {
-        return (int)1399353956L;
-    }
-    public static int HB_SCRIPT_SORA_SOMPENG() {
-        return (int)1399812705L;
-    }
-    public static int HB_SCRIPT_TAKRI() {
-        return (int)1415670642L;
-    }
-    public static int HB_SCRIPT_BASSA_VAH() {
-        return (int)1113682803L;
-    }
-    public static int HB_SCRIPT_CAUCASIAN_ALBANIAN() {
-        return (int)1097295970L;
-    }
-    public static int HB_SCRIPT_DUPLOYAN() {
-        return (int)1148547180L;
-    }
-    public static int HB_SCRIPT_ELBASAN() {
-        return (int)1164730977L;
-    }
-    public static int HB_SCRIPT_GRANTHA() {
-        return (int)1198678382L;
-    }
-    public static int HB_SCRIPT_KHOJKI() {
-        return (int)1265135466L;
-    }
-    public static int HB_SCRIPT_KHUDAWADI() {
-        return (int)1399418468L;
-    }
-    public static int HB_SCRIPT_LINEAR_A() {
-        return (int)1281977953L;
-    }
-    public static int HB_SCRIPT_MAHAJANI() {
-        return (int)1298229354L;
-    }
-    public static int HB_SCRIPT_MANICHAEAN() {
-        return (int)1298230889L;
-    }
-    public static int HB_SCRIPT_MENDE_KIKAKUI() {
-        return (int)1298493028L;
-    }
-    public static int HB_SCRIPT_MODI() {
-        return (int)1299145833L;
-    }
-    public static int HB_SCRIPT_MRO() {
-        return (int)1299345263L;
-    }
-    public static int HB_SCRIPT_NABATAEAN() {
-        return (int)1315070324L;
-    }
-    public static int HB_SCRIPT_OLD_NORTH_ARABIAN() {
-        return (int)1315009122L;
-    }
-    public static int HB_SCRIPT_OLD_PERMIC() {
-        return (int)1348825709L;
-    }
-    public static int HB_SCRIPT_PAHAWH_HMONG() {
-        return (int)1215131239L;
-    }
-    public static int HB_SCRIPT_PALMYRENE() {
-        return (int)1348562029L;
-    }
-    public static int HB_SCRIPT_PAU_CIN_HAU() {
-        return (int)1348564323L;
-    }
-    public static int HB_SCRIPT_PSALTER_PAHLAVI() {
-        return (int)1349020784L;
-    }
-    public static int HB_SCRIPT_SIDDHAM() {
-        return (int)1399415908L;
-    }
-    public static int HB_SCRIPT_TIRHUTA() {
-        return (int)1416196712L;
-    }
-    public static int HB_SCRIPT_WARANG_CITI() {
-        return (int)1466004065L;
-    }
-    public static int HB_SCRIPT_AHOM() {
-        return (int)1097363309L;
-    }
-    public static int HB_SCRIPT_ANATOLIAN_HIEROGLYPHS() {
-        return (int)1215067511L;
-    }
-    public static int HB_SCRIPT_HATRAN() {
-        return (int)1214346354L;
-    }
-    public static int HB_SCRIPT_MULTANI() {
-        return (int)1299541108L;
-    }
-    public static int HB_SCRIPT_OLD_HUNGARIAN() {
-        return (int)1215655527L;
-    }
-    public static int HB_SCRIPT_SIGNWRITING() {
-        return (int)1399287415L;
-    }
-    public static int HB_SCRIPT_ADLAM() {
-        return (int)1097100397L;
-    }
-    public static int HB_SCRIPT_BHAIKSUKI() {
-        return (int)1114139507L;
-    }
-    public static int HB_SCRIPT_MARCHEN() {
-        return (int)1298231907L;
-    }
-    public static int HB_SCRIPT_OSAGE() {
-        return (int)1332963173L;
-    }
-    public static int HB_SCRIPT_TANGUT() {
-        return (int)1415671399L;
-    }
-    public static int HB_SCRIPT_NEWA() {
-        return (int)1315272545L;
-    }
-    public static int HB_SCRIPT_MASARAM_GONDI() {
-        return (int)1198485101L;
-    }
-    public static int HB_SCRIPT_NUSHU() {
-        return (int)1316186229L;
-    }
-    public static int HB_SCRIPT_SOYOMBO() {
-        return (int)1399814511L;
-    }
-    public static int HB_SCRIPT_ZANABAZAR_SQUARE() {
-        return (int)1516334690L;
-    }
-    public static int HB_SCRIPT_DOGRA() {
-        return (int)1148151666L;
-    }
-    public static int HB_SCRIPT_GUNJALA_GONDI() {
-        return (int)1198485095L;
-    }
-    public static int HB_SCRIPT_HANIFI_ROHINGYA() {
-        return (int)1383032935L;
-    }
-    public static int HB_SCRIPT_MAKASAR() {
-        return (int)1298230113L;
-    }
-    public static int HB_SCRIPT_MEDEFAIDRIN() {
-        return (int)1298490470L;
-    }
-    public static int HB_SCRIPT_OLD_SOGDIAN() {
-        return (int)1399809903L;
-    }
-    public static int HB_SCRIPT_SOGDIAN() {
-        return (int)1399809892L;
-    }
-    public static int HB_SCRIPT_ELYMAIC() {
-        return (int)1164736877L;
-    }
-    public static int HB_SCRIPT_NANDINAGARI() {
-        return (int)1315008100L;
-    }
-    public static int HB_SCRIPT_NYIAKENG_PUACHUE_HMONG() {
-        return (int)1215131248L;
-    }
-    public static int HB_SCRIPT_WANCHO() {
-        return (int)1466132591L;
-    }
-    public static int HB_SCRIPT_CHORASMIAN() {
-        return (int)1130918515L;
-    }
-    public static int HB_SCRIPT_DIVES_AKURU() {
-        return (int)1147756907L;
-    }
-    public static int HB_SCRIPT_KHITAN_SMALL_SCRIPT() {
-        return (int)1265202291L;
-    }
-    public static int HB_SCRIPT_YEZIDI() {
-        return (int)1499822697L;
-    }
-    public static int HB_SCRIPT_INVALID() {
-        return (int)0L;
-    }
-    public static int _HB_SCRIPT_MAX_VALUE() {
-        return (int)2147483647L;
-    }
-    public static int _HB_SCRIPT_MAX_VALUE_SIGNED() {
-        return (int)2147483647L;
-    }
-    public static MethodHandle hb_script_from_iso15924_tag$MH() {
-        return RuntimeHelper.requireNonNull(constants$989.hb_script_from_iso15924_tag$MH,"hb_script_from_iso15924_tag");
-    }
-    public static int hb_script_from_iso15924_tag ( int tag) {
-        var mh$ = hb_script_from_iso15924_tag$MH();
-        try {
-            return (int)mh$.invokeExact(tag);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_script_from_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$989.hb_script_from_string$MH,"hb_script_from_string");
-    }
-    public static int hb_script_from_string ( Addressable str,  int len) {
-        var mh$ = hb_script_from_string$MH();
-        try {
-            return (int)mh$.invokeExact(str, len);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_script_to_iso15924_tag$MH() {
-        return RuntimeHelper.requireNonNull(constants$989.hb_script_to_iso15924_tag$MH,"hb_script_to_iso15924_tag");
-    }
-    public static int hb_script_to_iso15924_tag ( int script) {
-        var mh$ = hb_script_to_iso15924_tag$MH();
-        try {
-            return (int)mh$.invokeExact(script);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_script_get_horizontal_direction$MH() {
-        return RuntimeHelper.requireNonNull(constants$989.hb_script_get_horizontal_direction$MH,"hb_script_get_horizontal_direction");
-    }
-    public static int hb_script_get_horizontal_direction ( int script) {
-        var mh$ = hb_script_get_horizontal_direction$MH();
-        try {
-            return (int)mh$.invokeExact(script);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_feature_from_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$990.hb_feature_from_string$MH,"hb_feature_from_string");
-    }
-    public static int hb_feature_from_string ( Addressable str,  int len,  Addressable feature) {
-        var mh$ = hb_feature_from_string$MH();
-        try {
-            return (int)mh$.invokeExact(str, len, feature);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_feature_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$990.hb_feature_to_string$MH,"hb_feature_to_string");
-    }
-    public static void hb_feature_to_string ( Addressable feature,  Addressable buf,  int size) {
-        var mh$ = hb_feature_to_string$MH();
-        try {
-            mh$.invokeExact(feature, buf, size);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_variation_from_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$990.hb_variation_from_string$MH,"hb_variation_from_string");
-    }
-    public static int hb_variation_from_string ( Addressable str,  int len,  Addressable variation) {
-        var mh$ = hb_variation_from_string$MH();
-        try {
-            return (int)mh$.invokeExact(str, len, variation);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_variation_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$990.hb_variation_to_string$MH,"hb_variation_to_string");
-    }
-    public static void hb_variation_to_string ( Addressable variation,  Addressable buf,  int size) {
-        var mh$ = hb_variation_to_string$MH();
-        try {
-            mh$.invokeExact(variation, buf, size);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_color_get_alpha$MH() {
-        return RuntimeHelper.requireNonNull(constants$990.hb_color_get_alpha$MH,"hb_color_get_alpha");
-    }
-    public static byte hb_color_get_alpha ( int color) {
-        var mh$ = hb_color_get_alpha$MH();
-        try {
-            return (byte)mh$.invokeExact(color);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_color_get_red$MH() {
-        return RuntimeHelper.requireNonNull(constants$991.hb_color_get_red$MH,"hb_color_get_red");
-    }
-    public static byte hb_color_get_red ( int color) {
-        var mh$ = hb_color_get_red$MH();
-        try {
-            return (byte)mh$.invokeExact(color);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_color_get_green$MH() {
-        return RuntimeHelper.requireNonNull(constants$991.hb_color_get_green$MH,"hb_color_get_green");
-    }
-    public static byte hb_color_get_green ( int color) {
-        var mh$ = hb_color_get_green$MH();
-        try {
-            return (byte)mh$.invokeExact(color);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_color_get_blue$MH() {
-        return RuntimeHelper.requireNonNull(constants$991.hb_color_get_blue$MH,"hb_color_get_blue");
-    }
-    public static byte hb_color_get_blue ( int color) {
-        var mh$ = hb_color_get_blue$MH();
-        try {
-            return (byte)mh$.invokeExact(color);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static int HB_MEMORY_MODE_DUPLICATE() {
-        return (int)0L;
-    }
-    public static int HB_MEMORY_MODE_READONLY() {
-        return (int)1L;
-    }
-    public static int HB_MEMORY_MODE_WRITABLE() {
-        return (int)2L;
-    }
-    public static int HB_MEMORY_MODE_READONLY_MAY_MAKE_WRITABLE() {
-        return (int)3L;
-    }
-    public static MethodHandle hb_blob_create$MH() {
-        return RuntimeHelper.requireNonNull(constants$991.hb_blob_create$MH,"hb_blob_create");
-    }
-    public static MemoryAddress hb_blob_create ( Addressable data,  int length,  int mode,  Addressable user_data,  Addressable destroy) {
-        var mh$ = hb_blob_create$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(data, length, mode, user_data, destroy);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_blob_create_from_file$MH() {
-        return RuntimeHelper.requireNonNull(constants$991.hb_blob_create_from_file$MH,"hb_blob_create_from_file");
-    }
-    public static MemoryAddress hb_blob_create_from_file ( Addressable file_name) {
-        var mh$ = hb_blob_create_from_file$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(file_name);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_blob_create_sub_blob$MH() {
-        return RuntimeHelper.requireNonNull(constants$991.hb_blob_create_sub_blob$MH,"hb_blob_create_sub_blob");
-    }
-    public static MemoryAddress hb_blob_create_sub_blob ( Addressable parent,  int offset,  int length) {
-        var mh$ = hb_blob_create_sub_blob$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(parent, offset, length);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_blob_copy_writable_or_fail$MH() {
-        return RuntimeHelper.requireNonNull(constants$992.hb_blob_copy_writable_or_fail$MH,"hb_blob_copy_writable_or_fail");
-    }
-    public static MemoryAddress hb_blob_copy_writable_or_fail ( Addressable blob) {
-        var mh$ = hb_blob_copy_writable_or_fail$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(blob);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_blob_get_empty$MH() {
-        return RuntimeHelper.requireNonNull(constants$992.hb_blob_get_empty$MH,"hb_blob_get_empty");
-    }
-    public static MemoryAddress hb_blob_get_empty () {
-        var mh$ = hb_blob_get_empty$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_blob_reference$MH() {
-        return RuntimeHelper.requireNonNull(constants$992.hb_blob_reference$MH,"hb_blob_reference");
-    }
-    public static MemoryAddress hb_blob_reference ( Addressable blob) {
-        var mh$ = hb_blob_reference$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(blob);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_blob_destroy$MH() {
-        return RuntimeHelper.requireNonNull(constants$992.hb_blob_destroy$MH,"hb_blob_destroy");
-    }
-    public static void hb_blob_destroy ( Addressable blob) {
-        var mh$ = hb_blob_destroy$MH();
-        try {
-            mh$.invokeExact(blob);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_blob_set_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$992.hb_blob_set_user_data$MH,"hb_blob_set_user_data");
-    }
-    public static int hb_blob_set_user_data ( Addressable blob,  Addressable key,  Addressable data,  Addressable destroy,  int replace) {
-        var mh$ = hb_blob_set_user_data$MH();
-        try {
-            return (int)mh$.invokeExact(blob, key, data, destroy, replace);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_blob_get_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$992.hb_blob_get_user_data$MH,"hb_blob_get_user_data");
-    }
-    public static MemoryAddress hb_blob_get_user_data ( Addressable blob,  Addressable key) {
-        var mh$ = hb_blob_get_user_data$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(blob, key);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_blob_make_immutable$MH() {
-        return RuntimeHelper.requireNonNull(constants$993.hb_blob_make_immutable$MH,"hb_blob_make_immutable");
-    }
-    public static void hb_blob_make_immutable ( Addressable blob) {
-        var mh$ = hb_blob_make_immutable$MH();
-        try {
-            mh$.invokeExact(blob);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_blob_is_immutable$MH() {
-        return RuntimeHelper.requireNonNull(constants$993.hb_blob_is_immutable$MH,"hb_blob_is_immutable");
-    }
-    public static int hb_blob_is_immutable ( Addressable blob) {
-        var mh$ = hb_blob_is_immutable$MH();
-        try {
-            return (int)mh$.invokeExact(blob);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_blob_get_length$MH() {
-        return RuntimeHelper.requireNonNull(constants$993.hb_blob_get_length$MH,"hb_blob_get_length");
-    }
-    public static int hb_blob_get_length ( Addressable blob) {
-        var mh$ = hb_blob_get_length$MH();
-        try {
-            return (int)mh$.invokeExact(blob);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_blob_get_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$993.hb_blob_get_data$MH,"hb_blob_get_data");
-    }
-    public static MemoryAddress hb_blob_get_data ( Addressable blob,  Addressable length) {
-        var mh$ = hb_blob_get_data$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(blob, length);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_blob_get_data_writable$MH() {
-        return RuntimeHelper.requireNonNull(constants$993.hb_blob_get_data_writable$MH,"hb_blob_get_data_writable");
-    }
-    public static MemoryAddress hb_blob_get_data_writable ( Addressable blob,  Addressable length) {
-        var mh$ = hb_blob_get_data_writable$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(blob, length);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static int HB_UNICODE_GENERAL_CATEGORY_CONTROL() {
-        return (int)0L;
-    }
-    public static int HB_UNICODE_GENERAL_CATEGORY_FORMAT() {
-        return (int)1L;
-    }
-    public static int HB_UNICODE_GENERAL_CATEGORY_UNASSIGNED() {
-        return (int)2L;
-    }
-    public static int HB_UNICODE_GENERAL_CATEGORY_PRIVATE_USE() {
-        return (int)3L;
-    }
-    public static int HB_UNICODE_GENERAL_CATEGORY_SURROGATE() {
-        return (int)4L;
-    }
-    public static int HB_UNICODE_GENERAL_CATEGORY_LOWERCASE_LETTER() {
-        return (int)5L;
-    }
-    public static int HB_UNICODE_GENERAL_CATEGORY_MODIFIER_LETTER() {
-        return (int)6L;
-    }
-    public static int HB_UNICODE_GENERAL_CATEGORY_OTHER_LETTER() {
-        return (int)7L;
-    }
-    public static int HB_UNICODE_GENERAL_CATEGORY_TITLECASE_LETTER() {
-        return (int)8L;
-    }
-    public static int HB_UNICODE_GENERAL_CATEGORY_UPPERCASE_LETTER() {
-        return (int)9L;
-    }
-    public static int HB_UNICODE_GENERAL_CATEGORY_SPACING_MARK() {
-        return (int)10L;
-    }
-    public static int HB_UNICODE_GENERAL_CATEGORY_ENCLOSING_MARK() {
-        return (int)11L;
-    }
-    public static int HB_UNICODE_GENERAL_CATEGORY_NON_SPACING_MARK() {
-        return (int)12L;
-    }
-    public static int HB_UNICODE_GENERAL_CATEGORY_DECIMAL_NUMBER() {
-        return (int)13L;
-    }
-    public static int HB_UNICODE_GENERAL_CATEGORY_LETTER_NUMBER() {
-        return (int)14L;
-    }
-    public static int HB_UNICODE_GENERAL_CATEGORY_OTHER_NUMBER() {
-        return (int)15L;
-    }
-    public static int HB_UNICODE_GENERAL_CATEGORY_CONNECT_PUNCTUATION() {
-        return (int)16L;
-    }
-    public static int HB_UNICODE_GENERAL_CATEGORY_DASH_PUNCTUATION() {
-        return (int)17L;
-    }
-    public static int HB_UNICODE_GENERAL_CATEGORY_CLOSE_PUNCTUATION() {
-        return (int)18L;
-    }
-    public static int HB_UNICODE_GENERAL_CATEGORY_FINAL_PUNCTUATION() {
-        return (int)19L;
-    }
-    public static int HB_UNICODE_GENERAL_CATEGORY_INITIAL_PUNCTUATION() {
-        return (int)20L;
-    }
-    public static int HB_UNICODE_GENERAL_CATEGORY_OTHER_PUNCTUATION() {
-        return (int)21L;
-    }
-    public static int HB_UNICODE_GENERAL_CATEGORY_OPEN_PUNCTUATION() {
-        return (int)22L;
-    }
-    public static int HB_UNICODE_GENERAL_CATEGORY_CURRENCY_SYMBOL() {
-        return (int)23L;
-    }
-    public static int HB_UNICODE_GENERAL_CATEGORY_MODIFIER_SYMBOL() {
-        return (int)24L;
-    }
-    public static int HB_UNICODE_GENERAL_CATEGORY_MATH_SYMBOL() {
-        return (int)25L;
-    }
-    public static int HB_UNICODE_GENERAL_CATEGORY_OTHER_SYMBOL() {
-        return (int)26L;
-    }
-    public static int HB_UNICODE_GENERAL_CATEGORY_LINE_SEPARATOR() {
-        return (int)27L;
-    }
-    public static int HB_UNICODE_GENERAL_CATEGORY_PARAGRAPH_SEPARATOR() {
-        return (int)28L;
-    }
-    public static int HB_UNICODE_GENERAL_CATEGORY_SPACE_SEPARATOR() {
-        return (int)29L;
-    }
-    public static int HB_UNICODE_COMBINING_CLASS_NOT_REORDERED() {
-        return (int)0L;
-    }
-    public static int HB_UNICODE_COMBINING_CLASS_OVERLAY() {
-        return (int)1L;
-    }
-    public static int HB_UNICODE_COMBINING_CLASS_NUKTA() {
-        return (int)7L;
-    }
-    public static int HB_UNICODE_COMBINING_CLASS_KANA_VOICING() {
-        return (int)8L;
-    }
-    public static int HB_UNICODE_COMBINING_CLASS_VIRAMA() {
-        return (int)9L;
-    }
-    public static int HB_UNICODE_COMBINING_CLASS_CCC10() {
-        return (int)10L;
-    }
-    public static int HB_UNICODE_COMBINING_CLASS_CCC11() {
-        return (int)11L;
-    }
-    public static int HB_UNICODE_COMBINING_CLASS_CCC12() {
-        return (int)12L;
-    }
-    public static int HB_UNICODE_COMBINING_CLASS_CCC13() {
-        return (int)13L;
-    }
-    public static int HB_UNICODE_COMBINING_CLASS_CCC14() {
-        return (int)14L;
-    }
-    public static int HB_UNICODE_COMBINING_CLASS_CCC15() {
-        return (int)15L;
-    }
-    public static int HB_UNICODE_COMBINING_CLASS_CCC16() {
-        return (int)16L;
-    }
-    public static int HB_UNICODE_COMBINING_CLASS_CCC17() {
-        return (int)17L;
-    }
-    public static int HB_UNICODE_COMBINING_CLASS_CCC18() {
-        return (int)18L;
-    }
-    public static int HB_UNICODE_COMBINING_CLASS_CCC19() {
-        return (int)19L;
-    }
-    public static int HB_UNICODE_COMBINING_CLASS_CCC20() {
-        return (int)20L;
-    }
-    public static int HB_UNICODE_COMBINING_CLASS_CCC21() {
-        return (int)21L;
-    }
-    public static int HB_UNICODE_COMBINING_CLASS_CCC22() {
-        return (int)22L;
-    }
-    public static int HB_UNICODE_COMBINING_CLASS_CCC23() {
-        return (int)23L;
-    }
-    public static int HB_UNICODE_COMBINING_CLASS_CCC24() {
-        return (int)24L;
-    }
-    public static int HB_UNICODE_COMBINING_CLASS_CCC25() {
-        return (int)25L;
-    }
-    public static int HB_UNICODE_COMBINING_CLASS_CCC26() {
-        return (int)26L;
-    }
-    public static int HB_UNICODE_COMBINING_CLASS_CCC27() {
-        return (int)27L;
-    }
-    public static int HB_UNICODE_COMBINING_CLASS_CCC28() {
-        return (int)28L;
-    }
-    public static int HB_UNICODE_COMBINING_CLASS_CCC29() {
-        return (int)29L;
-    }
-    public static int HB_UNICODE_COMBINING_CLASS_CCC30() {
-        return (int)30L;
-    }
-    public static int HB_UNICODE_COMBINING_CLASS_CCC31() {
-        return (int)31L;
-    }
-    public static int HB_UNICODE_COMBINING_CLASS_CCC32() {
-        return (int)32L;
-    }
-    public static int HB_UNICODE_COMBINING_CLASS_CCC33() {
-        return (int)33L;
-    }
-    public static int HB_UNICODE_COMBINING_CLASS_CCC34() {
-        return (int)34L;
-    }
-    public static int HB_UNICODE_COMBINING_CLASS_CCC35() {
-        return (int)35L;
-    }
-    public static int HB_UNICODE_COMBINING_CLASS_CCC36() {
-        return (int)36L;
-    }
-    public static int HB_UNICODE_COMBINING_CLASS_CCC84() {
-        return (int)84L;
-    }
-    public static int HB_UNICODE_COMBINING_CLASS_CCC91() {
-        return (int)91L;
-    }
-    public static int HB_UNICODE_COMBINING_CLASS_CCC103() {
-        return (int)103L;
-    }
-    public static int HB_UNICODE_COMBINING_CLASS_CCC107() {
-        return (int)107L;
-    }
-    public static int HB_UNICODE_COMBINING_CLASS_CCC118() {
-        return (int)118L;
-    }
-    public static int HB_UNICODE_COMBINING_CLASS_CCC122() {
-        return (int)122L;
-    }
-    public static int HB_UNICODE_COMBINING_CLASS_CCC129() {
-        return (int)129L;
-    }
-    public static int HB_UNICODE_COMBINING_CLASS_CCC130() {
-        return (int)130L;
-    }
-    public static int HB_UNICODE_COMBINING_CLASS_CCC133() {
-        return (int)132L;
-    }
-    public static int HB_UNICODE_COMBINING_CLASS_ATTACHED_BELOW_LEFT() {
-        return (int)200L;
-    }
-    public static int HB_UNICODE_COMBINING_CLASS_ATTACHED_BELOW() {
-        return (int)202L;
-    }
-    public static int HB_UNICODE_COMBINING_CLASS_ATTACHED_ABOVE() {
-        return (int)214L;
-    }
-    public static int HB_UNICODE_COMBINING_CLASS_ATTACHED_ABOVE_RIGHT() {
-        return (int)216L;
-    }
-    public static int HB_UNICODE_COMBINING_CLASS_BELOW_LEFT() {
-        return (int)218L;
-    }
-    public static int HB_UNICODE_COMBINING_CLASS_BELOW() {
-        return (int)220L;
-    }
-    public static int HB_UNICODE_COMBINING_CLASS_BELOW_RIGHT() {
-        return (int)222L;
-    }
-    public static int HB_UNICODE_COMBINING_CLASS_LEFT() {
-        return (int)224L;
-    }
-    public static int HB_UNICODE_COMBINING_CLASS_RIGHT() {
-        return (int)226L;
-    }
-    public static int HB_UNICODE_COMBINING_CLASS_ABOVE_LEFT() {
-        return (int)228L;
-    }
-    public static int HB_UNICODE_COMBINING_CLASS_ABOVE() {
-        return (int)230L;
-    }
-    public static int HB_UNICODE_COMBINING_CLASS_ABOVE_RIGHT() {
-        return (int)232L;
-    }
-    public static int HB_UNICODE_COMBINING_CLASS_DOUBLE_BELOW() {
-        return (int)233L;
-    }
-    public static int HB_UNICODE_COMBINING_CLASS_DOUBLE_ABOVE() {
-        return (int)234L;
-    }
-    public static int HB_UNICODE_COMBINING_CLASS_IOTA_SUBSCRIPT() {
-        return (int)240L;
-    }
-    public static int HB_UNICODE_COMBINING_CLASS_INVALID() {
-        return (int)255L;
-    }
-    public static MethodHandle hb_unicode_funcs_get_default$MH() {
-        return RuntimeHelper.requireNonNull(constants$993.hb_unicode_funcs_get_default$MH,"hb_unicode_funcs_get_default");
-    }
-    public static MemoryAddress hb_unicode_funcs_get_default () {
-        var mh$ = hb_unicode_funcs_get_default$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_unicode_funcs_create$MH() {
-        return RuntimeHelper.requireNonNull(constants$994.hb_unicode_funcs_create$MH,"hb_unicode_funcs_create");
-    }
-    public static MemoryAddress hb_unicode_funcs_create ( Addressable parent) {
-        var mh$ = hb_unicode_funcs_create$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(parent);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_unicode_funcs_get_empty$MH() {
-        return RuntimeHelper.requireNonNull(constants$994.hb_unicode_funcs_get_empty$MH,"hb_unicode_funcs_get_empty");
-    }
-    public static MemoryAddress hb_unicode_funcs_get_empty () {
-        var mh$ = hb_unicode_funcs_get_empty$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_unicode_funcs_reference$MH() {
-        return RuntimeHelper.requireNonNull(constants$994.hb_unicode_funcs_reference$MH,"hb_unicode_funcs_reference");
-    }
-    public static MemoryAddress hb_unicode_funcs_reference ( Addressable ufuncs) {
-        var mh$ = hb_unicode_funcs_reference$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(ufuncs);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_unicode_funcs_destroy$MH() {
-        return RuntimeHelper.requireNonNull(constants$994.hb_unicode_funcs_destroy$MH,"hb_unicode_funcs_destroy");
-    }
-    public static void hb_unicode_funcs_destroy ( Addressable ufuncs) {
-        var mh$ = hb_unicode_funcs_destroy$MH();
-        try {
-            mh$.invokeExact(ufuncs);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_unicode_funcs_set_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$994.hb_unicode_funcs_set_user_data$MH,"hb_unicode_funcs_set_user_data");
-    }
-    public static int hb_unicode_funcs_set_user_data ( Addressable ufuncs,  Addressable key,  Addressable data,  Addressable destroy,  int replace) {
-        var mh$ = hb_unicode_funcs_set_user_data$MH();
-        try {
-            return (int)mh$.invokeExact(ufuncs, key, data, destroy, replace);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_unicode_funcs_get_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$994.hb_unicode_funcs_get_user_data$MH,"hb_unicode_funcs_get_user_data");
-    }
-    public static MemoryAddress hb_unicode_funcs_get_user_data ( Addressable ufuncs,  Addressable key) {
-        var mh$ = hb_unicode_funcs_get_user_data$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(ufuncs, key);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_unicode_funcs_make_immutable$MH() {
-        return RuntimeHelper.requireNonNull(constants$995.hb_unicode_funcs_make_immutable$MH,"hb_unicode_funcs_make_immutable");
-    }
-    public static void hb_unicode_funcs_make_immutable ( Addressable ufuncs) {
-        var mh$ = hb_unicode_funcs_make_immutable$MH();
-        try {
-            mh$.invokeExact(ufuncs);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_unicode_funcs_is_immutable$MH() {
-        return RuntimeHelper.requireNonNull(constants$995.hb_unicode_funcs_is_immutable$MH,"hb_unicode_funcs_is_immutable");
-    }
-    public static int hb_unicode_funcs_is_immutable ( Addressable ufuncs) {
-        var mh$ = hb_unicode_funcs_is_immutable$MH();
-        try {
-            return (int)mh$.invokeExact(ufuncs);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_unicode_funcs_get_parent$MH() {
-        return RuntimeHelper.requireNonNull(constants$995.hb_unicode_funcs_get_parent$MH,"hb_unicode_funcs_get_parent");
-    }
-    public static MemoryAddress hb_unicode_funcs_get_parent ( Addressable ufuncs) {
-        var mh$ = hb_unicode_funcs_get_parent$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(ufuncs);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_unicode_funcs_set_combining_class_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$997.hb_unicode_funcs_set_combining_class_func$MH,"hb_unicode_funcs_set_combining_class_func");
-    }
-    public static void hb_unicode_funcs_set_combining_class_func ( Addressable ufuncs,  Addressable func,  Addressable user_data,  Addressable destroy) {
-        var mh$ = hb_unicode_funcs_set_combining_class_func$MH();
-        try {
-            mh$.invokeExact(ufuncs, func, user_data, destroy);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_unicode_funcs_set_general_category_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$997.hb_unicode_funcs_set_general_category_func$MH,"hb_unicode_funcs_set_general_category_func");
-    }
-    public static void hb_unicode_funcs_set_general_category_func ( Addressable ufuncs,  Addressable func,  Addressable user_data,  Addressable destroy) {
-        var mh$ = hb_unicode_funcs_set_general_category_func$MH();
-        try {
-            mh$.invokeExact(ufuncs, func, user_data, destroy);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_unicode_funcs_set_mirroring_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$997.hb_unicode_funcs_set_mirroring_func$MH,"hb_unicode_funcs_set_mirroring_func");
-    }
-    public static void hb_unicode_funcs_set_mirroring_func ( Addressable ufuncs,  Addressable func,  Addressable user_data,  Addressable destroy) {
-        var mh$ = hb_unicode_funcs_set_mirroring_func$MH();
-        try {
-            mh$.invokeExact(ufuncs, func, user_data, destroy);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_unicode_funcs_set_script_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$998.hb_unicode_funcs_set_script_func$MH,"hb_unicode_funcs_set_script_func");
-    }
-    public static void hb_unicode_funcs_set_script_func ( Addressable ufuncs,  Addressable func,  Addressable user_data,  Addressable destroy) {
-        var mh$ = hb_unicode_funcs_set_script_func$MH();
-        try {
-            mh$.invokeExact(ufuncs, func, user_data, destroy);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_unicode_funcs_set_compose_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$998.hb_unicode_funcs_set_compose_func$MH,"hb_unicode_funcs_set_compose_func");
-    }
-    public static void hb_unicode_funcs_set_compose_func ( Addressable ufuncs,  Addressable func,  Addressable user_data,  Addressable destroy) {
-        var mh$ = hb_unicode_funcs_set_compose_func$MH();
-        try {
-            mh$.invokeExact(ufuncs, func, user_data, destroy);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_unicode_funcs_set_decompose_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$998.hb_unicode_funcs_set_decompose_func$MH,"hb_unicode_funcs_set_decompose_func");
-    }
-    public static void hb_unicode_funcs_set_decompose_func ( Addressable ufuncs,  Addressable func,  Addressable user_data,  Addressable destroy) {
-        var mh$ = hb_unicode_funcs_set_decompose_func$MH();
-        try {
-            mh$.invokeExact(ufuncs, func, user_data, destroy);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_unicode_combining_class$MH() {
-        return RuntimeHelper.requireNonNull(constants$998.hb_unicode_combining_class$MH,"hb_unicode_combining_class");
-    }
-    public static int hb_unicode_combining_class ( Addressable ufuncs,  int unicode) {
-        var mh$ = hb_unicode_combining_class$MH();
-        try {
-            return (int)mh$.invokeExact(ufuncs, unicode);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_unicode_general_category$MH() {
-        return RuntimeHelper.requireNonNull(constants$998.hb_unicode_general_category$MH,"hb_unicode_general_category");
-    }
-    public static int hb_unicode_general_category ( Addressable ufuncs,  int unicode) {
-        var mh$ = hb_unicode_general_category$MH();
-        try {
-            return (int)mh$.invokeExact(ufuncs, unicode);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_unicode_mirroring$MH() {
-        return RuntimeHelper.requireNonNull(constants$998.hb_unicode_mirroring$MH,"hb_unicode_mirroring");
-    }
-    public static int hb_unicode_mirroring ( Addressable ufuncs,  int unicode) {
-        var mh$ = hb_unicode_mirroring$MH();
-        try {
-            return (int)mh$.invokeExact(ufuncs, unicode);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_unicode_script$MH() {
-        return RuntimeHelper.requireNonNull(constants$999.hb_unicode_script$MH,"hb_unicode_script");
-    }
-    public static int hb_unicode_script ( Addressable ufuncs,  int unicode) {
-        var mh$ = hb_unicode_script$MH();
-        try {
-            return (int)mh$.invokeExact(ufuncs, unicode);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_unicode_compose$MH() {
-        return RuntimeHelper.requireNonNull(constants$999.hb_unicode_compose$MH,"hb_unicode_compose");
-    }
-    public static int hb_unicode_compose ( Addressable ufuncs,  int a,  int b,  Addressable ab) {
-        var mh$ = hb_unicode_compose$MH();
-        try {
-            return (int)mh$.invokeExact(ufuncs, a, b, ab);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_unicode_decompose$MH() {
-        return RuntimeHelper.requireNonNull(constants$999.hb_unicode_decompose$MH,"hb_unicode_decompose");
-    }
-    public static int hb_unicode_decompose ( Addressable ufuncs,  int ab,  Addressable a,  Addressable b) {
-        var mh$ = hb_unicode_decompose$MH();
-        try {
-            return (int)mh$.invokeExact(ufuncs, ab, a, b);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_set_create$MH() {
-        return RuntimeHelper.requireNonNull(constants$999.hb_set_create$MH,"hb_set_create");
-    }
-    public static MemoryAddress hb_set_create () {
-        var mh$ = hb_set_create$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_set_get_empty$MH() {
-        return RuntimeHelper.requireNonNull(constants$999.hb_set_get_empty$MH,"hb_set_get_empty");
-    }
-    public static MemoryAddress hb_set_get_empty () {
-        var mh$ = hb_set_get_empty$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_set_reference$MH() {
-        return RuntimeHelper.requireNonNull(constants$999.hb_set_reference$MH,"hb_set_reference");
-    }
-    public static MemoryAddress hb_set_reference ( Addressable set) {
-        var mh$ = hb_set_reference$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(set);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_set_destroy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1000.hb_set_destroy$MH,"hb_set_destroy");
-    }
-    public static void hb_set_destroy ( Addressable set) {
-        var mh$ = hb_set_destroy$MH();
-        try {
-            mh$.invokeExact(set);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_set_set_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1000.hb_set_set_user_data$MH,"hb_set_set_user_data");
-    }
-    public static int hb_set_set_user_data ( Addressable set,  Addressable key,  Addressable data,  Addressable destroy,  int replace) {
-        var mh$ = hb_set_set_user_data$MH();
-        try {
-            return (int)mh$.invokeExact(set, key, data, destroy, replace);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_set_get_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1000.hb_set_get_user_data$MH,"hb_set_get_user_data");
-    }
-    public static MemoryAddress hb_set_get_user_data ( Addressable set,  Addressable key) {
-        var mh$ = hb_set_get_user_data$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(set, key);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_set_allocation_successful$MH() {
-        return RuntimeHelper.requireNonNull(constants$1000.hb_set_allocation_successful$MH,"hb_set_allocation_successful");
-    }
-    public static int hb_set_allocation_successful ( Addressable set) {
-        var mh$ = hb_set_allocation_successful$MH();
-        try {
-            return (int)mh$.invokeExact(set);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_set_clear$MH() {
-        return RuntimeHelper.requireNonNull(constants$1000.hb_set_clear$MH,"hb_set_clear");
-    }
-    public static void hb_set_clear ( Addressable set) {
-        var mh$ = hb_set_clear$MH();
-        try {
-            mh$.invokeExact(set);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_set_is_empty$MH() {
-        return RuntimeHelper.requireNonNull(constants$1000.hb_set_is_empty$MH,"hb_set_is_empty");
-    }
-    public static int hb_set_is_empty ( Addressable set) {
-        var mh$ = hb_set_is_empty$MH();
-        try {
-            return (int)mh$.invokeExact(set);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_set_has$MH() {
-        return RuntimeHelper.requireNonNull(constants$1001.hb_set_has$MH,"hb_set_has");
-    }
-    public static int hb_set_has ( Addressable set,  int codepoint) {
-        var mh$ = hb_set_has$MH();
-        try {
-            return (int)mh$.invokeExact(set, codepoint);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_set_add$MH() {
-        return RuntimeHelper.requireNonNull(constants$1001.hb_set_add$MH,"hb_set_add");
-    }
-    public static void hb_set_add ( Addressable set,  int codepoint) {
-        var mh$ = hb_set_add$MH();
-        try {
-            mh$.invokeExact(set, codepoint);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_set_add_range$MH() {
-        return RuntimeHelper.requireNonNull(constants$1001.hb_set_add_range$MH,"hb_set_add_range");
-    }
-    public static void hb_set_add_range ( Addressable set,  int first,  int last) {
-        var mh$ = hb_set_add_range$MH();
-        try {
-            mh$.invokeExact(set, first, last);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_set_del$MH() {
-        return RuntimeHelper.requireNonNull(constants$1001.hb_set_del$MH,"hb_set_del");
-    }
-    public static void hb_set_del ( Addressable set,  int codepoint) {
-        var mh$ = hb_set_del$MH();
-        try {
-            mh$.invokeExact(set, codepoint);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_set_del_range$MH() {
-        return RuntimeHelper.requireNonNull(constants$1001.hb_set_del_range$MH,"hb_set_del_range");
-    }
-    public static void hb_set_del_range ( Addressable set,  int first,  int last) {
-        var mh$ = hb_set_del_range$MH();
-        try {
-            mh$.invokeExact(set, first, last);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_set_is_equal$MH() {
-        return RuntimeHelper.requireNonNull(constants$1001.hb_set_is_equal$MH,"hb_set_is_equal");
-    }
-    public static int hb_set_is_equal ( Addressable set,  Addressable other) {
-        var mh$ = hb_set_is_equal$MH();
-        try {
-            return (int)mh$.invokeExact(set, other);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_set_is_subset$MH() {
-        return RuntimeHelper.requireNonNull(constants$1002.hb_set_is_subset$MH,"hb_set_is_subset");
-    }
-    public static int hb_set_is_subset ( Addressable set,  Addressable larger_set) {
-        var mh$ = hb_set_is_subset$MH();
-        try {
-            return (int)mh$.invokeExact(set, larger_set);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_set_set$MH() {
-        return RuntimeHelper.requireNonNull(constants$1002.hb_set_set$MH,"hb_set_set");
-    }
-    public static void hb_set_set ( Addressable set,  Addressable other) {
-        var mh$ = hb_set_set$MH();
-        try {
-            mh$.invokeExact(set, other);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_set_union$MH() {
-        return RuntimeHelper.requireNonNull(constants$1002.hb_set_union$MH,"hb_set_union");
-    }
-    public static void hb_set_union ( Addressable set,  Addressable other) {
-        var mh$ = hb_set_union$MH();
-        try {
-            mh$.invokeExact(set, other);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_set_intersect$MH() {
-        return RuntimeHelper.requireNonNull(constants$1002.hb_set_intersect$MH,"hb_set_intersect");
-    }
-    public static void hb_set_intersect ( Addressable set,  Addressable other) {
-        var mh$ = hb_set_intersect$MH();
-        try {
-            mh$.invokeExact(set, other);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_set_subtract$MH() {
-        return RuntimeHelper.requireNonNull(constants$1002.hb_set_subtract$MH,"hb_set_subtract");
-    }
-    public static void hb_set_subtract ( Addressable set,  Addressable other) {
-        var mh$ = hb_set_subtract$MH();
-        try {
-            mh$.invokeExact(set, other);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_set_symmetric_difference$MH() {
-        return RuntimeHelper.requireNonNull(constants$1002.hb_set_symmetric_difference$MH,"hb_set_symmetric_difference");
-    }
-    public static void hb_set_symmetric_difference ( Addressable set,  Addressable other) {
-        var mh$ = hb_set_symmetric_difference$MH();
-        try {
-            mh$.invokeExact(set, other);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_set_get_population$MH() {
-        return RuntimeHelper.requireNonNull(constants$1003.hb_set_get_population$MH,"hb_set_get_population");
-    }
-    public static int hb_set_get_population ( Addressable set) {
-        var mh$ = hb_set_get_population$MH();
-        try {
-            return (int)mh$.invokeExact(set);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_set_get_min$MH() {
-        return RuntimeHelper.requireNonNull(constants$1003.hb_set_get_min$MH,"hb_set_get_min");
-    }
-    public static int hb_set_get_min ( Addressable set) {
-        var mh$ = hb_set_get_min$MH();
-        try {
-            return (int)mh$.invokeExact(set);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_set_get_max$MH() {
-        return RuntimeHelper.requireNonNull(constants$1003.hb_set_get_max$MH,"hb_set_get_max");
-    }
-    public static int hb_set_get_max ( Addressable set) {
-        var mh$ = hb_set_get_max$MH();
-        try {
-            return (int)mh$.invokeExact(set);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_set_next$MH() {
-        return RuntimeHelper.requireNonNull(constants$1003.hb_set_next$MH,"hb_set_next");
-    }
-    public static int hb_set_next ( Addressable set,  Addressable codepoint) {
-        var mh$ = hb_set_next$MH();
-        try {
-            return (int)mh$.invokeExact(set, codepoint);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_set_previous$MH() {
-        return RuntimeHelper.requireNonNull(constants$1003.hb_set_previous$MH,"hb_set_previous");
-    }
-    public static int hb_set_previous ( Addressable set,  Addressable codepoint) {
-        var mh$ = hb_set_previous$MH();
-        try {
-            return (int)mh$.invokeExact(set, codepoint);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_set_next_range$MH() {
-        return RuntimeHelper.requireNonNull(constants$1003.hb_set_next_range$MH,"hb_set_next_range");
-    }
-    public static int hb_set_next_range ( Addressable set,  Addressable first,  Addressable last) {
-        var mh$ = hb_set_next_range$MH();
-        try {
-            return (int)mh$.invokeExact(set, first, last);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_set_previous_range$MH() {
-        return RuntimeHelper.requireNonNull(constants$1004.hb_set_previous_range$MH,"hb_set_previous_range");
-    }
-    public static int hb_set_previous_range ( Addressable set,  Addressable first,  Addressable last) {
-        var mh$ = hb_set_previous_range$MH();
-        try {
-            return (int)mh$.invokeExact(set, first, last);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_face_count$MH() {
-        return RuntimeHelper.requireNonNull(constants$1004.hb_face_count$MH,"hb_face_count");
-    }
-    public static int hb_face_count ( Addressable blob) {
-        var mh$ = hb_face_count$MH();
-        try {
-            return (int)mh$.invokeExact(blob);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_face_create$MH() {
-        return RuntimeHelper.requireNonNull(constants$1004.hb_face_create$MH,"hb_face_create");
-    }
-    public static MemoryAddress hb_face_create ( Addressable blob,  int index) {
-        var mh$ = hb_face_create$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(blob, index);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_face_create_for_tables$MH() {
-        return RuntimeHelper.requireNonNull(constants$1004.hb_face_create_for_tables$MH,"hb_face_create_for_tables");
-    }
-    public static MemoryAddress hb_face_create_for_tables ( Addressable reference_table_func,  Addressable user_data,  Addressable destroy) {
-        var mh$ = hb_face_create_for_tables$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(reference_table_func, user_data, destroy);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_face_get_empty$MH() {
-        return RuntimeHelper.requireNonNull(constants$1005.hb_face_get_empty$MH,"hb_face_get_empty");
-    }
-    public static MemoryAddress hb_face_get_empty () {
-        var mh$ = hb_face_get_empty$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_face_reference$MH() {
-        return RuntimeHelper.requireNonNull(constants$1005.hb_face_reference$MH,"hb_face_reference");
-    }
-    public static MemoryAddress hb_face_reference ( Addressable face) {
-        var mh$ = hb_face_reference$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(face);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_face_destroy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1005.hb_face_destroy$MH,"hb_face_destroy");
-    }
-    public static void hb_face_destroy ( Addressable face) {
-        var mh$ = hb_face_destroy$MH();
-        try {
-            mh$.invokeExact(face);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_face_set_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1005.hb_face_set_user_data$MH,"hb_face_set_user_data");
-    }
-    public static int hb_face_set_user_data ( Addressable face,  Addressable key,  Addressable data,  Addressable destroy,  int replace) {
-        var mh$ = hb_face_set_user_data$MH();
-        try {
-            return (int)mh$.invokeExact(face, key, data, destroy, replace);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_face_get_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1005.hb_face_get_user_data$MH,"hb_face_get_user_data");
-    }
-    public static MemoryAddress hb_face_get_user_data ( Addressable face,  Addressable key) {
-        var mh$ = hb_face_get_user_data$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(face, key);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_face_make_immutable$MH() {
-        return RuntimeHelper.requireNonNull(constants$1005.hb_face_make_immutable$MH,"hb_face_make_immutable");
-    }
-    public static void hb_face_make_immutable ( Addressable face) {
-        var mh$ = hb_face_make_immutable$MH();
-        try {
-            mh$.invokeExact(face);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_face_is_immutable$MH() {
-        return RuntimeHelper.requireNonNull(constants$1006.hb_face_is_immutable$MH,"hb_face_is_immutable");
-    }
-    public static int hb_face_is_immutable ( Addressable face) {
-        var mh$ = hb_face_is_immutable$MH();
-        try {
-            return (int)mh$.invokeExact(face);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_face_reference_table$MH() {
-        return RuntimeHelper.requireNonNull(constants$1006.hb_face_reference_table$MH,"hb_face_reference_table");
-    }
-    public static MemoryAddress hb_face_reference_table ( Addressable face,  int tag) {
-        var mh$ = hb_face_reference_table$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(face, tag);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_face_reference_blob$MH() {
-        return RuntimeHelper.requireNonNull(constants$1006.hb_face_reference_blob$MH,"hb_face_reference_blob");
-    }
-    public static MemoryAddress hb_face_reference_blob ( Addressable face) {
-        var mh$ = hb_face_reference_blob$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(face);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_face_set_index$MH() {
-        return RuntimeHelper.requireNonNull(constants$1006.hb_face_set_index$MH,"hb_face_set_index");
-    }
-    public static void hb_face_set_index ( Addressable face,  int index) {
-        var mh$ = hb_face_set_index$MH();
-        try {
-            mh$.invokeExact(face, index);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_face_get_index$MH() {
-        return RuntimeHelper.requireNonNull(constants$1006.hb_face_get_index$MH,"hb_face_get_index");
-    }
-    public static int hb_face_get_index ( Addressable face) {
-        var mh$ = hb_face_get_index$MH();
-        try {
-            return (int)mh$.invokeExact(face);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_face_set_upem$MH() {
-        return RuntimeHelper.requireNonNull(constants$1006.hb_face_set_upem$MH,"hb_face_set_upem");
-    }
-    public static void hb_face_set_upem ( Addressable face,  int upem) {
-        var mh$ = hb_face_set_upem$MH();
-        try {
-            mh$.invokeExact(face, upem);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_face_get_upem$MH() {
-        return RuntimeHelper.requireNonNull(constants$1007.hb_face_get_upem$MH,"hb_face_get_upem");
-    }
-    public static int hb_face_get_upem ( Addressable face) {
-        var mh$ = hb_face_get_upem$MH();
-        try {
-            return (int)mh$.invokeExact(face);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_face_set_glyph_count$MH() {
-        return RuntimeHelper.requireNonNull(constants$1007.hb_face_set_glyph_count$MH,"hb_face_set_glyph_count");
-    }
-    public static void hb_face_set_glyph_count ( Addressable face,  int glyph_count) {
-        var mh$ = hb_face_set_glyph_count$MH();
-        try {
-            mh$.invokeExact(face, glyph_count);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_face_get_glyph_count$MH() {
-        return RuntimeHelper.requireNonNull(constants$1007.hb_face_get_glyph_count$MH,"hb_face_get_glyph_count");
-    }
-    public static int hb_face_get_glyph_count ( Addressable face) {
-        var mh$ = hb_face_get_glyph_count$MH();
-        try {
-            return (int)mh$.invokeExact(face);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_face_get_table_tags$MH() {
-        return RuntimeHelper.requireNonNull(constants$1007.hb_face_get_table_tags$MH,"hb_face_get_table_tags");
-    }
-    public static int hb_face_get_table_tags ( Addressable face,  int start_offset,  Addressable table_count,  Addressable table_tags) {
-        var mh$ = hb_face_get_table_tags$MH();
-        try {
-            return (int)mh$.invokeExact(face, start_offset, table_count, table_tags);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_face_collect_unicodes$MH() {
-        return RuntimeHelper.requireNonNull(constants$1007.hb_face_collect_unicodes$MH,"hb_face_collect_unicodes");
-    }
-    public static void hb_face_collect_unicodes ( Addressable face,  Addressable out) {
-        var mh$ = hb_face_collect_unicodes$MH();
-        try {
-            mh$.invokeExact(face, out);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_face_collect_variation_selectors$MH() {
-        return RuntimeHelper.requireNonNull(constants$1007.hb_face_collect_variation_selectors$MH,"hb_face_collect_variation_selectors");
-    }
-    public static void hb_face_collect_variation_selectors ( Addressable face,  Addressable out) {
-        var mh$ = hb_face_collect_variation_selectors$MH();
-        try {
-            mh$.invokeExact(face, out);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_face_collect_variation_unicodes$MH() {
-        return RuntimeHelper.requireNonNull(constants$1008.hb_face_collect_variation_unicodes$MH,"hb_face_collect_variation_unicodes");
-    }
-    public static void hb_face_collect_variation_unicodes ( Addressable face,  int variation_selector,  Addressable out) {
-        var mh$ = hb_face_collect_variation_unicodes$MH();
-        try {
-            mh$.invokeExact(face, variation_selector, out);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_face_builder_create$MH() {
-        return RuntimeHelper.requireNonNull(constants$1008.hb_face_builder_create$MH,"hb_face_builder_create");
-    }
-    public static MemoryAddress hb_face_builder_create () {
-        var mh$ = hb_face_builder_create$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_face_builder_add_table$MH() {
-        return RuntimeHelper.requireNonNull(constants$1008.hb_face_builder_add_table$MH,"hb_face_builder_add_table");
-    }
-    public static int hb_face_builder_add_table ( Addressable face,  int tag,  Addressable blob) {
-        var mh$ = hb_face_builder_add_table$MH();
-        try {
-            return (int)mh$.invokeExact(face, tag, blob);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_funcs_create$MH() {
-        return RuntimeHelper.requireNonNull(constants$1008.hb_font_funcs_create$MH,"hb_font_funcs_create");
-    }
-    public static MemoryAddress hb_font_funcs_create () {
-        var mh$ = hb_font_funcs_create$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_funcs_get_empty$MH() {
-        return RuntimeHelper.requireNonNull(constants$1008.hb_font_funcs_get_empty$MH,"hb_font_funcs_get_empty");
-    }
-    public static MemoryAddress hb_font_funcs_get_empty () {
-        var mh$ = hb_font_funcs_get_empty$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_funcs_reference$MH() {
-        return RuntimeHelper.requireNonNull(constants$1008.hb_font_funcs_reference$MH,"hb_font_funcs_reference");
-    }
-    public static MemoryAddress hb_font_funcs_reference ( Addressable ffuncs) {
-        var mh$ = hb_font_funcs_reference$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(ffuncs);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_funcs_destroy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1009.hb_font_funcs_destroy$MH,"hb_font_funcs_destroy");
-    }
-    public static void hb_font_funcs_destroy ( Addressable ffuncs) {
-        var mh$ = hb_font_funcs_destroy$MH();
-        try {
-            mh$.invokeExact(ffuncs);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_funcs_set_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1009.hb_font_funcs_set_user_data$MH,"hb_font_funcs_set_user_data");
-    }
-    public static int hb_font_funcs_set_user_data ( Addressable ffuncs,  Addressable key,  Addressable data,  Addressable destroy,  int replace) {
-        var mh$ = hb_font_funcs_set_user_data$MH();
-        try {
-            return (int)mh$.invokeExact(ffuncs, key, data, destroy, replace);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_funcs_get_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1009.hb_font_funcs_get_user_data$MH,"hb_font_funcs_get_user_data");
-    }
-    public static MemoryAddress hb_font_funcs_get_user_data ( Addressable ffuncs,  Addressable key) {
-        var mh$ = hb_font_funcs_get_user_data$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(ffuncs, key);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_funcs_make_immutable$MH() {
-        return RuntimeHelper.requireNonNull(constants$1009.hb_font_funcs_make_immutable$MH,"hb_font_funcs_make_immutable");
-    }
-    public static void hb_font_funcs_make_immutable ( Addressable ffuncs) {
-        var mh$ = hb_font_funcs_make_immutable$MH();
-        try {
-            mh$.invokeExact(ffuncs);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_funcs_is_immutable$MH() {
-        return RuntimeHelper.requireNonNull(constants$1009.hb_font_funcs_is_immutable$MH,"hb_font_funcs_is_immutable");
-    }
-    public static int hb_font_funcs_is_immutable ( Addressable ffuncs) {
-        var mh$ = hb_font_funcs_is_immutable$MH();
-        try {
-            return (int)mh$.invokeExact(ffuncs);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_funcs_set_font_h_extents_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1016.hb_font_funcs_set_font_h_extents_func$MH,"hb_font_funcs_set_font_h_extents_func");
-    }
-    public static void hb_font_funcs_set_font_h_extents_func ( Addressable ffuncs,  Addressable func,  Addressable user_data,  Addressable destroy) {
-        var mh$ = hb_font_funcs_set_font_h_extents_func$MH();
-        try {
-            mh$.invokeExact(ffuncs, func, user_data, destroy);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_funcs_set_font_v_extents_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1017.hb_font_funcs_set_font_v_extents_func$MH,"hb_font_funcs_set_font_v_extents_func");
-    }
-    public static void hb_font_funcs_set_font_v_extents_func ( Addressable ffuncs,  Addressable func,  Addressable user_data,  Addressable destroy) {
-        var mh$ = hb_font_funcs_set_font_v_extents_func$MH();
-        try {
-            mh$.invokeExact(ffuncs, func, user_data, destroy);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_funcs_set_nominal_glyph_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1017.hb_font_funcs_set_nominal_glyph_func$MH,"hb_font_funcs_set_nominal_glyph_func");
-    }
-    public static void hb_font_funcs_set_nominal_glyph_func ( Addressable ffuncs,  Addressable func,  Addressable user_data,  Addressable destroy) {
-        var mh$ = hb_font_funcs_set_nominal_glyph_func$MH();
-        try {
-            mh$.invokeExact(ffuncs, func, user_data, destroy);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_funcs_set_nominal_glyphs_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1017.hb_font_funcs_set_nominal_glyphs_func$MH,"hb_font_funcs_set_nominal_glyphs_func");
-    }
-    public static void hb_font_funcs_set_nominal_glyphs_func ( Addressable ffuncs,  Addressable func,  Addressable user_data,  Addressable destroy) {
-        var mh$ = hb_font_funcs_set_nominal_glyphs_func$MH();
-        try {
-            mh$.invokeExact(ffuncs, func, user_data, destroy);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_funcs_set_variation_glyph_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1017.hb_font_funcs_set_variation_glyph_func$MH,"hb_font_funcs_set_variation_glyph_func");
-    }
-    public static void hb_font_funcs_set_variation_glyph_func ( Addressable ffuncs,  Addressable func,  Addressable user_data,  Addressable destroy) {
-        var mh$ = hb_font_funcs_set_variation_glyph_func$MH();
-        try {
-            mh$.invokeExact(ffuncs, func, user_data, destroy);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_funcs_set_glyph_h_advance_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1017.hb_font_funcs_set_glyph_h_advance_func$MH,"hb_font_funcs_set_glyph_h_advance_func");
-    }
-    public static void hb_font_funcs_set_glyph_h_advance_func ( Addressable ffuncs,  Addressable func,  Addressable user_data,  Addressable destroy) {
-        var mh$ = hb_font_funcs_set_glyph_h_advance_func$MH();
-        try {
-            mh$.invokeExact(ffuncs, func, user_data, destroy);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_funcs_set_glyph_v_advance_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1017.hb_font_funcs_set_glyph_v_advance_func$MH,"hb_font_funcs_set_glyph_v_advance_func");
-    }
-    public static void hb_font_funcs_set_glyph_v_advance_func ( Addressable ffuncs,  Addressable func,  Addressable user_data,  Addressable destroy) {
-        var mh$ = hb_font_funcs_set_glyph_v_advance_func$MH();
-        try {
-            mh$.invokeExact(ffuncs, func, user_data, destroy);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_funcs_set_glyph_h_advances_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1018.hb_font_funcs_set_glyph_h_advances_func$MH,"hb_font_funcs_set_glyph_h_advances_func");
-    }
-    public static void hb_font_funcs_set_glyph_h_advances_func ( Addressable ffuncs,  Addressable func,  Addressable user_data,  Addressable destroy) {
-        var mh$ = hb_font_funcs_set_glyph_h_advances_func$MH();
-        try {
-            mh$.invokeExact(ffuncs, func, user_data, destroy);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_funcs_set_glyph_v_advances_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1018.hb_font_funcs_set_glyph_v_advances_func$MH,"hb_font_funcs_set_glyph_v_advances_func");
-    }
-    public static void hb_font_funcs_set_glyph_v_advances_func ( Addressable ffuncs,  Addressable func,  Addressable user_data,  Addressable destroy) {
-        var mh$ = hb_font_funcs_set_glyph_v_advances_func$MH();
-        try {
-            mh$.invokeExact(ffuncs, func, user_data, destroy);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_funcs_set_glyph_h_origin_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1018.hb_font_funcs_set_glyph_h_origin_func$MH,"hb_font_funcs_set_glyph_h_origin_func");
-    }
-    public static void hb_font_funcs_set_glyph_h_origin_func ( Addressable ffuncs,  Addressable func,  Addressable user_data,  Addressable destroy) {
-        var mh$ = hb_font_funcs_set_glyph_h_origin_func$MH();
-        try {
-            mh$.invokeExact(ffuncs, func, user_data, destroy);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_funcs_set_glyph_v_origin_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1018.hb_font_funcs_set_glyph_v_origin_func$MH,"hb_font_funcs_set_glyph_v_origin_func");
-    }
-    public static void hb_font_funcs_set_glyph_v_origin_func ( Addressable ffuncs,  Addressable func,  Addressable user_data,  Addressable destroy) {
-        var mh$ = hb_font_funcs_set_glyph_v_origin_func$MH();
-        try {
-            mh$.invokeExact(ffuncs, func, user_data, destroy);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_funcs_set_glyph_h_kerning_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1018.hb_font_funcs_set_glyph_h_kerning_func$MH,"hb_font_funcs_set_glyph_h_kerning_func");
-    }
-    public static void hb_font_funcs_set_glyph_h_kerning_func ( Addressable ffuncs,  Addressable func,  Addressable user_data,  Addressable destroy) {
-        var mh$ = hb_font_funcs_set_glyph_h_kerning_func$MH();
-        try {
-            mh$.invokeExact(ffuncs, func, user_data, destroy);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_funcs_set_glyph_extents_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1018.hb_font_funcs_set_glyph_extents_func$MH,"hb_font_funcs_set_glyph_extents_func");
-    }
-    public static void hb_font_funcs_set_glyph_extents_func ( Addressable ffuncs,  Addressable func,  Addressable user_data,  Addressable destroy) {
-        var mh$ = hb_font_funcs_set_glyph_extents_func$MH();
-        try {
-            mh$.invokeExact(ffuncs, func, user_data, destroy);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_funcs_set_glyph_contour_point_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1019.hb_font_funcs_set_glyph_contour_point_func$MH,"hb_font_funcs_set_glyph_contour_point_func");
-    }
-    public static void hb_font_funcs_set_glyph_contour_point_func ( Addressable ffuncs,  Addressable func,  Addressable user_data,  Addressable destroy) {
-        var mh$ = hb_font_funcs_set_glyph_contour_point_func$MH();
-        try {
-            mh$.invokeExact(ffuncs, func, user_data, destroy);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_funcs_set_glyph_name_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1019.hb_font_funcs_set_glyph_name_func$MH,"hb_font_funcs_set_glyph_name_func");
-    }
-    public static void hb_font_funcs_set_glyph_name_func ( Addressable ffuncs,  Addressable func,  Addressable user_data,  Addressable destroy) {
-        var mh$ = hb_font_funcs_set_glyph_name_func$MH();
-        try {
-            mh$.invokeExact(ffuncs, func, user_data, destroy);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_funcs_set_glyph_from_name_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1019.hb_font_funcs_set_glyph_from_name_func$MH,"hb_font_funcs_set_glyph_from_name_func");
-    }
-    public static void hb_font_funcs_set_glyph_from_name_func ( Addressable ffuncs,  Addressable func,  Addressable user_data,  Addressable destroy) {
-        var mh$ = hb_font_funcs_set_glyph_from_name_func$MH();
-        try {
-            mh$.invokeExact(ffuncs, func, user_data, destroy);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_get_h_extents$MH() {
-        return RuntimeHelper.requireNonNull(constants$1019.hb_font_get_h_extents$MH,"hb_font_get_h_extents");
-    }
-    public static int hb_font_get_h_extents ( Addressable font,  Addressable extents) {
-        var mh$ = hb_font_get_h_extents$MH();
-        try {
-            return (int)mh$.invokeExact(font, extents);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_get_v_extents$MH() {
-        return RuntimeHelper.requireNonNull(constants$1019.hb_font_get_v_extents$MH,"hb_font_get_v_extents");
-    }
-    public static int hb_font_get_v_extents ( Addressable font,  Addressable extents) {
-        var mh$ = hb_font_get_v_extents$MH();
-        try {
-            return (int)mh$.invokeExact(font, extents);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_get_nominal_glyph$MH() {
-        return RuntimeHelper.requireNonNull(constants$1019.hb_font_get_nominal_glyph$MH,"hb_font_get_nominal_glyph");
-    }
-    public static int hb_font_get_nominal_glyph ( Addressable font,  int unicode,  Addressable glyph) {
-        var mh$ = hb_font_get_nominal_glyph$MH();
-        try {
-            return (int)mh$.invokeExact(font, unicode, glyph);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_get_variation_glyph$MH() {
-        return RuntimeHelper.requireNonNull(constants$1020.hb_font_get_variation_glyph$MH,"hb_font_get_variation_glyph");
-    }
-    public static int hb_font_get_variation_glyph ( Addressable font,  int unicode,  int variation_selector,  Addressable glyph) {
-        var mh$ = hb_font_get_variation_glyph$MH();
-        try {
-            return (int)mh$.invokeExact(font, unicode, variation_selector, glyph);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_get_nominal_glyphs$MH() {
-        return RuntimeHelper.requireNonNull(constants$1020.hb_font_get_nominal_glyphs$MH,"hb_font_get_nominal_glyphs");
-    }
-    public static int hb_font_get_nominal_glyphs ( Addressable font,  int count,  Addressable first_unicode,  int unicode_stride,  Addressable first_glyph,  int glyph_stride) {
-        var mh$ = hb_font_get_nominal_glyphs$MH();
-        try {
-            return (int)mh$.invokeExact(font, count, first_unicode, unicode_stride, first_glyph, glyph_stride);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_get_glyph_h_advance$MH() {
-        return RuntimeHelper.requireNonNull(constants$1020.hb_font_get_glyph_h_advance$MH,"hb_font_get_glyph_h_advance");
-    }
-    public static int hb_font_get_glyph_h_advance ( Addressable font,  int glyph) {
-        var mh$ = hb_font_get_glyph_h_advance$MH();
-        try {
-            return (int)mh$.invokeExact(font, glyph);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_get_glyph_v_advance$MH() {
-        return RuntimeHelper.requireNonNull(constants$1020.hb_font_get_glyph_v_advance$MH,"hb_font_get_glyph_v_advance");
-    }
-    public static int hb_font_get_glyph_v_advance ( Addressable font,  int glyph) {
-        var mh$ = hb_font_get_glyph_v_advance$MH();
-        try {
-            return (int)mh$.invokeExact(font, glyph);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_get_glyph_h_advances$MH() {
-        return RuntimeHelper.requireNonNull(constants$1020.hb_font_get_glyph_h_advances$MH,"hb_font_get_glyph_h_advances");
-    }
-    public static void hb_font_get_glyph_h_advances ( Addressable font,  int count,  Addressable first_glyph,  int glyph_stride,  Addressable first_advance,  int advance_stride) {
-        var mh$ = hb_font_get_glyph_h_advances$MH();
-        try {
-            mh$.invokeExact(font, count, first_glyph, glyph_stride, first_advance, advance_stride);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_get_glyph_v_advances$MH() {
-        return RuntimeHelper.requireNonNull(constants$1020.hb_font_get_glyph_v_advances$MH,"hb_font_get_glyph_v_advances");
-    }
-    public static void hb_font_get_glyph_v_advances ( Addressable font,  int count,  Addressable first_glyph,  int glyph_stride,  Addressable first_advance,  int advance_stride) {
-        var mh$ = hb_font_get_glyph_v_advances$MH();
-        try {
-            mh$.invokeExact(font, count, first_glyph, glyph_stride, first_advance, advance_stride);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_get_glyph_h_origin$MH() {
-        return RuntimeHelper.requireNonNull(constants$1021.hb_font_get_glyph_h_origin$MH,"hb_font_get_glyph_h_origin");
-    }
-    public static int hb_font_get_glyph_h_origin ( Addressable font,  int glyph,  Addressable x,  Addressable y) {
-        var mh$ = hb_font_get_glyph_h_origin$MH();
-        try {
-            return (int)mh$.invokeExact(font, glyph, x, y);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_get_glyph_v_origin$MH() {
-        return RuntimeHelper.requireNonNull(constants$1021.hb_font_get_glyph_v_origin$MH,"hb_font_get_glyph_v_origin");
-    }
-    public static int hb_font_get_glyph_v_origin ( Addressable font,  int glyph,  Addressable x,  Addressable y) {
-        var mh$ = hb_font_get_glyph_v_origin$MH();
-        try {
-            return (int)mh$.invokeExact(font, glyph, x, y);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_get_glyph_h_kerning$MH() {
-        return RuntimeHelper.requireNonNull(constants$1021.hb_font_get_glyph_h_kerning$MH,"hb_font_get_glyph_h_kerning");
-    }
-    public static int hb_font_get_glyph_h_kerning ( Addressable font,  int left_glyph,  int right_glyph) {
-        var mh$ = hb_font_get_glyph_h_kerning$MH();
-        try {
-            return (int)mh$.invokeExact(font, left_glyph, right_glyph);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_get_glyph_extents$MH() {
-        return RuntimeHelper.requireNonNull(constants$1021.hb_font_get_glyph_extents$MH,"hb_font_get_glyph_extents");
-    }
-    public static int hb_font_get_glyph_extents ( Addressable font,  int glyph,  Addressable extents) {
-        var mh$ = hb_font_get_glyph_extents$MH();
-        try {
-            return (int)mh$.invokeExact(font, glyph, extents);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_get_glyph_contour_point$MH() {
-        return RuntimeHelper.requireNonNull(constants$1021.hb_font_get_glyph_contour_point$MH,"hb_font_get_glyph_contour_point");
-    }
-    public static int hb_font_get_glyph_contour_point ( Addressable font,  int glyph,  int point_index,  Addressable x,  Addressable y) {
-        var mh$ = hb_font_get_glyph_contour_point$MH();
-        try {
-            return (int)mh$.invokeExact(font, glyph, point_index, x, y);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_get_glyph_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$1021.hb_font_get_glyph_name$MH,"hb_font_get_glyph_name");
-    }
-    public static int hb_font_get_glyph_name ( Addressable font,  int glyph,  Addressable name,  int size) {
-        var mh$ = hb_font_get_glyph_name$MH();
-        try {
-            return (int)mh$.invokeExact(font, glyph, name, size);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_get_glyph_from_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$1022.hb_font_get_glyph_from_name$MH,"hb_font_get_glyph_from_name");
-    }
-    public static int hb_font_get_glyph_from_name ( Addressable font,  Addressable name,  int len,  Addressable glyph) {
-        var mh$ = hb_font_get_glyph_from_name$MH();
-        try {
-            return (int)mh$.invokeExact(font, name, len, glyph);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_get_glyph$MH() {
-        return RuntimeHelper.requireNonNull(constants$1022.hb_font_get_glyph$MH,"hb_font_get_glyph");
-    }
-    public static int hb_font_get_glyph ( Addressable font,  int unicode,  int variation_selector,  Addressable glyph) {
-        var mh$ = hb_font_get_glyph$MH();
-        try {
-            return (int)mh$.invokeExact(font, unicode, variation_selector, glyph);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_get_extents_for_direction$MH() {
-        return RuntimeHelper.requireNonNull(constants$1022.hb_font_get_extents_for_direction$MH,"hb_font_get_extents_for_direction");
-    }
-    public static void hb_font_get_extents_for_direction ( Addressable font,  int direction,  Addressable extents) {
-        var mh$ = hb_font_get_extents_for_direction$MH();
-        try {
-            mh$.invokeExact(font, direction, extents);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_get_glyph_advance_for_direction$MH() {
-        return RuntimeHelper.requireNonNull(constants$1022.hb_font_get_glyph_advance_for_direction$MH,"hb_font_get_glyph_advance_for_direction");
-    }
-    public static void hb_font_get_glyph_advance_for_direction ( Addressable font,  int glyph,  int direction,  Addressable x,  Addressable y) {
-        var mh$ = hb_font_get_glyph_advance_for_direction$MH();
-        try {
-            mh$.invokeExact(font, glyph, direction, x, y);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_get_glyph_advances_for_direction$MH() {
-        return RuntimeHelper.requireNonNull(constants$1022.hb_font_get_glyph_advances_for_direction$MH,"hb_font_get_glyph_advances_for_direction");
-    }
-    public static void hb_font_get_glyph_advances_for_direction ( Addressable font,  int direction,  int count,  Addressable first_glyph,  int glyph_stride,  Addressable first_advance,  int advance_stride) {
-        var mh$ = hb_font_get_glyph_advances_for_direction$MH();
-        try {
-            mh$.invokeExact(font, direction, count, first_glyph, glyph_stride, first_advance, advance_stride);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_get_glyph_origin_for_direction$MH() {
-        return RuntimeHelper.requireNonNull(constants$1022.hb_font_get_glyph_origin_for_direction$MH,"hb_font_get_glyph_origin_for_direction");
-    }
-    public static void hb_font_get_glyph_origin_for_direction ( Addressable font,  int glyph,  int direction,  Addressable x,  Addressable y) {
-        var mh$ = hb_font_get_glyph_origin_for_direction$MH();
-        try {
-            mh$.invokeExact(font, glyph, direction, x, y);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_add_glyph_origin_for_direction$MH() {
-        return RuntimeHelper.requireNonNull(constants$1023.hb_font_add_glyph_origin_for_direction$MH,"hb_font_add_glyph_origin_for_direction");
-    }
-    public static void hb_font_add_glyph_origin_for_direction ( Addressable font,  int glyph,  int direction,  Addressable x,  Addressable y) {
-        var mh$ = hb_font_add_glyph_origin_for_direction$MH();
-        try {
-            mh$.invokeExact(font, glyph, direction, x, y);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_subtract_glyph_origin_for_direction$MH() {
-        return RuntimeHelper.requireNonNull(constants$1023.hb_font_subtract_glyph_origin_for_direction$MH,"hb_font_subtract_glyph_origin_for_direction");
-    }
-    public static void hb_font_subtract_glyph_origin_for_direction ( Addressable font,  int glyph,  int direction,  Addressable x,  Addressable y) {
-        var mh$ = hb_font_subtract_glyph_origin_for_direction$MH();
-        try {
-            mh$.invokeExact(font, glyph, direction, x, y);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_get_glyph_kerning_for_direction$MH() {
-        return RuntimeHelper.requireNonNull(constants$1023.hb_font_get_glyph_kerning_for_direction$MH,"hb_font_get_glyph_kerning_for_direction");
-    }
-    public static void hb_font_get_glyph_kerning_for_direction ( Addressable font,  int first_glyph,  int second_glyph,  int direction,  Addressable x,  Addressable y) {
-        var mh$ = hb_font_get_glyph_kerning_for_direction$MH();
-        try {
-            mh$.invokeExact(font, first_glyph, second_glyph, direction, x, y);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_get_glyph_extents_for_origin$MH() {
-        return RuntimeHelper.requireNonNull(constants$1023.hb_font_get_glyph_extents_for_origin$MH,"hb_font_get_glyph_extents_for_origin");
-    }
-    public static int hb_font_get_glyph_extents_for_origin ( Addressable font,  int glyph,  int direction,  Addressable extents) {
-        var mh$ = hb_font_get_glyph_extents_for_origin$MH();
-        try {
-            return (int)mh$.invokeExact(font, glyph, direction, extents);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_get_glyph_contour_point_for_origin$MH() {
-        return RuntimeHelper.requireNonNull(constants$1023.hb_font_get_glyph_contour_point_for_origin$MH,"hb_font_get_glyph_contour_point_for_origin");
-    }
-    public static int hb_font_get_glyph_contour_point_for_origin ( Addressable font,  int glyph,  int point_index,  int direction,  Addressable x,  Addressable y) {
-        var mh$ = hb_font_get_glyph_contour_point_for_origin$MH();
-        try {
-            return (int)mh$.invokeExact(font, glyph, point_index, direction, x, y);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_glyph_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$1023.hb_font_glyph_to_string$MH,"hb_font_glyph_to_string");
-    }
-    public static void hb_font_glyph_to_string ( Addressable font,  int glyph,  Addressable s,  int size) {
-        var mh$ = hb_font_glyph_to_string$MH();
-        try {
-            mh$.invokeExact(font, glyph, s, size);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_glyph_from_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$1024.hb_font_glyph_from_string$MH,"hb_font_glyph_from_string");
-    }
-    public static int hb_font_glyph_from_string ( Addressable font,  Addressable s,  int len,  Addressable glyph) {
-        var mh$ = hb_font_glyph_from_string$MH();
-        try {
-            return (int)mh$.invokeExact(font, s, len, glyph);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_create$MH() {
-        return RuntimeHelper.requireNonNull(constants$1024.hb_font_create$MH,"hb_font_create");
-    }
-    public static MemoryAddress hb_font_create ( Addressable face) {
-        var mh$ = hb_font_create$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(face);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_create_sub_font$MH() {
-        return RuntimeHelper.requireNonNull(constants$1024.hb_font_create_sub_font$MH,"hb_font_create_sub_font");
-    }
-    public static MemoryAddress hb_font_create_sub_font ( Addressable parent) {
-        var mh$ = hb_font_create_sub_font$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(parent);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_get_empty$MH() {
-        return RuntimeHelper.requireNonNull(constants$1024.hb_font_get_empty$MH,"hb_font_get_empty");
-    }
-    public static MemoryAddress hb_font_get_empty () {
-        var mh$ = hb_font_get_empty$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_reference$MH() {
-        return RuntimeHelper.requireNonNull(constants$1024.hb_font_reference$MH,"hb_font_reference");
-    }
-    public static MemoryAddress hb_font_reference ( Addressable font) {
-        var mh$ = hb_font_reference$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(font);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_destroy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1024.hb_font_destroy$MH,"hb_font_destroy");
-    }
-    public static void hb_font_destroy ( Addressable font) {
-        var mh$ = hb_font_destroy$MH();
-        try {
-            mh$.invokeExact(font);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_set_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1025.hb_font_set_user_data$MH,"hb_font_set_user_data");
-    }
-    public static int hb_font_set_user_data ( Addressable font,  Addressable key,  Addressable data,  Addressable destroy,  int replace) {
-        var mh$ = hb_font_set_user_data$MH();
-        try {
-            return (int)mh$.invokeExact(font, key, data, destroy, replace);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_get_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1025.hb_font_get_user_data$MH,"hb_font_get_user_data");
-    }
-    public static MemoryAddress hb_font_get_user_data ( Addressable font,  Addressable key) {
-        var mh$ = hb_font_get_user_data$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(font, key);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_make_immutable$MH() {
-        return RuntimeHelper.requireNonNull(constants$1025.hb_font_make_immutable$MH,"hb_font_make_immutable");
-    }
-    public static void hb_font_make_immutable ( Addressable font) {
-        var mh$ = hb_font_make_immutable$MH();
-        try {
-            mh$.invokeExact(font);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_is_immutable$MH() {
-        return RuntimeHelper.requireNonNull(constants$1025.hb_font_is_immutable$MH,"hb_font_is_immutable");
-    }
-    public static int hb_font_is_immutable ( Addressable font) {
-        var mh$ = hb_font_is_immutable$MH();
-        try {
-            return (int)mh$.invokeExact(font);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_set_parent$MH() {
-        return RuntimeHelper.requireNonNull(constants$1025.hb_font_set_parent$MH,"hb_font_set_parent");
-    }
-    public static void hb_font_set_parent ( Addressable font,  Addressable parent) {
-        var mh$ = hb_font_set_parent$MH();
-        try {
-            mh$.invokeExact(font, parent);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_get_parent$MH() {
-        return RuntimeHelper.requireNonNull(constants$1025.hb_font_get_parent$MH,"hb_font_get_parent");
-    }
-    public static MemoryAddress hb_font_get_parent ( Addressable font) {
-        var mh$ = hb_font_get_parent$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(font);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_set_face$MH() {
-        return RuntimeHelper.requireNonNull(constants$1026.hb_font_set_face$MH,"hb_font_set_face");
-    }
-    public static void hb_font_set_face ( Addressable font,  Addressable face) {
-        var mh$ = hb_font_set_face$MH();
-        try {
-            mh$.invokeExact(font, face);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_get_face$MH() {
-        return RuntimeHelper.requireNonNull(constants$1026.hb_font_get_face$MH,"hb_font_get_face");
-    }
-    public static MemoryAddress hb_font_get_face ( Addressable font) {
-        var mh$ = hb_font_get_face$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(font);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_set_funcs$MH() {
-        return RuntimeHelper.requireNonNull(constants$1026.hb_font_set_funcs$MH,"hb_font_set_funcs");
-    }
-    public static void hb_font_set_funcs ( Addressable font,  Addressable klass,  Addressable font_data,  Addressable destroy) {
-        var mh$ = hb_font_set_funcs$MH();
-        try {
-            mh$.invokeExact(font, klass, font_data, destroy);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_set_funcs_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1026.hb_font_set_funcs_data$MH,"hb_font_set_funcs_data");
-    }
-    public static void hb_font_set_funcs_data ( Addressable font,  Addressable font_data,  Addressable destroy) {
-        var mh$ = hb_font_set_funcs_data$MH();
-        try {
-            mh$.invokeExact(font, font_data, destroy);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_set_scale$MH() {
-        return RuntimeHelper.requireNonNull(constants$1026.hb_font_set_scale$MH,"hb_font_set_scale");
-    }
-    public static void hb_font_set_scale ( Addressable font,  int x_scale,  int y_scale) {
-        var mh$ = hb_font_set_scale$MH();
-        try {
-            mh$.invokeExact(font, x_scale, y_scale);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_get_scale$MH() {
-        return RuntimeHelper.requireNonNull(constants$1026.hb_font_get_scale$MH,"hb_font_get_scale");
-    }
-    public static void hb_font_get_scale ( Addressable font,  Addressable x_scale,  Addressable y_scale) {
-        var mh$ = hb_font_get_scale$MH();
-        try {
-            mh$.invokeExact(font, x_scale, y_scale);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_set_ppem$MH() {
-        return RuntimeHelper.requireNonNull(constants$1027.hb_font_set_ppem$MH,"hb_font_set_ppem");
-    }
-    public static void hb_font_set_ppem ( Addressable font,  int x_ppem,  int y_ppem) {
-        var mh$ = hb_font_set_ppem$MH();
-        try {
-            mh$.invokeExact(font, x_ppem, y_ppem);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_get_ppem$MH() {
-        return RuntimeHelper.requireNonNull(constants$1027.hb_font_get_ppem$MH,"hb_font_get_ppem");
-    }
-    public static void hb_font_get_ppem ( Addressable font,  Addressable x_ppem,  Addressable y_ppem) {
-        var mh$ = hb_font_get_ppem$MH();
-        try {
-            mh$.invokeExact(font, x_ppem, y_ppem);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_set_ptem$MH() {
-        return RuntimeHelper.requireNonNull(constants$1027.hb_font_set_ptem$MH,"hb_font_set_ptem");
-    }
-    public static void hb_font_set_ptem ( Addressable font,  float ptem) {
-        var mh$ = hb_font_set_ptem$MH();
-        try {
-            mh$.invokeExact(font, ptem);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_get_ptem$MH() {
-        return RuntimeHelper.requireNonNull(constants$1027.hb_font_get_ptem$MH,"hb_font_get_ptem");
-    }
-    public static float hb_font_get_ptem ( Addressable font) {
-        var mh$ = hb_font_get_ptem$MH();
-        try {
-            return (float)mh$.invokeExact(font);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_set_variations$MH() {
-        return RuntimeHelper.requireNonNull(constants$1027.hb_font_set_variations$MH,"hb_font_set_variations");
-    }
-    public static void hb_font_set_variations ( Addressable font,  Addressable variations,  int variations_length) {
-        var mh$ = hb_font_set_variations$MH();
-        try {
-            mh$.invokeExact(font, variations, variations_length);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_set_var_coords_design$MH() {
-        return RuntimeHelper.requireNonNull(constants$1027.hb_font_set_var_coords_design$MH,"hb_font_set_var_coords_design");
-    }
-    public static void hb_font_set_var_coords_design ( Addressable font,  Addressable coords,  int coords_length) {
-        var mh$ = hb_font_set_var_coords_design$MH();
-        try {
-            mh$.invokeExact(font, coords, coords_length);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_set_var_coords_normalized$MH() {
-        return RuntimeHelper.requireNonNull(constants$1028.hb_font_set_var_coords_normalized$MH,"hb_font_set_var_coords_normalized");
-    }
-    public static void hb_font_set_var_coords_normalized ( Addressable font,  Addressable coords,  int coords_length) {
-        var mh$ = hb_font_set_var_coords_normalized$MH();
-        try {
-            mh$.invokeExact(font, coords, coords_length);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_get_var_coords_normalized$MH() {
-        return RuntimeHelper.requireNonNull(constants$1028.hb_font_get_var_coords_normalized$MH,"hb_font_get_var_coords_normalized");
-    }
-    public static MemoryAddress hb_font_get_var_coords_normalized ( Addressable font,  Addressable length) {
-        var mh$ = hb_font_get_var_coords_normalized$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(font, length);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_set_var_named_instance$MH() {
-        return RuntimeHelper.requireNonNull(constants$1028.hb_font_set_var_named_instance$MH,"hb_font_set_var_named_instance");
-    }
-    public static void hb_font_set_var_named_instance ( Addressable font,  int instance_index) {
-        var mh$ = hb_font_set_var_named_instance$MH();
-        try {
-            mh$.invokeExact(font, instance_index);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static int HB_GLYPH_FLAG_UNSAFE_TO_BREAK() {
-        return (int)1L;
-    }
-    public static int HB_GLYPH_FLAG_DEFINED() {
-        return (int)1L;
-    }
-    public static MethodHandle hb_glyph_info_get_glyph_flags$MH() {
-        return RuntimeHelper.requireNonNull(constants$1028.hb_glyph_info_get_glyph_flags$MH,"hb_glyph_info_get_glyph_flags");
-    }
-    public static int hb_glyph_info_get_glyph_flags ( Addressable info) {
-        var mh$ = hb_glyph_info_get_glyph_flags$MH();
-        try {
-            return (int)mh$.invokeExact(info);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_segment_properties_equal$MH() {
-        return RuntimeHelper.requireNonNull(constants$1028.hb_segment_properties_equal$MH,"hb_segment_properties_equal");
-    }
-    public static int hb_segment_properties_equal ( Addressable a,  Addressable b) {
-        var mh$ = hb_segment_properties_equal$MH();
-        try {
-            return (int)mh$.invokeExact(a, b);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_segment_properties_hash$MH() {
-        return RuntimeHelper.requireNonNull(constants$1028.hb_segment_properties_hash$MH,"hb_segment_properties_hash");
-    }
-    public static int hb_segment_properties_hash ( Addressable p) {
-        var mh$ = hb_segment_properties_hash$MH();
-        try {
-            return (int)mh$.invokeExact(p);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_buffer_create$MH() {
-        return RuntimeHelper.requireNonNull(constants$1029.hb_buffer_create$MH,"hb_buffer_create");
-    }
-    public static MemoryAddress hb_buffer_create () {
-        var mh$ = hb_buffer_create$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_buffer_get_empty$MH() {
-        return RuntimeHelper.requireNonNull(constants$1029.hb_buffer_get_empty$MH,"hb_buffer_get_empty");
-    }
-    public static MemoryAddress hb_buffer_get_empty () {
-        var mh$ = hb_buffer_get_empty$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_buffer_reference$MH() {
-        return RuntimeHelper.requireNonNull(constants$1029.hb_buffer_reference$MH,"hb_buffer_reference");
-    }
-    public static MemoryAddress hb_buffer_reference ( Addressable buffer) {
-        var mh$ = hb_buffer_reference$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(buffer);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_buffer_destroy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1029.hb_buffer_destroy$MH,"hb_buffer_destroy");
-    }
-    public static void hb_buffer_destroy ( Addressable buffer) {
-        var mh$ = hb_buffer_destroy$MH();
-        try {
-            mh$.invokeExact(buffer);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_buffer_set_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1029.hb_buffer_set_user_data$MH,"hb_buffer_set_user_data");
-    }
-    public static int hb_buffer_set_user_data ( Addressable buffer,  Addressable key,  Addressable data,  Addressable destroy,  int replace) {
-        var mh$ = hb_buffer_set_user_data$MH();
-        try {
-            return (int)mh$.invokeExact(buffer, key, data, destroy, replace);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_buffer_get_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1029.hb_buffer_get_user_data$MH,"hb_buffer_get_user_data");
-    }
-    public static MemoryAddress hb_buffer_get_user_data ( Addressable buffer,  Addressable key) {
-        var mh$ = hb_buffer_get_user_data$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(buffer, key);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static int HB_BUFFER_CONTENT_TYPE_INVALID() {
-        return (int)0L;
-    }
-    public static int HB_BUFFER_CONTENT_TYPE_UNICODE() {
-        return (int)1L;
-    }
-    public static int HB_BUFFER_CONTENT_TYPE_GLYPHS() {
-        return (int)2L;
-    }
-    public static MethodHandle hb_buffer_set_content_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1030.hb_buffer_set_content_type$MH,"hb_buffer_set_content_type");
-    }
-    public static void hb_buffer_set_content_type ( Addressable buffer,  int content_type) {
-        var mh$ = hb_buffer_set_content_type$MH();
-        try {
-            mh$.invokeExact(buffer, content_type);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_buffer_get_content_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1030.hb_buffer_get_content_type$MH,"hb_buffer_get_content_type");
-    }
-    public static int hb_buffer_get_content_type ( Addressable buffer) {
-        var mh$ = hb_buffer_get_content_type$MH();
-        try {
-            return (int)mh$.invokeExact(buffer);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_buffer_set_unicode_funcs$MH() {
-        return RuntimeHelper.requireNonNull(constants$1030.hb_buffer_set_unicode_funcs$MH,"hb_buffer_set_unicode_funcs");
-    }
-    public static void hb_buffer_set_unicode_funcs ( Addressable buffer,  Addressable unicode_funcs) {
-        var mh$ = hb_buffer_set_unicode_funcs$MH();
-        try {
-            mh$.invokeExact(buffer, unicode_funcs);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_buffer_get_unicode_funcs$MH() {
-        return RuntimeHelper.requireNonNull(constants$1030.hb_buffer_get_unicode_funcs$MH,"hb_buffer_get_unicode_funcs");
-    }
-    public static MemoryAddress hb_buffer_get_unicode_funcs ( Addressable buffer) {
-        var mh$ = hb_buffer_get_unicode_funcs$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(buffer);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_buffer_set_direction$MH() {
-        return RuntimeHelper.requireNonNull(constants$1030.hb_buffer_set_direction$MH,"hb_buffer_set_direction");
-    }
-    public static void hb_buffer_set_direction ( Addressable buffer,  int direction) {
-        var mh$ = hb_buffer_set_direction$MH();
-        try {
-            mh$.invokeExact(buffer, direction);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_buffer_get_direction$MH() {
-        return RuntimeHelper.requireNonNull(constants$1030.hb_buffer_get_direction$MH,"hb_buffer_get_direction");
-    }
-    public static int hb_buffer_get_direction ( Addressable buffer) {
-        var mh$ = hb_buffer_get_direction$MH();
-        try {
-            return (int)mh$.invokeExact(buffer);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_buffer_set_script$MH() {
-        return RuntimeHelper.requireNonNull(constants$1031.hb_buffer_set_script$MH,"hb_buffer_set_script");
-    }
-    public static void hb_buffer_set_script ( Addressable buffer,  int script) {
-        var mh$ = hb_buffer_set_script$MH();
-        try {
-            mh$.invokeExact(buffer, script);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_buffer_get_script$MH() {
-        return RuntimeHelper.requireNonNull(constants$1031.hb_buffer_get_script$MH,"hb_buffer_get_script");
-    }
-    public static int hb_buffer_get_script ( Addressable buffer) {
-        var mh$ = hb_buffer_get_script$MH();
-        try {
-            return (int)mh$.invokeExact(buffer);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_buffer_set_language$MH() {
-        return RuntimeHelper.requireNonNull(constants$1031.hb_buffer_set_language$MH,"hb_buffer_set_language");
-    }
-    public static void hb_buffer_set_language ( Addressable buffer,  Addressable language) {
-        var mh$ = hb_buffer_set_language$MH();
-        try {
-            mh$.invokeExact(buffer, language);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_buffer_get_language$MH() {
-        return RuntimeHelper.requireNonNull(constants$1031.hb_buffer_get_language$MH,"hb_buffer_get_language");
-    }
-    public static MemoryAddress hb_buffer_get_language ( Addressable buffer) {
-        var mh$ = hb_buffer_get_language$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(buffer);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_buffer_set_segment_properties$MH() {
-        return RuntimeHelper.requireNonNull(constants$1031.hb_buffer_set_segment_properties$MH,"hb_buffer_set_segment_properties");
-    }
-    public static void hb_buffer_set_segment_properties ( Addressable buffer,  Addressable props) {
-        var mh$ = hb_buffer_set_segment_properties$MH();
-        try {
-            mh$.invokeExact(buffer, props);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_buffer_get_segment_properties$MH() {
-        return RuntimeHelper.requireNonNull(constants$1031.hb_buffer_get_segment_properties$MH,"hb_buffer_get_segment_properties");
-    }
-    public static void hb_buffer_get_segment_properties ( Addressable buffer,  Addressable props) {
-        var mh$ = hb_buffer_get_segment_properties$MH();
-        try {
-            mh$.invokeExact(buffer, props);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_buffer_guess_segment_properties$MH() {
-        return RuntimeHelper.requireNonNull(constants$1032.hb_buffer_guess_segment_properties$MH,"hb_buffer_guess_segment_properties");
-    }
-    public static void hb_buffer_guess_segment_properties ( Addressable buffer) {
-        var mh$ = hb_buffer_guess_segment_properties$MH();
-        try {
-            mh$.invokeExact(buffer);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static int HB_BUFFER_FLAG_DEFAULT() {
-        return (int)0L;
-    }
-    public static int HB_BUFFER_FLAG_BOT() {
-        return (int)1L;
-    }
-    public static int HB_BUFFER_FLAG_EOT() {
-        return (int)2L;
-    }
-    public static int HB_BUFFER_FLAG_PRESERVE_DEFAULT_IGNORABLES() {
-        return (int)4L;
-    }
-    public static int HB_BUFFER_FLAG_REMOVE_DEFAULT_IGNORABLES() {
-        return (int)8L;
-    }
-    public static int HB_BUFFER_FLAG_DO_NOT_INSERT_DOTTED_CIRCLE() {
-        return (int)16L;
-    }
-    public static MethodHandle hb_buffer_set_flags$MH() {
-        return RuntimeHelper.requireNonNull(constants$1032.hb_buffer_set_flags$MH,"hb_buffer_set_flags");
-    }
-    public static void hb_buffer_set_flags ( Addressable buffer,  int flags) {
-        var mh$ = hb_buffer_set_flags$MH();
-        try {
-            mh$.invokeExact(buffer, flags);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_buffer_get_flags$MH() {
-        return RuntimeHelper.requireNonNull(constants$1032.hb_buffer_get_flags$MH,"hb_buffer_get_flags");
-    }
-    public static int hb_buffer_get_flags ( Addressable buffer) {
-        var mh$ = hb_buffer_get_flags$MH();
-        try {
-            return (int)mh$.invokeExact(buffer);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static int HB_BUFFER_CLUSTER_LEVEL_MONOTONE_GRAPHEMES() {
-        return (int)0L;
-    }
-    public static int HB_BUFFER_CLUSTER_LEVEL_MONOTONE_CHARACTERS() {
-        return (int)1L;
-    }
-    public static int HB_BUFFER_CLUSTER_LEVEL_CHARACTERS() {
-        return (int)2L;
-    }
-    public static int HB_BUFFER_CLUSTER_LEVEL_DEFAULT() {
-        return (int)0L;
-    }
-    public static MethodHandle hb_buffer_set_cluster_level$MH() {
-        return RuntimeHelper.requireNonNull(constants$1032.hb_buffer_set_cluster_level$MH,"hb_buffer_set_cluster_level");
-    }
-    public static void hb_buffer_set_cluster_level ( Addressable buffer,  int cluster_level) {
-        var mh$ = hb_buffer_set_cluster_level$MH();
-        try {
-            mh$.invokeExact(buffer, cluster_level);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_buffer_get_cluster_level$MH() {
-        return RuntimeHelper.requireNonNull(constants$1032.hb_buffer_get_cluster_level$MH,"hb_buffer_get_cluster_level");
-    }
-    public static int hb_buffer_get_cluster_level ( Addressable buffer) {
-        var mh$ = hb_buffer_get_cluster_level$MH();
-        try {
-            return (int)mh$.invokeExact(buffer);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_buffer_set_replacement_codepoint$MH() {
-        return RuntimeHelper.requireNonNull(constants$1032.hb_buffer_set_replacement_codepoint$MH,"hb_buffer_set_replacement_codepoint");
-    }
-    public static void hb_buffer_set_replacement_codepoint ( Addressable buffer,  int replacement) {
-        var mh$ = hb_buffer_set_replacement_codepoint$MH();
-        try {
-            mh$.invokeExact(buffer, replacement);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_buffer_get_replacement_codepoint$MH() {
-        return RuntimeHelper.requireNonNull(constants$1033.hb_buffer_get_replacement_codepoint$MH,"hb_buffer_get_replacement_codepoint");
-    }
-    public static int hb_buffer_get_replacement_codepoint ( Addressable buffer) {
-        var mh$ = hb_buffer_get_replacement_codepoint$MH();
-        try {
-            return (int)mh$.invokeExact(buffer);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_buffer_set_invisible_glyph$MH() {
-        return RuntimeHelper.requireNonNull(constants$1033.hb_buffer_set_invisible_glyph$MH,"hb_buffer_set_invisible_glyph");
-    }
-    public static void hb_buffer_set_invisible_glyph ( Addressable buffer,  int invisible) {
-        var mh$ = hb_buffer_set_invisible_glyph$MH();
-        try {
-            mh$.invokeExact(buffer, invisible);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_buffer_get_invisible_glyph$MH() {
-        return RuntimeHelper.requireNonNull(constants$1033.hb_buffer_get_invisible_glyph$MH,"hb_buffer_get_invisible_glyph");
-    }
-    public static int hb_buffer_get_invisible_glyph ( Addressable buffer) {
-        var mh$ = hb_buffer_get_invisible_glyph$MH();
-        try {
-            return (int)mh$.invokeExact(buffer);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_buffer_reset$MH() {
-        return RuntimeHelper.requireNonNull(constants$1033.hb_buffer_reset$MH,"hb_buffer_reset");
-    }
-    public static void hb_buffer_reset ( Addressable buffer) {
-        var mh$ = hb_buffer_reset$MH();
-        try {
-            mh$.invokeExact(buffer);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_buffer_clear_contents$MH() {
-        return RuntimeHelper.requireNonNull(constants$1033.hb_buffer_clear_contents$MH,"hb_buffer_clear_contents");
-    }
-    public static void hb_buffer_clear_contents ( Addressable buffer) {
-        var mh$ = hb_buffer_clear_contents$MH();
-        try {
-            mh$.invokeExact(buffer);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_buffer_pre_allocate$MH() {
-        return RuntimeHelper.requireNonNull(constants$1033.hb_buffer_pre_allocate$MH,"hb_buffer_pre_allocate");
-    }
-    public static int hb_buffer_pre_allocate ( Addressable buffer,  int size) {
-        var mh$ = hb_buffer_pre_allocate$MH();
-        try {
-            return (int)mh$.invokeExact(buffer, size);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_buffer_allocation_successful$MH() {
-        return RuntimeHelper.requireNonNull(constants$1034.hb_buffer_allocation_successful$MH,"hb_buffer_allocation_successful");
-    }
-    public static int hb_buffer_allocation_successful ( Addressable buffer) {
-        var mh$ = hb_buffer_allocation_successful$MH();
-        try {
-            return (int)mh$.invokeExact(buffer);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_buffer_reverse$MH() {
-        return RuntimeHelper.requireNonNull(constants$1034.hb_buffer_reverse$MH,"hb_buffer_reverse");
-    }
-    public static void hb_buffer_reverse ( Addressable buffer) {
-        var mh$ = hb_buffer_reverse$MH();
-        try {
-            mh$.invokeExact(buffer);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_buffer_reverse_range$MH() {
-        return RuntimeHelper.requireNonNull(constants$1034.hb_buffer_reverse_range$MH,"hb_buffer_reverse_range");
-    }
-    public static void hb_buffer_reverse_range ( Addressable buffer,  int start,  int end) {
-        var mh$ = hb_buffer_reverse_range$MH();
-        try {
-            mh$.invokeExact(buffer, start, end);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_buffer_reverse_clusters$MH() {
-        return RuntimeHelper.requireNonNull(constants$1034.hb_buffer_reverse_clusters$MH,"hb_buffer_reverse_clusters");
-    }
-    public static void hb_buffer_reverse_clusters ( Addressable buffer) {
-        var mh$ = hb_buffer_reverse_clusters$MH();
-        try {
-            mh$.invokeExact(buffer);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_buffer_add$MH() {
-        return RuntimeHelper.requireNonNull(constants$1034.hb_buffer_add$MH,"hb_buffer_add");
-    }
-    public static void hb_buffer_add ( Addressable buffer,  int codepoint,  int cluster) {
-        var mh$ = hb_buffer_add$MH();
-        try {
-            mh$.invokeExact(buffer, codepoint, cluster);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_buffer_add_utf8$MH() {
-        return RuntimeHelper.requireNonNull(constants$1034.hb_buffer_add_utf8$MH,"hb_buffer_add_utf8");
-    }
-    public static void hb_buffer_add_utf8 ( Addressable buffer,  Addressable text,  int text_length,  int item_offset,  int item_length) {
-        var mh$ = hb_buffer_add_utf8$MH();
-        try {
-            mh$.invokeExact(buffer, text, text_length, item_offset, item_length);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_buffer_add_utf16$MH() {
-        return RuntimeHelper.requireNonNull(constants$1035.hb_buffer_add_utf16$MH,"hb_buffer_add_utf16");
-    }
-    public static void hb_buffer_add_utf16 ( Addressable buffer,  Addressable text,  int text_length,  int item_offset,  int item_length) {
-        var mh$ = hb_buffer_add_utf16$MH();
-        try {
-            mh$.invokeExact(buffer, text, text_length, item_offset, item_length);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_buffer_add_utf32$MH() {
-        return RuntimeHelper.requireNonNull(constants$1035.hb_buffer_add_utf32$MH,"hb_buffer_add_utf32");
-    }
-    public static void hb_buffer_add_utf32 ( Addressable buffer,  Addressable text,  int text_length,  int item_offset,  int item_length) {
-        var mh$ = hb_buffer_add_utf32$MH();
-        try {
-            mh$.invokeExact(buffer, text, text_length, item_offset, item_length);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_buffer_add_latin1$MH() {
-        return RuntimeHelper.requireNonNull(constants$1035.hb_buffer_add_latin1$MH,"hb_buffer_add_latin1");
-    }
-    public static void hb_buffer_add_latin1 ( Addressable buffer,  Addressable text,  int text_length,  int item_offset,  int item_length) {
-        var mh$ = hb_buffer_add_latin1$MH();
-        try {
-            mh$.invokeExact(buffer, text, text_length, item_offset, item_length);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_buffer_add_codepoints$MH() {
-        return RuntimeHelper.requireNonNull(constants$1035.hb_buffer_add_codepoints$MH,"hb_buffer_add_codepoints");
-    }
-    public static void hb_buffer_add_codepoints ( Addressable buffer,  Addressable text,  int text_length,  int item_offset,  int item_length) {
-        var mh$ = hb_buffer_add_codepoints$MH();
-        try {
-            mh$.invokeExact(buffer, text, text_length, item_offset, item_length);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_buffer_append$MH() {
-        return RuntimeHelper.requireNonNull(constants$1035.hb_buffer_append$MH,"hb_buffer_append");
-    }
-    public static void hb_buffer_append ( Addressable buffer,  Addressable source,  int start,  int end) {
-        var mh$ = hb_buffer_append$MH();
-        try {
-            mh$.invokeExact(buffer, source, start, end);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_buffer_set_length$MH() {
-        return RuntimeHelper.requireNonNull(constants$1035.hb_buffer_set_length$MH,"hb_buffer_set_length");
-    }
-    public static int hb_buffer_set_length ( Addressable buffer,  int length) {
-        var mh$ = hb_buffer_set_length$MH();
-        try {
-            return (int)mh$.invokeExact(buffer, length);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_buffer_get_length$MH() {
-        return RuntimeHelper.requireNonNull(constants$1036.hb_buffer_get_length$MH,"hb_buffer_get_length");
-    }
-    public static int hb_buffer_get_length ( Addressable buffer) {
-        var mh$ = hb_buffer_get_length$MH();
-        try {
-            return (int)mh$.invokeExact(buffer);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_buffer_get_glyph_infos$MH() {
-        return RuntimeHelper.requireNonNull(constants$1036.hb_buffer_get_glyph_infos$MH,"hb_buffer_get_glyph_infos");
-    }
-    public static MemoryAddress hb_buffer_get_glyph_infos ( Addressable buffer,  Addressable length) {
-        var mh$ = hb_buffer_get_glyph_infos$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(buffer, length);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_buffer_get_glyph_positions$MH() {
-        return RuntimeHelper.requireNonNull(constants$1036.hb_buffer_get_glyph_positions$MH,"hb_buffer_get_glyph_positions");
-    }
-    public static MemoryAddress hb_buffer_get_glyph_positions ( Addressable buffer,  Addressable length) {
-        var mh$ = hb_buffer_get_glyph_positions$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(buffer, length);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_buffer_has_positions$MH() {
-        return RuntimeHelper.requireNonNull(constants$1036.hb_buffer_has_positions$MH,"hb_buffer_has_positions");
-    }
-    public static int hb_buffer_has_positions ( Addressable buffer) {
-        var mh$ = hb_buffer_has_positions$MH();
-        try {
-            return (int)mh$.invokeExact(buffer);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_buffer_normalize_glyphs$MH() {
-        return RuntimeHelper.requireNonNull(constants$1036.hb_buffer_normalize_glyphs$MH,"hb_buffer_normalize_glyphs");
-    }
-    public static void hb_buffer_normalize_glyphs ( Addressable buffer) {
-        var mh$ = hb_buffer_normalize_glyphs$MH();
-        try {
-            mh$.invokeExact(buffer);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static int HB_BUFFER_SERIALIZE_FLAG_DEFAULT() {
-        return (int)0L;
-    }
-    public static int HB_BUFFER_SERIALIZE_FLAG_NO_CLUSTERS() {
-        return (int)1L;
-    }
-    public static int HB_BUFFER_SERIALIZE_FLAG_NO_POSITIONS() {
-        return (int)2L;
-    }
-    public static int HB_BUFFER_SERIALIZE_FLAG_NO_GLYPH_NAMES() {
-        return (int)4L;
-    }
-    public static int HB_BUFFER_SERIALIZE_FLAG_GLYPH_EXTENTS() {
-        return (int)8L;
-    }
-    public static int HB_BUFFER_SERIALIZE_FLAG_GLYPH_FLAGS() {
-        return (int)16L;
-    }
-    public static int HB_BUFFER_SERIALIZE_FLAG_NO_ADVANCES() {
-        return (int)32L;
-    }
-    public static int HB_BUFFER_SERIALIZE_FORMAT_TEXT() {
-        return (int)1413830740L;
-    }
-    public static int HB_BUFFER_SERIALIZE_FORMAT_JSON() {
-        return (int)1246973774L;
-    }
-    public static int HB_BUFFER_SERIALIZE_FORMAT_INVALID() {
-        return (int)0L;
-    }
-    public static MethodHandle hb_buffer_serialize_format_from_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$1036.hb_buffer_serialize_format_from_string$MH,"hb_buffer_serialize_format_from_string");
-    }
-    public static int hb_buffer_serialize_format_from_string ( Addressable str,  int len) {
-        var mh$ = hb_buffer_serialize_format_from_string$MH();
-        try {
-            return (int)mh$.invokeExact(str, len);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_buffer_serialize_format_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$1037.hb_buffer_serialize_format_to_string$MH,"hb_buffer_serialize_format_to_string");
-    }
-    public static MemoryAddress hb_buffer_serialize_format_to_string ( int format) {
-        var mh$ = hb_buffer_serialize_format_to_string$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(format);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_buffer_serialize_list_formats$MH() {
-        return RuntimeHelper.requireNonNull(constants$1037.hb_buffer_serialize_list_formats$MH,"hb_buffer_serialize_list_formats");
-    }
-    public static MemoryAddress hb_buffer_serialize_list_formats () {
-        var mh$ = hb_buffer_serialize_list_formats$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_buffer_serialize_glyphs$MH() {
-        return RuntimeHelper.requireNonNull(constants$1037.hb_buffer_serialize_glyphs$MH,"hb_buffer_serialize_glyphs");
-    }
-    public static int hb_buffer_serialize_glyphs ( Addressable buffer,  int start,  int end,  Addressable buf,  int buf_size,  Addressable buf_consumed,  Addressable font,  int format,  int flags) {
-        var mh$ = hb_buffer_serialize_glyphs$MH();
-        try {
-            return (int)mh$.invokeExact(buffer, start, end, buf, buf_size, buf_consumed, font, format, flags);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_buffer_serialize_unicode$MH() {
-        return RuntimeHelper.requireNonNull(constants$1037.hb_buffer_serialize_unicode$MH,"hb_buffer_serialize_unicode");
-    }
-    public static int hb_buffer_serialize_unicode ( Addressable buffer,  int start,  int end,  Addressable buf,  int buf_size,  Addressable buf_consumed,  int format,  int flags) {
-        var mh$ = hb_buffer_serialize_unicode$MH();
-        try {
-            return (int)mh$.invokeExact(buffer, start, end, buf, buf_size, buf_consumed, format, flags);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_buffer_serialize$MH() {
-        return RuntimeHelper.requireNonNull(constants$1037.hb_buffer_serialize$MH,"hb_buffer_serialize");
-    }
-    public static int hb_buffer_serialize ( Addressable buffer,  int start,  int end,  Addressable buf,  int buf_size,  Addressable buf_consumed,  Addressable font,  int format,  int flags) {
-        var mh$ = hb_buffer_serialize$MH();
-        try {
-            return (int)mh$.invokeExact(buffer, start, end, buf, buf_size, buf_consumed, font, format, flags);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_buffer_deserialize_glyphs$MH() {
-        return RuntimeHelper.requireNonNull(constants$1037.hb_buffer_deserialize_glyphs$MH,"hb_buffer_deserialize_glyphs");
-    }
-    public static int hb_buffer_deserialize_glyphs ( Addressable buffer,  Addressable buf,  int buf_len,  Addressable end_ptr,  Addressable font,  int format) {
-        var mh$ = hb_buffer_deserialize_glyphs$MH();
-        try {
-            return (int)mh$.invokeExact(buffer, buf, buf_len, end_ptr, font, format);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_buffer_deserialize_unicode$MH() {
-        return RuntimeHelper.requireNonNull(constants$1038.hb_buffer_deserialize_unicode$MH,"hb_buffer_deserialize_unicode");
-    }
-    public static int hb_buffer_deserialize_unicode ( Addressable buffer,  Addressable buf,  int buf_len,  Addressable end_ptr,  int format) {
-        var mh$ = hb_buffer_deserialize_unicode$MH();
-        try {
-            return (int)mh$.invokeExact(buffer, buf, buf_len, end_ptr, format);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static int HB_BUFFER_DIFF_FLAG_EQUAL() {
-        return (int)0L;
-    }
-    public static int HB_BUFFER_DIFF_FLAG_CONTENT_TYPE_MISMATCH() {
-        return (int)1L;
-    }
-    public static int HB_BUFFER_DIFF_FLAG_LENGTH_MISMATCH() {
-        return (int)2L;
-    }
-    public static int HB_BUFFER_DIFF_FLAG_NOTDEF_PRESENT() {
-        return (int)4L;
-    }
-    public static int HB_BUFFER_DIFF_FLAG_DOTTED_CIRCLE_PRESENT() {
-        return (int)8L;
-    }
-    public static int HB_BUFFER_DIFF_FLAG_CODEPOINT_MISMATCH() {
-        return (int)16L;
-    }
-    public static int HB_BUFFER_DIFF_FLAG_CLUSTER_MISMATCH() {
-        return (int)32L;
-    }
-    public static int HB_BUFFER_DIFF_FLAG_GLYPH_FLAGS_MISMATCH() {
-        return (int)64L;
-    }
-    public static int HB_BUFFER_DIFF_FLAG_POSITION_MISMATCH() {
-        return (int)128L;
-    }
-    public static MethodHandle hb_buffer_diff$MH() {
-        return RuntimeHelper.requireNonNull(constants$1038.hb_buffer_diff$MH,"hb_buffer_diff");
-    }
-    public static int hb_buffer_diff ( Addressable buffer,  Addressable reference,  int dottedcircle_glyph,  int position_fuzz) {
-        var mh$ = hb_buffer_diff$MH();
-        try {
-            return (int)mh$.invokeExact(buffer, reference, dottedcircle_glyph, position_fuzz);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_buffer_set_message_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1038.hb_buffer_set_message_func$MH,"hb_buffer_set_message_func");
-    }
-    public static void hb_buffer_set_message_func ( Addressable buffer,  Addressable func,  Addressable user_data,  Addressable destroy) {
-        var mh$ = hb_buffer_set_message_func$MH();
-        try {
-            mh$.invokeExact(buffer, func, user_data, destroy);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_funcs_set_glyph_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1039.hb_font_funcs_set_glyph_func$MH,"hb_font_funcs_set_glyph_func");
-    }
-    public static void hb_font_funcs_set_glyph_func ( Addressable ffuncs,  Addressable func,  Addressable user_data,  Addressable destroy) {
-        var mh$ = hb_font_funcs_set_glyph_func$MH();
-        try {
-            mh$.invokeExact(ffuncs, func, user_data, destroy);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_set_invert$MH() {
-        return RuntimeHelper.requireNonNull(constants$1039.hb_set_invert$MH,"hb_set_invert");
-    }
-    public static void hb_set_invert ( Addressable set) {
-        var mh$ = hb_set_invert$MH();
-        try {
-            mh$.invokeExact(set);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_unicode_funcs_set_eastasian_width_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1039.hb_unicode_funcs_set_eastasian_width_func$MH,"hb_unicode_funcs_set_eastasian_width_func");
-    }
-    public static void hb_unicode_funcs_set_eastasian_width_func ( Addressable ufuncs,  Addressable func,  Addressable user_data,  Addressable destroy) {
-        var mh$ = hb_unicode_funcs_set_eastasian_width_func$MH();
-        try {
-            mh$.invokeExact(ufuncs, func, user_data, destroy);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_unicode_eastasian_width$MH() {
-        return RuntimeHelper.requireNonNull(constants$1040.hb_unicode_eastasian_width$MH,"hb_unicode_eastasian_width");
-    }
-    public static int hb_unicode_eastasian_width ( Addressable ufuncs,  int unicode) {
-        var mh$ = hb_unicode_eastasian_width$MH();
-        try {
-            return (int)mh$.invokeExact(ufuncs, unicode);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_unicode_funcs_set_decompose_compatibility_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1040.hb_unicode_funcs_set_decompose_compatibility_func$MH,"hb_unicode_funcs_set_decompose_compatibility_func");
-    }
-    public static void hb_unicode_funcs_set_decompose_compatibility_func ( Addressable ufuncs,  Addressable func,  Addressable user_data,  Addressable destroy) {
-        var mh$ = hb_unicode_funcs_set_decompose_compatibility_func$MH();
-        try {
-            mh$.invokeExact(ufuncs, func, user_data, destroy);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_unicode_decompose_compatibility$MH() {
-        return RuntimeHelper.requireNonNull(constants$1040.hb_unicode_decompose_compatibility$MH,"hb_unicode_decompose_compatibility");
-    }
-    public static int hb_unicode_decompose_compatibility ( Addressable ufuncs,  int u,  Addressable decomposed) {
-        var mh$ = hb_unicode_decompose_compatibility$MH();
-        try {
-            return (int)mh$.invokeExact(ufuncs, u, decomposed);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_funcs_set_glyph_v_kerning_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1041.hb_font_funcs_set_glyph_v_kerning_func$MH,"hb_font_funcs_set_glyph_v_kerning_func");
-    }
-    public static void hb_font_funcs_set_glyph_v_kerning_func ( Addressable ffuncs,  Addressable func,  Addressable user_data,  Addressable destroy) {
-        var mh$ = hb_font_funcs_set_glyph_v_kerning_func$MH();
-        try {
-            mh$.invokeExact(ffuncs, func, user_data, destroy);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_font_get_glyph_v_kerning$MH() {
-        return RuntimeHelper.requireNonNull(constants$1041.hb_font_get_glyph_v_kerning$MH,"hb_font_get_glyph_v_kerning");
-    }
-    public static int hb_font_get_glyph_v_kerning ( Addressable font,  int top_glyph,  int bottom_glyph) {
-        var mh$ = hb_font_get_glyph_v_kerning$MH();
-        try {
-            return (int)mh$.invokeExact(font, top_glyph, bottom_glyph);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_map_create$MH() {
-        return RuntimeHelper.requireNonNull(constants$1041.hb_map_create$MH,"hb_map_create");
-    }
-    public static MemoryAddress hb_map_create () {
-        var mh$ = hb_map_create$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_map_get_empty$MH() {
-        return RuntimeHelper.requireNonNull(constants$1041.hb_map_get_empty$MH,"hb_map_get_empty");
-    }
-    public static MemoryAddress hb_map_get_empty () {
-        var mh$ = hb_map_get_empty$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_map_reference$MH() {
-        return RuntimeHelper.requireNonNull(constants$1041.hb_map_reference$MH,"hb_map_reference");
-    }
-    public static MemoryAddress hb_map_reference ( Addressable map) {
-        var mh$ = hb_map_reference$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(map);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_map_destroy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1042.hb_map_destroy$MH,"hb_map_destroy");
-    }
-    public static void hb_map_destroy ( Addressable map) {
-        var mh$ = hb_map_destroy$MH();
-        try {
-            mh$.invokeExact(map);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_map_set_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1042.hb_map_set_user_data$MH,"hb_map_set_user_data");
-    }
-    public static int hb_map_set_user_data ( Addressable map,  Addressable key,  Addressable data,  Addressable destroy,  int replace) {
-        var mh$ = hb_map_set_user_data$MH();
-        try {
-            return (int)mh$.invokeExact(map, key, data, destroy, replace);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_map_get_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1042.hb_map_get_user_data$MH,"hb_map_get_user_data");
-    }
-    public static MemoryAddress hb_map_get_user_data ( Addressable map,  Addressable key) {
-        var mh$ = hb_map_get_user_data$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(map, key);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_map_allocation_successful$MH() {
-        return RuntimeHelper.requireNonNull(constants$1042.hb_map_allocation_successful$MH,"hb_map_allocation_successful");
-    }
-    public static int hb_map_allocation_successful ( Addressable map) {
-        var mh$ = hb_map_allocation_successful$MH();
-        try {
-            return (int)mh$.invokeExact(map);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_map_clear$MH() {
-        return RuntimeHelper.requireNonNull(constants$1042.hb_map_clear$MH,"hb_map_clear");
-    }
-    public static void hb_map_clear ( Addressable map) {
-        var mh$ = hb_map_clear$MH();
-        try {
-            mh$.invokeExact(map);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_map_is_empty$MH() {
-        return RuntimeHelper.requireNonNull(constants$1042.hb_map_is_empty$MH,"hb_map_is_empty");
-    }
-    public static int hb_map_is_empty ( Addressable map) {
-        var mh$ = hb_map_is_empty$MH();
-        try {
-            return (int)mh$.invokeExact(map);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_map_get_population$MH() {
-        return RuntimeHelper.requireNonNull(constants$1043.hb_map_get_population$MH,"hb_map_get_population");
-    }
-    public static int hb_map_get_population ( Addressable map) {
-        var mh$ = hb_map_get_population$MH();
-        try {
-            return (int)mh$.invokeExact(map);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_map_set$MH() {
-        return RuntimeHelper.requireNonNull(constants$1043.hb_map_set$MH,"hb_map_set");
-    }
-    public static void hb_map_set ( Addressable map,  int key,  int value) {
-        var mh$ = hb_map_set$MH();
-        try {
-            mh$.invokeExact(map, key, value);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_map_get$MH() {
-        return RuntimeHelper.requireNonNull(constants$1043.hb_map_get$MH,"hb_map_get");
-    }
-    public static int hb_map_get ( Addressable map,  int key) {
-        var mh$ = hb_map_get$MH();
-        try {
-            return (int)mh$.invokeExact(map, key);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_map_del$MH() {
-        return RuntimeHelper.requireNonNull(constants$1043.hb_map_del$MH,"hb_map_del");
-    }
-    public static void hb_map_del ( Addressable map,  int key) {
-        var mh$ = hb_map_del$MH();
-        try {
-            mh$.invokeExact(map, key);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_map_has$MH() {
-        return RuntimeHelper.requireNonNull(constants$1043.hb_map_has$MH,"hb_map_has");
-    }
-    public static int hb_map_has ( Addressable map,  int key) {
-        var mh$ = hb_map_has$MH();
-        try {
-            return (int)mh$.invokeExact(map, key);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_shape$MH() {
-        return RuntimeHelper.requireNonNull(constants$1043.hb_shape$MH,"hb_shape");
-    }
-    public static void hb_shape ( Addressable font,  Addressable buffer,  Addressable features,  int num_features) {
-        var mh$ = hb_shape$MH();
-        try {
-            mh$.invokeExact(font, buffer, features, num_features);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_shape_full$MH() {
-        return RuntimeHelper.requireNonNull(constants$1044.hb_shape_full$MH,"hb_shape_full");
-    }
-    public static int hb_shape_full ( Addressable font,  Addressable buffer,  Addressable features,  int num_features,  Addressable shaper_list) {
-        var mh$ = hb_shape_full$MH();
-        try {
-            return (int)mh$.invokeExact(font, buffer, features, num_features, shaper_list);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_shape_list_shapers$MH() {
-        return RuntimeHelper.requireNonNull(constants$1044.hb_shape_list_shapers$MH,"hb_shape_list_shapers");
-    }
-    public static MemoryAddress hb_shape_list_shapers () {
-        var mh$ = hb_shape_list_shapers$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_shape_plan_create$MH() {
-        return RuntimeHelper.requireNonNull(constants$1044.hb_shape_plan_create$MH,"hb_shape_plan_create");
-    }
-    public static MemoryAddress hb_shape_plan_create ( Addressable face,  Addressable props,  Addressable user_features,  int num_user_features,  Addressable shaper_list) {
-        var mh$ = hb_shape_plan_create$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(face, props, user_features, num_user_features, shaper_list);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_shape_plan_create_cached$MH() {
-        return RuntimeHelper.requireNonNull(constants$1044.hb_shape_plan_create_cached$MH,"hb_shape_plan_create_cached");
-    }
-    public static MemoryAddress hb_shape_plan_create_cached ( Addressable face,  Addressable props,  Addressable user_features,  int num_user_features,  Addressable shaper_list) {
-        var mh$ = hb_shape_plan_create_cached$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(face, props, user_features, num_user_features, shaper_list);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_shape_plan_create2$MH() {
-        return RuntimeHelper.requireNonNull(constants$1044.hb_shape_plan_create2$MH,"hb_shape_plan_create2");
-    }
-    public static MemoryAddress hb_shape_plan_create2 ( Addressable face,  Addressable props,  Addressable user_features,  int num_user_features,  Addressable coords,  int num_coords,  Addressable shaper_list) {
-        var mh$ = hb_shape_plan_create2$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(face, props, user_features, num_user_features, coords, num_coords, shaper_list);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_shape_plan_create_cached2$MH() {
-        return RuntimeHelper.requireNonNull(constants$1044.hb_shape_plan_create_cached2$MH,"hb_shape_plan_create_cached2");
-    }
-    public static MemoryAddress hb_shape_plan_create_cached2 ( Addressable face,  Addressable props,  Addressable user_features,  int num_user_features,  Addressable coords,  int num_coords,  Addressable shaper_list) {
-        var mh$ = hb_shape_plan_create_cached2$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(face, props, user_features, num_user_features, coords, num_coords, shaper_list);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_shape_plan_get_empty$MH() {
-        return RuntimeHelper.requireNonNull(constants$1045.hb_shape_plan_get_empty$MH,"hb_shape_plan_get_empty");
-    }
-    public static MemoryAddress hb_shape_plan_get_empty () {
-        var mh$ = hb_shape_plan_get_empty$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_shape_plan_reference$MH() {
-        return RuntimeHelper.requireNonNull(constants$1045.hb_shape_plan_reference$MH,"hb_shape_plan_reference");
-    }
-    public static MemoryAddress hb_shape_plan_reference ( Addressable shape_plan) {
-        var mh$ = hb_shape_plan_reference$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(shape_plan);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_shape_plan_destroy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1045.hb_shape_plan_destroy$MH,"hb_shape_plan_destroy");
-    }
-    public static void hb_shape_plan_destroy ( Addressable shape_plan) {
-        var mh$ = hb_shape_plan_destroy$MH();
-        try {
-            mh$.invokeExact(shape_plan);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_shape_plan_set_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1045.hb_shape_plan_set_user_data$MH,"hb_shape_plan_set_user_data");
-    }
-    public static int hb_shape_plan_set_user_data ( Addressable shape_plan,  Addressable key,  Addressable data,  Addressable destroy,  int replace) {
-        var mh$ = hb_shape_plan_set_user_data$MH();
-        try {
-            return (int)mh$.invokeExact(shape_plan, key, data, destroy, replace);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_shape_plan_get_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1045.hb_shape_plan_get_user_data$MH,"hb_shape_plan_get_user_data");
-    }
-    public static MemoryAddress hb_shape_plan_get_user_data ( Addressable shape_plan,  Addressable key) {
-        var mh$ = hb_shape_plan_get_user_data$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(shape_plan, key);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_shape_plan_execute$MH() {
-        return RuntimeHelper.requireNonNull(constants$1045.hb_shape_plan_execute$MH,"hb_shape_plan_execute");
-    }
-    public static int hb_shape_plan_execute ( Addressable shape_plan,  Addressable font,  Addressable buffer,  Addressable features,  int num_features) {
-        var mh$ = hb_shape_plan_execute$MH();
-        try {
-            return (int)mh$.invokeExact(shape_plan, font, buffer, features, num_features);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_shape_plan_get_shaper$MH() {
-        return RuntimeHelper.requireNonNull(constants$1046.hb_shape_plan_get_shaper$MH,"hb_shape_plan_get_shaper");
-    }
-    public static MemoryAddress hb_shape_plan_get_shaper ( Addressable shape_plan) {
-        var mh$ = hb_shape_plan_get_shaper$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(shape_plan);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_version$MH() {
-        return RuntimeHelper.requireNonNull(constants$1046.hb_version$MH,"hb_version");
-    }
-    public static void hb_version ( Addressable major,  Addressable minor,  Addressable micro) {
-        var mh$ = hb_version$MH();
-        try {
-            mh$.invokeExact(major, minor, micro);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_version_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$1046.hb_version_string$MH,"hb_version_string");
-    }
-    public static MemoryAddress hb_version_string () {
-        var mh$ = hb_version_string$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_version_atleast$MH() {
-        return RuntimeHelper.requireNonNull(constants$1046.hb_version_atleast$MH,"hb_version_atleast");
-    }
-    public static int hb_version_atleast ( int major,  int minor,  int micro) {
-        var mh$ = hb_version_atleast$MH();
-        try {
-            return (int)mh$.invokeExact(major, minor, micro);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static int PANGO_COVERAGE_NONE() {
-        return (int)0L;
-    }
-    public static int PANGO_COVERAGE_FALLBACK() {
-        return (int)1L;
-    }
-    public static int PANGO_COVERAGE_APPROXIMATE() {
-        return (int)2L;
-    }
-    public static int PANGO_COVERAGE_EXACT() {
-        return (int)3L;
-    }
-    public static MethodHandle pango_coverage_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1046.pango_coverage_get_type$MH,"pango_coverage_get_type");
-    }
-    public static long pango_coverage_get_type () {
-        var mh$ = pango_coverage_get_type$MH();
-        try {
-            return (long)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle pango_coverage_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1046.pango_coverage_new$MH,"pango_coverage_new");
-    }
-    public static MemoryAddress pango_coverage_new () {
-        var mh$ = pango_coverage_new$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle pango_coverage_ref$MH() {
-        return RuntimeHelper.requireNonNull(constants$1047.pango_coverage_ref$MH,"pango_coverage_ref");
-    }
-    public static MemoryAddress pango_coverage_ref ( Addressable coverage) {
-        var mh$ = pango_coverage_ref$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(coverage);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle pango_coverage_unref$MH() {
-        return RuntimeHelper.requireNonNull(constants$1047.pango_coverage_unref$MH,"pango_coverage_unref");
-    }
-    public static void pango_coverage_unref ( Addressable coverage) {
-        var mh$ = pango_coverage_unref$MH();
-        try {
-            mh$.invokeExact(coverage);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle pango_coverage_copy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1047.pango_coverage_copy$MH,"pango_coverage_copy");
-    }
-    public static MemoryAddress pango_coverage_copy ( Addressable coverage) {
-        var mh$ = pango_coverage_copy$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(coverage);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle pango_coverage_get$MH() {
-        return RuntimeHelper.requireNonNull(constants$1047.pango_coverage_get$MH,"pango_coverage_get");
-    }
-    public static int pango_coverage_get ( Addressable coverage,  int index_) {
-        var mh$ = pango_coverage_get$MH();
-        try {
-            return (int)mh$.invokeExact(coverage, index_);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle pango_coverage_set$MH() {
-        return RuntimeHelper.requireNonNull(constants$1047.pango_coverage_set$MH,"pango_coverage_set");
-    }
-    public static void pango_coverage_set ( Addressable coverage,  int index_,  int level) {
-        var mh$ = pango_coverage_set$MH();
-        try {
-            mh$.invokeExact(coverage, index_, level);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle pango_coverage_max$MH() {
-        return RuntimeHelper.requireNonNull(constants$1047.pango_coverage_max$MH,"pango_coverage_max");
-    }
-    public static void pango_coverage_max ( Addressable coverage,  Addressable other) {
-        var mh$ = pango_coverage_max$MH();
-        try {
-            mh$.invokeExact(coverage, other);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle pango_coverage_to_bytes$MH() {
-        return RuntimeHelper.requireNonNull(constants$1048.pango_coverage_to_bytes$MH,"pango_coverage_to_bytes");
-    }
-    public static void pango_coverage_to_bytes ( Addressable coverage,  Addressable bytes,  Addressable n_bytes) {
-        var mh$ = pango_coverage_to_bytes$MH();
-        try {
-            mh$.invokeExact(coverage, bytes, n_bytes);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle pango_coverage_from_bytes$MH() {
-        return RuntimeHelper.requireNonNull(constants$1048.pango_coverage_from_bytes$MH,"pango_coverage_from_bytes");
-    }
-    public static MemoryAddress pango_coverage_from_bytes ( Addressable bytes,  int n_bytes) {
-        var mh$ = pango_coverage_from_bytes$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(bytes, n_bytes);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress PangoCoverage_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress PangoCoverage_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress PangoCoverage_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress PangoCoverage_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_PangoCoverage$MH() {
-        return RuntimeHelper.requireNonNull(constants$1048.glib_autoptr_clear_PangoCoverage$MH,"glib_autoptr_clear_PangoCoverage");
-    }
-    public static void glib_autoptr_clear_PangoCoverage ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_PangoCoverage$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_PangoCoverage$MH() {
-        return RuntimeHelper.requireNonNull(constants$1048.glib_autoptr_cleanup_PangoCoverage$MH,"glib_autoptr_cleanup_PangoCoverage");
-    }
-    public static void glib_autoptr_cleanup_PangoCoverage ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_PangoCoverage$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_PangoCoverage$MH() {
-        return RuntimeHelper.requireNonNull(constants$1048.glib_listautoptr_cleanup_PangoCoverage$MH,"glib_listautoptr_cleanup_PangoCoverage");
-    }
-    public static void glib_listautoptr_cleanup_PangoCoverage ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_PangoCoverage$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_PangoCoverage$MH() {
-        return RuntimeHelper.requireNonNull(constants$1048.glib_slistautoptr_cleanup_PangoCoverage$MH,"glib_slistautoptr_cleanup_PangoCoverage");
-    }
-    public static void glib_slistautoptr_cleanup_PangoCoverage ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_PangoCoverage$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_PangoCoverage$MH() {
-        return RuntimeHelper.requireNonNull(constants$1049.glib_queueautoptr_cleanup_PangoCoverage$MH,"glib_queueautoptr_cleanup_PangoCoverage");
-    }
-    public static void glib_queueautoptr_cleanup_PangoCoverage ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_PangoCoverage$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle pango_units_from_double$MH() {
-        return RuntimeHelper.requireNonNull(constants$1049.pango_units_from_double$MH,"pango_units_from_double");
-    }
-    public static int pango_units_from_double ( double d) {
-        var mh$ = pango_units_from_double$MH();
-        try {
-            return (int)mh$.invokeExact(d);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle pango_units_to_double$MH() {
-        return RuntimeHelper.requireNonNull(constants$1049.pango_units_to_double$MH,"pango_units_to_double");
-    }
-    public static double pango_units_to_double ( int i) {
-        var mh$ = pango_units_to_double$MH();
-        try {
-            return (double)mh$.invokeExact(i);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle pango_extents_to_pixels$MH() {
-        return RuntimeHelper.requireNonNull(constants$1049.pango_extents_to_pixels$MH,"pango_extents_to_pixels");
-    }
-    public static void pango_extents_to_pixels ( Addressable inclusive,  Addressable nearest) {
-        var mh$ = pango_extents_to_pixels$MH();
-        try {
-            mh$.invokeExact(inclusive, nearest);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static int PANGO_GRAVITY_SOUTH() {
-        return (int)0L;
-    }
-    public static int PANGO_GRAVITY_EAST() {
-        return (int)1L;
-    }
-    public static int PANGO_GRAVITY_NORTH() {
-        return (int)2L;
-    }
-    public static int PANGO_GRAVITY_WEST() {
-        return (int)3L;
-    }
-    public static int PANGO_GRAVITY_AUTO() {
-        return (int)4L;
-    }
-    public static int PANGO_GRAVITY_HINT_NATURAL() {
-        return (int)0L;
-    }
-    public static int PANGO_GRAVITY_HINT_STRONG() {
-        return (int)1L;
-    }
-    public static int PANGO_GRAVITY_HINT_LINE() {
-        return (int)2L;
-    }
-    public static MethodHandle pango_matrix_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1049.pango_matrix_get_type$MH,"pango_matrix_get_type");
-    }
-    public static long pango_matrix_get_type () {
-        var mh$ = pango_matrix_get_type$MH();
-        try {
-            return (long)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle pango_matrix_copy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1049.pango_matrix_copy$MH,"pango_matrix_copy");
-    }
-    public static MemoryAddress pango_matrix_copy ( Addressable matrix) {
-        var mh$ = pango_matrix_copy$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(matrix);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle pango_matrix_free$MH() {
-        return RuntimeHelper.requireNonNull(constants$1050.pango_matrix_free$MH,"pango_matrix_free");
-    }
-    public static void pango_matrix_free ( Addressable matrix) {
-        var mh$ = pango_matrix_free$MH();
-        try {
-            mh$.invokeExact(matrix);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle pango_matrix_translate$MH() {
-        return RuntimeHelper.requireNonNull(constants$1050.pango_matrix_translate$MH,"pango_matrix_translate");
-    }
-    public static void pango_matrix_translate ( Addressable matrix,  double tx,  double ty) {
-        var mh$ = pango_matrix_translate$MH();
-        try {
-            mh$.invokeExact(matrix, tx, ty);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle pango_matrix_scale$MH() {
-        return RuntimeHelper.requireNonNull(constants$1050.pango_matrix_scale$MH,"pango_matrix_scale");
-    }
-    public static void pango_matrix_scale ( Addressable matrix,  double scale_x,  double scale_y) {
-        var mh$ = pango_matrix_scale$MH();
-        try {
-            mh$.invokeExact(matrix, scale_x, scale_y);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle pango_matrix_rotate$MH() {
-        return RuntimeHelper.requireNonNull(constants$1050.pango_matrix_rotate$MH,"pango_matrix_rotate");
-    }
-    public static void pango_matrix_rotate ( Addressable matrix,  double degrees) {
-        var mh$ = pango_matrix_rotate$MH();
-        try {
-            mh$.invokeExact(matrix, degrees);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle pango_matrix_concat$MH() {
-        return RuntimeHelper.requireNonNull(constants$1050.pango_matrix_concat$MH,"pango_matrix_concat");
-    }
-    public static void pango_matrix_concat ( Addressable matrix,  Addressable new_matrix) {
-        var mh$ = pango_matrix_concat$MH();
-        try {
-            mh$.invokeExact(matrix, new_matrix);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle pango_matrix_transform_point$MH() {
-        return RuntimeHelper.requireNonNull(constants$1050.pango_matrix_transform_point$MH,"pango_matrix_transform_point");
-    }
-    public static void pango_matrix_transform_point ( Addressable matrix,  Addressable x,  Addressable y) {
-        var mh$ = pango_matrix_transform_point$MH();
-        try {
-            mh$.invokeExact(matrix, x, y);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle pango_matrix_transform_distance$MH() {
-        return RuntimeHelper.requireNonNull(constants$1051.pango_matrix_transform_distance$MH,"pango_matrix_transform_distance");
-    }
-    public static void pango_matrix_transform_distance ( Addressable matrix,  Addressable dx,  Addressable dy) {
-        var mh$ = pango_matrix_transform_distance$MH();
-        try {
-            mh$.invokeExact(matrix, dx, dy);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle pango_matrix_transform_rectangle$MH() {
-        return RuntimeHelper.requireNonNull(constants$1051.pango_matrix_transform_rectangle$MH,"pango_matrix_transform_rectangle");
-    }
-    public static void pango_matrix_transform_rectangle ( Addressable matrix,  Addressable rect) {
-        var mh$ = pango_matrix_transform_rectangle$MH();
-        try {
-            mh$.invokeExact(matrix, rect);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle pango_matrix_transform_pixel_rectangle$MH() {
-        return RuntimeHelper.requireNonNull(constants$1051.pango_matrix_transform_pixel_rectangle$MH,"pango_matrix_transform_pixel_rectangle");
-    }
-    public static void pango_matrix_transform_pixel_rectangle ( Addressable matrix,  Addressable rect) {
-        var mh$ = pango_matrix_transform_pixel_rectangle$MH();
-        try {
-            mh$.invokeExact(matrix, rect);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle pango_matrix_get_font_scale_factor$MH() {
-        return RuntimeHelper.requireNonNull(constants$1051.pango_matrix_get_font_scale_factor$MH,"pango_matrix_get_font_scale_factor");
-    }
-    public static double pango_matrix_get_font_scale_factor ( Addressable matrix) {
-        var mh$ = pango_matrix_get_font_scale_factor$MH();
-        try {
-            return (double)mh$.invokeExact(matrix);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle pango_matrix_get_font_scale_factors$MH() {
-        return RuntimeHelper.requireNonNull(constants$1051.pango_matrix_get_font_scale_factors$MH,"pango_matrix_get_font_scale_factors");
-    }
-    public static void pango_matrix_get_font_scale_factors ( Addressable matrix,  Addressable xscale,  Addressable yscale) {
-        var mh$ = pango_matrix_get_font_scale_factors$MH();
-        try {
-            mh$.invokeExact(matrix, xscale, yscale);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle pango_matrix_get_slant_ratio$MH() {
-        return RuntimeHelper.requireNonNull(constants$1051.pango_matrix_get_slant_ratio$MH,"pango_matrix_get_slant_ratio");
-    }
-    public static double pango_matrix_get_slant_ratio ( Addressable matrix) {
-        var mh$ = pango_matrix_get_slant_ratio$MH();
-        try {
-            return (double)mh$.invokeExact(matrix);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static int PANGO_SCRIPT_INVALID_CODE() {
-        return (int)-1L;
-    }
-    public static int PANGO_SCRIPT_COMMON() {
-        return (int)0L;
-    }
-    public static int PANGO_SCRIPT_INHERITED() {
-        return (int)1L;
-    }
-    public static int PANGO_SCRIPT_ARABIC() {
-        return (int)2L;
-    }
-    public static int PANGO_SCRIPT_ARMENIAN() {
-        return (int)3L;
-    }
-    public static int PANGO_SCRIPT_BENGALI() {
-        return (int)4L;
-    }
-    public static int PANGO_SCRIPT_BOPOMOFO() {
-        return (int)5L;
-    }
-    public static int PANGO_SCRIPT_CHEROKEE() {
-        return (int)6L;
-    }
-    public static int PANGO_SCRIPT_COPTIC() {
-        return (int)7L;
-    }
-    public static int PANGO_SCRIPT_CYRILLIC() {
-        return (int)8L;
-    }
-    public static int PANGO_SCRIPT_DESERET() {
-        return (int)9L;
-    }
-    public static int PANGO_SCRIPT_DEVANAGARI() {
-        return (int)10L;
-    }
-    public static int PANGO_SCRIPT_ETHIOPIC() {
-        return (int)11L;
-    }
-    public static int PANGO_SCRIPT_GEORGIAN() {
-        return (int)12L;
-    }
-    public static int PANGO_SCRIPT_GOTHIC() {
-        return (int)13L;
-    }
-    public static int PANGO_SCRIPT_GREEK() {
-        return (int)14L;
-    }
-    public static int PANGO_SCRIPT_GUJARATI() {
-        return (int)15L;
-    }
-    public static int PANGO_SCRIPT_GURMUKHI() {
-        return (int)16L;
-    }
-    public static int PANGO_SCRIPT_HAN() {
-        return (int)17L;
-    }
-    public static int PANGO_SCRIPT_HANGUL() {
-        return (int)18L;
-    }
-    public static int PANGO_SCRIPT_HEBREW() {
-        return (int)19L;
-    }
-    public static int PANGO_SCRIPT_HIRAGANA() {
-        return (int)20L;
-    }
-    public static int PANGO_SCRIPT_KANNADA() {
-        return (int)21L;
-    }
-    public static int PANGO_SCRIPT_KATAKANA() {
-        return (int)22L;
-    }
-    public static int PANGO_SCRIPT_KHMER() {
-        return (int)23L;
-    }
-    public static int PANGO_SCRIPT_LAO() {
-        return (int)24L;
-    }
-    public static int PANGO_SCRIPT_LATIN() {
-        return (int)25L;
-    }
-    public static int PANGO_SCRIPT_MALAYALAM() {
-        return (int)26L;
-    }
-    public static int PANGO_SCRIPT_MONGOLIAN() {
-        return (int)27L;
-    }
-    public static int PANGO_SCRIPT_MYANMAR() {
-        return (int)28L;
-    }
-    public static int PANGO_SCRIPT_OGHAM() {
-        return (int)29L;
-    }
-    public static int PANGO_SCRIPT_OLD_ITALIC() {
-        return (int)30L;
-    }
-    public static int PANGO_SCRIPT_ORIYA() {
-        return (int)31L;
-    }
-    public static int PANGO_SCRIPT_RUNIC() {
-        return (int)32L;
-    }
-    public static int PANGO_SCRIPT_SINHALA() {
-        return (int)33L;
-    }
-    public static int PANGO_SCRIPT_SYRIAC() {
-        return (int)34L;
-    }
-    public static int PANGO_SCRIPT_TAMIL() {
-        return (int)35L;
-    }
-    public static int PANGO_SCRIPT_TELUGU() {
-        return (int)36L;
-    }
-    public static int PANGO_SCRIPT_THAANA() {
-        return (int)37L;
-    }
-    public static int PANGO_SCRIPT_THAI() {
-        return (int)38L;
-    }
-    public static int PANGO_SCRIPT_TIBETAN() {
-        return (int)39L;
-    }
-    public static int PANGO_SCRIPT_CANADIAN_ABORIGINAL() {
-        return (int)40L;
-    }
-    public static int PANGO_SCRIPT_YI() {
-        return (int)41L;
-    }
-    public static int PANGO_SCRIPT_TAGALOG() {
-        return (int)42L;
-    }
-    public static int PANGO_SCRIPT_HANUNOO() {
-        return (int)43L;
-    }
-    public static int PANGO_SCRIPT_BUHID() {
-        return (int)44L;
-    }
-    public static int PANGO_SCRIPT_TAGBANWA() {
-        return (int)45L;
-    }
-    public static int PANGO_SCRIPT_BRAILLE() {
-        return (int)46L;
-    }
-    public static int PANGO_SCRIPT_CYPRIOT() {
-        return (int)47L;
-    }
-    public static int PANGO_SCRIPT_LIMBU() {
-        return (int)48L;
-    }
-    public static int PANGO_SCRIPT_OSMANYA() {
-        return (int)49L;
-    }
-    public static int PANGO_SCRIPT_SHAVIAN() {
-        return (int)50L;
-    }
-    public static int PANGO_SCRIPT_LINEAR_B() {
-        return (int)51L;
-    }
-    public static int PANGO_SCRIPT_TAI_LE() {
-        return (int)52L;
-    }
-    public static int PANGO_SCRIPT_UGARITIC() {
-        return (int)53L;
-    }
-    public static int PANGO_SCRIPT_NEW_TAI_LUE() {
-        return (int)54L;
-    }
-    public static int PANGO_SCRIPT_BUGINESE() {
-        return (int)55L;
-    }
-    public static int PANGO_SCRIPT_GLAGOLITIC() {
-        return (int)56L;
-    }
-    public static int PANGO_SCRIPT_TIFINAGH() {
-        return (int)57L;
-    }
-    public static int PANGO_SCRIPT_SYLOTI_NAGRI() {
-        return (int)58L;
-    }
-    public static int PANGO_SCRIPT_OLD_PERSIAN() {
-        return (int)59L;
-    }
-    public static int PANGO_SCRIPT_KHAROSHTHI() {
-        return (int)60L;
-    }
-    public static int PANGO_SCRIPT_UNKNOWN() {
-        return (int)61L;
-    }
-    public static int PANGO_SCRIPT_BALINESE() {
-        return (int)62L;
-    }
-    public static int PANGO_SCRIPT_CUNEIFORM() {
-        return (int)63L;
-    }
-    public static int PANGO_SCRIPT_PHOENICIAN() {
-        return (int)64L;
-    }
-    public static int PANGO_SCRIPT_PHAGS_PA() {
-        return (int)65L;
-    }
-    public static int PANGO_SCRIPT_NKO() {
-        return (int)66L;
-    }
-    public static int PANGO_SCRIPT_KAYAH_LI() {
-        return (int)67L;
-    }
-    public static int PANGO_SCRIPT_LEPCHA() {
-        return (int)68L;
-    }
-    public static int PANGO_SCRIPT_REJANG() {
-        return (int)69L;
-    }
-    public static int PANGO_SCRIPT_SUNDANESE() {
-        return (int)70L;
-    }
-    public static int PANGO_SCRIPT_SAURASHTRA() {
-        return (int)71L;
-    }
-    public static int PANGO_SCRIPT_CHAM() {
-        return (int)72L;
-    }
-    public static int PANGO_SCRIPT_OL_CHIKI() {
-        return (int)73L;
-    }
-    public static int PANGO_SCRIPT_VAI() {
-        return (int)74L;
-    }
-    public static int PANGO_SCRIPT_CARIAN() {
-        return (int)75L;
-    }
-    public static int PANGO_SCRIPT_LYCIAN() {
-        return (int)76L;
-    }
-    public static int PANGO_SCRIPT_LYDIAN() {
-        return (int)77L;
-    }
-    public static int PANGO_SCRIPT_BATAK() {
-        return (int)78L;
-    }
-    public static int PANGO_SCRIPT_BRAHMI() {
-        return (int)79L;
-    }
-    public static int PANGO_SCRIPT_MANDAIC() {
-        return (int)80L;
-    }
-    public static int PANGO_SCRIPT_CHAKMA() {
-        return (int)81L;
-    }
-    public static int PANGO_SCRIPT_MEROITIC_CURSIVE() {
-        return (int)82L;
-    }
-    public static int PANGO_SCRIPT_MEROITIC_HIEROGLYPHS() {
-        return (int)83L;
-    }
-    public static int PANGO_SCRIPT_MIAO() {
-        return (int)84L;
-    }
-    public static int PANGO_SCRIPT_SHARADA() {
-        return (int)85L;
-    }
-    public static int PANGO_SCRIPT_SORA_SOMPENG() {
-        return (int)86L;
-    }
-    public static int PANGO_SCRIPT_TAKRI() {
-        return (int)87L;
-    }
-    public static int PANGO_SCRIPT_BASSA_VAH() {
-        return (int)88L;
-    }
-    public static int PANGO_SCRIPT_CAUCASIAN_ALBANIAN() {
-        return (int)89L;
-    }
-    public static int PANGO_SCRIPT_DUPLOYAN() {
-        return (int)90L;
-    }
-    public static int PANGO_SCRIPT_ELBASAN() {
-        return (int)91L;
-    }
-    public static int PANGO_SCRIPT_GRANTHA() {
-        return (int)92L;
-    }
-    public static int PANGO_SCRIPT_KHOJKI() {
-        return (int)93L;
-    }
-    public static int PANGO_SCRIPT_KHUDAWADI() {
-        return (int)94L;
-    }
-    public static int PANGO_SCRIPT_LINEAR_A() {
-        return (int)95L;
-    }
-    public static int PANGO_SCRIPT_MAHAJANI() {
-        return (int)96L;
-    }
-    public static int PANGO_SCRIPT_MANICHAEAN() {
-        return (int)97L;
-    }
-    public static int PANGO_SCRIPT_MENDE_KIKAKUI() {
-        return (int)98L;
-    }
-    public static int PANGO_SCRIPT_MODI() {
-        return (int)99L;
-    }
-    public static int PANGO_SCRIPT_MRO() {
-        return (int)100L;
-    }
-    public static int PANGO_SCRIPT_NABATAEAN() {
-        return (int)101L;
-    }
-    public static int PANGO_SCRIPT_OLD_NORTH_ARABIAN() {
-        return (int)102L;
-    }
-    public static int PANGO_SCRIPT_OLD_PERMIC() {
-        return (int)103L;
-    }
-    public static int PANGO_SCRIPT_PAHAWH_HMONG() {
-        return (int)104L;
-    }
-    public static int PANGO_SCRIPT_PALMYRENE() {
-        return (int)105L;
-    }
-    public static int PANGO_SCRIPT_PAU_CIN_HAU() {
-        return (int)106L;
-    }
-    public static int PANGO_SCRIPT_PSALTER_PAHLAVI() {
-        return (int)107L;
-    }
-    public static int PANGO_SCRIPT_SIDDHAM() {
-        return (int)108L;
-    }
-    public static int PANGO_SCRIPT_TIRHUTA() {
-        return (int)109L;
-    }
-    public static int PANGO_SCRIPT_WARANG_CITI() {
-        return (int)110L;
-    }
-    public static int PANGO_SCRIPT_AHOM() {
-        return (int)111L;
-    }
-    public static int PANGO_SCRIPT_ANATOLIAN_HIEROGLYPHS() {
-        return (int)112L;
-    }
-    public static int PANGO_SCRIPT_HATRAN() {
-        return (int)113L;
-    }
-    public static int PANGO_SCRIPT_MULTANI() {
-        return (int)114L;
-    }
-    public static int PANGO_SCRIPT_OLD_HUNGARIAN() {
-        return (int)115L;
-    }
-    public static int PANGO_SCRIPT_SIGNWRITING() {
-        return (int)116L;
-    }
-    public static MethodHandle pango_script_for_unichar$MH() {
-        return RuntimeHelper.requireNonNull(constants$1052.pango_script_for_unichar$MH,"pango_script_for_unichar");
-    }
-    public static int pango_script_for_unichar ( int ch) {
-        var mh$ = pango_script_for_unichar$MH();
-        try {
-            return (int)mh$.invokeExact(ch);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle pango_script_iter_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1052.pango_script_iter_get_type$MH,"pango_script_iter_get_type");
-    }
-    public static long pango_script_iter_get_type () {
-        var mh$ = pango_script_iter_get_type$MH();
-        try {
-            return (long)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle pango_script_iter_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1052.pango_script_iter_new$MH,"pango_script_iter_new");
-    }
-    public static MemoryAddress pango_script_iter_new ( Addressable text,  int length) {
-        var mh$ = pango_script_iter_new$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(text, length);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle pango_script_iter_get_range$MH() {
-        return RuntimeHelper.requireNonNull(constants$1052.pango_script_iter_get_range$MH,"pango_script_iter_get_range");
-    }
-    public static void pango_script_iter_get_range ( Addressable iter,  Addressable start,  Addressable end,  Addressable script) {
-        var mh$ = pango_script_iter_get_range$MH();
-        try {
-            mh$.invokeExact(iter, start, end, script);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle pango_script_iter_next$MH() {
-        return RuntimeHelper.requireNonNull(constants$1052.pango_script_iter_next$MH,"pango_script_iter_next");
-    }
-    public static int pango_script_iter_next ( Addressable iter) {
-        var mh$ = pango_script_iter_next$MH();
-        try {
-            return (int)mh$.invokeExact(iter);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle pango_script_iter_free$MH() {
-        return RuntimeHelper.requireNonNull(constants$1052.pango_script_iter_free$MH,"pango_script_iter_free");
-    }
-    public static void pango_script_iter_free ( Addressable iter) {
-        var mh$ = pango_script_iter_free$MH();
-        try {
-            mh$.invokeExact(iter);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle pango_language_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1053.pango_language_get_type$MH,"pango_language_get_type");
-    }
-    public static long pango_language_get_type () {
-        var mh$ = pango_language_get_type$MH();
-        try {
-            return (long)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle pango_language_get_default$MH() {
-        return RuntimeHelper.requireNonNull(constants$1053.pango_language_get_default$MH,"pango_language_get_default");
-    }
-    public static MemoryAddress pango_language_get_default () {
-        var mh$ = pango_language_get_default$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle pango_language_get_preferred$MH() {
-        return RuntimeHelper.requireNonNull(constants$1053.pango_language_get_preferred$MH,"pango_language_get_preferred");
-    }
-    public static MemoryAddress pango_language_get_preferred () {
-        var mh$ = pango_language_get_preferred$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle pango_language_from_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$1053.pango_language_from_string$MH,"pango_language_from_string");
-    }
-    public static MemoryAddress pango_language_from_string ( Addressable language) {
-        var mh$ = pango_language_from_string$MH();
-        try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(language);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
     public static MethodHandle pango_language_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$1053.pango_language_to_string$MH,"pango_language_to_string");
+        return RuntimeHelper.requireNonNull(constants$903.pango_language_to_string$MH,"pango_language_to_string");
     }
-    public static MemoryAddress pango_language_to_string ( Addressable language) {
+    /**
+     * {@snippet :
+     * char* pango_language_to_string(PangoLanguage* language);
+     * }
+     */
+    public static MemorySegment pango_language_to_string(MemorySegment language) {
         var mh$ = pango_language_to_string$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(language);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(language);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle pango_language_get_sample_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$1053.pango_language_get_sample_string$MH,"pango_language_get_sample_string");
+        return RuntimeHelper.requireNonNull(constants$903.pango_language_get_sample_string$MH,"pango_language_get_sample_string");
     }
-    public static MemoryAddress pango_language_get_sample_string ( Addressable language) {
+    /**
+     * {@snippet :
+     * char* pango_language_get_sample_string(PangoLanguage* language);
+     * }
+     */
+    public static MemorySegment pango_language_get_sample_string(MemorySegment language) {
         var mh$ = pango_language_get_sample_string$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(language);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(language);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle pango_language_matches$MH() {
-        return RuntimeHelper.requireNonNull(constants$1054.pango_language_matches$MH,"pango_language_matches");
+        return RuntimeHelper.requireNonNull(constants$904.pango_language_matches$MH,"pango_language_matches");
     }
-    public static int pango_language_matches ( Addressable language,  Addressable range_list) {
+    /**
+     * {@snippet :
+     * gboolean pango_language_matches(PangoLanguage* language, char* range_list);
+     * }
+     */
+    public static int pango_language_matches(MemorySegment language, MemorySegment range_list) {
         var mh$ = pango_language_matches$MH();
         try {
             return (int)mh$.invokeExact(language, range_list);
@@ -4895,9 +58,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle pango_language_includes_script$MH() {
-        return RuntimeHelper.requireNonNull(constants$1054.pango_language_includes_script$MH,"pango_language_includes_script");
+        return RuntimeHelper.requireNonNull(constants$904.pango_language_includes_script$MH,"pango_language_includes_script");
     }
-    public static int pango_language_includes_script ( Addressable language,  int script) {
+    /**
+     * {@snippet :
+     * gboolean pango_language_includes_script(PangoLanguage* language, PangoScript script);
+     * }
+     */
+    public static int pango_language_includes_script(MemorySegment language, int script) {
         var mh$ = pango_language_includes_script$MH();
         try {
             return (int)mh$.invokeExact(language, script);
@@ -4906,31 +74,46 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle pango_language_get_scripts$MH() {
-        return RuntimeHelper.requireNonNull(constants$1054.pango_language_get_scripts$MH,"pango_language_get_scripts");
+        return RuntimeHelper.requireNonNull(constants$904.pango_language_get_scripts$MH,"pango_language_get_scripts");
     }
-    public static MemoryAddress pango_language_get_scripts ( Addressable language,  Addressable num_scripts) {
+    /**
+     * {@snippet :
+     * const PangoScript* pango_language_get_scripts(PangoLanguage* language, int* num_scripts);
+     * }
+     */
+    public static MemorySegment pango_language_get_scripts(MemorySegment language, MemorySegment num_scripts) {
         var mh$ = pango_language_get_scripts$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(language, num_scripts);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(language, num_scripts);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle pango_script_get_sample_language$MH() {
-        return RuntimeHelper.requireNonNull(constants$1054.pango_script_get_sample_language$MH,"pango_script_get_sample_language");
+        return RuntimeHelper.requireNonNull(constants$904.pango_script_get_sample_language$MH,"pango_script_get_sample_language");
     }
-    public static MemoryAddress pango_script_get_sample_language ( int script) {
+    /**
+     * {@snippet :
+     * PangoLanguage* pango_script_get_sample_language(PangoScript script);
+     * }
+     */
+    public static MemorySegment pango_script_get_sample_language(int script) {
         var mh$ = pango_script_get_sample_language$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(script);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(script);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle pango_gravity_to_rotation$MH() {
-        return RuntimeHelper.requireNonNull(constants$1054.pango_gravity_to_rotation$MH,"pango_gravity_to_rotation");
+        return RuntimeHelper.requireNonNull(constants$904.pango_gravity_to_rotation$MH,"pango_gravity_to_rotation");
     }
-    public static double pango_gravity_to_rotation ( int gravity) {
+    /**
+     * {@snippet :
+     * double pango_gravity_to_rotation(PangoGravity gravity);
+     * }
+     */
+    public static double pango_gravity_to_rotation(int gravity) {
         var mh$ = pango_gravity_to_rotation$MH();
         try {
             return (double)mh$.invokeExact(gravity);
@@ -4939,9 +122,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle pango_gravity_get_for_matrix$MH() {
-        return RuntimeHelper.requireNonNull(constants$1054.pango_gravity_get_for_matrix$MH,"pango_gravity_get_for_matrix");
+        return RuntimeHelper.requireNonNull(constants$904.pango_gravity_get_for_matrix$MH,"pango_gravity_get_for_matrix");
     }
-    public static int pango_gravity_get_for_matrix ( Addressable matrix) {
+    /**
+     * {@snippet :
+     * PangoGravity pango_gravity_get_for_matrix(const PangoMatrix* matrix);
+     * }
+     */
+    public static int pango_gravity_get_for_matrix(MemorySegment matrix) {
         var mh$ = pango_gravity_get_for_matrix$MH();
         try {
             return (int)mh$.invokeExact(matrix);
@@ -4950,9 +138,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle pango_gravity_get_for_script$MH() {
-        return RuntimeHelper.requireNonNull(constants$1055.pango_gravity_get_for_script$MH,"pango_gravity_get_for_script");
+        return RuntimeHelper.requireNonNull(constants$905.pango_gravity_get_for_script$MH,"pango_gravity_get_for_script");
     }
-    public static int pango_gravity_get_for_script ( int script,  int base_gravity,  int hint) {
+    /**
+     * {@snippet :
+     * PangoGravity pango_gravity_get_for_script(PangoScript script, PangoGravity base_gravity, PangoGravityHint hint);
+     * }
+     */
+    public static int pango_gravity_get_for_script(int script, int base_gravity, int hint) {
         var mh$ = pango_gravity_get_for_script$MH();
         try {
             return (int)mh$.invokeExact(script, base_gravity, hint);
@@ -4961,9 +154,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle pango_gravity_get_for_script_and_width$MH() {
-        return RuntimeHelper.requireNonNull(constants$1055.pango_gravity_get_for_script_and_width$MH,"pango_gravity_get_for_script_and_width");
+        return RuntimeHelper.requireNonNull(constants$905.pango_gravity_get_for_script_and_width$MH,"pango_gravity_get_for_script_and_width");
     }
-    public static int pango_gravity_get_for_script_and_width ( int script,  int wide,  int base_gravity,  int hint) {
+    /**
+     * {@snippet :
+     * PangoGravity pango_gravity_get_for_script_and_width(PangoScript script, gboolean wide, PangoGravity base_gravity, PangoGravityHint hint);
+     * }
+     */
+    public static int pango_gravity_get_for_script_and_width(int script, int wide, int base_gravity, int hint) {
         var mh$ = pango_gravity_get_for_script_and_width$MH();
         try {
             return (int)mh$.invokeExact(script, wide, base_gravity, hint);
@@ -4971,100 +169,255 @@ import static java.lang.foreign.ValueLayout.*;
             throw new AssertionError("should not reach here", ex$);
         }
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_DIRECTION_LTR = 0;
+     * }
+     */
     public static int PANGO_DIRECTION_LTR() {
         return (int)0L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_DIRECTION_RTL = 1;
+     * }
+     */
     public static int PANGO_DIRECTION_RTL() {
         return (int)1L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_DIRECTION_TTB_LTR = 2;
+     * }
+     */
     public static int PANGO_DIRECTION_TTB_LTR() {
         return (int)2L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_DIRECTION_TTB_RTL = 3;
+     * }
+     */
     public static int PANGO_DIRECTION_TTB_RTL() {
         return (int)3L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_DIRECTION_WEAK_LTR = 4;
+     * }
+     */
     public static int PANGO_DIRECTION_WEAK_LTR() {
         return (int)4L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_DIRECTION_WEAK_RTL = 5;
+     * }
+     */
     public static int PANGO_DIRECTION_WEAK_RTL() {
         return (int)5L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_DIRECTION_NEUTRAL = 6;
+     * }
+     */
     public static int PANGO_DIRECTION_NEUTRAL() {
         return (int)6L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_BIDI_TYPE_L = 0;
+     * }
+     */
     public static int PANGO_BIDI_TYPE_L() {
         return (int)0L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_BIDI_TYPE_LRE = 1;
+     * }
+     */
     public static int PANGO_BIDI_TYPE_LRE() {
         return (int)1L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_BIDI_TYPE_LRO = 2;
+     * }
+     */
     public static int PANGO_BIDI_TYPE_LRO() {
         return (int)2L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_BIDI_TYPE_R = 3;
+     * }
+     */
     public static int PANGO_BIDI_TYPE_R() {
         return (int)3L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_BIDI_TYPE_AL = 4;
+     * }
+     */
     public static int PANGO_BIDI_TYPE_AL() {
         return (int)4L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_BIDI_TYPE_RLE = 5;
+     * }
+     */
     public static int PANGO_BIDI_TYPE_RLE() {
         return (int)5L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_BIDI_TYPE_RLO = 6;
+     * }
+     */
     public static int PANGO_BIDI_TYPE_RLO() {
         return (int)6L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_BIDI_TYPE_PDF = 7;
+     * }
+     */
     public static int PANGO_BIDI_TYPE_PDF() {
         return (int)7L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_BIDI_TYPE_EN = 8;
+     * }
+     */
     public static int PANGO_BIDI_TYPE_EN() {
         return (int)8L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_BIDI_TYPE_ES = 9;
+     * }
+     */
     public static int PANGO_BIDI_TYPE_ES() {
         return (int)9L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_BIDI_TYPE_ET = 10;
+     * }
+     */
     public static int PANGO_BIDI_TYPE_ET() {
         return (int)10L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_BIDI_TYPE_AN = 11;
+     * }
+     */
     public static int PANGO_BIDI_TYPE_AN() {
         return (int)11L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_BIDI_TYPE_CS = 12;
+     * }
+     */
     public static int PANGO_BIDI_TYPE_CS() {
         return (int)12L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_BIDI_TYPE_NSM = 13;
+     * }
+     */
     public static int PANGO_BIDI_TYPE_NSM() {
         return (int)13L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_BIDI_TYPE_BN = 14;
+     * }
+     */
     public static int PANGO_BIDI_TYPE_BN() {
         return (int)14L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_BIDI_TYPE_B = 15;
+     * }
+     */
     public static int PANGO_BIDI_TYPE_B() {
         return (int)15L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_BIDI_TYPE_S = 16;
+     * }
+     */
     public static int PANGO_BIDI_TYPE_S() {
         return (int)16L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_BIDI_TYPE_WS = 17;
+     * }
+     */
     public static int PANGO_BIDI_TYPE_WS() {
         return (int)17L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_BIDI_TYPE_ON = 18;
+     * }
+     */
     public static int PANGO_BIDI_TYPE_ON() {
         return (int)18L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_BIDI_TYPE_LRI = 19;
+     * }
+     */
     public static int PANGO_BIDI_TYPE_LRI() {
         return (int)19L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_BIDI_TYPE_RLI = 20;
+     * }
+     */
     public static int PANGO_BIDI_TYPE_RLI() {
         return (int)20L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_BIDI_TYPE_FSI = 21;
+     * }
+     */
     public static int PANGO_BIDI_TYPE_FSI() {
         return (int)21L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_BIDI_TYPE_PDI = 22;
+     * }
+     */
     public static int PANGO_BIDI_TYPE_PDI() {
         return (int)22L;
     }
     public static MethodHandle pango_bidi_type_for_unichar$MH() {
-        return RuntimeHelper.requireNonNull(constants$1055.pango_bidi_type_for_unichar$MH,"pango_bidi_type_for_unichar");
+        return RuntimeHelper.requireNonNull(constants$905.pango_bidi_type_for_unichar$MH,"pango_bidi_type_for_unichar");
     }
-    public static int pango_bidi_type_for_unichar ( int ch) {
+    /**
+     * {@snippet :
+     * PangoBidiType pango_bidi_type_for_unichar(gunichar ch);
+     * }
+     */
+    public static int pango_bidi_type_for_unichar(int ch) {
         var mh$ = pango_bidi_type_for_unichar$MH();
         try {
             return (int)mh$.invokeExact(ch);
@@ -5073,9 +426,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle pango_unichar_direction$MH() {
-        return RuntimeHelper.requireNonNull(constants$1055.pango_unichar_direction$MH,"pango_unichar_direction");
+        return RuntimeHelper.requireNonNull(constants$905.pango_unichar_direction$MH,"pango_unichar_direction");
     }
-    public static int pango_unichar_direction ( int ch) {
+    /**
+     * {@snippet :
+     * PangoDirection pango_unichar_direction(gunichar ch);
+     * }
+     */
+    public static int pango_unichar_direction(int ch) {
         var mh$ = pango_unichar_direction$MH();
         try {
             return (int)mh$.invokeExact(ch);
@@ -5084,9 +442,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle pango_find_base_dir$MH() {
-        return RuntimeHelper.requireNonNull(constants$1055.pango_find_base_dir$MH,"pango_find_base_dir");
+        return RuntimeHelper.requireNonNull(constants$905.pango_find_base_dir$MH,"pango_find_base_dir");
     }
-    public static int pango_find_base_dir ( Addressable text,  int length) {
+    /**
+     * {@snippet :
+     * PangoDirection pango_find_base_dir(const gchar* text, gint length);
+     * }
+     */
+    public static int pango_find_base_dir(MemorySegment text, int length) {
         var mh$ = pango_find_base_dir$MH();
         try {
             return (int)mh$.invokeExact(text, length);
@@ -5095,9 +458,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle pango_get_mirror_char$MH() {
-        return RuntimeHelper.requireNonNull(constants$1055.pango_get_mirror_char$MH,"pango_get_mirror_char");
+        return RuntimeHelper.requireNonNull(constants$905.pango_get_mirror_char$MH,"pango_get_mirror_char");
     }
-    public static int pango_get_mirror_char ( int ch,  Addressable mirrored_ch) {
+    /**
+     * {@snippet :
+     * gboolean pango_get_mirror_char(gunichar ch, gunichar* mirrored_ch);
+     * }
+     */
+    public static int pango_get_mirror_char(int ch, MemorySegment mirrored_ch) {
         var mh$ = pango_get_mirror_char$MH();
         try {
             return (int)mh$.invokeExact(ch, mirrored_ch);
@@ -5105,127 +473,327 @@ import static java.lang.foreign.ValueLayout.*;
             throw new AssertionError("should not reach here", ex$);
         }
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_STYLE_NORMAL = 0;
+     * }
+     */
     public static int PANGO_STYLE_NORMAL() {
         return (int)0L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_STYLE_OBLIQUE = 1;
+     * }
+     */
     public static int PANGO_STYLE_OBLIQUE() {
         return (int)1L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_STYLE_ITALIC = 2;
+     * }
+     */
     public static int PANGO_STYLE_ITALIC() {
         return (int)2L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_VARIANT_NORMAL = 0;
+     * }
+     */
     public static int PANGO_VARIANT_NORMAL() {
         return (int)0L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_VARIANT_SMALL_CAPS = 1;
+     * }
+     */
     public static int PANGO_VARIANT_SMALL_CAPS() {
         return (int)1L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_VARIANT_ALL_SMALL_CAPS = 2;
+     * }
+     */
     public static int PANGO_VARIANT_ALL_SMALL_CAPS() {
         return (int)2L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_VARIANT_PETITE_CAPS = 3;
+     * }
+     */
     public static int PANGO_VARIANT_PETITE_CAPS() {
         return (int)3L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_VARIANT_ALL_PETITE_CAPS = 4;
+     * }
+     */
     public static int PANGO_VARIANT_ALL_PETITE_CAPS() {
         return (int)4L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_VARIANT_UNICASE = 5;
+     * }
+     */
     public static int PANGO_VARIANT_UNICASE() {
         return (int)5L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_VARIANT_TITLE_CAPS = 6;
+     * }
+     */
     public static int PANGO_VARIANT_TITLE_CAPS() {
         return (int)6L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_WEIGHT_THIN = 100;
+     * }
+     */
     public static int PANGO_WEIGHT_THIN() {
         return (int)100L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_WEIGHT_ULTRALIGHT = 200;
+     * }
+     */
     public static int PANGO_WEIGHT_ULTRALIGHT() {
         return (int)200L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_WEIGHT_LIGHT = 300;
+     * }
+     */
     public static int PANGO_WEIGHT_LIGHT() {
         return (int)300L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_WEIGHT_SEMILIGHT = 350;
+     * }
+     */
     public static int PANGO_WEIGHT_SEMILIGHT() {
         return (int)350L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_WEIGHT_BOOK = 380;
+     * }
+     */
     public static int PANGO_WEIGHT_BOOK() {
         return (int)380L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_WEIGHT_NORMAL = 400;
+     * }
+     */
     public static int PANGO_WEIGHT_NORMAL() {
         return (int)400L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_WEIGHT_MEDIUM = 500;
+     * }
+     */
     public static int PANGO_WEIGHT_MEDIUM() {
         return (int)500L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_WEIGHT_SEMIBOLD = 600;
+     * }
+     */
     public static int PANGO_WEIGHT_SEMIBOLD() {
         return (int)600L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_WEIGHT_BOLD = 700;
+     * }
+     */
     public static int PANGO_WEIGHT_BOLD() {
         return (int)700L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_WEIGHT_ULTRABOLD = 800;
+     * }
+     */
     public static int PANGO_WEIGHT_ULTRABOLD() {
         return (int)800L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_WEIGHT_HEAVY = 900;
+     * }
+     */
     public static int PANGO_WEIGHT_HEAVY() {
         return (int)900L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_WEIGHT_ULTRAHEAVY = 1000;
+     * }
+     */
     public static int PANGO_WEIGHT_ULTRAHEAVY() {
         return (int)1000L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_STRETCH_ULTRA_CONDENSED = 0;
+     * }
+     */
     public static int PANGO_STRETCH_ULTRA_CONDENSED() {
         return (int)0L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_STRETCH_EXTRA_CONDENSED = 1;
+     * }
+     */
     public static int PANGO_STRETCH_EXTRA_CONDENSED() {
         return (int)1L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_STRETCH_CONDENSED = 2;
+     * }
+     */
     public static int PANGO_STRETCH_CONDENSED() {
         return (int)2L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_STRETCH_SEMI_CONDENSED = 3;
+     * }
+     */
     public static int PANGO_STRETCH_SEMI_CONDENSED() {
         return (int)3L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_STRETCH_NORMAL = 4;
+     * }
+     */
     public static int PANGO_STRETCH_NORMAL() {
         return (int)4L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_STRETCH_SEMI_EXPANDED = 5;
+     * }
+     */
     public static int PANGO_STRETCH_SEMI_EXPANDED() {
         return (int)5L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_STRETCH_EXPANDED = 6;
+     * }
+     */
     public static int PANGO_STRETCH_EXPANDED() {
         return (int)6L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_STRETCH_EXTRA_EXPANDED = 7;
+     * }
+     */
     public static int PANGO_STRETCH_EXTRA_EXPANDED() {
         return (int)7L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_STRETCH_ULTRA_EXPANDED = 8;
+     * }
+     */
     public static int PANGO_STRETCH_ULTRA_EXPANDED() {
         return (int)8L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_FONT_MASK_FAMILY = 1;
+     * }
+     */
     public static int PANGO_FONT_MASK_FAMILY() {
         return (int)1L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_FONT_MASK_STYLE = 2;
+     * }
+     */
     public static int PANGO_FONT_MASK_STYLE() {
         return (int)2L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_FONT_MASK_VARIANT = 4;
+     * }
+     */
     public static int PANGO_FONT_MASK_VARIANT() {
         return (int)4L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_FONT_MASK_WEIGHT = 8;
+     * }
+     */
     public static int PANGO_FONT_MASK_WEIGHT() {
         return (int)8L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_FONT_MASK_STRETCH = 16;
+     * }
+     */
     public static int PANGO_FONT_MASK_STRETCH() {
         return (int)16L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_FONT_MASK_SIZE = 32;
+     * }
+     */
     public static int PANGO_FONT_MASK_SIZE() {
         return (int)32L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_FONT_MASK_GRAVITY = 64;
+     * }
+     */
     public static int PANGO_FONT_MASK_GRAVITY() {
         return (int)64L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_FONT_MASK_VARIATIONS = 128;
+     * }
+     */
     public static int PANGO_FONT_MASK_VARIATIONS() {
         return (int)128L;
     }
     public static MethodHandle pango_font_description_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1056.pango_font_description_get_type$MH,"pango_font_description_get_type");
+        return RuntimeHelper.requireNonNull(constants$906.pango_font_description_get_type$MH,"pango_font_description_get_type");
     }
-    public static long pango_font_description_get_type () {
+    /**
+     * {@snippet :
+     * GType pango_font_description_get_type();
+     * }
+     */
+    public static long pango_font_description_get_type() {
         var mh$ = pango_font_description_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -5234,42 +802,62 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle pango_font_description_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1056.pango_font_description_new$MH,"pango_font_description_new");
+        return RuntimeHelper.requireNonNull(constants$906.pango_font_description_new$MH,"pango_font_description_new");
     }
-    public static MemoryAddress pango_font_description_new () {
+    /**
+     * {@snippet :
+     * PangoFontDescription* pango_font_description_new();
+     * }
+     */
+    public static MemorySegment pango_font_description_new() {
         var mh$ = pango_font_description_new$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact();
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle pango_font_description_copy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1056.pango_font_description_copy$MH,"pango_font_description_copy");
+        return RuntimeHelper.requireNonNull(constants$906.pango_font_description_copy$MH,"pango_font_description_copy");
     }
-    public static MemoryAddress pango_font_description_copy ( Addressable desc) {
+    /**
+     * {@snippet :
+     * PangoFontDescription* pango_font_description_copy(const PangoFontDescription* desc);
+     * }
+     */
+    public static MemorySegment pango_font_description_copy(MemorySegment desc) {
         var mh$ = pango_font_description_copy$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(desc);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(desc);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle pango_font_description_copy_static$MH() {
-        return RuntimeHelper.requireNonNull(constants$1056.pango_font_description_copy_static$MH,"pango_font_description_copy_static");
+        return RuntimeHelper.requireNonNull(constants$906.pango_font_description_copy_static$MH,"pango_font_description_copy_static");
     }
-    public static MemoryAddress pango_font_description_copy_static ( Addressable desc) {
+    /**
+     * {@snippet :
+     * PangoFontDescription* pango_font_description_copy_static(const PangoFontDescription* desc);
+     * }
+     */
+    public static MemorySegment pango_font_description_copy_static(MemorySegment desc) {
         var mh$ = pango_font_description_copy_static$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(desc);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(desc);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle pango_font_description_hash$MH() {
-        return RuntimeHelper.requireNonNull(constants$1056.pango_font_description_hash$MH,"pango_font_description_hash");
+        return RuntimeHelper.requireNonNull(constants$906.pango_font_description_hash$MH,"pango_font_description_hash");
     }
-    public static int pango_font_description_hash ( Addressable desc) {
+    /**
+     * {@snippet :
+     * guint pango_font_description_hash(const PangoFontDescription* desc);
+     * }
+     */
+    public static int pango_font_description_hash(MemorySegment desc) {
         var mh$ = pango_font_description_hash$MH();
         try {
             return (int)mh$.invokeExact(desc);
@@ -5278,9 +866,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle pango_font_description_equal$MH() {
-        return RuntimeHelper.requireNonNull(constants$1056.pango_font_description_equal$MH,"pango_font_description_equal");
+        return RuntimeHelper.requireNonNull(constants$906.pango_font_description_equal$MH,"pango_font_description_equal");
     }
-    public static int pango_font_description_equal ( Addressable desc1,  Addressable desc2) {
+    /**
+     * {@snippet :
+     * gboolean pango_font_description_equal(const PangoFontDescription* desc1, const PangoFontDescription* desc2);
+     * }
+     */
+    public static int pango_font_description_equal(MemorySegment desc1, MemorySegment desc2) {
         var mh$ = pango_font_description_equal$MH();
         try {
             return (int)mh$.invokeExact(desc1, desc2);
@@ -5289,9 +882,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle pango_font_description_free$MH() {
-        return RuntimeHelper.requireNonNull(constants$1057.pango_font_description_free$MH,"pango_font_description_free");
+        return RuntimeHelper.requireNonNull(constants$907.pango_font_description_free$MH,"pango_font_description_free");
     }
-    public static void pango_font_description_free ( Addressable desc) {
+    /**
+     * {@snippet :
+     * void pango_font_description_free(PangoFontDescription* desc);
+     * }
+     */
+    public static void pango_font_description_free(MemorySegment desc) {
         var mh$ = pango_font_description_free$MH();
         try {
             mh$.invokeExact(desc);
@@ -5300,9 +898,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle pango_font_descriptions_free$MH() {
-        return RuntimeHelper.requireNonNull(constants$1057.pango_font_descriptions_free$MH,"pango_font_descriptions_free");
+        return RuntimeHelper.requireNonNull(constants$907.pango_font_descriptions_free$MH,"pango_font_descriptions_free");
     }
-    public static void pango_font_descriptions_free ( Addressable descs,  int n_descs) {
+    /**
+     * {@snippet :
+     * void pango_font_descriptions_free(PangoFontDescription** descs, int n_descs);
+     * }
+     */
+    public static void pango_font_descriptions_free(MemorySegment descs, int n_descs) {
         var mh$ = pango_font_descriptions_free$MH();
         try {
             mh$.invokeExact(descs, n_descs);
@@ -5311,9 +914,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle pango_font_description_set_family$MH() {
-        return RuntimeHelper.requireNonNull(constants$1057.pango_font_description_set_family$MH,"pango_font_description_set_family");
+        return RuntimeHelper.requireNonNull(constants$907.pango_font_description_set_family$MH,"pango_font_description_set_family");
     }
-    public static void pango_font_description_set_family ( Addressable desc,  Addressable family) {
+    /**
+     * {@snippet :
+     * void pango_font_description_set_family(PangoFontDescription* desc, char* family);
+     * }
+     */
+    public static void pango_font_description_set_family(MemorySegment desc, MemorySegment family) {
         var mh$ = pango_font_description_set_family$MH();
         try {
             mh$.invokeExact(desc, family);
@@ -5322,9 +930,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle pango_font_description_set_family_static$MH() {
-        return RuntimeHelper.requireNonNull(constants$1057.pango_font_description_set_family_static$MH,"pango_font_description_set_family_static");
+        return RuntimeHelper.requireNonNull(constants$907.pango_font_description_set_family_static$MH,"pango_font_description_set_family_static");
     }
-    public static void pango_font_description_set_family_static ( Addressable desc,  Addressable family) {
+    /**
+     * {@snippet :
+     * void pango_font_description_set_family_static(PangoFontDescription* desc, char* family);
+     * }
+     */
+    public static void pango_font_description_set_family_static(MemorySegment desc, MemorySegment family) {
         var mh$ = pango_font_description_set_family_static$MH();
         try {
             mh$.invokeExact(desc, family);
@@ -5333,20 +946,30 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle pango_font_description_get_family$MH() {
-        return RuntimeHelper.requireNonNull(constants$1057.pango_font_description_get_family$MH,"pango_font_description_get_family");
+        return RuntimeHelper.requireNonNull(constants$907.pango_font_description_get_family$MH,"pango_font_description_get_family");
     }
-    public static MemoryAddress pango_font_description_get_family ( Addressable desc) {
+    /**
+     * {@snippet :
+     * char* pango_font_description_get_family(const PangoFontDescription* desc);
+     * }
+     */
+    public static MemorySegment pango_font_description_get_family(MemorySegment desc) {
         var mh$ = pango_font_description_get_family$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(desc);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(desc);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle pango_font_description_set_style$MH() {
-        return RuntimeHelper.requireNonNull(constants$1057.pango_font_description_set_style$MH,"pango_font_description_set_style");
+        return RuntimeHelper.requireNonNull(constants$907.pango_font_description_set_style$MH,"pango_font_description_set_style");
     }
-    public static void pango_font_description_set_style ( Addressable desc,  int style) {
+    /**
+     * {@snippet :
+     * void pango_font_description_set_style(PangoFontDescription* desc, PangoStyle style);
+     * }
+     */
+    public static void pango_font_description_set_style(MemorySegment desc, int style) {
         var mh$ = pango_font_description_set_style$MH();
         try {
             mh$.invokeExact(desc, style);
@@ -5355,9 +978,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle pango_font_description_get_style$MH() {
-        return RuntimeHelper.requireNonNull(constants$1058.pango_font_description_get_style$MH,"pango_font_description_get_style");
+        return RuntimeHelper.requireNonNull(constants$908.pango_font_description_get_style$MH,"pango_font_description_get_style");
     }
-    public static int pango_font_description_get_style ( Addressable desc) {
+    /**
+     * {@snippet :
+     * PangoStyle pango_font_description_get_style(const PangoFontDescription* desc);
+     * }
+     */
+    public static int pango_font_description_get_style(MemorySegment desc) {
         var mh$ = pango_font_description_get_style$MH();
         try {
             return (int)mh$.invokeExact(desc);
@@ -5366,9 +994,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle pango_font_description_set_variant$MH() {
-        return RuntimeHelper.requireNonNull(constants$1058.pango_font_description_set_variant$MH,"pango_font_description_set_variant");
+        return RuntimeHelper.requireNonNull(constants$908.pango_font_description_set_variant$MH,"pango_font_description_set_variant");
     }
-    public static void pango_font_description_set_variant ( Addressable desc,  int variant) {
+    /**
+     * {@snippet :
+     * void pango_font_description_set_variant(PangoFontDescription* desc, PangoVariant variant);
+     * }
+     */
+    public static void pango_font_description_set_variant(MemorySegment desc, int variant) {
         var mh$ = pango_font_description_set_variant$MH();
         try {
             mh$.invokeExact(desc, variant);
@@ -5377,9 +1010,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle pango_font_description_get_variant$MH() {
-        return RuntimeHelper.requireNonNull(constants$1058.pango_font_description_get_variant$MH,"pango_font_description_get_variant");
+        return RuntimeHelper.requireNonNull(constants$908.pango_font_description_get_variant$MH,"pango_font_description_get_variant");
     }
-    public static int pango_font_description_get_variant ( Addressable desc) {
+    /**
+     * {@snippet :
+     * PangoVariant pango_font_description_get_variant(const PangoFontDescription* desc);
+     * }
+     */
+    public static int pango_font_description_get_variant(MemorySegment desc) {
         var mh$ = pango_font_description_get_variant$MH();
         try {
             return (int)mh$.invokeExact(desc);
@@ -5388,9 +1026,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle pango_font_description_set_weight$MH() {
-        return RuntimeHelper.requireNonNull(constants$1058.pango_font_description_set_weight$MH,"pango_font_description_set_weight");
+        return RuntimeHelper.requireNonNull(constants$908.pango_font_description_set_weight$MH,"pango_font_description_set_weight");
     }
-    public static void pango_font_description_set_weight ( Addressable desc,  int weight) {
+    /**
+     * {@snippet :
+     * void pango_font_description_set_weight(PangoFontDescription* desc, PangoWeight weight);
+     * }
+     */
+    public static void pango_font_description_set_weight(MemorySegment desc, int weight) {
         var mh$ = pango_font_description_set_weight$MH();
         try {
             mh$.invokeExact(desc, weight);
@@ -5399,9 +1042,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle pango_font_description_get_weight$MH() {
-        return RuntimeHelper.requireNonNull(constants$1058.pango_font_description_get_weight$MH,"pango_font_description_get_weight");
+        return RuntimeHelper.requireNonNull(constants$908.pango_font_description_get_weight$MH,"pango_font_description_get_weight");
     }
-    public static int pango_font_description_get_weight ( Addressable desc) {
+    /**
+     * {@snippet :
+     * PangoWeight pango_font_description_get_weight(const PangoFontDescription* desc);
+     * }
+     */
+    public static int pango_font_description_get_weight(MemorySegment desc) {
         var mh$ = pango_font_description_get_weight$MH();
         try {
             return (int)mh$.invokeExact(desc);
@@ -5410,9 +1058,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle pango_font_description_set_stretch$MH() {
-        return RuntimeHelper.requireNonNull(constants$1058.pango_font_description_set_stretch$MH,"pango_font_description_set_stretch");
+        return RuntimeHelper.requireNonNull(constants$908.pango_font_description_set_stretch$MH,"pango_font_description_set_stretch");
     }
-    public static void pango_font_description_set_stretch ( Addressable desc,  int stretch) {
+    /**
+     * {@snippet :
+     * void pango_font_description_set_stretch(PangoFontDescription* desc, PangoStretch stretch);
+     * }
+     */
+    public static void pango_font_description_set_stretch(MemorySegment desc, int stretch) {
         var mh$ = pango_font_description_set_stretch$MH();
         try {
             mh$.invokeExact(desc, stretch);
@@ -5421,9 +1074,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle pango_font_description_get_stretch$MH() {
-        return RuntimeHelper.requireNonNull(constants$1059.pango_font_description_get_stretch$MH,"pango_font_description_get_stretch");
+        return RuntimeHelper.requireNonNull(constants$909.pango_font_description_get_stretch$MH,"pango_font_description_get_stretch");
     }
-    public static int pango_font_description_get_stretch ( Addressable desc) {
+    /**
+     * {@snippet :
+     * PangoStretch pango_font_description_get_stretch(const PangoFontDescription* desc);
+     * }
+     */
+    public static int pango_font_description_get_stretch(MemorySegment desc) {
         var mh$ = pango_font_description_get_stretch$MH();
         try {
             return (int)mh$.invokeExact(desc);
@@ -5432,9 +1090,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle pango_font_description_set_size$MH() {
-        return RuntimeHelper.requireNonNull(constants$1059.pango_font_description_set_size$MH,"pango_font_description_set_size");
+        return RuntimeHelper.requireNonNull(constants$909.pango_font_description_set_size$MH,"pango_font_description_set_size");
     }
-    public static void pango_font_description_set_size ( Addressable desc,  int size) {
+    /**
+     * {@snippet :
+     * void pango_font_description_set_size(PangoFontDescription* desc, gint size);
+     * }
+     */
+    public static void pango_font_description_set_size(MemorySegment desc, int size) {
         var mh$ = pango_font_description_set_size$MH();
         try {
             mh$.invokeExact(desc, size);
@@ -5443,9 +1106,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle pango_font_description_get_size$MH() {
-        return RuntimeHelper.requireNonNull(constants$1059.pango_font_description_get_size$MH,"pango_font_description_get_size");
+        return RuntimeHelper.requireNonNull(constants$909.pango_font_description_get_size$MH,"pango_font_description_get_size");
     }
-    public static int pango_font_description_get_size ( Addressable desc) {
+    /**
+     * {@snippet :
+     * gint pango_font_description_get_size(const PangoFontDescription* desc);
+     * }
+     */
+    public static int pango_font_description_get_size(MemorySegment desc) {
         var mh$ = pango_font_description_get_size$MH();
         try {
             return (int)mh$.invokeExact(desc);
@@ -5454,9 +1122,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle pango_font_description_set_absolute_size$MH() {
-        return RuntimeHelper.requireNonNull(constants$1059.pango_font_description_set_absolute_size$MH,"pango_font_description_set_absolute_size");
+        return RuntimeHelper.requireNonNull(constants$909.pango_font_description_set_absolute_size$MH,"pango_font_description_set_absolute_size");
     }
-    public static void pango_font_description_set_absolute_size ( Addressable desc,  double size) {
+    /**
+     * {@snippet :
+     * void pango_font_description_set_absolute_size(PangoFontDescription* desc, double size);
+     * }
+     */
+    public static void pango_font_description_set_absolute_size(MemorySegment desc, double size) {
         var mh$ = pango_font_description_set_absolute_size$MH();
         try {
             mh$.invokeExact(desc, size);
@@ -5465,9 +1138,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle pango_font_description_get_size_is_absolute$MH() {
-        return RuntimeHelper.requireNonNull(constants$1059.pango_font_description_get_size_is_absolute$MH,"pango_font_description_get_size_is_absolute");
+        return RuntimeHelper.requireNonNull(constants$909.pango_font_description_get_size_is_absolute$MH,"pango_font_description_get_size_is_absolute");
     }
-    public static int pango_font_description_get_size_is_absolute ( Addressable desc) {
+    /**
+     * {@snippet :
+     * gboolean pango_font_description_get_size_is_absolute(const PangoFontDescription* desc);
+     * }
+     */
+    public static int pango_font_description_get_size_is_absolute(MemorySegment desc) {
         var mh$ = pango_font_description_get_size_is_absolute$MH();
         try {
             return (int)mh$.invokeExact(desc);
@@ -5476,9 +1154,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle pango_font_description_set_gravity$MH() {
-        return RuntimeHelper.requireNonNull(constants$1059.pango_font_description_set_gravity$MH,"pango_font_description_set_gravity");
+        return RuntimeHelper.requireNonNull(constants$909.pango_font_description_set_gravity$MH,"pango_font_description_set_gravity");
     }
-    public static void pango_font_description_set_gravity ( Addressable desc,  int gravity) {
+    /**
+     * {@snippet :
+     * void pango_font_description_set_gravity(PangoFontDescription* desc, PangoGravity gravity);
+     * }
+     */
+    public static void pango_font_description_set_gravity(MemorySegment desc, int gravity) {
         var mh$ = pango_font_description_set_gravity$MH();
         try {
             mh$.invokeExact(desc, gravity);
@@ -5487,9 +1170,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle pango_font_description_get_gravity$MH() {
-        return RuntimeHelper.requireNonNull(constants$1060.pango_font_description_get_gravity$MH,"pango_font_description_get_gravity");
+        return RuntimeHelper.requireNonNull(constants$910.pango_font_description_get_gravity$MH,"pango_font_description_get_gravity");
     }
-    public static int pango_font_description_get_gravity ( Addressable desc) {
+    /**
+     * {@snippet :
+     * PangoGravity pango_font_description_get_gravity(const PangoFontDescription* desc);
+     * }
+     */
+    public static int pango_font_description_get_gravity(MemorySegment desc) {
         var mh$ = pango_font_description_get_gravity$MH();
         try {
             return (int)mh$.invokeExact(desc);
@@ -5498,9 +1186,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle pango_font_description_set_variations_static$MH() {
-        return RuntimeHelper.requireNonNull(constants$1060.pango_font_description_set_variations_static$MH,"pango_font_description_set_variations_static");
+        return RuntimeHelper.requireNonNull(constants$910.pango_font_description_set_variations_static$MH,"pango_font_description_set_variations_static");
     }
-    public static void pango_font_description_set_variations_static ( Addressable desc,  Addressable variations) {
+    /**
+     * {@snippet :
+     * void pango_font_description_set_variations_static(PangoFontDescription* desc, char* variations);
+     * }
+     */
+    public static void pango_font_description_set_variations_static(MemorySegment desc, MemorySegment variations) {
         var mh$ = pango_font_description_set_variations_static$MH();
         try {
             mh$.invokeExact(desc, variations);
@@ -5509,9 +1202,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle pango_font_description_set_variations$MH() {
-        return RuntimeHelper.requireNonNull(constants$1060.pango_font_description_set_variations$MH,"pango_font_description_set_variations");
+        return RuntimeHelper.requireNonNull(constants$910.pango_font_description_set_variations$MH,"pango_font_description_set_variations");
     }
-    public static void pango_font_description_set_variations ( Addressable desc,  Addressable variations) {
+    /**
+     * {@snippet :
+     * void pango_font_description_set_variations(PangoFontDescription* desc, char* variations);
+     * }
+     */
+    public static void pango_font_description_set_variations(MemorySegment desc, MemorySegment variations) {
         var mh$ = pango_font_description_set_variations$MH();
         try {
             mh$.invokeExact(desc, variations);
@@ -5520,20 +1218,30 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle pango_font_description_get_variations$MH() {
-        return RuntimeHelper.requireNonNull(constants$1060.pango_font_description_get_variations$MH,"pango_font_description_get_variations");
+        return RuntimeHelper.requireNonNull(constants$910.pango_font_description_get_variations$MH,"pango_font_description_get_variations");
     }
-    public static MemoryAddress pango_font_description_get_variations ( Addressable desc) {
+    /**
+     * {@snippet :
+     * char* pango_font_description_get_variations(const PangoFontDescription* desc);
+     * }
+     */
+    public static MemorySegment pango_font_description_get_variations(MemorySegment desc) {
         var mh$ = pango_font_description_get_variations$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(desc);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(desc);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle pango_font_description_get_set_fields$MH() {
-        return RuntimeHelper.requireNonNull(constants$1060.pango_font_description_get_set_fields$MH,"pango_font_description_get_set_fields");
+        return RuntimeHelper.requireNonNull(constants$910.pango_font_description_get_set_fields$MH,"pango_font_description_get_set_fields");
     }
-    public static int pango_font_description_get_set_fields ( Addressable desc) {
+    /**
+     * {@snippet :
+     * PangoFontMask pango_font_description_get_set_fields(const PangoFontDescription* desc);
+     * }
+     */
+    public static int pango_font_description_get_set_fields(MemorySegment desc) {
         var mh$ = pango_font_description_get_set_fields$MH();
         try {
             return (int)mh$.invokeExact(desc);
@@ -5542,9 +1250,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle pango_font_description_unset_fields$MH() {
-        return RuntimeHelper.requireNonNull(constants$1060.pango_font_description_unset_fields$MH,"pango_font_description_unset_fields");
+        return RuntimeHelper.requireNonNull(constants$910.pango_font_description_unset_fields$MH,"pango_font_description_unset_fields");
     }
-    public static void pango_font_description_unset_fields ( Addressable desc,  int to_unset) {
+    /**
+     * {@snippet :
+     * void pango_font_description_unset_fields(PangoFontDescription* desc, PangoFontMask to_unset);
+     * }
+     */
+    public static void pango_font_description_unset_fields(MemorySegment desc, int to_unset) {
         var mh$ = pango_font_description_unset_fields$MH();
         try {
             mh$.invokeExact(desc, to_unset);
@@ -5553,9 +1266,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle pango_font_description_merge$MH() {
-        return RuntimeHelper.requireNonNull(constants$1061.pango_font_description_merge$MH,"pango_font_description_merge");
+        return RuntimeHelper.requireNonNull(constants$911.pango_font_description_merge$MH,"pango_font_description_merge");
     }
-    public static void pango_font_description_merge ( Addressable desc,  Addressable desc_to_merge,  int replace_existing) {
+    /**
+     * {@snippet :
+     * void pango_font_description_merge(PangoFontDescription* desc, const PangoFontDescription* desc_to_merge, gboolean replace_existing);
+     * }
+     */
+    public static void pango_font_description_merge(MemorySegment desc, MemorySegment desc_to_merge, int replace_existing) {
         var mh$ = pango_font_description_merge$MH();
         try {
             mh$.invokeExact(desc, desc_to_merge, replace_existing);
@@ -5564,9 +1282,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle pango_font_description_merge_static$MH() {
-        return RuntimeHelper.requireNonNull(constants$1061.pango_font_description_merge_static$MH,"pango_font_description_merge_static");
+        return RuntimeHelper.requireNonNull(constants$911.pango_font_description_merge_static$MH,"pango_font_description_merge_static");
     }
-    public static void pango_font_description_merge_static ( Addressable desc,  Addressable desc_to_merge,  int replace_existing) {
+    /**
+     * {@snippet :
+     * void pango_font_description_merge_static(PangoFontDescription* desc, const PangoFontDescription* desc_to_merge, gboolean replace_existing);
+     * }
+     */
+    public static void pango_font_description_merge_static(MemorySegment desc, MemorySegment desc_to_merge, int replace_existing) {
         var mh$ = pango_font_description_merge_static$MH();
         try {
             mh$.invokeExact(desc, desc_to_merge, replace_existing);
@@ -5575,9 +1298,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle pango_font_description_better_match$MH() {
-        return RuntimeHelper.requireNonNull(constants$1061.pango_font_description_better_match$MH,"pango_font_description_better_match");
+        return RuntimeHelper.requireNonNull(constants$911.pango_font_description_better_match$MH,"pango_font_description_better_match");
     }
-    public static int pango_font_description_better_match ( Addressable desc,  Addressable old_match,  Addressable new_match) {
+    /**
+     * {@snippet :
+     * gboolean pango_font_description_better_match(const PangoFontDescription* desc, const PangoFontDescription* old_match, const PangoFontDescription* new_match);
+     * }
+     */
+    public static int pango_font_description_better_match(MemorySegment desc, MemorySegment old_match, MemorySegment new_match) {
         var mh$ = pango_font_description_better_match$MH();
         try {
             return (int)mh$.invokeExact(desc, old_match, new_match);
@@ -5586,42 +1314,62 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle pango_font_description_from_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$1061.pango_font_description_from_string$MH,"pango_font_description_from_string");
+        return RuntimeHelper.requireNonNull(constants$911.pango_font_description_from_string$MH,"pango_font_description_from_string");
     }
-    public static MemoryAddress pango_font_description_from_string ( Addressable str) {
+    /**
+     * {@snippet :
+     * PangoFontDescription* pango_font_description_from_string(char* str);
+     * }
+     */
+    public static MemorySegment pango_font_description_from_string(MemorySegment str) {
         var mh$ = pango_font_description_from_string$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(str);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(str);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle pango_font_description_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$1061.pango_font_description_to_string$MH,"pango_font_description_to_string");
+        return RuntimeHelper.requireNonNull(constants$911.pango_font_description_to_string$MH,"pango_font_description_to_string");
     }
-    public static MemoryAddress pango_font_description_to_string ( Addressable desc) {
+    /**
+     * {@snippet :
+     * char* pango_font_description_to_string(const PangoFontDescription* desc);
+     * }
+     */
+    public static MemorySegment pango_font_description_to_string(MemorySegment desc) {
         var mh$ = pango_font_description_to_string$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(desc);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(desc);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle pango_font_description_to_filename$MH() {
-        return RuntimeHelper.requireNonNull(constants$1061.pango_font_description_to_filename$MH,"pango_font_description_to_filename");
+        return RuntimeHelper.requireNonNull(constants$911.pango_font_description_to_filename$MH,"pango_font_description_to_filename");
     }
-    public static MemoryAddress pango_font_description_to_filename ( Addressable desc) {
+    /**
+     * {@snippet :
+     * char* pango_font_description_to_filename(const PangoFontDescription* desc);
+     * }
+     */
+    public static MemorySegment pango_font_description_to_filename(MemorySegment desc) {
         var mh$ = pango_font_description_to_filename$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(desc);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(desc);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle pango_font_metrics_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1062.pango_font_metrics_get_type$MH,"pango_font_metrics_get_type");
+        return RuntimeHelper.requireNonNull(constants$912.pango_font_metrics_get_type$MH,"pango_font_metrics_get_type");
     }
-    public static long pango_font_metrics_get_type () {
+    /**
+     * {@snippet :
+     * GType pango_font_metrics_get_type();
+     * }
+     */
+    public static long pango_font_metrics_get_type() {
         var mh$ = pango_font_metrics_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -5630,20 +1378,30 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle pango_font_metrics_ref$MH() {
-        return RuntimeHelper.requireNonNull(constants$1062.pango_font_metrics_ref$MH,"pango_font_metrics_ref");
+        return RuntimeHelper.requireNonNull(constants$912.pango_font_metrics_ref$MH,"pango_font_metrics_ref");
     }
-    public static MemoryAddress pango_font_metrics_ref ( Addressable metrics) {
+    /**
+     * {@snippet :
+     * PangoFontMetrics* pango_font_metrics_ref(PangoFontMetrics* metrics);
+     * }
+     */
+    public static MemorySegment pango_font_metrics_ref(MemorySegment metrics) {
         var mh$ = pango_font_metrics_ref$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(metrics);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(metrics);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle pango_font_metrics_unref$MH() {
-        return RuntimeHelper.requireNonNull(constants$1062.pango_font_metrics_unref$MH,"pango_font_metrics_unref");
+        return RuntimeHelper.requireNonNull(constants$912.pango_font_metrics_unref$MH,"pango_font_metrics_unref");
     }
-    public static void pango_font_metrics_unref ( Addressable metrics) {
+    /**
+     * {@snippet :
+     * void pango_font_metrics_unref(PangoFontMetrics* metrics);
+     * }
+     */
+    public static void pango_font_metrics_unref(MemorySegment metrics) {
         var mh$ = pango_font_metrics_unref$MH();
         try {
             mh$.invokeExact(metrics);
@@ -5652,9 +1410,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle pango_font_metrics_get_ascent$MH() {
-        return RuntimeHelper.requireNonNull(constants$1062.pango_font_metrics_get_ascent$MH,"pango_font_metrics_get_ascent");
+        return RuntimeHelper.requireNonNull(constants$912.pango_font_metrics_get_ascent$MH,"pango_font_metrics_get_ascent");
     }
-    public static int pango_font_metrics_get_ascent ( Addressable metrics) {
+    /**
+     * {@snippet :
+     * int pango_font_metrics_get_ascent(PangoFontMetrics* metrics);
+     * }
+     */
+    public static int pango_font_metrics_get_ascent(MemorySegment metrics) {
         var mh$ = pango_font_metrics_get_ascent$MH();
         try {
             return (int)mh$.invokeExact(metrics);
@@ -5663,9 +1426,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle pango_font_metrics_get_descent$MH() {
-        return RuntimeHelper.requireNonNull(constants$1062.pango_font_metrics_get_descent$MH,"pango_font_metrics_get_descent");
+        return RuntimeHelper.requireNonNull(constants$912.pango_font_metrics_get_descent$MH,"pango_font_metrics_get_descent");
     }
-    public static int pango_font_metrics_get_descent ( Addressable metrics) {
+    /**
+     * {@snippet :
+     * int pango_font_metrics_get_descent(PangoFontMetrics* metrics);
+     * }
+     */
+    public static int pango_font_metrics_get_descent(MemorySegment metrics) {
         var mh$ = pango_font_metrics_get_descent$MH();
         try {
             return (int)mh$.invokeExact(metrics);
@@ -5674,9 +1442,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle pango_font_metrics_get_height$MH() {
-        return RuntimeHelper.requireNonNull(constants$1062.pango_font_metrics_get_height$MH,"pango_font_metrics_get_height");
+        return RuntimeHelper.requireNonNull(constants$912.pango_font_metrics_get_height$MH,"pango_font_metrics_get_height");
     }
-    public static int pango_font_metrics_get_height ( Addressable metrics) {
+    /**
+     * {@snippet :
+     * int pango_font_metrics_get_height(PangoFontMetrics* metrics);
+     * }
+     */
+    public static int pango_font_metrics_get_height(MemorySegment metrics) {
         var mh$ = pango_font_metrics_get_height$MH();
         try {
             return (int)mh$.invokeExact(metrics);
@@ -5685,9 +1458,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle pango_font_metrics_get_approximate_char_width$MH() {
-        return RuntimeHelper.requireNonNull(constants$1063.pango_font_metrics_get_approximate_char_width$MH,"pango_font_metrics_get_approximate_char_width");
+        return RuntimeHelper.requireNonNull(constants$913.pango_font_metrics_get_approximate_char_width$MH,"pango_font_metrics_get_approximate_char_width");
     }
-    public static int pango_font_metrics_get_approximate_char_width ( Addressable metrics) {
+    /**
+     * {@snippet :
+     * int pango_font_metrics_get_approximate_char_width(PangoFontMetrics* metrics);
+     * }
+     */
+    public static int pango_font_metrics_get_approximate_char_width(MemorySegment metrics) {
         var mh$ = pango_font_metrics_get_approximate_char_width$MH();
         try {
             return (int)mh$.invokeExact(metrics);
@@ -5696,9 +1474,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle pango_font_metrics_get_approximate_digit_width$MH() {
-        return RuntimeHelper.requireNonNull(constants$1063.pango_font_metrics_get_approximate_digit_width$MH,"pango_font_metrics_get_approximate_digit_width");
+        return RuntimeHelper.requireNonNull(constants$913.pango_font_metrics_get_approximate_digit_width$MH,"pango_font_metrics_get_approximate_digit_width");
     }
-    public static int pango_font_metrics_get_approximate_digit_width ( Addressable metrics) {
+    /**
+     * {@snippet :
+     * int pango_font_metrics_get_approximate_digit_width(PangoFontMetrics* metrics);
+     * }
+     */
+    public static int pango_font_metrics_get_approximate_digit_width(MemorySegment metrics) {
         var mh$ = pango_font_metrics_get_approximate_digit_width$MH();
         try {
             return (int)mh$.invokeExact(metrics);
@@ -5707,9 +1490,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle pango_font_metrics_get_underline_position$MH() {
-        return RuntimeHelper.requireNonNull(constants$1063.pango_font_metrics_get_underline_position$MH,"pango_font_metrics_get_underline_position");
+        return RuntimeHelper.requireNonNull(constants$913.pango_font_metrics_get_underline_position$MH,"pango_font_metrics_get_underline_position");
     }
-    public static int pango_font_metrics_get_underline_position ( Addressable metrics) {
+    /**
+     * {@snippet :
+     * int pango_font_metrics_get_underline_position(PangoFontMetrics* metrics);
+     * }
+     */
+    public static int pango_font_metrics_get_underline_position(MemorySegment metrics) {
         var mh$ = pango_font_metrics_get_underline_position$MH();
         try {
             return (int)mh$.invokeExact(metrics);
@@ -5718,9 +1506,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle pango_font_metrics_get_underline_thickness$MH() {
-        return RuntimeHelper.requireNonNull(constants$1063.pango_font_metrics_get_underline_thickness$MH,"pango_font_metrics_get_underline_thickness");
+        return RuntimeHelper.requireNonNull(constants$913.pango_font_metrics_get_underline_thickness$MH,"pango_font_metrics_get_underline_thickness");
     }
-    public static int pango_font_metrics_get_underline_thickness ( Addressable metrics) {
+    /**
+     * {@snippet :
+     * int pango_font_metrics_get_underline_thickness(PangoFontMetrics* metrics);
+     * }
+     */
+    public static int pango_font_metrics_get_underline_thickness(MemorySegment metrics) {
         var mh$ = pango_font_metrics_get_underline_thickness$MH();
         try {
             return (int)mh$.invokeExact(metrics);
@@ -5729,9 +1522,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle pango_font_metrics_get_strikethrough_position$MH() {
-        return RuntimeHelper.requireNonNull(constants$1063.pango_font_metrics_get_strikethrough_position$MH,"pango_font_metrics_get_strikethrough_position");
+        return RuntimeHelper.requireNonNull(constants$913.pango_font_metrics_get_strikethrough_position$MH,"pango_font_metrics_get_strikethrough_position");
     }
-    public static int pango_font_metrics_get_strikethrough_position ( Addressable metrics) {
+    /**
+     * {@snippet :
+     * int pango_font_metrics_get_strikethrough_position(PangoFontMetrics* metrics);
+     * }
+     */
+    public static int pango_font_metrics_get_strikethrough_position(MemorySegment metrics) {
         var mh$ = pango_font_metrics_get_strikethrough_position$MH();
         try {
             return (int)mh$.invokeExact(metrics);
@@ -5740,9 +1538,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle pango_font_metrics_get_strikethrough_thickness$MH() {
-        return RuntimeHelper.requireNonNull(constants$1063.pango_font_metrics_get_strikethrough_thickness$MH,"pango_font_metrics_get_strikethrough_thickness");
+        return RuntimeHelper.requireNonNull(constants$913.pango_font_metrics_get_strikethrough_thickness$MH,"pango_font_metrics_get_strikethrough_thickness");
     }
-    public static int pango_font_metrics_get_strikethrough_thickness ( Addressable metrics) {
+    /**
+     * {@snippet :
+     * int pango_font_metrics_get_strikethrough_thickness(PangoFontMetrics* metrics);
+     * }
+     */
+    public static int pango_font_metrics_get_strikethrough_thickness(MemorySegment metrics) {
         var mh$ = pango_font_metrics_get_strikethrough_thickness$MH();
         try {
             return (int)mh$.invokeExact(metrics);
@@ -5751,9 +1554,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle pango_font_family_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1064.pango_font_family_get_type$MH,"pango_font_family_get_type");
+        return RuntimeHelper.requireNonNull(constants$914.pango_font_family_get_type$MH,"pango_font_family_get_type");
     }
-    public static long pango_font_family_get_type () {
+    /**
+     * {@snippet :
+     * GType pango_font_family_get_type();
+     * }
+     */
+    public static long pango_font_family_get_type() {
         var mh$ = pango_font_family_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -5762,9 +1570,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle pango_font_family_list_faces$MH() {
-        return RuntimeHelper.requireNonNull(constants$1064.pango_font_family_list_faces$MH,"pango_font_family_list_faces");
+        return RuntimeHelper.requireNonNull(constants$914.pango_font_family_list_faces$MH,"pango_font_family_list_faces");
     }
-    public static void pango_font_family_list_faces ( Addressable family,  Addressable faces,  Addressable n_faces) {
+    /**
+     * {@snippet :
+     * void pango_font_family_list_faces(PangoFontFamily* family, PangoFontFace*** faces, int* n_faces);
+     * }
+     */
+    public static void pango_font_family_list_faces(MemorySegment family, MemorySegment faces, MemorySegment n_faces) {
         var mh$ = pango_font_family_list_faces$MH();
         try {
             mh$.invokeExact(family, faces, n_faces);
@@ -5773,20 +1586,30 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle pango_font_family_get_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$1064.pango_font_family_get_name$MH,"pango_font_family_get_name");
+        return RuntimeHelper.requireNonNull(constants$914.pango_font_family_get_name$MH,"pango_font_family_get_name");
     }
-    public static MemoryAddress pango_font_family_get_name ( Addressable family) {
+    /**
+     * {@snippet :
+     * char* pango_font_family_get_name(PangoFontFamily* family);
+     * }
+     */
+    public static MemorySegment pango_font_family_get_name(MemorySegment family) {
         var mh$ = pango_font_family_get_name$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(family);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(family);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle pango_font_family_is_monospace$MH() {
-        return RuntimeHelper.requireNonNull(constants$1064.pango_font_family_is_monospace$MH,"pango_font_family_is_monospace");
+        return RuntimeHelper.requireNonNull(constants$914.pango_font_family_is_monospace$MH,"pango_font_family_is_monospace");
     }
-    public static int pango_font_family_is_monospace ( Addressable family) {
+    /**
+     * {@snippet :
+     * gboolean pango_font_family_is_monospace(PangoFontFamily* family);
+     * }
+     */
+    public static int pango_font_family_is_monospace(MemorySegment family) {
         var mh$ = pango_font_family_is_monospace$MH();
         try {
             return (int)mh$.invokeExact(family);
@@ -5795,9 +1618,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle pango_font_family_is_variable$MH() {
-        return RuntimeHelper.requireNonNull(constants$1064.pango_font_family_is_variable$MH,"pango_font_family_is_variable");
+        return RuntimeHelper.requireNonNull(constants$914.pango_font_family_is_variable$MH,"pango_font_family_is_variable");
     }
-    public static int pango_font_family_is_variable ( Addressable family) {
+    /**
+     * {@snippet :
+     * gboolean pango_font_family_is_variable(PangoFontFamily* family);
+     * }
+     */
+    public static int pango_font_family_is_variable(MemorySegment family) {
         var mh$ = pango_font_family_is_variable$MH();
         try {
             return (int)mh$.invokeExact(family);
@@ -5806,20 +1634,30 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle pango_font_family_get_face$MH() {
-        return RuntimeHelper.requireNonNull(constants$1064.pango_font_family_get_face$MH,"pango_font_family_get_face");
+        return RuntimeHelper.requireNonNull(constants$914.pango_font_family_get_face$MH,"pango_font_family_get_face");
     }
-    public static MemoryAddress pango_font_family_get_face ( Addressable family,  Addressable name) {
+    /**
+     * {@snippet :
+     * PangoFontFace* pango_font_family_get_face(PangoFontFamily* family, char* name);
+     * }
+     */
+    public static MemorySegment pango_font_family_get_face(MemorySegment family, MemorySegment name) {
         var mh$ = pango_font_family_get_face$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(family, name);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(family, name);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle pango_font_face_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1065.pango_font_face_get_type$MH,"pango_font_face_get_type");
+        return RuntimeHelper.requireNonNull(constants$915.pango_font_face_get_type$MH,"pango_font_face_get_type");
     }
-    public static long pango_font_face_get_type () {
+    /**
+     * {@snippet :
+     * GType pango_font_face_get_type();
+     * }
+     */
+    public static long pango_font_face_get_type() {
         var mh$ = pango_font_face_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -5828,31 +1666,46 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle pango_font_face_describe$MH() {
-        return RuntimeHelper.requireNonNull(constants$1065.pango_font_face_describe$MH,"pango_font_face_describe");
+        return RuntimeHelper.requireNonNull(constants$915.pango_font_face_describe$MH,"pango_font_face_describe");
     }
-    public static MemoryAddress pango_font_face_describe ( Addressable face) {
+    /**
+     * {@snippet :
+     * PangoFontDescription* pango_font_face_describe(PangoFontFace* face);
+     * }
+     */
+    public static MemorySegment pango_font_face_describe(MemorySegment face) {
         var mh$ = pango_font_face_describe$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(face);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(face);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle pango_font_face_get_face_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$1065.pango_font_face_get_face_name$MH,"pango_font_face_get_face_name");
+        return RuntimeHelper.requireNonNull(constants$915.pango_font_face_get_face_name$MH,"pango_font_face_get_face_name");
     }
-    public static MemoryAddress pango_font_face_get_face_name ( Addressable face) {
+    /**
+     * {@snippet :
+     * char* pango_font_face_get_face_name(PangoFontFace* face);
+     * }
+     */
+    public static MemorySegment pango_font_face_get_face_name(MemorySegment face) {
         var mh$ = pango_font_face_get_face_name$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(face);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(face);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle pango_font_face_list_sizes$MH() {
-        return RuntimeHelper.requireNonNull(constants$1065.pango_font_face_list_sizes$MH,"pango_font_face_list_sizes");
+        return RuntimeHelper.requireNonNull(constants$915.pango_font_face_list_sizes$MH,"pango_font_face_list_sizes");
     }
-    public static void pango_font_face_list_sizes ( Addressable face,  Addressable sizes,  Addressable n_sizes) {
+    /**
+     * {@snippet :
+     * void pango_font_face_list_sizes(PangoFontFace* face, int** sizes, int* n_sizes);
+     * }
+     */
+    public static void pango_font_face_list_sizes(MemorySegment face, MemorySegment sizes, MemorySegment n_sizes) {
         var mh$ = pango_font_face_list_sizes$MH();
         try {
             mh$.invokeExact(face, sizes, n_sizes);
@@ -5861,9 +1714,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle pango_font_face_is_synthesized$MH() {
-        return RuntimeHelper.requireNonNull(constants$1065.pango_font_face_is_synthesized$MH,"pango_font_face_is_synthesized");
+        return RuntimeHelper.requireNonNull(constants$915.pango_font_face_is_synthesized$MH,"pango_font_face_is_synthesized");
     }
-    public static int pango_font_face_is_synthesized ( Addressable face) {
+    /**
+     * {@snippet :
+     * gboolean pango_font_face_is_synthesized(PangoFontFace* face);
+     * }
+     */
+    public static int pango_font_face_is_synthesized(MemorySegment face) {
         var mh$ = pango_font_face_is_synthesized$MH();
         try {
             return (int)mh$.invokeExact(face);
@@ -5872,20 +1730,30 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle pango_font_face_get_family$MH() {
-        return RuntimeHelper.requireNonNull(constants$1065.pango_font_face_get_family$MH,"pango_font_face_get_family");
+        return RuntimeHelper.requireNonNull(constants$915.pango_font_face_get_family$MH,"pango_font_face_get_family");
     }
-    public static MemoryAddress pango_font_face_get_family ( Addressable face) {
+    /**
+     * {@snippet :
+     * PangoFontFamily* pango_font_face_get_family(PangoFontFace* face);
+     * }
+     */
+    public static MemorySegment pango_font_face_get_family(MemorySegment face) {
         var mh$ = pango_font_face_get_family$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(face);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(face);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle pango_font_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1066.pango_font_get_type$MH,"pango_font_get_type");
+        return RuntimeHelper.requireNonNull(constants$916.pango_font_get_type$MH,"pango_font_get_type");
     }
-    public static long pango_font_get_type () {
+    /**
+     * {@snippet :
+     * GType pango_font_get_type();
+     * }
+     */
+    public static long pango_font_get_type() {
         var mh$ = pango_font_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -5894,64 +1762,94 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle pango_font_describe$MH() {
-        return RuntimeHelper.requireNonNull(constants$1066.pango_font_describe$MH,"pango_font_describe");
+        return RuntimeHelper.requireNonNull(constants$916.pango_font_describe$MH,"pango_font_describe");
     }
-    public static MemoryAddress pango_font_describe ( Addressable font) {
+    /**
+     * {@snippet :
+     * PangoFontDescription* pango_font_describe(PangoFont* font);
+     * }
+     */
+    public static MemorySegment pango_font_describe(MemorySegment font) {
         var mh$ = pango_font_describe$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(font);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(font);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle pango_font_describe_with_absolute_size$MH() {
-        return RuntimeHelper.requireNonNull(constants$1066.pango_font_describe_with_absolute_size$MH,"pango_font_describe_with_absolute_size");
+        return RuntimeHelper.requireNonNull(constants$916.pango_font_describe_with_absolute_size$MH,"pango_font_describe_with_absolute_size");
     }
-    public static MemoryAddress pango_font_describe_with_absolute_size ( Addressable font) {
+    /**
+     * {@snippet :
+     * PangoFontDescription* pango_font_describe_with_absolute_size(PangoFont* font);
+     * }
+     */
+    public static MemorySegment pango_font_describe_with_absolute_size(MemorySegment font) {
         var mh$ = pango_font_describe_with_absolute_size$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(font);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(font);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle pango_font_get_coverage$MH() {
-        return RuntimeHelper.requireNonNull(constants$1066.pango_font_get_coverage$MH,"pango_font_get_coverage");
+        return RuntimeHelper.requireNonNull(constants$916.pango_font_get_coverage$MH,"pango_font_get_coverage");
     }
-    public static MemoryAddress pango_font_get_coverage ( Addressable font,  Addressable language) {
+    /**
+     * {@snippet :
+     * PangoCoverage* pango_font_get_coverage(PangoFont* font, PangoLanguage* language);
+     * }
+     */
+    public static MemorySegment pango_font_get_coverage(MemorySegment font, MemorySegment language) {
         var mh$ = pango_font_get_coverage$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(font, language);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(font, language);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle pango_font_find_shaper$MH() {
-        return RuntimeHelper.requireNonNull(constants$1066.pango_font_find_shaper$MH,"pango_font_find_shaper");
+        return RuntimeHelper.requireNonNull(constants$916.pango_font_find_shaper$MH,"pango_font_find_shaper");
     }
-    public static MemoryAddress pango_font_find_shaper ( Addressable font,  Addressable language,  int ch) {
+    /**
+     * {@snippet :
+     * PangoEngineShape* pango_font_find_shaper(PangoFont* font, PangoLanguage* language, guint32 ch);
+     * }
+     */
+    public static MemorySegment pango_font_find_shaper(MemorySegment font, MemorySegment language, int ch) {
         var mh$ = pango_font_find_shaper$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(font, language, ch);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(font, language, ch);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle pango_font_get_metrics$MH() {
-        return RuntimeHelper.requireNonNull(constants$1066.pango_font_get_metrics$MH,"pango_font_get_metrics");
+        return RuntimeHelper.requireNonNull(constants$916.pango_font_get_metrics$MH,"pango_font_get_metrics");
     }
-    public static MemoryAddress pango_font_get_metrics ( Addressable font,  Addressable language) {
+    /**
+     * {@snippet :
+     * PangoFontMetrics* pango_font_get_metrics(PangoFont* font, PangoLanguage* language);
+     * }
+     */
+    public static MemorySegment pango_font_get_metrics(MemorySegment font, MemorySegment language) {
         var mh$ = pango_font_get_metrics$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(font, language);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(font, language);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle pango_font_get_glyph_extents$MH() {
-        return RuntimeHelper.requireNonNull(constants$1067.pango_font_get_glyph_extents$MH,"pango_font_get_glyph_extents");
+        return RuntimeHelper.requireNonNull(constants$917.pango_font_get_glyph_extents$MH,"pango_font_get_glyph_extents");
     }
-    public static void pango_font_get_glyph_extents ( Addressable font,  int glyph,  Addressable ink_rect,  Addressable logical_rect) {
+    /**
+     * {@snippet :
+     * void pango_font_get_glyph_extents(PangoFont* font, PangoGlyph glyph, PangoRectangle* ink_rect, PangoRectangle* logical_rect);
+     * }
+     */
+    public static void pango_font_get_glyph_extents(MemorySegment font, int glyph, MemorySegment ink_rect, MemorySegment logical_rect) {
         var mh$ = pango_font_get_glyph_extents$MH();
         try {
             mh$.invokeExact(font, glyph, ink_rect, logical_rect);
@@ -5960,31 +1858,46 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle pango_font_get_font_map$MH() {
-        return RuntimeHelper.requireNonNull(constants$1067.pango_font_get_font_map$MH,"pango_font_get_font_map");
+        return RuntimeHelper.requireNonNull(constants$917.pango_font_get_font_map$MH,"pango_font_get_font_map");
     }
-    public static MemoryAddress pango_font_get_font_map ( Addressable font) {
+    /**
+     * {@snippet :
+     * PangoFontMap* pango_font_get_font_map(PangoFont* font);
+     * }
+     */
+    public static MemorySegment pango_font_get_font_map(MemorySegment font) {
         var mh$ = pango_font_get_font_map$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(font);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(font);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle pango_font_get_face$MH() {
-        return RuntimeHelper.requireNonNull(constants$1067.pango_font_get_face$MH,"pango_font_get_face");
+        return RuntimeHelper.requireNonNull(constants$917.pango_font_get_face$MH,"pango_font_get_face");
     }
-    public static MemoryAddress pango_font_get_face ( Addressable font) {
+    /**
+     * {@snippet :
+     * PangoFontFace* pango_font_get_face(PangoFont* font);
+     * }
+     */
+    public static MemorySegment pango_font_get_face(MemorySegment font) {
         var mh$ = pango_font_get_face$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(font);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(font);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle pango_font_has_char$MH() {
-        return RuntimeHelper.requireNonNull(constants$1067.pango_font_has_char$MH,"pango_font_has_char");
+        return RuntimeHelper.requireNonNull(constants$917.pango_font_has_char$MH,"pango_font_has_char");
     }
-    public static int pango_font_has_char ( Addressable font,  int wc) {
+    /**
+     * {@snippet :
+     * gboolean pango_font_has_char(PangoFont* font, gunichar wc);
+     * }
+     */
+    public static int pango_font_has_char(MemorySegment font, int wc) {
         var mh$ = pango_font_has_char$MH();
         try {
             return (int)mh$.invokeExact(font, wc);
@@ -5993,9 +1906,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle pango_font_get_features$MH() {
-        return RuntimeHelper.requireNonNull(constants$1067.pango_font_get_features$MH,"pango_font_get_features");
+        return RuntimeHelper.requireNonNull(constants$917.pango_font_get_features$MH,"pango_font_get_features");
     }
-    public static void pango_font_get_features ( Addressable font,  Addressable features,  int len,  Addressable num_features) {
+    /**
+     * {@snippet :
+     * void pango_font_get_features(PangoFont* font, hb_feature_t* features, guint len, guint* num_features);
+     * }
+     */
+    public static void pango_font_get_features(MemorySegment font, MemorySegment features, int len, MemorySegment num_features) {
         var mh$ = pango_font_get_features$MH();
         try {
             mh$.invokeExact(font, features, len, num_features);
@@ -6004,289 +1922,174 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle pango_font_get_hb_font$MH() {
-        return RuntimeHelper.requireNonNull(constants$1067.pango_font_get_hb_font$MH,"pango_font_get_hb_font");
+        return RuntimeHelper.requireNonNull(constants$917.pango_font_get_hb_font$MH,"pango_font_get_hb_font");
     }
-    public static MemoryAddress pango_font_get_hb_font ( Addressable font) {
+    /**
+     * {@snippet :
+     * hb_font_t* pango_font_get_hb_font(PangoFont* font);
+     * }
+     */
+    public static MemorySegment pango_font_get_hb_font(MemorySegment font) {
         var mh$ = pango_font_get_hb_font$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(font);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(font);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle pango_font_get_languages$MH() {
-        return RuntimeHelper.requireNonNull(constants$1068.pango_font_get_languages$MH,"pango_font_get_languages");
+        return RuntimeHelper.requireNonNull(constants$918.pango_font_get_languages$MH,"pango_font_get_languages");
     }
-    public static MemoryAddress pango_font_get_languages ( Addressable font) {
+    /**
+     * {@snippet :
+     * PangoLanguage** pango_font_get_languages(PangoFont* font);
+     * }
+     */
+    public static MemorySegment pango_font_get_languages(MemorySegment font) {
         var mh$ = pango_font_get_languages$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(font);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(font);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle pango_font_serialize$MH() {
-        return RuntimeHelper.requireNonNull(constants$1068.pango_font_serialize$MH,"pango_font_serialize");
+        return RuntimeHelper.requireNonNull(constants$918.pango_font_serialize$MH,"pango_font_serialize");
     }
-    public static MemoryAddress pango_font_serialize ( Addressable font) {
+    /**
+     * {@snippet :
+     * GBytes* pango_font_serialize(PangoFont* font);
+     * }
+     */
+    public static MemorySegment pango_font_serialize(MemorySegment font) {
         var mh$ = pango_font_serialize$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(font);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(font);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle pango_font_deserialize$MH() {
-        return RuntimeHelper.requireNonNull(constants$1068.pango_font_deserialize$MH,"pango_font_deserialize");
+        return RuntimeHelper.requireNonNull(constants$918.pango_font_deserialize$MH,"pango_font_deserialize");
     }
-    public static MemoryAddress pango_font_deserialize ( Addressable context,  Addressable bytes,  Addressable error) {
+    /**
+     * {@snippet :
+     * PangoFont* pango_font_deserialize(PangoContext* context, GBytes* bytes, GError** error);
+     * }
+     */
+    public static MemorySegment pango_font_deserialize(MemorySegment context, MemorySegment bytes, MemorySegment error) {
         var mh$ = pango_font_deserialize$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(context, bytes, error);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(context, bytes, error);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static OfAddress PangoFontFamily_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress PangoFontFamily_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress PangoFontFamily_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress PangoFontFamily_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_PangoFontFamily$MH() {
-        return RuntimeHelper.requireNonNull(constants$1068.glib_autoptr_clear_PangoFontFamily$MH,"glib_autoptr_clear_PangoFontFamily");
-    }
-    public static void glib_autoptr_clear_PangoFontFamily ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_PangoFontFamily$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_PangoFontFamily$MH() {
-        return RuntimeHelper.requireNonNull(constants$1068.glib_autoptr_cleanup_PangoFontFamily$MH,"glib_autoptr_cleanup_PangoFontFamily");
-    }
-    public static void glib_autoptr_cleanup_PangoFontFamily ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_PangoFontFamily$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_PangoFontFamily$MH() {
-        return RuntimeHelper.requireNonNull(constants$1068.glib_listautoptr_cleanup_PangoFontFamily$MH,"glib_listautoptr_cleanup_PangoFontFamily");
-    }
-    public static void glib_listautoptr_cleanup_PangoFontFamily ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_PangoFontFamily$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_PangoFontFamily$MH() {
-        return RuntimeHelper.requireNonNull(constants$1069.glib_slistautoptr_cleanup_PangoFontFamily$MH,"glib_slistautoptr_cleanup_PangoFontFamily");
-    }
-    public static void glib_slistautoptr_cleanup_PangoFontFamily ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_PangoFontFamily$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_PangoFontFamily$MH() {
-        return RuntimeHelper.requireNonNull(constants$1069.glib_queueautoptr_cleanup_PangoFontFamily$MH,"glib_queueautoptr_cleanup_PangoFontFamily");
-    }
-    public static void glib_queueautoptr_cleanup_PangoFontFamily ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_PangoFontFamily$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress PangoFontFace_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress PangoFontFace_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress PangoFontFace_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress PangoFontFace_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_PangoFontFace$MH() {
-        return RuntimeHelper.requireNonNull(constants$1069.glib_autoptr_clear_PangoFontFace$MH,"glib_autoptr_clear_PangoFontFace");
-    }
-    public static void glib_autoptr_clear_PangoFontFace ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_PangoFontFace$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_PangoFontFace$MH() {
-        return RuntimeHelper.requireNonNull(constants$1069.glib_autoptr_cleanup_PangoFontFace$MH,"glib_autoptr_cleanup_PangoFontFace");
-    }
-    public static void glib_autoptr_cleanup_PangoFontFace ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_PangoFontFace$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_PangoFontFace$MH() {
-        return RuntimeHelper.requireNonNull(constants$1069.glib_listautoptr_cleanup_PangoFontFace$MH,"glib_listautoptr_cleanup_PangoFontFace");
-    }
-    public static void glib_listautoptr_cleanup_PangoFontFace ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_PangoFontFace$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_PangoFontFace$MH() {
-        return RuntimeHelper.requireNonNull(constants$1069.glib_slistautoptr_cleanup_PangoFontFace$MH,"glib_slistautoptr_cleanup_PangoFontFace");
-    }
-    public static void glib_slistautoptr_cleanup_PangoFontFace ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_PangoFontFace$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_PangoFontFace$MH() {
-        return RuntimeHelper.requireNonNull(constants$1070.glib_queueautoptr_cleanup_PangoFontFace$MH,"glib_queueautoptr_cleanup_PangoFontFace");
-    }
-    public static void glib_queueautoptr_cleanup_PangoFontFace ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_PangoFontFace$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress PangoFont_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress PangoFont_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress PangoFont_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress PangoFont_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_PangoFont$MH() {
-        return RuntimeHelper.requireNonNull(constants$1070.glib_autoptr_clear_PangoFont$MH,"glib_autoptr_clear_PangoFont");
-    }
-    public static void glib_autoptr_clear_PangoFont ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_PangoFont$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_PangoFont$MH() {
-        return RuntimeHelper.requireNonNull(constants$1070.glib_autoptr_cleanup_PangoFont$MH,"glib_autoptr_cleanup_PangoFont");
-    }
-    public static void glib_autoptr_cleanup_PangoFont ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_PangoFont$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_PangoFont$MH() {
-        return RuntimeHelper.requireNonNull(constants$1070.glib_listautoptr_cleanup_PangoFont$MH,"glib_listautoptr_cleanup_PangoFont");
-    }
-    public static void glib_listautoptr_cleanup_PangoFont ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_PangoFont$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_PangoFont$MH() {
-        return RuntimeHelper.requireNonNull(constants$1070.glib_slistautoptr_cleanup_PangoFont$MH,"glib_slistautoptr_cleanup_PangoFont");
-    }
-    public static void glib_slistautoptr_cleanup_PangoFont ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_PangoFont$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_PangoFont$MH() {
-        return RuntimeHelper.requireNonNull(constants$1070.glib_queueautoptr_cleanup_PangoFont$MH,"glib_queueautoptr_cleanup_PangoFont");
-    }
-    public static void glib_queueautoptr_cleanup_PangoFont ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_PangoFont$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static OfAddress PangoFontDescription_autoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress PangoFontDescription_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress PangoFontDescription_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static OfAddress PangoFontDescription_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle glib_autoptr_clear_PangoFontDescription$MH() {
-        return RuntimeHelper.requireNonNull(constants$1071.glib_autoptr_clear_PangoFontDescription$MH,"glib_autoptr_clear_PangoFontDescription");
-    }
-    public static void glib_autoptr_clear_PangoFontDescription ( Addressable _ptr) {
-        var mh$ = glib_autoptr_clear_PangoFontDescription$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_autoptr_cleanup_PangoFontDescription$MH() {
-        return RuntimeHelper.requireNonNull(constants$1071.glib_autoptr_cleanup_PangoFontDescription$MH,"glib_autoptr_cleanup_PangoFontDescription");
-    }
-    public static void glib_autoptr_cleanup_PangoFontDescription ( Addressable _ptr) {
-        var mh$ = glib_autoptr_cleanup_PangoFontDescription$MH();
-        try {
-            mh$.invokeExact(_ptr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_listautoptr_cleanup_PangoFontDescription$MH() {
-        return RuntimeHelper.requireNonNull(constants$1071.glib_listautoptr_cleanup_PangoFontDescription$MH,"glib_listautoptr_cleanup_PangoFontDescription");
-    }
-    public static void glib_listautoptr_cleanup_PangoFontDescription ( Addressable _l) {
-        var mh$ = glib_listautoptr_cleanup_PangoFontDescription$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_slistautoptr_cleanup_PangoFontDescription$MH() {
-        return RuntimeHelper.requireNonNull(constants$1071.glib_slistautoptr_cleanup_PangoFontDescription$MH,"glib_slistautoptr_cleanup_PangoFontDescription");
-    }
-    public static void glib_slistautoptr_cleanup_PangoFontDescription ( Addressable _l) {
-        var mh$ = glib_slistautoptr_cleanup_PangoFontDescription$MH();
-        try {
-            mh$.invokeExact(_l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle glib_queueautoptr_cleanup_PangoFontDescription$MH() {
-        return RuntimeHelper.requireNonNull(constants$1071.glib_queueautoptr_cleanup_PangoFontDescription$MH,"glib_queueautoptr_cleanup_PangoFontDescription");
-    }
-    public static void glib_queueautoptr_cleanup_PangoFontDescription ( Addressable _q) {
-        var mh$ = glib_queueautoptr_cleanup_PangoFontDescription$MH();
-        try {
-            mh$.invokeExact(_q);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
+    /**
+     * {@snippet :
+     * typedef struct _PangoFontFamily* PangoFontFamily_autoptr;
+     * }
+     */
+    public static final OfAddress PangoFontFamily_autoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GList* PangoFontFamily_listautoptr;
+     * }
+     */
+    public static final OfAddress PangoFontFamily_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* PangoFontFamily_slistautoptr;
+     * }
+     */
+    public static final OfAddress PangoFontFamily_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* PangoFontFamily_queueautoptr;
+     * }
+     */
+    public static final OfAddress PangoFontFamily_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _PangoFontFace* PangoFontFace_autoptr;
+     * }
+     */
+    public static final OfAddress PangoFontFace_autoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GList* PangoFontFace_listautoptr;
+     * }
+     */
+    public static final OfAddress PangoFontFace_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* PangoFontFace_slistautoptr;
+     * }
+     */
+    public static final OfAddress PangoFontFace_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* PangoFontFace_queueautoptr;
+     * }
+     */
+    public static final OfAddress PangoFontFace_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _PangoFont* PangoFont_autoptr;
+     * }
+     */
+    public static final OfAddress PangoFont_autoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GList* PangoFont_listautoptr;
+     * }
+     */
+    public static final OfAddress PangoFont_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* PangoFont_slistautoptr;
+     * }
+     */
+    public static final OfAddress PangoFont_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* PangoFont_queueautoptr;
+     * }
+     */
+    public static final OfAddress PangoFont_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _PangoFontDescription* PangoFontDescription_autoptr;
+     * }
+     */
+    public static final OfAddress PangoFontDescription_autoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GList* PangoFontDescription_listautoptr;
+     * }
+     */
+    public static final OfAddress PangoFontDescription_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* PangoFontDescription_slistautoptr;
+     * }
+     */
+    public static final OfAddress PangoFontDescription_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* PangoFontDescription_queueautoptr;
+     * }
+     */
+    public static final OfAddress PangoFontDescription_queueautoptr = Constants$root.C_POINTER$LAYOUT;
     public static MethodHandle pango_color_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1071.pango_color_get_type$MH,"pango_color_get_type");
+        return RuntimeHelper.requireNonNull(constants$918.pango_color_get_type$MH,"pango_color_get_type");
     }
-    public static long pango_color_get_type () {
+    /**
+     * {@snippet :
+     * GType pango_color_get_type();
+     * }
+     */
+    public static long pango_color_get_type() {
         var mh$ = pango_color_get_type$MH();
         try {
             return (long)mh$.invokeExact();
@@ -6295,20 +2098,30 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle pango_color_copy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1072.pango_color_copy$MH,"pango_color_copy");
+        return RuntimeHelper.requireNonNull(constants$918.pango_color_copy$MH,"pango_color_copy");
     }
-    public static MemoryAddress pango_color_copy ( Addressable src) {
+    /**
+     * {@snippet :
+     * PangoColor* pango_color_copy(const PangoColor* src);
+     * }
+     */
+    public static MemorySegment pango_color_copy(MemorySegment src) {
         var mh$ = pango_color_copy$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(src);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(src);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle pango_color_free$MH() {
-        return RuntimeHelper.requireNonNull(constants$1072.pango_color_free$MH,"pango_color_free");
+        return RuntimeHelper.requireNonNull(constants$918.pango_color_free$MH,"pango_color_free");
     }
-    public static void pango_color_free ( Addressable color) {
+    /**
+     * {@snippet :
+     * void pango_color_free(PangoColor* color);
+     * }
+     */
+    public static void pango_color_free(MemorySegment color) {
         var mh$ = pango_color_free$MH();
         try {
             mh$.invokeExact(color);
@@ -6317,9 +2130,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle pango_color_parse$MH() {
-        return RuntimeHelper.requireNonNull(constants$1072.pango_color_parse$MH,"pango_color_parse");
+        return RuntimeHelper.requireNonNull(constants$919.pango_color_parse$MH,"pango_color_parse");
     }
-    public static int pango_color_parse ( Addressable color,  Addressable spec) {
+    /**
+     * {@snippet :
+     * gboolean pango_color_parse(PangoColor* color, char* spec);
+     * }
+     */
+    public static int pango_color_parse(MemorySegment color, MemorySegment spec) {
         var mh$ = pango_color_parse$MH();
         try {
             return (int)mh$.invokeExact(color, spec);
@@ -6328,9 +2146,14 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle pango_color_parse_with_alpha$MH() {
-        return RuntimeHelper.requireNonNull(constants$1072.pango_color_parse_with_alpha$MH,"pango_color_parse_with_alpha");
+        return RuntimeHelper.requireNonNull(constants$919.pango_color_parse_with_alpha$MH,"pango_color_parse_with_alpha");
     }
-    public static int pango_color_parse_with_alpha ( Addressable color,  Addressable alpha,  Addressable spec) {
+    /**
+     * {@snippet :
+     * gboolean pango_color_parse_with_alpha(PangoColor* color, guint16* alpha, char* spec);
+     * }
+     */
+    public static int pango_color_parse_with_alpha(MemorySegment color, MemorySegment alpha, MemorySegment spec) {
         var mh$ = pango_color_parse_with_alpha$MH();
         try {
             return (int)mh$.invokeExact(color, alpha, spec);
@@ -6339,159 +2162,11145 @@ import static java.lang.foreign.ValueLayout.*;
         }
     }
     public static MethodHandle pango_color_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$1072.pango_color_to_string$MH,"pango_color_to_string");
+        return RuntimeHelper.requireNonNull(constants$919.pango_color_to_string$MH,"pango_color_to_string");
     }
-    public static MemoryAddress pango_color_to_string ( Addressable color) {
+    /**
+     * {@snippet :
+     * char* pango_color_to_string(const PangoColor* color);
+     * }
+     */
+    public static MemorySegment pango_color_to_string(MemorySegment color) {
         var mh$ = pango_color_to_string$MH();
         try {
-            return (java.lang.foreign.MemoryAddress)mh$.invokeExact(color);
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(color);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_ATTR_INVALID = 0;
+     * }
+     */
     public static int PANGO_ATTR_INVALID() {
         return (int)0L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_ATTR_LANGUAGE = 1;
+     * }
+     */
     public static int PANGO_ATTR_LANGUAGE() {
         return (int)1L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_ATTR_FAMILY = 2;
+     * }
+     */
     public static int PANGO_ATTR_FAMILY() {
         return (int)2L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_ATTR_STYLE = 3;
+     * }
+     */
     public static int PANGO_ATTR_STYLE() {
         return (int)3L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_ATTR_WEIGHT = 4;
+     * }
+     */
     public static int PANGO_ATTR_WEIGHT() {
         return (int)4L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_ATTR_VARIANT = 5;
+     * }
+     */
     public static int PANGO_ATTR_VARIANT() {
         return (int)5L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_ATTR_STRETCH = 6;
+     * }
+     */
     public static int PANGO_ATTR_STRETCH() {
         return (int)6L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_ATTR_SIZE = 7;
+     * }
+     */
     public static int PANGO_ATTR_SIZE() {
         return (int)7L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_ATTR_FONT_DESC = 8;
+     * }
+     */
     public static int PANGO_ATTR_FONT_DESC() {
         return (int)8L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_ATTR_FOREGROUND = 9;
+     * }
+     */
     public static int PANGO_ATTR_FOREGROUND() {
         return (int)9L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_ATTR_BACKGROUND = 10;
+     * }
+     */
     public static int PANGO_ATTR_BACKGROUND() {
         return (int)10L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_ATTR_UNDERLINE = 11;
+     * }
+     */
     public static int PANGO_ATTR_UNDERLINE() {
         return (int)11L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_ATTR_STRIKETHROUGH = 12;
+     * }
+     */
     public static int PANGO_ATTR_STRIKETHROUGH() {
         return (int)12L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_ATTR_RISE = 13;
+     * }
+     */
     public static int PANGO_ATTR_RISE() {
         return (int)13L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_ATTR_SHAPE = 14;
+     * }
+     */
     public static int PANGO_ATTR_SHAPE() {
         return (int)14L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_ATTR_SCALE = 15;
+     * }
+     */
     public static int PANGO_ATTR_SCALE() {
         return (int)15L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_ATTR_FALLBACK = 16;
+     * }
+     */
     public static int PANGO_ATTR_FALLBACK() {
         return (int)16L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_ATTR_LETTER_SPACING = 17;
+     * }
+     */
     public static int PANGO_ATTR_LETTER_SPACING() {
         return (int)17L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_ATTR_UNDERLINE_COLOR = 18;
+     * }
+     */
     public static int PANGO_ATTR_UNDERLINE_COLOR() {
         return (int)18L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_ATTR_STRIKETHROUGH_COLOR = 19;
+     * }
+     */
     public static int PANGO_ATTR_STRIKETHROUGH_COLOR() {
         return (int)19L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_ATTR_ABSOLUTE_SIZE = 20;
+     * }
+     */
     public static int PANGO_ATTR_ABSOLUTE_SIZE() {
         return (int)20L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_ATTR_GRAVITY = 21;
+     * }
+     */
     public static int PANGO_ATTR_GRAVITY() {
         return (int)21L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_ATTR_GRAVITY_HINT = 22;
+     * }
+     */
     public static int PANGO_ATTR_GRAVITY_HINT() {
         return (int)22L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_ATTR_FONT_FEATURES = 23;
+     * }
+     */
     public static int PANGO_ATTR_FONT_FEATURES() {
         return (int)23L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_ATTR_FOREGROUND_ALPHA = 24;
+     * }
+     */
     public static int PANGO_ATTR_FOREGROUND_ALPHA() {
         return (int)24L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_ATTR_BACKGROUND_ALPHA = 25;
+     * }
+     */
     public static int PANGO_ATTR_BACKGROUND_ALPHA() {
         return (int)25L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_ATTR_ALLOW_BREAKS = 26;
+     * }
+     */
     public static int PANGO_ATTR_ALLOW_BREAKS() {
         return (int)26L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_ATTR_SHOW = 27;
+     * }
+     */
     public static int PANGO_ATTR_SHOW() {
         return (int)27L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_ATTR_INSERT_HYPHENS = 28;
+     * }
+     */
     public static int PANGO_ATTR_INSERT_HYPHENS() {
         return (int)28L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_ATTR_OVERLINE = 29;
+     * }
+     */
     public static int PANGO_ATTR_OVERLINE() {
         return (int)29L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_ATTR_OVERLINE_COLOR = 30;
+     * }
+     */
     public static int PANGO_ATTR_OVERLINE_COLOR() {
         return (int)30L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_ATTR_LINE_HEIGHT = 31;
+     * }
+     */
     public static int PANGO_ATTR_LINE_HEIGHT() {
         return (int)31L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_ATTR_ABSOLUTE_LINE_HEIGHT = 32;
+     * }
+     */
     public static int PANGO_ATTR_ABSOLUTE_LINE_HEIGHT() {
         return (int)32L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_ATTR_TEXT_TRANSFORM = 33;
+     * }
+     */
     public static int PANGO_ATTR_TEXT_TRANSFORM() {
         return (int)33L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_ATTR_WORD = 34;
+     * }
+     */
     public static int PANGO_ATTR_WORD() {
         return (int)34L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_ATTR_SENTENCE = 35;
+     * }
+     */
     public static int PANGO_ATTR_SENTENCE() {
         return (int)35L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_ATTR_BASELINE_SHIFT = 36;
+     * }
+     */
     public static int PANGO_ATTR_BASELINE_SHIFT() {
         return (int)36L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_ATTR_FONT_SCALE = 37;
+     * }
+     */
     public static int PANGO_ATTR_FONT_SCALE() {
         return (int)37L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_UNDERLINE_NONE = 0;
+     * }
+     */
     public static int PANGO_UNDERLINE_NONE() {
         return (int)0L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_UNDERLINE_SINGLE = 1;
+     * }
+     */
     public static int PANGO_UNDERLINE_SINGLE() {
         return (int)1L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_UNDERLINE_DOUBLE = 2;
+     * }
+     */
     public static int PANGO_UNDERLINE_DOUBLE() {
         return (int)2L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_UNDERLINE_LOW = 3;
+     * }
+     */
     public static int PANGO_UNDERLINE_LOW() {
         return (int)3L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_UNDERLINE_ERROR = 4;
+     * }
+     */
     public static int PANGO_UNDERLINE_ERROR() {
         return (int)4L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_UNDERLINE_SINGLE_LINE = 5;
+     * }
+     */
     public static int PANGO_UNDERLINE_SINGLE_LINE() {
         return (int)5L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_UNDERLINE_DOUBLE_LINE = 6;
+     * }
+     */
     public static int PANGO_UNDERLINE_DOUBLE_LINE() {
         return (int)6L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_UNDERLINE_ERROR_LINE = 7;
+     * }
+     */
     public static int PANGO_UNDERLINE_ERROR_LINE() {
         return (int)7L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_OVERLINE_NONE = 0;
+     * }
+     */
     public static int PANGO_OVERLINE_NONE() {
         return (int)0L;
     }
+    /**
+     * {@snippet :
+     * enum .PANGO_OVERLINE_SINGLE = 1;
+     * }
+     */
     public static int PANGO_OVERLINE_SINGLE() {
         return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_SHOW_NONE = 0;
+     * }
+     */
+    public static int PANGO_SHOW_NONE() {
+        return (int)0L;
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_SHOW_SPACES = 1;
+     * }
+     */
+    public static int PANGO_SHOW_SPACES() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_SHOW_LINE_BREAKS = 2;
+     * }
+     */
+    public static int PANGO_SHOW_LINE_BREAKS() {
+        return (int)2L;
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_SHOW_IGNORABLES = 4;
+     * }
+     */
+    public static int PANGO_SHOW_IGNORABLES() {
+        return (int)4L;
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_TEXT_TRANSFORM_NONE = 0;
+     * }
+     */
+    public static int PANGO_TEXT_TRANSFORM_NONE() {
+        return (int)0L;
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_TEXT_TRANSFORM_LOWERCASE = 1;
+     * }
+     */
+    public static int PANGO_TEXT_TRANSFORM_LOWERCASE() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_TEXT_TRANSFORM_UPPERCASE = 2;
+     * }
+     */
+    public static int PANGO_TEXT_TRANSFORM_UPPERCASE() {
+        return (int)2L;
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_TEXT_TRANSFORM_CAPITALIZE = 3;
+     * }
+     */
+    public static int PANGO_TEXT_TRANSFORM_CAPITALIZE() {
+        return (int)3L;
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_BASELINE_SHIFT_NONE = 0;
+     * }
+     */
+    public static int PANGO_BASELINE_SHIFT_NONE() {
+        return (int)0L;
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_BASELINE_SHIFT_SUPERSCRIPT = 1;
+     * }
+     */
+    public static int PANGO_BASELINE_SHIFT_SUPERSCRIPT() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_BASELINE_SHIFT_SUBSCRIPT = 2;
+     * }
+     */
+    public static int PANGO_BASELINE_SHIFT_SUBSCRIPT() {
+        return (int)2L;
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_FONT_SCALE_NONE = 0;
+     * }
+     */
+    public static int PANGO_FONT_SCALE_NONE() {
+        return (int)0L;
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_FONT_SCALE_SUPERSCRIPT = 1;
+     * }
+     */
+    public static int PANGO_FONT_SCALE_SUPERSCRIPT() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_FONT_SCALE_SUBSCRIPT = 2;
+     * }
+     */
+    public static int PANGO_FONT_SCALE_SUBSCRIPT() {
+        return (int)2L;
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_FONT_SCALE_SMALL_CAPS = 3;
+     * }
+     */
+    public static int PANGO_FONT_SCALE_SMALL_CAPS() {
+        return (int)3L;
+    }
+    public static MethodHandle pango_attribute_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$920.pango_attribute_get_type$MH,"pango_attribute_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType pango_attribute_get_type();
+     * }
+     */
+    public static long pango_attribute_get_type() {
+        var mh$ = pango_attribute_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attr_type_register$MH() {
+        return RuntimeHelper.requireNonNull(constants$920.pango_attr_type_register$MH,"pango_attr_type_register");
+    }
+    /**
+     * {@snippet :
+     * PangoAttrType pango_attr_type_register(char* name);
+     * }
+     */
+    public static int pango_attr_type_register(MemorySegment name) {
+        var mh$ = pango_attr_type_register$MH();
+        try {
+            return (int)mh$.invokeExact(name);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attr_type_get_name$MH() {
+        return RuntimeHelper.requireNonNull(constants$920.pango_attr_type_get_name$MH,"pango_attr_type_get_name");
+    }
+    /**
+     * {@snippet :
+     * char* pango_attr_type_get_name(PangoAttrType type);
+     * }
+     */
+    public static MemorySegment pango_attr_type_get_name(int type) {
+        var mh$ = pango_attr_type_get_name$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(type);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attribute_init$MH() {
+        return RuntimeHelper.requireNonNull(constants$920.pango_attribute_init$MH,"pango_attribute_init");
+    }
+    /**
+     * {@snippet :
+     * void pango_attribute_init(PangoAttribute* attr, const PangoAttrClass* klass);
+     * }
+     */
+    public static void pango_attribute_init(MemorySegment attr, MemorySegment klass) {
+        var mh$ = pango_attribute_init$MH();
+        try {
+            mh$.invokeExact(attr, klass);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attribute_copy$MH() {
+        return RuntimeHelper.requireNonNull(constants$920.pango_attribute_copy$MH,"pango_attribute_copy");
+    }
+    /**
+     * {@snippet :
+     * PangoAttribute* pango_attribute_copy(const PangoAttribute* attr);
+     * }
+     */
+    public static MemorySegment pango_attribute_copy(MemorySegment attr) {
+        var mh$ = pango_attribute_copy$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(attr);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attribute_destroy$MH() {
+        return RuntimeHelper.requireNonNull(constants$921.pango_attribute_destroy$MH,"pango_attribute_destroy");
+    }
+    /**
+     * {@snippet :
+     * void pango_attribute_destroy(PangoAttribute* attr);
+     * }
+     */
+    public static void pango_attribute_destroy(MemorySegment attr) {
+        var mh$ = pango_attribute_destroy$MH();
+        try {
+            mh$.invokeExact(attr);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attribute_equal$MH() {
+        return RuntimeHelper.requireNonNull(constants$921.pango_attribute_equal$MH,"pango_attribute_equal");
+    }
+    /**
+     * {@snippet :
+     * gboolean pango_attribute_equal(const PangoAttribute* attr1, const PangoAttribute* attr2);
+     * }
+     */
+    public static int pango_attribute_equal(MemorySegment attr1, MemorySegment attr2) {
+        var mh$ = pango_attribute_equal$MH();
+        try {
+            return (int)mh$.invokeExact(attr1, attr2);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attr_language_new$MH() {
+        return RuntimeHelper.requireNonNull(constants$921.pango_attr_language_new$MH,"pango_attr_language_new");
+    }
+    /**
+     * {@snippet :
+     * PangoAttribute* pango_attr_language_new(PangoLanguage* language);
+     * }
+     */
+    public static MemorySegment pango_attr_language_new(MemorySegment language) {
+        var mh$ = pango_attr_language_new$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(language);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attr_family_new$MH() {
+        return RuntimeHelper.requireNonNull(constants$921.pango_attr_family_new$MH,"pango_attr_family_new");
+    }
+    /**
+     * {@snippet :
+     * PangoAttribute* pango_attr_family_new(char* family);
+     * }
+     */
+    public static MemorySegment pango_attr_family_new(MemorySegment family) {
+        var mh$ = pango_attr_family_new$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(family);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attr_foreground_new$MH() {
+        return RuntimeHelper.requireNonNull(constants$921.pango_attr_foreground_new$MH,"pango_attr_foreground_new");
+    }
+    /**
+     * {@snippet :
+     * PangoAttribute* pango_attr_foreground_new(guint16 red, guint16 green, guint16 blue);
+     * }
+     */
+    public static MemorySegment pango_attr_foreground_new(short red, short green, short blue) {
+        var mh$ = pango_attr_foreground_new$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(red, green, blue);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attr_background_new$MH() {
+        return RuntimeHelper.requireNonNull(constants$921.pango_attr_background_new$MH,"pango_attr_background_new");
+    }
+    /**
+     * {@snippet :
+     * PangoAttribute* pango_attr_background_new(guint16 red, guint16 green, guint16 blue);
+     * }
+     */
+    public static MemorySegment pango_attr_background_new(short red, short green, short blue) {
+        var mh$ = pango_attr_background_new$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(red, green, blue);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attr_size_new$MH() {
+        return RuntimeHelper.requireNonNull(constants$922.pango_attr_size_new$MH,"pango_attr_size_new");
+    }
+    /**
+     * {@snippet :
+     * PangoAttribute* pango_attr_size_new(int size);
+     * }
+     */
+    public static MemorySegment pango_attr_size_new(int size) {
+        var mh$ = pango_attr_size_new$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(size);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attr_size_new_absolute$MH() {
+        return RuntimeHelper.requireNonNull(constants$922.pango_attr_size_new_absolute$MH,"pango_attr_size_new_absolute");
+    }
+    /**
+     * {@snippet :
+     * PangoAttribute* pango_attr_size_new_absolute(int size);
+     * }
+     */
+    public static MemorySegment pango_attr_size_new_absolute(int size) {
+        var mh$ = pango_attr_size_new_absolute$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(size);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attr_style_new$MH() {
+        return RuntimeHelper.requireNonNull(constants$922.pango_attr_style_new$MH,"pango_attr_style_new");
+    }
+    /**
+     * {@snippet :
+     * PangoAttribute* pango_attr_style_new(PangoStyle style);
+     * }
+     */
+    public static MemorySegment pango_attr_style_new(int style) {
+        var mh$ = pango_attr_style_new$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(style);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attr_weight_new$MH() {
+        return RuntimeHelper.requireNonNull(constants$922.pango_attr_weight_new$MH,"pango_attr_weight_new");
+    }
+    /**
+     * {@snippet :
+     * PangoAttribute* pango_attr_weight_new(PangoWeight weight);
+     * }
+     */
+    public static MemorySegment pango_attr_weight_new(int weight) {
+        var mh$ = pango_attr_weight_new$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(weight);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attr_variant_new$MH() {
+        return RuntimeHelper.requireNonNull(constants$922.pango_attr_variant_new$MH,"pango_attr_variant_new");
+    }
+    /**
+     * {@snippet :
+     * PangoAttribute* pango_attr_variant_new(PangoVariant variant);
+     * }
+     */
+    public static MemorySegment pango_attr_variant_new(int variant) {
+        var mh$ = pango_attr_variant_new$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(variant);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attr_stretch_new$MH() {
+        return RuntimeHelper.requireNonNull(constants$922.pango_attr_stretch_new$MH,"pango_attr_stretch_new");
+    }
+    /**
+     * {@snippet :
+     * PangoAttribute* pango_attr_stretch_new(PangoStretch stretch);
+     * }
+     */
+    public static MemorySegment pango_attr_stretch_new(int stretch) {
+        var mh$ = pango_attr_stretch_new$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(stretch);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attr_font_desc_new$MH() {
+        return RuntimeHelper.requireNonNull(constants$923.pango_attr_font_desc_new$MH,"pango_attr_font_desc_new");
+    }
+    /**
+     * {@snippet :
+     * PangoAttribute* pango_attr_font_desc_new(const PangoFontDescription* desc);
+     * }
+     */
+    public static MemorySegment pango_attr_font_desc_new(MemorySegment desc) {
+        var mh$ = pango_attr_font_desc_new$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(desc);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attr_underline_new$MH() {
+        return RuntimeHelper.requireNonNull(constants$923.pango_attr_underline_new$MH,"pango_attr_underline_new");
+    }
+    /**
+     * {@snippet :
+     * PangoAttribute* pango_attr_underline_new(PangoUnderline underline);
+     * }
+     */
+    public static MemorySegment pango_attr_underline_new(int underline) {
+        var mh$ = pango_attr_underline_new$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(underline);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attr_underline_color_new$MH() {
+        return RuntimeHelper.requireNonNull(constants$923.pango_attr_underline_color_new$MH,"pango_attr_underline_color_new");
+    }
+    /**
+     * {@snippet :
+     * PangoAttribute* pango_attr_underline_color_new(guint16 red, guint16 green, guint16 blue);
+     * }
+     */
+    public static MemorySegment pango_attr_underline_color_new(short red, short green, short blue) {
+        var mh$ = pango_attr_underline_color_new$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(red, green, blue);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attr_strikethrough_new$MH() {
+        return RuntimeHelper.requireNonNull(constants$923.pango_attr_strikethrough_new$MH,"pango_attr_strikethrough_new");
+    }
+    /**
+     * {@snippet :
+     * PangoAttribute* pango_attr_strikethrough_new(gboolean strikethrough);
+     * }
+     */
+    public static MemorySegment pango_attr_strikethrough_new(int strikethrough) {
+        var mh$ = pango_attr_strikethrough_new$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(strikethrough);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attr_strikethrough_color_new$MH() {
+        return RuntimeHelper.requireNonNull(constants$923.pango_attr_strikethrough_color_new$MH,"pango_attr_strikethrough_color_new");
+    }
+    /**
+     * {@snippet :
+     * PangoAttribute* pango_attr_strikethrough_color_new(guint16 red, guint16 green, guint16 blue);
+     * }
+     */
+    public static MemorySegment pango_attr_strikethrough_color_new(short red, short green, short blue) {
+        var mh$ = pango_attr_strikethrough_color_new$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(red, green, blue);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attr_rise_new$MH() {
+        return RuntimeHelper.requireNonNull(constants$923.pango_attr_rise_new$MH,"pango_attr_rise_new");
+    }
+    /**
+     * {@snippet :
+     * PangoAttribute* pango_attr_rise_new(int rise);
+     * }
+     */
+    public static MemorySegment pango_attr_rise_new(int rise) {
+        var mh$ = pango_attr_rise_new$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(rise);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attr_baseline_shift_new$MH() {
+        return RuntimeHelper.requireNonNull(constants$924.pango_attr_baseline_shift_new$MH,"pango_attr_baseline_shift_new");
+    }
+    /**
+     * {@snippet :
+     * PangoAttribute* pango_attr_baseline_shift_new(int shift);
+     * }
+     */
+    public static MemorySegment pango_attr_baseline_shift_new(int shift) {
+        var mh$ = pango_attr_baseline_shift_new$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(shift);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attr_font_scale_new$MH() {
+        return RuntimeHelper.requireNonNull(constants$924.pango_attr_font_scale_new$MH,"pango_attr_font_scale_new");
+    }
+    /**
+     * {@snippet :
+     * PangoAttribute* pango_attr_font_scale_new(PangoFontScale scale);
+     * }
+     */
+    public static MemorySegment pango_attr_font_scale_new(int scale) {
+        var mh$ = pango_attr_font_scale_new$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(scale);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attr_scale_new$MH() {
+        return RuntimeHelper.requireNonNull(constants$924.pango_attr_scale_new$MH,"pango_attr_scale_new");
+    }
+    /**
+     * {@snippet :
+     * PangoAttribute* pango_attr_scale_new(double scale_factor);
+     * }
+     */
+    public static MemorySegment pango_attr_scale_new(double scale_factor) {
+        var mh$ = pango_attr_scale_new$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(scale_factor);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attr_fallback_new$MH() {
+        return RuntimeHelper.requireNonNull(constants$924.pango_attr_fallback_new$MH,"pango_attr_fallback_new");
+    }
+    /**
+     * {@snippet :
+     * PangoAttribute* pango_attr_fallback_new(gboolean enable_fallback);
+     * }
+     */
+    public static MemorySegment pango_attr_fallback_new(int enable_fallback) {
+        var mh$ = pango_attr_fallback_new$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(enable_fallback);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attr_letter_spacing_new$MH() {
+        return RuntimeHelper.requireNonNull(constants$924.pango_attr_letter_spacing_new$MH,"pango_attr_letter_spacing_new");
+    }
+    /**
+     * {@snippet :
+     * PangoAttribute* pango_attr_letter_spacing_new(int letter_spacing);
+     * }
+     */
+    public static MemorySegment pango_attr_letter_spacing_new(int letter_spacing) {
+        var mh$ = pango_attr_letter_spacing_new$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(letter_spacing);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attr_shape_new$MH() {
+        return RuntimeHelper.requireNonNull(constants$924.pango_attr_shape_new$MH,"pango_attr_shape_new");
+    }
+    /**
+     * {@snippet :
+     * PangoAttribute* pango_attr_shape_new(const PangoRectangle* ink_rect, const PangoRectangle* logical_rect);
+     * }
+     */
+    public static MemorySegment pango_attr_shape_new(MemorySegment ink_rect, MemorySegment logical_rect) {
+        var mh$ = pango_attr_shape_new$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(ink_rect, logical_rect);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attr_shape_new_with_data$MH() {
+        return RuntimeHelper.requireNonNull(constants$925.pango_attr_shape_new_with_data$MH,"pango_attr_shape_new_with_data");
+    }
+    /**
+     * {@snippet :
+     * PangoAttribute* pango_attr_shape_new_with_data(const PangoRectangle* ink_rect, const PangoRectangle* logical_rect, gpointer data, PangoAttrDataCopyFunc copy_func, GDestroyNotify destroy_func);
+     * }
+     */
+    public static MemorySegment pango_attr_shape_new_with_data(MemorySegment ink_rect, MemorySegment logical_rect, MemorySegment data, MemorySegment copy_func, MemorySegment destroy_func) {
+        var mh$ = pango_attr_shape_new_with_data$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(ink_rect, logical_rect, data, copy_func, destroy_func);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attr_gravity_new$MH() {
+        return RuntimeHelper.requireNonNull(constants$925.pango_attr_gravity_new$MH,"pango_attr_gravity_new");
+    }
+    /**
+     * {@snippet :
+     * PangoAttribute* pango_attr_gravity_new(PangoGravity gravity);
+     * }
+     */
+    public static MemorySegment pango_attr_gravity_new(int gravity) {
+        var mh$ = pango_attr_gravity_new$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(gravity);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attr_gravity_hint_new$MH() {
+        return RuntimeHelper.requireNonNull(constants$925.pango_attr_gravity_hint_new$MH,"pango_attr_gravity_hint_new");
+    }
+    /**
+     * {@snippet :
+     * PangoAttribute* pango_attr_gravity_hint_new(PangoGravityHint hint);
+     * }
+     */
+    public static MemorySegment pango_attr_gravity_hint_new(int hint) {
+        var mh$ = pango_attr_gravity_hint_new$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(hint);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attr_font_features_new$MH() {
+        return RuntimeHelper.requireNonNull(constants$925.pango_attr_font_features_new$MH,"pango_attr_font_features_new");
+    }
+    /**
+     * {@snippet :
+     * PangoAttribute* pango_attr_font_features_new(char* features);
+     * }
+     */
+    public static MemorySegment pango_attr_font_features_new(MemorySegment features) {
+        var mh$ = pango_attr_font_features_new$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(features);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attr_foreground_alpha_new$MH() {
+        return RuntimeHelper.requireNonNull(constants$925.pango_attr_foreground_alpha_new$MH,"pango_attr_foreground_alpha_new");
+    }
+    /**
+     * {@snippet :
+     * PangoAttribute* pango_attr_foreground_alpha_new(guint16 alpha);
+     * }
+     */
+    public static MemorySegment pango_attr_foreground_alpha_new(short alpha) {
+        var mh$ = pango_attr_foreground_alpha_new$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(alpha);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attr_background_alpha_new$MH() {
+        return RuntimeHelper.requireNonNull(constants$925.pango_attr_background_alpha_new$MH,"pango_attr_background_alpha_new");
+    }
+    /**
+     * {@snippet :
+     * PangoAttribute* pango_attr_background_alpha_new(guint16 alpha);
+     * }
+     */
+    public static MemorySegment pango_attr_background_alpha_new(short alpha) {
+        var mh$ = pango_attr_background_alpha_new$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(alpha);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attr_allow_breaks_new$MH() {
+        return RuntimeHelper.requireNonNull(constants$926.pango_attr_allow_breaks_new$MH,"pango_attr_allow_breaks_new");
+    }
+    /**
+     * {@snippet :
+     * PangoAttribute* pango_attr_allow_breaks_new(gboolean allow_breaks);
+     * }
+     */
+    public static MemorySegment pango_attr_allow_breaks_new(int allow_breaks) {
+        var mh$ = pango_attr_allow_breaks_new$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(allow_breaks);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attr_word_new$MH() {
+        return RuntimeHelper.requireNonNull(constants$926.pango_attr_word_new$MH,"pango_attr_word_new");
+    }
+    /**
+     * {@snippet :
+     * PangoAttribute* pango_attr_word_new();
+     * }
+     */
+    public static MemorySegment pango_attr_word_new() {
+        var mh$ = pango_attr_word_new$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attr_sentence_new$MH() {
+        return RuntimeHelper.requireNonNull(constants$926.pango_attr_sentence_new$MH,"pango_attr_sentence_new");
+    }
+    /**
+     * {@snippet :
+     * PangoAttribute* pango_attr_sentence_new();
+     * }
+     */
+    public static MemorySegment pango_attr_sentence_new() {
+        var mh$ = pango_attr_sentence_new$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attr_insert_hyphens_new$MH() {
+        return RuntimeHelper.requireNonNull(constants$926.pango_attr_insert_hyphens_new$MH,"pango_attr_insert_hyphens_new");
+    }
+    /**
+     * {@snippet :
+     * PangoAttribute* pango_attr_insert_hyphens_new(gboolean insert_hyphens);
+     * }
+     */
+    public static MemorySegment pango_attr_insert_hyphens_new(int insert_hyphens) {
+        var mh$ = pango_attr_insert_hyphens_new$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(insert_hyphens);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attr_overline_new$MH() {
+        return RuntimeHelper.requireNonNull(constants$926.pango_attr_overline_new$MH,"pango_attr_overline_new");
+    }
+    /**
+     * {@snippet :
+     * PangoAttribute* pango_attr_overline_new(PangoOverline overline);
+     * }
+     */
+    public static MemorySegment pango_attr_overline_new(int overline) {
+        var mh$ = pango_attr_overline_new$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(overline);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attr_overline_color_new$MH() {
+        return RuntimeHelper.requireNonNull(constants$926.pango_attr_overline_color_new$MH,"pango_attr_overline_color_new");
+    }
+    /**
+     * {@snippet :
+     * PangoAttribute* pango_attr_overline_color_new(guint16 red, guint16 green, guint16 blue);
+     * }
+     */
+    public static MemorySegment pango_attr_overline_color_new(short red, short green, short blue) {
+        var mh$ = pango_attr_overline_color_new$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(red, green, blue);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attr_show_new$MH() {
+        return RuntimeHelper.requireNonNull(constants$927.pango_attr_show_new$MH,"pango_attr_show_new");
+    }
+    /**
+     * {@snippet :
+     * PangoAttribute* pango_attr_show_new(PangoShowFlags flags);
+     * }
+     */
+    public static MemorySegment pango_attr_show_new(int flags) {
+        var mh$ = pango_attr_show_new$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(flags);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attr_line_height_new$MH() {
+        return RuntimeHelper.requireNonNull(constants$927.pango_attr_line_height_new$MH,"pango_attr_line_height_new");
+    }
+    /**
+     * {@snippet :
+     * PangoAttribute* pango_attr_line_height_new(double factor);
+     * }
+     */
+    public static MemorySegment pango_attr_line_height_new(double factor) {
+        var mh$ = pango_attr_line_height_new$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(factor);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attr_line_height_new_absolute$MH() {
+        return RuntimeHelper.requireNonNull(constants$927.pango_attr_line_height_new_absolute$MH,"pango_attr_line_height_new_absolute");
+    }
+    /**
+     * {@snippet :
+     * PangoAttribute* pango_attr_line_height_new_absolute(int height);
+     * }
+     */
+    public static MemorySegment pango_attr_line_height_new_absolute(int height) {
+        var mh$ = pango_attr_line_height_new_absolute$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(height);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attr_text_transform_new$MH() {
+        return RuntimeHelper.requireNonNull(constants$927.pango_attr_text_transform_new$MH,"pango_attr_text_transform_new");
+    }
+    /**
+     * {@snippet :
+     * PangoAttribute* pango_attr_text_transform_new(PangoTextTransform transform);
+     * }
+     */
+    public static MemorySegment pango_attr_text_transform_new(int transform) {
+        var mh$ = pango_attr_text_transform_new$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(transform);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attribute_as_string$MH() {
+        return RuntimeHelper.requireNonNull(constants$927.pango_attribute_as_string$MH,"pango_attribute_as_string");
+    }
+    /**
+     * {@snippet :
+     * PangoAttrString* pango_attribute_as_string(PangoAttribute* attr);
+     * }
+     */
+    public static MemorySegment pango_attribute_as_string(MemorySegment attr) {
+        var mh$ = pango_attribute_as_string$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(attr);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attribute_as_language$MH() {
+        return RuntimeHelper.requireNonNull(constants$927.pango_attribute_as_language$MH,"pango_attribute_as_language");
+    }
+    /**
+     * {@snippet :
+     * PangoAttrLanguage* pango_attribute_as_language(PangoAttribute* attr);
+     * }
+     */
+    public static MemorySegment pango_attribute_as_language(MemorySegment attr) {
+        var mh$ = pango_attribute_as_language$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(attr);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attribute_as_int$MH() {
+        return RuntimeHelper.requireNonNull(constants$928.pango_attribute_as_int$MH,"pango_attribute_as_int");
+    }
+    /**
+     * {@snippet :
+     * PangoAttrInt* pango_attribute_as_int(PangoAttribute* attr);
+     * }
+     */
+    public static MemorySegment pango_attribute_as_int(MemorySegment attr) {
+        var mh$ = pango_attribute_as_int$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(attr);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attribute_as_size$MH() {
+        return RuntimeHelper.requireNonNull(constants$928.pango_attribute_as_size$MH,"pango_attribute_as_size");
+    }
+    /**
+     * {@snippet :
+     * PangoAttrSize* pango_attribute_as_size(PangoAttribute* attr);
+     * }
+     */
+    public static MemorySegment pango_attribute_as_size(MemorySegment attr) {
+        var mh$ = pango_attribute_as_size$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(attr);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attribute_as_float$MH() {
+        return RuntimeHelper.requireNonNull(constants$928.pango_attribute_as_float$MH,"pango_attribute_as_float");
+    }
+    /**
+     * {@snippet :
+     * PangoAttrFloat* pango_attribute_as_float(PangoAttribute* attr);
+     * }
+     */
+    public static MemorySegment pango_attribute_as_float(MemorySegment attr) {
+        var mh$ = pango_attribute_as_float$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(attr);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attribute_as_color$MH() {
+        return RuntimeHelper.requireNonNull(constants$928.pango_attribute_as_color$MH,"pango_attribute_as_color");
+    }
+    /**
+     * {@snippet :
+     * PangoAttrColor* pango_attribute_as_color(PangoAttribute* attr);
+     * }
+     */
+    public static MemorySegment pango_attribute_as_color(MemorySegment attr) {
+        var mh$ = pango_attribute_as_color$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(attr);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attribute_as_font_desc$MH() {
+        return RuntimeHelper.requireNonNull(constants$928.pango_attribute_as_font_desc$MH,"pango_attribute_as_font_desc");
+    }
+    /**
+     * {@snippet :
+     * PangoAttrFontDesc* pango_attribute_as_font_desc(PangoAttribute* attr);
+     * }
+     */
+    public static MemorySegment pango_attribute_as_font_desc(MemorySegment attr) {
+        var mh$ = pango_attribute_as_font_desc$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(attr);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attribute_as_shape$MH() {
+        return RuntimeHelper.requireNonNull(constants$928.pango_attribute_as_shape$MH,"pango_attribute_as_shape");
+    }
+    /**
+     * {@snippet :
+     * PangoAttrShape* pango_attribute_as_shape(PangoAttribute* attr);
+     * }
+     */
+    public static MemorySegment pango_attribute_as_shape(MemorySegment attr) {
+        var mh$ = pango_attribute_as_shape$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(attr);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attribute_as_font_features$MH() {
+        return RuntimeHelper.requireNonNull(constants$929.pango_attribute_as_font_features$MH,"pango_attribute_as_font_features");
+    }
+    /**
+     * {@snippet :
+     * PangoAttrFontFeatures* pango_attribute_as_font_features(PangoAttribute* attr);
+     * }
+     */
+    public static MemorySegment pango_attribute_as_font_features(MemorySegment attr) {
+        var mh$ = pango_attribute_as_font_features$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(attr);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attr_list_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$929.pango_attr_list_get_type$MH,"pango_attr_list_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType pango_attr_list_get_type();
+     * }
+     */
+    public static long pango_attr_list_get_type() {
+        var mh$ = pango_attr_list_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attr_list_new$MH() {
+        return RuntimeHelper.requireNonNull(constants$929.pango_attr_list_new$MH,"pango_attr_list_new");
+    }
+    /**
+     * {@snippet :
+     * PangoAttrList* pango_attr_list_new();
+     * }
+     */
+    public static MemorySegment pango_attr_list_new() {
+        var mh$ = pango_attr_list_new$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attr_list_ref$MH() {
+        return RuntimeHelper.requireNonNull(constants$929.pango_attr_list_ref$MH,"pango_attr_list_ref");
+    }
+    /**
+     * {@snippet :
+     * PangoAttrList* pango_attr_list_ref(PangoAttrList* list);
+     * }
+     */
+    public static MemorySegment pango_attr_list_ref(MemorySegment list) {
+        var mh$ = pango_attr_list_ref$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(list);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attr_list_unref$MH() {
+        return RuntimeHelper.requireNonNull(constants$929.pango_attr_list_unref$MH,"pango_attr_list_unref");
+    }
+    /**
+     * {@snippet :
+     * void pango_attr_list_unref(PangoAttrList* list);
+     * }
+     */
+    public static void pango_attr_list_unref(MemorySegment list) {
+        var mh$ = pango_attr_list_unref$MH();
+        try {
+            mh$.invokeExact(list);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attr_list_copy$MH() {
+        return RuntimeHelper.requireNonNull(constants$929.pango_attr_list_copy$MH,"pango_attr_list_copy");
+    }
+    /**
+     * {@snippet :
+     * PangoAttrList* pango_attr_list_copy(PangoAttrList* list);
+     * }
+     */
+    public static MemorySegment pango_attr_list_copy(MemorySegment list) {
+        var mh$ = pango_attr_list_copy$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(list);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attr_list_insert$MH() {
+        return RuntimeHelper.requireNonNull(constants$930.pango_attr_list_insert$MH,"pango_attr_list_insert");
+    }
+    /**
+     * {@snippet :
+     * void pango_attr_list_insert(PangoAttrList* list, PangoAttribute* attr);
+     * }
+     */
+    public static void pango_attr_list_insert(MemorySegment list, MemorySegment attr) {
+        var mh$ = pango_attr_list_insert$MH();
+        try {
+            mh$.invokeExact(list, attr);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attr_list_insert_before$MH() {
+        return RuntimeHelper.requireNonNull(constants$930.pango_attr_list_insert_before$MH,"pango_attr_list_insert_before");
+    }
+    /**
+     * {@snippet :
+     * void pango_attr_list_insert_before(PangoAttrList* list, PangoAttribute* attr);
+     * }
+     */
+    public static void pango_attr_list_insert_before(MemorySegment list, MemorySegment attr) {
+        var mh$ = pango_attr_list_insert_before$MH();
+        try {
+            mh$.invokeExact(list, attr);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attr_list_change$MH() {
+        return RuntimeHelper.requireNonNull(constants$930.pango_attr_list_change$MH,"pango_attr_list_change");
+    }
+    /**
+     * {@snippet :
+     * void pango_attr_list_change(PangoAttrList* list, PangoAttribute* attr);
+     * }
+     */
+    public static void pango_attr_list_change(MemorySegment list, MemorySegment attr) {
+        var mh$ = pango_attr_list_change$MH();
+        try {
+            mh$.invokeExact(list, attr);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attr_list_splice$MH() {
+        return RuntimeHelper.requireNonNull(constants$930.pango_attr_list_splice$MH,"pango_attr_list_splice");
+    }
+    /**
+     * {@snippet :
+     * void pango_attr_list_splice(PangoAttrList* list, PangoAttrList* other, int pos, int len);
+     * }
+     */
+    public static void pango_attr_list_splice(MemorySegment list, MemorySegment other, int pos, int len) {
+        var mh$ = pango_attr_list_splice$MH();
+        try {
+            mh$.invokeExact(list, other, pos, len);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attr_list_update$MH() {
+        return RuntimeHelper.requireNonNull(constants$930.pango_attr_list_update$MH,"pango_attr_list_update");
+    }
+    /**
+     * {@snippet :
+     * void pango_attr_list_update(PangoAttrList* list, int pos, int remove, int add);
+     * }
+     */
+    public static void pango_attr_list_update(MemorySegment list, int pos, int remove, int add) {
+        var mh$ = pango_attr_list_update$MH();
+        try {
+            mh$.invokeExact(list, pos, remove, add);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attr_list_filter$MH() {
+        return RuntimeHelper.requireNonNull(constants$930.pango_attr_list_filter$MH,"pango_attr_list_filter");
+    }
+    /**
+     * {@snippet :
+     * PangoAttrList* pango_attr_list_filter(PangoAttrList* list, PangoAttrFilterFunc func, gpointer data);
+     * }
+     */
+    public static MemorySegment pango_attr_list_filter(MemorySegment list, MemorySegment func, MemorySegment data) {
+        var mh$ = pango_attr_list_filter$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(list, func, data);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attr_list_get_attributes$MH() {
+        return RuntimeHelper.requireNonNull(constants$931.pango_attr_list_get_attributes$MH,"pango_attr_list_get_attributes");
+    }
+    /**
+     * {@snippet :
+     * GSList* pango_attr_list_get_attributes(PangoAttrList* list);
+     * }
+     */
+    public static MemorySegment pango_attr_list_get_attributes(MemorySegment list) {
+        var mh$ = pango_attr_list_get_attributes$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(list);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attr_list_equal$MH() {
+        return RuntimeHelper.requireNonNull(constants$931.pango_attr_list_equal$MH,"pango_attr_list_equal");
+    }
+    /**
+     * {@snippet :
+     * gboolean pango_attr_list_equal(PangoAttrList* list, PangoAttrList* other_list);
+     * }
+     */
+    public static int pango_attr_list_equal(MemorySegment list, MemorySegment other_list) {
+        var mh$ = pango_attr_list_equal$MH();
+        try {
+            return (int)mh$.invokeExact(list, other_list);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attr_list_to_string$MH() {
+        return RuntimeHelper.requireNonNull(constants$931.pango_attr_list_to_string$MH,"pango_attr_list_to_string");
+    }
+    /**
+     * {@snippet :
+     * char* pango_attr_list_to_string(PangoAttrList* list);
+     * }
+     */
+    public static MemorySegment pango_attr_list_to_string(MemorySegment list) {
+        var mh$ = pango_attr_list_to_string$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(list);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attr_list_from_string$MH() {
+        return RuntimeHelper.requireNonNull(constants$931.pango_attr_list_from_string$MH,"pango_attr_list_from_string");
+    }
+    /**
+     * {@snippet :
+     * PangoAttrList* pango_attr_list_from_string(char* text);
+     * }
+     */
+    public static MemorySegment pango_attr_list_from_string(MemorySegment text) {
+        var mh$ = pango_attr_list_from_string$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(text);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attr_iterator_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$931.pango_attr_iterator_get_type$MH,"pango_attr_iterator_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType pango_attr_iterator_get_type();
+     * }
+     */
+    public static long pango_attr_iterator_get_type() {
+        var mh$ = pango_attr_iterator_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attr_list_get_iterator$MH() {
+        return RuntimeHelper.requireNonNull(constants$931.pango_attr_list_get_iterator$MH,"pango_attr_list_get_iterator");
+    }
+    /**
+     * {@snippet :
+     * PangoAttrIterator* pango_attr_list_get_iterator(PangoAttrList* list);
+     * }
+     */
+    public static MemorySegment pango_attr_list_get_iterator(MemorySegment list) {
+        var mh$ = pango_attr_list_get_iterator$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(list);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attr_iterator_range$MH() {
+        return RuntimeHelper.requireNonNull(constants$932.pango_attr_iterator_range$MH,"pango_attr_iterator_range");
+    }
+    /**
+     * {@snippet :
+     * void pango_attr_iterator_range(PangoAttrIterator* iterator, int* start, int* end);
+     * }
+     */
+    public static void pango_attr_iterator_range(MemorySegment iterator, MemorySegment start, MemorySegment end) {
+        var mh$ = pango_attr_iterator_range$MH();
+        try {
+            mh$.invokeExact(iterator, start, end);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attr_iterator_next$MH() {
+        return RuntimeHelper.requireNonNull(constants$932.pango_attr_iterator_next$MH,"pango_attr_iterator_next");
+    }
+    /**
+     * {@snippet :
+     * gboolean pango_attr_iterator_next(PangoAttrIterator* iterator);
+     * }
+     */
+    public static int pango_attr_iterator_next(MemorySegment iterator) {
+        var mh$ = pango_attr_iterator_next$MH();
+        try {
+            return (int)mh$.invokeExact(iterator);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attr_iterator_copy$MH() {
+        return RuntimeHelper.requireNonNull(constants$932.pango_attr_iterator_copy$MH,"pango_attr_iterator_copy");
+    }
+    /**
+     * {@snippet :
+     * PangoAttrIterator* pango_attr_iterator_copy(PangoAttrIterator* iterator);
+     * }
+     */
+    public static MemorySegment pango_attr_iterator_copy(MemorySegment iterator) {
+        var mh$ = pango_attr_iterator_copy$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(iterator);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attr_iterator_destroy$MH() {
+        return RuntimeHelper.requireNonNull(constants$932.pango_attr_iterator_destroy$MH,"pango_attr_iterator_destroy");
+    }
+    /**
+     * {@snippet :
+     * void pango_attr_iterator_destroy(PangoAttrIterator* iterator);
+     * }
+     */
+    public static void pango_attr_iterator_destroy(MemorySegment iterator) {
+        var mh$ = pango_attr_iterator_destroy$MH();
+        try {
+            mh$.invokeExact(iterator);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attr_iterator_get$MH() {
+        return RuntimeHelper.requireNonNull(constants$932.pango_attr_iterator_get$MH,"pango_attr_iterator_get");
+    }
+    /**
+     * {@snippet :
+     * PangoAttribute* pango_attr_iterator_get(PangoAttrIterator* iterator, PangoAttrType type);
+     * }
+     */
+    public static MemorySegment pango_attr_iterator_get(MemorySegment iterator, int type) {
+        var mh$ = pango_attr_iterator_get$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(iterator, type);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attr_iterator_get_font$MH() {
+        return RuntimeHelper.requireNonNull(constants$932.pango_attr_iterator_get_font$MH,"pango_attr_iterator_get_font");
+    }
+    /**
+     * {@snippet :
+     * void pango_attr_iterator_get_font(PangoAttrIterator* iterator, PangoFontDescription* desc, PangoLanguage** language, GSList** extra_attrs);
+     * }
+     */
+    public static void pango_attr_iterator_get_font(MemorySegment iterator, MemorySegment desc, MemorySegment language, MemorySegment extra_attrs) {
+        var mh$ = pango_attr_iterator_get_font$MH();
+        try {
+            mh$.invokeExact(iterator, desc, language, extra_attrs);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attr_iterator_get_attrs$MH() {
+        return RuntimeHelper.requireNonNull(constants$933.pango_attr_iterator_get_attrs$MH,"pango_attr_iterator_get_attrs");
+    }
+    /**
+     * {@snippet :
+     * GSList* pango_attr_iterator_get_attrs(PangoAttrIterator* iterator);
+     * }
+     */
+    public static MemorySegment pango_attr_iterator_get_attrs(MemorySegment iterator) {
+        var mh$ = pango_attr_iterator_get_attrs$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(iterator);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    /**
+     * {@snippet :
+     * typedef struct _PangoAttribute* PangoAttribute_autoptr;
+     * }
+     */
+    public static final OfAddress PangoAttribute_autoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GList* PangoAttribute_listautoptr;
+     * }
+     */
+    public static final OfAddress PangoAttribute_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* PangoAttribute_slistautoptr;
+     * }
+     */
+    public static final OfAddress PangoAttribute_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* PangoAttribute_queueautoptr;
+     * }
+     */
+    public static final OfAddress PangoAttribute_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _PangoAttrList* PangoAttrList_autoptr;
+     * }
+     */
+    public static final OfAddress PangoAttrList_autoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GList* PangoAttrList_listautoptr;
+     * }
+     */
+    public static final OfAddress PangoAttrList_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* PangoAttrList_slistautoptr;
+     * }
+     */
+    public static final OfAddress PangoAttrList_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* PangoAttrList_queueautoptr;
+     * }
+     */
+    public static final OfAddress PangoAttrList_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _PangoAttrIterator* PangoAttrIterator_autoptr;
+     * }
+     */
+    public static final OfAddress PangoAttrIterator_autoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GList* PangoAttrIterator_listautoptr;
+     * }
+     */
+    public static final OfAddress PangoAttrIterator_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* PangoAttrIterator_slistautoptr;
+     * }
+     */
+    public static final OfAddress PangoAttrIterator_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* PangoAttrIterator_queueautoptr;
+     * }
+     */
+    public static final OfAddress PangoAttrIterator_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static MethodHandle pango_item_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$933.pango_item_get_type$MH,"pango_item_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType pango_item_get_type();
+     * }
+     */
+    public static long pango_item_get_type() {
+        var mh$ = pango_item_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_item_new$MH() {
+        return RuntimeHelper.requireNonNull(constants$933.pango_item_new$MH,"pango_item_new");
+    }
+    /**
+     * {@snippet :
+     * PangoItem* pango_item_new();
+     * }
+     */
+    public static MemorySegment pango_item_new() {
+        var mh$ = pango_item_new$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_item_copy$MH() {
+        return RuntimeHelper.requireNonNull(constants$933.pango_item_copy$MH,"pango_item_copy");
+    }
+    /**
+     * {@snippet :
+     * PangoItem* pango_item_copy(PangoItem* item);
+     * }
+     */
+    public static MemorySegment pango_item_copy(MemorySegment item) {
+        var mh$ = pango_item_copy$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(item);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_item_free$MH() {
+        return RuntimeHelper.requireNonNull(constants$933.pango_item_free$MH,"pango_item_free");
+    }
+    /**
+     * {@snippet :
+     * void pango_item_free(PangoItem* item);
+     * }
+     */
+    public static void pango_item_free(MemorySegment item) {
+        var mh$ = pango_item_free$MH();
+        try {
+            mh$.invokeExact(item);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_item_split$MH() {
+        return RuntimeHelper.requireNonNull(constants$933.pango_item_split$MH,"pango_item_split");
+    }
+    /**
+     * {@snippet :
+     * PangoItem* pango_item_split(PangoItem* orig, int split_index, int split_offset);
+     * }
+     */
+    public static MemorySegment pango_item_split(MemorySegment orig, int split_index, int split_offset) {
+        var mh$ = pango_item_split$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(orig, split_index, split_offset);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_item_apply_attrs$MH() {
+        return RuntimeHelper.requireNonNull(constants$934.pango_item_apply_attrs$MH,"pango_item_apply_attrs");
+    }
+    /**
+     * {@snippet :
+     * void pango_item_apply_attrs(PangoItem* item, PangoAttrIterator* iter);
+     * }
+     */
+    public static void pango_item_apply_attrs(MemorySegment item, MemorySegment iter) {
+        var mh$ = pango_item_apply_attrs$MH();
+        try {
+            mh$.invokeExact(item, iter);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_reorder_items$MH() {
+        return RuntimeHelper.requireNonNull(constants$934.pango_reorder_items$MH,"pango_reorder_items");
+    }
+    /**
+     * {@snippet :
+     * GList* pango_reorder_items(GList* items);
+     * }
+     */
+    public static MemorySegment pango_reorder_items(MemorySegment items) {
+        var mh$ = pango_reorder_items$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(items);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_itemize$MH() {
+        return RuntimeHelper.requireNonNull(constants$934.pango_itemize$MH,"pango_itemize");
+    }
+    /**
+     * {@snippet :
+     * GList* pango_itemize(PangoContext* context, char* text, int start_index, int length, PangoAttrList* attrs, PangoAttrIterator* cached_iter);
+     * }
+     */
+    public static MemorySegment pango_itemize(MemorySegment context, MemorySegment text, int start_index, int length, MemorySegment attrs, MemorySegment cached_iter) {
+        var mh$ = pango_itemize$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(context, text, start_index, length, attrs, cached_iter);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_itemize_with_base_dir$MH() {
+        return RuntimeHelper.requireNonNull(constants$934.pango_itemize_with_base_dir$MH,"pango_itemize_with_base_dir");
+    }
+    /**
+     * {@snippet :
+     * GList* pango_itemize_with_base_dir(PangoContext* context, PangoDirection base_dir, char* text, int start_index, int length, PangoAttrList* attrs, PangoAttrIterator* cached_iter);
+     * }
+     */
+    public static MemorySegment pango_itemize_with_base_dir(MemorySegment context, int base_dir, MemorySegment text, int start_index, int length, MemorySegment attrs, MemorySegment cached_iter) {
+        var mh$ = pango_itemize_with_base_dir$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(context, base_dir, text, start_index, length, attrs, cached_iter);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_break$MH() {
+        return RuntimeHelper.requireNonNull(constants$934.pango_break$MH,"pango_break");
+    }
+    /**
+     * {@snippet :
+     * void pango_break(char* text, int length, PangoAnalysis* analysis, PangoLogAttr* attrs, int attrs_len);
+     * }
+     */
+    public static void pango_break(MemorySegment text, int length, MemorySegment analysis, MemorySegment attrs, int attrs_len) {
+        var mh$ = pango_break$MH();
+        try {
+            mh$.invokeExact(text, length, analysis, attrs, attrs_len);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_get_log_attrs$MH() {
+        return RuntimeHelper.requireNonNull(constants$934.pango_get_log_attrs$MH,"pango_get_log_attrs");
+    }
+    /**
+     * {@snippet :
+     * void pango_get_log_attrs(char* text, int length, int level, PangoLanguage* language, PangoLogAttr* attrs, int attrs_len);
+     * }
+     */
+    public static void pango_get_log_attrs(MemorySegment text, int length, int level, MemorySegment language, MemorySegment attrs, int attrs_len) {
+        var mh$ = pango_get_log_attrs$MH();
+        try {
+            mh$.invokeExact(text, length, level, language, attrs, attrs_len);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_default_break$MH() {
+        return RuntimeHelper.requireNonNull(constants$935.pango_default_break$MH,"pango_default_break");
+    }
+    /**
+     * {@snippet :
+     * void pango_default_break(char* text, int length, PangoAnalysis* analysis, PangoLogAttr* attrs, int attrs_len);
+     * }
+     */
+    public static void pango_default_break(MemorySegment text, int length, MemorySegment analysis, MemorySegment attrs, int attrs_len) {
+        var mh$ = pango_default_break$MH();
+        try {
+            mh$.invokeExact(text, length, analysis, attrs, attrs_len);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_tailor_break$MH() {
+        return RuntimeHelper.requireNonNull(constants$935.pango_tailor_break$MH,"pango_tailor_break");
+    }
+    /**
+     * {@snippet :
+     * void pango_tailor_break(char* text, int length, PangoAnalysis* analysis, int offset, PangoLogAttr* attrs, int attrs_len);
+     * }
+     */
+    public static void pango_tailor_break(MemorySegment text, int length, MemorySegment analysis, int offset, MemorySegment attrs, int attrs_len) {
+        var mh$ = pango_tailor_break$MH();
+        try {
+            mh$.invokeExact(text, length, analysis, offset, attrs, attrs_len);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attr_break$MH() {
+        return RuntimeHelper.requireNonNull(constants$935.pango_attr_break$MH,"pango_attr_break");
+    }
+    /**
+     * {@snippet :
+     * void pango_attr_break(char* text, int length, PangoAttrList* attr_list, int offset, PangoLogAttr* attrs, int attrs_len);
+     * }
+     */
+    public static void pango_attr_break(MemorySegment text, int length, MemorySegment attr_list, int offset, MemorySegment attrs, int attrs_len) {
+        var mh$ = pango_attr_break$MH();
+        try {
+            mh$.invokeExact(text, length, attr_list, offset, attrs, attrs_len);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_fontset_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$935.pango_fontset_get_type$MH,"pango_fontset_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType pango_fontset_get_type();
+     * }
+     */
+    public static long pango_fontset_get_type() {
+        var mh$ = pango_fontset_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_fontset_get_font$MH() {
+        return RuntimeHelper.requireNonNull(constants$936.pango_fontset_get_font$MH,"pango_fontset_get_font");
+    }
+    /**
+     * {@snippet :
+     * PangoFont* pango_fontset_get_font(PangoFontset* fontset, guint wc);
+     * }
+     */
+    public static MemorySegment pango_fontset_get_font(MemorySegment fontset, int wc) {
+        var mh$ = pango_fontset_get_font$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(fontset, wc);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_fontset_get_metrics$MH() {
+        return RuntimeHelper.requireNonNull(constants$936.pango_fontset_get_metrics$MH,"pango_fontset_get_metrics");
+    }
+    /**
+     * {@snippet :
+     * PangoFontMetrics* pango_fontset_get_metrics(PangoFontset* fontset);
+     * }
+     */
+    public static MemorySegment pango_fontset_get_metrics(MemorySegment fontset) {
+        var mh$ = pango_fontset_get_metrics$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(fontset);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_fontset_foreach$MH() {
+        return RuntimeHelper.requireNonNull(constants$936.pango_fontset_foreach$MH,"pango_fontset_foreach");
+    }
+    /**
+     * {@snippet :
+     * void pango_fontset_foreach(PangoFontset* fontset, PangoFontsetForeachFunc func, gpointer data);
+     * }
+     */
+    public static void pango_fontset_foreach(MemorySegment fontset, MemorySegment func, MemorySegment data) {
+        var mh$ = pango_fontset_foreach$MH();
+        try {
+            mh$.invokeExact(fontset, func, data);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_font_map_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$936.pango_font_map_get_type$MH,"pango_font_map_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType pango_font_map_get_type();
+     * }
+     */
+    public static long pango_font_map_get_type() {
+        var mh$ = pango_font_map_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_font_map_create_context$MH() {
+        return RuntimeHelper.requireNonNull(constants$936.pango_font_map_create_context$MH,"pango_font_map_create_context");
+    }
+    /**
+     * {@snippet :
+     * PangoContext* pango_font_map_create_context(PangoFontMap* fontmap);
+     * }
+     */
+    public static MemorySegment pango_font_map_create_context(MemorySegment fontmap) {
+        var mh$ = pango_font_map_create_context$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(fontmap);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_font_map_load_font$MH() {
+        return RuntimeHelper.requireNonNull(constants$936.pango_font_map_load_font$MH,"pango_font_map_load_font");
+    }
+    /**
+     * {@snippet :
+     * PangoFont* pango_font_map_load_font(PangoFontMap* fontmap, PangoContext* context, const PangoFontDescription* desc);
+     * }
+     */
+    public static MemorySegment pango_font_map_load_font(MemorySegment fontmap, MemorySegment context, MemorySegment desc) {
+        var mh$ = pango_font_map_load_font$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(fontmap, context, desc);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_font_map_load_fontset$MH() {
+        return RuntimeHelper.requireNonNull(constants$937.pango_font_map_load_fontset$MH,"pango_font_map_load_fontset");
+    }
+    /**
+     * {@snippet :
+     * PangoFontset* pango_font_map_load_fontset(PangoFontMap* fontmap, PangoContext* context, const PangoFontDescription* desc, PangoLanguage* language);
+     * }
+     */
+    public static MemorySegment pango_font_map_load_fontset(MemorySegment fontmap, MemorySegment context, MemorySegment desc, MemorySegment language) {
+        var mh$ = pango_font_map_load_fontset$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(fontmap, context, desc, language);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_font_map_list_families$MH() {
+        return RuntimeHelper.requireNonNull(constants$937.pango_font_map_list_families$MH,"pango_font_map_list_families");
+    }
+    /**
+     * {@snippet :
+     * void pango_font_map_list_families(PangoFontMap* fontmap, PangoFontFamily*** families, int* n_families);
+     * }
+     */
+    public static void pango_font_map_list_families(MemorySegment fontmap, MemorySegment families, MemorySegment n_families) {
+        var mh$ = pango_font_map_list_families$MH();
+        try {
+            mh$.invokeExact(fontmap, families, n_families);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_font_map_get_serial$MH() {
+        return RuntimeHelper.requireNonNull(constants$937.pango_font_map_get_serial$MH,"pango_font_map_get_serial");
+    }
+    /**
+     * {@snippet :
+     * guint pango_font_map_get_serial(PangoFontMap* fontmap);
+     * }
+     */
+    public static int pango_font_map_get_serial(MemorySegment fontmap) {
+        var mh$ = pango_font_map_get_serial$MH();
+        try {
+            return (int)mh$.invokeExact(fontmap);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_font_map_changed$MH() {
+        return RuntimeHelper.requireNonNull(constants$937.pango_font_map_changed$MH,"pango_font_map_changed");
+    }
+    /**
+     * {@snippet :
+     * void pango_font_map_changed(PangoFontMap* fontmap);
+     * }
+     */
+    public static void pango_font_map_changed(MemorySegment fontmap) {
+        var mh$ = pango_font_map_changed$MH();
+        try {
+            mh$.invokeExact(fontmap);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_font_map_get_family$MH() {
+        return RuntimeHelper.requireNonNull(constants$937.pango_font_map_get_family$MH,"pango_font_map_get_family");
+    }
+    /**
+     * {@snippet :
+     * PangoFontFamily* pango_font_map_get_family(PangoFontMap* fontmap, char* name);
+     * }
+     */
+    public static MemorySegment pango_font_map_get_family(MemorySegment fontmap, MemorySegment name) {
+        var mh$ = pango_font_map_get_family$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(fontmap, name);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    /**
+     * {@snippet :
+     * typedef struct _PangoFontMap* PangoFontMap_autoptr;
+     * }
+     */
+    public static final OfAddress PangoFontMap_autoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GList* PangoFontMap_listautoptr;
+     * }
+     */
+    public static final OfAddress PangoFontMap_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* PangoFontMap_slistautoptr;
+     * }
+     */
+    public static final OfAddress PangoFontMap_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* PangoFontMap_queueautoptr;
+     * }
+     */
+    public static final OfAddress PangoFontMap_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static MethodHandle pango_context_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$937.pango_context_get_type$MH,"pango_context_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType pango_context_get_type();
+     * }
+     */
+    public static long pango_context_get_type() {
+        var mh$ = pango_context_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_context_new$MH() {
+        return RuntimeHelper.requireNonNull(constants$938.pango_context_new$MH,"pango_context_new");
+    }
+    /**
+     * {@snippet :
+     * PangoContext* pango_context_new();
+     * }
+     */
+    public static MemorySegment pango_context_new() {
+        var mh$ = pango_context_new$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_context_changed$MH() {
+        return RuntimeHelper.requireNonNull(constants$938.pango_context_changed$MH,"pango_context_changed");
+    }
+    /**
+     * {@snippet :
+     * void pango_context_changed(PangoContext* context);
+     * }
+     */
+    public static void pango_context_changed(MemorySegment context) {
+        var mh$ = pango_context_changed$MH();
+        try {
+            mh$.invokeExact(context);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_context_set_font_map$MH() {
+        return RuntimeHelper.requireNonNull(constants$938.pango_context_set_font_map$MH,"pango_context_set_font_map");
+    }
+    /**
+     * {@snippet :
+     * void pango_context_set_font_map(PangoContext* context, PangoFontMap* font_map);
+     * }
+     */
+    public static void pango_context_set_font_map(MemorySegment context, MemorySegment font_map) {
+        var mh$ = pango_context_set_font_map$MH();
+        try {
+            mh$.invokeExact(context, font_map);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_context_get_font_map$MH() {
+        return RuntimeHelper.requireNonNull(constants$938.pango_context_get_font_map$MH,"pango_context_get_font_map");
+    }
+    /**
+     * {@snippet :
+     * PangoFontMap* pango_context_get_font_map(PangoContext* context);
+     * }
+     */
+    public static MemorySegment pango_context_get_font_map(MemorySegment context) {
+        var mh$ = pango_context_get_font_map$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(context);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_context_get_serial$MH() {
+        return RuntimeHelper.requireNonNull(constants$938.pango_context_get_serial$MH,"pango_context_get_serial");
+    }
+    /**
+     * {@snippet :
+     * guint pango_context_get_serial(PangoContext* context);
+     * }
+     */
+    public static int pango_context_get_serial(MemorySegment context) {
+        var mh$ = pango_context_get_serial$MH();
+        try {
+            return (int)mh$.invokeExact(context);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_context_list_families$MH() {
+        return RuntimeHelper.requireNonNull(constants$938.pango_context_list_families$MH,"pango_context_list_families");
+    }
+    /**
+     * {@snippet :
+     * void pango_context_list_families(PangoContext* context, PangoFontFamily*** families, int* n_families);
+     * }
+     */
+    public static void pango_context_list_families(MemorySegment context, MemorySegment families, MemorySegment n_families) {
+        var mh$ = pango_context_list_families$MH();
+        try {
+            mh$.invokeExact(context, families, n_families);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_context_load_font$MH() {
+        return RuntimeHelper.requireNonNull(constants$939.pango_context_load_font$MH,"pango_context_load_font");
+    }
+    /**
+     * {@snippet :
+     * PangoFont* pango_context_load_font(PangoContext* context, const PangoFontDescription* desc);
+     * }
+     */
+    public static MemorySegment pango_context_load_font(MemorySegment context, MemorySegment desc) {
+        var mh$ = pango_context_load_font$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(context, desc);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_context_load_fontset$MH() {
+        return RuntimeHelper.requireNonNull(constants$939.pango_context_load_fontset$MH,"pango_context_load_fontset");
+    }
+    /**
+     * {@snippet :
+     * PangoFontset* pango_context_load_fontset(PangoContext* context, const PangoFontDescription* desc, PangoLanguage* language);
+     * }
+     */
+    public static MemorySegment pango_context_load_fontset(MemorySegment context, MemorySegment desc, MemorySegment language) {
+        var mh$ = pango_context_load_fontset$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(context, desc, language);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_context_get_metrics$MH() {
+        return RuntimeHelper.requireNonNull(constants$939.pango_context_get_metrics$MH,"pango_context_get_metrics");
+    }
+    /**
+     * {@snippet :
+     * PangoFontMetrics* pango_context_get_metrics(PangoContext* context, const PangoFontDescription* desc, PangoLanguage* language);
+     * }
+     */
+    public static MemorySegment pango_context_get_metrics(MemorySegment context, MemorySegment desc, MemorySegment language) {
+        var mh$ = pango_context_get_metrics$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(context, desc, language);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_context_set_font_description$MH() {
+        return RuntimeHelper.requireNonNull(constants$939.pango_context_set_font_description$MH,"pango_context_set_font_description");
+    }
+    /**
+     * {@snippet :
+     * void pango_context_set_font_description(PangoContext* context, const PangoFontDescription* desc);
+     * }
+     */
+    public static void pango_context_set_font_description(MemorySegment context, MemorySegment desc) {
+        var mh$ = pango_context_set_font_description$MH();
+        try {
+            mh$.invokeExact(context, desc);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_context_get_font_description$MH() {
+        return RuntimeHelper.requireNonNull(constants$939.pango_context_get_font_description$MH,"pango_context_get_font_description");
+    }
+    /**
+     * {@snippet :
+     * PangoFontDescription* pango_context_get_font_description(PangoContext* context);
+     * }
+     */
+    public static MemorySegment pango_context_get_font_description(MemorySegment context) {
+        var mh$ = pango_context_get_font_description$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(context);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_context_get_language$MH() {
+        return RuntimeHelper.requireNonNull(constants$939.pango_context_get_language$MH,"pango_context_get_language");
+    }
+    /**
+     * {@snippet :
+     * PangoLanguage* pango_context_get_language(PangoContext* context);
+     * }
+     */
+    public static MemorySegment pango_context_get_language(MemorySegment context) {
+        var mh$ = pango_context_get_language$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(context);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_context_set_language$MH() {
+        return RuntimeHelper.requireNonNull(constants$940.pango_context_set_language$MH,"pango_context_set_language");
+    }
+    /**
+     * {@snippet :
+     * void pango_context_set_language(PangoContext* context, PangoLanguage* language);
+     * }
+     */
+    public static void pango_context_set_language(MemorySegment context, MemorySegment language) {
+        var mh$ = pango_context_set_language$MH();
+        try {
+            mh$.invokeExact(context, language);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_context_set_base_dir$MH() {
+        return RuntimeHelper.requireNonNull(constants$940.pango_context_set_base_dir$MH,"pango_context_set_base_dir");
+    }
+    /**
+     * {@snippet :
+     * void pango_context_set_base_dir(PangoContext* context, PangoDirection direction);
+     * }
+     */
+    public static void pango_context_set_base_dir(MemorySegment context, int direction) {
+        var mh$ = pango_context_set_base_dir$MH();
+        try {
+            mh$.invokeExact(context, direction);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_context_get_base_dir$MH() {
+        return RuntimeHelper.requireNonNull(constants$940.pango_context_get_base_dir$MH,"pango_context_get_base_dir");
+    }
+    /**
+     * {@snippet :
+     * PangoDirection pango_context_get_base_dir(PangoContext* context);
+     * }
+     */
+    public static int pango_context_get_base_dir(MemorySegment context) {
+        var mh$ = pango_context_get_base_dir$MH();
+        try {
+            return (int)mh$.invokeExact(context);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_context_set_base_gravity$MH() {
+        return RuntimeHelper.requireNonNull(constants$940.pango_context_set_base_gravity$MH,"pango_context_set_base_gravity");
+    }
+    /**
+     * {@snippet :
+     * void pango_context_set_base_gravity(PangoContext* context, PangoGravity gravity);
+     * }
+     */
+    public static void pango_context_set_base_gravity(MemorySegment context, int gravity) {
+        var mh$ = pango_context_set_base_gravity$MH();
+        try {
+            mh$.invokeExact(context, gravity);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_context_get_base_gravity$MH() {
+        return RuntimeHelper.requireNonNull(constants$940.pango_context_get_base_gravity$MH,"pango_context_get_base_gravity");
+    }
+    /**
+     * {@snippet :
+     * PangoGravity pango_context_get_base_gravity(PangoContext* context);
+     * }
+     */
+    public static int pango_context_get_base_gravity(MemorySegment context) {
+        var mh$ = pango_context_get_base_gravity$MH();
+        try {
+            return (int)mh$.invokeExact(context);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_context_get_gravity$MH() {
+        return RuntimeHelper.requireNonNull(constants$940.pango_context_get_gravity$MH,"pango_context_get_gravity");
+    }
+    /**
+     * {@snippet :
+     * PangoGravity pango_context_get_gravity(PangoContext* context);
+     * }
+     */
+    public static int pango_context_get_gravity(MemorySegment context) {
+        var mh$ = pango_context_get_gravity$MH();
+        try {
+            return (int)mh$.invokeExact(context);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_context_set_gravity_hint$MH() {
+        return RuntimeHelper.requireNonNull(constants$941.pango_context_set_gravity_hint$MH,"pango_context_set_gravity_hint");
+    }
+    /**
+     * {@snippet :
+     * void pango_context_set_gravity_hint(PangoContext* context, PangoGravityHint hint);
+     * }
+     */
+    public static void pango_context_set_gravity_hint(MemorySegment context, int hint) {
+        var mh$ = pango_context_set_gravity_hint$MH();
+        try {
+            mh$.invokeExact(context, hint);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_context_get_gravity_hint$MH() {
+        return RuntimeHelper.requireNonNull(constants$941.pango_context_get_gravity_hint$MH,"pango_context_get_gravity_hint");
+    }
+    /**
+     * {@snippet :
+     * PangoGravityHint pango_context_get_gravity_hint(PangoContext* context);
+     * }
+     */
+    public static int pango_context_get_gravity_hint(MemorySegment context) {
+        var mh$ = pango_context_get_gravity_hint$MH();
+        try {
+            return (int)mh$.invokeExact(context);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_context_set_matrix$MH() {
+        return RuntimeHelper.requireNonNull(constants$941.pango_context_set_matrix$MH,"pango_context_set_matrix");
+    }
+    /**
+     * {@snippet :
+     * void pango_context_set_matrix(PangoContext* context, const PangoMatrix* matrix);
+     * }
+     */
+    public static void pango_context_set_matrix(MemorySegment context, MemorySegment matrix) {
+        var mh$ = pango_context_set_matrix$MH();
+        try {
+            mh$.invokeExact(context, matrix);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_context_get_matrix$MH() {
+        return RuntimeHelper.requireNonNull(constants$941.pango_context_get_matrix$MH,"pango_context_get_matrix");
+    }
+    /**
+     * {@snippet :
+     * const PangoMatrix* pango_context_get_matrix(PangoContext* context);
+     * }
+     */
+    public static MemorySegment pango_context_get_matrix(MemorySegment context) {
+        var mh$ = pango_context_get_matrix$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(context);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_context_set_round_glyph_positions$MH() {
+        return RuntimeHelper.requireNonNull(constants$941.pango_context_set_round_glyph_positions$MH,"pango_context_set_round_glyph_positions");
+    }
+    /**
+     * {@snippet :
+     * void pango_context_set_round_glyph_positions(PangoContext* context, gboolean round_positions);
+     * }
+     */
+    public static void pango_context_set_round_glyph_positions(MemorySegment context, int round_positions) {
+        var mh$ = pango_context_set_round_glyph_positions$MH();
+        try {
+            mh$.invokeExact(context, round_positions);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_context_get_round_glyph_positions$MH() {
+        return RuntimeHelper.requireNonNull(constants$941.pango_context_get_round_glyph_positions$MH,"pango_context_get_round_glyph_positions");
+    }
+    /**
+     * {@snippet :
+     * gboolean pango_context_get_round_glyph_positions(PangoContext* context);
+     * }
+     */
+    public static int pango_context_get_round_glyph_positions(MemorySegment context) {
+        var mh$ = pango_context_get_round_glyph_positions$MH();
+        try {
+            return (int)mh$.invokeExact(context);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    /**
+     * {@snippet :
+     * typedef int PangoGlyphUnit;
+     * }
+     */
+    public static final OfInt PangoGlyphUnit = Constants$root.C_INT$LAYOUT;
+    public static MethodHandle pango_glyph_string_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$942.pango_glyph_string_get_type$MH,"pango_glyph_string_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType pango_glyph_string_get_type();
+     * }
+     */
+    public static long pango_glyph_string_get_type() {
+        var mh$ = pango_glyph_string_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_glyph_string_new$MH() {
+        return RuntimeHelper.requireNonNull(constants$942.pango_glyph_string_new$MH,"pango_glyph_string_new");
+    }
+    /**
+     * {@snippet :
+     * PangoGlyphString* pango_glyph_string_new();
+     * }
+     */
+    public static MemorySegment pango_glyph_string_new() {
+        var mh$ = pango_glyph_string_new$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_glyph_string_set_size$MH() {
+        return RuntimeHelper.requireNonNull(constants$942.pango_glyph_string_set_size$MH,"pango_glyph_string_set_size");
+    }
+    /**
+     * {@snippet :
+     * void pango_glyph_string_set_size(PangoGlyphString* string, int new_len);
+     * }
+     */
+    public static void pango_glyph_string_set_size(MemorySegment string, int new_len) {
+        var mh$ = pango_glyph_string_set_size$MH();
+        try {
+            mh$.invokeExact(string, new_len);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_glyph_string_copy$MH() {
+        return RuntimeHelper.requireNonNull(constants$942.pango_glyph_string_copy$MH,"pango_glyph_string_copy");
+    }
+    /**
+     * {@snippet :
+     * PangoGlyphString* pango_glyph_string_copy(PangoGlyphString* string);
+     * }
+     */
+    public static MemorySegment pango_glyph_string_copy(MemorySegment string) {
+        var mh$ = pango_glyph_string_copy$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(string);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_glyph_string_free$MH() {
+        return RuntimeHelper.requireNonNull(constants$942.pango_glyph_string_free$MH,"pango_glyph_string_free");
+    }
+    /**
+     * {@snippet :
+     * void pango_glyph_string_free(PangoGlyphString* string);
+     * }
+     */
+    public static void pango_glyph_string_free(MemorySegment string) {
+        var mh$ = pango_glyph_string_free$MH();
+        try {
+            mh$.invokeExact(string);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_glyph_string_extents$MH() {
+        return RuntimeHelper.requireNonNull(constants$942.pango_glyph_string_extents$MH,"pango_glyph_string_extents");
+    }
+    /**
+     * {@snippet :
+     * void pango_glyph_string_extents(PangoGlyphString* glyphs, PangoFont* font, PangoRectangle* ink_rect, PangoRectangle* logical_rect);
+     * }
+     */
+    public static void pango_glyph_string_extents(MemorySegment glyphs, MemorySegment font, MemorySegment ink_rect, MemorySegment logical_rect) {
+        var mh$ = pango_glyph_string_extents$MH();
+        try {
+            mh$.invokeExact(glyphs, font, ink_rect, logical_rect);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_glyph_string_get_width$MH() {
+        return RuntimeHelper.requireNonNull(constants$943.pango_glyph_string_get_width$MH,"pango_glyph_string_get_width");
+    }
+    /**
+     * {@snippet :
+     * int pango_glyph_string_get_width(PangoGlyphString* glyphs);
+     * }
+     */
+    public static int pango_glyph_string_get_width(MemorySegment glyphs) {
+        var mh$ = pango_glyph_string_get_width$MH();
+        try {
+            return (int)mh$.invokeExact(glyphs);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_glyph_string_extents_range$MH() {
+        return RuntimeHelper.requireNonNull(constants$943.pango_glyph_string_extents_range$MH,"pango_glyph_string_extents_range");
+    }
+    /**
+     * {@snippet :
+     * void pango_glyph_string_extents_range(PangoGlyphString* glyphs, int start, int end, PangoFont* font, PangoRectangle* ink_rect, PangoRectangle* logical_rect);
+     * }
+     */
+    public static void pango_glyph_string_extents_range(MemorySegment glyphs, int start, int end, MemorySegment font, MemorySegment ink_rect, MemorySegment logical_rect) {
+        var mh$ = pango_glyph_string_extents_range$MH();
+        try {
+            mh$.invokeExact(glyphs, start, end, font, ink_rect, logical_rect);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_glyph_string_get_logical_widths$MH() {
+        return RuntimeHelper.requireNonNull(constants$943.pango_glyph_string_get_logical_widths$MH,"pango_glyph_string_get_logical_widths");
+    }
+    /**
+     * {@snippet :
+     * void pango_glyph_string_get_logical_widths(PangoGlyphString* glyphs, char* text, int length, int embedding_level, int* logical_widths);
+     * }
+     */
+    public static void pango_glyph_string_get_logical_widths(MemorySegment glyphs, MemorySegment text, int length, int embedding_level, MemorySegment logical_widths) {
+        var mh$ = pango_glyph_string_get_logical_widths$MH();
+        try {
+            mh$.invokeExact(glyphs, text, length, embedding_level, logical_widths);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_glyph_string_index_to_x$MH() {
+        return RuntimeHelper.requireNonNull(constants$943.pango_glyph_string_index_to_x$MH,"pango_glyph_string_index_to_x");
+    }
+    /**
+     * {@snippet :
+     * void pango_glyph_string_index_to_x(PangoGlyphString* glyphs, char* text, int length, PangoAnalysis* analysis, int index_, gboolean trailing, int* x_pos);
+     * }
+     */
+    public static void pango_glyph_string_index_to_x(MemorySegment glyphs, MemorySegment text, int length, MemorySegment analysis, int index_, int trailing, MemorySegment x_pos) {
+        var mh$ = pango_glyph_string_index_to_x$MH();
+        try {
+            mh$.invokeExact(glyphs, text, length, analysis, index_, trailing, x_pos);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_glyph_string_x_to_index$MH() {
+        return RuntimeHelper.requireNonNull(constants$943.pango_glyph_string_x_to_index$MH,"pango_glyph_string_x_to_index");
+    }
+    /**
+     * {@snippet :
+     * void pango_glyph_string_x_to_index(PangoGlyphString* glyphs, char* text, int length, PangoAnalysis* analysis, int x_pos, int* index_, int* trailing);
+     * }
+     */
+    public static void pango_glyph_string_x_to_index(MemorySegment glyphs, MemorySegment text, int length, MemorySegment analysis, int x_pos, MemorySegment index_, MemorySegment trailing) {
+        var mh$ = pango_glyph_string_x_to_index$MH();
+        try {
+            mh$.invokeExact(glyphs, text, length, analysis, x_pos, index_, trailing);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_glyph_string_index_to_x_full$MH() {
+        return RuntimeHelper.requireNonNull(constants$943.pango_glyph_string_index_to_x_full$MH,"pango_glyph_string_index_to_x_full");
+    }
+    /**
+     * {@snippet :
+     * void pango_glyph_string_index_to_x_full(PangoGlyphString* glyphs, char* text, int length, PangoAnalysis* analysis, PangoLogAttr* attrs, int index_, gboolean trailing, int* x_pos);
+     * }
+     */
+    public static void pango_glyph_string_index_to_x_full(MemorySegment glyphs, MemorySegment text, int length, MemorySegment analysis, MemorySegment attrs, int index_, int trailing, MemorySegment x_pos) {
+        var mh$ = pango_glyph_string_index_to_x_full$MH();
+        try {
+            mh$.invokeExact(glyphs, text, length, analysis, attrs, index_, trailing, x_pos);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_SHAPE_NONE = 0;
+     * }
+     */
+    public static int PANGO_SHAPE_NONE() {
+        return (int)0L;
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_SHAPE_ROUND_POSITIONS = 1;
+     * }
+     */
+    public static int PANGO_SHAPE_ROUND_POSITIONS() {
+        return (int)1L;
+    }
+    public static MethodHandle pango_shape$MH() {
+        return RuntimeHelper.requireNonNull(constants$944.pango_shape$MH,"pango_shape");
+    }
+    /**
+     * {@snippet :
+     * void pango_shape(char* text, int length, const PangoAnalysis* analysis, PangoGlyphString* glyphs);
+     * }
+     */
+    public static void pango_shape(MemorySegment text, int length, MemorySegment analysis, MemorySegment glyphs) {
+        var mh$ = pango_shape$MH();
+        try {
+            mh$.invokeExact(text, length, analysis, glyphs);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_shape_full$MH() {
+        return RuntimeHelper.requireNonNull(constants$944.pango_shape_full$MH,"pango_shape_full");
+    }
+    /**
+     * {@snippet :
+     * void pango_shape_full(char* item_text, int item_length, char* paragraph_text, int paragraph_length, const PangoAnalysis* analysis, PangoGlyphString* glyphs);
+     * }
+     */
+    public static void pango_shape_full(MemorySegment item_text, int item_length, MemorySegment paragraph_text, int paragraph_length, MemorySegment analysis, MemorySegment glyphs) {
+        var mh$ = pango_shape_full$MH();
+        try {
+            mh$.invokeExact(item_text, item_length, paragraph_text, paragraph_length, analysis, glyphs);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_shape_with_flags$MH() {
+        return RuntimeHelper.requireNonNull(constants$944.pango_shape_with_flags$MH,"pango_shape_with_flags");
+    }
+    /**
+     * {@snippet :
+     * void pango_shape_with_flags(char* item_text, int item_length, char* paragraph_text, int paragraph_length, const PangoAnalysis* analysis, PangoGlyphString* glyphs, PangoShapeFlags flags);
+     * }
+     */
+    public static void pango_shape_with_flags(MemorySegment item_text, int item_length, MemorySegment paragraph_text, int paragraph_length, MemorySegment analysis, MemorySegment glyphs, int flags) {
+        var mh$ = pango_shape_with_flags$MH();
+        try {
+            mh$.invokeExact(item_text, item_length, paragraph_text, paragraph_length, analysis, glyphs, flags);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_shape_item$MH() {
+        return RuntimeHelper.requireNonNull(constants$944.pango_shape_item$MH,"pango_shape_item");
+    }
+    /**
+     * {@snippet :
+     * void pango_shape_item(PangoItem* item, char* paragraph_text, int paragraph_length, PangoLogAttr* log_attrs, PangoGlyphString* glyphs, PangoShapeFlags flags);
+     * }
+     */
+    public static void pango_shape_item(MemorySegment item, MemorySegment paragraph_text, int paragraph_length, MemorySegment log_attrs, MemorySegment glyphs, int flags) {
+        var mh$ = pango_shape_item$MH();
+        try {
+            mh$.invokeExact(item, paragraph_text, paragraph_length, log_attrs, glyphs, flags);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_engine_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$944.pango_engine_get_type$MH,"pango_engine_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType pango_engine_get_type();
+     * }
+     */
+    public static long pango_engine_get_type() {
+        var mh$ = pango_engine_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_engine_lang_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$944.pango_engine_lang_get_type$MH,"pango_engine_lang_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType pango_engine_lang_get_type();
+     * }
+     */
+    public static long pango_engine_lang_get_type() {
+        var mh$ = pango_engine_lang_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_engine_shape_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$945.pango_engine_shape_get_type$MH,"pango_engine_shape_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType pango_engine_shape_get_type();
+     * }
+     */
+    public static long pango_engine_shape_get_type() {
+        var mh$ = pango_engine_shape_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle script_engine_list$MH() {
+        return RuntimeHelper.requireNonNull(constants$945.script_engine_list$MH,"script_engine_list");
+    }
+    /**
+     * {@snippet :
+     * void script_engine_list(PangoEngineInfo** engines, int* n_engines);
+     * }
+     */
+    public static void script_engine_list(MemorySegment engines, MemorySegment n_engines) {
+        var mh$ = script_engine_list$MH();
+        try {
+            mh$.invokeExact(engines, n_engines);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle script_engine_init$MH() {
+        return RuntimeHelper.requireNonNull(constants$945.script_engine_init$MH,"script_engine_init");
+    }
+    /**
+     * {@snippet :
+     * void script_engine_init(GTypeModule* module);
+     * }
+     */
+    public static void script_engine_init(MemorySegment module) {
+        var mh$ = script_engine_init$MH();
+        try {
+            mh$.invokeExact(module);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle script_engine_exit$MH() {
+        return RuntimeHelper.requireNonNull(constants$945.script_engine_exit$MH,"script_engine_exit");
+    }
+    /**
+     * {@snippet :
+     * void script_engine_exit();
+     * }
+     */
+    public static void script_engine_exit() {
+        var mh$ = script_engine_exit$MH();
+        try {
+            mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle script_engine_create$MH() {
+        return RuntimeHelper.requireNonNull(constants$945.script_engine_create$MH,"script_engine_create");
+    }
+    /**
+     * {@snippet :
+     * PangoEngine* script_engine_create(char* id);
+     * }
+     */
+    public static MemorySegment script_engine_create(MemorySegment id) {
+        var mh$ = script_engine_create$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(id);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_attr_type_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$945.pango_attr_type_get_type$MH,"pango_attr_type_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType pango_attr_type_get_type();
+     * }
+     */
+    public static long pango_attr_type_get_type() {
+        var mh$ = pango_attr_type_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_underline_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$946.pango_underline_get_type$MH,"pango_underline_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType pango_underline_get_type();
+     * }
+     */
+    public static long pango_underline_get_type() {
+        var mh$ = pango_underline_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_overline_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$946.pango_overline_get_type$MH,"pango_overline_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType pango_overline_get_type();
+     * }
+     */
+    public static long pango_overline_get_type() {
+        var mh$ = pango_overline_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_show_flags_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$946.pango_show_flags_get_type$MH,"pango_show_flags_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType pango_show_flags_get_type();
+     * }
+     */
+    public static long pango_show_flags_get_type() {
+        var mh$ = pango_show_flags_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_text_transform_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$946.pango_text_transform_get_type$MH,"pango_text_transform_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType pango_text_transform_get_type();
+     * }
+     */
+    public static long pango_text_transform_get_type() {
+        var mh$ = pango_text_transform_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_baseline_shift_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$946.pango_baseline_shift_get_type$MH,"pango_baseline_shift_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType pango_baseline_shift_get_type();
+     * }
+     */
+    public static long pango_baseline_shift_get_type() {
+        var mh$ = pango_baseline_shift_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_font_scale_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$946.pango_font_scale_get_type$MH,"pango_font_scale_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType pango_font_scale_get_type();
+     * }
+     */
+    public static long pango_font_scale_get_type() {
+        var mh$ = pango_font_scale_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_bidi_type_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$947.pango_bidi_type_get_type$MH,"pango_bidi_type_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType pango_bidi_type_get_type();
+     * }
+     */
+    public static long pango_bidi_type_get_type() {
+        var mh$ = pango_bidi_type_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_coverage_level_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$947.pango_coverage_level_get_type$MH,"pango_coverage_level_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType pango_coverage_level_get_type();
+     * }
+     */
+    public static long pango_coverage_level_get_type() {
+        var mh$ = pango_coverage_level_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_direction_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$947.pango_direction_get_type$MH,"pango_direction_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType pango_direction_get_type();
+     * }
+     */
+    public static long pango_direction_get_type() {
+        var mh$ = pango_direction_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_style_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$947.pango_style_get_type$MH,"pango_style_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType pango_style_get_type();
+     * }
+     */
+    public static long pango_style_get_type() {
+        var mh$ = pango_style_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_variant_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$947.pango_variant_get_type$MH,"pango_variant_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType pango_variant_get_type();
+     * }
+     */
+    public static long pango_variant_get_type() {
+        var mh$ = pango_variant_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_weight_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$947.pango_weight_get_type$MH,"pango_weight_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType pango_weight_get_type();
+     * }
+     */
+    public static long pango_weight_get_type() {
+        var mh$ = pango_weight_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_stretch_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$948.pango_stretch_get_type$MH,"pango_stretch_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType pango_stretch_get_type();
+     * }
+     */
+    public static long pango_stretch_get_type() {
+        var mh$ = pango_stretch_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_font_mask_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$948.pango_font_mask_get_type$MH,"pango_font_mask_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType pango_font_mask_get_type();
+     * }
+     */
+    public static long pango_font_mask_get_type() {
+        var mh$ = pango_font_mask_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_shape_flags_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$948.pango_shape_flags_get_type$MH,"pango_shape_flags_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType pango_shape_flags_get_type();
+     * }
+     */
+    public static long pango_shape_flags_get_type() {
+        var mh$ = pango_shape_flags_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_gravity_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$948.pango_gravity_get_type$MH,"pango_gravity_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType pango_gravity_get_type();
+     * }
+     */
+    public static long pango_gravity_get_type() {
+        var mh$ = pango_gravity_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_gravity_hint_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$948.pango_gravity_hint_get_type$MH,"pango_gravity_hint_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType pango_gravity_hint_get_type();
+     * }
+     */
+    public static long pango_gravity_hint_get_type() {
+        var mh$ = pango_gravity_hint_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_alignment_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$948.pango_alignment_get_type$MH,"pango_alignment_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType pango_alignment_get_type();
+     * }
+     */
+    public static long pango_alignment_get_type() {
+        var mh$ = pango_alignment_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_wrap_mode_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$949.pango_wrap_mode_get_type$MH,"pango_wrap_mode_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType pango_wrap_mode_get_type();
+     * }
+     */
+    public static long pango_wrap_mode_get_type() {
+        var mh$ = pango_wrap_mode_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_ellipsize_mode_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$949.pango_ellipsize_mode_get_type$MH,"pango_ellipsize_mode_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType pango_ellipsize_mode_get_type();
+     * }
+     */
+    public static long pango_ellipsize_mode_get_type() {
+        var mh$ = pango_ellipsize_mode_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_serialize_flags_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$949.pango_layout_serialize_flags_get_type$MH,"pango_layout_serialize_flags_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType pango_layout_serialize_flags_get_type();
+     * }
+     */
+    public static long pango_layout_serialize_flags_get_type() {
+        var mh$ = pango_layout_serialize_flags_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_deserialize_error_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$949.pango_layout_deserialize_error_get_type$MH,"pango_layout_deserialize_error_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType pango_layout_deserialize_error_get_type();
+     * }
+     */
+    public static long pango_layout_deserialize_error_get_type() {
+        var mh$ = pango_layout_deserialize_error_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_deserialize_flags_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$949.pango_layout_deserialize_flags_get_type$MH,"pango_layout_deserialize_flags_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType pango_layout_deserialize_flags_get_type();
+     * }
+     */
+    public static long pango_layout_deserialize_flags_get_type() {
+        var mh$ = pango_layout_deserialize_flags_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_render_part_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$949.pango_render_part_get_type$MH,"pango_render_part_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType pango_render_part_get_type();
+     * }
+     */
+    public static long pango_render_part_get_type() {
+        var mh$ = pango_render_part_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_script_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$950.pango_script_get_type$MH,"pango_script_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType pango_script_get_type();
+     * }
+     */
+    public static long pango_script_get_type() {
+        var mh$ = pango_script_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_tab_align_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$950.pango_tab_align_get_type$MH,"pango_tab_align_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType pango_tab_align_get_type();
+     * }
+     */
+    public static long pango_tab_align_get_type() {
+        var mh$ = pango_tab_align_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_fontset_simple_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$950.pango_fontset_simple_get_type$MH,"pango_fontset_simple_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType pango_fontset_simple_get_type();
+     * }
+     */
+    public static long pango_fontset_simple_get_type() {
+        var mh$ = pango_fontset_simple_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_fontset_simple_new$MH() {
+        return RuntimeHelper.requireNonNull(constants$950.pango_fontset_simple_new$MH,"pango_fontset_simple_new");
+    }
+    /**
+     * {@snippet :
+     * PangoFontsetSimple* pango_fontset_simple_new(PangoLanguage* language);
+     * }
+     */
+    public static MemorySegment pango_fontset_simple_new(MemorySegment language) {
+        var mh$ = pango_fontset_simple_new$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(language);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_fontset_simple_append$MH() {
+        return RuntimeHelper.requireNonNull(constants$950.pango_fontset_simple_append$MH,"pango_fontset_simple_append");
+    }
+    /**
+     * {@snippet :
+     * void pango_fontset_simple_append(PangoFontsetSimple* fontset, PangoFont* font);
+     * }
+     */
+    public static void pango_fontset_simple_append(MemorySegment fontset, MemorySegment font) {
+        var mh$ = pango_fontset_simple_append$MH();
+        try {
+            mh$.invokeExact(fontset, font);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_fontset_simple_size$MH() {
+        return RuntimeHelper.requireNonNull(constants$950.pango_fontset_simple_size$MH,"pango_fontset_simple_size");
+    }
+    /**
+     * {@snippet :
+     * int pango_fontset_simple_size(PangoFontsetSimple* fontset);
+     * }
+     */
+    public static int pango_fontset_simple_size(MemorySegment fontset) {
+        var mh$ = pango_fontset_simple_size$MH();
+        try {
+            return (int)mh$.invokeExact(fontset);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_glyph_item_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$951.pango_glyph_item_get_type$MH,"pango_glyph_item_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType pango_glyph_item_get_type();
+     * }
+     */
+    public static long pango_glyph_item_get_type() {
+        var mh$ = pango_glyph_item_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_glyph_item_split$MH() {
+        return RuntimeHelper.requireNonNull(constants$951.pango_glyph_item_split$MH,"pango_glyph_item_split");
+    }
+    /**
+     * {@snippet :
+     * PangoGlyphItem* pango_glyph_item_split(PangoGlyphItem* orig, char* text, int split_index);
+     * }
+     */
+    public static MemorySegment pango_glyph_item_split(MemorySegment orig, MemorySegment text, int split_index) {
+        var mh$ = pango_glyph_item_split$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(orig, text, split_index);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_glyph_item_copy$MH() {
+        return RuntimeHelper.requireNonNull(constants$951.pango_glyph_item_copy$MH,"pango_glyph_item_copy");
+    }
+    /**
+     * {@snippet :
+     * PangoGlyphItem* pango_glyph_item_copy(PangoGlyphItem* orig);
+     * }
+     */
+    public static MemorySegment pango_glyph_item_copy(MemorySegment orig) {
+        var mh$ = pango_glyph_item_copy$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(orig);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_glyph_item_free$MH() {
+        return RuntimeHelper.requireNonNull(constants$951.pango_glyph_item_free$MH,"pango_glyph_item_free");
+    }
+    /**
+     * {@snippet :
+     * void pango_glyph_item_free(PangoGlyphItem* glyph_item);
+     * }
+     */
+    public static void pango_glyph_item_free(MemorySegment glyph_item) {
+        var mh$ = pango_glyph_item_free$MH();
+        try {
+            mh$.invokeExact(glyph_item);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_glyph_item_apply_attrs$MH() {
+        return RuntimeHelper.requireNonNull(constants$951.pango_glyph_item_apply_attrs$MH,"pango_glyph_item_apply_attrs");
+    }
+    /**
+     * {@snippet :
+     * GSList* pango_glyph_item_apply_attrs(PangoGlyphItem* glyph_item, char* text, PangoAttrList* list);
+     * }
+     */
+    public static MemorySegment pango_glyph_item_apply_attrs(MemorySegment glyph_item, MemorySegment text, MemorySegment list) {
+        var mh$ = pango_glyph_item_apply_attrs$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(glyph_item, text, list);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_glyph_item_letter_space$MH() {
+        return RuntimeHelper.requireNonNull(constants$951.pango_glyph_item_letter_space$MH,"pango_glyph_item_letter_space");
+    }
+    /**
+     * {@snippet :
+     * void pango_glyph_item_letter_space(PangoGlyphItem* glyph_item, char* text, PangoLogAttr* log_attrs, int letter_spacing);
+     * }
+     */
+    public static void pango_glyph_item_letter_space(MemorySegment glyph_item, MemorySegment text, MemorySegment log_attrs, int letter_spacing) {
+        var mh$ = pango_glyph_item_letter_space$MH();
+        try {
+            mh$.invokeExact(glyph_item, text, log_attrs, letter_spacing);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_glyph_item_get_logical_widths$MH() {
+        return RuntimeHelper.requireNonNull(constants$952.pango_glyph_item_get_logical_widths$MH,"pango_glyph_item_get_logical_widths");
+    }
+    /**
+     * {@snippet :
+     * void pango_glyph_item_get_logical_widths(PangoGlyphItem* glyph_item, char* text, int* logical_widths);
+     * }
+     */
+    public static void pango_glyph_item_get_logical_widths(MemorySegment glyph_item, MemorySegment text, MemorySegment logical_widths) {
+        var mh$ = pango_glyph_item_get_logical_widths$MH();
+        try {
+            mh$.invokeExact(glyph_item, text, logical_widths);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_glyph_item_iter_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$952.pango_glyph_item_iter_get_type$MH,"pango_glyph_item_iter_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType pango_glyph_item_iter_get_type();
+     * }
+     */
+    public static long pango_glyph_item_iter_get_type() {
+        var mh$ = pango_glyph_item_iter_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_glyph_item_iter_copy$MH() {
+        return RuntimeHelper.requireNonNull(constants$952.pango_glyph_item_iter_copy$MH,"pango_glyph_item_iter_copy");
+    }
+    /**
+     * {@snippet :
+     * PangoGlyphItemIter* pango_glyph_item_iter_copy(PangoGlyphItemIter* orig);
+     * }
+     */
+    public static MemorySegment pango_glyph_item_iter_copy(MemorySegment orig) {
+        var mh$ = pango_glyph_item_iter_copy$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(orig);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_glyph_item_iter_free$MH() {
+        return RuntimeHelper.requireNonNull(constants$952.pango_glyph_item_iter_free$MH,"pango_glyph_item_iter_free");
+    }
+    /**
+     * {@snippet :
+     * void pango_glyph_item_iter_free(PangoGlyphItemIter* iter);
+     * }
+     */
+    public static void pango_glyph_item_iter_free(MemorySegment iter) {
+        var mh$ = pango_glyph_item_iter_free$MH();
+        try {
+            mh$.invokeExact(iter);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_glyph_item_iter_init_start$MH() {
+        return RuntimeHelper.requireNonNull(constants$952.pango_glyph_item_iter_init_start$MH,"pango_glyph_item_iter_init_start");
+    }
+    /**
+     * {@snippet :
+     * gboolean pango_glyph_item_iter_init_start(PangoGlyphItemIter* iter, PangoGlyphItem* glyph_item, char* text);
+     * }
+     */
+    public static int pango_glyph_item_iter_init_start(MemorySegment iter, MemorySegment glyph_item, MemorySegment text) {
+        var mh$ = pango_glyph_item_iter_init_start$MH();
+        try {
+            return (int)mh$.invokeExact(iter, glyph_item, text);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_glyph_item_iter_init_end$MH() {
+        return RuntimeHelper.requireNonNull(constants$952.pango_glyph_item_iter_init_end$MH,"pango_glyph_item_iter_init_end");
+    }
+    /**
+     * {@snippet :
+     * gboolean pango_glyph_item_iter_init_end(PangoGlyphItemIter* iter, PangoGlyphItem* glyph_item, char* text);
+     * }
+     */
+    public static int pango_glyph_item_iter_init_end(MemorySegment iter, MemorySegment glyph_item, MemorySegment text) {
+        var mh$ = pango_glyph_item_iter_init_end$MH();
+        try {
+            return (int)mh$.invokeExact(iter, glyph_item, text);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_glyph_item_iter_next_cluster$MH() {
+        return RuntimeHelper.requireNonNull(constants$953.pango_glyph_item_iter_next_cluster$MH,"pango_glyph_item_iter_next_cluster");
+    }
+    /**
+     * {@snippet :
+     * gboolean pango_glyph_item_iter_next_cluster(PangoGlyphItemIter* iter);
+     * }
+     */
+    public static int pango_glyph_item_iter_next_cluster(MemorySegment iter) {
+        var mh$ = pango_glyph_item_iter_next_cluster$MH();
+        try {
+            return (int)mh$.invokeExact(iter);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_glyph_item_iter_prev_cluster$MH() {
+        return RuntimeHelper.requireNonNull(constants$953.pango_glyph_item_iter_prev_cluster$MH,"pango_glyph_item_iter_prev_cluster");
+    }
+    /**
+     * {@snippet :
+     * gboolean pango_glyph_item_iter_prev_cluster(PangoGlyphItemIter* iter);
+     * }
+     */
+    public static int pango_glyph_item_iter_prev_cluster(MemorySegment iter) {
+        var mh$ = pango_glyph_item_iter_prev_cluster$MH();
+        try {
+            return (int)mh$.invokeExact(iter);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_TAB_LEFT = 0;
+     * }
+     */
+    public static int PANGO_TAB_LEFT() {
+        return (int)0L;
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_TAB_RIGHT = 1;
+     * }
+     */
+    public static int PANGO_TAB_RIGHT() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_TAB_CENTER = 2;
+     * }
+     */
+    public static int PANGO_TAB_CENTER() {
+        return (int)2L;
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_TAB_DECIMAL = 3;
+     * }
+     */
+    public static int PANGO_TAB_DECIMAL() {
+        return (int)3L;
+    }
+    public static MethodHandle pango_tab_array_new$MH() {
+        return RuntimeHelper.requireNonNull(constants$953.pango_tab_array_new$MH,"pango_tab_array_new");
+    }
+    /**
+     * {@snippet :
+     * PangoTabArray* pango_tab_array_new(gint initial_size, gboolean positions_in_pixels);
+     * }
+     */
+    public static MemorySegment pango_tab_array_new(int initial_size, int positions_in_pixels) {
+        var mh$ = pango_tab_array_new$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(initial_size, positions_in_pixels);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_tab_array_new_with_positions$MH() {
+        return RuntimeHelper.requireNonNull(constants$953.pango_tab_array_new_with_positions$MH,"pango_tab_array_new_with_positions");
+    }
+    /**
+     * {@snippet :
+     * PangoTabArray* pango_tab_array_new_with_positions(gint size, gboolean positions_in_pixels, PangoTabAlign first_alignment, gint first_position,...);
+     * }
+     */
+    public static MemorySegment pango_tab_array_new_with_positions(int size, int positions_in_pixels, int first_alignment, int first_position, Object... x4) {
+        var mh$ = pango_tab_array_new_with_positions$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(size, positions_in_pixels, first_alignment, first_position, x4);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_tab_array_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$953.pango_tab_array_get_type$MH,"pango_tab_array_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType pango_tab_array_get_type();
+     * }
+     */
+    public static long pango_tab_array_get_type() {
+        var mh$ = pango_tab_array_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_tab_array_copy$MH() {
+        return RuntimeHelper.requireNonNull(constants$953.pango_tab_array_copy$MH,"pango_tab_array_copy");
+    }
+    /**
+     * {@snippet :
+     * PangoTabArray* pango_tab_array_copy(PangoTabArray* src);
+     * }
+     */
+    public static MemorySegment pango_tab_array_copy(MemorySegment src) {
+        var mh$ = pango_tab_array_copy$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(src);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_tab_array_free$MH() {
+        return RuntimeHelper.requireNonNull(constants$954.pango_tab_array_free$MH,"pango_tab_array_free");
+    }
+    /**
+     * {@snippet :
+     * void pango_tab_array_free(PangoTabArray* tab_array);
+     * }
+     */
+    public static void pango_tab_array_free(MemorySegment tab_array) {
+        var mh$ = pango_tab_array_free$MH();
+        try {
+            mh$.invokeExact(tab_array);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_tab_array_get_size$MH() {
+        return RuntimeHelper.requireNonNull(constants$954.pango_tab_array_get_size$MH,"pango_tab_array_get_size");
+    }
+    /**
+     * {@snippet :
+     * gint pango_tab_array_get_size(PangoTabArray* tab_array);
+     * }
+     */
+    public static int pango_tab_array_get_size(MemorySegment tab_array) {
+        var mh$ = pango_tab_array_get_size$MH();
+        try {
+            return (int)mh$.invokeExact(tab_array);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_tab_array_resize$MH() {
+        return RuntimeHelper.requireNonNull(constants$954.pango_tab_array_resize$MH,"pango_tab_array_resize");
+    }
+    /**
+     * {@snippet :
+     * void pango_tab_array_resize(PangoTabArray* tab_array, gint new_size);
+     * }
+     */
+    public static void pango_tab_array_resize(MemorySegment tab_array, int new_size) {
+        var mh$ = pango_tab_array_resize$MH();
+        try {
+            mh$.invokeExact(tab_array, new_size);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_tab_array_set_tab$MH() {
+        return RuntimeHelper.requireNonNull(constants$954.pango_tab_array_set_tab$MH,"pango_tab_array_set_tab");
+    }
+    /**
+     * {@snippet :
+     * void pango_tab_array_set_tab(PangoTabArray* tab_array, gint tab_index, PangoTabAlign alignment, gint location);
+     * }
+     */
+    public static void pango_tab_array_set_tab(MemorySegment tab_array, int tab_index, int alignment, int location) {
+        var mh$ = pango_tab_array_set_tab$MH();
+        try {
+            mh$.invokeExact(tab_array, tab_index, alignment, location);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_tab_array_get_tab$MH() {
+        return RuntimeHelper.requireNonNull(constants$954.pango_tab_array_get_tab$MH,"pango_tab_array_get_tab");
+    }
+    /**
+     * {@snippet :
+     * void pango_tab_array_get_tab(PangoTabArray* tab_array, gint tab_index, PangoTabAlign* alignment, gint* location);
+     * }
+     */
+    public static void pango_tab_array_get_tab(MemorySegment tab_array, int tab_index, MemorySegment alignment, MemorySegment location) {
+        var mh$ = pango_tab_array_get_tab$MH();
+        try {
+            mh$.invokeExact(tab_array, tab_index, alignment, location);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_tab_array_get_tabs$MH() {
+        return RuntimeHelper.requireNonNull(constants$954.pango_tab_array_get_tabs$MH,"pango_tab_array_get_tabs");
+    }
+    /**
+     * {@snippet :
+     * void pango_tab_array_get_tabs(PangoTabArray* tab_array, PangoTabAlign** alignments, gint** locations);
+     * }
+     */
+    public static void pango_tab_array_get_tabs(MemorySegment tab_array, MemorySegment alignments, MemorySegment locations) {
+        var mh$ = pango_tab_array_get_tabs$MH();
+        try {
+            mh$.invokeExact(tab_array, alignments, locations);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_tab_array_get_positions_in_pixels$MH() {
+        return RuntimeHelper.requireNonNull(constants$955.pango_tab_array_get_positions_in_pixels$MH,"pango_tab_array_get_positions_in_pixels");
+    }
+    /**
+     * {@snippet :
+     * gboolean pango_tab_array_get_positions_in_pixels(PangoTabArray* tab_array);
+     * }
+     */
+    public static int pango_tab_array_get_positions_in_pixels(MemorySegment tab_array) {
+        var mh$ = pango_tab_array_get_positions_in_pixels$MH();
+        try {
+            return (int)mh$.invokeExact(tab_array);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_tab_array_set_positions_in_pixels$MH() {
+        return RuntimeHelper.requireNonNull(constants$955.pango_tab_array_set_positions_in_pixels$MH,"pango_tab_array_set_positions_in_pixels");
+    }
+    /**
+     * {@snippet :
+     * void pango_tab_array_set_positions_in_pixels(PangoTabArray* tab_array, gboolean positions_in_pixels);
+     * }
+     */
+    public static void pango_tab_array_set_positions_in_pixels(MemorySegment tab_array, int positions_in_pixels) {
+        var mh$ = pango_tab_array_set_positions_in_pixels$MH();
+        try {
+            mh$.invokeExact(tab_array, positions_in_pixels);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_tab_array_to_string$MH() {
+        return RuntimeHelper.requireNonNull(constants$955.pango_tab_array_to_string$MH,"pango_tab_array_to_string");
+    }
+    /**
+     * {@snippet :
+     * char* pango_tab_array_to_string(PangoTabArray* tab_array);
+     * }
+     */
+    public static MemorySegment pango_tab_array_to_string(MemorySegment tab_array) {
+        var mh$ = pango_tab_array_to_string$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(tab_array);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_tab_array_from_string$MH() {
+        return RuntimeHelper.requireNonNull(constants$955.pango_tab_array_from_string$MH,"pango_tab_array_from_string");
+    }
+    /**
+     * {@snippet :
+     * PangoTabArray* pango_tab_array_from_string(char* text);
+     * }
+     */
+    public static MemorySegment pango_tab_array_from_string(MemorySegment text) {
+        var mh$ = pango_tab_array_from_string$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(text);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_tab_array_set_decimal_point$MH() {
+        return RuntimeHelper.requireNonNull(constants$955.pango_tab_array_set_decimal_point$MH,"pango_tab_array_set_decimal_point");
+    }
+    /**
+     * {@snippet :
+     * void pango_tab_array_set_decimal_point(PangoTabArray* tab_array, int tab_index, gunichar decimal_point);
+     * }
+     */
+    public static void pango_tab_array_set_decimal_point(MemorySegment tab_array, int tab_index, int decimal_point) {
+        var mh$ = pango_tab_array_set_decimal_point$MH();
+        try {
+            mh$.invokeExact(tab_array, tab_index, decimal_point);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_tab_array_get_decimal_point$MH() {
+        return RuntimeHelper.requireNonNull(constants$955.pango_tab_array_get_decimal_point$MH,"pango_tab_array_get_decimal_point");
+    }
+    /**
+     * {@snippet :
+     * gunichar pango_tab_array_get_decimal_point(PangoTabArray* tab_array, int tab_index);
+     * }
+     */
+    public static int pango_tab_array_get_decimal_point(MemorySegment tab_array, int tab_index) {
+        var mh$ = pango_tab_array_get_decimal_point$MH();
+        try {
+            return (int)mh$.invokeExact(tab_array, tab_index);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_tab_array_sort$MH() {
+        return RuntimeHelper.requireNonNull(constants$956.pango_tab_array_sort$MH,"pango_tab_array_sort");
+    }
+    /**
+     * {@snippet :
+     * void pango_tab_array_sort(PangoTabArray* tab_array);
+     * }
+     */
+    public static void pango_tab_array_sort(MemorySegment tab_array) {
+        var mh$ = pango_tab_array_sort$MH();
+        try {
+            mh$.invokeExact(tab_array);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    /**
+     * {@snippet :
+     * typedef struct _PangoTabArray* PangoTabArray_autoptr;
+     * }
+     */
+    public static final OfAddress PangoTabArray_autoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GList* PangoTabArray_listautoptr;
+     * }
+     */
+    public static final OfAddress PangoTabArray_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* PangoTabArray_slistautoptr;
+     * }
+     */
+    public static final OfAddress PangoTabArray_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* PangoTabArray_queueautoptr;
+     * }
+     */
+    public static final OfAddress PangoTabArray_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * enum .PANGO_ALIGN_LEFT = 0;
+     * }
+     */
+    public static int PANGO_ALIGN_LEFT() {
+        return (int)0L;
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_ALIGN_CENTER = 1;
+     * }
+     */
+    public static int PANGO_ALIGN_CENTER() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_ALIGN_RIGHT = 2;
+     * }
+     */
+    public static int PANGO_ALIGN_RIGHT() {
+        return (int)2L;
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_WRAP_WORD = 0;
+     * }
+     */
+    public static int PANGO_WRAP_WORD() {
+        return (int)0L;
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_WRAP_CHAR = 1;
+     * }
+     */
+    public static int PANGO_WRAP_CHAR() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_WRAP_WORD_CHAR = 2;
+     * }
+     */
+    public static int PANGO_WRAP_WORD_CHAR() {
+        return (int)2L;
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_ELLIPSIZE_NONE = 0;
+     * }
+     */
+    public static int PANGO_ELLIPSIZE_NONE() {
+        return (int)0L;
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_ELLIPSIZE_START = 1;
+     * }
+     */
+    public static int PANGO_ELLIPSIZE_START() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_ELLIPSIZE_MIDDLE = 2;
+     * }
+     */
+    public static int PANGO_ELLIPSIZE_MIDDLE() {
+        return (int)2L;
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_ELLIPSIZE_END = 3;
+     * }
+     */
+    public static int PANGO_ELLIPSIZE_END() {
+        return (int)3L;
+    }
+    public static MethodHandle pango_layout_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$956.pango_layout_get_type$MH,"pango_layout_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType pango_layout_get_type();
+     * }
+     */
+    public static long pango_layout_get_type() {
+        var mh$ = pango_layout_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_new$MH() {
+        return RuntimeHelper.requireNonNull(constants$956.pango_layout_new$MH,"pango_layout_new");
+    }
+    /**
+     * {@snippet :
+     * PangoLayout* pango_layout_new(PangoContext* context);
+     * }
+     */
+    public static MemorySegment pango_layout_new(MemorySegment context) {
+        var mh$ = pango_layout_new$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(context);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_copy$MH() {
+        return RuntimeHelper.requireNonNull(constants$956.pango_layout_copy$MH,"pango_layout_copy");
+    }
+    /**
+     * {@snippet :
+     * PangoLayout* pango_layout_copy(PangoLayout* src);
+     * }
+     */
+    public static MemorySegment pango_layout_copy(MemorySegment src) {
+        var mh$ = pango_layout_copy$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(src);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_get_context$MH() {
+        return RuntimeHelper.requireNonNull(constants$956.pango_layout_get_context$MH,"pango_layout_get_context");
+    }
+    /**
+     * {@snippet :
+     * PangoContext* pango_layout_get_context(PangoLayout* layout);
+     * }
+     */
+    public static MemorySegment pango_layout_get_context(MemorySegment layout) {
+        var mh$ = pango_layout_get_context$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(layout);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_set_attributes$MH() {
+        return RuntimeHelper.requireNonNull(constants$956.pango_layout_set_attributes$MH,"pango_layout_set_attributes");
+    }
+    /**
+     * {@snippet :
+     * void pango_layout_set_attributes(PangoLayout* layout, PangoAttrList* attrs);
+     * }
+     */
+    public static void pango_layout_set_attributes(MemorySegment layout, MemorySegment attrs) {
+        var mh$ = pango_layout_set_attributes$MH();
+        try {
+            mh$.invokeExact(layout, attrs);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_get_attributes$MH() {
+        return RuntimeHelper.requireNonNull(constants$957.pango_layout_get_attributes$MH,"pango_layout_get_attributes");
+    }
+    /**
+     * {@snippet :
+     * PangoAttrList* pango_layout_get_attributes(PangoLayout* layout);
+     * }
+     */
+    public static MemorySegment pango_layout_get_attributes(MemorySegment layout) {
+        var mh$ = pango_layout_get_attributes$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(layout);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_set_text$MH() {
+        return RuntimeHelper.requireNonNull(constants$957.pango_layout_set_text$MH,"pango_layout_set_text");
+    }
+    /**
+     * {@snippet :
+     * void pango_layout_set_text(PangoLayout* layout, char* text, int length);
+     * }
+     */
+    public static void pango_layout_set_text(MemorySegment layout, MemorySegment text, int length) {
+        var mh$ = pango_layout_set_text$MH();
+        try {
+            mh$.invokeExact(layout, text, length);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_get_text$MH() {
+        return RuntimeHelper.requireNonNull(constants$957.pango_layout_get_text$MH,"pango_layout_get_text");
+    }
+    /**
+     * {@snippet :
+     * char* pango_layout_get_text(PangoLayout* layout);
+     * }
+     */
+    public static MemorySegment pango_layout_get_text(MemorySegment layout) {
+        var mh$ = pango_layout_get_text$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(layout);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_get_character_count$MH() {
+        return RuntimeHelper.requireNonNull(constants$957.pango_layout_get_character_count$MH,"pango_layout_get_character_count");
+    }
+    /**
+     * {@snippet :
+     * gint pango_layout_get_character_count(PangoLayout* layout);
+     * }
+     */
+    public static int pango_layout_get_character_count(MemorySegment layout) {
+        var mh$ = pango_layout_get_character_count$MH();
+        try {
+            return (int)mh$.invokeExact(layout);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_set_markup$MH() {
+        return RuntimeHelper.requireNonNull(constants$957.pango_layout_set_markup$MH,"pango_layout_set_markup");
+    }
+    /**
+     * {@snippet :
+     * void pango_layout_set_markup(PangoLayout* layout, char* markup, int length);
+     * }
+     */
+    public static void pango_layout_set_markup(MemorySegment layout, MemorySegment markup, int length) {
+        var mh$ = pango_layout_set_markup$MH();
+        try {
+            mh$.invokeExact(layout, markup, length);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_set_markup_with_accel$MH() {
+        return RuntimeHelper.requireNonNull(constants$957.pango_layout_set_markup_with_accel$MH,"pango_layout_set_markup_with_accel");
+    }
+    /**
+     * {@snippet :
+     * void pango_layout_set_markup_with_accel(PangoLayout* layout, char* markup, int length, gunichar accel_marker, gunichar* accel_char);
+     * }
+     */
+    public static void pango_layout_set_markup_with_accel(MemorySegment layout, MemorySegment markup, int length, int accel_marker, MemorySegment accel_char) {
+        var mh$ = pango_layout_set_markup_with_accel$MH();
+        try {
+            mh$.invokeExact(layout, markup, length, accel_marker, accel_char);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_set_font_description$MH() {
+        return RuntimeHelper.requireNonNull(constants$958.pango_layout_set_font_description$MH,"pango_layout_set_font_description");
+    }
+    /**
+     * {@snippet :
+     * void pango_layout_set_font_description(PangoLayout* layout, const PangoFontDescription* desc);
+     * }
+     */
+    public static void pango_layout_set_font_description(MemorySegment layout, MemorySegment desc) {
+        var mh$ = pango_layout_set_font_description$MH();
+        try {
+            mh$.invokeExact(layout, desc);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_get_font_description$MH() {
+        return RuntimeHelper.requireNonNull(constants$958.pango_layout_get_font_description$MH,"pango_layout_get_font_description");
+    }
+    /**
+     * {@snippet :
+     * const PangoFontDescription* pango_layout_get_font_description(PangoLayout* layout);
+     * }
+     */
+    public static MemorySegment pango_layout_get_font_description(MemorySegment layout) {
+        var mh$ = pango_layout_get_font_description$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(layout);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_set_width$MH() {
+        return RuntimeHelper.requireNonNull(constants$958.pango_layout_set_width$MH,"pango_layout_set_width");
+    }
+    /**
+     * {@snippet :
+     * void pango_layout_set_width(PangoLayout* layout, int width);
+     * }
+     */
+    public static void pango_layout_set_width(MemorySegment layout, int width) {
+        var mh$ = pango_layout_set_width$MH();
+        try {
+            mh$.invokeExact(layout, width);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_get_width$MH() {
+        return RuntimeHelper.requireNonNull(constants$958.pango_layout_get_width$MH,"pango_layout_get_width");
+    }
+    /**
+     * {@snippet :
+     * int pango_layout_get_width(PangoLayout* layout);
+     * }
+     */
+    public static int pango_layout_get_width(MemorySegment layout) {
+        var mh$ = pango_layout_get_width$MH();
+        try {
+            return (int)mh$.invokeExact(layout);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_set_height$MH() {
+        return RuntimeHelper.requireNonNull(constants$958.pango_layout_set_height$MH,"pango_layout_set_height");
+    }
+    /**
+     * {@snippet :
+     * void pango_layout_set_height(PangoLayout* layout, int height);
+     * }
+     */
+    public static void pango_layout_set_height(MemorySegment layout, int height) {
+        var mh$ = pango_layout_set_height$MH();
+        try {
+            mh$.invokeExact(layout, height);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_get_height$MH() {
+        return RuntimeHelper.requireNonNull(constants$958.pango_layout_get_height$MH,"pango_layout_get_height");
+    }
+    /**
+     * {@snippet :
+     * int pango_layout_get_height(PangoLayout* layout);
+     * }
+     */
+    public static int pango_layout_get_height(MemorySegment layout) {
+        var mh$ = pango_layout_get_height$MH();
+        try {
+            return (int)mh$.invokeExact(layout);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_set_wrap$MH() {
+        return RuntimeHelper.requireNonNull(constants$959.pango_layout_set_wrap$MH,"pango_layout_set_wrap");
+    }
+    /**
+     * {@snippet :
+     * void pango_layout_set_wrap(PangoLayout* layout, PangoWrapMode wrap);
+     * }
+     */
+    public static void pango_layout_set_wrap(MemorySegment layout, int wrap) {
+        var mh$ = pango_layout_set_wrap$MH();
+        try {
+            mh$.invokeExact(layout, wrap);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_get_wrap$MH() {
+        return RuntimeHelper.requireNonNull(constants$959.pango_layout_get_wrap$MH,"pango_layout_get_wrap");
+    }
+    /**
+     * {@snippet :
+     * PangoWrapMode pango_layout_get_wrap(PangoLayout* layout);
+     * }
+     */
+    public static int pango_layout_get_wrap(MemorySegment layout) {
+        var mh$ = pango_layout_get_wrap$MH();
+        try {
+            return (int)mh$.invokeExact(layout);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_is_wrapped$MH() {
+        return RuntimeHelper.requireNonNull(constants$959.pango_layout_is_wrapped$MH,"pango_layout_is_wrapped");
+    }
+    /**
+     * {@snippet :
+     * gboolean pango_layout_is_wrapped(PangoLayout* layout);
+     * }
+     */
+    public static int pango_layout_is_wrapped(MemorySegment layout) {
+        var mh$ = pango_layout_is_wrapped$MH();
+        try {
+            return (int)mh$.invokeExact(layout);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_set_indent$MH() {
+        return RuntimeHelper.requireNonNull(constants$959.pango_layout_set_indent$MH,"pango_layout_set_indent");
+    }
+    /**
+     * {@snippet :
+     * void pango_layout_set_indent(PangoLayout* layout, int indent);
+     * }
+     */
+    public static void pango_layout_set_indent(MemorySegment layout, int indent) {
+        var mh$ = pango_layout_set_indent$MH();
+        try {
+            mh$.invokeExact(layout, indent);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_get_indent$MH() {
+        return RuntimeHelper.requireNonNull(constants$959.pango_layout_get_indent$MH,"pango_layout_get_indent");
+    }
+    /**
+     * {@snippet :
+     * int pango_layout_get_indent(PangoLayout* layout);
+     * }
+     */
+    public static int pango_layout_get_indent(MemorySegment layout) {
+        var mh$ = pango_layout_get_indent$MH();
+        try {
+            return (int)mh$.invokeExact(layout);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_set_spacing$MH() {
+        return RuntimeHelper.requireNonNull(constants$959.pango_layout_set_spacing$MH,"pango_layout_set_spacing");
+    }
+    /**
+     * {@snippet :
+     * void pango_layout_set_spacing(PangoLayout* layout, int spacing);
+     * }
+     */
+    public static void pango_layout_set_spacing(MemorySegment layout, int spacing) {
+        var mh$ = pango_layout_set_spacing$MH();
+        try {
+            mh$.invokeExact(layout, spacing);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_get_spacing$MH() {
+        return RuntimeHelper.requireNonNull(constants$960.pango_layout_get_spacing$MH,"pango_layout_get_spacing");
+    }
+    /**
+     * {@snippet :
+     * int pango_layout_get_spacing(PangoLayout* layout);
+     * }
+     */
+    public static int pango_layout_get_spacing(MemorySegment layout) {
+        var mh$ = pango_layout_get_spacing$MH();
+        try {
+            return (int)mh$.invokeExact(layout);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_set_line_spacing$MH() {
+        return RuntimeHelper.requireNonNull(constants$960.pango_layout_set_line_spacing$MH,"pango_layout_set_line_spacing");
+    }
+    /**
+     * {@snippet :
+     * void pango_layout_set_line_spacing(PangoLayout* layout, float factor);
+     * }
+     */
+    public static void pango_layout_set_line_spacing(MemorySegment layout, float factor) {
+        var mh$ = pango_layout_set_line_spacing$MH();
+        try {
+            mh$.invokeExact(layout, factor);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_get_line_spacing$MH() {
+        return RuntimeHelper.requireNonNull(constants$960.pango_layout_get_line_spacing$MH,"pango_layout_get_line_spacing");
+    }
+    /**
+     * {@snippet :
+     * float pango_layout_get_line_spacing(PangoLayout* layout);
+     * }
+     */
+    public static float pango_layout_get_line_spacing(MemorySegment layout) {
+        var mh$ = pango_layout_get_line_spacing$MH();
+        try {
+            return (float)mh$.invokeExact(layout);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_set_justify$MH() {
+        return RuntimeHelper.requireNonNull(constants$960.pango_layout_set_justify$MH,"pango_layout_set_justify");
+    }
+    /**
+     * {@snippet :
+     * void pango_layout_set_justify(PangoLayout* layout, gboolean justify);
+     * }
+     */
+    public static void pango_layout_set_justify(MemorySegment layout, int justify) {
+        var mh$ = pango_layout_set_justify$MH();
+        try {
+            mh$.invokeExact(layout, justify);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_get_justify$MH() {
+        return RuntimeHelper.requireNonNull(constants$960.pango_layout_get_justify$MH,"pango_layout_get_justify");
+    }
+    /**
+     * {@snippet :
+     * gboolean pango_layout_get_justify(PangoLayout* layout);
+     * }
+     */
+    public static int pango_layout_get_justify(MemorySegment layout) {
+        var mh$ = pango_layout_get_justify$MH();
+        try {
+            return (int)mh$.invokeExact(layout);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_set_justify_last_line$MH() {
+        return RuntimeHelper.requireNonNull(constants$960.pango_layout_set_justify_last_line$MH,"pango_layout_set_justify_last_line");
+    }
+    /**
+     * {@snippet :
+     * void pango_layout_set_justify_last_line(PangoLayout* layout, gboolean justify);
+     * }
+     */
+    public static void pango_layout_set_justify_last_line(MemorySegment layout, int justify) {
+        var mh$ = pango_layout_set_justify_last_line$MH();
+        try {
+            mh$.invokeExact(layout, justify);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_get_justify_last_line$MH() {
+        return RuntimeHelper.requireNonNull(constants$961.pango_layout_get_justify_last_line$MH,"pango_layout_get_justify_last_line");
+    }
+    /**
+     * {@snippet :
+     * gboolean pango_layout_get_justify_last_line(PangoLayout* layout);
+     * }
+     */
+    public static int pango_layout_get_justify_last_line(MemorySegment layout) {
+        var mh$ = pango_layout_get_justify_last_line$MH();
+        try {
+            return (int)mh$.invokeExact(layout);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_set_auto_dir$MH() {
+        return RuntimeHelper.requireNonNull(constants$961.pango_layout_set_auto_dir$MH,"pango_layout_set_auto_dir");
+    }
+    /**
+     * {@snippet :
+     * void pango_layout_set_auto_dir(PangoLayout* layout, gboolean auto_dir);
+     * }
+     */
+    public static void pango_layout_set_auto_dir(MemorySegment layout, int auto_dir) {
+        var mh$ = pango_layout_set_auto_dir$MH();
+        try {
+            mh$.invokeExact(layout, auto_dir);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_get_auto_dir$MH() {
+        return RuntimeHelper.requireNonNull(constants$961.pango_layout_get_auto_dir$MH,"pango_layout_get_auto_dir");
+    }
+    /**
+     * {@snippet :
+     * gboolean pango_layout_get_auto_dir(PangoLayout* layout);
+     * }
+     */
+    public static int pango_layout_get_auto_dir(MemorySegment layout) {
+        var mh$ = pango_layout_get_auto_dir$MH();
+        try {
+            return (int)mh$.invokeExact(layout);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_set_alignment$MH() {
+        return RuntimeHelper.requireNonNull(constants$961.pango_layout_set_alignment$MH,"pango_layout_set_alignment");
+    }
+    /**
+     * {@snippet :
+     * void pango_layout_set_alignment(PangoLayout* layout, PangoAlignment alignment);
+     * }
+     */
+    public static void pango_layout_set_alignment(MemorySegment layout, int alignment) {
+        var mh$ = pango_layout_set_alignment$MH();
+        try {
+            mh$.invokeExact(layout, alignment);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_get_alignment$MH() {
+        return RuntimeHelper.requireNonNull(constants$961.pango_layout_get_alignment$MH,"pango_layout_get_alignment");
+    }
+    /**
+     * {@snippet :
+     * PangoAlignment pango_layout_get_alignment(PangoLayout* layout);
+     * }
+     */
+    public static int pango_layout_get_alignment(MemorySegment layout) {
+        var mh$ = pango_layout_get_alignment$MH();
+        try {
+            return (int)mh$.invokeExact(layout);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_set_tabs$MH() {
+        return RuntimeHelper.requireNonNull(constants$961.pango_layout_set_tabs$MH,"pango_layout_set_tabs");
+    }
+    /**
+     * {@snippet :
+     * void pango_layout_set_tabs(PangoLayout* layout, PangoTabArray* tabs);
+     * }
+     */
+    public static void pango_layout_set_tabs(MemorySegment layout, MemorySegment tabs) {
+        var mh$ = pango_layout_set_tabs$MH();
+        try {
+            mh$.invokeExact(layout, tabs);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_get_tabs$MH() {
+        return RuntimeHelper.requireNonNull(constants$962.pango_layout_get_tabs$MH,"pango_layout_get_tabs");
+    }
+    /**
+     * {@snippet :
+     * PangoTabArray* pango_layout_get_tabs(PangoLayout* layout);
+     * }
+     */
+    public static MemorySegment pango_layout_get_tabs(MemorySegment layout) {
+        var mh$ = pango_layout_get_tabs$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(layout);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_set_single_paragraph_mode$MH() {
+        return RuntimeHelper.requireNonNull(constants$962.pango_layout_set_single_paragraph_mode$MH,"pango_layout_set_single_paragraph_mode");
+    }
+    /**
+     * {@snippet :
+     * void pango_layout_set_single_paragraph_mode(PangoLayout* layout, gboolean setting);
+     * }
+     */
+    public static void pango_layout_set_single_paragraph_mode(MemorySegment layout, int setting) {
+        var mh$ = pango_layout_set_single_paragraph_mode$MH();
+        try {
+            mh$.invokeExact(layout, setting);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_get_single_paragraph_mode$MH() {
+        return RuntimeHelper.requireNonNull(constants$962.pango_layout_get_single_paragraph_mode$MH,"pango_layout_get_single_paragraph_mode");
+    }
+    /**
+     * {@snippet :
+     * gboolean pango_layout_get_single_paragraph_mode(PangoLayout* layout);
+     * }
+     */
+    public static int pango_layout_get_single_paragraph_mode(MemorySegment layout) {
+        var mh$ = pango_layout_get_single_paragraph_mode$MH();
+        try {
+            return (int)mh$.invokeExact(layout);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_set_ellipsize$MH() {
+        return RuntimeHelper.requireNonNull(constants$962.pango_layout_set_ellipsize$MH,"pango_layout_set_ellipsize");
+    }
+    /**
+     * {@snippet :
+     * void pango_layout_set_ellipsize(PangoLayout* layout, PangoEllipsizeMode ellipsize);
+     * }
+     */
+    public static void pango_layout_set_ellipsize(MemorySegment layout, int ellipsize) {
+        var mh$ = pango_layout_set_ellipsize$MH();
+        try {
+            mh$.invokeExact(layout, ellipsize);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_get_ellipsize$MH() {
+        return RuntimeHelper.requireNonNull(constants$962.pango_layout_get_ellipsize$MH,"pango_layout_get_ellipsize");
+    }
+    /**
+     * {@snippet :
+     * PangoEllipsizeMode pango_layout_get_ellipsize(PangoLayout* layout);
+     * }
+     */
+    public static int pango_layout_get_ellipsize(MemorySegment layout) {
+        var mh$ = pango_layout_get_ellipsize$MH();
+        try {
+            return (int)mh$.invokeExact(layout);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_is_ellipsized$MH() {
+        return RuntimeHelper.requireNonNull(constants$962.pango_layout_is_ellipsized$MH,"pango_layout_is_ellipsized");
+    }
+    /**
+     * {@snippet :
+     * gboolean pango_layout_is_ellipsized(PangoLayout* layout);
+     * }
+     */
+    public static int pango_layout_is_ellipsized(MemorySegment layout) {
+        var mh$ = pango_layout_is_ellipsized$MH();
+        try {
+            return (int)mh$.invokeExact(layout);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_get_unknown_glyphs_count$MH() {
+        return RuntimeHelper.requireNonNull(constants$963.pango_layout_get_unknown_glyphs_count$MH,"pango_layout_get_unknown_glyphs_count");
+    }
+    /**
+     * {@snippet :
+     * int pango_layout_get_unknown_glyphs_count(PangoLayout* layout);
+     * }
+     */
+    public static int pango_layout_get_unknown_glyphs_count(MemorySegment layout) {
+        var mh$ = pango_layout_get_unknown_glyphs_count$MH();
+        try {
+            return (int)mh$.invokeExact(layout);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_get_direction$MH() {
+        return RuntimeHelper.requireNonNull(constants$963.pango_layout_get_direction$MH,"pango_layout_get_direction");
+    }
+    /**
+     * {@snippet :
+     * PangoDirection pango_layout_get_direction(PangoLayout* layout, int index);
+     * }
+     */
+    public static int pango_layout_get_direction(MemorySegment layout, int index) {
+        var mh$ = pango_layout_get_direction$MH();
+        try {
+            return (int)mh$.invokeExact(layout, index);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_context_changed$MH() {
+        return RuntimeHelper.requireNonNull(constants$963.pango_layout_context_changed$MH,"pango_layout_context_changed");
+    }
+    /**
+     * {@snippet :
+     * void pango_layout_context_changed(PangoLayout* layout);
+     * }
+     */
+    public static void pango_layout_context_changed(MemorySegment layout) {
+        var mh$ = pango_layout_context_changed$MH();
+        try {
+            mh$.invokeExact(layout);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_get_serial$MH() {
+        return RuntimeHelper.requireNonNull(constants$963.pango_layout_get_serial$MH,"pango_layout_get_serial");
+    }
+    /**
+     * {@snippet :
+     * guint pango_layout_get_serial(PangoLayout* layout);
+     * }
+     */
+    public static int pango_layout_get_serial(MemorySegment layout) {
+        var mh$ = pango_layout_get_serial$MH();
+        try {
+            return (int)mh$.invokeExact(layout);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_get_log_attrs$MH() {
+        return RuntimeHelper.requireNonNull(constants$963.pango_layout_get_log_attrs$MH,"pango_layout_get_log_attrs");
+    }
+    /**
+     * {@snippet :
+     * void pango_layout_get_log_attrs(PangoLayout* layout, PangoLogAttr** attrs, gint* n_attrs);
+     * }
+     */
+    public static void pango_layout_get_log_attrs(MemorySegment layout, MemorySegment attrs, MemorySegment n_attrs) {
+        var mh$ = pango_layout_get_log_attrs$MH();
+        try {
+            mh$.invokeExact(layout, attrs, n_attrs);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_get_log_attrs_readonly$MH() {
+        return RuntimeHelper.requireNonNull(constants$963.pango_layout_get_log_attrs_readonly$MH,"pango_layout_get_log_attrs_readonly");
+    }
+    /**
+     * {@snippet :
+     * const PangoLogAttr* pango_layout_get_log_attrs_readonly(PangoLayout* layout, gint* n_attrs);
+     * }
+     */
+    public static MemorySegment pango_layout_get_log_attrs_readonly(MemorySegment layout, MemorySegment n_attrs) {
+        var mh$ = pango_layout_get_log_attrs_readonly$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(layout, n_attrs);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_index_to_pos$MH() {
+        return RuntimeHelper.requireNonNull(constants$964.pango_layout_index_to_pos$MH,"pango_layout_index_to_pos");
+    }
+    /**
+     * {@snippet :
+     * void pango_layout_index_to_pos(PangoLayout* layout, int index_, PangoRectangle* pos);
+     * }
+     */
+    public static void pango_layout_index_to_pos(MemorySegment layout, int index_, MemorySegment pos) {
+        var mh$ = pango_layout_index_to_pos$MH();
+        try {
+            mh$.invokeExact(layout, index_, pos);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_index_to_line_x$MH() {
+        return RuntimeHelper.requireNonNull(constants$964.pango_layout_index_to_line_x$MH,"pango_layout_index_to_line_x");
+    }
+    /**
+     * {@snippet :
+     * void pango_layout_index_to_line_x(PangoLayout* layout, int index_, gboolean trailing, int* line, int* x_pos);
+     * }
+     */
+    public static void pango_layout_index_to_line_x(MemorySegment layout, int index_, int trailing, MemorySegment line, MemorySegment x_pos) {
+        var mh$ = pango_layout_index_to_line_x$MH();
+        try {
+            mh$.invokeExact(layout, index_, trailing, line, x_pos);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_get_cursor_pos$MH() {
+        return RuntimeHelper.requireNonNull(constants$964.pango_layout_get_cursor_pos$MH,"pango_layout_get_cursor_pos");
+    }
+    /**
+     * {@snippet :
+     * void pango_layout_get_cursor_pos(PangoLayout* layout, int index_, PangoRectangle* strong_pos, PangoRectangle* weak_pos);
+     * }
+     */
+    public static void pango_layout_get_cursor_pos(MemorySegment layout, int index_, MemorySegment strong_pos, MemorySegment weak_pos) {
+        var mh$ = pango_layout_get_cursor_pos$MH();
+        try {
+            mh$.invokeExact(layout, index_, strong_pos, weak_pos);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_get_caret_pos$MH() {
+        return RuntimeHelper.requireNonNull(constants$964.pango_layout_get_caret_pos$MH,"pango_layout_get_caret_pos");
+    }
+    /**
+     * {@snippet :
+     * void pango_layout_get_caret_pos(PangoLayout* layout, int index_, PangoRectangle* strong_pos, PangoRectangle* weak_pos);
+     * }
+     */
+    public static void pango_layout_get_caret_pos(MemorySegment layout, int index_, MemorySegment strong_pos, MemorySegment weak_pos) {
+        var mh$ = pango_layout_get_caret_pos$MH();
+        try {
+            mh$.invokeExact(layout, index_, strong_pos, weak_pos);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_move_cursor_visually$MH() {
+        return RuntimeHelper.requireNonNull(constants$964.pango_layout_move_cursor_visually$MH,"pango_layout_move_cursor_visually");
+    }
+    /**
+     * {@snippet :
+     * void pango_layout_move_cursor_visually(PangoLayout* layout, gboolean strong, int old_index, int old_trailing, int direction, int* new_index, int* new_trailing);
+     * }
+     */
+    public static void pango_layout_move_cursor_visually(MemorySegment layout, int strong, int old_index, int old_trailing, int direction, MemorySegment new_index, MemorySegment new_trailing) {
+        var mh$ = pango_layout_move_cursor_visually$MH();
+        try {
+            mh$.invokeExact(layout, strong, old_index, old_trailing, direction, new_index, new_trailing);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_xy_to_index$MH() {
+        return RuntimeHelper.requireNonNull(constants$964.pango_layout_xy_to_index$MH,"pango_layout_xy_to_index");
+    }
+    /**
+     * {@snippet :
+     * gboolean pango_layout_xy_to_index(PangoLayout* layout, int x, int y, int* index_, int* trailing);
+     * }
+     */
+    public static int pango_layout_xy_to_index(MemorySegment layout, int x, int y, MemorySegment index_, MemorySegment trailing) {
+        var mh$ = pango_layout_xy_to_index$MH();
+        try {
+            return (int)mh$.invokeExact(layout, x, y, index_, trailing);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_get_extents$MH() {
+        return RuntimeHelper.requireNonNull(constants$965.pango_layout_get_extents$MH,"pango_layout_get_extents");
+    }
+    /**
+     * {@snippet :
+     * void pango_layout_get_extents(PangoLayout* layout, PangoRectangle* ink_rect, PangoRectangle* logical_rect);
+     * }
+     */
+    public static void pango_layout_get_extents(MemorySegment layout, MemorySegment ink_rect, MemorySegment logical_rect) {
+        var mh$ = pango_layout_get_extents$MH();
+        try {
+            mh$.invokeExact(layout, ink_rect, logical_rect);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_get_pixel_extents$MH() {
+        return RuntimeHelper.requireNonNull(constants$965.pango_layout_get_pixel_extents$MH,"pango_layout_get_pixel_extents");
+    }
+    /**
+     * {@snippet :
+     * void pango_layout_get_pixel_extents(PangoLayout* layout, PangoRectangle* ink_rect, PangoRectangle* logical_rect);
+     * }
+     */
+    public static void pango_layout_get_pixel_extents(MemorySegment layout, MemorySegment ink_rect, MemorySegment logical_rect) {
+        var mh$ = pango_layout_get_pixel_extents$MH();
+        try {
+            mh$.invokeExact(layout, ink_rect, logical_rect);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_get_size$MH() {
+        return RuntimeHelper.requireNonNull(constants$965.pango_layout_get_size$MH,"pango_layout_get_size");
+    }
+    /**
+     * {@snippet :
+     * void pango_layout_get_size(PangoLayout* layout, int* width, int* height);
+     * }
+     */
+    public static void pango_layout_get_size(MemorySegment layout, MemorySegment width, MemorySegment height) {
+        var mh$ = pango_layout_get_size$MH();
+        try {
+            mh$.invokeExact(layout, width, height);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_get_pixel_size$MH() {
+        return RuntimeHelper.requireNonNull(constants$965.pango_layout_get_pixel_size$MH,"pango_layout_get_pixel_size");
+    }
+    /**
+     * {@snippet :
+     * void pango_layout_get_pixel_size(PangoLayout* layout, int* width, int* height);
+     * }
+     */
+    public static void pango_layout_get_pixel_size(MemorySegment layout, MemorySegment width, MemorySegment height) {
+        var mh$ = pango_layout_get_pixel_size$MH();
+        try {
+            mh$.invokeExact(layout, width, height);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_get_baseline$MH() {
+        return RuntimeHelper.requireNonNull(constants$965.pango_layout_get_baseline$MH,"pango_layout_get_baseline");
+    }
+    /**
+     * {@snippet :
+     * int pango_layout_get_baseline(PangoLayout* layout);
+     * }
+     */
+    public static int pango_layout_get_baseline(MemorySegment layout) {
+        var mh$ = pango_layout_get_baseline$MH();
+        try {
+            return (int)mh$.invokeExact(layout);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_get_line_count$MH() {
+        return RuntimeHelper.requireNonNull(constants$965.pango_layout_get_line_count$MH,"pango_layout_get_line_count");
+    }
+    /**
+     * {@snippet :
+     * int pango_layout_get_line_count(PangoLayout* layout);
+     * }
+     */
+    public static int pango_layout_get_line_count(MemorySegment layout) {
+        var mh$ = pango_layout_get_line_count$MH();
+        try {
+            return (int)mh$.invokeExact(layout);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_get_line$MH() {
+        return RuntimeHelper.requireNonNull(constants$966.pango_layout_get_line$MH,"pango_layout_get_line");
+    }
+    /**
+     * {@snippet :
+     * PangoLayoutLine* pango_layout_get_line(PangoLayout* layout, int line);
+     * }
+     */
+    public static MemorySegment pango_layout_get_line(MemorySegment layout, int line) {
+        var mh$ = pango_layout_get_line$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(layout, line);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_get_line_readonly$MH() {
+        return RuntimeHelper.requireNonNull(constants$966.pango_layout_get_line_readonly$MH,"pango_layout_get_line_readonly");
+    }
+    /**
+     * {@snippet :
+     * PangoLayoutLine* pango_layout_get_line_readonly(PangoLayout* layout, int line);
+     * }
+     */
+    public static MemorySegment pango_layout_get_line_readonly(MemorySegment layout, int line) {
+        var mh$ = pango_layout_get_line_readonly$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(layout, line);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_get_lines$MH() {
+        return RuntimeHelper.requireNonNull(constants$966.pango_layout_get_lines$MH,"pango_layout_get_lines");
+    }
+    /**
+     * {@snippet :
+     * GSList* pango_layout_get_lines(PangoLayout* layout);
+     * }
+     */
+    public static MemorySegment pango_layout_get_lines(MemorySegment layout) {
+        var mh$ = pango_layout_get_lines$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(layout);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_get_lines_readonly$MH() {
+        return RuntimeHelper.requireNonNull(constants$966.pango_layout_get_lines_readonly$MH,"pango_layout_get_lines_readonly");
+    }
+    /**
+     * {@snippet :
+     * GSList* pango_layout_get_lines_readonly(PangoLayout* layout);
+     * }
+     */
+    public static MemorySegment pango_layout_get_lines_readonly(MemorySegment layout) {
+        var mh$ = pango_layout_get_lines_readonly$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(layout);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_LAYOUT_SERIALIZE_DEFAULT = 0;
+     * }
+     */
+    public static int PANGO_LAYOUT_SERIALIZE_DEFAULT() {
+        return (int)0L;
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_LAYOUT_SERIALIZE_CONTEXT = 1;
+     * }
+     */
+    public static int PANGO_LAYOUT_SERIALIZE_CONTEXT() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_LAYOUT_SERIALIZE_OUTPUT = 2;
+     * }
+     */
+    public static int PANGO_LAYOUT_SERIALIZE_OUTPUT() {
+        return (int)2L;
+    }
+    public static MethodHandle pango_layout_serialize$MH() {
+        return RuntimeHelper.requireNonNull(constants$966.pango_layout_serialize$MH,"pango_layout_serialize");
+    }
+    /**
+     * {@snippet :
+     * GBytes* pango_layout_serialize(PangoLayout* layout, PangoLayoutSerializeFlags flags);
+     * }
+     */
+    public static MemorySegment pango_layout_serialize(MemorySegment layout, int flags) {
+        var mh$ = pango_layout_serialize$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(layout, flags);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_write_to_file$MH() {
+        return RuntimeHelper.requireNonNull(constants$966.pango_layout_write_to_file$MH,"pango_layout_write_to_file");
+    }
+    /**
+     * {@snippet :
+     * gboolean pango_layout_write_to_file(PangoLayout* layout, PangoLayoutSerializeFlags flags, char* filename, GError** error);
+     * }
+     */
+    public static int pango_layout_write_to_file(MemorySegment layout, int flags, MemorySegment filename, MemorySegment error) {
+        var mh$ = pango_layout_write_to_file$MH();
+        try {
+            return (int)mh$.invokeExact(layout, flags, filename, error);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_LAYOUT_DESERIALIZE_INVALID = 0;
+     * }
+     */
+    public static int PANGO_LAYOUT_DESERIALIZE_INVALID() {
+        return (int)0L;
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_LAYOUT_DESERIALIZE_INVALID_VALUE = 1;
+     * }
+     */
+    public static int PANGO_LAYOUT_DESERIALIZE_INVALID_VALUE() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_LAYOUT_DESERIALIZE_MISSING_VALUE = 2;
+     * }
+     */
+    public static int PANGO_LAYOUT_DESERIALIZE_MISSING_VALUE() {
+        return (int)2L;
+    }
+    public static MethodHandle pango_layout_deserialize_error_quark$MH() {
+        return RuntimeHelper.requireNonNull(constants$967.pango_layout_deserialize_error_quark$MH,"pango_layout_deserialize_error_quark");
+    }
+    /**
+     * {@snippet :
+     * GQuark pango_layout_deserialize_error_quark();
+     * }
+     */
+    public static int pango_layout_deserialize_error_quark() {
+        var mh$ = pango_layout_deserialize_error_quark$MH();
+        try {
+            return (int)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_LAYOUT_DESERIALIZE_DEFAULT = 0;
+     * }
+     */
+    public static int PANGO_LAYOUT_DESERIALIZE_DEFAULT() {
+        return (int)0L;
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_LAYOUT_DESERIALIZE_CONTEXT = 1;
+     * }
+     */
+    public static int PANGO_LAYOUT_DESERIALIZE_CONTEXT() {
+        return (int)1L;
+    }
+    public static MethodHandle pango_layout_deserialize$MH() {
+        return RuntimeHelper.requireNonNull(constants$967.pango_layout_deserialize$MH,"pango_layout_deserialize");
+    }
+    /**
+     * {@snippet :
+     * PangoLayout* pango_layout_deserialize(PangoContext* context, GBytes* bytes, PangoLayoutDeserializeFlags flags, GError** error);
+     * }
+     */
+    public static MemorySegment pango_layout_deserialize(MemorySegment context, MemorySegment bytes, int flags, MemorySegment error) {
+        var mh$ = pango_layout_deserialize$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(context, bytes, flags, error);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_line_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$967.pango_layout_line_get_type$MH,"pango_layout_line_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType pango_layout_line_get_type();
+     * }
+     */
+    public static long pango_layout_line_get_type() {
+        var mh$ = pango_layout_line_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_line_ref$MH() {
+        return RuntimeHelper.requireNonNull(constants$967.pango_layout_line_ref$MH,"pango_layout_line_ref");
+    }
+    /**
+     * {@snippet :
+     * PangoLayoutLine* pango_layout_line_ref(PangoLayoutLine* line);
+     * }
+     */
+    public static MemorySegment pango_layout_line_ref(MemorySegment line) {
+        var mh$ = pango_layout_line_ref$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(line);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_line_unref$MH() {
+        return RuntimeHelper.requireNonNull(constants$967.pango_layout_line_unref$MH,"pango_layout_line_unref");
+    }
+    /**
+     * {@snippet :
+     * void pango_layout_line_unref(PangoLayoutLine* line);
+     * }
+     */
+    public static void pango_layout_line_unref(MemorySegment line) {
+        var mh$ = pango_layout_line_unref$MH();
+        try {
+            mh$.invokeExact(line);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_line_get_start_index$MH() {
+        return RuntimeHelper.requireNonNull(constants$967.pango_layout_line_get_start_index$MH,"pango_layout_line_get_start_index");
+    }
+    /**
+     * {@snippet :
+     * int pango_layout_line_get_start_index(PangoLayoutLine* line);
+     * }
+     */
+    public static int pango_layout_line_get_start_index(MemorySegment line) {
+        var mh$ = pango_layout_line_get_start_index$MH();
+        try {
+            return (int)mh$.invokeExact(line);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_line_get_length$MH() {
+        return RuntimeHelper.requireNonNull(constants$968.pango_layout_line_get_length$MH,"pango_layout_line_get_length");
+    }
+    /**
+     * {@snippet :
+     * int pango_layout_line_get_length(PangoLayoutLine* line);
+     * }
+     */
+    public static int pango_layout_line_get_length(MemorySegment line) {
+        var mh$ = pango_layout_line_get_length$MH();
+        try {
+            return (int)mh$.invokeExact(line);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_line_is_paragraph_start$MH() {
+        return RuntimeHelper.requireNonNull(constants$968.pango_layout_line_is_paragraph_start$MH,"pango_layout_line_is_paragraph_start");
+    }
+    /**
+     * {@snippet :
+     * gboolean pango_layout_line_is_paragraph_start(PangoLayoutLine* line);
+     * }
+     */
+    public static int pango_layout_line_is_paragraph_start(MemorySegment line) {
+        var mh$ = pango_layout_line_is_paragraph_start$MH();
+        try {
+            return (int)mh$.invokeExact(line);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_line_get_resolved_direction$MH() {
+        return RuntimeHelper.requireNonNull(constants$968.pango_layout_line_get_resolved_direction$MH,"pango_layout_line_get_resolved_direction");
+    }
+    /**
+     * {@snippet :
+     * PangoDirection pango_layout_line_get_resolved_direction(PangoLayoutLine* line);
+     * }
+     */
+    public static int pango_layout_line_get_resolved_direction(MemorySegment line) {
+        var mh$ = pango_layout_line_get_resolved_direction$MH();
+        try {
+            return (int)mh$.invokeExact(line);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_line_x_to_index$MH() {
+        return RuntimeHelper.requireNonNull(constants$968.pango_layout_line_x_to_index$MH,"pango_layout_line_x_to_index");
+    }
+    /**
+     * {@snippet :
+     * gboolean pango_layout_line_x_to_index(PangoLayoutLine* line, int x_pos, int* index_, int* trailing);
+     * }
+     */
+    public static int pango_layout_line_x_to_index(MemorySegment line, int x_pos, MemorySegment index_, MemorySegment trailing) {
+        var mh$ = pango_layout_line_x_to_index$MH();
+        try {
+            return (int)mh$.invokeExact(line, x_pos, index_, trailing);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_line_index_to_x$MH() {
+        return RuntimeHelper.requireNonNull(constants$968.pango_layout_line_index_to_x$MH,"pango_layout_line_index_to_x");
+    }
+    /**
+     * {@snippet :
+     * void pango_layout_line_index_to_x(PangoLayoutLine* line, int index_, gboolean trailing, int* x_pos);
+     * }
+     */
+    public static void pango_layout_line_index_to_x(MemorySegment line, int index_, int trailing, MemorySegment x_pos) {
+        var mh$ = pango_layout_line_index_to_x$MH();
+        try {
+            mh$.invokeExact(line, index_, trailing, x_pos);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_line_get_x_ranges$MH() {
+        return RuntimeHelper.requireNonNull(constants$968.pango_layout_line_get_x_ranges$MH,"pango_layout_line_get_x_ranges");
+    }
+    /**
+     * {@snippet :
+     * void pango_layout_line_get_x_ranges(PangoLayoutLine* line, int start_index, int end_index, int** ranges, int* n_ranges);
+     * }
+     */
+    public static void pango_layout_line_get_x_ranges(MemorySegment line, int start_index, int end_index, MemorySegment ranges, MemorySegment n_ranges) {
+        var mh$ = pango_layout_line_get_x_ranges$MH();
+        try {
+            mh$.invokeExact(line, start_index, end_index, ranges, n_ranges);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_line_get_extents$MH() {
+        return RuntimeHelper.requireNonNull(constants$969.pango_layout_line_get_extents$MH,"pango_layout_line_get_extents");
+    }
+    /**
+     * {@snippet :
+     * void pango_layout_line_get_extents(PangoLayoutLine* line, PangoRectangle* ink_rect, PangoRectangle* logical_rect);
+     * }
+     */
+    public static void pango_layout_line_get_extents(MemorySegment line, MemorySegment ink_rect, MemorySegment logical_rect) {
+        var mh$ = pango_layout_line_get_extents$MH();
+        try {
+            mh$.invokeExact(line, ink_rect, logical_rect);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_line_get_height$MH() {
+        return RuntimeHelper.requireNonNull(constants$969.pango_layout_line_get_height$MH,"pango_layout_line_get_height");
+    }
+    /**
+     * {@snippet :
+     * void pango_layout_line_get_height(PangoLayoutLine* line, int* height);
+     * }
+     */
+    public static void pango_layout_line_get_height(MemorySegment line, MemorySegment height) {
+        var mh$ = pango_layout_line_get_height$MH();
+        try {
+            mh$.invokeExact(line, height);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_line_get_pixel_extents$MH() {
+        return RuntimeHelper.requireNonNull(constants$969.pango_layout_line_get_pixel_extents$MH,"pango_layout_line_get_pixel_extents");
+    }
+    /**
+     * {@snippet :
+     * void pango_layout_line_get_pixel_extents(PangoLayoutLine* layout_line, PangoRectangle* ink_rect, PangoRectangle* logical_rect);
+     * }
+     */
+    public static void pango_layout_line_get_pixel_extents(MemorySegment layout_line, MemorySegment ink_rect, MemorySegment logical_rect) {
+        var mh$ = pango_layout_line_get_pixel_extents$MH();
+        try {
+            mh$.invokeExact(layout_line, ink_rect, logical_rect);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_iter_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$969.pango_layout_iter_get_type$MH,"pango_layout_iter_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType pango_layout_iter_get_type();
+     * }
+     */
+    public static long pango_layout_iter_get_type() {
+        var mh$ = pango_layout_iter_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_get_iter$MH() {
+        return RuntimeHelper.requireNonNull(constants$969.pango_layout_get_iter$MH,"pango_layout_get_iter");
+    }
+    /**
+     * {@snippet :
+     * PangoLayoutIter* pango_layout_get_iter(PangoLayout* layout);
+     * }
+     */
+    public static MemorySegment pango_layout_get_iter(MemorySegment layout) {
+        var mh$ = pango_layout_get_iter$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(layout);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_iter_copy$MH() {
+        return RuntimeHelper.requireNonNull(constants$969.pango_layout_iter_copy$MH,"pango_layout_iter_copy");
+    }
+    /**
+     * {@snippet :
+     * PangoLayoutIter* pango_layout_iter_copy(PangoLayoutIter* iter);
+     * }
+     */
+    public static MemorySegment pango_layout_iter_copy(MemorySegment iter) {
+        var mh$ = pango_layout_iter_copy$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(iter);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_iter_free$MH() {
+        return RuntimeHelper.requireNonNull(constants$970.pango_layout_iter_free$MH,"pango_layout_iter_free");
+    }
+    /**
+     * {@snippet :
+     * void pango_layout_iter_free(PangoLayoutIter* iter);
+     * }
+     */
+    public static void pango_layout_iter_free(MemorySegment iter) {
+        var mh$ = pango_layout_iter_free$MH();
+        try {
+            mh$.invokeExact(iter);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_iter_get_index$MH() {
+        return RuntimeHelper.requireNonNull(constants$970.pango_layout_iter_get_index$MH,"pango_layout_iter_get_index");
+    }
+    /**
+     * {@snippet :
+     * int pango_layout_iter_get_index(PangoLayoutIter* iter);
+     * }
+     */
+    public static int pango_layout_iter_get_index(MemorySegment iter) {
+        var mh$ = pango_layout_iter_get_index$MH();
+        try {
+            return (int)mh$.invokeExact(iter);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_iter_get_run$MH() {
+        return RuntimeHelper.requireNonNull(constants$970.pango_layout_iter_get_run$MH,"pango_layout_iter_get_run");
+    }
+    /**
+     * {@snippet :
+     * PangoLayoutRun* pango_layout_iter_get_run(PangoLayoutIter* iter);
+     * }
+     */
+    public static MemorySegment pango_layout_iter_get_run(MemorySegment iter) {
+        var mh$ = pango_layout_iter_get_run$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(iter);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_iter_get_run_readonly$MH() {
+        return RuntimeHelper.requireNonNull(constants$970.pango_layout_iter_get_run_readonly$MH,"pango_layout_iter_get_run_readonly");
+    }
+    /**
+     * {@snippet :
+     * PangoLayoutRun* pango_layout_iter_get_run_readonly(PangoLayoutIter* iter);
+     * }
+     */
+    public static MemorySegment pango_layout_iter_get_run_readonly(MemorySegment iter) {
+        var mh$ = pango_layout_iter_get_run_readonly$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(iter);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_iter_get_line$MH() {
+        return RuntimeHelper.requireNonNull(constants$970.pango_layout_iter_get_line$MH,"pango_layout_iter_get_line");
+    }
+    /**
+     * {@snippet :
+     * PangoLayoutLine* pango_layout_iter_get_line(PangoLayoutIter* iter);
+     * }
+     */
+    public static MemorySegment pango_layout_iter_get_line(MemorySegment iter) {
+        var mh$ = pango_layout_iter_get_line$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(iter);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_iter_get_line_readonly$MH() {
+        return RuntimeHelper.requireNonNull(constants$970.pango_layout_iter_get_line_readonly$MH,"pango_layout_iter_get_line_readonly");
+    }
+    /**
+     * {@snippet :
+     * PangoLayoutLine* pango_layout_iter_get_line_readonly(PangoLayoutIter* iter);
+     * }
+     */
+    public static MemorySegment pango_layout_iter_get_line_readonly(MemorySegment iter) {
+        var mh$ = pango_layout_iter_get_line_readonly$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(iter);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_iter_at_last_line$MH() {
+        return RuntimeHelper.requireNonNull(constants$971.pango_layout_iter_at_last_line$MH,"pango_layout_iter_at_last_line");
+    }
+    /**
+     * {@snippet :
+     * gboolean pango_layout_iter_at_last_line(PangoLayoutIter* iter);
+     * }
+     */
+    public static int pango_layout_iter_at_last_line(MemorySegment iter) {
+        var mh$ = pango_layout_iter_at_last_line$MH();
+        try {
+            return (int)mh$.invokeExact(iter);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_iter_get_layout$MH() {
+        return RuntimeHelper.requireNonNull(constants$971.pango_layout_iter_get_layout$MH,"pango_layout_iter_get_layout");
+    }
+    /**
+     * {@snippet :
+     * PangoLayout* pango_layout_iter_get_layout(PangoLayoutIter* iter);
+     * }
+     */
+    public static MemorySegment pango_layout_iter_get_layout(MemorySegment iter) {
+        var mh$ = pango_layout_iter_get_layout$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(iter);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_iter_next_char$MH() {
+        return RuntimeHelper.requireNonNull(constants$971.pango_layout_iter_next_char$MH,"pango_layout_iter_next_char");
+    }
+    /**
+     * {@snippet :
+     * gboolean pango_layout_iter_next_char(PangoLayoutIter* iter);
+     * }
+     */
+    public static int pango_layout_iter_next_char(MemorySegment iter) {
+        var mh$ = pango_layout_iter_next_char$MH();
+        try {
+            return (int)mh$.invokeExact(iter);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_iter_next_cluster$MH() {
+        return RuntimeHelper.requireNonNull(constants$971.pango_layout_iter_next_cluster$MH,"pango_layout_iter_next_cluster");
+    }
+    /**
+     * {@snippet :
+     * gboolean pango_layout_iter_next_cluster(PangoLayoutIter* iter);
+     * }
+     */
+    public static int pango_layout_iter_next_cluster(MemorySegment iter) {
+        var mh$ = pango_layout_iter_next_cluster$MH();
+        try {
+            return (int)mh$.invokeExact(iter);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_iter_next_run$MH() {
+        return RuntimeHelper.requireNonNull(constants$971.pango_layout_iter_next_run$MH,"pango_layout_iter_next_run");
+    }
+    /**
+     * {@snippet :
+     * gboolean pango_layout_iter_next_run(PangoLayoutIter* iter);
+     * }
+     */
+    public static int pango_layout_iter_next_run(MemorySegment iter) {
+        var mh$ = pango_layout_iter_next_run$MH();
+        try {
+            return (int)mh$.invokeExact(iter);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_iter_next_line$MH() {
+        return RuntimeHelper.requireNonNull(constants$971.pango_layout_iter_next_line$MH,"pango_layout_iter_next_line");
+    }
+    /**
+     * {@snippet :
+     * gboolean pango_layout_iter_next_line(PangoLayoutIter* iter);
+     * }
+     */
+    public static int pango_layout_iter_next_line(MemorySegment iter) {
+        var mh$ = pango_layout_iter_next_line$MH();
+        try {
+            return (int)mh$.invokeExact(iter);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_iter_get_char_extents$MH() {
+        return RuntimeHelper.requireNonNull(constants$972.pango_layout_iter_get_char_extents$MH,"pango_layout_iter_get_char_extents");
+    }
+    /**
+     * {@snippet :
+     * void pango_layout_iter_get_char_extents(PangoLayoutIter* iter, PangoRectangle* logical_rect);
+     * }
+     */
+    public static void pango_layout_iter_get_char_extents(MemorySegment iter, MemorySegment logical_rect) {
+        var mh$ = pango_layout_iter_get_char_extents$MH();
+        try {
+            mh$.invokeExact(iter, logical_rect);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_iter_get_cluster_extents$MH() {
+        return RuntimeHelper.requireNonNull(constants$972.pango_layout_iter_get_cluster_extents$MH,"pango_layout_iter_get_cluster_extents");
+    }
+    /**
+     * {@snippet :
+     * void pango_layout_iter_get_cluster_extents(PangoLayoutIter* iter, PangoRectangle* ink_rect, PangoRectangle* logical_rect);
+     * }
+     */
+    public static void pango_layout_iter_get_cluster_extents(MemorySegment iter, MemorySegment ink_rect, MemorySegment logical_rect) {
+        var mh$ = pango_layout_iter_get_cluster_extents$MH();
+        try {
+            mh$.invokeExact(iter, ink_rect, logical_rect);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_iter_get_run_extents$MH() {
+        return RuntimeHelper.requireNonNull(constants$972.pango_layout_iter_get_run_extents$MH,"pango_layout_iter_get_run_extents");
+    }
+    /**
+     * {@snippet :
+     * void pango_layout_iter_get_run_extents(PangoLayoutIter* iter, PangoRectangle* ink_rect, PangoRectangle* logical_rect);
+     * }
+     */
+    public static void pango_layout_iter_get_run_extents(MemorySegment iter, MemorySegment ink_rect, MemorySegment logical_rect) {
+        var mh$ = pango_layout_iter_get_run_extents$MH();
+        try {
+            mh$.invokeExact(iter, ink_rect, logical_rect);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_iter_get_line_extents$MH() {
+        return RuntimeHelper.requireNonNull(constants$972.pango_layout_iter_get_line_extents$MH,"pango_layout_iter_get_line_extents");
+    }
+    /**
+     * {@snippet :
+     * void pango_layout_iter_get_line_extents(PangoLayoutIter* iter, PangoRectangle* ink_rect, PangoRectangle* logical_rect);
+     * }
+     */
+    public static void pango_layout_iter_get_line_extents(MemorySegment iter, MemorySegment ink_rect, MemorySegment logical_rect) {
+        var mh$ = pango_layout_iter_get_line_extents$MH();
+        try {
+            mh$.invokeExact(iter, ink_rect, logical_rect);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_iter_get_line_yrange$MH() {
+        return RuntimeHelper.requireNonNull(constants$972.pango_layout_iter_get_line_yrange$MH,"pango_layout_iter_get_line_yrange");
+    }
+    /**
+     * {@snippet :
+     * void pango_layout_iter_get_line_yrange(PangoLayoutIter* iter, int* y0_, int* y1_);
+     * }
+     */
+    public static void pango_layout_iter_get_line_yrange(MemorySegment iter, MemorySegment y0_, MemorySegment y1_) {
+        var mh$ = pango_layout_iter_get_line_yrange$MH();
+        try {
+            mh$.invokeExact(iter, y0_, y1_);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_iter_get_layout_extents$MH() {
+        return RuntimeHelper.requireNonNull(constants$972.pango_layout_iter_get_layout_extents$MH,"pango_layout_iter_get_layout_extents");
+    }
+    /**
+     * {@snippet :
+     * void pango_layout_iter_get_layout_extents(PangoLayoutIter* iter, PangoRectangle* ink_rect, PangoRectangle* logical_rect);
+     * }
+     */
+    public static void pango_layout_iter_get_layout_extents(MemorySegment iter, MemorySegment ink_rect, MemorySegment logical_rect) {
+        var mh$ = pango_layout_iter_get_layout_extents$MH();
+        try {
+            mh$.invokeExact(iter, ink_rect, logical_rect);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_iter_get_baseline$MH() {
+        return RuntimeHelper.requireNonNull(constants$973.pango_layout_iter_get_baseline$MH,"pango_layout_iter_get_baseline");
+    }
+    /**
+     * {@snippet :
+     * int pango_layout_iter_get_baseline(PangoLayoutIter* iter);
+     * }
+     */
+    public static int pango_layout_iter_get_baseline(MemorySegment iter) {
+        var mh$ = pango_layout_iter_get_baseline$MH();
+        try {
+            return (int)mh$.invokeExact(iter);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_layout_iter_get_run_baseline$MH() {
+        return RuntimeHelper.requireNonNull(constants$973.pango_layout_iter_get_run_baseline$MH,"pango_layout_iter_get_run_baseline");
+    }
+    /**
+     * {@snippet :
+     * int pango_layout_iter_get_run_baseline(PangoLayoutIter* iter);
+     * }
+     */
+    public static int pango_layout_iter_get_run_baseline(MemorySegment iter) {
+        var mh$ = pango_layout_iter_get_run_baseline$MH();
+        try {
+            return (int)mh$.invokeExact(iter);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    /**
+     * {@snippet :
+     * typedef struct _PangoLayout* PangoLayout_autoptr;
+     * }
+     */
+    public static final OfAddress PangoLayout_autoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GList* PangoLayout_listautoptr;
+     * }
+     */
+    public static final OfAddress PangoLayout_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* PangoLayout_slistautoptr;
+     * }
+     */
+    public static final OfAddress PangoLayout_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* PangoLayout_queueautoptr;
+     * }
+     */
+    public static final OfAddress PangoLayout_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _PangoLayoutIter* PangoLayoutIter_autoptr;
+     * }
+     */
+    public static final OfAddress PangoLayoutIter_autoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GList* PangoLayoutIter_listautoptr;
+     * }
+     */
+    public static final OfAddress PangoLayoutIter_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* PangoLayoutIter_slistautoptr;
+     * }
+     */
+    public static final OfAddress PangoLayoutIter_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* PangoLayoutIter_queueautoptr;
+     * }
+     */
+    public static final OfAddress PangoLayoutIter_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static MethodHandle pango_markup_parser_new$MH() {
+        return RuntimeHelper.requireNonNull(constants$973.pango_markup_parser_new$MH,"pango_markup_parser_new");
+    }
+    /**
+     * {@snippet :
+     * GMarkupParseContext* pango_markup_parser_new(gunichar accel_marker);
+     * }
+     */
+    public static MemorySegment pango_markup_parser_new(int accel_marker) {
+        var mh$ = pango_markup_parser_new$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(accel_marker);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_markup_parser_finish$MH() {
+        return RuntimeHelper.requireNonNull(constants$973.pango_markup_parser_finish$MH,"pango_markup_parser_finish");
+    }
+    /**
+     * {@snippet :
+     * gboolean pango_markup_parser_finish(GMarkupParseContext* context, PangoAttrList** attr_list, char** text, gunichar* accel_char, GError** error);
+     * }
+     */
+    public static int pango_markup_parser_finish(MemorySegment context, MemorySegment attr_list, MemorySegment text, MemorySegment accel_char, MemorySegment error) {
+        var mh$ = pango_markup_parser_finish$MH();
+        try {
+            return (int)mh$.invokeExact(context, attr_list, text, accel_char, error);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_parse_markup$MH() {
+        return RuntimeHelper.requireNonNull(constants$973.pango_parse_markup$MH,"pango_parse_markup");
+    }
+    /**
+     * {@snippet :
+     * gboolean pango_parse_markup(char* markup_text, int length, gunichar accel_marker, PangoAttrList** attr_list, char** text, gunichar* accel_char, GError** error);
+     * }
+     */
+    public static int pango_parse_markup(MemorySegment markup_text, int length, int accel_marker, MemorySegment attr_list, MemorySegment text, MemorySegment accel_char, MemorySegment error) {
+        var mh$ = pango_parse_markup$MH();
+        try {
+            return (int)mh$.invokeExact(markup_text, length, accel_marker, attr_list, text, accel_char, error);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_RENDER_PART_FOREGROUND = 0;
+     * }
+     */
+    public static int PANGO_RENDER_PART_FOREGROUND() {
+        return (int)0L;
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_RENDER_PART_BACKGROUND = 1;
+     * }
+     */
+    public static int PANGO_RENDER_PART_BACKGROUND() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_RENDER_PART_UNDERLINE = 2;
+     * }
+     */
+    public static int PANGO_RENDER_PART_UNDERLINE() {
+        return (int)2L;
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_RENDER_PART_STRIKETHROUGH = 3;
+     * }
+     */
+    public static int PANGO_RENDER_PART_STRIKETHROUGH() {
+        return (int)3L;
+    }
+    /**
+     * {@snippet :
+     * enum .PANGO_RENDER_PART_OVERLINE = 4;
+     * }
+     */
+    public static int PANGO_RENDER_PART_OVERLINE() {
+        return (int)4L;
+    }
+    public static MethodHandle pango_renderer_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$973.pango_renderer_get_type$MH,"pango_renderer_get_type");
+    }
+    /**
+     * {@snippet :
+     * GType pango_renderer_get_type();
+     * }
+     */
+    public static long pango_renderer_get_type() {
+        var mh$ = pango_renderer_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_renderer_draw_layout$MH() {
+        return RuntimeHelper.requireNonNull(constants$974.pango_renderer_draw_layout$MH,"pango_renderer_draw_layout");
+    }
+    /**
+     * {@snippet :
+     * void pango_renderer_draw_layout(PangoRenderer* renderer, PangoLayout* layout, int x, int y);
+     * }
+     */
+    public static void pango_renderer_draw_layout(MemorySegment renderer, MemorySegment layout, int x, int y) {
+        var mh$ = pango_renderer_draw_layout$MH();
+        try {
+            mh$.invokeExact(renderer, layout, x, y);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_renderer_draw_layout_line$MH() {
+        return RuntimeHelper.requireNonNull(constants$974.pango_renderer_draw_layout_line$MH,"pango_renderer_draw_layout_line");
+    }
+    /**
+     * {@snippet :
+     * void pango_renderer_draw_layout_line(PangoRenderer* renderer, PangoLayoutLine* line, int x, int y);
+     * }
+     */
+    public static void pango_renderer_draw_layout_line(MemorySegment renderer, MemorySegment line, int x, int y) {
+        var mh$ = pango_renderer_draw_layout_line$MH();
+        try {
+            mh$.invokeExact(renderer, line, x, y);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_renderer_draw_glyphs$MH() {
+        return RuntimeHelper.requireNonNull(constants$974.pango_renderer_draw_glyphs$MH,"pango_renderer_draw_glyphs");
+    }
+    /**
+     * {@snippet :
+     * void pango_renderer_draw_glyphs(PangoRenderer* renderer, PangoFont* font, PangoGlyphString* glyphs, int x, int y);
+     * }
+     */
+    public static void pango_renderer_draw_glyphs(MemorySegment renderer, MemorySegment font, MemorySegment glyphs, int x, int y) {
+        var mh$ = pango_renderer_draw_glyphs$MH();
+        try {
+            mh$.invokeExact(renderer, font, glyphs, x, y);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_renderer_draw_glyph_item$MH() {
+        return RuntimeHelper.requireNonNull(constants$974.pango_renderer_draw_glyph_item$MH,"pango_renderer_draw_glyph_item");
+    }
+    /**
+     * {@snippet :
+     * void pango_renderer_draw_glyph_item(PangoRenderer* renderer, char* text, PangoGlyphItem* glyph_item, int x, int y);
+     * }
+     */
+    public static void pango_renderer_draw_glyph_item(MemorySegment renderer, MemorySegment text, MemorySegment glyph_item, int x, int y) {
+        var mh$ = pango_renderer_draw_glyph_item$MH();
+        try {
+            mh$.invokeExact(renderer, text, glyph_item, x, y);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_renderer_draw_rectangle$MH() {
+        return RuntimeHelper.requireNonNull(constants$974.pango_renderer_draw_rectangle$MH,"pango_renderer_draw_rectangle");
+    }
+    /**
+     * {@snippet :
+     * void pango_renderer_draw_rectangle(PangoRenderer* renderer, PangoRenderPart part, int x, int y, int width, int height);
+     * }
+     */
+    public static void pango_renderer_draw_rectangle(MemorySegment renderer, int part, int x, int y, int width, int height) {
+        var mh$ = pango_renderer_draw_rectangle$MH();
+        try {
+            mh$.invokeExact(renderer, part, x, y, width, height);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_renderer_draw_error_underline$MH() {
+        return RuntimeHelper.requireNonNull(constants$974.pango_renderer_draw_error_underline$MH,"pango_renderer_draw_error_underline");
+    }
+    /**
+     * {@snippet :
+     * void pango_renderer_draw_error_underline(PangoRenderer* renderer, int x, int y, int width, int height);
+     * }
+     */
+    public static void pango_renderer_draw_error_underline(MemorySegment renderer, int x, int y, int width, int height) {
+        var mh$ = pango_renderer_draw_error_underline$MH();
+        try {
+            mh$.invokeExact(renderer, x, y, width, height);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_renderer_draw_trapezoid$MH() {
+        return RuntimeHelper.requireNonNull(constants$975.pango_renderer_draw_trapezoid$MH,"pango_renderer_draw_trapezoid");
+    }
+    /**
+     * {@snippet :
+     * void pango_renderer_draw_trapezoid(PangoRenderer* renderer, PangoRenderPart part, double y1_, double x11, double x21, double y2, double x12, double x22);
+     * }
+     */
+    public static void pango_renderer_draw_trapezoid(MemorySegment renderer, int part, double y1_, double x11, double x21, double y2, double x12, double x22) {
+        var mh$ = pango_renderer_draw_trapezoid$MH();
+        try {
+            mh$.invokeExact(renderer, part, y1_, x11, x21, y2, x12, x22);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_renderer_draw_glyph$MH() {
+        return RuntimeHelper.requireNonNull(constants$975.pango_renderer_draw_glyph$MH,"pango_renderer_draw_glyph");
+    }
+    /**
+     * {@snippet :
+     * void pango_renderer_draw_glyph(PangoRenderer* renderer, PangoFont* font, PangoGlyph glyph, double x, double y);
+     * }
+     */
+    public static void pango_renderer_draw_glyph(MemorySegment renderer, MemorySegment font, int glyph, double x, double y) {
+        var mh$ = pango_renderer_draw_glyph$MH();
+        try {
+            mh$.invokeExact(renderer, font, glyph, x, y);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_renderer_activate$MH() {
+        return RuntimeHelper.requireNonNull(constants$975.pango_renderer_activate$MH,"pango_renderer_activate");
+    }
+    /**
+     * {@snippet :
+     * void pango_renderer_activate(PangoRenderer* renderer);
+     * }
+     */
+    public static void pango_renderer_activate(MemorySegment renderer) {
+        var mh$ = pango_renderer_activate$MH();
+        try {
+            mh$.invokeExact(renderer);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_renderer_deactivate$MH() {
+        return RuntimeHelper.requireNonNull(constants$975.pango_renderer_deactivate$MH,"pango_renderer_deactivate");
+    }
+    /**
+     * {@snippet :
+     * void pango_renderer_deactivate(PangoRenderer* renderer);
+     * }
+     */
+    public static void pango_renderer_deactivate(MemorySegment renderer) {
+        var mh$ = pango_renderer_deactivate$MH();
+        try {
+            mh$.invokeExact(renderer);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_renderer_part_changed$MH() {
+        return RuntimeHelper.requireNonNull(constants$975.pango_renderer_part_changed$MH,"pango_renderer_part_changed");
+    }
+    /**
+     * {@snippet :
+     * void pango_renderer_part_changed(PangoRenderer* renderer, PangoRenderPart part);
+     * }
+     */
+    public static void pango_renderer_part_changed(MemorySegment renderer, int part) {
+        var mh$ = pango_renderer_part_changed$MH();
+        try {
+            mh$.invokeExact(renderer, part);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_renderer_set_color$MH() {
+        return RuntimeHelper.requireNonNull(constants$975.pango_renderer_set_color$MH,"pango_renderer_set_color");
+    }
+    /**
+     * {@snippet :
+     * void pango_renderer_set_color(PangoRenderer* renderer, PangoRenderPart part, const PangoColor* color);
+     * }
+     */
+    public static void pango_renderer_set_color(MemorySegment renderer, int part, MemorySegment color) {
+        var mh$ = pango_renderer_set_color$MH();
+        try {
+            mh$.invokeExact(renderer, part, color);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_renderer_get_color$MH() {
+        return RuntimeHelper.requireNonNull(constants$976.pango_renderer_get_color$MH,"pango_renderer_get_color");
+    }
+    /**
+     * {@snippet :
+     * PangoColor* pango_renderer_get_color(PangoRenderer* renderer, PangoRenderPart part);
+     * }
+     */
+    public static MemorySegment pango_renderer_get_color(MemorySegment renderer, int part) {
+        var mh$ = pango_renderer_get_color$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(renderer, part);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_renderer_set_alpha$MH() {
+        return RuntimeHelper.requireNonNull(constants$976.pango_renderer_set_alpha$MH,"pango_renderer_set_alpha");
+    }
+    /**
+     * {@snippet :
+     * void pango_renderer_set_alpha(PangoRenderer* renderer, PangoRenderPart part, guint16 alpha);
+     * }
+     */
+    public static void pango_renderer_set_alpha(MemorySegment renderer, int part, short alpha) {
+        var mh$ = pango_renderer_set_alpha$MH();
+        try {
+            mh$.invokeExact(renderer, part, alpha);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_renderer_get_alpha$MH() {
+        return RuntimeHelper.requireNonNull(constants$976.pango_renderer_get_alpha$MH,"pango_renderer_get_alpha");
+    }
+    /**
+     * {@snippet :
+     * guint16 pango_renderer_get_alpha(PangoRenderer* renderer, PangoRenderPart part);
+     * }
+     */
+    public static short pango_renderer_get_alpha(MemorySegment renderer, int part) {
+        var mh$ = pango_renderer_get_alpha$MH();
+        try {
+            return (short)mh$.invokeExact(renderer, part);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_renderer_set_matrix$MH() {
+        return RuntimeHelper.requireNonNull(constants$976.pango_renderer_set_matrix$MH,"pango_renderer_set_matrix");
+    }
+    /**
+     * {@snippet :
+     * void pango_renderer_set_matrix(PangoRenderer* renderer, const PangoMatrix* matrix);
+     * }
+     */
+    public static void pango_renderer_set_matrix(MemorySegment renderer, MemorySegment matrix) {
+        var mh$ = pango_renderer_set_matrix$MH();
+        try {
+            mh$.invokeExact(renderer, matrix);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_renderer_get_matrix$MH() {
+        return RuntimeHelper.requireNonNull(constants$976.pango_renderer_get_matrix$MH,"pango_renderer_get_matrix");
+    }
+    /**
+     * {@snippet :
+     * const PangoMatrix* pango_renderer_get_matrix(PangoRenderer* renderer);
+     * }
+     */
+    public static MemorySegment pango_renderer_get_matrix(MemorySegment renderer) {
+        var mh$ = pango_renderer_get_matrix$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(renderer);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_renderer_get_layout$MH() {
+        return RuntimeHelper.requireNonNull(constants$976.pango_renderer_get_layout$MH,"pango_renderer_get_layout");
+    }
+    /**
+     * {@snippet :
+     * PangoLayout* pango_renderer_get_layout(PangoRenderer* renderer);
+     * }
+     */
+    public static MemorySegment pango_renderer_get_layout(MemorySegment renderer) {
+        var mh$ = pango_renderer_get_layout$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(renderer);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_renderer_get_layout_line$MH() {
+        return RuntimeHelper.requireNonNull(constants$977.pango_renderer_get_layout_line$MH,"pango_renderer_get_layout_line");
+    }
+    /**
+     * {@snippet :
+     * PangoLayoutLine* pango_renderer_get_layout_line(PangoRenderer* renderer);
+     * }
+     */
+    public static MemorySegment pango_renderer_get_layout_line(MemorySegment renderer) {
+        var mh$ = pango_renderer_get_layout_line$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(renderer);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MemoryLayout stdin$LAYOUT() {
+        return constants$977.stdin$LAYOUT;
+    }
+    public static VarHandle stdin$VH() {
+        return constants$977.stdin$VH;
+    }
+    public static MemorySegment stdin$SEGMENT() {
+        return RuntimeHelper.requireNonNull(constants$977.stdin$SEGMENT,"stdin");
+    }
+    /**
+     * Getter for variable:
+     * {@snippet :
+     * FILE* stdin;
+     * }
+     */
+    public static MemorySegment stdin$get() {
+        return (java.lang.foreign.MemorySegment) constants$977.stdin$VH.get(RuntimeHelper.requireNonNull(constants$977.stdin$SEGMENT, "stdin"));
+    }
+    /**
+     * Setter for variable:
+     * {@snippet :
+     * FILE* stdin;
+     * }
+     */
+    public static void stdin$set(MemorySegment x) {
+        constants$977.stdin$VH.set(RuntimeHelper.requireNonNull(constants$977.stdin$SEGMENT, "stdin"), x);
+    }
+    public static MemoryLayout stdout$LAYOUT() {
+        return constants$977.stdout$LAYOUT;
+    }
+    public static VarHandle stdout$VH() {
+        return constants$977.stdout$VH;
+    }
+    public static MemorySegment stdout$SEGMENT() {
+        return RuntimeHelper.requireNonNull(constants$977.stdout$SEGMENT,"stdout");
+    }
+    /**
+     * Getter for variable:
+     * {@snippet :
+     * FILE* stdout;
+     * }
+     */
+    public static MemorySegment stdout$get() {
+        return (java.lang.foreign.MemorySegment) constants$977.stdout$VH.get(RuntimeHelper.requireNonNull(constants$977.stdout$SEGMENT, "stdout"));
+    }
+    /**
+     * Setter for variable:
+     * {@snippet :
+     * FILE* stdout;
+     * }
+     */
+    public static void stdout$set(MemorySegment x) {
+        constants$977.stdout$VH.set(RuntimeHelper.requireNonNull(constants$977.stdout$SEGMENT, "stdout"), x);
+    }
+    public static MemoryLayout stderr$LAYOUT() {
+        return constants$977.stderr$LAYOUT;
+    }
+    public static VarHandle stderr$VH() {
+        return constants$977.stderr$VH;
+    }
+    public static MemorySegment stderr$SEGMENT() {
+        return RuntimeHelper.requireNonNull(constants$977.stderr$SEGMENT,"stderr");
+    }
+    /**
+     * Getter for variable:
+     * {@snippet :
+     * FILE* stderr;
+     * }
+     */
+    public static MemorySegment stderr$get() {
+        return (java.lang.foreign.MemorySegment) constants$977.stderr$VH.get(RuntimeHelper.requireNonNull(constants$977.stderr$SEGMENT, "stderr"));
+    }
+    /**
+     * Setter for variable:
+     * {@snippet :
+     * FILE* stderr;
+     * }
+     */
+    public static void stderr$set(MemorySegment x) {
+        constants$977.stderr$VH.set(RuntimeHelper.requireNonNull(constants$977.stderr$SEGMENT, "stderr"), x);
+    }
+    public static MethodHandle remove$MH() {
+        return RuntimeHelper.requireNonNull(constants$977.remove$MH,"remove");
+    }
+    /**
+     * {@snippet :
+     * int remove(char* __filename);
+     * }
+     */
+    public static int remove(MemorySegment __filename) {
+        var mh$ = remove$MH();
+        try {
+            return (int)mh$.invokeExact(__filename);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle rename$MH() {
+        return RuntimeHelper.requireNonNull(constants$977.rename$MH,"rename");
+    }
+    /**
+     * {@snippet :
+     * int rename(char* __old, char* __new);
+     * }
+     */
+    public static int rename(MemorySegment __old, MemorySegment __new) {
+        var mh$ = rename$MH();
+        try {
+            return (int)mh$.invokeExact(__old, __new);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle renameat$MH() {
+        return RuntimeHelper.requireNonNull(constants$978.renameat$MH,"renameat");
+    }
+    /**
+     * {@snippet :
+     * int renameat(int __oldfd, char* __old, int __newfd, char* __new);
+     * }
+     */
+    public static int renameat(int __oldfd, MemorySegment __old, int __newfd, MemorySegment __new) {
+        var mh$ = renameat$MH();
+        try {
+            return (int)mh$.invokeExact(__oldfd, __old, __newfd, __new);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle fclose$MH() {
+        return RuntimeHelper.requireNonNull(constants$978.fclose$MH,"fclose");
+    }
+    /**
+     * {@snippet :
+     * int fclose(FILE* __stream);
+     * }
+     */
+    public static int fclose(MemorySegment __stream) {
+        var mh$ = fclose$MH();
+        try {
+            return (int)mh$.invokeExact(__stream);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle tmpfile$MH() {
+        return RuntimeHelper.requireNonNull(constants$978.tmpfile$MH,"tmpfile");
+    }
+    /**
+     * {@snippet :
+     * FILE* tmpfile();
+     * }
+     */
+    public static MemorySegment tmpfile() {
+        var mh$ = tmpfile$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle tmpnam$MH() {
+        return RuntimeHelper.requireNonNull(constants$978.tmpnam$MH,"tmpnam");
+    }
+    /**
+     * {@snippet :
+     * char* tmpnam(char [20]);
+     * }
+     */
+    public static MemorySegment tmpnam(MemorySegment x0) {
+        var mh$ = tmpnam$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(x0);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle tmpnam_r$MH() {
+        return RuntimeHelper.requireNonNull(constants$978.tmpnam_r$MH,"tmpnam_r");
+    }
+    /**
+     * {@snippet :
+     * char* tmpnam_r(char __s[20]);
+     * }
+     */
+    public static MemorySegment tmpnam_r(MemorySegment __s) {
+        var mh$ = tmpnam_r$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(__s);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle tempnam$MH() {
+        return RuntimeHelper.requireNonNull(constants$978.tempnam$MH,"tempnam");
+    }
+    /**
+     * {@snippet :
+     * char* tempnam(char* __dir, char* __pfx);
+     * }
+     */
+    public static MemorySegment tempnam(MemorySegment __dir, MemorySegment __pfx) {
+        var mh$ = tempnam$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(__dir, __pfx);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle fflush$MH() {
+        return RuntimeHelper.requireNonNull(constants$979.fflush$MH,"fflush");
+    }
+    /**
+     * {@snippet :
+     * int fflush(FILE* __stream);
+     * }
+     */
+    public static int fflush(MemorySegment __stream) {
+        var mh$ = fflush$MH();
+        try {
+            return (int)mh$.invokeExact(__stream);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle fflush_unlocked$MH() {
+        return RuntimeHelper.requireNonNull(constants$979.fflush_unlocked$MH,"fflush_unlocked");
+    }
+    /**
+     * {@snippet :
+     * int fflush_unlocked(FILE* __stream);
+     * }
+     */
+    public static int fflush_unlocked(MemorySegment __stream) {
+        var mh$ = fflush_unlocked$MH();
+        try {
+            return (int)mh$.invokeExact(__stream);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle fopen$MH() {
+        return RuntimeHelper.requireNonNull(constants$979.fopen$MH,"fopen");
+    }
+    /**
+     * {@snippet :
+     * FILE* fopen(char* __filename, char* __modes);
+     * }
+     */
+    public static MemorySegment fopen(MemorySegment __filename, MemorySegment __modes) {
+        var mh$ = fopen$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(__filename, __modes);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle freopen$MH() {
+        return RuntimeHelper.requireNonNull(constants$979.freopen$MH,"freopen");
+    }
+    /**
+     * {@snippet :
+     * FILE* freopen(char* __filename, char* __modes, FILE* __stream);
+     * }
+     */
+    public static MemorySegment freopen(MemorySegment __filename, MemorySegment __modes, MemorySegment __stream) {
+        var mh$ = freopen$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(__filename, __modes, __stream);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle fdopen$MH() {
+        return RuntimeHelper.requireNonNull(constants$979.fdopen$MH,"fdopen");
+    }
+    /**
+     * {@snippet :
+     * FILE* fdopen(int __fd, char* __modes);
+     * }
+     */
+    public static MemorySegment fdopen(int __fd, MemorySegment __modes) {
+        var mh$ = fdopen$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(__fd, __modes);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle fmemopen$MH() {
+        return RuntimeHelper.requireNonNull(constants$979.fmemopen$MH,"fmemopen");
+    }
+    /**
+     * {@snippet :
+     * FILE* fmemopen(void* __s, size_t __len, char* __modes);
+     * }
+     */
+    public static MemorySegment fmemopen(MemorySegment __s, long __len, MemorySegment __modes) {
+        var mh$ = fmemopen$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(__s, __len, __modes);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle open_memstream$MH() {
+        return RuntimeHelper.requireNonNull(constants$980.open_memstream$MH,"open_memstream");
+    }
+    /**
+     * {@snippet :
+     * FILE* open_memstream(char** __bufloc, size_t* __sizeloc);
+     * }
+     */
+    public static MemorySegment open_memstream(MemorySegment __bufloc, MemorySegment __sizeloc) {
+        var mh$ = open_memstream$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(__bufloc, __sizeloc);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle setbuf$MH() {
+        return RuntimeHelper.requireNonNull(constants$980.setbuf$MH,"setbuf");
+    }
+    /**
+     * {@snippet :
+     * void setbuf(FILE* __stream, char* __buf);
+     * }
+     */
+    public static void setbuf(MemorySegment __stream, MemorySegment __buf) {
+        var mh$ = setbuf$MH();
+        try {
+            mh$.invokeExact(__stream, __buf);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle setvbuf$MH() {
+        return RuntimeHelper.requireNonNull(constants$980.setvbuf$MH,"setvbuf");
+    }
+    /**
+     * {@snippet :
+     * int setvbuf(FILE* __stream, char* __buf, int __modes, size_t __n);
+     * }
+     */
+    public static int setvbuf(MemorySegment __stream, MemorySegment __buf, int __modes, long __n) {
+        var mh$ = setvbuf$MH();
+        try {
+            return (int)mh$.invokeExact(__stream, __buf, __modes, __n);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle setbuffer$MH() {
+        return RuntimeHelper.requireNonNull(constants$980.setbuffer$MH,"setbuffer");
+    }
+    /**
+     * {@snippet :
+     * void setbuffer(FILE* __stream, char* __buf, size_t __size);
+     * }
+     */
+    public static void setbuffer(MemorySegment __stream, MemorySegment __buf, long __size) {
+        var mh$ = setbuffer$MH();
+        try {
+            mh$.invokeExact(__stream, __buf, __size);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle setlinebuf$MH() {
+        return RuntimeHelper.requireNonNull(constants$980.setlinebuf$MH,"setlinebuf");
+    }
+    /**
+     * {@snippet :
+     * void setlinebuf(FILE* __stream);
+     * }
+     */
+    public static void setlinebuf(MemorySegment __stream) {
+        var mh$ = setlinebuf$MH();
+        try {
+            mh$.invokeExact(__stream);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle fprintf$MH() {
+        return RuntimeHelper.requireNonNull(constants$980.fprintf$MH,"fprintf");
+    }
+    /**
+     * {@snippet :
+     * int fprintf(FILE* __stream, char* __format,...);
+     * }
+     */
+    public static int fprintf(MemorySegment __stream, MemorySegment __format, Object... x2) {
+        var mh$ = fprintf$MH();
+        try {
+            return (int)mh$.invokeExact(__stream, __format, x2);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle printf$MH() {
+        return RuntimeHelper.requireNonNull(constants$981.printf$MH,"printf");
+    }
+    /**
+     * {@snippet :
+     * int printf(char* __format,...);
+     * }
+     */
+    public static int printf(MemorySegment __format, Object... x1) {
+        var mh$ = printf$MH();
+        try {
+            return (int)mh$.invokeExact(__format, x1);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle sprintf$MH() {
+        return RuntimeHelper.requireNonNull(constants$981.sprintf$MH,"sprintf");
+    }
+    /**
+     * {@snippet :
+     * int sprintf(char* __s, char* __format,...);
+     * }
+     */
+    public static int sprintf(MemorySegment __s, MemorySegment __format, Object... x2) {
+        var mh$ = sprintf$MH();
+        try {
+            return (int)mh$.invokeExact(__s, __format, x2);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle vfprintf$MH() {
+        return RuntimeHelper.requireNonNull(constants$981.vfprintf$MH,"vfprintf");
+    }
+    /**
+     * {@snippet :
+     * int vfprintf(FILE* __s, char* __format, __gnuc_va_list __arg);
+     * }
+     */
+    public static int vfprintf(MemorySegment __s, MemorySegment __format, MemorySegment __arg) {
+        var mh$ = vfprintf$MH();
+        try {
+            return (int)mh$.invokeExact(__s, __format, __arg);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle vprintf$MH() {
+        return RuntimeHelper.requireNonNull(constants$981.vprintf$MH,"vprintf");
+    }
+    /**
+     * {@snippet :
+     * int vprintf(char* __format, __gnuc_va_list __arg);
+     * }
+     */
+    public static int vprintf(MemorySegment __format, MemorySegment __arg) {
+        var mh$ = vprintf$MH();
+        try {
+            return (int)mh$.invokeExact(__format, __arg);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle vsprintf$MH() {
+        return RuntimeHelper.requireNonNull(constants$981.vsprintf$MH,"vsprintf");
+    }
+    /**
+     * {@snippet :
+     * int vsprintf(char* __s, char* __format, __gnuc_va_list __arg);
+     * }
+     */
+    public static int vsprintf(MemorySegment __s, MemorySegment __format, MemorySegment __arg) {
+        var mh$ = vsprintf$MH();
+        try {
+            return (int)mh$.invokeExact(__s, __format, __arg);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle snprintf$MH() {
+        return RuntimeHelper.requireNonNull(constants$981.snprintf$MH,"snprintf");
+    }
+    /**
+     * {@snippet :
+     * int snprintf(char* __s, size_t __maxlen, char* __format,...);
+     * }
+     */
+    public static int snprintf(MemorySegment __s, long __maxlen, MemorySegment __format, Object... x3) {
+        var mh$ = snprintf$MH();
+        try {
+            return (int)mh$.invokeExact(__s, __maxlen, __format, x3);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle vsnprintf$MH() {
+        return RuntimeHelper.requireNonNull(constants$982.vsnprintf$MH,"vsnprintf");
+    }
+    /**
+     * {@snippet :
+     * int vsnprintf(char* __s, size_t __maxlen, char* __format, __gnuc_va_list __arg);
+     * }
+     */
+    public static int vsnprintf(MemorySegment __s, long __maxlen, MemorySegment __format, MemorySegment __arg) {
+        var mh$ = vsnprintf$MH();
+        try {
+            return (int)mh$.invokeExact(__s, __maxlen, __format, __arg);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle vdprintf$MH() {
+        return RuntimeHelper.requireNonNull(constants$982.vdprintf$MH,"vdprintf");
+    }
+    /**
+     * {@snippet :
+     * int vdprintf(int __fd, char* __fmt, __gnuc_va_list __arg);
+     * }
+     */
+    public static int vdprintf(int __fd, MemorySegment __fmt, MemorySegment __arg) {
+        var mh$ = vdprintf$MH();
+        try {
+            return (int)mh$.invokeExact(__fd, __fmt, __arg);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle dprintf$MH() {
+        return RuntimeHelper.requireNonNull(constants$982.dprintf$MH,"dprintf");
+    }
+    /**
+     * {@snippet :
+     * int dprintf(int __fd, char* __fmt,...);
+     * }
+     */
+    public static int dprintf(int __fd, MemorySegment __fmt, Object... x2) {
+        var mh$ = dprintf$MH();
+        try {
+            return (int)mh$.invokeExact(__fd, __fmt, x2);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle fscanf$MH() {
+        return RuntimeHelper.requireNonNull(constants$982.fscanf$MH,"fscanf");
+    }
+    /**
+     * {@snippet :
+     * int fscanf(FILE* __stream, char* __format,...);
+     * }
+     */
+    public static int fscanf(MemorySegment __stream, MemorySegment __format, Object... x2) {
+        var mh$ = fscanf$MH();
+        try {
+            return (int)mh$.invokeExact(__stream, __format, x2);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle scanf$MH() {
+        return RuntimeHelper.requireNonNull(constants$982.scanf$MH,"scanf");
+    }
+    /**
+     * {@snippet :
+     * int scanf(char* __format,...);
+     * }
+     */
+    public static int scanf(MemorySegment __format, Object... x1) {
+        var mh$ = scanf$MH();
+        try {
+            return (int)mh$.invokeExact(__format, x1);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle sscanf$MH() {
+        return RuntimeHelper.requireNonNull(constants$982.sscanf$MH,"sscanf");
+    }
+    /**
+     * {@snippet :
+     * int sscanf(char* __s, char* __format,...);
+     * }
+     */
+    public static int sscanf(MemorySegment __s, MemorySegment __format, Object... x2) {
+        var mh$ = sscanf$MH();
+        try {
+            return (int)mh$.invokeExact(__s, __format, x2);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle vfscanf$MH() {
+        return RuntimeHelper.requireNonNull(constants$983.vfscanf$MH,"vfscanf");
+    }
+    /**
+     * {@snippet :
+     * int vfscanf(FILE* __s, char* __format, __gnuc_va_list __arg);
+     * }
+     */
+    public static int vfscanf(MemorySegment __s, MemorySegment __format, MemorySegment __arg) {
+        var mh$ = vfscanf$MH();
+        try {
+            return (int)mh$.invokeExact(__s, __format, __arg);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle vscanf$MH() {
+        return RuntimeHelper.requireNonNull(constants$983.vscanf$MH,"vscanf");
+    }
+    /**
+     * {@snippet :
+     * int vscanf(char* __format, __gnuc_va_list __arg);
+     * }
+     */
+    public static int vscanf(MemorySegment __format, MemorySegment __arg) {
+        var mh$ = vscanf$MH();
+        try {
+            return (int)mh$.invokeExact(__format, __arg);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle vsscanf$MH() {
+        return RuntimeHelper.requireNonNull(constants$983.vsscanf$MH,"vsscanf");
+    }
+    /**
+     * {@snippet :
+     * int vsscanf(char* __s, char* __format, __gnuc_va_list __arg);
+     * }
+     */
+    public static int vsscanf(MemorySegment __s, MemorySegment __format, MemorySegment __arg) {
+        var mh$ = vsscanf$MH();
+        try {
+            return (int)mh$.invokeExact(__s, __format, __arg);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle fgetc$MH() {
+        return RuntimeHelper.requireNonNull(constants$983.fgetc$MH,"fgetc");
+    }
+    /**
+     * {@snippet :
+     * int fgetc(FILE* __stream);
+     * }
+     */
+    public static int fgetc(MemorySegment __stream) {
+        var mh$ = fgetc$MH();
+        try {
+            return (int)mh$.invokeExact(__stream);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle getc$MH() {
+        return RuntimeHelper.requireNonNull(constants$983.getc$MH,"getc");
+    }
+    /**
+     * {@snippet :
+     * int getc(FILE* __stream);
+     * }
+     */
+    public static int getc(MemorySegment __stream) {
+        var mh$ = getc$MH();
+        try {
+            return (int)mh$.invokeExact(__stream);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle getchar$MH() {
+        return RuntimeHelper.requireNonNull(constants$983.getchar$MH,"getchar");
+    }
+    /**
+     * {@snippet :
+     * int getchar();
+     * }
+     */
+    public static int getchar() {
+        var mh$ = getchar$MH();
+        try {
+            return (int)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle getc_unlocked$MH() {
+        return RuntimeHelper.requireNonNull(constants$984.getc_unlocked$MH,"getc_unlocked");
+    }
+    /**
+     * {@snippet :
+     * int getc_unlocked(FILE* __stream);
+     * }
+     */
+    public static int getc_unlocked(MemorySegment __stream) {
+        var mh$ = getc_unlocked$MH();
+        try {
+            return (int)mh$.invokeExact(__stream);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle getchar_unlocked$MH() {
+        return RuntimeHelper.requireNonNull(constants$984.getchar_unlocked$MH,"getchar_unlocked");
+    }
+    /**
+     * {@snippet :
+     * int getchar_unlocked();
+     * }
+     */
+    public static int getchar_unlocked() {
+        var mh$ = getchar_unlocked$MH();
+        try {
+            return (int)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle fgetc_unlocked$MH() {
+        return RuntimeHelper.requireNonNull(constants$984.fgetc_unlocked$MH,"fgetc_unlocked");
+    }
+    /**
+     * {@snippet :
+     * int fgetc_unlocked(FILE* __stream);
+     * }
+     */
+    public static int fgetc_unlocked(MemorySegment __stream) {
+        var mh$ = fgetc_unlocked$MH();
+        try {
+            return (int)mh$.invokeExact(__stream);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle fputc$MH() {
+        return RuntimeHelper.requireNonNull(constants$984.fputc$MH,"fputc");
+    }
+    /**
+     * {@snippet :
+     * int fputc(int __c, FILE* __stream);
+     * }
+     */
+    public static int fputc(int __c, MemorySegment __stream) {
+        var mh$ = fputc$MH();
+        try {
+            return (int)mh$.invokeExact(__c, __stream);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle putc$MH() {
+        return RuntimeHelper.requireNonNull(constants$984.putc$MH,"putc");
+    }
+    /**
+     * {@snippet :
+     * int putc(int __c, FILE* __stream);
+     * }
+     */
+    public static int putc(int __c, MemorySegment __stream) {
+        var mh$ = putc$MH();
+        try {
+            return (int)mh$.invokeExact(__c, __stream);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle putchar$MH() {
+        return RuntimeHelper.requireNonNull(constants$984.putchar$MH,"putchar");
+    }
+    /**
+     * {@snippet :
+     * int putchar(int __c);
+     * }
+     */
+    public static int putchar(int __c) {
+        var mh$ = putchar$MH();
+        try {
+            return (int)mh$.invokeExact(__c);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle fputc_unlocked$MH() {
+        return RuntimeHelper.requireNonNull(constants$985.fputc_unlocked$MH,"fputc_unlocked");
+    }
+    /**
+     * {@snippet :
+     * int fputc_unlocked(int __c, FILE* __stream);
+     * }
+     */
+    public static int fputc_unlocked(int __c, MemorySegment __stream) {
+        var mh$ = fputc_unlocked$MH();
+        try {
+            return (int)mh$.invokeExact(__c, __stream);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle putc_unlocked$MH() {
+        return RuntimeHelper.requireNonNull(constants$985.putc_unlocked$MH,"putc_unlocked");
+    }
+    /**
+     * {@snippet :
+     * int putc_unlocked(int __c, FILE* __stream);
+     * }
+     */
+    public static int putc_unlocked(int __c, MemorySegment __stream) {
+        var mh$ = putc_unlocked$MH();
+        try {
+            return (int)mh$.invokeExact(__c, __stream);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle putchar_unlocked$MH() {
+        return RuntimeHelper.requireNonNull(constants$985.putchar_unlocked$MH,"putchar_unlocked");
+    }
+    /**
+     * {@snippet :
+     * int putchar_unlocked(int __c);
+     * }
+     */
+    public static int putchar_unlocked(int __c) {
+        var mh$ = putchar_unlocked$MH();
+        try {
+            return (int)mh$.invokeExact(__c);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle getw$MH() {
+        return RuntimeHelper.requireNonNull(constants$985.getw$MH,"getw");
+    }
+    /**
+     * {@snippet :
+     * int getw(FILE* __stream);
+     * }
+     */
+    public static int getw(MemorySegment __stream) {
+        var mh$ = getw$MH();
+        try {
+            return (int)mh$.invokeExact(__stream);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle putw$MH() {
+        return RuntimeHelper.requireNonNull(constants$985.putw$MH,"putw");
+    }
+    /**
+     * {@snippet :
+     * int putw(int __w, FILE* __stream);
+     * }
+     */
+    public static int putw(int __w, MemorySegment __stream) {
+        var mh$ = putw$MH();
+        try {
+            return (int)mh$.invokeExact(__w, __stream);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle fgets$MH() {
+        return RuntimeHelper.requireNonNull(constants$985.fgets$MH,"fgets");
+    }
+    /**
+     * {@snippet :
+     * char* fgets(char* __s, int __n, FILE* __stream);
+     * }
+     */
+    public static MemorySegment fgets(MemorySegment __s, int __n, MemorySegment __stream) {
+        var mh$ = fgets$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(__s, __n, __stream);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle __getdelim$MH() {
+        return RuntimeHelper.requireNonNull(constants$986.__getdelim$MH,"__getdelim");
+    }
+    /**
+     * {@snippet :
+     * __ssize_t __getdelim(char** __lineptr, size_t* __n, int __delimiter, FILE* __stream);
+     * }
+     */
+    public static long __getdelim(MemorySegment __lineptr, MemorySegment __n, int __delimiter, MemorySegment __stream) {
+        var mh$ = __getdelim$MH();
+        try {
+            return (long)mh$.invokeExact(__lineptr, __n, __delimiter, __stream);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle getdelim$MH() {
+        return RuntimeHelper.requireNonNull(constants$986.getdelim$MH,"getdelim");
+    }
+    /**
+     * {@snippet :
+     * __ssize_t getdelim(char** __lineptr, size_t* __n, int __delimiter, FILE* __stream);
+     * }
+     */
+    public static long getdelim(MemorySegment __lineptr, MemorySegment __n, int __delimiter, MemorySegment __stream) {
+        var mh$ = getdelim$MH();
+        try {
+            return (long)mh$.invokeExact(__lineptr, __n, __delimiter, __stream);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle getline$MH() {
+        return RuntimeHelper.requireNonNull(constants$986.getline$MH,"getline");
+    }
+    /**
+     * {@snippet :
+     * __ssize_t getline(char** __lineptr, size_t* __n, FILE* __stream);
+     * }
+     */
+    public static long getline(MemorySegment __lineptr, MemorySegment __n, MemorySegment __stream) {
+        var mh$ = getline$MH();
+        try {
+            return (long)mh$.invokeExact(__lineptr, __n, __stream);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle fputs$MH() {
+        return RuntimeHelper.requireNonNull(constants$986.fputs$MH,"fputs");
+    }
+    /**
+     * {@snippet :
+     * int fputs(char* __s, FILE* __stream);
+     * }
+     */
+    public static int fputs(MemorySegment __s, MemorySegment __stream) {
+        var mh$ = fputs$MH();
+        try {
+            return (int)mh$.invokeExact(__s, __stream);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle puts$MH() {
+        return RuntimeHelper.requireNonNull(constants$986.puts$MH,"puts");
+    }
+    /**
+     * {@snippet :
+     * int puts(char* __s);
+     * }
+     */
+    public static int puts(MemorySegment __s) {
+        var mh$ = puts$MH();
+        try {
+            return (int)mh$.invokeExact(__s);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle ungetc$MH() {
+        return RuntimeHelper.requireNonNull(constants$986.ungetc$MH,"ungetc");
+    }
+    /**
+     * {@snippet :
+     * int ungetc(int __c, FILE* __stream);
+     * }
+     */
+    public static int ungetc(int __c, MemorySegment __stream) {
+        var mh$ = ungetc$MH();
+        try {
+            return (int)mh$.invokeExact(__c, __stream);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle fread$MH() {
+        return RuntimeHelper.requireNonNull(constants$987.fread$MH,"fread");
+    }
+    /**
+     * {@snippet :
+     * unsigned long fread(void* __ptr, size_t __size, size_t __n, FILE* __stream);
+     * }
+     */
+    public static long fread(MemorySegment __ptr, long __size, long __n, MemorySegment __stream) {
+        var mh$ = fread$MH();
+        try {
+            return (long)mh$.invokeExact(__ptr, __size, __n, __stream);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle fwrite$MH() {
+        return RuntimeHelper.requireNonNull(constants$987.fwrite$MH,"fwrite");
+    }
+    /**
+     * {@snippet :
+     * unsigned long fwrite(void* __ptr, size_t __size, size_t __n, FILE* __s);
+     * }
+     */
+    public static long fwrite(MemorySegment __ptr, long __size, long __n, MemorySegment __s) {
+        var mh$ = fwrite$MH();
+        try {
+            return (long)mh$.invokeExact(__ptr, __size, __n, __s);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle fread_unlocked$MH() {
+        return RuntimeHelper.requireNonNull(constants$987.fread_unlocked$MH,"fread_unlocked");
+    }
+    /**
+     * {@snippet :
+     * size_t fread_unlocked(void* __ptr, size_t __size, size_t __n, FILE* __stream);
+     * }
+     */
+    public static long fread_unlocked(MemorySegment __ptr, long __size, long __n, MemorySegment __stream) {
+        var mh$ = fread_unlocked$MH();
+        try {
+            return (long)mh$.invokeExact(__ptr, __size, __n, __stream);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle fwrite_unlocked$MH() {
+        return RuntimeHelper.requireNonNull(constants$987.fwrite_unlocked$MH,"fwrite_unlocked");
+    }
+    /**
+     * {@snippet :
+     * size_t fwrite_unlocked(void* __ptr, size_t __size, size_t __n, FILE* __stream);
+     * }
+     */
+    public static long fwrite_unlocked(MemorySegment __ptr, long __size, long __n, MemorySegment __stream) {
+        var mh$ = fwrite_unlocked$MH();
+        try {
+            return (long)mh$.invokeExact(__ptr, __size, __n, __stream);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle fseek$MH() {
+        return RuntimeHelper.requireNonNull(constants$987.fseek$MH,"fseek");
+    }
+    /**
+     * {@snippet :
+     * int fseek(FILE* __stream, long __off, int __whence);
+     * }
+     */
+    public static int fseek(MemorySegment __stream, long __off, int __whence) {
+        var mh$ = fseek$MH();
+        try {
+            return (int)mh$.invokeExact(__stream, __off, __whence);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle ftell$MH() {
+        return RuntimeHelper.requireNonNull(constants$987.ftell$MH,"ftell");
+    }
+    /**
+     * {@snippet :
+     * long ftell(FILE* __stream);
+     * }
+     */
+    public static long ftell(MemorySegment __stream) {
+        var mh$ = ftell$MH();
+        try {
+            return (long)mh$.invokeExact(__stream);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle rewind$MH() {
+        return RuntimeHelper.requireNonNull(constants$988.rewind$MH,"rewind");
+    }
+    /**
+     * {@snippet :
+     * void rewind(FILE* __stream);
+     * }
+     */
+    public static void rewind(MemorySegment __stream) {
+        var mh$ = rewind$MH();
+        try {
+            mh$.invokeExact(__stream);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle fseeko$MH() {
+        return RuntimeHelper.requireNonNull(constants$988.fseeko$MH,"fseeko");
+    }
+    /**
+     * {@snippet :
+     * int fseeko(FILE* __stream, __off_t __off, int __whence);
+     * }
+     */
+    public static int fseeko(MemorySegment __stream, long __off, int __whence) {
+        var mh$ = fseeko$MH();
+        try {
+            return (int)mh$.invokeExact(__stream, __off, __whence);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle ftello$MH() {
+        return RuntimeHelper.requireNonNull(constants$988.ftello$MH,"ftello");
+    }
+    /**
+     * {@snippet :
+     * __off_t ftello(FILE* __stream);
+     * }
+     */
+    public static long ftello(MemorySegment __stream) {
+        var mh$ = ftello$MH();
+        try {
+            return (long)mh$.invokeExact(__stream);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle fgetpos$MH() {
+        return RuntimeHelper.requireNonNull(constants$988.fgetpos$MH,"fgetpos");
+    }
+    /**
+     * {@snippet :
+     * int fgetpos(FILE* __stream, fpos_t* __pos);
+     * }
+     */
+    public static int fgetpos(MemorySegment __stream, MemorySegment __pos) {
+        var mh$ = fgetpos$MH();
+        try {
+            return (int)mh$.invokeExact(__stream, __pos);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle fsetpos$MH() {
+        return RuntimeHelper.requireNonNull(constants$988.fsetpos$MH,"fsetpos");
+    }
+    /**
+     * {@snippet :
+     * int fsetpos(FILE* __stream, const fpos_t* __pos);
+     * }
+     */
+    public static int fsetpos(MemorySegment __stream, MemorySegment __pos) {
+        var mh$ = fsetpos$MH();
+        try {
+            return (int)mh$.invokeExact(__stream, __pos);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle clearerr$MH() {
+        return RuntimeHelper.requireNonNull(constants$988.clearerr$MH,"clearerr");
+    }
+    /**
+     * {@snippet :
+     * void clearerr(FILE* __stream);
+     * }
+     */
+    public static void clearerr(MemorySegment __stream) {
+        var mh$ = clearerr$MH();
+        try {
+            mh$.invokeExact(__stream);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle feof$MH() {
+        return RuntimeHelper.requireNonNull(constants$989.feof$MH,"feof");
+    }
+    /**
+     * {@snippet :
+     * int feof(FILE* __stream);
+     * }
+     */
+    public static int feof(MemorySegment __stream) {
+        var mh$ = feof$MH();
+        try {
+            return (int)mh$.invokeExact(__stream);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle ferror$MH() {
+        return RuntimeHelper.requireNonNull(constants$989.ferror$MH,"ferror");
+    }
+    /**
+     * {@snippet :
+     * int ferror(FILE* __stream);
+     * }
+     */
+    public static int ferror(MemorySegment __stream) {
+        var mh$ = ferror$MH();
+        try {
+            return (int)mh$.invokeExact(__stream);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle clearerr_unlocked$MH() {
+        return RuntimeHelper.requireNonNull(constants$989.clearerr_unlocked$MH,"clearerr_unlocked");
+    }
+    /**
+     * {@snippet :
+     * void clearerr_unlocked(FILE* __stream);
+     * }
+     */
+    public static void clearerr_unlocked(MemorySegment __stream) {
+        var mh$ = clearerr_unlocked$MH();
+        try {
+            mh$.invokeExact(__stream);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle feof_unlocked$MH() {
+        return RuntimeHelper.requireNonNull(constants$989.feof_unlocked$MH,"feof_unlocked");
+    }
+    /**
+     * {@snippet :
+     * int feof_unlocked(FILE* __stream);
+     * }
+     */
+    public static int feof_unlocked(MemorySegment __stream) {
+        var mh$ = feof_unlocked$MH();
+        try {
+            return (int)mh$.invokeExact(__stream);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle ferror_unlocked$MH() {
+        return RuntimeHelper.requireNonNull(constants$989.ferror_unlocked$MH,"ferror_unlocked");
+    }
+    /**
+     * {@snippet :
+     * int ferror_unlocked(FILE* __stream);
+     * }
+     */
+    public static int ferror_unlocked(MemorySegment __stream) {
+        var mh$ = ferror_unlocked$MH();
+        try {
+            return (int)mh$.invokeExact(__stream);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle perror$MH() {
+        return RuntimeHelper.requireNonNull(constants$989.perror$MH,"perror");
+    }
+    /**
+     * {@snippet :
+     * void perror(char* __s);
+     * }
+     */
+    public static void perror(MemorySegment __s) {
+        var mh$ = perror$MH();
+        try {
+            mh$.invokeExact(__s);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle fileno$MH() {
+        return RuntimeHelper.requireNonNull(constants$990.fileno$MH,"fileno");
+    }
+    /**
+     * {@snippet :
+     * int fileno(FILE* __stream);
+     * }
+     */
+    public static int fileno(MemorySegment __stream) {
+        var mh$ = fileno$MH();
+        try {
+            return (int)mh$.invokeExact(__stream);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle fileno_unlocked$MH() {
+        return RuntimeHelper.requireNonNull(constants$990.fileno_unlocked$MH,"fileno_unlocked");
+    }
+    /**
+     * {@snippet :
+     * int fileno_unlocked(FILE* __stream);
+     * }
+     */
+    public static int fileno_unlocked(MemorySegment __stream) {
+        var mh$ = fileno_unlocked$MH();
+        try {
+            return (int)mh$.invokeExact(__stream);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pclose$MH() {
+        return RuntimeHelper.requireNonNull(constants$990.pclose$MH,"pclose");
+    }
+    /**
+     * {@snippet :
+     * int pclose(FILE* __stream);
+     * }
+     */
+    public static int pclose(MemorySegment __stream) {
+        var mh$ = pclose$MH();
+        try {
+            return (int)mh$.invokeExact(__stream);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle popen$MH() {
+        return RuntimeHelper.requireNonNull(constants$990.popen$MH,"popen");
+    }
+    /**
+     * {@snippet :
+     * FILE* popen(char* __command, char* __modes);
+     * }
+     */
+    public static MemorySegment popen(MemorySegment __command, MemorySegment __modes) {
+        var mh$ = popen$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(__command, __modes);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle ctermid$MH() {
+        return RuntimeHelper.requireNonNull(constants$990.ctermid$MH,"ctermid");
+    }
+    /**
+     * {@snippet :
+     * char* ctermid(char* __s);
+     * }
+     */
+    public static MemorySegment ctermid(MemorySegment __s) {
+        var mh$ = ctermid$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(__s);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle flockfile$MH() {
+        return RuntimeHelper.requireNonNull(constants$990.flockfile$MH,"flockfile");
+    }
+    /**
+     * {@snippet :
+     * void flockfile(FILE* __stream);
+     * }
+     */
+    public static void flockfile(MemorySegment __stream) {
+        var mh$ = flockfile$MH();
+        try {
+            mh$.invokeExact(__stream);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle ftrylockfile$MH() {
+        return RuntimeHelper.requireNonNull(constants$991.ftrylockfile$MH,"ftrylockfile");
+    }
+    /**
+     * {@snippet :
+     * int ftrylockfile(FILE* __stream);
+     * }
+     */
+    public static int ftrylockfile(MemorySegment __stream) {
+        var mh$ = ftrylockfile$MH();
+        try {
+            return (int)mh$.invokeExact(__stream);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle funlockfile$MH() {
+        return RuntimeHelper.requireNonNull(constants$991.funlockfile$MH,"funlockfile");
+    }
+    /**
+     * {@snippet :
+     * void funlockfile(FILE* __stream);
+     * }
+     */
+    public static void funlockfile(MemorySegment __stream) {
+        var mh$ = funlockfile$MH();
+        try {
+            mh$.invokeExact(__stream);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle __uflow$MH() {
+        return RuntimeHelper.requireNonNull(constants$991.__uflow$MH,"__uflow");
+    }
+    /**
+     * {@snippet :
+     * int __uflow(FILE*);
+     * }
+     */
+    public static int __uflow(MemorySegment x0) {
+        var mh$ = __uflow$MH();
+        try {
+            return (int)mh$.invokeExact(x0);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle __overflow$MH() {
+        return RuntimeHelper.requireNonNull(constants$991.__overflow$MH,"__overflow");
+    }
+    /**
+     * {@snippet :
+     * int __overflow(FILE*, int);
+     * }
+     */
+    public static int __overflow(MemorySegment x0, int x1) {
+        var mh$ = __overflow$MH();
+        try {
+            return (int)mh$.invokeExact(x0, x1);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_split_file_list$MH() {
+        return RuntimeHelper.requireNonNull(constants$991.pango_split_file_list$MH,"pango_split_file_list");
+    }
+    /**
+     * {@snippet :
+     * char** pango_split_file_list(char* str);
+     * }
+     */
+    public static MemorySegment pango_split_file_list(MemorySegment str) {
+        var mh$ = pango_split_file_list$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(str);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_trim_string$MH() {
+        return RuntimeHelper.requireNonNull(constants$991.pango_trim_string$MH,"pango_trim_string");
+    }
+    /**
+     * {@snippet :
+     * char* pango_trim_string(char* str);
+     * }
+     */
+    public static MemorySegment pango_trim_string(MemorySegment str) {
+        var mh$ = pango_trim_string$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(str);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_read_line$MH() {
+        return RuntimeHelper.requireNonNull(constants$992.pango_read_line$MH,"pango_read_line");
+    }
+    /**
+     * {@snippet :
+     * gint pango_read_line(FILE* stream, GString* str);
+     * }
+     */
+    public static int pango_read_line(MemorySegment stream, MemorySegment str) {
+        var mh$ = pango_read_line$MH();
+        try {
+            return (int)mh$.invokeExact(stream, str);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_skip_space$MH() {
+        return RuntimeHelper.requireNonNull(constants$992.pango_skip_space$MH,"pango_skip_space");
+    }
+    /**
+     * {@snippet :
+     * gboolean pango_skip_space(char** pos);
+     * }
+     */
+    public static int pango_skip_space(MemorySegment pos) {
+        var mh$ = pango_skip_space$MH();
+        try {
+            return (int)mh$.invokeExact(pos);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_scan_word$MH() {
+        return RuntimeHelper.requireNonNull(constants$992.pango_scan_word$MH,"pango_scan_word");
+    }
+    /**
+     * {@snippet :
+     * gboolean pango_scan_word(char** pos, GString* out);
+     * }
+     */
+    public static int pango_scan_word(MemorySegment pos, MemorySegment out) {
+        var mh$ = pango_scan_word$MH();
+        try {
+            return (int)mh$.invokeExact(pos, out);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_scan_string$MH() {
+        return RuntimeHelper.requireNonNull(constants$992.pango_scan_string$MH,"pango_scan_string");
+    }
+    /**
+     * {@snippet :
+     * gboolean pango_scan_string(char** pos, GString* out);
+     * }
+     */
+    public static int pango_scan_string(MemorySegment pos, MemorySegment out) {
+        var mh$ = pango_scan_string$MH();
+        try {
+            return (int)mh$.invokeExact(pos, out);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_scan_int$MH() {
+        return RuntimeHelper.requireNonNull(constants$992.pango_scan_int$MH,"pango_scan_int");
+    }
+    /**
+     * {@snippet :
+     * gboolean pango_scan_int(char** pos, int* out);
+     * }
+     */
+    public static int pango_scan_int(MemorySegment pos, MemorySegment out) {
+        var mh$ = pango_scan_int$MH();
+        try {
+            return (int)mh$.invokeExact(pos, out);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_parse_enum$MH() {
+        return RuntimeHelper.requireNonNull(constants$992.pango_parse_enum$MH,"pango_parse_enum");
+    }
+    /**
+     * {@snippet :
+     * gboolean pango_parse_enum(GType type, char* str, int* value, gboolean warn, char** possible_values);
+     * }
+     */
+    public static int pango_parse_enum(long type, MemorySegment str, MemorySegment value, int warn, MemorySegment possible_values) {
+        var mh$ = pango_parse_enum$MH();
+        try {
+            return (int)mh$.invokeExact(type, str, value, warn, possible_values);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_parse_style$MH() {
+        return RuntimeHelper.requireNonNull(constants$993.pango_parse_style$MH,"pango_parse_style");
+    }
+    /**
+     * {@snippet :
+     * gboolean pango_parse_style(char* str, PangoStyle* style, gboolean warn);
+     * }
+     */
+    public static int pango_parse_style(MemorySegment str, MemorySegment style, int warn) {
+        var mh$ = pango_parse_style$MH();
+        try {
+            return (int)mh$.invokeExact(str, style, warn);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_parse_variant$MH() {
+        return RuntimeHelper.requireNonNull(constants$993.pango_parse_variant$MH,"pango_parse_variant");
+    }
+    /**
+     * {@snippet :
+     * gboolean pango_parse_variant(char* str, PangoVariant* variant, gboolean warn);
+     * }
+     */
+    public static int pango_parse_variant(MemorySegment str, MemorySegment variant, int warn) {
+        var mh$ = pango_parse_variant$MH();
+        try {
+            return (int)mh$.invokeExact(str, variant, warn);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_parse_weight$MH() {
+        return RuntimeHelper.requireNonNull(constants$993.pango_parse_weight$MH,"pango_parse_weight");
+    }
+    /**
+     * {@snippet :
+     * gboolean pango_parse_weight(char* str, PangoWeight* weight, gboolean warn);
+     * }
+     */
+    public static int pango_parse_weight(MemorySegment str, MemorySegment weight, int warn) {
+        var mh$ = pango_parse_weight$MH();
+        try {
+            return (int)mh$.invokeExact(str, weight, warn);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_parse_stretch$MH() {
+        return RuntimeHelper.requireNonNull(constants$993.pango_parse_stretch$MH,"pango_parse_stretch");
+    }
+    /**
+     * {@snippet :
+     * gboolean pango_parse_stretch(char* str, PangoStretch* stretch, gboolean warn);
+     * }
+     */
+    public static int pango_parse_stretch(MemorySegment str, MemorySegment stretch, int warn) {
+        var mh$ = pango_parse_stretch$MH();
+        try {
+            return (int)mh$.invokeExact(str, stretch, warn);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_quantize_line_geometry$MH() {
+        return RuntimeHelper.requireNonNull(constants$993.pango_quantize_line_geometry$MH,"pango_quantize_line_geometry");
+    }
+    /**
+     * {@snippet :
+     * void pango_quantize_line_geometry(int* thickness, int* position);
+     * }
+     */
+    public static void pango_quantize_line_geometry(MemorySegment thickness, MemorySegment position) {
+        var mh$ = pango_quantize_line_geometry$MH();
+        try {
+            mh$.invokeExact(thickness, position);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_log2vis_get_embedding_levels$MH() {
+        return RuntimeHelper.requireNonNull(constants$993.pango_log2vis_get_embedding_levels$MH,"pango_log2vis_get_embedding_levels");
+    }
+    /**
+     * {@snippet :
+     * guint8* pango_log2vis_get_embedding_levels(const gchar* text, int length, PangoDirection* pbase_dir);
+     * }
+     */
+    public static MemorySegment pango_log2vis_get_embedding_levels(MemorySegment text, int length, MemorySegment pbase_dir) {
+        var mh$ = pango_log2vis_get_embedding_levels$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(text, length, pbase_dir);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_is_zero_width$MH() {
+        return RuntimeHelper.requireNonNull(constants$994.pango_is_zero_width$MH,"pango_is_zero_width");
+    }
+    /**
+     * {@snippet :
+     * gboolean pango_is_zero_width(gunichar ch);
+     * }
+     */
+    public static int pango_is_zero_width(int ch) {
+        var mh$ = pango_is_zero_width$MH();
+        try {
+            return (int)mh$.invokeExact(ch);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_find_paragraph_boundary$MH() {
+        return RuntimeHelper.requireNonNull(constants$994.pango_find_paragraph_boundary$MH,"pango_find_paragraph_boundary");
+    }
+    /**
+     * {@snippet :
+     * void pango_find_paragraph_boundary(char* text, int length, int* paragraph_delimiter_index, int* next_paragraph_start);
+     * }
+     */
+    public static void pango_find_paragraph_boundary(MemorySegment text, int length, MemorySegment paragraph_delimiter_index, MemorySegment next_paragraph_start) {
+        var mh$ = pango_find_paragraph_boundary$MH();
+        try {
+            mh$.invokeExact(text, length, paragraph_delimiter_index, next_paragraph_start);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_version$MH() {
+        return RuntimeHelper.requireNonNull(constants$994.pango_version$MH,"pango_version");
+    }
+    /**
+     * {@snippet :
+     * int pango_version();
+     * }
+     */
+    public static int pango_version() {
+        var mh$ = pango_version$MH();
+        try {
+            return (int)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_version_string$MH() {
+        return RuntimeHelper.requireNonNull(constants$994.pango_version_string$MH,"pango_version_string");
+    }
+    /**
+     * {@snippet :
+     * char* pango_version_string();
+     * }
+     */
+    public static MemorySegment pango_version_string() {
+        var mh$ = pango_version_string$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_version_check$MH() {
+        return RuntimeHelper.requireNonNull(constants$994.pango_version_check$MH,"pango_version_check");
+    }
+    /**
+     * {@snippet :
+     * char* pango_version_check(int required_major, int required_minor, int required_micro);
+     * }
+     */
+    public static MemorySegment pango_version_check(int required_major, int required_minor, int required_micro) {
+        var mh$ = pango_version_check$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(required_major, required_minor, required_micro);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_version$MH() {
+        return RuntimeHelper.requireNonNull(constants$994.cairo_version$MH,"cairo_version");
+    }
+    /**
+     * {@snippet :
+     * int cairo_version();
+     * }
+     */
+    public static int cairo_version() {
+        var mh$ = cairo_version$MH();
+        try {
+            return (int)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_version_string$MH() {
+        return RuntimeHelper.requireNonNull(constants$995.cairo_version_string$MH,"cairo_version_string");
+    }
+    /**
+     * {@snippet :
+     * char* cairo_version_string();
+     * }
+     */
+    public static MemorySegment cairo_version_string() {
+        var mh$ = cairo_version_string$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    /**
+     * {@snippet :
+     * typedef int cairo_bool_t;
+     * }
+     */
+    public static final OfInt cairo_bool_t = Constants$root.C_INT$LAYOUT;
+    /**
+     * {@snippet :
+     * enum _cairo_status.CAIRO_STATUS_SUCCESS = 0;
+     * }
+     */
+    public static int CAIRO_STATUS_SUCCESS() {
+        return (int)0L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_status.CAIRO_STATUS_NO_MEMORY = 1;
+     * }
+     */
+    public static int CAIRO_STATUS_NO_MEMORY() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_status.CAIRO_STATUS_INVALID_RESTORE = 2;
+     * }
+     */
+    public static int CAIRO_STATUS_INVALID_RESTORE() {
+        return (int)2L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_status.CAIRO_STATUS_INVALID_POP_GROUP = 3;
+     * }
+     */
+    public static int CAIRO_STATUS_INVALID_POP_GROUP() {
+        return (int)3L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_status.CAIRO_STATUS_NO_CURRENT_POINT = 4;
+     * }
+     */
+    public static int CAIRO_STATUS_NO_CURRENT_POINT() {
+        return (int)4L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_status.CAIRO_STATUS_INVALID_MATRIX = 5;
+     * }
+     */
+    public static int CAIRO_STATUS_INVALID_MATRIX() {
+        return (int)5L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_status.CAIRO_STATUS_INVALID_STATUS = 6;
+     * }
+     */
+    public static int CAIRO_STATUS_INVALID_STATUS() {
+        return (int)6L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_status.CAIRO_STATUS_NULL_POINTER = 7;
+     * }
+     */
+    public static int CAIRO_STATUS_NULL_POINTER() {
+        return (int)7L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_status.CAIRO_STATUS_INVALID_STRING = 8;
+     * }
+     */
+    public static int CAIRO_STATUS_INVALID_STRING() {
+        return (int)8L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_status.CAIRO_STATUS_INVALID_PATH_DATA = 9;
+     * }
+     */
+    public static int CAIRO_STATUS_INVALID_PATH_DATA() {
+        return (int)9L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_status.CAIRO_STATUS_READ_ERROR = 10;
+     * }
+     */
+    public static int CAIRO_STATUS_READ_ERROR() {
+        return (int)10L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_status.CAIRO_STATUS_WRITE_ERROR = 11;
+     * }
+     */
+    public static int CAIRO_STATUS_WRITE_ERROR() {
+        return (int)11L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_status.CAIRO_STATUS_SURFACE_FINISHED = 12;
+     * }
+     */
+    public static int CAIRO_STATUS_SURFACE_FINISHED() {
+        return (int)12L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_status.CAIRO_STATUS_SURFACE_TYPE_MISMATCH = 13;
+     * }
+     */
+    public static int CAIRO_STATUS_SURFACE_TYPE_MISMATCH() {
+        return (int)13L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_status.CAIRO_STATUS_PATTERN_TYPE_MISMATCH = 14;
+     * }
+     */
+    public static int CAIRO_STATUS_PATTERN_TYPE_MISMATCH() {
+        return (int)14L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_status.CAIRO_STATUS_INVALID_CONTENT = 15;
+     * }
+     */
+    public static int CAIRO_STATUS_INVALID_CONTENT() {
+        return (int)15L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_status.CAIRO_STATUS_INVALID_FORMAT = 16;
+     * }
+     */
+    public static int CAIRO_STATUS_INVALID_FORMAT() {
+        return (int)16L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_status.CAIRO_STATUS_INVALID_VISUAL = 17;
+     * }
+     */
+    public static int CAIRO_STATUS_INVALID_VISUAL() {
+        return (int)17L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_status.CAIRO_STATUS_FILE_NOT_FOUND = 18;
+     * }
+     */
+    public static int CAIRO_STATUS_FILE_NOT_FOUND() {
+        return (int)18L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_status.CAIRO_STATUS_INVALID_DASH = 19;
+     * }
+     */
+    public static int CAIRO_STATUS_INVALID_DASH() {
+        return (int)19L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_status.CAIRO_STATUS_INVALID_DSC_COMMENT = 20;
+     * }
+     */
+    public static int CAIRO_STATUS_INVALID_DSC_COMMENT() {
+        return (int)20L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_status.CAIRO_STATUS_INVALID_INDEX = 21;
+     * }
+     */
+    public static int CAIRO_STATUS_INVALID_INDEX() {
+        return (int)21L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_status.CAIRO_STATUS_CLIP_NOT_REPRESENTABLE = 22;
+     * }
+     */
+    public static int CAIRO_STATUS_CLIP_NOT_REPRESENTABLE() {
+        return (int)22L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_status.CAIRO_STATUS_TEMP_FILE_ERROR = 23;
+     * }
+     */
+    public static int CAIRO_STATUS_TEMP_FILE_ERROR() {
+        return (int)23L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_status.CAIRO_STATUS_INVALID_STRIDE = 24;
+     * }
+     */
+    public static int CAIRO_STATUS_INVALID_STRIDE() {
+        return (int)24L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_status.CAIRO_STATUS_FONT_TYPE_MISMATCH = 25;
+     * }
+     */
+    public static int CAIRO_STATUS_FONT_TYPE_MISMATCH() {
+        return (int)25L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_status.CAIRO_STATUS_USER_FONT_IMMUTABLE = 26;
+     * }
+     */
+    public static int CAIRO_STATUS_USER_FONT_IMMUTABLE() {
+        return (int)26L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_status.CAIRO_STATUS_USER_FONT_ERROR = 27;
+     * }
+     */
+    public static int CAIRO_STATUS_USER_FONT_ERROR() {
+        return (int)27L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_status.CAIRO_STATUS_NEGATIVE_COUNT = 28;
+     * }
+     */
+    public static int CAIRO_STATUS_NEGATIVE_COUNT() {
+        return (int)28L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_status.CAIRO_STATUS_INVALID_CLUSTERS = 29;
+     * }
+     */
+    public static int CAIRO_STATUS_INVALID_CLUSTERS() {
+        return (int)29L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_status.CAIRO_STATUS_INVALID_SLANT = 30;
+     * }
+     */
+    public static int CAIRO_STATUS_INVALID_SLANT() {
+        return (int)30L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_status.CAIRO_STATUS_INVALID_WEIGHT = 31;
+     * }
+     */
+    public static int CAIRO_STATUS_INVALID_WEIGHT() {
+        return (int)31L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_status.CAIRO_STATUS_INVALID_SIZE = 32;
+     * }
+     */
+    public static int CAIRO_STATUS_INVALID_SIZE() {
+        return (int)32L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_status.CAIRO_STATUS_USER_FONT_NOT_IMPLEMENTED = 33;
+     * }
+     */
+    public static int CAIRO_STATUS_USER_FONT_NOT_IMPLEMENTED() {
+        return (int)33L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_status.CAIRO_STATUS_DEVICE_TYPE_MISMATCH = 34;
+     * }
+     */
+    public static int CAIRO_STATUS_DEVICE_TYPE_MISMATCH() {
+        return (int)34L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_status.CAIRO_STATUS_DEVICE_ERROR = 35;
+     * }
+     */
+    public static int CAIRO_STATUS_DEVICE_ERROR() {
+        return (int)35L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_status.CAIRO_STATUS_INVALID_MESH_CONSTRUCTION = 36;
+     * }
+     */
+    public static int CAIRO_STATUS_INVALID_MESH_CONSTRUCTION() {
+        return (int)36L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_status.CAIRO_STATUS_DEVICE_FINISHED = 37;
+     * }
+     */
+    public static int CAIRO_STATUS_DEVICE_FINISHED() {
+        return (int)37L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_status.CAIRO_STATUS_JBIG2_GLOBAL_MISSING = 38;
+     * }
+     */
+    public static int CAIRO_STATUS_JBIG2_GLOBAL_MISSING() {
+        return (int)38L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_status.CAIRO_STATUS_PNG_ERROR = 39;
+     * }
+     */
+    public static int CAIRO_STATUS_PNG_ERROR() {
+        return (int)39L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_status.CAIRO_STATUS_FREETYPE_ERROR = 40;
+     * }
+     */
+    public static int CAIRO_STATUS_FREETYPE_ERROR() {
+        return (int)40L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_status.CAIRO_STATUS_WIN32_GDI_ERROR = 41;
+     * }
+     */
+    public static int CAIRO_STATUS_WIN32_GDI_ERROR() {
+        return (int)41L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_status.CAIRO_STATUS_TAG_ERROR = 42;
+     * }
+     */
+    public static int CAIRO_STATUS_TAG_ERROR() {
+        return (int)42L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_status.CAIRO_STATUS_LAST_STATUS = 43;
+     * }
+     */
+    public static int CAIRO_STATUS_LAST_STATUS() {
+        return (int)43L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_content.CAIRO_CONTENT_COLOR = 4096;
+     * }
+     */
+    public static int CAIRO_CONTENT_COLOR() {
+        return (int)4096L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_content.CAIRO_CONTENT_ALPHA = 8192;
+     * }
+     */
+    public static int CAIRO_CONTENT_ALPHA() {
+        return (int)8192L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_content.CAIRO_CONTENT_COLOR_ALPHA = 12288;
+     * }
+     */
+    public static int CAIRO_CONTENT_COLOR_ALPHA() {
+        return (int)12288L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_format.CAIRO_FORMAT_INVALID = -1;
+     * }
+     */
+    public static int CAIRO_FORMAT_INVALID() {
+        return (int)-1L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_format.CAIRO_FORMAT_ARGB32 = 0;
+     * }
+     */
+    public static int CAIRO_FORMAT_ARGB32() {
+        return (int)0L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_format.CAIRO_FORMAT_RGB24 = 1;
+     * }
+     */
+    public static int CAIRO_FORMAT_RGB24() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_format.CAIRO_FORMAT_A8 = 2;
+     * }
+     */
+    public static int CAIRO_FORMAT_A8() {
+        return (int)2L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_format.CAIRO_FORMAT_A1 = 3;
+     * }
+     */
+    public static int CAIRO_FORMAT_A1() {
+        return (int)3L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_format.CAIRO_FORMAT_RGB16_565 = 4;
+     * }
+     */
+    public static int CAIRO_FORMAT_RGB16_565() {
+        return (int)4L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_format.CAIRO_FORMAT_RGB30 = 5;
+     * }
+     */
+    public static int CAIRO_FORMAT_RGB30() {
+        return (int)5L;
+    }
+    public static MethodHandle cairo_create$MH() {
+        return RuntimeHelper.requireNonNull(constants$996.cairo_create$MH,"cairo_create");
+    }
+    /**
+     * {@snippet :
+     * cairo_t* cairo_create(cairo_surface_t* target);
+     * }
+     */
+    public static MemorySegment cairo_create(MemorySegment target) {
+        var mh$ = cairo_create$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(target);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_reference$MH() {
+        return RuntimeHelper.requireNonNull(constants$996.cairo_reference$MH,"cairo_reference");
+    }
+    /**
+     * {@snippet :
+     * cairo_t* cairo_reference(cairo_t* cr);
+     * }
+     */
+    public static MemorySegment cairo_reference(MemorySegment cr) {
+        var mh$ = cairo_reference$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(cr);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_destroy$MH() {
+        return RuntimeHelper.requireNonNull(constants$996.cairo_destroy$MH,"cairo_destroy");
+    }
+    /**
+     * {@snippet :
+     * void cairo_destroy(cairo_t* cr);
+     * }
+     */
+    public static void cairo_destroy(MemorySegment cr) {
+        var mh$ = cairo_destroy$MH();
+        try {
+            mh$.invokeExact(cr);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_get_reference_count$MH() {
+        return RuntimeHelper.requireNonNull(constants$996.cairo_get_reference_count$MH,"cairo_get_reference_count");
+    }
+    /**
+     * {@snippet :
+     * unsigned int cairo_get_reference_count(cairo_t* cr);
+     * }
+     */
+    public static int cairo_get_reference_count(MemorySegment cr) {
+        var mh$ = cairo_get_reference_count$MH();
+        try {
+            return (int)mh$.invokeExact(cr);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_get_user_data$MH() {
+        return RuntimeHelper.requireNonNull(constants$996.cairo_get_user_data$MH,"cairo_get_user_data");
+    }
+    /**
+     * {@snippet :
+     * void* cairo_get_user_data(cairo_t* cr, const cairo_user_data_key_t* key);
+     * }
+     */
+    public static MemorySegment cairo_get_user_data(MemorySegment cr, MemorySegment key) {
+        var mh$ = cairo_get_user_data$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(cr, key);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_set_user_data$MH() {
+        return RuntimeHelper.requireNonNull(constants$997.cairo_set_user_data$MH,"cairo_set_user_data");
+    }
+    /**
+     * {@snippet :
+     * cairo_status_t cairo_set_user_data(cairo_t* cr, const cairo_user_data_key_t* key, void* user_data, cairo_destroy_func_t destroy);
+     * }
+     */
+    public static int cairo_set_user_data(MemorySegment cr, MemorySegment key, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = cairo_set_user_data$MH();
+        try {
+            return (int)mh$.invokeExact(cr, key, user_data, destroy);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_save$MH() {
+        return RuntimeHelper.requireNonNull(constants$997.cairo_save$MH,"cairo_save");
+    }
+    /**
+     * {@snippet :
+     * void cairo_save(cairo_t* cr);
+     * }
+     */
+    public static void cairo_save(MemorySegment cr) {
+        var mh$ = cairo_save$MH();
+        try {
+            mh$.invokeExact(cr);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_restore$MH() {
+        return RuntimeHelper.requireNonNull(constants$997.cairo_restore$MH,"cairo_restore");
+    }
+    /**
+     * {@snippet :
+     * void cairo_restore(cairo_t* cr);
+     * }
+     */
+    public static void cairo_restore(MemorySegment cr) {
+        var mh$ = cairo_restore$MH();
+        try {
+            mh$.invokeExact(cr);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_push_group$MH() {
+        return RuntimeHelper.requireNonNull(constants$997.cairo_push_group$MH,"cairo_push_group");
+    }
+    /**
+     * {@snippet :
+     * void cairo_push_group(cairo_t* cr);
+     * }
+     */
+    public static void cairo_push_group(MemorySegment cr) {
+        var mh$ = cairo_push_group$MH();
+        try {
+            mh$.invokeExact(cr);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_push_group_with_content$MH() {
+        return RuntimeHelper.requireNonNull(constants$997.cairo_push_group_with_content$MH,"cairo_push_group_with_content");
+    }
+    /**
+     * {@snippet :
+     * void cairo_push_group_with_content(cairo_t* cr, cairo_content_t content);
+     * }
+     */
+    public static void cairo_push_group_with_content(MemorySegment cr, int content) {
+        var mh$ = cairo_push_group_with_content$MH();
+        try {
+            mh$.invokeExact(cr, content);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_pop_group$MH() {
+        return RuntimeHelper.requireNonNull(constants$997.cairo_pop_group$MH,"cairo_pop_group");
+    }
+    /**
+     * {@snippet :
+     * cairo_pattern_t* cairo_pop_group(cairo_t* cr);
+     * }
+     */
+    public static MemorySegment cairo_pop_group(MemorySegment cr) {
+        var mh$ = cairo_pop_group$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(cr);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_pop_group_to_source$MH() {
+        return RuntimeHelper.requireNonNull(constants$998.cairo_pop_group_to_source$MH,"cairo_pop_group_to_source");
+    }
+    /**
+     * {@snippet :
+     * void cairo_pop_group_to_source(cairo_t* cr);
+     * }
+     */
+    public static void cairo_pop_group_to_source(MemorySegment cr) {
+        var mh$ = cairo_pop_group_to_source$MH();
+        try {
+            mh$.invokeExact(cr);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_operator.CAIRO_OPERATOR_CLEAR = 0;
+     * }
+     */
+    public static int CAIRO_OPERATOR_CLEAR() {
+        return (int)0L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_operator.CAIRO_OPERATOR_SOURCE = 1;
+     * }
+     */
+    public static int CAIRO_OPERATOR_SOURCE() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_operator.CAIRO_OPERATOR_OVER = 2;
+     * }
+     */
+    public static int CAIRO_OPERATOR_OVER() {
+        return (int)2L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_operator.CAIRO_OPERATOR_IN = 3;
+     * }
+     */
+    public static int CAIRO_OPERATOR_IN() {
+        return (int)3L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_operator.CAIRO_OPERATOR_OUT = 4;
+     * }
+     */
+    public static int CAIRO_OPERATOR_OUT() {
+        return (int)4L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_operator.CAIRO_OPERATOR_ATOP = 5;
+     * }
+     */
+    public static int CAIRO_OPERATOR_ATOP() {
+        return (int)5L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_operator.CAIRO_OPERATOR_DEST = 6;
+     * }
+     */
+    public static int CAIRO_OPERATOR_DEST() {
+        return (int)6L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_operator.CAIRO_OPERATOR_DEST_OVER = 7;
+     * }
+     */
+    public static int CAIRO_OPERATOR_DEST_OVER() {
+        return (int)7L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_operator.CAIRO_OPERATOR_DEST_IN = 8;
+     * }
+     */
+    public static int CAIRO_OPERATOR_DEST_IN() {
+        return (int)8L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_operator.CAIRO_OPERATOR_DEST_OUT = 9;
+     * }
+     */
+    public static int CAIRO_OPERATOR_DEST_OUT() {
+        return (int)9L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_operator.CAIRO_OPERATOR_DEST_ATOP = 10;
+     * }
+     */
+    public static int CAIRO_OPERATOR_DEST_ATOP() {
+        return (int)10L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_operator.CAIRO_OPERATOR_XOR = 11;
+     * }
+     */
+    public static int CAIRO_OPERATOR_XOR() {
+        return (int)11L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_operator.CAIRO_OPERATOR_ADD = 12;
+     * }
+     */
+    public static int CAIRO_OPERATOR_ADD() {
+        return (int)12L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_operator.CAIRO_OPERATOR_SATURATE = 13;
+     * }
+     */
+    public static int CAIRO_OPERATOR_SATURATE() {
+        return (int)13L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_operator.CAIRO_OPERATOR_MULTIPLY = 14;
+     * }
+     */
+    public static int CAIRO_OPERATOR_MULTIPLY() {
+        return (int)14L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_operator.CAIRO_OPERATOR_SCREEN = 15;
+     * }
+     */
+    public static int CAIRO_OPERATOR_SCREEN() {
+        return (int)15L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_operator.CAIRO_OPERATOR_OVERLAY = 16;
+     * }
+     */
+    public static int CAIRO_OPERATOR_OVERLAY() {
+        return (int)16L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_operator.CAIRO_OPERATOR_DARKEN = 17;
+     * }
+     */
+    public static int CAIRO_OPERATOR_DARKEN() {
+        return (int)17L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_operator.CAIRO_OPERATOR_LIGHTEN = 18;
+     * }
+     */
+    public static int CAIRO_OPERATOR_LIGHTEN() {
+        return (int)18L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_operator.CAIRO_OPERATOR_COLOR_DODGE = 19;
+     * }
+     */
+    public static int CAIRO_OPERATOR_COLOR_DODGE() {
+        return (int)19L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_operator.CAIRO_OPERATOR_COLOR_BURN = 20;
+     * }
+     */
+    public static int CAIRO_OPERATOR_COLOR_BURN() {
+        return (int)20L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_operator.CAIRO_OPERATOR_HARD_LIGHT = 21;
+     * }
+     */
+    public static int CAIRO_OPERATOR_HARD_LIGHT() {
+        return (int)21L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_operator.CAIRO_OPERATOR_SOFT_LIGHT = 22;
+     * }
+     */
+    public static int CAIRO_OPERATOR_SOFT_LIGHT() {
+        return (int)22L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_operator.CAIRO_OPERATOR_DIFFERENCE = 23;
+     * }
+     */
+    public static int CAIRO_OPERATOR_DIFFERENCE() {
+        return (int)23L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_operator.CAIRO_OPERATOR_EXCLUSION = 24;
+     * }
+     */
+    public static int CAIRO_OPERATOR_EXCLUSION() {
+        return (int)24L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_operator.CAIRO_OPERATOR_HSL_HUE = 25;
+     * }
+     */
+    public static int CAIRO_OPERATOR_HSL_HUE() {
+        return (int)25L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_operator.CAIRO_OPERATOR_HSL_SATURATION = 26;
+     * }
+     */
+    public static int CAIRO_OPERATOR_HSL_SATURATION() {
+        return (int)26L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_operator.CAIRO_OPERATOR_HSL_COLOR = 27;
+     * }
+     */
+    public static int CAIRO_OPERATOR_HSL_COLOR() {
+        return (int)27L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_operator.CAIRO_OPERATOR_HSL_LUMINOSITY = 28;
+     * }
+     */
+    public static int CAIRO_OPERATOR_HSL_LUMINOSITY() {
+        return (int)28L;
+    }
+    public static MethodHandle cairo_set_operator$MH() {
+        return RuntimeHelper.requireNonNull(constants$998.cairo_set_operator$MH,"cairo_set_operator");
+    }
+    /**
+     * {@snippet :
+     * void cairo_set_operator(cairo_t* cr, cairo_operator_t op);
+     * }
+     */
+    public static void cairo_set_operator(MemorySegment cr, int op) {
+        var mh$ = cairo_set_operator$MH();
+        try {
+            mh$.invokeExact(cr, op);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_set_source$MH() {
+        return RuntimeHelper.requireNonNull(constants$998.cairo_set_source$MH,"cairo_set_source");
+    }
+    /**
+     * {@snippet :
+     * void cairo_set_source(cairo_t* cr, cairo_pattern_t* source);
+     * }
+     */
+    public static void cairo_set_source(MemorySegment cr, MemorySegment source) {
+        var mh$ = cairo_set_source$MH();
+        try {
+            mh$.invokeExact(cr, source);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_set_source_rgb$MH() {
+        return RuntimeHelper.requireNonNull(constants$998.cairo_set_source_rgb$MH,"cairo_set_source_rgb");
+    }
+    /**
+     * {@snippet :
+     * void cairo_set_source_rgb(cairo_t* cr, double red, double green, double blue);
+     * }
+     */
+    public static void cairo_set_source_rgb(MemorySegment cr, double red, double green, double blue) {
+        var mh$ = cairo_set_source_rgb$MH();
+        try {
+            mh$.invokeExact(cr, red, green, blue);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_set_source_rgba$MH() {
+        return RuntimeHelper.requireNonNull(constants$998.cairo_set_source_rgba$MH,"cairo_set_source_rgba");
+    }
+    /**
+     * {@snippet :
+     * void cairo_set_source_rgba(cairo_t* cr, double red, double green, double blue, double alpha);
+     * }
+     */
+    public static void cairo_set_source_rgba(MemorySegment cr, double red, double green, double blue, double alpha) {
+        var mh$ = cairo_set_source_rgba$MH();
+        try {
+            mh$.invokeExact(cr, red, green, blue, alpha);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_set_source_surface$MH() {
+        return RuntimeHelper.requireNonNull(constants$998.cairo_set_source_surface$MH,"cairo_set_source_surface");
+    }
+    /**
+     * {@snippet :
+     * void cairo_set_source_surface(cairo_t* cr, cairo_surface_t* surface, double x, double y);
+     * }
+     */
+    public static void cairo_set_source_surface(MemorySegment cr, MemorySegment surface, double x, double y) {
+        var mh$ = cairo_set_source_surface$MH();
+        try {
+            mh$.invokeExact(cr, surface, x, y);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_set_tolerance$MH() {
+        return RuntimeHelper.requireNonNull(constants$999.cairo_set_tolerance$MH,"cairo_set_tolerance");
+    }
+    /**
+     * {@snippet :
+     * void cairo_set_tolerance(cairo_t* cr, double tolerance);
+     * }
+     */
+    public static void cairo_set_tolerance(MemorySegment cr, double tolerance) {
+        var mh$ = cairo_set_tolerance$MH();
+        try {
+            mh$.invokeExact(cr, tolerance);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_antialias.CAIRO_ANTIALIAS_DEFAULT = 0;
+     * }
+     */
+    public static int CAIRO_ANTIALIAS_DEFAULT() {
+        return (int)0L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_antialias.CAIRO_ANTIALIAS_NONE = 1;
+     * }
+     */
+    public static int CAIRO_ANTIALIAS_NONE() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_antialias.CAIRO_ANTIALIAS_GRAY = 2;
+     * }
+     */
+    public static int CAIRO_ANTIALIAS_GRAY() {
+        return (int)2L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_antialias.CAIRO_ANTIALIAS_SUBPIXEL = 3;
+     * }
+     */
+    public static int CAIRO_ANTIALIAS_SUBPIXEL() {
+        return (int)3L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_antialias.CAIRO_ANTIALIAS_FAST = 4;
+     * }
+     */
+    public static int CAIRO_ANTIALIAS_FAST() {
+        return (int)4L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_antialias.CAIRO_ANTIALIAS_GOOD = 5;
+     * }
+     */
+    public static int CAIRO_ANTIALIAS_GOOD() {
+        return (int)5L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_antialias.CAIRO_ANTIALIAS_BEST = 6;
+     * }
+     */
+    public static int CAIRO_ANTIALIAS_BEST() {
+        return (int)6L;
+    }
+    public static MethodHandle cairo_set_antialias$MH() {
+        return RuntimeHelper.requireNonNull(constants$999.cairo_set_antialias$MH,"cairo_set_antialias");
+    }
+    /**
+     * {@snippet :
+     * void cairo_set_antialias(cairo_t* cr, cairo_antialias_t antialias);
+     * }
+     */
+    public static void cairo_set_antialias(MemorySegment cr, int antialias) {
+        var mh$ = cairo_set_antialias$MH();
+        try {
+            mh$.invokeExact(cr, antialias);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_fill_rule.CAIRO_FILL_RULE_WINDING = 0;
+     * }
+     */
+    public static int CAIRO_FILL_RULE_WINDING() {
+        return (int)0L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_fill_rule.CAIRO_FILL_RULE_EVEN_ODD = 1;
+     * }
+     */
+    public static int CAIRO_FILL_RULE_EVEN_ODD() {
+        return (int)1L;
+    }
+    public static MethodHandle cairo_set_fill_rule$MH() {
+        return RuntimeHelper.requireNonNull(constants$999.cairo_set_fill_rule$MH,"cairo_set_fill_rule");
+    }
+    /**
+     * {@snippet :
+     * void cairo_set_fill_rule(cairo_t* cr, cairo_fill_rule_t fill_rule);
+     * }
+     */
+    public static void cairo_set_fill_rule(MemorySegment cr, int fill_rule) {
+        var mh$ = cairo_set_fill_rule$MH();
+        try {
+            mh$.invokeExact(cr, fill_rule);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_set_line_width$MH() {
+        return RuntimeHelper.requireNonNull(constants$999.cairo_set_line_width$MH,"cairo_set_line_width");
+    }
+    /**
+     * {@snippet :
+     * void cairo_set_line_width(cairo_t* cr, double width);
+     * }
+     */
+    public static void cairo_set_line_width(MemorySegment cr, double width) {
+        var mh$ = cairo_set_line_width$MH();
+        try {
+            mh$.invokeExact(cr, width);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_line_cap.CAIRO_LINE_CAP_BUTT = 0;
+     * }
+     */
+    public static int CAIRO_LINE_CAP_BUTT() {
+        return (int)0L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_line_cap.CAIRO_LINE_CAP_ROUND = 1;
+     * }
+     */
+    public static int CAIRO_LINE_CAP_ROUND() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_line_cap.CAIRO_LINE_CAP_SQUARE = 2;
+     * }
+     */
+    public static int CAIRO_LINE_CAP_SQUARE() {
+        return (int)2L;
+    }
+    public static MethodHandle cairo_set_line_cap$MH() {
+        return RuntimeHelper.requireNonNull(constants$999.cairo_set_line_cap$MH,"cairo_set_line_cap");
+    }
+    /**
+     * {@snippet :
+     * void cairo_set_line_cap(cairo_t* cr, cairo_line_cap_t line_cap);
+     * }
+     */
+    public static void cairo_set_line_cap(MemorySegment cr, int line_cap) {
+        var mh$ = cairo_set_line_cap$MH();
+        try {
+            mh$.invokeExact(cr, line_cap);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_line_join.CAIRO_LINE_JOIN_MITER = 0;
+     * }
+     */
+    public static int CAIRO_LINE_JOIN_MITER() {
+        return (int)0L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_line_join.CAIRO_LINE_JOIN_ROUND = 1;
+     * }
+     */
+    public static int CAIRO_LINE_JOIN_ROUND() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_line_join.CAIRO_LINE_JOIN_BEVEL = 2;
+     * }
+     */
+    public static int CAIRO_LINE_JOIN_BEVEL() {
+        return (int)2L;
+    }
+    public static MethodHandle cairo_set_line_join$MH() {
+        return RuntimeHelper.requireNonNull(constants$999.cairo_set_line_join$MH,"cairo_set_line_join");
+    }
+    /**
+     * {@snippet :
+     * void cairo_set_line_join(cairo_t* cr, cairo_line_join_t line_join);
+     * }
+     */
+    public static void cairo_set_line_join(MemorySegment cr, int line_join) {
+        var mh$ = cairo_set_line_join$MH();
+        try {
+            mh$.invokeExact(cr, line_join);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_set_dash$MH() {
+        return RuntimeHelper.requireNonNull(constants$1000.cairo_set_dash$MH,"cairo_set_dash");
+    }
+    /**
+     * {@snippet :
+     * void cairo_set_dash(cairo_t* cr, double* dashes, int num_dashes, double offset);
+     * }
+     */
+    public static void cairo_set_dash(MemorySegment cr, MemorySegment dashes, int num_dashes, double offset) {
+        var mh$ = cairo_set_dash$MH();
+        try {
+            mh$.invokeExact(cr, dashes, num_dashes, offset);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_set_miter_limit$MH() {
+        return RuntimeHelper.requireNonNull(constants$1000.cairo_set_miter_limit$MH,"cairo_set_miter_limit");
+    }
+    /**
+     * {@snippet :
+     * void cairo_set_miter_limit(cairo_t* cr, double limit);
+     * }
+     */
+    public static void cairo_set_miter_limit(MemorySegment cr, double limit) {
+        var mh$ = cairo_set_miter_limit$MH();
+        try {
+            mh$.invokeExact(cr, limit);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_translate$MH() {
+        return RuntimeHelper.requireNonNull(constants$1000.cairo_translate$MH,"cairo_translate");
+    }
+    /**
+     * {@snippet :
+     * void cairo_translate(cairo_t* cr, double tx, double ty);
+     * }
+     */
+    public static void cairo_translate(MemorySegment cr, double tx, double ty) {
+        var mh$ = cairo_translate$MH();
+        try {
+            mh$.invokeExact(cr, tx, ty);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_scale$MH() {
+        return RuntimeHelper.requireNonNull(constants$1000.cairo_scale$MH,"cairo_scale");
+    }
+    /**
+     * {@snippet :
+     * void cairo_scale(cairo_t* cr, double sx, double sy);
+     * }
+     */
+    public static void cairo_scale(MemorySegment cr, double sx, double sy) {
+        var mh$ = cairo_scale$MH();
+        try {
+            mh$.invokeExact(cr, sx, sy);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_rotate$MH() {
+        return RuntimeHelper.requireNonNull(constants$1000.cairo_rotate$MH,"cairo_rotate");
+    }
+    /**
+     * {@snippet :
+     * void cairo_rotate(cairo_t* cr, double angle);
+     * }
+     */
+    public static void cairo_rotate(MemorySegment cr, double angle) {
+        var mh$ = cairo_rotate$MH();
+        try {
+            mh$.invokeExact(cr, angle);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_transform$MH() {
+        return RuntimeHelper.requireNonNull(constants$1000.cairo_transform$MH,"cairo_transform");
+    }
+    /**
+     * {@snippet :
+     * void cairo_transform(cairo_t* cr, const cairo_matrix_t* matrix);
+     * }
+     */
+    public static void cairo_transform(MemorySegment cr, MemorySegment matrix) {
+        var mh$ = cairo_transform$MH();
+        try {
+            mh$.invokeExact(cr, matrix);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_set_matrix$MH() {
+        return RuntimeHelper.requireNonNull(constants$1001.cairo_set_matrix$MH,"cairo_set_matrix");
+    }
+    /**
+     * {@snippet :
+     * void cairo_set_matrix(cairo_t* cr, const cairo_matrix_t* matrix);
+     * }
+     */
+    public static void cairo_set_matrix(MemorySegment cr, MemorySegment matrix) {
+        var mh$ = cairo_set_matrix$MH();
+        try {
+            mh$.invokeExact(cr, matrix);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_identity_matrix$MH() {
+        return RuntimeHelper.requireNonNull(constants$1001.cairo_identity_matrix$MH,"cairo_identity_matrix");
+    }
+    /**
+     * {@snippet :
+     * void cairo_identity_matrix(cairo_t* cr);
+     * }
+     */
+    public static void cairo_identity_matrix(MemorySegment cr) {
+        var mh$ = cairo_identity_matrix$MH();
+        try {
+            mh$.invokeExact(cr);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_user_to_device$MH() {
+        return RuntimeHelper.requireNonNull(constants$1001.cairo_user_to_device$MH,"cairo_user_to_device");
+    }
+    /**
+     * {@snippet :
+     * void cairo_user_to_device(cairo_t* cr, double* x, double* y);
+     * }
+     */
+    public static void cairo_user_to_device(MemorySegment cr, MemorySegment x, MemorySegment y) {
+        var mh$ = cairo_user_to_device$MH();
+        try {
+            mh$.invokeExact(cr, x, y);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_user_to_device_distance$MH() {
+        return RuntimeHelper.requireNonNull(constants$1001.cairo_user_to_device_distance$MH,"cairo_user_to_device_distance");
+    }
+    /**
+     * {@snippet :
+     * void cairo_user_to_device_distance(cairo_t* cr, double* dx, double* dy);
+     * }
+     */
+    public static void cairo_user_to_device_distance(MemorySegment cr, MemorySegment dx, MemorySegment dy) {
+        var mh$ = cairo_user_to_device_distance$MH();
+        try {
+            mh$.invokeExact(cr, dx, dy);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_device_to_user$MH() {
+        return RuntimeHelper.requireNonNull(constants$1001.cairo_device_to_user$MH,"cairo_device_to_user");
+    }
+    /**
+     * {@snippet :
+     * void cairo_device_to_user(cairo_t* cr, double* x, double* y);
+     * }
+     */
+    public static void cairo_device_to_user(MemorySegment cr, MemorySegment x, MemorySegment y) {
+        var mh$ = cairo_device_to_user$MH();
+        try {
+            mh$.invokeExact(cr, x, y);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_device_to_user_distance$MH() {
+        return RuntimeHelper.requireNonNull(constants$1001.cairo_device_to_user_distance$MH,"cairo_device_to_user_distance");
+    }
+    /**
+     * {@snippet :
+     * void cairo_device_to_user_distance(cairo_t* cr, double* dx, double* dy);
+     * }
+     */
+    public static void cairo_device_to_user_distance(MemorySegment cr, MemorySegment dx, MemorySegment dy) {
+        var mh$ = cairo_device_to_user_distance$MH();
+        try {
+            mh$.invokeExact(cr, dx, dy);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_new_path$MH() {
+        return RuntimeHelper.requireNonNull(constants$1002.cairo_new_path$MH,"cairo_new_path");
+    }
+    /**
+     * {@snippet :
+     * void cairo_new_path(cairo_t* cr);
+     * }
+     */
+    public static void cairo_new_path(MemorySegment cr) {
+        var mh$ = cairo_new_path$MH();
+        try {
+            mh$.invokeExact(cr);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_move_to$MH() {
+        return RuntimeHelper.requireNonNull(constants$1002.cairo_move_to$MH,"cairo_move_to");
+    }
+    /**
+     * {@snippet :
+     * void cairo_move_to(cairo_t* cr, double x, double y);
+     * }
+     */
+    public static void cairo_move_to(MemorySegment cr, double x, double y) {
+        var mh$ = cairo_move_to$MH();
+        try {
+            mh$.invokeExact(cr, x, y);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_new_sub_path$MH() {
+        return RuntimeHelper.requireNonNull(constants$1002.cairo_new_sub_path$MH,"cairo_new_sub_path");
+    }
+    /**
+     * {@snippet :
+     * void cairo_new_sub_path(cairo_t* cr);
+     * }
+     */
+    public static void cairo_new_sub_path(MemorySegment cr) {
+        var mh$ = cairo_new_sub_path$MH();
+        try {
+            mh$.invokeExact(cr);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_line_to$MH() {
+        return RuntimeHelper.requireNonNull(constants$1002.cairo_line_to$MH,"cairo_line_to");
+    }
+    /**
+     * {@snippet :
+     * void cairo_line_to(cairo_t* cr, double x, double y);
+     * }
+     */
+    public static void cairo_line_to(MemorySegment cr, double x, double y) {
+        var mh$ = cairo_line_to$MH();
+        try {
+            mh$.invokeExact(cr, x, y);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_curve_to$MH() {
+        return RuntimeHelper.requireNonNull(constants$1002.cairo_curve_to$MH,"cairo_curve_to");
+    }
+    /**
+     * {@snippet :
+     * void cairo_curve_to(cairo_t* cr, double x1, double y1, double x2, double y2, double x3, double y3);
+     * }
+     */
+    public static void cairo_curve_to(MemorySegment cr, double x1, double y1, double x2, double y2, double x3, double y3) {
+        var mh$ = cairo_curve_to$MH();
+        try {
+            mh$.invokeExact(cr, x1, y1, x2, y2, x3, y3);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_arc$MH() {
+        return RuntimeHelper.requireNonNull(constants$1002.cairo_arc$MH,"cairo_arc");
+    }
+    /**
+     * {@snippet :
+     * void cairo_arc(cairo_t* cr, double xc, double yc, double radius, double angle1, double angle2);
+     * }
+     */
+    public static void cairo_arc(MemorySegment cr, double xc, double yc, double radius, double angle1, double angle2) {
+        var mh$ = cairo_arc$MH();
+        try {
+            mh$.invokeExact(cr, xc, yc, radius, angle1, angle2);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_arc_negative$MH() {
+        return RuntimeHelper.requireNonNull(constants$1003.cairo_arc_negative$MH,"cairo_arc_negative");
+    }
+    /**
+     * {@snippet :
+     * void cairo_arc_negative(cairo_t* cr, double xc, double yc, double radius, double angle1, double angle2);
+     * }
+     */
+    public static void cairo_arc_negative(MemorySegment cr, double xc, double yc, double radius, double angle1, double angle2) {
+        var mh$ = cairo_arc_negative$MH();
+        try {
+            mh$.invokeExact(cr, xc, yc, radius, angle1, angle2);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_rel_move_to$MH() {
+        return RuntimeHelper.requireNonNull(constants$1003.cairo_rel_move_to$MH,"cairo_rel_move_to");
+    }
+    /**
+     * {@snippet :
+     * void cairo_rel_move_to(cairo_t* cr, double dx, double dy);
+     * }
+     */
+    public static void cairo_rel_move_to(MemorySegment cr, double dx, double dy) {
+        var mh$ = cairo_rel_move_to$MH();
+        try {
+            mh$.invokeExact(cr, dx, dy);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_rel_line_to$MH() {
+        return RuntimeHelper.requireNonNull(constants$1003.cairo_rel_line_to$MH,"cairo_rel_line_to");
+    }
+    /**
+     * {@snippet :
+     * void cairo_rel_line_to(cairo_t* cr, double dx, double dy);
+     * }
+     */
+    public static void cairo_rel_line_to(MemorySegment cr, double dx, double dy) {
+        var mh$ = cairo_rel_line_to$MH();
+        try {
+            mh$.invokeExact(cr, dx, dy);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_rel_curve_to$MH() {
+        return RuntimeHelper.requireNonNull(constants$1003.cairo_rel_curve_to$MH,"cairo_rel_curve_to");
+    }
+    /**
+     * {@snippet :
+     * void cairo_rel_curve_to(cairo_t* cr, double dx1, double dy1, double dx2, double dy2, double dx3, double dy3);
+     * }
+     */
+    public static void cairo_rel_curve_to(MemorySegment cr, double dx1, double dy1, double dx2, double dy2, double dx3, double dy3) {
+        var mh$ = cairo_rel_curve_to$MH();
+        try {
+            mh$.invokeExact(cr, dx1, dy1, dx2, dy2, dx3, dy3);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_rectangle$MH() {
+        return RuntimeHelper.requireNonNull(constants$1003.cairo_rectangle$MH,"cairo_rectangle");
+    }
+    /**
+     * {@snippet :
+     * void cairo_rectangle(cairo_t* cr, double x, double y, double width, double height);
+     * }
+     */
+    public static void cairo_rectangle(MemorySegment cr, double x, double y, double width, double height) {
+        var mh$ = cairo_rectangle$MH();
+        try {
+            mh$.invokeExact(cr, x, y, width, height);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_close_path$MH() {
+        return RuntimeHelper.requireNonNull(constants$1003.cairo_close_path$MH,"cairo_close_path");
+    }
+    /**
+     * {@snippet :
+     * void cairo_close_path(cairo_t* cr);
+     * }
+     */
+    public static void cairo_close_path(MemorySegment cr) {
+        var mh$ = cairo_close_path$MH();
+        try {
+            mh$.invokeExact(cr);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_path_extents$MH() {
+        return RuntimeHelper.requireNonNull(constants$1004.cairo_path_extents$MH,"cairo_path_extents");
+    }
+    /**
+     * {@snippet :
+     * void cairo_path_extents(cairo_t* cr, double* x1, double* y1, double* x2, double* y2);
+     * }
+     */
+    public static void cairo_path_extents(MemorySegment cr, MemorySegment x1, MemorySegment y1, MemorySegment x2, MemorySegment y2) {
+        var mh$ = cairo_path_extents$MH();
+        try {
+            mh$.invokeExact(cr, x1, y1, x2, y2);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_paint$MH() {
+        return RuntimeHelper.requireNonNull(constants$1004.cairo_paint$MH,"cairo_paint");
+    }
+    /**
+     * {@snippet :
+     * void cairo_paint(cairo_t* cr);
+     * }
+     */
+    public static void cairo_paint(MemorySegment cr) {
+        var mh$ = cairo_paint$MH();
+        try {
+            mh$.invokeExact(cr);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_paint_with_alpha$MH() {
+        return RuntimeHelper.requireNonNull(constants$1004.cairo_paint_with_alpha$MH,"cairo_paint_with_alpha");
+    }
+    /**
+     * {@snippet :
+     * void cairo_paint_with_alpha(cairo_t* cr, double alpha);
+     * }
+     */
+    public static void cairo_paint_with_alpha(MemorySegment cr, double alpha) {
+        var mh$ = cairo_paint_with_alpha$MH();
+        try {
+            mh$.invokeExact(cr, alpha);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_mask$MH() {
+        return RuntimeHelper.requireNonNull(constants$1004.cairo_mask$MH,"cairo_mask");
+    }
+    /**
+     * {@snippet :
+     * void cairo_mask(cairo_t* cr, cairo_pattern_t* pattern);
+     * }
+     */
+    public static void cairo_mask(MemorySegment cr, MemorySegment pattern) {
+        var mh$ = cairo_mask$MH();
+        try {
+            mh$.invokeExact(cr, pattern);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_mask_surface$MH() {
+        return RuntimeHelper.requireNonNull(constants$1004.cairo_mask_surface$MH,"cairo_mask_surface");
+    }
+    /**
+     * {@snippet :
+     * void cairo_mask_surface(cairo_t* cr, cairo_surface_t* surface, double surface_x, double surface_y);
+     * }
+     */
+    public static void cairo_mask_surface(MemorySegment cr, MemorySegment surface, double surface_x, double surface_y) {
+        var mh$ = cairo_mask_surface$MH();
+        try {
+            mh$.invokeExact(cr, surface, surface_x, surface_y);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_stroke$MH() {
+        return RuntimeHelper.requireNonNull(constants$1004.cairo_stroke$MH,"cairo_stroke");
+    }
+    /**
+     * {@snippet :
+     * void cairo_stroke(cairo_t* cr);
+     * }
+     */
+    public static void cairo_stroke(MemorySegment cr) {
+        var mh$ = cairo_stroke$MH();
+        try {
+            mh$.invokeExact(cr);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_stroke_preserve$MH() {
+        return RuntimeHelper.requireNonNull(constants$1005.cairo_stroke_preserve$MH,"cairo_stroke_preserve");
+    }
+    /**
+     * {@snippet :
+     * void cairo_stroke_preserve(cairo_t* cr);
+     * }
+     */
+    public static void cairo_stroke_preserve(MemorySegment cr) {
+        var mh$ = cairo_stroke_preserve$MH();
+        try {
+            mh$.invokeExact(cr);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_fill$MH() {
+        return RuntimeHelper.requireNonNull(constants$1005.cairo_fill$MH,"cairo_fill");
+    }
+    /**
+     * {@snippet :
+     * void cairo_fill(cairo_t* cr);
+     * }
+     */
+    public static void cairo_fill(MemorySegment cr) {
+        var mh$ = cairo_fill$MH();
+        try {
+            mh$.invokeExact(cr);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_fill_preserve$MH() {
+        return RuntimeHelper.requireNonNull(constants$1005.cairo_fill_preserve$MH,"cairo_fill_preserve");
+    }
+    /**
+     * {@snippet :
+     * void cairo_fill_preserve(cairo_t* cr);
+     * }
+     */
+    public static void cairo_fill_preserve(MemorySegment cr) {
+        var mh$ = cairo_fill_preserve$MH();
+        try {
+            mh$.invokeExact(cr);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_copy_page$MH() {
+        return RuntimeHelper.requireNonNull(constants$1005.cairo_copy_page$MH,"cairo_copy_page");
+    }
+    /**
+     * {@snippet :
+     * void cairo_copy_page(cairo_t* cr);
+     * }
+     */
+    public static void cairo_copy_page(MemorySegment cr) {
+        var mh$ = cairo_copy_page$MH();
+        try {
+            mh$.invokeExact(cr);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_show_page$MH() {
+        return RuntimeHelper.requireNonNull(constants$1005.cairo_show_page$MH,"cairo_show_page");
+    }
+    /**
+     * {@snippet :
+     * void cairo_show_page(cairo_t* cr);
+     * }
+     */
+    public static void cairo_show_page(MemorySegment cr) {
+        var mh$ = cairo_show_page$MH();
+        try {
+            mh$.invokeExact(cr);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_in_stroke$MH() {
+        return RuntimeHelper.requireNonNull(constants$1005.cairo_in_stroke$MH,"cairo_in_stroke");
+    }
+    /**
+     * {@snippet :
+     * cairo_bool_t cairo_in_stroke(cairo_t* cr, double x, double y);
+     * }
+     */
+    public static int cairo_in_stroke(MemorySegment cr, double x, double y) {
+        var mh$ = cairo_in_stroke$MH();
+        try {
+            return (int)mh$.invokeExact(cr, x, y);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_in_fill$MH() {
+        return RuntimeHelper.requireNonNull(constants$1006.cairo_in_fill$MH,"cairo_in_fill");
+    }
+    /**
+     * {@snippet :
+     * cairo_bool_t cairo_in_fill(cairo_t* cr, double x, double y);
+     * }
+     */
+    public static int cairo_in_fill(MemorySegment cr, double x, double y) {
+        var mh$ = cairo_in_fill$MH();
+        try {
+            return (int)mh$.invokeExact(cr, x, y);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_in_clip$MH() {
+        return RuntimeHelper.requireNonNull(constants$1006.cairo_in_clip$MH,"cairo_in_clip");
+    }
+    /**
+     * {@snippet :
+     * cairo_bool_t cairo_in_clip(cairo_t* cr, double x, double y);
+     * }
+     */
+    public static int cairo_in_clip(MemorySegment cr, double x, double y) {
+        var mh$ = cairo_in_clip$MH();
+        try {
+            return (int)mh$.invokeExact(cr, x, y);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_stroke_extents$MH() {
+        return RuntimeHelper.requireNonNull(constants$1006.cairo_stroke_extents$MH,"cairo_stroke_extents");
+    }
+    /**
+     * {@snippet :
+     * void cairo_stroke_extents(cairo_t* cr, double* x1, double* y1, double* x2, double* y2);
+     * }
+     */
+    public static void cairo_stroke_extents(MemorySegment cr, MemorySegment x1, MemorySegment y1, MemorySegment x2, MemorySegment y2) {
+        var mh$ = cairo_stroke_extents$MH();
+        try {
+            mh$.invokeExact(cr, x1, y1, x2, y2);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_fill_extents$MH() {
+        return RuntimeHelper.requireNonNull(constants$1006.cairo_fill_extents$MH,"cairo_fill_extents");
+    }
+    /**
+     * {@snippet :
+     * void cairo_fill_extents(cairo_t* cr, double* x1, double* y1, double* x2, double* y2);
+     * }
+     */
+    public static void cairo_fill_extents(MemorySegment cr, MemorySegment x1, MemorySegment y1, MemorySegment x2, MemorySegment y2) {
+        var mh$ = cairo_fill_extents$MH();
+        try {
+            mh$.invokeExact(cr, x1, y1, x2, y2);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_reset_clip$MH() {
+        return RuntimeHelper.requireNonNull(constants$1006.cairo_reset_clip$MH,"cairo_reset_clip");
+    }
+    /**
+     * {@snippet :
+     * void cairo_reset_clip(cairo_t* cr);
+     * }
+     */
+    public static void cairo_reset_clip(MemorySegment cr) {
+        var mh$ = cairo_reset_clip$MH();
+        try {
+            mh$.invokeExact(cr);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_clip$MH() {
+        return RuntimeHelper.requireNonNull(constants$1006.cairo_clip$MH,"cairo_clip");
+    }
+    /**
+     * {@snippet :
+     * void cairo_clip(cairo_t* cr);
+     * }
+     */
+    public static void cairo_clip(MemorySegment cr) {
+        var mh$ = cairo_clip$MH();
+        try {
+            mh$.invokeExact(cr);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_clip_preserve$MH() {
+        return RuntimeHelper.requireNonNull(constants$1007.cairo_clip_preserve$MH,"cairo_clip_preserve");
+    }
+    /**
+     * {@snippet :
+     * void cairo_clip_preserve(cairo_t* cr);
+     * }
+     */
+    public static void cairo_clip_preserve(MemorySegment cr) {
+        var mh$ = cairo_clip_preserve$MH();
+        try {
+            mh$.invokeExact(cr);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_clip_extents$MH() {
+        return RuntimeHelper.requireNonNull(constants$1007.cairo_clip_extents$MH,"cairo_clip_extents");
+    }
+    /**
+     * {@snippet :
+     * void cairo_clip_extents(cairo_t* cr, double* x1, double* y1, double* x2, double* y2);
+     * }
+     */
+    public static void cairo_clip_extents(MemorySegment cr, MemorySegment x1, MemorySegment y1, MemorySegment x2, MemorySegment y2) {
+        var mh$ = cairo_clip_extents$MH();
+        try {
+            mh$.invokeExact(cr, x1, y1, x2, y2);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_copy_clip_rectangle_list$MH() {
+        return RuntimeHelper.requireNonNull(constants$1007.cairo_copy_clip_rectangle_list$MH,"cairo_copy_clip_rectangle_list");
+    }
+    /**
+     * {@snippet :
+     * cairo_rectangle_list_t* cairo_copy_clip_rectangle_list(cairo_t* cr);
+     * }
+     */
+    public static MemorySegment cairo_copy_clip_rectangle_list(MemorySegment cr) {
+        var mh$ = cairo_copy_clip_rectangle_list$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(cr);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_rectangle_list_destroy$MH() {
+        return RuntimeHelper.requireNonNull(constants$1007.cairo_rectangle_list_destroy$MH,"cairo_rectangle_list_destroy");
+    }
+    /**
+     * {@snippet :
+     * void cairo_rectangle_list_destroy(cairo_rectangle_list_t* rectangle_list);
+     * }
+     */
+    public static void cairo_rectangle_list_destroy(MemorySegment rectangle_list) {
+        var mh$ = cairo_rectangle_list_destroy$MH();
+        try {
+            mh$.invokeExact(rectangle_list);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_tag_begin$MH() {
+        return RuntimeHelper.requireNonNull(constants$1007.cairo_tag_begin$MH,"cairo_tag_begin");
+    }
+    /**
+     * {@snippet :
+     * void cairo_tag_begin(cairo_t* cr, char* tag_name, char* attributes);
+     * }
+     */
+    public static void cairo_tag_begin(MemorySegment cr, MemorySegment tag_name, MemorySegment attributes) {
+        var mh$ = cairo_tag_begin$MH();
+        try {
+            mh$.invokeExact(cr, tag_name, attributes);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_tag_end$MH() {
+        return RuntimeHelper.requireNonNull(constants$1007.cairo_tag_end$MH,"cairo_tag_end");
+    }
+    /**
+     * {@snippet :
+     * void cairo_tag_end(cairo_t* cr, char* tag_name);
+     * }
+     */
+    public static void cairo_tag_end(MemorySegment cr, MemorySegment tag_name) {
+        var mh$ = cairo_tag_end$MH();
+        try {
+            mh$.invokeExact(cr, tag_name);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_glyph_allocate$MH() {
+        return RuntimeHelper.requireNonNull(constants$1008.cairo_glyph_allocate$MH,"cairo_glyph_allocate");
+    }
+    /**
+     * {@snippet :
+     * cairo_glyph_t* cairo_glyph_allocate(int num_glyphs);
+     * }
+     */
+    public static MemorySegment cairo_glyph_allocate(int num_glyphs) {
+        var mh$ = cairo_glyph_allocate$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(num_glyphs);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_glyph_free$MH() {
+        return RuntimeHelper.requireNonNull(constants$1008.cairo_glyph_free$MH,"cairo_glyph_free");
+    }
+    /**
+     * {@snippet :
+     * void cairo_glyph_free(cairo_glyph_t* glyphs);
+     * }
+     */
+    public static void cairo_glyph_free(MemorySegment glyphs) {
+        var mh$ = cairo_glyph_free$MH();
+        try {
+            mh$.invokeExact(glyphs);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_text_cluster_allocate$MH() {
+        return RuntimeHelper.requireNonNull(constants$1008.cairo_text_cluster_allocate$MH,"cairo_text_cluster_allocate");
+    }
+    /**
+     * {@snippet :
+     * cairo_text_cluster_t* cairo_text_cluster_allocate(int num_clusters);
+     * }
+     */
+    public static MemorySegment cairo_text_cluster_allocate(int num_clusters) {
+        var mh$ = cairo_text_cluster_allocate$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(num_clusters);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_text_cluster_free$MH() {
+        return RuntimeHelper.requireNonNull(constants$1008.cairo_text_cluster_free$MH,"cairo_text_cluster_free");
+    }
+    /**
+     * {@snippet :
+     * void cairo_text_cluster_free(cairo_text_cluster_t* clusters);
+     * }
+     */
+    public static void cairo_text_cluster_free(MemorySegment clusters) {
+        var mh$ = cairo_text_cluster_free$MH();
+        try {
+            mh$.invokeExact(clusters);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_text_cluster_flags.CAIRO_TEXT_CLUSTER_FLAG_BACKWARD = 1;
+     * }
+     */
+    public static int CAIRO_TEXT_CLUSTER_FLAG_BACKWARD() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_font_slant.CAIRO_FONT_SLANT_NORMAL = 0;
+     * }
+     */
+    public static int CAIRO_FONT_SLANT_NORMAL() {
+        return (int)0L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_font_slant.CAIRO_FONT_SLANT_ITALIC = 1;
+     * }
+     */
+    public static int CAIRO_FONT_SLANT_ITALIC() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_font_slant.CAIRO_FONT_SLANT_OBLIQUE = 2;
+     * }
+     */
+    public static int CAIRO_FONT_SLANT_OBLIQUE() {
+        return (int)2L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_font_weight.CAIRO_FONT_WEIGHT_NORMAL = 0;
+     * }
+     */
+    public static int CAIRO_FONT_WEIGHT_NORMAL() {
+        return (int)0L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_font_weight.CAIRO_FONT_WEIGHT_BOLD = 1;
+     * }
+     */
+    public static int CAIRO_FONT_WEIGHT_BOLD() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_subpixel_order.CAIRO_SUBPIXEL_ORDER_DEFAULT = 0;
+     * }
+     */
+    public static int CAIRO_SUBPIXEL_ORDER_DEFAULT() {
+        return (int)0L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_subpixel_order.CAIRO_SUBPIXEL_ORDER_RGB = 1;
+     * }
+     */
+    public static int CAIRO_SUBPIXEL_ORDER_RGB() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_subpixel_order.CAIRO_SUBPIXEL_ORDER_BGR = 2;
+     * }
+     */
+    public static int CAIRO_SUBPIXEL_ORDER_BGR() {
+        return (int)2L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_subpixel_order.CAIRO_SUBPIXEL_ORDER_VRGB = 3;
+     * }
+     */
+    public static int CAIRO_SUBPIXEL_ORDER_VRGB() {
+        return (int)3L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_subpixel_order.CAIRO_SUBPIXEL_ORDER_VBGR = 4;
+     * }
+     */
+    public static int CAIRO_SUBPIXEL_ORDER_VBGR() {
+        return (int)4L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_hint_style.CAIRO_HINT_STYLE_DEFAULT = 0;
+     * }
+     */
+    public static int CAIRO_HINT_STYLE_DEFAULT() {
+        return (int)0L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_hint_style.CAIRO_HINT_STYLE_NONE = 1;
+     * }
+     */
+    public static int CAIRO_HINT_STYLE_NONE() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_hint_style.CAIRO_HINT_STYLE_SLIGHT = 2;
+     * }
+     */
+    public static int CAIRO_HINT_STYLE_SLIGHT() {
+        return (int)2L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_hint_style.CAIRO_HINT_STYLE_MEDIUM = 3;
+     * }
+     */
+    public static int CAIRO_HINT_STYLE_MEDIUM() {
+        return (int)3L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_hint_style.CAIRO_HINT_STYLE_FULL = 4;
+     * }
+     */
+    public static int CAIRO_HINT_STYLE_FULL() {
+        return (int)4L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_hint_metrics.CAIRO_HINT_METRICS_DEFAULT = 0;
+     * }
+     */
+    public static int CAIRO_HINT_METRICS_DEFAULT() {
+        return (int)0L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_hint_metrics.CAIRO_HINT_METRICS_OFF = 1;
+     * }
+     */
+    public static int CAIRO_HINT_METRICS_OFF() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_hint_metrics.CAIRO_HINT_METRICS_ON = 2;
+     * }
+     */
+    public static int CAIRO_HINT_METRICS_ON() {
+        return (int)2L;
+    }
+    public static MethodHandle cairo_font_options_create$MH() {
+        return RuntimeHelper.requireNonNull(constants$1008.cairo_font_options_create$MH,"cairo_font_options_create");
+    }
+    /**
+     * {@snippet :
+     * cairo_font_options_t* cairo_font_options_create();
+     * }
+     */
+    public static MemorySegment cairo_font_options_create() {
+        var mh$ = cairo_font_options_create$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_font_options_copy$MH() {
+        return RuntimeHelper.requireNonNull(constants$1008.cairo_font_options_copy$MH,"cairo_font_options_copy");
+    }
+    /**
+     * {@snippet :
+     * cairo_font_options_t* cairo_font_options_copy(const cairo_font_options_t* original);
+     * }
+     */
+    public static MemorySegment cairo_font_options_copy(MemorySegment original) {
+        var mh$ = cairo_font_options_copy$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(original);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_font_options_destroy$MH() {
+        return RuntimeHelper.requireNonNull(constants$1009.cairo_font_options_destroy$MH,"cairo_font_options_destroy");
+    }
+    /**
+     * {@snippet :
+     * void cairo_font_options_destroy(cairo_font_options_t* options);
+     * }
+     */
+    public static void cairo_font_options_destroy(MemorySegment options) {
+        var mh$ = cairo_font_options_destroy$MH();
+        try {
+            mh$.invokeExact(options);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_font_options_status$MH() {
+        return RuntimeHelper.requireNonNull(constants$1009.cairo_font_options_status$MH,"cairo_font_options_status");
+    }
+    /**
+     * {@snippet :
+     * cairo_status_t cairo_font_options_status(cairo_font_options_t* options);
+     * }
+     */
+    public static int cairo_font_options_status(MemorySegment options) {
+        var mh$ = cairo_font_options_status$MH();
+        try {
+            return (int)mh$.invokeExact(options);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_font_options_merge$MH() {
+        return RuntimeHelper.requireNonNull(constants$1009.cairo_font_options_merge$MH,"cairo_font_options_merge");
+    }
+    /**
+     * {@snippet :
+     * void cairo_font_options_merge(cairo_font_options_t* options, const cairo_font_options_t* other);
+     * }
+     */
+    public static void cairo_font_options_merge(MemorySegment options, MemorySegment other) {
+        var mh$ = cairo_font_options_merge$MH();
+        try {
+            mh$.invokeExact(options, other);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_font_options_equal$MH() {
+        return RuntimeHelper.requireNonNull(constants$1009.cairo_font_options_equal$MH,"cairo_font_options_equal");
+    }
+    /**
+     * {@snippet :
+     * cairo_bool_t cairo_font_options_equal(const cairo_font_options_t* options, const cairo_font_options_t* other);
+     * }
+     */
+    public static int cairo_font_options_equal(MemorySegment options, MemorySegment other) {
+        var mh$ = cairo_font_options_equal$MH();
+        try {
+            return (int)mh$.invokeExact(options, other);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_font_options_hash$MH() {
+        return RuntimeHelper.requireNonNull(constants$1009.cairo_font_options_hash$MH,"cairo_font_options_hash");
+    }
+    /**
+     * {@snippet :
+     * unsigned long cairo_font_options_hash(const cairo_font_options_t* options);
+     * }
+     */
+    public static long cairo_font_options_hash(MemorySegment options) {
+        var mh$ = cairo_font_options_hash$MH();
+        try {
+            return (long)mh$.invokeExact(options);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_font_options_set_antialias$MH() {
+        return RuntimeHelper.requireNonNull(constants$1009.cairo_font_options_set_antialias$MH,"cairo_font_options_set_antialias");
+    }
+    /**
+     * {@snippet :
+     * void cairo_font_options_set_antialias(cairo_font_options_t* options, cairo_antialias_t antialias);
+     * }
+     */
+    public static void cairo_font_options_set_antialias(MemorySegment options, int antialias) {
+        var mh$ = cairo_font_options_set_antialias$MH();
+        try {
+            mh$.invokeExact(options, antialias);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_font_options_get_antialias$MH() {
+        return RuntimeHelper.requireNonNull(constants$1010.cairo_font_options_get_antialias$MH,"cairo_font_options_get_antialias");
+    }
+    /**
+     * {@snippet :
+     * cairo_antialias_t cairo_font_options_get_antialias(const cairo_font_options_t* options);
+     * }
+     */
+    public static int cairo_font_options_get_antialias(MemorySegment options) {
+        var mh$ = cairo_font_options_get_antialias$MH();
+        try {
+            return (int)mh$.invokeExact(options);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_font_options_set_subpixel_order$MH() {
+        return RuntimeHelper.requireNonNull(constants$1010.cairo_font_options_set_subpixel_order$MH,"cairo_font_options_set_subpixel_order");
+    }
+    /**
+     * {@snippet :
+     * void cairo_font_options_set_subpixel_order(cairo_font_options_t* options, cairo_subpixel_order_t subpixel_order);
+     * }
+     */
+    public static void cairo_font_options_set_subpixel_order(MemorySegment options, int subpixel_order) {
+        var mh$ = cairo_font_options_set_subpixel_order$MH();
+        try {
+            mh$.invokeExact(options, subpixel_order);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_font_options_get_subpixel_order$MH() {
+        return RuntimeHelper.requireNonNull(constants$1010.cairo_font_options_get_subpixel_order$MH,"cairo_font_options_get_subpixel_order");
+    }
+    /**
+     * {@snippet :
+     * cairo_subpixel_order_t cairo_font_options_get_subpixel_order(const cairo_font_options_t* options);
+     * }
+     */
+    public static int cairo_font_options_get_subpixel_order(MemorySegment options) {
+        var mh$ = cairo_font_options_get_subpixel_order$MH();
+        try {
+            return (int)mh$.invokeExact(options);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_font_options_set_hint_style$MH() {
+        return RuntimeHelper.requireNonNull(constants$1010.cairo_font_options_set_hint_style$MH,"cairo_font_options_set_hint_style");
+    }
+    /**
+     * {@snippet :
+     * void cairo_font_options_set_hint_style(cairo_font_options_t* options, cairo_hint_style_t hint_style);
+     * }
+     */
+    public static void cairo_font_options_set_hint_style(MemorySegment options, int hint_style) {
+        var mh$ = cairo_font_options_set_hint_style$MH();
+        try {
+            mh$.invokeExact(options, hint_style);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_font_options_get_hint_style$MH() {
+        return RuntimeHelper.requireNonNull(constants$1010.cairo_font_options_get_hint_style$MH,"cairo_font_options_get_hint_style");
+    }
+    /**
+     * {@snippet :
+     * cairo_hint_style_t cairo_font_options_get_hint_style(const cairo_font_options_t* options);
+     * }
+     */
+    public static int cairo_font_options_get_hint_style(MemorySegment options) {
+        var mh$ = cairo_font_options_get_hint_style$MH();
+        try {
+            return (int)mh$.invokeExact(options);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_font_options_set_hint_metrics$MH() {
+        return RuntimeHelper.requireNonNull(constants$1010.cairo_font_options_set_hint_metrics$MH,"cairo_font_options_set_hint_metrics");
+    }
+    /**
+     * {@snippet :
+     * void cairo_font_options_set_hint_metrics(cairo_font_options_t* options, cairo_hint_metrics_t hint_metrics);
+     * }
+     */
+    public static void cairo_font_options_set_hint_metrics(MemorySegment options, int hint_metrics) {
+        var mh$ = cairo_font_options_set_hint_metrics$MH();
+        try {
+            mh$.invokeExact(options, hint_metrics);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_font_options_get_hint_metrics$MH() {
+        return RuntimeHelper.requireNonNull(constants$1011.cairo_font_options_get_hint_metrics$MH,"cairo_font_options_get_hint_metrics");
+    }
+    /**
+     * {@snippet :
+     * cairo_hint_metrics_t cairo_font_options_get_hint_metrics(const cairo_font_options_t* options);
+     * }
+     */
+    public static int cairo_font_options_get_hint_metrics(MemorySegment options) {
+        var mh$ = cairo_font_options_get_hint_metrics$MH();
+        try {
+            return (int)mh$.invokeExact(options);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_font_options_get_variations$MH() {
+        return RuntimeHelper.requireNonNull(constants$1011.cairo_font_options_get_variations$MH,"cairo_font_options_get_variations");
+    }
+    /**
+     * {@snippet :
+     * char* cairo_font_options_get_variations(cairo_font_options_t* options);
+     * }
+     */
+    public static MemorySegment cairo_font_options_get_variations(MemorySegment options) {
+        var mh$ = cairo_font_options_get_variations$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(options);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_font_options_set_variations$MH() {
+        return RuntimeHelper.requireNonNull(constants$1011.cairo_font_options_set_variations$MH,"cairo_font_options_set_variations");
+    }
+    /**
+     * {@snippet :
+     * void cairo_font_options_set_variations(cairo_font_options_t* options, char* variations);
+     * }
+     */
+    public static void cairo_font_options_set_variations(MemorySegment options, MemorySegment variations) {
+        var mh$ = cairo_font_options_set_variations$MH();
+        try {
+            mh$.invokeExact(options, variations);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_select_font_face$MH() {
+        return RuntimeHelper.requireNonNull(constants$1011.cairo_select_font_face$MH,"cairo_select_font_face");
+    }
+    /**
+     * {@snippet :
+     * void cairo_select_font_face(cairo_t* cr, char* family, cairo_font_slant_t slant, cairo_font_weight_t weight);
+     * }
+     */
+    public static void cairo_select_font_face(MemorySegment cr, MemorySegment family, int slant, int weight) {
+        var mh$ = cairo_select_font_face$MH();
+        try {
+            mh$.invokeExact(cr, family, slant, weight);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_set_font_size$MH() {
+        return RuntimeHelper.requireNonNull(constants$1011.cairo_set_font_size$MH,"cairo_set_font_size");
+    }
+    /**
+     * {@snippet :
+     * void cairo_set_font_size(cairo_t* cr, double size);
+     * }
+     */
+    public static void cairo_set_font_size(MemorySegment cr, double size) {
+        var mh$ = cairo_set_font_size$MH();
+        try {
+            mh$.invokeExact(cr, size);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_set_font_matrix$MH() {
+        return RuntimeHelper.requireNonNull(constants$1011.cairo_set_font_matrix$MH,"cairo_set_font_matrix");
+    }
+    /**
+     * {@snippet :
+     * void cairo_set_font_matrix(cairo_t* cr, const cairo_matrix_t* matrix);
+     * }
+     */
+    public static void cairo_set_font_matrix(MemorySegment cr, MemorySegment matrix) {
+        var mh$ = cairo_set_font_matrix$MH();
+        try {
+            mh$.invokeExact(cr, matrix);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_get_font_matrix$MH() {
+        return RuntimeHelper.requireNonNull(constants$1012.cairo_get_font_matrix$MH,"cairo_get_font_matrix");
+    }
+    /**
+     * {@snippet :
+     * void cairo_get_font_matrix(cairo_t* cr, cairo_matrix_t* matrix);
+     * }
+     */
+    public static void cairo_get_font_matrix(MemorySegment cr, MemorySegment matrix) {
+        var mh$ = cairo_get_font_matrix$MH();
+        try {
+            mh$.invokeExact(cr, matrix);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_set_font_options$MH() {
+        return RuntimeHelper.requireNonNull(constants$1012.cairo_set_font_options$MH,"cairo_set_font_options");
+    }
+    /**
+     * {@snippet :
+     * void cairo_set_font_options(cairo_t* cr, const cairo_font_options_t* options);
+     * }
+     */
+    public static void cairo_set_font_options(MemorySegment cr, MemorySegment options) {
+        var mh$ = cairo_set_font_options$MH();
+        try {
+            mh$.invokeExact(cr, options);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_get_font_options$MH() {
+        return RuntimeHelper.requireNonNull(constants$1012.cairo_get_font_options$MH,"cairo_get_font_options");
+    }
+    /**
+     * {@snippet :
+     * void cairo_get_font_options(cairo_t* cr, cairo_font_options_t* options);
+     * }
+     */
+    public static void cairo_get_font_options(MemorySegment cr, MemorySegment options) {
+        var mh$ = cairo_get_font_options$MH();
+        try {
+            mh$.invokeExact(cr, options);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_set_font_face$MH() {
+        return RuntimeHelper.requireNonNull(constants$1012.cairo_set_font_face$MH,"cairo_set_font_face");
+    }
+    /**
+     * {@snippet :
+     * void cairo_set_font_face(cairo_t* cr, cairo_font_face_t* font_face);
+     * }
+     */
+    public static void cairo_set_font_face(MemorySegment cr, MemorySegment font_face) {
+        var mh$ = cairo_set_font_face$MH();
+        try {
+            mh$.invokeExact(cr, font_face);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_get_font_face$MH() {
+        return RuntimeHelper.requireNonNull(constants$1012.cairo_get_font_face$MH,"cairo_get_font_face");
+    }
+    /**
+     * {@snippet :
+     * cairo_font_face_t* cairo_get_font_face(cairo_t* cr);
+     * }
+     */
+    public static MemorySegment cairo_get_font_face(MemorySegment cr) {
+        var mh$ = cairo_get_font_face$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(cr);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_set_scaled_font$MH() {
+        return RuntimeHelper.requireNonNull(constants$1012.cairo_set_scaled_font$MH,"cairo_set_scaled_font");
+    }
+    /**
+     * {@snippet :
+     * void cairo_set_scaled_font(cairo_t* cr, const cairo_scaled_font_t* scaled_font);
+     * }
+     */
+    public static void cairo_set_scaled_font(MemorySegment cr, MemorySegment scaled_font) {
+        var mh$ = cairo_set_scaled_font$MH();
+        try {
+            mh$.invokeExact(cr, scaled_font);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_get_scaled_font$MH() {
+        return RuntimeHelper.requireNonNull(constants$1013.cairo_get_scaled_font$MH,"cairo_get_scaled_font");
+    }
+    /**
+     * {@snippet :
+     * cairo_scaled_font_t* cairo_get_scaled_font(cairo_t* cr);
+     * }
+     */
+    public static MemorySegment cairo_get_scaled_font(MemorySegment cr) {
+        var mh$ = cairo_get_scaled_font$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(cr);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_show_text$MH() {
+        return RuntimeHelper.requireNonNull(constants$1013.cairo_show_text$MH,"cairo_show_text");
+    }
+    /**
+     * {@snippet :
+     * void cairo_show_text(cairo_t* cr, char* utf8);
+     * }
+     */
+    public static void cairo_show_text(MemorySegment cr, MemorySegment utf8) {
+        var mh$ = cairo_show_text$MH();
+        try {
+            mh$.invokeExact(cr, utf8);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_show_glyphs$MH() {
+        return RuntimeHelper.requireNonNull(constants$1013.cairo_show_glyphs$MH,"cairo_show_glyphs");
+    }
+    /**
+     * {@snippet :
+     * void cairo_show_glyphs(cairo_t* cr, const cairo_glyph_t* glyphs, int num_glyphs);
+     * }
+     */
+    public static void cairo_show_glyphs(MemorySegment cr, MemorySegment glyphs, int num_glyphs) {
+        var mh$ = cairo_show_glyphs$MH();
+        try {
+            mh$.invokeExact(cr, glyphs, num_glyphs);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_show_text_glyphs$MH() {
+        return RuntimeHelper.requireNonNull(constants$1013.cairo_show_text_glyphs$MH,"cairo_show_text_glyphs");
+    }
+    /**
+     * {@snippet :
+     * void cairo_show_text_glyphs(cairo_t* cr, char* utf8, int utf8_len, const cairo_glyph_t* glyphs, int num_glyphs, const cairo_text_cluster_t* clusters, int num_clusters, cairo_text_cluster_flags_t cluster_flags);
+     * }
+     */
+    public static void cairo_show_text_glyphs(MemorySegment cr, MemorySegment utf8, int utf8_len, MemorySegment glyphs, int num_glyphs, MemorySegment clusters, int num_clusters, int cluster_flags) {
+        var mh$ = cairo_show_text_glyphs$MH();
+        try {
+            mh$.invokeExact(cr, utf8, utf8_len, glyphs, num_glyphs, clusters, num_clusters, cluster_flags);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_text_path$MH() {
+        return RuntimeHelper.requireNonNull(constants$1013.cairo_text_path$MH,"cairo_text_path");
+    }
+    /**
+     * {@snippet :
+     * void cairo_text_path(cairo_t* cr, char* utf8);
+     * }
+     */
+    public static void cairo_text_path(MemorySegment cr, MemorySegment utf8) {
+        var mh$ = cairo_text_path$MH();
+        try {
+            mh$.invokeExact(cr, utf8);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_glyph_path$MH() {
+        return RuntimeHelper.requireNonNull(constants$1013.cairo_glyph_path$MH,"cairo_glyph_path");
+    }
+    /**
+     * {@snippet :
+     * void cairo_glyph_path(cairo_t* cr, const cairo_glyph_t* glyphs, int num_glyphs);
+     * }
+     */
+    public static void cairo_glyph_path(MemorySegment cr, MemorySegment glyphs, int num_glyphs) {
+        var mh$ = cairo_glyph_path$MH();
+        try {
+            mh$.invokeExact(cr, glyphs, num_glyphs);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_text_extents$MH() {
+        return RuntimeHelper.requireNonNull(constants$1014.cairo_text_extents$MH,"cairo_text_extents");
+    }
+    /**
+     * {@snippet :
+     * void cairo_text_extents(cairo_t* cr, char* utf8, cairo_text_extents_t* extents);
+     * }
+     */
+    public static void cairo_text_extents(MemorySegment cr, MemorySegment utf8, MemorySegment extents) {
+        var mh$ = cairo_text_extents$MH();
+        try {
+            mh$.invokeExact(cr, utf8, extents);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_glyph_extents$MH() {
+        return RuntimeHelper.requireNonNull(constants$1014.cairo_glyph_extents$MH,"cairo_glyph_extents");
+    }
+    /**
+     * {@snippet :
+     * void cairo_glyph_extents(cairo_t* cr, const cairo_glyph_t* glyphs, int num_glyphs, cairo_text_extents_t* extents);
+     * }
+     */
+    public static void cairo_glyph_extents(MemorySegment cr, MemorySegment glyphs, int num_glyphs, MemorySegment extents) {
+        var mh$ = cairo_glyph_extents$MH();
+        try {
+            mh$.invokeExact(cr, glyphs, num_glyphs, extents);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_font_extents$MH() {
+        return RuntimeHelper.requireNonNull(constants$1014.cairo_font_extents$MH,"cairo_font_extents");
+    }
+    /**
+     * {@snippet :
+     * void cairo_font_extents(cairo_t* cr, cairo_font_extents_t* extents);
+     * }
+     */
+    public static void cairo_font_extents(MemorySegment cr, MemorySegment extents) {
+        var mh$ = cairo_font_extents$MH();
+        try {
+            mh$.invokeExact(cr, extents);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_font_face_reference$MH() {
+        return RuntimeHelper.requireNonNull(constants$1014.cairo_font_face_reference$MH,"cairo_font_face_reference");
+    }
+    /**
+     * {@snippet :
+     * cairo_font_face_t* cairo_font_face_reference(cairo_font_face_t* font_face);
+     * }
+     */
+    public static MemorySegment cairo_font_face_reference(MemorySegment font_face) {
+        var mh$ = cairo_font_face_reference$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(font_face);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_font_face_destroy$MH() {
+        return RuntimeHelper.requireNonNull(constants$1014.cairo_font_face_destroy$MH,"cairo_font_face_destroy");
+    }
+    /**
+     * {@snippet :
+     * void cairo_font_face_destroy(cairo_font_face_t* font_face);
+     * }
+     */
+    public static void cairo_font_face_destroy(MemorySegment font_face) {
+        var mh$ = cairo_font_face_destroy$MH();
+        try {
+            mh$.invokeExact(font_face);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_font_face_get_reference_count$MH() {
+        return RuntimeHelper.requireNonNull(constants$1014.cairo_font_face_get_reference_count$MH,"cairo_font_face_get_reference_count");
+    }
+    /**
+     * {@snippet :
+     * unsigned int cairo_font_face_get_reference_count(cairo_font_face_t* font_face);
+     * }
+     */
+    public static int cairo_font_face_get_reference_count(MemorySegment font_face) {
+        var mh$ = cairo_font_face_get_reference_count$MH();
+        try {
+            return (int)mh$.invokeExact(font_face);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_font_face_status$MH() {
+        return RuntimeHelper.requireNonNull(constants$1015.cairo_font_face_status$MH,"cairo_font_face_status");
+    }
+    /**
+     * {@snippet :
+     * cairo_status_t cairo_font_face_status(cairo_font_face_t* font_face);
+     * }
+     */
+    public static int cairo_font_face_status(MemorySegment font_face) {
+        var mh$ = cairo_font_face_status$MH();
+        try {
+            return (int)mh$.invokeExact(font_face);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_font_type.CAIRO_FONT_TYPE_TOY = 0;
+     * }
+     */
+    public static int CAIRO_FONT_TYPE_TOY() {
+        return (int)0L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_font_type.CAIRO_FONT_TYPE_FT = 1;
+     * }
+     */
+    public static int CAIRO_FONT_TYPE_FT() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_font_type.CAIRO_FONT_TYPE_WIN32 = 2;
+     * }
+     */
+    public static int CAIRO_FONT_TYPE_WIN32() {
+        return (int)2L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_font_type.CAIRO_FONT_TYPE_QUARTZ = 3;
+     * }
+     */
+    public static int CAIRO_FONT_TYPE_QUARTZ() {
+        return (int)3L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_font_type.CAIRO_FONT_TYPE_USER = 4;
+     * }
+     */
+    public static int CAIRO_FONT_TYPE_USER() {
+        return (int)4L;
+    }
+    public static MethodHandle cairo_font_face_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$1015.cairo_font_face_get_type$MH,"cairo_font_face_get_type");
+    }
+    /**
+     * {@snippet :
+     * cairo_font_type_t cairo_font_face_get_type(cairo_font_face_t* font_face);
+     * }
+     */
+    public static int cairo_font_face_get_type(MemorySegment font_face) {
+        var mh$ = cairo_font_face_get_type$MH();
+        try {
+            return (int)mh$.invokeExact(font_face);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_font_face_get_user_data$MH() {
+        return RuntimeHelper.requireNonNull(constants$1015.cairo_font_face_get_user_data$MH,"cairo_font_face_get_user_data");
+    }
+    /**
+     * {@snippet :
+     * void* cairo_font_face_get_user_data(cairo_font_face_t* font_face, const cairo_user_data_key_t* key);
+     * }
+     */
+    public static MemorySegment cairo_font_face_get_user_data(MemorySegment font_face, MemorySegment key) {
+        var mh$ = cairo_font_face_get_user_data$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(font_face, key);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_font_face_set_user_data$MH() {
+        return RuntimeHelper.requireNonNull(constants$1015.cairo_font_face_set_user_data$MH,"cairo_font_face_set_user_data");
+    }
+    /**
+     * {@snippet :
+     * cairo_status_t cairo_font_face_set_user_data(cairo_font_face_t* font_face, const cairo_user_data_key_t* key, void* user_data, cairo_destroy_func_t destroy);
+     * }
+     */
+    public static int cairo_font_face_set_user_data(MemorySegment font_face, MemorySegment key, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = cairo_font_face_set_user_data$MH();
+        try {
+            return (int)mh$.invokeExact(font_face, key, user_data, destroy);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_scaled_font_create$MH() {
+        return RuntimeHelper.requireNonNull(constants$1015.cairo_scaled_font_create$MH,"cairo_scaled_font_create");
+    }
+    /**
+     * {@snippet :
+     * cairo_scaled_font_t* cairo_scaled_font_create(cairo_font_face_t* font_face, const cairo_matrix_t* font_matrix, const cairo_matrix_t* ctm, const cairo_font_options_t* options);
+     * }
+     */
+    public static MemorySegment cairo_scaled_font_create(MemorySegment font_face, MemorySegment font_matrix, MemorySegment ctm, MemorySegment options) {
+        var mh$ = cairo_scaled_font_create$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(font_face, font_matrix, ctm, options);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_scaled_font_reference$MH() {
+        return RuntimeHelper.requireNonNull(constants$1015.cairo_scaled_font_reference$MH,"cairo_scaled_font_reference");
+    }
+    /**
+     * {@snippet :
+     * cairo_scaled_font_t* cairo_scaled_font_reference(cairo_scaled_font_t* scaled_font);
+     * }
+     */
+    public static MemorySegment cairo_scaled_font_reference(MemorySegment scaled_font) {
+        var mh$ = cairo_scaled_font_reference$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(scaled_font);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_scaled_font_destroy$MH() {
+        return RuntimeHelper.requireNonNull(constants$1016.cairo_scaled_font_destroy$MH,"cairo_scaled_font_destroy");
+    }
+    /**
+     * {@snippet :
+     * void cairo_scaled_font_destroy(cairo_scaled_font_t* scaled_font);
+     * }
+     */
+    public static void cairo_scaled_font_destroy(MemorySegment scaled_font) {
+        var mh$ = cairo_scaled_font_destroy$MH();
+        try {
+            mh$.invokeExact(scaled_font);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_scaled_font_get_reference_count$MH() {
+        return RuntimeHelper.requireNonNull(constants$1016.cairo_scaled_font_get_reference_count$MH,"cairo_scaled_font_get_reference_count");
+    }
+    /**
+     * {@snippet :
+     * unsigned int cairo_scaled_font_get_reference_count(cairo_scaled_font_t* scaled_font);
+     * }
+     */
+    public static int cairo_scaled_font_get_reference_count(MemorySegment scaled_font) {
+        var mh$ = cairo_scaled_font_get_reference_count$MH();
+        try {
+            return (int)mh$.invokeExact(scaled_font);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_scaled_font_status$MH() {
+        return RuntimeHelper.requireNonNull(constants$1016.cairo_scaled_font_status$MH,"cairo_scaled_font_status");
+    }
+    /**
+     * {@snippet :
+     * cairo_status_t cairo_scaled_font_status(cairo_scaled_font_t* scaled_font);
+     * }
+     */
+    public static int cairo_scaled_font_status(MemorySegment scaled_font) {
+        var mh$ = cairo_scaled_font_status$MH();
+        try {
+            return (int)mh$.invokeExact(scaled_font);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_scaled_font_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$1016.cairo_scaled_font_get_type$MH,"cairo_scaled_font_get_type");
+    }
+    /**
+     * {@snippet :
+     * cairo_font_type_t cairo_scaled_font_get_type(cairo_scaled_font_t* scaled_font);
+     * }
+     */
+    public static int cairo_scaled_font_get_type(MemorySegment scaled_font) {
+        var mh$ = cairo_scaled_font_get_type$MH();
+        try {
+            return (int)mh$.invokeExact(scaled_font);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_scaled_font_get_user_data$MH() {
+        return RuntimeHelper.requireNonNull(constants$1016.cairo_scaled_font_get_user_data$MH,"cairo_scaled_font_get_user_data");
+    }
+    /**
+     * {@snippet :
+     * void* cairo_scaled_font_get_user_data(cairo_scaled_font_t* scaled_font, const cairo_user_data_key_t* key);
+     * }
+     */
+    public static MemorySegment cairo_scaled_font_get_user_data(MemorySegment scaled_font, MemorySegment key) {
+        var mh$ = cairo_scaled_font_get_user_data$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(scaled_font, key);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_scaled_font_set_user_data$MH() {
+        return RuntimeHelper.requireNonNull(constants$1016.cairo_scaled_font_set_user_data$MH,"cairo_scaled_font_set_user_data");
+    }
+    /**
+     * {@snippet :
+     * cairo_status_t cairo_scaled_font_set_user_data(cairo_scaled_font_t* scaled_font, const cairo_user_data_key_t* key, void* user_data, cairo_destroy_func_t destroy);
+     * }
+     */
+    public static int cairo_scaled_font_set_user_data(MemorySegment scaled_font, MemorySegment key, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = cairo_scaled_font_set_user_data$MH();
+        try {
+            return (int)mh$.invokeExact(scaled_font, key, user_data, destroy);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_scaled_font_extents$MH() {
+        return RuntimeHelper.requireNonNull(constants$1017.cairo_scaled_font_extents$MH,"cairo_scaled_font_extents");
+    }
+    /**
+     * {@snippet :
+     * void cairo_scaled_font_extents(cairo_scaled_font_t* scaled_font, cairo_font_extents_t* extents);
+     * }
+     */
+    public static void cairo_scaled_font_extents(MemorySegment scaled_font, MemorySegment extents) {
+        var mh$ = cairo_scaled_font_extents$MH();
+        try {
+            mh$.invokeExact(scaled_font, extents);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_scaled_font_text_extents$MH() {
+        return RuntimeHelper.requireNonNull(constants$1017.cairo_scaled_font_text_extents$MH,"cairo_scaled_font_text_extents");
+    }
+    /**
+     * {@snippet :
+     * void cairo_scaled_font_text_extents(cairo_scaled_font_t* scaled_font, char* utf8, cairo_text_extents_t* extents);
+     * }
+     */
+    public static void cairo_scaled_font_text_extents(MemorySegment scaled_font, MemorySegment utf8, MemorySegment extents) {
+        var mh$ = cairo_scaled_font_text_extents$MH();
+        try {
+            mh$.invokeExact(scaled_font, utf8, extents);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
     }
 }
 

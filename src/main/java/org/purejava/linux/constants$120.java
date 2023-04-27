@@ -7,8 +7,41 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$120 {
+final class constants$120 {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$120() {}
+    static final FunctionDescriptor g_date_strftime$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_date_strftime$MH = RuntimeHelper.downcallHandle(
+        "g_date_strftime",
+        constants$120.g_date_strftime$FUNC
+    );
+    static final FunctionDescriptor closedir$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle closedir$MH = RuntimeHelper.downcallHandle(
+        "closedir",
+        constants$120.closedir$FUNC
+    );
+    static final FunctionDescriptor opendir$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle opendir$MH = RuntimeHelper.downcallHandle(
+        "opendir",
+        constants$120.opendir$FUNC
+    );
+    static final FunctionDescriptor fdopendir$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle fdopendir$MH = RuntimeHelper.downcallHandle(
+        "fdopendir",
+        constants$120.fdopendir$FUNC
+    );
     static final FunctionDescriptor readdir$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
@@ -24,35 +57,6 @@ class constants$120 {
     static final MethodHandle readdir_r$MH = RuntimeHelper.downcallHandle(
         "readdir_r",
         constants$120.readdir_r$FUNC
-    );
-    static final FunctionDescriptor rewinddir$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rewinddir$MH = RuntimeHelper.downcallHandle(
-        "rewinddir",
-        constants$120.rewinddir$FUNC
-    );
-    static final FunctionDescriptor seekdir$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle seekdir$MH = RuntimeHelper.downcallHandle(
-        "seekdir",
-        constants$120.seekdir$FUNC
-    );
-    static final FunctionDescriptor telldir$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle telldir$MH = RuntimeHelper.downcallHandle(
-        "telldir",
-        constants$120.telldir$FUNC
-    );
-    static final FunctionDescriptor dirfd$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle dirfd$MH = RuntimeHelper.downcallHandle(
-        "dirfd",
-        constants$120.dirfd$FUNC
     );
 }
 

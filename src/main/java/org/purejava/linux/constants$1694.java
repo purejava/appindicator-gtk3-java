@@ -7,66 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1694 {
+final class constants$1694 {
 
-    static final FunctionDescriptor gtk_builder_add_from_file$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_builder_add_from_file$MH = RuntimeHelper.downcallHandle(
-        "gtk_builder_add_from_file",
-        constants$1694.gtk_builder_add_from_file$FUNC
-    );
-    static final FunctionDescriptor gtk_builder_add_from_resource$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1694() {}
+    static final FunctionDescriptor gtk_menu_button_set_menu_model$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_builder_add_from_resource$MH = RuntimeHelper.downcallHandle(
-        "gtk_builder_add_from_resource",
-        constants$1694.gtk_builder_add_from_resource$FUNC
+    static final MethodHandle gtk_menu_button_set_menu_model$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_button_set_menu_model",
+        constants$1694.gtk_menu_button_set_menu_model$FUNC
     );
-    static final FunctionDescriptor gtk_builder_add_from_string$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
+    static final FunctionDescriptor gtk_menu_button_get_menu_model$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_builder_add_from_string$MH = RuntimeHelper.downcallHandle(
-        "gtk_builder_add_from_string",
-        constants$1694.gtk_builder_add_from_string$FUNC
+    static final MethodHandle gtk_menu_button_get_menu_model$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_button_get_menu_model",
+        constants$1694.gtk_menu_button_get_menu_model$FUNC
     );
-    static final FunctionDescriptor gtk_builder_add_objects_from_file$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_menu_button_set_align_widget$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_builder_add_objects_from_file$MH = RuntimeHelper.downcallHandle(
-        "gtk_builder_add_objects_from_file",
-        constants$1694.gtk_builder_add_objects_from_file$FUNC
+    static final MethodHandle gtk_menu_button_set_align_widget$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_button_set_align_widget",
+        constants$1694.gtk_menu_button_set_align_widget$FUNC
     );
-    static final FunctionDescriptor gtk_builder_add_objects_from_resource$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_menu_button_get_align_widget$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_builder_add_objects_from_resource$MH = RuntimeHelper.downcallHandle(
-        "gtk_builder_add_objects_from_resource",
-        constants$1694.gtk_builder_add_objects_from_resource$FUNC
+    static final MethodHandle gtk_menu_button_get_align_widget$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_button_get_align_widget",
+        constants$1694.gtk_menu_button_get_align_widget$FUNC
     );
-    static final FunctionDescriptor gtk_builder_add_objects_from_string$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_menu_button_set_use_popover$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_menu_button_set_use_popover$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_button_set_use_popover",
+        constants$1694.gtk_menu_button_set_use_popover$FUNC
+    );
+    static final FunctionDescriptor gtk_menu_button_get_use_popover$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_builder_add_objects_from_string$MH = RuntimeHelper.downcallHandle(
-        "gtk_builder_add_objects_from_string",
-        constants$1694.gtk_builder_add_objects_from_string$FUNC
+    static final MethodHandle gtk_menu_button_get_use_popover$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_button_get_use_popover",
+        constants$1694.gtk_menu_button_get_use_popover$FUNC
     );
 }
 

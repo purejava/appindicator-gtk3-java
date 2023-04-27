@@ -7,8 +7,40 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$127 {
+final class constants$127 {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$127() {}
+    static final FunctionDescriptor g_build_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_build_path$MH = RuntimeHelper.downcallHandleVariadic(
+        "g_build_path",
+        constants$127.g_build_path$FUNC
+    );
+    static final FunctionDescriptor g_build_pathv$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_build_pathv$MH = RuntimeHelper.downcallHandle(
+        "g_build_pathv",
+        constants$127.g_build_pathv$FUNC
+    );
+    static final FunctionDescriptor g_build_filename$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_build_filename$MH = RuntimeHelper.downcallHandleVariadic(
+        "g_build_filename",
+        constants$127.g_build_filename$FUNC
+    );
+    static final FunctionDescriptor g_build_filenamev$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_build_filenamev$MH = RuntimeHelper.downcallHandle(
+        "g_build_filenamev",
+        constants$127.g_build_filenamev$FUNC
+    );
     static final FunctionDescriptor g_build_filename_valist$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
@@ -24,32 +56,6 @@ class constants$127 {
     static final MethodHandle g_mkdir_with_parents$MH = RuntimeHelper.downcallHandle(
         "g_mkdir_with_parents",
         constants$127.g_mkdir_with_parents$FUNC
-    );
-    static final FunctionDescriptor g_path_is_absolute$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_path_is_absolute$MH = RuntimeHelper.downcallHandle(
-        "g_path_is_absolute",
-        constants$127.g_path_is_absolute$FUNC
-    );
-    static final FunctionDescriptor g_path_skip_root$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_path_skip_root$MH = RuntimeHelper.downcallHandle(
-        "g_path_skip_root",
-        constants$127.g_path_skip_root$FUNC
-    );
-    static final FunctionDescriptor g_basename$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_basename$MH = RuntimeHelper.downcallHandle(
-        "g_basename",
-        constants$127.g_basename$FUNC
-    );
-    static final FunctionDescriptor g_get_current_dir$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_get_current_dir$MH = RuntimeHelper.downcallHandle(
-        "g_get_current_dir",
-        constants$127.g_get_current_dir$FUNC
     );
 }
 

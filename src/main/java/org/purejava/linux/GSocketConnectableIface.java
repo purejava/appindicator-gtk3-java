@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GSocketConnectableIface extends _GSocketConnectableIface {
+/**
+ * {@snippet :
+ * typedef struct _GSocketConnectableIface GSocketConnectableIface;
+ * }
+ */
+public final class GSocketConnectableIface extends _GSocketConnectableIface {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GSocketConnectableIface() {}
 }
 
 

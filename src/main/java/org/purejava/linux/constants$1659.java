@@ -7,57 +7,57 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1659 {
+final class constants$1659 {
 
-    static final FunctionDescriptor gtk_tree_view_get_columns$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_get_columns$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_columns",
-        constants$1659.gtk_tree_view_get_columns$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_move_column_after$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1659() {}
+    static final FunctionDescriptor gtk_icon_view_enable_model_drag_dest$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_move_column_after$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_move_column_after",
-        constants$1659.gtk_tree_view_move_column_after$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_set_expander_column$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_set_expander_column$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_set_expander_column",
-        constants$1659.gtk_tree_view_set_expander_column$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_get_expander_column$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_get_expander_column$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_expander_column",
-        constants$1659.gtk_tree_view_get_expander_column$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_set_column_drag_function$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_set_column_drag_function$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_set_column_drag_function",
-        constants$1659.gtk_tree_view_set_column_drag_function$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_scroll_to_point$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_tree_view_scroll_to_point$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_scroll_to_point",
-        constants$1659.gtk_tree_view_scroll_to_point$FUNC
+    static final MethodHandle gtk_icon_view_enable_model_drag_dest$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_view_enable_model_drag_dest",
+        constants$1659.gtk_icon_view_enable_model_drag_dest$FUNC
+    );
+    static final FunctionDescriptor gtk_icon_view_unset_model_drag_source$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_icon_view_unset_model_drag_source$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_view_unset_model_drag_source",
+        constants$1659.gtk_icon_view_unset_model_drag_source$FUNC
+    );
+    static final FunctionDescriptor gtk_icon_view_unset_model_drag_dest$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_icon_view_unset_model_drag_dest$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_view_unset_model_drag_dest",
+        constants$1659.gtk_icon_view_unset_model_drag_dest$FUNC
+    );
+    static final FunctionDescriptor gtk_icon_view_set_reorderable$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_icon_view_set_reorderable$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_view_set_reorderable",
+        constants$1659.gtk_icon_view_set_reorderable$FUNC
+    );
+    static final FunctionDescriptor gtk_icon_view_get_reorderable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_icon_view_get_reorderable$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_view_get_reorderable",
+        constants$1659.gtk_icon_view_get_reorderable$FUNC
+    );
+    static final FunctionDescriptor gtk_icon_view_set_drag_dest_item$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_icon_view_set_drag_dest_item$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_view_set_drag_dest_item",
+        constants$1659.gtk_icon_view_set_drag_dest_item$FUNC
     );
 }
 

@@ -7,9 +7,18 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GtkTargetEntry {
+ *     gchar* target;
+ *     guint flags;
+ *     guint info;
+ * };
+ * }
+ */
 public class _GtkTargetEntry {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_POINTER$LAYOUT.withName("target"),
         Constants$root.C_INT$LAYOUT.withName("flags"),
         Constants$root.C_INT$LAYOUT.withName("info")
@@ -21,26 +30,50 @@ public class _GtkTargetEntry {
     public static VarHandle target$VH() {
         return _GtkTargetEntry.target$VH;
     }
-    public static MemoryAddress target$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkTargetEntry.target$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gchar* target;
+     * }
+     */
+    public static MemorySegment target$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkTargetEntry.target$VH.get(seg);
     }
-    public static void target$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gchar* target;
+     * }
+     */
+    public static void target$set(MemorySegment seg, MemorySegment x) {
         _GtkTargetEntry.target$VH.set(seg, x);
     }
-    public static MemoryAddress target$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkTargetEntry.target$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment target$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkTargetEntry.target$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void target$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void target$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkTargetEntry.target$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle flags$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("flags"));
     public static VarHandle flags$VH() {
         return _GtkTargetEntry.flags$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * guint flags;
+     * }
+     */
     public static int flags$get(MemorySegment seg) {
         return (int)_GtkTargetEntry.flags$VH.get(seg);
     }
-    public static void flags$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * guint flags;
+     * }
+     */
+    public static void flags$set(MemorySegment seg, int x) {
         _GtkTargetEntry.flags$VH.set(seg, x);
     }
     public static int flags$get(MemorySegment seg, long index) {
@@ -53,10 +86,22 @@ public class _GtkTargetEntry {
     public static VarHandle info$VH() {
         return _GtkTargetEntry.info$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * guint info;
+     * }
+     */
     public static int info$get(MemorySegment seg) {
         return (int)_GtkTargetEntry.info$VH.get(seg);
     }
-    public static void info$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * guint info;
+     * }
+     */
+    public static void info$set(MemorySegment seg, int x) {
         _GtkTargetEntry.info$VH.set(seg, x);
     }
     public static int info$get(MemorySegment seg, long index) {
@@ -67,10 +112,10 @@ public class _GtkTargetEntry {
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

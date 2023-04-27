@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class AtkHypertextIface extends _AtkHypertextIface {
+/**
+ * {@snippet :
+ * typedef struct _AtkHypertextIface AtkHypertextIface;
+ * }
+ */
+public final class AtkHypertextIface extends _AtkHypertextIface {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private AtkHypertextIface() {}
 }
 
 

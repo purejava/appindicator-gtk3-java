@@ -7,9 +7,17 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct {
+ *     long long __clang_max_align_nonce1;
+ *     long double __clang_max_align_nonce2;
+ * };
+ * }
+ */
 public class max_align_t {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_LONG_LONG$LAYOUT.withName("__clang_max_align_nonce1"),
         MemoryLayout.paddingLayout(64),
         MemoryLayout.paddingLayout(128).withName("__clang_max_align_nonce2")
@@ -21,10 +29,22 @@ public class max_align_t {
     public static VarHandle __clang_max_align_nonce1$VH() {
         return max_align_t.__clang_max_align_nonce1$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * long long __clang_max_align_nonce1;
+     * }
+     */
     public static long __clang_max_align_nonce1$get(MemorySegment seg) {
         return (long)max_align_t.__clang_max_align_nonce1$VH.get(seg);
     }
-    public static void __clang_max_align_nonce1$set( MemorySegment seg, long x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * long long __clang_max_align_nonce1;
+     * }
+     */
+    public static void __clang_max_align_nonce1$set(MemorySegment seg, long x) {
         max_align_t.__clang_max_align_nonce1$VH.set(seg, x);
     }
     public static long __clang_max_align_nonce1$get(MemorySegment seg, long index) {
@@ -35,10 +55,10 @@ public class max_align_t {
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

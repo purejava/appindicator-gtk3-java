@@ -7,59 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$743 {
+final class constants$743 {
 
-    static final FunctionDescriptor g_list_store_find_with_equal_func$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$743() {}
+    static final FunctionDescriptor g_settings_list_relocatable_schemas$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle g_settings_list_relocatable_schemas$MH = RuntimeHelper.downcallHandle(
+        "g_settings_list_relocatable_schemas",
+        constants$743.g_settings_list_relocatable_schemas$FUNC
+    );
+    static final FunctionDescriptor g_settings_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_settings_new$MH = RuntimeHelper.downcallHandle(
+        "g_settings_new",
+        constants$743.g_settings_new$FUNC
+    );
+    static final FunctionDescriptor g_settings_new_with_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_settings_new_with_path$MH = RuntimeHelper.downcallHandle(
+        "g_settings_new_with_path",
+        constants$743.g_settings_new_with_path$FUNC
+    );
+    static final FunctionDescriptor g_settings_new_with_backend$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_settings_new_with_backend$MH = RuntimeHelper.downcallHandle(
+        "g_settings_new_with_backend",
+        constants$743.g_settings_new_with_backend$FUNC
+    );
+    static final FunctionDescriptor g_settings_new_with_backend_and_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_list_store_find_with_equal_func$MH = RuntimeHelper.downcallHandle(
-        "g_list_store_find_with_equal_func",
-        constants$743.g_list_store_find_with_equal_func$FUNC
+    static final MethodHandle g_settings_new_with_backend_and_path$MH = RuntimeHelper.downcallHandle(
+        "g_settings_new_with_backend_and_path",
+        constants$743.g_settings_new_with_backend_and_path$FUNC
     );
-    static final FunctionDescriptor g_loadable_icon_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_loadable_icon_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_loadable_icon_get_type",
-        constants$743.g_loadable_icon_get_type$FUNC
-    );
-    static final FunctionDescriptor g_loadable_icon_load$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_settings_new_full$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_loadable_icon_load$MH = RuntimeHelper.downcallHandle(
-        "g_loadable_icon_load",
-        constants$743.g_loadable_icon_load$FUNC
-    );
-    static final FunctionDescriptor g_loadable_icon_load_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_loadable_icon_load_async$MH = RuntimeHelper.downcallHandle(
-        "g_loadable_icon_load_async",
-        constants$743.g_loadable_icon_load_async$FUNC
-    );
-    static final FunctionDescriptor g_loadable_icon_load_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_loadable_icon_load_finish$MH = RuntimeHelper.downcallHandle(
-        "g_loadable_icon_load_finish",
-        constants$743.g_loadable_icon_load_finish$FUNC
-    );
-    static final FunctionDescriptor g_memory_input_stream_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_memory_input_stream_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_memory_input_stream_get_type",
-        constants$743.g_memory_input_stream_get_type$FUNC
+    static final MethodHandle g_settings_new_full$MH = RuntimeHelper.downcallHandle(
+        "g_settings_new_full",
+        constants$743.g_settings_new_full$FUNC
     );
 }
 

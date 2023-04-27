@@ -7,36 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$166 {
+final class constants$166 {
 
-    static final FunctionDescriptor GSourceDisposeFunc$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$166() {}
+    static final FunctionDescriptor g_slist_sort$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GSourceDisposeFunc$MH = RuntimeHelper.downcallHandle(
-        constants$166.GSourceDisposeFunc$FUNC
+    static final MethodHandle g_slist_sort$MH = RuntimeHelper.downcallHandle(
+        "g_slist_sort",
+        constants$166.g_slist_sort$FUNC
     );
-    static final FunctionDescriptor GSourceDummyMarshal$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle GSourceDummyMarshal$MH = RuntimeHelper.downcallHandle(
-        constants$166.GSourceDummyMarshal$FUNC
+    static final FunctionDescriptor g_slist_sort_with_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor g_main_context_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_main_context_new$MH = RuntimeHelper.downcallHandle(
-        "g_main_context_new",
-        constants$166.g_main_context_new$FUNC
+    static final MethodHandle g_slist_sort_with_data$MH = RuntimeHelper.downcallHandle(
+        "g_slist_sort_with_data",
+        constants$166.g_slist_sort_with_data$FUNC
     );
-    static final FunctionDescriptor g_main_context_new_with_flags$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_slist_nth_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_main_context_new_with_flags$MH = RuntimeHelper.downcallHandle(
-        "g_main_context_new_with_flags",
-        constants$166.g_main_context_new_with_flags$FUNC
+    static final MethodHandle g_slist_nth_data$MH = RuntimeHelper.downcallHandle(
+        "g_slist_nth_data",
+        constants$166.g_slist_nth_data$FUNC
     );
-    static final FunctionDescriptor g_main_context_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_clear_slist$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_main_context_ref$MH = RuntimeHelper.downcallHandle(
-        "g_main_context_ref",
-        constants$166.g_main_context_ref$FUNC
+    static final MethodHandle g_clear_slist$MH = RuntimeHelper.downcallHandle(
+        "g_clear_slist",
+        constants$166.g_clear_slist$FUNC
+    );
+    static final FunctionDescriptor GSourceFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final FunctionDescriptor GSourceFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GSourceFunc_UP$MH = RuntimeHelper.upcallHandle(GSourceFunc.class, "apply", constants$166.GSourceFunc_UP$FUNC);
+    static final FunctionDescriptor GSourceFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GSourceFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$166.GSourceFunc_DOWN$FUNC
     );
 }
 

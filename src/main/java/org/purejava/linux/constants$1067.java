@@ -7,56 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1067 {
+final class constants$1067 {
 
-    static final FunctionDescriptor pango_font_get_glyph_extents$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1067() {}
+    static final FunctionDescriptor gdk_event_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_event_copy$MH = RuntimeHelper.downcallHandle(
+        "gdk_event_copy",
+        constants$1067.gdk_event_copy$FUNC
+    );
+    static final FunctionDescriptor gdk_event_free$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_event_free$MH = RuntimeHelper.downcallHandle(
+        "gdk_event_free",
+        constants$1067.gdk_event_free$FUNC
+    );
+    static final FunctionDescriptor gdk_event_get_window$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_event_get_window$MH = RuntimeHelper.downcallHandle(
+        "gdk_event_get_window",
+        constants$1067.gdk_event_get_window$FUNC
+    );
+    static final FunctionDescriptor gdk_event_get_time$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_event_get_time$MH = RuntimeHelper.downcallHandle(
+        "gdk_event_get_time",
+        constants$1067.gdk_event_get_time$FUNC
+    );
+    static final FunctionDescriptor gdk_event_get_state$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_font_get_glyph_extents$MH = RuntimeHelper.downcallHandle(
-        "pango_font_get_glyph_extents",
-        constants$1067.pango_font_get_glyph_extents$FUNC
+    static final MethodHandle gdk_event_get_state$MH = RuntimeHelper.downcallHandle(
+        "gdk_event_get_state",
+        constants$1067.gdk_event_get_state$FUNC
     );
-    static final FunctionDescriptor pango_font_get_font_map$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_font_get_font_map$MH = RuntimeHelper.downcallHandle(
-        "pango_font_get_font_map",
-        constants$1067.pango_font_get_font_map$FUNC
-    );
-    static final FunctionDescriptor pango_font_get_face$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_font_get_face$MH = RuntimeHelper.downcallHandle(
-        "pango_font_get_face",
-        constants$1067.pango_font_get_face$FUNC
-    );
-    static final FunctionDescriptor pango_font_has_char$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_font_has_char$MH = RuntimeHelper.downcallHandle(
-        "pango_font_has_char",
-        constants$1067.pango_font_has_char$FUNC
-    );
-    static final FunctionDescriptor pango_font_get_features$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gdk_event_get_coords$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_font_get_features$MH = RuntimeHelper.downcallHandle(
-        "pango_font_get_features",
-        constants$1067.pango_font_get_features$FUNC
-    );
-    static final FunctionDescriptor pango_font_get_hb_font$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_font_get_hb_font$MH = RuntimeHelper.downcallHandle(
-        "pango_font_get_hb_font",
-        constants$1067.pango_font_get_hb_font$FUNC
+    static final MethodHandle gdk_event_get_coords$MH = RuntimeHelper.downcallHandle(
+        "gdk_event_get_coords",
+        constants$1067.gdk_event_get_coords$FUNC
     );
 }
 

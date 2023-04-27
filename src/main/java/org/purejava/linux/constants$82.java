@@ -7,8 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$82 {
+final class constants$82 {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$82() {}
+    static final FunctionDescriptor g_time_zone_new_local$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle g_time_zone_new_local$MH = RuntimeHelper.downcallHandle(
+        "g_time_zone_new_local",
+        constants$82.g_time_zone_new_local$FUNC
+    );
+    static final FunctionDescriptor g_time_zone_new_offset$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_time_zone_new_offset$MH = RuntimeHelper.downcallHandle(
+        "g_time_zone_new_offset",
+        constants$82.g_time_zone_new_offset$FUNC
+    );
     static final FunctionDescriptor g_time_zone_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
@@ -40,22 +54,6 @@ class constants$82 {
     static final MethodHandle g_time_zone_adjust_time$MH = RuntimeHelper.downcallHandle(
         "g_time_zone_adjust_time",
         constants$82.g_time_zone_adjust_time$FUNC
-    );
-    static final FunctionDescriptor g_time_zone_get_abbreviation$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_time_zone_get_abbreviation$MH = RuntimeHelper.downcallHandle(
-        "g_time_zone_get_abbreviation",
-        constants$82.g_time_zone_get_abbreviation$FUNC
-    );
-    static final FunctionDescriptor g_time_zone_get_offset$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_time_zone_get_offset$MH = RuntimeHelper.downcallHandle(
-        "g_time_zone_get_offset",
-        constants$82.g_time_zone_get_offset$FUNC
     );
 }
 

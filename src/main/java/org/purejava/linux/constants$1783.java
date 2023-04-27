@@ -7,52 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1783 {
+final class constants$1783 {
 
-    static final FunctionDescriptor gtk_flow_box_get_row_spacing$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1783() {}
+    static final FunctionDescriptor gtk_recent_chooser_get_current_item$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_flow_box_get_row_spacing$MH = RuntimeHelper.downcallHandle(
-        "gtk_flow_box_get_row_spacing",
-        constants$1783.gtk_flow_box_get_row_spacing$FUNC
+    static final MethodHandle gtk_recent_chooser_get_current_item$MH = RuntimeHelper.downcallHandle(
+        "gtk_recent_chooser_get_current_item",
+        constants$1783.gtk_recent_chooser_get_current_item$FUNC
     );
-    static final FunctionDescriptor gtk_flow_box_set_column_spacing$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_recent_chooser_select_uri$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_flow_box_set_column_spacing$MH = RuntimeHelper.downcallHandle(
-        "gtk_flow_box_set_column_spacing",
-        constants$1783.gtk_flow_box_set_column_spacing$FUNC
-    );
-    static final FunctionDescriptor gtk_flow_box_get_column_spacing$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_flow_box_get_column_spacing$MH = RuntimeHelper.downcallHandle(
-        "gtk_flow_box_get_column_spacing",
-        constants$1783.gtk_flow_box_get_column_spacing$FUNC
+    static final MethodHandle gtk_recent_chooser_select_uri$MH = RuntimeHelper.downcallHandle(
+        "gtk_recent_chooser_select_uri",
+        constants$1783.gtk_recent_chooser_select_uri$FUNC
     );
-    static final FunctionDescriptor gtk_flow_box_set_min_children_per_line$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_recent_chooser_unselect_uri$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_flow_box_set_min_children_per_line$MH = RuntimeHelper.downcallHandle(
-        "gtk_flow_box_set_min_children_per_line",
-        constants$1783.gtk_flow_box_set_min_children_per_line$FUNC
-    );
-    static final FunctionDescriptor gtk_flow_box_get_min_children_per_line$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_flow_box_get_min_children_per_line$MH = RuntimeHelper.downcallHandle(
-        "gtk_flow_box_get_min_children_per_line",
-        constants$1783.gtk_flow_box_get_min_children_per_line$FUNC
+    static final MethodHandle gtk_recent_chooser_unselect_uri$MH = RuntimeHelper.downcallHandle(
+        "gtk_recent_chooser_unselect_uri",
+        constants$1783.gtk_recent_chooser_unselect_uri$FUNC
     );
-    static final FunctionDescriptor gtk_flow_box_set_max_children_per_line$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor gtk_recent_chooser_select_all$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_flow_box_set_max_children_per_line$MH = RuntimeHelper.downcallHandle(
-        "gtk_flow_box_set_max_children_per_line",
-        constants$1783.gtk_flow_box_set_max_children_per_line$FUNC
+    static final MethodHandle gtk_recent_chooser_select_all$MH = RuntimeHelper.downcallHandle(
+        "gtk_recent_chooser_select_all",
+        constants$1783.gtk_recent_chooser_select_all$FUNC
+    );
+    static final FunctionDescriptor gtk_recent_chooser_unselect_all$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_recent_chooser_unselect_all$MH = RuntimeHelper.downcallHandle(
+        "gtk_recent_chooser_unselect_all",
+        constants$1783.gtk_recent_chooser_unselect_all$FUNC
+    );
+    static final FunctionDescriptor gtk_recent_chooser_get_items$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_recent_chooser_get_items$MH = RuntimeHelper.downcallHandle(
+        "gtk_recent_chooser_get_items",
+        constants$1783.gtk_recent_chooser_get_items$FUNC
     );
 }
 

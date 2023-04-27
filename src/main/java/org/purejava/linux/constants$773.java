@@ -7,57 +7,71 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$773 {
+final class constants$773 {
 
-    static final FunctionDescriptor g_notification_add_button_with_target_value$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$773() {}
+    static final FunctionDescriptor g_socket_client_set_proxy_resolver$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_socket_client_set_proxy_resolver$MH = RuntimeHelper.downcallHandle(
+        "g_socket_client_set_proxy_resolver",
+        constants$773.g_socket_client_set_proxy_resolver$FUNC
+    );
+    static final FunctionDescriptor g_socket_client_connect$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_notification_add_button_with_target_value$MH = RuntimeHelper.downcallHandle(
-        "g_notification_add_button_with_target_value",
-        constants$773.g_notification_add_button_with_target_value$FUNC
+    static final MethodHandle g_socket_client_connect$MH = RuntimeHelper.downcallHandle(
+        "g_socket_client_connect",
+        constants$773.g_socket_client_connect$FUNC
     );
-    static final FunctionDescriptor g_notification_set_default_action$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_socket_client_connect_to_host$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_SHORT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_notification_set_default_action$MH = RuntimeHelper.downcallHandle(
-        "g_notification_set_default_action",
-        constants$773.g_notification_set_default_action$FUNC
+    static final MethodHandle g_socket_client_connect_to_host$MH = RuntimeHelper.downcallHandle(
+        "g_socket_client_connect_to_host",
+        constants$773.g_socket_client_connect_to_host$FUNC
     );
-    static final FunctionDescriptor g_notification_set_default_action_and_target$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_socket_client_connect_to_service$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_notification_set_default_action_and_target$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_notification_set_default_action_and_target",
-        constants$773.g_notification_set_default_action_and_target$FUNC
-    );
-    static final FunctionDescriptor g_notification_set_default_action_and_target_value$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_notification_set_default_action_and_target_value$MH = RuntimeHelper.downcallHandle(
-        "g_notification_set_default_action_and_target_value",
-        constants$773.g_notification_set_default_action_and_target_value$FUNC
+    static final MethodHandle g_socket_client_connect_to_service$MH = RuntimeHelper.downcallHandle(
+        "g_socket_client_connect_to_service",
+        constants$773.g_socket_client_connect_to_service$FUNC
     );
-    static final FunctionDescriptor g_permission_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_permission_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_permission_get_type",
-        constants$773.g_permission_get_type$FUNC
+    static final FunctionDescriptor g_socket_client_connect_to_uri$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_SHORT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor g_permission_acquire$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final MethodHandle g_socket_client_connect_to_uri$MH = RuntimeHelper.downcallHandle(
+        "g_socket_client_connect_to_uri",
+        constants$773.g_socket_client_connect_to_uri$FUNC
+    );
+    static final FunctionDescriptor g_socket_client_connect_async$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_permission_acquire$MH = RuntimeHelper.downcallHandle(
-        "g_permission_acquire",
-        constants$773.g_permission_acquire$FUNC
+    static final MethodHandle g_socket_client_connect_async$MH = RuntimeHelper.downcallHandle(
+        "g_socket_client_connect_async",
+        constants$773.g_socket_client_connect_async$FUNC
     );
 }
 

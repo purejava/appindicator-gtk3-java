@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkPaned extends _GtkPaned {
+/**
+ * {@snippet :
+ * typedef struct _GtkPaned GtkPaned;
+ * }
+ */
+public final class GtkPaned extends _GtkPaned {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkPaned() {}
 }
 
 

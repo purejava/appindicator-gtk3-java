@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkEntryCompletion extends _GtkEntryCompletion {
+/**
+ * {@snippet :
+ * typedef struct _GtkEntryCompletion GtkEntryCompletion;
+ * }
+ */
+public final class GtkEntryCompletion extends _GtkEntryCompletion {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkEntryCompletion() {}
 }
 
 

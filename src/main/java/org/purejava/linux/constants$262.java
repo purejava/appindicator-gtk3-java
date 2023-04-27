@@ -7,53 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$262 {
+final class constants$262 {
 
-    static final FunctionDescriptor g_queue_push_tail$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$262() {}
+    static final FunctionDescriptor g_log_structured_standard$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_queue_push_tail$MH = RuntimeHelper.downcallHandle(
-        "g_queue_push_tail",
-        constants$262.g_queue_push_tail$FUNC
+    static final MethodHandle g_log_structured_standard$MH = RuntimeHelper.downcallHandleVariadic(
+        "g_log_structured_standard",
+        constants$262.g_log_structured_standard$FUNC
     );
-    static final FunctionDescriptor g_queue_push_nth$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_queue_push_nth$MH = RuntimeHelper.downcallHandle(
-        "g_queue_push_nth",
-        constants$262.g_queue_push_nth$FUNC
-    );
-    static final FunctionDescriptor g_queue_pop_head$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor GPrintFunc$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_queue_pop_head$MH = RuntimeHelper.downcallHandle(
-        "g_queue_pop_head",
-        constants$262.g_queue_pop_head$FUNC
-    );
-    static final FunctionDescriptor g_queue_pop_tail$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor GPrintFunc_UP$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_queue_pop_tail$MH = RuntimeHelper.downcallHandle(
-        "g_queue_pop_tail",
-        constants$262.g_queue_pop_tail$FUNC
-    );
-    static final FunctionDescriptor g_queue_pop_nth$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_queue_pop_nth$MH = RuntimeHelper.downcallHandle(
-        "g_queue_pop_nth",
-        constants$262.g_queue_pop_nth$FUNC
-    );
-    static final FunctionDescriptor g_queue_peek_head$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final MethodHandle GPrintFunc_UP$MH = RuntimeHelper.upcallHandle(GPrintFunc.class, "apply", constants$262.GPrintFunc_UP$FUNC);
+    static final FunctionDescriptor GPrintFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_queue_peek_head$MH = RuntimeHelper.downcallHandle(
-        "g_queue_peek_head",
-        constants$262.g_queue_peek_head$FUNC
+    static final MethodHandle GPrintFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$262.GPrintFunc_DOWN$FUNC
+    );
+    static final FunctionDescriptor g_print$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_print$MH = RuntimeHelper.downcallHandleVariadic(
+        "g_print",
+        constants$262.g_print$FUNC
+    );
+    static final FunctionDescriptor g_set_print_handler$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_set_print_handler$MH = RuntimeHelper.downcallHandle(
+        "g_set_print_handler",
+        constants$262.g_set_print_handler$FUNC
+    );
+    static final FunctionDescriptor g_printerr$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_printerr$MH = RuntimeHelper.downcallHandleVariadic(
+        "g_printerr",
+        constants$262.g_printerr$FUNC
     );
 }
 

@@ -7,52 +7,49 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$218 {
+final class constants$218 {
 
-    static final FunctionDescriptor g_markup_parse_context_pop$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$218() {}
+    static final FunctionDescriptor g_io_channel_error_quark$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
+    static final MethodHandle g_io_channel_error_quark$MH = RuntimeHelper.downcallHandle(
+        "g_io_channel_error_quark",
+        constants$218.g_io_channel_error_quark$FUNC
+    );
+    static final FunctionDescriptor g_io_channel_error_from_errno$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_io_channel_error_from_errno$MH = RuntimeHelper.downcallHandle(
+        "g_io_channel_error_from_errno",
+        constants$218.g_io_channel_error_from_errno$FUNC
+    );
+    static final FunctionDescriptor g_io_channel_unix_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_io_channel_unix_new$MH = RuntimeHelper.downcallHandle(
+        "g_io_channel_unix_new",
+        constants$218.g_io_channel_unix_new$FUNC
+    );
+    static final FunctionDescriptor g_io_channel_unix_get_fd$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_markup_parse_context_pop$MH = RuntimeHelper.downcallHandle(
-        "g_markup_parse_context_pop",
-        constants$218.g_markup_parse_context_pop$FUNC
+    static final MethodHandle g_io_channel_unix_get_fd$MH = RuntimeHelper.downcallHandle(
+        "g_io_channel_unix_get_fd",
+        constants$218.g_io_channel_unix_get_fd$FUNC
     );
-    static final FunctionDescriptor g_markup_parse_context_end_parse$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_markup_parse_context_end_parse$MH = RuntimeHelper.downcallHandle(
-        "g_markup_parse_context_end_parse",
-        constants$218.g_markup_parse_context_end_parse$FUNC
-    );
-    static final FunctionDescriptor g_markup_parse_context_get_element$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_markup_parse_context_get_element$MH = RuntimeHelper.downcallHandle(
-        "g_markup_parse_context_get_element",
-        constants$218.g_markup_parse_context_get_element$FUNC
-    );
-    static final FunctionDescriptor g_markup_parse_context_get_element_stack$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_markup_parse_context_get_element_stack$MH = RuntimeHelper.downcallHandle(
-        "g_markup_parse_context_get_element_stack",
-        constants$218.g_markup_parse_context_get_element_stack$FUNC
-    );
-    static final FunctionDescriptor g_markup_parse_context_get_position$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_markup_parse_context_get_position$MH = RuntimeHelper.downcallHandle(
-        "g_markup_parse_context_get_position",
-        constants$218.g_markup_parse_context_get_position$FUNC
-    );
-    static final FunctionDescriptor g_markup_parse_context_get_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_markup_parse_context_get_user_data$MH = RuntimeHelper.downcallHandle(
-        "g_markup_parse_context_get_user_data",
-        constants$218.g_markup_parse_context_get_user_data$FUNC
+    static final StructLayout g_io_watch_funcs$LAYOUT = MemoryLayout.structLayout(
+        Constants$root.C_POINTER$LAYOUT.withName("prepare"),
+        Constants$root.C_POINTER$LAYOUT.withName("check"),
+        Constants$root.C_POINTER$LAYOUT.withName("dispatch"),
+        Constants$root.C_POINTER$LAYOUT.withName("finalize"),
+        Constants$root.C_POINTER$LAYOUT.withName("closure_callback"),
+        Constants$root.C_POINTER$LAYOUT.withName("closure_marshal")
+    ).withName("_GSourceFuncs");
+    static final MemorySegment g_io_watch_funcs$SEGMENT = RuntimeHelper.lookupGlobalVariable("g_io_watch_funcs", constants$218.g_io_watch_funcs$LAYOUT);
+    static final FunctionDescriptor g_key_file_error_quark$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
+    static final MethodHandle g_key_file_error_quark$MH = RuntimeHelper.downcallHandle(
+        "g_key_file_error_quark",
+        constants$218.g_key_file_error_quark$FUNC
     );
 }
 

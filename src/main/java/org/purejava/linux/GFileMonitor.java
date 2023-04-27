@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GFileMonitor extends _GFileMonitor {
+/**
+ * {@snippet :
+ * typedef struct _GFileMonitor GFileMonitor;
+ * }
+ */
+public final class GFileMonitor extends _GFileMonitor {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GFileMonitor() {}
 }
 
 

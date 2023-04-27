@@ -7,46 +7,70 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$766 {
+final class constants$766 {
 
-    static final FunctionDescriptor g_volume_monitor_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_volume_monitor_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_volume_monitor_get_type",
-        constants$766.g_volume_monitor_get_type$FUNC
-    );
-    static final FunctionDescriptor g_volume_monitor_get$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_volume_monitor_get$MH = RuntimeHelper.downcallHandle(
-        "g_volume_monitor_get",
-        constants$766.g_volume_monitor_get$FUNC
-    );
-    static final FunctionDescriptor g_volume_monitor_get_connected_drives$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_volume_monitor_get_connected_drives$MH = RuntimeHelper.downcallHandle(
-        "g_volume_monitor_get_connected_drives",
-        constants$766.g_volume_monitor_get_connected_drives$FUNC
-    );
-    static final FunctionDescriptor g_volume_monitor_get_volumes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_volume_monitor_get_volumes$MH = RuntimeHelper.downcallHandle(
-        "g_volume_monitor_get_volumes",
-        constants$766.g_volume_monitor_get_volumes$FUNC
-    );
-    static final FunctionDescriptor g_volume_monitor_get_mounts$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_volume_monitor_get_mounts$MH = RuntimeHelper.downcallHandle(
-        "g_volume_monitor_get_mounts",
-        constants$766.g_volume_monitor_get_mounts$FUNC
-    );
-    static final FunctionDescriptor g_volume_monitor_get_volume_for_uuid$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$766() {}
+    static final FunctionDescriptor g_socket_condition_wait$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_volume_monitor_get_volume_for_uuid$MH = RuntimeHelper.downcallHandle(
-        "g_volume_monitor_get_volume_for_uuid",
-        constants$766.g_volume_monitor_get_volume_for_uuid$FUNC
+    static final MethodHandle g_socket_condition_wait$MH = RuntimeHelper.downcallHandle(
+        "g_socket_condition_wait",
+        constants$766.g_socket_condition_wait$FUNC
+    );
+    static final FunctionDescriptor g_socket_condition_timed_wait$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_socket_condition_timed_wait$MH = RuntimeHelper.downcallHandle(
+        "g_socket_condition_timed_wait",
+        constants$766.g_socket_condition_timed_wait$FUNC
+    );
+    static final FunctionDescriptor g_socket_accept$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_socket_accept$MH = RuntimeHelper.downcallHandle(
+        "g_socket_accept",
+        constants$766.g_socket_accept$FUNC
+    );
+    static final FunctionDescriptor g_socket_listen$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_socket_listen$MH = RuntimeHelper.downcallHandle(
+        "g_socket_listen",
+        constants$766.g_socket_listen$FUNC
+    );
+    static final FunctionDescriptor g_socket_receive$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_socket_receive$MH = RuntimeHelper.downcallHandle(
+        "g_socket_receive",
+        constants$766.g_socket_receive$FUNC
+    );
+    static final FunctionDescriptor g_socket_receive_from$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_socket_receive_from$MH = RuntimeHelper.downcallHandle(
+        "g_socket_receive_from",
+        constants$766.g_socket_receive_from$FUNC
     );
 }
 

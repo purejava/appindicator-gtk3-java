@@ -7,62 +7,83 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$626 {
+final class constants$626 {
 
-    static final FunctionDescriptor g_dbus_method_invocation_get_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_method_invocation_get_user_data$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_method_invocation_get_user_data",
-        constants$626.g_dbus_method_invocation_get_user_data$FUNC
-    );
-    static final FunctionDescriptor g_dbus_method_invocation_return_value$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_method_invocation_return_value$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_method_invocation_return_value",
-        constants$626.g_dbus_method_invocation_return_value$FUNC
-    );
-    static final FunctionDescriptor g_dbus_method_invocation_return_value_with_unix_fd_list$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$626() {}
+    static final FunctionDescriptor g_file_trash_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_method_invocation_return_value_with_unix_fd_list$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_method_invocation_return_value_with_unix_fd_list",
-        constants$626.g_dbus_method_invocation_return_value_with_unix_fd_list$FUNC
+    static final MethodHandle g_file_trash_finish$MH = RuntimeHelper.downcallHandle(
+        "g_file_trash_finish",
+        constants$626.g_file_trash_finish$FUNC
     );
-    static final FunctionDescriptor g_dbus_method_invocation_return_error$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_file_copy$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_method_invocation_return_error$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_dbus_method_invocation_return_error",
-        constants$626.g_dbus_method_invocation_return_error$FUNC
-    );
-    static final FunctionDescriptor g_dbus_method_invocation_return_error_valist$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_method_invocation_return_error_valist$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_method_invocation_return_error_valist",
-        constants$626.g_dbus_method_invocation_return_error_valist$FUNC
+    static final MethodHandle g_file_copy$MH = RuntimeHelper.downcallHandle(
+        "g_file_copy",
+        constants$626.g_file_copy$FUNC
     );
-    static final FunctionDescriptor g_dbus_method_invocation_return_error_literal$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_file_copy_async$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_method_invocation_return_error_literal$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_method_invocation_return_error_literal",
-        constants$626.g_dbus_method_invocation_return_error_literal$FUNC
+    static final MethodHandle g_file_copy_async$MH = RuntimeHelper.downcallHandle(
+        "g_file_copy_async",
+        constants$626.g_file_copy_async$FUNC
+    );
+    static final FunctionDescriptor g_file_copy_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_file_copy_finish$MH = RuntimeHelper.downcallHandle(
+        "g_file_copy_finish",
+        constants$626.g_file_copy_finish$FUNC
+    );
+    static final FunctionDescriptor g_file_move$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_file_move$MH = RuntimeHelper.downcallHandle(
+        "g_file_move",
+        constants$626.g_file_move$FUNC
+    );
+    static final FunctionDescriptor g_file_move_async$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_file_move_async$MH = RuntimeHelper.downcallHandle(
+        "g_file_move_async",
+        constants$626.g_file_move_async$FUNC
     );
 }
 

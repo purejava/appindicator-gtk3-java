@@ -7,37 +7,60 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1715 {
+final class constants$1715 {
 
-    static final FunctionDescriptor gtk_cell_renderer_pixbuf_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_cell_renderer_pixbuf_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_renderer_pixbuf_new",
-        constants$1715.gtk_cell_renderer_pixbuf_new$FUNC
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1715() {}
+    static final FunctionDescriptor gtk_notebook_set_menu_label_text$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor gtk_cell_renderer_progress_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_cell_renderer_progress_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_renderer_progress_get_type",
-        constants$1715.gtk_cell_renderer_progress_get_type$FUNC
+    static final MethodHandle gtk_notebook_set_menu_label_text$MH = RuntimeHelper.downcallHandle(
+        "gtk_notebook_set_menu_label_text",
+        constants$1715.gtk_notebook_set_menu_label_text$FUNC
     );
-    static final FunctionDescriptor gtk_cell_renderer_progress_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_cell_renderer_progress_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_renderer_progress_new",
-        constants$1715.gtk_cell_renderer_progress_new$FUNC
+    static final FunctionDescriptor gtk_notebook_get_menu_label_text$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor gtk_cell_renderer_spin_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_cell_renderer_spin_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_renderer_spin_get_type",
-        constants$1715.gtk_cell_renderer_spin_get_type$FUNC
+    static final MethodHandle gtk_notebook_get_menu_label_text$MH = RuntimeHelper.downcallHandle(
+        "gtk_notebook_get_menu_label_text",
+        constants$1715.gtk_notebook_get_menu_label_text$FUNC
     );
-    static final FunctionDescriptor gtk_cell_renderer_spin_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_cell_renderer_spin_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_renderer_spin_new",
-        constants$1715.gtk_cell_renderer_spin_new$FUNC
+    static final FunctionDescriptor gtk_notebook_reorder_child$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final FunctionDescriptor gtk_cell_renderer_spinner_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_cell_renderer_spinner_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_renderer_spinner_get_type",
-        constants$1715.gtk_cell_renderer_spinner_get_type$FUNC
+    static final MethodHandle gtk_notebook_reorder_child$MH = RuntimeHelper.downcallHandle(
+        "gtk_notebook_reorder_child",
+        constants$1715.gtk_notebook_reorder_child$FUNC
+    );
+    static final FunctionDescriptor gtk_notebook_get_tab_reorderable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_notebook_get_tab_reorderable$MH = RuntimeHelper.downcallHandle(
+        "gtk_notebook_get_tab_reorderable",
+        constants$1715.gtk_notebook_get_tab_reorderable$FUNC
+    );
+    static final FunctionDescriptor gtk_notebook_set_tab_reorderable$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_notebook_set_tab_reorderable$MH = RuntimeHelper.downcallHandle(
+        "gtk_notebook_set_tab_reorderable",
+        constants$1715.gtk_notebook_set_tab_reorderable$FUNC
+    );
+    static final FunctionDescriptor gtk_notebook_get_tab_detachable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_notebook_get_tab_detachable$MH = RuntimeHelper.downcallHandle(
+        "gtk_notebook_get_tab_detachable",
+        constants$1715.gtk_notebook_get_tab_detachable$FUNC
     );
 }
 

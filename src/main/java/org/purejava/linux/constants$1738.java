@@ -7,51 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1738 {
+final class constants$1738 {
 
-    static final FunctionDescriptor gtk_color_button_get_use_alpha$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1738() {}
+    static final FunctionDescriptor gtk_print_settings_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_print_settings_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_settings_get_type",
+        constants$1738.gtk_print_settings_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_print_settings_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_print_settings_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_settings_new",
+        constants$1738.gtk_print_settings_new$FUNC
+    );
+    static final FunctionDescriptor gtk_print_settings_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_color_button_get_use_alpha$MH = RuntimeHelper.downcallHandle(
-        "gtk_color_button_get_use_alpha",
-        constants$1738.gtk_color_button_get_use_alpha$FUNC
+    static final MethodHandle gtk_print_settings_copy$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_settings_copy",
+        constants$1738.gtk_print_settings_copy$FUNC
     );
-    static final FunctionDescriptor gtk_color_button_set_rgba$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_print_settings_new_from_file$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_color_button_set_rgba$MH = RuntimeHelper.downcallHandle(
-        "gtk_color_button_set_rgba",
-        constants$1738.gtk_color_button_set_rgba$FUNC
+    static final MethodHandle gtk_print_settings_new_from_file$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_settings_new_from_file",
+        constants$1738.gtk_print_settings_new_from_file$FUNC
     );
-    static final FunctionDescriptor gtk_color_button_get_rgba$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_print_settings_load_file$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_color_button_get_rgba$MH = RuntimeHelper.downcallHandle(
-        "gtk_color_button_get_rgba",
-        constants$1738.gtk_color_button_get_rgba$FUNC
+    static final MethodHandle gtk_print_settings_load_file$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_settings_load_file",
+        constants$1738.gtk_print_settings_load_file$FUNC
     );
-    static final FunctionDescriptor gtk_color_chooser_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_color_chooser_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_color_chooser_get_type",
-        constants$1738.gtk_color_chooser_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_color_chooser_get_rgba$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_print_settings_to_file$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_color_chooser_get_rgba$MH = RuntimeHelper.downcallHandle(
-        "gtk_color_chooser_get_rgba",
-        constants$1738.gtk_color_chooser_get_rgba$FUNC
-    );
-    static final FunctionDescriptor gtk_color_chooser_set_rgba$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_color_chooser_set_rgba$MH = RuntimeHelper.downcallHandle(
-        "gtk_color_chooser_set_rgba",
-        constants$1738.gtk_color_chooser_set_rgba$FUNC
+    static final MethodHandle gtk_print_settings_to_file$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_settings_to_file",
+        constants$1738.gtk_print_settings_to_file$FUNC
     );
 }
 

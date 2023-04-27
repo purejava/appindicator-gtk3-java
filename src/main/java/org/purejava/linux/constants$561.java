@@ -7,51 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$561 {
+final class constants$561 {
 
-    static final FunctionDescriptor g_charset_converter_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_charset_converter_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_charset_converter_get_type",
-        constants$561.g_charset_converter_get_type$FUNC
-    );
-    static final FunctionDescriptor g_charset_converter_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$561() {}
+    static final FunctionDescriptor g_dbus_error_set_dbus_error_valist$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_charset_converter_new$MH = RuntimeHelper.downcallHandle(
-        "g_charset_converter_new",
-        constants$561.g_charset_converter_new$FUNC
+    static final MethodHandle g_dbus_error_set_dbus_error_valist$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_error_set_dbus_error_valist",
+        constants$561.g_dbus_error_set_dbus_error_valist$FUNC
     );
-    static final FunctionDescriptor g_charset_converter_set_use_fallback$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_dbus_error_encode_gerror$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_dbus_error_encode_gerror$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_error_encode_gerror",
+        constants$561.g_dbus_error_encode_gerror$FUNC
+    );
+    static final FunctionDescriptor g_dbus_interface_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_dbus_interface_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_interface_get_type",
+        constants$561.g_dbus_interface_get_type$FUNC
+    );
+    static final FunctionDescriptor g_dbus_interface_get_info$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_dbus_interface_get_info$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_interface_get_info",
+        constants$561.g_dbus_interface_get_info$FUNC
+    );
+    static final FunctionDescriptor g_dbus_interface_get_object$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_dbus_interface_get_object$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_interface_get_object",
+        constants$561.g_dbus_interface_get_object$FUNC
+    );
+    static final FunctionDescriptor g_dbus_interface_set_object$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_charset_converter_set_use_fallback$MH = RuntimeHelper.downcallHandle(
-        "g_charset_converter_set_use_fallback",
-        constants$561.g_charset_converter_set_use_fallback$FUNC
-    );
-    static final FunctionDescriptor g_charset_converter_get_use_fallback$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_charset_converter_get_use_fallback$MH = RuntimeHelper.downcallHandle(
-        "g_charset_converter_get_use_fallback",
-        constants$561.g_charset_converter_get_use_fallback$FUNC
-    );
-    static final FunctionDescriptor g_charset_converter_get_num_fallbacks$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_charset_converter_get_num_fallbacks$MH = RuntimeHelper.downcallHandle(
-        "g_charset_converter_get_num_fallbacks",
-        constants$561.g_charset_converter_get_num_fallbacks$FUNC
-    );
-    static final FunctionDescriptor g_content_type_equals$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_content_type_equals$MH = RuntimeHelper.downcallHandle(
-        "g_content_type_equals",
-        constants$561.g_content_type_equals$FUNC
+    static final MethodHandle g_dbus_interface_set_object$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_interface_set_object",
+        constants$561.g_dbus_interface_set_object$FUNC
     );
 }
 

@@ -7,60 +7,63 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$457 {
+final class constants$457 {
 
-    static final FunctionDescriptor g_signal_is_valid_name$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$457() {}
+    static final FunctionDescriptor g_type_module_unuse$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_signal_is_valid_name$MH = RuntimeHelper.downcallHandle(
-        "g_signal_is_valid_name",
-        constants$457.g_signal_is_valid_name$FUNC
+    static final MethodHandle g_type_module_unuse$MH = RuntimeHelper.downcallHandle(
+        "g_type_module_unuse",
+        constants$457.g_type_module_unuse$FUNC
     );
-    static final FunctionDescriptor g_signal_parse_name$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_type_module_set_name$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_type_module_set_name$MH = RuntimeHelper.downcallHandle(
+        "g_type_module_set_name",
+        constants$457.g_type_module_set_name$FUNC
+    );
+    static final FunctionDescriptor g_type_module_register_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_signal_parse_name$MH = RuntimeHelper.downcallHandle(
-        "g_signal_parse_name",
-        constants$457.g_signal_parse_name$FUNC
+    static final MethodHandle g_type_module_register_type$MH = RuntimeHelper.downcallHandle(
+        "g_type_module_register_type",
+        constants$457.g_type_module_register_type$FUNC
     );
-    static final FunctionDescriptor g_signal_get_invocation_hint$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_type_module_add_interface$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_signal_get_invocation_hint$MH = RuntimeHelper.downcallHandle(
-        "g_signal_get_invocation_hint",
-        constants$457.g_signal_get_invocation_hint$FUNC
+    static final MethodHandle g_type_module_add_interface$MH = RuntimeHelper.downcallHandle(
+        "g_type_module_add_interface",
+        constants$457.g_type_module_add_interface$FUNC
     );
-    static final FunctionDescriptor g_signal_stop_emission$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_signal_stop_emission$MH = RuntimeHelper.downcallHandle(
-        "g_signal_stop_emission",
-        constants$457.g_signal_stop_emission$FUNC
-    );
-    static final FunctionDescriptor g_signal_stop_emission_by_name$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_signal_stop_emission_by_name$MH = RuntimeHelper.downcallHandle(
-        "g_signal_stop_emission_by_name",
-        constants$457.g_signal_stop_emission_by_name$FUNC
-    );
-    static final FunctionDescriptor g_signal_add_emission_hook$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_type_module_register_enum$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_signal_add_emission_hook$MH = RuntimeHelper.downcallHandle(
-        "g_signal_add_emission_hook",
-        constants$457.g_signal_add_emission_hook$FUNC
+    static final MethodHandle g_type_module_register_enum$MH = RuntimeHelper.downcallHandle(
+        "g_type_module_register_enum",
+        constants$457.g_type_module_register_enum$FUNC
+    );
+    static final FunctionDescriptor g_type_module_register_flags$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_type_module_register_flags$MH = RuntimeHelper.downcallHandle(
+        "g_type_module_register_flags",
+        constants$457.g_type_module_register_flags$FUNC
     );
 }
 

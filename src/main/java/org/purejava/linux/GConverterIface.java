@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GConverterIface extends _GConverterIface {
+/**
+ * {@snippet :
+ * typedef struct _GConverterIface GConverterIface;
+ * }
+ */
+public final class GConverterIface extends _GConverterIface {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GConverterIface() {}
 }
 
 

@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GScanner extends _GScanner {
+/**
+ * {@snippet :
+ * typedef struct _GScanner GScanner;
+ * }
+ */
+public final class GScanner extends _GScanner {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GScanner() {}
 }
 
 

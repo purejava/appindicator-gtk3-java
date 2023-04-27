@@ -7,69 +7,50 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$599 {
+final class constants$599 {
 
-    static final FunctionDescriptor g_dbus_connection_flush$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$599() {}
+    static final FunctionDescriptor g_debug_controller_get_debug_enabled$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_debug_controller_get_debug_enabled$MH = RuntimeHelper.downcallHandle(
+        "g_debug_controller_get_debug_enabled",
+        constants$599.g_debug_controller_get_debug_enabled$FUNC
+    );
+    static final FunctionDescriptor g_debug_controller_set_debug_enabled$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_debug_controller_set_debug_enabled$MH = RuntimeHelper.downcallHandle(
+        "g_debug_controller_set_debug_enabled",
+        constants$599.g_debug_controller_set_debug_enabled$FUNC
+    );
+    static final FunctionDescriptor g_debug_controller_dbus_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_debug_controller_dbus_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_debug_controller_dbus_get_type",
+        constants$599.g_debug_controller_dbus_get_type$FUNC
+    );
+    static final FunctionDescriptor g_debug_controller_dbus_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_connection_flush$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_flush",
-        constants$599.g_dbus_connection_flush$FUNC
+    static final MethodHandle g_debug_controller_dbus_new$MH = RuntimeHelper.downcallHandle(
+        "g_debug_controller_dbus_new",
+        constants$599.g_debug_controller_dbus_new$FUNC
     );
-    static final FunctionDescriptor g_dbus_connection_flush_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_debug_controller_dbus_stop$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_dbus_connection_flush_finish$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_flush_finish",
-        constants$599.g_dbus_connection_flush_finish$FUNC
+    static final MethodHandle g_debug_controller_dbus_stop$MH = RuntimeHelper.downcallHandle(
+        "g_debug_controller_dbus_stop",
+        constants$599.g_debug_controller_dbus_stop$FUNC
     );
-    static final FunctionDescriptor g_dbus_connection_flush_sync$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_connection_flush_sync$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_flush_sync",
-        constants$599.g_dbus_connection_flush_sync$FUNC
-    );
-    static final FunctionDescriptor g_dbus_connection_send_message$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_connection_send_message$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_send_message",
-        constants$599.g_dbus_connection_send_message$FUNC
-    );
-    static final FunctionDescriptor g_dbus_connection_send_message_with_reply$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_connection_send_message_with_reply$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_send_message_with_reply",
-        constants$599.g_dbus_connection_send_message_with_reply$FUNC
-    );
-    static final FunctionDescriptor g_dbus_connection_send_message_with_reply_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_connection_send_message_with_reply_finish$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_send_message_with_reply_finish",
-        constants$599.g_dbus_connection_send_message_with_reply_finish$FUNC
+    static final FunctionDescriptor g_drive_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_drive_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_drive_get_type",
+        constants$599.g_drive_get_type$FUNC
     );
 }
 

@@ -7,9 +7,20 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GStaticResource {
+ *     const guint8* data;
+ *     gsize data_len;
+ *     GResource* resource;
+ *     GStaticResource* next;
+ *     gpointer padding;
+ * };
+ * }
+ */
 public class _GStaticResource {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_POINTER$LAYOUT.withName("data"),
         Constants$root.C_LONG_LONG$LAYOUT.withName("data_len"),
         Constants$root.C_POINTER$LAYOUT.withName("resource"),
@@ -23,26 +34,50 @@ public class _GStaticResource {
     public static VarHandle data$VH() {
         return _GStaticResource.data$VH;
     }
-    public static MemoryAddress data$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GStaticResource.data$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * const guint8* data;
+     * }
+     */
+    public static MemorySegment data$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GStaticResource.data$VH.get(seg);
     }
-    public static void data$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * const guint8* data;
+     * }
+     */
+    public static void data$set(MemorySegment seg, MemorySegment x) {
         _GStaticResource.data$VH.set(seg, x);
     }
-    public static MemoryAddress data$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GStaticResource.data$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment data$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GStaticResource.data$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void data$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void data$set(MemorySegment seg, long index, MemorySegment x) {
         _GStaticResource.data$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle data_len$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("data_len"));
     public static VarHandle data_len$VH() {
         return _GStaticResource.data_len$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gsize data_len;
+     * }
+     */
     public static long data_len$get(MemorySegment seg) {
         return (long)_GStaticResource.data_len$VH.get(seg);
     }
-    public static void data_len$set( MemorySegment seg, long x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gsize data_len;
+     * }
+     */
+    public static void data_len$set(MemorySegment seg, long x) {
         _GStaticResource.data_len$VH.set(seg, x);
     }
     public static long data_len$get(MemorySegment seg, long index) {
@@ -55,56 +90,92 @@ public class _GStaticResource {
     public static VarHandle resource$VH() {
         return _GStaticResource.resource$VH;
     }
-    public static MemoryAddress resource$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GStaticResource.resource$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GResource* resource;
+     * }
+     */
+    public static MemorySegment resource$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GStaticResource.resource$VH.get(seg);
     }
-    public static void resource$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GResource* resource;
+     * }
+     */
+    public static void resource$set(MemorySegment seg, MemorySegment x) {
         _GStaticResource.resource$VH.set(seg, x);
     }
-    public static MemoryAddress resource$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GStaticResource.resource$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment resource$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GStaticResource.resource$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void resource$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void resource$set(MemorySegment seg, long index, MemorySegment x) {
         _GStaticResource.resource$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle next$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("next"));
     public static VarHandle next$VH() {
         return _GStaticResource.next$VH;
     }
-    public static MemoryAddress next$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GStaticResource.next$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GStaticResource* next;
+     * }
+     */
+    public static MemorySegment next$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GStaticResource.next$VH.get(seg);
     }
-    public static void next$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GStaticResource* next;
+     * }
+     */
+    public static void next$set(MemorySegment seg, MemorySegment x) {
         _GStaticResource.next$VH.set(seg, x);
     }
-    public static MemoryAddress next$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GStaticResource.next$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment next$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GStaticResource.next$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void next$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void next$set(MemorySegment seg, long index, MemorySegment x) {
         _GStaticResource.next$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle padding$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("padding"));
     public static VarHandle padding$VH() {
         return _GStaticResource.padding$VH;
     }
-    public static MemoryAddress padding$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GStaticResource.padding$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gpointer padding;
+     * }
+     */
+    public static MemorySegment padding$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GStaticResource.padding$VH.get(seg);
     }
-    public static void padding$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gpointer padding;
+     * }
+     */
+    public static void padding$set(MemorySegment seg, MemorySegment x) {
         _GStaticResource.padding$VH.set(seg, x);
     }
-    public static MemoryAddress padding$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GStaticResource.padding$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment padding$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GStaticResource.padding$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void padding$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void padding$set(MemorySegment seg, long index, MemorySegment x) {
         _GStaticResource.padding$VH.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

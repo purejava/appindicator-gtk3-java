@@ -7,53 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1636 {
+final class constants$1636 {
 
-    static final FunctionDescriptor gtk_image_new_from_stock$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1636() {}
+    static final FunctionDescriptor gtk_style_context_set_frame_clock$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_image_new_from_stock$MH = RuntimeHelper.downcallHandle(
-        "gtk_image_new_from_stock",
-        constants$1636.gtk_image_new_from_stock$FUNC
-    );
-    static final FunctionDescriptor gtk_image_new_from_icon_set$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_image_new_from_icon_set$MH = RuntimeHelper.downcallHandle(
-        "gtk_image_new_from_icon_set",
-        constants$1636.gtk_image_new_from_icon_set$FUNC
-    );
-    static final FunctionDescriptor gtk_image_new_from_animation$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_image_new_from_animation$MH = RuntimeHelper.downcallHandle(
-        "gtk_image_new_from_animation",
-        constants$1636.gtk_image_new_from_animation$FUNC
+    static final MethodHandle gtk_style_context_set_frame_clock$MH = RuntimeHelper.downcallHandle(
+        "gtk_style_context_set_frame_clock",
+        constants$1636.gtk_style_context_set_frame_clock$FUNC
     );
-    static final FunctionDescriptor gtk_image_new_from_icon_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_image_new_from_icon_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_image_new_from_icon_name",
-        constants$1636.gtk_image_new_from_icon_name$FUNC
-    );
-    static final FunctionDescriptor gtk_image_new_from_gicon$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_image_new_from_gicon$MH = RuntimeHelper.downcallHandle(
-        "gtk_image_new_from_gicon",
-        constants$1636.gtk_image_new_from_gicon$FUNC
-    );
-    static final FunctionDescriptor gtk_image_new_from_surface$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_style_context_get_frame_clock$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_image_new_from_surface$MH = RuntimeHelper.downcallHandle(
-        "gtk_image_new_from_surface",
-        constants$1636.gtk_image_new_from_surface$FUNC
+    static final MethodHandle gtk_style_context_get_frame_clock$MH = RuntimeHelper.downcallHandle(
+        "gtk_style_context_get_frame_clock",
+        constants$1636.gtk_style_context_get_frame_clock$FUNC
+    );
+    static final FunctionDescriptor gtk_style_context_set_direction$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_style_context_set_direction$MH = RuntimeHelper.downcallHandle(
+        "gtk_style_context_set_direction",
+        constants$1636.gtk_style_context_set_direction$FUNC
+    );
+    static final FunctionDescriptor gtk_style_context_get_direction$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_style_context_get_direction$MH = RuntimeHelper.downcallHandle(
+        "gtk_style_context_get_direction",
+        constants$1636.gtk_style_context_get_direction$FUNC
+    );
+    static final FunctionDescriptor gtk_style_context_set_junction_sides$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_style_context_set_junction_sides$MH = RuntimeHelper.downcallHandle(
+        "gtk_style_context_set_junction_sides",
+        constants$1636.gtk_style_context_set_junction_sides$FUNC
+    );
+    static final FunctionDescriptor gtk_style_context_get_junction_sides$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_style_context_get_junction_sides$MH = RuntimeHelper.downcallHandle(
+        "gtk_style_context_get_junction_sides",
+        constants$1636.gtk_style_context_get_junction_sides$FUNC
     );
 }
 

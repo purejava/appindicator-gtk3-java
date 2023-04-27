@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkHeaderBar extends _GtkHeaderBar {
+/**
+ * {@snippet :
+ * typedef struct _GtkHeaderBar GtkHeaderBar;
+ * }
+ */
+public final class GtkHeaderBar extends _GtkHeaderBar {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkHeaderBar() {}
 }
 
 

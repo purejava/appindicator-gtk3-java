@@ -7,42 +7,58 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$995 {
+final class constants$995 {
 
-    static final FunctionDescriptor hb_unicode_funcs_make_immutable$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$995() {}
+    static final FunctionDescriptor cairo_version_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle cairo_version_string$MH = RuntimeHelper.downcallHandle(
+        "cairo_version_string",
+        constants$995.cairo_version_string$FUNC
+    );
+    static final FunctionDescriptor cairo_destroy_func_t$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_unicode_funcs_make_immutable$MH = RuntimeHelper.downcallHandle(
-        "hb_unicode_funcs_make_immutable",
-        constants$995.hb_unicode_funcs_make_immutable$FUNC
-    );
-    static final FunctionDescriptor hb_unicode_funcs_is_immutable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor cairo_destroy_func_t_UP$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_unicode_funcs_is_immutable$MH = RuntimeHelper.downcallHandle(
-        "hb_unicode_funcs_is_immutable",
-        constants$995.hb_unicode_funcs_is_immutable$FUNC
-    );
-    static final FunctionDescriptor hb_unicode_funcs_get_parent$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final MethodHandle cairo_destroy_func_t_UP$MH = RuntimeHelper.upcallHandle(cairo_destroy_func_t.class, "apply", constants$995.cairo_destroy_func_t_UP$FUNC);
+    static final FunctionDescriptor cairo_destroy_func_t_DOWN$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle hb_unicode_funcs_get_parent$MH = RuntimeHelper.downcallHandle(
-        "hb_unicode_funcs_get_parent",
-        constants$995.hb_unicode_funcs_get_parent$FUNC
+    static final MethodHandle cairo_destroy_func_t_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$995.cairo_destroy_func_t_DOWN$FUNC
     );
-    static final FunctionDescriptor hb_unicode_combining_class_func_t$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor cairo_write_func_t$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_unicode_combining_class_func_t$MH = RuntimeHelper.downcallHandle(
-        constants$995.hb_unicode_combining_class_func_t$FUNC
-    );
-    static final FunctionDescriptor hb_unicode_general_category_func_t$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT
     );
+    static final FunctionDescriptor cairo_write_func_t_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle cairo_write_func_t_UP$MH = RuntimeHelper.upcallHandle(cairo_write_func_t.class, "apply", constants$995.cairo_write_func_t_UP$FUNC);
+    static final FunctionDescriptor cairo_write_func_t_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle cairo_write_func_t_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$995.cairo_write_func_t_DOWN$FUNC
+    );
+    static final FunctionDescriptor cairo_read_func_t$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final FunctionDescriptor cairo_read_func_t_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle cairo_read_func_t_UP$MH = RuntimeHelper.upcallHandle(cairo_read_func_t.class, "apply", constants$995.cairo_read_func_t_UP$FUNC);
 }
 
 

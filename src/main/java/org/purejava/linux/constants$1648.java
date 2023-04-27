@@ -7,57 +7,57 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1648 {
+final class constants$1648 {
 
-    static final FunctionDescriptor gtk_entry_set_icon_from_icon_name$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1648() {}
+    static final FunctionDescriptor gtk_icon_info_load_symbolic_for_style$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_entry_set_icon_from_icon_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_set_icon_from_icon_name",
-        constants$1648.gtk_entry_set_icon_from_icon_name$FUNC
+    static final MethodHandle gtk_icon_info_load_symbolic_for_style$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_info_load_symbolic_for_style",
+        constants$1648.gtk_icon_info_load_symbolic_for_style$FUNC
     );
-    static final FunctionDescriptor gtk_entry_set_icon_from_gicon$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_icon_info_set_raw_coordinates$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_icon_info_set_raw_coordinates$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_info_set_raw_coordinates",
+        constants$1648.gtk_icon_info_set_raw_coordinates$FUNC
+    );
+    static final FunctionDescriptor gtk_icon_info_get_embedded_rect$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_entry_set_icon_from_gicon$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_set_icon_from_gicon",
-        constants$1648.gtk_entry_set_icon_from_gicon$FUNC
+    static final MethodHandle gtk_icon_info_get_embedded_rect$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_info_get_embedded_rect",
+        constants$1648.gtk_icon_info_get_embedded_rect$FUNC
     );
-    static final FunctionDescriptor gtk_entry_get_icon_storage_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_icon_info_get_attach_points$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_entry_get_icon_storage_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_get_icon_storage_type",
-        constants$1648.gtk_entry_get_icon_storage_type$FUNC
-    );
-    static final FunctionDescriptor gtk_entry_get_icon_pixbuf$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_entry_get_icon_pixbuf$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_get_icon_pixbuf",
-        constants$1648.gtk_entry_get_icon_pixbuf$FUNC
+    static final MethodHandle gtk_icon_info_get_attach_points$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_info_get_attach_points",
+        constants$1648.gtk_icon_info_get_attach_points$FUNC
     );
-    static final FunctionDescriptor gtk_entry_get_icon_stock$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor gtk_icon_info_get_display_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_entry_get_icon_stock$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_get_icon_stock",
-        constants$1648.gtk_entry_get_icon_stock$FUNC
+    static final MethodHandle gtk_icon_info_get_display_name$MH = RuntimeHelper.downcallHandle(
+        "gtk_icon_info_get_display_name",
+        constants$1648.gtk_icon_info_get_display_name$FUNC
     );
-    static final FunctionDescriptor gtk_entry_get_icon_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_entry_get_icon_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_get_icon_name",
-        constants$1648.gtk_entry_get_icon_name$FUNC
+    static final FunctionDescriptor gtk_tooltip_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_tooltip_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_tooltip_get_type",
+        constants$1648.gtk_tooltip_get_type$FUNC
     );
 }
 

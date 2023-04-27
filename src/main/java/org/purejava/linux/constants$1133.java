@@ -7,66 +7,69 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1133 {
+final class constants$1133 {
 
-    static final FunctionDescriptor pango_renderer_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_renderer_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_renderer_get_type",
-        constants$1133.pango_renderer_get_type$FUNC
-    );
-    static final FunctionDescriptor pango_renderer_draw_layout$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1133() {}
+    static final FunctionDescriptor gdk_pixbuf_new_from_bytes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_renderer_draw_layout$MH = RuntimeHelper.downcallHandle(
-        "pango_renderer_draw_layout",
-        constants$1133.pango_renderer_draw_layout$FUNC
-    );
-    static final FunctionDescriptor pango_renderer_draw_layout_line$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_renderer_draw_layout_line$MH = RuntimeHelper.downcallHandle(
-        "pango_renderer_draw_layout_line",
-        constants$1133.pango_renderer_draw_layout_line$FUNC
-    );
-    static final FunctionDescriptor pango_renderer_draw_glyphs$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_renderer_draw_glyphs$MH = RuntimeHelper.downcallHandle(
-        "pango_renderer_draw_glyphs",
-        constants$1133.pango_renderer_draw_glyphs$FUNC
-    );
-    static final FunctionDescriptor pango_renderer_draw_glyph_item$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_renderer_draw_glyph_item$MH = RuntimeHelper.downcallHandle(
-        "pango_renderer_draw_glyph_item",
-        constants$1133.pango_renderer_draw_glyph_item$FUNC
-    );
-    static final FunctionDescriptor pango_renderer_draw_rectangle$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle pango_renderer_draw_rectangle$MH = RuntimeHelper.downcallHandle(
-        "pango_renderer_draw_rectangle",
-        constants$1133.pango_renderer_draw_rectangle$FUNC
+    static final MethodHandle gdk_pixbuf_new_from_bytes$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_new_from_bytes",
+        constants$1133.gdk_pixbuf_new_from_bytes$FUNC
+    );
+    static final FunctionDescriptor gdk_pixbuf_new_from_xpm_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_pixbuf_new_from_xpm_data$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_new_from_xpm_data",
+        constants$1133.gdk_pixbuf_new_from_xpm_data$FUNC
+    );
+    static final FunctionDescriptor gdk_pixbuf_new_from_inline$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_pixbuf_new_from_inline$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_new_from_inline",
+        constants$1133.gdk_pixbuf_new_from_inline$FUNC
+    );
+    static final FunctionDescriptor gdk_pixbuf_fill$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gdk_pixbuf_fill$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_fill",
+        constants$1133.gdk_pixbuf_fill$FUNC
+    );
+    static final FunctionDescriptor gdk_pixbuf_save$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_pixbuf_save$MH = RuntimeHelper.downcallHandleVariadic(
+        "gdk_pixbuf_save",
+        constants$1133.gdk_pixbuf_save$FUNC
+    );
+    static final FunctionDescriptor gdk_pixbuf_savev$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_pixbuf_savev$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_savev",
+        constants$1133.gdk_pixbuf_savev$FUNC
     );
 }
 

@@ -7,9 +7,17 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct {
+ *     GString* data;
+ *     GSList* msgs;
+ * };
+ * }
+ */
 public class GTestLogBuffer {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_POINTER$LAYOUT.withName("data"),
         Constants$root.C_POINTER$LAYOUT.withName("msgs")
     );
@@ -20,40 +28,64 @@ public class GTestLogBuffer {
     public static VarHandle data$VH() {
         return GTestLogBuffer.data$VH;
     }
-    public static MemoryAddress data$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)GTestLogBuffer.data$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GString* data;
+     * }
+     */
+    public static MemorySegment data$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)GTestLogBuffer.data$VH.get(seg);
     }
-    public static void data$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GString* data;
+     * }
+     */
+    public static void data$set(MemorySegment seg, MemorySegment x) {
         GTestLogBuffer.data$VH.set(seg, x);
     }
-    public static MemoryAddress data$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)GTestLogBuffer.data$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment data$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)GTestLogBuffer.data$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void data$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void data$set(MemorySegment seg, long index, MemorySegment x) {
         GTestLogBuffer.data$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final VarHandle msgs$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("msgs"));
     public static VarHandle msgs$VH() {
         return GTestLogBuffer.msgs$VH;
     }
-    public static MemoryAddress msgs$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)GTestLogBuffer.msgs$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * GSList* msgs;
+     * }
+     */
+    public static MemorySegment msgs$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)GTestLogBuffer.msgs$VH.get(seg);
     }
-    public static void msgs$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * GSList* msgs;
+     * }
+     */
+    public static void msgs$set(MemorySegment seg, MemorySegment x) {
         GTestLogBuffer.msgs$VH.set(seg, x);
     }
-    public static MemoryAddress msgs$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)GTestLogBuffer.msgs$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment msgs$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)GTestLogBuffer.msgs$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void msgs$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void msgs$set(MemorySegment seg, long index, MemorySegment x) {
         GTestLogBuffer.msgs$VH.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

@@ -7,48 +7,62 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$794 {
+final class constants$794 {
 
-    static final FunctionDescriptor g_settings_schema_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_settings_schema_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_settings_schema_get_type",
-        constants$794.g_settings_schema_get_type$FUNC
-    );
-    static final FunctionDescriptor g_settings_schema_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$794() {}
+    static final FunctionDescriptor g_task_get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_settings_schema_ref$MH = RuntimeHelper.downcallHandle(
-        "g_settings_schema_ref",
-        constants$794.g_settings_schema_ref$FUNC
+    static final MethodHandle g_task_get_name$MH = RuntimeHelper.downcallHandle(
+        "g_task_get_name",
+        constants$794.g_task_get_name$FUNC
     );
-    static final FunctionDescriptor g_settings_schema_unref$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_settings_schema_unref$MH = RuntimeHelper.downcallHandle(
-        "g_settings_schema_unref",
-        constants$794.g_settings_schema_unref$FUNC
-    );
-    static final FunctionDescriptor g_settings_schema_get_id$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_settings_schema_get_id$MH = RuntimeHelper.downcallHandle(
-        "g_settings_schema_get_id",
-        constants$794.g_settings_schema_get_id$FUNC
-    );
-    static final FunctionDescriptor g_settings_schema_get_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_settings_schema_get_path$MH = RuntimeHelper.downcallHandle(
-        "g_settings_schema_get_path",
-        constants$794.g_settings_schema_get_path$FUNC
-    );
-    static final FunctionDescriptor g_settings_schema_get_key$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_task_is_valid$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_settings_schema_get_key$MH = RuntimeHelper.downcallHandle(
-        "g_settings_schema_get_key",
-        constants$794.g_settings_schema_get_key$FUNC
+    static final MethodHandle g_task_is_valid$MH = RuntimeHelper.downcallHandle(
+        "g_task_is_valid",
+        constants$794.g_task_is_valid$FUNC
+    );
+    static final FunctionDescriptor GTaskThreadFunc$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final FunctionDescriptor GTaskThreadFunc_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GTaskThreadFunc_UP$MH = RuntimeHelper.upcallHandle(GTaskThreadFunc.class, "apply", constants$794.GTaskThreadFunc_UP$FUNC);
+    static final FunctionDescriptor GTaskThreadFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GTaskThreadFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$794.GTaskThreadFunc_DOWN$FUNC
+    );
+    static final FunctionDescriptor g_task_run_in_thread$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_task_run_in_thread$MH = RuntimeHelper.downcallHandle(
+        "g_task_run_in_thread",
+        constants$794.g_task_run_in_thread$FUNC
+    );
+    static final FunctionDescriptor g_task_run_in_thread_sync$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_task_run_in_thread_sync$MH = RuntimeHelper.downcallHandle(
+        "g_task_run_in_thread_sync",
+        constants$794.g_task_run_in_thread_sync$FUNC
     );
 }
 

@@ -7,50 +7,50 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1150 {
+final class constants$1150 {
 
-    static final FunctionDescriptor flockfile$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle flockfile$MH = RuntimeHelper.downcallHandle(
-        "flockfile",
-        constants$1150.flockfile$FUNC
-    );
-    static final FunctionDescriptor ftrylockfile$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle ftrylockfile$MH = RuntimeHelper.downcallHandle(
-        "ftrylockfile",
-        constants$1150.ftrylockfile$FUNC
-    );
-    static final FunctionDescriptor funlockfile$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle funlockfile$MH = RuntimeHelper.downcallHandle(
-        "funlockfile",
-        constants$1150.funlockfile$FUNC
-    );
-    static final FunctionDescriptor __uflow$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle __uflow$MH = RuntimeHelper.downcallHandle(
-        "__uflow",
-        constants$1150.__uflow$FUNC
-    );
-    static final FunctionDescriptor __overflow$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1150() {}
+    static final FunctionDescriptor pango_cairo_font_map_new_for_font_type$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle __overflow$MH = RuntimeHelper.downcallHandle(
-        "__overflow",
-        constants$1150.__overflow$FUNC
+    static final MethodHandle pango_cairo_font_map_new_for_font_type$MH = RuntimeHelper.downcallHandle(
+        "pango_cairo_font_map_new_for_font_type",
+        constants$1150.pango_cairo_font_map_new_for_font_type$FUNC
     );
-    static final FunctionDescriptor pango_split_file_list$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor pango_cairo_font_map_get_default$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle pango_cairo_font_map_get_default$MH = RuntimeHelper.downcallHandle(
+        "pango_cairo_font_map_get_default",
+        constants$1150.pango_cairo_font_map_get_default$FUNC
+    );
+    static final FunctionDescriptor pango_cairo_font_map_set_default$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_split_file_list$MH = RuntimeHelper.downcallHandle(
-        "pango_split_file_list",
-        constants$1150.pango_split_file_list$FUNC
+    static final MethodHandle pango_cairo_font_map_set_default$MH = RuntimeHelper.downcallHandle(
+        "pango_cairo_font_map_set_default",
+        constants$1150.pango_cairo_font_map_set_default$FUNC
+    );
+    static final FunctionDescriptor pango_cairo_font_map_get_font_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle pango_cairo_font_map_get_font_type$MH = RuntimeHelper.downcallHandle(
+        "pango_cairo_font_map_get_font_type",
+        constants$1150.pango_cairo_font_map_get_font_type$FUNC
+    );
+    static final FunctionDescriptor pango_cairo_font_map_set_resolution$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle pango_cairo_font_map_set_resolution$MH = RuntimeHelper.downcallHandle(
+        "pango_cairo_font_map_set_resolution",
+        constants$1150.pango_cairo_font_map_set_resolution$FUNC
+    );
+    static final FunctionDescriptor pango_cairo_font_map_get_resolution$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle pango_cairo_font_map_get_resolution$MH = RuntimeHelper.downcallHandle(
+        "pango_cairo_font_map_get_resolution",
+        constants$1150.pango_cairo_font_map_get_resolution$FUNC
     );
 }
 

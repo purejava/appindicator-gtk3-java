@@ -7,8 +7,26 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$78 {
+final class constants$78 {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$78() {}
+    static final FunctionDescriptor siginterrupt$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle siginterrupt$MH = RuntimeHelper.downcallHandle(
+        "siginterrupt",
+        constants$78.siginterrupt$FUNC
+    );
+    static final FunctionDescriptor sigaltstack$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle sigaltstack$MH = RuntimeHelper.downcallHandle(
+        "sigaltstack",
+        constants$78.sigaltstack$FUNC
+    );
     static final FunctionDescriptor sigstack$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
@@ -38,18 +56,6 @@ class constants$78 {
     static final MethodHandle __libc_current_sigrtmin$MH = RuntimeHelper.downcallHandle(
         "__libc_current_sigrtmin",
         constants$78.__libc_current_sigrtmin$FUNC
-    );
-    static final FunctionDescriptor __libc_current_sigrtmax$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle __libc_current_sigrtmax$MH = RuntimeHelper.downcallHandle(
-        "__libc_current_sigrtmax",
-        constants$78.__libc_current_sigrtmax$FUNC
-    );
-    static final FunctionDescriptor g_on_error_query$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_on_error_query$MH = RuntimeHelper.downcallHandle(
-        "g_on_error_query",
-        constants$78.g_on_error_query$FUNC
     );
 }
 

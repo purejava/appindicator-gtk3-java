@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * int (*hb_unicode_decompose_func_t)(struct hb_unicode_funcs_t* ufuncs,unsigned int ab,unsigned int* a,unsigned int* b,void* user_data);
+ * }
+ */
 public interface hb_unicode_decompose_func_t {
 
-    int apply(java.lang.foreign.MemoryAddress ufuncs, int ab, java.lang.foreign.MemoryAddress a, java.lang.foreign.MemoryAddress b, java.lang.foreign.MemoryAddress user_data);
-    static MemorySegment allocate(hb_unicode_decompose_func_t fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(hb_unicode_decompose_func_t.class, fi, constants$997.hb_unicode_decompose_func_t$FUNC, session);
+    int apply(java.lang.foreign.MemorySegment ufuncs, int ab, java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
+    static MemorySegment allocate(hb_unicode_decompose_func_t fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$840.hb_unicode_decompose_func_t_UP$MH, fi, constants$840.hb_unicode_decompose_func_t$FUNC, scope);
     }
-    static hb_unicode_decompose_func_t ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _ufuncs, int _ab, java.lang.foreign.MemoryAddress _a, java.lang.foreign.MemoryAddress _b, java.lang.foreign.MemoryAddress _user_data) -> {
+    static hb_unicode_decompose_func_t ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _ufuncs, int _ab, java.lang.foreign.MemorySegment _a, java.lang.foreign.MemorySegment _b, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                return (int)constants$997.hb_unicode_decompose_func_t$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_ufuncs, _ab, (java.lang.foreign.Addressable)_a, (java.lang.foreign.Addressable)_b, (java.lang.foreign.Addressable)_user_data);
+                return (int)constants$840.hb_unicode_decompose_func_t_DOWN$MH.invokeExact(symbol, _ufuncs, _ab, _a, _b, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

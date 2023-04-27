@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GProxyAddressClass extends _GProxyAddressClass {
+/**
+ * {@snippet :
+ * typedef struct _GProxyAddressClass GProxyAddressClass;
+ * }
+ */
+public final class GProxyAddressClass extends _GProxyAddressClass {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GProxyAddressClass() {}
 }
 
 

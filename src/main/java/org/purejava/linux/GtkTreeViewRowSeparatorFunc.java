@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * int (*GtkTreeViewRowSeparatorFunc)(struct _GtkTreeModel* model,struct _GtkTreeIter* iter,void* data);
+ * }
+ */
 public interface GtkTreeViewRowSeparatorFunc {
 
-    int apply(java.lang.foreign.MemoryAddress model, java.lang.foreign.MemoryAddress iter, java.lang.foreign.MemoryAddress data);
-    static MemorySegment allocate(GtkTreeViewRowSeparatorFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GtkTreeViewRowSeparatorFunc.class, fi, constants$1654.GtkTreeViewRowSeparatorFunc$FUNC, session);
+    int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
+    static MemorySegment allocate(GtkTreeViewRowSeparatorFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$1464.GtkTreeViewRowSeparatorFunc_UP$MH, fi, constants$1464.GtkTreeViewRowSeparatorFunc$FUNC, scope);
     }
-    static GtkTreeViewRowSeparatorFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _model, java.lang.foreign.MemoryAddress _iter, java.lang.foreign.MemoryAddress _data) -> {
+    static GtkTreeViewRowSeparatorFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _a, java.lang.foreign.MemorySegment _b, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                return (int)constants$1654.GtkTreeViewRowSeparatorFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_model, (java.lang.foreign.Addressable)_iter, (java.lang.foreign.Addressable)_data);
+                return (int)constants$1464.GtkTreeViewRowSeparatorFunc_DOWN$MH.invokeExact(symbol, _a, _b, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

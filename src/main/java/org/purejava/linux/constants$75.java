@@ -7,13 +7,34 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$75 {
+final class constants$75 {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$75() {}
+    static final FunctionDescriptor sigsetmask$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle sigsetmask$MH = RuntimeHelper.downcallHandle(
+        "sigsetmask",
+        constants$75.sigsetmask$FUNC
+    );
+    static final FunctionDescriptor siggetmask$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
+    static final MethodHandle siggetmask$MH = RuntimeHelper.downcallHandle(
+        "siggetmask",
+        constants$75.siggetmask$FUNC
+    );
     static final FunctionDescriptor sig_t$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle sig_t$MH = RuntimeHelper.downcallHandle(
-        constants$75.sig_t$FUNC
+    static final FunctionDescriptor sig_t_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle sig_t_UP$MH = RuntimeHelper.upcallHandle(sig_t.class, "apply", constants$75.sig_t_UP$FUNC);
+    static final FunctionDescriptor sig_t_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle sig_t_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$75.sig_t_DOWN$FUNC
     );
     static final FunctionDescriptor sigemptyset$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
@@ -28,22 +49,6 @@ class constants$75 {
     static final MethodHandle sigfillset$MH = RuntimeHelper.downcallHandle(
         "sigfillset",
         constants$75.sigfillset$FUNC
-    );
-    static final FunctionDescriptor sigaddset$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle sigaddset$MH = RuntimeHelper.downcallHandle(
-        "sigaddset",
-        constants$75.sigaddset$FUNC
-    );
-    static final FunctionDescriptor sigdelset$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle sigdelset$MH = RuntimeHelper.downcallHandle(
-        "sigdelset",
-        constants$75.sigdelset$FUNC
     );
 }
 

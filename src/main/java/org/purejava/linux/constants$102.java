@@ -7,8 +7,33 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$102 {
+final class constants$102 {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$102() {}
+    static final FunctionDescriptor g_bytes_hash$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_bytes_hash$MH = RuntimeHelper.downcallHandle(
+        "g_bytes_hash",
+        constants$102.g_bytes_hash$FUNC
+    );
+    static final FunctionDescriptor g_bytes_equal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_bytes_equal$MH = RuntimeHelper.downcallHandle(
+        "g_bytes_equal",
+        constants$102.g_bytes_equal$FUNC
+    );
+    static final FunctionDescriptor g_bytes_compare$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_bytes_compare$MH = RuntimeHelper.downcallHandle(
+        "g_bytes_compare",
+        constants$102.g_bytes_compare$FUNC
+    );
     static final FunctionDescriptor g_bytes_get_region$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_LONG_LONG$LAYOUT,
@@ -30,25 +55,6 @@ class constants$102 {
     static final MethodHandle g_get_codeset$MH = RuntimeHelper.downcallHandle(
         "g_get_codeset",
         constants$102.g_get_codeset$FUNC
-    );
-    static final FunctionDescriptor g_get_console_charset$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_get_console_charset$MH = RuntimeHelper.downcallHandle(
-        "g_get_console_charset",
-        constants$102.g_get_console_charset$FUNC
-    );
-    static final FunctionDescriptor g_get_language_names$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_get_language_names$MH = RuntimeHelper.downcallHandle(
-        "g_get_language_names",
-        constants$102.g_get_language_names$FUNC
-    );
-    static final FunctionDescriptor g_get_language_names_with_category$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_get_language_names_with_category$MH = RuntimeHelper.downcallHandle(
-        "g_get_language_names_with_category",
-        constants$102.g_get_language_names_with_category$FUNC
     );
 }
 

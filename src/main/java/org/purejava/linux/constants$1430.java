@@ -7,64 +7,56 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1430 {
+final class constants$1430 {
 
-    static final FunctionDescriptor gtk_widget_get_request_mode$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_get_request_mode$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_request_mode",
-        constants$1430.gtk_widget_get_request_mode$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_get_preferred_width$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1430() {}
+    static final FunctionDescriptor gtk_im_context_set_client_window$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_widget_get_preferred_width$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_preferred_width",
-        constants$1430.gtk_widget_get_preferred_width$FUNC
+    static final MethodHandle gtk_im_context_set_client_window$MH = RuntimeHelper.downcallHandle(
+        "gtk_im_context_set_client_window",
+        constants$1430.gtk_im_context_set_client_window$FUNC
     );
-    static final FunctionDescriptor gtk_widget_get_preferred_height_for_width$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_get_preferred_height_for_width$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_preferred_height_for_width",
-        constants$1430.gtk_widget_get_preferred_height_for_width$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_get_preferred_height$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_get_preferred_height$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_preferred_height",
-        constants$1430.gtk_widget_get_preferred_height$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_get_preferred_width_for_height$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_get_preferred_width_for_height$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_preferred_width_for_height",
-        constants$1430.gtk_widget_get_preferred_width_for_height$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_get_preferred_height_and_baseline_for_width$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_im_context_get_preedit_string$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_widget_get_preferred_height_and_baseline_for_width$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_preferred_height_and_baseline_for_width",
-        constants$1430.gtk_widget_get_preferred_height_and_baseline_for_width$FUNC
+    static final MethodHandle gtk_im_context_get_preedit_string$MH = RuntimeHelper.downcallHandle(
+        "gtk_im_context_get_preedit_string",
+        constants$1430.gtk_im_context_get_preedit_string$FUNC
+    );
+    static final FunctionDescriptor gtk_im_context_filter_keypress$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_im_context_filter_keypress$MH = RuntimeHelper.downcallHandle(
+        "gtk_im_context_filter_keypress",
+        constants$1430.gtk_im_context_filter_keypress$FUNC
+    );
+    static final FunctionDescriptor gtk_im_context_focus_in$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_im_context_focus_in$MH = RuntimeHelper.downcallHandle(
+        "gtk_im_context_focus_in",
+        constants$1430.gtk_im_context_focus_in$FUNC
+    );
+    static final FunctionDescriptor gtk_im_context_focus_out$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_im_context_focus_out$MH = RuntimeHelper.downcallHandle(
+        "gtk_im_context_focus_out",
+        constants$1430.gtk_im_context_focus_out$FUNC
+    );
+    static final FunctionDescriptor gtk_im_context_reset$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_im_context_reset$MH = RuntimeHelper.downcallHandle(
+        "gtk_im_context_reset",
+        constants$1430.gtk_im_context_reset$FUNC
     );
 }
 

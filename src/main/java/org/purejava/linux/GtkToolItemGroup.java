@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkToolItemGroup extends _GtkToolItemGroup {
+/**
+ * {@snippet :
+ * typedef struct _GtkToolItemGroup GtkToolItemGroup;
+ * }
+ */
+public final class GtkToolItemGroup extends _GtkToolItemGroup {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkToolItemGroup() {}
 }
 
 

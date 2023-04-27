@@ -7,52 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1865 {
+final class constants$1865 {
 
-    static final FunctionDescriptor gtk_level_bar_get_value$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_level_bar_get_value$MH = RuntimeHelper.downcallHandle(
-        "gtk_level_bar_get_value",
-        constants$1865.gtk_level_bar_get_value$FUNC
-    );
-    static final FunctionDescriptor gtk_level_bar_set_min_value$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1865() {}
+    static final FunctionDescriptor gtk_test_widget_send_key$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle gtk_level_bar_set_min_value$MH = RuntimeHelper.downcallHandle(
-        "gtk_level_bar_set_min_value",
-        constants$1865.gtk_level_bar_set_min_value$FUNC
-    );
-    static final FunctionDescriptor gtk_level_bar_get_min_value$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_level_bar_get_min_value$MH = RuntimeHelper.downcallHandle(
-        "gtk_level_bar_get_min_value",
-        constants$1865.gtk_level_bar_get_min_value$FUNC
-    );
-    static final FunctionDescriptor gtk_level_bar_set_max_value$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle gtk_level_bar_set_max_value$MH = RuntimeHelper.downcallHandle(
-        "gtk_level_bar_set_max_value",
-        constants$1865.gtk_level_bar_set_max_value$FUNC
-    );
-    static final FunctionDescriptor gtk_level_bar_get_max_value$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_level_bar_get_max_value$MH = RuntimeHelper.downcallHandle(
-        "gtk_level_bar_get_max_value",
-        constants$1865.gtk_level_bar_get_max_value$FUNC
-    );
-    static final FunctionDescriptor gtk_level_bar_set_inverted$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_level_bar_set_inverted$MH = RuntimeHelper.downcallHandle(
-        "gtk_level_bar_set_inverted",
-        constants$1865.gtk_level_bar_set_inverted$FUNC
+    static final MethodHandle gtk_test_widget_send_key$MH = RuntimeHelper.downcallHandle(
+        "gtk_test_widget_send_key",
+        constants$1865.gtk_test_widget_send_key$FUNC
+    );
+    static final FunctionDescriptor gtk_test_text_set$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_test_text_set$MH = RuntimeHelper.downcallHandle(
+        "gtk_test_text_set",
+        constants$1865.gtk_test_text_set$FUNC
+    );
+    static final FunctionDescriptor gtk_test_text_get$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_test_text_get$MH = RuntimeHelper.downcallHandle(
+        "gtk_test_text_get",
+        constants$1865.gtk_test_text_get$FUNC
+    );
+    static final FunctionDescriptor gtk_test_find_sibling$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT
+    );
+    static final MethodHandle gtk_test_find_sibling$MH = RuntimeHelper.downcallHandle(
+        "gtk_test_find_sibling",
+        constants$1865.gtk_test_find_sibling$FUNC
+    );
+    static final FunctionDescriptor gtk_test_find_label$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_test_find_label$MH = RuntimeHelper.downcallHandle(
+        "gtk_test_find_label",
+        constants$1865.gtk_test_find_label$FUNC
+    );
+    static final FunctionDescriptor gtk_tree_drag_source_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_tree_drag_source_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_tree_drag_source_get_type",
+        constants$1865.gtk_tree_drag_source_get_type$FUNC
     );
 }
 

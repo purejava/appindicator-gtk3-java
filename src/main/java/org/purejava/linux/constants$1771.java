@@ -7,50 +7,61 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1771 {
+final class constants$1771 {
 
-    static final FunctionDescriptor gtk_file_chooser_get_choice$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1771() {}
+    static final FunctionDescriptor gtk_recent_manager_add_full$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_file_chooser_get_choice$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_get_choice",
-        constants$1771.gtk_file_chooser_get_choice$FUNC
+    static final MethodHandle gtk_recent_manager_add_full$MH = RuntimeHelper.downcallHandle(
+        "gtk_recent_manager_add_full",
+        constants$1771.gtk_recent_manager_add_full$FUNC
     );
-    static final FunctionDescriptor gtk_file_chooser_button_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_file_chooser_button_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_button_get_type",
-        constants$1771.gtk_file_chooser_button_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_file_chooser_button_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_recent_manager_remove_item$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_file_chooser_button_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_button_new",
-        constants$1771.gtk_file_chooser_button_new$FUNC
-    );
-    static final FunctionDescriptor gtk_file_chooser_button_new_with_dialog$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_file_chooser_button_new_with_dialog$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_button_new_with_dialog",
-        constants$1771.gtk_file_chooser_button_new_with_dialog$FUNC
-    );
-    static final FunctionDescriptor gtk_file_chooser_button_get_title$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_file_chooser_button_get_title$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_button_get_title",
-        constants$1771.gtk_file_chooser_button_get_title$FUNC
-    );
-    static final FunctionDescriptor gtk_file_chooser_button_set_title$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_file_chooser_button_set_title$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_button_set_title",
-        constants$1771.gtk_file_chooser_button_set_title$FUNC
+    static final MethodHandle gtk_recent_manager_remove_item$MH = RuntimeHelper.downcallHandle(
+        "gtk_recent_manager_remove_item",
+        constants$1771.gtk_recent_manager_remove_item$FUNC
+    );
+    static final FunctionDescriptor gtk_recent_manager_lookup_item$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_recent_manager_lookup_item$MH = RuntimeHelper.downcallHandle(
+        "gtk_recent_manager_lookup_item",
+        constants$1771.gtk_recent_manager_lookup_item$FUNC
+    );
+    static final FunctionDescriptor gtk_recent_manager_has_item$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_recent_manager_has_item$MH = RuntimeHelper.downcallHandle(
+        "gtk_recent_manager_has_item",
+        constants$1771.gtk_recent_manager_has_item$FUNC
+    );
+    static final FunctionDescriptor gtk_recent_manager_move_item$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_recent_manager_move_item$MH = RuntimeHelper.downcallHandle(
+        "gtk_recent_manager_move_item",
+        constants$1771.gtk_recent_manager_move_item$FUNC
+    );
+    static final FunctionDescriptor gtk_recent_manager_get_items$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_recent_manager_get_items$MH = RuntimeHelper.downcallHandle(
+        "gtk_recent_manager_get_items",
+        constants$1771.gtk_recent_manager_get_items$FUNC
     );
 }
 

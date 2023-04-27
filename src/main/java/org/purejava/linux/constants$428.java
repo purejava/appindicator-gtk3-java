@@ -7,54 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$428 {
+final class constants$428 {
 
-    static final FunctionDescriptor g_type_interface_prerequisites$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$428() {}
+    static final FunctionDescriptor GBoxedFreeFunc$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final FunctionDescriptor GBoxedFreeFunc_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GBoxedFreeFunc_UP$MH = RuntimeHelper.upcallHandle(GBoxedFreeFunc.class, "apply", constants$428.GBoxedFreeFunc_UP$FUNC);
+    static final FunctionDescriptor GBoxedFreeFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle GBoxedFreeFunc_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$428.GBoxedFreeFunc_DOWN$FUNC
+    );
+    static final FunctionDescriptor g_boxed_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_type_interface_prerequisites$MH = RuntimeHelper.downcallHandle(
-        "g_type_interface_prerequisites",
-        constants$428.g_type_interface_prerequisites$FUNC
+    static final MethodHandle g_boxed_copy$MH = RuntimeHelper.downcallHandle(
+        "g_boxed_copy",
+        constants$428.g_boxed_copy$FUNC
     );
-    static final FunctionDescriptor g_type_interface_instantiatable_prerequisite$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_type_interface_instantiatable_prerequisite$MH = RuntimeHelper.downcallHandle(
-        "g_type_interface_instantiatable_prerequisite",
-        constants$428.g_type_interface_instantiatable_prerequisite$FUNC
-    );
-    static final FunctionDescriptor g_type_class_add_private$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_type_class_add_private$MH = RuntimeHelper.downcallHandle(
-        "g_type_class_add_private",
-        constants$428.g_type_class_add_private$FUNC
-    );
-    static final FunctionDescriptor g_type_add_instance_private$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_boxed_free$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_type_add_instance_private$MH = RuntimeHelper.downcallHandle(
-        "g_type_add_instance_private",
-        constants$428.g_type_add_instance_private$FUNC
+    static final MethodHandle g_boxed_free$MH = RuntimeHelper.downcallHandle(
+        "g_boxed_free",
+        constants$428.g_boxed_free$FUNC
     );
-    static final FunctionDescriptor g_type_instance_get_private$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_type_instance_get_private$MH = RuntimeHelper.downcallHandle(
-        "g_type_instance_get_private",
-        constants$428.g_type_instance_get_private$FUNC
-    );
-    static final FunctionDescriptor g_type_class_adjust_private_offset$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_value_set_boxed$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_type_class_adjust_private_offset$MH = RuntimeHelper.downcallHandle(
-        "g_type_class_adjust_private_offset",
-        constants$428.g_type_class_adjust_private_offset$FUNC
+    static final MethodHandle g_value_set_boxed$MH = RuntimeHelper.downcallHandle(
+        "g_value_set_boxed",
+        constants$428.g_value_set_boxed$FUNC
+    );
+    static final FunctionDescriptor g_value_set_static_boxed$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_value_set_static_boxed$MH = RuntimeHelper.downcallHandle(
+        "g_value_set_static_boxed",
+        constants$428.g_value_set_static_boxed$FUNC
     );
 }
 

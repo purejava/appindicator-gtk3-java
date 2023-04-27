@@ -7,52 +7,60 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1436 {
+final class constants$1436 {
 
-    static final FunctionDescriptor gtk_widget_set_receives_default$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1436() {}
+    static final FunctionDescriptor gtk_list_store_insert_with_valuesv$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_widget_set_receives_default$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_receives_default",
-        constants$1436.gtk_widget_set_receives_default$FUNC
+    static final MethodHandle gtk_list_store_insert_with_valuesv$MH = RuntimeHelper.downcallHandle(
+        "gtk_list_store_insert_with_valuesv",
+        constants$1436.gtk_list_store_insert_with_valuesv$FUNC
     );
-    static final FunctionDescriptor gtk_widget_get_receives_default$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_get_receives_default$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_receives_default",
-        constants$1436.gtk_widget_get_receives_default$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_has_grab$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_has_grab$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_has_grab",
-        constants$1436.gtk_widget_has_grab$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_device_is_shadowed$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_list_store_prepend$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_widget_device_is_shadowed$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_device_is_shadowed",
-        constants$1436.gtk_widget_device_is_shadowed$FUNC
+    static final MethodHandle gtk_list_store_prepend$MH = RuntimeHelper.downcallHandle(
+        "gtk_list_store_prepend",
+        constants$1436.gtk_list_store_prepend$FUNC
     );
-    static final FunctionDescriptor gtk_widget_set_name$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_list_store_append$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_widget_set_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_name",
-        constants$1436.gtk_widget_set_name$FUNC
+    static final MethodHandle gtk_list_store_append$MH = RuntimeHelper.downcallHandle(
+        "gtk_list_store_append",
+        constants$1436.gtk_list_store_append$FUNC
     );
-    static final FunctionDescriptor gtk_widget_get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_list_store_clear$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_widget_get_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_name",
-        constants$1436.gtk_widget_get_name$FUNC
+    static final MethodHandle gtk_list_store_clear$MH = RuntimeHelper.downcallHandle(
+        "gtk_list_store_clear",
+        constants$1436.gtk_list_store_clear$FUNC
+    );
+    static final FunctionDescriptor gtk_list_store_iter_is_valid$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_list_store_iter_is_valid$MH = RuntimeHelper.downcallHandle(
+        "gtk_list_store_iter_is_valid",
+        constants$1436.gtk_list_store_iter_is_valid$FUNC
+    );
+    static final FunctionDescriptor gtk_list_store_reorder$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_list_store_reorder$MH = RuntimeHelper.downcallHandle(
+        "gtk_list_store_reorder",
+        constants$1436.gtk_list_store_reorder$FUNC
     );
 }
 

@@ -7,48 +7,39 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1197 {
+final class constants$1197 {
 
-    static final FunctionDescriptor cairo_recording_surface_create$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1197() {}
+    static final FunctionDescriptor atk_layer_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle atk_layer_get_type$MH = RuntimeHelper.downcallHandle(
+        "atk_layer_get_type",
+        constants$1197.atk_layer_get_type$FUNC
     );
-    static final MethodHandle cairo_recording_surface_create$MH = RuntimeHelper.downcallHandle(
-        "cairo_recording_surface_create",
-        constants$1197.cairo_recording_surface_create$FUNC
+    static final FunctionDescriptor atk_relation_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle atk_relation_type_get_type$MH = RuntimeHelper.downcallHandle(
+        "atk_relation_type_get_type",
+        constants$1197.atk_relation_type_get_type$FUNC
     );
-    static final FunctionDescriptor cairo_recording_surface_ink_extents$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor atk_state_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle atk_state_type_get_type$MH = RuntimeHelper.downcallHandle(
+        "atk_state_type_get_type",
+        constants$1197.atk_state_type_get_type$FUNC
     );
-    static final MethodHandle cairo_recording_surface_ink_extents$MH = RuntimeHelper.downcallHandle(
-        "cairo_recording_surface_ink_extents",
-        constants$1197.cairo_recording_surface_ink_extents$FUNC
+    static final FunctionDescriptor atk_text_attribute_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle atk_text_attribute_get_type$MH = RuntimeHelper.downcallHandle(
+        "atk_text_attribute_get_type",
+        constants$1197.atk_text_attribute_get_type$FUNC
     );
-    static final FunctionDescriptor cairo_recording_surface_get_extents$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor atk_text_boundary_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle atk_text_boundary_get_type$MH = RuntimeHelper.downcallHandle(
+        "atk_text_boundary_get_type",
+        constants$1197.atk_text_boundary_get_type$FUNC
     );
-    static final MethodHandle cairo_recording_surface_get_extents$MH = RuntimeHelper.downcallHandle(
-        "cairo_recording_surface_get_extents",
-        constants$1197.cairo_recording_surface_get_extents$FUNC
-    );
-    static final FunctionDescriptor cairo_raster_source_acquire_func_t$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_raster_source_acquire_func_t$MH = RuntimeHelper.downcallHandle(
-        constants$1197.cairo_raster_source_acquire_func_t$FUNC
-    );
-    static final FunctionDescriptor cairo_raster_source_release_func_t$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor atk_text_granularity_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle atk_text_granularity_get_type$MH = RuntimeHelper.downcallHandle(
+        "atk_text_granularity_get_type",
+        constants$1197.atk_text_granularity_get_type$FUNC
     );
 }
 

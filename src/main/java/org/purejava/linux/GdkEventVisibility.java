@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GdkEventVisibility extends _GdkEventVisibility {
+/**
+ * {@snippet :
+ * typedef struct _GdkEventVisibility GdkEventVisibility;
+ * }
+ */
+public final class GdkEventVisibility extends _GdkEventVisibility {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GdkEventVisibility() {}
 }
 
 

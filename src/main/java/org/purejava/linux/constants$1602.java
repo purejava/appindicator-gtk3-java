@@ -7,53 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1602 {
+final class constants$1602 {
 
-    static final FunctionDescriptor gtk_text_iter_backward_cursor_positions$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_text_iter_backward_cursor_positions$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_backward_cursor_positions",
-        constants$1602.gtk_text_iter_backward_cursor_positions$FUNC
-    );
-    static final FunctionDescriptor gtk_text_iter_forward_visible_cursor_position$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1602() {}
+    static final FunctionDescriptor gtk_gesture_is_recognized$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_text_iter_forward_visible_cursor_position$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_forward_visible_cursor_position",
-        constants$1602.gtk_text_iter_forward_visible_cursor_position$FUNC
+    static final MethodHandle gtk_gesture_is_recognized$MH = RuntimeHelper.downcallHandle(
+        "gtk_gesture_is_recognized",
+        constants$1602.gtk_gesture_is_recognized$FUNC
     );
-    static final FunctionDescriptor gtk_text_iter_backward_visible_cursor_position$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_gesture_get_window$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_text_iter_backward_visible_cursor_position$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_backward_visible_cursor_position",
-        constants$1602.gtk_text_iter_backward_visible_cursor_position$FUNC
+    static final MethodHandle gtk_gesture_get_window$MH = RuntimeHelper.downcallHandle(
+        "gtk_gesture_get_window",
+        constants$1602.gtk_gesture_get_window$FUNC
     );
-    static final FunctionDescriptor gtk_text_iter_forward_visible_cursor_positions$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_gesture_set_window$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_text_iter_forward_visible_cursor_positions$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_forward_visible_cursor_positions",
-        constants$1602.gtk_text_iter_forward_visible_cursor_positions$FUNC
+    static final MethodHandle gtk_gesture_set_window$MH = RuntimeHelper.downcallHandle(
+        "gtk_gesture_set_window",
+        constants$1602.gtk_gesture_set_window$FUNC
     );
-    static final FunctionDescriptor gtk_text_iter_backward_visible_cursor_positions$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_gesture_group$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_text_iter_backward_visible_cursor_positions$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_backward_visible_cursor_positions",
-        constants$1602.gtk_text_iter_backward_visible_cursor_positions$FUNC
+    static final MethodHandle gtk_gesture_group$MH = RuntimeHelper.downcallHandle(
+        "gtk_gesture_group",
+        constants$1602.gtk_gesture_group$FUNC
     );
-    static final FunctionDescriptor gtk_text_iter_set_offset$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor gtk_gesture_ungroup$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_text_iter_set_offset$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_set_offset",
-        constants$1602.gtk_text_iter_set_offset$FUNC
+    static final MethodHandle gtk_gesture_ungroup$MH = RuntimeHelper.downcallHandle(
+        "gtk_gesture_ungroup",
+        constants$1602.gtk_gesture_ungroup$FUNC
+    );
+    static final FunctionDescriptor gtk_gesture_get_group$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_gesture_get_group$MH = RuntimeHelper.downcallHandle(
+        "gtk_gesture_get_group",
+        constants$1602.gtk_gesture_get_group$FUNC
     );
 }
 

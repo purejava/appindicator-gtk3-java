@@ -7,9 +7,23 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GTypeValueTable {
+ *     void (*value_init)(GValue*);
+ *     void (*value_free)(GValue*);
+ *     void (*value_copy)(const GValue*,GValue*);
+ *     gpointer (*value_peek_pointer)(const GValue*);
+ *     const gchar* collect_format;
+ *     gchar* (*collect_value)(GValue*,guint,GTypeCValue*,guint);
+ *     const gchar* lcopy_format;
+ *     gchar* (*lcopy_value)(const GValue*,guint,GTypeCValue*,guint);
+ * };
+ * }
+ */
 public class _GTypeValueTable {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_POINTER$LAYOUT.withName("value_init"),
         Constants$root.C_POINTER$LAYOUT.withName("value_free"),
         Constants$root.C_POINTER$LAYOUT.withName("value_copy"),
@@ -25,20 +39,32 @@ public class _GTypeValueTable {
     static final FunctionDescriptor value_init$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle value_init$MH = RuntimeHelper.downcallHandle(
-        _GTypeValueTable.value_init$FUNC
+    static final FunctionDescriptor value_init_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle value_init_UP$MH = RuntimeHelper.upcallHandle(value_init.class, "apply", _GTypeValueTable.value_init_UP$FUNC);
+    static final FunctionDescriptor value_init_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle value_init_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GTypeValueTable.value_init_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*value_init)(GValue*);
+     * }
+     */
     public interface value_init {
 
-        void apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(value_init fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(value_init.class, fi, _GTypeValueTable.value_init$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment display);
+        static MemorySegment allocate(value_init fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GTypeValueTable.value_init_UP$MH, fi, _GTypeValueTable.value_init$FUNC, scope);
         }
-        static value_init ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static value_init ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GTypeValueTable.value_init$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    _GTypeValueTable.value_init_DOWN$MH.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -50,38 +76,62 @@ public class _GTypeValueTable {
     public static VarHandle value_init$VH() {
         return _GTypeValueTable.value_init$VH;
     }
-    public static MemoryAddress value_init$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GTypeValueTable.value_init$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*value_init)(GValue*);
+     * }
+     */
+    public static MemorySegment value_init$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GTypeValueTable.value_init$VH.get(seg);
     }
-    public static void value_init$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*value_init)(GValue*);
+     * }
+     */
+    public static void value_init$set(MemorySegment seg, MemorySegment x) {
         _GTypeValueTable.value_init$VH.set(seg, x);
     }
-    public static MemoryAddress value_init$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GTypeValueTable.value_init$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment value_init$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GTypeValueTable.value_init$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void value_init$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void value_init$set(MemorySegment seg, long index, MemorySegment x) {
         _GTypeValueTable.value_init$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static value_init value_init (MemorySegment segment, MemorySession session) {
-        return value_init.ofAddress(value_init$get(segment), session);
+    public static value_init value_init(MemorySegment segment, SegmentScope scope) {
+        return value_init.ofAddress(value_init$get(segment), scope);
     }
     static final FunctionDescriptor value_free$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle value_free$MH = RuntimeHelper.downcallHandle(
-        _GTypeValueTable.value_free$FUNC
+    static final FunctionDescriptor value_free_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle value_free_UP$MH = RuntimeHelper.upcallHandle(value_free.class, "apply", _GTypeValueTable.value_free_UP$FUNC);
+    static final FunctionDescriptor value_free_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle value_free_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GTypeValueTable.value_free_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*value_free)(GValue*);
+     * }
+     */
     public interface value_free {
 
-        void apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(value_free fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(value_free.class, fi, _GTypeValueTable.value_free$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment display);
+        static MemorySegment allocate(value_free fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GTypeValueTable.value_free_UP$MH, fi, _GTypeValueTable.value_free$FUNC, scope);
         }
-        static value_free ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static value_free ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GTypeValueTable.value_free$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    _GTypeValueTable.value_free_DOWN$MH.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -93,39 +143,65 @@ public class _GTypeValueTable {
     public static VarHandle value_free$VH() {
         return _GTypeValueTable.value_free$VH;
     }
-    public static MemoryAddress value_free$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GTypeValueTable.value_free$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*value_free)(GValue*);
+     * }
+     */
+    public static MemorySegment value_free$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GTypeValueTable.value_free$VH.get(seg);
     }
-    public static void value_free$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*value_free)(GValue*);
+     * }
+     */
+    public static void value_free$set(MemorySegment seg, MemorySegment x) {
         _GTypeValueTable.value_free$VH.set(seg, x);
     }
-    public static MemoryAddress value_free$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GTypeValueTable.value_free$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment value_free$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GTypeValueTable.value_free$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void value_free$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void value_free$set(MemorySegment seg, long index, MemorySegment x) {
         _GTypeValueTable.value_free$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static value_free value_free (MemorySegment segment, MemorySession session) {
-        return value_free.ofAddress(value_free$get(segment), session);
+    public static value_free value_free(MemorySegment segment, SegmentScope scope) {
+        return value_free.ofAddress(value_free$get(segment), scope);
     }
     static final FunctionDescriptor value_copy$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle value_copy$MH = RuntimeHelper.downcallHandle(
-        _GTypeValueTable.value_copy$FUNC
+    static final FunctionDescriptor value_copy_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle value_copy_UP$MH = RuntimeHelper.upcallHandle(value_copy.class, "apply", _GTypeValueTable.value_copy_UP$FUNC);
+    static final FunctionDescriptor value_copy_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle value_copy_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GTypeValueTable.value_copy_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*value_copy)(const GValue*,GValue*);
+     * }
+     */
     public interface value_copy {
 
-        void apply(java.lang.foreign.MemoryAddress _x0, java.lang.foreign.MemoryAddress _x1);
-        static MemorySegment allocate(value_copy fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(value_copy.class, fi, _GTypeValueTable.value_copy$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+        static MemorySegment allocate(value_copy fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GTypeValueTable.value_copy_UP$MH, fi, _GTypeValueTable.value_copy$FUNC, scope);
         }
-        static value_copy ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, java.lang.foreign.MemoryAddress __x1) -> {
+        static value_copy ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GTypeValueTable.value_copy$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, (java.lang.foreign.Addressable)__x1);
+                    _GTypeValueTable.value_copy_DOWN$MH.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -137,38 +213,62 @@ public class _GTypeValueTable {
     public static VarHandle value_copy$VH() {
         return _GTypeValueTable.value_copy$VH;
     }
-    public static MemoryAddress value_copy$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GTypeValueTable.value_copy$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*value_copy)(const GValue*,GValue*);
+     * }
+     */
+    public static MemorySegment value_copy$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GTypeValueTable.value_copy$VH.get(seg);
     }
-    public static void value_copy$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*value_copy)(const GValue*,GValue*);
+     * }
+     */
+    public static void value_copy$set(MemorySegment seg, MemorySegment x) {
         _GTypeValueTable.value_copy$VH.set(seg, x);
     }
-    public static MemoryAddress value_copy$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GTypeValueTable.value_copy$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment value_copy$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GTypeValueTable.value_copy$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void value_copy$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void value_copy$set(MemorySegment seg, long index, MemorySegment x) {
         _GTypeValueTable.value_copy$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static value_copy value_copy (MemorySegment segment, MemorySession session) {
-        return value_copy.ofAddress(value_copy$get(segment), session);
+    public static value_copy value_copy(MemorySegment segment, SegmentScope scope) {
+        return value_copy.ofAddress(value_copy$get(segment), scope);
     }
     static final FunctionDescriptor value_peek_pointer$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle value_peek_pointer$MH = RuntimeHelper.downcallHandle(
-        _GTypeValueTable.value_peek_pointer$FUNC
+    static final FunctionDescriptor value_peek_pointer_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle value_peek_pointer_UP$MH = RuntimeHelper.upcallHandle(value_peek_pointer.class, "apply", _GTypeValueTable.value_peek_pointer_UP$FUNC);
+    static final FunctionDescriptor value_peek_pointer_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle value_peek_pointer_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GTypeValueTable.value_peek_pointer_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gpointer (*value_peek_pointer)(const GValue*);
+     * }
+     */
     public interface value_peek_pointer {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(value_peek_pointer fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(value_peek_pointer.class, fi, _GTypeValueTable.value_peek_pointer$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment _x0);
+        static MemorySegment allocate(value_peek_pointer fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GTypeValueTable.value_peek_pointer_UP$MH, fi, _GTypeValueTable.value_peek_pointer$FUNC, scope);
         }
-        static value_peek_pointer ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static value_peek_pointer ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GTypeValueTable.value_peek_pointer$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    return (java.lang.foreign.MemorySegment)_GTypeValueTable.value_peek_pointer_DOWN$MH.invokeExact(symbol, __x0);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -180,35 +280,59 @@ public class _GTypeValueTable {
     public static VarHandle value_peek_pointer$VH() {
         return _GTypeValueTable.value_peek_pointer$VH;
     }
-    public static MemoryAddress value_peek_pointer$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GTypeValueTable.value_peek_pointer$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gpointer (*value_peek_pointer)(const GValue*);
+     * }
+     */
+    public static MemorySegment value_peek_pointer$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GTypeValueTable.value_peek_pointer$VH.get(seg);
     }
-    public static void value_peek_pointer$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gpointer (*value_peek_pointer)(const GValue*);
+     * }
+     */
+    public static void value_peek_pointer$set(MemorySegment seg, MemorySegment x) {
         _GTypeValueTable.value_peek_pointer$VH.set(seg, x);
     }
-    public static MemoryAddress value_peek_pointer$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GTypeValueTable.value_peek_pointer$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment value_peek_pointer$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GTypeValueTable.value_peek_pointer$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void value_peek_pointer$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void value_peek_pointer$set(MemorySegment seg, long index, MemorySegment x) {
         _GTypeValueTable.value_peek_pointer$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static value_peek_pointer value_peek_pointer (MemorySegment segment, MemorySession session) {
-        return value_peek_pointer.ofAddress(value_peek_pointer$get(segment), session);
+    public static value_peek_pointer value_peek_pointer(MemorySegment segment, SegmentScope scope) {
+        return value_peek_pointer.ofAddress(value_peek_pointer$get(segment), scope);
     }
     static final VarHandle collect_format$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("collect_format"));
     public static VarHandle collect_format$VH() {
         return _GTypeValueTable.collect_format$VH;
     }
-    public static MemoryAddress collect_format$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GTypeValueTable.collect_format$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * const gchar* collect_format;
+     * }
+     */
+    public static MemorySegment collect_format$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GTypeValueTable.collect_format$VH.get(seg);
     }
-    public static void collect_format$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * const gchar* collect_format;
+     * }
+     */
+    public static void collect_format$set(MemorySegment seg, MemorySegment x) {
         _GTypeValueTable.collect_format$VH.set(seg, x);
     }
-    public static MemoryAddress collect_format$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GTypeValueTable.collect_format$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment collect_format$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GTypeValueTable.collect_format$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void collect_format$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void collect_format$set(MemorySegment seg, long index, MemorySegment x) {
         _GTypeValueTable.collect_format$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final FunctionDescriptor collect_value$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
@@ -217,20 +341,38 @@ public class _GTypeValueTable {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle collect_value$MH = RuntimeHelper.downcallHandle(
-        _GTypeValueTable.collect_value$FUNC
+    static final FunctionDescriptor collect_value_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle collect_value_UP$MH = RuntimeHelper.upcallHandle(collect_value.class, "apply", _GTypeValueTable.collect_value_UP$FUNC);
+    static final FunctionDescriptor collect_value_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle collect_value_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GTypeValueTable.collect_value_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gchar* (*collect_value)(GValue*,guint,GTypeCValue*,guint);
+     * }
+     */
     public interface collect_value {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0, int _x1, java.lang.foreign.MemoryAddress _x2, int _x3);
-        static MemorySegment allocate(collect_value fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(collect_value.class, fi, _GTypeValueTable.collect_value$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment _x0, int _x1, java.lang.foreign.MemorySegment _x2, int _x3);
+        static MemorySegment allocate(collect_value fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GTypeValueTable.collect_value_UP$MH, fi, _GTypeValueTable.collect_value$FUNC, scope);
         }
-        static collect_value ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, int __x1, java.lang.foreign.MemoryAddress __x2, int __x3) -> {
+        static collect_value ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, int __x1, java.lang.foreign.MemorySegment __x2, int __x3) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GTypeValueTable.collect_value$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, __x1, (java.lang.foreign.Addressable)__x2, __x3);
+                    return (java.lang.foreign.MemorySegment)_GTypeValueTable.collect_value_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -242,35 +384,59 @@ public class _GTypeValueTable {
     public static VarHandle collect_value$VH() {
         return _GTypeValueTable.collect_value$VH;
     }
-    public static MemoryAddress collect_value$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GTypeValueTable.collect_value$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gchar* (*collect_value)(GValue*,guint,GTypeCValue*,guint);
+     * }
+     */
+    public static MemorySegment collect_value$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GTypeValueTable.collect_value$VH.get(seg);
     }
-    public static void collect_value$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gchar* (*collect_value)(GValue*,guint,GTypeCValue*,guint);
+     * }
+     */
+    public static void collect_value$set(MemorySegment seg, MemorySegment x) {
         _GTypeValueTable.collect_value$VH.set(seg, x);
     }
-    public static MemoryAddress collect_value$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GTypeValueTable.collect_value$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment collect_value$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GTypeValueTable.collect_value$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void collect_value$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void collect_value$set(MemorySegment seg, long index, MemorySegment x) {
         _GTypeValueTable.collect_value$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static collect_value collect_value (MemorySegment segment, MemorySession session) {
-        return collect_value.ofAddress(collect_value$get(segment), session);
+    public static collect_value collect_value(MemorySegment segment, SegmentScope scope) {
+        return collect_value.ofAddress(collect_value$get(segment), scope);
     }
     static final VarHandle lcopy_format$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("lcopy_format"));
     public static VarHandle lcopy_format$VH() {
         return _GTypeValueTable.lcopy_format$VH;
     }
-    public static MemoryAddress lcopy_format$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GTypeValueTable.lcopy_format$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * const gchar* lcopy_format;
+     * }
+     */
+    public static MemorySegment lcopy_format$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GTypeValueTable.lcopy_format$VH.get(seg);
     }
-    public static void lcopy_format$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * const gchar* lcopy_format;
+     * }
+     */
+    public static void lcopy_format$set(MemorySegment seg, MemorySegment x) {
         _GTypeValueTable.lcopy_format$VH.set(seg, x);
     }
-    public static MemoryAddress lcopy_format$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GTypeValueTable.lcopy_format$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment lcopy_format$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GTypeValueTable.lcopy_format$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void lcopy_format$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void lcopy_format$set(MemorySegment seg, long index, MemorySegment x) {
         _GTypeValueTable.lcopy_format$VH.set(seg.asSlice(index*sizeof()), x);
     }
     static final FunctionDescriptor lcopy_value$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
@@ -279,20 +445,38 @@ public class _GTypeValueTable {
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle lcopy_value$MH = RuntimeHelper.downcallHandle(
-        _GTypeValueTable.lcopy_value$FUNC
+    static final FunctionDescriptor lcopy_value_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
+    static final MethodHandle lcopy_value_UP$MH = RuntimeHelper.upcallHandle(lcopy_value.class, "apply", _GTypeValueTable.lcopy_value_UP$FUNC);
+    static final FunctionDescriptor lcopy_value_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle lcopy_value_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GTypeValueTable.lcopy_value_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * gchar* (*lcopy_value)(const GValue*,guint,GTypeCValue*,guint);
+     * }
+     */
     public interface lcopy_value {
 
-        java.lang.foreign.Addressable apply(java.lang.foreign.MemoryAddress _x0, int _x1, java.lang.foreign.MemoryAddress _x2, int _x3);
-        static MemorySegment allocate(lcopy_value fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(lcopy_value.class, fi, _GTypeValueTable.lcopy_value$FUNC, session);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment _x0, int _x1, java.lang.foreign.MemorySegment _x2, int _x3);
+        static MemorySegment allocate(lcopy_value fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GTypeValueTable.lcopy_value_UP$MH, fi, _GTypeValueTable.lcopy_value$FUNC, scope);
         }
-        static lcopy_value ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0, int __x1, java.lang.foreign.MemoryAddress __x2, int __x3) -> {
+        static lcopy_value ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment __x0, int __x1, java.lang.foreign.MemorySegment __x2, int __x3) -> {
                 try {
-                    return (java.lang.foreign.Addressable)(java.lang.foreign.MemoryAddress)_GTypeValueTable.lcopy_value$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0, __x1, (java.lang.foreign.Addressable)__x2, __x3);
+                    return (java.lang.foreign.MemorySegment)_GTypeValueTable.lcopy_value_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -304,27 +488,39 @@ public class _GTypeValueTable {
     public static VarHandle lcopy_value$VH() {
         return _GTypeValueTable.lcopy_value$VH;
     }
-    public static MemoryAddress lcopy_value$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GTypeValueTable.lcopy_value$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * gchar* (*lcopy_value)(const GValue*,guint,GTypeCValue*,guint);
+     * }
+     */
+    public static MemorySegment lcopy_value$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GTypeValueTable.lcopy_value$VH.get(seg);
     }
-    public static void lcopy_value$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * gchar* (*lcopy_value)(const GValue*,guint,GTypeCValue*,guint);
+     * }
+     */
+    public static void lcopy_value$set(MemorySegment seg, MemorySegment x) {
         _GTypeValueTable.lcopy_value$VH.set(seg, x);
     }
-    public static MemoryAddress lcopy_value$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GTypeValueTable.lcopy_value$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment lcopy_value$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GTypeValueTable.lcopy_value$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void lcopy_value$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void lcopy_value$set(MemorySegment seg, long index, MemorySegment x) {
         _GTypeValueTable.lcopy_value$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static lcopy_value lcopy_value (MemorySegment segment, MemorySession session) {
-        return lcopy_value.ofAddress(lcopy_value$get(segment), session);
+    public static lcopy_value lcopy_value(MemorySegment segment, SegmentScope scope) {
+        return lcopy_value.ofAddress(lcopy_value$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

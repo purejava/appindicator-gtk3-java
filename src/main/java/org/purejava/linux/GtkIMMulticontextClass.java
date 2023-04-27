@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkIMMulticontextClass extends _GtkIMMulticontextClass {
+/**
+ * {@snippet :
+ * typedef struct _GtkIMMulticontextClass GtkIMMulticontextClass;
+ * }
+ */
+public final class GtkIMMulticontextClass extends _GtkIMMulticontextClass {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkIMMulticontextClass() {}
 }
 
 

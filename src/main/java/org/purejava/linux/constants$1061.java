@@ -7,55 +7,53 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1061 {
+final class constants$1061 {
 
-    static final FunctionDescriptor pango_font_description_merge$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1061() {}
+    static final FunctionDescriptor gdk_drag_context_get_suggested_action$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_drag_context_get_suggested_action$MH = RuntimeHelper.downcallHandle(
+        "gdk_drag_context_get_suggested_action",
+        constants$1061.gdk_drag_context_get_suggested_action$FUNC
+    );
+    static final FunctionDescriptor gdk_drag_context_get_selected_action$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_drag_context_get_selected_action$MH = RuntimeHelper.downcallHandle(
+        "gdk_drag_context_get_selected_action",
+        constants$1061.gdk_drag_context_get_selected_action$FUNC
+    );
+    static final FunctionDescriptor gdk_drag_context_get_source_window$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_drag_context_get_source_window$MH = RuntimeHelper.downcallHandle(
+        "gdk_drag_context_get_source_window",
+        constants$1061.gdk_drag_context_get_source_window$FUNC
+    );
+    static final FunctionDescriptor gdk_drag_context_get_dest_window$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_drag_context_get_dest_window$MH = RuntimeHelper.downcallHandle(
+        "gdk_drag_context_get_dest_window",
+        constants$1061.gdk_drag_context_get_dest_window$FUNC
+    );
+    static final FunctionDescriptor gdk_drag_context_get_protocol$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_drag_context_get_protocol$MH = RuntimeHelper.downcallHandle(
+        "gdk_drag_context_get_protocol",
+        constants$1061.gdk_drag_context_get_protocol$FUNC
+    );
+    static final FunctionDescriptor gdk_drag_status$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle pango_font_description_merge$MH = RuntimeHelper.downcallHandle(
-        "pango_font_description_merge",
-        constants$1061.pango_font_description_merge$FUNC
-    );
-    static final FunctionDescriptor pango_font_description_merge_static$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_font_description_merge_static$MH = RuntimeHelper.downcallHandle(
-        "pango_font_description_merge_static",
-        constants$1061.pango_font_description_merge_static$FUNC
-    );
-    static final FunctionDescriptor pango_font_description_better_match$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_font_description_better_match$MH = RuntimeHelper.downcallHandle(
-        "pango_font_description_better_match",
-        constants$1061.pango_font_description_better_match$FUNC
-    );
-    static final FunctionDescriptor pango_font_description_from_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_font_description_from_string$MH = RuntimeHelper.downcallHandle(
-        "pango_font_description_from_string",
-        constants$1061.pango_font_description_from_string$FUNC
-    );
-    static final FunctionDescriptor pango_font_description_to_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_font_description_to_string$MH = RuntimeHelper.downcallHandle(
-        "pango_font_description_to_string",
-        constants$1061.pango_font_description_to_string$FUNC
-    );
-    static final FunctionDescriptor pango_font_description_to_filename$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_font_description_to_filename$MH = RuntimeHelper.downcallHandle(
-        "pango_font_description_to_filename",
-        constants$1061.pango_font_description_to_filename$FUNC
+    static final MethodHandle gdk_drag_status$MH = RuntimeHelper.downcallHandle(
+        "gdk_drag_status",
+        constants$1061.gdk_drag_status$FUNC
     );
 }
 

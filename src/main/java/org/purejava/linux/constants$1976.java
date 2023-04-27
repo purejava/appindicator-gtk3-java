@@ -7,41 +7,66 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1976 {
+final class constants$1976 {
 
-    static final FunctionDescriptor gtk_recent_filter_filter$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1976() {}
+    static final FunctionDescriptor gtk_ui_manager_get_action$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_recent_filter_filter$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_filter_filter",
-        constants$1976.gtk_recent_filter_filter$FUNC
+    static final MethodHandle gtk_ui_manager_get_action$MH = RuntimeHelper.downcallHandle(
+        "gtk_ui_manager_get_action",
+        constants$1976.gtk_ui_manager_get_action$FUNC
     );
-    static final FunctionDescriptor GtkRecentSortFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_ui_manager_add_ui_from_string$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_ui_manager_add_ui_from_string$MH = RuntimeHelper.downcallHandle(
+        "gtk_ui_manager_add_ui_from_string",
+        constants$1976.gtk_ui_manager_add_ui_from_string$FUNC
+    );
+    static final FunctionDescriptor gtk_ui_manager_add_ui_from_file$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GtkRecentSortFunc$MH = RuntimeHelper.downcallHandle(
-        constants$1976.GtkRecentSortFunc$FUNC
+    static final MethodHandle gtk_ui_manager_add_ui_from_file$MH = RuntimeHelper.downcallHandle(
+        "gtk_ui_manager_add_ui_from_file",
+        constants$1976.gtk_ui_manager_add_ui_from_file$FUNC
     );
-    static final FunctionDescriptor gtk_recent_chooser_error_quark$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle gtk_recent_chooser_error_quark$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_chooser_error_quark",
-        constants$1976.gtk_recent_chooser_error_quark$FUNC
+    static final FunctionDescriptor gtk_ui_manager_add_ui_from_resource$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor gtk_recent_chooser_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_recent_chooser_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_chooser_get_type",
-        constants$1976.gtk_recent_chooser_get_type$FUNC
+    static final MethodHandle gtk_ui_manager_add_ui_from_resource$MH = RuntimeHelper.downcallHandle(
+        "gtk_ui_manager_add_ui_from_resource",
+        constants$1976.gtk_ui_manager_add_ui_from_resource$FUNC
     );
-    static final FunctionDescriptor gtk_recent_chooser_set_show_private$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_ui_manager_add_ui$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_ui_manager_add_ui$MH = RuntimeHelper.downcallHandle(
+        "gtk_ui_manager_add_ui",
+        constants$1976.gtk_ui_manager_add_ui$FUNC
+    );
+    static final FunctionDescriptor gtk_ui_manager_remove_ui$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_recent_chooser_set_show_private$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_chooser_set_show_private",
-        constants$1976.gtk_recent_chooser_set_show_private$FUNC
+    static final MethodHandle gtk_ui_manager_remove_ui$MH = RuntimeHelper.downcallHandle(
+        "gtk_ui_manager_remove_ui",
+        constants$1976.gtk_ui_manager_remove_ui$FUNC
     );
 }
 

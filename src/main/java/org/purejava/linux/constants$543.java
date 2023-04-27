@@ -7,61 +7,71 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$543 {
+final class constants$543 {
 
-    static final FunctionDescriptor g_async_initable_newv_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_LONG_LONG$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$543() {}
+    static final FunctionDescriptor g_data_input_stream_read_line$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_data_input_stream_read_line$MH = RuntimeHelper.downcallHandle(
+        "g_data_input_stream_read_line",
+        constants$543.g_data_input_stream_read_line$FUNC
+    );
+    static final FunctionDescriptor g_data_input_stream_read_line_utf8$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_data_input_stream_read_line_utf8$MH = RuntimeHelper.downcallHandle(
+        "g_data_input_stream_read_line_utf8",
+        constants$543.g_data_input_stream_read_line_utf8$FUNC
+    );
+    static final FunctionDescriptor g_data_input_stream_read_line_async$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_data_input_stream_read_line_async$MH = RuntimeHelper.downcallHandle(
+        "g_data_input_stream_read_line_async",
+        constants$543.g_data_input_stream_read_line_async$FUNC
+    );
+    static final FunctionDescriptor g_data_input_stream_read_line_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_async_initable_newv_async$MH = RuntimeHelper.downcallHandle(
-        "g_async_initable_newv_async",
-        constants$543.g_async_initable_newv_async$FUNC
+    static final MethodHandle g_data_input_stream_read_line_finish$MH = RuntimeHelper.downcallHandle(
+        "g_data_input_stream_read_line_finish",
+        constants$543.g_data_input_stream_read_line_finish$FUNC
     );
-    static final FunctionDescriptor g_async_initable_new_valist_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_LONG_LONG$LAYOUT,
+    static final FunctionDescriptor g_data_input_stream_read_line_finish_utf8$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_async_initable_new_valist_async$MH = RuntimeHelper.downcallHandle(
-        "g_async_initable_new_valist_async",
-        constants$543.g_async_initable_new_valist_async$FUNC
+    static final MethodHandle g_data_input_stream_read_line_finish_utf8$MH = RuntimeHelper.downcallHandle(
+        "g_data_input_stream_read_line_finish_utf8",
+        constants$543.g_data_input_stream_read_line_finish_utf8$FUNC
     );
-    static final FunctionDescriptor g_async_initable_new_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_data_input_stream_read_until$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_async_initable_new_finish$MH = RuntimeHelper.downcallHandle(
-        "g_async_initable_new_finish",
-        constants$543.g_async_initable_new_finish$FUNC
-    );
-    static final FunctionDescriptor g_async_result_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_async_result_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_async_result_get_type",
-        constants$543.g_async_result_get_type$FUNC
-    );
-    static final FunctionDescriptor g_async_result_get_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_async_result_get_user_data$MH = RuntimeHelper.downcallHandle(
-        "g_async_result_get_user_data",
-        constants$543.g_async_result_get_user_data$FUNC
-    );
-    static final FunctionDescriptor g_async_result_get_source_object$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_async_result_get_source_object$MH = RuntimeHelper.downcallHandle(
-        "g_async_result_get_source_object",
-        constants$543.g_async_result_get_source_object$FUNC
+    static final MethodHandle g_data_input_stream_read_until$MH = RuntimeHelper.downcallHandle(
+        "g_data_input_stream_read_until",
+        constants$543.g_data_input_stream_read_until$FUNC
     );
 }
 

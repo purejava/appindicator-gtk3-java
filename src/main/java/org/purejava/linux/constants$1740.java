@@ -7,51 +7,60 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1740 {
+final class constants$1740 {
 
-    static final FunctionDescriptor gtk_color_chooser_widget_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_color_chooser_widget_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_color_chooser_widget_new",
-        constants$1740.gtk_color_chooser_widget_new$FUNC
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1740() {}
+    static final FunctionDescriptor gtk_print_settings_unset$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor gtk_hsv_to_rgb$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
+    static final MethodHandle gtk_print_settings_unset$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_settings_unset",
+        constants$1740.gtk_print_settings_unset$FUNC
+    );
+    static final FunctionDescriptor gtk_print_settings_foreach$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_hsv_to_rgb$MH = RuntimeHelper.downcallHandle(
-        "gtk_hsv_to_rgb",
-        constants$1740.gtk_hsv_to_rgb$FUNC
+    static final MethodHandle gtk_print_settings_foreach$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_settings_foreach",
+        constants$1740.gtk_print_settings_foreach$FUNC
     );
-    static final FunctionDescriptor gtk_rgb_to_hsv$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_print_settings_get_bool$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_rgb_to_hsv$MH = RuntimeHelper.downcallHandle(
-        "gtk_rgb_to_hsv",
-        constants$1740.gtk_rgb_to_hsv$FUNC
+    static final MethodHandle gtk_print_settings_get_bool$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_settings_get_bool",
+        constants$1740.gtk_print_settings_get_bool$FUNC
     );
-    static final FunctionDescriptor gtk_combo_box_text_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_combo_box_text_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_combo_box_text_get_type",
-        constants$1740.gtk_combo_box_text_get_type$FUNC
+    static final FunctionDescriptor gtk_print_settings_set_bool$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final FunctionDescriptor gtk_combo_box_text_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_combo_box_text_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_combo_box_text_new",
-        constants$1740.gtk_combo_box_text_new$FUNC
+    static final MethodHandle gtk_print_settings_set_bool$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_settings_set_bool",
+        constants$1740.gtk_print_settings_set_bool$FUNC
     );
-    static final FunctionDescriptor gtk_combo_box_text_new_with_entry$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_combo_box_text_new_with_entry$MH = RuntimeHelper.downcallHandle(
-        "gtk_combo_box_text_new_with_entry",
-        constants$1740.gtk_combo_box_text_new_with_entry$FUNC
+    static final FunctionDescriptor gtk_print_settings_get_double$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_print_settings_get_double$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_settings_get_double",
+        constants$1740.gtk_print_settings_get_double$FUNC
+    );
+    static final FunctionDescriptor gtk_print_settings_get_double_with_default$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle gtk_print_settings_get_double_with_default$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_settings_get_double_with_default",
+        constants$1740.gtk_print_settings_get_double_with_default$FUNC
     );
 }
 

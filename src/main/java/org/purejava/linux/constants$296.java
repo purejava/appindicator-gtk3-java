@@ -7,47 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$296 {
+final class constants$296 {
 
-    static final  OfAddress g_ascii_table$LAYOUT = Constants$root.C_POINTER$LAYOUT;
-    static final VarHandle g_ascii_table$VH = constants$296.g_ascii_table$LAYOUT.varHandle();
-    static final MemorySegment g_ascii_table$SEGMENT = RuntimeHelper.lookupGlobalVariable("g_ascii_table", constants$296.g_ascii_table$LAYOUT);
-    static final FunctionDescriptor g_ascii_tolower$FUNC = FunctionDescriptor.of(Constants$root.C_CHAR$LAYOUT,
-        Constants$root.C_CHAR$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$296() {}
+    static final FunctionDescriptor g_scanner_input_file$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_ascii_tolower$MH = RuntimeHelper.downcallHandle(
-        "g_ascii_tolower",
-        constants$296.g_ascii_tolower$FUNC
+    static final MethodHandle g_scanner_input_file$MH = RuntimeHelper.downcallHandle(
+        "g_scanner_input_file",
+        constants$296.g_scanner_input_file$FUNC
     );
-    static final FunctionDescriptor g_ascii_toupper$FUNC = FunctionDescriptor.of(Constants$root.C_CHAR$LAYOUT,
-        Constants$root.C_CHAR$LAYOUT
+    static final FunctionDescriptor g_scanner_sync_file_offset$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_ascii_toupper$MH = RuntimeHelper.downcallHandle(
-        "g_ascii_toupper",
-        constants$296.g_ascii_toupper$FUNC
+    static final MethodHandle g_scanner_sync_file_offset$MH = RuntimeHelper.downcallHandle(
+        "g_scanner_sync_file_offset",
+        constants$296.g_scanner_sync_file_offset$FUNC
     );
-    static final FunctionDescriptor g_ascii_digit_value$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_CHAR$LAYOUT
-    );
-    static final MethodHandle g_ascii_digit_value$MH = RuntimeHelper.downcallHandle(
-        "g_ascii_digit_value",
-        constants$296.g_ascii_digit_value$FUNC
-    );
-    static final FunctionDescriptor g_ascii_xdigit_value$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_CHAR$LAYOUT
-    );
-    static final MethodHandle g_ascii_xdigit_value$MH = RuntimeHelper.downcallHandle(
-        "g_ascii_xdigit_value",
-        constants$296.g_ascii_xdigit_value$FUNC
-    );
-    static final FunctionDescriptor g_strdelimit$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_scanner_input_text$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_CHAR$LAYOUT
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_strdelimit$MH = RuntimeHelper.downcallHandle(
-        "g_strdelimit",
-        constants$296.g_strdelimit$FUNC
+    static final MethodHandle g_scanner_input_text$MH = RuntimeHelper.downcallHandle(
+        "g_scanner_input_text",
+        constants$296.g_scanner_input_text$FUNC
+    );
+    static final FunctionDescriptor g_scanner_get_next_token$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_scanner_get_next_token$MH = RuntimeHelper.downcallHandle(
+        "g_scanner_get_next_token",
+        constants$296.g_scanner_get_next_token$FUNC
+    );
+    static final FunctionDescriptor g_scanner_peek_next_token$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_scanner_peek_next_token$MH = RuntimeHelper.downcallHandle(
+        "g_scanner_peek_next_token",
+        constants$296.g_scanner_peek_next_token$FUNC
+    );
+    static final FunctionDescriptor g_scanner_cur_token$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_scanner_cur_token$MH = RuntimeHelper.downcallHandle(
+        "g_scanner_cur_token",
+        constants$296.g_scanner_cur_token$FUNC
     );
 }
 

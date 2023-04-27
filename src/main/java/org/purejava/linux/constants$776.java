@@ -7,53 +7,58 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$776 {
+final class constants$776 {
 
-    static final FunctionDescriptor g_pollable_input_stream_create_source$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$776() {}
+    static final FunctionDescriptor g_socket_connection_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_socket_connection_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_socket_connection_get_type",
+        constants$776.g_socket_connection_get_type$FUNC
+    );
+    static final FunctionDescriptor g_socket_connection_is_connected$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_socket_connection_is_connected$MH = RuntimeHelper.downcallHandle(
+        "g_socket_connection_is_connected",
+        constants$776.g_socket_connection_is_connected$FUNC
+    );
+    static final FunctionDescriptor g_socket_connection_connect$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_pollable_input_stream_create_source$MH = RuntimeHelper.downcallHandle(
-        "g_pollable_input_stream_create_source",
-        constants$776.g_pollable_input_stream_create_source$FUNC
+    static final MethodHandle g_socket_connection_connect$MH = RuntimeHelper.downcallHandle(
+        "g_socket_connection_connect",
+        constants$776.g_socket_connection_connect$FUNC
     );
-    static final FunctionDescriptor g_pollable_input_stream_read_nonblocking$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+    static final FunctionDescriptor g_socket_connection_connect_async$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_pollable_input_stream_read_nonblocking$MH = RuntimeHelper.downcallHandle(
-        "g_pollable_input_stream_read_nonblocking",
-        constants$776.g_pollable_input_stream_read_nonblocking$FUNC
+    static final MethodHandle g_socket_connection_connect_async$MH = RuntimeHelper.downcallHandle(
+        "g_socket_connection_connect_async",
+        constants$776.g_socket_connection_connect_async$FUNC
     );
-    static final FunctionDescriptor g_pollable_output_stream_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_pollable_output_stream_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_pollable_output_stream_get_type",
-        constants$776.g_pollable_output_stream_get_type$FUNC
-    );
-    static final FunctionDescriptor g_pollable_output_stream_can_poll$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_pollable_output_stream_can_poll$MH = RuntimeHelper.downcallHandle(
-        "g_pollable_output_stream_can_poll",
-        constants$776.g_pollable_output_stream_can_poll$FUNC
-    );
-    static final FunctionDescriptor g_pollable_output_stream_is_writable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_pollable_output_stream_is_writable$MH = RuntimeHelper.downcallHandle(
-        "g_pollable_output_stream_is_writable",
-        constants$776.g_pollable_output_stream_is_writable$FUNC
-    );
-    static final FunctionDescriptor g_pollable_output_stream_create_source$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_socket_connection_connect_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_pollable_output_stream_create_source$MH = RuntimeHelper.downcallHandle(
-        "g_pollable_output_stream_create_source",
-        constants$776.g_pollable_output_stream_create_source$FUNC
+    static final MethodHandle g_socket_connection_connect_finish$MH = RuntimeHelper.downcallHandle(
+        "g_socket_connection_connect_finish",
+        constants$776.g_socket_connection_connect_finish$FUNC
+    );
+    static final FunctionDescriptor g_socket_connection_get_socket$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_socket_connection_get_socket$MH = RuntimeHelper.downcallHandle(
+        "g_socket_connection_get_socket",
+        constants$776.g_socket_connection_get_socket$FUNC
     );
 }
 

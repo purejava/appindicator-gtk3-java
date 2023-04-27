@@ -7,71 +7,61 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$545 {
+final class constants$545 {
 
-    static final FunctionDescriptor g_input_stream_skip$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$545() {}
+    static final FunctionDescriptor g_data_output_stream_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_data_output_stream_new$MH = RuntimeHelper.downcallHandle(
+        "g_data_output_stream_new",
+        constants$545.g_data_output_stream_new$FUNC
+    );
+    static final FunctionDescriptor g_data_output_stream_set_byte_order$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_data_output_stream_set_byte_order$MH = RuntimeHelper.downcallHandle(
+        "g_data_output_stream_set_byte_order",
+        constants$545.g_data_output_stream_set_byte_order$FUNC
+    );
+    static final FunctionDescriptor g_data_output_stream_get_byte_order$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_data_output_stream_get_byte_order$MH = RuntimeHelper.downcallHandle(
+        "g_data_output_stream_get_byte_order",
+        constants$545.g_data_output_stream_get_byte_order$FUNC
+    );
+    static final FunctionDescriptor g_data_output_stream_put_byte$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_CHAR$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_input_stream_skip$MH = RuntimeHelper.downcallHandle(
-        "g_input_stream_skip",
-        constants$545.g_input_stream_skip$FUNC
+    static final MethodHandle g_data_output_stream_put_byte$MH = RuntimeHelper.downcallHandle(
+        "g_data_output_stream_put_byte",
+        constants$545.g_data_output_stream_put_byte$FUNC
     );
-    static final FunctionDescriptor g_input_stream_close$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_data_output_stream_put_int16$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_SHORT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_input_stream_close$MH = RuntimeHelper.downcallHandle(
-        "g_input_stream_close",
-        constants$545.g_input_stream_close$FUNC
+    static final MethodHandle g_data_output_stream_put_int16$MH = RuntimeHelper.downcallHandle(
+        "g_data_output_stream_put_int16",
+        constants$545.g_data_output_stream_put_int16$FUNC
     );
-    static final FunctionDescriptor g_input_stream_read_async$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_data_output_stream_put_uint16$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_SHORT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_input_stream_read_async$MH = RuntimeHelper.downcallHandle(
-        "g_input_stream_read_async",
-        constants$545.g_input_stream_read_async$FUNC
-    );
-    static final FunctionDescriptor g_input_stream_read_finish$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_input_stream_read_finish$MH = RuntimeHelper.downcallHandle(
-        "g_input_stream_read_finish",
-        constants$545.g_input_stream_read_finish$FUNC
-    );
-    static final FunctionDescriptor g_input_stream_read_all_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_input_stream_read_all_async$MH = RuntimeHelper.downcallHandle(
-        "g_input_stream_read_all_async",
-        constants$545.g_input_stream_read_all_async$FUNC
-    );
-    static final FunctionDescriptor g_input_stream_read_all_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_input_stream_read_all_finish$MH = RuntimeHelper.downcallHandle(
-        "g_input_stream_read_all_finish",
-        constants$545.g_input_stream_read_all_finish$FUNC
+    static final MethodHandle g_data_output_stream_put_uint16$MH = RuntimeHelper.downcallHandle(
+        "g_data_output_stream_put_uint16",
+        constants$545.g_data_output_stream_put_uint16$FUNC
     );
 }
 

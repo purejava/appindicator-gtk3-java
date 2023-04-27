@@ -7,52 +7,56 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1441 {
+final class constants$1441 {
 
-    static final FunctionDescriptor gtk_widget_set_parent$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1441() {}
+    static final FunctionDescriptor gtk_entry_completion_get_entry$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_entry_completion_get_entry$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_completion_get_entry",
+        constants$1441.gtk_entry_completion_get_entry$FUNC
+    );
+    static final FunctionDescriptor gtk_entry_completion_set_model$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_widget_set_parent$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_parent",
-        constants$1441.gtk_widget_set_parent$FUNC
+    static final MethodHandle gtk_entry_completion_set_model$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_completion_set_model",
+        constants$1441.gtk_entry_completion_set_model$FUNC
     );
-    static final FunctionDescriptor gtk_widget_get_parent$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_entry_completion_get_model$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_widget_get_parent$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_parent",
-        constants$1441.gtk_widget_get_parent$FUNC
+    static final MethodHandle gtk_entry_completion_get_model$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_completion_get_model",
+        constants$1441.gtk_entry_completion_get_model$FUNC
     );
-    static final FunctionDescriptor gtk_widget_set_parent_window$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_entry_completion_set_match_func$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_widget_set_parent_window$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_parent_window",
-        constants$1441.gtk_widget_set_parent_window$FUNC
+    static final MethodHandle gtk_entry_completion_set_match_func$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_completion_set_match_func",
+        constants$1441.gtk_entry_completion_set_match_func$FUNC
     );
-    static final FunctionDescriptor gtk_widget_get_parent_window$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_get_parent_window$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_parent_window",
-        constants$1441.gtk_widget_get_parent_window$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_set_child_visible$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_entry_completion_set_minimum_key_length$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_widget_set_child_visible$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_child_visible",
-        constants$1441.gtk_widget_set_child_visible$FUNC
+    static final MethodHandle gtk_entry_completion_set_minimum_key_length$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_completion_set_minimum_key_length",
+        constants$1441.gtk_entry_completion_set_minimum_key_length$FUNC
     );
-    static final FunctionDescriptor gtk_widget_get_child_visible$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_entry_completion_get_minimum_key_length$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_widget_get_child_visible$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_child_visible",
-        constants$1441.gtk_widget_get_child_visible$FUNC
+    static final MethodHandle gtk_entry_completion_get_minimum_key_length$MH = RuntimeHelper.downcallHandle(
+        "gtk_entry_completion_get_minimum_key_length",
+        constants$1441.gtk_entry_completion_get_minimum_key_length$FUNC
     );
 }
 

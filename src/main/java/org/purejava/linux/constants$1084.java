@@ -7,55 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1084 {
+final class constants$1084 {
 
-    static final FunctionDescriptor pango_attr_list_update$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1084() {}
+    static final FunctionDescriptor gdk_window_merge_child_shapes$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_window_merge_child_shapes$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_merge_child_shapes",
+        constants$1084.gdk_window_merge_child_shapes$FUNC
+    );
+    static final FunctionDescriptor gdk_window_input_shape_combine_region$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle pango_attr_list_update$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_list_update",
-        constants$1084.pango_attr_list_update$FUNC
+    static final MethodHandle gdk_window_input_shape_combine_region$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_input_shape_combine_region",
+        constants$1084.gdk_window_input_shape_combine_region$FUNC
     );
-    static final FunctionDescriptor pango_attr_list_filter$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gdk_window_set_child_input_shapes$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_window_set_child_input_shapes$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_set_child_input_shapes",
+        constants$1084.gdk_window_set_child_input_shapes$FUNC
+    );
+    static final FunctionDescriptor gdk_window_merge_child_input_shapes$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_window_merge_child_input_shapes$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_merge_child_input_shapes",
+        constants$1084.gdk_window_merge_child_input_shapes$FUNC
+    );
+    static final FunctionDescriptor gdk_window_set_pass_through$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gdk_window_set_pass_through$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_set_pass_through",
+        constants$1084.gdk_window_set_pass_through$FUNC
+    );
+    static final FunctionDescriptor gdk_window_get_pass_through$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_attr_list_filter$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_list_filter",
-        constants$1084.pango_attr_list_filter$FUNC
-    );
-    static final FunctionDescriptor pango_attr_list_get_attributes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_attr_list_get_attributes$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_list_get_attributes",
-        constants$1084.pango_attr_list_get_attributes$FUNC
-    );
-    static final FunctionDescriptor pango_attr_list_equal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_attr_list_equal$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_list_equal",
-        constants$1084.pango_attr_list_equal$FUNC
-    );
-    static final FunctionDescriptor pango_attr_list_to_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_attr_list_to_string$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_list_to_string",
-        constants$1084.pango_attr_list_to_string$FUNC
-    );
-    static final FunctionDescriptor pango_attr_list_from_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_attr_list_from_string$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_list_from_string",
-        constants$1084.pango_attr_list_from_string$FUNC
+    static final MethodHandle gdk_window_get_pass_through$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_get_pass_through",
+        constants$1084.gdk_window_get_pass_through$FUNC
     );
 }
 

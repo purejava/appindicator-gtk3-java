@@ -7,44 +7,60 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1705 {
+final class constants$1705 {
 
-    static final FunctionDescriptor GtkCalendarDetailFunc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1705() {}
+    static final FunctionDescriptor gtk_menu_tool_button_set_arrow_tooltip_text$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_menu_tool_button_set_arrow_tooltip_text$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_tool_button_set_arrow_tooltip_text",
+        constants$1705.gtk_menu_tool_button_set_arrow_tooltip_text$FUNC
+    );
+    static final FunctionDescriptor gtk_menu_tool_button_set_arrow_tooltip_markup$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_menu_tool_button_set_arrow_tooltip_markup$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_tool_button_set_arrow_tooltip_markup",
+        constants$1705.gtk_menu_tool_button_set_arrow_tooltip_markup$FUNC
+    );
+    static final FunctionDescriptor gtk_message_dialog_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_message_dialog_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_message_dialog_get_type",
+        constants$1705.gtk_message_dialog_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_message_dialog_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle GtkCalendarDetailFunc$MH = RuntimeHelper.downcallHandle(
-        constants$1705.GtkCalendarDetailFunc$FUNC
+    static final MethodHandle gtk_message_dialog_new$MH = RuntimeHelper.downcallHandleVariadic(
+        "gtk_message_dialog_new",
+        constants$1705.gtk_message_dialog_new$FUNC
     );
-    static final FunctionDescriptor gtk_calendar_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_calendar_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_calendar_get_type",
-        constants$1705.gtk_calendar_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_calendar_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_calendar_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_calendar_new",
-        constants$1705.gtk_calendar_new$FUNC
-    );
-    static final FunctionDescriptor gtk_calendar_select_month$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_message_dialog_new_with_markup$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_calendar_select_month$MH = RuntimeHelper.downcallHandle(
-        "gtk_calendar_select_month",
-        constants$1705.gtk_calendar_select_month$FUNC
+    static final MethodHandle gtk_message_dialog_new_with_markup$MH = RuntimeHelper.downcallHandleVariadic(
+        "gtk_message_dialog_new_with_markup",
+        constants$1705.gtk_message_dialog_new_with_markup$FUNC
     );
-    static final FunctionDescriptor gtk_calendar_select_day$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_message_dialog_set_image$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_calendar_select_day$MH = RuntimeHelper.downcallHandle(
-        "gtk_calendar_select_day",
-        constants$1705.gtk_calendar_select_day$FUNC
+    static final MethodHandle gtk_message_dialog_set_image$MH = RuntimeHelper.downcallHandle(
+        "gtk_message_dialog_set_image",
+        constants$1705.gtk_message_dialog_set_image$FUNC
     );
 }
 

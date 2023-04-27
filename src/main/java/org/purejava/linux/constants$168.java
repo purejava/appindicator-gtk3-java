@@ -7,53 +7,42 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$168 {
+final class constants$168 {
 
-    static final FunctionDescriptor g_main_context_find_source_by_funcs_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$168() {}
+    static final FunctionDescriptor GSourceDummyMarshal$FUNC = FunctionDescriptor.ofVoid();
+    static final FunctionDescriptor GSourceDummyMarshal_UP$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle GSourceDummyMarshal_UP$MH = RuntimeHelper.upcallHandle(GSourceDummyMarshal.class, "apply", constants$168.GSourceDummyMarshal_UP$FUNC);
+    static final FunctionDescriptor GSourceDummyMarshal_DOWN$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle GSourceDummyMarshal_DOWN$MH = RuntimeHelper.downcallHandle(
+        constants$168.GSourceDummyMarshal_DOWN$FUNC
+    );
+    static final FunctionDescriptor g_main_context_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle g_main_context_new$MH = RuntimeHelper.downcallHandle(
+        "g_main_context_new",
+        constants$168.g_main_context_new$FUNC
+    );
+    static final FunctionDescriptor g_main_context_new_with_flags$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle g_main_context_new_with_flags$MH = RuntimeHelper.downcallHandle(
+        "g_main_context_new_with_flags",
+        constants$168.g_main_context_new_with_flags$FUNC
+    );
+    static final FunctionDescriptor g_main_context_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_main_context_find_source_by_funcs_user_data$MH = RuntimeHelper.downcallHandle(
-        "g_main_context_find_source_by_funcs_user_data",
-        constants$168.g_main_context_find_source_by_funcs_user_data$FUNC
+    static final MethodHandle g_main_context_ref$MH = RuntimeHelper.downcallHandle(
+        "g_main_context_ref",
+        constants$168.g_main_context_ref$FUNC
     );
-    static final FunctionDescriptor g_main_context_wakeup$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_main_context_unref$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_main_context_wakeup$MH = RuntimeHelper.downcallHandle(
-        "g_main_context_wakeup",
-        constants$168.g_main_context_wakeup$FUNC
-    );
-    static final FunctionDescriptor g_main_context_acquire$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_main_context_acquire$MH = RuntimeHelper.downcallHandle(
-        "g_main_context_acquire",
-        constants$168.g_main_context_acquire$FUNC
-    );
-    static final FunctionDescriptor g_main_context_release$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_main_context_release$MH = RuntimeHelper.downcallHandle(
-        "g_main_context_release",
-        constants$168.g_main_context_release$FUNC
-    );
-    static final FunctionDescriptor g_main_context_is_owner$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_main_context_is_owner$MH = RuntimeHelper.downcallHandle(
-        "g_main_context_is_owner",
-        constants$168.g_main_context_is_owner$FUNC
-    );
-    static final FunctionDescriptor g_main_context_wait$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_main_context_wait$MH = RuntimeHelper.downcallHandle(
-        "g_main_context_wait",
-        constants$168.g_main_context_wait$FUNC
+    static final MethodHandle g_main_context_unref$MH = RuntimeHelper.downcallHandle(
+        "g_main_context_unref",
+        constants$168.g_main_context_unref$FUNC
     );
 }
 

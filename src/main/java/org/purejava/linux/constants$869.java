@@ -7,54 +7,69 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$869 {
+final class constants$869 {
 
-    static final FunctionDescriptor g_tls_database_lookup_certificates_issued_by_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$869() {}
+    static final FunctionDescriptor hb_font_get_glyph_h_advance$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle hb_font_get_glyph_h_advance$MH = RuntimeHelper.downcallHandle(
+        "hb_font_get_glyph_h_advance",
+        constants$869.hb_font_get_glyph_h_advance$FUNC
+    );
+    static final FunctionDescriptor hb_font_get_glyph_v_advance$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle hb_font_get_glyph_v_advance$MH = RuntimeHelper.downcallHandle(
+        "hb_font_get_glyph_v_advance",
+        constants$869.hb_font_get_glyph_v_advance$FUNC
+    );
+    static final FunctionDescriptor hb_font_get_glyph_h_advances$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle hb_font_get_glyph_h_advances$MH = RuntimeHelper.downcallHandle(
+        "hb_font_get_glyph_h_advances",
+        constants$869.hb_font_get_glyph_h_advances$FUNC
+    );
+    static final FunctionDescriptor hb_font_get_glyph_v_advances$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle hb_font_get_glyph_v_advances$MH = RuntimeHelper.downcallHandle(
+        "hb_font_get_glyph_v_advances",
+        constants$869.hb_font_get_glyph_v_advances$FUNC
+    );
+    static final FunctionDescriptor hb_font_get_glyph_h_origin$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_tls_database_lookup_certificates_issued_by_finish$MH = RuntimeHelper.downcallHandle(
-        "g_tls_database_lookup_certificates_issued_by_finish",
-        constants$869.g_tls_database_lookup_certificates_issued_by_finish$FUNC
+    static final MethodHandle hb_font_get_glyph_h_origin$MH = RuntimeHelper.downcallHandle(
+        "hb_font_get_glyph_h_origin",
+        constants$869.hb_font_get_glyph_h_origin$FUNC
     );
-    static final FunctionDescriptor g_tls_file_database_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_tls_file_database_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_tls_file_database_get_type",
-        constants$869.g_tls_file_database_get_type$FUNC
-    );
-    static final FunctionDescriptor g_tls_file_database_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor hb_font_get_glyph_v_origin$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_tls_file_database_new$MH = RuntimeHelper.downcallHandle(
-        "g_tls_file_database_new",
-        constants$869.g_tls_file_database_new$FUNC
-    );
-    static final FunctionDescriptor g_tls_interaction_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_tls_interaction_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_tls_interaction_get_type",
-        constants$869.g_tls_interaction_get_type$FUNC
-    );
-    static final FunctionDescriptor g_tls_interaction_invoke_ask_password$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_tls_interaction_invoke_ask_password$MH = RuntimeHelper.downcallHandle(
-        "g_tls_interaction_invoke_ask_password",
-        constants$869.g_tls_interaction_invoke_ask_password$FUNC
-    );
-    static final FunctionDescriptor g_tls_interaction_ask_password$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_tls_interaction_ask_password$MH = RuntimeHelper.downcallHandle(
-        "g_tls_interaction_ask_password",
-        constants$869.g_tls_interaction_ask_password$FUNC
+    static final MethodHandle hb_font_get_glyph_v_origin$MH = RuntimeHelper.downcallHandle(
+        "hb_font_get_glyph_v_origin",
+        constants$869.hb_font_get_glyph_v_origin$FUNC
     );
 }
 

@@ -7,52 +7,47 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1939 {
+final class constants$1939 {
 
-    static final FunctionDescriptor gtk_print_settings_get_printer$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1939() {}
+    static final FunctionDescriptor gtk_hscale_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_hscale_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_hscale_get_type",
+        constants$1939.gtk_hscale_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_hscale_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_print_settings_get_printer$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_get_printer",
-        constants$1939.gtk_print_settings_get_printer$FUNC
+    static final MethodHandle gtk_hscale_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_hscale_new",
+        constants$1939.gtk_hscale_new$FUNC
     );
-    static final FunctionDescriptor gtk_print_settings_set_printer$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_hscale_new_with_range$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT
+    );
+    static final MethodHandle gtk_hscale_new_with_range$MH = RuntimeHelper.downcallHandle(
+        "gtk_hscale_new_with_range",
+        constants$1939.gtk_hscale_new_with_range$FUNC
+    );
+    static final FunctionDescriptor gtk_hscrollbar_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_hscrollbar_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_hscrollbar_get_type",
+        constants$1939.gtk_hscrollbar_get_type$FUNC
+    );
+    static final FunctionDescriptor gtk_hscrollbar_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_print_settings_set_printer$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_set_printer",
-        constants$1939.gtk_print_settings_set_printer$FUNC
+    static final MethodHandle gtk_hscrollbar_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_hscrollbar_new",
+        constants$1939.gtk_hscrollbar_new$FUNC
     );
-    static final FunctionDescriptor gtk_print_settings_get_orientation$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_print_settings_get_orientation$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_get_orientation",
-        constants$1939.gtk_print_settings_get_orientation$FUNC
-    );
-    static final FunctionDescriptor gtk_print_settings_set_orientation$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_print_settings_set_orientation$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_set_orientation",
-        constants$1939.gtk_print_settings_set_orientation$FUNC
-    );
-    static final FunctionDescriptor gtk_print_settings_get_paper_size$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_print_settings_get_paper_size$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_get_paper_size",
-        constants$1939.gtk_print_settings_get_paper_size$FUNC
-    );
-    static final FunctionDescriptor gtk_print_settings_set_paper_size$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_print_settings_set_paper_size$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_set_paper_size",
-        constants$1939.gtk_print_settings_set_paper_size$FUNC
+    static final FunctionDescriptor gtk_hseparator_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_hseparator_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_hseparator_get_type",
+        constants$1939.gtk_hseparator_get_type$FUNC
     );
 }
 

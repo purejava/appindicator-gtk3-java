@@ -7,47 +7,52 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1407 {
+final class constants$1407 {
 
-    static final FunctionDescriptor atk_registry_get_factory_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle atk_registry_get_factory_type$MH = RuntimeHelper.downcallHandle(
-        "atk_registry_get_factory_type",
-        constants$1407.atk_registry_get_factory_type$FUNC
-    );
-    static final FunctionDescriptor atk_registry_get_factory$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle atk_registry_get_factory$MH = RuntimeHelper.downcallHandle(
-        "atk_registry_get_factory",
-        constants$1407.atk_registry_get_factory$FUNC
-    );
-    static final FunctionDescriptor atk_get_default_registry$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle atk_get_default_registry$MH = RuntimeHelper.downcallHandle(
-        "atk_get_default_registry",
-        constants$1407.atk_get_default_registry$FUNC
-    );
-    static final FunctionDescriptor atk_relation_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle atk_relation_get_type$MH = RuntimeHelper.downcallHandle(
-        "atk_relation_get_type",
-        constants$1407.atk_relation_get_type$FUNC
-    );
-    static final FunctionDescriptor atk_relation_type_register$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1407() {}
+    static final FunctionDescriptor gtk_text_iter_get_language$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_relation_type_register$MH = RuntimeHelper.downcallHandle(
-        "atk_relation_type_register",
-        constants$1407.atk_relation_type_register$FUNC
+    static final MethodHandle gtk_text_iter_get_language$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_get_language",
+        constants$1407.gtk_text_iter_get_language$FUNC
     );
-    static final FunctionDescriptor atk_relation_type_get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_text_iter_is_end$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_text_iter_is_end$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_is_end",
+        constants$1407.gtk_text_iter_is_end$FUNC
+    );
+    static final FunctionDescriptor gtk_text_iter_is_start$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_text_iter_is_start$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_is_start",
+        constants$1407.gtk_text_iter_is_start$FUNC
+    );
+    static final FunctionDescriptor gtk_text_iter_forward_char$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_text_iter_forward_char$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_forward_char",
+        constants$1407.gtk_text_iter_forward_char$FUNC
+    );
+    static final FunctionDescriptor gtk_text_iter_backward_char$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_text_iter_backward_char$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_backward_char",
+        constants$1407.gtk_text_iter_backward_char$FUNC
+    );
+    static final FunctionDescriptor gtk_text_iter_forward_chars$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle atk_relation_type_get_name$MH = RuntimeHelper.downcallHandle(
-        "atk_relation_type_get_name",
-        constants$1407.atk_relation_type_get_name$FUNC
+    static final MethodHandle gtk_text_iter_forward_chars$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_forward_chars",
+        constants$1407.gtk_text_iter_forward_chars$FUNC
     );
 }
 

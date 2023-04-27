@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkSpinButtonClass extends _GtkSpinButtonClass {
+/**
+ * {@snippet :
+ * typedef struct _GtkSpinButtonClass GtkSpinButtonClass;
+ * }
+ */
+public final class GtkSpinButtonClass extends _GtkSpinButtonClass {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkSpinButtonClass() {}
 }
 
 

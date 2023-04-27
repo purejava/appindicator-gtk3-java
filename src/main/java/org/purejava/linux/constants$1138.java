@@ -7,54 +7,99 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1138 {
+final class constants$1138 {
 
-    static final FunctionDescriptor tempnam$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1138() {}
+    static final FunctionDescriptor gdk_pixbuf_copy_options$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle tempnam$MH = RuntimeHelper.downcallHandle(
-        "tempnam",
-        constants$1138.tempnam$FUNC
+    static final MethodHandle gdk_pixbuf_copy_options$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_copy_options",
+        constants$1138.gdk_pixbuf_copy_options$FUNC
     );
-    static final FunctionDescriptor fflush$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle fflush$MH = RuntimeHelper.downcallHandle(
-        "fflush",
-        constants$1138.fflush$FUNC
-    );
-    static final FunctionDescriptor fflush_unlocked$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle fflush_unlocked$MH = RuntimeHelper.downcallHandle(
-        "fflush_unlocked",
-        constants$1138.fflush_unlocked$FUNC
-    );
-    static final FunctionDescriptor fopen$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle fopen$MH = RuntimeHelper.downcallHandle(
-        "fopen",
-        constants$1138.fopen$FUNC
-    );
-    static final FunctionDescriptor freopen$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gdk_pixbuf_scale$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle freopen$MH = RuntimeHelper.downcallHandle(
-        "freopen",
-        constants$1138.freopen$FUNC
-    );
-    static final FunctionDescriptor fdopen$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle fdopen$MH = RuntimeHelper.downcallHandle(
-        "fdopen",
-        constants$1138.fdopen$FUNC
+    static final MethodHandle gdk_pixbuf_scale$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_scale",
+        constants$1138.gdk_pixbuf_scale$FUNC
+    );
+    static final FunctionDescriptor gdk_pixbuf_composite$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gdk_pixbuf_composite$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_composite",
+        constants$1138.gdk_pixbuf_composite$FUNC
+    );
+    static final FunctionDescriptor gdk_pixbuf_composite_color$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_DOUBLE$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gdk_pixbuf_composite_color$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_composite_color",
+        constants$1138.gdk_pixbuf_composite_color$FUNC
+    );
+    static final FunctionDescriptor gdk_pixbuf_scale_simple$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gdk_pixbuf_scale_simple$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_scale_simple",
+        constants$1138.gdk_pixbuf_scale_simple$FUNC
+    );
+    static final FunctionDescriptor gdk_pixbuf_composite_color_simple$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gdk_pixbuf_composite_color_simple$MH = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_composite_color_simple",
+        constants$1138.gdk_pixbuf_composite_color_simple$FUNC
     );
 }
 

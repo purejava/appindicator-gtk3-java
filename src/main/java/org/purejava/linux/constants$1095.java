@@ -7,55 +7,58 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1095 {
+final class constants$1095 {
 
-    static final FunctionDescriptor pango_context_set_font_map$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1095() {}
+    static final FunctionDescriptor gdk_window_get_children_with_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_context_set_font_map$MH = RuntimeHelper.downcallHandle(
-        "pango_context_set_font_map",
-        constants$1095.pango_context_set_font_map$FUNC
+    static final MethodHandle gdk_window_get_children_with_user_data$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_get_children_with_user_data",
+        constants$1095.gdk_window_get_children_with_user_data$FUNC
     );
-    static final FunctionDescriptor pango_context_get_font_map$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gdk_window_get_events$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_context_get_font_map$MH = RuntimeHelper.downcallHandle(
-        "pango_context_get_font_map",
-        constants$1095.pango_context_get_font_map$FUNC
+    static final MethodHandle gdk_window_get_events$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_get_events",
+        constants$1095.gdk_window_get_events$FUNC
     );
-    static final FunctionDescriptor pango_context_get_serial$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gdk_window_set_events$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle pango_context_get_serial$MH = RuntimeHelper.downcallHandle(
-        "pango_context_get_serial",
-        constants$1095.pango_context_get_serial$FUNC
+    static final MethodHandle gdk_window_set_events$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_set_events",
+        constants$1095.gdk_window_set_events$FUNC
     );
-    static final FunctionDescriptor pango_context_list_families$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gdk_window_set_device_events$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle pango_context_list_families$MH = RuntimeHelper.downcallHandle(
-        "pango_context_list_families",
-        constants$1095.pango_context_list_families$FUNC
+    static final MethodHandle gdk_window_set_device_events$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_set_device_events",
+        constants$1095.gdk_window_set_device_events$FUNC
     );
-    static final FunctionDescriptor pango_context_load_font$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_context_load_font$MH = RuntimeHelper.downcallHandle(
-        "pango_context_load_font",
-        constants$1095.pango_context_load_font$FUNC
-    );
-    static final FunctionDescriptor pango_context_load_fontset$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gdk_window_get_device_events$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle pango_context_load_fontset$MH = RuntimeHelper.downcallHandle(
-        "pango_context_load_fontset",
-        constants$1095.pango_context_load_fontset$FUNC
+    static final MethodHandle gdk_window_get_device_events$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_get_device_events",
+        constants$1095.gdk_window_get_device_events$FUNC
+    );
+    static final FunctionDescriptor gdk_window_set_source_events$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gdk_window_set_source_events$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_set_source_events",
+        constants$1095.gdk_window_set_source_events$FUNC
     );
 }
 

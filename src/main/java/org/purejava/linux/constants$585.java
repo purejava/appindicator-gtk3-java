@@ -7,55 +7,50 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$585 {
+final class constants$585 {
 
-    static final FunctionDescriptor g_credentials_set_native$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$585() {}
+    static final FunctionDescriptor g_dbus_object_get_object_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_credentials_set_native$MH = RuntimeHelper.downcallHandle(
-        "g_credentials_set_native",
-        constants$585.g_credentials_set_native$FUNC
+    static final MethodHandle g_dbus_object_get_object_path$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_object_get_object_path",
+        constants$585.g_dbus_object_get_object_path$FUNC
     );
-    static final FunctionDescriptor g_credentials_is_same_user$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_dbus_object_get_interfaces$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_credentials_is_same_user$MH = RuntimeHelper.downcallHandle(
-        "g_credentials_is_same_user",
-        constants$585.g_credentials_is_same_user$FUNC
+    static final MethodHandle g_dbus_object_get_interfaces$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_object_get_interfaces",
+        constants$585.g_dbus_object_get_interfaces$FUNC
     );
-    static final FunctionDescriptor g_credentials_get_unix_pid$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_credentials_get_unix_pid$MH = RuntimeHelper.downcallHandle(
-        "g_credentials_get_unix_pid",
-        constants$585.g_credentials_get_unix_pid$FUNC
-    );
-    static final FunctionDescriptor g_credentials_get_unix_user$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_dbus_object_get_interface$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_credentials_get_unix_user$MH = RuntimeHelper.downcallHandle(
-        "g_credentials_get_unix_user",
-        constants$585.g_credentials_get_unix_user$FUNC
+    static final MethodHandle g_dbus_object_get_interface$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_object_get_interface",
+        constants$585.g_dbus_object_get_interface$FUNC
     );
-    static final FunctionDescriptor g_credentials_set_unix_user$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_dbus_object_manager_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle g_dbus_object_manager_get_type$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_object_manager_get_type",
+        constants$585.g_dbus_object_manager_get_type$FUNC
+    );
+    static final FunctionDescriptor g_dbus_object_manager_get_object_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_credentials_set_unix_user$MH = RuntimeHelper.downcallHandle(
-        "g_credentials_set_unix_user",
-        constants$585.g_credentials_set_unix_user$FUNC
+    static final MethodHandle g_dbus_object_manager_get_object_path$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_object_manager_get_object_path",
+        constants$585.g_dbus_object_manager_get_object_path$FUNC
     );
-    static final FunctionDescriptor g_datagram_based_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_datagram_based_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_datagram_based_get_type",
-        constants$585.g_datagram_based_get_type$FUNC
+    static final FunctionDescriptor g_dbus_object_manager_get_objects$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_dbus_object_manager_get_objects$MH = RuntimeHelper.downcallHandle(
+        "g_dbus_object_manager_get_objects",
+        constants$585.g_dbus_object_manager_get_objects$FUNC
     );
 }
 

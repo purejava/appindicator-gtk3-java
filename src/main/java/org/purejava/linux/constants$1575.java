@@ -7,64 +7,58 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1575 {
+final class constants$1575 {
 
-    static final FunctionDescriptor gtk_cell_area_cell_get_valist$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_cell_area_cell_get_valist$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_cell_get_valist",
-        constants$1575.gtk_cell_area_cell_get_valist$FUNC
-    );
-    static final FunctionDescriptor gtk_cell_area_cell_set_property$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1575() {}
+    static final FunctionDescriptor gtk_file_chooser_set_file$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_cell_area_cell_set_property$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_cell_set_property",
-        constants$1575.gtk_cell_area_cell_set_property$FUNC
+    static final MethodHandle gtk_file_chooser_set_file$MH = RuntimeHelper.downcallHandle(
+        "gtk_file_chooser_set_file",
+        constants$1575.gtk_file_chooser_set_file$FUNC
     );
-    static final FunctionDescriptor gtk_cell_area_cell_get_property$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_file_chooser_select_file$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_cell_area_cell_get_property$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_cell_get_property",
-        constants$1575.gtk_cell_area_cell_get_property$FUNC
+    static final MethodHandle gtk_file_chooser_select_file$MH = RuntimeHelper.downcallHandle(
+        "gtk_file_chooser_select_file",
+        constants$1575.gtk_file_chooser_select_file$FUNC
     );
-    static final FunctionDescriptor gtk_cell_area_is_activatable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_file_chooser_unselect_file$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_cell_area_is_activatable$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_is_activatable",
-        constants$1575.gtk_cell_area_is_activatable$FUNC
+    static final MethodHandle gtk_file_chooser_unselect_file$MH = RuntimeHelper.downcallHandle(
+        "gtk_file_chooser_unselect_file",
+        constants$1575.gtk_file_chooser_unselect_file$FUNC
     );
-    static final FunctionDescriptor gtk_cell_area_activate$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor gtk_file_chooser_get_files$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_cell_area_activate$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_activate",
-        constants$1575.gtk_cell_area_activate$FUNC
+    static final MethodHandle gtk_file_chooser_get_files$MH = RuntimeHelper.downcallHandle(
+        "gtk_file_chooser_get_files",
+        constants$1575.gtk_file_chooser_get_files$FUNC
     );
-    static final FunctionDescriptor gtk_cell_area_focus$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_file_chooser_set_current_folder_file$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_cell_area_focus$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_focus",
-        constants$1575.gtk_cell_area_focus$FUNC
+    static final MethodHandle gtk_file_chooser_set_current_folder_file$MH = RuntimeHelper.downcallHandle(
+        "gtk_file_chooser_set_current_folder_file",
+        constants$1575.gtk_file_chooser_set_current_folder_file$FUNC
+    );
+    static final FunctionDescriptor gtk_file_chooser_get_current_folder_file$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_file_chooser_get_current_folder_file$MH = RuntimeHelper.downcallHandle(
+        "gtk_file_chooser_get_current_folder_file",
+        constants$1575.gtk_file_chooser_get_current_folder_file$FUNC
     );
 }
 

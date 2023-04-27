@@ -7,53 +7,63 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$764 {
+final class constants$764 {
 
-    static final FunctionDescriptor g_mount_operation_set_password_save$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_mount_operation_set_password_save$MH = RuntimeHelper.downcallHandle(
-        "g_mount_operation_set_password_save",
-        constants$764.g_mount_operation_set_password_save$FUNC
-    );
-    static final FunctionDescriptor g_mount_operation_get_choice$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$764() {}
+    static final FunctionDescriptor g_socket_get_multicast_ttl$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_mount_operation_get_choice$MH = RuntimeHelper.downcallHandle(
-        "g_mount_operation_get_choice",
-        constants$764.g_mount_operation_get_choice$FUNC
+    static final MethodHandle g_socket_get_multicast_ttl$MH = RuntimeHelper.downcallHandle(
+        "g_socket_get_multicast_ttl",
+        constants$764.g_socket_get_multicast_ttl$FUNC
     );
-    static final FunctionDescriptor g_mount_operation_set_choice$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_socket_set_multicast_ttl$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle g_mount_operation_set_choice$MH = RuntimeHelper.downcallHandle(
-        "g_mount_operation_set_choice",
-        constants$764.g_mount_operation_set_choice$FUNC
+    static final MethodHandle g_socket_set_multicast_ttl$MH = RuntimeHelper.downcallHandle(
+        "g_socket_set_multicast_ttl",
+        constants$764.g_socket_set_multicast_ttl$FUNC
     );
-    static final FunctionDescriptor g_mount_operation_reply$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_mount_operation_reply$MH = RuntimeHelper.downcallHandle(
-        "g_mount_operation_reply",
-        constants$764.g_mount_operation_reply$FUNC
-    );
-    static final FunctionDescriptor g_mount_operation_get_is_tcrypt_hidden_volume$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor g_socket_is_connected$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_mount_operation_get_is_tcrypt_hidden_volume$MH = RuntimeHelper.downcallHandle(
-        "g_mount_operation_get_is_tcrypt_hidden_volume",
-        constants$764.g_mount_operation_get_is_tcrypt_hidden_volume$FUNC
+    static final MethodHandle g_socket_is_connected$MH = RuntimeHelper.downcallHandle(
+        "g_socket_is_connected",
+        constants$764.g_socket_is_connected$FUNC
     );
-    static final FunctionDescriptor g_mount_operation_set_is_tcrypt_hidden_volume$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_socket_bind$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_mount_operation_set_is_tcrypt_hidden_volume$MH = RuntimeHelper.downcallHandle(
-        "g_mount_operation_set_is_tcrypt_hidden_volume",
-        constants$764.g_mount_operation_set_is_tcrypt_hidden_volume$FUNC
+    static final MethodHandle g_socket_bind$MH = RuntimeHelper.downcallHandle(
+        "g_socket_bind",
+        constants$764.g_socket_bind$FUNC
+    );
+    static final FunctionDescriptor g_socket_join_multicast_group$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_socket_join_multicast_group$MH = RuntimeHelper.downcallHandle(
+        "g_socket_join_multicast_group",
+        constants$764.g_socket_join_multicast_group$FUNC
+    );
+    static final FunctionDescriptor g_socket_leave_multicast_group$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_socket_leave_multicast_group$MH = RuntimeHelper.downcallHandle(
+        "g_socket_leave_multicast_group",
+        constants$764.g_socket_leave_multicast_group$FUNC
     );
 }
 

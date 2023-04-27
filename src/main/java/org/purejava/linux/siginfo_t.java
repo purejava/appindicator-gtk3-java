@@ -7,9 +7,20 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct {
+ *     int si_signo;
+ *     int si_errno;
+ *     int si_code;
+ *     int __pad0;
+ *     union  _sifields;
+ * };
+ * }
+ */
 public class siginfo_t {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         Constants$root.C_INT$LAYOUT.withName("si_signo"),
         Constants$root.C_INT$LAYOUT.withName("si_errno"),
         Constants$root.C_INT$LAYOUT.withName("si_code"),
@@ -75,10 +86,22 @@ public class siginfo_t {
     public static VarHandle si_signo$VH() {
         return siginfo_t.si_signo$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * int si_signo;
+     * }
+     */
     public static int si_signo$get(MemorySegment seg) {
         return (int)siginfo_t.si_signo$VH.get(seg);
     }
-    public static void si_signo$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * int si_signo;
+     * }
+     */
+    public static void si_signo$set(MemorySegment seg, int x) {
         siginfo_t.si_signo$VH.set(seg, x);
     }
     public static int si_signo$get(MemorySegment seg, long index) {
@@ -91,10 +114,22 @@ public class siginfo_t {
     public static VarHandle si_errno$VH() {
         return siginfo_t.si_errno$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * int si_errno;
+     * }
+     */
     public static int si_errno$get(MemorySegment seg) {
         return (int)siginfo_t.si_errno$VH.get(seg);
     }
-    public static void si_errno$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * int si_errno;
+     * }
+     */
+    public static void si_errno$set(MemorySegment seg, int x) {
         siginfo_t.si_errno$VH.set(seg, x);
     }
     public static int si_errno$get(MemorySegment seg, long index) {
@@ -107,10 +142,22 @@ public class siginfo_t {
     public static VarHandle si_code$VH() {
         return siginfo_t.si_code$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * int si_code;
+     * }
+     */
     public static int si_code$get(MemorySegment seg) {
         return (int)siginfo_t.si_code$VH.get(seg);
     }
-    public static void si_code$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * int si_code;
+     * }
+     */
+    public static void si_code$set(MemorySegment seg, int x) {
         siginfo_t.si_code$VH.set(seg, x);
     }
     public static int si_code$get(MemorySegment seg, long index) {
@@ -123,10 +170,22 @@ public class siginfo_t {
     public static VarHandle __pad0$VH() {
         return siginfo_t.__pad0$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * int __pad0;
+     * }
+     */
     public static int __pad0$get(MemorySegment seg) {
         return (int)siginfo_t.__pad0$VH.get(seg);
     }
-    public static void __pad0$set( MemorySegment seg, int x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * int __pad0;
+     * }
+     */
+    public static void __pad0$set(MemorySegment seg, int x) {
         siginfo_t.__pad0$VH.set(seg, x);
     }
     public static int __pad0$get(MemorySegment seg, long index) {
@@ -135,9 +194,25 @@ public class siginfo_t {
     public static void __pad0$set(MemorySegment seg, long index, int x) {
         siginfo_t.__pad0$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static class _sifields {
+    /**
+     * {@snippet :
+     * union {
+     *     int _pad[28];
+     *     struct  _kill;
+     *     struct  _timer;
+     *     struct  _rt;
+     *     struct  _sigchld;
+     *     struct  _sigfault;
+     *     struct  _sigpoll;
+     *     struct  _sigsys;
+     * };
+     * }
+     */
+    public static final class _sifields {
 
-        static final  GroupLayout _sifields$union$LAYOUT = MemoryLayout.unionLayout(
+        // Suppresses default constructor, ensuring non-instantiability.
+        private _sifields() {}
+        static final UnionLayout _sifields$union$LAYOUT = MemoryLayout.unionLayout(
             MemoryLayout.sequenceLayout(28, Constants$root.C_INT$LAYOUT).withName("_pad"),
             MemoryLayout.structLayout(
                 Constants$root.C_INT$LAYOUT.withName("si_pid"),
@@ -196,9 +271,19 @@ public class siginfo_t {
         public static MemorySegment _pad$slice(MemorySegment seg) {
             return seg.asSlice(0, 112);
         }
-        public static class _kill {
+        /**
+         * {@snippet :
+         * struct {
+         *     __pid_t si_pid;
+         *     __uid_t si_uid;
+         * };
+         * }
+         */
+        public static final class _kill {
 
-            static final  GroupLayout _sifields$_kill$struct$LAYOUT = MemoryLayout.structLayout(
+            // Suppresses default constructor, ensuring non-instantiability.
+            private _kill() {}
+            static final StructLayout _sifields$_kill$struct$LAYOUT = MemoryLayout.structLayout(
                 Constants$root.C_INT$LAYOUT.withName("si_pid"),
                 Constants$root.C_INT$LAYOUT.withName("si_uid")
             );
@@ -209,10 +294,22 @@ public class siginfo_t {
             public static VarHandle si_pid$VH() {
                 return _kill.si_pid$VH;
             }
+            /**
+             * Getter for field:
+             * {@snippet :
+             * __pid_t si_pid;
+             * }
+             */
             public static int si_pid$get(MemorySegment seg) {
                 return (int)_kill.si_pid$VH.get(seg);
             }
-            public static void si_pid$set( MemorySegment seg, int x) {
+            /**
+             * Setter for field:
+             * {@snippet :
+             * __pid_t si_pid;
+             * }
+             */
+            public static void si_pid$set(MemorySegment seg, int x) {
                 _kill.si_pid$VH.set(seg, x);
             }
             public static int si_pid$get(MemorySegment seg, long index) {
@@ -225,10 +322,22 @@ public class siginfo_t {
             public static VarHandle si_uid$VH() {
                 return _kill.si_uid$VH;
             }
+            /**
+             * Getter for field:
+             * {@snippet :
+             * __uid_t si_uid;
+             * }
+             */
             public static int si_uid$get(MemorySegment seg) {
                 return (int)_kill.si_uid$VH.get(seg);
             }
-            public static void si_uid$set( MemorySegment seg, int x) {
+            /**
+             * Setter for field:
+             * {@snippet :
+             * __uid_t si_uid;
+             * }
+             */
+            public static void si_uid$set(MemorySegment seg, int x) {
                 _kill.si_uid$VH.set(seg, x);
             }
             public static int si_uid$get(MemorySegment seg, long index) {
@@ -239,18 +348,29 @@ public class siginfo_t {
             }
             public static long sizeof() { return $LAYOUT().byteSize(); }
             public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-            public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+            public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
                 return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
             }
-            public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+            public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
         }
 
         public static MemorySegment _kill$slice(MemorySegment seg) {
             return seg.asSlice(0, 8);
         }
-        public static class _timer {
+        /**
+         * {@snippet :
+         * struct {
+         *     int si_tid;
+         *     int si_overrun;
+         *     __sigval_t si_sigval;
+         * };
+         * }
+         */
+        public static final class _timer {
 
-            static final  GroupLayout _sifields$_timer$struct$LAYOUT = MemoryLayout.structLayout(
+            // Suppresses default constructor, ensuring non-instantiability.
+            private _timer() {}
+            static final StructLayout _sifields$_timer$struct$LAYOUT = MemoryLayout.structLayout(
                 Constants$root.C_INT$LAYOUT.withName("si_tid"),
                 Constants$root.C_INT$LAYOUT.withName("si_overrun"),
                 MemoryLayout.unionLayout(
@@ -265,10 +385,22 @@ public class siginfo_t {
             public static VarHandle si_tid$VH() {
                 return _timer.si_tid$VH;
             }
+            /**
+             * Getter for field:
+             * {@snippet :
+             * int si_tid;
+             * }
+             */
             public static int si_tid$get(MemorySegment seg) {
                 return (int)_timer.si_tid$VH.get(seg);
             }
-            public static void si_tid$set( MemorySegment seg, int x) {
+            /**
+             * Setter for field:
+             * {@snippet :
+             * int si_tid;
+             * }
+             */
+            public static void si_tid$set(MemorySegment seg, int x) {
                 _timer.si_tid$VH.set(seg, x);
             }
             public static int si_tid$get(MemorySegment seg, long index) {
@@ -281,10 +413,22 @@ public class siginfo_t {
             public static VarHandle si_overrun$VH() {
                 return _timer.si_overrun$VH;
             }
+            /**
+             * Getter for field:
+             * {@snippet :
+             * int si_overrun;
+             * }
+             */
             public static int si_overrun$get(MemorySegment seg) {
                 return (int)_timer.si_overrun$VH.get(seg);
             }
-            public static void si_overrun$set( MemorySegment seg, int x) {
+            /**
+             * Setter for field:
+             * {@snippet :
+             * int si_overrun;
+             * }
+             */
+            public static void si_overrun$set(MemorySegment seg, int x) {
                 _timer.si_overrun$VH.set(seg, x);
             }
             public static int si_overrun$get(MemorySegment seg, long index) {
@@ -298,18 +442,29 @@ public class siginfo_t {
             }
             public static long sizeof() { return $LAYOUT().byteSize(); }
             public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-            public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+            public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
                 return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
             }
-            public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+            public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
         }
 
         public static MemorySegment _timer$slice(MemorySegment seg) {
             return seg.asSlice(0, 16);
         }
-        public static class _rt {
+        /**
+         * {@snippet :
+         * struct {
+         *     __pid_t si_pid;
+         *     __uid_t si_uid;
+         *     __sigval_t si_sigval;
+         * };
+         * }
+         */
+        public static final class _rt {
 
-            static final  GroupLayout _sifields$_rt$struct$LAYOUT = MemoryLayout.structLayout(
+            // Suppresses default constructor, ensuring non-instantiability.
+            private _rt() {}
+            static final StructLayout _sifields$_rt$struct$LAYOUT = MemoryLayout.structLayout(
                 Constants$root.C_INT$LAYOUT.withName("si_pid"),
                 Constants$root.C_INT$LAYOUT.withName("si_uid"),
                 MemoryLayout.unionLayout(
@@ -324,10 +479,22 @@ public class siginfo_t {
             public static VarHandle si_pid$VH() {
                 return _rt.si_pid$VH;
             }
+            /**
+             * Getter for field:
+             * {@snippet :
+             * __pid_t si_pid;
+             * }
+             */
             public static int si_pid$get(MemorySegment seg) {
                 return (int)_rt.si_pid$VH.get(seg);
             }
-            public static void si_pid$set( MemorySegment seg, int x) {
+            /**
+             * Setter for field:
+             * {@snippet :
+             * __pid_t si_pid;
+             * }
+             */
+            public static void si_pid$set(MemorySegment seg, int x) {
                 _rt.si_pid$VH.set(seg, x);
             }
             public static int si_pid$get(MemorySegment seg, long index) {
@@ -340,10 +507,22 @@ public class siginfo_t {
             public static VarHandle si_uid$VH() {
                 return _rt.si_uid$VH;
             }
+            /**
+             * Getter for field:
+             * {@snippet :
+             * __uid_t si_uid;
+             * }
+             */
             public static int si_uid$get(MemorySegment seg) {
                 return (int)_rt.si_uid$VH.get(seg);
             }
-            public static void si_uid$set( MemorySegment seg, int x) {
+            /**
+             * Setter for field:
+             * {@snippet :
+             * __uid_t si_uid;
+             * }
+             */
+            public static void si_uid$set(MemorySegment seg, int x) {
                 _rt.si_uid$VH.set(seg, x);
             }
             public static int si_uid$get(MemorySegment seg, long index) {
@@ -357,18 +536,31 @@ public class siginfo_t {
             }
             public static long sizeof() { return $LAYOUT().byteSize(); }
             public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-            public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+            public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
                 return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
             }
-            public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+            public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
         }
 
         public static MemorySegment _rt$slice(MemorySegment seg) {
             return seg.asSlice(0, 16);
         }
-        public static class _sigchld {
+        /**
+         * {@snippet :
+         * struct {
+         *     __pid_t si_pid;
+         *     __uid_t si_uid;
+         *     int si_status;
+         *     __clock_t si_utime;
+         *     __clock_t si_stime;
+         * };
+         * }
+         */
+        public static final class _sigchld {
 
-            static final  GroupLayout _sifields$_sigchld$struct$LAYOUT = MemoryLayout.structLayout(
+            // Suppresses default constructor, ensuring non-instantiability.
+            private _sigchld() {}
+            static final StructLayout _sifields$_sigchld$struct$LAYOUT = MemoryLayout.structLayout(
                 Constants$root.C_INT$LAYOUT.withName("si_pid"),
                 Constants$root.C_INT$LAYOUT.withName("si_uid"),
                 Constants$root.C_INT$LAYOUT.withName("si_status"),
@@ -383,10 +575,22 @@ public class siginfo_t {
             public static VarHandle si_pid$VH() {
                 return _sigchld.si_pid$VH;
             }
+            /**
+             * Getter for field:
+             * {@snippet :
+             * __pid_t si_pid;
+             * }
+             */
             public static int si_pid$get(MemorySegment seg) {
                 return (int)_sigchld.si_pid$VH.get(seg);
             }
-            public static void si_pid$set( MemorySegment seg, int x) {
+            /**
+             * Setter for field:
+             * {@snippet :
+             * __pid_t si_pid;
+             * }
+             */
+            public static void si_pid$set(MemorySegment seg, int x) {
                 _sigchld.si_pid$VH.set(seg, x);
             }
             public static int si_pid$get(MemorySegment seg, long index) {
@@ -399,10 +603,22 @@ public class siginfo_t {
             public static VarHandle si_uid$VH() {
                 return _sigchld.si_uid$VH;
             }
+            /**
+             * Getter for field:
+             * {@snippet :
+             * __uid_t si_uid;
+             * }
+             */
             public static int si_uid$get(MemorySegment seg) {
                 return (int)_sigchld.si_uid$VH.get(seg);
             }
-            public static void si_uid$set( MemorySegment seg, int x) {
+            /**
+             * Setter for field:
+             * {@snippet :
+             * __uid_t si_uid;
+             * }
+             */
+            public static void si_uid$set(MemorySegment seg, int x) {
                 _sigchld.si_uid$VH.set(seg, x);
             }
             public static int si_uid$get(MemorySegment seg, long index) {
@@ -415,10 +631,22 @@ public class siginfo_t {
             public static VarHandle si_status$VH() {
                 return _sigchld.si_status$VH;
             }
+            /**
+             * Getter for field:
+             * {@snippet :
+             * int si_status;
+             * }
+             */
             public static int si_status$get(MemorySegment seg) {
                 return (int)_sigchld.si_status$VH.get(seg);
             }
-            public static void si_status$set( MemorySegment seg, int x) {
+            /**
+             * Setter for field:
+             * {@snippet :
+             * int si_status;
+             * }
+             */
+            public static void si_status$set(MemorySegment seg, int x) {
                 _sigchld.si_status$VH.set(seg, x);
             }
             public static int si_status$get(MemorySegment seg, long index) {
@@ -431,10 +659,22 @@ public class siginfo_t {
             public static VarHandle si_utime$VH() {
                 return _sigchld.si_utime$VH;
             }
+            /**
+             * Getter for field:
+             * {@snippet :
+             * __clock_t si_utime;
+             * }
+             */
             public static long si_utime$get(MemorySegment seg) {
                 return (long)_sigchld.si_utime$VH.get(seg);
             }
-            public static void si_utime$set( MemorySegment seg, long x) {
+            /**
+             * Setter for field:
+             * {@snippet :
+             * __clock_t si_utime;
+             * }
+             */
+            public static void si_utime$set(MemorySegment seg, long x) {
                 _sigchld.si_utime$VH.set(seg, x);
             }
             public static long si_utime$get(MemorySegment seg, long index) {
@@ -447,10 +687,22 @@ public class siginfo_t {
             public static VarHandle si_stime$VH() {
                 return _sigchld.si_stime$VH;
             }
+            /**
+             * Getter for field:
+             * {@snippet :
+             * __clock_t si_stime;
+             * }
+             */
             public static long si_stime$get(MemorySegment seg) {
                 return (long)_sigchld.si_stime$VH.get(seg);
             }
-            public static void si_stime$set( MemorySegment seg, long x) {
+            /**
+             * Setter for field:
+             * {@snippet :
+             * __clock_t si_stime;
+             * }
+             */
+            public static void si_stime$set(MemorySegment seg, long x) {
                 _sigchld.si_stime$VH.set(seg, x);
             }
             public static long si_stime$get(MemorySegment seg, long index) {
@@ -461,18 +713,29 @@ public class siginfo_t {
             }
             public static long sizeof() { return $LAYOUT().byteSize(); }
             public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-            public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+            public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
                 return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
             }
-            public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+            public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
         }
 
         public static MemorySegment _sigchld$slice(MemorySegment seg) {
             return seg.asSlice(0, 32);
         }
-        public static class _sigfault {
+        /**
+         * {@snippet :
+         * struct {
+         *     void* si_addr;
+         *     short si_addr_lsb;
+         *     union  _bounds;
+         * };
+         * }
+         */
+        public static final class _sigfault {
 
-            static final  GroupLayout _sifields$_sigfault$struct$LAYOUT = MemoryLayout.structLayout(
+            // Suppresses default constructor, ensuring non-instantiability.
+            private _sigfault() {}
+            static final StructLayout _sifields$_sigfault$struct$LAYOUT = MemoryLayout.structLayout(
                 Constants$root.C_POINTER$LAYOUT.withName("si_addr"),
                 Constants$root.C_SHORT$LAYOUT.withName("si_addr_lsb"),
                 MemoryLayout.paddingLayout(48),
@@ -491,26 +754,50 @@ public class siginfo_t {
             public static VarHandle si_addr$VH() {
                 return _sigfault.si_addr$VH;
             }
-            public static MemoryAddress si_addr$get(MemorySegment seg) {
-                return (java.lang.foreign.MemoryAddress)_sigfault.si_addr$VH.get(seg);
+            /**
+             * Getter for field:
+             * {@snippet :
+             * void* si_addr;
+             * }
+             */
+            public static MemorySegment si_addr$get(MemorySegment seg) {
+                return (java.lang.foreign.MemorySegment)_sigfault.si_addr$VH.get(seg);
             }
-            public static void si_addr$set( MemorySegment seg, MemoryAddress x) {
+            /**
+             * Setter for field:
+             * {@snippet :
+             * void* si_addr;
+             * }
+             */
+            public static void si_addr$set(MemorySegment seg, MemorySegment x) {
                 _sigfault.si_addr$VH.set(seg, x);
             }
-            public static MemoryAddress si_addr$get(MemorySegment seg, long index) {
-                return (java.lang.foreign.MemoryAddress)_sigfault.si_addr$VH.get(seg.asSlice(index*sizeof()));
+            public static MemorySegment si_addr$get(MemorySegment seg, long index) {
+                return (java.lang.foreign.MemorySegment)_sigfault.si_addr$VH.get(seg.asSlice(index*sizeof()));
             }
-            public static void si_addr$set(MemorySegment seg, long index, MemoryAddress x) {
+            public static void si_addr$set(MemorySegment seg, long index, MemorySegment x) {
                 _sigfault.si_addr$VH.set(seg.asSlice(index*sizeof()), x);
             }
             static final VarHandle si_addr_lsb$VH = _sifields$_sigfault$struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("si_addr_lsb"));
             public static VarHandle si_addr_lsb$VH() {
                 return _sigfault.si_addr_lsb$VH;
             }
+            /**
+             * Getter for field:
+             * {@snippet :
+             * short si_addr_lsb;
+             * }
+             */
             public static short si_addr_lsb$get(MemorySegment seg) {
                 return (short)_sigfault.si_addr_lsb$VH.get(seg);
             }
-            public static void si_addr_lsb$set( MemorySegment seg, short x) {
+            /**
+             * Setter for field:
+             * {@snippet :
+             * short si_addr_lsb;
+             * }
+             */
+            public static void si_addr_lsb$set(MemorySegment seg, short x) {
                 _sigfault.si_addr_lsb$VH.set(seg, x);
             }
             public static short si_addr_lsb$get(MemorySegment seg, long index) {
@@ -519,9 +806,19 @@ public class siginfo_t {
             public static void si_addr_lsb$set(MemorySegment seg, long index, short x) {
                 _sigfault.si_addr_lsb$VH.set(seg.asSlice(index*sizeof()), x);
             }
-            public static class _bounds {
+            /**
+             * {@snippet :
+             * union {
+             *     struct  _addr_bnd;
+             *     __uint32_t _pkey;
+             * };
+             * }
+             */
+            public static final class _bounds {
 
-                static final  GroupLayout _sifields$_sigfault$_bounds$union$LAYOUT = MemoryLayout.unionLayout(
+                // Suppresses default constructor, ensuring non-instantiability.
+                private _bounds() {}
+                static final UnionLayout _sifields$_sigfault$_bounds$union$LAYOUT = MemoryLayout.unionLayout(
                     MemoryLayout.structLayout(
                         Constants$root.C_POINTER$LAYOUT.withName("_lower"),
                         Constants$root.C_POINTER$LAYOUT.withName("_upper")
@@ -531,9 +828,19 @@ public class siginfo_t {
                 public static MemoryLayout $LAYOUT() {
                     return _bounds._sifields$_sigfault$_bounds$union$LAYOUT;
                 }
-                public static class _addr_bnd {
+                /**
+                 * {@snippet :
+                 * struct {
+                 *     void* _lower;
+                 *     void* _upper;
+                 * };
+                 * }
+                 */
+                public static final class _addr_bnd {
 
-                    static final  GroupLayout _sifields$_sigfault$_bounds$_addr_bnd$struct$LAYOUT = MemoryLayout.structLayout(
+                    // Suppresses default constructor, ensuring non-instantiability.
+                    private _addr_bnd() {}
+                    static final StructLayout _sifields$_sigfault$_bounds$_addr_bnd$struct$LAYOUT = MemoryLayout.structLayout(
                         Constants$root.C_POINTER$LAYOUT.withName("_lower"),
                         Constants$root.C_POINTER$LAYOUT.withName("_upper")
                     );
@@ -544,40 +851,64 @@ public class siginfo_t {
                     public static VarHandle _lower$VH() {
                         return _addr_bnd._lower$VH;
                     }
-                    public static MemoryAddress _lower$get(MemorySegment seg) {
-                        return (java.lang.foreign.MemoryAddress)_addr_bnd._lower$VH.get(seg);
+                    /**
+                     * Getter for field:
+                     * {@snippet :
+                     * void* _lower;
+                     * }
+                     */
+                    public static MemorySegment _lower$get(MemorySegment seg) {
+                        return (java.lang.foreign.MemorySegment)_addr_bnd._lower$VH.get(seg);
                     }
-                    public static void _lower$set( MemorySegment seg, MemoryAddress x) {
+                    /**
+                     * Setter for field:
+                     * {@snippet :
+                     * void* _lower;
+                     * }
+                     */
+                    public static void _lower$set(MemorySegment seg, MemorySegment x) {
                         _addr_bnd._lower$VH.set(seg, x);
                     }
-                    public static MemoryAddress _lower$get(MemorySegment seg, long index) {
-                        return (java.lang.foreign.MemoryAddress)_addr_bnd._lower$VH.get(seg.asSlice(index*sizeof()));
+                    public static MemorySegment _lower$get(MemorySegment seg, long index) {
+                        return (java.lang.foreign.MemorySegment)_addr_bnd._lower$VH.get(seg.asSlice(index*sizeof()));
                     }
-                    public static void _lower$set(MemorySegment seg, long index, MemoryAddress x) {
+                    public static void _lower$set(MemorySegment seg, long index, MemorySegment x) {
                         _addr_bnd._lower$VH.set(seg.asSlice(index*sizeof()), x);
                     }
                     static final VarHandle _upper$VH = _sifields$_sigfault$_bounds$_addr_bnd$struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("_upper"));
                     public static VarHandle _upper$VH() {
                         return _addr_bnd._upper$VH;
                     }
-                    public static MemoryAddress _upper$get(MemorySegment seg) {
-                        return (java.lang.foreign.MemoryAddress)_addr_bnd._upper$VH.get(seg);
+                    /**
+                     * Getter for field:
+                     * {@snippet :
+                     * void* _upper;
+                     * }
+                     */
+                    public static MemorySegment _upper$get(MemorySegment seg) {
+                        return (java.lang.foreign.MemorySegment)_addr_bnd._upper$VH.get(seg);
                     }
-                    public static void _upper$set( MemorySegment seg, MemoryAddress x) {
+                    /**
+                     * Setter for field:
+                     * {@snippet :
+                     * void* _upper;
+                     * }
+                     */
+                    public static void _upper$set(MemorySegment seg, MemorySegment x) {
                         _addr_bnd._upper$VH.set(seg, x);
                     }
-                    public static MemoryAddress _upper$get(MemorySegment seg, long index) {
-                        return (java.lang.foreign.MemoryAddress)_addr_bnd._upper$VH.get(seg.asSlice(index*sizeof()));
+                    public static MemorySegment _upper$get(MemorySegment seg, long index) {
+                        return (java.lang.foreign.MemorySegment)_addr_bnd._upper$VH.get(seg.asSlice(index*sizeof()));
                     }
-                    public static void _upper$set(MemorySegment seg, long index, MemoryAddress x) {
+                    public static void _upper$set(MemorySegment seg, long index, MemorySegment x) {
                         _addr_bnd._upper$VH.set(seg.asSlice(index*sizeof()), x);
                     }
                     public static long sizeof() { return $LAYOUT().byteSize(); }
                     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-                    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+                    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
                         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
                     }
-                    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+                    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
                 }
 
                 public static MemorySegment _addr_bnd$slice(MemorySegment seg) {
@@ -587,10 +918,22 @@ public class siginfo_t {
                 public static VarHandle _pkey$VH() {
                     return _bounds._pkey$VH;
                 }
+                /**
+                 * Getter for field:
+                 * {@snippet :
+                 * __uint32_t _pkey;
+                 * }
+                 */
                 public static int _pkey$get(MemorySegment seg) {
                     return (int)_bounds._pkey$VH.get(seg);
                 }
-                public static void _pkey$set( MemorySegment seg, int x) {
+                /**
+                 * Setter for field:
+                 * {@snippet :
+                 * __uint32_t _pkey;
+                 * }
+                 */
+                public static void _pkey$set(MemorySegment seg, int x) {
                     _bounds._pkey$VH.set(seg, x);
                 }
                 public static int _pkey$get(MemorySegment seg, long index) {
@@ -601,10 +944,10 @@ public class siginfo_t {
                 }
                 public static long sizeof() { return $LAYOUT().byteSize(); }
                 public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-                public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+                public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
                     return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
                 }
-                public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+                public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
             }
 
             public static MemorySegment _bounds$slice(MemorySegment seg) {
@@ -612,18 +955,28 @@ public class siginfo_t {
             }
             public static long sizeof() { return $LAYOUT().byteSize(); }
             public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-            public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+            public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
                 return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
             }
-            public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+            public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
         }
 
         public static MemorySegment _sigfault$slice(MemorySegment seg) {
             return seg.asSlice(0, 32);
         }
-        public static class _sigpoll {
+        /**
+         * {@snippet :
+         * struct {
+         *     long si_band;
+         *     int si_fd;
+         * };
+         * }
+         */
+        public static final class _sigpoll {
 
-            static final  GroupLayout _sifields$_sigpoll$struct$LAYOUT = MemoryLayout.structLayout(
+            // Suppresses default constructor, ensuring non-instantiability.
+            private _sigpoll() {}
+            static final StructLayout _sifields$_sigpoll$struct$LAYOUT = MemoryLayout.structLayout(
                 Constants$root.C_LONG_LONG$LAYOUT.withName("si_band"),
                 Constants$root.C_INT$LAYOUT.withName("si_fd"),
                 MemoryLayout.paddingLayout(32)
@@ -635,10 +988,22 @@ public class siginfo_t {
             public static VarHandle si_band$VH() {
                 return _sigpoll.si_band$VH;
             }
+            /**
+             * Getter for field:
+             * {@snippet :
+             * long si_band;
+             * }
+             */
             public static long si_band$get(MemorySegment seg) {
                 return (long)_sigpoll.si_band$VH.get(seg);
             }
-            public static void si_band$set( MemorySegment seg, long x) {
+            /**
+             * Setter for field:
+             * {@snippet :
+             * long si_band;
+             * }
+             */
+            public static void si_band$set(MemorySegment seg, long x) {
                 _sigpoll.si_band$VH.set(seg, x);
             }
             public static long si_band$get(MemorySegment seg, long index) {
@@ -651,10 +1016,22 @@ public class siginfo_t {
             public static VarHandle si_fd$VH() {
                 return _sigpoll.si_fd$VH;
             }
+            /**
+             * Getter for field:
+             * {@snippet :
+             * int si_fd;
+             * }
+             */
             public static int si_fd$get(MemorySegment seg) {
                 return (int)_sigpoll.si_fd$VH.get(seg);
             }
-            public static void si_fd$set( MemorySegment seg, int x) {
+            /**
+             * Setter for field:
+             * {@snippet :
+             * int si_fd;
+             * }
+             */
+            public static void si_fd$set(MemorySegment seg, int x) {
                 _sigpoll.si_fd$VH.set(seg, x);
             }
             public static int si_fd$get(MemorySegment seg, long index) {
@@ -665,18 +1042,29 @@ public class siginfo_t {
             }
             public static long sizeof() { return $LAYOUT().byteSize(); }
             public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-            public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+            public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
                 return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
             }
-            public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+            public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
         }
 
         public static MemorySegment _sigpoll$slice(MemorySegment seg) {
             return seg.asSlice(0, 16);
         }
-        public static class _sigsys {
+        /**
+         * {@snippet :
+         * struct {
+         *     void* _call_addr;
+         *     int _syscall;
+         *     unsigned int _arch;
+         * };
+         * }
+         */
+        public static final class _sigsys {
 
-            static final  GroupLayout _sifields$_sigsys$struct$LAYOUT = MemoryLayout.structLayout(
+            // Suppresses default constructor, ensuring non-instantiability.
+            private _sigsys() {}
+            static final StructLayout _sifields$_sigsys$struct$LAYOUT = MemoryLayout.structLayout(
                 Constants$root.C_POINTER$LAYOUT.withName("_call_addr"),
                 Constants$root.C_INT$LAYOUT.withName("_syscall"),
                 Constants$root.C_INT$LAYOUT.withName("_arch")
@@ -688,26 +1076,50 @@ public class siginfo_t {
             public static VarHandle _call_addr$VH() {
                 return _sigsys._call_addr$VH;
             }
-            public static MemoryAddress _call_addr$get(MemorySegment seg) {
-                return (java.lang.foreign.MemoryAddress)_sigsys._call_addr$VH.get(seg);
+            /**
+             * Getter for field:
+             * {@snippet :
+             * void* _call_addr;
+             * }
+             */
+            public static MemorySegment _call_addr$get(MemorySegment seg) {
+                return (java.lang.foreign.MemorySegment)_sigsys._call_addr$VH.get(seg);
             }
-            public static void _call_addr$set( MemorySegment seg, MemoryAddress x) {
+            /**
+             * Setter for field:
+             * {@snippet :
+             * void* _call_addr;
+             * }
+             */
+            public static void _call_addr$set(MemorySegment seg, MemorySegment x) {
                 _sigsys._call_addr$VH.set(seg, x);
             }
-            public static MemoryAddress _call_addr$get(MemorySegment seg, long index) {
-                return (java.lang.foreign.MemoryAddress)_sigsys._call_addr$VH.get(seg.asSlice(index*sizeof()));
+            public static MemorySegment _call_addr$get(MemorySegment seg, long index) {
+                return (java.lang.foreign.MemorySegment)_sigsys._call_addr$VH.get(seg.asSlice(index*sizeof()));
             }
-            public static void _call_addr$set(MemorySegment seg, long index, MemoryAddress x) {
+            public static void _call_addr$set(MemorySegment seg, long index, MemorySegment x) {
                 _sigsys._call_addr$VH.set(seg.asSlice(index*sizeof()), x);
             }
             static final VarHandle _syscall$VH = _sifields$_sigsys$struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("_syscall"));
             public static VarHandle _syscall$VH() {
                 return _sigsys._syscall$VH;
             }
+            /**
+             * Getter for field:
+             * {@snippet :
+             * int _syscall;
+             * }
+             */
             public static int _syscall$get(MemorySegment seg) {
                 return (int)_sigsys._syscall$VH.get(seg);
             }
-            public static void _syscall$set( MemorySegment seg, int x) {
+            /**
+             * Setter for field:
+             * {@snippet :
+             * int _syscall;
+             * }
+             */
+            public static void _syscall$set(MemorySegment seg, int x) {
                 _sigsys._syscall$VH.set(seg, x);
             }
             public static int _syscall$get(MemorySegment seg, long index) {
@@ -720,10 +1132,22 @@ public class siginfo_t {
             public static VarHandle _arch$VH() {
                 return _sigsys._arch$VH;
             }
+            /**
+             * Getter for field:
+             * {@snippet :
+             * unsigned int _arch;
+             * }
+             */
             public static int _arch$get(MemorySegment seg) {
                 return (int)_sigsys._arch$VH.get(seg);
             }
-            public static void _arch$set( MemorySegment seg, int x) {
+            /**
+             * Setter for field:
+             * {@snippet :
+             * unsigned int _arch;
+             * }
+             */
+            public static void _arch$set(MemorySegment seg, int x) {
                 _sigsys._arch$VH.set(seg, x);
             }
             public static int _arch$get(MemorySegment seg, long index) {
@@ -734,10 +1158,10 @@ public class siginfo_t {
             }
             public static long sizeof() { return $LAYOUT().byteSize(); }
             public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-            public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+            public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
                 return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
             }
-            public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+            public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
         }
 
         public static MemorySegment _sigsys$slice(MemorySegment seg) {
@@ -745,10 +1169,10 @@ public class siginfo_t {
         }
         public static long sizeof() { return $LAYOUT().byteSize(); }
         public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-        public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+        public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
             return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
         }
-        public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+        public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
     }
 
     public static MemorySegment _sifields$slice(MemorySegment seg) {
@@ -756,10 +1180,10 @@ public class siginfo_t {
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

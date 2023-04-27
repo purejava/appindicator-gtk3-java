@@ -7,17 +7,22 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * void (*GtkClipboardGetFunc)(struct _GtkClipboard* clipboard,struct _GtkSelectionData* selection_data,unsigned int info,void* user_data_or_owner);
+ * }
+ */
 public interface GtkClipboardGetFunc {
 
-    void apply(java.lang.foreign.MemoryAddress clipboard, java.lang.foreign.MemoryAddress selection_data, int info, java.lang.foreign.MemoryAddress user_data_or_owner);
-    static MemorySegment allocate(GtkClipboardGetFunc fi, MemorySession session) {
-        return RuntimeHelper.upcallStub(GtkClipboardGetFunc.class, fi, constants$1730.GtkClipboardGetFunc$FUNC, session);
+    void apply(java.lang.foreign.MemorySegment clipboard, java.lang.foreign.MemorySegment selection_data, int info, java.lang.foreign.MemorySegment user_data_or_owner);
+    static MemorySegment allocate(GtkClipboardGetFunc fi, SegmentScope scope) {
+        return RuntimeHelper.upcallStub(constants$1539.GtkClipboardGetFunc_UP$MH, fi, constants$1539.GtkClipboardGetFunc$FUNC, scope);
     }
-    static GtkClipboardGetFunc ofAddress(MemoryAddress addr, MemorySession session) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-        return (java.lang.foreign.MemoryAddress _clipboard, java.lang.foreign.MemoryAddress _selection_data, int _info, java.lang.foreign.MemoryAddress _user_data_or_owner) -> {
+    static GtkClipboardGetFunc ofAddress(MemorySegment addr, SegmentScope scope) {
+        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        return (java.lang.foreign.MemorySegment _clipboard, java.lang.foreign.MemorySegment _selection_data, int _info, java.lang.foreign.MemorySegment _user_data_or_owner) -> {
             try {
-                constants$1730.GtkClipboardGetFunc$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)_clipboard, (java.lang.foreign.Addressable)_selection_data, _info, (java.lang.foreign.Addressable)_user_data_or_owner);
+                constants$1539.GtkClipboardGetFunc_DOWN$MH.invokeExact(symbol, _clipboard, _selection_data, _info, _user_data_or_owner);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

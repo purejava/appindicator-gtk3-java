@@ -7,47 +7,72 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$813 {
+final class constants$813 {
 
-    static final FunctionDescriptor g_simple_async_report_take_gerror_in_idle$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$813() {}
+    static final FunctionDescriptor g_tls_database_verify_chain_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_simple_async_report_take_gerror_in_idle$MH = RuntimeHelper.downcallHandle(
-        "g_simple_async_report_take_gerror_in_idle",
-        constants$813.g_simple_async_report_take_gerror_in_idle$FUNC
+    static final MethodHandle g_tls_database_verify_chain_finish$MH = RuntimeHelper.downcallHandle(
+        "g_tls_database_verify_chain_finish",
+        constants$813.g_tls_database_verify_chain_finish$FUNC
     );
-    static final FunctionDescriptor g_simple_io_stream_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_simple_io_stream_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_simple_io_stream_get_type",
-        constants$813.g_simple_io_stream_get_type$FUNC
-    );
-    static final FunctionDescriptor g_simple_io_stream_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_tls_database_create_certificate_handle$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_simple_io_stream_new$MH = RuntimeHelper.downcallHandle(
-        "g_simple_io_stream_new",
-        constants$813.g_simple_io_stream_new$FUNC
+    static final MethodHandle g_tls_database_create_certificate_handle$MH = RuntimeHelper.downcallHandle(
+        "g_tls_database_create_certificate_handle",
+        constants$813.g_tls_database_create_certificate_handle$FUNC
     );
-    static final FunctionDescriptor g_simple_permission_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_simple_permission_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_simple_permission_get_type",
-        constants$813.g_simple_permission_get_type$FUNC
+    static final FunctionDescriptor g_tls_database_lookup_certificate_for_handle$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor g_simple_permission_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle g_tls_database_lookup_certificate_for_handle$MH = RuntimeHelper.downcallHandle(
+        "g_tls_database_lookup_certificate_for_handle",
+        constants$813.g_tls_database_lookup_certificate_for_handle$FUNC
     );
-    static final MethodHandle g_simple_permission_new$MH = RuntimeHelper.downcallHandle(
-        "g_simple_permission_new",
-        constants$813.g_simple_permission_new$FUNC
+    static final FunctionDescriptor g_tls_database_lookup_certificate_for_handle_async$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor g_simple_proxy_resolver_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_simple_proxy_resolver_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_simple_proxy_resolver_get_type",
-        constants$813.g_simple_proxy_resolver_get_type$FUNC
+    static final MethodHandle g_tls_database_lookup_certificate_for_handle_async$MH = RuntimeHelper.downcallHandle(
+        "g_tls_database_lookup_certificate_for_handle_async",
+        constants$813.g_tls_database_lookup_certificate_for_handle_async$FUNC
+    );
+    static final FunctionDescriptor g_tls_database_lookup_certificate_for_handle_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_tls_database_lookup_certificate_for_handle_finish$MH = RuntimeHelper.downcallHandle(
+        "g_tls_database_lookup_certificate_for_handle_finish",
+        constants$813.g_tls_database_lookup_certificate_for_handle_finish$FUNC
+    );
+    static final FunctionDescriptor g_tls_database_lookup_certificate_issuer$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_tls_database_lookup_certificate_issuer$MH = RuntimeHelper.downcallHandle(
+        "g_tls_database_lookup_certificate_issuer",
+        constants$813.g_tls_database_lookup_certificate_issuer$FUNC
     );
 }
 

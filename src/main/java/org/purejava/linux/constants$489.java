@@ -7,51 +7,62 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$489 {
+final class constants$489 {
 
-    static final FunctionDescriptor g_enum_register_static$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$489() {}
+    static final FunctionDescriptor g_application_set_action_group$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_enum_register_static$MH = RuntimeHelper.downcallHandle(
-        "g_enum_register_static",
-        constants$489.g_enum_register_static$FUNC
+    static final MethodHandle g_application_set_action_group$MH = RuntimeHelper.downcallHandle(
+        "g_application_set_action_group",
+        constants$489.g_application_set_action_group$FUNC
     );
-    static final FunctionDescriptor g_flags_register_static$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
+    static final FunctionDescriptor g_application_add_main_option_entries$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_flags_register_static$MH = RuntimeHelper.downcallHandle(
-        "g_flags_register_static",
-        constants$489.g_flags_register_static$FUNC
+    static final MethodHandle g_application_add_main_option_entries$MH = RuntimeHelper.downcallHandle(
+        "g_application_add_main_option_entries",
+        constants$489.g_application_add_main_option_entries$FUNC
     );
-    static final FunctionDescriptor g_enum_complete_type_info$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_LONG_LONG$LAYOUT,
+    static final FunctionDescriptor g_application_add_main_option$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_CHAR$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_enum_complete_type_info$MH = RuntimeHelper.downcallHandle(
-        "g_enum_complete_type_info",
-        constants$489.g_enum_complete_type_info$FUNC
+    static final MethodHandle g_application_add_main_option$MH = RuntimeHelper.downcallHandle(
+        "g_application_add_main_option",
+        constants$489.g_application_add_main_option$FUNC
     );
-    static final FunctionDescriptor g_flags_complete_type_info$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_LONG_LONG$LAYOUT,
+    static final FunctionDescriptor g_application_add_option_group$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_flags_complete_type_info$MH = RuntimeHelper.downcallHandle(
-        "g_flags_complete_type_info",
-        constants$489.g_flags_complete_type_info$FUNC
+    static final MethodHandle g_application_add_option_group$MH = RuntimeHelper.downcallHandle(
+        "g_application_add_option_group",
+        constants$489.g_application_add_option_group$FUNC
     );
-    static final FunctionDescriptor g_unicode_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_unicode_type_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_unicode_type_get_type",
-        constants$489.g_unicode_type_get_type$FUNC
+    static final FunctionDescriptor g_application_set_option_context_parameter_string$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor g_unicode_break_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_unicode_break_type_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_unicode_break_type_get_type",
-        constants$489.g_unicode_break_type_get_type$FUNC
+    static final MethodHandle g_application_set_option_context_parameter_string$MH = RuntimeHelper.downcallHandle(
+        "g_application_set_option_context_parameter_string",
+        constants$489.g_application_set_option_context_parameter_string$FUNC
+    );
+    static final FunctionDescriptor g_application_set_option_context_summary$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_application_set_option_context_summary$MH = RuntimeHelper.downcallHandle(
+        "g_application_set_option_context_summary",
+        constants$489.g_application_set_option_context_summary$FUNC
     );
 }
 

@@ -7,84 +7,16 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1985 {
+final class constants$1985 {
 
-    static final FunctionDescriptor gtk_render_focus$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle gtk_render_focus$MH = RuntimeHelper.downcallHandle(
-        "gtk_render_focus",
-        constants$1985.gtk_render_focus$FUNC
-    );
-    static final FunctionDescriptor gtk_render_layout$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_render_layout$MH = RuntimeHelper.downcallHandle(
-        "gtk_render_layout",
-        constants$1985.gtk_render_layout$FUNC
-    );
-    static final FunctionDescriptor gtk_render_line$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle gtk_render_line$MH = RuntimeHelper.downcallHandle(
-        "gtk_render_line",
-        constants$1985.gtk_render_line$FUNC
-    );
-    static final FunctionDescriptor gtk_render_slider$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_render_slider$MH = RuntimeHelper.downcallHandle(
-        "gtk_render_slider",
-        constants$1985.gtk_render_slider$FUNC
-    );
-    static final FunctionDescriptor gtk_render_frame_gap$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle gtk_render_frame_gap$MH = RuntimeHelper.downcallHandle(
-        "gtk_render_frame_gap",
-        constants$1985.gtk_render_frame_gap$FUNC
-    );
-    static final FunctionDescriptor gtk_render_extension$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_render_extension$MH = RuntimeHelper.downcallHandle(
-        "gtk_render_extension",
-        constants$1985.gtk_render_extension$FUNC
-    );
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1985() {}
+    static final MemorySegment G_STRLOC$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("/tmp/jextract$10505176010774648845.h:49");
+    static final MemorySegment G_GINT16_MODIFIER$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("h");
+    static final MemorySegment G_GINT16_FORMAT$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("hi");
+    static final MemorySegment G_GUINT16_FORMAT$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("hu");
+    static final MemorySegment G_GINT32_MODIFIER$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("");
+    static final MemorySegment G_GINT32_FORMAT$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("i");
 }
 
 

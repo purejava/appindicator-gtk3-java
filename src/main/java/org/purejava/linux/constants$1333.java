@@ -7,52 +7,55 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1333 {
+final class constants$1333 {
 
-    static final FunctionDescriptor gdk_gl_context_set_debug_enabled$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1333() {}
+    static final FunctionDescriptor gtk_menu_set_accel_group$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_gl_context_set_debug_enabled$MH = RuntimeHelper.downcallHandle(
-        "gdk_gl_context_set_debug_enabled",
-        constants$1333.gdk_gl_context_set_debug_enabled$FUNC
-    );
-    static final FunctionDescriptor gdk_gl_context_get_debug_enabled$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_gl_context_get_debug_enabled$MH = RuntimeHelper.downcallHandle(
-        "gdk_gl_context_get_debug_enabled",
-        constants$1333.gdk_gl_context_get_debug_enabled$FUNC
+    static final MethodHandle gtk_menu_set_accel_group$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_set_accel_group",
+        constants$1333.gtk_menu_set_accel_group$FUNC
     );
-    static final FunctionDescriptor gdk_gl_context_set_forward_compatible$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_gl_context_set_forward_compatible$MH = RuntimeHelper.downcallHandle(
-        "gdk_gl_context_set_forward_compatible",
-        constants$1333.gdk_gl_context_set_forward_compatible$FUNC
-    );
-    static final FunctionDescriptor gdk_gl_context_get_forward_compatible$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_menu_get_accel_group$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_gl_context_get_forward_compatible$MH = RuntimeHelper.downcallHandle(
-        "gdk_gl_context_get_forward_compatible",
-        constants$1333.gdk_gl_context_get_forward_compatible$FUNC
+    static final MethodHandle gtk_menu_get_accel_group$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_get_accel_group",
+        constants$1333.gtk_menu_get_accel_group$FUNC
     );
-    static final FunctionDescriptor gdk_gl_context_set_use_es$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_menu_set_accel_path$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_gl_context_set_use_es$MH = RuntimeHelper.downcallHandle(
-        "gdk_gl_context_set_use_es",
-        constants$1333.gdk_gl_context_set_use_es$FUNC
-    );
-    static final FunctionDescriptor gdk_gl_context_get_use_es$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gdk_gl_context_get_use_es$MH = RuntimeHelper.downcallHandle(
-        "gdk_gl_context_get_use_es",
-        constants$1333.gdk_gl_context_get_use_es$FUNC
+    static final MethodHandle gtk_menu_set_accel_path$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_set_accel_path",
+        constants$1333.gtk_menu_set_accel_path$FUNC
+    );
+    static final FunctionDescriptor gtk_menu_get_accel_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_menu_get_accel_path$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_get_accel_path",
+        constants$1333.gtk_menu_get_accel_path$FUNC
+    );
+    static final FunctionDescriptor gtk_menu_attach_to_widget$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_menu_attach_to_widget$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_attach_to_widget",
+        constants$1333.gtk_menu_attach_to_widget$FUNC
+    );
+    static final FunctionDescriptor gtk_menu_detach$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_menu_detach$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_detach",
+        constants$1333.gtk_menu_detach$FUNC
     );
 }
 

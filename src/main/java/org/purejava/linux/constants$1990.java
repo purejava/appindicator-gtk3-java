@@ -7,53 +7,16 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1990 {
+final class constants$1990 {
 
-    static final FunctionDescriptor gtk_scale_get_value_pos$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_scale_get_value_pos$MH = RuntimeHelper.downcallHandle(
-        "gtk_scale_get_value_pos",
-        constants$1990.gtk_scale_get_value_pos$FUNC
-    );
-    static final FunctionDescriptor gtk_scale_get_layout$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_scale_get_layout$MH = RuntimeHelper.downcallHandle(
-        "gtk_scale_get_layout",
-        constants$1990.gtk_scale_get_layout$FUNC
-    );
-    static final FunctionDescriptor gtk_scale_get_layout_offsets$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_scale_get_layout_offsets$MH = RuntimeHelper.downcallHandle(
-        "gtk_scale_get_layout_offsets",
-        constants$1990.gtk_scale_get_layout_offsets$FUNC
-    );
-    static final FunctionDescriptor gtk_scale_add_mark$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_scale_add_mark$MH = RuntimeHelper.downcallHandle(
-        "gtk_scale_add_mark",
-        constants$1990.gtk_scale_add_mark$FUNC
-    );
-    static final FunctionDescriptor gtk_scale_clear_marks$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_scale_clear_marks$MH = RuntimeHelper.downcallHandle(
-        "gtk_scale_clear_marks",
-        constants$1990.gtk_scale_clear_marks$FUNC
-    );
-    static final FunctionDescriptor gtk_scale_button_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_scale_button_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_scale_button_get_type",
-        constants$1990.gtk_scale_button_get_type$FUNC
-    );
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1990() {}
+    static final MemorySegment G_OS_INFO_KEY_HOME_URL$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("HOME_URL");
+    static final MemorySegment G_OS_INFO_KEY_DOCUMENTATION_URL$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("DOCUMENTATION_URL");
+    static final MemorySegment G_OS_INFO_KEY_SUPPORT_URL$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("SUPPORT_URL");
+    static final MemorySegment G_OS_INFO_KEY_BUG_REPORT_URL$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("BUG_REPORT_URL");
+    static final MemorySegment G_OS_INFO_KEY_PRIVACY_POLICY_URL$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("PRIVACY_POLICY_URL");
+    static final MemorySegment SIG_ERR$ADDR = MemorySegment.ofAddress(-1L);
 }
 
 

@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GActionMap {
+/**
+ * {@snippet :
+ * typedef struct _GActionMap GActionMap;
+ * }
+ */
+public final class GActionMap {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GActionMap() {}
 }
 
 

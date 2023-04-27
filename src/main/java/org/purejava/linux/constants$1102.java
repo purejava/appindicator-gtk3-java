@@ -7,41 +7,49 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1102 {
+final class constants$1102 {
 
-    static final FunctionDescriptor script_engine_init$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1102() {}
+    static final FunctionDescriptor gdk_window_get_update_area$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle script_engine_init$MH = RuntimeHelper.downcallHandle(
-        "script_engine_init",
-        constants$1102.script_engine_init$FUNC
+    static final MethodHandle gdk_window_get_update_area$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_get_update_area",
+        constants$1102.gdk_window_get_update_area$FUNC
     );
-    static final FunctionDescriptor script_engine_exit$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle script_engine_exit$MH = RuntimeHelper.downcallHandle(
-        "script_engine_exit",
-        constants$1102.script_engine_exit$FUNC
-    );
-    static final FunctionDescriptor script_engine_create$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gdk_window_freeze_updates$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle script_engine_create$MH = RuntimeHelper.downcallHandle(
-        "script_engine_create",
-        constants$1102.script_engine_create$FUNC
+    static final MethodHandle gdk_window_freeze_updates$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_freeze_updates",
+        constants$1102.gdk_window_freeze_updates$FUNC
     );
-    static final FunctionDescriptor pango_attr_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_attr_type_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_type_get_type",
-        constants$1102.pango_attr_type_get_type$FUNC
+    static final FunctionDescriptor gdk_window_thaw_updates$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor pango_underline_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_underline_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_underline_get_type",
-        constants$1102.pango_underline_get_type$FUNC
+    static final MethodHandle gdk_window_thaw_updates$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_thaw_updates",
+        constants$1102.gdk_window_thaw_updates$FUNC
     );
-    static final FunctionDescriptor pango_overline_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_overline_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_overline_get_type",
-        constants$1102.pango_overline_get_type$FUNC
+    static final FunctionDescriptor gdk_window_freeze_toplevel_updates_libgtk_only$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_window_freeze_toplevel_updates_libgtk_only$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_freeze_toplevel_updates_libgtk_only",
+        constants$1102.gdk_window_freeze_toplevel_updates_libgtk_only$FUNC
+    );
+    static final FunctionDescriptor gdk_window_thaw_toplevel_updates_libgtk_only$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gdk_window_thaw_toplevel_updates_libgtk_only$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_thaw_toplevel_updates_libgtk_only",
+        constants$1102.gdk_window_thaw_toplevel_updates_libgtk_only$FUNC
+    );
+    static final FunctionDescriptor gdk_window_process_all_updates$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle gdk_window_process_all_updates$MH = RuntimeHelper.downcallHandle(
+        "gdk_window_process_all_updates",
+        constants$1102.gdk_window_process_all_updates$FUNC
     );
 }
 

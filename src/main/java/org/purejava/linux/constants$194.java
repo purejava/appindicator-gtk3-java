@@ -7,53 +7,62 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$194 {
+final class constants$194 {
 
-    static final FunctionDescriptor g_utf8_collate_key_for_filename$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$194() {}
+    static final FunctionDescriptor g_ucs4_to_utf8$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_utf8_collate_key_for_filename$MH = RuntimeHelper.downcallHandle(
-        "g_utf8_collate_key_for_filename",
-        constants$194.g_utf8_collate_key_for_filename$FUNC
-    );
-    static final FunctionDescriptor g_utf8_make_valid$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_utf8_make_valid$MH = RuntimeHelper.downcallHandle(
-        "g_utf8_make_valid",
-        constants$194.g_utf8_make_valid$FUNC
-    );
-    static final FunctionDescriptor g_string_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_string_new$MH = RuntimeHelper.downcallHandle(
-        "g_string_new",
-        constants$194.g_string_new$FUNC
+    static final MethodHandle g_ucs4_to_utf8$MH = RuntimeHelper.downcallHandle(
+        "g_ucs4_to_utf8",
+        constants$194.g_ucs4_to_utf8$FUNC
     );
-    static final FunctionDescriptor g_string_new_len$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_unichar_to_utf8$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_unichar_to_utf8$MH = RuntimeHelper.downcallHandle(
+        "g_unichar_to_utf8",
+        constants$194.g_unichar_to_utf8$FUNC
+    );
+    static final FunctionDescriptor g_utf8_validate$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_utf8_validate$MH = RuntimeHelper.downcallHandle(
+        "g_utf8_validate",
+        constants$194.g_utf8_validate$FUNC
+    );
+    static final FunctionDescriptor g_utf8_validate_len$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_LONG_LONG$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_utf8_validate_len$MH = RuntimeHelper.downcallHandle(
+        "g_utf8_validate_len",
+        constants$194.g_utf8_validate_len$FUNC
+    );
+    static final FunctionDescriptor g_utf8_strup$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_LONG_LONG$LAYOUT
     );
-    static final MethodHandle g_string_new_len$MH = RuntimeHelper.downcallHandle(
-        "g_string_new_len",
-        constants$194.g_string_new_len$FUNC
+    static final MethodHandle g_utf8_strup$MH = RuntimeHelper.downcallHandle(
+        "g_utf8_strup",
+        constants$194.g_utf8_strup$FUNC
     );
-    static final FunctionDescriptor g_string_sized_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_utf8_strdown$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_LONG_LONG$LAYOUT
     );
-    static final MethodHandle g_string_sized_new$MH = RuntimeHelper.downcallHandle(
-        "g_string_sized_new",
-        constants$194.g_string_sized_new$FUNC
-    );
-    static final FunctionDescriptor g_string_free$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_string_free$MH = RuntimeHelper.downcallHandle(
-        "g_string_free",
-        constants$194.g_string_free$FUNC
+    static final MethodHandle g_utf8_strdown$MH = RuntimeHelper.downcallHandle(
+        "g_utf8_strdown",
+        constants$194.g_utf8_strdown$FUNC
     );
 }
 

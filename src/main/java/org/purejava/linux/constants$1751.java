@@ -7,49 +7,47 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1751 {
+final class constants$1751 {
 
-    static final FunctionDescriptor gtk_event_box_set_above_child$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1751() {}
+    static final FunctionDescriptor gtk_print_operation_preview_render_page$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_event_box_set_above_child$MH = RuntimeHelper.downcallHandle(
-        "gtk_event_box_set_above_child",
-        constants$1751.gtk_event_box_set_above_child$FUNC
+    static final MethodHandle gtk_print_operation_preview_render_page$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_operation_preview_render_page",
+        constants$1751.gtk_print_operation_preview_render_page$FUNC
     );
-    static final FunctionDescriptor gtk_event_controller_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_event_controller_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_event_controller_get_type",
-        constants$1751.gtk_event_controller_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_event_controller_get_widget$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_print_operation_preview_end_preview$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_event_controller_get_widget$MH = RuntimeHelper.downcallHandle(
-        "gtk_event_controller_get_widget",
-        constants$1751.gtk_event_controller_get_widget$FUNC
+    static final MethodHandle gtk_print_operation_preview_end_preview$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_operation_preview_end_preview",
+        constants$1751.gtk_print_operation_preview_end_preview$FUNC
     );
-    static final FunctionDescriptor gtk_event_controller_handle_event$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gtk_print_operation_preview_is_selected$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_event_controller_handle_event$MH = RuntimeHelper.downcallHandle(
-        "gtk_event_controller_handle_event",
-        constants$1751.gtk_event_controller_handle_event$FUNC
+    static final MethodHandle gtk_print_operation_preview_is_selected$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_operation_preview_is_selected",
+        constants$1751.gtk_print_operation_preview_is_selected$FUNC
     );
-    static final FunctionDescriptor gtk_event_controller_reset$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor gtk_print_error_quark$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
+    static final MethodHandle gtk_print_error_quark$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_error_quark",
+        constants$1751.gtk_print_error_quark$FUNC
     );
-    static final MethodHandle gtk_event_controller_reset$MH = RuntimeHelper.downcallHandle(
-        "gtk_event_controller_reset",
-        constants$1751.gtk_event_controller_reset$FUNC
+    static final FunctionDescriptor gtk_print_operation_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gtk_print_operation_get_type$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_operation_get_type",
+        constants$1751.gtk_print_operation_get_type$FUNC
     );
-    static final FunctionDescriptor gtk_event_controller_get_propagation_phase$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_event_controller_get_propagation_phase$MH = RuntimeHelper.downcallHandle(
-        "gtk_event_controller_get_propagation_phase",
-        constants$1751.gtk_event_controller_get_propagation_phase$FUNC
+    static final FunctionDescriptor gtk_print_operation_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_print_operation_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_print_operation_new",
+        constants$1751.gtk_print_operation_new$FUNC
     );
 }
 

@@ -7,51 +7,45 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1168 {
+final class constants$1168 {
 
-    static final FunctionDescriptor cairo_font_options_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1168() {}
+    static final FunctionDescriptor gdk_fullscreen_mode_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gdk_fullscreen_mode_get_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_fullscreen_mode_get_type",
+        constants$1168.gdk_fullscreen_mode_get_type$FUNC
+    );
+    static final FunctionDescriptor gdk_gl_error_quark$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
+    static final MethodHandle gdk_gl_error_quark$MH = RuntimeHelper.downcallHandle(
+        "gdk_gl_error_quark",
+        constants$1168.gdk_gl_error_quark$FUNC
+    );
+    static final FunctionDescriptor gdk_gl_context_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle gdk_gl_context_get_type$MH = RuntimeHelper.downcallHandle(
+        "gdk_gl_context_get_type",
+        constants$1168.gdk_gl_context_get_type$FUNC
+    );
+    static final FunctionDescriptor gdk_gl_context_get_display$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_font_options_copy$MH = RuntimeHelper.downcallHandle(
-        "cairo_font_options_copy",
-        constants$1168.cairo_font_options_copy$FUNC
+    static final MethodHandle gdk_gl_context_get_display$MH = RuntimeHelper.downcallHandle(
+        "gdk_gl_context_get_display",
+        constants$1168.gdk_gl_context_get_display$FUNC
     );
-    static final FunctionDescriptor cairo_font_options_destroy$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gdk_gl_context_get_window$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_font_options_destroy$MH = RuntimeHelper.downcallHandle(
-        "cairo_font_options_destroy",
-        constants$1168.cairo_font_options_destroy$FUNC
+    static final MethodHandle gdk_gl_context_get_window$MH = RuntimeHelper.downcallHandle(
+        "gdk_gl_context_get_window",
+        constants$1168.gdk_gl_context_get_window$FUNC
     );
-    static final FunctionDescriptor cairo_font_options_status$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+    static final FunctionDescriptor gdk_gl_context_get_shared_context$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle cairo_font_options_status$MH = RuntimeHelper.downcallHandle(
-        "cairo_font_options_status",
-        constants$1168.cairo_font_options_status$FUNC
-    );
-    static final FunctionDescriptor cairo_font_options_merge$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_font_options_merge$MH = RuntimeHelper.downcallHandle(
-        "cairo_font_options_merge",
-        constants$1168.cairo_font_options_merge$FUNC
-    );
-    static final FunctionDescriptor cairo_font_options_equal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_font_options_equal$MH = RuntimeHelper.downcallHandle(
-        "cairo_font_options_equal",
-        constants$1168.cairo_font_options_equal$FUNC
-    );
-    static final FunctionDescriptor cairo_font_options_hash$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_font_options_hash$MH = RuntimeHelper.downcallHandle(
-        "cairo_font_options_hash",
-        constants$1168.cairo_font_options_hash$FUNC
+    static final MethodHandle gdk_gl_context_get_shared_context$MH = RuntimeHelper.downcallHandle(
+        "gdk_gl_context_get_shared_context",
+        constants$1168.gdk_gl_context_get_shared_context$FUNC
     );
 }
 

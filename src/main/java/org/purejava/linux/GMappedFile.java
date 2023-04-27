@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GMappedFile {
+/**
+ * {@snippet :
+ * typedef struct _GMappedFile GMappedFile;
+ * }
+ */
+public final class GMappedFile {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GMappedFile() {}
 }
 
 

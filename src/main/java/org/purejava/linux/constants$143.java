@@ -7,8 +7,47 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$143 {
+final class constants$143 {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$143() {}
+    static final FunctionDescriptor g_list_position$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_list_position$MH = RuntimeHelper.downcallHandle(
+        "g_list_position",
+        constants$143.g_list_position$FUNC
+    );
+    static final FunctionDescriptor g_list_index$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_list_index$MH = RuntimeHelper.downcallHandle(
+        "g_list_index",
+        constants$143.g_list_index$FUNC
+    );
+    static final FunctionDescriptor g_list_last$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_list_last$MH = RuntimeHelper.downcallHandle(
+        "g_list_last",
+        constants$143.g_list_last$FUNC
+    );
+    static final FunctionDescriptor g_list_first$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_list_first$MH = RuntimeHelper.downcallHandle(
+        "g_list_first",
+        constants$143.g_list_first$FUNC
+    );
+    static final FunctionDescriptor g_list_length$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_list_length$MH = RuntimeHelper.downcallHandle(
+        "g_list_length",
+        constants$143.g_list_length$FUNC
+    );
     static final FunctionDescriptor g_list_foreach$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
@@ -17,44 +56,6 @@ class constants$143 {
     static final MethodHandle g_list_foreach$MH = RuntimeHelper.downcallHandle(
         "g_list_foreach",
         constants$143.g_list_foreach$FUNC
-    );
-    static final FunctionDescriptor g_list_sort$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_list_sort$MH = RuntimeHelper.downcallHandle(
-        "g_list_sort",
-        constants$143.g_list_sort$FUNC
-    );
-    static final FunctionDescriptor g_list_sort_with_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_list_sort_with_data$MH = RuntimeHelper.downcallHandle(
-        "g_list_sort_with_data",
-        constants$143.g_list_sort_with_data$FUNC
-    );
-    static final FunctionDescriptor g_list_nth_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_list_nth_data$MH = RuntimeHelper.downcallHandle(
-        "g_list_nth_data",
-        constants$143.g_list_nth_data$FUNC
-    );
-    static final FunctionDescriptor g_clear_list$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_clear_list$MH = RuntimeHelper.downcallHandle(
-        "g_clear_list",
-        constants$143.g_clear_list$FUNC
-    );
-    static final FunctionDescriptor GHRFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
     );
 }
 

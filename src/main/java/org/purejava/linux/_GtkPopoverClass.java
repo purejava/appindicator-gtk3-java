@@ -7,9 +7,18 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct _GtkPopoverClass {
+ *     GtkBinClass parent_class;
+ *     void (*closed)(GtkPopover*);
+ *     gpointer reserved[10];
+ * };
+ * }
+ */
 public class _GtkPopoverClass {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
                 MemoryLayout.structLayout(
@@ -27,7 +36,10 @@ public class _GtkPopoverClass {
                         Constants$root.C_POINTER$LAYOUT.withName("notify"),
                         Constants$root.C_POINTER$LAYOUT.withName("constructed"),
                         Constants$root.C_LONG_LONG$LAYOUT.withName("flags"),
-                        MemoryLayout.sequenceLayout(6, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
+                        Constants$root.C_LONG_LONG$LAYOUT.withName("n_construct_properties"),
+                        Constants$root.C_POINTER$LAYOUT.withName("pspecs"),
+                        Constants$root.C_LONG_LONG$LAYOUT.withName("n_pspecs"),
+                        MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
                     ).withName("parent_class"),
                     Constants$root.C_INT$LAYOUT.withName("activate_signal"),
                     MemoryLayout.paddingLayout(32),
@@ -127,10 +139,7 @@ public class _GtkPopoverClass {
                 Constants$root.C_POINTER$LAYOUT.withName("set_child_property"),
                 Constants$root.C_POINTER$LAYOUT.withName("get_child_property"),
                 Constants$root.C_POINTER$LAYOUT.withName("get_path_for_child"),
-                MemoryLayout.structLayout(
-                    MemoryLayout.paddingLayout(1).withName("_handle_border_width"),
-                    MemoryLayout.paddingLayout(63)
-                ),
+                MemoryLayout.paddingLayout(64),
                 Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved1"),
                 Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved2"),
                 Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved3"),
@@ -157,20 +166,32 @@ public class _GtkPopoverClass {
     static final FunctionDescriptor closed$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle closed$MH = RuntimeHelper.downcallHandle(
-        _GtkPopoverClass.closed$FUNC
+    static final FunctionDescriptor closed_UP$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
+    static final MethodHandle closed_UP$MH = RuntimeHelper.upcallHandle(closed.class, "apply", _GtkPopoverClass.closed_UP$FUNC);
+    static final FunctionDescriptor closed_DOWN$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle closed_DOWN$MH = RuntimeHelper.downcallHandle(
+        _GtkPopoverClass.closed_DOWN$FUNC
+    );
+    /**
+     * {@snippet :
+ * void (*closed)(GtkPopover*);
+     * }
+     */
     public interface closed {
 
-        void apply(java.lang.foreign.MemoryAddress _x0);
-        static MemorySegment allocate(closed fi, MemorySession session) {
-            return RuntimeHelper.upcallStub(closed.class, fi, _GtkPopoverClass.closed$FUNC, session);
+        void apply(java.lang.foreign.MemorySegment display);
+        static MemorySegment allocate(closed fi, SegmentScope scope) {
+            return RuntimeHelper.upcallStub(_GtkPopoverClass.closed_UP$MH, fi, _GtkPopoverClass.closed$FUNC, scope);
         }
-        static closed ofAddress(MemoryAddress addr, MemorySession session) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr, 0, session);
-            return (java.lang.foreign.MemoryAddress __x0) -> {
+        static closed ofAddress(MemorySegment addr, SegmentScope scope) {
+            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+            return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GtkPopoverClass.closed$MH.invokeExact((Addressable)symbol, (java.lang.foreign.Addressable)__x0);
+                    _GtkPopoverClass.closed_DOWN$MH.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -182,30 +203,42 @@ public class _GtkPopoverClass {
     public static VarHandle closed$VH() {
         return _GtkPopoverClass.closed$VH;
     }
-    public static MemoryAddress closed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemoryAddress)_GtkPopoverClass.closed$VH.get(seg);
+    /**
+     * Getter for field:
+     * {@snippet :
+     * void (*closed)(GtkPopover*);
+     * }
+     */
+    public static MemorySegment closed$get(MemorySegment seg) {
+        return (java.lang.foreign.MemorySegment)_GtkPopoverClass.closed$VH.get(seg);
     }
-    public static void closed$set( MemorySegment seg, MemoryAddress x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * void (*closed)(GtkPopover*);
+     * }
+     */
+    public static void closed$set(MemorySegment seg, MemorySegment x) {
         _GtkPopoverClass.closed$VH.set(seg, x);
     }
-    public static MemoryAddress closed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemoryAddress)_GtkPopoverClass.closed$VH.get(seg.asSlice(index*sizeof()));
+    public static MemorySegment closed$get(MemorySegment seg, long index) {
+        return (java.lang.foreign.MemorySegment)_GtkPopoverClass.closed$VH.get(seg.asSlice(index*sizeof()));
     }
-    public static void closed$set(MemorySegment seg, long index, MemoryAddress x) {
+    public static void closed$set(MemorySegment seg, long index, MemorySegment x) {
         _GtkPopoverClass.closed$VH.set(seg.asSlice(index*sizeof()), x);
     }
-    public static closed closed (MemorySegment segment, MemorySession session) {
-        return closed.ofAddress(closed$get(segment), session);
+    public static closed closed(MemorySegment segment, SegmentScope scope) {
+        return closed.ofAddress(closed$get(segment), scope);
     }
     public static MemorySegment reserved$slice(MemorySegment seg) {
         return seg.asSlice(1016, 80);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

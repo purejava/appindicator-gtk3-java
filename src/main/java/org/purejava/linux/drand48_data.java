@@ -7,9 +7,20 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
+/**
+ * {@snippet :
+ * struct drand48_data {
+ *     unsigned short __x[3];
+ *     unsigned short __old_x[3];
+ *     unsigned short __c;
+ *     unsigned short __init;
+ *     unsigned long long __a;
+ * };
+ * }
+ */
 public class drand48_data {
 
-    static final  GroupLayout $struct$LAYOUT = MemoryLayout.structLayout(
+    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
         MemoryLayout.sequenceLayout(3, Constants$root.C_SHORT$LAYOUT).withName("__x"),
         MemoryLayout.sequenceLayout(3, Constants$root.C_SHORT$LAYOUT).withName("__old_x"),
         Constants$root.C_SHORT$LAYOUT.withName("__c"),
@@ -29,10 +40,22 @@ public class drand48_data {
     public static VarHandle __c$VH() {
         return drand48_data.__c$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * unsigned short __c;
+     * }
+     */
     public static short __c$get(MemorySegment seg) {
         return (short)drand48_data.__c$VH.get(seg);
     }
-    public static void __c$set( MemorySegment seg, short x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * unsigned short __c;
+     * }
+     */
+    public static void __c$set(MemorySegment seg, short x) {
         drand48_data.__c$VH.set(seg, x);
     }
     public static short __c$get(MemorySegment seg, long index) {
@@ -45,10 +68,22 @@ public class drand48_data {
     public static VarHandle __init$VH() {
         return drand48_data.__init$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * unsigned short __init;
+     * }
+     */
     public static short __init$get(MemorySegment seg) {
         return (short)drand48_data.__init$VH.get(seg);
     }
-    public static void __init$set( MemorySegment seg, short x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * unsigned short __init;
+     * }
+     */
+    public static void __init$set(MemorySegment seg, short x) {
         drand48_data.__init$VH.set(seg, x);
     }
     public static short __init$get(MemorySegment seg, long index) {
@@ -61,10 +96,22 @@ public class drand48_data {
     public static VarHandle __a$VH() {
         return drand48_data.__a$VH;
     }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * unsigned long long __a;
+     * }
+     */
     public static long __a$get(MemorySegment seg) {
         return (long)drand48_data.__a$VH.get(seg);
     }
-    public static void __a$set( MemorySegment seg, long x) {
+    /**
+     * Setter for field:
+     * {@snippet :
+     * unsigned long long __a;
+     * }
+     */
+    public static void __a$set(MemorySegment seg, long x) {
         drand48_data.__a$VH.set(seg, x);
     }
     public static long __a$get(MemorySegment seg, long index) {
@@ -75,10 +122,10 @@ public class drand48_data {
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(int len, SegmentAllocator allocator) {
+    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemoryAddress addr, MemorySession session) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, session); }
+    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

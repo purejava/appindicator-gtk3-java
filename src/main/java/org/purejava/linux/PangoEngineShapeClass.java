@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class PangoEngineShapeClass extends _PangoEngineShapeClass {
+/**
+ * {@snippet :
+ * typedef struct _PangoEngineShapeClass PangoEngineShapeClass;
+ * }
+ */
+public final class PangoEngineShapeClass extends _PangoEngineShapeClass {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private PangoEngineShapeClass() {}
 }
 
 

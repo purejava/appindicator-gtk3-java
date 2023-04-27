@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class PangoGlyphInfo extends _PangoGlyphInfo {
+/**
+ * {@snippet :
+ * typedef struct _PangoGlyphInfo PangoGlyphInfo;
+ * }
+ */
+public final class PangoGlyphInfo extends _PangoGlyphInfo {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private PangoGlyphInfo() {}
 }
 
 

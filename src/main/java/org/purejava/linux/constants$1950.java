@@ -7,55 +7,46 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1950 {
+final class constants$1950 {
 
-    static final FunctionDescriptor gtk_print_operation_set_current_page$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1950() {}
+    static final FunctionDescriptor gtk_rc_get_module_dir$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_rc_get_module_dir$MH = RuntimeHelper.downcallHandle(
+        "gtk_rc_get_module_dir",
+        constants$1950.gtk_rc_get_module_dir$FUNC
     );
-    static final MethodHandle gtk_print_operation_set_current_page$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_operation_set_current_page",
-        constants$1950.gtk_print_operation_set_current_page$FUNC
+    static final FunctionDescriptor gtk_rc_get_im_module_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_rc_get_im_module_path$MH = RuntimeHelper.downcallHandle(
+        "gtk_rc_get_im_module_path",
+        constants$1950.gtk_rc_get_im_module_path$FUNC
     );
-    static final FunctionDescriptor gtk_print_operation_set_use_full_page$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor gtk_rc_get_im_module_file$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_rc_get_im_module_file$MH = RuntimeHelper.downcallHandle(
+        "gtk_rc_get_im_module_file",
+        constants$1950.gtk_rc_get_im_module_file$FUNC
     );
-    static final MethodHandle gtk_print_operation_set_use_full_page$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_operation_set_use_full_page",
-        constants$1950.gtk_print_operation_set_use_full_page$FUNC
+    static final FunctionDescriptor gtk_rc_scanner_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_rc_scanner_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_rc_scanner_new",
+        constants$1950.gtk_rc_scanner_new$FUNC
     );
-    static final FunctionDescriptor gtk_print_operation_set_unit$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_print_operation_set_unit$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_operation_set_unit",
-        constants$1950.gtk_print_operation_set_unit$FUNC
-    );
-    static final FunctionDescriptor gtk_print_operation_set_export_filename$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_rc_parse_color$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_print_operation_set_export_filename$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_operation_set_export_filename",
-        constants$1950.gtk_print_operation_set_export_filename$FUNC
+    static final MethodHandle gtk_rc_parse_color$MH = RuntimeHelper.downcallHandle(
+        "gtk_rc_parse_color",
+        constants$1950.gtk_rc_parse_color$FUNC
     );
-    static final FunctionDescriptor gtk_print_operation_set_track_print_status$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_rc_parse_color_full$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_print_operation_set_track_print_status$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_operation_set_track_print_status",
-        constants$1950.gtk_print_operation_set_track_print_status$FUNC
-    );
-    static final FunctionDescriptor gtk_print_operation_set_show_progress$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_print_operation_set_show_progress$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_operation_set_show_progress",
-        constants$1950.gtk_print_operation_set_show_progress$FUNC
+    static final MethodHandle gtk_rc_parse_color_full$MH = RuntimeHelper.downcallHandle(
+        "gtk_rc_parse_color_full",
+        constants$1950.gtk_rc_parse_color_full$FUNC
     );
 }
 

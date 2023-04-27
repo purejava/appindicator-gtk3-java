@@ -7,60 +7,54 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1732 {
+final class constants$1732 {
 
-    static final FunctionDescriptor gtk_clipboard_set_with_owner$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1732() {}
+    static final FunctionDescriptor gtk_places_sidebar_get_show_desktop$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_clipboard_set_with_owner$MH = RuntimeHelper.downcallHandle(
-        "gtk_clipboard_set_with_owner",
-        constants$1732.gtk_clipboard_set_with_owner$FUNC
+    static final MethodHandle gtk_places_sidebar_get_show_desktop$MH = RuntimeHelper.downcallHandle(
+        "gtk_places_sidebar_get_show_desktop",
+        constants$1732.gtk_places_sidebar_get_show_desktop$FUNC
     );
-    static final FunctionDescriptor gtk_clipboard_get_owner$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_clipboard_get_owner$MH = RuntimeHelper.downcallHandle(
-        "gtk_clipboard_get_owner",
-        constants$1732.gtk_clipboard_get_owner$FUNC
-    );
-    static final FunctionDescriptor gtk_clipboard_clear$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_clipboard_clear$MH = RuntimeHelper.downcallHandle(
-        "gtk_clipboard_clear",
-        constants$1732.gtk_clipboard_clear$FUNC
-    );
-    static final FunctionDescriptor gtk_clipboard_set_text$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_places_sidebar_set_show_desktop$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_clipboard_set_text$MH = RuntimeHelper.downcallHandle(
-        "gtk_clipboard_set_text",
-        constants$1732.gtk_clipboard_set_text$FUNC
+    static final MethodHandle gtk_places_sidebar_set_show_desktop$MH = RuntimeHelper.downcallHandle(
+        "gtk_places_sidebar_set_show_desktop",
+        constants$1732.gtk_places_sidebar_set_show_desktop$FUNC
     );
-    static final FunctionDescriptor gtk_clipboard_set_image$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_places_sidebar_get_show_connect_to_server$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_clipboard_set_image$MH = RuntimeHelper.downcallHandle(
-        "gtk_clipboard_set_image",
-        constants$1732.gtk_clipboard_set_image$FUNC
+    static final MethodHandle gtk_places_sidebar_get_show_connect_to_server$MH = RuntimeHelper.downcallHandle(
+        "gtk_places_sidebar_get_show_connect_to_server",
+        constants$1732.gtk_places_sidebar_get_show_connect_to_server$FUNC
     );
-    static final FunctionDescriptor gtk_clipboard_request_contents$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_places_sidebar_set_show_connect_to_server$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_places_sidebar_set_show_connect_to_server$MH = RuntimeHelper.downcallHandle(
+        "gtk_places_sidebar_set_show_connect_to_server",
+        constants$1732.gtk_places_sidebar_set_show_connect_to_server$FUNC
+    );
+    static final FunctionDescriptor gtk_places_sidebar_get_show_enter_location$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_clipboard_request_contents$MH = RuntimeHelper.downcallHandle(
-        "gtk_clipboard_request_contents",
-        constants$1732.gtk_clipboard_request_contents$FUNC
+    static final MethodHandle gtk_places_sidebar_get_show_enter_location$MH = RuntimeHelper.downcallHandle(
+        "gtk_places_sidebar_get_show_enter_location",
+        constants$1732.gtk_places_sidebar_get_show_enter_location$FUNC
+    );
+    static final FunctionDescriptor gtk_places_sidebar_set_show_enter_location$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_places_sidebar_set_show_enter_location$MH = RuntimeHelper.downcallHandle(
+        "gtk_places_sidebar_set_show_enter_location",
+        constants$1732.gtk_places_sidebar_set_show_enter_location$FUNC
     );
 }
 

@@ -7,58 +7,60 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1902 {
+final class constants$1902 {
 
-    static final FunctionDescriptor gtk_menu_tool_button_set_arrow_tooltip_text$FUNC = FunctionDescriptor.ofVoid(
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1902() {}
+    static final FunctionDescriptor gtk_widget_path_iter_get_siblings$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_menu_tool_button_set_arrow_tooltip_text$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_tool_button_set_arrow_tooltip_text",
-        constants$1902.gtk_menu_tool_button_set_arrow_tooltip_text$FUNC
+    static final MethodHandle gtk_widget_path_iter_get_siblings$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_path_iter_get_siblings",
+        constants$1902.gtk_widget_path_iter_get_siblings$FUNC
     );
-    static final FunctionDescriptor gtk_menu_tool_button_set_arrow_tooltip_markup$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_widget_path_iter_get_sibling_index$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_menu_tool_button_set_arrow_tooltip_markup$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_tool_button_set_arrow_tooltip_markup",
-        constants$1902.gtk_menu_tool_button_set_arrow_tooltip_markup$FUNC
+    static final MethodHandle gtk_widget_path_iter_get_sibling_index$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_path_iter_get_sibling_index",
+        constants$1902.gtk_widget_path_iter_get_sibling_index$FUNC
     );
-    static final FunctionDescriptor gtk_message_dialog_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_message_dialog_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_message_dialog_get_type",
-        constants$1902.gtk_message_dialog_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_message_dialog_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_widget_path_iter_get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle gtk_message_dialog_new$MH = RuntimeHelper.downcallHandleVariadic(
-        "gtk_message_dialog_new",
-        constants$1902.gtk_message_dialog_new$FUNC
+    static final MethodHandle gtk_widget_path_iter_get_name$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_path_iter_get_name",
+        constants$1902.gtk_widget_path_iter_get_name$FUNC
     );
-    static final FunctionDescriptor gtk_message_dialog_new_with_markup$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_widget_path_iter_set_name$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_message_dialog_new_with_markup$MH = RuntimeHelper.downcallHandleVariadic(
-        "gtk_message_dialog_new_with_markup",
-        constants$1902.gtk_message_dialog_new_with_markup$FUNC
+    static final MethodHandle gtk_widget_path_iter_set_name$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_path_iter_set_name",
+        constants$1902.gtk_widget_path_iter_set_name$FUNC
     );
-    static final FunctionDescriptor gtk_message_dialog_set_image$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_widget_path_iter_has_name$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle gtk_message_dialog_set_image$MH = RuntimeHelper.downcallHandle(
-        "gtk_message_dialog_set_image",
-        constants$1902.gtk_message_dialog_set_image$FUNC
+    static final MethodHandle gtk_widget_path_iter_has_name$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_path_iter_has_name",
+        constants$1902.gtk_widget_path_iter_has_name$FUNC
+    );
+    static final FunctionDescriptor gtk_widget_path_iter_has_qname$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle gtk_widget_path_iter_has_qname$MH = RuntimeHelper.downcallHandle(
+        "gtk_widget_path_iter_has_qname",
+        constants$1902.gtk_widget_path_iter_has_qname$FUNC
     );
 }
 

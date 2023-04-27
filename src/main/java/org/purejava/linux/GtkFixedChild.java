@@ -7,8 +7,15 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-public class GtkFixedChild extends _GtkFixedChild {
+/**
+ * {@snippet :
+ * typedef struct _GtkFixedChild GtkFixedChild;
+ * }
+ */
+public final class GtkFixedChild extends _GtkFixedChild {
 
+    // Suppresses default constructor, ensuring non-instantiability.
+    private GtkFixedChild() {}
 }
 
 

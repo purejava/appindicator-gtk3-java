@@ -7,54 +7,68 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$1415 {
+final class constants$1415 {
 
-    static final FunctionDescriptor atk_streamable_content_get_mime_type$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$1415() {}
+    static final FunctionDescriptor gtk_text_iter_backward_find_char$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle atk_streamable_content_get_mime_type$MH = RuntimeHelper.downcallHandle(
-        "atk_streamable_content_get_mime_type",
-        constants$1415.atk_streamable_content_get_mime_type$FUNC
-    );
-    static final FunctionDescriptor atk_streamable_content_get_stream$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_streamable_content_get_stream$MH = RuntimeHelper.downcallHandle(
-        "atk_streamable_content_get_stream",
-        constants$1415.atk_streamable_content_get_stream$FUNC
+    static final MethodHandle gtk_text_iter_backward_find_char$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_backward_find_char",
+        constants$1415.gtk_text_iter_backward_find_char$FUNC
     );
-    static final FunctionDescriptor atk_streamable_content_get_uri$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_text_iter_forward_search$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_streamable_content_get_uri$MH = RuntimeHelper.downcallHandle(
-        "atk_streamable_content_get_uri",
-        constants$1415.atk_streamable_content_get_uri$FUNC
+    static final MethodHandle gtk_text_iter_forward_search$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_forward_search",
+        constants$1415.gtk_text_iter_forward_search$FUNC
     );
-    static final FunctionDescriptor atk_table_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle atk_table_get_type$MH = RuntimeHelper.downcallHandle(
-        "atk_table_get_type",
-        constants$1415.atk_table_get_type$FUNC
-    );
-    static final FunctionDescriptor atk_table_ref_at$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor gtk_text_iter_backward_search$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle atk_table_ref_at$MH = RuntimeHelper.downcallHandle(
-        "atk_table_ref_at",
-        constants$1415.atk_table_ref_at$FUNC
-    );
-    static final FunctionDescriptor atk_table_get_index_at$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle atk_table_get_index_at$MH = RuntimeHelper.downcallHandle(
-        "atk_table_get_index_at",
-        constants$1415.atk_table_get_index_at$FUNC
+    static final MethodHandle gtk_text_iter_backward_search$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_backward_search",
+        constants$1415.gtk_text_iter_backward_search$FUNC
+    );
+    static final FunctionDescriptor gtk_text_iter_equal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_text_iter_equal$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_equal",
+        constants$1415.gtk_text_iter_equal$FUNC
+    );
+    static final FunctionDescriptor gtk_text_iter_compare$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_text_iter_compare$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_compare",
+        constants$1415.gtk_text_iter_compare$FUNC
+    );
+    static final FunctionDescriptor gtk_text_iter_in_range$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_text_iter_in_range$MH = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_in_range",
+        constants$1415.gtk_text_iter_in_range$FUNC
     );
 }
 

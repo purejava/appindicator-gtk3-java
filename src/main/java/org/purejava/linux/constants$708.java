@@ -7,46 +7,65 @@ import java.lang.invoke.VarHandle;
 import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
-class constants$708 {
+final class constants$708 {
 
-    static final FunctionDescriptor g_filename_completer_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_filename_completer_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_filename_completer_get_type",
-        constants$708.g_filename_completer_get_type$FUNC
+    // Suppresses default constructor, ensuring non-instantiability.
+    private constants$708() {}
+    static final FunctionDescriptor g_mount_unshadow$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final FunctionDescriptor g_filename_completer_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_filename_completer_new$MH = RuntimeHelper.downcallHandle(
-        "g_filename_completer_new",
-        constants$708.g_filename_completer_new$FUNC
+    static final MethodHandle g_mount_unshadow$MH = RuntimeHelper.downcallHandle(
+        "g_mount_unshadow",
+        constants$708.g_mount_unshadow$FUNC
     );
-    static final FunctionDescriptor g_filename_completer_get_completion_suffix$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_mount_unmount_with_operation$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_filename_completer_get_completion_suffix$MH = RuntimeHelper.downcallHandle(
-        "g_filename_completer_get_completion_suffix",
-        constants$708.g_filename_completer_get_completion_suffix$FUNC
+    static final MethodHandle g_mount_unmount_with_operation$MH = RuntimeHelper.downcallHandle(
+        "g_mount_unmount_with_operation",
+        constants$708.g_mount_unmount_with_operation$FUNC
     );
-    static final FunctionDescriptor g_filename_completer_get_completions$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor g_mount_unmount_with_operation_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_filename_completer_get_completions$MH = RuntimeHelper.downcallHandle(
-        "g_filename_completer_get_completions",
-        constants$708.g_filename_completer_get_completions$FUNC
+    static final MethodHandle g_mount_unmount_with_operation_finish$MH = RuntimeHelper.downcallHandle(
+        "g_mount_unmount_with_operation_finish",
+        constants$708.g_mount_unmount_with_operation_finish$FUNC
     );
-    static final FunctionDescriptor g_filename_completer_set_dirs_only$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor g_mount_eject_with_operation$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+        Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle g_filename_completer_set_dirs_only$MH = RuntimeHelper.downcallHandle(
-        "g_filename_completer_set_dirs_only",
-        constants$708.g_filename_completer_set_dirs_only$FUNC
+    static final MethodHandle g_mount_eject_with_operation$MH = RuntimeHelper.downcallHandle(
+        "g_mount_eject_with_operation",
+        constants$708.g_mount_eject_with_operation$FUNC
     );
-    static final FunctionDescriptor g_file_output_stream_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_file_output_stream_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_file_output_stream_get_type",
-        constants$708.g_file_output_stream_get_type$FUNC
+    static final FunctionDescriptor g_mount_eject_with_operation_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_mount_eject_with_operation_finish$MH = RuntimeHelper.downcallHandle(
+        "g_mount_eject_with_operation_finish",
+        constants$708.g_mount_eject_with_operation_finish$FUNC
+    );
+    static final FunctionDescriptor g_mount_get_sort_key$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle g_mount_get_sort_key$MH = RuntimeHelper.downcallHandle(
+        "g_mount_get_sort_key",
+        constants$708.g_mount_get_sort_key$FUNC
     );
 }
 
